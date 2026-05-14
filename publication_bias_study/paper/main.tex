@@ -1092,23 +1092,26 @@ finding direction.  The vast majority of \JF{}/\RFS{}/\JFE{} articles pass
 through AFA before publication, making AFA presenters a substantially closer
 match to the published sample than the full NBER working-paper universe.
 
-We collect 3,815 AFA program papers from 2006--2024 (all years with
-structured HTML programs; 2013 is unavailable).  Applying a title-only
-keyword filter to identify government-intervention papers yields 241
+We collect 4,001 AFA program papers from 2006--2024.  For 2006--2012 and
+2014--2024, we scrape the AFA website directly; for 2013, whose AFA page
+returns a 404, we parse AFA sessions from the full ASSA preliminary program
+hosted by the AEA (\url{https://www.aeaweb.org/conference/2013/preliminary.php}),
+yielding 186 papers from 57 AFA sessions.  Applying a title-only keyword
+filter to identify government-intervention papers yields 251
 in-scope papers.  Direction codes are assigned from abstract-based codes for
 papers matched to our published dataset and from conservative title-keyword
 rules for unmatched papers (which are predominantly coded null because
-finance titles are typically neutral).  Thirty-seven AFA papers (15.4\%)
+finance titles are typically neutral).  Forty AFA papers (15.9\%)
 are matched to a JF/RFS/JFE publication via fuzzy title matching.
 
 The binary directional probit on the AFA baseline yields
-$\hat\beta = 1.787^{***}$ (s.e.\ 0.493, $p < 0.001$, $N = 241$),
+$\hat\beta = 1.755^{***}$ (s.e.\ 0.492, $p < 0.001$, $N = 251$),
 consistent with the NBER-baseline estimate of $1.279^{***}$ (s.e.\ 0.162).
-The AFA directional publication rate is 75\% versus 13\% for
+The AFA directional publication rate is 75\% versus 14\% for
 null-finding AFA papers---a gap that exceeds the NBER baseline gap in
 magnitude, though the small number of directional AFA papers ($N = 8$)
 produces wide confidence intervals.  The pattern is unchanged when a year
-trend is added ($\hat\beta = 1.761^{***}$, s.e.\ 0.495).  We note that
+trend is added ($\hat\beta = 1.730^{***}$, s.e.\ 0.495).  We note that
 direction coding for unmatched AFA papers is noisier than our main
 abstract-based coding (title-only classification misses many genuinely
 directional papers with neutral titles, biasing the unmatched group toward
@@ -1172,8 +1175,8 @@ R6: LPM (OLS, HC3)         & Positive & $0.437^{***}$ & $<$0.001 & 296 \\
                             & Negative & $0.457^{***}$ & $<$0.001 & 296 \\[4pt]
 R8: + log(abstract length) & Positive & $0.171$       & 0.756    & 296 \\
 \small{[lower-bound spec]}  & Negative & $0.584$       & 0.197    & 296 \\[4pt]
-R10: AFA conference baseline & Directional & $1.787^{***}$ & $<$0.001 & 241 \\
-\small{[AFA pre-pub.\ control]} & (+ year) & $1.761^{***}$ & $<$0.001 & 241 \\
+R10: AFA conference baseline & Directional & $1.755^{***}$ & $<$0.001 & 251 \\
+\small{[AFA pre-pub.\ control]} & (+ year) & $1.730^{***}$ & $<$0.001 & 251 \\
 \bottomrule
 \end{tabular}
 \begin{tablenotes}
@@ -1188,9 +1191,10 @@ $\log(1+N_{\text{authors}})$.  R8 is a lower-bound bounding specification:
 the abstract-length control is partly endogenous (journals require longer
 abstracts during revision), so the R8 coefficients should be read as a lower
 bound on the true direction--publication association; see text for details.
-R10 uses AFA annual meeting papers (2006--2024, $N=241$ in-scope) as the
-pre-publication baseline in place of NBER working papers; the outcome is
-matched to a JF/RFS/JFE publication via fuzzy title matching (15.4\% match
+R10 uses AFA annual meeting papers (2006--2024, $N=251$ in-scope) as the
+pre-publication baseline in place of NBER working papers; 2013 papers sourced
+from the AEA ASSA program (afajof.org returns 404 for 2013).  The outcome is
+matched to a JF/RFS/JFE publication via fuzzy title matching (15.9\% match
 rate).  Direction codes are from published-abstract coding for matched papers
 and conservative title-keyword rules for unmatched papers.
 Standard errors omitted for brevity.

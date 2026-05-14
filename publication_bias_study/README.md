@@ -295,10 +295,12 @@ selected on research quality rather than finding direction.
 python scripts/10_collect_afa.py
 ```
 
-- Scrapes `afajof.org` program pages for 2006–2024 (2013 unavailable)
-- Handles three distinct HTML formats across years automatically
+- Scrapes `afajof.org` program pages for 2006–2024; 2013 is fetched from
+  `aeaweb.org/conference/2013/preliminary.php` (AFA sessions filtered by
+  `sessionSource` tag) because the AFA site returns 404 for that year
+- Handles four distinct HTML formats across years automatically
 - Caches fetched HTML in `data/raw/afa_html_cache/` — re-runs use cache
-- Output: `data/raw/afa_papers.parquet` (~3,800 papers)
+- Output: `data/raw/afa_papers.parquet` (~4,000 papers, full 2006–2024)
 - Runtime: ~45 seconds (network) or ~2 seconds (cached)
 
 **Step 10b — Run AFA analysis (free, no API)**
@@ -325,9 +327,10 @@ Outputs:
 | `robustness_afa_threeway.{csv,tex}` | Three-way (pos/neg/null) symmetry test |
 | `table2_afa_pub_rates.csv` | AFA publication rates by direction |
 
-**R10 result:** Binary directional probit β = 1.787*** (s.e. 0.493, N = 241),
+**R10 result:** Binary directional probit β = 1.755*** (s.e. 0.492, N = 251),
 consistent with the NBER-baseline estimate of 1.279***. Directional AFA papers
-are published in top journals at a 75% rate vs 13% for null-finding AFA papers.
+are published in top journals at a 75% rate vs 14% for null-finding AFA papers.
+Full 2006–2024 coverage including 2013 (sourced from AEA ASSA program).
 
 **Caveat:** Only 8 directional AFA papers in the no-api run (titles alone miss
 many policy papers with neutral titles), producing wide confidence intervals.

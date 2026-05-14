@@ -5,13 +5,22 @@ Scrape AFA annual meeting program pages (2006-2024) and save all
 paper titles + authors to data/raw/afa_papers.parquet.
 
 URL patterns:
-  2006-2023: https://afajof.org/{YEAR}-preliminary-program/
-  2024+    : https://afajof.org/management/full-program{YEAR}.html
+  2006-2012,
+  2014-2023: https://afajof.org/{YEAR}-preliminary-program/
+  2013      : https://www.aeaweb.org/conference/2013/preliminary.php
+              (AFA 2013 page on afajof.org returns 404; AEA hosts the full
+               ASSA program with AFA sessions identifiable by sessionSource)
+  2024+     : https://afajof.org/management/full-program{YEAR}.html
 
-HTML structure (2006-2023):
+HTML structure (2006-2023, afajof.org):
   h3 = time block heading
   h5 = paper title
   p  = authors (first <p> after the h5, before "Discussant:")
+
+HTML structure (2013, aeaweb.org):
+  div.session with font.sessionSource="American Finance Association"
+  div.paper > font.paperTitle = paper title
+  div.author_prelim > font.name + font.affiliation = authors
 
 HTML structure (2024+):
   h5 = session heading
@@ -45,9 +54,9 @@ ROOT     = pathlib.Path(__file__).parent.parent.resolve()
 OUT_PATH = ROOT / "data" / "raw" / "afa_papers.parquet"
 CACHE_DIR = ROOT / "data" / "raw" / "afa_html_cache"
 
-YEARS_OLD   = list(range(2006, 2024))   # h5 = title
+YEARS_OLD   = list(range(2006, 2024))   # h5 = title (2013 uses AEA URL)
 YEARS_NEW   = [2024, 2025, 2026]        # h6 = title
-ALL_YEARS   = YEARS_OLD + [2024]        # 2025/2026 only if they exist
+ALL_YEARS   = sorted(set(YEARS_OLD) | {2024})  # full 2006-2024 coverage
 
 RATE_LIMIT  = 2.0   # seconds between HTTP requests
 
@@ -64,7 +73,12 @@ SESSION_HEADERS = {
 # URL builder                                                          #
 # ------------------------------------------------------------------ #
 
+AEA_2013_URL = "https://www.aeaweb.org/conference/2013/preliminary.php"
+
+
 def url_for_year(year: int) -> str:
+    if year == 2013:
+        return AEA_2013_URL
     if year <= 2023:
         return f"https://afajof.org/{year}-preliminary-program/"
     return f"https://afajof.org/management/full-program{year}.html"
@@ -333,10 +347,52 @@ def parse_new(html: str, year: int) -> list[dict]:
     return papers
 
 
+def parse_aea_2013(html: str) -> list[dict]:
+    """
+    Parse the AEA 2013 full ASSA program page and extract only AFA sessions.
+    Structure: div.session with font.sessionSource = 'American Finance Association'
+    Papers: div.paper > font.paperTitle; authors in div.author_prelim.
+    """
+    soup = BeautifulSoup(html, "lxml")
+    papers: list[dict] = []
+
+    for session in soup.find_all("div", class_="session"):
+        src_tag = session.find("font", class_="sessionSource")
+        if not src_tag or "American Finance Association" not in src_tag.get_text():
+            continue
+
+        title_tag = session.find("div", class_="sessionTitle")
+        session_title = clean(title_tag.get_text(" ")) if title_tag else ""
+
+        for paper_div in session.find_all("div", class_="paper"):
+            pt = paper_div.find("font", class_="paperTitle")
+            if not pt:
+                continue
+            title = clean(pt.get_text(" "))
+            if not title or len(title) < 5:
+                continue
+
+            authors_list = []
+            for ap in paper_div.find_all("div", class_="author_prelim"):
+                name_tag = ap.find("font", class_="name")
+                aff_tag  = ap.find("font", class_="affiliation")
+                if name_tag:
+                    name = name_tag.get_text(strip=True)
+                    aff  = aff_tag.get_text(strip=True) if aff_tag else ""
+                    authors_list.append(f"{name} {aff}".strip())
+            authors = ", ".join(authors_list)
+
+            _append(papers, 2013, title, authors, session_title)
+
+    return papers
+
+
 def parse_year(html: str, year: int) -> list[dict]:
+    if year == 2013:
+        return parse_aea_2013(html)
     if year <= 2012:
         records = parse_dashed(html, year)
-        if not records:            # fallback if page structure differs
+        if not records:
             records = parse_old_v2(html, year)
         return records
     if year <= 2016:
