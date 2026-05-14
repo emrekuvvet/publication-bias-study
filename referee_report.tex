@@ -1,0 +1,307 @@
+%% ============================================================
+%%  Referee Report
+%%  Manuscript: "Significance Bias in Government Intervention
+%%               Research: Evidence from Top Finance Journals"
+%%  Journal: Journal of Finance (simulated review)
+%% ============================================================
+
+\documentclass[12pt]{article}
+\usepackage[margin=1.25in]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue}
+\usepackage{enumitem}
+\usepackage{natbib}
+\bibpunct{(}{)}{;}{a}{,}{,}
+\usepackage{microtype}
+\setlength{\parskip}{6pt}
+
+\title{\textbf{Referee Report} \\[6pt]
+       \large\textit{Significance Bias in Government Intervention Research:
+       Evidence from Top Finance Journals} \\[6pt]
+       \normalsize Submitted to the \textit{Journal of Finance}}
+
+\author{Referee \#2 \\ Anonymous}
+
+\date{May 2026}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\section*{Summary Recommendation}
+
+\textbf{Decision: Reject --- Encourage Resubmission}
+
+The paper addresses an important and timely question: does the published
+finance literature on government intervention systematically underrepresent
+null findings?  If true, this would have significant implications for
+regulatory policy, which relies heavily on the academic evidence base.  The
+topic is well-motivated, the writing is generally clear, and the empirical
+exercise is transparent.  However, the paper has several fundamental
+identification problems that prevent me from recommending acceptance at this
+stage.  The core issue is that the research design compares two populations
+that are never directly observed at the same stage of the research pipeline,
+which introduces confounds that the authors have not adequately addressed.
+I describe these concerns below in order of severity.
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\section{Major Concerns}
+
+\subsection*{1. The Fundamental Identification Problem: Two Non-Overlapping Samples}
+
+The paper's identification strategy rests on comparing publication rates
+across direction codes within a combined sample of NBER working papers and
+published journal articles.  The critical design choice is that only 8 of
+183 published papers (4.4\%) are matched to an NBER working paper.  This
+means the sample consists almost entirely of two non-overlapping populations:
+
+\begin{itemize}
+  \item 175 published journal articles with \emph{no} observed pre-publication
+        counterpart.
+  \item 113 NBER working papers with \emph{no} confirmed journal publication.
+\end{itemize}
+
+The paper's identifying assumption is that the NBER sample represents the
+pre-publication distribution of findings and that the journal sample
+represents the post-publication distribution.  But because these are
+\emph{different papers} rather than the same papers tracked before and after
+the editorial filter, the comparison is confounded.  The 113 unpublished
+NBER papers and the 175 published journal papers may differ along many
+dimensions other than direction code---including research quality, author
+seniority, institutional affiliation, identification strategy, and data
+quality.  If null-finding papers are of lower average quality (e.g., because
+genuinely null results in this domain are harder to publish credibly due to
+underpowering or weaker identification), the 36\% publication rate for null
+papers reflects a quality gap, not a significance filter.  The paper does
+not control for any of these alternative explanations.
+
+The gold-standard design for this question would track the same papers from
+pre-submission through editorial decision---as in \textit{Franco2014}'s
+survey of NSF-funded studies, where grant records identify research regardless
+of whether it was ultimately published.  The NBER working paper approach
+approximates this, but the near-zero match rate means the approximation is
+very rough.  The authors should either (a) dramatically improve the matching
+rate, (b) add controls for observable quality proxies, or (c) substantially
+qualify the causal interpretation.
+
+\subsection*{2. NBER Selection Is Not a Random Draw from Research Output}
+
+The paper acknowledges that ``NBER membership is itself selective'' but argues
+the selection ``operates largely on researcher quality and institution rather
+than on the direction of findings.''  This may be true in the cross-section,
+but it creates a severe problem for the within-researcher inference the paper
+requires.
+
+Specifically: NBER-affiliated researchers are among the most productive and
+well-connected academics in finance and economics.  Their null-finding papers
+(which constitute 75.2\% of the NBER sub-sample) may be substantially more
+publishable than null-finding papers from the broader population.  If this
+is so, the 36\% publication rate for null-finding NBER papers represents an
+\emph{upper bound} on the true publication probability for null results in the
+field.  The paper's policy conclusion that ``the published record overstates
+the share of interventions with detectable effects'' would then be
+conservative---but the magnitude of the bias would also be smaller than
+reported.  More problematically, there is no way to assess from the current
+design whether the null papers in the NBER sample represent genuinely null
+interventions or simply research programs that were ultimately abandoned
+because early results were weak.
+
+\subsection*{3. LLM Direction Coding: Validity and Potential Systematic Error}
+
+The direction codes that drive all results are assigned by an LLM reading
+the abstract of each paper.  Three concerns arise:
+
+\textbf{(a) No systematic human validation.}  The paper mentions ``a
+held-out set'' in the Related Literature section but provides no validation
+statistics---no confusion matrix, no inter-rater agreement, no false-positive
+or false-negative rates for direction coding.  Without these, readers cannot
+assess whether the LLM's direction assignments are reliable.  A 10\% error
+rate applied asymmetrically---for example, if the LLM more often miscodes
+ambiguous positives as null than ambiguous negatives---could substantially
+affect the estimated premiums.
+
+\textbf{(b) Abstract language is itself affected by the publication process.}
+Published abstracts are polished through the editorial process; NBER working
+paper abstracts are often rougher and less definitive in their framing.  If
+published papers are written to emphasize the significance and direction of
+their results (which they are), the LLM may systematically assign stronger
+direction codes to published papers and weaker or null codes to NBER papers.
+This would mechanically generate the observed publication-rate gap even in the
+absence of any true significance filter.
+
+\textbf{(c) The definition of ``positive'' is normatively charged.}  A paper
+finding that capital requirements reduce bank risk-taking is coded positive
+(+1) because ``the intervention achieved its intended regulatory goal.''  But
+many economists would code the same result as ``the intervention constrained
+banks'' and ask whether the regulatory goal was desirable.  This coding
+convention is not neutral, and it may map imperfectly onto what editors and
+referees consider a ``positive'' finding.  The authors should test the
+sensitivity of their results to alternative coding conventions.
+
+\subsection*{4. Quality Differences Between Null and Directional Papers}
+
+The most important alternative explanation for the null-paper disadvantage
+is that null-finding papers in this domain are, on average, of lower empirical
+quality.  Credibly estimating a null effect of a government policy requires
+the same statistical power and identification rigor as estimating a positive
+or negative effect---and in a domain where many interventions have genuinely
+large effects, a finding of no effect is inherently harder to make credibly.
+Editors and referees may rationally discount null results more heavily because
+they are more likely to reflect underpowering than to reflect a true zero.
+
+The paper does not control for any proxy of research quality: not
+identification strategy (DiD vs.\ OLS), not number of citations, not author
+quality, not data quality, not sample size, not the journal tier in which
+NBER authors typically publish.  Until these confounds are addressed, the
+significance-bias interpretation is not the only---or even the most
+plausible---explanation for the observed pattern.
+
+\subsection*{5. Inconsistency in Reporting the JF Results}
+
+The paper makes a central claim that ``the finance publication process
+exhibits strong significance bias.''  However, the journal-level results tell
+a more nuanced story that is not adequately reconciled.  The JF coefficients
+are labeled $1.022^{***}$ and $1.067^{***}$ in Table 4, but the text then
+states they ``fall short of statistical significance at conventional levels''
+and attributes this to low power.  There is a contradiction: triple-star
+notation conventionally indicates $p < 0.01$, yet the text implies the JF
+estimates are not statistically significant.  The authors should carefully
+verify and reconcile the significance labels in Table 4.
+
+More substantively, the fact that the largest journal in the field---and the
+journal to which this paper is submitted---shows no significant significance
+bias in this domain is a material finding that deserves more prominent
+discussion rather than being explained away with a power argument.
+
+\section{Moderate Concerns}
+
+\subsection*{6. Sample Size and Statistical Power}
+
+The analysis rests on 296 papers, of which 113 are NBER-only and 183 are
+published.  The journal-level regressions have 151 (JF), 180 (RFS), and 191
+(JFE) observations, but within each journal the published sub-sample is only
+38, 67, and 78 papers, respectively.  The sub-period regressions have 97 and
+154 observations.  These are small samples for probit models with multiple
+parameters.  The authors should report that all results are verified with
+linear probability models (which avoid separation issues in small samples)
+and consider reporting bootstrap confidence intervals.
+
+\subsection*{7. Interpretation of the 2000--2007 Sub-Period Omission}
+
+The authors omit the 2000--2007 sub-period because it has only 45 papers
+``insufficient for reliable probit estimation.''  But 45 papers is not an
+unreasonably small sample for a bivariate probit, and the omission of this
+sub-period---which covers the pre-crisis period when government intervention
+was arguably less salient---could affect the time-trend interpretation.  At
+minimum, the 2000--2007 results should be reported (with appropriate caveats)
+rather than simply dropped.
+
+\subsection*{8. The Corpus Description Is Internally Inconsistent}
+
+The introduction states the authors screen ``a corpus of more than 40,000
+documents,'' but the Data section reports a total corpus of 33,224 documents.
+This discrepancy should be resolved.  (I note that the inconsistency appears
+to stem from earlier draft language referring to the 1990--2024 period;
+if the paper has been revised to cover only 2000--2024, all corpus references
+must be updated consistently.)
+
+\subsection*{9. Robustness Check R4 Is Misspecified}
+
+Robustness check R4 restricts to the 169 high-confidence LLM classifications
+and reports that the subsample is endogenously selected (88\% published,
+versus 62\% in the full sample).  The authors correctly note that this renders
+the coefficients uninformative and say they ``do not draw conclusions'' from
+the exercise.  If that is the case, the check adds no information and should
+either be replaced with a meaningful sensitivity analysis or omitted.
+
+\section{Minor Comments}
+
+\begin{enumerate}[leftmargin=*]
+
+  \item \textbf{The NBER-to-journal match rate of 4.4\% is surprisingly low.}
+  The paper attributes this to title revisions and non-NBER publication paths.
+  The authors should quantify how many published papers they believe had NBER
+  working paper precursors that were simply not matched (perhaps by checking
+  known papers by hand), and assess whether the 175 unmatched published papers
+  are a representative cross-section of the direction distribution.
+
+  \item \textbf{No comparison to other domains.}  The paper would be
+  strengthened considerably by a comparison sample---either from a different
+  domain of finance (e.g., corporate governance without explicit policy
+  intervention) or from another field (e.g., labor economics, where similar
+  studies exist).  Without a comparison, it is hard to assess whether the
+  documented 2.3$\times$ ratio is large or typical.
+
+  \item \textbf{The discussion of mechanisms is speculative.}  The paper
+  interprets the 2008--2015 negative-finding premium as ``elevated editorial
+  demand for research documenting the unintended costs of the post-crisis
+  regulatory expansion.''  This is a plausible narrative but is not tested.
+  Editor letters, referee reports, or desk-rejection data could provide
+  evidence for or against this mechanism.
+
+  \item \textbf{No correction for multiple testing.}  The paper runs multiple
+  probit specifications, journal subsets, and sub-period regressions.  Given
+  the exploratory nature of some of these tests, Bonferroni or
+  Benjamini--Hochberg corrections (or at minimum a discussion of multiple
+  testing concerns) would strengthen the paper.
+
+  \item \textbf{Terminology.}  The term ``significance bias'' is used
+  throughout, but this term has a specific meaning in the statistics
+  literature (bias in test statistics near the significance threshold, as in
+  \textit{Brodeur2016}).  The phenomenon the authors document is more
+  precisely described as a ``publication filter'' or ``null-result penalty.''
+  Using established terminology or carefully defining the authors' usage
+  would reduce confusion.
+
+  \item \textbf{References.}  The paper cites \textit{Ash2023} for the use of
+  LLMs in economics.  Given the rapid growth of this literature, the authors
+  should also cite more recent work on LLM reliability and potential biases in
+  text classification tasks, particularly for economics applications.
+
+\end{enumerate}
+
+\section*{Summary of Required Revisions}
+
+For this paper to be publishable in a top journal, the authors must:
+
+\begin{enumerate}
+  \item Address the fundamental identification problem by substantially
+        improving the NBER-to-journal match rate, adding controls for
+        observable quality, or obtaining an alternative data source (e.g.,
+        editor records, submission-level data from a journal) that allows
+        tracking the same papers through the publication process.
+  \item Provide systematic LLM validation statistics (confusion matrix,
+        inter-rater reliability with human coders) for both the in-scope
+        classification and the direction coding.
+  \item Reconcile the JF significance labels in Table 4 with the text
+        discussion.
+  \item Report results for the 2000--2007 sub-period.
+  \item Add controls for paper quality (author citations, identification
+        strategy, sample size) or explicitly test whether the null-paper
+        disadvantage survives quality controls.
+  \item Replace or remove Robustness Check R4, which by the authors' own
+        admission yields uninformative estimates.
+\end{enumerate}
+
+The topic is important and the paper is well-executed at the data-collection
+and descriptive level.  The authors have built an impressive pipeline.
+I encourage a revision that addresses the identification concerns, particularly
+items 1--3 above.
+
+\bigskip
+\noindent\rule{\linewidth}{0.4pt}
+
+\noindent\textit{Note: References in this report follow the style of the
+manuscript under review.  ``Brodeur2016'' refers to Brodeur, L\'{e}, Sangnier,
+and Zylberberg (2016); ``Franco2014'' refers to Franco, Malhotra, and
+Simonovits (2014); ``Andrews2019'' refers to Andrews and Kasy (2019);
+``Ash2023'' refers to Ash et al.\ (2023).}
+
+\end{document}

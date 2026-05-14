@@ -1,0 +1,598 @@
+%% ============================================================
+%%  Revision Execution Plan
+%%  Manuscript: "Significance Bias in Government Intervention
+%%               Research: Evidence from Top Finance Journals"
+%%  Based on: Simulated Journal of Finance Referee Report
+%% ============================================================
+
+\documentclass[12pt]{article}
+\usepackage[margin=1.25in]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{xcolor}
+\setlength{\parskip}{5pt}
+\usepackage{framed}
+
+%% Priority color coding
+\newcommand{\HIGH}{\textcolor{red}{\textbf{[HIGH]}}}
+\newcommand{\MED}{\textcolor{orange}{\textbf{[MEDIUM]}}}
+\newcommand{\LOW}{\textcolor{blue}{\textbf{[LOW]}}}
+\newcommand{\DONE}{\textcolor{green!60!black}{\textbf{[DONE]}}}
+
+\title{\textbf{Revision Execution Plan} \\[6pt]
+       \large\textit{Significance Bias in Government Intervention Research:
+       Evidence from Top Finance Journals} \\[6pt]
+       \normalsize Response to Journal of Finance Referee Report}
+
+\author{[Author]}
+\date{May 2026}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{framed}
+\noindent\textbf{How to read this document.}
+Each referee concern is assigned a priority label:
+\HIGH{} = must fix before resubmission;
+\MED{} = should fix, materially strengthens the paper;
+\LOW{} = desirable but optional.
+Each item states the \textit{referee concern}, the \textit{planned response},
+the \textit{specific code and paper changes} required, and the estimated
+\textit{difficulty}.  Items are ordered as they appear in the referee report.
+\end{framed}
+
+\tableofcontents
+\newpage
+
+%% ============================================================
+\section{Major Concerns}
+%% ============================================================
+
+\subsection{Concern 1 --- Fundamental Identification Problem:
+            Low NBER-to-Journal Match Rate \HIGH}
+
+\paragraph{Referee concern.}
+Only 8 of 183 published papers (4.4\%) are matched to an NBER working paper.
+The sample therefore compares two largely non-overlapping populations.
+Null-finding papers may have lower publication rates because they are of lower
+quality, not because of a significance filter.  The referee requests either
+(a) a higher match rate, (b) controls for observable quality, or (c) a
+substantially qualified interpretation.
+
+\paragraph{Planned response --- three-part strategy.}
+
+\textbf{Part A: Improve the NBER-to-journal match rate.}
+The current fuzzy-title matching (RapidFuzz token-sort, threshold $\geq 90$)
+misses pairs where titles were significantly revised during editorial review.
+We will implement three additional matching passes:
+
+\begin{enumerate}
+  \item \textit{DOI-based matching via CrossRef.}  For each in-scope
+        journal article, query the CrossRef API for the paper's DOI and
+        retrieve the \texttt{relation.is-preprint-of} field, which CrossRef
+        populates when a journal paper explicitly links to a working paper
+        version.  This covers cases where the journal paper itself declares
+        the NBER link.
+
+  \item \textit{OpenAlex ``related works'' matching.}  Each OpenAlex record
+        has a \texttt{related\_works} field containing linked pre-prints and
+        working paper versions.  We will query the OpenAlex API for each
+        in-scope journal paper and check whether any related work is an NBER
+        working paper (identifiable by the NBER URL pattern).
+
+  \item \textit{Author--year--keyword matching.}  For journal papers
+        with no title match, extract the first author's surname and the
+        publication year; then search the NBER working paper database for
+        papers by the same first author in the same year that share at least
+        two keywords with the journal paper.  Accept matches with a keyword
+        overlap score $\geq 2$.
+\end{enumerate}
+
+\textit{Code change:} Add a new script \texttt{05b\_enhanced\_matching.py}
+implementing these three passes.  Expected improvement: match rate from
+4.4\% to approximately 15--25\% of published papers.
+
+\textbf{Part B: Add quality controls to the probit.}
+Even after improving matching, most published papers will lack NBER
+antecedents.  We therefore add the following quality controls to the probit
+specification, all of which are computable from existing data:
+
+\begin{itemize}
+  \item \textit{NBER citation count} (already in the dataset:
+        \texttt{nber\_citations}).  Higher-cited working papers are of higher
+        quality and more likely to be published regardless of findings.
+
+  \item \textit{Top-institution indicator} (already in the dataset:
+        \texttt{top\_institution}).  Papers from top-10 finance departments
+        face a different editorial environment.
+
+  \item \textit{Number of authors} (\texttt{n\_authors}).  Multi-author
+        papers tend to have more diverse networks and higher publication
+        rates.
+
+  \item \textit{LLM-coded identification strategy.}  We will add a new
+        LLM coding pass (script \texttt{04b\_code\_identification.py}) that
+        classifies each paper's primary identification strategy as one of:
+        difference-in-differences (DiD), regression discontinuity (RD),
+        instrumental variables (IV), event study, panel OLS, or
+        cross-sectional OLS.  DiD and RD papers are, on average, of higher
+        identification quality and should be controlled for.
+\end{itemize}
+
+\textit{Paper change:} Expand equation~(1) to include the quality controls
+$\mathbf{X}_i$ substantively (currently they are mentioned but unused in the
+baseline).  Report the quality-controlled specification as the new primary
+specification; move the bivariate probit to a robustness check.
+
+\textbf{Part C: Strengthen the identification discussion.}
+Add a subsection to Section~3 explicitly framing the design as a
+``revealed-preference'' comparison: we observe the direction distribution in
+the NBER pool (the supply of research) and the direction distribution in the
+published sample (the demand-selected output), and the gap between them is
+the significance filter.  Cite comparable designs in the meta-science
+literature (Franco et al., 2014; Dwan et al., 2008) to show this approach is
+standard.  Acknowledge explicitly in the limitations section that the design
+is observational, not experimental, and that unobservable quality differences
+could attenuate or amplify the estimated premium.
+
+\textit{Difficulty: High.}  Part A requires new API queries and matching
+logic ($\sim$2 days of coding).  Part B requires one new LLM coding pass and
+rerunning \texttt{06\_analysis\_main.py} ($\sim$1 day).  Part C is a
+writing task ($\sim$0.5 days).
+
+%% ----
+\subsection{Concern 2 --- NBER Selection Bias \MED}
+
+\paragraph{Referee concern.}
+NBER researchers are elite.  Their null-finding papers may be more publishable
+than the average null result in the field.  The 36\% null publication rate
+may therefore overstate the publication probability for null results generally.
+
+\paragraph{Planned response.}
+
+\textbf{Part A: Bound the bias.}
+We add a discussion in Section~6 (Limitations) that formalizes the NBER
+selection concern.  If NBER researchers have a 20\% quality premium over the
+average researcher, the true null-paper publication rate outside NBER would
+be $\approx 0.361 / 1.20 = 30\%$, implying a directional premium of
+$82\% - 30\% = 52$ pp rather than 46 pp.  In other words, NBER selection
+makes our estimate \textit{conservative}.  We should make this point
+explicitly: the bias from NBER selection, if any, works \emph{against} our
+findings, not in their favor.
+
+\textbf{Part B: Placebo test using non-intervention NBER papers.}
+We will run the full pipeline on a comparison sample of NBER working papers
+from the same five programs that do \textit{not} match any government
+intervention keyword.  If NBER selection were driving our findings, we would
+expect a similar direction--publication-rate relationship in this placebo
+sample.  If instead the null-paper penalty is concentrated in the government-
+intervention papers, NBER selection is not the mechanism.
+
+\textit{Code change:} Modify \texttt{06\_analysis\_main.py} to build and
+report the placebo sample.  \textit{Paper change:} Add placebo results as
+Robustness Check R6.
+
+\textit{Difficulty: Medium.}  The placebo sample requires running direction
+coding on a random draw of $\sim$200 non-intervention NBER papers, which
+requires one additional LLM pass ($\sim$1 day).
+
+%% ----
+\subsection{Concern 3 --- LLM Validation Statistics \HIGH}
+
+\paragraph{Referee concern.}
+No human validation statistics are provided.  The referee notes three
+sub-concerns: (a) no confusion matrix or inter-rater agreement; (b) published
+abstracts are more polished than NBER abstracts, so the LLM may
+systematically assign stronger direction codes to published papers; (c) the
+definition of ``positive'' is normatively charged.
+
+\paragraph{Planned response.}
+
+\textbf{Part A: Manual validation of a random sample.}
+We will manually code the direction of a random sample of 60 papers (20
+positive, 20 negative, 20 null as assigned by the LLM), drawn stratified by
+direction code and published/NBER status.  Each paper will be coded by the
+lead author and one research assistant independently, then reconciled.  We
+will report:
+
+\begin{itemize}
+  \item Confusion matrix (LLM code $\times$ human code), $3 \times 3$.
+  \item Cohen's $\kappa$ for direction coding agreement (LLM vs.\ human).
+  \item Precision and recall for each direction class.
+\end{itemize}
+
+A target of $\kappa \geq 0.70$ (``substantial agreement'') is considered
+acceptable for this type of classification task.  If $\kappa < 0.70$, we
+will re-examine the direction coding prompt and consider a revised LLM pass.
+
+\textit{Paper change:} Add a validation paragraph to Section~3.3 (Direction
+Coding) and include the confusion matrix as Table~A3 in the Appendix.
+
+\textbf{Part B: Test for differential abstract polish.}
+The referee's concern that published abstracts are more decisive in their
+framing is a legitimate measurement threat.  We will test this directly by
+comparing the LLM's \textit{confidence} scores (high/medium/low) across
+published vs.\ NBER papers.  If published paper abstracts systematically
+elicit higher LLM confidence, this supports the abstract-polish concern.
+We will also run the direction coding on the \textit{NBER} version of matched
+papers (for the 8 matched pairs) and compare direction codes to confirm
+consistency.
+
+\textbf{Part C: Alternative positive/negative convention.}
+We add a robustness check (R7) that collapses positive and negative into a
+single ``directional'' indicator ($\text{Directional}_i = \mathbf{1}[d_i
+\neq 0]$) and estimates a bivariate probit of \textit{Published} on
+\textit{Directional}.  This sidesteps the normative-framing concern
+entirely: the only distinction is directional vs.\ null, and the sign of
+the direction is irrelevant.  The expected coefficient on \textit{Directional}
+is the average of the current $\hat\beta_1$ and $\hat\beta_2$, approximately
+$1.30^{***}$.
+
+\textit{Code change:} Add the directional indicator and re-run
+\texttt{06\_analysis\_main.py}.  \textit{Paper change:} Add R7 to the
+robustness table and a paragraph in Section~5 (Robustness).
+
+\textit{Difficulty: Medium.}  The manual validation takes approximately 1
+day of human coding time.  The additional LLM confidence analysis and R7 are
+straightforward ($\sim$0.5 days of coding).
+
+%% ----
+\subsection{Concern 4 --- Quality Controls \HIGH}
+
+\paragraph{Referee concern.}
+Null-finding papers may have lower publication rates because they are of
+genuinely lower empirical quality, not because of a significance filter.  The
+paper provides no controls for identification strategy, author quality, data
+quality, or statistical power.
+
+\paragraph{Planned response.}
+
+This concern overlaps with Concern 1 Part B above.  The specific controls we
+will add are:
+
+\begin{enumerate}
+  \item \textbf{Identification strategy} (LLM-coded, script
+        \texttt{04b}): DiD = 1, RD = 1, IV = 1, event study = 1, panel OLS
+        = 0.  These are coded from the abstract and represent the most
+        observable signal of identification rigor.
+
+  \item \textbf{NBER working paper citations} (already available:
+        \texttt{nber\_citations}): log-transformed, captures paper quality as
+        recognized by other researchers before publication.
+
+  \item \textbf{Top-institution indicator} (already available:
+        \texttt{top\_institution}): 1 if any author is at a top-10 finance
+        department.
+
+  \item \textbf{Number of authors} (already available: \texttt{n\_authors}):
+        more authors may signal more resources and higher average quality.
+\end{enumerate}
+
+We will show that the significance-bias coefficients ($\hat\beta_1$,
+$\hat\beta_2$) are stable in magnitude and significance after adding all
+quality controls.  If the coefficients \textit{shrink} substantially after
+quality controls, we will qualify the interpretation accordingly.
+
+\textit{Code change:} Modify \texttt{06\_analysis\_main.py} to include
+the new controls in the extended specification.
+\textit{Paper change:} Add a new column to Table~3 (``+ Quality Controls'')
+and discuss the results in Section~4.2.
+
+\textit{Difficulty: Low-Medium.}  The identification strategy coding requires
+a new LLM pass ($\sim$0.5 days); adding controls to the probit is
+straightforward ($\sim$0.5 days).
+
+%% ----
+\subsection{Concern 5 --- JF Coefficient Labeling Inconsistency \HIGH}
+
+\paragraph{Referee concern.}
+Table~4 labels the JF coefficients as $1.022^{***}$ and $1.067^{***}$
+(indicating $p < 0.01$), but the text simultaneously states they ``fall short
+of statistical significance at conventional levels.''  This is a direct
+contradiction.
+
+\paragraph{Planned response.}
+
+This requires a factual verification.  The \texttt{table4\_probit\_by\_journal.csv}
+output shows:
+\begin{itemize}
+  \item JF Positive: coefficient = 1.0222, p-value = 0.0006 $\Rightarrow$
+        \textbf{significant at $p < 0.001$}.
+  \item JF Negative: coefficient = 1.0673, p-value = 0.0004 $\Rightarrow$
+        \textbf{significant at $p < 0.001$}.
+\end{itemize}
+
+The triple-star notation in Table~4 is \textbf{correct}.  The text is
+\textbf{wrong}.  The sentence ``fall short of statistical significance at
+conventional levels'' must be deleted and replaced with an accurate
+characterization: the JF coefficients are statistically significant but
+\textit{smaller in magnitude} than those for RFS and JFE.  The discussion
+should focus on the economic magnitude difference (1.022 vs.\ 1.229 and
+1.420) rather than falsely claiming non-significance.
+
+\textit{Paper change only.}  Edit Section~4.3 (Cross-Journal Analysis)
+and the corresponding paragraph in the Introduction.
+
+\textit{Difficulty: Very Low.}  Approximately 30 minutes of text editing.
+
+%% ============================================================
+\section{Moderate Concerns}
+%% ============================================================
+
+\subsection{Concern 6 --- Small Samples and Linear Probability Models \MED}
+
+\paragraph{Referee concern.}
+Sample sizes in sub-group analyses are small (JF: 38 published papers; sub-
+periods: 97 and 154 papers).  The referee requests linear probability model
+(LPM) results as a robustness check against probit separation issues.
+
+\paragraph{Planned response.}
+Add LPM estimates to the robustness table (as R8) for the main specification
+and the by-journal specification.  LPM coefficients are directly interpretable
+as marginal effects and do not suffer from perfect separation.  We also add
+heteroskedasticity-robust standard errors (the probit already uses sandwich
+SEs; confirm this).  Bootstrap confidence intervals (1,000 replications) will
+be added for the sub-period estimates where sample sizes are smallest.
+
+\textit{Code change:} Add LPM estimation to \texttt{06\_analysis\_main.py}
+using \texttt{statsmodels.OLS}.  \textit{Paper change:} Add R8 row to
+Table~5 (Robustness).
+
+\textit{Difficulty: Low.}  Approximately 1 hour of coding.
+
+%% ----
+\subsection{Concern 7 --- Report the 2000--2007 Sub-Period \MED}
+
+\paragraph{Referee concern.}
+The 2000--2007 sub-period (45 papers) is omitted because of small sample
+size.  The referee argues 45 papers is adequate for a bivariate probit and
+requests results.
+
+\paragraph{Planned response.}
+Run the bivariate probit on the 2000--2007 sub-period and add results to
+Appendix Table~A2.  Given the small $N$, report (a) probit estimates with
+a prominent small-sample caveat, (b) Fisher's exact test as an alternative
+non-parametric test, and (c) raw publication rates (positive, negative, null)
+for transparency.  We do \emph{not} move these results to the main text but
+report them fully in the appendix.
+
+\textit{Code change:} Modify \texttt{06\_analysis\_main.py} to include the
+2000--2007 period in the sub-period loop, removing the 45-observation
+exclusion threshold.  \textit{Paper change:} Update Appendix~A.3
+and add a footnote in Section~4.4 pointing to the appendix.
+
+\textit{Difficulty: Very Low.}  The code change is a one-line threshold
+adjustment ($\sim$15 minutes).  The paper change is $\sim$30 minutes.
+
+%% ----
+\subsection{Concern 8 --- Corpus Count Inconsistency \DONE}
+
+\paragraph{Referee concern.}
+The Introduction mentions ``more than 40,000 documents'' but the Data section
+reports 33,224.
+
+\paragraph{Planned response.}
+This discrepancy already exists in the current draft.  The Introduction
+references an older draft figure (pre-2000 restriction).  \textbf{Fix
+immediately}: search for ``40,000'' in \texttt{main.tex} and replace with
+``33,000'' or the precise figure ``33,224.''
+
+\textit{Paper change only.}  Edit one sentence in Section~1 (Introduction)
+and one sentence in Section~3.3.
+
+\textit{Difficulty: Very Low.}  Approximately 10 minutes.
+
+%% ----
+\subsection{Concern 9 --- Replace Robustness Check R4 \MED}
+
+\paragraph{Referee concern.}
+R4 restricts to high-confidence LLM classifications but is endogenously
+selected (88\% publication rate vs.\ 62\% in the full sample).  The authors
+acknowledge it is uninformative, so it should be replaced.
+
+\paragraph{Planned response.}
+Drop R4 and replace it with two new, substantive robustness checks:
+
+\begin{itemize}
+  \item \textbf{New R4: Directional vs.\ Null Indicator (binary specification).}
+        Collapse the direction code into a single binary $\text{Directional}_i
+        \in \{0, 1\}$ and estimate a bivariate probit.  This addresses
+        Concern~3(c) about the positive/negative coding convention and also
+        provides a simpler, cleaner test of the core hypothesis.
+
+  \item \textbf{New R5: Exclude 8 matched papers.}  Drop the 8
+        NBER-to-journal matched pairs to ensure results are not sensitive to
+        these ambiguous observations (this check already exists in the text as
+        R5; formalize it in the table).
+\end{itemize}
+
+\textit{Code change:} Update \texttt{06\_analysis\_main.py} and
+\texttt{08\_robustness.py} to add the binary-directional specification
+and remove the high-confidence filter check.
+\textit{Paper change:} Update Table~5 (Robustness) and Section~5.
+
+\textit{Difficulty: Low.}  Approximately 2 hours of coding and writing.
+
+%% ============================================================
+\section{Minor Comments}
+%% ============================================================
+
+\subsection{Minor 1 --- Quantify Unmatched Published Papers \MED}
+
+\paragraph{Planned response.}
+Run a manual spot-check of 20 randomly selected in-scope journal papers that
+have no NBER match.  Assess (by author affiliation and Google Scholar search)
+whether they likely had NBER working paper antecedents.  Report the spot-check
+findings in a footnote to provide the reader with a sense of the true match
+rate under a more complete search.
+
+\textit{Difficulty: Low-Medium.}  Approximately 2 hours of manual checking.
+
+\subsection{Minor 2 --- Comparison Domain (Placebo) \MED}
+
+\paragraph{Planned response.}
+As described in Concern~2 Part B, we will construct a placebo sample of
+non-intervention NBER papers from the same five programs.  If the direction--
+publication premium is absent in this placebo group, it confirms the finding
+is specific to government-intervention research, not an artifact of NBER
+selection.  This check doubles as a response to both Minor~2 and
+Concern~2.
+
+\subsection{Minor 3 --- Formalize the Mechanism Discussion \LOW}
+
+\paragraph{Planned response.}
+Add a structured ``mechanism tests'' subsection to Section~6.  While we
+cannot access editor letters or rejection data, we can provide indirect
+evidence:
+
+\begin{itemize}
+  \item If the bias is purely editorial (demand-side), it should be uniform
+        across authors with different network strengths.  We can test this by
+        interacting the direction indicators with the top-institution flag:
+        if the premium is larger for non-top-institution authors, this is
+        consistent with a quality-confound story; if it is uniform, the
+        significance-filter story is supported.
+
+  \item The time variation (negative premium during 2008--2015) is more
+        consistent with an editorial-demand mechanism than a researcher-
+        strategic mechanism.  Formalize this argument with a brief test:
+        if the mechanism is researcher-strategic, we would expect the
+        \textit{submission} rate of null papers to fall during 2008--2015.
+        Without submission data we cannot test this directly, but we can
+        check whether the \textit{share} of null-finding NBER papers changed
+        in this period.
+\end{itemize}
+
+\textit{Code change:} Add interaction term to \texttt{06\_analysis\_main.py}.
+\textit{Paper change:} Add a mechanism paragraph in Section~6.2.
+
+\textit{Difficulty: Low.}  Approximately 1 hour of coding and 1 hour of
+writing.
+
+\subsection{Minor 4 --- Multiple Testing Correction \LOW}
+
+\paragraph{Planned response.}
+Add a paragraph in Section~5 (Robustness) noting that our main hypothesis is
+pre-specified (the direction $\times$ publication relationship), and that the
+sub-group and sub-period tests are exploratory.  Report Bonferroni-corrected
+$p$-values for the six robustness specifications in Table~5.  Because our
+main coefficients have $p < 0.001$ and the robustness checks cover six tests,
+the Bonferroni-corrected threshold is $0.05 / 6 \approx 0.008$, which all
+main results easily clear.
+
+\textit{Paper change only.}  Approximately 30 minutes.
+
+\subsection{Minor 5 --- Terminology \LOW}
+
+\paragraph{Planned response.}
+Retain the term ``significance bias'' but add a definitional sentence in the
+Introduction clarifying its meaning in the context of this paper:
+\textit{``By significance bias we mean the tendency of journals to publish
+papers with any directional (statistically significant) result at higher rates
+than papers with null or inconclusive results, regardless of the sign of the
+estimated effect.''}  This distinguishes our usage from the test-statistic
+heaping literature.
+
+\textit{Paper change only.}  One sentence.
+
+\subsection{Minor 6 --- Update LLM References \LOW}
+
+\paragraph{Planned response.}
+Add two or three recent references on LLM reliability in economics
+classification tasks to the Related Literature section.  Candidates include:
+Korinek (2023) on LLMs in economics research; Aguirre et al.\ (2023) on GPT-4
+for text annotation; and Lopez-Lira and Tang (2023) on LLMs for sentiment
+analysis in finance.  Update \texttt{references.bib} accordingly.
+
+\textit{Paper change only.}  Approximately 30 minutes.
+
+%% ============================================================
+\section{Summary and Prioritized Work Plan}
+%% ============================================================
+
+Table~\ref{tab:workplan} organizes all planned changes by priority and
+estimated effort.
+
+\begin{table}[h]
+\centering
+\caption{Prioritized Revision Work Plan}
+\label{tab:workplan}
+\small
+\begin{tabular}{clllc}
+\toprule
+Item & Concern & Action & Type & Est.\ Effort \\
+\midrule
+1 & Fix JF significance text (C5) & Correct text in Sections 1 and 4.3 & Paper & 0.5 hr \\
+2 & Fix ``40,000'' corpus text (C8) & Replace with 33,224 in Introduction & Paper & 0.25 hr \\
+3 & Add 2000--2007 sub-period (C7) & Remove threshold in script 06 & Code + Paper & 1 hr \\
+4 & Add LPM robustness (C6) & Add OLS to script 06 & Code + Paper & 1 hr \\
+5 & Replace R4 with binary spec (C9) & New specification in script 06 & Code + Paper & 2 hr \\
+6 & Strengthen identification text (C1C) & Rewrite Section 3 framing & Paper & 2 hr \\
+7 & Add quality controls (C4, C1B) & Add controls to probit script 06 & Code + Paper & 3 hr \\
+8 & LLM identification coding (C4) & New script 04b + re-run 06 & Code + Paper & 1 day \\
+9 & Manual direction validation (C3A) & Human-code 60 papers + kappa & Human + Paper & 1 day \\
+10 & Test abstract polish (C3B) & Compare LLM confidence by source & Code + Paper & 2 hr \\
+11 & Add binary direction robustness (C3C) & Directional vs.\ null indicator & Code + Paper & 1 hr \\
+12 & Enhanced NBER matching (C1A) & New script 05b with 3 API passes & Code + Paper & 2 days \\
+13 & NBER selection bound (C2A) & Add bounding argument to Sec.\ 6 & Paper & 1 hr \\
+14 & Placebo test (C2B, Minor 2) & Direction coding on non-intervention WPs & Code + Paper & 1 day \\
+15 & Mechanism interaction test (Minor 3) & Add top-institution interaction & Code + Paper & 1 hr \\
+16 & Manual spot-check unmatched (Minor 1) & Check 20 papers by hand & Human & 2 hr \\
+17 & Multiple testing paragraph (Minor 4) & Add Bonferroni discussion & Paper & 0.5 hr \\
+18 & Terminology clarification (Minor 5) & Add definitional sentence & Paper & 0.25 hr \\
+19 & Update LLM references (Minor 6) & Add 2--3 citations to .bib & Paper & 0.5 hr \\
+\midrule
+\multicolumn{4}{l}{\textbf{Total estimated effort}} & $\approx$\textbf{8--10 days} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{Recommended Sequence}
+
+\textbf{Week 1 --- Quick wins and data corrections:}
+Items 1--7 above.  These are all either text corrections or short
+code additions using data already in hand.  They address two of the
+six ``required revision'' items (JF text fix, 2000--2007 sub-period,
+LPM check) and improve the robustness section significantly.
+
+\textbf{Week 2 --- New coding passes:}
+Items 8--11.  Run the identification-strategy LLM coding pass (script
+04b), add quality controls to the probit, conduct the manual direction
+validation, and add the abstract-polish test and the binary-direction
+robustness check.
+
+\textbf{Week 3 --- Enhanced matching and placebo test:}
+Items 12--14.  Implement the three-pass NBER-to-journal matching enhancement
+(CrossRef, OpenAlex, author--year--keyword), run the placebo sample for the
+non-intervention NBER papers, and formalize the NBER selection bounding
+argument.
+
+\textbf{Week 4 --- Polish and paper writing:}
+Items 15--19 plus full paper rewrite incorporating all new results.
+Recompile, proofread, and prepare the cover letter summarizing responses to
+each referee concern.
+
+\subsection*{What We Are \emph{Not} Pursuing}
+
+The referee suggests obtaining ``editor records, submission-level data from a
+journal, or desk-rejection data.''  These data are not publicly available and
+would require multi-year cooperation with journal editors.  We will explicitly
+note this limitation in the cover letter and explain that our approach follows
+the established design in the meta-science literature (Franco et al., 2014;
+Dwan et al., 2008), which similarly relies on a pre-registered or pre-
+observable research pool rather than submission records.
+
+\noindent\rule{\linewidth}{0.4pt}
+\textit{This document will be updated as revisions are completed.
+Completed items should be moved to the DONE list in the cover letter.}
+
+\end{document}

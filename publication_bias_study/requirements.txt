@@ -1,0 +1,39 @@
+# Publication Bias Study — Python Dependencies
+# Python 3.11+  (tested on 3.11.x)
+# Install: pip install -r requirements.txt
+
+# --- Core data stack ---
+pandas==2.2.2
+numpy==1.26.4
+pyarrow==15.0.2          # Parquet I/O
+duckdb==0.10.3           # Analytical DB over parquet files
+
+# --- HTTP / scraping ---
+requests==2.31.0
+requests-ratelimiter==0.4.1
+beautifulsoup4==4.12.3
+lxml==5.1.0
+
+# --- Fuzzy matching (NBER → journal linking) ---
+rapidfuzz==3.6.2
+
+# --- LLM classification (Claude API) ---
+anthropic==0.25.0
+
+# --- Statistics / econometrics ---
+statsmodels==0.14.2
+scipy==1.13.0
+scikit-learn==1.4.2
+
+# --- Visualisation ---
+matplotlib==3.8.4
+seaborn==0.13.2
+
+# --- Validation utilities ---
+openpyxl==3.1.2          # human_coding_sheet.xlsx
+
+# --- Misc ---
+tqdm==4.66.2
+python-dotenv==1.0.1
+tenacity==8.2.3          # retry logic for API calls
+jinja2==3.1.4            # required by pandas to_latex()
