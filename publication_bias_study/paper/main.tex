@@ -462,7 +462,6 @@ requirements are optimal policy.  The full coding prompt is in
 Appendix~\ref{app:prompts}.
 
 \paragraph{Coding reliability.}
-\label{subsec:direction}
 To assess the reliability of our LLM direction codes, we conducted a
 replication exercise: we re-ran the direction coding protocol on a stratified
 random sample of 60 papers (5 papers per source $\times$ direction cell,
@@ -890,15 +889,17 @@ receive ``high-confidence'' ratings; 72.6\% receive ``low-confidence'' ratings.
 This difference is striking and confirms that abstract polish is a real
 measurement concern.
 
-We address this in two ways.  First, because lower-confidence LLM codes are
-more likely to be miscoded as null (abstraction and hedging make null codes
-easier to assign), any such miscoding \textit{attenuates} our estimated premiums
-toward zero.  Our finding of a large, significant premium is therefore a
-conservative lower bound.  Second, we verify that the main result holds in the
-subsample of 169 papers receiving high-confidence codes \textit{only among NBER
-papers}: restricting to the 21 high-confidence NBER papers still shows a
-null-paper publication rate well below the published rate, though the small
-subsample limits precision.
+We address this as follows.  Because lower-confidence LLM codes are more likely
+to be miscoded as null (abstraction and hedging make null codes easier to assign),
+any such miscoding \textit{attenuates} our estimated premiums toward zero.  Our
+finding of a large, significant premium is therefore a conservative lower bound.
+Restricting the probit to only high-confidence-coded papers would create a severe
+endogenous selection problem: 148 journal papers but only 21 NBER papers receive
+``high-confidence'' codes, making any such subsample 88\% published---far above
+the 62\% baseline---and rendering the direction coefficients uninformative.  We
+therefore treat the abstract-polish concern as a source of conservative attenuation
+rather than conducting a subsample sensitivity test that would be confounded by
+selection.
 
 \medskip
 \noindent\textbf{R6 --- Linear probability model.}
@@ -936,7 +937,7 @@ R3: \JF{} only             & Positive & $0.310$       & 0.184    & 296 \\
 R3: \RFS{}+\JFE{} only     & Positive & $1.059^{***}$ & $<$0.001 & 296 \\
                             & Negative & $1.086^{***}$ & $<$0.001 & 296 \\[4pt]
 R4: Binary directional     & Directional & $1.303^{***}$ & $<$0.001 & 296 \\[4pt]
-R4: Binary + controls      & Directional & $1.279^{***}$ & $<$0.001 & 296 \\[4pt]
+R4+: Binary + year + authors & Directional & $1.279^{***}$ & $<$0.001 & 296 \\[4pt]
 R6: LPM (OLS, HC3)         & Positive & $0.461^{***}$ & $<$0.001 & 296 \\
                             & Negative & $0.472^{***}$ & $<$0.001 & 296 \\
 \bottomrule
@@ -1071,6 +1072,24 @@ coding), or pre-registered abstract language could address this concern
 directly.
 
 \medskip
+\noindent\textbf{Quality controls and the alternative quality explanation.}
+A natural alternative explanation for the null-paper disadvantage is that
+null-finding papers in this domain are, on average, of lower empirical quality.
+We address this with the author-count quality proxy in Spec~(4): adding
+$\log(1+N_{\text{authors}})$ leaves the direction coefficients virtually
+unchanged ($\hat\beta_{\text{pos}} = 1.268^{***}$, $\hat\beta_{\text{neg}} =
+1.288^{***}$), and the author-count coefficient itself is near zero and
+insignificant.  Moreover, 75.2\% of NBER-only papers are null-finding papers
+written by NBER-affiliated researchers---among the most productive in the
+profession---making generic ``low quality'' an implausible blanket explanation.
+We cannot, however, control for identification strategy (DiD versus OLS),
+sample size, or author citation counts because these measures require full-paper
+reading rather than abstract coding; fewer than 4\% of our abstracts explicitly
+name their identification strategy.  Fully addressing the quality alternative
+would require submission-level data or hand-coded quality assessments across all
+296 papers, which we leave for future work.
+
+\medskip
 \noindent\textbf{NBER selection and the direction of potential bias.}
 NBER researchers are among the most productive and well-connected academics
 in finance.  If their null-finding papers are more publishable than null-
@@ -1108,10 +1127,11 @@ for future work.
 Our main hypothesis---that directional-finding papers are published at higher
 rates than null-finding papers---is pre-specified and tested in a single
 primary regression.  The cross-journal and sub-period analyses are exploratory.
-Applying a Bonferroni correction for six robustness checks yields a corrected
-threshold of $p < 0.0083$.  All main results ($p < 0.001$) easily clear this
-threshold; only R3 (JF-only subset, $p = 0.18$) does not, which we interpret
-as a power issue rather than evidence against the main finding.
+Applying a Bonferroni correction for the eight robustness checks in
+Table~\ref{tab:robustness} (R2, R3$\times$2, R4$\times$2, R6, R5, R7) yields a
+corrected threshold of $p < 0.00625$.  All main results ($p < 0.001$) easily
+clear this threshold; only R3 (JF-only subset, $p = 0.18$) does not, which we
+interpret as a power issue rather than evidence against the main finding.
 
 %% ============================================================
 \section{Conclusion}
@@ -1127,8 +1147,9 @@ findings are published in the top three finance journals at rates of 82\% and
 The implied marginal premium for a directional result is 46--47 percentage
 points, and directional papers are approximately $2.3\times$ more likely to
 appear in a top-three journal than null papers.  The bias is concentrated in
-the \RFS{} and \JFE{} and is robust to excluding monetary policy papers and
-restricting to high-confidence LLM classifications.
+the \RFS{} and \JFE{} and is robust to excluding monetary policy papers,
+replacing the three-way direction code with a binary directional indicator,
+and re-estimating via a linear probability model.
 
 Sub-period analysis reveals time heterogeneity that is itself informative about
 the mechanism.  During the financial crisis and post-crisis period (2008--2015),
