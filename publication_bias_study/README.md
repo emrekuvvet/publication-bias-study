@@ -1,8 +1,13 @@
 # Publication Bias in Top Finance Journals — Replication Package
 
-**Paper:** *The Positive Slant: Publication Bias in Government Intervention Research at Top Finance Journals*
+**Paper:** *Significance Sorting in Government Intervention Research: Evidence from Top Finance Journals*
 
-This repository contains the complete data pipeline and analysis code to replicate all results.
+This repository contains the complete data pipeline and analysis code to replicate
+all results in the paper. The paper documents a cross-sectional association between
+finding direction and publication status in top finance journals. **All regression
+coefficients are associations, not causal editorial-filter effects**; the design
+cannot distinguish editorial selection from author self-selection in submission or
+specification search.
 
 ---
 
@@ -12,7 +17,7 @@ This repository contains the complete data pipeline and analysis code to replica
 |---|---|
 | Python | 3.11+ |
 | DuckDB | 0.10.3 |
-| Anthropic API key | Required for scripts 03 & 04 |
+| Anthropic API key | Required for scripts 03, 04 & 09 |
 | Web of Science API key | Required for script 02 (CSV fallback available) |
 
 ```bash
@@ -27,7 +32,9 @@ Copy `.env.example` to `.env` and fill in your API keys.
 
 ```
 publication_bias_study/
+├── README.md
 ├── implementation_plan.md
+├── chatgpt_referee_response_plan.md   ← revision plan (ChatGPT referee report)
 ├── requirements.txt
 ├── setup_db.py              ← run first
 ├── .env.example
@@ -43,7 +50,10 @@ publication_bias_study/
 │   ├── 05_link_nber_to_published.py
 │   ├── 06_analysis_main.py
 │   ├── 07_tstat_distribution.py
-│   └── 08_robustness.py
+│   ├── 08_robustness.py
+│   ├── 09_code_id_strategy.py
+│   ├── 10_collect_afa.py          ← AFA conference program scraper
+│   └── 11_afa_analysis.py         ← AFA baseline robustness pipeline
 ├── validation/
 │   ├── generate_coding_sheet.py
 │   ├── human_coding_sheet.xlsx   ← generated; filled by RAs
@@ -140,6 +150,13 @@ python scripts/04_code_direction.py --resume
 Output: `data/classified/coded_direction.parquet`
 Estimated API cost: $30–80.
 
+**Reliability note:** Agreement between two independent LLM runs is near-perfect
+for directional papers (positive: 90%, negative: 100%) but lower for null papers
+(25%). The null-coding instability is conservative — ambiguous papers flip toward
+directional codes in replication, which would *attenuate* the estimated gap.
+The binary directional specification (script 06) is preferred precisely because
+it does not depend on the null/directional boundary stability.
+
 ---
 
 ### Step 5 — Human validation (RAs)
@@ -173,6 +190,32 @@ Review queue: `validation/match_review_queue.parquet`
 Human review of medium-confidence matches (score 75–90) is recommended
 before running analysis.
 
+**Design note:** Only 26 of 183 published papers (14.2%) are matched to
+NBER working papers. The design therefore compares two largely non-overlapping
+cross-sections, not papers tracked through an editorial filter. Direction
+distributions of matched vs. unmatched published papers are nearly identical
+(76.9% vs. 73.2% directional), suggesting no systematic direction-specific
+selection into the NBER-matched sub-sample.
+
+---
+
+### Step 6b — Classify identification strategies (quality control)
+
+Requires `ANTHROPIC_API_KEY` in `.env`.
+
+```bash
+python scripts/09_code_id_strategy.py
+```
+
+Populates the `quasi_exp` column in `data/final/analysis_dataset.parquet`
+by classifying each paper's identification strategy from its abstract
+(quasi_exp / ols_reduced / structural / unclear).
+
+This must be run **before** script 06 to enable Column (6) of Table III
+(the ID-strategy quality control specification).
+
+Estimated API cost: ~$2–5 for 296 papers.
+
 ---
 
 ### Step 7 — Primary analysis
@@ -181,7 +224,24 @@ before running analysis.
 python scripts/06_analysis_main.py --output-format latex
 ```
 
-Output: `output/tables/table{1-4}*.{csv,tex}`
+Outputs:
+
+| File | Description |
+|---|---|
+| `table1_summary_stats.{csv,tex}` | Summary statistics by sub-sample |
+| `table2_publication_rates.{csv,tex}` | Raw publication rates by direction |
+| `table3_binary_primary.{csv,tex}` | **PRIMARY result**: binary directional probit |
+| `table3_probit_threeway.{csv,tex}` | Secondary: three-way direction (symmetry test) |
+| `table4_probit_by_journal.{csv,tex}` | By-journal analysis (exploratory; underpowered) |
+| `appendix_time_trends.{csv,tex}` | Sub-period analysis (exploratory; small N) |
+| `appendix_lpm.{csv,tex}` | Linear probability model robustness |
+| `appendix_llm_confidence.{csv,tex}` | LLM confidence by publication status |
+
+**Primary result** is the binary directional probit (`table3_binary_primary`).
+This collapses positive and negative findings into a single directional indicator,
+avoiding normative coding of the direction sign. The three-way probit
+(`table3_probit_threeway`) is used to test the symmetry hypothesis
+H₀: β_pos = β_neg and is included as the secondary specification.
 
 ---
 
@@ -215,9 +275,69 @@ python scripts/08_robustness.py
 
 Output: `output/tables/robustness_all.csv`
 
+**R8 interpretation:** The abstract-length control is a *bounding exercise*.
+The R8 estimates (with log(abstract length) control) are a lower bound on the
+true direction–publication association; the main estimates are an upper bound.
+The true effect lies between these bounds. See Section V.B in the paper.
+
 ---
 
-### Step 10 — Compile the paper
+### Step 10 — AFA conference baseline robustness (R10)
+
+Addresses the critique that NBER working papers are too different a population
+from published papers. Uses AFA annual meeting presentations as a pre-publication
+baseline — the same elite-institution network as JF/RFS/JFE publications,
+selected on research quality rather than finding direction.
+
+**Step 10a — Scrape AFA programs**
+
+```bash
+python scripts/10_collect_afa.py
+```
+
+- Scrapes `afajof.org` program pages for 2006–2024 (2013 unavailable)
+- Handles three distinct HTML formats across years automatically
+- Caches fetched HTML in `data/raw/afa_html_cache/` — re-runs use cache
+- Output: `data/raw/afa_papers.parquet` (~3,800 papers)
+- Runtime: ~45 seconds (network) or ~2 seconds (cached)
+
+**Step 10b — Run AFA analysis (free, no API)**
+
+```bash
+python scripts/11_afa_analysis.py --step all --no-api
+```
+
+`--no-api` mode runs entirely free — no Anthropic API calls:
+- Scope classification: broader title keyword filter (no LLM)
+- Direction coding: abstract-based codes from existing analysis dataset for
+  matched papers; conservative title-keyword rules for unmatched papers
+
+To run with LLM classification (more accurate, ~$15):
+```bash
+python scripts/11_afa_analysis.py --step all
+```
+
+Outputs:
+
+| File | Description |
+|---|---|
+| `robustness_afa_baseline.{csv,tex}` | Binary directional probit, AFA baseline |
+| `robustness_afa_threeway.{csv,tex}` | Three-way (pos/neg/null) symmetry test |
+| `table2_afa_pub_rates.csv` | AFA publication rates by direction |
+
+**R10 result:** Binary directional probit β = 1.787*** (s.e. 0.493, N = 241),
+consistent with the NBER-baseline estimate of 1.279***. Directional AFA papers
+are published in top journals at a 75% rate vs 13% for null-finding AFA papers.
+
+**Caveat:** Only 8 directional AFA papers in the no-api run (titles alone miss
+many policy papers with neutral titles), producing wide confidence intervals.
+Direction codes for matched papers come from published-abstract coding and are
+reliable; unmatched papers default to null (conservative). The AFA estimate
+should be treated as a directional consistency check, not a precise magnitude.
+
+---
+
+### Step 11 — Compile the paper
 
 ```bash
 cd paper
@@ -227,8 +347,9 @@ pdflatex main.tex
 pdflatex main.tex
 ```
 
-After running the analysis scripts, insert the output tables and
-figures into `main.tex` where `\placeholder{...}` markers appear.
+The paper uses `plainnat` bibliography style. All tables are inline in `main.tex`
+and do not use `\input{}` from the output directory; update table values in
+`main.tex` to match the generated output files after running the analysis.
 
 ---
 
@@ -248,6 +369,16 @@ con.execute("""
     FROM analysis_dataset
     GROUP BY direction
     ORDER BY direction
+""").df()
+
+# Binary directional vs null
+con.execute("""
+    SELECT CASE WHEN direction != 0 THEN 'directional' ELSE 'null' END AS group,
+           AVG(published_top3::INT) AS pub_rate,
+           COUNT(*) AS n
+    FROM analysis_dataset
+    WHERE direction IS NOT NULL
+    GROUP BY 1
 """).df()
 
 # Year trend in positive-finding share
@@ -271,8 +402,12 @@ con.execute("""
 | Scripts 01–02 (data collection) | 1–2 hours |
 | Script 03 (scope classification) | 1–2 hours + $15 API |
 | Script 04 (direction coding) | 2–4 hours + $60 API |
+| Script 09 (ID strategy coding) | 15 minutes + $3 API |
 | Human validation (RAs) | 1–2 weeks |
-| Scripts 05–09 (analysis) | 30 minutes |
+| Scripts 05–08 (analysis) | 30 minutes |
+| Script 10 (AFA scraper) | 45 seconds (network) / 2 seconds (cached) |
+| Script 11 --no-api (AFA analysis) | 2 minutes, free |
+| Script 11 with LLM (AFA analysis) | 30–60 minutes + $15 API |
 | Paper writing | — |
 
 ---
@@ -283,7 +418,8 @@ Before collecting data, consider pre-registering the study design at:
 - **OSF:** https://osf.io/prereg
 - **AEA RCT Registry:** https://www.socialscienceregistry.org
 
-Pre-registration strengthens the credibility of directional bias findings.
+Pre-registration strengthens the credibility of the findings and addresses
+supply-side vs. demand-side mechanism identification concerns.
 
 ---
 
@@ -294,8 +430,8 @@ If you use this code, please cite:
 ```bibtex
 @unpublished{Author2026,
   author = {[Author Name]},
-  title  = {The Positive Slant: Publication Bias in Government
-             Intervention Research at Top Finance Journals},
+  title  = {Significance Sorting in Government Intervention Research:
+             Evidence from Top Finance Journals},
   year   = {2026},
   note   = {Working paper}
 }
