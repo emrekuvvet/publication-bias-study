@@ -1,17 +1,28 @@
 """
 06_analysis_main.py
 -------------------
-Primary probit regressions testing directional publication bias.
+Primary probit regressions documenting the significance-sorting pattern
+in top finance journals (government intervention research, 2000-2024).
 
-Model (from implementation plan §4a):
+Primary model (binary directional — preferred specification):
+    Published_in_top3(i) = α + β Directional(i) + γ X(i) + ε(i)
+
+Secondary model (three-way direction code, for symmetry test):
     Published_in_top3(i) = α + β₁ Positive(i) + β₂ Negative(i) + γ X(i) + ε(i)
 
+NOTE ON INTERPRETATION: Coefficients are cross-sectional associations between
+finding direction and publication status. The design cannot distinguish editorial
+selection from author self-selection in submission or specification search.
+
 Outputs saved to output/tables/:
-    table1_summary_stats.csv
-    table2_publication_rates.csv
-    table3_probit_main.csv       ← primary result
-    table4_probit_by_journal.csv
-    appendix_time_trends.csv
+    table1_summary_stats.csv/.tex
+    table2_publication_rates.csv/.tex
+    table3_binary_primary.csv/.tex   ← PRIMARY result (binary directional)
+    table3_probit_threeway.csv/.tex  ← Secondary (three-way direction, symmetry test)
+    table4_probit_by_journal.csv/.tex
+    appendix_time_trends.csv/.tex    ← Exploratory; small sub-samples
+    appendix_lpm.csv/.tex
+    appendix_llm_confidence.csv/.tex
 
 Usage:
     python scripts/06_analysis_main.py
@@ -197,32 +208,110 @@ def run_lpm(formula: str, df: pd.DataFrame, label: str) -> pd.DataFrame:
     return pd.DataFrame(result_rows)
 
 
+def wald_test_symmetry(model) -> dict:
+    """
+    Wald test for H0: beta_pos == beta_neg.
+    Also computes power of this test at 80% level.
+    Returns dict with chi2, p-value, and minimum detectable difference.
+    """
+    from scipy.stats import chi2 as chi2_dist, norm
+    try:
+        R = np.zeros((1, len(model.params)))
+        pos_idx = list(model.params.index).index("pos")
+        neg_idx = list(model.params.index).index("neg")
+        R[0, pos_idx] =  1
+        R[0, neg_idx] = -1
+        w = model.wald_test(R, scalar=True)
+        chi2_val = float(w.statistic)
+        p_val    = float(w.pvalue)
+
+        # Power calculation: given observed N and SE(beta_pos - beta_neg),
+        # what minimum difference is detectable at 80% power, alpha=0.05?
+        se_diff = float(np.sqrt(
+            model.cov_params().iloc[pos_idx, pos_idx]
+            + model.cov_params().iloc[neg_idx, neg_idx]
+            - 2 * model.cov_params().iloc[pos_idx, neg_idx]
+        ))
+        # At 80% power, alpha=0.05 (one-sided): delta = (z_alpha + z_beta) * se_diff
+        z_alpha = norm.ppf(0.975)   # 1.96
+        z_beta  = norm.ppf(0.80)    # 0.84
+        mdd = (z_alpha + z_beta) * se_diff
+
+        return {"chi2": round(chi2_val, 3), "p": round(p_val, 4),
+                "se_diff": round(se_diff, 4), "mdd_80pct": round(mdd, 4)}
+    except Exception as exc:
+        print(f"    Wald test failed: {exc}")
+        return {}
+
+
 def table_probit_main(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Secondary specification: three-way direction code (positive / negative / null).
+
+    Used to test the symmetry hypothesis H0: β_pos = β_neg.
+    The primary result is table_binary_directional() which avoids normative coding.
+    These coefficients are cross-sectional associations — the design cannot identify
+    editorial selection vs. author self-selection in submission.
+    """
     if df["direction"].isna().all():
         print("  No direction codes available — skipping probit (run script 04 first)")
         return pd.DataFrame()
     df = df.copy()
-    df["pub"]     = df["published_top3"].astype(int)
-    df["pos"]     = df["positive"].astype(int)
-    df["neg"]     = df["negative"].astype(int)
-    df["year_c"]  = df["year"] - df["year"].mean()
-    df["decade"]  = (df["year"] // 10) * 10
-    df["log_nauth"] = np.log1p(df["n_authors"].fillna(df["n_authors"].median()))
-    df["log_ablen"] = np.log1p(df["abstract_len"].fillna(df["abstract_len"].median()))
+    df["pub"]      = df["published_top3"].astype(int)
+    df["pos"]      = df["positive"].astype(int)
+    df["neg"]      = df["negative"].astype(int)
+    df["year_c"]   = df["year"] - df["year"].mean()
+    df["decade"]   = (df["year"] // 10) * 10
+    df["log_nauth"]= np.log1p(pd.to_numeric(df["n_authors"], errors="coerce").fillna(0))
+    df["log_ablen"]= np.log1p(pd.to_numeric(df["abstract_len"], errors="coerce").fillna(
+        df["abstract_len"].dropna().astype(float).median()))
+    # Identification strategy quality control (from script 09)
+    df["quasi_exp"]= pd.to_numeric(df.get("quasi_exp", 0), errors="coerce").fillna(0).astype(int)
 
     all_results = []
+    fitted_models = {}
 
-    # Spec 1: bivariate
-    all_results.append(run_probit("pub ~ pos + neg", df, "Spec 1: Bivariate"))
-    # Spec 2: + year trend
-    all_results.append(run_probit("pub ~ pos + neg + year_c", df, "Spec 2: + Year"))
-    # Spec 3: + decade FE
-    all_results.append(run_probit("pub ~ pos + neg + C(decade)", df, "Spec 3: + Decade FE"))
-    # Spec 4: + quality controls (n_authors, abstract length)
-    all_results.append(run_probit(
-        "pub ~ pos + neg + year_c + log_nauth + log_ablen",
-        df, "Spec 4: + Quality Controls"
-    ))
+    specs = [
+        ("Spec 1: Bivariate",      "pub ~ pos + neg"),
+        ("Spec 2: + Year",         "pub ~ pos + neg + year_c"),
+        ("Spec 3: + Decade FE",    "pub ~ pos + neg + C(decade)"),
+        ("Spec 4: + Author Count", "pub ~ pos + neg + year_c + log_nauth"),
+        ("Spec 5: + ID Strategy",  "pub ~ pos + neg + year_c + log_nauth + quasi_exp"),
+    ]
+
+    for label, formula in specs:
+        import statsmodels.formula.api as smf_inner
+        try:
+            m = smf_inner.probit(formula, data=df).fit(
+                disp=False, method="bfgs", maxiter=500)
+            fitted_models[label] = m
+        except Exception as exc:
+            print(f"  Warning [{label}]: {exc}")
+            continue
+        result_rows = []
+        for name in m.params.index:
+            coef = m.params[name]; se = m.bse[name]
+            z = m.tvalues[name];   p  = m.pvalues[name]
+            ci_lo, ci_hi = m.conf_int().loc[name]
+            stars = ("***" if p < 0.01 else "**" if p < 0.05 else
+                     "*" if p < 0.10 else "")
+            result_rows.append({
+                "Specification": label, "Variable": name,
+                "Coefficient": round(coef,4), "Std Error": round(se,4),
+                "z-stat": round(z,3), "p-value": round(p,4),
+                "CI 2.5%": round(ci_lo,4), "CI 97.5%": round(ci_hi,4),
+                "Significance": stars, "N": int(m.nobs),
+                "Pseudo R2": round(m.prsquared,4),
+            })
+        all_results.append(pd.DataFrame(result_rows))
+
+    # Report Wald test on baseline spec
+    if "Spec 1: Bivariate" in fitted_models:
+        wd = wald_test_symmetry(fitted_models["Spec 1: Bivariate"])
+        if wd:
+            print(f"  Wald H0(β_pos=β_neg): χ²={wd['chi2']}, p={wd['p']}")
+            print(f"  Power note: MDD at 80% power = {wd['mdd_80pct']:.3f} "
+                  f"(SE of diff = {wd['se_diff']:.4f})")
 
     return pd.concat(all_results, ignore_index=True)
 
@@ -232,6 +321,14 @@ def table_probit_main(df: pd.DataFrame) -> pd.DataFrame:
 # ------------------------------------------------------------------ #
 
 def table_probit_by_journal(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Direction--publication association by journal.
+
+    CAUTION: Cross-journal comparisons are underpowered. JF sub-sample = 38
+    papers. Cross-journal Wald tests are uniformly insignificant; pairwise
+    differences in coefficients are not statistically distinguishable.
+    Report as exploratory/descriptive only.
+    """
     if df["direction"].isna().all():
         print("  No direction codes available — skipping by-journal probit")
         return pd.DataFrame()
@@ -242,13 +339,43 @@ def table_probit_by_journal(df: pd.DataFrame) -> pd.DataFrame:
     df["neg"] = df["negative"].astype(int)
     df["year_c"] = df["year"] - df["year"].mean()
 
+    import statsmodels.formula.api as smf_inner
+    fitted = {}
     for journal in ["JF", "RFS", "JFE"]:
         jdf = df[(df["journal"] == journal) | (~df["published_top3"])].copy()
         jdf["pub_j"] = (df["journal"] == journal).astype(int)
-        results.append(run_probit(
-            "pub_j ~ pos + neg + year_c",
-            jdf, f"Journal = {journal}"
-        ))
+        results.append(run_probit("pub_j ~ pos + neg + year_c", jdf, f"Journal = {journal}"))
+        try:
+            fitted[journal] = smf_inner.probit(
+                "pub_j ~ pos + neg + year_c", data=jdf
+            ).fit(disp=False, method="bfgs", maxiter=500)
+        except Exception:
+            pass
+
+    # Cross-journal Wald tests: are beta_pos coefficients distinguishable across journals?
+    print("  Cross-journal symmetry tests (power likely low):")
+    for j1, j2 in [("JF","RFS"), ("JF","JFE"), ("RFS","JFE")]:
+        if j1 in fitted and j2 in fitted:
+            b1 = fitted[j1].params.get("pos", np.nan)
+            b2 = fitted[j2].params.get("pos", np.nan)
+            se1 = fitted[j1].bse.get("pos", np.nan)
+            se2 = fitted[j2].bse.get("pos", np.nan)
+            if not any(np.isnan([b1, b2, se1, se2])):
+                z = (b1 - b2) / np.sqrt(se1**2 + se2**2)
+                p = 2 * (1 - stats.norm.cdf(abs(z)))
+                print(f"    β_pos: {j1} vs {j2}: z={z:.3f}, p={p:.3f}")
+                results.append(pd.DataFrame([{
+                    "Specification": f"Cross-journal: {j1} vs {j2} (β_pos diff)",
+                    "Variable": "pos_diff",
+                    "Coefficient": round(b1 - b2, 4),
+                    "Std Error": round(np.sqrt(se1**2 + se2**2), 4),
+                    "z-stat": round(z, 3), "p-value": round(p, 4),
+                    "Significance": ("***" if p<.01 else "**" if p<.05 else
+                                     "*" if p<.10 else ""),
+                    "N": np.nan, "Pseudo R2": np.nan,
+                    "CI 2.5%": np.nan, "CI 97.5%": np.nan,
+                }]))
+
     return pd.concat(results, ignore_index=True)
 
 
@@ -257,6 +384,14 @@ def table_probit_by_journal(df: pd.DataFrame) -> pd.DataFrame:
 # ------------------------------------------------------------------ #
 
 def table_time_trends(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    EXPLORATORY sub-period analysis.
+
+    Sub-sample sizes are small (N ≈ 45, 97, 154). Results should be read as
+    descriptive patterns, not confirmatory tests. CIs overlap substantially
+    across periods. The crisis-period asymmetry is consistent with but does
+    NOT causally identify elevated publication rates for regulatory-cost research.
+    """
     if df["direction"].isna().all():
         print("  No direction codes available — skipping time trends")
         return pd.DataFrame()
@@ -320,19 +455,29 @@ def table_lpm(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def table_binary_directional(df: pd.DataFrame) -> pd.DataFrame:
-    """Binary directional vs null: collapses pos/neg into single indicator."""
+    """
+    PRIMARY specification: binary directional vs null.
+
+    Collapses pos/neg into a single indicator, entirely avoiding normative
+    direction coding (no judgment required about whether an outcome is
+    "beneficial" or "harmful"). This is our most credible result.
+
+    Cross-sectional association only — cannot identify editorial selection
+    vs. author self-selection in submission.
+    """
     df = df.copy()
     df["pub"]        = df["published_top3"].astype(int)
     df["directional"]= (df["direction"] != 0).astype(int)
     df["year_c"]     = df["year"] - df["year"].mean()
-    df["log_nauth"]  = np.log1p(df["n_authors"].fillna(df["n_authors"].median()))
-    df["log_ablen"]  = np.log1p(df["abstract_len"].fillna(df["abstract_len"].median()))
+    df["log_nauth"]  = np.log1p(pd.to_numeric(df["n_authors"], errors="coerce").fillna(0))
+    df["log_ablen"]  = np.log1p(pd.to_numeric(df["abstract_len"], errors="coerce").fillna(df["abstract_len"].dropna().astype(float).median()))
+    df["quasi_exp"]  = pd.to_numeric(df.get("quasi_exp", 0), errors="coerce").fillna(0).astype(int)
     results = []
-    results.append(run_probit("pub ~ directional", df, "Binary: Bivariate"))
-    results.append(run_probit("pub ~ directional + year_c", df, "Binary: + Year"))
-    results.append(run_probit(
-        "pub ~ directional + year_c + log_nauth + log_ablen",
-        df, "Binary: + Quality Controls"))
+    results.append(run_probit("pub ~ directional",                          df, "Binary (1): Bivariate"))
+    results.append(run_probit("pub ~ directional + year_c",                 df, "Binary (2): + Year"))
+    results.append(run_probit("pub ~ directional + year_c + log_nauth",     df, "Binary (3): + Author Count"))
+    results.append(run_probit("pub ~ directional + year_c + log_nauth + quasi_exp",
+                                                                             df, "Binary (4): + ID Strategy"))
     return pd.concat(results, ignore_index=True)
 
 
@@ -364,20 +509,30 @@ def main(output_format: str) -> None:
     print("\n[Table 2] Raw publication rates by direction")
     save(table_pub_rates(df), "table2_publication_rates", output_format)
 
-    print("\n[Table 3] Primary probit regressions (incl. quality controls)")
-    save(table_probit_main(df), "table3_probit_main", output_format)
+    # ------------------------------------------------------------------
+    # PRIMARY result: binary directional specification.
+    # Collapses pos/neg into a single indicator — no normative direction
+    # coding. This is the paper's main finding (Table III, Column 1).
+    # ------------------------------------------------------------------
+    print("\n[Table 3 — PRIMARY] Binary directional probit")
+    save(table_binary_directional(df), "table3_binary_primary", output_format)
 
-    print("\n[Table 4] Probit by journal")
+    # ------------------------------------------------------------------
+    # SECONDARY: three-way direction code (positive / negative / null).
+    # Used to test the symmetry hypothesis H0: β_pos = β_neg.
+    # Results are robust to this more detailed decomposition.
+    # ------------------------------------------------------------------
+    print("\n[Table 3 — Secondary] Three-way direction probit (symmetry test)")
+    save(table_probit_main(df), "table3_probit_threeway", output_format)
+
+    print("\n[Table 4] Direction--publication association by journal (exploratory; underpowered)")
     save(table_probit_by_journal(df), "table4_probit_by_journal", output_format)
 
-    print("\n[Appendix] Time-trend regressions (all sub-periods)")
+    print("\n[Appendix] Time-trend regressions — EXPLORATORY; small sub-samples")
     save(table_time_trends(df), "appendix_time_trends", output_format)
 
     print("\n[Appendix] Linear probability model")
     save(table_lpm(df), "appendix_lpm", output_format)
-
-    print("\n[Appendix] Binary directional vs null")
-    save(table_binary_directional(df), "appendix_binary_directional", output_format)
 
     print("\n[Appendix] LLM confidence by publication status")
     save(table_validation_stats(df), "appendix_llm_confidence", output_format)
