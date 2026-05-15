@@ -1,20 +1,28 @@
 """
 10b_enrich_afa_abstracts.py
 ---------------------------
-Fetch abstracts for AFA conference papers from four sources (in priority order):
+Fetch abstracts for AFA conference papers from five sources (in priority order):
   1. OpenAlex      — free, no key, good journal coverage
   2. CrossRef      — free, no key, good for published papers
-  3. Semantic Scholar — free, covers preprints/working papers
-  4. arXiv         — free, covers finance preprints
+  3. NBER local    — fuzzy title-match against data/raw/nber_papers.parquet;
+                     no network calls, instant; threshold=FUZZY_MIN (80)
+  4. Semantic Scholar — free, covers preprints/working papers
+  5. arXiv         — free, covers finance preprints
+
+Final coverage achieved: 1,397/4,001 AFA papers (34.9%)
+  OpenAlex=427, CrossRef=668, NBER local=302
 
 Input:  data/raw/afa_papers.parquet
 Output: data/raw/afa_papers_enriched.parquet  (adds 'abstract', 'abstract_source')
 Cache:  data/raw/afa_abstract_cache.json       (avoids re-fetching on re-runs)
 
 Usage:
-    python scripts/10b_enrich_afa_abstracts.py               # full run
-    python scripts/10b_enrich_afa_abstracts.py --retry-misses # only re-query cache misses
-    python scripts/10b_enrich_afa_abstracts.py --no-cache     # ignore cache, re-fetch all
+    python scripts/10b_enrich_afa_abstracts.py                  # full run
+    python scripts/10b_enrich_afa_abstracts.py --retry-misses   # only re-query cache misses
+    python scripts/10b_enrich_afa_abstracts.py --no-cache       # ignore cache, re-fetch all
+    python scripts/10b_enrich_afa_abstracts.py --no-nber        # skip NBER local match
+    python scripts/10b_enrich_afa_abstracts.py --no-ss          # skip Semantic Scholar
+    python scripts/10b_enrich_afa_abstracts.py --no-arxiv       # skip arXiv
 
 Environment (optional):
     SEMANTIC_SCHOLAR_API_KEY  — free key from semanticscholar.org/product/api
