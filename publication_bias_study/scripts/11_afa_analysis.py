@@ -157,8 +157,8 @@ def keyword_hit_title_only(title: str) -> bool:
     return False
 
 
-# Rule-based direction keywords (title-only; conservative — most neutral titles → 0)
-_POSITIVE_WORDS = [
+# ---- Title-only keyword sets (short, unambiguous signals) ----
+_POSITIVE_TITLE = [
     "improves", "improvement", "beneficial", "benefit", "benefits",
     "enhances", "enhancement", "strengthens", "boosts", "stabilizes",
     "reduces risk", "lowers cost", "reduces cost", "promotes",
@@ -166,7 +166,7 @@ _POSITIVE_WORDS = [
     "increases efficiency", "improves market", "improves liquidity",
     "reduces systemic", "reduces fraud",
 ]
-_NEGATIVE_WORDS = [
+_NEGATIVE_TITLE = [
     "reduces liquidity", "reduces market quality", "harms", "harmful",
     "distortion", "distorts", "crowds out", "crowding out",
     "unintended consequences", "unintended effects",
@@ -177,21 +177,85 @@ _NEGATIVE_WORDS = [
     "adverse effect", "adverse effects",
 ]
 
+# ---- Abstract keyword sets (richer; abstracts state findings explicitly) ----
+# Null signals — check first; override directional signals when present
+_ABS_NULL = [
+    "no significant effect", "no significant impact", "no significant association",
+    "not statistically significant", "statistically insignificant",
+    "no evidence of", "find no evidence", "we find no",
+    "cannot reject the null", "fail to reject",
+    "mixed evidence", "mixed results", "inconclusive",
+    "no systematic effect", "no robust evidence",
+    "insignificant effect", "not significant",
+]
+_ABS_POSITIVE = [
+    "positive effect", "positive impact", "positive association",
+    "significantly positive", "positive and significant",
+    "beneficial effect", "beneficial impact",
+    "improves liquidity", "improves market quality", "improves efficiency",
+    "increases firm value", "increases market quality", "increases liquidity",
+    "reduces systemic risk", "lowers cost of capital", "lower cost of capital",
+    "better investor protection", "improved investor protection",
+    "enhances market", "strengthens market", "significant increase in",
+    "significant positive", "we find that.*increas",
+]
+_ABS_NEGATIVE = [
+    "negative effect", "negative impact", "negative association",
+    "significantly negative", "negative and significant",
+    "reduces liquidity", "decreased liquidity", "lower liquidity",
+    "unintended consequences", "unintended consequence",
+    "welfare loss", "deadweight loss",
+    "increases costs", "higher compliance cost", "costly regulation",
+    "distorts", "crowding out", "crowds out",
+    "harmful effect", "harmful impact",
+    "adverse effect", "adverse impact",
+    "significant decrease in", "significant reduction in",
+    "regulatory burden", "negative and significant",
+]
+
 
 def rule_based_direction(title: str) -> int:
     """
     Code direction ∈ {-1, 0, 1} from title keywords alone.
-    Conservative: returns 0 (null/unclear) unless a keyword is unambiguous.
-    Most finance titles ("The Effect of X on Y") will correctly return 0.
+    Conservative: returns 0 unless a keyword is unambiguous.
+    Most finance titles ("The Effect of X on Y") correctly return 0.
     """
     t = title.lower()
-    pos = any(kw in t for kw in _POSITIVE_WORDS)
-    neg = any(kw in t for kw in _NEGATIVE_WORDS)
+    pos = any(kw in t for kw in _POSITIVE_TITLE)
+    neg = any(kw in t for kw in _NEGATIVE_TITLE)
     if pos and not neg:
         return 1
     if neg and not pos:
         return -1
-    return 0   # neutral title or conflicting signals → null
+    return 0
+
+
+def rule_based_direction_abstract(abstract: str) -> int:
+    """
+    Code direction ∈ {-1, 0, 1} from abstract text.
+    More accurate than title-only because abstracts state findings explicitly.
+    Null signals take precedence over directional signals (conservative on ambiguity).
+    """
+    t = abstract.lower()
+    if any(kw in t for kw in _ABS_NULL):
+        return 0
+    pos = any(kw in t for kw in _ABS_POSITIVE)
+    neg = any(kw in t for kw in _ABS_NEGATIVE)
+    if pos and not neg:
+        return 1
+    if neg and not pos:
+        return -1
+    return 0
+
+
+def rule_based_direction_best(title: str, abstract: str = "") -> int:
+    """
+    Use abstract-based rules when abstract is available (≥20 words),
+    fall back to title-only rules otherwise. Mirrors the LLM prompt hierarchy.
+    """
+    if abstract and len(abstract.split()) >= 20:
+        return rule_based_direction_abstract(abstract)
+    return rule_based_direction(title)
 
 
 def keyword_hit(title: str) -> bool:
@@ -470,62 +534,74 @@ def step_direction(no_api: bool = False) -> None:
 
     if no_api:
         print("  --no-api: direction from analysis_dataset for matched papers; "
-              "rule-based for the rest")
+              "abstract-based rules for papers with abstracts; title rules otherwise")
 
-        # Pull abstract-based direction codes from existing coded dataset
         analysis_path = ROOT / "data" / "final" / "analysis_dataset.parquet"
-        direction_from_dataset: dict[str, int] = {}
+        dir_map: dict[str, int] = {}
+
         if analysis_path.exists():
             adf = pd.read_parquet(analysis_path)
             coded = adf[
                 adf["source"].isin(["jf", "rfs", "jfe"])
                 & adf["direction"].notna()
             ].copy()
-            j_index: dict[str, str] = {}
-            for _, row in coded.iterrows():
-                norm = normalise_title(row.get("title", ""))
-                if norm:
-                    j_index[row["paper_id"]] = norm
-
-            dir_map: dict[str, int] = {}
+            j_index: dict[str, str] = {
+                row["paper_id"]: normalise_title(row.get("title", ""))
+                for _, row in coded.iterrows()
+                if normalise_title(row.get("title", ""))
+            }
             dir_lookup = coded.set_index("paper_id")["direction"]
-            for _, afa_row in inscope.iterrows():
-                afa_norm = normalise_title(afa_row["title"])
-                if not afa_norm or not j_index:
-                    dir_map[afa_row["paper_id"]] = rule_based_direction(afa_row["title"])
-                    continue
-                candidates = process.extract(
-                    afa_norm, j_index,
-                    scorer=fuzz.token_sort_ratio,
-                    limit=3,
-                )
-                matched_dir = None
-                for _val, score, paper_id in candidates:
-                    if score >= FUZZY_THRESHOLD and paper_id in dir_lookup.index:
-                        matched_dir = int(dir_lookup[paper_id])
-                        break
-                dir_map[afa_row["paper_id"]] = (
-                    matched_dir if matched_dir is not None
-                    else rule_based_direction(afa_row["title"])
-                )
-            direction_from_dataset = dir_map
-            n_from_dataset = sum(
-                1 for pid, d in dir_map.items() if d != 0
-                and any(
-                    afa_row["paper_id"] == pid
-                    for _, afa_row in inscope.iterrows()
-                )
-            )
-            print(f"  Direction codes from analysis_dataset lookup: "
-                  f"{sum(1 for d in dir_map.values() if d != 0)} directional")
-        else:
-            print("  Warning: analysis_dataset.parquet not found — using rule-based only")
-            for _, row in inscope.iterrows():
-                direction_from_dataset[row["paper_id"]] = rule_based_direction(row["title"])
 
-        inscope["direction"]     = inscope["paper_id"].map(direction_from_dataset).fillna(0).astype(int)
-        inscope["dir_conf"]      = "dataset_or_rule_based"
-        inscope["dir_rationale"] = "analysis_dataset abstract coding if matched; title keyword rule otherwise"
+            n_dataset = 0
+            n_abstract = 0
+            n_title    = 0
+
+            for _, afa_row in inscope.iterrows():
+                pid      = afa_row["paper_id"]
+                title    = afa_row["title"]
+                abstract = afa_row.get("abstract", "") or ""
+                afa_norm = normalise_title(title)
+
+                # Priority 1: direction from analysis_dataset fuzzy match
+                matched_dir = None
+                if afa_norm and j_index:
+                    candidates = process.extract(
+                        afa_norm, j_index,
+                        scorer=fuzz.token_sort_ratio,
+                        limit=3,
+                    )
+                    for _val, score, paper_id in candidates:
+                        if score >= FUZZY_THRESHOLD and paper_id in dir_lookup.index:
+                            matched_dir = int(dir_lookup[paper_id])
+                            break
+
+                if matched_dir is not None:
+                    dir_map[pid] = matched_dir
+                    n_dataset += 1
+                elif abstract and len(abstract.split()) >= 20:
+                    # Priority 2: abstract-based keyword rules (same logic as LLM prompt)
+                    dir_map[pid] = rule_based_direction_abstract(abstract)
+                    n_abstract += 1
+                else:
+                    # Priority 3: title-only keyword rules (last resort)
+                    dir_map[pid] = rule_based_direction(title)
+                    n_title += 1
+
+            print(f"  Direction source: {n_dataset} from dataset match, "
+                  f"{n_abstract} from abstract rules, {n_title} from title rules")
+        else:
+            print("  Warning: analysis_dataset.parquet not found — using abstract/title rules only")
+            for _, afa_row in inscope.iterrows():
+                abstract = afa_row.get("abstract", "") or ""
+                dir_map[afa_row["paper_id"]] = rule_based_direction_best(
+                    afa_row["title"], abstract
+                )
+
+        inscope["direction"]     = inscope["paper_id"].map(dir_map).fillna(0).astype(int)
+        inscope["dir_conf"]      = "dataset_match_or_abstract_rules_or_title_rules"
+        inscope["dir_rationale"] = ("analysis_dataset abstract coding if matched; "
+                                    "abstract keyword rules if abstract available; "
+                                    "title keyword rules otherwise")
     else:
         api_key = os.environ.get("ANTHROPIC_API_KEY", "")
         if not api_key:

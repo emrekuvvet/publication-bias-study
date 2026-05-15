@@ -343,11 +343,12 @@ Outputs:
 | `robustness_afa_threeway.{csv,tex}` | Three-way (pos/neg/null) symmetry test |
 | `table2_afa_pub_rates.csv` | AFA publication rates by direction |
 
-**R10 result:** Binary directional probit β = 1.727*** (s.e. 0.491, N = 261),
-consistent with the NBER-baseline estimate of 1.279***. Directional AFA papers
-are published in top journals at a 75% rate vs 15% for null-finding AFA papers.
-Full 2006–2024 coverage including 2013 (sourced from AEA ASSA program).
-Match rate: 16.5% (43/261). Abstracts retrieved from OpenAlex for 427 papers.
+**R10 result:** Binary directional probit β = 1.159*** (s.e. 0.391, p=0.003, N = 261),
+consistent with and statistically indistinguishable from the NBER-baseline estimate
+of 1.279*** (s.e. 0.162). Directional AFA papers are published at a 55% rate vs 15%
+for null-finding AFA papers. Match rate: 16.5% (43/261), N_directional=11.
+Abstracts retrieved from OpenAlex for 427 papers; direction coding uses the same
+three-tier hierarchy as NBER: dataset match → abstract rules → title rules.
 
 **Caveat:** Only 8 directional AFA papers in the no-api run (titles alone miss
 many policy papers with neutral titles), producing wide confidence intervals.
