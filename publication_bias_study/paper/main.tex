@@ -227,7 +227,7 @@ $= 0.239$).  We can therefore rule out large asymmetries, but cannot exclude
 directional differences smaller than this threshold.  Within this constraint,
 the evidence is consistent with a significance-sorting pattern---not a directional one.
 
-The quasi-experimental identification control in Column~(5) confirms that
+The quasi-experimental identification control in Column~(6) confirms that
 identification quality is strongly associated with publication: the
 $\text{QuasiExp}$ dummy carries a coefficient of $0.731^{***}$ ($p < 0.001$),
 consistent with clean-identification papers having a substantial structural
@@ -454,8 +454,9 @@ candidates, a pass rate of 32.9\%.  The high rejection rate reflects the
 strictness of our causal-effect criterion: a paper that describes a regulation,
 discusses its mechanics, or studies firm responses without identifying a causal
 effect is excluded.  The final analysis sample consists of \textbf{296 papers}:
-113 NBER working papers (of which 8 are confirmed matches to journal papers
-via our linking procedure) and 183 published journal articles (38 in the \JF{},
+113 NBER working papers (of which 8 are in-scope matches to journal papers
+in our sample; 26 total NBER-to-journal links are identified but only 8 pass
+the in-scope filter) and 183 published journal articles (38 in the \JF{},
 67 in the \RFS{}, and 78 in the \JFE{}).
 
 \begin{table}[H]
@@ -797,10 +798,10 @@ coefficients virtually unchanged ($\hat\beta_1 = 1.233^{***}$,
 $\hat\beta_2 = 1.295^{***}$), indicating that team size does not explain
 the null-paper disadvantage.  The author-count coefficient itself is
 small and statistically indistinguishable from zero ($\hat\delta = 0.064$,
-s.e.\ 0.303, $p = 0.83$).  The estimated year trend (Column~3) is small
+s.e.\ 0.303, $p = 0.83$).  The estimated year trend (Column~(3)) is small
 and indistinguishable from zero ($\hat\gamma = 0.007$, s.e.\ 0.013),
 indicating no simple linear drift in the publication--direction association over the period.
-Decade fixed effects (Column~3) leave the direction coefficients essentially
+Decade fixed effects (Column~(4)) leave the direction coefficients essentially
 unchanged.
 
 \begin{table}[H]
@@ -841,7 +842,7 @@ of the direction sign.  Columns~(2)--(6) use the three-way direction code;
 Positive ($+1$) and Negative ($-1$) are indicators for the LLM-assigned
 direction code; the omitted category is Null/Mixed ($0$).  Column~(5) adds
 $\log(1 + N_{\text{authors}})$ as a proxy for team size.  Column~(6) adds a
-Quasi-Experimental identification dummy equal to one if the paper's primary
+quasi-experimental identification dummy equal to one if the paper's primary
 identification strategy is RDD, IV, DiD, or Event Study (as classified by our
 LLM pipeline from abstracts).
 Standard errors in parentheses.  *** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$.
@@ -1014,9 +1015,9 @@ effects, or on any particular normative coding convention.
 \medskip
 \noindent\textbf{R5 --- Abstract language and LLM confidence.}
 Abstract polish introduces a \textit{two-sided} measurement concern that we
-address directly.  Among published papers, 80.9\% receive a
-``high-confidence'' direction code; among NBER-only papers, only 18.6\% do,
-with 72.6\% receiving ``low-confidence'' ratings.  Two distinct confounds arise
+address directly.  Among published papers, 78.5\% receive a
+``high-confidence'' direction code; among NBER-only papers, only 18.1\% do,
+with 75.2\% receiving ``low-confidence'' ratings.  Two distinct confounds arise
 from this asymmetry.  \textit{Direction (i): attenuating.}  Lower-confidence
 LLM codes are more likely to be miscoded as null, because hedged abstract
 language makes null the easier assignment.  Any such miscoding pushes some
@@ -1039,7 +1040,7 @@ the direction coefficients shrink substantially and lose statistical significanc
 ($\hat\beta_1 = 0.171$, $p = 0.756$; $\hat\beta_2 = 0.584$, $p = 0.197$).
 This result must be interpreted with care, however.  Abstract length is
 virtually a proxy for publication status in our sample: published abstracts
-average 106 words versus 44 words for NBER working papers, a gap that is
+average 109 words versus 44 words for NBER working papers, a gap that is
 primarily mechanical---journals require well-developed abstracts as a condition
 of acceptance.  Including log(abstract length) is therefore roughly equivalent
 to adding an additional publication-status predictor, which by construction
@@ -1053,7 +1054,7 @@ tightly linked---as expected if editorial revision routinely expands abstracts.
 \medskip
 \noindent\textbf{R8 --- Abstract-length control (bounding exercise).}
 Abstract polish creates a two-sided measurement concern: (i) published abstracts
-are on average 106 words versus 44 for NBER abstracts, and the LLM may code
+are on average 109 words versus 44 for NBER abstracts, and the LLM may code
 published papers as directional partly because their language signals
 directionality more clearly, inflating our estimated premium; (ii) conversely,
 hedged NBER abstract language may push genuinely directional papers into the
@@ -1361,8 +1362,8 @@ Our pipeline assigns direction codes by reading paper abstracts.  A key
 concern---confirmed by our data---is that published paper abstracts are
 substantially more detailed and decisive in their language than NBER working
 paper abstracts: the mean published abstract contains 109 words, compared
-with 44 words for NBER abstracts.  Accordingly, 80.9\% of published papers
-receive a ``high-confidence'' LLM direction code, versus only 18.6\% of
+with 44 words for NBER abstracts.  Accordingly, 78.5\% of published papers
+receive a ``high-confidence'' LLM direction code, versus only 18.1\% of
 NBER-only papers.  If the LLM more often assigns a null code to ambiguously
 phrased NBER abstracts, the measured null-paper publication rate would be
 biased downward---which would \textit{attenuate} our estimated significance

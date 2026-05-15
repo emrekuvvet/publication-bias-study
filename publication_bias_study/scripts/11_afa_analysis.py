@@ -432,7 +432,8 @@ def step_classify(no_api: bool = False) -> None:
 
 
 # ------------------------------------------------------------------ #
-# Step B — LLM direction coding (title only)                          #
+# Step B — Direction coding (abstract-based when available; title     #
+#           fallback when not)                                        #
 # ------------------------------------------------------------------ #
 
 DIRECTION_SYSTEM = (

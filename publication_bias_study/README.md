@@ -17,7 +17,7 @@ specification search.
 |---|---|
 | Python | 3.11+ |
 | DuckDB | 0.10.3 |
-| Anthropic API key | Required for scripts 03, 04 & 09 |
+| Anthropic API key | Required for scripts 03, 04, 09, and 11 (without --no-api) |
 | Web of Science API key | Required for script 02 (CSV fallback available) |
 
 ```bash

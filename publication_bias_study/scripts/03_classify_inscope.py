@@ -57,8 +57,7 @@ INCLUSION_KEYWORDS = [
     "tarp", "stress test", "bank resolution", "government guarantee",
     # Monetary / fiscal policy
     "quantitative easing", "qe", "fed intervention", "government subsidy",
-    "government guarantee", "public guarantee", "state guarantee",
-    "fiscal stimulus",
+    "public guarantee", "state guarantee", "fiscal stimulus",
     # Market microstructure rules
     "circuit breaker", "tick size", "trading halt", "uptick rule",
     "limit-down", "limit-up", "trading curb",
@@ -112,6 +111,7 @@ Exclusion criteria (mark in_scope=false):
 - Papers whose main topic is private firm/market behaviour, with policy as incidental context
 - Papers studying central bank communication WITHOUT a specific policy instrument
 
+Title: \"\"\"{title}\"\"\"
 Abstract:
 \"\"\"
 {abstract}
@@ -128,14 +128,18 @@ Return JSON with exactly these keys:
 @retry(stop=stop_after_attempt(4),
        wait=wait_exponential(multiplier=1, min=2, max=30))
 def classify_one(client: Anthropic, paper_id: str,
-                 abstract: str) -> dict:
+                 combined_text: str, title: str = "") -> dict:
+    abstract = combined_text[len(title):].strip() if title and combined_text.startswith(title) else combined_text
     msg = client.messages.create(
         model=ANTHROPIC_MODEL,
         max_tokens=200,
         system=SCOPE_SYSTEM,
         messages=[{
             "role": "user",
-            "content": SCOPE_PROMPT_TEMPLATE.format(abstract=abstract[:3000])
+            "content": SCOPE_PROMPT_TEMPLATE.format(
+                title=title[:300] if title else "",
+                abstract=abstract[:2700]
+            )
         }],
     )
     raw = msg.content[0].text.strip()
@@ -215,7 +219,8 @@ def main(skip_llm: bool, sample: int | None) -> None:
 
         def _classify_row(row) -> tuple:
             try:
-                res = classify_one(_get_client(), row["paper_id"], row["combined_text"])
+                res = classify_one(_get_client(), row["paper_id"],
+                                   row["combined_text"], row.get("title", ""))
                 return (row["paper_id"],
                         bool(res.get("in_scope", False)),
                         str(res.get("confidence", "low")),
