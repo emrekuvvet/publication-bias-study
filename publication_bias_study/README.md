@@ -303,14 +303,30 @@ python scripts/10_collect_afa.py
 - Output: `data/raw/afa_papers.parquet` (~4,000 papers, full 2006–2024)
 - Runtime: ~45 seconds (network) or ~2 seconds (cached)
 
-**Step 10b — Run AFA analysis (free, no API)**
+**Step 10b — Enrich AFA abstracts from OpenAlex**
+
+```bash
+python scripts/10b_enrich_afa_abstracts.py
+```
+
+- Fetches abstracts from OpenAlex for AFA papers that have since been published
+- ~49% hit rate for in-scope papers; ~10.7% overall
+- Runtime: ~10 minutes (OpenAlex only, no Semantic Scholar)
+- Output: `data/raw/afa_papers_enriched.parquet` (adds `abstract`, `abstract_source`)
+- Cache: `data/raw/afa_abstract_cache.json` (re-runs are instant)
+
+**Step 10c — Run AFA analysis (free, no API)**
 
 ```bash
 python scripts/11_afa_analysis.py --step all --no-api
 ```
 
+Automatically loads `afa_papers_enriched.parquet` when available and applies the
+same `title + abstract` keyword filter as the NBER pipeline (script 03). Falls
+back to `afa_papers.parquet` with title-only filtering if enrichment hasn't been run.
+
 `--no-api` mode runs entirely free — no Anthropic API calls:
-- Scope classification: broader title keyword filter (no LLM)
+- Scope classification: title+abstract keyword filter (no LLM)
 - Direction coding: abstract-based codes from existing analysis dataset for
   matched papers; conservative title-keyword rules for unmatched papers
 
@@ -327,10 +343,11 @@ Outputs:
 | `robustness_afa_threeway.{csv,tex}` | Three-way (pos/neg/null) symmetry test |
 | `table2_afa_pub_rates.csv` | AFA publication rates by direction |
 
-**R10 result:** Binary directional probit β = 1.755*** (s.e. 0.492, N = 251),
+**R10 result:** Binary directional probit β = 1.727*** (s.e. 0.491, N = 261),
 consistent with the NBER-baseline estimate of 1.279***. Directional AFA papers
-are published in top journals at a 75% rate vs 14% for null-finding AFA papers.
+are published in top journals at a 75% rate vs 15% for null-finding AFA papers.
 Full 2006–2024 coverage including 2013 (sourced from AEA ASSA program).
+Match rate: 16.5% (43/261). Abstracts retrieved from OpenAlex for 427 papers.
 
 **Caveat:** Only 8 directional AFA papers in the no-api run (titles alone miss
 many policy papers with neutral titles), producing wide confidence intervals.
