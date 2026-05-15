@@ -303,13 +303,13 @@ def r8_abstract_length_control(df: pd.DataFrame) -> pd.DataFrame:
 
 def r9_matched_pairs_direction(df: pd.DataFrame) -> pd.DataFrame:
     """
-    Among the 26 papers matched between NBER and a top-3 journal,
-    check whether direction codes differ between the NBER and published
-    versions. If direction codes are stable (same sign), this provides
-    evidence that editorial revision does not systematically shift the
-    coded direction of findings.
+    Among the high-confidence auto-matched NBER-to-journal pairs,
+    check publication rates by direction to verify matched papers behave
+    similarly to the full sample. match_quality='auto' = fuzzy score >90.
+    The 'review' tier (score 75-90, needs human confirmation) is excluded
+    to keep this check conservative.
     """
-    matched = df[df["match_quality"].isin(["auto", "manual"])].copy()
+    matched = df[df["match_quality"] == "auto"].copy()
     print(f"  R9: matched-pair subsample N={len(matched):,}")
     if len(matched) < 5:
         print("  R9: too few matched pairs — skipping")

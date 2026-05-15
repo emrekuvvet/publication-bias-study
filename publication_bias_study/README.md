@@ -430,6 +430,7 @@ con.execute("""
 | Human validation (RAs) | 1–2 weeks |
 | Scripts 05–08 (analysis) | 30 minutes |
 | Script 10 (AFA scraper) | 45 seconds (network) / 2 seconds (cached) |
+| Script 10b (AFA abstract enrichment) | 3–4 hours first run; instant on re-run (cache) |
 | Script 11 --no-api (AFA analysis) | 2 minutes, free |
 | Script 11 with LLM (AFA analysis) | 30–60 minutes + $15 API |
 | Paper writing | — |

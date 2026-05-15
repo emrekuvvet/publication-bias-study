@@ -46,7 +46,7 @@ WORKERS = 8
 # ------------------------------------------------------------------ #
 
 DIRECTION_SYSTEM = (
-    "You are a research assistant reading finance paper abstracts. "
+    "You are a research assistant classifying finance paper findings. "
     "Return valid JSON only — no other text."
 )
 
@@ -80,18 +80,44 @@ Return JSON with exactly:
   "rationale": "one sentence"
 }}"""
 
+DIRECTION_PROMPT_TITLE_ONLY = """\
+The following is the title of a finance paper that studies the effect of a \
+government law, regulation, or public policy. No abstract is available.
+
+Based on the title alone, infer the likely direction of the main empirical finding:
+  +1  The intervention likely produced a POSITIVE / BENEFICIAL outcome
+  -1  The intervention likely produced a NEGATIVE / HARMFUL outcome
+   0  NULL, MIXED, or cannot be determined from the title alone
+
+Coding rules:
+- Default to 0 (null) if the title is neutral or provides no directional signal
+- Only assign +1 or -1 if the title clearly implies a directional finding
+- Set confidence to "low" unless the directional signal is unambiguous
+
+Title:
+\"\"\"
+{title}
+\"\"\"
+
+Return JSON with exactly:
+{{
+  "direction": 1 | -1 | 0,
+  "confidence": "high" | "medium" | "low",
+  "rationale": "one sentence"
+}}"""
+
 
 @retry(stop=stop_after_attempt(4),
        wait=wait_exponential(multiplier=1, min=2, max=30))
-def code_one(client: Anthropic, abstract: str) -> dict:
+def code_one(client: Anthropic, text: str, title_only: bool = False) -> dict:
+    prompt = (DIRECTION_PROMPT_TITLE_ONLY.format(title=text[:1200])
+              if title_only
+              else DIRECTION_PROMPT.format(abstract=text[:3000]))
     msg = client.messages.create(
         model=ANTHROPIC_MODEL,
         max_tokens=200,
         system=DIRECTION_SYSTEM,
-        messages=[{
-            "role": "user",
-            "content": DIRECTION_PROMPT.format(abstract=abstract[:3000])
-        }],
+        messages=[{"role": "user", "content": prompt}],
     )
     raw = msg.content[0].text.strip()
     try:
@@ -103,7 +129,6 @@ def code_one(client: Anthropic, abstract: str) -> dict:
             "direction": 0, "confidence": "low",
             "rationale": "parse error"
         }
-    # Normalise direction to int
     direction = result.get("direction", 0)
     if isinstance(direction, str):
         direction = int(direction)
@@ -149,10 +174,11 @@ def main(sample: int | None, resume: bool) -> None:
 
     def _code_row(row) -> dict:
         abstract = str(row.get("abstract", ""))
-        if not abstract.strip():
-            abstract = str(row.get("title", ""))
+        has_abstract = bool(abstract.strip()) and len(abstract.split()) >= 20
+        title_only = not has_abstract
+        text = abstract if has_abstract else str(row.get("title", ""))
         try:
-            res = code_one(_get_client(), abstract)
+            res = code_one(_get_client(), text, title_only=title_only)
             return {
                 "paper_id":   row["paper_id"],
                 "direction":  res["direction"],
