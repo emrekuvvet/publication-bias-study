@@ -6,8 +6,9 @@ reference population with AFA annual meeting papers (2006-2024).
 
 Steps
 -----
-  A  classify  -- keyword filter + LLM in-scope classification (title only)
-  B  direction -- LLM direction coding (title only)
+  A  classify  -- keyword filter + LLM in-scope classification
+                  (title+abstract when abstract available; title-only otherwise)
+  B  direction -- LLM direction coding (abstract-based when available; title otherwise)
   C  match     -- fuzzy-match AFA papers to JF/RFS/JFE publications
   D  analyze   -- binary directional probit (same spec as script 06)
 
@@ -19,16 +20,20 @@ Usage:
     python scripts/11_afa_analysis.py --step match
     python scripts/11_afa_analysis.py --step analyze
 
+Abstract enrichment:
+    Run scripts/10b_enrich_afa_abstracts.py first (produces afa_papers_enriched.parquet).
+    When that file exists, this script automatically loads it and applies the same
+    title+abstract keyword filter as the NBER pipeline (script 03).  When it does
+    not exist, the script falls back to afa_papers.parquet and title-only filtering.
+
 --no-api mode (free):
     Step A uses keyword filter only (no LLM scope check).
-    Step B uses rule-based title keywords to code direction.
+    Step B uses analysis_dataset direction codes for matched papers; rule-based otherwise.
     Steps C and D are unchanged (local computation only).
-    Direction coding from titles is noisier than from abstracts; expect a
-    higher null rate.  The binary directional indicator (directional vs null)
-    is still useful because even noisy direction coding preserves the key split.
 
 Prerequisites:
     data/raw/afa_papers.parquet (from 10_collect_afa.py)
+    data/raw/afa_papers_enriched.parquet (from 10b_enrich_afa_abstracts.py) [optional]
     data/raw/{jf,rfs,jfe}_papers.parquet
     ANTHROPIC_API_KEY in .env (only needed without --no-api)
 """
@@ -55,8 +60,9 @@ from tqdm import tqdm
 ROOT = pathlib.Path(__file__).parent.parent.resolve()
 load_dotenv(ROOT / ".env")
 
-# Input paths
-AFA_RAW   = ROOT / "data" / "raw"  / "afa_papers.parquet"
+# Input paths — prefer enriched parquet (has abstracts) when available
+AFA_ENRICHED = ROOT / "data" / "raw" / "afa_papers_enriched.parquet"
+AFA_RAW      = ROOT / "data" / "raw" / "afa_papers.parquet"
 
 # Intermediate
 AFA_SCOPE     = ROOT / "data" / "classified" / "afa_inscope.parquet"
@@ -206,7 +212,26 @@ SCOPE_SYSTEM = (
     "You must return valid JSON only — no other text."
 )
 
-AFA_SCOPE_PROMPT = """\
+AFA_SCOPE_PROMPT_ABSTRACT = """\
+The following is the title and abstract of a finance paper presented at the AFA
+annual meeting. Classify whether this paper's primary research question is the
+CAUSAL EFFECT of a government law, regulation, or public policy on financial
+markets, firms, or investors.
+
+Return in_scope=true if the paper clearly studies a government-policy causal-effect.
+If uncertain, return in_scope=false (conservative default).
+
+Title: \"\"\"{title}\"\"\"
+Abstract: \"\"\"{abstract}\"\"\"
+
+Return JSON with exactly these keys:
+{{
+  "in_scope": true or false,
+  "confidence": "high" | "medium" | "low",
+  "reason": "one sentence"
+}}"""
+
+AFA_SCOPE_PROMPT_TITLE_ONLY = """\
 The following is the TITLE of a finance paper presented at the AFA annual meeting.
 No abstract is available. Based on the title alone, classify whether this paper's
 primary research question is likely the CAUSAL EFFECT of a government law,
@@ -228,15 +253,19 @@ Return JSON with exactly these keys:
 
 @retry(stop=stop_after_attempt(4),
        wait=wait_exponential(multiplier=1, min=2, max=30))
-def classify_one_afa(client: Anthropic, title: str) -> dict:
+def classify_one_afa(client: Anthropic, title: str, abstract: str = "") -> dict:
+    if abstract and len(abstract.split()) >= 20:
+        prompt = AFA_SCOPE_PROMPT_ABSTRACT.format(
+            title=title[:400], abstract=abstract[:1200]
+        )
+    else:
+        prompt = AFA_SCOPE_PROMPT_TITLE_ONLY.format(title=title[:500])
+
     msg = client.messages.create(
         model=ANTHROPIC_MODEL,
         max_tokens=200,
         system=SCOPE_SYSTEM,
-        messages=[{
-            "role": "user",
-            "content": AFA_SCOPE_PROMPT.format(title=title[:500])
-        }],
+        messages=[{"role": "user", "content": prompt}],
     )
     raw = msg.content[0].text.strip()
     try:
@@ -248,26 +277,53 @@ def classify_one_afa(client: Anthropic, title: str) -> dict:
         }
 
 
+def _load_afa_papers() -> pd.DataFrame:
+    """Load AFA papers, preferring enriched parquet (with abstracts) when available."""
+    if AFA_ENRICHED.exists():
+        df = pd.read_parquet(AFA_ENRICHED)
+        n_abstract = (df.get("abstract", pd.Series(dtype=str)).str.len() > 0).sum()
+        print(f"  Loaded {len(df):,} AFA papers from enriched parquet "
+              f"({n_abstract:,} with abstracts)")
+    else:
+        df = pd.read_parquet(AFA_RAW)
+        df["abstract"]        = ""
+        df["abstract_source"] = "none"
+        print(f"  Loaded {len(df):,} AFA papers (no abstracts — run 10b_enrich_afa_abstracts.py)")
+    return df
+
+
 def step_classify(no_api: bool = False) -> None:
     print("=== Step A: Keyword filter + in-scope classification ===")
-    df = pd.read_parquet(AFA_RAW)
-    print(f"  Loaded {len(df):,} AFA papers")
+    df = _load_afa_papers()
 
-    df["keyword_hit"] = df["title"].apply(keyword_hit)
+    # Build combined text (title + abstract) — same approach as script 03
+    df["abstract"] = df.get("abstract", pd.Series("", index=df.index)).fillna("")
+    df["combined_text"] = df["title"].fillna("") + " " + df["abstract"]
+    df["has_abstract"]  = df["abstract"].str.split().str.len() >= 20
+
+    # Standard keyword filter on combined text (identical to script 03)
+    df["keyword_hit"] = df["combined_text"].apply(keyword_hit)
+    # Broader title-only filter for papers without abstracts (catches policy signals
+    # that are unambiguous in short titles but too broad in full text)
+    df["keyword_hit_title"] = df.apply(
+        lambda r: keyword_hit_title_only(r["title"]) if not r["has_abstract"] else False,
+        axis=1,
+    )
+    df["any_keyword_hit"] = df["keyword_hit"] | df["keyword_hit_title"]
+
     kw_n = df["keyword_hit"].sum()
-    print(f"  Keyword hits: {kw_n:,} ({kw_n/len(df)*100:.1f}%)")
+    kw_title_n = df["keyword_hit_title"].sum()
+    total_hits = df["any_keyword_hit"].sum()
+    print(f"  Keyword hits (title+abstract): {kw_n:,} ({kw_n/len(df)*100:.1f}%)")
+    print(f"  Broader title-only hits (no abstract): {kw_title_n:,}")
+    print(f"  Total keyword candidates: {total_hits:,} ({total_hits/len(df)*100:.1f}%)")
 
-    candidates = df[df["keyword_hit"]].copy().reset_index(drop=True)
+    candidates = df[df["any_keyword_hit"]].copy().reset_index(drop=True)
 
     if no_api:
-        # Re-run with the broader title-only filter
-        df["keyword_hit_title"] = df["title"].apply(keyword_hit_title_only)
-        title_n = df["keyword_hit_title"].sum()
-        print(f"  Title-only keyword hits (broader): {title_n:,} ({title_n/len(df)*100:.1f}%)")
-        candidates = df[df["keyword_hit_title"]].copy().reset_index(drop=True)
         candidates["in_scope"]   = True
-        candidates["confidence"] = "keyword_only_title"
-        candidates["reason"]     = "broader title-only keyword filter — no LLM (--no-api)"
+        candidates["confidence"] = "keyword_only"
+        candidates["reason"]     = "keyword filter (title+abstract where available) — no LLM (--no-api)"
         print(f"  --no-api: accepting all {len(candidates):,} keyword hits as in-scope")
     else:
         api_key = os.environ.get("ANTHROPIC_API_KEY", "")
@@ -278,7 +334,8 @@ def step_classify(no_api: bool = False) -> None:
         results: dict[str, dict] = {}
 
         def classify_row(row):
-            res = classify_one_afa(client, row["title"])
+            res = classify_one_afa(client, row["title"],
+                                   row.get("abstract", "") or "")
             with lock:
                 results[row["paper_id"]] = res
 
@@ -296,16 +353,17 @@ def step_classify(no_api: bool = False) -> None:
         candidates["reason"]     = candidates["paper_id"].map(
             lambda pid: results.get(pid, {}).get("reason", ""))
 
-    # Mark title_only flag (always True for AFA papers)
-    candidates["title_only"] = True
+    # title_only = True when no usable abstract was available at classification time
+    candidates["title_only"] = ~candidates["has_abstract"]
 
     inscope = candidates[candidates["in_scope"]].copy()
     if not no_api:
+        with_abs = inscope["has_abstract"].sum()
         print(f"  In-scope after LLM: {len(inscope):,} / {len(candidates):,}")
+        print(f"  In-scope with abstract: {with_abs:,} / {len(inscope):,}")
 
-    out = candidates.copy()
     AFA_SCOPE.parent.mkdir(parents=True, exist_ok=True)
-    out.to_parquet(AFA_SCOPE, index=False, compression="snappy")
+    candidates.to_parquet(AFA_SCOPE, index=False, compression="snappy")
     print(f"  Saved → {AFA_SCOPE}")
 
 
@@ -314,11 +372,43 @@ def step_classify(no_api: bool = False) -> None:
 # ------------------------------------------------------------------ #
 
 DIRECTION_SYSTEM = (
-    "You are a research assistant reading finance paper titles. "
+    "You are a research assistant reading finance research papers. "
     "Return valid JSON only — no other text."
 )
 
-AFA_DIRECTION_PROMPT = """\
+# Abstract-based prompt — identical to script 04 DIRECTION_PROMPT
+AFA_DIRECTION_PROMPT_ABSTRACT = """\
+The following is the abstract of a finance paper that studies the effect of a \
+government law, regulation, or public policy.
+
+Classify the MAIN empirical finding:
+  +1  The government intervention produced a POSITIVE / BENEFICIAL outcome \
+(e.g. improved market quality, reduced systemic risk, better investor protection, \
+increased firm value, lower cost of capital)
+  -1  The government intervention produced a NEGATIVE / HARMFUL outcome \
+(e.g. reduced liquidity, higher costs, unintended consequences, welfare losses)
+   0  NULL, MIXED, or INCONCLUSIVE finding (no statistically significant effect, \
+evidence on both sides, or the paper explicitly refuses to take a directional stance)
+
+Coding rules:
+- Code the PRIMARY intervention and PRIMARY outcome (named in title or first sentence)
+- If paper is purely theoretical with no empirical test → set direction=0, confidence=low
+- Do NOT infer direction from normative framing; code the sign of the estimated coefficient
+
+Abstract:
+\"\"\"
+{abstract}
+\"\"\"
+
+Return JSON with exactly:
+{{
+  "direction": 1 | -1 | 0,
+  "confidence": "high" | "medium" | "low",
+  "rationale": "one sentence"
+}}"""
+
+# Title-only fallback — used when no abstract is available
+AFA_DIRECTION_PROMPT_TITLE = """\
 The following is the TITLE of a finance paper that studies the effect of a
 government law, regulation, or public policy. No abstract is available.
 Based on the title alone, classify the LIKELY direction of the main finding.
@@ -344,15 +434,17 @@ Return JSON with exactly these keys:
 
 @retry(stop=stop_after_attempt(4),
        wait=wait_exponential(multiplier=1, min=2, max=30))
-def code_direction_afa(client: Anthropic, title: str) -> dict:
+def code_direction_afa(client: Anthropic, title: str, abstract: str = "") -> dict:
+    if abstract and len(abstract.split()) >= 20:
+        prompt = AFA_DIRECTION_PROMPT_ABSTRACT.format(abstract=abstract[:1500])
+    else:
+        prompt = AFA_DIRECTION_PROMPT_TITLE.format(title=title[:500])
+
     msg = client.messages.create(
         model=ANTHROPIC_MODEL,
         max_tokens=200,
         system=DIRECTION_SYSTEM,
-        messages=[{
-            "role": "user",
-            "content": AFA_DIRECTION_PROMPT.format(title=title[:500])
-        }],
+        messages=[{"role": "user", "content": prompt}],
     )
     raw = msg.content[0].text.strip()
     try:
@@ -365,13 +457,16 @@ def code_direction_afa(client: Anthropic, title: str) -> dict:
 
 
 def step_direction(no_api: bool = False) -> None:
-    print("=== Step B: Direction coding (title only) ===")
+    print("=== Step B: Direction coding ===")
     if not AFA_SCOPE.exists():
         raise FileNotFoundError(f"{AFA_SCOPE} not found — run --step classify first")
 
     scope_df = pd.read_parquet(AFA_SCOPE)
     inscope  = scope_df[scope_df["in_scope"]].copy().reset_index(drop=True)
-    print(f"  In-scope papers to code: {len(inscope):,}")
+    inscope["abstract"] = inscope.get("abstract", pd.Series("", index=inscope.index)).fillna("")
+    with_abs = (inscope["abstract"].str.split().str.len() >= 20).sum()
+    print(f"  In-scope papers to code: {len(inscope):,} "
+          f"({with_abs:,} with abstract, {len(inscope)-with_abs:,} title-only)")
 
     if no_api:
         print("  --no-api: direction from analysis_dataset for matched papers; "
@@ -440,7 +535,8 @@ def step_direction(no_api: bool = False) -> None:
         results: dict[str, dict] = {}
 
         def code_row(row):
-            res = code_direction_afa(client, row["title"])
+            res = code_direction_afa(client, row["title"],
+                                     row.get("abstract", "") or "")
             with lock:
                 results[row["paper_id"]] = res
 
@@ -457,6 +553,12 @@ def step_direction(no_api: bool = False) -> None:
             lambda pid: results.get(pid, {}).get("confidence", "low"))
         inscope["dir_rationale"] = inscope["paper_id"].map(
             lambda pid: results.get(pid, {}).get("rationale", ""))
+
+        n_abs_coded = (
+            inscope["abstract"].str.split().str.len() >= 20
+        ).sum()
+        n_title_coded = len(inscope) - n_abs_coded
+        print(f"  Coded from abstract: {n_abs_coded:,} | from title only: {n_title_coded:,}")
 
     counts = inscope["direction"].value_counts()
     print(f"  Direction distribution: {counts.to_dict()}")
