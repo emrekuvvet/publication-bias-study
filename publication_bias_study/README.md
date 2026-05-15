@@ -303,17 +303,17 @@ python scripts/10_collect_afa.py
 - Output: `data/raw/afa_papers.parquet` (~4,000 papers, full 2006–2024)
 - Runtime: ~45 seconds (network) or ~2 seconds (cached)
 
-**Step 10b — Enrich AFA abstracts from OpenAlex and CrossRef**
+**Step 10b — Enrich AFA abstracts from OpenAlex, CrossRef, and NBER**
 
 ```bash
 python scripts/10b_enrich_afa_abstracts.py
 ```
 
-- Fetches abstracts from OpenAlex (primary) and CrossRef (fallback) for AFA papers
-- 27.4% overall coverage (1,095/4,001); ~31% hit rate for in-scope papers
-  - OpenAlex: 427 papers; CrossRef: 668 additional papers
-- Runtime: ~3–4 hours (first run with CrossRef); instant on re-runs (cache)
-- Flags: `--no-ss` (skip Semantic Scholar), `--no-arxiv` (skip arXiv), `--retry-misses`
+- Fetches abstracts from OpenAlex (primary), CrossRef (fallback), and NBER local dataset (fuzzy-title match, no network) for AFA papers
+- 34.9% overall coverage (1,397/4,001)
+  - OpenAlex: 427 papers; CrossRef: 668 additional papers; NBER local: 302 additional papers
+- Runtime: ~3–4 hours (first run with CrossRef); instant on re-runs (cache); NBER match is always instant (local)
+- Flags: `--no-ss` (skip Semantic Scholar), `--no-arxiv` (skip arXiv), `--no-nber` (skip NBER local match), `--retry-misses`
 - Output: `data/raw/afa_papers_enriched.parquet` (adds `abstract`, `abstract_source`)
 - Cache: `data/raw/afa_abstract_cache.json` (re-runs are instant)
 
@@ -345,15 +345,15 @@ Outputs:
 | `robustness_afa_threeway.{csv,tex}` | Three-way (pos/neg/null) symmetry test |
 | `table2_afa_pub_rates.csv` | AFA publication rates by direction |
 
-**R10 result:** Binary directional probit β = 1.136*** (s.e. 0.312, p<0.001, N = 268),
+**R10 result:** Binary directional probit β = 1.245*** (s.e. 0.322, p<0.001, N = 257),
 consistent with and statistically indistinguishable from the NBER-baseline estimate
-of 1.279*** (s.e. 0.162). Directional AFA papers are published at a 50% rate vs 13%
-for null-finding AFA papers. Match rate: 15.3% (41/268), N_directional=18.
-Abstracts retrieved from OpenAlex (427) and CrossRef (668) for 1,095 total papers;
-84 in-scope. Direction coding uses the same three-tier hierarchy as NBER:
+of 1.279*** (s.e. 0.162). Directional AFA papers are published at a 52.9% rate (9/17)
+vs 12.1% for null-finding AFA papers (29/240). Match rate: 14.8% (38/257), N_directional=17.
+Abstracts retrieved from OpenAlex (427), CrossRef (668), and NBER local dataset (302)
+for 1,397 total papers; 92 in-scope. Direction coding uses the same three-tier hierarchy as NBER:
 dataset match → abstract rules → title rules.
 
-**Caveat:** Confidence intervals remain wide given N_directional=18. Direction
+**Caveat:** Confidence intervals remain wide given N_directional=17. Direction
 codes for journal-matched papers come from published-abstract coding and are
 reliable; unmatched papers use abstract keyword rules (when available) or
 default to null (conservative). The AFA estimate should be treated as a

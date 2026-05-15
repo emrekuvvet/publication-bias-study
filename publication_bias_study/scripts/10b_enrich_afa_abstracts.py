@@ -36,7 +36,7 @@ import xml.etree.ElementTree as ET
 import pandas as pd
 import requests
 from dotenv import load_dotenv
-from rapidfuzz import fuzz
+from rapidfuzz import fuzz, process
 from tqdm import tqdm
 
 ROOT       = pathlib.Path(__file__).parent.parent.resolve()
@@ -253,6 +253,43 @@ def arxiv_search(title: str, year: int | None,
 
 
 # ------------------------------------------------------------------ #
+# Source 5 — NBER working papers (local dataset)                       #
+# ------------------------------------------------------------------ #
+
+NBER_PATH = ROOT / "data" / "raw" / "nber_papers.parquet"
+
+
+def build_nber_index() -> tuple[list[str], list[str], list[str]]:
+    """Load NBER papers; return (paper_ids, normalised_titles, abstracts)."""
+    if not NBER_PATH.exists():
+        return [], [], []
+    nber = pd.read_parquet(NBER_PATH)
+    nber = nber[nber["abstract"].notna() & (nber["abstract"].str.len() > 100)].copy()
+    ids      = nber["wp_number"].tolist()
+    titles   = [normalise(str(t)) for t in nber["title"].tolist()]
+    abstracts = nber["abstract"].tolist()
+    return ids, titles, abstracts
+
+
+def nber_search(query_norm: str,
+                nber_titles: list[str],
+                nber_abstracts: list[str]) -> str | None:
+    """Return the NBER abstract whose title best matches query_norm (score ≥ FUZZY_MIN)."""
+    if not nber_titles:
+        return None
+    result = process.extractOne(
+        query_norm, nber_titles,
+        scorer=fuzz.token_sort_ratio,
+        score_cutoff=FUZZY_MIN,
+    )
+    if result is None:
+        return None
+    _, score, idx = result
+    abstract = nber_abstracts[idx]
+    return abstract if is_good(abstract) else None
+
+
+# ------------------------------------------------------------------ #
 # Cache helpers                                                        #
 # ------------------------------------------------------------------ #
 
@@ -275,7 +312,8 @@ def save_cache(cache: dict) -> None:
 # ------------------------------------------------------------------ #
 
 def main(retry_misses: bool, no_cache: bool,
-         no_ss: bool = False, no_arxiv: bool = False) -> None:
+         no_ss: bool = False, no_arxiv: bool = False,
+         no_nber: bool = False) -> None:
     df = pd.read_parquet(IN_PATH)
     print(f"Loaded {len(df):,} AFA papers")
 
@@ -283,9 +321,7 @@ def main(retry_misses: bool, no_cache: bool,
 
     if retry_misses:
         prior_misses = {pid for pid, v in cache.items() if not v.get("abstract")}
-        print(f"--retry-misses: will re-query {len(prior_misses):,} cache misses "
-              f"with CrossRef / Semantic Scholar / arXiv")
-        # Evict miss entries so the main loop re-queries them
+        print(f"--retry-misses: will re-query {len(prior_misses):,} cache misses")
         for pid in prior_misses:
             del cache[pid]
 
@@ -310,10 +346,17 @@ def main(retry_misses: bool, no_cache: bool,
     else:
         print(f"  No SEMANTIC_SCHOLAR_API_KEY found — using free tier (~1 req/s)")
 
+    # Pre-load NBER index (fast — local disk, no network)
+    nber_ids, nber_titles_norm, nber_abstracts = [], [], []
+    if not no_nber:
+        print("  Building NBER title index ...", end=" ", flush=True)
+        nber_ids, nber_titles_norm, nber_abstracts = build_nber_index()
+        print(f"{len(nber_ids):,} NBER papers indexed")
+
     abstracts: list[str] = []
     sources:   list[str] = []
     hits: dict[str, int] = {"openalex": 0, "crossref": 0,
-                             "semantic_scholar": 0, "arxiv": 0}
+                             "nber": 0, "semantic_scholar": 0, "arxiv": 0}
     misses = 0
 
     for _, row in tqdm(df.iterrows(), total=len(df), desc="Fetching abstracts"):
@@ -346,7 +389,14 @@ def main(retry_misses: bool, no_cache: bool,
                 hits["crossref"] += 1
             time.sleep(0.12)
 
-        # --- 3. Semantic Scholar ---
+        # --- 3. NBER local index (no network, no rate limit) ---
+        if not abstract and not no_nber and nber_titles_norm:
+            abstract = nber_search(normalise(title), nber_titles_norm, nber_abstracts)
+            if abstract:
+                source = "nber"
+                hits["nber"] += 1
+
+        # --- 4. Semantic Scholar ---
         if not abstract and not no_ss:
             abstract = ss_search(title, year, ss_session)
             if abstract:
@@ -355,7 +405,7 @@ def main(retry_misses: bool, no_cache: bool,
             # SS free tier: ~1 req/s; key tier: much faster
             time.sleep(1.1 if not SS_API_KEY else 0.05)
 
-        # --- 4. arXiv ---
+        # --- 5. arXiv ---
         if not abstract and not no_arxiv:
             abstract = arxiv_search(title, year, arx_session)
             if abstract:
@@ -377,6 +427,7 @@ def main(retry_misses: bool, no_cache: bool,
             processed = len(abstracts)
             tqdm.write(f"  [{processed}/{len(df)}] hits so far: "
                        f"OA={hits['openalex']} CR={hits['crossref']} "
+                       f"NB={hits['nber']} "
                        f"SS={hits['semantic_scholar']} arXiv={hits['arxiv']} "
                        f"miss={misses} ({total_found/processed*100:.1f}% coverage)")
 
@@ -390,6 +441,7 @@ def main(retry_misses: bool, no_cache: bool,
     print(f"\nResults:")
     print(f"  OpenAlex:         {hits['openalex']:,}")
     print(f"  CrossRef:         {hits['crossref']:,}")
+    print(f"  NBER (local):     {hits['nber']:,}")
     print(f"  Semantic Scholar: {hits['semantic_scholar']:,}")
     print(f"  arXiv:            {hits['arxiv']:,}")
     print(f"  No abstract:      {misses:,}")
@@ -423,5 +475,9 @@ if __name__ == "__main__":
         "--no-arxiv", action="store_true",
         help="Skip arXiv (low hit rate for finance papers)."
     )
+    parser.add_argument(
+        "--no-nber", action="store_true",
+        help="Skip NBER local title-matching (fast, no network)."
+    )
     args = parser.parse_args()
-    main(args.retry_misses, args.no_cache, args.no_ss, args.no_arxiv)
+    main(args.retry_misses, args.no_cache, args.no_ss, args.no_arxiv, args.no_nber)
