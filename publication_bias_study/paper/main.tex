@@ -1020,8 +1020,8 @@ effects, or on any particular normative coding convention.
 \medskip
 \noindent\textbf{R5 --- Abstract language and LLM confidence.}
 Abstract polish introduces a \textit{two-sided} measurement concern that we
-address directly.  Among published papers, 78.5\% receive a
-``high-confidence'' direction code; among NBER-only papers, only 18.1\% do,
+address directly.  Among published papers, 77.6\% receive a
+``high-confidence'' direction code; among NBER-only papers, only 19.2\% do,
 with 75.2\% receiving ``low-confidence'' ratings.  Two distinct confounds arise
 from this asymmetry.  \textit{Direction (i): attenuating.}  Lower-confidence
 LLM codes are more likely to be miscoded as null, because hedged abstract
@@ -1148,8 +1148,8 @@ an identification-quality gradient between directional and null papers.
 Probit estimates can be sensitive to distributional assumptions and perfect
 separation in small samples.  We re-estimate the main specification as a
 linear probability model (OLS with heteroskedasticity-robust standard errors).
-The LPM yields coefficients of $0.437^{***}$ (s.e.\ 0.061) for positive
-findings and $0.457^{***}$ (s.e.\ 0.057) for negative findings, directly
+The LPM yields coefficients of $0.422^{***}$ (s.e.\ 0.062) for positive
+findings and $0.431^{***}$ (s.e.\ 0.058) for negative findings, directly
 interpretable as percentage-point differences in publication probability
 relative to null-finding papers.  These magnitudes closely match the probit
 marginal effects (44 pp and 46 pp) and confirm the results do not hinge on
@@ -1182,8 +1182,8 @@ R3: \RFS{}+\JFE{} only     & Positive & $1.059^{***}$ & $<$0.001 & 296 \\
                             & Negative & $1.086^{***}$ & $<$0.001 & 296 \\[4pt]
 R4: Binary directional     & Directional & $1.215^{***}$ & $<$0.001 & 296 \\[4pt]
 R4+: Binary + year + authors & Directional & $1.197^{***}$ & $<$0.001 & 296 \\[4pt]
-R6: LPM (OLS, HC3)         & Positive & $0.437^{***}$ & $<$0.001 & 296 \\
-                            & Negative & $0.457^{***}$ & $<$0.001 & 296 \\[4pt]
+R6: LPM (OLS, HC3)         & Positive & $0.422^{***}$ & $<$0.001 & 296 \\
+                            & Negative & $0.431^{***}$ & $<$0.001 & 296 \\[4pt]
 R8: + log(abstract length) & Positive & $0.171$       & 0.756    & 296 \\
 \small{[lower-bound spec]}  & Negative & $0.584$       & 0.197    & 296 \\[4pt]
 R10: AFA conference baseline & Directional & $1.245^{***}$ & $<$0.001 & 257 \\
@@ -1368,8 +1368,8 @@ Our pipeline assigns direction codes by reading paper abstracts.  A key
 concern---confirmed by our data---is that published paper abstracts are
 substantially more detailed and decisive in their language than NBER working
 paper abstracts: the mean published abstract contains 109 words, compared
-with 44 words for NBER abstracts.  Accordingly, 78.5\% of published papers
-receive a ``high-confidence'' LLM direction code, versus only 18.1\% of
+with 44 words for NBER abstracts.  Accordingly, 77.6\% of published papers
+receive a ``high-confidence'' LLM direction code, versus only 19.2\% of
 NBER-only papers.  If the LLM more often assigns a null code to ambiguously
 phrased NBER abstracts, the measured null-paper publication rate would be
 biased downward---which would \textit{attenuate} our estimated significance

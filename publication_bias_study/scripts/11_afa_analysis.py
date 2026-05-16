@@ -908,7 +908,7 @@ def step_analyze() -> None:
         if afa_biv:
             print(f"  AFA  bivariate directional β = {afa_biv['Coefficient']:.4f}"
                   f" (s.e. {afa_biv['Std Error']:.4f}){afa_biv['Significance']}")
-    print("  NBER bivariate directional β = 1.2793 (s.e. 0.1623)***")
+    print("  NBER binary directional β = 1.2149 (s.e. 0.1611)***")
     print("  (If AFA β is similar, the significance-sorting pattern is robust"
           " to the choice of pre-publication baseline.)")
 
