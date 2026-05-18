@@ -231,12 +231,12 @@ the evidence is consistent with a significance-sorting pattern---not a direction
 
 The quasi-experimental identification control in Column~(6) confirms that
 identification quality is strongly associated with publication: the
-$\text{QuasiExp}$ dummy carries a coefficient of $0.731^{***}$ ($p < 0.001$),
+$\text{QuasiExp}$ dummy carries a coefficient of $0.613^{***}$ ($p < 0.001$),
 consistent with clean-identification papers having a substantial structural
 advantage in the review process---an advantage that is separate from and
 additive to the direction premium.  Crucially, however, the direction
-coefficients are essentially unchanged ($\hat\beta_1 = 1.202^{***}$,
-$\hat\beta_2 = 1.274^{***}$), confirming that the significance premium is not
+coefficients are essentially unchanged ($\hat\beta_1 = 1.176^{***}$,
+$\hat\beta_2 = 1.250^{***}$), confirming that the significance premium is not
 an artifact of null-finding papers relying on weaker identification strategies.
 
 The structure of the significance-sorting pattern varies across journals.  The
@@ -561,24 +561,25 @@ are flagged for manual review; scores below 75 are treated as unmatched.
 
 Among the 183 in-scope journal papers, 22 (12.0\%) are automatically matched to
 an NBER working paper, 4 (2.2\%) require manual confirmation, 2 (1.1\%) are
-identified via API and text-similarity methods, and 155 (84.7\%)
+identified via API and text-similarity methods, 5 (2.7\%) matched via
+full-text PDF comparison of published papers against NBER drafts, and 150 (82.0\%)
 remain unmatched after searching all 30,219 raw NBER papers in the database.
 The improved match rate (versus na\"{i}ve in-scope-only search) was achieved by
 widening the matching pool from the 113 in-scope NBER papers to the full NBER
 archive and correcting a tokenisation bug in the fuzzy-matching dictionary
-index.  The residual 84.7\% unmatched rate reflects the fact that most
+index.  The residual 82.0\% unmatched rate reflects the fact that most
 published finance papers in this domain are circulated as SSRN or institutional
 working papers rather than through NBER, and that title revisions during the
 editorial process prevent fuzzy matching even when an NBER draft exists.
 External API verification via OpenAlex, Unpaywall, and CrossRef confirms that
-these 155 papers have no retrievable NBER preprint record.
+these 150 papers have no retrievable NBER preprint record.
 
 To assess whether the unmatched published papers are representative of the
-direction distribution, we compare the direction codes of the 31 matched papers
-with those of the 152 unmatched ones.  Among matched papers, 71.0\% have a
-directional finding; among unmatched published papers, 74.3\% do---a difference
-of just 3.3 percentage points.  This near-identical composition provides
-reassurance that the low match rate does not bias our comparison of direction
+direction distribution, we compare the direction codes of the 33 matched papers
+with those of the 150 unmatched ones.  Among matched papers, 66.7\% have a
+directional finding; among unmatched published papers, 75.3\% do---a difference
+of 8.6 percentage points.  This modest difference provides
+reassurance that the low match rate does not materially bias our comparison of direction
 distributions between the published and NBER-only sub-samples.
 
 In our probit analysis, unmatched journal papers are treated as having been
@@ -644,7 +645,7 @@ circulated as NBER working papers and a separate sample of papers that were
 published in the \JF{}, the \RFS{}, or the \JFE{}, and we ask whether the
 direction distribution of findings differs between the two groups.  This is
 \textit{not} a within-paper design in which the same papers are tracked from
-submission to publication outcome.  Only 31 of 183 published papers (16.9\%)
+submission to publication outcome.  Only 33 of 183 published papers (18.0\%)
 are matched to an NBER working paper, so the two samples are largely
 non-overlapping populations.
 
@@ -661,9 +662,9 @@ institution, and because most published finance papers circulate through SSRN
 rather than NBER.
 
 Two features of the data are reassuring about the assumption.  First, the
-direction distributions of matched and unmatched published papers are virtually
-identical (71.0\% vs.\ 74.3\% directional), suggesting that NBER circulation is
-not systematically related to finding direction among eventually-published papers.
+direction distributions of matched and unmatched published papers are similar
+(66.7\% vs.\ 75.3\% directional), suggesting that NBER circulation is
+not strongly related to finding direction among eventually-published papers.
 Second, NBER selection, if anything, makes our estimates \textit{conservative}:
 if NBER researchers have higher-quality null results than the average researcher,
 the true publication premium for directional findings would be larger than we
@@ -818,21 +819,21 @@ unchanged.
 \midrule
 Directional     & $1.215^{***}$ &               &               &               &               &               \\
                 & $(0.161)$     &               &               &               &               &               \\[4pt]
-Positive ($+1$) &               & $1.195^{***}$ & $1.189^{***}$ & $1.194^{***}$ & $1.191^{***}$ & $1.202^{***}$ \\
-                &               & $(0.207)$     & $(0.207)$     & $(0.207)$     & $(0.208)$     & $(0.215)$     \\[4pt]
-Negative ($-1$) &               & $1.231^{***}$ & $1.201^{***}$ & $1.223^{***}$ & $1.202^{***}$ & $1.274^{***}$ \\
-                &               & $(0.194)$     & $(0.199)$     & $(0.197)$     & $(0.199)$     & $(0.208)$     \\[4pt]
+Positive ($+1$) &               & $1.195^{***}$ & $1.189^{***}$ & $1.194^{***}$ & $1.191^{***}$ & $1.176^{***}$ \\
+                &               & $(0.207)$     & $(0.207)$     & $(0.207)$     & $(0.208)$     & $(0.212)$     \\[4pt]
+Negative ($-1$) &               & $1.231^{***}$ & $1.201^{***}$ & $1.223^{***}$ & $1.202^{***}$ & $1.250^{***}$ \\
+                &               & $(0.194)$     & $(0.199)$     & $(0.197)$     & $(0.199)$     & $(0.205)$     \\[4pt]
 Year trend      &               &               & $0.009$       &               & $0.009$       & $0.001$       \\
                 &               &               & $(0.013)$     &               & $(0.013)$     & $(0.013)$     \\[4pt]
-$\log(N_{\text{authors}})$ & & &             &               & $0.024$       & $-0.054$      \\
-                &               &               &               &               & $(0.301)$     & $(0.315)$     \\[4pt]
-Quasi-Exp.\ ID  &               &               &               &               &               & $0.749^{***}$ \\
-                &               &               &               &               &               & $(0.171)$     \\[4pt]
+$\log(N_{\text{authors}})$ & & &             &               & $0.024$       & $-0.021$      \\
+                &               &               &               &               & $(0.301)$     & $(0.312)$     \\[4pt]
+Quasi-Exp.\ ID  &               &               &               &               &               & $0.613^{***}$ \\
+                &               &               &               &               &               & $(0.168)$     \\[4pt]
 Decade FEs      & No            & No            & No            & Yes           & No            & No            \\
-Intercept       & $-0.218^{**}$ & $-0.218^{**}$ & $-0.207^{*}$  & $-0.188$      & $-0.239$      & $-0.488$      \\
+Intercept       & $-0.218^{**}$ & $-0.218^{**}$ & $-0.207^{*}$  & $-0.188$      & $-0.239$      & $-0.471$      \\
 \midrule
 $N$             & 296           & 296           & 296           & 296           & 296           & 296           \\
-Pseudo $R^2$    & 0.157         & 0.157         & 0.159         & 0.161         & 0.159         & 0.210         \\
+Pseudo $R^2$    & 0.157         & 0.157         & 0.159         & 0.161         & 0.159         & 0.194         \\
 \bottomrule
 \end{tabular}
 \begin{tablenotes}
@@ -1077,9 +1078,9 @@ direction, we regard the lower bound as conservative.
 
 \medskip
 \noindent\textbf{R9 --- Matched-pairs direction stability.}
-Among the 31 papers matched between their NBER working paper and a top-journal
-publication, the direction distribution is nearly identical to the full published
-sample (71.0\% directional versus 74.3\% for unmatched published papers).
+Among the 33 papers matched between their NBER working paper and a top-journal
+publication, the direction distribution is similar to the full published
+sample (66.7\% directional versus 75.3\% for unmatched published papers).
 Publication rates by direction code within this matched subsample are consistent
 with the full-sample results, providing evidence that the non-overlapping
 structure of our two samples does not introduce direction-specific selection bias.
@@ -1088,7 +1089,7 @@ structure of our two samples does not introduce direction-specific selection bia
 \noindent\textbf{R10 --- AFA conference baseline.}
 The central identification concern is that NBER working papers and
 top-journal articles are drawn from fundamentally different populations:
-only 16.9\% of published papers are matched to an NBER counterpart, so the
+only 18.0\% of published papers are matched to an NBER counterpart, so the
 two samples are largely non-overlapping cross-sections that may differ in
 quality, topic mix, and institutional origin.  To address this concern we
 construct an alternative pre-publication baseline using papers presented at
@@ -1348,7 +1349,7 @@ Five main threats to the validity of our analysis deserve discussion.
 The most important limitation is that NBER working papers and published journal
 articles are not different states of the same population of papers.  They are
 largely non-overlapping samples selected through different institutional
-processes: only 31 of 183 published papers (16.9\%) are matched to an NBER
+processes: only 33 of 183 published papers (18.0\%) are matched to an NBER
 working paper.  Our design therefore compares two different cross-sections,
 not papers tracked through the editorial filter.  The observed difference in
 direction distributions is consistent with editorial selection but equally
@@ -1425,8 +1426,8 @@ researchers would be larger than we document.  NBER selection---if
 anything---biases against finding a significance-sorting pattern, reinforcing
 rather than undermining our main conclusion.  Absent submission-level data,
 the two reassuring features of our sample remain: the direction distributions
-of matched and unmatched published papers are virtually identical (71.0\%
-vs.\ 74.3\% directional), and we cannot follow the same papers through the
+of matched and unmatched published papers are similar (66.7\%
+vs.\ 75.3\% directional), and we cannot follow the same papers through the
 editorial filter as \citet{Franco2014} do for NSF-funded social science
 projects or as \citet{DellaVigna2022} do for institutional RCTs.
 
