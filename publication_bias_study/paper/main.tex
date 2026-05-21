@@ -551,29 +551,38 @@ reports the full $3\times3$ confusion matrix.
 \label{subsec:linking}
 
 Our probit analysis requires knowing which NBER working papers were eventually
-published in one of the three journals.  We use the RapidFuzz library to
-compute token-sort Levenshtein similarity between normalized titles, requiring
-author surname overlap as a second confirmation criterion.  Papers with a
-similarity score of 90 or above are automatically linked; scores in $[75, 90)$
-are flagged for manual review; scores below 75 are treated as unmatched.
+published in one of the three journals.  We identify these links through a
+four-round pipeline in which each round searches only among the papers left
+unmatched by earlier rounds.
 
-Among the 183 in-scope journal papers, 22 (12.0\%) are automatically matched to
-an NBER working paper, 4 (2.2\%) are manually confirmed matches (fuzzy scores in $[75,90)$), 2 (1.1\%) are
-identified via API and text-similarity methods, 5 (2.7\%) matched via
-full-text PDF comparison of published papers against NBER drafts, and 150 (82.0\%)
-remain unmatched after searching all 30,219 raw NBER papers in the database.
-The improved match rate (versus na\"{i}ve in-scope-only search) was achieved by
-widening the matching pool from the 113 in-scope NBER papers to the full NBER
-archive and correcting a tokenisation bug in the fuzzy-matching dictionary
-index.  The residual 82.0\% unmatched rate reflects the fact that most
-published finance papers in this domain are circulated as SSRN or institutional
-working papers rather than through NBER.  Because our pipeline goes beyond
-title matching---using full-text comparison of published PDFs against NBER
-drafts to handle papers where titles were substantially revised during peer
-review---the 150 unmatched papers are those for which no NBER preprint could
-be found by any method.  External API verification via OpenAlex, Unpaywall,
-and CrossRef confirms that these 150 papers have no retrievable NBER preprint
-record.
+In the \textit{first round} we apply token-sort Levenshtein similarity
+(RapidFuzz) to normalized titles, comparing each of the 183 journal papers
+against the full NBER archive of 30,219 working papers.  A shared author
+surname is required as a second gate.  Scores of 90 or above are
+automatically linked; scores in $[75, 90)$ are flagged for manual inspection
+by the authors.  In the \textit{second round} we query six external
+sources---OpenAlex, Semantic Scholar, the NBER search endpoint, CrossRef
+(queried in both the preprint-to-journal and journal-to-preprint directions),
+and Unpaywall---and complement these with TF-IDF cosine similarity over paper
+abstracts with an author-overlap gate.  In the \textit{third round} a large
+language model (Claude) reads each unmatched journal paper's abstract
+alongside the first four pages of the top-40 NBER candidate PDFs and decides
+whether they describe the same research project.  In the \textit{fourth
+round} we supply Claude with the complete published journal PDF alongside the
+NBER draft, enabling identification of matches where both the title and the
+abstract were substantially rewritten during peer review.
+
+The pipeline identifies 33 matched pairs among the 183 journal papers.
+Round~1 accounts for 26 of these: 22 automatic matches (score $\geq 90$) and
+4 confirmed after manual inspection (score in $[75, 90)$).  Rounds~2, 3, and
+4 add 2, 3, and 2 further matches, respectively.  The remaining 150 journal
+papers (82.0\%) are unmatched.  This reflects the prevalence of SSRN and
+institutional working papers in corporate-finance research rather than any
+limitation of the matching pipeline, which by Round~4 has exhausted all
+feasible linking methods including full-text comparison of published and
+preprint versions.  External verification via OpenAlex, Unpaywall, and
+CrossRef independently confirms that these 150 papers have no retrievable
+NBER preprint record.
 
 To assess whether the unmatched published papers are representative of the
 direction distribution, we compare the direction codes of the 33 matched papers
@@ -766,7 +775,7 @@ Total           & 296 & 193 & 65.2\% & \\
 are treated as unpublished.  95\% confidence intervals use the Wilson
 score method.  A $\chi^2$ test of homogeneity across the three rates
 gives $\chi^2 = 58.6$ ($p < 0.001$).  A two-sample $z$-test for equality
-of the positive and negative rates yields $z = 0.15$ ($p = 0.88$).
+of the positive and negative rates yields $z = 0.35$ ($p = 0.73$).
 \end{tablenotes}
 \end{threeparttable}
 \end{table}
