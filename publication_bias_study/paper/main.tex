@@ -456,9 +456,7 @@ candidates, a pass rate of 32.9\%.  The high rejection rate reflects the
 strictness of our causal-effect criterion: a paper that describes a regulation,
 discusses its mechanics, or studies firm responses without identifying a causal
 effect is excluded.  The final analysis sample consists of \textbf{296 papers}:
-113 NBER working papers (of which 10 are in-scope matches to journal papers
-in our sample; 33 total NBER-to-journal links are identified but only 10 pass
-the in-scope filter) and 183 published journal articles (38 in the \JF{},
+113 NBER working papers and 183 published journal articles (38 in the \JF{},
 67 in the \RFS{}, and 78 in the \JFE{}).
 
 \begin{table}[H]
@@ -560,7 +558,7 @@ similarity score of 90 or above are automatically linked; scores in $[75, 90)$
 are flagged for manual review; scores below 75 are treated as unmatched.
 
 Among the 183 in-scope journal papers, 22 (12.0\%) are automatically matched to
-an NBER working paper, 4 (2.2\%) require manual confirmation, 2 (1.1\%) are
+an NBER working paper, 4 (2.2\%) are manually confirmed matches (fuzzy scores in $[75,90)$), 2 (1.1\%) are
 identified via API and text-similarity methods, 5 (2.7\%) matched via
 full-text PDF comparison of published papers against NBER drafts, and 150 (82.0\%)
 remain unmatched after searching all 30,219 raw NBER papers in the database.
@@ -569,10 +567,13 @@ widening the matching pool from the 113 in-scope NBER papers to the full NBER
 archive and correcting a tokenisation bug in the fuzzy-matching dictionary
 index.  The residual 82.0\% unmatched rate reflects the fact that most
 published finance papers in this domain are circulated as SSRN or institutional
-working papers rather than through NBER, and that title revisions during the
-editorial process prevent fuzzy matching even when an NBER draft exists.
-External API verification via OpenAlex, Unpaywall, and CrossRef confirms that
-these 150 papers have no retrievable NBER preprint record.
+working papers rather than through NBER.  Because our pipeline goes beyond
+title matching---using full-text comparison of published PDFs against NBER
+drafts to handle papers where titles were substantially revised during peer
+review---the 150 unmatched papers are those for which no NBER preprint could
+be found by any method.  External API verification via OpenAlex, Unpaywall,
+and CrossRef confirms that these 150 papers have no retrievable NBER preprint
+record.
 
 To assess whether the unmatched published papers are representative of the
 direction distribution, we compare the direction codes of the 33 matched papers
