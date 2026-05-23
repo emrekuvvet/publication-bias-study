@@ -1216,7 +1216,7 @@ R10: AFA conference baseline & Directional & $1.403^{***}$ & $<$0.001 & 238 \\
 on the indicated variable.  The omitted category is Null/Mixed ($0$) except
 in R4 where it is Null/Mixed ($0$) vs.\ any directional finding.  R1 restricts
 to papers with quasi-experimental identification (RDD, IV, DiD, Event Study)
-as classified by our LLM pipeline ($N = 141$).  All probit
+as classified by our LLM pipeline ($N = 146$).  All probit
 specifications include a linear year trend.  R4 ``+ controls'' adds
 $\log(1+N_{\text{authors}})$.  R8 is a lower-bound bounding specification:
 the abstract-length control is partly endogenous (journals require longer
@@ -1708,10 +1708,26 @@ contains:
   classification (keyword + LLM)
 \item \texttt{scripts/04\_code\_direction.py} --- LLM direction coding
 \item \texttt{scripts/05\_link\_nber\_to\_published.py} --- Fuzzy title
-  matching for NBER-to-journal linkage (sample period: 2000--2024)
+  matching for NBER-to-journal linkage (Round 1)
+\item \texttt{scripts/05b\_improve\_matching.py} --- API-based abstract
+  matching for unmatched NBER papers (Round 2)
+\item \texttt{scripts/05c\_fulltext\_matching.py} --- LLM full-text
+  matching via NBER PDFs (Round 3)
+\item \texttt{scripts/05d\_published\_fulltext\_matching.py} --- LLM
+  matching using published PDF full text (Round 4)
 \item \texttt{scripts/06\_analysis\_main.py} --- Primary probit regressions
   and summary statistics
 \item \texttt{scripts/08\_robustness.py} --- Robustness checks
+\item \texttt{scripts/09\_code\_id\_strategy.py} --- LLM identification-strategy
+  classification (RDD, IV, DiD, Event Study)
+\item \texttt{scripts/10\_collect\_afa.py} --- AFA annual meeting program
+  collection (2006--2024)
+\item \texttt{scripts/10b\_enrich\_afa\_abstracts.py} --- Abstract enrichment
+  for AFA papers via OpenAlex, CrossRef, and NBER
+\item \texttt{scripts/10c\_fix\_2014\_2016\_parsing.py} --- Corrected
+  HTML parsing for 2014--2016 AFA program pages
+\item \texttt{scripts/11\_afa\_analysis.py} --- AFA-baseline probit
+  regressions (R10 robustness check)
 \item \texttt{data/} --- Final analysis dataset in Parquet format
 \item \texttt{paper/} --- \LaTeX{} source for this paper
 \end{itemize}
