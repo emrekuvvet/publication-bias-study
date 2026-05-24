@@ -50,6 +50,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import numpy as np
 import pandas as pd
 import statsmodels.formula.api as smf
+import httpx
 from anthropic import Anthropic
 from dotenv import load_dotenv
 from rapidfuzz import fuzz, process
@@ -73,7 +74,7 @@ AFA_MATCHED   = ROOT / "data" / "classified" / "afa_matched.parquet"
 OUT_DIR = ROOT / "output" / "tables"
 
 ANTHROPIC_MODEL = "claude-haiku-4-5-20251001"
-WORKERS = 8
+WORKERS = 1
 
 FUZZY_THRESHOLD = 85.0   # slightly tighter than NBER (85 vs 80) for AFA
 
@@ -393,7 +394,7 @@ def step_classify(no_api: bool = False) -> None:
         api_key = os.environ.get("ANTHROPIC_API_KEY", "")
         if not api_key:
             raise RuntimeError("ANTHROPIC_API_KEY not set in .env")
-        client = Anthropic(api_key=api_key)
+        client = Anthropic(api_key=api_key, timeout=httpx.Timeout(30.0))
         lock   = threading.Lock()
         results: dict[str, dict] = {}
 
@@ -607,7 +608,7 @@ def step_direction(no_api: bool = False) -> None:
         api_key = os.environ.get("ANTHROPIC_API_KEY", "")
         if not api_key:
             raise RuntimeError("ANTHROPIC_API_KEY not set in .env")
-        client = Anthropic(api_key=api_key)
+        client = Anthropic(api_key=api_key, timeout=httpx.Timeout(30.0))
         lock   = threading.Lock()
         results: dict[str, dict] = {}
 
