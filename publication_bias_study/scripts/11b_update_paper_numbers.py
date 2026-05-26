@@ -92,6 +92,20 @@ def patch(text: str, old: str, new: str, label: str) -> str:
     return result
 
 
+def patch_re(text: str, pattern: str, replacement: str, label: str) -> str:
+    """Replace first regex match with literal replacement string."""
+    m = re.search(pattern, text)
+    if m is None:
+        print(f"  WARN [{label}]: pattern not found — skipping")
+        return text
+    old = m.group(0)
+    if old == replacement:
+        return text
+    result = text[:m.start()] + replacement + text[m.end():]
+    print(f"  [{label}]  '{old}'  →  '{replacement}'")
+    return result
+
+
 def main():
     print("Loading analysis outputs ...")
     try:
@@ -132,74 +146,74 @@ def main():
     year_p_inline = "0.01" if d["year_sig"].strip() == "***" else "0.05"
 
     # 1. Abstract coverage sentence
-    tex = patch(tex,
-        f"2,775 of the 4,080 AFA papers (68.0\\% overall",
+    tex = patch_re(tex,
+        r'[\d,]+ of the [\d,]+ AFA papers \([\d.]+\\% overall',
         f"{num(d['abs_count'])} of the {num(d['total_papers'])} AFA papers ({d['abs_pct']:.1f}\\% overall",
         "abs coverage sentence")
 
     # 2. Abstract count in robustness note
-    tex = patch(tex,
-        "(2,775 total; 125 in-scope)",
+    tex = patch_re(tex,
+        r'\([\d,]+ total; \d+ in-scope\)',
         f"({num(d['abs_count'])} total; {d['n_with_abs']} in-scope)",
         "abs count robustness note")
 
-    # 3. Total in-scope N (inline prose)
-    tex = patch(tex,
-        "yielding 156",
+    # 3. Total in-scope N (inline prose) — matches "yielding NNN" at line-end before "in-scope"
+    tex = patch_re(tex,
+        r'yielding \d+(?=\nin-scope)',
         f"yielding {d['n_inscope']}",
         "N inscope prose")
 
     # 4. Published/matched count + pct
-    tex = patch(tex,
-        "Thirty-five AFA papers (22.4\\%)",
+    tex = patch_re(tex,
+        r'[A-Z][A-Za-z-]* AFA papers \([\d.]+\\%\)',
         f"{_pub_words} AFA papers ({d['pub_pct_total']:.1f}\\%)",
         "published/matched count prose")
 
     # 5. Bivariate regression (inline)
-    tex = patch(tex,
-        f"$\\hat\\beta = 0.513^{{**}}$ (s.e.\\ 0.245, $p < 0.05$, $N = 156$)",
+    tex = patch_re(tex,
+        r'\$\\hat\\beta = [\d.]+\^\{[*]+\}\$ \(s\.e\.\\ [\d.]+, \$p < [\d.]+\$, \$N = \d+\$\)',
         f"$\\hat\\beta = {fmt_coef(d['biv_coef'], d['biv_sig'])}$ (s.e.\\ {d['biv_se']:.3f}, $p < {biv_p_inline}$, $N = {d['biv_N']}$)",
         "bivariate coef inline")
 
     # 6. Publication rate directional
-    tex = patch(tex,
-        "27.8\\% rate (27 of 97)",
+    tex = patch_re(tex,
+        r'[\d.]+\\% rate \(\d+ of \d+\)',
         f"{d['pub_rate_dir']:.1f}\\% rate ({d['n_published_dir']} of {d['n_directional']})",
         "pub rate directional")
 
     # 7. Null publication rate (vs. directional)
-    tex = patch(tex,
-        "13.6\\% for null-finding papers (8 of 59)",
+    tex = patch_re(tex,
+        r'[\d.]+\\% for null-finding papers \(\d+ of \d+\)',
         f"{null_rate:.1f}\\% for null-finding papers ({n_null_published} of {n_null})",
         "null pub rate")
 
     # 8. +Year regression (inline)
-    tex = patch(tex,
-        f"($\\hat\\beta = 0.506^{{**}}$, s.e.\\ 0.248)",
+    tex = patch_re(tex,
+        r'\(\$\\hat\\beta = [\d.]+\^\{[*]+\}\$, s\.e\.\\ [\d.]+\)',
         f"($\\hat\\beta = {fmt_coef(d['year_coef'], d['year_sig'])}$, s.e.\\ {d['year_se']:.3f})",
         "year coef inline")
 
-    # 9. Robustness table row — bivariate
-    tex = patch(tex,
-        f"$0.513^{{**}}$ & $<$0.05 & 156 \\\\",
-        f"${fmt_coef(d['biv_coef'], d['biv_sig'])}$ & {biv_pval} & {d['biv_N']} \\\\",
+    # 9. Robustness table row — bivariate (R10 row)
+    tex = patch_re(tex,
+        r'R10: AFA conference baseline & Directional & \$[\d.]+\^\{[*]+\}\$ & [^&]+ & \d+ \\\\',
+        f"R10: AFA conference baseline & Directional & ${fmt_coef(d['biv_coef'], d['biv_sig'])}$ & {biv_pval} & {d['biv_N']} \\\\",
         "bivariate table row")
 
-    # 10. Robustness table row — +year
-    tex = patch(tex,
-        f"$0.506^{{**}}$ & $<$0.05 & 156 \\\\",
-        f"${fmt_coef(d['year_coef'], d['year_sig'])}$ & {year_pval} & {d['biv_N']} \\\\",
+    # 10. Robustness table row — +year (AFA control row)
+    tex = patch_re(tex,
+        r'\\small\{\[AFA pre-pub\.\\ control\]\} & \(\+ year\) & \$[\d.]+\^\{[*]+\}\$ & [^&]+ & \d+ \\\\',
+        f"\\small{{[AFA pre-pub.\\ control]}} & (+ year) & ${fmt_coef(d['year_coef'], d['year_sig'])}$ & {year_pval} & {d['biv_N']} \\\\",
         "year table row")
 
     # 11. Table caption N
-    tex = patch(tex,
-        "$N=156$ in-scope",
+    tex = patch_re(tex,
+        r'\$N=\d+\$ in-scope',
         f"$N={d['n_inscope']}$ in-scope",
         "caption N")
 
     # 12. Match rate in robustness note
-    tex = patch(tex,
-        f"22.4\\% match rate; $N_{{\\text{{directional}}}}=97$",
+    tex = patch_re(tex,
+        r'[\d.]+\\% match rate; \$N_\{\\text\{directional\}\}=\d+\$',
         f"{d['pub_pct_total']:.1f}\\% match rate; $N_{{\\text{{directional}}}}={d['n_directional']}$",
         "match rate note")
 
