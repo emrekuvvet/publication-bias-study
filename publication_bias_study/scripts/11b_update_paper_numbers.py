@@ -39,8 +39,15 @@ def load_numbers() -> dict:
 
     # --- Abstract coverage ---
     enr = pd.read_parquet(ROOT / "data" / "raw" / "afa_papers_enriched.parquet")
+    _noise = enr["title"].str.contains(
+        r'(?i)^(?:Session Chair|Location:|AFA Lecture)'
+        r'|\d{4}.*\bthrough\b'
+        r'|^(?:Finance|Economics|Accounting|Real Estate)\s+(?:Group|Unit|Section)\s*$'
+        r'|^Finance and Economics|^Economics,\s*Finance',
+        regex=True, na=False)
+    enr = enr[~_noise]
     has = enr["abstract"].notna() & (enr["abstract"].str.strip() != "")
-    d["total_papers"] = len(enr)          # should stay 4,080
+    d["total_papers"] = len(enr)
     d["abs_count"]    = int(has.sum())
     d["abs_pct"]      = has.mean() * 100
 
