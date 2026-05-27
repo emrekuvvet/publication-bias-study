@@ -87,23 +87,25 @@ def extract_abstract_from_html(html: str, title: str) -> tuple[str, str]:
     """Extract abstract and page title from ResearchGate HTML."""
     soup = BeautifulSoup(html, "html.parser")
 
-    # Try og:description meta tag first — often the cleanest abstract
-    og_desc = soup.find("meta", property="og:description")
-    if og_desc and og_desc.get("content"):
-        candidate = og_desc["content"].strip()
+    # og:description contains "Request PDF | Title | ABSTRACT... | Find, read..."
+    # Strip the boilerplate and extract just the abstract portion.
+    for attr in [{"property": "og:description"}, {"name": "description"}]:
+        tag = soup.find("meta", attr)
+        if not tag:
+            continue
+        raw = tag.get("content", "").strip()
+        # Strip RG framing: "Request PDF | Title | ABSTRACT | Find, read..."
+        m = re.match(
+            r'^(?:Request(?:\s+full-text)?\s+PDF|Article)\s*\|\s*.+?\|\s*(.+?)\s*\|\s*Find,\s*read',
+            raw, re.DOTALL,
+        )
+        candidate = re.sub(r"\.\.\.$", "", m.group(1)).strip() if m else raw
         if is_good(candidate) and content_valid(title, candidate):
             page_title = ""
             og_title = soup.find("meta", property="og:title")
             if og_title:
                 page_title = og_title.get("content", "").strip()
             return candidate, page_title
-
-    # Try meta description
-    meta_desc = soup.find("meta", attrs={"name": "description"})
-    if meta_desc and meta_desc.get("content"):
-        candidate = meta_desc["content"].strip()
-        if is_good(candidate) and content_valid(title, candidate):
-            return candidate, ""
 
     # Try known abstract div classes
     for cls in [
@@ -115,15 +117,12 @@ def extract_abstract_from_html(html: str, title: str) -> tuple[str, str]:
         div = soup.find(attrs={"class": re.compile(cls, re.I)})
         if div:
             text = div.get_text(" ", strip=True)
-            # Strip "Abstract" prefix
             text = re.sub(r"^[Aa]bstract[:\s]*", "", text).strip()
             if is_good(text) and content_valid(title, text):
                 return text, ""
 
-    # Fallback: regex search in raw HTML for abstract-like block
-    m = re.search(
-        r'"abstract"\s*:\s*"([^"]{100,2000})"', html
-    )
+    # Fallback: JSON abstract in page source
+    m = re.search(r'"abstract"\s*:\s*"([^"]{100,2000})"', html)
     if m:
         candidate = m.group(1).replace("\\n", " ").replace('\\"', '"').strip()
         if is_good(candidate) and content_valid(title, candidate):
@@ -133,32 +132,33 @@ def extract_abstract_from_html(html: str, title: str) -> tuple[str, str]:
 
 
 def rg_search(title: str) -> list[dict]:
-    """Search ResearchGate and return list of {url, title} candidates."""
-    q = title[:150]
-    url = f"https://www.researchgate.net/search/publication?q={requests.utils.quote(q)}"
+    """Use DuckDuckGo HTML search to find ResearchGate publication URLs."""
+    q = f'site:researchgate.net/publication "{title[:120]}"'
     try:
-        r = SESSION.get(url, timeout=TIMEOUT)
+        r = SESSION.get(
+            "https://html.duckduckgo.com/html/",
+            params={"q": q},
+            timeout=TIMEOUT,
+        )
         if r.status_code != 200:
             return []
         html = r.text
     except Exception:
         return []
 
-    # Extract publication URLs from search results
-    found = re.findall(
-        r'href="(/publication/\d+[^"]*)"', html
-    )
+    found = re.findall(r'researchgate\.net/publication/(\d+[^\s"&<]*)', html)
     seen = set()
     results = []
-    for path in found:
-        pub_id = re.match(r'/publication/(\d+)', path)
+    for slug in found:
+        pub_id = re.match(r"(\d+)", slug)
         if pub_id and pub_id.group(1) not in seen:
             seen.add(pub_id.group(1))
+            clean = slug.split("?")[0].rstrip(".,)")
             results.append({
-                "url": f"https://www.researchgate.net{path.split('?')[0]}",
+                "url": f"https://www.researchgate.net/publication/{clean}",
                 "pub_id": pub_id.group(1),
             })
-        if len(results) >= 5:
+        if len(results) >= 3:
             break
     return results
 
@@ -174,11 +174,46 @@ def fetch_publication(url: str, title: str) -> tuple[str, str]:
         return "", ""
 
 
+def wait_for_rg(max_wait: int = 86400) -> bool:
+    """Poll ResearchGate every 5 minutes until Cloudflare block clears."""
+    print("Waiting for ResearchGate to become accessible (polling every 5 min) ...")
+    waited = 0
+    while waited < max_wait:
+        time.sleep(300)
+        waited += 300
+        try:
+            r = SESSION.get(
+                "https://www.researchgate.net/publication/256012960",
+                timeout=TIMEOUT,
+            )
+            if r.status_code == 200:
+                print(f"  ResearchGate accessible after {waited//60} min.")
+                return True
+            print(f"  {waited//60} min elapsed: still {r.status_code} ...")
+        except Exception:
+            print(f"  {waited//60} min elapsed: request failed, retrying ...")
+    return False
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--force", action="store_true", help="ignore cache")
     ap.add_argument("--limit", type=int, default=0, help="max papers to process")
+    ap.add_argument("--no-wait", action="store_true", help="fail immediately if blocked")
     args = ap.parse_args()
+
+    # Check accessibility; wait if Cloudflare-blocked
+    try:
+        r = SESSION.get("https://www.researchgate.net/publication/256012960", timeout=TIMEOUT)
+        if r.status_code != 200:
+            if args.no_wait:
+                raise SystemExit(f"ResearchGate blocked ({r.status_code}). Run without --no-wait to wait.")
+            if not wait_for_rg():
+                raise SystemExit("Timed out waiting for ResearchGate to become accessible.")
+    except SystemExit:
+        raise
+    except Exception:
+        pass
 
     df = pd.read_parquet(PARQUET)
     has_abs = df["abstract"].notna() & (df["abstract"].str.strip() != "")
@@ -211,12 +246,12 @@ def main():
             abstract, source = "", "none"
 
             candidates = rg_search(title)
-            time.sleep(0.5)  # be polite
+            time.sleep(2.0)
 
             q_norm = normalise(title)
             for cand in candidates:
                 page_abstract, page_title = fetch_publication(cand["url"], title)
-                time.sleep(0.4)
+                time.sleep(1.5)
 
                 if not page_abstract:
                     continue
@@ -232,6 +267,9 @@ def main():
                 break
 
             cache[pid] = {"abstract": abstract, "source": source}
+
+            # Conservative delay with jitter to avoid Cloudflare re-triggering
+            time.sleep(3.0 + (hash(pid) % 20) / 10.0)
 
             # Save cache periodically
             if len(cache) % 50 == 0:
