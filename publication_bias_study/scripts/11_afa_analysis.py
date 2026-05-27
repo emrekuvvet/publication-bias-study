@@ -361,6 +361,16 @@ def step_classify(no_api: bool = False) -> None:
     print("=== Step A: Keyword filter + in-scope classification ===")
     df = _load_afa_papers()
 
+    # Drop session headers, date-range rows, group labels, and AFA Lectures
+    _noise = df["title"].str.contains(
+        r'(?i)^(?:Session Chair|Location:|AFA Lecture)'
+        r'|\d{4}.*\bthrough\b'
+        r'|^(?:Finance|Economics|Accounting|Real Estate)\s+(?:Group|Unit|Section)\s*$'
+        r'|^Finance and Economics|^Economics,\s*Finance',
+        regex=True, na=False)
+    df = df[~_noise].reset_index(drop=True)
+    print(f"  Excluded {_noise.sum()} non-paper rows (session headers / group labels)")
+
     # Build combined text (title + abstract) — same approach as script 03
     df["abstract"] = df.get("abstract", pd.Series("", index=df.index)).fillna("")
     df["combined_text"] = df["title"].fillna("") + " " + df["abstract"]

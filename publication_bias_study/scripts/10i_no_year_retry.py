@@ -133,7 +133,12 @@ def main():
 
     df = pd.read_parquet(PARQUET)
     has_abs = df["abstract"].notna() & (df["abstract"].str.strip() != "")
-    noise = df["title"].str.startswith(("Session Chair", "Location:"))
+    noise = df["title"].str.contains(
+        r'(?i)^(?:Session Chair|Location:|AFA Lecture)'
+        r'|\d{4}.*\bthrough\b'
+        r'|^(?:Finance|Economics|Accounting|Real Estate)\s+(?:Group|Unit|Section)\s*$'
+        r'|^Finance and Economics|^Economics,\s*Finance',
+        regex=True, na=False)
     missing = df[~has_abs & ~noise].copy()
     print(f"Papers missing abstracts: {len(missing)}")
     print(f"Starting coverage: {has_abs.sum():,} / {len(df):,} ({has_abs.mean()*100:.1f}%)")
