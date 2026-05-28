@@ -40,7 +40,7 @@ def load_numbers() -> dict:
     # --- Abstract coverage ---
     enr = pd.read_parquet(ROOT / "data" / "raw" / "afa_papers_enriched.parquet")
     _noise = enr["title"].str.contains(
-        r'(?i)^(?:Session Chair|Location:|AFA Lecture)'
+        r'(?i)^(?:Session Chair|Location:|AFA Lecture|The Lecture)'
         r'|\d{4}.*\bthrough\b'
         r'|^(?:Finance|Economics|Accounting|Real Estate)\s+(?:Group|Unit|Section)\s*$'
         r'|^Finance and Economics|^Economics,\s*Finance',
