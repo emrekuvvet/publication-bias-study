@@ -1,15 +1,16 @@
 """
 10o_web_search_abstracts.py
 ----------------------------
-Fetches abstracts for remaining missing papers via Google Scholar
-(plain requests — no browser needed, no CAPTCHA at modest request rates).
+Fetches abstracts for remaining missing papers.
 
 Pipeline per paper:
-  1. Search Google Scholar for the paper title
-  2. Extract the snippet (.gs_rs element) — contains the abstract opening
-  3. Fuzzy-validate title match (token_set_ratio ≥ FUZZY_MIN)
-  4. Content-validate (≥2 significant title words present in snippet)
-  5. If snippet too short, fetch the first result URL to get a fuller abstract
+  1. Extract author surnames from the `authors` column
+  2. Search IDEAS/REPEC with "title + surnames" — no rate limiting, high recall
+     a. Extract abstract from search result snippet (text after <hr/>)
+     b. If no snippet, fetch the IDEAS paper page and extract abstract
+  3. Fallback: Google Scholar plain requests (~3-5s delay to avoid CAPTCHA)
+     a. Extract snippet from .gs_rs element
+     b. If no snippet, fetch the first result URL
 
 Usage:
     python scripts/10o_web_search_abstracts.py
@@ -36,10 +37,11 @@ PARQUET    = ROOT / "data" / "raw" / "afa_papers_enriched.parquet"
 CACHE_PATH = ROOT / "data" / "raw" / "afa_10o_cache.json"
 LOG_PATH   = ROOT / "validation" / "abstract_10o_matches.csv"
 
-FUZZY_MIN   = 68
-MAX_RESULTS = 4   # fallback page URLs to try
-TIMEOUT     = 15
-SCHOLAR_DELAY = (3.0, 5.5)   # random sleep range between Scholar requests
+FUZZY_MIN    = 68
+MAX_RESULTS  = 4
+TIMEOUT      = 15
+IDEAS_DELAY  = (0.8, 1.5)    # IDEAS has no strict rate limit but be polite
+SCHOLAR_DELAY = (3.0, 5.5)   # Scholar blocks at higher rates
 
 SCHOLAR_HEADERS = {
     "User-Agent": (
@@ -97,11 +99,181 @@ def should_skip(url: str) -> bool:
     return any(d in url for d in SKIP_DOMAINS)
 
 
+def extract_surnames(authors_str: str) -> list[str]:
+    """Extract up to 3 author surnames from 'First Last, Affil and First Last, Affil' strings."""
+    if not authors_str:
+        return []
+    parts = re.split(r"\s+and\s+", str(authors_str))
+    surnames = []
+    for part in parts[:3]:
+        name_token = part.split(",")[0].strip()
+        words = name_token.split()
+        if words:
+            surnames.append(words[-1].rstrip("."))
+    return surnames
+
+
+# ── IDEAS/REPEC search ──────────────────────────────────────────────────────
+
+IDEAS_SESSION = requests.Session()
+IDEAS_SESSION.headers.update({"User-Agent": "Mozilla/5.0"})
+
+
+def _ideas_abstract_from_li(li, title: str) -> str:
+    """Extract abstract text from an IDEAS <li> result item (text after <hr/>)."""
+    hr = li.find("hr")
+    if not hr:
+        return ""
+    parts = []
+    for sib in hr.next_siblings:
+        if sib.name == "i":   # RepEC handle marker — stop here
+            break
+        if sib.name == "br":
+            break
+        if isinstance(sib, str):
+            parts.append(sib)
+        elif sib.name not in ("script", "span"):
+            parts.append(sib.get_text(" "))
+    txt = re.sub(r"\s+", " ", " ".join(parts)).strip()
+    # Relax content_valid to 1 overlap: title fuzzy match already verified relevance
+    if is_good(txt) and content_valid(title, txt, min_overlap=1):
+        return txt
+    return ""
+
+
+def _ideas_abstract_from_page(url: str, title: str) -> str:
+    """Fetch an IDEAS paper page and extract the abstract."""
+    try:
+        r = IDEAS_SESSION.get(url, timeout=TIMEOUT)
+        if r.status_code != 200:
+            return ""
+    except Exception:
+        return ""
+    soup = BeautifulSoup(r.text, "html.parser")
+    text = soup.get_text(" ")
+    idx = text.find("Abstract")
+    if idx == -1:
+        return ""
+    chunk = text[idx + 8 : idx + 2500]
+    for stop in ["Download", "JEL", "Keywords", "Suggested Citation",
+                 "Related works", "References", "No abstract is available"]:
+        si = chunk.find(stop)
+        if si > 50:
+            chunk = chunk[:si]
+    txt = re.sub(r"\s+", " ", chunk).strip()
+    if is_good(txt) and content_valid(title, txt):
+        return txt
+    return ""
+
+
+def ideas_search(title: str, surnames: list[str]) -> tuple[str, str]:
+    """Search IDEAS with title+surnames. Returns (abstract, source_label)."""
+    query = f"{title} {' '.join(surnames)}" if surnames else title
+    try:
+        r = IDEAS_SESSION.post(
+            "https://ideas.repec.org/cgi-bin/htsearch2",
+            data={"q": query[:200], "method": "and", "fmt": "score"},
+            timeout=TIMEOUT,
+        )
+    except Exception:
+        return "", ""
+
+    if r.status_code != 200:
+        return "", ""
+
+    soup = BeautifulSoup(r.text, "html.parser")
+    ol = soup.find("ol", class_="list-group")
+    if not ol:
+        return "", ""
+
+    q_norm = normalise(title)
+    for li in ol.find_all("li")[:6]:
+        link = li.find("a")
+        if not link:
+            continue
+        # use get_text(" ") to preserve spaces between <b> tags
+        cand_title = re.sub(r"\s+", " ", link.get_text(" ")).strip()
+        score = fuzz.token_set_ratio(q_norm, normalise(cand_title))
+        if score < FUZZY_MIN:
+            continue
+
+        # Try snippet in search result first
+        abstract = _ideas_abstract_from_li(li, title)
+        if abstract:
+            return abstract, "ideas_snippet_10o"
+
+        # Fallback: fetch the IDEAS paper page
+        href = link.get("href", "")
+        if href:
+            abstract = _ideas_abstract_from_page(href, title)
+            if abstract:
+                return abstract, "ideas_page_10o"
+
+    return "", ""
+
+
+# ── Google Scholar ──────────────────────────────────────────────────────────
+
+SCHOLAR_SESSION = requests.Session()
+SCHOLAR_SESSION.headers.update(SCHOLAR_HEADERS)
+_scholar_blocked = False   # flip to True on first CAPTCHA, skip rest of run
+
+
+def scholar_search(title: str) -> tuple[str, list[str]]:
+    """Search Google Scholar. Returns (snippet_or_empty, [result_urls])."""
+    global _scholar_blocked
+    if _scholar_blocked:
+        return "", []
+    try:
+        r = SCHOLAR_SESSION.get(
+            "https://scholar.google.com/scholar",
+            params={"q": title[:120], "hl": "en"},
+            timeout=20,
+        )
+    except Exception:
+        return "", []
+
+    if r.status_code != 200:
+        return "", []
+
+    if "captcha" in r.text.lower() or "/sorry/" in r.url:
+        _scholar_blocked = True
+        return "", []
+
+    soup = BeautifulSoup(r.text, "html.parser")
+    q_norm = normalise(title)
+    snippet_abstract = ""
+    urls = []
+
+    result_blocks = soup.select(".gs_r.gs_or.gs_scl") or soup.select(".gs_r")
+    for block in result_blocks[:6]:
+        title_link = block.select_one(".gs_rt a")
+        if title_link:
+            href = title_link.get("href", "")
+            cand_title = title_link.get_text(strip=True)
+            if href.startswith("http") and not should_skip(href):
+                if fuzz.token_set_ratio(q_norm, normalise(cand_title)) >= FUZZY_MIN:
+                    urls.append(href)
+
+        if not snippet_abstract:
+            snip = block.select_one(".gs_rs")
+            if snip:
+                txt = re.sub(r"\s+", " ", snip.get_text(" ", strip=True)).strip()
+                txt = re.sub(r"^[Aa]bstract[:\s]*", "", txt).strip()
+                if is_good(txt) and content_valid(title, txt):
+                    t_link = block.select_one(".gs_rt")
+                    t_text = t_link.get_text(strip=True) if t_link else ""
+                    if fuzz.token_set_ratio(q_norm, normalise(t_text)) >= FUZZY_MIN:
+                        snippet_abstract = txt
+
+    return snippet_abstract, urls
+
+
+# ── General URL fetching ────────────────────────────────────────────────────
+
 def extract_abstract_from_html(html: str, title: str) -> str:
-    """Try multiple strategies to extract an abstract from arbitrary HTML."""
     soup = BeautifulSoup(html, "html.parser")
 
-    # 1. Meta og:description
     for attr in [{"property": "og:description"}, {"name": "description"}]:
         tag = soup.find("meta", attr)
         if tag:
@@ -109,12 +281,10 @@ def extract_abstract_from_html(html: str, title: str) -> str:
             if is_good(txt) and content_valid(title, txt):
                 return txt
 
-    # 2. Known abstract CSS selectors
     for sel in [
         ".abstract", ".abstract-text", "#abstract", "#abstractDiv",
         "[class*='abstract']", "[id*='abstract']",
-        ".description", ".summary", ".paper-abstract",
-        "dd",
+        ".description", ".summary", ".paper-abstract", "dd",
     ]:
         try:
             el = soup.select_one(sel)
@@ -126,7 +296,6 @@ def extract_abstract_from_html(html: str, title: str) -> str:
         except Exception:
             pass
 
-    # 3. "Abstract" heading → next sibling paragraph
     for heading in soup.find_all(["h2","h3","h4","h5","strong","b","dt"]):
         if re.match(r"^\s*abstract\s*$", heading.get_text(), re.I):
             sib = heading.find_next_sibling()
@@ -134,16 +303,9 @@ def extract_abstract_from_html(html: str, title: str) -> str:
                 txt = re.sub(r"\s+", " ", sib.get_text(" ", strip=True))
                 if is_good(txt) and content_valid(title, txt):
                     return txt
-            parent_sib = heading.parent.find_next_sibling() if heading.parent else None
-            if parent_sib:
-                txt = re.sub(r"\s+", " ", parent_sib.get_text(" ", strip=True))
-                if is_good(txt) and content_valid(title, txt):
-                    return txt
 
-    # 4. Largest <p> containing title keywords
     title_words = {w for w in normalise(title).split() if len(w) >= 4}
-    best_p = ""
-    best_overlap = 0
+    best_p, best_overlap = "", 0
     for p in soup.find_all("p"):
         txt = re.sub(r"\s+", " ", p.get_text(" ", strip=True))
         if not is_good(txt):
@@ -171,72 +333,15 @@ def fetch_abstract(url: str, title: str) -> str:
         return ""
 
 
-SCHOLAR_SESSION = requests.Session()
-SCHOLAR_SESSION.headers.update(SCHOLAR_HEADERS)
-
-
-def scholar_search(title: str) -> tuple[str, list[str]]:
-    """Search Google Scholar, return (snippet_abstract_or_empty, [result_urls])."""
-    try:
-        r = SCHOLAR_SESSION.get(
-            "https://scholar.google.com/scholar",
-            params={"q": title[:120], "hl": "en"},
-            timeout=20,
-        )
-    except Exception:
-        return "", []
-
-    if r.status_code != 200:
-        return "", []
-
-    # Check for CAPTCHA
-    if "captcha" in r.text.lower() or "/sorry/" in r.url:
-        return "", []
-
-    soup = BeautifulSoup(r.text, "html.parser")
-    q_norm = normalise(title)
-
-    snippet_abstract = ""
-    urls = []
-
-    result_blocks = soup.select(".gs_r.gs_or.gs_scl")
-    if not result_blocks:
-        result_blocks = soup.select(".gs_r")
-
-    for block in result_blocks[:6]:
-        # Title and URL
-        title_link = block.select_one(".gs_rt a")
-        if title_link:
-            href = title_link.get("href", "")
-            cand_title = title_link.get_text(strip=True)
-            if href.startswith("http") and not should_skip(href):
-                score = fuzz.token_set_ratio(q_norm, normalise(cand_title))
-                if score >= FUZZY_MIN:
-                    urls.append(href)
-
-        # Snippet (.gs_rs) — often contains abstract text
-        if not snippet_abstract:
-            snip = block.select_one(".gs_rs")
-            if snip:
-                txt = re.sub(r"\s+", " ", snip.get_text(" ", strip=True)).strip()
-                txt = re.sub(r"^[Aa]bstract[:\s]*", "", txt).strip()
-                if is_good(txt) and content_valid(title, txt):
-                    # Also check title match of the block
-                    t_link = block.select_one(".gs_rt")
-                    t_text = t_link.get_text(strip=True) if t_link else ""
-                    score = fuzz.token_set_ratio(q_norm, normalise(t_text))
-                    if score >= FUZZY_MIN:
-                        snippet_abstract = txt
-
-    return snippet_abstract, urls
-
+# ── Main processing loop ────────────────────────────────────────────────────
 
 def run(missing: pd.DataFrame, cache: dict) -> tuple[dict, list]:
     log_rows = []
 
-    for _, row in tqdm(missing.iterrows(), total=len(missing), desc="10o Scholar"):
-        pid   = str(row["paper_id"])
-        title = str(row.get("title", "") or "")
+    for _, row in tqdm(missing.iterrows(), total=len(missing), desc="10o search"):
+        pid     = str(row["paper_id"])
+        title   = str(row.get("title", "") or "")
+        authors = str(row.get("authors", "") or "")
 
         if pid in cache:
             entry    = cache[pid]
@@ -244,21 +349,27 @@ def run(missing: pd.DataFrame, cache: dict) -> tuple[dict, list]:
             source   = entry.get("source", "none")
         else:
             abstract, source = "", "none"
+            surnames = extract_surnames(authors)
 
-            snippet, urls = scholar_search(title)
-            # Polite delay: Scholar tolerates ~3-5s between requests
-            time.sleep(random.uniform(*SCHOLAR_DELAY))
+            # ── 1. IDEAS primary ──
+            abstract, source = ideas_search(title, surnames)
+            time.sleep(random.uniform(*IDEAS_DELAY))
 
-            if snippet:
-                abstract = snippet
-                source   = "web_scholar_snippet_10o"
-            else:
-                for url in urls[:MAX_RESULTS]:
-                    abstract = fetch_abstract(url, title)
-                    if abstract:
-                        source = "web_10o"
-                        break
-                    time.sleep(0.5)
+            # ── 2. Google Scholar fallback ──
+            if not abstract:
+                snippet, urls = scholar_search(title)
+                if not _scholar_blocked:
+                    time.sleep(random.uniform(*SCHOLAR_DELAY))
+                if snippet:
+                    abstract = snippet
+                    source   = "scholar_snippet_10o"
+                else:
+                    for url in urls[:MAX_RESULTS]:
+                        abstract = fetch_abstract(url, title)
+                        if abstract:
+                            source = "web_10o"
+                            break
+                        time.sleep(0.5)
 
             cache[pid] = {"abstract": abstract, "source": source}
 
@@ -280,8 +391,8 @@ def run(missing: pd.DataFrame, cache: dict) -> tuple[dict, list]:
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--force",  action="store_true", help="ignore cache")
-    ap.add_argument("--limit",  type=int, default=0, help="max papers to process")
+    ap.add_argument("--force", action="store_true", help="ignore cache")
+    ap.add_argument("--limit", type=int, default=0, help="max papers to process")
     args = ap.parse_args()
 
     df = pd.read_parquet(PARQUET)
@@ -298,7 +409,8 @@ def main():
         missing = missing.head(args.limit)
 
     print(f"Papers missing abstracts : {len(missing)}")
-    print(f"Starting coverage        : {has_abs.sum():,} / {(~noise).sum():,} ({has_abs[~noise].mean()*100:.1f}%)")
+    print(f"Starting coverage        : {has_abs[~noise].sum():,} / {(~noise).sum():,} "
+          f"({has_abs[~noise].mean()*100:.1f}%)")
 
     cache: dict = {}
     if CACHE_PATH.exists() and not args.force:
@@ -314,7 +426,6 @@ def main():
     with open(CACHE_PATH, "w") as f:
         json.dump(cache, f)
 
-    # Write abstracts to parquet
     for pid, entry in cache.items():
         abstract = entry.get("abstract", "")
         source   = entry.get("source", "none")
@@ -328,11 +439,12 @@ def main():
 
     df.to_parquet(PARQUET, index=False)
     has_new = df["abstract"].notna() & (df["abstract"].str.strip() != "")
-    gain = has_new.sum() - has_abs.sum()
+    gain = has_new[~noise].sum() - has_abs[~noise].sum()
 
     print(f"\nResults:")
     print(f"  New abstracts added : {gain}")
-    print(f"  Final coverage      : {has_new.sum():,} / {(~noise).sum():,} ({has_new[~noise].mean()*100:.1f}%)")
+    print(f"  Final coverage      : {has_new[~noise].sum():,} / {(~noise).sum():,} "
+          f"({has_new[~noise].mean()*100:.1f}%)")
 
     if log_rows:
         LOG_PATH.parent.mkdir(parents=True, exist_ok=True)
