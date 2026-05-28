@@ -99,17 +99,35 @@ def should_skip(url: str) -> bool:
     return any(d in url for d in SKIP_DOMAINS)
 
 
+_INSTITUTION_WORDS = {
+    "Finance", "Economics", "Business", "School", "University", "Institute",
+    "Department", "College", "Center", "Centre", "International", "National",
+    "Federal", "Research", "Studies", "Science", "Sciences", "Management",
+    "Accounting", "Marketing", "Law", "Medicine", "Technology", "Institute",
+}
+
+
 def extract_surnames(authors_str: str) -> list[str]:
-    """Extract up to 3 author surnames from 'First Last, Affil and First Last, Affil' strings."""
+    """Extract up to 3 author surnames from 'First Last, Affil and First Last, Affil' strings.
+
+    Splits on ' and ' but discards tokens whose first word is an institution
+    keyword (e.g. 'Finance and Economics' inside an affiliation string).
+    """
     if not authors_str:
         return []
     parts = re.split(r"\s+and\s+", str(authors_str))
     surnames = []
-    for part in parts[:3]:
+    for part in parts:
         name_token = part.split(",")[0].strip()
         words = name_token.split()
-        if words:
-            surnames.append(words[-1].rstrip("."))
+        if not words:
+            continue
+        # Skip affiliation fragments: short tokens or first word is institution
+        if words[0] in _INSTITUTION_WORDS or len(words) > 4:
+            continue
+        surnames.append(words[-1].rstrip("."))
+        if len(surnames) == 3:
+            break
     return surnames
 
 
