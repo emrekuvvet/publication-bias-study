@@ -363,7 +363,8 @@ def main():
         r'(?i)^(?:Session Chair|Location:|AFA Lecture|The Lecture|presented by|M\. Cecilia Bustamante)'
         r'|\d{4}.*\bthrough\b'
         r'|^(?:Finance|Economics|Accounting|Real Estate)\s+(?:Group|Unit|Section)\s*$'
-        r'|^Finance and Economics|^Economics,\s*Finance',
+        r'|^Finance and Economics|^Economics,\s*Finance'
+        r'|Association.*Association',
         regex=True, na=False)
     noise_authors = df["authors"].str.contains(
         r'Location:|Session:|Chair:|Salon|Marriott|Hyatt', na=False)
