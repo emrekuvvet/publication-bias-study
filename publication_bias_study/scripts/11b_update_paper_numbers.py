@@ -77,11 +77,11 @@ def load_numbers() -> dict:
 
     d["biv_coef"]  = biv["Coefficient"]
     d["biv_se"]    = biv["Std Error"]
-    d["biv_sig"]   = biv["Significance"]
+    d["biv_sig"]   = "" if pd.isna(biv["Significance"]) else str(biv["Significance"])
     d["biv_N"]     = int(biv["N"])
     d["year_coef"] = year["Coefficient"]
     d["year_se"]   = year["Std Error"]
-    d["year_sig"]  = year["Significance"]
+    d["year_sig"]  = "" if pd.isna(year["Significance"]) else str(year["Significance"])
 
     return d
 
@@ -150,8 +150,8 @@ def main():
     biv_pval = pval_str(d["biv_sig"])
     year_pval = pval_str(d["year_sig"])
     # Determine inline p-value label from significance
-    biv_p_inline = "0.01" if d["biv_sig"].strip() == "***" else "0.05"
-    year_p_inline = "0.01" if d["year_sig"].strip() == "***" else "0.05"
+    biv_p_inline = "0.01" if d["biv_sig"].strip() == "***" else ("0.05" if d["biv_sig"].strip() in ("**", "*") else "0.10")
+    year_p_inline = "0.01" if d["year_sig"].strip() == "***" else ("0.05" if d["year_sig"].strip() in ("**", "*") else "0.10")
 
     # 1. Abstract coverage sentence
     tex = patch_re(tex,
@@ -179,7 +179,7 @@ def main():
 
     # 5. Bivariate regression (inline)
     tex = patch_re(tex,
-        r'\$\\hat\\beta = [\d.]+\^\{[*]+\}\$ \(s\.e\.\\ [\d.]+, \$p < [\d.]+\$, \$N = \d+\$\)',
+        r'\$\\hat\\beta = [\d.]+(?:\^\{[*]+\})?\$ \(s\.e\.\\ [\d.]+, \$p < [\d.]+\$, \$N = \d+\$\)',
         f"$\\hat\\beta = {fmt_coef(d['biv_coef'], d['biv_sig'])}$ (s.e.\\ {d['biv_se']:.3f}, $p < {biv_p_inline}$, $N = {d['biv_N']}$)",
         "bivariate coef inline")
 
@@ -197,19 +197,19 @@ def main():
 
     # 8. +Year regression (inline)
     tex = patch_re(tex,
-        r'\(\$\\hat\\beta = [\d.]+\^\{[*]+\}\$, s\.e\.\\ [\d.]+\)',
+        r'\(\$\\hat\\beta = [\d.]+(?:\^\{[*]+\})?\$, s\.e\.\\ [\d.]+\)',
         f"($\\hat\\beta = {fmt_coef(d['year_coef'], d['year_sig'])}$, s.e.\\ {d['year_se']:.3f})",
         "year coef inline")
 
     # 9. Robustness table row — bivariate (R10 row)
     tex = patch_re(tex,
-        r'R10: AFA conference baseline & Directional & \$[\d.]+\^\{[*]+\}\$ & [^&]+ & \d+ \\\\',
+        r'R10: AFA conference baseline & Directional & \$[\d.]+(?:\^\{[*]+\})?\$ & [^&]+ & \d+ \\\\',
         f"R10: AFA conference baseline & Directional & ${fmt_coef(d['biv_coef'], d['biv_sig'])}$ & {biv_pval} & {d['biv_N']} \\\\",
         "bivariate table row")
 
     # 10. Robustness table row — +year (AFA control row)
     tex = patch_re(tex,
-        r'\\small\{\[AFA pre-pub\.\\ control\]\} & \(\+ year\) & \$[\d.]+\^\{[*]+\}\$ & [^&]+ & \d+ \\\\',
+        r'\\small\{\[AFA pre-pub\.\\ control\]\} & \(\+ year\) & \$[\d.]+(?:\^\{[*]+\})?\$ & [^&]+ & \d+ \\\\',
         f"\\small{{[AFA pre-pub.\\ control]}} & (+ year) & ${fmt_coef(d['year_coef'], d['year_sig'])}$ & {year_pval} & {d['biv_N']} \\\\",
         "year table row")
 
