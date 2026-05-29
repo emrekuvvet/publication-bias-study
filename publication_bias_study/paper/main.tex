@@ -1128,21 +1128,21 @@ obtaining abstracts for 3,960 of the 3,972 AFA papers (99.7\% overall; coverage 
 higher for in-scope papers because government-intervention papers are more
 likely to be published).  We apply our standard title-plus-abstract keyword
 filter (identical to the NBER pipeline) to papers with abstracts, and the
-broader title-only filter to the remaining papers, yielding 132
+broader title-only filter to the remaining papers, yielding 108
 in-scope papers.  Direction codes are assigned from abstract-based codes for
 papers matched to our published dataset and from conservative title-keyword
 rules for unmatched papers (which are predominantly coded null because
-finance titles are typically neutral).  Thirty-five AFA papers (26.5\%)
+finance titles are typically neutral).  29 AFA papers (26.9\%)
 are matched to a JF/RFS/JFE publication via fuzzy title matching.
 
 The binary directional probit on the AFA baseline yields
-$\hat\beta = 0.334$ (s.e.\ 0.289, $p < 0.10$, $N = 132$),
+$\hat\beta = 0.077$ (s.e.\ 0.298, $p < 0.10$, $N = 108$),
 consistent with the NBER-baseline estimate of $1.241^{***}$ (s.e.\ 0.162).
 The two estimates are statistically indistinguishable at the 5\% level.
-Directional AFA papers are published in top journals at a 29.0\% rate (29 of 100)
-versus 18.8\% for null-finding papers (6 of 32)---a gap directionally identical to the NBER
+Directional AFA papers are published in top journals at a 27.5\% rate (22 of 80)
+versus 25.0\% for null-finding papers (7 of 28)---a gap directionally identical to the NBER
 baseline.  The pattern is unchanged when a year trend is added
-($\hat\beta = 0.338$, s.e.\ 0.291).  Direction coding applies
+($\hat\beta = 0.082$, s.e.\ 0.300).  Direction coding applies
 the same three-tier hierarchy as the NBER pipeline: journal-matched papers
 receive direction codes from published-abstract coding; papers with
 OpenAlex, CrossRef, or NBER abstracts receive abstract-based keyword rules; and the remaining
@@ -1205,8 +1205,8 @@ R6: LPM (OLS, HC3)         & Positive & $0.422^{***}$ & $<$0.001 & 296 \\
                             & Negative & $0.442^{***}$ & $<$0.001 & 296 \\[4pt]
 R8: + log(abstract length) & Positive & $0.037$       & 0.943    & 296 \\
 \small{[lower-bound spec]}  & Negative & $0.395$       & 0.363    & 296 \\[4pt]
-R10: AFA conference baseline & Directional & $0.334$ & --- & 132 \\
-\small{[AFA pre-pub.\ control]} & (+ year) & $0.338$ & --- & 132 \\
+R10: AFA conference baseline & Directional & $0.077$ & --- & 108 \\
+\small{[AFA pre-pub.\ control]} & (+ year) & $0.082$ & --- & 108 \\
 \bottomrule
 \end{tabular}
 \begin{tablenotes}
@@ -1221,14 +1221,14 @@ $\log(1+N_{\text{authors}})$.  R8 is a lower-bound bounding specification:
 the abstract-length control is partly endogenous (journals require longer
 abstracts during revision), so the R8 coefficients should be read as a lower
 bound on the true direction--publication association; see text for details.
-R10 uses AFA annual meeting papers (2006--2024, $N=132$ in-scope) as the
+R10 uses AFA annual meeting papers (2006--2024, $N=108$ in-scope) as the
 pre-publication baseline in place of NBER working papers; 2013 papers sourced
 from the AEA ASSA program (afajof.org returns 404 for 2013).  Abstracts are
 retrieved from OpenAlex, CrossRef, and the NBER working paper dataset for AFA papers
-(3,960 total; 132 in-scope) and applied via the same title-plus-abstract keyword
+(3,960 total; 108 in-scope) and applied via the same title-plus-abstract keyword
 filter as the NBER pipeline.
 The outcome is matched to a JF/RFS/JFE publication via fuzzy title matching
-(26.5\% match rate; $N_{\text{directional}}=100$).  Direction codes follow the
+(26.9\% match rate; $N_{\text{directional}}=80$).  Direction codes follow the
 same three-tier hierarchy as the NBER pipeline: (1)~published-abstract coding
 for journal-matched papers; (2)~abstract-based keyword rules for papers with
 OpenAlex, CrossRef, or NBER abstracts; (3)~title-keyword rules for the remainder.
