@@ -1,0 +1,132 @@
+NBER WORKING PAPER SERIES
+DIGITAL COLLATERAL
+Paul Gertler
+Brett Green
+Catherine Wolfram
+Working Paper 28724
+http://www.nber.org/papers/w28724
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+April 2021, Revised July 2023
+This research was supported by USAID, CGAP and IFC (as part of the HIFI program), JPAL’s
+Post-Primary Education program and UC Berkeley’s Lab for Inclusive FinTech (LIFT). We are
+very grateful to Jenya Kahn-Lang, Renping Li, Cyrus Mevorach, Sanghamitra Mukherjee, Derek
+Wolfson, Hilary Yu, and especially Robert Pickmans for excellent research assistance. Laura
+Steiner provided exceptional project management, and we are also grateful to the IPA Uganda
+team. We thank Efraim Benmelech (discussant), Dean Karlan, David Levine, Isabel Macdonald,
+Gautam Rao, David Sraer, Antoinette Schoar, and Jonathan Zinman for useful comments and
+suggestions as well as participants at the Harvard/Yale/Berkeley EEE seminar, NBER Corporate
+Finance Meetings, Columbia University, Copenhagen Business School, Kellogg School of
+Management, Oxford University, Stanford University, UC Merced, University of British
+Columbia, University College of London, Warwick Business School, and The Wharton School.
+The experiment described in this paper is registered at the AEA RCT Registry under the code
+AEARCTR-0004191. The protocol was granted IRB approval by the University of California at
+Berkeley under the code 2018-10-11516. The authors declare that they have no financial or
+material interests in the results discussed in this paper. The views expressed in this article do not
+necessarily represent the views of the United States, the U.S. Department of the Treasury, or the
+National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2021 by Paul Gertler, Brett Green, and Catherine Wolfram. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that
+full credit, including © notice, is given to the source.
+
+Digital Collateral
+Paul Gertler, Brett Green, and Catherine Wolfram
+NBER Working Paper No. 28724
+April 2021, Revised July 2023
+JEL No. G20,I22,O16
+ABSTRACT
+A new form of secured lending using “digital collateral” has recently emerged, most prominently
+in low- and middle-income countries. Digital collateral relies on lockout technology, which
+allows the lender to temporarily disable the flow value of the collateral to the borrower without
+physically repossessing it. We explore this new form of credit both in a model and in a field
+experiment using school-fee loans digitally secured with a solar home system. Securing a loan
+with digital collateral drastically reduces default rates (by 19 pp) and increases the lender’s rate of
+return (by 38 pp). Employing a variant of the Karlan and Zinman (2009) methodology, we
+decompose the total effect on repayment and find that roughly one-third is attributable to adverse
+selection, and two-thirds is attributable to moral hazard. In addition, access to digitally secured
+school-fee loans significantly increases school enrollment and school-related expenditures
+without detrimental effects to households’ balance sheet.
+Paul Gertler Catherine Wolfram
+Haas School of Business Massachusetts Institute of Technology
+University of California, Berkeley Sloan School of Management
+Berkeley, CA 94720 100 Main St.
+and NBER Cambridge, MA 02142
+gertler@haas.berkeley.edu and NBER
+cwolfram@mit.edu
+Brett Green
+Olin School of Business
+Washington University
+St. Louis, MO
+b.green@wustl.edu
+
+1 Introduction
+Using collateral to secure debt helps overcome economic frictions, thereby expanding the supply
+of credit and reducing the cost of providing credit. Indeed, more than 80% of total household
+debt in the US is secured by a physical asset.1 Yet, secured debt is much less prevalent in low-
+and middle-income countries (LMICs).2 Why? On the supply side, property rights are difficult
+to establish and enforce in economies with weak legal institutions, which translates to a high cost
+of repossessing collateral for creditors. This is especially true for lenders servicing households in
+remote areas, where the costs associated with locating, repossessing, and redeploying collateral
+can be prohibitive. On the demand side, the primary source of income for many households in
+LMICs is self-employment, which is subject to more frequent shocks than formal sector wages.
+These households, which lack savings, are more likely to default for nonstrategic reasons and may
+choose to avoid the risk of having assets repossessed.
+Recent technological innovations have facilitated new financial contracts that use “digital
+collateral.” An emerging example is pay-as-you-go (PAYGO) financing. The typical PAYGO
+contract requires a nominal down payment to take possession of an asset, followed by frequent,
+small payments made via a mobile payment system. PAYGO lenders rely on an embedded lockout
+technology, enabling them to remotely disable the flow of services from the asset. In other words,
+the lender can digitally repossess the asset without the need to physically repossess it. Digital
+collateral has two distinct technological features. First, disabling the flow of services is cheap and
+easily reversible. Second, borrowers unable to make a payment do not lose the asset, rather they
+are simply unable to consume the flow of services from the asset until they start paying again.
+These features allow for a richer space of financial contracts involving flexible repayment schedules
+(e.g., pay per usage) and temporary repossession for non-payment.3
+In this paper, we argue that digital repossession can serve a useful role in credit markets,
+1Source: “QuarterlyReportonHouseholdDebtandCredit,”FederalReserveoftheBankofNewYork(2020),
+https://www.newyorkfed.org/medialibrary/interactives/householdcredit/data/pdf/HHDC 2020Q2.pdf.
+2In our baseline survey, we find that only 30% of money borrowed by households is secured by a physical
+asset (house, land, livestock, or vehicle). The Transparent Pricing Initiative, which covers standardized pricing
+datafrom 23institutions operating inUganda, showsthat only16% ofloanproducts during 2011-2014explicitly
+mention the usage of collateral (Transparent Pricing Initiative, 2014). In a survey, Elum and Kanu (2018) find
+that47%ofthefarmersinNigeriaagreedthatcollateralrequirementwasaprobleminaccessingformalcredit.
+3These features are in contrast to the typical secured loan that involves a fixed repayment schedule and
+permanentrepossessionindefault.
+1
+
+especially in settings where physical repossession is impractical. We develop a theoretical model
+to understand the implications of digital repossession in lending markets and how it contrasts
+with physical repossession. The model also provides a framework for interpreting the results of
+our experiment. In the experiment, we quantify the extent to which digitally secured loans have
+better repayment than “unsecured” loans for which the lockout feature is disabled.4 We explore
+the mechanism for the increase in repayment and ask whether digitally secured credit is a feasible
+equilibrium contract. We then examine how access to this form of credit affects households.
+Traditional collateral serves two roles: (i) the lender recovers something of value, thereby
+insuring them against default, and (ii) the household loses something of value, thereby providing
+them an incentive to repay the loan or decline the loan if they expect to default. Digital collateral
+serves the latter role, but not the former. Still, much like with traditional collateral, securing loans
+with digital collateral reduces the lender’s cost of providing financing via two channels relative to
+unsecured credit. First, it provides households with an incentive to repay the loan when they can
+afford to do so, thereby mitigating the moral hazard problem of strategic default (which is also
+often referred to as limited enforcement). Second, when combined with a down payment, digital
+collateral serves as a screening mechanism to mitigate adverse selection. That is, a household that
+is more likely to default will have less incentive to accept a digitally secured loan. By reducing
+moral hazard and adverse selection, digital collateral enables lenders to offer more financing to
+credit-worthy borrowers at terms they find acceptable.
+Despite reducing agency costs, a more effective lockout technology—which enables collateral to
+bedigitized—doesnotnecessarilyincreasewelfare. Moreeffectivelockoutdestroysmoresurplus(i.e.,
+householdutility)whenitisutilized,whichcanoffsetthewelfaregainsofthecreditexpansion,even
+ifitisutilizedlessfrequently. Asaresult,anintermediatedegreeoflockoutfollowingnon-repayment
+can be welfare maximizing. This finding is consistent with the temporary and relatively lenient
+nature in which lockout is deployed in PAYGO contracts compared to traditional secured lending.
+Our field experiment was designed to identify the impact of digital collateral on credit market
+frictions and household outcomes. We partnered with Fenix International, the largest solar-home
+system(SHS)providerinUganda. AnSHSprovidesahouseholdwithaccesstoamodestamountof
+4While we refer to the latter type of loans as unsecured, technically all of the loans in our experiment are
+secured in thesame way as mostother secured debt in LMICs, i.e., witha low probability of physicalrepossession
+conditionalondefault.
+2

@@ -1,0 +1,114 @@
+NBER WORKING PAPER SERIES
+DO MARKETS CARE WHO CHAIRS THE CENTRAL BANK?
+Kenneth N. Kuttner
+Adam S. Posen
+Working Paper 13101
+http://www.nber.org/papers/w13101
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2007
+Our thanks go to seminar participants at the Bank of England, the Bank of Japan, Birkbeck College,
+the Federal Reserve Bank of Cleveland, the Liberal Arts Macro Workshop, the NBER, Oberlin College,
+the Reserve Bank of New Zealand, and the Zentrum für Europäische Wirtschaftsforschung; and to
+Barbara Craig, Simon Gilchrist, Pavel Kapinos, and Peter Pedroni for constructive suggestions. Dimitar
+Vlahov provided research assistance, and we are also grateful to Marta Abreu, Geoffrey Barrows,
+Özer Karagedikli, and Tarja Yrjola for their assistance with the data. The views expressed herein are
+those of the author(s) and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+© 2007 by Kenneth N. Kuttner and Adam S. Posen. All rights reserved. Short sections of text, not
+to exceed two paragraphs, may be quoted without explicit permission provided that full credit, including
+© notice, is given to the source.
+
+Do Markets Care Who Chairs the Central Bank?
+Kenneth N. Kuttner and Adam S. Posen
+NBER Working Paper No. 13101
+May 2007, Revised August 2008
+JEL No. E58,E61,G14
+ABSTRACT
+This paper assesses the effects of central bank governor appointments on financial market expectations
+of monetary policy. To measure these effects, we assemble a new dataset of appointment announcements
+from 15 countries, and conduct an event study analysis on exchange rates, bond yields, and stock prices.
+The analysis reveals a significant reaction of exchange rates and bond yields to unexpected appointments.
+The reactions are not unidirectional, and thus do not suggest new governors suffer from a generic credibility
+problem. Federal Reserve chairman appointments stand out in terms of their unusually pronounced
+effects on financial markets.
+Kenneth N. Kuttner
+c/o Economics Department
+Williams College
+Williamstown MA 01267
+and NBER
+kenneth.n.kuttner@williams.edu
+Adam S. Posen
+Peterson Institute for International Economics
+1750 Massachusetts Ave., NW
+Washington, DC 20036-1903
+aposen@petersoninstitute.org
+
+1 Introduction
+The appointment of a new central bank governor usually makes headlines in the financial
+press, and those reports often attribute to the appointment the subsequent movement in
+the financial markets.1 Ben S. Bernanke’s October 24, 2005 appointment to chair the US
+Federal Reserve, for example, generated hundreds of press reports and nearly as many
+analyses and commentaries speculating on his policy leanings.2 Stocks climbed sharply
+immediatelyfollowingtheannouncement,whilebondpricesfell.
+That financial markets should react to the appointment of a new governor is hardly
+surprising. After all, central banks’ policies can have significant macroeconomic effects,
+and it is taken as given that the governor exerts a disproportionate influence over those
+policies. This may have been especially true in the case of Alan Greenspan, to whom
+extraordinary powers of foresight were sometimes attributed and who was increasingly
+personally identified with US monetary policy over the course of his long tenure.3 And
+decades earlier, a similar degree of prescience and personal influence was attributed to
+Benjamin Strong, the governor of the Federal Reserve Bank of New York (then the locus
+of US monetary policy decisionmaking), whose death in 1928 is thought by some to have
+contributedtotheonsetoftheGreatDepression.4
+Governor-specificattributesalsoplayacentralroleinmuchofthetheoreticalliterature
+on monetary policy. The currently standard framework for modeling policymakers’ incen-
+tives, which began with Kydland & Prescott (1977) and Barro & Gordon (1983), opened
+the door to characterizing differences in central bank behavior in terms of the objective
+function attributed to the central banker, as well as the institutional setting within which
+1Thispaperusestheterm“governor”genericallytorefertotheheadofthecentralbank,evenwhenthe
+actualjobtitleis“president”or“chair.”
+2Factivaalonereports1322sucharticlesonthedayof,andthedayfollowing,hisappointment.
+3This is nicely illustrated by Senator John McCain’s unforgettable quip from a 1999 GOP presidential
+debate: “...if Mr. Greenspan should happen to die, God forbid, I would do like they did in the movie
+‘WeekendatBernie’s,’ Iwouldprophimupandputapairofdarkglassesonhimandkeephimaslongas
+wecould.”
+4Friedman&Schwartz(1963,p.412-13)conjecturedthat“if[Benjamin]Stronghadstillbeenaliveand
+headoftheNewYork[FederalReserve]Bankinthefallof1930,hewouldverylikelyhaverecognizedthe
+oncomingliquiditycrisis...”andtaken“appropriatemeasurestoheaditoff.”
+1
+
+he or she served. This was made explicit in the influential Rogoff (1985) model of the
+“conservative”centralbanker. Inasimilarvein,themodelofCukierman&Meltzer(1986)
+distinguishes between different central banker types—“hawks” versus “doves”. Financial
+market commentary often makes much of this distinction in central bankers’ preferences
+whenforecastingappointees’likelyinfluenceonmonetarypolicy.5
+The point of this paper is not to determine whether, and to what extent, central bank
+governors influence monetary policy and the economy—we assume that they do. Rather,
+it is to determine whether financial markets perceive that the central bank appointments
+containnewinformationrelevanttopolicyexpectations.6 Ifso,thentheseappointments(or
+moreprecisely,theannouncements)shouldmovemarketsthroughtheireffectsonexpected
+inflationandinterestrates.
+Our objective is therefore to assess empirically the perceived information content, if
+any, of governor appointments in the eyes of financial market participants. The paper’s
+specific goals are threefold. The first is to document the reaction of exchange rates, bond
+yields,andstockprices,andtodeterminethosereactions’jointstatisticalsignificance. The
+second goal is to determine the extent to which the monetary policy framework in place
+at the time of the appointment affects the magnitude of the market response. Third, we
+are interested in whether the reactions indicate a generic concern about incoming gover-
+nors’ anti-inflationcredibility: ifthis were thecase, we would expectto see atendency for
+announcementstobeassociatedwithrisingbondyieldsanddepreciatingexchangerates.
+Sofarasweknow,thisisthefirstefforttoanalyzetheimpactofnewgovernorappoint-
+ments on financial markets and monetary policy expectations. There is, of course, a large
+literature on how economic news affects financial markets, and a number of recent papers
+5Bernasek(2005),forexample,wrotefollowingBernanke’sappointment:“Greenspandid,however,make
+onethingclear[atthetimeofhisappointment]: theneedtocombatinflation. Herealizedthatheneededto
+establish his credibility on this front. Soon after his appointment, the Fed raised interest rates by half a
+percentagepointandsentamessageabouthisdeterminationtotamepriceincreases. Heunderstoodthatan
+unhappy bond market could undo a Fed chairman and that the economy would suffer the consequences....
+Thefirsttestwillbe[Bernanke’s]credibilityoninflation...thevotethatultimatelymattersmorewillbethe
+onecastbythebondmarkets.Inflationwillbetheirlitmustest.BondtradersarealreadyscouringBernanke’s
+recordforevidenceonewayortheother.... Thebondmarketreactedbyinchingrateshigher.”
+6Notethattheshiftsinexpectationscreatedbytheseannouncementsneednotbecorrectexpost.
+2

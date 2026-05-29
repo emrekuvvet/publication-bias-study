@@ -1,0 +1,146 @@
+NBER WORKING PAPER SERIES
+THE INFORMATION OF OPTION VOLUME
+FOR FUTURE STOCK PRICES
+Jun Pan
+Allen Poteshman
+Working Paper 10925
+http://www.nber.org/papers/w10925
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+November 2004
+Pan is with the MIT Sloan School of Management and NBER, junpan@mit.edu. Poteshman is at the
+University of Illinois at Urbana-Champaign, poteshma@uiuc.edu. We thank Joe Levin, Eileen Smith, and
+Dick Thaler for assistance with the data used in this paper, and Harrison Hong and Joe Chen for valuable
+initial discussions. We are grateful for the extensive comments and suggestions of an anonymous referee and
+the comments of Michael Brandt, Darrell Du.e, John Gri.n, Chris Jones, Owen Lamont, Jon Lewellen,
+Stephan Nagel, Maureen O’Hara, Neil Pearson, Mark Rubinstein, Paul Tetlock, and seminar participants
+at MIT, LBS, UIUC, the April 2003 NBER Asset Pricing Meeting, Kellogg, the Summer 2003 Econometric
+Society Meetings, the Fall 2003 Chicago Quantitative Alliance Meeting, the June 2004WFA Meeting,
+McGill, Stanford, Berkeley, UBC, INSEAD, IMA, Duke Econ, and Texas. Reza Mahani and Sophie Xiaoyan
+Ni provided excellent research assistance. Pan thanks theMIT Laboratory for Financial Engineering for
+research support, and Poteshman thanks the O.ce for Futures and Options Research at UIUC for .nancial
+support. This paper can be downloaded from www.mit.edu/~junpan or www.business.uiuc.edu/poteshma.
+The views expressed herein are those of the author(s) and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+© 2004 by Jun Pan and Allen Poteshman. All rights reserved. Short sections of text, not to exceed two
+paragraphs, may be quoted without explicit permission provided that full credit, including © notice, is given
+to the source.
+
+The Information of Option Volume for Future Stock Prices
+Jun Pan and Allen Poteshman
+NBER Working Paper No. 10925
+November 2004
+JEL No. G1
+ABSTRACT
+We present strong evidence that option trading volume contains information about future stock price
+movements. Taking advantage of a unique dataset from the Chicago Board Options Exchange, we
+construct put-call ratios from option volume initiated by buyers to open new positions. On a risk-
+adjusted basis, stocks with low put-call ratios outperform stocks with high put-call ratios by more
+than 40 basis points on the next day and more than 1% over the next week. Partitioning our option
+signals into components that are publicly and non-publicly observable, we find that the economic
+source of this predictability is non-public information possessed by option traders rather than market
+inefficiency. We also find greater predictability from option signals for stocks with higher
+concentrations of informed traders and from option contracts with greater leverage.
+Jun Pan
+MIT Sloan School of Management
+50 Memorial Drive
+Rm E52-454
+Cambridge, MA 02142
+and NBER
+junpan@mit.edu
+Allen Poteshman
+University of Illinois at Urbana-Champaign
+poteshma@uiuc.edu
+
+1 Introduction
+This paper examines the informational content of option trading for future movements in
+underlying stock prices. This topic addresses the fundamental economic question of how
+information gets incorporated into asset prices and is also of obvious practical interest. Our
+main goals are to establish the presence of informed trading in the option market and also
+to explore several key issues regarding its nature.
+Our focus on the informational role of derivatives comes at a time when derivatives play
+an increasingly important role in financial markets. Indeed, for the past several decades,
+the capital markets have experienced an impressive proliferation of derivative securities,
+ranging from equity options to fixed-income derivatives to, more recently, credit derivatives.
+The view that informed investors might choose to trade derivatives because of the higher
+leverage offered by such instruments has long been entertained by academics [e.g., Black
+(1975)] and can often be found in the popular press.1 A formal treatment of this issue is
+provided by Easley, O’Hara, and Srinivas (1998), who allow the participation of informed
+traders in the option market to be decided endogenously in an equilibrium framework. In
+their model, informed investors choose to trade in both the option and the stock market – in
+a “pooling equilibrium” – when the leverage implicit in options is large, when the liquidity
+in the stock market is low, or when the overall fraction of informed traders is high.
+Our main empirical result directly tests whether the stock and option market are in the
+pooling equilibrium of Easley, O’Hara, and Srinivas (1998). Using option trades that are ini-
+tiated by buyers to open new positions, we form put-call ratios to examine the predictability
+of option trading for future stock price movements. We find predictability that is strong
+in both magnitude and statistical significance. For our 1990 through 2001 sample period,
+stocks with positive option signals (i.e., those with lowest quintile put-call ratios) outperform
+those with negative option signals (i.e., those with highest quintile put-call ratios) by over
+40 basis points per day and 1 percent per week on a risk-adjusted basis. When the stock
+returns are tracked for several weeks, the level of predictability gradually dies out, indicating
+that the information contained in the option volume eventually gets incorporated into the
+underlying stock prices.
+Although our main empirical result clearly documents that there is informed trading
+in the option market, it does not necessarily imply that there is any market inefficiency,
+because the option volume used in our main test – which is initiated by buyers to open
+new positions – is not publicly observable. Indeed, information-based models [e.g., Glosten
+and Milgrom (1985), Easley, O’Hara, and Srinivas (1998)] imply that prices adjust at once
+to the public information contained in the trading process but may adjust slowly to the
+private information possessed by informed traders. As a result, the predictability captured
+in our main test may well correspond to the process of stock prices gradually adjusting to
+the private component of information in option trading.
+1For example, on July 25, 2002, the Wall Street Journal reported that the Chicago Board Options
+Exchange was investigating “unusual trading activity” in options on shares of Wyeth, the pharmaceuticals
+giantbasedin Madison,N.J., whichexperienceda sharpincreaseintradingvolume earlierthatmonth. The
+optionvolumeuptickoccurreddaysbeforethereleaseofagovernmentstudybytheJournaloftheAmerican
+MedicalAssociationthatdocumentedaheightenedriskofbreastcancer,coronaryheartdisease,strokesand
+blood clots for women who had been taking Wyeth’s hormone-replacement drug Prempro for many years.
+2
+
+Motivated by the differing theoretical predictions about the speed at which prices adjust
+to public versus private information, we explore the predictability of publicly versus non-
+publicly observable option volume. Following previous empirical studies in this area [e.g.,
+Easley, O’Hara, and Srinivas (1998), Chan, Chung, and Fong (2002)], we use the Lee and
+Ready (1991) algorithm to back out buyer-initiated put andcall optionvolume frompublicly
+observable trade and quote records from the Chicago Board Options Exchange (CBOE). We
+find that the resulting publicly observable option signals are able to predict stock returns for
+only the next 1 or 2 trade days. Moreover, the stock prices subsequently reverse which raises
+the question of whether the predictability from the public signal is a manifestation of price
+pressure rather than informed trading. In a bivariate analysis which includes both the public
+and non-public signals, the non-public signal has the same pattern of information-based
+predictability as when it is used alone, but there is no predictability at all from the public
+signal. This set of findings underscores the important distinction between public and non-
+public signals and their respective roles in price discovery. Further, the weak predictability
+exhibited bythepublic signalsuggeststhattheeconomicsourceofourmainresult isvaluable
+private information in the option volume rather than an inefficiency across the stock and
+option market.
+Central to allinformation-basedmodels aretheroles of informedanduninformed traders.
+In particular, the concentration of informed traders is a key variable in such models with
+important implications for the informativeness of trading volume. Using the PIN variable
+proposed by Easley, Kiefer, and O’Hara (1997) and Easley, Hvidkjaer, and O’Hara (2002)
+as a measure of the prevalence of informed traders, we investigate how the predictability
+from option volume varies across underlying stocks with different concentrations of informed
+traders. We find a higher level of predictability from the option signals of stocks with a
+higher prevalence of informed traders.2
+While the theoretical models define informed and uninformed traders strictly in terms
+of information sets, we can speculate outside of the models about who the informed and
+uninformed traders might be. Our dataset is unique in that in addition to recording whether
+the initiator of volume is a buyer or a seller opening or closing a position, it also identifies the
+investor class of the initiator. We find that option signals from investors who trade through
+fullservice brokerage houses provide much stronger predictability thanthesignals fromthose
+who tradethroughdiscount brokeragehouses. Giventhat theoptionvolume fromfullservice
+brokerages includes that from hedge funds, this result is hardly surprising. It is interesting,
+however, that the option signals from firm proprietary traders contain no information at all
+about future stock price movements. In the framework of the information-based models,
+this result suggests that firm proprietary traders are uninformed investors who come to the
+option market primarily for hedging purposes.
+Finally, a unique feature of the multimarket stock and option setting is the availability of
+securities with differing leverage. Black (1975) asserts that leverage is the key variable which
+determines whether informed investors choose to trade in the option market, and Easley,
+O’Hara, and Srinivas (1998) demonstrate that under a natural set of assumptions this is
+2Given that stocks with higher PIN are typically smaller stocks, our result could be driven by the fact
+that there is higher predictability from option signals of smaller stocks. We show that this is not the case.
+In particular, our PIN result remains intact after controlling for size.
+3

@@ -1,0 +1,136 @@
+NBER WORKING PAPER SERIES
+INTELLECTUAL PROPERTY RIGHTS AND INNOVATION:
+EVIDENCE FROM THE HUMAN GENOME
+Heidi L. Williams
+Working Paper 16213
+http://www.nber.org/papers/w16213
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2010
+I am very grateful to Wes Cohen, Joe Doyle, Dan Fetter, Matt Gentzkow, Claudia Goldin, Sam Kortum,
+Amanda Kowalski, Fiona Murray, Jesse Shapiro, Scott Stern, three anonymous referees, numerous
+seminar participants, and especially my PhD advisers David Cutler, Amy Finkelstein, and Larry Katz
+for comments. Several individuals from Celera, the Human Genome Project, and related institutions
+provided invaluable guidance, including Sam Broder, Peter Hutt, and particularly Mark Adams, David
+Altshuler, Bob Cook-Deegan, Eric Lander, Robert Millman, and seminar participants at the Broad
+Institute. David Robinson provided valuable assistance with the data collection. Financial support
+from NIA Grant Number T32-AG000186 to the NBER, NSF Grant Number 1151497, and the Center
+for American Political Studies at Harvard is gratefully acknowledged. The views expressed herein
+are those of the author and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2010 by Heidi L. Williams. All rights reserved. Short sections of text, not to exceed two paragraphs,
+may be quoted without explicit permission provided that full credit, including © notice, is given to
+the source.
+
+Intellectual Property Rights and Innovation: Evidence from the Human Genome
+Heidi L. Williams
+NBER Working Paper No. 16213
+July 2010, Revised January 2013
+JEL No. I10,I18,O3,O34
+ABSTRACT
+Do intellectual property (IP) rights on existing technologies hinder subsequent innovation? Using newly-
+collected data on the sequencing of the human genome by the public Human Genome Project and
+the private firm Celera, this paper estimates the impact of Celera's gene-level IP on subsequent scientific
+research and product development. Genes initially sequenced by Celera were held with IP for up to
+two years, but moved into the public domain once re-sequenced by the public effort. Across a range
+of empirical specifications, I find evidence that Celera's IP led to reductions in subsequent scientific
+research and product development on the order of 20 to 30 percent. Taken together, these results suggest
+that Celera's short-term IP had persistent negative effects on subsequent innovation relative to a counterfactual
+of Celera genes having always been in the public domain.
+Heidi L. Williams
+MIT Department of Economics
+50 Memorial Drive
+Building E52, Room 274C
+Cambridge MA 02142-1347
+and NBER
+heidiw@mit.edu
+
+Innovationisakeydriverofeconomicgrowth,butcompetitivemarketsmayunder-incentivize
+innovation due to the public good nature of ideas (Nelson, 1959; Arrow, 1962). Intellectual
+property (IP) rights, such as patents and copyrights, aim to incentivize innovation by allowing
+firms to capture a higher share of the social returns to their research investments. Traditional
+evaluationsoftheeffectivenessofIPhavefocusedonwhethertheprospectofobtainingIPrights
+stimulatesthedevelopmentofnewtechnologies. However,inmanymarketstechnologicalchange
+is cumulative, in the sense that product development results from several steps of invention and
+research. In markets where innovation is cumulative, the overall effectiveness of IP in promoting
+innovation also depends on a second, less studied question: do IP rights on existing technologies
+hinder subsequent innovation? The contribution of this paper is to provide empirical evidence
+on this second question by investigating how one form of IP on the human genome influenced
+subsequent scientific research and product development.
+To fix ideas, suppose the firm Celera holds IP on a human gene, and that Pfizer discovers a
+genetic diagnostic test based on Celera’s gene. Will Celera’s IP discourage Pfizer from develop-
+ing this test? In a perfect contracting environment with no transaction costs, Celera and Pfizer
+would negotiate a licensing agreement such that cumulative research is not hindered. However,
+transaction costs may cause licensing negotiations to break down, deterring some socially de-
+sirable research. While the theoretical literature on this question is well-developed (Scotchmer,
+1991; Green and Scotchmer, 1995; Bessen, 2004), empirical evidence is scarce.
+The empirical context analyzed in this paper is the sequencing of the human genome by the
+public Human Genome Project and the private firm Celera. The public effort began in 1990,
+and required that all sequenced genes be placed in the public domain. Celera’s effort began
+in 1999, and ended in 2001 when Celera disclosed an incomplete draft genome. The public
+effort continued, and by 2003 had sequenced all genes in Celera’s 2001 draft. Between 2001 and
+2003, Celera used a contract law-based form of IP to protect genes sequenced by Celera but not
+yet sequenced by the public effort. This IP enabled Celera to sell its data for substantial fees,
+and required firms to negotiate licensing agreements with Celera for any resulting commercial
+discoveries - even though it was publicly known at the time that all of Celera’s genes would be
+sequenced by the public effort, and thus be in the public domain, by 2003. Figure 1 summarizes
+a timeline of these key events.
+How did Celera’s gene-level IP influence subsequent scientific research and product devel-
+opment? To investigate this question, I construct a new dataset that tracks the timing of gene
+sequencing and Celera’s IP across the human genome, linked to gene-level measures of scien-
+tific research and product development. Specifically, I trace cumulative innovation by compiling
+data on links between genes and phenotypes, which are observable traits or characteristics. For
+example, the link between variation on the HTT gene and Huntington’s disease represents a
+genotype-phenotype link. For each gene, I collect data on publications investigating genotype-
+phenotype links, on successfully generated knowledge about genotype-phenotype links, and on
+the development of gene-based diagnostic tests available to consumers.1
+1Patent citations are a frequently-used measure of cumulative innovation (Jaffe, Trajtenberg and Henderson,
+1
+
+Asimplecross-tabulationillustrateshowthisdatacanbeusedtoinvestigatehowCelera’sIP
+influenced subsequent innovation. Table 1 compares subsequent innovation outcomes for Celera
+genes relative to non-Celera genes sequenced in the same year. Taken at face value, these data
+suggestthatCelera’sIPledtoeconomicallyandstatisticallysignificantreductionsinsubsequent
+scientific research and product development. Celera genes had an average of 1.2 publications
+by 2009, relative to 2.1 publications for non-Celera genes sequenced in the same year. About
+3 percent of Celera genes were used in a gene-based diagnostic test as of 2009, relative to 5.4
+percent of non-Celera genes sequenced in the same year.
+These simple differences in means could reflect a negative effect of Celera’s IP on subsequent
+research, or could reflect that Celera’s genes had lower inherent potential for follow-on research.
+Because the institutional context suggests that selection bias could be a concern, I present
+estimates from two additional empirical tests that directly address selection. First, I restrict
+attention to within-gene variation in IP and test whether the removal of Celera’s IP increased
+subsequentinnovation. Second,IlimitthesampletoCeleragenesandtestforalinkbetweenthe
+amount of time a gene was held with Celera’s IP and subsequent innovation. These additional
+empirical tests appear to eliminate selection bias in the following sense: within the sample of
+∼1,600 Celera genes, proxies for the ex ante expected value of a gene do not predict the timing
+of when genes were re-sequenced by the public effort. The estimates from these two additional
+empiricaltestsareroughlythesamemagnitudeastheestimatesfromthesimplecross-tabulation:
+Celera’s IP appears to have generated economically and statistically significant reductions in
+subsequent scientific research and product development, on the order of 20 to 30 percent.
+ThisanalysisdoesnotevaluatetheoverallwelfareconsequencesofCelera’sentry, whichmay
+have been spurred by the prospect of obtaining IP. If Celera’s entry spurred faster sequencing
+of the human genome, the overall timing of genome-related innovation likely shifted earlier in
+time, which would have had welfare gains even if Celera’s IP in isolation hindered innovation.
+Rather, these results suggest that, holding Celera’s entry constant, an alternative lump-sum
+reward mechanism may have had social benefits relative to Celera’s chosen form of IP.2
+This paper joins a handful of recent papers documenting evidence that IP may hinder sub-
+sequent innovation (Murray and Stern, 2007; Huang and Murray, 2009; Murray et al., 2008). Of
+particular note is the work of Murray et al. (2008), who analyze short-term IP the firm DuPont
+held on certain types of genetically engineered mice. Using a dataset of matched mouse-article
+pairs, the authors document that the removal of IP increased citations to scientific papers on
+affected mice by 20 to 40 percent relative to papers on unaffected mice - very similar to the
+magnitude of my estimates.3
+1993). However, by construction patent citations cannot measure cumulative innovation on non-patented tech-
+nologies. The type of data constructed in this paper - measuring scientific research and product development
+directly, rather than via patent citations - is critical in enabling a test of how IP affects cumulative innovation.
+2For example, under the patent buyout mechanism discussedby Kremer (1998), the public sector(or another
+entity) could have paid Celera some fee to “buy out” Celera’s IP and place Celera genes in the public domain.
+SeeKremerandWilliams(2010)forfurtherdiscussionofotheralternativemechanismsforrewardinginnovation.
+3Murray et al. (2008) also provide evidence, consistent with the model of Aghion, Dewatripont and Stein
+(2008), that IP reduces the diversity of scientific experimentation.
+2

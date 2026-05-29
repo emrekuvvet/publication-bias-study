@@ -1,0 +1,113 @@
+NBER WORKING PAPER SERIES
+THE DIRECT AND INDIRECT EFFECTS OF SMALL BUSINESS ADMINISTRATION LENDING ON GROWTH:
+EVIDENCE FROM U.S. COUNTY-LEVEL DATA
+Andrew T. Young
+Matthew J. Higgins
+Donald J. Lacombe
+Briana Sell
+Working Paper 20543
+http://www.nber.org/papers/w20543
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2014
+We thank Jerry Thursby, Bart Hamilton and Daniel Levy for valuable comments and discussions.
+We also thank the Small Business Administration for their help in our FOIA request. Higgins acknowledges
+funding from the Imlay Professorship. The views expressed herein are those of the authors and do
+not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2014 by Andrew T. Young, Matthew J. Higgins, Donald J. Lacombe, and Briana Sell. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+The Direct and Indirect Effects of Small Business Administration Lending on Growth: Evidence
+from U.S. County-Level Data
+Andrew T. Young, Matthew J. Higgins, Donald J. Lacombe, and Briana Sell
+NBER Working Paper No. 20543
+October 2014
+JEL No. C31,E65,H25,O47,R11
+ABSTRACT
+Conventional wisdom suggests that small businesses are innovative engines of Schumpetarian growth.
+However, as small businesses, they are likely to face credit rationing in financial markets. If true then
+policies that promote lending to small businesses may yield substantial economy-wide returns. We
+examine the relationship between Small Business Administration (SBA) lending and local economic
+growth using a spatial econometric framework across a sample of 3,035 U.S. counties for the years
+1980 to 2009. We find evidence that a county’s SBA lending per capita is associated with direct negative
+effects on its income growth. We also find evidence of indirect negative effects on the growth rates
+of neighboring counties. Overall, a 10% increase in SBA loans per capita is associated with a cumulative
+decrease in income growth rates of about 2%.
+Andrew T. Young Donald J. Lacombe
+College of Business and Economics Regional Research Institute,
+West Virginia University West Virginia University
+Morgantown, WV 26505-6025 PO Box 6825
+andrew.young@mail.wvu.edu 886 Chestnut Ridge Road
+Morgantown, WV 26506-6825
+Matthew J. Higgins Donald.Lacombe@mail.wvu.edu
+Scheller College of Business
+Georgia Institute of Technology Briana Sell
+800 West Peachtree Street Georgia Institute of Technology
+Atlanta, GA 30308 Scheller College of Business
+and NBER 800 West Peachtree St. NW
+matt.higgins@scheller.gatech.edu Atlanta, GA 30308
+Briana.Sell@scheller.gatech.edu
+
+“I said I would cut taxes for small businesses [ - ]the drivers and engines of growth, and we've
+cut them 18 times. And I want to continue those tax cuts for middle-class families and for small
+businesses.”
+Democratic US President Barack Obama
+“[C]hampioning small business. Our party has been focused on big business too long. I came
+through small business. I understand how hard it is to start a small business. That's why
+everything I'll do is designed to help small businesses grow and add jobs. I want to keep their
+taxes down on small business. I want regulators to see their job as encouraging small enterprise,
+not crushing it.”
+Republican US Presidential Nominee Mitt Romney
+Second US Presidential Debate, October 16, 2012
+1. Introduction
+On October 16, 2012, during the second U.S. presidential debate, President Barack Obama and
+challenger Mitt Romney together used the phrases “small business” and “small businesses” a
+total of 21 times.1 Politicians, policymakers, and pundits regularly extol the virtues of small
+businesses as engines of economic growth. This positive view towards small business is reflected
+by society more broadly. For example, a 2012 Gallup Poll found that more than 94% of
+Americans surveyed reported having a positive image of “small business”.2
+David Birch (1979, 1987) did much to popularize the perception that small businesses
+account for the bulk of job creation in the U.S. And many researchers – most prominently Zoltan
+Acs and David Audretsch along with their coauthors – have argued that small businesses are also
+important sources of Schumpetarian (1942) innovation (e.g., Acs and Audretsch, 1993; Acs,
+1999; Acs et al., 2009; Audretsch et al., 2006). If this innovation is associated with positive
+1 Based on the transcript produced by U.S. National Public Radio (NPR):
+http://www.npr.org/2012/10/16/163050988/transcript-obama-romney-2nd-presidential-debate; last accessed March
+11, 2014. There were additional references to “small enterprise” and “small employers”.
+2 Alternatively, only 75% of Republicans and 44% of Democrats reported having a positive image of “big business”.
+“Small business” also garnered more positive reactions than general terms like “free enterprise” and “capitalism”:
+http://www.gallup.com/poll/158978/democrats-republicans-diverge-capitalism-federal-gov.aspx; last accessed
+March 14, 2014.
+2
+
+spillovers but small businesses are financially constrained, then the gains from subsidizing them
+may be considerable (Evans and Jovanovic, 1989; Evans and Leighton, 1989).
+Consistent with these popular and scholarly perceptions, small businesses in the U.S. are
+directly and indirectly subsidized by the federal government in numerous ways. For example
+they receive exemptions from regulations (e.g., requirements for advanced notice of layoffs) and
+are given preferential tax treatment (e.g, tax credits for the expenses of new retirement plans).
+They also receive preferential treatment for government contracts. Additionally, small business
+innovative efforts are also subsidized through the Small Business Innovation Research Program
+(SBIR) and Small Business Technology Transfer Program (STTR).3 And, of course, the Small
+Business Administration (SBA) is a federal government agency whose very mission is to “…aid,
+counsel, assist and protect the interests of small business…”.4
+The asymmetric information problems that exist between financial intermediaries and
+small businesses may be particularly severe. The systematic recording and communication of
+information relevant to creditors is subject to economies of scale. As such, small businesses may
+be particularly subject to credit rationing (Stiglitz and Weiss, 1981). An important component of
+the SBA is its loan programs. To help with these potential information asymmetries, the SBA
+facilitates exchange between small businesses and intermediaries, often guaranteeing 75% to
+90% of the loan.
+Despite popular pro-small business sentiment and scholarly support, not all researchers
+are convinced of the benefits of subsidizing small businesses. Hurst and Pugsley (2011) examine
+survey responses from a sample of entrepreneurs taken before they started their small businesses.
+They find that most of these entrepreneurs are not Schumpetarian innovators – they do not
+3 de Rungy (2005) provides a concise overview of these government programs.
+4 This is from the SBA mission statement: http://www.sba.gov/about-sba/what_we_do/mission; last accessed March
+14, 2014.
+3

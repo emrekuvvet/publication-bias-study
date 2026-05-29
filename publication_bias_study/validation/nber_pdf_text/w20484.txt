@@ -1,0 +1,110 @@
+NBER WORKING PAPER SERIES
+THE ROLE OF DYNAMIC RENEGOTIATION AND ASYMMETRIC INFORMATION
+IN FINANCIAL CONTRACTING
+Michael R. Roberts
+Working Paper 20484
+http://www.nber.org/papers/w20484
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2014
+I thank Bill Schwert (editor), two anonymous referees, Franklin Allen, Patrick Bolton, Peter DeMarzo,
+Nicolae Garleanu, Todd Gormley, Victoria Ivashina, Mark Leary, Mike Lemmon, Pricila Maziero,
+Martin Oehmke, Nick Roussanov, Luke Taylor, Toni Whited, Amir Yaron, Jeffrey Zwiebel for helpful
+comments; seminar participants at Columbia University, Michigan State University, New York Federal
+Reserve Bank, University of Chicago GSB, University of Pennsylvania; conference participants at
+SITE 2011; and, William Mann and Peter Maa for excellent research assistance. Roberts gratefully
+acknowledges financial support from the Jacobs Levy Equity Management Center for Quantitative
+Financial Research and the Greener Family Research Fellowship. The views expressed herein are
+those of the author and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2014 by Michael R. Roberts. All rights reserved. Short sections of text, not to exceed two paragraphs,
+may be quoted without explicit permission provided that full credit, including © notice, is given to
+the source.
+
+The Role of Dynamic Renegotiation and Asymmetric Information in Financial Contracting
+Michael R. Roberts
+NBER Working Paper No. 20484
+September 2014
+JEL No. D82,G21,G23,G32,K12
+ABSTRACT
+Using data from SEC filings, I show that the typical bank loan is renegotiated five times, or every
+nine months. The pricing, maturity, amount, and covenants are all significantly modified during each
+renegotiation, whose timing is governed by the financial health of the contracting parties and uncertainty
+regarding the borrowers' credit quality. The relative importance of these factors depends on the duration
+of the lending relationship. I interpret these results in light of financial contracting theories and emphasize
+that renegotiation is an important mechanism for dynamically completing contracts and for allocating
+control rights ex post.
+Michael R. Roberts
+The Wharton School
+University of Pennsylvania
+3620 Locust Walk, #2319
+Philadelphia, PA 19104
+and NBER
+mrrobert@wharton.upenn.edu
+
+1. Introduction
+Privatelyplaceddebtisbyfarthemostimportantsourceofexternalfinancingforfirmsin
+OECDcountries(GortonandWinton,2003). Unsurprisingly,alargeliteraturehasdeveloped
+which examines this form of financing and its implications for corporate behavior.1 Despite
+this attention, there are few studies examining the renegotiation of privately placed debt
+outside of financial distress. This void is troubling because a large number of theoretical
+studies show that the possibility of renegotiation can have a significant impact on security
+design, incentives, and welfare.2
+This paper helps fill that void using a novel, hand-collected dataset of “loan paths” for
+a random sample of bank borrowers. A loan path is a sequence of events beginning with
+an origination and ending with a terminal event, such as maturity or early termination.
+In between these two termini I record any and all renegotiations that occur, as well as
+information on the modifications made to the loan. This data enables me to address two
+broad questions: What happens in renegotiation? And, when does renegotiation occur? For
+both questions, I focus on how the answer varies as a function of the duration of the lending
+relationship and the number of renegotiations, or renegotiation round.
+My primary findings can be summarized as follow. First, renegotiations are initiated by
+borrowers primarily in response to changing conditions, as opposed to lender interventions
+due to default. Fewer than 28% of the sample renegotiations are due to a covenant violation
+or in anticipation of a covenant violation. Yet, more than 75% of all covenant violations lead
+to a renegotiation. Thus, renegotiations caused by contractual breaches occur infrequently,
+though when a contractual breach occurs it frequently leads to renegotiation.3
+1Empirical studies of privately placed debt have examined: debt maturity (e.g., Scherr and Hulburt,
+2001; Ortiz-Molina and Penas, 2004; Berger et al., 2005), pricing (Chava, Livdan and Purnanandam, 2009;
+Altman, Gande and Saunders, 2010); and covenants (Bradley and Roberts, 2003; Chava and Roberts, 2008;
+Roberts and Sufi, 2009a).
+2See Section 3 for a discussion of the relevant theories.
+3AnumberofstudiesexaminetheimplicationsofcovenantviolationincludingSmithandWarner(1979),
+Beneish and Press (1993, 1995), Chen and Wei (1993), Smith (1993), Sweeny (1994), Chava and Roberts
+(2008), Roberts and Sufi (2009a), and Nini, Smith, and Sufi (2009).
+1
+
+Second, most loans are renegotiated multiple times over relatively short horizons, with
+each renegotiation leading to significant changes to the contract. Ignoring the few short-term
+loans that are not renegotiated, the typical loan has a maturity at origination of four and a
+half years but is renegotiated almost five times, or every 9 months. This finding is not an
+artifact of maturity extensions, which occur in less than 20% of renegotiations and typically
+with modifications to other features of the contract.
+Specifically, renegotiations produce average increases (decreases) in the pricing, amount,
+and maturity of the loan equal to 73 (74) basis points, 103 (100) million dollars, and 23 (12)
+months, respectively. Relative to an average interest rate spread of 205 basis points, loan
+amount of 200 million dollars, and maturity of 5.5 years, these changes are economically
+large. They are also largely independent of the renegotiation round, or the duration of
+the contractual relationship. In addition to modifications of the contract terms, I observe
+changes to the tranche structure and loan type. Borrowers and lenders frequently repackage
+loans into more or fewer tranches during renegotiations, while also changing the nature of
+lenders’ commitments from term loans to revolving lines of credit and vice versa.
+Third, the plurality of renegotiations (46%) modify only the covenant package. In fact,
+covenants are more likely to be modified than other loan term throughout the life of the
+loan. These modifications are driven largely by borrowers desires to alter their investment,
+operating, or financing policies and, to a lesser extent, by borrowers’ financial distress. In
+lightofagrowingnumberofcontingenciestiedtotheinterestrate(performancepricinggrid),
+amount (borrowing base), and maturity (evergreen provisions), it may not be surprising that
+covenant modifications are responsible for many renegotiations.4 Yet, despite the presence of
+these contingencies, the majority (54%) of renegotiations modify the interest rate, amount,
+or maturity; and over 35% of renegotiations modify an interest rate spread linked to a pricing
+4Some covenants do come with contingencies. For example, maintenance covenant thresholds often vary
+overtimeinamannerdeterminedbytheperformanceofthecompany. Forexample,networthcovenantsof-
+tenincludebuildupprovisionsthatincreasethethresholdwithafractionofpositivenetincome. Restrictions
+on capital expenditures often include carryovers, which define the amount of unused investment capacity in
+a given period that may be carried forward into future periods.
+2

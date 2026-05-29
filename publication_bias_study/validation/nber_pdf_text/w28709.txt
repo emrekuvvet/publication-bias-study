@@ -1,0 +1,134 @@
+NBER WORKING PAPER SERIES
+MERCHANTS OF DEATH:
+THE EFFECT OF CREDIT SUPPLY SHOCKS ON HOSPITAL OUTCOMES
+Cyrus Aghamolla
+Pinar Karaca-Mandic
+Xuelin Li
+Richard T. Thakor
+Working Paper 28709
+http://www.nber.org/papers/w28709
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+April 2021, revised October 2023
+We thank the anonymous reviewers, John Friedman (the editor), Viral Acharya, Sandra
+Chamberlain, Gustavo Cortes, Jon Garfinkel, Sabrina Howell, Katharina Lewellen, Erzo Luttmer,
+Tom Philipson, Michael Usher, Daniel Weagley, Chris Whaley, Xiaoyun Yu, several hospital
+executives, conference participants at the 2021 FIRS Meetings, the 2021 NBER Health Care
+Summer Institute, the 2021 Federal Reserve Stress Testing Research Conference, the 2022
+Financial Markets and Corporate Governance Conference, and the 2022 China International
+Conference in Finance, and seminar participants at Columbia University, CSU Fullerton, Emory
+University, Indian Institute of Management Ahmedabad, Northeastern University, Pennsylvania
+State University, University of Bath, University of British Columbia, University of Colorado–
+Boulder, Peking University, University of Minnesota, University of Missouri, University of
+Pittsburgh, University Wisconsin–Milwaukee, and the Virtual Corporate Finance Seminars for
+helpful comments.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2021 by Cyrus Aghamolla, Pinar Karaca-Mandic, Xuelin Li, and Richard T. Thakor. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+Merchants of Death: The Effect of Credit Supply Shocks on Hospital Outcomes
+Cyrus Aghamolla, Pinar Karaca-Mandic, Xuelin Li, and Richard T. Thakor
+NBER Working Paper No. 28709
+April 2021, revised October 2023
+JEL No. G21,G32,I11,I15
+ABSTRACT
+This study examines the link between credit supply and hospital health outcomes. We use bank
+stress tests as exogenous shocks to credit access for hospitals that have lending relationships with
+tested banks. We find that affected hospitals shift their operations to increase resource utilization
+following a negative credit shock but reduce the quality of their care to patients across a variety
+of measures, including a significant increase in risk-adjusted readmission and mortality rates. The
+results indicate that access to credit can affect the quality of healthcare hospitals deliver, pointing
+to important spillover effects of credit market frictions on health outcomes.
+Cyrus Aghamolla Xuelin Li
+University of Minnesota University of South Carolina
+321 19th Ave S 1014 Greene St
+Minneapolis, MN 55455 Columbia, SC 29208
+caghamol@umn.edu xuelin.li@columbia.edu
+Pinar Karaca-Mandic Richard T. Thakor
+Carlson School of Management University of Minnesota,
+University of Minnesota 321 19th Avenue South, 3-255
+321 19th Avenue South Minneapolis, MN 55455
+Room 3-287 rthakor@umn.edu
+Minneapolis, MN 55455
+and NBER
+pkmandic@umn.edu
+
+1 Introduction
+Hospitals play an essential role in maintaining public health. Hospitals are also crucial to
+the economy, with healthcare spending in the U.S. accounting for 18–20% of GDP and the
+hospital sector accounting for one-third of this spending.1 However, like other enterprises,
+hospitals must obtain financing for their operations and utilize credit markets for this financ-
+ing. Indeed, the vast majority of U.S. hospitals carry leverage and often rely on debt for
+their financing needs. Moreover, due to low profit margins, hospitals carry considerable de-
+fault risk, with healthcare defaults on municipal bonds comprising 20% of all bond defaults,
+second only to housing. Consequently, frictions in the credit market can exacerbate imped-
+iments to credit access for hospitals, straining hospital finances and potentially influencing
+real decisions and outcomes.
+Given the prevalence of borrowing in the hospital sector (among all types of hospitals,
+including non-profit and rural hospitals), it is important to understand the role of credit
+access in shaping hospital operating decisions, as well as the potential spillover effects of such
+decisionsonthehospital’squalityofcare. Thequestionsweseektoaddressarethus: (i)How
+do shocks to credit markets transmit to hospital finances?; (ii) How do hospitals respond to
+negative shocks to credit access in terms of financing and operating decisions?; and finally,
+(iii) Do we observe indirect, negative effects on patient health outcomes following tightened
+credit constraints? Given their importance to public health, we would expect (or hope)
+that hospitals can maintain the same quality of care despite frictions in financial markets.
+This question highlights an important yet overlooked negative societal externality—health
+consequences—that can arise from credit shocks. Research on this topic may therefore have
+important social consequences and policy implications.
+To help shed light on the above questions, we utilize the staggered pattern of stress
+tests on U.S. banks implemented by the 2010 Dodd-Frank Act to cleanly test the effects
+of shocks to the supply of credit. Stress tests are regulatory assessments by the Federal
+Reserve designed to gauge a bank’s ability to withstand an impending economic crisis, the
+first of which were implemented in 2012. Following a stress test, banks often engage in risk
+management actions in order to improve their solvency and capital adequacy ratios. We
+1U.S. healthcare spending was $4.1 trillion in 2020, constituting 19.7% of U.S. GDP. Furthermore,
+hospital employment in the U.S. exceeds 5.7 million, and hospitals are among the top employers across
+U.S. cities (Samuelson (2017)). See also Gaynor et al. (2015). Moreover, the economic decline following the
+2020 pandemic is reported to be partly attributed to the large reduction in healthcare spending, leading
+to significant layoffs of hospital medical staff. See, e.g., “Plunge in health-care spending a big reason US
+economy sank in first quarter,” CNBC, April 29, 2020. Healthcare spending in other OECD countries is
+similar, with an average of 8–9% of GDP.
+1
+
+use the fact that a given hospital’s bank experiences a stress test as an exogenous negative
+shock to credit for the hospital. As noted by Gao et al. (2019), hospitals are particularly
+risky borrowers, with higher than average yields and default rates for municipal bonds.
+Consequently, to better manage their risk or improve their capital adequacy, stress-tested
+banks can lower the amount of credit provided or demand higher rates from these risky
+borrowers (Acharya et al. (2018), Cort´es et al. (2020)).2
+Using a staggered difference-in-differences specification over the period 2010–2016, we
+examine the change in operating decisions and performance, as measured by patient health
+outcomes, between hospitals subject to a credit supply shock—hospitals that had lending
+relationships with banks which were later stress-tested—relative to hospitals which did not
+experience a shock. This empirical strategy has the advantage that (i) the stress tests
+themselvesareunrelatedtotheunderlyinghealthofalocalpopulation; (ii)thetestsoccurred
+in a staggered manner; (iii) the tests were applied to banks based on size thresholds rather
+than on bank performance; and (iv) it is unlikely that hospitals could anticipate the negative
+bank responses following a stress test.
+We first establish that bank stress tests constitute a negative credit shock to their con-
+nected hospital borrowers. In particular, we find that loan spreads increase while loan
+amounts and maturity periods decrease for affected hospitals, and these hospitals are more
+likely to switch lenders to one for which they did not have a previous relationship with.3
+These results are consistent with bank stress tests increasing the cost of credit for an af-
+fected bank’s hospitals and reinforce the findings of Acharya et al. (2018) and Cort´es et al.
+(2020). The increases in debt servicing costs are economically significant for hospitals in our
+sample, due to low profit margins within the hospital industry. For example, the impact
+of the higher spread (interest rate over LIBOR) alone results in an additional $1.07 million
+in interest expense per year for an affected hospital in our sample, which amounts to an
+economically sizable 13.4% of net income. A decrease in net income heightens the likelihood
+of hospital insolvency and closure—an ever-present risk in the hospital industry (Bai et al.
+(2020))—and also leaves the hospital with fewer internally generated funds with which to
+finance future operations.
+We then explore how hospital financial and operating outcomes change as a result. We
+2Asshown by Acharyaet al.(2018)andCort´esetal. (2020), bankstrimtheirloanportfoliosandcharge
+higher rates for riskier loans following a stress test, thus constituting a negative credit supply shock to firms
+that borrow from these tested banks.
+3Changing lenders or acquiring loans from new banks also proves problematic for hospitals, as new
+lenders require a higher rate to compensate for the more severe information asymmetry due to the absence
+of a previous relationship.
+2

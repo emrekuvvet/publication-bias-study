@@ -1,0 +1,123 @@
+NBER WORKING PAPER SERIES
+SOCIAL FINANCE: CULTURAL EVOLUTION, TRANSMISSION BIAS AND MARKET
+DYNAMICS
+Erol Akcay
+David Hirshleifer
+Working Paper 27745
+http://www.nber.org/papers/w27745
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+August 2020, December 2020
+We thank participants at the Conference on Evolutionary Models of Financial Markets, MIT
+Laboratory for Financial Engineering (virtual, June 2020), Siew Hong Teoh, Sheridan Titman,
+Jeffrey Zwiebel, and especially the discussant, Simon Levin and an anonymous referee for
+insightful comments. The views expressed herein are those of the authors and do not necessarily
+reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2020 by Erol Akcay and David Hirshleifer. All rights reserved. Short sections of text, not to exceed
+two paragraphs, may be quoted without explicit permission provided that full credit, including © notice,
+is given to the source.
+
+Social Finance: Cultural Evolution, Transmission Bias and Market Dynamics
+Erol Akcay and David Hirshleifer
+NBER Working Paper No. 27745
+August 2020, Revised December 2020
+JEL No. D03,D15,D21,D25,D53,D8,D82,D83,D84,D85,D9,D91,D92,G02,G1,G11,G12,G14,G28, G35,G4,G41,G5,G51,G53,O31
+G3,G31,G32,G34, G35,G4,G41,G5,G51,G53,O31
+ABSTRACT
+The thoughts and behaviors of financial market participants depend upon adopted cultural traits,
+including information signals, beliefs, strategies, and folk economic models. Financial traits
+compete to survive in the human population, and are modified in the process of being transmitted
+from one agent to another. These cultural evolutionary processes shape market outcomes, which
+in turn feed back into the success of competing traits. This evolutionary system is studied in an
+emerging paradigm, social finance. In this paradigm, social transmission biases determine the
+evolution of financial traits in the investor population. It considers an enriched set of cultural
+traits, both selection on traits and mutation pressure, and market equilibrium at different
+frequencies. Other key ingredients of the paradigm include psychological bias, social network
+structure, information asymmetries, and institutional environment.
+Erol Akcay
+University of Pennsylvania
+Philadelphia, PA 19104
+eakcay@sas.upenn.edu
+David Hirshleifer
+The Paul Merage School of Business
+University of California, Irvine
+4291 Pereira Drive
+Irvine, CA 92697
+and NBER
+david.h@uci.edu
+
+1 Introduction
+Financial market participants employ a variety of learning strategies and heuristics,
+andaresubjecttodifferentbiasesinjudgementsanddecisions. Thesedispositionsare
+shaped by the cultural traits that people adopt from others. These include macrocul-
+tural traits, such as national, religious, ethnic and political beliefs; and more specific
+informationsignals,beliefs,financialstrategies,andfolkmodelsofhowtheeconomy
+orfinancialmarketswork. Asfinancialtraitsspreadfrompersontoperson,theycom-
+peteforsurvivalinthepopulation. Financialtraitsarealsomodifiedintheprocessof
+beingtransmitted—intensifying,lessening,orchangingqualitatively.
+The resulting population distribution of investor traits determines financial out-
+comes, such as project choices, market prices and trading profits. These market out-
+comesfeedbackintotheevolutionarysuccessofcompetingculturaltraits. Sofinancial
+marketsandtraitsarepartsofadualculturalevolutionaryandmarketsystem.
+Wearguehereforanewparadigmforunderstandingfinancialmarketswhichwe
+call social finance. Social finance studies the cultural evolution of financial traits, the
+transmission biases that shape this process, and resulting market dynamics. It draws
+upon concepts from classical and behavioral finance, evolutionary finance, and cul-
+tural evolutionary theory. We review the cultural evolution of beliefs, investment,
+and price-setting in financial markets, in the context of social network structure and
+institutional environment. We also highlight connections between general evolution-
+arytheoryandfinancialapplications,andsuggestdirectionsforfutureresearch.
+Cultural evolution is a shift in the distribution of cultural traits in a population
+over time (Mesoudi et al., 2006). Cultural traits increase or decrease in frequency,
+and are modified through individual and social learning. Financial economics has
+longstudiedlearningbyobservingmarketprice. Evolutionaryfinancerecognizesthat
+beliefsandbehaviorsarealsotransmittedviasocialinteractionandobservation. Social
+financeisdistinguishedbyanexplicitandbroaderexaminationofsocialtransmission
+processes,culturaltraits,andevolutionarydynamics.
+Thereisgrowingevidencethatculturally-transmittedinvestorideasorfolkmodels
+affecttradingbehaviorandpriceoutcomes. Thisincludesbothmacroculturaltraits,as
+mentioned above, and microcultural traits, such as a belief in Bitcoin as a trading op-
+portunity. Marketparticipants,suchasmanagersandinvestors,acquireandtransmit
+understandingsabouthowtheeconomyandmarketswork—whatHirshleifer(2020)
+refers to as folk economic and financial models. Folk financial models often reflect shal-
+2
+
+lowcognition,asencapsulatedincatch-phrasessuchas‘dead-catbounce’and‘Don’t
+fight the Fed.’ Folk models are also sometimes attached to vivid narratives that help
+themspreadfrompersontoperson(Shiller,2017).
+Despitealonghistoryofevolutionaryapproachestoeconomicsandfinance(Alchian,
+1950),evolutionaryfinance,including“econophysics”(surveyedby(Slanina,2014)),
+has largely remained separate intellectual lineage from the rest of the finance field.
+However,agrowingnumberof‘callstoarms’endorsethestudyofsocialinteractions
+and,insomecases,evolutionaryprocessesinfinancialmarkets(FarmerandLo,1999;
+Lo,2017;Shiller,2017;Hirshleifer,2020).
+Existingevolutionaryandagent-basedapproachestofinancialmarkets,including
+the econophysics literature, typically derive or simulate the aggregate consequences
+of zero-intelligence rules for how agents behave. These approaches provide valuable
+insights, but do not address the effects of having agents how thoughtfully seek to
+optimize (even if imperfectly). Social finance encompasses agent-based modeling of
+transmissionbiases,butgoesfurthertoallowfortheeffectsoftransmissionbiaswhen
+agentsformbeliefsandchooseactionsthoughtfully.
+Buildingonpreviousadvancesinevolutionaryfinanceandotherdisciplines,social
+financeoffersseveraldistinctivefeaturesandpotentialcontributions.
+1. Socialfinancenestsclassicalandbehavioralfinanceasspecialcases,andendog-
+enizestraitsthataretypicallytakenasgiven.
+Social transmission helps explain how private signals are distributed across in-
+vestors; in classical finance this distribution is often taken as given. Furthermore, so-
+cialtransmissionoffinancialtraits,includingfinancialfolkmodels,shapestheheuris-
+ticsandbiasestakenasgiveninbehavioralfinance(asreviewedin(Hirshleifer,2015)),
+andshapeshowthesetraitsvaryacrossagentsandovertime.
+For example, in behavioral finance investor belief in continuation or reversal of
+pricetrendsistakenasgiven,asintheliteratureonpositivefeedbacktrading(DeLong
+et al., 1990). The new evolutionary perspective seeks to explain how investors come
+to possess such beliefs or decision rules. In this approach, investors acquire trend-
+chasingorcontrariantraitsfromothersinaprocessofculturaltransmission. Thefolk
+model that return trends tend to continue competes for investor attention and belief
+withthe“buyonthedips”folkmodelthatreturnstendtoreverse. Similarly,empirical
+behavioralfinanceresearchoftentakesinvestorsentimenttobeanexogenousdriverof
+behavior (Lee et al., 1991; Baker and Wurgler, 2007). Social finance regards shifts in
+3

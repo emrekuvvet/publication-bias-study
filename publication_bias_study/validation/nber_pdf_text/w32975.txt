@@ -1,0 +1,137 @@
+NBER WORKING PAPER SERIES
+THE SELECTIVE DISCLOSURE OF EVIDENCE:
+AN EXPERIMENT
+Agata Farina
+Guillaume Fréchette
+Alessandro Ispano
+Alessandro Lizzeri
+Jacopo Perego
+Working Paper 32975
+http://www.nber.org/papers/w32975
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2024
+Financial Support from the National Science Foundation; no other significant sources of funds. This
+paper merges and replaces Farina et al. (2024) and Ispano (2024). We are thankful to Jonathan
+Glover, Jeanne Hagenbach, Navin Kartik, Yichuan Lou, Marco Ottaviani, Emanuel Vespa, Leeat
+Yariv, Sevgi Yuksel, and seminar participants at Bocconi University, Brown University, Columbia
+University, John Hopkins University, MIT, New York University, Northwestern University,
+Princeton University, Stanford University, and the University of Pittsburgh for helpful comments.
+The views expressed herein are those of the authors and do not necessarily reflect the views of the
+National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2024 by Agata Farina, Guillaume Fréchette, Alessandro Ispano, Alessandro Lizzeri, and Jacopo
+Perego. All rights reserved. Short sections of text, not to exceed two paragraphs, may be quoted
+without explicit permission provided that full credit, including © notice, is given to the source.
+
+The Selective Disclosure of Evidence: An Experiment
+Agata Farina, Guillaume Fréchette, Alessandro Ispano, Alessandro Lizzeri, and Jacopo Perego
+NBER Working Paper No. 32975
+September 2024
+JEL No. C92, D83
+ABSTRACT
+We conduct an experimental analysis of selective disclosure in communication. In our model, an
+informed sender aims to influence a receiver by disclosing verifiable evidence that is selected from
+a larger pool of available evidence. Our experimental design leverages the rich comparative statics
+predictions of this model, enabling a systematic test of the relative importance of evidence selection
+versus evidence concealment in communication. Our findings confirm the key qualitative
+predictions of the theory, suggesting that selection, rather than concealment, is often the dominant
+distortion in communication. We also identify deviations from the theory: A minority of senders
+overcommunicate relative to predictions, while some receivers partially neglect the selective
+nature of the evidence they observe.
+Agata Farina Alessandro Lizzeri
+Princeton University Department of Economics
+Department of Economics Princeton University
+Julis Romo Rabinowitz Building Julis Romo Rabinowitz Building
+Princeton, NJ 08544 Princeton, NJ 08544
+United States and NBER
+agatafarina@princeton.edu lizzeri@princeton.edu
+Guillaume Fréchette Jacopo Perego
+New York University Columbia University
+Department of Economics 3022 Broadway Uris 616
+19 West 4th Street New York, NY 10027
+New York, NY 10012 jp3754@columbia.edu
+guillaume.frechette@nyu.edu
+Alessandro Ispano
+Laboratoire d'Economie de Dauphine (LEDa)
+Place du Maréchal de Lattre de Tassigny
+Paris 75775
+France
+alessandro.ispano@gmail.com
+
+1 Introduction
+This paper presents the results of an experimental analysis of selective disclosure. We study
+settings in which an informed sender seeks to influence the actions of an uninformed receiver
+bydisclosingselectedevidence. Thisformofselectivecommunicationispervasiveinpractice.
+Forinstance,ajournalistmayselectthenewseventstoreportdependingonhowtheyreflecton
+apoliticalcandidate;adefenselawyermayselecttheevidencetopresentincourtinanattempt
+to increase the chance of acquittal; a firm may choose specific features of its product portfolio
+to advertise to customers.1 These settings share the following characteristics: The evidence is
+verifiable(i.e.,thesendercannotfabricateit)butpossiblynoisy(i.e.,itisimperfectlyinforma-
+tive); furthermore, it may be selected by the sender from a larger pool of available evidence.
+Thus,theinterpretationofthedisclosedevidencedependsonthecontext—namely,howitwas
+selectedbythesender. Thisselectionultimatelydetermineshoweffectivelythesenderandthe
+receivercancommunicate.
+The disclosure of verifiable evidence is a centerpiece of the economic analysis of the po-
+tential distortions caused by asymmetric information, with numerous applications to financial
+economics, accounting, and industrial organization (for reviews, see Verrecchia (2001), Mil-
+grom (2008), Dranove and Jin (2010), and Beyer et al. (2010)). The benchmark result in this
+literature—theunravelingprinciple—arguesthatifthesendercanverifiablydisclosetheavail-
+able evidence, she will do so, regardless of how favorable it is. According to this prediction,
+communication helps resolve the initial information asymmetry. The disclosure literature has
+largelyfocusedondocumentingandexplainingakeydeviationfromthisbenchmark: Theten-
+dencyofsenderstoconcealunfavorableevidence.2 Thisbehaviorcausesdistortions,assenders
+undercommunicaterelativetotheunravelingbenchmark,allowingtheinformationasymmetry
+topersist. Thesedistortionsjustifytheadoptionofdisclosuremandates,whicharecommonin
+manycontexts.3
+In this paper, we shift the emphasis away from distortions caused by the concealment of ev-
+idence and focus instead on a less-studied aspect of the problem: distortions arising from the
+1Prat and Stro¨mberg (2013) and Gentzkow et al. (2015) argue that selective disclosure is in practice one of
+theprincipalsourcesofmediaslant,whichtheyrefertoas“filtering”or“factbias.” KoehlerandMercer(2009)
+illustratehowmutualfundcompaniesselectivelyadvertisetheirbetter-performingfunds.
+2StartingfromDye(1985),severaltheoreticalmodelshaveexplainedwhyconcealmentmightoccurinequi-
+librium. Intheempiricalliterature,excessiveconcealmenthasbeendocumentedbothinthefieldandthelabora-
+tory(see,e.g.,Mathios,2000;JinandLeslie,2003;Bertomeuetal.,2020;Jinetal.,2021).
+3IntheUnitedStates,forinstance,regulationsmayrequirerestaurantstodisplaysanitarygradesandcalorie
+counts,publiclytradedcompaniestodisclosefinancialstatements,andrealestatesellerstorevealspecificproperty
+conditions.
+1
+
+sender’s ability to select which evidence to disclose. This shift in focus may lead to a corre-
+sponding change in policy recommendations. Our experimental analysis is informed by a the-
+oryofselectivedisclosurethatprovidesrichcomparativestatics,wherebywevarythequantity
+of evidence available to the sender and how much of it can be disclosed to the receiver. These
+comparative statics results enable a systematic test of the strategic forces driving selective dis-
+closure.
+Our model, building on Milgrom (1981), features a sender who privately observes the state
+oftheworldandtherealizationof N independentsignals(orevidence),whichareinformative
+about the state. The sender can verifiably disclose up to K of these signals to a receiver. In
+this context, N represents how much evidence is available to the sender, and K represents the
+communicationcapacityoftheenvironment(e.g.,thenumberofstoriesanewspapercanprint).
+The receiver observes the disclosed signals and takes an action. The receiver’s objective is to
+match her action to the state, while the sender wishes to persuade the receiver to take a higher
+action, regardless of the state. We show that in our setting, an equilibrium exists in which the
+sender discloses the K highest signals among those she observes. This equilibrium reflects the
+sender’sincentivestobeselectiveanddisclosethemost-favorableevidenceatherdisposal.
+Theinterplaybetweenconcealmentandselectionofevidenceshapesthestrategicinteraction
+between the sender and the receiver in our setting. Notably, their relative importance changes
+as we vary N and K. When K = N, evidence can only be concealed, not selected, as in a
+classic disclosure setting. Conversely, when N is large relative to K, selection is likely to be
+the dominant distortion: The sender can disclose highly favorable evidence regardless of the
+state, similar to a cheap-talk setting. Thus, by varying K and N, this model accommodates
+forcestypicaloftwooppositecommunicationparadigms: verifiabledisclosure(e.g.,Milgrom,
+1981; Grossman, 1981) at one extreme and cheap talk (e.g., Crawford and Sobel, 1982) at the
+other. These extremes have been analyzed separately in the experimental literature, leading to
+contrastingfindingsthat,asexplainedbelow,ourhybridsettingcanhelpreconcile.
+Ourexperimentalanalysisisguidedbytherichcomparativestaticpredictionsthatarisefrom
+varying K and N. As N increases relative to K, the sender should disclose more-favorable
+evidence. This endogenous selection should make receivers more skeptical of any message
+as N increases or K decreases. The behavior of both the sender and the receivers jointly
+determinestheinformativenessoftheequilibrium,whichwedefineasthecorrelationbetween
+the state and the receiver’s action. Holding N constant, the informativeness should increase
+in K. Instead, holding K constant, the informativeness may be nonmonotone in N, but it
+shouldnecessarilydecreasetozeroas N becomeslarge. Thesepredictionsstemfromabalance
+2

@@ -1,0 +1,127 @@
+NBER WORKING PAPER SERIES
+FINANCIAL CONSTRAINTS, ASSET TANGIBILITY,
+AND CORPORATE INVESTMENT
+Heitor Almeida
+Murillo Campello
+Working Paper 12087
+http://www.nber.org/papers/w12087
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+March 2006
+We thank Matias Braun, Charlie Calomiris, Glenn Hubbard (NBER discussant), Owen Lamont, Anthony
+Lynch, Bob McDonald (the editor), Eli Ofek, Leonardo Rezende, Paola Sapienza, David Scharfstein, Rodrigo
+Soares, Sheri Tice, Greg Udell, Belén Villalonga (AFA discussant), Daniel Wolfenzon, and an anonymous
+referee for their suggestions. Comments from seminar participants at the AFA meetings (2005), Baruch
+College, FGV-Rio, Indiana University, NBER Summer Institute (2003), New York University, and Yale
+University are also appreciated. Joongho Han provided support with GAUSS programming. Patrick Kelly
+and Sherlyn Lim assisted us with the Census data collection. The views expressed herein are those of the
+author(s) and do not necessarily reflect the views of the National Bureau of Economic Research.
+©2006 by Heitor Almeida and Murillo Campello. All rights reserved. Short sections of text, not to exceed
+two paragraphs, may be quoted without explicit permission provided that full credit, including © notice, is
+given to the source.
+
+Financial Constraints, Asset Tangibility, and Corporate Investment
+Heitor Almeida and Murillo Campello
+NBER Working Paper No. 12087
+March 2006
+JEL No. G31
+ABSTRACT
+When firms are able to pledge their assets as collateral, investment and borrowing become
+endogenous: pledgeable assets support more borrowings that in turn allow for further investment in
+pledgeable assets. We show that this credit multiplier has an important impact on investment when
+firms face credit constraints: investment-cash flow sensitivities are increasing in the degree of
+tangibility of constrained firms' assets. If firms are unconstrained, however, investment-cash flow
+sensitivities are unaffected by asset tangibility. Crucially, asset tangibility itself may determine
+whether a firm faces credit constraints - firms with more tangible assets may have greater access to
+external funds. This implies that the relationship between capital spending and cash flows is non-
+monotonic in the firm's asset tangibility. Our theory allows us to use a differences-in-differences
+approach to identify the effect of financing frictions on corporate investment: we compare the
+differential effect of asset tangibility on the sensitivity of investment to cash flow across different
+regimes of financial constraints. We implement this testing strategy on a large sample of
+manufacturing firms drawn from COMPUSTAT between 1985 and 2000. Our tests allow for the
+endogeneity of the firm's credit status, with asset tangibility influencing whether a firm is classified
+as credit constrained or unconstrained in a switching regression framework. The data strongly
+support our hypothesis about the role of asset tangibility on corporate investment under financial
+constraints.
+Heitor Almeida Murillo Campello
+NYU Stern School of Business University of Illinois
+Department of Finance 430 A Wohlers Hall
+44 West 4th Street, Room 9-85 1206 South Sixth Street
+New York, NY 10012 Champaign, IL 61820
+and NBER campello@uiuc.edu
+halmeida@stern.nyu.edu
+
+1 Introduction
+Whether …nancing frictions in‡uence real investment decisions is a central matter in contemporary
+…nance (Stein (2003)). Various theories explore the interplay between …nancing frictions and invest-
+ment to study issues ranging from …rm organizational design (e.g., Gertner et al. (1994) and Stein
+(1997)) to optimal hedging and cash policies (Froot et al. (1993) and Almeida et al. (2004)). Unfor-
+tunately, identifying …nancing–investment interactions in the data is not an easy task. The standard
+identi…cationstrategyisbasedonthemethodologyproposedbyFazzarietal. (1988).1 Thoseauthors
+argue that the sensitivity of investment to internal funds should increase with the wedge between the
+costs of internal and external funds (monotonicity hypothesis). Accordingly, one should be able to
+gaugetheimpactofcreditimperfectionsoncorporatespendingbycomparingthesensitivityofinvest-
+menttocash‡owacrosssamplesof…rmssortedonproxiesfor…nancingfrictions. Anumberofrecent
+papers, however, have questioned the validity of the Fazzari et al. approach. Kaplan and Zingales
+(1997) argue that the monotonicity hypothesis is not a necessary implication of optimal investment
+under constrained …nancing, and report evidence that contradicts Fazzari et al.’s …ndings. Work
+by Erickson and Whited (2000), Gomes (2001), and Alti (2003) further suggests that the patterns
+reported by Fazzari et al. are consistent with models in which …nancing frictions play no role.
+In this paper, we develop and test a theoretical argument that allows one to identify whether
+…nancing imperfections a¤ect …rm investment behavior. We explore the idea that variables that in-
+crease a …rm’s ability to contract external …nance may in‡uence observed investment spending when
+investment demand is constrained by credit imperfections. One such variable is the tangibility of
+a …rm’s assets. Assets that are more tangible sustain more external …nancing, because tangibility
+mitigates contractibility problems — asset tangibility increases the value that can be recaptured by
+creditors in default states.2 Through a simple contracting model that draws on Kiyotaki and Moore
+(1997), we show that investment–cash ‡ow sensitivities will be increasing in the tangibility of con-
+strained …rms’assets. In contrast, tangibility willhave no e¤ect on investment–cash ‡owsensitivities
+of …nancially unconstrained …rms. Crucially, asset tangibility itself a¤ects the credit status of the
+…rm: …rms with very tangible (pledgeable) assets are likely to become unconstrained. This implies
+a non-monotonic e¤ect of tangibility on investment–cash ‡ow sensitivities.
+Inanutshell,ourtheorypredictsthatatrelativelylowlevelsoftangibility,thesensitivityofinvest-
+mentspendingtocash‡owincreaseswithassettangibility. However,thise¤ectceasestoexistathigh
+1ApartiallistofpapersthatusetheFazzarietal. methodologyincludesDevereuxandSchiantarelli(1990),Fazzari
+and Petersen (1993), Himmelberg and Petersen (1994), Bond and Meghir (1994), Calomiris and Hubbard (1995),
+Gilchrist and Himmelberg (1995), and Kadapakkam et al. (1998). See Hubbard (1998) for a comprehensive survey.
+2Ourproxiesforassettangibilitydonotmeasuretheratiooftangibletointangibleassetsinthe…rm’sbalancesheet,
+but rather gauge the degree of salability or the ease of redeployment of a …rm’s assets by its creditors. Hereinafter,
+the term “tangibility”is meant to summarize these characteristics, rather than how hard are a …rm’s assets.
+1
+
+levels of tangibility, as highly tangible …rms become …nancially unconstrained. This prediction allows
+us to formulate an empirical test of the interplay between …nancial constraints and investment that
+usesadi¤erences-in-di¤erencesapproach. Weidentifythee¤ectof…nancingfrictionsoninvestmentby
+comparingthedi¤erentiale¤ectofassettangibilityonthesensitivityofinvestmenttocash‡owacross
+di¤erent (endogenously determined) regimes of …nancial constraints. In contrast to Kaplan and Zin-
+gales(1997),wearguethatinvestment–cash‡owsensitivitiescan beusedasameanstogaugetheim-
+pact of …nancing frictions on real investment. However, the conditions under which identi…cation oc-
+cursalsosuggestthatinvestment–cash‡owsensitivitiesarenot monotonicallyrelatedtothedegreeof
+…nancingconstraints. Inthissense,therelationshipbetweentangibilityandinvestment–cash‡owsen-
+sitivities that we identify agrees with Kaplan and Zingales’s critique of the monotonicity hypothesis.
+Our empirical approach provides a way to sidestep some of the problems associated with prior
+work on …nancial constraints. Because we focus on the di¤erential e¤ect of asset tangibility on
+investment–cash ‡ow sensitivities across constrained and unconstrained …rms, it is hard to argue
+that our results could be generated by a model with no …nancing frictions in which poor proxies for
+investmentopportunities(suchasQ)areemployed(cf. EricksonandWhited(2000)andAlti(2003)).
+We recognize that problems with proxy quality might imply a di¤erent bias for the absolute levels
+of the estimated investment–cash ‡ow sensitivities across constrained and unconstrained samples.
+However, our empirical test focuses on the marginal e¤ect of asset tangibility on investment sensitiv-
+ities. In order to generate our hypothesis in a model with frictionless …nancing, one would need to
+generate residuals from poor proxies for investment opportunities that have very special properties.
+Speci…cally, theseresidualswouldneedtoloadontovariationsinassettangibilitydi¤erentiallyacross
+samples of …nancially constrained and unconstrained …rms, and do so precisely along the lines of the
+predictions of our theory. We …nd it di¢ cult to articulate a good rationale for such a story. However,
+to verify that our empirical results cannot be explained away by mismeasurement and other biases,
+our analysis also employs the expectations GMM estimator proposed by Cummins et al. (1999), the
+measurement error-consistent estimator of Erickson and Whited (2000), and the Euler-based model
+of capital investment of Bond and Meghir (1994).
+We test our hypothesis on a large sample of manufacturing …rms drawn from the COMPUSTAT
+tapes between 1985 and 2000. We estimate investment equations that resemble those of Fazzari et al.
+(1988), butincludeaninteractiontermthatcapturesthee¤ectoftangibilityoninvestment–cash‡ow
+sensitivities. These equations are …tted over subsamples that are identi…ed based on the likelihood
+that …rms face constrained access to capital markets. Importantly, our main tests do not rely on
+standard a priori assignments of …rms into …nancial constraint categories. Instead, we look at cross-
+sectional di¤erences in investment using a switching regression approach in which the probability
+2

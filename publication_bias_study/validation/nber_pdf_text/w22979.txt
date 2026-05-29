@@ -1,0 +1,112 @@
+NBER WORKING PAPER SERIES
+STEPPING ON A RAKE:
+REPLICATION AND DIAGNOSIS
+John H. Cochrane
+Working Paper 22979
+http://www.nber.org/papers/w22979
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2016, Revised October 2017
+Previously circulated as “Stepping on a Rake: Replication and Diagnosis.” Computer programs
+and updated drafts may be found at http://faculty.chicagobooth.edu/john.cochrane/. I thank two
+referees, Eric Leeper (the editor), and Zhengyang Jiang for helpful comments. The views
+expressed herein are those of the author and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2016 by John H. Cochrane. All rights reserved. Short sections of text, not to exceed two
+paragraphs, may be quoted without explicit permission provided that full credit, including ©
+notice, is given to the source.
+
+Stepping on a Rake: Replication and Diagnosis
+John H. Cochrane
+NBER Working Paper No. 22979
+December 2016, Revised October 2017
+JEL No. E31,E4,E5
+ABSTRACT
+The fiscal theory of the price level can describe monetary policy. Governments can set interest
+rate targets and thereby affect inflation, with no change in fiscal surpluses. The same basic
+mechanism describes interest rate targets, forward guidance, open market operations, and
+quantitative easing. It does not require any monetary, pricing, or other frictions. In the presence of
+long-term debt, higher interest rates lead to temporarily lower inflation, a challenging sign. I
+derive and replicate the results of the Sims (2011) “stepping on a rake” model, which first
+produced this negative sign, and produces realistic impulse-response functions. I show that Sims'
+result is robust to many model features, but essentially requires long-term debt.
+John H. Cochrane
+Hoover Institution
+434 Galvez Mall
+Stanford University
+Stanford, CA 94305-6010
+and NBER
+john.cochrane@stanford.edu
+Computer programs available on my webpage is available at
+http://faculty.chicagobooth.edu/john.cochrane/
+
+1. Introduction
+The fiscal theory of the price level does not just describe inflation and deflation driven by
+fiscal events. The fiscal theory of the price level also offers a cogent and unified description of
+monetary policy: how governments can set interest rate targets; and how governments can affect
+inflation and the real economy, by interest rate targets, by forward guidance about interest rate
+targets, and by varying the quantity and maturity structure of government debt in open-market
+and quantitative-easing operations, all without changes in fiscal surpluses.
+Inthepresenceoflong-termdebt, aninterestraterisecanproduceatemporarilylowerinflation
+rate in this fiscal theory. Higher nominal interest rates mean lower nominal bond prices, which
+lower the nominal market value of outstanding government debt. If expected future surpluses do
+not change, as I assume of “monetary policy,” and at the existing price level, the market value of
+government debt is then less than its real value to consumers and investors. People then try to
+buy government debt, and to buy less goods and services, i.e. aggregate demand declines. The
+price level declines, until the real value of nominal debt again matches the real present value of
+primary surpluses. Since the inflation-lowering effect of higher rates depends on long-term bond
+prices, and thus centrally on expected future short term rates, this mechanism is also a model of
+forward guidance.
+Similarly, in the presence of long-term debt, buying back some long term debt, with no change
+in surpluses, means less debt coming due at future dates, backed by unchanged surpluses. This
+reduces the future price level. The extra money from today’s bond purchase drives up today’s
+price level, an inflationary stimulus. The higher current and lower future price level imply a lower
+long-term interest rate. This is a version of quantitative easing.
+Eventually, however, the Fisher effect wins out, and persistently higher nominal interest rates
+mean higher inflation. Sims (2011) calls this pattern of responses to a persistent interest rate rise
+“stepping on a rake.” He offers it as an explanation of the 1970s: Attempts to lower inflation by
+raising interest rates, without fiscal reform, temporarily lowered inflation, but then inflation came
+back even more strongly.
+This fiscal theory of monetary policy requires no frictions at all – no money demand, special
+liquid asset, sticky prices, financial frictions, liquidity constraints, irrational expectations, and so
+forth. Yes, one may add frictions and elaborations to obtain realistic dynamics. In particular,
+pricing frictions deliver output effects of monetary policy. But we can now start with a simple
+supply and demand benchmark, which delivers basic signs and intuitions, and then add frictions to
+2
+
+match dynamics, as we do elsewhere in economics, rather than require frictions to even get going,
+i.e. to determine the price level, to describe the central bank’s ability to control interest rates and
+inflation, or to produce the basic sign of monetary policy.
+Sims (2011) is a ready-made example. Sims specifies an interest rate target which rises with
+inflation and output; fiscal surpluses that respond to output, with larger deficits in recessions; a
+standard forward-looking sticky-price Phillips curve; a habit-like preference for smooth consump-
+tion; and long-term government debt. His policy parameters are in the “passive-money / active-
+fiscal” region of the Leeper (1991) categorization: Interest rates respond less than one for one to
+inflation, and fiscal surpluses do not respond to validate revisions in the value of government debt
+coming from arbitrary changes in the price level.
+Simsshowsthatariseininterestratesproducesatransitorydeclineininflation(seethetopleft
+panel of figure 2 below). If the interest rate rise is persistent, inflation eventually rises. Sims also
+generatessmoothimpulseresponsefunctionswithsignsandmagnitudestypicaloftheactive-money
+New-Keynesian literature.
+1.1. Context
+One may be surprised that I focus on the temporary inflation decline rather than the eventual
+long-terminflationriseinresponsetopersistentlyhigherinterestrates. Commonintuitionsuggests
+thathigherinterestrateslowerinflation,sotheshort-runnegativeresponseseemseasy,andthelong
+run positive response seems a novelty. Indeed, Sims’ analysis of the 1970s was novel. Conventional
+wisdom says that inflation grew out of control in the 1970s because rates were not raised high
+enough or for long enough, not because they were raised too much or for too long.
+However,ithassincebecomeclearthatthistheoreticalpresumptionshouldbereversed. Models
+with forward-looking people, including standard new-Keynesian models, produce higher long-run
+inflation in response to persistently higher interest rates. They have great trouble to produce even
+a temporarily lower inflation. The intuition is simple: In these models, the Fisher relation, that
+nominal interest rate equals real rate plus expected inflation, is a stable steady state. Real rates
+settle down eventually, so inflation is attracted to the nominal rate.
+In fact, other than by this fiscal-theory mechanism, we do not have a simple, modern (rational
+agents, market clearing) economic model that robustly produces even a short-run negative effect
+of interest rates on inflation. (The qualifiers simple, modern, economic, and robust are important
+to this statement. See Cochrane (2017a) for extensive discussion.) Thus, the ability to produce a
+3

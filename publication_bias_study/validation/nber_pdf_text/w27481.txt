@@ -1,0 +1,126 @@
+NBER WORKING PAPER SERIES
+CREDIT BOOMS, FINANCIAL CRISES AND MACROPRUDENTIAL POLICY
+Mark Gertler
+Nobuhiro Kiyotaki
+Andrea Prestipino
+Working Paper 27481
+http://www.nber.org/papers/w27481
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2020
+We would like to thank the participants of various seminars and conferences, particularly Juliane
+Begenau, Jonathan Heathcote, Urban Jermann, Vincenzo Quadrini and Alejandro Van der Ghote
+for thoughtful comments. The Financial Support of the National Science Foundation is gratefully
+acknowledged. The views expressed herein are those of the authors and do not necessarily reflect
+the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Mark Gertler, Nobuhiro Kiyotaki, and Andrea Prestipino. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Credit Booms, Financial Crises and Macroprudential Policy
+Mark Gertler, Nobuhiro Kiyotaki, and Andrea Prestipino
+NBER Working Paper No. 27481
+July 2020
+JEL No. E00
+ABSTRACT
+We develop a model of banking crises which Is consistent with two important features of the
+data: First, banking crises are usually preceded by credit booms. Second, credit booms often do
+not result in a crisis. That is, there are "good" booms as well as "bad" booms in the language of
+Gorton and Ordonez (2019). We then consider how the optimal macroprudential policy weighs
+the benefits of preventing a crisis against the costs of stopping a good boom. We show that
+countercyclical capital buffers are a critical feature of a successful macropudential policy.
+Mark Gertler Andrea Prestipino
+Department of Economics Federal Reserve System
+New York University Washington DC, 20551
+269 Mercer Street, 7th Floor andrea.prestipino@frb.gov
+New York, NY 10003
+and NBER
+mark.gertler@nyu.edu
+Nobuhiro Kiyotaki
+Department of Economics
+Princeton University
+Fisher Hall
+Princeton, NJ 08544-1021
+and NBER
+kiyotaki@princeton.edu
+
+1 Introduction
+We develop a model of banking panics which is consistent with two important features of the
+data: First, banking crises are usually preceded by credit booms. Second, credit booms often
+do not result in crises. That is, there are ”bad booms” as well as ”good booms” in the language
+of Gorton and Ordonez (2019). We then use the model to study macroprudential policy.
+We first describe the main facts we think a model of financial crises should capture. Figure
+1 portrays the link between credit growth and financial crises, using data from Krishnamurthy
+and Muir (2017). The evidence is based on a panel of annual data of industrialized countries,
+ranging from 1869 to 2018. The authors use the narrative based classification in Jorda` et al.
+(2011) to determine periods in which a country experienced a financial crisis. The figure then
+plots the average behavior of output, credit growth and credit spreads, around the time a crisis
+occurs. In each of the three panels, the crisis occurs at year zero. The upper-right panel shows
+that credit growth on average steadily increases prior to the crisis before declining afterward, as
+a number of authors have recently noted, e.g. Schularick and Taylor (2012). The bottom panel
+shows that prior to a crisis, GDP growth on average increases relative to trend by roughly two
+percent, but when the crisis hits it experiences a sharp and persistent decline of nearly eight
+percent. Finally, as support for the notion that the output contractions reflect financial crises,
+credit spreads increase on average prior to and during the crisis, before eventually going back
+to a normal level, as shown in the upper-left panel.
+Figure 2, however, makes clear that high credit growth does not always lead to a crisis, nor
+is it necessary for a crisis to arise. The data in the figure plots annual demeaned credit growth
+in a country lagged two years (the horizontal axis) versus one year (the vertical axis).1 The red
+dots are episodes where a country experienced a financial crisis while the blue are instances
+where a crisis did not occur. If we think of a credit boom as a period in which credit growth is
+aboveaveragefortwoconsecutiveyears, thentheupperrightquadrantreflectsperiodspreceded
+by credit booms. Accordingly, crisis episodes happening after credit booms are all the red dots
+in the upper right hand quadrant in the figure, while the blue dots in the upper right quadrant
+are episodes in which a credit boom did not result in a crisis. As the figure shows, more often
+than not, a credit boom does not result in a financial crisis. Conditional on a credit boom, the
+probability of a crisis is just 4.9 percent. It is true, however, that a credit boom makes a crisis
+more likely: conditional on no credit boom, the probability of a crisis drops to 2.8 percent.
+Our goal in this paper is to first develop a macroeconomic framework with banking panics
+that is consistent with the evidence in Figures 1 and 2, and then to use the model to study
+regulatory policy. The framework we develop is based on Gertler et al. (2020b), henceforth
+1Credit growth data is from Jord`a et al. (2011). To demean the data we compute for each country seperate
+means of credit growth for the pre-war period and post-war periods.
+2
+
+GKP (2020), which is a standard New Keynesian macro model modified to include banks and
+bankingpanicsthatdisruptrealactivity. Withinthatframework, wecapturebothcreditbooms
+preceding crises and the banking collapse and disruption of real activity that follows. In the
+spirit of Geanakoplos (2010) and Bordalo et al. (2018), the source of the boom is optimistic
+beliefs by financial intermediaries (or banks in short) about future returns to capital that are
+eventually disappointed.2 This leads to a buildup of bank credit that is funded by an increase
+in bank leverage, mostly in the form of short term debt. High levels of debt, in turn, make
+the system vulnerable to a run by increasing the exposure of banks to negative returns on
+their assets, so that even small negative shocks can trigger system wide runs that result in deep
+contractions in economic activity. In this latter regard, the model captures the highly nonlinear
+dimension of financial crises. We use global methods to solve the model numerically in order
+to characterize these nonlinearities.
+There are several di↵erences from our earlier work. First, while in our earlier paper we used
+a canonical New Keynesian framework with capital accumulation and focused our study on the
+Great Recession, here we consider a simple endowment economy but allow for recurrent credit
+booms that may or may not result in banking crises. This allows us to capture the statistical
+relationship between credit booms and financial crises described above. The presence of good
+and bad credit booms sets the stage for our study of macroprudential regulation. By restricting
+financial intermediation, macroprudential policies can prevent the large credit booms that are
+the root cause of financial crises. However, since the regulator can’t tell apart bad credit
+booms from good ones, attempts at preventing crises will often end up stifling good booms.
+By matching the relative frequency of good and bad credit booms in the data, our framework
+allows us to study quantitatively how the optimal policy weighs the benefits of preventing crises
+against the costs of stopping good booms. We also analyze the features of optimal regulation
+and show, for example, that countercyclical capital bu↵ers are a critical feature of a successfully
+designed macroprudential policy.
+One final important modelling di↵erence from our earlier work is that we allow for equity
+injections into the banking sector. In our earlier work we assumed that bank capital was
+only accumulated via retained earnings. What this implies is that to meet equity capital
+requirements, the only margin of adjustment is for banks to reduce assets. Allowing for new
+equity injections introduces a second margin of adjustment. We assume however that at the
+margin, equity injections are costly. If they were costless, equity finance would become the sole
+source of funding for banks, eliminating the possibility of runs or any other type of banking
+2Thoughweuseadi↵erentbeliefmechanismfromBordaloetal.(2018),wefollowtheseauthorsinourearlier
+work (Gertler et al. (2020b)) by showing that investor forecast errors from our mechanism during the recent
+boom and bust are consistent with the evidence. See also Boz and Mendoza (2014) and Boissay et al. (2016)
+for other models that try to capture the boom-bust cycle in credit associated with financial crises.
+3

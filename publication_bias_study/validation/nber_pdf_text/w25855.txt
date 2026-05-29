@@ -1,0 +1,149 @@
+NBER WORKING PAPER SERIES
+A THEORY OF STOCK EXCHANGE COMPETITION AND INNOVATION:
+WILL THE MARKET FIX THE MARKET?
+Eric Budish
+Robin S. Lee
+John J. Shim
+Working Paper 25855
+http://www.nber.org/papers/w25855
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02134
+May 2019, Revised November 2022
+An early version of this research was presented in the 2017 AEA/AFA joint luncheon address.
+We are extremely grateful to the colleagues, policymakers, and industry participants with whom
+we have discussed this research over the last several years. Special thanks to Larry Glosten, Terry
+Hendershott and Jakub Kastl for providing valuable feedback as conference discussants, and to
+the editor and three anonymous referees for comments that significantly improved the paper. We
+are also grateful to Jason Abaluck, Nikhil Agarwal, Susan Athey, John Campbell, Dennis
+Carlton, Judy Chevalier, John Cochrane, Christopher Conlon, Shane Corwin, Peter Cramton,
+Doug Diamond, David Easley, Alex Frankel, Joel Hasbrouck, Kate Ho, Anil Kashyap, Pete Kyle,
+Donald Mackenzie, Neale Mahoney, Paul Milgrom, Joshua Mollner, Ariel Pakes, Al Roth, Fiona
+Scott Morton, Sophie Shive, Andrei Shleifer, Jeremy Stein, Mike Whinston, Heidi Williams and
+Luigi Zingales for valuable discussions, and to seminar audiences at Chicago, Yale,
+Northwestern, NYU, Berkeley, Harvard, MIT, NBER Market Design, UPenn, Columbia,
+HKUST, KER, the Economics of Platforms Workshop, NBER IO, SEC DERA, and the AFAs.
+Paul Kim, Cameron Taylor, Matthew O’Keefe, Natalia Drozdoff, and Ethan Che provided
+excellent research assistance. Budish acknowledges financial support from the Fama-Miller
+Center, the Stigler Center, and the University of Chicago Booth School of Business. Disclosure:
+the authors declare that they have no relevant or material financial interests that relate to the
+research described in this paper. John Shim worked at Jump Trading, a high-frequency trading
+firm, from 2006-2011. The views expressed herein are those of the authors and do not necessarily
+reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2019 by Eric Budish, Robin S. Lee, and John J. Shim. All rights reserved. Short sections of
+text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+A Theory of Stock Exchange Competition and Innovation: Will the Market Fix the Market?
+Eric Budish, Robin S. Lee, and John J. Shim
+NBER Working Paper No. 25855
+May 2019, Revised November 2022
+JEL No. D02,D44,D47,D53,D82,G1,G2,G23,L1,L13,L5,L89
+ABSTRACT
+Will stock exchanges innovate to address latency arbitrage and the arms race for speed? This
+paper models how exchanges compete in the modern electronic era and how this shapes
+incentives for market design innovation. In the status quo, exchange trading fees are competitive
+while exchanges earn economic rents from selling speed. These rents create a wedge between
+private and social incentives to innovate, and support the persistence of an inefficient market
+design in equilibrium of a market design adoption game. We discuss implications for policy and
+insights for the literatures on market design, innovation, and platforms.
+Eric Budish John J. Shim
+Booth School of Business Booth School of Business
+University of Chicago University of Chicago
+5807 South Woodlawn Avenue 5807 S Woodlawn Avenue
+Chicago, IL 60637 Chicago, IL 60637
+and NBER jshim2@nd.edu
+eric.budish@chicagobooth.edu
+Robin S. Lee
+Department of Economics
+Harvard University
+Littauer Center 120
+Cambridge, MA 02138
+and NBER
+robinlee@fas.harvard.edu
+A Data Appendix is available at http://www.nber.org/data-appendix/w25855
+
+1 Introduction
+Market design research usually focuses on designing the best possible market mechanism for a given
+problem.1 Thispaperconcernsadifferent,complementary,question. Supposeresearchershavealready
+designed an attractive mechanism—will it actually get adopted?
+The context of the study is market design for financial exchanges. Financial exchanges are clearly
+important—they serve vital roles in the global economy generating price signals, helping companies
+and governments raise capital, and sharing risk. Stock exchanges alone execute over $200 trillion
+of transaction volume per year. Recent research has shown that the predominant financial exchange
+designusedaroundtheworld,calledthecontinuouslimitorderbook,hasanimportantdesignflaw. By
+treating time continuously, the market design gives rise to a phenomenon called “latency arbitrage,”
+or arbitrage rents from symmetrically disseminated public information—rents that in principle are not
+supposed to exist in an efficient market, as opposed to the rents from asymmetric private information
+that are at the heart of classic models of market microstructure (Kyle, 1985; Glosten and Milgrom,
+1985). These latency arbitrage rents, in turn, cause a socially wasteful arms race for speed and harm
+market liquidity. Latency arbitrage races are currently measured in millionths and even billionths of
+seconds, andhavebeenestimatedasgeneratingabout20%ofalltradingvolumeandharmingliquidity
+byfromabout17%to33%dependingonthemeasureused. Asimple(intheory)marketdesignreform,
+that puts time into small discrete increments and batch processes trade requests that arrive at the
+“same time,” would solve the problem.2
+To date, while there has been a fair amount of innovative activity that is in some way related to
+latency arbitrage, it is fair to say that large incumbent financial exchanges have not embraced the new
+market design reform.3 This paper tries to understand how financial exchanges compete and how this
+shapes their incentives to innovate—and ultimately whether exchanges’ private incentives for market
+design innovation align with what is socially efficient. Will the market fix the market?
+As is well known in the fields of industrial organization and innovation economics, there is no
+one answer to whether private and social innovation incentives align. The usual case, of course, is
+that if there is a large inefficiency in a market, and a private-sector innovation could address the
+inefficiency, then the private sector will innovate in a way that aligns with social welfare (Griliches,
+1957). But there are many cases where private and social innovation incentives might diverge (Arrow,
+1962; Nordhaus, 1969; Hirshleifer, 1971; Mankiw and Whinston, 1986). We will ultimately find that
+private and social incentives to innovate diverge here as well, for a mix of classical and novel reasons.
+To analyze our questions, we build a model that is closely tailored to the institutional details of
+modern electronic financial exchanges. Some aspects of the model are tailored specifically to regula-
+1Forrecentsurveysofthemarketdesignliterature,seeRoth(2018),Milgrom(2021)andAgarwalandBudish(2021).
+2SeeBudish,CramtonandShim(2015)forthedefinitionoflatencyarbitrageandthemarket-designreformoffrequent
+batchauctions. Anothermarket-designreformthatcansolvethelatencyarbitrageproblemisanasymmetricspeedbump;
+seeBaldaufandMollner(2020). SeeAquilina, BudishandO’Neill(2022)forempiricalmagnitudesoflatencyarbitrage.
+See Indriawan, Pascual and Shkilko (2022) for an empirical comparison of continuous- and discrete-time trading.
+3See discussion of innovation activity to date in Section 4.1 and Appendix H.
+1
+
+tions for the U.S stock market, which is both a canonical financial market and has been at the heart
+of the controversy around latency arbitrage. The players in our model are exchanges and three kinds
+of market participants: trading firms, informed investors and uninformed investors. Exchanges make
+a market design decision and set prices—prices for trading per se and prices for what we call speed
+technology. The trading firms decide whether to pay for speed technology and the market participants
+play a trading game. Two important details of the trading game are that stocks are fungible across
+exchanges (due to regulation called Unlisted Trading Privileges), and market participants are able to
+engage in frictionless search across exchanges (due to regulations such as Regulation National Mar-
+ket System in the U.S.). As will become clear, these details make stock exchange competition very
+different from other familiar forms of platform competition.
+Westartbystudyingequilibriuminthesubgamewhereallexchangeschoosethestatusquomarket
+design(“Continuous”). Wefindthattradingfeesareperfectlycompetitivebutthatexchangesareable
+toextractrentsfromspeedtechnology. Thereasonwhytradingfeesarecompetitiveisthatfrictionless
+searchleadstoBertrand-likecompetitionoverthenetpriceofatrade, andhenceontradingfees. This
+stands in contrast to many other platform markets, which have network effects and supra-competitive
+transaction fees. The intuition for why speed technology fees are not competitive is that, if there is a
+speed-sensitive trading opportunity on a particular exchange, only that exchange’s speed technology
+is useful for the opportunity. For example, Nasdaq speed technology is not useful for latency-arbitrage
+opportunities on the New York Stock Exchange, and vice versa. This creates market power. These
+outcomes of our theory model align with empirical facts that we document about trading fees and
+speed-technology revenues. The average trading fee in the U.S. stock market is just $0.0001 per-share
+per-side, or just 0.0001% of a $100 share of stock.4 Further, speed technology revenues are several
+times larger than trading fee revenues and have been growing rapidly in the modern electronic era.
+We then study equilibria in subgames where one or more exchanges use a market design that
+addresses latency arbitrage (“Discrete”). We obtain two sets of results. If there is a single exchange
+that adopts Discrete, then this exchange would win share and be able to charge supra-competitive
+trading fees, in any equilibrium. The same frictionless search that caused trading fees to be brutally
+competitive under the status quo enables an exchange with a better market design to get off the
+ground in any equilibrium. This too is in sharp contrast to many other platform settings, where
+there are chicken-and-egg equilibria in which the new market design can stay stuck with zero share,
+even if in principle it is better designed. Moreover, the exchange can charge a supra-competitive
+fee commensurate with the latency-arbitrage savings it creates. Intuitively, the innovator is getting
+compensated for solving the problem, as in the classic case where private and social incentives align.
+However, if multiple exchanges use the new market design—as would be the case if there were a
+regulatory mandate or if the initial innovator is imitated—then trading fees become perfectly compet-
+4Thisissignificantlydifferentfromotherplatformmarketswithevenmodestsearchfrictions. Forexample,internet-
+enabledplatformmarketsforitemssuchastickets,ride-sharing,fooddelivery,andvacationrentalscommonlyhavefees
+ofabout10-30%,orabout100,000timeshigheronapercentagebasis. Whiletherearemanyreasonswhythiscomparison
+is not apples-to-apples (e.g., fraud costs), the contrast is nonetheless striking.
+2

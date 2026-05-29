@@ -1,0 +1,125 @@
+NBER WORKING PAPER SERIES
+THE COMPLEXITY OF LIQUIDITY:
+THE EXTRAORDINARY CASE OF SOVEREIGN BONDS
+Jacob Boudoukh
+Jordan Brooks
+Matthew Richardson
+Zhikai Xu
+Working Paper 22576
+http://www.nber.org/papers/w22576
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+August 2016
+We thank seminar participants at NYU-Stern, AQR Asset Management, ICS of Hitotsubashi
+University, State Administration of Foreign Exchange (SAFE), Bank of Korea, Shanghai Institute
+of Finance (SAIF), and Fudan University; and Yakov Amihud, Robin Greenwood, Antti Ilmanen,
+Michael Katz, Lars Nielsen, Yao Hua Ooi, Lasse Pedersen, Thomas Philippon and Marti
+Subrahmanyam for helpful comments and suggestions. The views expressed herein are those of
+the authors and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2016 by Jacob Boudoukh, Jordan Brooks, Matthew Richardson, and Zhikai Xu. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+The Complexity of Liquidity: The Extraordinary Case of Sovereign Bonds
+Jacob Boudoukh, Jordan Brooks, Matthew Richardson, and Zhikai Xu
+NBER Working Paper No. 22576
+August 2016
+JEL No. F3,G1,G12,G15
+ABSTRACT
+It is well-documented that government bonds with almost identical cash flows can trade at
+different prices. The explanation is that due to higher liquidity the most recently issued bond
+tends to trade at a premium to previously issued bonds. This paper analyzes the cross-section of
+bond spreads across developed countries over a 17-year time period. Indeed, liquidity has
+commonality across countries in the expected direction. However, the paper documents a novel
+finding that questions the standard view of liquidity. Under certain conditions, especially related
+to credit deterioration and flight to quality, new issue bond spreads tighten and can be negative.
+In other words, the liquid bonds become cheaper, not more expensive, relative to their less liquid
+counterparts. We offer an explanation based on price pressure and provide empirical support
+using data on net flows of investors in sovereign bonds. Of some interest, we are able to reconcile
+the differential behavior of bond spreads of the U.S. and Germany versus Belgium, Spain and
+Italy during the Eurozone crisis period.
+Jacob Boudoukh Matthew Richardson
+The Caesarea Center Stern School of Business
+Arison School of Business, IDC New York University
+3 Kanfei Nesharim St 44 West 4th Street, Suite 9-190
+Herzlia 46150 New York, NY 10012
+ISRAEL and NBER
+jboudouk@idc.ac.il mrichar0@stern.nyu.edu
+Jordan Brooks Zhikai Xu
+AQR Capital Management Princeton University and
+2 Greenwich Plaza AQR Capital Management
+Greenwich, CT xuzhikai19@gmail.com
+jordan.brooks@aqr.com
+
+I. Introduction
+It is now well documented that there are numerous violations of the law of one price for
+financial assets, i.e., securities with almost identical cash flows can trade at different prices. There
+is arguably no better illustration of this phenomenon than that of government bonds, in particular,
+between the pricing of the most recently issued bond and a matched previously issued counterpart.1
+The extant literature finds the yield spread between newly issued and previously issued bonds
+(hereby denoted the NI-spread) to be meaningfully positive and time-varying.2 The explanation
+advanced in this literature for the existence of this spread is liquidity. Specifically, investors value
+the ability to trade the newly issued bonds with immediacy, in relatively large quantities and at the
+prevailing price (or with a relatively small price impact), and hence are willing to pay a premium
+for these bonds.
+The level and variation of liquidity in the government bond market, however, can arise
+through a variety of sources, including exogenous transaction costs, demand pressure and inventory
+risk, and difficulty in locating trading counterparties (see for example the survey by Amihud,
+Mendelson and Pedersen (2005)).3 One of the questions resulting from this literature is the extent
+to which these sources are common across government bonds: is the NI-spread explained by
+common liquidity shocks (“flight to liquidity”) (e.g., Longstaff (2004) and Goyenko,
+Subrahmanyam and Ukhov (2011))? A related literature looks at sovereign government bonds of
+various credit quality and decomposes the sovereign spread into a flight to liquidity and aggregate
+economy shocks (“flight to quality”) (e.g., Beber, Brandt and Kavajecz (2009), Favero, Pagano and
+1
+See, for example, Cornell and Shapiro (1990), Amihud and Mendelson (1991), Warga (1992), Boudoukh and
+Whitelaw (1993), Kamara (1994), Elton and Green (1998), Jordan, Jorgensen, and Kuipers (2000), Krishnamurthy
+(2002), Longstaff (2004), Goldreich, Hanke and Nath (2005), Pasquariello and Vega (2009), and Goyenko,
+Subrahmanyam and Ukhov (2011). In the U.S., the spread between new and previous bond issues is often denoted the
+on-the-run versus off-the-run spread.
+2 In the U.S., the spread between new and previous bond issues is often denoted the on-the-run versus off-the-run
+spread. We choose the NI spread because this terminology is less common in international bond markets for reasons
+described later.
+3 Some specific theories relevant to the liquidity of the government bond market include Amihud and Mendelson
+(1986), Grossman and Miller (1988), Boudoukh and Whitelaw (1993), Duffie, Garleanu and Pedersen (2002),
+Vayanos (2004), Vayanos and Weill (2008) and Pasquariello and Vega (2009), Favero, Pagano and Von Thadden
+(2010), and Banerjee and Graveline (2013).
+2
+
+Von Thadden (2010), Bai, Julliard and Yuan (2012), Darbha and Dufour (2015), and Pelizzon,
+Subrahmanyam, Tomio, and Uno (2015)).
+In this paper, we study the behavior of the spread between newly issued and previously
+issued government bonds across a range of countries over an extensive time period, 1998 to 2015.
+By construction, the spread reflects the relative pricing of government bonds that differ only by
+issuance date and, importantly, not by credit risk. The behavior of the spread is at times startling
+and provides a challenge to existing research on liquidity. For example, from 2009 to 2013, the NI-
+spreads of Belgian, Italian and Spanish government bonds are consistently negative. In other
+words, the price of the liquid newly issued bond falls below the less liquid previously issued bonds.
+If, in fact, newly issued bonds are more liquid than previously issued bonds, then how can these
+spreads turn negative? Of course, there exist many time periods when the spreads across countries
+are positive and move together. Such cases documented in this paper include the default of Russian
+debt and the so-called LTCM crisis in August of 1998 (i.e., the failure and then bailout of the large
+fixed income hedge fund, Long Term Capital Management) and, to a lesser extent, the bankruptcy
+of Lehman Brothers in September 2008.
+Our paper provides a framework for understanding these and other stylized facts. In
+particular, there are two components to the pricing of liquidity, namely (i) the standard benefit
+arising from lower trading and search costs, and (ii) an ambiguous cost-benefit arising in stressful
+periods. Current thinking suggests (ii) is a benefit of liquidity as investors “fly” towards liquidity in
+times of crisis. That is, the NI-spread should widen. However, we document that, in periods of a
+flight to quality, investors will “fly” from, not to, the liquidity of weak sovereigns. Their NI-
+spreads actually tighten. This is because, under extreme conditions, newly issued bonds are easier
+to trade than previously issued bonds. Price pressure pushes the price of newly issued bonds more
+than previously issued bonds.
+In equilibrium, investors realize that the newly issue bond of low quality countries could be
+subject to price pressure episodes, leading to tighter NI-spreads on average in lower quality
+countries. In other words, a flight episode is a time of high marginal utility. That is, because
+illiquid bonds of low quality countries can outperform liquid bonds during these episodes, the NI-
+spread is tighter for low quality countries. We document that this is indeed the case; the R2
+increases from 42% to 71% when sovereign CDS spreads are added to a cross-sectional regression
+of average NI-spreads on a common liquidity factor.
+3

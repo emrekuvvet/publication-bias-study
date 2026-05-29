@@ -1,0 +1,137 @@
+NBER WORKING PAPER SERIES
+AFFORDABLE HOUSING AND CITY WELFARE
+Jack Favilukis
+Pierre Mabille
+Stijn Van Nieuwerburgh
+Working Paper 25906
+http://www.nber.org/papers/w25906
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2019, Revised June 2021
+We thank Hae-Kang Lee for superb research assistance. We thank John Humphries, Timothy
+McQuade, Adam Guren, Charles Nathanson (discussants), and Morris Davis for valuable
+comments. We have benefited from participants at the 2018 Society for Economic Dynamics
+conference in Mexico City, the Urban Economics Association conference at Columbia
+University, the 2019 American Economic Association in Atlanta, the Macro Finance Society
+meeting at Kellogg, the Conference on Low-Income Housing Supply and Housing Affordability
+in Madrid, and seminar participants at the University of Miami, Columbia GSB, Atlanta Fed and
+Emory University, NYU Stern, University of Connecticut, University of Luxembourg, John’s
+Hopkins University, PUC in Santiago, Boston College, London Business School, and the San
+Francisco Federal Reserve Bank. The views expressed herein are those of the authors and do not
+necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2019 by Jack Favilukis, Pierre Mabille, and Stijn Van Nieuwerburgh. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Affordable Housing and City Welfare
+Jack Favilukis, Pierre Mabille, and Stijn Van Nieuwerburgh
+NBER Working Paper No. 25906
+May 2019, Revised June 2021
+JEL No. E21,E6,G11,G12,G18,H2,H76,R1,R13,R21,R28,R3,R31,R41,R51
+ABSTRACT
+Housing affordability is the main policy challenge for most large cities in the world. Zoning
+changes, rent control, housing vouchers, and tax credits are the main levers employed by policy
+makers. How effective are they at combatting the affordability crisis? We build a dynamic
+stochastic spatial equilibrium model to evaluate the effect of these policies on the well-being of
+its citizens. The model endogenizes house prices, rents, construction, labor supply, output,
+income and wealth inequality, the location decisions of households within the city as well as
+inter-city migration. Its main novel features are risk, risk aversion, and incomplete risk-sharing.
+We calibrate the model to the New York MSA. Housing affordability policies carry substantial
+insurance value but affect aggregate housing and labor supply and cause misallocation in labor
+and housing markets. Housing affordability policies that enhance access to this insurance
+especially for the neediest households create substantial net welfare gains.
+Jack Favilukis Stijn Van Nieuwerburgh
+Sauder School of Business Columbia University
+University of British Columbia Graduate School of Business
+Henry Angus Building 2053 Main Mall Uris Hall, office 809
+Office 867 3022 Broadway
+Vancouver, BC V6T 1Z2 New York, NY 10027
+Canada and NBER
+jack.favilukis@sauder.ubc.ca svnieuwe@gsb.columbia.edu
+Pierre Mabille
+INSEAD
+Boulevard de Constance
+77300 Fontainebleau
+France
+pierre.mabille@insead.edu
+
+1 Introduction
+The increasing appeal of major urban centers has brought on an unprecedented housing
+affordabilitycrisis. Evermoreurbanhouseholdsareburdenedbyrentsormortgagepay-
+mentsthattakeupalargefractionoftheirpaycheckand/orbylongcommutes. Theshare
+of cost-burdened renters in the United States has doubled from 24% in the 1960s to 48%
+in 2016. Over this period, median home value rose 112%, far outpacing the 50% increase
+in the median owner income (Joint Center for Housing Studies of Harvard University,
+2018). Hsieh and Moretti (2019) argue that our most productive cities are smaller than
+they should be because of lack of affordable housing options, underscoring the impor-
+tance of the issue. The Covid-19 pandemic lent new urgency to the affordability crisis
+with 10 million American renters behind on $60 billion in rent as of February 2021, and
+withabove-10%housepriceappreciationin2020.
+Policymakersthroughouttheworldareunderincreasingpressuretoimproveafford-
+ability.1 They employ policy tools ranging from rent regulation, upzoning, inclusionary
+zoning, housing vouchers, to developer tax credits. While there is much work, both em-
+pirical and theoretical, on housing affordability, what is missing is a general equilibrium
+modelthatquantifiestheaggregateanddistributionalimpactofsuchpoliciesonindivid-
+ual and city-wide welfare. This paper provides such a model. It endogenizes prices and
+quantities of owned and rented housing, the spatial distribution of housing and house-
+holds,commutingpatterns,incentivestowork,incomeandwealthinequalitywithinand
+acrossneighborhoods,output,andin-andout-migrationtoothermetropolitanareas. We
+calibrate the model and use it as a laboratory to conduct various housing policy experi-
+ments, allowing us to study the various policy instruments and compare their effective-
+ness. Thisnewframeworkiswellsuitedforstudyingtheimpactofplace-basedpolicies.
+We find that the expansion of a range of housing affordability policies improves wel-
+fare. In an incomplete markets model with risk and risk aversion, affordability policies
+play a quantitatively important role as an insurance device. The housing stability they
+provide disproportionately benefits low-income households. These insurance benefits
+trade off against the aggregate and spatial distortions in housing and labor markets that
+accompanysuchpolicies. Ourresultshighlighttheimportanceofgeneralequilibriumef-
+1Fifteen cities in California have rent regulation. A November 2018 California state ballot initiative
+proposedtooverturnthe1995Costa-HawkinsAct,clearingthewayformorerentcontrol.Oregonimposed
+statewiderentcontrolin2019. NewYorkStatepassedthemostsweepingexpansionofrentregulationlaws
+inagenerationinJune2019. SodidtheDistrictofColumbia. BilldeBlasio, themayorofNewYorkCity,
+was elected on a platform to preserve or add 200,000 affordable housing units. Many local policymakers
+aretryingtooverturnpreemptionlaws, onthebooksinin36U.S.States, thatpreventlocalgovernments
+fromadoptingrentregulationlaws.
+1
+
+fects, which often reverse partial equilibrium logic, and of how the affordability policies
+arefinanced.
+Our model consists of two metropolitan areas. The first metro is the one we focus on
+and whose housing policies we study. We think of this metro as a “gateway” city with a
+housing affordability problem. This metro consists of two zones, the urban core (zone 1)
+andthesuburbs(zone2). Working-agehouseholdswholiveinzone2commutetozone1
+forwork. Commutingentailsbothanopportunitycostoftimeandafinancialcost. Zones
+have different sizes, captured by limits on the housing stock, provide different amenity
+benefits, and households who live in the urban core enjoy higher productivity, captur-
+ing agglomeration benefits. The second metro serves as an alternative, naturally more
+affordable, location for residents of the first metro. We study migration between the two
+metros, which is subject to moving costs. The spatial aspects of the model are important
+since affordable housing policies affect the spatial allocation of labor and housing, both
+withinandacrossmetros.
+Theeconomyispopulatedbyoverlappinggenerationsofriskaversehouseholdswho
+face idiosyncratic labor productivity and mortality risk. They make dynamic decisions
+on location, non-housing and housing consumption, labor supply, tenure status (own
+or rent), savings in bonds, primary housing, investment property, and mortgage debt.
+Since households cannot perfectly hedge labor income and longevity risk, markets are
+incomplete. Progressive tax-and-transfer and social security systems capture important
+insurance mechanisms beside affordable housing policies. The model generates a rich
+cross-sectional distribution over age, labor income, tenure status, housing wealth, and
+financial wealth. This richness is paramount to understanding both the distributional
+andtheaggregateimplicationsofhousingaffordabilitypolicies.
+On the firm side, each metro produces tradable goods and residential housing, sub-
+ject to decreasing returns to scale. As an area approaches its housing limit, construction
+becomes increasingly expensive, and the housing supply elasticity falls. Wages, house
+prices,andmarketrentsineachmetroaredeterminedinequilibrium.
+We calibrate the first metro to the New York metropolitan statistical area (NY MSA),
+designating Manhattan as zone 1 and the remaining 24 counties of the NY MSA as zone
+2. Our calibration targets key features of the data, including the relative housing stock
+and population of zone 1 and zone 2, the income distribution in the New York MSA, ob-
+served commuting times and costs, the housing supply elasticity, current zoning laws,
+the current size and scope of the rent stabilization system, and the current federal, state,
+andlocaltax-and-transfersystem. Thebaselinemodelgeneratesrealisticincome,wealth,
+andhomeownershippatternsoverthelife-cycleforvariouspercentilesoftheincomedis-
+2

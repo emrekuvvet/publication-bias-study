@@ -1,0 +1,144 @@
+NBER WORKING PAPER SERIES
+PRINCIPAL COMPONENT ANALYSIS OF HIGH FREQUENCY DATA
+Yacine Aït-Sahalia
+Dacheng Xiu
+Working Paper 21584
+http://www.nber.org/papers/w21584
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2015
+We thank Hristo Sendov for valuable discussions on eigenvalues and spectral functions. In addition,
+we benefited much from comments by Torben Andersen, Tim Bollerslev, Oleg Bondarenko, Marine
+Carrasco, Gary Chamberlain, Kirill Evdokimov, Jianqing Fan, Christian Hansen, Jerry Hausman, Jean
+Jacod, Ilze Kalnina, Jia Li, Yingying Li, Oliver Linton, Nour Meddahi, Per Mykland, Ulrich Müller,
+Andrew Patton, Eric Renault, Jeffrey Russell, Neil Shephard, George Tauchen, Viktor Todorov, Ruey
+Tsay, and Xinghua Zheng, as well as seminar and conference participants at Brown University, CEMFI,
+Duke University, Harvard University, MIT, Northwestern University, Peking University, Princeton
+University, Singapore Management University, University of Amsterdam, University of Chicago,
+University of Illinois at Chicago, University of Tokyo, the 2015 North American Winter Meeting of
+the Econometric Society, the CEME Young Econometricians Workshop at Cornell, the NBER-NSF
+Time Series Conference in Vienna, the 10th International Symposium on Econometric Theory and
+Applications, the 7th Annual SoFiE Conference, the 2015 Financial Econometrics Conference in Toulouse
+and the 6th French Econometrics Conference. The views expressed herein are those of the authors
+and do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2015 by Yacine Aït-Sahalia and Dacheng Xiu. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit, including
+© notice, is given to the source.
+
+Principal Component Analysis of High Frequency Data
+Yacine Aït-Sahalia and Dacheng Xiu
+NBER Working Paper No. 21584
+September 2015
+JEL No. C22,C55,C58,G01
+ABSTRACT
+We develop the necessary methodology to conduct principal component analysis at high frequency.
+We construct estimators of realized eigenvalues, eigenvectors, and principal components and provide
+the asymptotic distribution of these estimators. Empirically, we study the high frequency covariance
+structure of the constituents of the S&P 100 Index using as little as one week of high frequency data
+at a time. The explanatory power of the high frequency principal components varies over time. During
+the recent financial crisis, the first principal component becomes increasingly dominant, explaining
+up to 60% of the variation on its own, while the second principal component drives the common variation
+of financial sector stocks.
+Yacine Aït-Sahalia
+Department of Economics
+Bendheim Center for Finance
+Princeton University
+Princeton, NJ 08540
+and NBER
+yacine@princeton.edu
+Dacheng Xiu
+Booth School of Business
+University of Chicago
+5807 South Woodlaswn Avenue
+Chicago, IL 60637
+dachxiu@chicagobooth.edu
+
+Principal Component Analysis of High Frequency Data∗
+Yacine A¨ıt-Sahalia† Dacheng Xiu‡
+Department of Economics Booth School of Business
+Princeton University and NBER University of Chicago
+This Version: September 16, 2015
+Abstract
+We develop the necessary methodology to conduct principal component analysis at high frequency.
+We construct estimators of realized eigenvalues, eigenvectors, and principal components and provide the
+asymptoticdistributionoftheseestimators. Empirically,westudythehighfrequencycovariancestructure
+of the constituents of the S&P 100 Index using as little as one week of high frequency data at a time.
+The explanatory power of the high frequency principal components varies over time. During the recent
+financial crisis, the first principal component becomes increasingly dominant, explaining up to 60% of the
+variationonitsown,whilethesecondprincipalcomponentdrivesthecommonvariationoffinancialsector
+stocks.
+Keywords: ItˆoSemimartingale,HighFrequency,SpectralFunction,Eigenvalue,Eigenvector,Principal
+Components, Three Factor Model.
+JEL Codes: C13, C14, C55, C58.
+1 Introduction
+Principalcomponentanalysis(PCA)isoneofthemostpopulartechniquesinmultivariatestatistics,providing
+a window into any latent common structure in a large dataset. The central idea of PCA is to identify a small
+number of common or principal components which effectively summarize a large part of the variation of the
+data, and serve to reduce the dimensionality of the problem and achieve parsimony.
+Classical PCA originated in Pearson (1901) and Hotelling (1933) and is widely used in macroeconomics
+and finance among many other fields. One example is Litterman and Scheinkman (1991), who document a
+∗We thank Hristo Sendov for valuable discussions on eigenvalues and spectral functions. In addition, we benefited much
+fromcommentsbyTorbenAndersen,TimBollerslev,OlegBondarenko,MarineCarrasco,GaryChamberlain,KirillEvdokimov,
+Jianqing Fan, Christian Hansen, Jerry Hausman, Jean Jacod, Ilze Kalnina, Jia Li, Yingying Li, Oliver Linton, Nour Meddahi,
+Per Mykland, Ulrich Mu¨ller, Andrew Patton, Eric Renault, Jeffrey Russell, Neil Shephard, George Tauchen, Viktor Todorov,
+Ruey Tsay, and Xinghua Zheng, as well as seminar and conference participants at Brown University, CEMFI, Duke University,
+Harvard University, MIT, Northwestern University, Peking University, Princeton University, Singapore Management University,
+UniversityofAmsterdam,UniversityofChicago,UniversityofIllinoisatChicago,UniversityofTokyo,the2015NorthAmerican
+Winter Meeting of the Econometric Society, the CEME Young Econometricians Workshop at Cornell, the NBER-NSF Time
+SeriesConferenceinVienna,the10thInternationalSymposiumonEconometricTheoryandApplications,the7thAnnualSoFiE
+Conference,the2015FinancialEconometricsConferenceinToulouseandthe6thFrenchEconometricsConference.
+†Address: 26ProspectAvenue,Princeton,NJ08540,USA.E-mailaddress: yacine@princeton.edu.
+‡Address: 5807SWoodlawnAvenue,Chicago,IL60637,USA.E-mailaddress: dacheng.xiu@chicagobooth.edu. Xiugratefully
+acknowledgesfinancialsupportfromtheIBMFacultyScholarFundattheUniversityofChicagoBoothSchoolofBusiness.
+1
+
+three-factor structure of the term structure of yields using PCA. PCA has also been applied to analyze the
+dimension of volatility dynamics, e.g., Egloff, Leippold, and Wu (2010), suggesting a two-factor model of
+volatility, capturing the long and short-term fluctuations of the volatility term structure. Another example
+is the development of economic activity and inflation indices by Stock and Watson (1999) using PCA and a
+factor model. A sentiment measure, reflecting the optimistic or pessimistic view of investors, was created by
+BakerandWurgler(2006)usingthefirstprincipalcomponentofanumberofsentimentproxies,whileapolicy
+uncertainty index was created by Baker, Bloom, and Davis (2013).
+The estimation of the eigenvalues of the sample covariance matrix is the key step towards PCA. Classical
+asymptotic results, starting with Anderson (1958) and Anderson (1963), show that eigenvalues of the sample
+covariance matrix are consistent and asymptotically normal estimators of the population eigenvalues, at least
+when the data follow a multivariate normal distribution. Even under normality, the asymptotic distribution
+becomes rather involved when repeated eigenvalues are present. Waternaux (1976) showed that a similar
+centrallimitresultholdsforsimpleeigenvaluesaslongasthedistributionofthedatahasfinitefourthmoment,
+while Tyler (1981) obtains the asymptotic distribution of eigenvectors under more general assumptions; see
+also discussions in the books by Jolliffe (2002) and Jackson (2003).
+TheclassicalPCAapproachtostatisticalinferenceofeigenvaluessuffersfromthreemaindrawbacks. First
+is the curse of dimensionality. For instance, it is well known that even the largest eigenvalue is no longer
+consistently estimated when the cross-sectional dimension grows at the same rate as the sample size along
+the time domain. Second, the asymptotic theory is essentially dependent on frequency domain analysis under
+stationarity (and often additional) assumptions, see, e.g., Brillinger (2001). Third, the principal components
+are linear combinations of the data, which fail to capture potentially nonlinear patterns therein.
+These three drawbacks create difficulties when PCA is employed on asset returns data. A typical portfolio
+mayconsistofdozensofstocks. Forinstance,aportfoliowith30stockshas465parametersintheircovariance
+matrix, if no additional structure is imposed, while one with 100 stocks contain 5,050 parameters. As a
+result, years of time series data are required for estimation, raising issues of survivorship bias, potential non-
+stationarity and parameter constancy. Moreover, asset returns are known to exhibit time-varying volatility
+and heavy tails, leading to deviations from the assumptions required by the classical PCA asymptotic theory.
+In addition, prices of derivatives, e.g., options, are often nonlinear functions of the underlying asset’s price
+and volatility. Ruling out nonlinear combinations disconnects their principal components from the underlying
+factors that drive derivative returns.
+TheseissuesmotivatethedevelopmentinthispaperofthetoolsnecessarytoconductPCAforcontinuous-
+time stochastic processes using high frequency data and high frequency or “in-fill” asymptotics, whereby the
+numberofobservationsgrowswithinafixedtimewindow. Thisapproachnotonlyaddstheimportantmethod
+of PCA to the high frequency toolkit, but it addresses the three drawbacks mentioned above. First, the large
+amountofintradaytimeseriesdatavastlyimprovethetimeseriesvs. cross-sectionaldimensionalitytrade-off.
+And these are not redundant observations for the problem at hand. Unlike for expected returns, it is well
+established theoretically that increasing the sampling frequency improves variance and covariance estimation,
+at least until market microstructure concerns start biting. Yet market microstructure noise is not a serious
+concern at the one minute sampling frequency we will employ empirically, for liquid stocks which typically
+trade on infra-second time scales. As a result of the large increase in the time series dimension, it is plausible
+to expect high frequency asymptotic analysis with the cross-sectional dimension fixed to serve as accurate
+approximations.1 Infact, wewillshowbothinsimulationsandempiricallythatPCAworksquitewellathigh
+1At low frequency, in the case of large dimensional data, Geman (1980) and Bai, Silverstein, and Yin (1988) investigated
+the strong law of the largest eigenvalue, when the cross-sectional dimension of the data grows at the same rate as the sample
+size. Johnstone (2001) further analyzed the distribution of the largest eigenvalue using random matrix theory. These analyses
+2

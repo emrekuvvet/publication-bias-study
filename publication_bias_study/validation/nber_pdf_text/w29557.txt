@@ -1,0 +1,126 @@
+NBER WORKING PAPER SERIES
+INDIVIDUAL AND COLLECTIVE INFORMATION ACQUISITION:
+AN EXPERIMENTAL STUDY
+Pëllumb Reshidi
+Alessandro Lizzeri
+Leeat Yariv
+Jimmy H. Chan
+Wing Suen
+Working Paper 29557
+http://www.nber.org/papers/w29557
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2021
+We thank Marina Agranov, Roland Benabou, Tim Cason, Stephen Morris, Salvo Nunnari, and
+Wolfgang Pesendorfer for very helpful discussions and feedback. We gratefully acknowledge the
+support of NSF grants SES-1629613 and SES-1949381. The views expressed herein are those of
+the authors and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2021 by Pëllumb Reshidi, Alessandro Lizzeri, Leeat Yariv, Jimmy H. Chan, and Wing Suen.
+All rights reserved. Short sections of text, not to exceed two paragraphs, may be quoted without
+explicit permission provided that full credit, including © notice, is given to the source.
+
+Individual and Collective Information Acquisition: An Experimental Study
+Pëllumb Reshidi, Alessandro Lizzeri, Leeat Yariv, Jimmy H. Chan, and Wing Suen
+NBER Working Paper No. 29557
+December 2021
+JEL No. C91,C92,D7,D8
+ABSTRACT
+Many committees—juries, political task forces, etc.—spend time gathering costly information
+before reaching a decision. We report results from lab experiments focused on such information-
+collection processes. We consider decisions governed by individuals and groups and compare
+how voting rules affect outcomes. We also contrast static information collection, as in classical
+hypothesis testing, with dynamic collection, as in sequential hypothesis testing. Several insights
+emerge. Static information collection is excessive, and sequential information collection is non-
+stationary, producing declining decision accuracies over time. Furthermore, groups using
+majority rule yield especially hasty and inaccurate decisions. Nonetheless, sequential information
+collection is welfare enhancing relative to static collection, particularly when unanimous rules are
+used.
+Pëllumb Reshidi Jimmy H. Chan
+Department of Economics Department of Economics
+Princeton University Chinese University of Hong Kong
+Julis Romo Rabinowitz Hong Kong
+Princeton, NJ 08544 Hong Kong
+preshidi@princeton.edu jimmyhingchan@cuhk.edu.hk
+Alessandro Lizzeri Wing Suen
+Department of Economics Room 908, K.K. Leung Building
+Princeton University The University of Hong Kong
+Julis Romo Rabinowitz Building Pokfulam Road Hong Kong
+Princeton, NJ 08544 wsuen@econ.hku.hk
+and NBER
+lizzeri@princeton.edu
+Leeat Yariv
+Department of Economics
+Princeton University
+Julis Romo Rabinowitz
+Princeton, NJ 08544
+and NBER
+lyariv@princeton.edu
+An online appendix is available at http://www.nber.org/data-appendix/w29557
+
+1 Introduction
+1.1 Overview
+Information acquisition precedes a variety of important decisions—juries attend to testimonies,
+boards of directors research investment prospects, government agencies such as the FDA or the
+EPA require evidence prior to the approval of new drugs or policies. In practice, information
+collection takes two broad forms. At times, it occurs in one shot: a volume of evidence is decided
+upon at the outset, after which a decision is taken. This method is often referred to as classical
+hypothesis testing. At other times, information is collected in increments and responsive to what
+has already been learned. This dynamic approach, pioneered by Wald (1947), is commonly termed
+sequential hypothesis testing. Although both methods are prevalent and heavily studied in the
+theoretical literature, there is a dearth of data on how each performs in practice. This paper
+reports results from an array of lab experiments inspecting both static and sequential information
+collection. We consider individuals as well as groups operating within various institutions.
+There are several clear patterns in our data. Sequential information collection approximates
+the theoretically predicted decision accuracies, but these decline over deliberation time; static
+informationcollectionisexcessive;andgroupsexhibitmarkedlydifferentbehaviorsthanindividuals.
+As theoretically predicted, welfare is higher when information is collected dynamically. However,
+institutions interact non-trivially with the information-collection protocol: Dynamic information
+collection with groups using unanimity rule generate the highest welfare, whereas groups using
+majority rule yield especially hasty and inaccurate decisions.
+Our results have implications for institutional design when information collection is an impor-
+tant component of decision making. Using committees, rather than individuals, can be beneficial
+even if increasing the size of the decision body does not affect the overall information available.
+However, the rules governing how collective decisions are made and the information protocol in
+place—static or dynamic—need to be customized in tandem.
+At the core of our experimental design is the following decision problem. There are two ex-ante
+equally likely states, A or B. The state can represent a guilty or an innocent defendant, a safe or
+unsafe drug, an investment that is profitable or not, etc. Ultimately, each participant must guess
+the state of the world and gets rewarded when correct. Each state is associated with a Brownian
+2
+
+motion. The drift is µ when the state is A and −µ when the state is B. The Brownian motion’s
+variance is state-independent. As time goes by, the realized sample path of the Brownian motion
+becomes increasingly informative about the underlying state. There is a flow cost of information
+collection. Wheneverinformationcollectionterminates, participantsknowtheposteriorprobability
+that the state is A and submit their guess. Naturally, the optimal guess corresponds to the more
+likelystate. Ourfocusisonthetrade-offpertainingtoinformationcollection: waitinglongerbefore
+making a decision increases accuracy but comes at a cost.
+We consider both static and dynamic information-collection procedures. The static setting
+emulates the classical hypothesis testing setup. Participants determine, at the outset, the time
+horizon during which they collect information by observing the Brownian path. They then see the
+path unravel for their desired time, get informed of the ultimate posterior over states, and make
+their guess. The dynamic setting implements the sequential sampling setup.1 Participants track
+the evolution of the Brownian path and can stop at any time to submit their guess.
+In our benchmark treatments, decisions are made by individuals, as in the canonical paradigms.
+Since many applications involve committees as decision-makers, in additional treatments, decisions
+are made in groups. When in a group, we consider two commonly-used institutions: majority and
+unanimity. In the static setting, group members all submit their desired information-collection
+horizon at the outset. Under majority rule, the median time is implemented for the group, whereas
+under unanimity, the maximal time is implemented. In the dynamic setting, group members decide
+whether to stop or continue information collection at each point in time. Under majority, whenever
+two members agree on a guess, information collection terminates for the group, and the majority
+guess is submitted. Analogously, under unanimity, whenever all members agree on the guess,
+information collection terminates, and that guess is implemented. In all our group treatments,
+information is public: group members are privy to the same information. Furthermore, group
+members receive the same payoff, derived from the common costs accrued during the group’s
+information-collection period and the group’s guess accuracy.
+Our individual treatments offer a natural benchmark for the basic predictions emerging from
+the classical statistical information-collection procedures. In the static setting, our parameters are
+such that the optimal information-collection horizon is 30 seconds. In our experiments, on average,
+1Specifically, our setup mimics that of Dvoretzky et al. (1953).
+3

@@ -1,0 +1,123 @@
+NBER WORKING PAPER SERIES
+UNDERSTANDING ORDER FLOW
+Martin D. D. Evans
+Richard K. Lyons
+Working Paper 11748
+http://www.nber.org/papers/w11748
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+November 2005
+Corresponding author: Martin Evans. Both authors thank the National Science Foundation for financial
+support, including a clearing-house for micro-based research on exchange rates (at
+georgetown.edu/faculty/evansm1 and at faculty.haas.berkeley.edu/lyons). The views expressed herein are
+those of the author(s) and do not necessarily reflect the views of the National Bureau of Economic Research.
+©2005 by Martin D. D. Evans and Richard K. Lyons. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit, including ©
+notice, is given to the source.
+
+Understanding Order Flow
+Martin D. D. Evans and Richard K. Lyons
+NBER Working Paper No. 11748
+November 2005
+JEL No. F3, F4, G1
+ABSTRACT
+This paper develops a model for understanding end-user order flow in the FX market. The model
+addresses several puzzling findings. First, the estimated price-impact of flow from different end-user
+segments is, dollar-for-dollar, quite different. Second, order flow from segments traditionally thought
+to be liquidity-motivated actually has power to forecast exchange rates. Third, about one third of
+order flow's power to forecast exchange rates one month ahead comes from flow's ability to forecast
+future flow, whereas the remaining two-thirds applies to price components unrelated to future flow.
+We show that all of these features arise naturally from end-user heterogeneity, in a setting where
+order flow provides timely information to market-makers about the state of the macroeconomy.
+Martin D. D. Evans
+Department of Economics
+Georgetown University
+Washington, DC 20057
+and NBER
+evansm1@georgetown.edu
+Richard K. Lyons
+Haas School of Business
+University of California, Berkeley
+Berkeley, CA 94720-1900
+and NBER
+lyons@haas.berkeley.edu
+
+Introduction
+This paper addresses order ‡ow heterogeneity and its empirical implications. By order ‡ow hetero-
+geneity, we mean transactions initiated by agents of di¤erent types (e.g., non-…nancial corporations
+versus hedge funds versus mutual funds). Recent theoretical work on exchange rates stresses the
+analytical importance of heterogeneity across agents, stemming from both dispersed information
+and non-informational shocks to asset demands (e.g., Bacchetta and van Wincoop 2003, Hau and
+Rey 2002, Dunne, Hau, and Moore 2004, Evans and Lyons 2004a,b). Empirical predictions from
+these models are borne out: trades have causal and persistent e¤ects on price, a …nding that runs
+counter to textbook exchange rate models (e.g., Evans and Lyons 2002a,b, Payne 2003, among
+many others).2 Theory generally assumes, however, that agents are symmetrically heterogeneous;
+that is to say, they di¤er, but in the same way. In contrast, trades in the foreign exchange (FX)
+market come from categories of agents that are quite di¤erent: they have di¤erent motivations,
+di¤erent attitudes toward risk, and di¤erent horizons. Extant theory provides little guidance for
+empiricists seeking to exploit transaction data that is disaggregated into segments.3
+Several puzzling empirical …ndings suggest that new modeling is needed. First, the price im-
+pact of order ‡ow is, dollar–for–dollar, quite di¤erent across end–user segments. This is not what
+one would expect to see if agents are symmetrically heterogeneous. Second, order ‡ow from seg-
+mentstraditionallythoughttobeliquidity–motivatedactuallyhaspowertoforecastexchangerates.
+Third, about one third of order ‡ow’s power to forecast exchange rates comes from ‡ow’s ability
+to forecast future ‡ow, whereas the remaining two–thirds applies to price components unrelated
+to future ‡ow. In this paper, we present a model where all these features arise naturally from
+heterogeneity across end–user segments, in a setting where order ‡ow provides timely information
+to market-makers about the state of the macroeconomy.
+A one-period version of the Kyle (1985) model illustrates why intuition based on standard
+microstructure models is an unreliable guide to empirical work using order ‡ow data from di¤erent
+end-user(henceforth"customers")segments. Inthismodel,thechangeinpricequotedbyamarket-
+maker (i.e., the change in the log exchange rate s ) depends on the total order ‡ow arriving in the
+t
+2In textbook models, all of which assume that variables relevant to exchange rates are common knowledge (CK),
+trades per se have no causal e¤ect on price. Demand shifts have causal e¤ects on price. But because demand shifts
+come from public information only, prices adjust before transactions occur, so no causality from trades to price is
+present. Put di¤erently, in CK environments demand and order ‡ow are quite di¤erent, whereas in purely non-CK
+environments they are the same.
+3Recentresearch usingtransaction datafrom di¤erentsegmentsincludesFrootandRamadorai(2002),Carpenter
+and Wang (2003), Mende and Menkho¤(2003), Bjønnes, Rime, and Solheim (2004), Marsh and O’Rourke (2005),
+and Sager and Taylor (2005).
+1
+
+market, x :
+t
+(cid:1)s = (cid:12)x ;
+t t
+where (cid:12), the price–impact coe¢ cient, governs the sensitivity of the market–maker’s price quote to
+order ‡ow. By assumption, the market-maker cannot distinguish di¤erent order ‡ow components,
+but must instead respond to the aggregated total ‡ow x . Expected order ‡ow in this model is
+t
+zero. Even in dynamic versions of the Kyle model, the market-maker expects order ‡ow to be zero
+in each period (a property that also applies to standard versions of the other canonical information
+model, the Glosten and Milgrom 1985 model). This conditional i.i.d. structure is an analytically
+attractive feature of these models.
+Now suppose that a researcher has a dataset that breaks total FX customer ‡ow at a given
+bank into three segments, say short-term investors (e.g., hedge funds), long-term investors (e.g.,
+mutual funds), and international-trade-based (e.g., non-…nancial corporations); xi for i = 1;2;3.
+t
+The researcher then runs the regression:
+(cid:1)s = (cid:12) x1+(cid:12) x2+(cid:12) x3+(cid:15) : (1)
+t 1 t 2 t 3 t t
+With the perspective of the Kyle model, it would be natural to interpret the (cid:12) coe¢ cients as
+i
+price–impact parameters. However, this would be problematic for three reasons: First, the three
+regressors are not likely to be independent intratemporally. Indeed, in our data the order ‡ows
+from di¤erent segments are signi…cantly correlated. If the xis are known to covary, and each of
+t
+the (cid:12)’s are non-zero, then no one coe¢ cient summarizes the total price–impact of changes in a
+single ‡ow segment. Second, the three regressors are not likely to be independent intertemporally.
+In fact, the ‡ow segments in our dataset are signi…cantly auto-correlated. In this context, the
+speci…cation in (1) is a reduced-form for potentially complex microeconomic dynamics. As non-
+structural estimates, the (cid:12)’s are not reliable measures of the price–impact of incremental trades.
+Third, the speci…cation misses the fact that regressors in equation (1) come from a single bank,
+whereas the ‡ows that move the exchange rate are the market-wide ‡ows from all segments. This is
+problematicintermsofprice–impactparameters: positivecorrelationbetween‡owsegmentsacross
+banks means that when the regression omits other-bank ‡ows, the ‡ows from the source bank are
+getting too much price–impact credit (a form of omitted variable bias). More fundamentally, the
+FX market is not transparent, at least not with respect to customer ‡ows, so that the ‡ows that
+drive (cid:1)s proximately are in fact the interdealer ‡ows. The exchange rate re‡ects the information
+t
+in any individual bank’s customer ‡ows only when other dealers learn that information.
+2

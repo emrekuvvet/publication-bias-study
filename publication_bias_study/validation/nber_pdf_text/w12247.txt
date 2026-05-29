@@ -1,0 +1,115 @@
+NBER WORKING PAPER SERIES
+STOCK AND BOND RETURNS WITH MOODY INVESTORS
+Geert Bekaert
+Eric Engstrom
+Steven R. Grenadier
+Working Paper 12247
+http://www.nber.org/papers/w12247
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2006
+Bekaert, Corresponding author: Columbia Business School, 802 Uris Hall, 3022 Broadway, New York New
+York, 10027; ph: (212)-854-9156; fx: (212)-662-8474; gb241@columbia.edu. We thank Pietro Veronesi,
+John Campbell, and participants at the NBER Summer Institute 2004 for useful comments. All remaining
+errors are the sole responsibility of the authors. This work does not necessarily reflect the views of the
+Federal Reserve System. The views expressed herein are those of the author(s) and do not necessarily reflect
+the views of the National Bureau of Economic Research.
+©2006 by Geert Bekaert, Eric Engstrom and Steven R. Grenadier. All rights reserved. Short sections of text,
+not to exceed two paragraphs, may be quoted without explicit permission provided that full credit, including
+© notice, is given to the source.
+
+Stock and Bond Returns with Moody Investors
+Geert Bekaert, Eric Engstrom and Steven R. Grenadier
+NBER Working Paper No. 12247
+May 2006
+JEL No. G12, G15, E44
+ABSTRACT
+We present a tractable, linear model for the simultaneous pricing of stock and bond returns that
+incorporates stochastic risk aversion. In this model, analytic solutions for endogenous stock and bond
+prices and returns are readily calculated. After estimating the parameters of the model by the general
+method of moments, we investigate a series of classic puzzles of the empirical asset pricing
+literature. In particular, our model is shown to jointly accommodate the mean and volatility of equity
+and long term bond risk premia as well as salient features of the nominal short rate, the dividend
+yield, and the term spread. Also, the model matches the evidence for predictability of excess stock
+and bond returns. However, the stock-bond return correlation implied by the model is somewhat
+higher than in the data.
+Geert Bekaert
+Columbia Business School
+802 Uris Hall
+3022 Broadway
+New York, NY 10027
+and NBER
+gb241@columbia.edu
+Eric Engstrom
+Mail Stop 89
+Board of Governors of the Federal Reserve System
+Washington, DC 20551
+eric.c.engstrom@frb.gov
+Steven R. Grenadier
+Graduate School of Business
+Stanford University
+Stanford, CA 94305
+sgren@stanford.edu
+
+1 Introduction
+Campbell and Cochrane (1999) identify slow countercyclical risk premiums as the key to explaining
+awidevarietyofdynamicassetpricingphenomenawithinthecontextofaconsumption-basedasset-
+pricing model. They generate such risk premiums by adding a slow moving external habit to the
+standard power utility framework. Essentially, as we clarify below, their model generates counter-
+cyclical risk aversion. This idea has surfaced elsewhere as well. Sharpe (1990) and practitioners
+such as Persaud (see, forinstance, Kumar and Persaud2002) developed models of time-varying risk
+appetites to make sense of dramatic stock market movements.
+Thefirstcontributionofthisarticleistopresentaverytractable,linearmodelthatincorporates
+stochasticriskaversion. Becauseofthemodel’stractability,itbecomesparticularlysimpletoaddress
+a wider set of empirical puzzles than those considered by Campbell and Cochrane. Campbell and
+Cochrane match salient features of equity returns, including the equity premium, excess return
+variability and the variability of the price dividend ratio. They do so in a model where the risk free
+rateisconstant. Instead,weembedafullystochastictermstructureintoourmodel,andinvestigate
+whether the model can fit salient features of bond and stock returns simultaneously. Such over-
+identification is important, because previous models that match equity return moments often do so
+byincreasingthevariabilityofmarginalratesofsubstitutiontothepointthatasatisfactoryfitwith
+bond market data and risk free rates is no longer possible. Using the General Method of Moments
+(GMM), we find that our model can rather successfully fit many features of bond and stock return
+data together with important properties of the fundamentals, including a low correlation between
+fundamentals and returns.
+The NBER Working Paper version of Campbell and Cochrane also considered a specification
+with a stochastic interest rate. While that model matched some salient features of interest rate
+data, being a one-factor model, it necessarily could not provide a fully satisfactory fit of term
+structure data. Moreover, the one shock nature of the model imposes too strong of a link between
+bondandstockreturns,anissuenotexaminedinCampbellandCochrane. TheresultsinCampbell
+and Cochrane (1995) were nevertheless suggestive that a joint modeling of bond and stock returns
+within their or a related framework might prove successful. In our model, stochastic risk aversion
+is not perfectly negatively correlated with consumption growth as in Campbell and Cochrane, but
+the perfect correlation case represents a testable restriction of our model.
+1
+
+Once we model bond and stock returns jointly, a series of classic empirical puzzles becomes
+testable. First, ShillerandBeltratti(1992) point out thatpresent valuemodels with aconstant risk
+premiumimplya negligible correlation between stock and bond returns in contrast tothe moderate
+positive correlation in the data. We expand on the present value approach by allowing for an
+endogenously determined stochastic risk premium. Second, Fama and French (1989) and Keim
+and Stambaugh (1986) find common predictable components in bond and equity returns. After
+estimating the parameters of the model to match the salient features of bond and stock returns
+alluded to above, we test how well the model fares with respect to these puzzles. Our model
+generates a bond-stock return correlation that is somewhat too high relative to the data but it
+matches the predictability evidence.
+Third, to convert frommodel output to the data, we use inflation as a state variable, but ensure
+that inflation is neutral: that is the Fisher hypothesis holds in our economy. This is important in
+interpreting our empirical results on the joint properties of bond and stock returns. More realistic
+modeling of the inflation process is a prime candidate for resolving the remaining failures of the
+model.
+Ourmodelalsofitsintoalongseriesofrecentattemptstobreakthetightlinkbetweenconsump-
+tiongrowthandthepricingkernelthatisthemainreasonforthefailureofthestandardconsumption
+— based asset pricing models. Santos and Veronesi (2005) add the consumption/labor income ratio
+as a second factor to the kernel, Wei (2003) adds leisure services to the pricing kernel and models
+human capital formation, Piazessi, Schneider and Tuzel (2003) and Lustig and Van Nieuwerburgh
+(2003) model the housing market to increase the dimensionality of the pricing kernel.
+The remainder of the article is organized as follows. Section 1 presents the model. Section 2
+derivesclosed-formexpressionsforbondpricesandequityreturns. Section3outlinesourestimation
+procedure whereas Section 4 analyzes the estimation results, and the implications of the model at
+the estimated parameters. Section 5 tests how the model fares with respect to the interaction of
+bond and stock returns. In the conclusions, we summarize the implications of our work for future
+research and we discuss some recent papers that have also considered the joint modeling of bond
+and stock returns.
+2

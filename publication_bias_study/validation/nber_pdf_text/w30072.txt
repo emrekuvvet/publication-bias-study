@@ -1,0 +1,139 @@
+NBER WORKING PAPER SERIES
+A STRUCTURAL APPROACH TO HIGH-FREQUENCY EVENT STUDIES:
+THE FED AND MARKETS AS CASE HISTORY
+Francesco Bianchi
+Sydney C. Ludvigson
+Sai Ma
+Working Paper 30072
+http://www.nber.org/papers/w30072
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2022, Revised June 2025
+This paper superscedes the old paper “Monetary Based Asset Pricing: A Mixed-Frequency
+Structural Approach.” We are grateful to Courtney Weigand, Nicholas Zarra, and Steven Zheng
+for excellent research assistance. Bianchi and Ludvigson received financial support from the
+National Science Foun- dation under Grant 2116641. We thank Adrien Auclert, Michael Bauer,
+Anna Cieslak, Andrea Ferrero, Eric Ghysels, Jonas Jensen, Carolin Pflueger, Frank Schorfheide,
+and seminar participants at the Spring 2023 NBER Asset Pricing meeting, the 2022 American
+Economic Association annual meetings, the May 2022 Bank of England Macro-Finance
+Conference, the June 2022 EDHEC PhD Forum, the September 2022 SOFIE webinar, the
+September 2022 Bank of Finland and CEPR Joint Conference on Monetary Policy in the Post-
+Pandemic Era, the November 2022 NBER Monetary Economics meeting, Harvard Business
+School, Notre Dame, HKUST, Bocconi University, McGill, MIT, and the University of Chicago
+for helpful comments. The views expressed are those of the authors and do not necessarily reflect
+those of the Federal Reserve Board, the Federal Reserve System, or the National Bureau of
+Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2022 by Francesco Bianchi, Sydney C. Ludvigson, and Sai Ma. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+A Structural Approach to High-Frequency Event Studies: The Fed and Markets as Case History
+Francesco Bianchi, Sydney C. Ludvigson, and Sai Ma
+NBER Working Paper No. 30072
+May 2022, Revised June 2025
+JEL No. E52, E58, E7, G12
+ABSTRACT
+We develop a methodology to integrate a high-frequency event study into a macro-finance model
+and structural estimation. The methodology is applied to Federal Reserve announcements in a
+model where investor beliefs about the economic state and/or regime change in future policy can
+jump in response to monetary news. We find that stock market volatility in narrow windows around
+policy announcements is frequently driven by jumps in beliefs about future policy rules that affect
+subjective risk premia. Such jumps often generate positive comovement between short rates and the
+stock market, erroneously suggesting a role for “Fed information shocks.”
+Francesco Bianchi Sai Ma
+Johns Hopkins University Federal Reserve Board of Governors
+Department of Economics sai.ma@frb.gov
+and CEPR
+and also NBER
+francesco.bianchi@jhu.edu
+Sydney C. Ludvigson
+New York University
+Department of Economics
+and NBER
+sydney.ludvigson@nyu.edu
+A online appendix is available at http://www.nber.org/data-appendix/w30072
+
+1 Introduction
+A growing academic literature has o¤ered a myriad of competing explanations for why
+…nancial markets react strongly to the announcements of central banks. A classic New-
+Keynesian view is that surprise central bank announcements proxy for shocks to a nom-
+inal interest rate rule of the type emphasized by Taylor (1993), which in‡uence the real
+economy through an intertemporal substitution channel. More recently, other theories
+emphasizethee¤ectsofcentralbankannouncementson…nancialmarketriskpremia(the
+risk premium channel), the information they impart about the state of the economy (the
+“Fed information shock”channel), or the role they play in revising the public’s under-
+standing of the central bank’s reaction function and objectives (the perceived policy rule
+channel).
+As the mushrooming debate over how to interpret this evidence indicates, many
+questions about the interplay between central bank news and …nancial markets remain
+unanswered. In this paper we consider two of them. First, although extant theories
+typically focus on a single channel of monetary transmission, there is no obvious rea-
+son why multiple channels might not be operative simultaneously. We therefore con-
+sider whether more than one channel might explain why markets react to central bank
+news, and quantify their roles. Second, much like other types of news to which markets
+are strongly attentive, monetary news typically covers a wide-ranging set of themes.
+In the case of announcements by the U.S. Federal Reserve, these themes often range
+broadly from interest rate policy, to forward guidance, to quantitative interventions, to
+the macroeconomic outlook, a plethora o¤ering little reason to expect that the forces
+driving reactions to one announcement should be similar to another. We therefore con-
+sider announcement-speci…c reactions that di¤er according to how market participants’
+perceptions of primitive economic risks have changed as a result of the news.
+Addressing these questions requires a high-frequency event study that can allow for
+distinct theoretical channels of varying degrees of importance across event-time. Unfor-
+tunately, existing event study approaches are poorly suited to the task, both because
+they provide little to no announcement-speci…c evidence or conceptual framework, and
+because they o¤er limited insight into why market participants react to speci…c an-
+nouncements. When beliefs react to news causing equilibrium prices to change, which
+primitive shocks did investors perceive and what was their quantitative relation to the
+resulting price change?
+Our contribution to addressing these questions is to integrate a high-frequency event
+study into a mixed-frequency macro-…nance model and structural estimation. The re-
+sulting ‘mixed-frequency structural approach’to event study analysis allows us to ad-
+dress the question of why–as seen through the lens of a theoretical framework–…nancial
+markets reacted to a given piece of news the way they did, e¤ectively identifying state-
+1
+
+dependent reaction functions to real-world events. The general approach can be applied
+in a wide variety of structural and semi-structural settings whenever the research ob-
+jective calls for a conceptual understanding of …nancial market responses to any type of
+news or event.1
+In this article, we apply the approach to undertake a case study of the stock market’s
+reactions to Federal Reserve (Fed) communications. Our structural estimation uses
+dozensofforward-lookingseriesrangingfromminutely…nancialmarketdatatobiannual
+survey forecast data. These data, along with the model and structural estimation,
+allow us to infer jumps in investor beliefs about the latent state of the economy, the
+perceived sources of primitive economic risk driving that state, and the future conduct
+of monetary policy, all in response to Fed news. In turn, movements in these beliefs
+generate endogenous movements in subjective risk premia.
+We study a two-agent asset pricing model with New Keynesian style macroeconomic
+dynamics in which the two agents have heterogeneous beliefs, as in Bianchi, Lettau,
+and Ludvigson (2022). One agent is a representative “investor”who is forward-looking,
+reacts swiftly to news, and earns income solely from investments in the stock market
+and a one-period nominal bond. Macroeconomic dynamics are speci…ed by a set of
+equations similar to those in New Keynesian models, and can be thought of as driven
+by a representative “household/worker”that supplies labor, has access to the nominal
+bond, but holds no stock market wealth. Unlike investors, the household/worker forms
+expectations in a backward-looking manner using adaptive learning rules, consistent
+with survey evidence on how households actually arrive at their beliefs (Malmendier
+and Nagel (2016), Coibion, Gorodnichenko, Kumar, and Pedemonte (2020)).
+An important feature of our model is that the conduct of monetary policy is allowed
+to undergo possible nonrecurrent regime shifts, or “structural breaks,”that take the
+form of shifts in the parameters of a nominal interest rate rule. Such regime changes
+in what we refer to as the conduct of monetary policy give rise to endogenously long-
+lasting changes in real interest rates that are conceptually distinct from those generated
+by the monetary policy shock, an innovation in the nominal rate that is uncorrelated
+with in‡ation, economic growth, and shifts in the policy rule parameters.
+With this feature at hand, we explicitly model investor beliefs about future regime
+change in the conduct of monetary policy. Investors in the model closely monitor central
+bank communications for information that would lead them to revise their perceived
+probabilityoftransitioningoutofthecurrentpolicyregimeintoaperceived“Alternative
+regime”thattheybelievewillcomenext. Investorsareawarethattheymaychangetheir
+minds about the likelihoodof near-termmonetary regime change givennewinformation,
+1Bianchi, Ludvigson, and Ma (2024) apply the approach to study over- and under-reaction in the
+stock market to macroeconomic data announcements, corporate earnings announcements, as well as
+Fed news.
+2

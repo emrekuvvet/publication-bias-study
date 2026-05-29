@@ -1,0 +1,126 @@
+NBER WORKING PAPER SERIES
+HOW DO PATENTS AFFECT FOLLOW-ON INNOVATION? EVIDENCE FROM
+THE HUMAN GENOME
+Bhaven Sampat
+Heidi L. Williams
+Working Paper 21666
+http://www.nber.org/papers/w21666
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2015
+Daron Acemoglu, Josh Angrist, David Autor, Pierre Azoulay, Stefan Bechtold, Nick Bloom, Tim Bresnahan,
+Joe Doyle, Dan Fetter, Amy Finkelstein, Alberto Galasso, Nancy Gallini, Joshua Gans, Aaron Kesselheim,
+Pat Kline, Amanda Kowalski, Mark Lemley, Josh Lerner, Petra Moser, Ben Olken, Ariel Pakes, Jim
+Poterba, Arti Rai, Mark Schankerman, Scott Stern, Mike Whinston, and seminar participants at Analysis
+Group, Brown, Chicago Booth, Clemson, Dartmouth, Duke, the Federal Reserve Board, Harvard,
+HBS, MIT, Northwestern Kellogg, the NBER (Law and Economics, Productivity and Public Economics),
+Stanford, UC-Berkeley Haas, UC-Santa Barbara, the USPTO, and Williams College provided very
+helpful comments. We are very grateful to Ernie Berndt for help with accessing the Pharmaprojects
+data; to Osmat Jefferson, the CAMBIA Lens initiative, Lee Fleming, and Guan-Cheng Li for sharing
+USPTO-related data; and to Joey Anderson, Jeremy Brown, Lizi Chen, Alex Fahey, Cirrus Foroughi,
+Yunzhi Gao, Grant Graziani, Tamri Matiashvili, Kelly Peterson, Lauren Russell, Mahnum Shahzad,
+Sophie Sun, Nicholas Tilipman, Myles Wagner, and Hanwen Xu for excellent research assistance.
+The views expressed herein are those of the authors and do not necessarily reflect the views of the
+National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2015 by Bhaven Sampat and Heidi L. Williams. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit, including
+© notice, is given to the source.
+
+How Do Patents Affect Follow-On Innovation? Evidence from the Human Genome
+Bhaven Sampat and Heidi L. Williams
+NBER Working Paper No. 21666
+October 2015, Revised August 2018
+JEL No. I10,I18,O34
+ABSTRACT
+We investigate whether patents on human genes have affected follow-on scientific research and product
+development. Using administrative data on successful and unsuccessful patent applications submitted
+to the US Patent and Trademark Office, we link the exact gene sequences claimed in each application
+with data measuring follow-on scientific research and commercial investments. Using this data, we
+document novel evidence of selection into patenting: patented genes appear more valuable—prior
+to being patented—than non-patented genes. This evidence of selection motivates two quasi-experimental
+approaches, both of which suggest that on average gene patents have had no quantitatively important
+effect on follow-on innovation.
+Bhaven Sampat
+Department of Health Policy and Management
+Columbia University
+600 West 168th Street, 6th Floor
+New York, NY 10032
+and NBER
+bns3@columbia.edu
+Heidi L. Williams
+Department of Economics, E52-440
+MIT
+77 Massachusetts Avenue
+Cambridge MA 02139
+and NBER
+heidiw@mit.edu
+
+How Do Patents Affect Follow-on Innovation?
+Evidence from the Human Genome∗
+Bhaven Sampat Heidi L. Williams
+Columbia and NBER MIT and NBER
+August 14, 2018
+Abstract
+We investigate whether patents on human genes have affected follow-on scientific research and
+product development. Using administrative data on successful and unsuccessful patent applications
+submitted to the US Patent and Trademark Office, we link the exact gene sequences claimed in each
+application with data measuring follow-on scientific research and commercial investments. Using this
+data, we document novel evidence of selection into patenting: patented genes appear more valu-
+able—prior to being patented—than non-patented genes. This evidence of selection motivates two
+quasi-experimentalapproaches, bothofwhichsuggestthatonaveragegenepatentshavehadnoquan-
+titatively important effect on follow-on innovation.
+∗DaronAcemoglu,JoshAngrist,DavidAutor,PierreAzoulay,StefanBechtold,NickBloom,TimBresnahan,JoeDoyle,
+DanFetter,AmyFinkelstein,AlbertoGalasso,NancyGallini,JoshuaGans,AaronKesselheim,PatKline,AmandaKowalski,
+Mark Lemley, Josh Lerner, Petra Moser, Ben Olken, Ariel Pakes, Jim Poterba, Arti Rai, Mark Schankerman, Scott Stern,
+Mike Whinston, and seminar participants at Analysis Group, Brown, Chicago Booth, Clemson, Dartmouth, Duke, the
+Federal Reserve Board, Harvard, HBS, MIT, Northwestern Kellogg, the NBER (Law and Economics, Productivity and
+Public Economics), Stanford, UC-Berkeley Haas, UC-Santa Barbara, the USPTO, and Williams College provided very
+helpful comments. We are very grateful to Ernie Berndt for help with accessing the Pharmaprojects data; to Osmat
+Jefferson, the CAMBIA Lens initiative, Lee Fleming, and Guan-Cheng Li for sharing USPTO-related data; and to Joey
+Anderson, Jeremy Brown, Lizi Chen, Alex Fahey, Cirrus Foroughi, Yunzhi Gao, Grant Graziani, Tamri Matiashvili, Kelly
+Peterson, Lauren Russell, Mahnum Shahzad, Sophie Sun, Nicholas Tilipman, Myles Wagner, and Hanwen Xu for excellent
+research assistance. Research reported in this publication was supported by the National Institute on Aging and the NIH
+Common Fund, Office of the NIH Director, through Grant U01-AG046708 to the National Bureau of Economic Research
+(NBER);thecontentissolelytheresponsibilityoftheauthorsanddoesnotnecessarilyrepresenttheofficialviewsoftheNIH
+orNBER.Thiswork/researchwasalsofundedbytheEwingMarionKauffmanFoundation;thecontentsofthispublication
+aresolelytheresponsibilityoftheGrantee. FinancialsupportfromNIAGrantNumberT32-AG000186totheNBER,NSF
+GrantNumber1151497,theNBERInnovationPolicyandtheEconomyprogram,andtheToulouseNetworkforInformation
+Technology is also gratefully acknowledged. Contact: bns3@columbia.edu, heidiw@mit.edu.
+
+1
+1 Introduction
+Competitive markets may under-incentivize innovation due to the public good nature of new ideas. In-
+tellectual property rights, such as patents, aim to address this under-investment problem by allowing
+inventors to capture a higher share of the social returns to their research investments. By awarding inven-
+tors a temporary right to exclude others from marketing their invention, patents aim to allow inventors to
+earn quasi-rents—temporarily—as a way to re-coup their research and development costs, thus providing
+dynamicincentivesforinvestmentsinnewtechnologies. DatingbackatleasttoanalysessuchasNordhaus
+(1969), optimal patent policy design has traditionally been framed as a trade-off between this benefit of
+providing incentives for the development of new technologies and the cost of deadweight loss from higher
+prices during the life of the patent.
+Nordhaus-style models of optimal patent policy design have traditionally modeled innovations as iso-
+lated discoveries. However, in practice many or most innovations are cumulative, in the sense that a
+given discovery may be an input into later follow-on discoveries. When innovation is cumulative, optimal
+patent policy design also depends on how patents on existing technologies affect follow-on innovation.
+One prominent example in recent policy debates is a patented human gene sequence. Sequenced genetic
+data is a research input into subsequent follow-on discoveries: by analyzing sequenced genetic data sci-
+entists may discover links between genetic variations and diseases, and such knowledge can be applied to
+commercialize medical technologies such as pharmaceutical treatments and diagnostic tests. If patents
+on discoveries such as human genes affect follow-on innovation, that effect is a key additional input into
+optimal patent policy design. In this paper, we investigate whether patents on human genes have af-
+fected follow-on scientific research and product development. Our broad goal is to inform whether the
+Nordhaus-style trade-off between ex ante incentives and deadweight loss is sufficient for optimal patent
+policy design, or whether—at least in this context—the effects of patents on follow-on innovation need to
+be considered.
+Investigating how patents on existing technologies affect follow-on innovation requires addressing two
+key challenges. First, in most markets it is difficult or impossible to take a given set of technologies which
+are claimed as intellectual property in patents and measure follow-on innovation on those technologies.
+Follow-on innovations which infringe the original patent legally require a license from the original innova-
+tor. Butbecauselicensesareveryrarelypubliclydisclosed,constructingappropriatemeasuresoffollow-on
+innovation for any given patented invention is quite difficult. Second, a priori we expect a selection bias
+problem to arise if inventors are more likely to file for or to obtain patents on technologies that are inher-
+ently more valuable. This type of selection raises the concern that any measured differences in follow-on

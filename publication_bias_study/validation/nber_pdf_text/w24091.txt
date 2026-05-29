@@ -1,0 +1,167 @@
+NBER WORKING PAPER SERIES
+HOUSE PRICE BELIEFS AND MORTGAGE LEVERAGE CHOICE
+Michael Bailey
+Eduardo Dávila
+Theresa Kuchler
+Johannes Stroebel
+Working Paper 24091
+http://www.nber.org/papers/w24091
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+November 2017
+We like to thank Jonathan Berk, Philippe Bracke, Peter DeMarzo, Nicola Gennaioli, Emmanuel
+Farhi, Sean Hundtofte, Amit Seru, Alp Simsek, Venky Venkateswaran, and Iván Werning, as
+well as seminar and conference participants at Bank of Ireland, Berkeley Haas, Chicago Booth,
+CREi, Drexel University, Empirical Macro Workshop in Charleston, Federal Reserve Bank of
+Philadelphia, LMU Munich, Massachusetts Institute of Technology, NYC Real Estate
+Conference, NBER Summer Institute, Stanford Institute for Theoretical Economics, University
+College London, University of Maryland, USC Rena Sivitanidou Lusk Research Symposium, UT
+Austin, Washington University in St. Louis for helpful comments. Elizabeth Casano, Drew
+Johnston, Hongbum Lee, and Luke Min provided excellent research assistance. This project was
+supported through a grant of the Center for Global Economy and Business at NYU Stern. The
+views expressed herein are those of the authors and do not necessarily reflect the views of the
+National Bureau of Economic Research.
+At least one co-author has disclosed a financial relationship of potential relevance for this
+research. Further information is available online at http://www.nber.org/papers/w24091.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2017 by Michael Bailey, Eduardo Dávila, Theresa Kuchler, and Johannes Stroebel. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+House Price Beliefs And Mortgage Leverage Choice
+Michael Bailey, Eduardo Dávila, Theresa Kuchler, and Johannes Stroebel
+NBER Working Paper No. 24091
+November 2017
+JEL No. D1,D14,E03,G0,G02,G11,G12,G21,R21,R30
+ABSTRACT
+We study the relationship between homebuyers' beliefs about future house price changes and
+their mortgage leverage choices. From a theoretical perspective, whether more pessimistic
+homebuyers choose more or less leverage is ambiguous and depends on their willingness to
+reduce the size of their housing investment. When households primarily maximize the levered
+return of their property investment, more pessimistic homebuyers reduce their leverage to
+purchase smaller houses. On the other hand, when considerations such as family size pin down
+the desired property size, pessimistic homebuyers reduce their financial exposure to the housing
+market by making smaller downpayments to buy similarly-sized homes. To determine which
+scenario better describes the data, we empirically investigate the cross-sectional relationship
+between beliefs and leverage choices in the U.S. housing market. Our data combine mortgage
+financing information and a housing market expectations survey with anonymized social network
+data from Facebook. The survey shows that an individual's belief distribution about future house
+price changes is affected by the recent house price experiences of her geographically distant
+friends, allowing us to use these experiences as quasi-exogenous shifters of individuals' house
+price beliefs. We find that more pessimistic homebuyers make smaller downpayments and choose
+higher leverage, in particular in states where default costs are relatively low, as well as during
+periods when house prices are expected to fall on average. Overall, our results provide evidence
+for an important role of heterogeneous beliefs in explaining individuals' financial decision-
+making.
+Michael Bailey Theresa Kuchler
+Facebook Stern School of Business
+Economist New York University
+mcbailey@fb.com 44 West 4th Street
+New York, NY 10012
+Eduardo Dávila tkuchler@stern.nyu.edu
+Stern School of Business
+New York University Johannes Stroebel
+44 West 4th Street Stern School of Business
+New York, NY 10012 New York University
+and NBER 44 West 4th Street
+edavila@stern.nyu.edu New York, NY 10012
+and NBER
+johannes.stroebel@nyu.edu
+
+Aggregate leverage ratios in the economy vary substantially over time and play a key role in driving economic
+fluctuations(seeKrishnamurthyandMuir,2016;Mian,SufiandVerner,2016). Understandingthedeterminantsof
+investors’ leverage choices is therefore a question of central economic importance. Leverage choices in the housing
+market are of particular interest to policy makers (see DeFusco, Johnson and Mondragon, 2017): mortgages are
+the primary liability on households’ balance sheets, and increased household leverage plays a key role in many
+accountsoftherecentFinancialCrisis(e.g.,MianandSufi,2009). Inthispaper,weexploretheroleofhomebuyers’
+beliefs about house price growth as one potential determinant of their mortgage leverage choices.
+We first develop a parsimonious model that characterizes the channels through which homebuyers’ beliefs
+about future house price growth can affect their mortgage leverage choices. We show that the direction of the
+combinedeffectofbeliefsonleveragechoicesisambiguous,anddependsonthewillingnessofrelativelypessimistic
+homebuyers to reduce the size of their housing market investment by either renting or buying a smaller house in a
+cheaper neighborhood. We then empirically investigate the relationship between homebuyers’ beliefs about future
+house price growth and their leverage choices, and find that more pessimistic homebuyers take on more leverage.
+Our model adapts the portfolio choice framework of Geanakoplos (2010) and Simsek (2013) to the housing
+market. We consider individuals who optimally choose non-housing consumption in addition to home size and
+mortgage leverage given a schedule of loan-to-value ratios and interest rates offered by lenders. Introducing
+consumption as an additional choice margin allows households to separately determine the size of their home and
+their leverage. House price beliefs affect leverage choices through two forces. The first force works through the
+perceived expected return on housing investments (“expected return force”). More optimistic agents want to buy
+largerhouses,sincetheyexpecteachdollarinvestedinhousingtoearnahigherreturn. Inordertoaffordthelarger
+home, they need to further lever up their fixed resources. The second force works through the protection against
+house price declines offered by the ability to default on mortgages (“downpayment protection force”).1 Holding
+housesizefixed,morepessimisticagents,whoperceiveahigherprobabilityofdefaultingontheirmortgage,choose
+lower downpayments and higher leverage to limit the potential loss of their own funds in case of default.2
+Our model captures an additional important feature of housing markets. Since owner-occupied housing is
+bothaninvestmentandaconsumptiongood,theoptimalhomeisnotjustdeterminedbyhomebuyers’investment
+motives,butalsobyconsumption-drivenmotivessuchasfamilysizeandneighborhoodpreferences. Thisintroduces
+a“collateraladjustmentfriction” thatreduceshomebuyers’willingnesstoadjusttheirpropertysizeinresponseto
+changesinhousepricebeliefs.3 Forexample,alargecollateraladjustmentfrictioncouldbetheresultofpessimists
+not being willing to purchase in a less-safe neighborhood, or not wanting to buy a much smaller house. Our main
+theoretical result is to show that the strength of this friction is central to determining the relationship between
+homebuyers’ house price beliefs and their mortgage leverage choices.
+We highlight the key mechanisms in our model by considering two polar scenarios for which we can obtain
+explicit analytical results. We first consider a housing-as-investment scenario in which there is no collateral
+1We show that this force is active independent of whether mortgage default is primarily strategic, with homeowners defaulting
+as soon as their home is sufficiently “underwater,” or whether mortgage default only occurs when households also receive a negative
+incomeshockthatmakesitimpossibleforthemtocontinuetheirmonthlymortgagepayments.
+2As will become evident below, an equivalent exposition of the second force describes pessimists as perceiving a lower marginal
+costofborrowing,sincetheyexpecttorepaytheirloaninfewerstatesoftheworld. Thismakeshigherleveragemoreappealing.
+3We use the term friction to capture any force that reduces the willingness of individuals to adjust their exposure to the housing
+collateralforpureinvestmentmotives. Inoursetting,thisforcecomesfromthepreferencesofhomebuyers,whoviewtheirhousenot
+just as an investment, but also as a place to live, which puts additional constraints on house size. Our discussion of the collateral
+adjustment friction focuses on the intensive margin of housing investment. In housing markets, renting rather than buying can give
+individualstheoptiontoseparatetheirdecisionofwhathousetoliveinfromthedecisionofthesizeoftheirhousingmarketinvestment.
+However,inmanycases,thesetofpropertiesavailableforrentisverydifferentfromthesetofpropertiesavailableforsale;indeed,large
+single-family residences are almost exclusively owner-occupied. Therefore, reducing one’s housing market exposure through renting
+willusuallyalsoinvolveapotentiallycostlyadjustmenttothetypeofhousingthatcanbeconsumed. Thisforcewillhavethesame
+effectasthecollateraladjustmentfrictionweconsiderfortheintensivemarginadjustment.
+2
+
+adjustment friction and property size and leverage are determined by both the expected return force and the
+downpaymentprotectionforce. Undertheappropriatedefinitionofoptimism,thisscenariorecoversthepredictions
+fromtheportfoliochoiceprobleminSimsek(2013): morepessimistichomebuyersreducetheirleveragetopurchase
+smaller houses because the expected return force dominates the downpayment protection force.
+Wethenconsiderahousing-as-consumption scenario, inwhichthesizeofthehousinginvestmentiscompletely
+pinned down by factors such as family size, and households allocate their resources between consumption and
+making a downpayment to purchase the house. In this scenario, which corresponds to an infinite collateral
+adjustment friction, the expected return force is inactive, but the downpayment protection force continues to
+operate. As a result, more pessimistic agents make smaller downpayments to protect their assets against losses
+in case of house price declines. In particular, a pessimistic homebuyer might think: “I need at least a 3-bedroom
+house given my family size, but I think house prices are likely to fall, so I do not want to invest much of my own
+money.” Such a borrower would then naturally choose higher leverage. As a reader explained to the Washington
+Post (2011): “An acquaintance once told me he doesn’t believe in putting much money down on a mortgage loan
+because that way he can ‘just walk away’ if things ever get bad. And walk away he did. His property is now in
+foreclosure.” In the paper, we provide extensive evidence for the prevalence of such thinking among homebuyers.
+When we move away from these polar cases, whether more pessimistic agents take on more or less leverage
+depends on the magnitude of the collateral adjustment friction that captures the extent to which optimal home
+sizeisdeterminedbyinvestmentorconsumptionmotives. Theempiricalcontributionofthispaperistoinvestigate
+whichoftheseforcesdominatesinpractice. Thisanalysisfacesanumberofchallenges. Testingtheimplicationsof
+models with belief heterogeneity is difficult because individuals’ beliefs are high-dimensional and hard-to-observe
+objects. In addition, even if we could cleanly elicit homebuyers’ house price beliefs, we rarely observe forces that
+induce heterogeneity in these beliefs without also inducing variation in their economic resources or other variables
+that might independently affect their leverage choices.
+Our empirical approach builds on Bailey et al. (2017a), who document that the recent house price experiences
+in an individual’s geographically distant social network affect her beliefs about the attractiveness of local housing
+market investments. Indeed, we verify that the recent house price experiences of geographically distant friends
+can be used as shifters of individuals’ beliefs about the distribution of expected future house price changes. We
+also show that friends’ house price experiences are unlikely to affect leverage choices through channels other than
+beliefs. This allows us to explore the empirical relationship between beliefs and leverage by analyzing the cross-
+sectional relationship between the leverage choices of individuals borrowing from the same lender to purchase
+homes at the same time and in the same neighborhood, and the house price experiences of these homebuyers’
+geographically distant friends.
+In our data, we observe an anonymized snapshot of U.S. individuals’ friendship networks on Facebook, the
+largestonlinesocialnetwork,withover231millionusersintheU.S.andCanada. Ourfirstempiricalstepcombines
+these data with responses to a housing market expectation survey that was conducted by Facebook in April 2017.
+The survey, which targeted Facebook users in Los Angeles through their News Feeds, elicited a distribution
+of respondents’ expectations for future house price changes in their own zip codes. Individuals whose friends
+experienced more recent house price increases expect higher average future house price growth. Quantitatively, a
+one-percentage-point higher house price appreciation among an individual’s friends over the previous 24 months
+is associated with individuals expecting a 33 basis points higher house price growth over the subsequent year. We
+also find that individuals whose friends experienced more heterogeneous recent house price changes report a more
+disperseddistributionofexpectedfuturehousepricegrowth. Thissuggeststhatthehousepriceexperienceswithin
+an individual’s social network do not just affect her beliefs on average, but that other moments of the distribution
+3

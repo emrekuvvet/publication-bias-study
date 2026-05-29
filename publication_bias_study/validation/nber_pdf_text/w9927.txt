@@ -1,0 +1,132 @@
+NBER WORKING PAPER SERIES
+UNCOVERING THE RISK-RETURN RELATION IN THE STOCK MARKET
+Hui Guo
+Robert F. Whitelaw
+Working Paper 9927
+http://www.nber.org/papers/w9927
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+August 2003
+This paper formerly circulated under the title “Risk and Return: Some New Evidence”. We thank N.R.
+Prabhala for providing the implied volatility data and seminar participants at the Federal Reserve Bank of
+New York, the University of Illinois, Urbana-Champaign, the University of Texas, Austin, Vanderbilt
+University, the Australian Graduate School of Management, and the University of Queensland for helpful
+comments. Financial support from the C. V. Starr Center for Applied Economics is gratefully acknowledged
+by the first author. The views expressed in this paper are those of the authors and do not necessarily relect
+the official positions of the Federal Reserve Bank of St. Louis or the Federal Reserve System. The views
+expressed herein are those of the authors and not necessarily those of the National Bureau of Economic
+Research.
+©2003 by Hui Guo and Robert F. Whitelaw. All rights reserved. Short sections of text, not to exceed two
+paragraphs, may be quoted without explicit permission provided that full credit, including © notice, is given
+to the source.
+
+Uncovering the Risk-Return Relation in the Stock Market
+Hui Guo and Robert F. Whitelaw
+NBER Working Paper No. 9927
+August 2003
+JEL No. G1
+ABSTRACT
+There is an ongoing debate in the literature about the apparent weak or negative relation between
+risk (conditional variance) and return (expected returns) in the aggregate stock market. We develop
+and estimate an empirical model based on the ICAPM to investigate this relation. Our primary
+innovation is to model and identify empirically the two components of expected returns--the risk
+component and the component due to the desire to hedge changes in investment opportunities. We
+also explicitly model the effect of shocks to expected returns on ex post returns and use implied
+volatility from traded options to increase estimation efficiency. As a result, the coefficient of relative
+risk aversion is estimated more precisely, and we find it to be positive and reasonable in magnitude.
+Although volatility risk is priced, as theory dictates, it contributes only a small amount to the time-
+variation in expected returns. Expected returns are driven primarily by the desire to hedge changes
+in investment opportunities. It is the omission of this hedge component that is responsible for the
+contradictory and counter-intuitive results in the existing literature.
+Hui Guo
+Research Department
+Federal Reserve Bank of St. Louis
+P.O. Box 442
+St. Louis, Missouri 63166
+hui.gao@stls.frb.org
+Robert F. Whitelaw
+New York University
+Stern School of Business
+44 W. 4th Street, Suite 9-190
+New York, NY 10012
+and NBER
+rwhitela@stern.nyu.edu
+
+1 Introduction
+The return on the market portfolio plays a central role in the capital asset pricing model (CAPM),
+the financial theory widely used by both academics and practitioners. However, the intertemporal
+1
+properties of stock market returns are not yet fully understood. In particular, there is an ongoing
+debate in the literature aboutthe relationship between stock market risk and returnand the extent
+to which stock market volatility moves stock prices. This paper provides new evidence on the
+risk-return relation by estimating a variant of Merton’s (1973) intertemporal capital asset pricing
+model (ICAPM).
+Inhisseminalpaper,Merton(1973)showsthattheconditionalexcessmarketreturn,E
+t−1
+r
+M,t
+−
+r f,t, is a linear function of its conditional variance, σ
+M
+2
+,t−1
+, (the risk component) and its covariance
+with investment opportunities, σ MF,t−1, (the hedge component), i.e.,
+−J W −J
+E t−1 r M,t −r f,t = [ W J W ]σ M 2 ,t−1 +[ J WF ]σ MF,t−1 , (1)
+W W
+where J(W(t),F(t),t) is the indirect utility function with subscripts denoting partial derivatives,
+W(t) is wealth, and F(t) is a vector of state variables that describe investment opportunities. 2
+−J W
+WW is a measure of relative risk aversion, which is usually assumed to be constant over time.
+J
+W
+If people are risk averse, then this quantity should be positive.
+Under certain conditions, Merton (1980) argues that the hedge component is negligible and
+the conditional excess market return is proportional to its conditional variance. Since Merton’s
+work, this specification has been subject to dozens of empirical investigations, but these papers
+have drawn conflicting conclusions on thesign of the coefficient of relative risk aversion. In general,
+however, despite widely differing specifications and estimation techniques, most studies find a weak
+or negative relation. Examples include French, Schwert and Stambaugh (1987), Campbell (1987),
+Glosten, Jagannathan and Runkle (1993), Whitelaw (1994), and more recent papers, including
+Goyal and Santa-Clara (2003) and Lettau and Ludvigson (2003).
+1The expected stock market return was long considered to be constant until relatively recent work documenting
+the predictability of market returns (e.g., Fama and French (1989)). It is now well understood that time-varying
+expected returns are consistent with rational expectations. See Campbell and Cochrane (1999) and Guo (2003) for
+recent examples of this literature.
+2Strictly speaking, equation (1) is the discrete time version of Merton’s ICAPM (see Long [1974]). In addition,
+theequation holds for the aggregate wealth portfolio for which we usethe market portfolio as a proxy.
+1
+
+The failure to reach a definitive conclusion on the risk-return relation can be attributed to two
+factors. First, neither the conditional return nor the conditional variance are directly observable;
+certain restrictions must be imposed to identify these two variables. Instrumental variable (IV)
+models and autoregressive conditional heteroscedasticity (ARCH) models are the two most com-
+monly used identification methods. In general, empirical results are sensitive to the restrictions
+imposed by these models. For example, Campbell (1987) finds that the results depend on the
+choice of instrumental variables. Specifically, the nominal risk-free rate is negatively related to
+the expected return and positively related to the variance, and “these two results together give
+a perverse negative relationship between the conditional mean and variance for common stock”
+(Campbell (1987, p.391)). In the context of ARCH models, if the conditional distribution of the
+return shock is changed from normal to student-t, the positive relation found by French, Schwert
+and Stambaugh (1987) disappears (see Baillie and DeGennaro (1990)).
+Second, there are no theoretical restrictions on the sign of the correlation between risk and
+return. Backus and Gregory (1993) show that in a Lucas exchange economy, the correlation can
+be positive or negative depending on the time series properties of the pricing kernel. This result
+suggests that the hedge component can be a significant pricing factor and can have an important
+effectontherisk-returnrelation. Ingeneral,therisk-returnrelationcanbetime-varyingasobserved
+byWhitelaw(1994). Thetheory,however,stillrequiresapositivepartial relationshipbetweenstock
+market risk and return. The more relevant empirical issue is to disentangle the risk component
+from the hedge component.
+Scruggs (1998) presents some initial results on the decomposition of the expected excess market
+return into risk and hedge components. Assuming that the long-term government bond return rep-
+resents investment opportunities, he estimates equation (1) using a bivariate exponential GARCH
+model and finds that the coefficient of relative risk aversion is positive and statistically significant.
+However, his approach has some weaknesses. For example, he assumes that the conditional corre-
+lation between stock returns and bond returns is constant, but Ibbotson Associates (1997) provide
+evidence that it actually changes sign over time in historical data. After relaxing this assumption,
+Scruggs and Glabadanidis (2003) fail to replicate the earlier results. Of course, this latter result
+does not imply a rejection of equation (1); rather, it challenges the assumption that bond returns
+are perfectly correlated with investment opportunities.
+2

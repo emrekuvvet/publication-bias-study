@@ -1,0 +1,161 @@
+NBER WORKING PAPER SERIES
+ANALYZING THE EFFECTS OF INSURING HEALTH RISKS:
+ON THE TRADE-OFF BETWEEN SHORT RUN INSURANCE BENEFITS VS. LONG RUN INCENTIVE COSTS
+Harold L. Cole
+Soojin Kim
+Dirk Krueger
+Working Paper 18572
+http://www.nber.org/papers/w18572
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+November 2012
+We thank Hanming Fang, Iourii Manovskii and participants at EUI, EIEF, the Penn Macro Lunch
+and the Annual Meeting for Society for Economic Dynamics 2012 for many helpful comments. Krueger
+gratefully acknowledges financial support from the NSF under grant SES-0820494. The views expressed
+herein are those of the authors and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2012 by Harold L. Cole, Soojin Kim, and Dirk Krueger. All rights reserved. Short sections of text,
+not to exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Analyzing the Effects of Insuring Health Risks: On the Trade-off between Short Run Insurance
+Benefits vs. Long Run Incentive Costs
+Harold L. Cole, Soojin Kim, and Dirk Krueger
+NBER Working Paper No. 18572
+November 2012
+JEL No. E61,H31,I18
+ABSTRACT
+This paper constructs a dynamic model of health insurance to evaluate the short- and long run effects
+of policies that prevent firms from conditioning wages on health conditions of their workers, and that
+prevent health insurance companies from charging individuals with adverse health conditions higher
+insurance premia. Our study is motivated by recent US legislation that has tightened regulations on
+wage discrimination against workers with poorer health status (Americans with Disability Act of 2009,
+ADA, and ADA Amendments Act of 2008, ADAAA) and that will prohibit health insurance companies
+from charging different premiums for workers of different health status starting in 2014 (Patient Protection
+and Affordable Care Act, PPACA). In the model, a trade-off arises between the static gains from better
+insurance against poor health induced by these policies and their adverse dynamic incentive effects
+on household efforts to lead a healthy life. Using household panel data from the PSID we estimate
+and calibrate the model and then use it to evaluate the static and dynamic consequences of no-wage
+discrimination and no-prior conditions laws for the evolution of the cross-sectional health and consumption
+distribution of a cohort of households, as well as ex-ante lifetime utility of a typical member of this
+cohort. In our quantitative analysis we find that although a combination of both policies is effective
+in providing full consumption insurance period by period, it is suboptimal to introduce both policies
+jointly since such policy innovation induces a more rapid deterioration of the cohort health distribution
+over time. This is due to the fact that combination of both laws severely undermines the incentives
+to lead healthier lives. The resulting negative effects on health outcomes in society more than offset
+the static gains from better consumption insurance so that expected discounted lifetime utility is lower
+under both policies, relative to only implementing wage nondiscrimination legislation.
+Harold L. Cole Dirk Krueger
+Economics Department Economics Department
+University of Pennsylvania University of Pennsylvania
+3718 Locust Walk 160 McNeil Building
+160 McNeil Building 3718 Locust Walk
+Philadelphia, PA 19104 Philadelphia, PA 19104
+and NBER and NBER
+colehl@sas.upenn.edu dkrueger@econ.upenn.edu
+Soojin Kim
+Economics Department
+University of Pennsylvania
+3718 Locust Walk
+160 McNeil Building
+Philadelphia, PA 19104
+soojink@sas.upenn.edu
+
+Analyzing the Effects of Insuring Health Risks:∗
+On the Trade-off between Short Run Insurance Benefits vs. Long Run Incentive Costs
+Harold L. Cole Soojin Kim
+University of Pennsylvania and NBER University of Pennsylvania
+Dirk Krueger
+University of Pennsylvania, CEPR and NBER
+November 29, 2012
+Abstract
+Thispaperconstructsadynamicmodelofhealthinsurancetoevaluatetheshort-andlongruneffects
+of policies that prevent firms from conditioning wages on health conditions of their workers, and that
+prevent health insurance companies from charging individuals with adverse health conditions higher in-
+surancepremia. OurstudyismotivatedbyrecentUSlegislationthathastightenedregulationsonwage
+discrimination against workers with poorer health status (Americans with Disability Act of 2009, ADA,
+and ADA Amendments Act of 2008, ADAAA) and that will prohibit health insurance companies from
+charging different premiums for workers of different health status starting in 2014 (Patient Protection
+andAffordableCareAct,PPACA).Inthemodel,atrade-offarisesbetweenthestaticgainsfrombetter
+insurance against poor health induced by these policies and their adverse dynamic incentive effects on
+household efforts to lead a healthy life. Using household panel data from the PSID we estimate and
+calibrate the model and then use it to evaluate the static and dynamic consequences of no-wage dis-
+criminationandno-priorconditionslawsfortheevolutionofthecross-sectionalhealthandconsumption
+distribution of a cohort of households, as well as ex-ante lifetime utility of a typical member of this
+cohort. In our quantitative analysis we find that although a combination of both policies is effective in
+providingfullconsumptioninsuranceperiodbyperiod,itissuboptimaltointroducebothpoliciesjointly
+since such policy innovation induces a more rapid deterioration of the cohort health distribution over
+time. This is due to the fact that combination of both laws severely undermines the incentives to lead
+healthier lives. The resulting negative effects on health outcomes in society more than offset the static
+gainsfrombetterconsumptioninsurancesothatexpecteddiscountedlifetimeutilityislowerunderboth
+policies, relative to only implementing wage nondiscrimination legislation.
+JEL Codes: E61, H31, I18
+Keywords: Health, Insurance, Incentive
+1 Introduction
+In this paper we study the impact of social insurance policies aimed at reducing households’ exposure to
+health related risk during their working life. These risks come through higher medical costs, higher medical
+premiums and lower earnings. Historically there have been major insurance efforts aimed at the elderly
+through Medicaid and Social Security, and the poor through Medicare and income support programs like
+Welfare and Food Stamps. Recently the extent of these programs and the scope of the different groups
+they impact on has been greatly expanded. On the health insurance front, HIPPA in 1966 and the Patient
+Protection and Affordable Care Act in 2010 sought to increase access to health care and to prevent health
+insurance being differentially priced based upon pre-existing conditions. On the income front, the 1990
+∗WethankHanmingFang,IouriiManovskiiandparticipantsatEUI,EIEF,thePennMacroLunchandtheAnnualMeeting
+forSocietyforEconomicDynamics2012formanyhelpfulcomments. Kruegergratefullyacknowledgesfinancialsupportfrom
+theNSFundergrantSES-0820494.
+1
+
+Americans with Disabilities Act and its Amendment in 2009 sought to restrict the ability of employers to
+employ and compensate workers differentially based upon health related reasons.
+In order to analyze the impact of these policies we construct a dynamic model of health insurance
+with heterogeneous households. As in Grossman (1972), health for these households is a state variable. A
+household’s health state helps to determine both their productivity at work and the likelihood that they
+will be subject to adverse health shocks. Our model features the two-way interaction between health and
+income that has been emphasized in the literature. Our model of health shocks includes temporary health
+shocks that impact on productivity and can be offset by medical expenditures (as in Dey and Flinn 2005),
+and catastrophic health shocks which require nondiscretionary health expenditures to avoid death. Health
+status in our model is persistent and evolves stochastically. This evolution is affected by the household’s
+efforts to maintain their health which results in a moral hazard problem as health related insurance reduces
+households’ incentives to maintain their health. We explicitly model the choice of medical expenditure and
+thereby endogenously determine the health insurance policy and how it responds both to the household’s
+state in terms of health status, age and education.
+Thefocusofouranalysisishowthedistributionsofhealthstatus,earningsandhealthinsurancecostswill
+evolveunderdifferentpolicychoicesandtheimpactofthesechoicesonwelfare. Weconsiderseveraldifferent
+policyregimes. Thefirstisacompleteinsurancebenchmarkinwhichthesocialplannercandictateboththe
+health insurance contract, the effort made to maintain health and the extent of redistributive transfers that
+provide full insurance against all health related shocks. The second is pure competition in which workers
+enter into one-period employment and insurance contracts. Competition leads these contracts to partially
+insure the worker against within period temporary health shocks, but not against his initial health status
+and the transition of this status. The second is a version of the no-prior conditions restriction on health
+insurance in which health insurance companies compete to offer one-period health insurance contracts in
+which they cannot differentially charge based upon the worker’s health status. The third is a version of the
+no-discrimination restrictions on employment in which firms cannot differentially hire or pay workers based
+upon their health status. In the fourth version we consider the impact of both the no-prior conditions and
+the no-discrimination restrictions jointly.
+We study both the static and the dynamic impact of these policies. One of the key aspects of the
+dynamic analysis is the impact these policies have on individuals’ incentives to maintain their health and
+thefeedbackthiscreatesbetweenthehealthdistributionofthepopulationandthecostsofhealthinsurance
+and productivity of the workforce.
+We evaluate the quantitative impacts of the different policies on consumption insurance, incentives and
+aggregate outcomes, and, ultimately, welfare. To do so, we first estimate and calibrate the model using
+PSID data to match key aggregate statistics on labor earnings, medical expenditures and observed physical
+exercise levels. We then use the parameterized version of the model as a laboratory to evaluate different
+policyscenarios. Ourresultsshowthatacombinationofwagenon-discriminationlawandnopriorconditions
+law provides full insurance against health risks and restores the first-best consumption insurance allocation
+intheshortrun,butleadstoaseveredeteriorationofincentivesandthusthepopulationhealthdistribution
+inthelongrun. Quantitativelyevaluatingthewelfareconsequencesofthistrade-offwefindthateventhough
+both policies improve upon the laissez-faire equilibrium, implementing them jointly is suboptimal, relative
+to introducing a wage nondiscrimination in isolation.
+1.1 Institutional Background
+The U.S. has a long history of policy initiatives in relation to health risk. Implicitly Welfare programs,
+which date back to the 1930s and were greatly expanded by the Great Society in the 1960s, insure workers
+against a variety of shocks, implicitly including health related shocks insofar they affect earnings. Since
+1965 Medicare has sought to provide health insurance to the elderly and the disabled. Medicaid has sought
+to provide health insurance to the poor since the 1990s. The last two decades legislation in the U.S. was
+passed that limits the ability of employers to condition wages on the health conditions of employees, and to
+discriminate against applicants with prior health conditions when filling vacant positions.
+2

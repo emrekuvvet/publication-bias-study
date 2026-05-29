@@ -1,0 +1,145 @@
+NBER WORKING PAPER SERIES
+A QUANTITY-DRIVEN THEORY OF TERM PREMIA AND EXCHANGE RATES
+Robin Greenwood
+Samuel G. Hanson
+Jeremy C. Stein
+Adi Sunderam
+Working Paper 27615
+http://www.nber.org/papers/w27615
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2020
+We are grateful to John Campbell, Wenxin Du, Ken Froot, Arvind Krishnamurthy, Gordon Liao,
+Hanno Lustig, and Matteo Maggiori and seminar participants at Dartmouth Tuck, the ECB,
+Harvard, the NBER Asset Pricing Summer Institute, Oxford Said, SITE 2019, Wharton, and
+Warwick Business School for helpful comments. Greenwood, Hanson, and Sunderam gratefully
+acknowledge funding from the Harvard Business School Division of Research. The views
+expressed herein are those of the authors and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+At least one co-author has disclosed a financial relationship of potential relevance for this research.
+Further information is available online at http://www.nber.org/papers/w27615.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2020 by Robin Greenwood, Samuel G. Hanson, Jeremy C. Stein, and Adi Sunderam. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+A Quantity-Driven Theory of Term Premia and Exchange Rates
+Robin Greenwood, Samuel G. Hanson, Jeremy C. Stein, and Adi Sunderam
+NBER Working Paper No. 27615
+July 2020
+JEL No. F31,G12
+ABSTRACT
+We develop a model in which specialized bond investors must absorb shocks to the supply and
+demand for long-term bonds in two currencies. Since long-term bonds and foreign exchange are
+both exposed to unexpected movements in short-term interest rates, a shift in the supply of long-
+term bonds in one currency influences the foreign exchange rate between the two currencies, as
+well as bond term premia in both currencies. Our model matches several important empirical
+patterns, including the co-movement between exchange rates and term premia, as well as the
+finding that central banks' quantitative easing policies impact exchange rates. An extension of our
+model sheds light on the persistent deviations from covered interest rate parity that have emerged
+since 2008.
+Robin Greenwood Jeremy C. Stein
+Harvard Business School Department of Economics
+Baker Library 267 Harvard University
+Soldiers Field Littauer 209
+Boston, MA 02163 Cambridge, MA 02138
+and NBER and NBER
+rgreenwood@hbs.edu jeremy_stein@harvard.edu
+Samuel G. Hanson Adi Sunderam
+Harvard Business School Harvard Business School
+Baker Library 361 Baker Library 359
+Soldiers Field Soldiers Field
+Boston, MA 02163 Boston, MA 02163
+and NBER and NBER
+shanson@hbs.edu asunderam@hbs.edu
+An Online Appendix is available at dl=0
+https://www.dropbox.com/s/hoscjn80wx5ua8t/GHSS_FX_IA_FINAL.pdf?dl=0
+
+1 Introduction
+Thereisagrowingrecognitionthat…nancialintermediariesplayanimportantroleindetermining
+foreign exchange (FX) rates (Kouri [1976], Evans and Lyons [2002], Froot and Ramadorai [2005],
+Gabaix and Maggiori [2015], Itskhoki and Mukhin [2019]). When there are frictions in …nancial
+intermediation, exchange rates move in response to shifts in the supply and demand for assets
+in di¤erent currencies, which intermediaries must absorb. Since the wealth of intermediaries in
+FX markets need not be closely tied to aggregate consumption or conditions in broader …nancial
+markets (e.g., equities), this approach can explain the disconnect of exchange rates from macro-
+economic fundamentals (Obstfeld and Rogo¤ [2000]) and the predictability of currency returns
+(Fama [1984]).
+Inthispaper,weprovideaframeworkforunderstandinghowthedetailedstructureof…nancial
+intermediation impacts foreign exchange rates and show that this approach can shed light on
+numerous puzzles in the exchange rate literature. We start by assuming that global bond and
+FX markets are integrated with one another but segmented from other …nancial markets. We
+make this assumption for two reasons. First, foreign exchange is conceptually similar to long-
+term bonds in that both are “interest-rate sensitive”assets: they are heavily exposed to news
+about future short-term interest rates. Thus, the physical and human capital needed to trade
+long-term bonds can also be used to trade FX. Indeed, at most major dealer-banks and hedge
+funds, interest-rate and FX trading are tightly integrated.
+Second, concrete empirical motivation for our paper comes from recent work showing that
+quantitativeeasing(QE)policies—i.e.,large-scalepurchasesoflong-termbondsbycentralbanks—
+signi…cantly impacted foreign exchange rates and not just long-term bond yields, suggesting im-
+portant linkages between the two markets For example, Neely (2011), Bauer and Neely (2014),
+and Swanson (2017) show that the Fed’s long-term bond purchases were associated with a large
+depreciation of the U.S. dollar vis-a-vis other major currencies.
+Aquantity-driven, supply-and-demandapproachinthespiritofTobin(1958, 1969)providesa
+natural explanation for bond price movements stemming from QE.1 According to this “portfolio
+balance”view, holding …xed the expected path of future short-term rates, a reduction in the
+supply of long-term bonds—such as QE—leads to a fall in long-term bond yields because it
+reduces the total amount of interest rate risk borne by specialized …nancial intermediaries. Since
+the …xed-income market is assumed to be partially segmented from other parts of the broader
+capital markets, these intermediaries cannot diversify away the interest rate risk they bear and
+mustbepaidtoabsorbshockstothesupplyanddemandforlong-termbonds. Thissegmentation
+explainswhyQEpolicies—which, whilelargerelativetonationalbondmarkets, aresmallrelative
+to global markets for all …nancial assets—have a large impact on long-term yields.
+Our paper shows that this same quantity-driven, supply-and demand approach can also ex-
+plain many empirical facts about exchange rates, including their response to QE. The key insight
+is that, as noted above, foreign exchange and long-term U.S. bonds are exposed to the same
+primary risk factor—unexpected movements in short-term U.S. interest rates. Thus, if the global
+1See, for example, Greenwood and Vayanos (2014), Vayanos and Vila (2019), Hamilton and Wu (2012),
+D’Amico and King (2013), and Greenwood, Hanson, and Vayanos (2016).
+1
+
+bond and FX markets are integrated with one another, a shift in the supply of long-term U.S.
+bonds like QE a¤ects the risk premium on both types of assets.
+Our baseline model is a straightforward generalization of the Vayanos and Vila (2019) term
+structure model to a setting with two currencies. Speci…cally, we consider a model with short-
+term and long-term bonds in two currencies, which we label the U.S. dollar (USD) and the euro
+(EUR). Short-term interest rates in each currency are exogenous and evolve stochastically over
+time. We assume that short rates in the two currencies are positively, but imperfectly, correlated.
+The key friction in the model is that the marginal investors in global bond and FX markets—
+who we call “global bond investors”—are specialized. These investors must absorb exogenous
+shocks to the supply and demand for long-term bonds in both currencies, as well as demand
+shocks in the foreign exchange market. Since these specialists have limited risk-bearing capacity,
+they will only absorb these shocks if the expected returns on long-term bonds in both currencies,
+as well as foreign exchange, adjust in response.
+To solve the model, we must pin down three equilibrium prices: the long-term yield in each
+currency and the exchange rate between the two currencies—the number of dollars per euro.
+Equivalently, the equilibrium pins down expected returns on three long-short trades: a “yield
+curve trade”in each currency—which borrows short-termand lends long-termin that currency—
+and an “FX trade”—which borrows short-term in dollars and lends short-term in euros.
+We …rst show that this baseline model predicts that shifts in the supply of long-term bonds
+impact not only term premia, but also the expected returns on the FX trade and hence exchange
+rates. For instance, an increase in the supply of long-term U.S. bonds raises both the expected
+excess return on long-term U.S. bonds and the expected return on the borrow-in-dollar lend-in-
+euro FX trade, leading to a depreciation of the euro versus the dollar.
+The key intuition is that the U.S. yield curve trade and the borrow-in-dollar lend-in-euro
+FX trade have similar exposures to U.S. short rate risk. First, when the U.S. short rate rises
+unexpectedly, long-term U.S. yields also rise through an expectations hypothesis channel: the
+expected path of U.S. short rates is now higher, so long-term U.S. yields must rise for long-term
+U.S. bonds to remain attractive to investors. As a result, the price of long-term U.S. bonds falls,
+so investors in the U.S. yield curve trade lose money. The borrow-in-dollar lend-in-euro FX trade
+is also exposed to U.S. short rate risk. When the U.S. short rate rises unexpectedly, the euro
+depreciates through an uncovered-interest-rate-parity (UIP) channel: since future short rates are
+now expected to be higher in the U.S. than in Europe, the euro must fall and then be expected
+to appreciate for short-term euro bonds to remain attractive. Thus, the FX trade su¤ers losses
+at the same time as the U.S. yield curve trade.
+Nowconsiderthee¤ectofanincreaseinthesupplyoflong-termU.S.bonds—e.g., becausethe
+Federal Reserve announces it is going to unwind its QE policies. Following this outward supply
+shift, global bond investors will be more exposed to future shocks to short-term U.S. interest
+rates. As a result, the price of bearing U.S. short rate risk must rise. Since long-term U.S. bonds
+are exposed to U.S. short rate risk, this leads to a rise in the term premium component of long-
+term U.S. yields. It also leads to a rise in the risk premium on the borrow-in-dollar lend-in-euro
+FXtrade, which is similarly exposed to U.S. short rate risk. As a result, the euro must depreciate
+2

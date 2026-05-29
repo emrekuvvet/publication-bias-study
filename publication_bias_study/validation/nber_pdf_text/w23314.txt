@@ -1,0 +1,133 @@
+NBER WORKING PAPER SERIES
+SOVEREIGN DEFAULT RISK AND FIRM HETEROGENEITY
+Cristina Arellano
+Yan Bai
+Luigi Bocola
+Working Paper 23314
+http://www.nber.org/papers/w23314
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+April 2017
+First draft: March 2017. We thank Grey Gordon, Juan Carlos Hatchondo, Christian Hellwig,
+Sebnem Kalemli-Ozcan, Alberto Martin, and Vivian Yue for useful comments, and participants at
+several seminars and conferences for valuable insights. Gabriel Mihalache and Alexandra
+Solovyeva provided excellent research assistance. We thank the National Science Foundation for
+financial support under grants 1024581 and 2145007. Luigi Bocola thanks the Alfred P. Sloan
+foundation for generous funding. The views expressed herein are those of the authors and not
+necessarily those of the Federal Reserve Bank of Minneapolis, the Federal Reserve System, or the
+National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2017 by Cristina Arellano, Yan Bai, and Luigi Bocola. All rights reserved. Short sections of
+text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Sovereign Default Risk and Firm Heterogeneity
+Cristina Arellano, Yan Bai, and Luigi Bocola
+NBER Working Paper No. 23314
+April 2017
+JEL No. E44,F34,G12,G15
+ABSTRACT
+This paper measures the output costs of sovereign risk by combining a sovereign debt model with
+firm- and bank-level data. An increase in sovereign risk lowers the price of government debt and
+has an adverse impact on banks’ balance sheets, disrupting their ability to finance firms. The
+resulting fall in credit supply impacts firms directly, as they need to borrow at higher interest
+rates, and indirectly through general equilibrium effects on the price of inputs and other goods.
+Importantly, firms are not equally affected by these developments: those that have greater
+financing needs and that borrow from banks that hold more government debt are mostly affected
+by the change in borrowing rates, while firms that do not borrow are only impacted indirectly.
+We show that these direct and indirect effects can be recovered using a firm-level regression,
+which we estimate using Italian data. We calibrate our model to match the measured firm-level
+elasticities and find that heightened sovereign risk was responsible for one-third of the observed
+output decline during the Italian debt crisis.
+Cristina Arellano Luigi Bocola
+Federal Reserve Bank of Minneapolis Department of Economics
+Research Department Landau 342
+90 Hennepin Avenue Stanford University
+Minneapolis, MN 55401 579 Jane Stanford Way
+arellano.cristina@gmail.com Stanford, CA 94305-6072
+and NBER
+Yan Bai lbocola@stanford.edu
+Department of Economics
+University of Rochester
+216 Harkness Hall
+Rochester, NY 14627
+and NBER
+yanbai06@gmail.com
+
+1 Introduction
+During the European sovereign debt crisis, as in many emerging markets crises, many
+countries experienced large declines in real economic activity. An active research agenda
+has put forth various explanations for this negative association between sovereign risk
+and output. Sovereign default models in the tradition of Arellano (2008) and Aguiar and
+Gopinath (2006) predict that governments have greater temptation to default when the
+economy is in a recession, potentially explaining why sovereign risk increases when eco-
+nomic conditions deteriorate. Several other papers (Gennaioli, Martin, and Rossi, 2014;
+Perez, 2015; Bocola, 2016), however, have emphasized that sovereign risk may also have
+negative spillovers on the economy: because financial intermediaries hold large quantities
+ofdomesticgovernmentdebt, afallinthevalueofthese securitiescandisrupttheirbalance
+sheets and induce a tightening of credit supply to the private sector.
+Quantifying the two-way feedback between sovereign risk and output is a challenging
+openquestioninmacroeconomics,yetitisrelevantforpolicymakersdealingwithsovereign
+debt crises. The challenge arises because debt crises and economic outcomes are jointly
+determined, which makes it hard to disentangle to what extent sovereign risk rises in re-
+sponsetodeterioratingeconomicconditionsandtowhatextentitcausesthem. Researchers
+have tackled this challenge with two main methodologies. One approach consists of fitting
+structural models to aggregate data and using them to measure the macroeconomic conse-
+quences of sovereign risk. This approach suffers from the criticism that the identification
+of the relevant effects relies partly on ancillary assumptions, as aggregate data alone pro-
+vide little information about the direction of causality. A second approach uses firm-bank
+datasets and various empirical methods to estimate the impact that sovereign risk has on
+bank credit and on firms’ performance. While these methods offer a more transparent
+identification of the firm-level responses to sovereign risk, they are not designed to capture
+the aggregate effects.
+The contribution of this paper is to combine these two approaches by building a model
+of sovereign debt with heterogeneous firms to measure the feedback between sovereign
+risk and output. We show that in our framework, the response of output to an increase
+in sovereign risk depends on a set of firm-level elasticities. We estimate these elasticities
+using Italian micro data, and use them as empirical targets to estimate the model structural
+parameters. In our main counterfactual, we find that spillovers from the government to
+the private sector were sizable and accounted for about one-third of the output decline
+observed during the Italian debt crisis.
+Our framework incorporates financial intermediaries and heterogeneous firms into an
+1
+
+otherwise canonical general equilibrium model of sovereign debt and default. The econ-
+omy consists of islands populated by firms, financial intermediaries, and households, and
+a central government. Firms differ in their productivity, and they borrow from interme-
+diaries to finance payments of labor and capital services, factors that are used to produce
+a differentiated good. These working capital needs are also heterogeneous: some firms
+need to advance a greater fraction of their payments than other firms. Intermediaries bor-
+row from households and use their own net worth to purchase long-term government debt
+and extend loans to firms. These credit markets are local in that firms borrow exclusively
+from intermediaries operating on their island, and intermediaries across islands are hetero-
+geneous in their holdings of government debt. Financial intermediaries face occasionally
+binding leverage constraints, as the amount they borrow cannot exceed a multiple of their
+net worth. The governmentfunds publicconsumption by collectingtaxes andissuing long-
+term bonds, and chooses whether to default on its debt.
+The model is perturbed by two aggregate shocks: a shock that moves the productivity
+process of firms and a shock to the value of default for the government. In response to
+these shocks, our environment features a two-way feedback loop between the government
+and the private sector. Importantly, different from standard sovereign default models,
+our environment does not feature exogenous output costs from default, but instead the
+outputlossesfromsovereignriskpotentiallyarisefromthebalancesheeteffectsoffinancial
+intermediaries who hold sovereign debt.
+The first side of this loop reflects the endogeneity of government default risk as changes
+inaggregateproductivityandenforcementaffectthevaluesforthegovernmentofrepaying
+versus defaulting, thereby inducing time variation in sovereign default probabilities and
+hence interest rate spreads of government securities. The second side of this loop is that
+fluctuations in government default risk affect production through their impact on financial
+intermediation. Whensovereignriskincreases, themarketvalueofgovernmentdebtonthe
+balance sheet of financial intermediaries falls, leading to a decline in their net worth. This
+decline tightens the banks’ leverage constraint, which leads intermediaries to restrict credit
+supply. The reduction in credit supply raises the interest rates at which firms finance their
+working capital, and these higher costs induce firms to reduce their demand for inputs.
+Alongside this direct effect that sovereign risk has on economic activity through its impact
+on firms’ borrowing costs, the model features additional general equilibrium mechanisms:
+as firms that are exposed to higher borrowing costs cut their production, the demand for
+other intermediate goods and for labor falls, affecting in equilibrium the prices faced by all
+other firms. We refer to these as the indirect effects of sovereign risk.
+An important result in our paper is that, up to a first-order approximation, the direct
+2

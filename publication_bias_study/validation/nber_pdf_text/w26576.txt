@@ -1,0 +1,139 @@
+NBER WORKING PAPER SERIES
+FINTECH PLATFORMS AND MUTUAL FUND DISTRIBUTION
+Claire Yurong Hong
+Xiaomeng Lu
+Jun Pan
+Working Paper 26576
+http://www.nber.org/papers/w26576
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2019, Revised May 2022
+This paper was previously entitled “The Economic Impact of Distributing Financial Products on
+Third-Party Online Platforms.” We are grateful to Brad Barber, Ben Charoenwong (discussant),
+Robin Döttling (discussant), Darrell Duffie, Hao Jiang, Andrew Karolyi, Jennifer Huang, Xing
+Huang, Yi Huang (discussant), Xin Liu (discussant), Wenlan Qian, Hongxun Ruan (discussant),
+Yu Shan (discussant), Clemens Sialm, Laura Stark, Baolian Wang, Joakim Westerholm
+(discussant), Shangjin Wei, Yizhou Xiao (discussant), Wei Xiong, Bernard Yeung, Xiaoyun Yu,
+Yao Zeng (discussant), Lu Zheng, and Haoxiang Zhu for valuable discussions and comments. We
+thank seminar and conference participants at Tsinghua University PBC School of Finance,
+Chinese University of Hong Kong (Shenzhen), Lingnan University, Shanghai Advanced Institute
+of Finance, Hong Kong University of Science and Technology, National University of Singapore,
+FISF at Fudan University, the 2021 American Finance Association, the 2019 China FinTech
+Research Conference, the 2020 Finance Down Under Conference, the 2020 ABFER Specialty
+Conference on FinTech, the 2021 European Retail Investment Conference, 2021 World Finance
+Conference, FMA2021, the 2022 NBER Chinese Economy Workshop and the behavioral
+finance online seminar organized by Wei Xiong. We are grateful to the Howbuy platform for data
+provision. We thank Linchen Liu, Shiwen Tian, and Heming Zhang for research assistance. The
+views expressed herein are those of the authors and do not necessarily reflect the views of the
+National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2019 by Claire Yurong Hong, Xiaomeng Lu, and Jun Pan. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that
+full credit, including © notice, is given to the source.
+
+FinTech Platforms and Mutual Fund Distribution
+Claire Yurong Hong, Xiaomeng Lu, and Jun Pan
+NBER Working Paper No. 26576
+December 2019, Revised May 2022
+JEL No. G0,G10,G15,G2,G20,G23,G4,G40,G5
+ABSTRACT
+We document a novel platform effect caused by the emergence of FinTech platforms in financial
+intermediation. In China, platform distributions of mutual funds emerged in 2012 and grew
+quickly into a formidable presence. Utilizing the staggered entrance of funds onto platforms, we
+find a marked increase of performance-chasing, driven by the centralized information flow
+unique to FinTech platforms. This pattern is further confirmed using proprietary data from a top
+platform. Examining the platform impact on fund managers, we find that, incentivized by the
+amplified performance-chasing, fund managers increase risk taking to enhance their probability
+of getting onto the top ranking.
+Claire Yurong Hong Jun Pan
+Shanghai Advanced Institute of Finance Shanghai Advanced Institute of Finance
+Shanghai Jiao Tong University Shanghai Jiao Tong University
+211 West Huaihai Road, Shanghai Shanghai, China
+P.R.China, 200030 junpan@saif.sjtu.edu.cn
+yrhong@saif.sjtu.edu.cn
+Xiaomeng Lu
+FISF, Fudan University
+Shanghai
+P.R.China, 200030
+xiaomenglu@fudan.edu.cn
+
+1 Introduction
+The rise of the platform economy over the past decade is transforming the way we live.
+Empowered by technological innovations, platforms are like intermediaries on steroids, cre-
+ating social and business connectivity on a previously unimaginable scale. Widely adopted
+platforms, such as Google for information, Amazon for retail, Facebook for social network-
+ing, and Uber for taxi rides, have profoundly reshaped how information is aggregated and
+disseminated, altering consumer behavior and disrupting the respective industries.
+In this paper, we focus on the emergence of FinTech platforms in the asset manage-
+ment industry, taking advantage a 2012 policy change in China, which allows tech firms to
+distribute mutual funds via e-commerce platforms.1 Created by tech-driven firms, such Fin-
+Tech platforms distribute financial products directly to individual investors, bypassing and
+replacing the traditional channels of mutual-fund distributions organized by fund families,
+banks and brokers. Akin to what Amazon did for books and retail goods, FinTech platforms
+break down the market segmentation, distributing to their giant user bases not only financial
+products but also information, which, given the platform structure, is highly centralized in
+nature. As consumer behavior is influenced by the information fed to them – a fact made
+abundantly clear by the emergence of social-media platforms in disseminating information
+to the public,2 this highly centralized market structure leads to highly synchronized investor
+behavior. On the production side, fund managers, no matter how small or invisible, have the
+potential to reach the entire user base of these platforms. As their reliance on platform dis-
+tribution increases, the platform-induced investor behavior can in turn affect fund managers’
+incentives.
+Focusing first on the impact of the platforms on investor behavior, our empirical results
+documentastrongplatform-inducedamplificationofperformancechasing. Wefindastriking
+increase in performance sensitivity, driven by flows chasing the top-ranked funds much more
+aggressively after the emergence of the platforms. Upon ranking actively managed equity
+funds by their past 12-month returns into deciles, the average net flow to the funds in the
+top decile increases from 3.03% pre-platform (2008–2012) to 20.84% post-platform (2013–
+1Though technological developments over the past quarter century have greatly facilitated the distri-
+bution of mutual funds (Barber and Odean (2001, 2002) and Choi et al. (2002)), the recent emergence of
+FinTech platforms is an entirely new phenomenon. In February 2012, China Securities Regulatory Commis-
+sion (CSRC) announced that tech firms, independent from fund families, banks, and brokers, are allowed to
+distribute mutual funds. Since then, FinTech platforms have grown into a formidable presence. By 2014,
+top platforms like Tiantian and Ant Financial have covered almost the entire universe of mutual funds in
+China. By end of 2018, about one-third of the non-family sales of funds took place on FinTech platforms.
+2ExamplesinfinancialmarketsincludeBarberetal.(2021)onRobinhoodinvestorsandHuetal.(2021)
+on the Reddit users involved in the GameStop trading.
+1
+
+2017).3 We further take advantage of the fact that our data include the exact dates on
+which each mutual fund signs up for the platforms. Using this information on staggered
+entrance, we find the increase in flow-performance sensitivity occurs exactly on and after
+a fund enters platforms. In particular, controlling for fund-level characteristics and time
+and fund fixed effects, we find that the post-platform performance sensitivity is over three
+times the pre-platform level for both equity and mixed funds. Moreover, we do not observe
+such a marked increase in flow-performance sensitivity under placebo tests, estimated by
+randomly assigning funds to be on- or off-platforms. In particular, our actual estimates on
+platform-induced performance chasing exceed 94.1% and 99.8% of the placebo estimates for
+equity and mixed funds respectively.
+To further provide evidence on the platform-induced performance chasing, we directly
+examine investors’ behaviors on a FinTech platform – Howbuy, one of the top platforms
+in China. With the proprietary dataset obtained from Howbuy, we find that performance
+chasing is indeed stronger on the FinTech platforms. From 2015 through 2018, the top-decile
+equity funds account for an average of 49.37% of the quarterly purchases on Howbuy, signif-
+icantly larger than the average of 37.61% for the entire market, which aggregates purchases
+over all distribution channels, both on- and off-platform. Pre-platform, only 23.79% of the
+quarterly purchases goes to the top-decile equity funds.
+The emergence of FinTech platforms results in a striking increase in flow-performance
+sensitivity. Understanding the mechanisms behind this amplified performance chasing is
+therefore important. We hypothesize that the highly centralized and uniform information
+display on these FinTech platform apps may generate a pattern of coordinated or syn-
+chronized performance chasing. Off-platform, information signal is dispersed with funds
+distributed via various segmented channels. On-platform, investors are essentially fed the
+same information. In particular, as platforms invariably list mutual funds by their past
+performance, the top-performing funds are displayed prominently at the front page of every
+investor’s mobile device, causing an otherwise diverse set of investors to chase the same set of
+front-page funds. Consequently, performance chasing behavior at an individual level might
+be synchronized and lead to amplified performance-chasing at the aggregate level.
+To demonstrate the importance of this centralized information display channel, we ex-
+amine the platform effect on the front-page funds. Across all platforms, mutual funds are
+displayed by past 12-months returns in a descending order via mobile apps in a performance
+rank list.4 Depending on the size of their cell-phone screen, investors normally see 8 to 12
+3As a benchmark, the average net flow to the top-decile equity funds in the US is very stable, with a
+magnitude of around 6% in both time periods.
+4Platforms group mutual funds by style into tabs for equity, bond, mixed, index funds, etc. Within each
+tab, the default page displays the funds in the descending order of their past n-months returns, with n=12
+2

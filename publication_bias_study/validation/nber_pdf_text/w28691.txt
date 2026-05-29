@@ -1,0 +1,125 @@
+NBER WORKING PAPER SERIES
+DISCOUNT RATE RISK IN PRIVATE EQUITY:
+EVIDENCE FROM SECONDARY MARKET TRANSACTIONS
+Brian Boyer
+Taylor D. Nadauld
+Keith P. Vorkink
+Michael S. Weisbach
+Working Paper 28691
+http://www.nber.org/papers/w28691
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+April 2021
+We are grateful to the partners at an anonymous intermediary for providing us with data. We
+thank Ulf Axelson, Carter Davis, Pierre Collin-Dufresne, Brigham Frandsen, Jason Gull, Niklas
+Hüther, Jonathan Jensen, Steve Kaplan, Arthur Korteweg, Josh Lerner, Stefan Nagel, Ludovic
+Phalippou, Joseph Romano, Amit Seru, Tyler Shumway, Per Strömberg, Ayako Yasuda, Jeffrey
+Wooldridge, two anonymous referees, and seminar and conference participants at Brigham
+Young University, the University of Chicago Housing and Corporate Lending Conference,
+Ensign Peak Advisors, the Finance Research Association, Lausanne, London Business School,
+Miami, the NBER Corporate Finance Meetings, Ohio State, Singapore Management University,
+Texas Tech, and the Wasatch Finance Conference, for useful comments and suggestions. We also
+thank Greg Adams and Hyeik Kim for excellent research assistance. The views expressed herein
+are those of the authors and do not necessarily reflect the views of the National Bureau of
+Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2021 by Brian Boyer, Taylor D. Nadauld, Keith P. Vorkink, and Michael S. Weisbach. All
+rights reserved. Short sections of text, not to exceed two paragraphs, may be quoted without
+explicit permission provided that full credit, including © notice, is given to the source.
+
+Discount Rate Risk in Private Equity: Evidence from Secondary Market Transactions
+Brian Boyer, Taylor D. Nadauld, Keith P. Vorkink, and Michael S. Weisbach
+NBER Working Paper No. 28691
+April 2021
+JEL No. G11,G23,G24
+ABSTRACT
+Standard measures of private equity performance based on cash flows overlook discount rate risk.
+An index constructed from prices paid in secondary market transactions indicates that private
+equity discount rates vary considerably. While the standard alpha for our index is zero, measures
+of performance based on cash flow data for funds in our index are large and positive. To illustrate
+that results are not driven by idiosyncrasies of private equity secondary markets, we obtain
+similar results using cash flows and returns of synthetic funds that invest in small cap stocks.
+Ignoring variation in PE discount rates can lead to a misallocation of capital.
+Brian Boyer Keith P. Vorkink
+Marriott School of Management Finance Department
+Brigham Young University Marriott School
+Provo, UT 84602 Brigham Young University
+bhb@byu.edu Office 634 TNRB
+Provo, UT 84602-3113
+Taylor D. Nadauld keith_vorkink@byu.edu
+Department of Finance
+Brigham Young University Michael S. Weisbach
+Provo, Utah 84602 Department of Finance
+taylor.nadauld@byu.edu Fisher College of Business
+Ohio State University
+2100 Neil Ave.
+Columbus, OH 43210
+and NBER
+weisbach.2@osu.edu
+
+1. Introduction
+In recent decades, private equity (PE) has become an important asset class for investors.
+A recent survey of institutional investors finds that 88% are invested in private equity, with nearly
+a third having an allocation greater than 10% (Whyte (2017)). In the early 2000s, a secondary
+market developed in which limited partners (LPs) can transact their stakes in private equity funds.1
+Since data on secondary market prices are not publicly-available, investors and academics have
+been limited to using data on cash-flows to evaluate the risk and return of private equity. As much
+as half of the variation for public equity returns, however, is driven by news about discount rates
+(Campbell (1991). Further, all variation in dividend price ratios for public equity corresponds to
+variation in discount rates, not variation in expected cash flows (Campbell and Shiller (1989),
+Campbell (2011)).
+These findings naturally lead to four important questions to consider. First, under what
+conditions might performance measures based on cash flows overlook risk that arises from
+variation in discount rates? After all, asset prices are not arbitrary and should ultimately be
+determined by the properties of the underlying cash flows. Second, to what extent do discount
+rates for private equity vary? The marginal PE investor may very well differ from the marginal
+investor in other asset classes in terms of preferences, sophistication, sentiment, and risk aversion
+that are all important determinants for discount rates. Moreover, the organizational structure of
+private equity may generate unique risk dynamics. Third, how does variation in PE discount rates
+impact standard performance measures such as CAPM alpha and beta, relative to other measures
+of performance based on cash flows? And fourth, what kind of investor cares about variation in
+PE discount rates?
+To answer the first question, we explore the relationship between the GPME of Korteweg
+and Nagel (2016) and the standard one-period Euler condition that depends on market prices. The
+GPME is unique among PE performance evaluation measures in that it is well grounded in asset
+pricing theory. We highlight that it represents a first order condition for optimal asset allocation
+and is equivalent to the net present value (NPV) of cash flows over the life of the investment. We
+illustrate that the implicit beta in the discount factor for GPME, however, is a cash flow yield beta
+1 While secondary market liquidity was limited in the nascent years of the secondary market, liquidity has grown
+substantially over the past decade.
+1
+
+with the growth in investor marginal utility. In contrast, the standard Euler equation represents the
+one-period NPV using market prices, in which the implicit beta is a total return beta. We further
+show that if discount rates vary over time, then GPME generally reflects the unconditional one-
+period NPV plus a term representing PE discount rate risk: the covariance of PE discount rates
+with the growth in investor marginal utility. Such risk impacts the one-period NPV, but not the
+GPME.
+We then turn to the second and third questions mentioned above to investigate variation
+in private equity discount rates and determine the impact of this form of discount rate risk on
+performance evaluation measures. To do so we use data obtained from a large intermediary in this
+market to evaluate the risk and return of private equity funds in a similar manner to the way in
+which investors regularly use public equity markets to understand the risk and return of publicly
+traded companies. Using these data, we construct market-based indices for buyout funds. By
+comparing the performance of our indices with that of standard NAV-based indices and an index
+based on listed private equity companies, we obtain new insights about the performance of private
+equity. In contrast to much of the existing literature, our transaction-based indices suggest that
+buyout funds do not outperform public markets on a risk-adjusted basis.2
+A difficulty in constructing an index using our secondary market data for private equity is
+accounting for the facts that no fund trades in every period, and many funds do not trade at all. In
+the subsample of funds that could be matched with cash flow data from the Preqin database, there
+are 839 buyout transactions for 287 unique funds from 2006 through 2018, implying that the
+average fund trades 2.9 times in our sample, conditional trading at all. Moreover, the funds that do
+trade are not randomly chosen, and sample selection could potentially affect inferences from
+empirical analysis if not controlled for econometrically.
+We explicitly account for the possibility that specific types of funds may trade more often
+than others by using the approach of Heckman (1979). On a large sample of buyout funds, we
+estimate the parameters of an econometric model using observed transaction prices. We use this
+model each period to create an inferred price for every fund in our population every period,
+including those that do not transact. We then construct our transactions-based index from these
+2 For example, current evidence suggests buyout funds outperform on a risk-adjusted basis (Higson and Stucke (2012),
+Harris, Jenkinson, and Kaplan (2014), and Robinson and Sensoy (2016))..
+2

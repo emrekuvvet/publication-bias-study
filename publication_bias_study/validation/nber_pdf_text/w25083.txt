@@ -1,0 +1,135 @@
+NBER WORKING PAPER SERIES
+MACROPRUDENTIAL FX REGULATIONS:
+SHIFTING THE SNOWBANKS OF FX VULNERABILITY?
+Toni Ahnert
+Kristin Forbes
+Christian Friedrich
+Dennis Reinhardt
+Working Paper 25083
+http://www.nber.org/papers/w25083
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2018
+The views in this paper are those of the authors and do not necessarily represent the views of any
+institution with which they are affiliated. We would like to thank Jason Allen, Ricardo Correa,
+Jeffrey Frankel, Glenn Hoggarth, Patrick Honohan, Matias Ossandon Busch, Ian Marsh, Brad
+Setser, Frank Smets, Livio Stracca, and participants at the AEA 2018 meetings in Philadelphia,
+the Global Linkages conference in Dublin, the NBER conference on Capital Flows, Currency
+Wars and Monetary Policy in Cambridge, the Emerging Markets Group Workshop on
+International Capital Flows: Drivers and Policy Responses in London, the annual conference of
+the Canadian Economics Association in Montreal, and the IBEFA summer meeting in Vancouver
+for valuable comments. Further thanks to Matthew Cormier, Min Jae Kim, Duncan Whyte, and
+Sanjana Bhatnagar for outstanding research assistance and to Jérôme Vandenbussche, Ursula
+Vogel and Enrica Detragiache for sharing their data. The views expressed herein are those of the
+authors and do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2018 by Toni Ahnert, Kristin Forbes, Christian Friedrich, and Dennis Reinhardt. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+Macroprudential FX Regulations: Shifting the Snowbanks of FX Vulnerability?
+Toni Ahnert, Kristin Forbes, Christian Friedrich, and Dennis Reinhardt
+NBER Working Paper No. 25083
+September 2018
+JEL No. F32,F34,G15,G21,G28
+ABSTRACT
+Can macroprudential foreign exchange (FX) regulations on banks reduce the financial and
+macroeconomic vulnerabilities created by borrowing in foreign currency? To evaluate the
+effectiveness and unintended consequences of macroprudential FX regulations, we develop a
+parsimonious model of bank and market lending in domestic and foreign currency and derive four
+predictions. We confirm these predictions using a rich dataset of macroprudential FX regulations.
+These empirical tests show that FX regulations:(1) are effective in terms of reducing borrowing in
+foreign currency by banks; (2) have the unintended consequence of simultaneously causing firms
+to increase FX debt issuance; (3) reduce the sensitivity of banks to exchange rate movements, but
+(4) are less effective at reducing the sensitivity of corporates and the broader financial market to
+exchange rate movements. As a result, FX regulations on banks appear to be successful in
+mitigating the vulnerability of banks to exchange rate movements and the global financial cycle,
+but partially shift the snowbank of FX vulnerability to other sectors.
+Toni Ahnert Christian Friedrich
+Financial Studies Division Bank of Canada
+Bank of Canada 234 Laurier Avenue West
+234 Wellington St Ottawa, Ontario, K1AOG9
+Ottawa, Ontario, K1A 0G9 Canada
+CANADA cfriedrich@bankofcanada.ca
+tahnert@bankofcanada.ca
+Dennis Reinhardt
+Kristin Forbes Bank of England,
+MIT Sloan School of Management Threadneedle Street
+100 Main Street, E62-416 London EC2R 8AH
+Cambridge, MA 02142 dennis.reinhardt@bankofengland.co.uk
+and CEPR
+and also NBER
+kjforbes@mit.edu
+
+I. Introduction
+The global financial crisis has prompted renewed interest in tools to reduce
+macroeconomic and financial vulnerabilities, strengthen financial systems, and improve
+country resilience. A key component of this strategy is greater use of macroprudential tools —
+such as countercyclical capital buffers, tighter reserve ratios, leverage ratios, and restrictions
+on loan-to-value and debt-to-income ratios. Several papers have analyzed the use and
+effectiveness of many of these tools.1One type of tool, macroprudential foreign exchange (FX)
+regulations, however, has received less attention, despite the long-standing research
+documenting the vulnerabilities associated with currency mismatch.
+This paper seeks to fill this gap. It provides a detailed assessment of macroprudential
+regulations on the use of foreign currencies by banks, including theoretical predictions of how
+they could work and then empirical assessments of their direct and unintended consequences
+using a rich new dataset. We find that macroprudential FX policies are effective in
+accomplishing their primary goal of reducing bank exposure to foreign currency risk. But do
+they simply shift the risk elsewhere—similar to “shifting a snowbank” (a pile of snow) from
+one place to another? We find some evidence of a “shifting snowbank” effect, as reduced FX
+lending from banks causes some firms to increase FX debt issuance to investors. This shifting
+is only partial, however, so that aggregate exposure to FX debt declines. Our results also show
+that these FX regulations reduce the sensitivity of banks to currency movements, but are less
+successful at reducing the sensitivity of the corporate sector and the broader economy. As a
+result, although macroprudential FX regulations can substantially improve the resilience of
+the banking sector to the global financial cycle, the benefits to the broader economy may be
+more moderate, as some vulnerability shifts to other sectors that may be less informed and
+make less efficient lending choices.
+Exposure to foreign currency borrowing and currency mismatch has been a habitual
+concern, especially in emerging markets. Foreign currency exposure can increase a country’s
+vulnerability to sudden stops, currency depreciations, and financial and banking crises, as well
+as limit the ability of the exchange rate and monetary policy to respond to shocks (Rey, 2013).
+Despite these concerns, foreign currency exposure has continued to increase—especially in
+the corporate and household sector.2 For example, over our sample period from the mid-
+1Cerutti et al. (2015) and Forbes (2018) are recent surveys of this extensive literature.
+2 See Acharya et al. (2015), Bruno and Shin (2016), Chui et al. (2014, 2016), and Du and Schreger (2016).
+1
+
+1990s through end-2014, total FX borrowing in international debt securities and bank loans
+more than tripled to about $12 trillion USD. FX borrowing has continued to grow since the
+2008 crisis—with cross-border FX borrowing in international debt securities and FX loans
+increasing by around $2.5 trillion USD between 2009 and 2015—a sharp contrast to almost
+no change in comparable cross-border borrowing in local currency over the same period.
+Concerns about the macroeconomic and financial risks related to FX exposure have increased
+interest in using macroprudential FX regulations.
+Evaluating the effects of macroprudential FX measures has been challenging, however,
+partly due to insufficient data linked to the limited experience with these tools until recently,
+and partly due to identification challenges related to macroprudential regulations being
+introduced as a response to financial and macroeconomic developments.3 An evaluation
+should assess not only the direct effects of these measures on the intended sector of the
+economy (such as banks), but also any spillovers or leakages as firms, banks, and other entities
+respond to the regulations. These types of unintended consequences have been highlighted in
+analyses of other types of macroprudential regulations and capital controls.4 If these leakages
+and substitution effects occur, can these macroprudential policies achieve their primary goal
+of reducing aggregate country vulnerability to currency risk?
+This paper attempts to tackle these challenges in an assessment of the direct and indirect
+effects of macroprudential FX regulations on banks and the broader economy. We develop a
+parsimonious model of bank versus market lending, building on the seminal work of
+Holmstrom and Tirole (1997), but adding the dimension that lending and borrowing is also
+differentiated between domestic and foreign currencies. Domestic firms seek funding from
+lenders, but have private information about their productivity. Banks can screen firms at a
+cost and identify unproductive, low-productivity, and high-productivity firms, while market
+investors can only lend indiscriminately. Funding in foreign currency is cheaper than in
+domestic currency, but subject to exchange rate risk. When the domestic currency depreciates,
+low-productivity firms and their associated banks default. Macroprudential FX regulation
+increases banks’ cost of funding in foreign currency (if the regulation is a liability-side
+measure) or the equilibrium lending rate to firms (if an asset-side measure). Banks stop
+3 Papers which include some discussion of macroprudential FX regulations as part of their broader analyses of
+macroprudential tools are: Nier et al. (2011), Cerutti et al. (2015), Vandenbussche et al. (2015), and Avdjiev et al.
+(2016b). Two papers which focus on FX regulations are De Crescenzio et al. (2017) and Aguirre and Repetto (2017),
+but neither consider the leakages, broader effects on the economy, or sensitivity to currency movements.
+4 See Agénor and da Silva (2017) for a recent survey.
+2

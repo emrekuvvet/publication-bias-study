@@ -1,0 +1,131 @@
+NBER WORKING PAPER SERIES
+LIFE IS CHEAP:
+USING MORTALITY BONDS TO HEDGE
+AGGREGATE MORTALITY RISK
+Leora Friedberg
+Anthony Webb
+Working Paper 11984
+http://www.nber.org/papers/w11984
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+January 2006
+Anthony Webb, Ph.D., (corresponding author) is a research economist at the Center for Retirement Research
+at Boston College (CRR), located at 258 Hammond Street, Chestnut Hill, MA 02467-3808. 646-662-7254
+(phone), 617-552-0191(fax). Webbaa@bc.edu. Leora Friedberg, Ph.D., is an Assistant Professor in the
+Department of Economics of the University of Virginia, P.O. Box 400182, Charlottesville, VA 22904-4182.
+434-924-3225 (phone), 434-982-2904 (fax). lfriedberg@virginia.edu. We would like to thank Jeff Brown,
+Steve Cooperstein, Francesca Golub-Sass, Jim Poterba, John Ralfe, Mauricio Soto, Bob Triest, and seminar
+participants at the Center for Retirement Research, Boston College, for their very helpful comments. The
+views expressed herein are those of the author(s) and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+©2006 by Leora Friedberg and Anthony Webb. All rights reserved. Short sections of text, not to exceed two
+paragraphs, may be quoted without explicit permission provided that full credit, including © notice, is given
+to the source.
+
+Life is Cheap: Using Mortality Bonds to Hedge Aggregate Mortality Risk
+Leora Friedberg and Anthony Webb
+NBER Working Paper No. 11984
+January 2006
+JEL No. G12, G22, G23, J11, J14
+ABSTRACT
+Using the widely-cited Lee-Carter mortality model, we quantify aggregate mortality risk as the risk
+that the average annuitant lives longer than is predicted by the model, and we conclude that annuity
+business exposes insurance companies to substantial mortality risk. We calculate that a markup of
+3.7% on an annuity premium (or else shareholders’ capital equal to 3.7% of the expected present
+value of annuity payments) would reduce the probability of insolvency resulting from uncertain
+aggregate mortality trends to 5% and a markup of 5.4% would reduce the probability of insolvency
+to 1%. Using the same model, we find that a projection scale commonly referred to by the insurance
+industry underestimates aggregate mortality improvements. Annuities that are priced on that
+projection scale without any conservative margin appear to be substantially underpriced. Insurance
+companies could deal with aggregate mortality risk by transferring it to financial markets through
+mortality-contingent bonds, one of which has recently been offered. We calculate the returns that
+investors would have obtained on such bonds had they been available over a long period. Using both
+the Capital and the Consumption Capital Asset Pricing Models, we determine the risk premium that
+investors would have required on such bonds. At plausible coefficients of risk aversion, annuity
+providers should be able to hedge aggregate mortality risk via such bonds at a very low cost.
+Leora Friedberg
+Department of Economics
+University of Virginia
+114 Rouss Hall
+P.O. Box 400182
+Charlottesville, VA 22904-4182
+and NBER
+lfriedberg@virginia.edu
+Anthony Webb
+Research Economist
+Center for Retirement Research at Boston College
+258 Hammond Street
+Chestnut Hill, MA 02467-3808
+webbaa@bc.edu
+
+INTRODUCTION
+Annuities provide a means by which risk-averse households facing an uncertain
+lifespan can insure themselves against the risk of outliving their wealth in old age. Annuitization
+is predicted to raise average expected utility under a variety of assumptions (Brown, Davidoff,
+and Diamond 2005), yet voluntary annuity purchases are rare. Only 10.2% of a large sample of
+elderly households had voluntarily annuitized any of their wealth between 1993 and 2000 (Dushi
+and Webb 2004).1 Immediate annuity sales were only $10.2 billion in 2001 (NAVA 2002), and
+approximately half of that total may have been life-contingent (Brown and Poterba 2000).2
+Interest in private annuities may well jump in coming years, though, as pre-annuitized defined
+benefit (DB) pensions provided by employers are largely replaced by lump-sum defined
+contribution (DC) pensions, and also if Social Security is similarly transformed using private
+accounts.3
+The meager market for private annuities remains a puzzle. One reason may rest on
+difficulties which insurers face in offering annuities. Annuity providers face two kinds of
+mortality risk: idiosyncratic risk, since any particular annuitant may live longer than anticipated,
+and aggregate mortality risk, since annuitants may on average live longer than expected.4 The
+former risk can be eliminated through diversification. The latter risk is non-diversifiable unless
+the insurer can write other classes of business, for example life insurance, with negatively
+correlated risks.5 Notably, one explanation for the shift in private pension structure may be a
+growing reluctance of employers to take on aggregate mortality risk (ACA 2005, pp.13-14).
+The academic literature on the value of annuitization to households assumes that
+average future mortality is known with certainty. In reality, there is considerable uncertainty
+about the possible course of mortality reductions. Forecasting life expectancy 50 or 100 years
+1 These statistics were computed from the Asset and Health Dynamics of the Oldest Old, a panel of households with
+a member born before 1924.
+2 Sales of deferred annuities substantially exceed those of immediate annuities. A deferred annuity enables people
+to accumulate wealth while deferring taxes but lacks the essential feature of an immediate annuity, namely the
+irrevocable exchange of a capital sum in return for a lifetime income. Individuals may withdraw deferred annuity
+assets in the form of a lifetime income, but rarely do so.
+3 Some Social Security privatization proposals involve annuitization. Social Security investment fund providers in
+Chile are required to offer voluntary annuities. While the provision will end in April 2006, the U.K. has required
+that “individual pensions” be annuitized by the time that individuals turn 75.
+4 Since adverse selection is not our focus, we simplify the analysis by ignoring uncertainty over the degree of
+selection experienced by the insurer.
+5 The actual scope for doing so may be limited because the average ages of life insurance and annuity holders differ
+and mortality shocks differ in magnitude and occasionally even in sign across ages.
+1
+
+hence involves taking a controversial position on the potential for either scientific discoveries to
+slow the aging process or emergent conditions to hasten it. The potential for longevity gains
+over such time horizons generates considerable disagreement. S. Jay Olshansky and Stephen
+Austad, two of the most famous researchers in the field, take divergent positions and have
+wagered $500 million on whether someone recently born will live to 150 by 2150.6
+Insurance companies and potential annuitants make their decisions over much shorter
+time horizons. Over such horizons, it is common to use models that combine extrapolations of
+past trends with some consideration of likely medical threats or advances, while avoiding a
+strong position on medical progress or the biology of aging. Purely extrapolative models fit the
+data closely, have been shown to perform well in sample, and importantly for our purposes,
+enable researchers to quantify the uncertainty surrounding the future course of mortality.
+Yet, past forecasts from these models indicate that point estimates of expected
+mortality rates carry wide margins of error. Insurance companies and other annuity providers
+that base their pricing on those estimates would be exposed to significant aggregate mortality
+risk. Annuity providers can respond to this risk in a number of ways. One approach is to add on
+a margin for error, though doing so may further deter high-expected mortality households from
+annuitizing, exacerbating adverse selection. Other more efficient alternatives would be to
+transfer aggregate mortality risk to third parties through the reinsurance market or through
+financial markets by issuing mortality-contingent bonds, with interest payments that depend on
+mortality experience.7
+What is an appropriate risk premium for such bonds? This paper quantifies the
+magnitude of the aggregate mortality risk faced by annuity providers and then prices that risk.
+As far as we know, no other paper in the economics literature applies the tools of financial
+economics to price aggregate risks which beset the insurance industry. In Section 1 of the paper,
+we discuss the literature on aggregate mortality risk and present the Lee-Carter (1992) model,
+which – according to Deaton and Paxson (2004) – has become the “leading statistical model of
+mortality in the demographic literature.” The Lee-Carter model has been adopted by the U.S.
+Census Bureau, among others, and was viewed favorably by the Social Security Administration’s
+6 Due to the power of compound interest, the present value of the wager is considerably more modest!
+7 The pricing and availability of reinsurance may depend on reinsurers’ ability to transfer the same risk yet more
+broadly. Later, we discuss relevant evidence and describe how mortality bonds can be used to effect this transfer.
+2

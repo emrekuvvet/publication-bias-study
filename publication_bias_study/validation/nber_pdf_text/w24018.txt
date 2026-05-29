@@ -1,0 +1,118 @@
+NBER WORKING PAPER SERIES
+ON THE ECONOMICS OF AUDIT PARTNER TENURE AND ROTATION:
+EVIDENCE FROM PCAOB DATA
+Brandon Gipper
+Luzi Hail
+Christian Leuz
+Working Paper 24018
+http://www.nber.org/papers/w24018
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+November 2017, Revised June 2018
+This study uses proprietary PCAOB data. To access these data, we submitted a research proposal
+to the PCAOB describing the research questions, the research design as well as the data necessary
+to conduct the study. As a condition of data access, our study is reviewed by the PCAOB with
+respect to the release of nonpublic information (but not for its results). The PCAOB, as a matter
+of policy disclaims responsibility for any private publication or statement by any of its economic
+research fellows, advisors, and employees. The views expressed in this paper are the views of the
+authors and do not necessarily reflect the views of the Board, individual Board members, or staff
+of the PCAOB. Brandon Gipper was an Economic Research Fellow of the PCAOB. Christian
+Leuz is Economic Advisor of the PCAOB’s Center of Economic and Risk Analysis. We
+appreciate the helpful comments of Preeti Choudhary, Michael Gurbutt, Robert Knechel, Luigi
+Zingales, PCAOB staff, two partners from one audit firm in our sample, and seminar participants
+at the PCAOB’s Center for Economic Analysis and Stanford Summer Camp. The views
+expressed herein are those of the authors and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2017 by Brandon Gipper, Luzi Hail, and Christian Leuz. All rights reserved. Short sections of
+text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+On the Economics of Audit Partner Tenure and Rotation: Evidence from PCAOB Data
+Brandon Gipper, Luzi Hail, and Christian Leuz
+NBER Working Paper No. 24018
+November 2017, Revised June 2018
+JEL No. G30,J44,J62,K22,L84,M21,M41,M42,M51,M54
+ABSTRACT
+This paper provides the first partner tenure and rotation analysis for a large cross-section of U.S.
+publicly listed firms over an extended period. We analyze the effects on audit quality as well as
+economic tradeoffs related to partner tenure and rotation with respect to audit hours and fees. On
+average, we find no evidence for audit quality declines over the tenure cycle and little support for
+fresh-look benefits after rotations. Nevertheless, partner rotations have significant economic
+consequences. We find increases in audit fees and decreases in audit hours over the tenure cycle,
+which differ by partner experience, client size, and competitiveness of the local audit market.
+More generally, our findings are consistent with efforts by the audit firms to minimize disruptions
+and audit failures around mandatory rotations. We also analyze special circumstances, such as
+audit firm switches and early partner rotations, and show that they are more disruptive than
+mandatory rotations, and also more likely to exhibit audit quality effects.
+Brandon Gipper Christian Leuz
+Stanford University Booth School of Business
+Graduate School of Business University of Chicago
+655 Knight Way 5807 S. Woodlawn Avenue
+Stanford, CA 94305 Chicago, IL 60637-1610
+gipperbr@stanford.edu and NBER
+cleuz@chicagobooth.edu
+Luzi Hail
+Wharton School
+University of Pennsylvania
+Locust Walk
+Philadelphia, PA 19104
+lhail@wharton.upenn.edu
+
+1. Introduction
+Does tenure of an audit partner at a given client influence audit quality? How disruptive and
+costly are partner rotations, say, in terms of audit hours and fees? Do audit firms rotate partners
+early when audit quality is low? Questions like these are central to audit practice and regulation
+and have been studied extensively in academic research (see, e.g., DeFond and Zhang, 2014, and
+Lennox and Wu, 2017, for overviews). This literature recognizes information asymmetry,
+conflicts of interest, learning, and competition in audit market as key forces and highlights
+several economic tradeoffs. For instance, engagement partners with long tenure have developed
+close relationships with their clients, which could compromise audit quality or make them
+reluctant to update audit procedures. A partner that comes in after a rotation did not approve
+prior audit procedures and, hence, can take a “fresh look” at the engagement. Over the years,
+engagement partners develop a deeper understanding and specific knowledge of their clients and
+respective industries, which should enable them to perform audits better and more efficiently.
+Newly-assigned partners need time to acquire this knowledge, which is costly and could
+temporarily decrease audit quality. This short discussion highlights a myriad of potential effects.
+Prior literature finds mixed evidence when it comes to the effects of partner tenure and
+rotation on audit quality.6 However, many of these studies rely on small samples obtained from
+individual audit firms or settings outside the U.S., where engagement partner names must be
+disclosed. It is not obvious that the results from foreign settings carry over to the U.S. where
+partner tenure and rotation have not been observable to outside investors until recently. In fact,
+6 For instance, studies on the effects of mandatory partner rotation find decreases (Litt, Sharma, Simpson, and
+Tanyi, 2014), increases (Lennox, Wu, and Zhang, 2014; and Laurion, Lawrence, and Ryans, 2016), and no
+change (Chi, Huang, Liao, and Xie, 2009) in audit quality. Studies on audit partner tenure find evidence of
+decreases (Carey and Simnett, 2006; Fitzgerald, Omer, and Thompson, 2018), increases (Chen, Lin, and Lin,
+2008; Manry, Mock, and Turner, 2008), or an initial increase followed by a decrease (Chi and Huang, 2005) in
+audit quality.
+1
+
+partner name disclosure could alter the effects of tenure and rotation. Moreover, the U.S.
+environment features major litigation risk for auditors, relatively strict audit oversight, including
+mandatory partner rotation every five years, as well as substantial monitoring by capital-market
+participants such as investors and analysts. These forces could substantially mitigate agency
+concerns relative to non-U.S. settings.
+In this paper, we provide the first partner tenure and rotation analysis for a large cross-
+section of U.S. publicly listed issuers over an extended period (2008-2014). We analyze audit
+quality over the five-year tenure cycle, around partner rotations and as an impetus for early
+rotations. We also go back to first principles and study the underlying audit process and the
+economics of partner tenure and rotation. We shed light on how audit fees and hours evolve over
+the partner cycle and how the patterns differ with competitive pressures and partner experience.
+Our analysis provides novel evidence on the economic tradeoffs related to partner tenure and
+rotation for U.S. audit firms. Among other things, this evidence can serve as baseline for future
+research on the role of engagement partners using the disclosure of their names starting in 2017.
+We use a proprietary dataset from the Public Company Accounting Oversight Board
+(PCAOB) that matches audit partners with client issuers. Aside from partner names and tenure,
+the dataset contains relevant engagement information, including total audit hours, partner hours,
+audit fees, billing realization, review partner names and hours, and internal audit risk ratings of
+the clients. Many of these data have not been previously analyzed for a large sample of U.S.
+firms. Our sample covers over 3,300 clients of six large U.S. auditors (henceforth “Big 6”)7 from
+2008 to 2014 and represents 46 percent of U.S. audit firms’ clients covered by Audit Analytics
+7 The six large audit firms are BDO USA, Deloitte & Touche, Ernst & Young, Grant Thornton, KPMG, and PwC
+PricewaterhouseCoopers. These firms are all subject to yearly PCAOB inspection and report partner and client
+data to the PCAOB annually in machine-readable form. Smaller audit firms are also required to report this
+information but do so with lower frequency (see Franzel, 2012).
+2

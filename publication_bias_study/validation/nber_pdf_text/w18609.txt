@@ -1,0 +1,129 @@
+NBER WORKING PAPER SERIES
+DID THE COMMUNITY REINVESTMENT ACT (CRA) LEAD TO RISKY LENDING?
+Sumit Agarwal
+Efraim Benmelech
+Nittai Bergman
+Amit Seru
+Working Paper 18609
+http://www.nber.org/papers/w18609
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2012
+The authors thank Brent Ambrose, Gadi Barlevy, Charles Calomiris, Itzhak Ben-David, John Cochrane,
+Doug Evanoff, Gene Fama, Erik Hurst, Benjamin Keys, Mitchell Petersen, Tomasz Piskorski, Raghuram
+Rajan, Vikrant Vig, Luigi Zingales and seminar participants at Duke (Fuqua School of Business) and
+the Federal Reserve Bank of Chicago for useful discussions. Caitlin Kearns provided outstanding research
+assistance. The analysis in this paper was conducted and finalized while Agarwal was a senior financial
+economist at the Federal Reserve Bank of Chicago. The views expressed in this paper are those of
+the authors and do not necessarily reflect the views of the Federal Reserve Bank of Chicago, the Federal
+Reserve System, or the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2012 by Sumit Agarwal, Efraim Benmelech, Nittai Bergman, and Amit Seru. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission provided
+that full credit, including © notice, is given to the source.
+
+Did the Community Reinvestment Act (CRA) Lead to Risky Lending?
+Sumit Agarwal, Efraim Benmelech, Nittai Bergman, and Amit Seru
+NBER Working Paper No. 18609
+December 2012
+JEL No. G01,G21,G38,H24,H31
+ABSTRACT
+Yes, it did. We use exogenous variation in banks’ incentives to conform to the standards of the Community
+Reinvestment Act (CRA) around regulatory exam dates to trace out the effect of the CRA on lending
+activity. Our empirical strategy compares lending behavior of banks undergoing CRA exams within
+a given census tract in a given month to the behavior of banks operating in the same census tract-month
+that do not face these exams. We find that adherence to the act led to riskier lending by banks: in the
+six quarters surrounding the CRA exams lending is elevated on average by about 5 percent every quarter
+and loans in these quarters default by about 15 percent more often. These patterns are accentuated
+in CRA-eligible census tracts and are concentrated among large banks. The effects are strongest during
+the time period when the market for private securitization was booming.
+Sumit Agarwal Nittai Bergman
+Associate Professor of Finance and Real Estate MIT Sloan School of Management
+NUS Business School 100 Main Street, E62-632
+Mochtar Raidy Building, BIZ1 Cambridge, MA 02142
+15 Kent Ridge Road and NBER
+Singapore, 119245 nbergman@mit.edu
+ushakri@yahoo.com
+Amit Seru
+Efraim Benmelech Booth School of Business
+Kellogg School of Management University of Chicago
+Northwestern University 5807 South Woodlawn Avenue
+2001 Sheridan Road Chicago, IL 60637
+Evanston, IL 60208 and NBER
+and NBER amit.seru@chicagobooth.edu
+e-benmelech@kellogg.northwestern.edu
+
+I. Introduction
+The role of financial regulation in fueling the recent financial crisis is being hotly debated
+by academics, politicians, and policymakers (Mayer, Morrison and Piskorski, 2009). A central
+piece of this heated discussion relates to the role played by the Community Reinvestment Act
+(CRA) in the buildup to the financial crisis and, in particular, its impact on pre-crisis mortgage
+lending standards. Although regulators and community groups strongly defend the act,
+economists remain divided in their views on the role of the CRA in lowering underwriting
+standards. This debate is best illustrated by the stark views taken by economists Raghuram Rajan
+and Paul Krugman. Rajan (2010) suggests that the CRA was the channel through which “a US
+Congress, worried about growing income inequality, towards expanding low income housing,
+joined with the flood of foreign capital inflows to remove any discipline on home loans.”1 In
+contrast, Krugman (2010) argues that “the Community Reinvestment Act of 1977 was irrelevant
+to the subprime boom.”2
+Most empirical studies find that the CRA had little or no effect when looking into a
+battery of dependent variables (e.g., Dahl, Evanoff, and Spivey 2000 and Kroszner 2008). This
+lack of results makes it hard to conclude whether the CRA truly had no impact on lending
+standards or, alternatively, whether the empirical approaches used employed insufficient
+variation to identify the causal effect of the act. In this paper we attempt to fill this gap. Using
+exogenous variation in banks’ incentives to conform to CRA standards around regulatory exams,
+we study whether the CRA led to riskier lending. By tracing out banks’ responses to CRA
+evaluations in terms of both the quality and the quantity of mortgages originated, we show
+clearly that the CRA did lead to riskier lending.3
+The main econometric challenge of an evaluation of the CRA’s impact is the lack of
+counterfactual lending behavior in the absence of the CRA. Our empirical design addresses this
+issue by exploiting variation in banks’ incentive to conform to CRA standards around regulatory
+exams. The Community Reinvestment Act of 1977 instructs federal financial supervisory
+agencies to encourage their regulated financial institutions to help meet credit needs of the
+communities in which they are chartered while also conforming to “safe and sound” lending
+standards. To enforce the statute, federal regulatory agencies periodically examine banking
+1 “Bankers Have Been Sold Short by Market Distortions.” Raghuram Rajan, Financial Times, June 2, 2010. See also
+Calomiris 2008 and Calomiris 2011 for a similar view.
+2 “Things Everyone in Chicago Knows.” Paul Krugman, krugman.blogs.nytimes.com, June 3, 2010.
+3 For other studies on mortgage defaults see Mayer, Pence and Sherlund 2009 and Mayer, Morrison, Piskorski and
+Gupta 2011 and cites therein.
+1
+
+institutions for CRA compliance. Regulators use this compliance information when approving
+applications for new bank branches as well as for mergers and acquisitions. Banks may therefore
+have a strong incentive to concentrate their CRA-compliant lending before an exam date to
+ensure a satisfactory CRA evaluation while minimizing the likelihood that such lending would
+fail the “safe and sound” criteria at the time of the exam.4 Moreover, since the exam itself is not
+an instantaneous event, with a significant time gap between the exam initiation and the
+submission of the final CRA report, banks also may choose to elevate their lending a few
+quarters after the CRA exam.
+Our empirical design exploits this intertemporal variation in incentives to comply with
+CRA standards by comparing banks undergoing CRA exams (treatment group banks) to similar
+banks operating in the same vicinity but not undergoing a CRA exam (control group banks). The
+identifying assumption is that around the time of CRA exams, because of their increased
+incentive to comply with CRA standards, banks will shift their lending behavior toward
+borrowers that improve their CRA rating. By law, such borrowers include any applicant that is
+located in CRA-target tracts – defined as census tracts with a median income less than 80 percent
+of the median income at the Metropolitan Statistical Area (MSA) level – as well as low-income
+and minority borrowers in non-CRA-target tracts. Importantly, in comparing lending behavior of
+banks that underwent CRA exams to those that did not, our analysis always includes tract-by-
+month fixed effects. This battery of fixed effects implies that our regressions are identified
+through variation between treatment group and control group banks within a given tract in a
+given month. As such, the fixed effects control for potentially important demand-side variables
+affecting the lending behavior of all banks within a given tract-month. The empirical strategy we
+use in the paper is related to the literature that examines the role of nonlinear incentives in
+shaping economic decisions. Examples include the timing of sales (Oyer 1998), procurement
+spending (Liebman and Mahoney 2012), and risk-taking in mutual funds (Chevalier and Ellison
+1997).
+Our identification strategy hinges on the assumption that the timing and frequency of the
+CRA exams themselves are not driven by local credit and economic conditions affecting a given
+bank’s lending behavior. This is a plausible assumption since in practice both the timing and the
+frequency of CRA evaluations are driven by a fixed policy that is unrelated to local economic
+conditions. In particular, the review cycle for smaller banks – those with less than $250 million
+in assets – is five years, whereas for larger banks the review cycle is two years.
+4 In particular, this may be the case as long as the adjustment costs to elevate lending are not too large and a loan
+becomes delinquent over time with some hazard rate.
+2

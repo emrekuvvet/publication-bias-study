@@ -1,0 +1,135 @@
+NBER WORKING PAPER SERIES
+REFERRALS: PEER SCREENING AND ENFORCEMENT IN A CONSUMER CREDIT
+FIELD EXPERIMENT
+Gharad T. Bryan
+Dean Karlan
+Jonathan Zinman
+Working Paper 17883
+http://www.nber.org/papers/w17883
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+March 2012
+Previously circulated as "You Can Pick Your Friends, But You Need to Watch Them: Loan Screening
+and Enforcement in a Referrals Field Experiment." The authors would like to thank Manfred Kuhn
+and the employees of Opportunity Finance, Luke Crowley, Jon de Quidt and seminar participants at
+Yale, NEUDC,Warwick, Hebrew University, Stanford GSB, Wharton, The NBER summer institute
+and The Cambridge conference on consumer credit and bankruptcy. We would also like to thank The
+Bill and Melinda Gates Foundation for funding. This paper formed the third chapter of Gharad Bryan’s
+dissertation – he would like to thank The Kauffman Foundation for financial support. All errors are,
+of course, our own. The views expressed herein are those of the authors and do not necessarily reflect
+the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2012 by Gharad T. Bryan, Dean Karlan, and Jonathan Zinman. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Referrals: Peer Screening and Enforcement in a Consumer Credit Field Experiment
+Gharad T. Bryan, Dean Karlan, and Jonathan Zinman
+NBER Working Paper No. 17883
+March 2012, Revised May 2012
+JEL No. C93,D12,D14,D82,O12,O16
+ABSTRACT
+Empirical evidence on peer intermediation lags behind many years of lending practice and a large
+body of theory in which lenders use peers to mitigate adverse selection and moral hazard. Using a
+simple referral incentive mechanism under individual liability, we develop and implement a two-stage
+field experiment that permits separate identification of peer screening and enforcement effects. We
+allow for borrower heterogeneity in both ex-ante repayment type and ex-post susceptibility to social
+pressure. Our key contribution is how we deal with the interaction between these two sources of asymmetric
+information. Our method allows us to cleanly identify selection on the likelihood of repayment, selection
+on the susceptibility to social pressure, and loan enforcement. We estimate peer effects on loan repayment
+in our setting, and find no evidence of screening (albeit with an imprecisely estimated zero) and large
+effects on enforcement. We then discuss the potential utility and portability of the methodological
+innovation, for both science and for practice.
+Gharad T. Bryan Jonathan Zinman
+London School of Economics Department of Economics
+Houghton Street Dartmouth College
+London WC2A 2AE 314 Rockefeller Hall
+United Kingdom Hanover, NH 03755
+g.t.bryan@lse.ac.uk and NBER
+jzinman@dartmouth.edu
+Dean Karlan
+Department of Economics
+Yale University
+P.O. Box 208269
+New Haven, CT 06520-8629
+and NBER
+dean.karlan@yale.edu
+
+Referrals: Peer Screening and Enforcement in a
+Consumer Credit Field Experiment
+∗
+GharadBryan,DeanKarlanandJonathanZinman
+April29,2013
+Abstract
+Empiricalevidenceonpeerintermediationlagsbehindmanyyearsoflendingpracticeand
+alargebodyoftheoryinwhichlendersusepeerstomitigateadverseselectionandmoralhaz-
+ard. Usingasimplereferralincentivemechanismunderindividualliability, wedevelopand
+implementatwo-stagefieldexperimentthatpermitsseparateidentificationofpeerscreening
+andenforcementeffects. Weallowforborrowerheterogeneityinbothex-anterepaymenttype
+and ex-post susceptibility to social pressure. Our key contribution is how we deal with the
+interaction between these two sources of asymmetric information. Our method allows us to
+cleanlyidentifyselectiononthelikelihoodofrepayment,selectiononthesusceptibilitytoso-
+cialpressure,andloanenforcement.Weestimatepeereffectsonloanrepaymentinoursetting,
+andfindnoevidenceofscreening(albeitwithanimpreciselyestimatedzero)andlargeeffects
+onenforcement. Wethendiscussthepotentialutilityandportabilityofthemethodologicalin-
+novation,forbothscienceandforpractice.
+JELCodes:C93D12D14D82O12O16
+1 Introduction
+Economictheoryassignscreditmarketfailureacentralroleinexplainingpovertyandunderde-
+velopment. Borrowingconstraintsreduceefficiency,increaseinequalityandcanleadtopoverty
+traps (Banerjee and Newman, 1993; Galor and Zeira, 1993). Credit rationing also appears to be
+empiricallyimportant. Makinguseofexperimentalorquasi-experimentalsupplyshocks,several
+∗Bryan:LondonSchoolofEconomicsandInnovationsforPovertyAction,g.t.bryan@lse.ac.uk.Karlan:YaleUniversity,
+M.I.T.JameelPovertyActionLab,InnovationsforPovertyActionandNBER,dean.karlan@yale.edu.Zinman:Dartmouth
+College, M.I.T.JameelPovertyActionLab, InnovationsforPovertyActionandNBER,jzinman@dartmouth.edu. The
+authorswouldliketothankManfredKuhnandtheemployeesofOpportunityFinance,LukeCrowley,JondeQuidtand
+seminarparticipantsatYale,NEUDC,Warwick,HebrewUniversity,StanfordGSB,Wharton,TheNBERsummerinstitute
+andTheCambridgeconferenceonconsumercreditandbankruptcy. WewouldalsoliketothankTheBillandMelinda
+GatesFoundationforfunding. ThispaperformedthethirdchapterofGharadBryan’sdissertation–hewouldliketo
+thankTheKauffmanFoundationforfinancialsupport.Allerrorsare,ofcourse,ourown.
+1
+
+recentpapersestimatealargeunmetdemandforadditionalcreditfromconsumers,microenter-
+prises and small and medium enterprises.1 These studies, coupled with a literature that often
+findshighreturnstocapital(e.g.,DeMeletal.2008),lendcredencetopolicyandprogrammatic
+effortstorelaxborrowingconstraints.
+Buthowshouldonegoaboutrelaxingborrowingconstraints? Informationasymmetries, in-
+cludingex-anteselectionandex-postincentiveandenforcementproblems,areofteninvokedas
+the root causes of borrowing constraints in theory (Stiglitz and Weiss, 1981) and practice (Ar-
+menda´riz et al. 2010). If this is indeed the case, contracts that alleviate asymmetric information
+problemsprovidearoutetogreatercreditmarketefficiency.
+Onepopularapproachtotacklingasymmetricinformationisbasedonthepresumptionthat
+a borrower’s peers can be harnessed to provide information/screening or enforcement that is
+unavailable to (or more costly for) the lender.2 Peer-intermediation has been fleshed out over
+several hundred years of lending practice and can be seen in a range of guises including credit
+cooperatives, credit unions, rotating savings and credit associations, and microlenders such as
+theGrameenBank. Peerintermediationhasalsobeenanalyzedinalargetheoreticalliteratureon
+optimalmechanismdesigninthefaceofdifferentasymmetricinformationproblems(e.g.,Varian
+1990,Stiglitz1990,Banerjeeetal.1994,BesleyandCoate1995,Ghatak1999,GhatakandGuinnane
+1999,RaiandSjo¨stro¨m2004,andBondandRai2008).
+Empirical work on peer contracting has, however, lagged behind both theory and practice.
+Yet we need empirical tests of theories not just to inform and build on our theoretical models
+of credit markets, but for practical concerns to inform policy. Specifically, with more precise
+informationontheabsoluteandrelativeimportanceandleverageofscreeningandenforcement,
+one can design better contracts that improve credit market efficiency. For example, if peers are
+abletoprovidehighqualityscreeningbutweakenforcement,amechanismthatusesjointliability
+toselectclientsforafirstloanbutthenmovestoindividualliabilitywouldharnessmuchofthe
+screening incentive – a´ la Ghatak (1999) – but minimise the possible negatives of joint liability
+lendingsuchastippingintostrategicdefault(BesleyandCoate1995)andsub-optimalrisk-taking
+(Fischer 2010 and Gine´ et al. 2011). But if enforcement is largely responsible for the success of
+peerschemes,thentheappropriatenessofpeermechanismswilldecreaseasex-postenforcement
+isstrengthenedthroughdebtcollection,courtactionorbetteridentification.
+Weformalizeandimplementafieldexperimentdesignthatseparatelyidentifiespeerscreen-
+ingandpeerenforcementeffectsunderweakerassumptionsthanpreviousworkonasymmetric
+information. Ourkeyinnovationsconcerntheinteractionbetweenhiddeninformationandhid-
+denaction. Ourframeworkallowsborrowerstodifferbothwithrespecttotheirabilitytorepay
+(theirrepaymenttype)andtheirsusceptibilitytosocialpressure(theirmalleabilitytype).Hetero-
+geneitywithrespecttomalleabilityraisesthepossibilityofselectiononmalleability–thatpeers
+1Forconsumersseee.g.,KarlanandZinman(2010)formicroenterpretiseseee.g.,Banerjeeetal.(2009);Karlanand
+Zinman(2011)andforSMEsseee.g.,BanerjeeandDuflo(2004).
+2Throughoutthepaperweusethetermenforcementtorefertoasetofactionsthatmightincludemonitoring,peer
+pressure,mutualinsuranceordirectpeerassistance.
+2

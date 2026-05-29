@@ -1,0 +1,131 @@
+NBER WORKING PAPER SERIES
+THE MACROECONOMICS OF SHADOW BANKING
+Alan Moreira
+Alexi Savov
+Working Paper 20335
+http://www.nber.org/papers/w20335
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2014
+We thank Markus Brunnermeier, Douglas Diamond, Gary Gorton, Valentin Haddad, Zhiguo He, Arvind
+Krishnamurthy, Matteo Maggiori, Andrew Metrick, Tyler Muir, Cecilia Parlatore Siritto, Thomas
+Philippon, and Michael Woodford for feedback. We also thank seminar participants at Yale School
+of Management, New York University Stern School of Business, Kellogg School of Management,
+Wisconsin Business School, and Princeton University, and conference participants at the Kellogg Junior
+Finance Conference, the NBER Monetary Economics Program Meeting, the Safe Assets and the Macroeconomy
+Conference at LBS, and the annual meetings of the WFA and SED. The views expressed herein are
+those of the authors and do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2014 by Alan Moreira and Alexi Savov. All rights reserved. Short sections of text, not to exceed
+two paragraphs, may be quoted without explicit permission provided that full credit, including © notice,
+is given to the source.
+
+The Macroeconomics of Shadow Banking
+Alan Moreira and Alexi Savov
+NBER Working Paper No. 20335
+July 2014
+JEL No. E44,E52,G01,G21,G23
+ABSTRACT
+We build a macroeconomic model that centers on liquidity transformation in the financial sector. Intermediaries
+maximize liquidity creation by issuing securities that are money-like in normal times but become illiquid
+in a crash when collateral is scarce. We call this process shadow banking. A rise in uncertainty raises
+demand for crash-proof liquidity, forcing intermediaries to delever and substitute toward safe, collateral-
+intensive liabilities. Shadow banking shrinks, causing the liquidity supply to contract, discount rates
+and collateral premia spike, prices and investment fall. The model produces slow recoveries, collateral
+runs, and flight to quality and it provides a framework for analyzing unconventional monetary policy
+and regulatory reform proposals.
+Alan Moreira
+Yale School of Management
+Yale University
+46 Hillhouse Avenue
+New Haven, CT 06511
+alan.moreira@yale.edu
+Alexi Savov
+Stern School of Business
+New York University
+44 West Fourth Street, Suite 9-85
+New York, NY 10012
+and NBER
+asavov@stern.nyu.edu
+
+Economic performance over the past ten years is the story of a boom, a bust, and a
+slow recovery. Recent work (He and Krishnamurthy, 2013; Brunnermeier and Sannikov,
+2014b) shows how a scarcity of capital in the financial sector amplifies the bust. At the
+sametime,thereisanunderstandingthattheconnectionbetweenfinanceandmacroalso
+runs through the liabilities of financial institutions: The ups and downs of the recent
+cycle closely track the rise and fall of the shadow banking sector, whose liabilities are an
+importantsourceofliquidityinthefinancialsystem.1 Thecapitalscarcityviewprevalent
+in the macro finance literature does not offer an interpretation of shadow banking that
+canbeusedtodrawthisconnection.
+We interpret shadow banking as liquidity transformation: issuing safe liquid liabil-
+ities against risky illiquid assets. We build a dynamic macro finance model that puts
+this process at the center. In doing so, it joins the macroeconomic cycle to the liquidity
+transformationcycleinthefinancialsector.
+Here is how it works. Households demand liquidity to insure against shocks. Inter-
+mediaries supply liquidity by tranching illiquid assets, subject to a collateral constraint
+due to crash risk; issuing equity is costless. In quiet times, intermediaries lever up the
+collateral valueof their assets, expandingthe quantity butalso the fragility ofliquidity, a
+shadowbankingboom. Overtime,investmentinriskycapitalcreatesaneconomicboom,
+butitalsobuildsupeconomicfragility.
+A rise in uncertainty causes households to demand crash-proof, fully-collateralized
+liquid securities. Intermediaries delever to meet this demand. Shadow banking shuts
+down, contracting the liquidity supply and driving up discount rates. Asset prices fall,
+amplified by endogenous collateral runs (rising haircuts reinforce falling prices). Invest-
+ment and economic growth also fall. A flight to quality effect pushes up the prices of
+safe assets, causing intermediaries to shift investment to storage-like capital. This sets
+up a slow recovery once uncertainty recedes. Recovery is further slowed by a “collateral
+decelarator”inwhichhaircutsriseasexposuretouncertaintyonceagainpicksup.
+Attheheartofourmodelliesthedistinctionbetweenliquidityandwealth. Securities
+1FromBernanke(2013): “Shadowbanking...wasanimportantsourceofinstabilityduringthecrisis....
+Shadowbankingincludesvehiclesforcreditintermediation,maturitytransformation,liquidityprovision,
+andrisksharing. Suchvehiclesaretypicallyfundedonalargelyshort-termbasisfromwholesalesources.
+In the run-up to the crisis, the shadow banking sector involved a high degree of maturity transformation
+and leverage. Illiquid loans to households and businesses were securitized, and the tranches of the se-
+curitizations with the highest credit ratings were funded by very short-term debt, such as asset-backed
+commercial paper and repurchase agreements (repos). The short-term funding was in turn provided by
+institutions, suchasmoneymarketfunds, whoseinvestorsexpectedpaymentinfullondemandandhad
+littletoleranceforrisktoprincipal....Wheninvestorslostconfidenceinthequalityoftheassets...theyran.
+Theirflightcreatedseriousfundingpressuresthroughoutthefinancialsystem,threatenedthesolvencyof
+manyfirms,andinflictedseriousdamageonthebroadereconomy.”
+1
+
+areliquidonlytotheextentthattheyarebackedbysufficientcollateraltomaketheirpay-
+offsinsensitivetoprivateinformation. Weshowthatintermediariescanprovideliquidity
+efficiently by tranching the economy’s capital assets. This is the source of their economic
+value.
+Bycontrast,thecapitalscarcityviewreliesonthedistinctionbetweeninsideandout-
+side intermediary capital, imposing a friction on the ability of outside capital to flow in.
+To highlight the liquidity view, we abstract entirely from this type of friction, though the
+twocaninteractininterestingways.
+The role for liquidity in our model originates with households who experience id-
+iosyncratic liquidity events (Diamond and Dybvig, 1983): short-lived opportunities to
+consume a burst of wealth at high marginal utility, which necessitates a rapid sale of se-
+curities. As a result of this urgency, liquidity-event consumption must be financed by
+sales of liquid securities, namely those that can be traded quickly and in large quantities
+atlowcost.2
+We endogenize liquidity based on the notion of low information sensitivity (Gorton
+andPennacchi,1990): Asecurityisliquidifitsexpectedpayoffdoesnotdependtoomuch
+on private information about the state of the economy. This makes it immune to adverse
+selectionandallowsittotradewithoutincurringpriceimpactorothercosts.
+Liquidity provision is constrained by the supply of collateral as all promises must
+be backed by assets (e.g. Holmström and Tirole, 1998). The efficient use of collateral,
+which is especially scarce in crashes, leads to the rise of shadow banking. Whereas an
+always-liquid, money-like security requires enough collateral to remain informationally
+insensitiveat alltimes, even ina crash,a near-moneysecurity thatis onlyliquid absenta
+crashusescollateralmainlywhenitismoreabundant,makingitcheapertoproduce. We
+refertothecrash-proofliquidsecurityasmoney(e.g. depositsorTreasury-backedrepos)
+and the normal-times liquid security as shadow money (e.g. asset-backed commercial
+paper or private-label repos). Shadow banking is the process of issuing shadow money.
+It is in this sense that it embodies liquidity transformation; it allows greater liquidity
+creationforeachdollarofavailablecollateral.
+Thesupplyofcollateralsetstheliquiditypossibilityfrontier,anditsintersectionwith
+householddemandpinsdowntheequilibriumliquiditymixandsecurityspreads. House-
+holds’ willingness to hold shadow money instead of money falls as the probability of a
+crashrisesbecauseshadowmoneybecomesincreasinglylikelytoceasetobeliquidwhen
+2Empirical evidence for the importance of liquidity demand is found in Krishnamurthy and Vissing-
+Jorgensen(2012a,b), Sunderam(2013), Greenwood, HansonandStein(2014), andNagel(2014). Thesepa-
+persshowthatinvestorsacceptlowerreturnsforholdingsecuritieswithmoney-likeliquidity.
+2

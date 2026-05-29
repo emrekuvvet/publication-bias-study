@@ -1,0 +1,120 @@
+NBER WORKING PAPER SERIES
+SECURING PROPERTY RIGHTS
+A.Patrick Behrer
+Edward L. Glaeser
+Giacomo A.M. Ponzetto
+Andrei Shleifer
+Working Paper 22701
+http://www.nber.org/papers/w22701
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2016
+The views expressed herein are those of the authors and do not necessarily reflect the views of the
+National Bureau of Economic Research. We are grateful to Alejandro Ponce from the World
+Justice Project for providing us with their data, and especially to Joseph Shapiro for his data on
+water pollution. We are grateful to Abhijit Banerjee, Lucian Bebchuk, Kevin Chen, Oliver Hart,
+Louis Kaplow, Robbie Minton, Yusuf Neggers, Jesse Shapiro, Henry Smith, Ilya Somin, Dan
+Svirsky, Gabriel Unger, and the referees of this journal for extremely helpful advice. Ponzetto
+acknowledges financial support from the Centre de Recerca en Economia Internacional (CREI),
+through the European Research Council (ERC), under the European Union’s Horizon 2020
+Programme, Grant Agreement 714905 (“Citizens, Institutions and Globalization”), the Spanish
+Ministry of Economy and Competitiveness (grants RYC-2013-13838 and SEV-2015-0563) and
+the Government of Catalonia (grant 2014 SGR 830 and CERCA program).
+At least one co-author has disclosed a financial relationship of potential relevance for this research.
+Further information is available online at http://www.nber.org/papers/w22701.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2016 by Edward L. Glaeser, Giacomo A.M. Ponzetto, Andrei Shleifer, and A. Patrick Behrer. All
+rights reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+Securing Property Rights
+A. Patrick Behrer, Edward L. Glaeser, Giacomo A.M. Ponzetto, and Andrei Shleifer
+NBER Working Paper No. 22701
+September 2016, Revised July 2020
+JEL No. H13,K11,O43
+ABSTRACT
+A central challenge in securing property rights is the subversion of justice through legal skill,
+bribery, or physical force by the strong—the state or its powerful citizens—against the weak. We
+present evidence that undue influence on courts is a common concern in many countries,
+especially among the poor. We then present a model of a water polluter whose discharges
+contaminate riparian properties belonging to multiple owners, and we compare property rules,
+liability rules, and regulation from the efficiency viewpoint. When the polluter can subvert the
+assessment of damages, property rules are preferred to liability rules when there are few parties
+and bargaining is feasible, but they excessively deter efficient pollution when bargaining between
+many parties fails. Regulation that enforces partial abatement may be preferred to either of the
+extreme rules. Our model helps explain the evolution of the legal treatment of water pollution
+from property rules to liability rules to regulation. An empirical analysis of water quality in the
+U.S. before and after the Clean Water Act shows that the effects of regulation are consistent with
+several predictions of the model.
+A. Patrick Behrer Giacomo A.M. Ponzetto
+Harvard University CREI, Universitat
+Economics Department Pompeu Fabra, IPEG and
+Littauer Center Barcelona GSE
+Cambridge, MA 02138 C/ Ramon Trias Fargas,
+behrer@g.harvard.edu 25-27 08005 Barcelona
+Spain
+gponzetto@crei.cat
+Edward L. Glaeser
+Department of Economics 315A Andrei Shleifer
+Littauer Center Department of Economics
+Harvard University Harvard University
+Cambridge, MA 02138 Littauer Center M-9
+and NBER Cambridge, MA 02138
+eglaeser@harvard.edu and NBER
+ashleifer@harvard.edu
+
+“The question I have to decide is, whether the appeal to me by the defendant to deprive the plaintiff of his
+right of way and give him money damages instead, can be entertained. I think it cannot. [If it were,] of
+course that simply means the Court in every case, at the instance of the rich man, is to compel the poor
+man to sell him his property at a valuation. ... I am quite satisfied nothing of the kind was ever intended,
+and that if I acceded to this view ... I should add one more to the number of instances which we have from
+the days in which the Bible was written until the present moment, in which the man of large possessions
+has endeavoured to deprive his neighbour, the man with small possessions, of his property, with or
+without adequate compensation.” (Krehl v. Burrell, 7 Ch.D. 553 [1878])
+“The whole point of a property regime is to restrain the strong from resorting to their strength…
+The weak are no longer vulnerable to unrestrained depredations, and they now have the chance of
+becoming rich without becoming strong… The only thing that is certain to be certain under property is
+effective protection of the weak against violent dispossession by the strong, and vice versa” (Kennedy and
+Michelman 1980, p. 723).
+1. Introduction
+Economists since Montesquieu (1748) and Smith (1776) have seen protection of property rights as
+essential for growth and prosperity.1 Yet, property in much of the world today remains insecure. Even in
+the developed world, exposure to dangerous pollution, or trespass by hunters or neighbors’ cattle, are
+common concerns. In the developing world, the land and property of the weaker members of society are
+vulnerable to outright takings by the stronger ones—be they tribal chiefs, powerful neighbors, or even
+men taking from women (Ali, Deininger and Goldstein 2014; Ali et al. 2014). People everywhere fear
+expropriation by the state through eminent domain without just compensation (Munch 1976; Chang 2010;
+1 For the aggregate evidence in favor of this consensus, see, e.g., Barro (1990), De Long and Shleifer (1993), and
+Acemoglu, Johnson and Robinson (2001). For micro evidence, see Besley (1995), De Soto (2000), Field (2005,
+2007), Goldstein and Udry (2008), Dell (2010), and Hornbeck (2010).
+2
+
+Singh 2012; Somin 2015). At the heart of insecurity of property is the belief that institutions of law and
+order such as the police and the courts fail to protect the weak in conflicts with the strong.
+We provide some evidence that such subversion of justice is a major concern for people in
+developing countries today. We then show theoretically that several key aspects of securing property can
+be understood from this perspective. Using a model of a “strong” water polluter who can influence a court
+in its determination of damages, and multiple “weak” affected property owners who cannot, we compare
+the efficiency of alternative legal rules, including property rules, liability rules, and regulation. The
+assumption of a strong polluter who can subvert the determination of damages is a central innovation of
+our model. The assumption of multiple victims is a standard way to model the limits of bargaining.
+In this model, the upside of a property rule relative to a liability rule is that it grants land owners
+protection that is invulnerable to subversion by the polluter. The downside is that it relies on bargaining to
+attain efficiency, and when bargaining fails it stops efficient pollution. Regulation can address these
+inefficiencies by mandating abatement up to a pre-specified level, and enforcing this mandate with stark
+penalties like those of a property rule. Intuitively, regulation is thus equivalent to a partial property rule.
+Both regulation and the property rule have the upside of reducing harm when courts are
+subverted, and the downside of being relatively inflexible. Regulation, however, does not fully stop
+pollution when bargaining fails. It is a crude instrument, like the property rule, but nonetheless avoids
+both extremes of no pollution or unabated pollution. Therefore it can do better than either pure legal rule.
+We then apply our approach to water pollution across U.S. counties, showing how historically court-
+enforced liability rules failed to protect private property from externalities, especially in the more corrupt
+places, and how regulation through the 1972 Clean Water Act has improved water quality.
+Figure 1, based on surveys of around 1,000 households in each of 102 countries by the World
+Justice Project (WJP), illustrates the basic fact that motivates our analysis. It reports, for all sample
+countries with population above 50 million, aggregating over the surveyed households in each country,
+responses to the following question. “In your opinion, most judges decide cases according to: (single
+3

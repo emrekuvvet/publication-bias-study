@@ -1,0 +1,133 @@
+NBER WORKING PAPER SERIES
+EVALUATING CENTRAL BANKS' TOOL KIT:
+PAST, PRESENT, AND FUTURE
+Eric R. Sims
+Jing Cynthia Wu
+Working Paper 26040
+http://www.nber.org/papers/w26040
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2019
+We are grateful to Rich Clarida, Todd Clark, Drew Creal, Andrew Foerster, Yuriy
+Gorodnichenko, Rob Lester, Leonardo Melosi, Ken Rogoff, and Annette Vissing-Jorgensen, as
+well as seminar participants at the Conference on Monetary Policy Strategy, Tools, and
+Communication Practices (A Fed Listens Event), the Federal Reserve Banks of Dallas and
+Cleveland, the University of Notre Dame, and the University of Wisconsin-Madison, for helpful
+comments. The views expressed herein are those of the authors and do not necessarily reflect the
+views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2019 by Eric R. Sims and Jing Cynthia Wu. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Evaluating Central Banks' Tool Kit: Past, Present, and Future
+Eric R. Sims and Jing Cynthia Wu
+NBER Working Paper No. 26040
+July 2019
+JEL No. E10,E32,E5,E52,E58
+ABSTRACT
+We develop a structural DSGE model to systematically study the principal tools of
+unconventional monetary policy – quantitative easing (QE), forward guidance, and negative
+interest rate policy (NIRP) – as well as the interactions between them. To generate the same
+output response, the requisite NIRP and forward guidance interventions are twice as large as a
+conventional policy shock, which seems implausible in practice. In contrast, QE via an
+endogenous feedback rule can alleviate the constraints on conventional policy posed by the zero
+lower bound. Quantitatively, QE1-QE3 can account for two thirds of the observed decline in the
+“shadow” Federal Funds rate. In spite of its usefulness, QE does not come without cost. A large
+balance sheet has consequences for different normalization plans, the efficacy of NIRP, and the
+effective lower bound on the policy rate.
+Eric R. Sims
+Department of Economics
+University of Notre Dame
+3060 Jenkins Nanovic Hall
+Notre Dame, IN 46556
+and NBER
+esims1@nd.edu
+Jing Cynthia Wu
+Department of Economics
+3060 Jenkins Nanovic Hall
+University of Notre Dame
+Notre Dame, IN 46556
+and NBER
+cynthia.wu@nd.edu
+
+1 Introduction
+In response to the Financial Crisis and ensuing Great Recession of 2007-2009, the Fed and
+other central banks pushed policy rates to zero (or, in some cases, slightly below zero).
+With conventional policy unavailable, central banks launched a sequence of experimental
+unconventional policy interventions. The principal tools of unconventional policy include
+large scale asset purchases (or quantitative easing, QE), forward guidance (FG), and neg-
+ative interest rate policy (NIRP). Even ten years subsequent to the Crisis, many advanced
+economies are still plagued by near-zero policy rates. Further, an emerging consensus is that
+global forces and demographic trends have lowered the “natural” or “neutral” rate of inter-
+est; see Laubach and Williams (2003) and Del Negro, Giannone, Giannoni and Tambalotti
+(2017). This means that the Great Recession is likely not a one-off event and heretofore
+unconventional tools will become a more conventional part of central banks’ tool kit. The
+time is therefore ripe for a comprehensive, quantitative review of these tools in a unified
+modeling framework.
+Our paper makes a number of important contributions to the literature. First, rather
+than introducing them in a piecemeal fashion as in the existing literature, we develop the
+first quantitative DSGE model that builds in all three different types of unconventional
+tools together. This allows us to study similarities, differences, and potential interactions
+between them. Second, we draw attention to two distinct channels by which NIRP can
+transmit to the economy. On the one hand, NIRP in our model can be stimulative via a
+forward guidance type channel, but on the other hand, it erodes the net worth of financial
+intermediaries,whichworksintheoppositedirection. Third,weproposeanovelandintuitive
+endogenous specification for QE that is similar to a conventional Taylor rule. We find that
+endogenous QE can successfully neutralize the adverse consequences of a binding zero lower
+bound(ZLB).Despiteitsusefulness, QEdoesnotcomewithoutacost. Afourthcontribution
+of our paper is to address questions relating to the size of a central bank’s balance sheet,
+including consequences of different normalization plans as well as the interaction between
+the size of the balance sheet and NIRP. Fifth, we provide a first attempt at endogenizing
+an effective lower bound (ELB) for policy rates. The ELB depends on the overall size of
+a central bank’s balance sheet. Finally, we introduce a novel timing assumption to model
+forward guidance, where our approach ameliorates the so-called forward guidance “puzzle”
+(Del Negro, Giannoni and Patterson 2015).
+Though it shares similarities with canonical medium-scale models (e.g. Christiano,
+Eichenbaum and Evans 2005, and Smets and Wouters 2007), our model differs from standard
+models in some important ways. Firms are required to issue long term bonds to finance part
+1
+
+of investment in new physical capital, similarly to Carlstrom, Fuerst and Paustian (2017).
+Asset markets are segmented in that households can only indirectly access long term bonds
+via holding short term debt (i.e. deposits) with financial intermediaries. Financial inter-
+mediaries are introduced in a way similar to Gertler and Karadi (2011, 2013). A costly
+enforcement problem results in an endogenous leverage constraint on intermediaries. This
+results in excess returns and time-varying interest rate spreads, which allows QE type poli-
+cies to have real effects. New to the literature, we also formally model the central bank’s
+balance sheet with interest-bearing reserves. Along with a constraint on minimum reserve
+balances at intermediaries, this allows for the interest rate on reserves to potentially differ
+from the deposit rate, thereby permitting us to explore the effects of negative interest rate
+policy.
+During normal times, conventional monetary policy in our model involves the central
+bank setting the interest rate on reserves (what we hereafter refer to as the policy rate),
+which equals the deposit rate, according to a Taylor (1993) type rule.1,2 QE in our model
+entails the central bank purchasing (or selling) long maturity private or government bonds,
+financedviathecreation(ordestruction)ofreserves.3 QEpoliciescanbeundertakenwhether
+conventional policy is constrained by the ZLB or not, though they are more effective when
+short term rates are fixed. Forward guidance in our model involves cutting the desired short
+term policy rate implied by the Taylor rule when the actual policy rate is constrained by
+zero. This signals a commitment to lower the actual short term rate after the ZLB constraint
+has lifted. We introduce into our model a reduced form parameter capturing the perceived
+credibility of forward guidance announcements.
+Consistent with the experience of many countries that have experimented with NIRP, our
+model assumes that the policy rate can go negative, while the deposit rate (the economically
+relevant short term interest rate) cannot. To implement NIRP, the central bank can require
+intermediariestoholdmorereservesthantheywouldlike. Ontheonehand, NIRPaffectsthe
+economy much like forward guidance – it signals the intent to lower economically relevant
+short term rates in the future, which in turn can affect long term rates in the present.
+Because it involves a tangible action rather than mere words, it may be more credible than
+1For a study of Ramsey optimal instrument rules in a model sharing similarities with ours, see Mau
+(2019).
+2Several related papers (e.g. Gertler and Karadi 2011, 2013 and Carlstrom, Fuerst and Paustian 2017)
+do not model reserves at all and instead think of conventional policy as directly setting the deposit rate via
+a Taylor rule.
+3Clarida (2012) distinguishes between different types of large scale asset purchases, calling purchases of
+long term government bonds “quantitative easing” and purchases of privately-issued debt “credit easing.”
+Our model features both government and private sector long maturity bonds. We will use the term “quan-
+titative easing” as it has been used in the financial press to refer to any type of large scale asset purchase
+(either government or non).
+2

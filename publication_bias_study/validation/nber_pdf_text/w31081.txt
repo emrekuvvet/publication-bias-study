@@ -1,0 +1,123 @@
+NBER WORKING PAPER SERIES
+MODEL-FREE AND MODEL-BASED LEARNING AS
+JOINT DRIVERS OF INVESTOR BEHAVIOR
+Nicholas C. Barberis
+Lawrence J. Jin
+Working Paper 31081
+http://www.nber.org/papers/w31081
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+March 2023, Revised July 2023
+We are grateful to Andrew Caplin, Alex Chinco, Cary Frydman, Xavier Gabaix, Alex Imas, Chen
+Lian, Stefan Nagel, Elise Payzan-LeNestour, Indira Puri, Antonio Rangel, Josh Schwartzstein,
+Andrei Shleifer, Michael Woodford, and seminar participants at Caltech, Columbia University,
+Cornell University, Harvard University, Imperial College London, the University of California
+Los Angeles, the University of Chicago, the University of Pennsylvania, Washington University,
+Yale University, the AFA Annual Meeting and the NBER Behavioral Finance conference for
+very useful feedback. We are also grateful to Colin Camerer, Nathaniel Daw, Peter Dayan, Sam
+Gershman, John O'Doherty, and members of their lab groups for very helpful discussions about
+the psychological concepts in the paper. Steven Ma provided excellent research assistance. The
+views expressed herein are those of the authors and do not necessarily reflect the views of the
+National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2023 by Nicholas C. Barberis and Lawrence J. Jin. All rights reserved. Short sections of text,
+not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Model-free and Model-based Learning as Joint Drivers of Investor Behavior
+Nicholas C. Barberis and Lawrence J. Jin
+NBER Working Paper No. 31081
+March 2023, Revised July 2023
+JEL No. D03,G02,G11
+ABSTRACT
+Motivated by neural evidence on the brain's computations, cognitive scientists are increasingly
+adopting a framework that combines two systems, namely “model-free” and “model-based”
+learning. We import this framework into a financial setting, study its properties, and use it to
+account for a range of facts about investor behavior. These include extrapolative demand,
+experience effects, the disconnect between investor allocations and beliefs in the frequency
+domain and the cross-section, the inertia in investors’ allocations, and stock market non-
+participation. Our results suggest that model-free learning plays a significant role in the behavior
+of some investors.
+Nicholas C. Barberis
+Yale School of Management
+P O Box 208200
+New Haven, CT 06520-8200
+and NBER
+nick.barberis@yale.edu
+Lawrence J. Jin
+Johnson College of Business
+Cornell University
+Ithaca, NY 14850
+and NBER
+lawrence.jin@cornell.edu
+A data appendix is available at http://www.nber.org/data-appendix/w31081
+
+1 Introduction
+Afundamentalquestioninbotheconomicsandpsychologyasks: Howdopeoplemakedecisions
+in dynamic settings? The traditional answer in economics is to say that people act as if they
+havesolvedadynamicprogrammingproblem. Bycontrast, overthepastdecade, psychologists
+and neuroscientists have embraced a different framework for thinking about decision-making
+in dynamic settings. This framework combines two algorithms, or systems: a “model-free”
+learningsystemanda“model-based”learningsystem. Inthispaper,weimportthisframework
+into a simple financial setting – one where investors allocate between a risk-free asset and a
+riskyasset–studyitsimplicationsforinvestorbehavior,andshowthatitishelpfulforthinking
+about a range of facts in finance.1
+The goal of both the model-free and the model-based algorithms is to estimate the value
+of taking a given action. The model-free system goes about this in a way that is different from
+traditional economic models. As its name suggests, it does not use a “model of the world”: it
+makes no attempt to construct a probability distribution of future outcomes. Rather, it learns
+by experience. At each date, it tries an action, observes the outcome, and then updates its
+estimate of the value of the action by way of two important quantities: a reward prediction
+error – the reward it observes after taking the action relative to the reward it anticipated –
+and a learning rate. If the prediction error is positive, the algorithm raises its estimate of
+the value of the action and is more likely to repeat the action in the future; if the prediction
+error is negative, it lowers the estimated value of the action and is less likely to try it again.
+This model-free framework has been increasingly adopted by psychologists and neuroscientists
+because of evidence that it reflects actual computations performed by the brain: numerous
+studies have found that neurons in the brain encode the reward prediction error used by
+model-free learning.
+The model-based algorithm, by contrast, is similar to traditional economic approaches in
+that it does construct a model of the world – a probability distribution of future outcomes –
+and then uses this to compute the value of different actions. There are a number of model-
+based approaches; we use one that is often adopted in research in psychology and that, like
+1An early paper on this framework is Daw, Niv, and Dayan (2005). Two prominent implementations in
+laboratory settings are Glascher et al. (2010) and Daw et al. (2011). Useful reviews include Balleine, Daw,
+and O’Doherty (2009) and Daw (2014). We discuss the behavioral and neural evidence for the framework in
+more detail in Section 2.
+2
+
+the model-free system, has neuroscientific support. Under this approach, after observing an
+outcome at some moment in time, the model-based system increases the probability it assigns
+to that outcome and downweights the probabilities of other outcomes. To do the updating,
+it again uses a learning rate and a prediction error that measures how surprising a realized
+outcome is; as before, there is evidence that the brain computes such prediction errors.
+Recent research in psychology argues that, to make decisions, people use these two systems
+in combination: they take a weighted average of the model-free and model-based estimates
+of the value of different actions and use the resulting “hybrid” estimates to make a choice
+(Glascher et al., 2010; Daw et al., 2011).
+In this paper, we import this framework into a financial setting, study its implications for
+investor behavior, and use it to account for a range of empirical facts. To our knowledge,
+this is the first time the framework has been applied, in a comprehensive way, in an economic
+domain outside the laboratory. We choose a simple setting: one where an individual allocates
+money between a risk-free asset and a risky asset in order to maximize the expected log utility
+of wealth at some future horizon. This problem fits the canonical context in which model-free
+and model-based algorithms are applied. The two algorithms tackle the problem in different
+ways. The model-based system learns a distribution of stock market returns over time by
+observing realized returns and uses it to decide on an allocation. The model-free system, by
+contrast, simply tries an allocation and observes the resulting portfolio return; if this return
+is good, the model-free system raises its estimate of the value of this allocation and is more
+likely to recommend this allocation again in the future.
+Webeginbycharacterizinginvestorbehaviorinourframework, payingparticularattention
+to the model-free system – for economists, the more novel system. Specifically, we look at
+how the stock market allocation proposed by each of the model-free and model-based systems
+depends on past stock market returns. The model-based allocation puts weights on past
+market returns that are positive and that decline for more distant past returns. We find
+that the model-free system also recommends an allocation that puts positive weight on past
+returns, and show that it does so through a mechanism that is new to financial economics. In
+brief: A good stock market return reinforces the investor’s previous allocation, whether the
+allocation was low or high. However, this reinforcement is stronger when the prior allocation
+is high: for a given positive market return, the reward, or portfolio return, is higher when the
+3

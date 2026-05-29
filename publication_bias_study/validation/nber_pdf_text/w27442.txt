@@ -1,0 +1,114 @@
+NBER WORKING PAPER SERIES
+DO BANK INSIDERS IMPEDE EQUITY ISSUANCES?
+Martin Goetz
+Luc Laeven
+Ross Levine
+Working Paper 27442
+http://www.nber.org/papers/w27442
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2020
+We thank Dean Corbae, Terry Hendershott, Chen Lin, Sascha Steffen, and seminar participants at
+the Chicago Federal Reserve Bank, University of Münster, Vienna University, the Dutch Central
+Bank, for helpful comments, and Matteo Bagnara, Yangming Bao, Claudio Hantzsche, Florian
+Maisch, Fabian Nemeczek, Yuma Iwase and Mohammad Izadi for excellent research assistance.
+Goetz gratefully acknowledges financial support from the Center of Excellence SAFE, funded by
+the State of Hessen initiative for research LOEWE. The views expressed are our own and do not
+reflect those of the ECB, the Eurosystem, or the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Martin Goetz, Luc Laeven, and Ross Levine. All rights reserved. Short sections of
+text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Do Bank Insiders Impede Equity Issuances?
+Martin Goetz, Luc Laeven, and Ross Levine
+NBER Working Paper No. 27442
+June 2020
+JEL No. G21,G28,G32
+ABSTRACT
+We evaluate the role of insider ownership in shaping banks’ equity issuances in response to the
+global financial crisis. We construct a unique dataset on the ownership structure of U.S. banks
+and their equity issuances and discover that greater insider ownership leads to less equity
+issuances. Several tests are consistent with the view that bank insiders are reluctant to reduce
+their private benefits of control by diluting their ownership through equity issuances. Given the
+connection between bank equity and lending, the results stress that ownership structure can shape
+the resilience of banks—and hence the entire economy—to aggregate shocks.
+Martin Goetz Ross Levine
+SAFE and Goethe University Haas School of Business
+Frankfurt University of California at Berkeley
+GERMANY 545 Student Services Building, #1900 (F685)
+goetz@econ.uni-frankfurt.de Berkeley, CA 94720-1900
+and NBER
+Luc Laeven Ross_levine@haas.berkeley.edu
+European Central Bank
+Research Department
+Sonnemannstrasse 20
+Frankfurt am Main
+GERMANY
+and CEPR
+Luc.Laeven@ecb.europa.eu
+
+1. Introduction
+There are strong linkages between bank equity and economic stability. As reviewed by
+Thakor (2014), banks with more equity tend to lend more, create more liquidity, and have
+higher probabilities of surviving crises. Baron, Verner, and Xiong (2019) show that adverse
+shocks to bank equity predict contractions in lending and output, while Berger and Bouwman
+(2013) and Jorda et al. (2017) discover that lower bank equity ratios are associated with slower
+recoveries following crises.1 Extensive research also stresses that bank equity can foster
+stability by mitigating excessive risk-taking by banks and absorbing adverse shocks to bank
+assets (e.g., Boot and Greenbaum 1993). These connections between bank equity and the
+resilience of the economy to aggregate shocks highlight the value of understanding the factors
+that shape the differing degrees to which banks issue new stock to replenish bank equity in
+response to crises. The comparative incentives and influence of differing owners are one
+potential factor influencing stock sales.
+Research offers conflicting perspectives on the impact of ownership structure on stock
+issuances following adverse shocks to bank equity. In the presence of large private benefits of
+control, a bank’s controlling owners may resist new stock issuances to protect those rents
+(Barclay and Holderness 1989; Doidge et al. 2009). From this “dilution reluctance”
+perspective, greater insider ownership will reduce stock sales, potentially making the economy
+less resilient to aggregate shocks. In contrast, other research suggests that banks with greater
+insider ownership can more effectively coordinate the actions of stakeholders with differing
+interests during crises, (e.g., Chakraborty and Gantchev 2013), allowing such banks to sell
+more stock than banks with less insider ownership. The overall impact of insider ownership on
+stock sales in times of crisis, therefore, is an open empirical question.
+In this paper, we evaluate the role of insider ownership in shaping U.S. banks’ sale of
+stock in response to the 2008 global financial crisis, which adversely bank valuations and put
+1 Theory explains how reductions in bank equity can reduce lending by increasing the risk premium paid by banks,
+reducing banks’ ability to collateralize their assets, and hindering banks’ ability to commitment to effective
+monitoring (e.g., Holmstrom and Tirole 1997; Bernanke, Gertler, and Gilchrist 1999; Gertler and Kiyotaki 2010;
+He and Krishnamurthy 2013; Brunnermeier and Sannikov 2014; and Rampini and Viswanathan 2018).
+1
+
+pressure on banks to raise new capital. We compile a unique database on the ownership
+structure and equity issuances of private and public banks. We hand-collect annual data on the
+ownership of 566 U.S. bank holding companies (BHCs). We define insiders as bank directors
+and executives, as reported in banks’ regulatory FR Y-6 filings. Furthermore, we compile data
+on stock sales by each bank. Using these data, we explore how insider ownership shapes banks’
+stock issuances following the onset of the financial crisis.
+There are two distinct periods of bank equity issuances following the collapse of Bear
+Stearns, the failure of Lehman Brothers, and the placement of Fannie Mae and Freddie Mac
+into government conservatorship. First, the U.S. Treasury started the Capital Purchase Program
+(CPP) in Q4/2008 that encouraged financial institutions to sell preferred stock to the Treasury.
+The program triggered a temporary surge in preferred stock sales in Q4/2008 and Q1/2009.
+Second, following Q1/2009, the Supervisory Capital Assessment Program (SCAP) (“stress
+test”) results encouraged banks to issue common equity and/or make other adjustments to
+satisfy capital regulatory requirements (e.g., Bayazitova and Shivdasani 2012). Banks’ sales of
+common stock increased markedly after Q1/2009. Given our focus on the potential dilution of
+control through stock sales, we are most concerned with common stock—and not CPP-induced
+preferred stock sales to the Treasury. Thus, we focus on the post-Q1/2009 period while
+controlling for bank issuances of preferred and common stock before Q2/2009, but note that
+our results are robust to including earlier quarters.
+We employ three empirical tests to assess the relationship between insider ownership
+and equity issuances. First, we conduct cross-sectional analyses of common stock sales and
+insider ownership during the period from Q2/2009 through Q1/2011. We measure “insider
+ownership” as the proportion of the BHC’s stock owned by insiders and calculate “common
+stock sales” as the total amount of funds raised through common stock sales as a proportion of
+bank equity in Q2/2008. We use ordinary least squares (OLS) regressions while controlling for
+an array of BHC-specific and geographic fixed effects. Second, to address concerns about the
+potential endogeneity of bank ownership, we employ a “shift-share” instrumental variable (IV)
+in the spirit of Bartik (1991) and Goldsmith-Pinkham, Sorkin and Swift (2018). Third, we
+extend these IV analyses and assess whether the relationship between stock sales and insider
+2

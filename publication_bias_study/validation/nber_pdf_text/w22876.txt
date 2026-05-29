@@ -1,0 +1,124 @@
+NBER WORKING PAPER SERIES
+INSURERS' RESPONSE TO SELECTION RISK:
+EVIDENCE FROM MEDICARE ENROLLMENT REFORMS
+Francesco Decarolis
+Andrea Guglielmo
+Working Paper 22876
+http://www.nber.org/papers/w22876
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2016
+Andrea Guglielmo is an associate at Analysis Group, Inc. Research for this article was
+undertaken when he was a student at the University of Wisconsin - Madison. The views
+expressed herein are those of the authors and do not necessarily reflect the views of Analysis
+Group or the National Bureau of Economic Research. Decarolis is grateful to the Sloan
+Foundation (grant 2011-5-23 ECON) for financial support. We are also grateful for the comments
+received from Pierre Andre Chiappori, Vilsa Curto, Mark Duggan, Liran Einav, Randy Ellis,
+Amit Gandhi, Jesse Gregory, Ken Hendricks, Kate Ho, Brad Larsen, Jon Levin, Tim Layton,
+Maria Polyakova, Mike Riordan, Alan Sorensen, Chris Taber, Pietro Tebaldi and Bob Town and
+from the participants at the seminars at Boston University, Columbia, EIEF, Stanford, Università
+Bocconi and the University of Wisconsin Madison where earlier versions of this paper were
+presented.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2016 by Francesco Decarolis and Andrea Guglielmo. All rights reserved. Short sections of text,
+not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Insurers' Response to Selection Risk: Evidence from Medicare Enrollment Reforms
+Francesco Decarolis and Andrea Guglielmo
+NBER Working Paper No. 22876
+December 2016, Revised February 2017
+JEL No. I1,I13,I18,L22
+ABSTRACT
+Evidence on insurers’ behavior in environments with both risk selection and market power is
+largely missing. We fill this gap by providing one of the first empirical accounts of how insurers
+adjust plan features when faced with potential changes in selection. Our strategy exploits a 2012
+reform allowing Medicare enrollees to switch to 5-star contracts at anytime. This policy increased
+enrollment into 5-star contracts, but without risk selection worsening. Our findings show that this
+is due to 5-star plans lowering both premiums and generosity, thus becoming more appealing for
+most beneficiaries, but less so for those in worse health conditions.
+Francesco Decarolis
+Department of Economics
+Boston University
+270 Bay State Road
+Boston, MA 02215
+and EIEF
+and also NBER
+fdc@bu.edu
+Andrea Guglielmo
+Analysis Group, Inc
+Prudential Center Plaza III
+111 Huntington Ave, B
+Boston, MA 02199
+andrea.guglielmo.85@gmail.com
+
+I Introduction
+The behavior of insurers is a crucial component of the functioning of any insurance market.
+Understanding such behavior is thus key to evaluate reforms like the creation of the health-
+care marketplaces under the Patient Protection and Affordable Care Act (ACA) and the
+growingly privatized provision of Medicare throughout the Part C and Part D programs.1
+The question of how competition works in environments with potential risk selection (either
+advantageous or adverse) is, however, still unsettled from a theoretical perspective and there
+is still much to be learned on the complex interaction between market power and selection.
+More specifically, nearly all the recent literature on selection markets focuses on pricing
+distortions while abstracting from how selection affects the broader set of characteristics
+of the contracts offered. The supply-side analysis presented in this paper is, instead, about
+how health plans respond in terms of both premiums and benefits to additional opportunities
+for beneficiaries to move among plans, possibly in response to health shocks. Therefore, our
+contribution follows in the tradition initiated by the seminal theoretical studies of Rothschild
+andStiglitz(1976)andGlazerandMcGuire(2000)inwhichplansaltertheirproductseeking
+to attract good risks. Although a handful of earlier studies have already shown evidence
+of insurers taking actions to attract good and deter bad health risk,2 our contribution is
+to provide a particularly clean identification strategy to quantify how both premiums and
+benefits respond to a potential change in selection driven by a policy reform stimulating
+consumers’ mobility between plans and to do so in a context, that of Medicare Advantage,
+that is characterized by the presence of market power.3
+Reliable evidence on this type of behavior is hard to collect because it is rare to observe
+1Part C, also known as Medicare Advantage, is a substitute for the traditional Medicare services (i.e.,
+Part A covering in-hospital services and Part B covering physicians, surgeons and other outpatient hospital
+services. Part D is a program offering prescription drug insurance.
+2Several of these contributions, from the early study of Ellis and McGuire (2007) to the more recent
+contributions of Carey (2016) and Shepard (2016), will be discussed next.
+3Using Part C data for 2006-2011, Curto et al. (2014) estimate that plan margins are on the order
+of 16 percent above their (variable) costs of coverage. Similar estimates are found by Guglielmo (2016)
+with a shorter dataset (2008-2011): by looking separately at plan types, he finds that HMOs and LPPOs
+generate the most profit per enrollee, amounting to a markup of 12 percent, while PFFS plans’ markup
+is approximately 9.5 percent. These estimates are also broadly consistent with the average markup of 13
+percent reported the MedPAC annual report 2010.
+1
+
+changes in selection risk within a market. Furthermore, even when selection risk changes
+for a subset of plans, it is often impossible to find a set of plans that can serve as a valid
+comparison group since the equilibrium in the whole market is affected. Our analysis over-
+comes this difficulty by exploiting the combined effects of a Medicare reform that altered
+the potential selection risk of the highest quality (5-star) Part C and D plans and the geo-
+graphical dispersion of such plans over the US. This allows us to separately observe treated
+and control geographical markets both before and after this policy change, thus allowing a
+quantile differences-in-differences approach that we use to study distributional changes in
+contract features in the treated markets relative to the control ones. Our main finding is
+that the policy triggered a response that involved not only changing premiums, but also
+adjusting benefits. This made 5-star plans more appealing for most beneficiaries through
+lower premiums, but less so for those in worse health through higher out of pocket costs.
+The starting point of our analysis is a Medicare reform changing the enrollment rules,
+most notably allowing enrollment outside the open enrollment period for a subset of plans.
+As in most insurance markets, beneficiaries select their Part C or D plan for coverage year
+t during a window of time in the fall of year t−1.4 However, starting with the enrollment
+year 2012, a reform allowed enrollees to switch to 5-star Part C or D plans at any point
+during the year. Despite the official motivation for this reform (known as “5-star Special
+Enrollment Period” or “5-star SEP”), which was to foster enrollment into high quality plans,
+the reform exposes 5-star plans to an evident selection risk: enrollees could initially select
+cheap plans and then move to expensive 5-star plans with generous coverage only after
+being hit by health shocks. The selection risk associated with within-year plan changes
+is different from the typical selection problem studied in the existing Medicare literature
+involving choices made in the open enrollment period and is potentially more severe as
+people select plans after learning their health status. Limiting this type of selection is
+typically seen as important for the proper functioning of managed care markets and, indeed,
+4While the open enrollment period length can very from 2 months to 2 weeks in employer sponsored
+health insurance, the open enrollment period in Medicare is fixed. Specifically in Medicare, as well as in the
+ACA exchanges, the open enrollment period is from October 15th to December 7th. This open enrollment
+period only applies to those who are already Medicare beneficiaries and not to individuals turning 65 who
+become eligible for Medicare.
+2

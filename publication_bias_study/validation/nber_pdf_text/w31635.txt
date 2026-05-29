@@ -1,0 +1,123 @@
+NBER WORKING PAPER SERIES
+JUDGING BANKS’ RISK BY THE PROFITS THEY REPORT
+Ben S. Meiselman
+Stefan Nagel
+Amiyatosh Purnanandam
+Working Paper 31635
+http://www.nber.org/papers/w31635
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+August 2023
+This research was conducted while Meiselman was an employee of the U.S. Department of the
+Treasury. The findings, opinions, and conclusions expressed here are entirely those of the authors
+and do not necessarily reflect the views or the official positions of the U.S. Department of the
+Treasury. We are grateful for comments from Viral Acharya, Matthew Baron, Murillo Campello,
+John Cochrane, Ken French, Robin Greenwood, Randy Krozsner, Daniel Paravisini, Philip
+Strahan, Raghuram Rajan, Uday Rajan, David Sraer, Jeremy Stein, Rene Stulz, Pietro Veronesi,
+Vikrant Vig, Vijay Yerramilli, and seminar and conference participants at the AFA meetings,
+Federal Reserve Bank, Imperial College, LBS Summer Finance Symposium, NBER Summer
+Institute (Corporate Finance), Office of the Comptroller of Currency, Securities and Exchange
+Commission, SITE Summer Workshop, SUNY Buffalo, University of California at San Diego,
+University College London, University of Iowa, Vanderbilt, and Wharton Liquidity Conference.
+The views expressed herein are those of the authors and do not necessarily reflect the views of the
+National Bureau of Economic Research.
+At least one co-author has disclosed additional relationships of potential relevance for this
+research. Further information is available online at http://www.nber.org/papers/w31635
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2023 by Ben S. Meiselman, Stefan Nagel, and Amiyatosh Purnanandam. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Judging Banks’ Risk by the Profits They Report
+Ben S. Meiselman, Stefan Nagel, and Amiyatosh Purnanandam
+NBER Working Paper No. 31635
+August 2023
+JEL No. G20,G30
+ABSTRACT
+In competitive capital markets, risky debt claims that offer high yields in good times have high
+systematic risk exposure in bad times. We apply this idea to bank risk measurement. We find that
+banks with high accounting return on equity (ROE) prior to a crisis have higher systematic tail
+risk exposure during the crisis. Proximate causes of crises differ, but the predictive power of ROE
+is pervasive, including during the financial crisis of 2007–2010 and the recent crisis triggered by
+the collapse of Silicon Valley Bank. ROE predicts systematic tail risk much better than
+conventional measures based on risk-weighted assets.
+Ben S. Meiselman Amiyatosh Purnanandam
+U.S. Department of the Treasury University of Michigan
+1500 Pennsylvania Avenue NW Ross School of Business
+Washington, DC 20220 R5453, 701 Tappan Street
+benmeiselman@gmail.com Ann Arbor, MI 48109
+amiyatos@umich.edu
+Stefan Nagel
+University of Chicago
+Booth School of Business
+5807 South Woodlawn Avenue
+Chicago, IL 60637
+and NBER
+stefan.nagel@chicagobooth.edu
+
+1 Introduction
+Accurate and timely measurement of risk is a fundamental problem in bank regulation. Of
+particular concern are tail risk and systemic risk exposures of financial institutions, which can
+impose severe negative externalities on the rest of the economy. Equity capital requirements and
+deposit insurance premiums depend crucially on the regulator’s assessment of the level of risk taken
+by a regulated bank. The Basel Committee on Banking Supervision and central banks around the
+world have devoted considerable resources to improving risk measurement over the years.
+While details may vary, there is considerable commonality in the broad philosophy behind risk
+measurement across asset classes (such as trading book versus loan book) and across regulators
+(such as Federal Reserve Banks and the Federal Deposit Insurance Corporation)—they all rely on
+“models” of risk measurement. The process typically starts with a classification of di↵erent assets
+and activities into various risk categories based on a model approved by the regulator, followed by
+an aggregation exercise that again depends on a model. For example, a bank’s trading book risk is
+measured with a Value-at-Risk model of di↵erent asset classes and the final aggregation allows for
+some model-implied diversification benefits across asset classes. Similarly, for the lending portfolio,
+risk-assessment is done based on external or internal credit rating models of loans and corporate
+bonds. The aggregated risk measure, in turn, dictates the level of equity capital or liquid assets
+a bank must keep in order to meet regulatory capital or liquidity requirements. We call such an
+approach to risk assessment and regulation the “model-based” approach.
+Unfortunately, model-based regulation su↵ers from at least two problems. First, models can only
+capture risks that they are designed to capture. Models are necessarily imperfect and incomplete.
+Built to capture risks that were relevant according to historical experience, they may not be able to
+capture the risks relevant in future crises. Second, model-based regulation can be susceptible to
+manipulation by the regulated entities. Since it is prohibitively expensive to devise models that
+can capture all aspects of risk-taking behavior, model-based regulation ends up leaving substantial
+discretion in modeling choices with the regulated entities themselves. As a consequence, regulated
+entities have not only a private incentive, but also considerable ability to understate risk exposures.1
+Understatement of systematic risk is particularly worrisome, as this type of risk is closely related
+1Empirical evidence in Behn, Haselmann, and Vig (2014) and Begley, Purnanandam, and Zheng (2017) suggests
+that banks make use of this ability to manipulate.
+1
+
+to systemic risk, which is of central relevance for optimal bank regulation (Acharya, 2009).2 We
+therefore focus on the measurement of systematic rather than bank-specific risk in this paper.
+We go back to first principles of risk and return analysis to propose an approach that is simpler,
+less vulnerable to manipulation, and hence a potentially useful complement to the established model-
+based approach. We start in the simplest possible setting in which banks operate in a competitive
+frictionless environment. The asset risk and return of a bank resembles the risk and return of a
+diversified portfolio of high-quality marketable risky debt such as, for example, investment-grade
+corporate bonds: In most periods (“good times”), default rates are low, while default losses are
+concentrated in occasional recessions and crises (“bad times”). The higher the portfolio’s expected
+payo↵ in good times, the higher must be the portfolio’s systematic risk. A similar logic should
+then apply to banks: High profits in good times should be indicative of a systematically risky asset
+portfolio that is likely to su↵er in bad times.
+To implement this idea, we would ideally like to measure the expected payo↵ of a bank’s assets
+in good times. While this variable is not directly observable, accounting profits should be a useful
+proxy. In good times, the expected payo↵ of a risky bond portfolio is the promised yield less a
+small amount of expected default losses that are largely idiosyncratic. Similarly, the accounting
+profit on a bank’s loan portfolio is roughly the promised yield on the loans less an adjustment for
+expected loan losses. In contrast, realized rates of return on the bank’s stock at an annual or a
+quarterly frequency would not be good proxies because they are influenced by unexpected shocks to
+market values. For example, if the assets of a bank unexpectedly become less risky (e.g., because
+borrowers’ collateral values improve), this generates a positive unexpected return, obscuring the
+positive relationship between risk and return. In analogy, the yield of a corporate bond portfolio in
+good times, possibly adjusted for the portfolio’s average rates of default losses, would be a better
+indicator of its systematic risk than its realized return over a short time window.
+A similar reasoning also applies to interest-rate risk. A bank that tilts towards long-duration
+assets in times of low interest rates and an upward-sloping yield curve will earn high rates of
+accounting profit as long as rates stay low, but with a risk of substantial losses in the event of
+a sharp rise in interest rates. Higher accounting profits are indicative of higher interest-rate risk
+2Many commonly used empirical proxies of systemic risk are actually measures of co-movement with risk factors
+and hence measures of systematic risk rather than direct measures of systemic risk.
+2

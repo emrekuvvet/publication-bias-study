@@ -1,0 +1,110 @@
+NBER WORKING PAPER SERIES
+INFORMATION AND CONSUMER CHOICE:
+THE VALUE OF PUBLICIZED HEALTH PLAN RATINGS
+Ginger Zhe Jin
+Alan T. Sorensen
+Working Paper 11514
+http://www.nber.org/papers/w11514
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2005
+Special thanks to Sarah Shih, Sarah Scholle, Greg Pawlson and James Bost at NCQA for providing assistance
+with the quality information reported to NCQA; to Bill Anderson, James Quayle, Agnes Kalland, Ralph
+Pierce, Ron Gresch, Leroy McKnight, and Ebbie Block in OPM for providing us individual records of
+FEHBP beneficiaries; and to the University of Maryland for financing the data cost. We are grateful to the
+editor and two anonymous referees for several helpful suggestions. Participants at the 2004 FTC Conference
+on Health Care also provided useful comments. Any errors are ours. The views expressed herein are those
+of the author(s) and do not necessarily reflect the views of the National Bureau of Economic Research.
+©2005 by Ginger Zhe Jin and Alan T. Sorensen. All rights reserved. Short sections of text, not to exceed
+two paragraphs, may be quoted without explicit permission provided that full credit, including © notice, is
+given to the source.
+
+Information and Consumer Choice: The Value of Publicized Health Plan Ratings
+Ginger Zhe Jin and Alan T. Sorensen
+NBER Working Paper No. 11514
+July 2005
+JEL No. I11, L15
+ABSTRACT
+We use data on the enrollment decisions of federal annuitants to estimate the influence of publicized
+ratings on health plan choice. We focus on the impact of ratings disseminated by the National
+Committee for Quality Assurance (NCQA), and use our estimates to calculate the value of the
+information. Our approach exploits a novel feature of the data—the availability of nonpublic plan
+ratings—to correct for a source of bias that is inherent in studies of consumer responsiveness to
+information on product quality: since publicized ratings are correlated with other quality signals
+known to consumers (but unobserved by researchers), the estimated influence of ratings is likely to
+be overstated. We control for this bias by comparing the estimated impact of publicized ratings to
+the estimated impact of ratings that were never disclosed. The results indicate that NCQA’s plan
+ratings had a meaningful influence on individuals’ choices, particularly for individuals choosing a
+plan for the first time. Although we estimate that a very small fraction of individual decisions were
+materially affected by the information, for those that were affected the implied utility gains are
+substantial.
+Ginger Zhe Jin Alan Sorensen
+University of Maryland Graduate School of Business
+Department of Economics Stanford University
+3105 Tydings Hall 518 Memorial Way
+College Park, MD 20742-7211 Stanford, CA 94305-5015
+and NBER and NBER
+jin@econ.umd.edu asorensen@stanford.edu
+
+Information and Consumer Choice:
+∗
+The Value of Publicized Health Plan Ratings
+Ginger Zhe Jin Alan T. Sorensen
+University of Maryland and NBER Stanford University and NBER
+jin@econ.umd.edu asorensen@stanford.edu
+June 2005
+Abstract
+We use data on the enrollment decisions of federal annuitants to estimate the influence of
+publicized ratings on health plan choice. We focus on the impact of ratings disseminated by
+theNationalCommitteeforQualityAssurance(NCQA),anduseourestimatestocalculatethe
+valueoftheinformation. Ourapproachexploitsanovelfeatureofthedata—theavailability of
+nonpublic plan ratings—to correct for a source of bias that is inherent in studies of consumer
+responsiveness to information on product quality: since publicized ratings are correlated with
+otherqualitysignalsknowntoconsumers(butunobservedbyresearchers), theestimatedinflu-
+ence of ratings is likely to be overstated. We control for this bias by comparing the estimated
+impact of publicized ratings to the estimated impact of ratings that were never disclosed. The
+results indicate that NCQA’splan ratings had a meaningful influence on individuals’ choices,
+particularly forindividuals choosing aplanforthefirsttime. Althoughweestimatethatavery
+small fraction of individual decisions were materially affected by the information, for those
+thatwereaffected theimplied utility gainsaresubstantial.
+1 Introduction
+Consumers often choose between products whose qualities or characteristics are ex ante uncer-
+tain. The reliability of a car, for example, cannot be fully known at the time of purchase, and the
+∗Special thanks to Sarah Shih, Sarah Scholle, Greg Pawlson and James Bost at NCQA for providingassistance
+withthequalityinformationreportedtoNCQA;toBillAnderson,JamesQuayle,AgnesKalland,RalphPierce,Ron
+Gresch,LeroyMcKnight,andEbbieBlockinOPMforprovidingusindividualrecordsofFEHBPbeneficiaries;and
+totheUniversityofMarylandforfinancingthedatacost.Wearegratefultotheeditorandtwoanonymousrefereesfor
+severalhelpfulsuggestions.Participantsatthe2004FTCConferenceonHealthCarealsoprovidedusefulcomments.
+Anyerrorsareours.
+1
+
+quality of a restaurant isn’t known until after one has dined there. For some products, the pres-
+ence of such uncertainty has given rise to markets for information: for example, companies like
+Edmunds and Consumer Reports publish automobile ratings, and publications like Zagat provide
+restaurantreviews. The profitabilityofsuchinformationenterprises indicatesthatthe information
+is valuable—but exactly how valuable is it? In some cases, government or nonprofit consumer-
+interest agencies have assumed the role of information provider. Does the information benefit
+consumersenoughtowarrantthecostsofitsacquisitionanddissemination?
+In this paper we attempt to answer these questions in the context of employee health plan de-
+cisions. Foremployeeschoosingfromamenuofhealthplanoptions,howvaluableare publicized
+planratings inmakingthedecision? The NationalCommitteefor QualityAssurance (NCQA), an
+independent nonprofit agency that serves as a “watchdog for the managed care industry,” collects
+and actively disseminates information about health insurance plans. The ratings and statistics are
+usedbylargeemployerstoinformtheiremployeesaboutplans,andforaperiodoftimeinthelate
+1990’ssummaries of the ratings were publishedin a major nationalnews magazine, U.S.News &
+World Report. Using enrollment data for a large sample of U.S. government annuitants, we mea-
+suretheimpactofthehealthplanratingsonindividuals’choices,anduseourestimatestocalculate
+thevalue(toconsumers)oftheinformation.
+This study is not the first to analyze consumer reponses to health plan quality information.
+Wedig and Tai-Seale (2002) examine data on federal employees in 1995 and 1996, when health
+planreportcardswerefirstprovided,andreportevidencethatplanratingssignificantlyinfluenced
+individuals’ decisions. Beaulieu (2002) examined the health plan choices of Harvard University
+employees and found that the provisionof qualityinformationin 1997 had a small but significant
+effect. Scanlonetal(2002)useemployeedatafromGeneralMotorstostudyhealthplandecisions;
+they find that employees respond to overall quality indices but not to specific quality measures.
+Using the same dataset, Chernew et al (2004) estimate the parameters of a Bayesian learning
+model, in which reported plan ratings cause individuals to update their prior beliefs about plan
+quality. Theirfindingsconfirmthepositivevalueofinformation,butalsosuggestthatmuchofthe
+informationinreportedratingswasalreadyknown.
+2

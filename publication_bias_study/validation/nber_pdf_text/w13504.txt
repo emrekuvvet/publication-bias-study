@@ -1,0 +1,127 @@
+NBER WORKING PAPER SERIES
+ADVISORS AND ASSET PRICES:
+A MODEL OF THE ORIGINS OF BUBBLES
+Harrison Hong
+Jose A. Scheinkman
+Wei Xiong
+Working Paper 13504
+http://www.nber.org/papers/w13504
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2007
+We thank Kerry Back, Henry Cao, John Eatwell, Simon Gervais, Ming Huang, Robert Jarrow, Maureen
+O'Hara, Jacob Sagi, Robert Shiller, Sheridan Titman, Pietro Veronesi, and seminar participants at the
+Bank of England, Cornell University, St. Louis Federal Reserve Bank, 2006 American Finance Association
+Annual Meeting in Philadelphia, 12th Mitsui Life Symposium at University of Michigan, Cambridge-Princeton
+Conference on Finance, CEPR/Pompeu Fabra Bubble Conference, Duke-UNC Asset Pricing Conference,
+Financial Intermediation Research Society Conference in Shanghai and NBER Behavioral Finance
+Conference for helpful comments. We thank the National Science Foundation for financial support
+under grants SES0350770 and SES0718407. The views expressed herein are those of the author(s)
+and do not necessarily reflect the views of the National Bureau of Economic Research.
+© 2007 by Harrison Hong, Jose A. Scheinkman, and Wei Xiong. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Advisors and Asset Prices: A Model of the Origins of Bubbles
+Harrison Hong, Jose A. Scheinkman, and Wei Xiong
+NBER Working Paper No. 13504
+October 2007
+JEL No. G1,G14,G2
+ABSTRACT
+We develop a model of asset price bubbles based on the communication process between advisors
+and investors. Advisors are well-intentioned and want to maximize the welfare of their advisees (like
+a parent treats a child). But only some advisors understand the new technology (the tech-savvies);
+others do not and can only make a downward-biased recommendation (the old-fogies). While smart
+investors recognize the heterogeneity in advisors, naive ones mistakenly take whatever is said at face
+value. Tech-savvies inflate their forecasts to signal that they are not old-fogies, since more accurate
+information about their type improves the welfare of investors in the future. A bubble arises for a wide
+range of parameters, and its size is maximized when there is a mix of smart and naive investors in
+the economy. Our model suggests an alternative sou rce for stock over-valuation in addition to investor
+overreaction to news and sell-side bias.
+Harrison Hong Wei Xiong
+Berndheim Center for Finance Princeton University
+Princeton University Department of Economics
+26 Prospect Avenue Bendheim Center for Finance
+Princeton, NJ 08540 Princeton, NJ 08450
+hhong@Princeton.EDU and NBER
+wxiong@princeton.edu
+Jose A. Scheinkman
+Department of Economics
+Princeton University
+Princeton, NJ 08544-1021
+and NBER
+joses@princeton.edu
+
+“To be against what is new is not to be modern. Not to be modern is to write
+yourself out of the scene. Not to be in the scene is to be nowhere.” Tom Wolfe,
+The Painted Word
+1. Introduction
+What are the origins of speculative asset price bubbles? This question remains unanswered
+despite a large and growing literature on speculative trading and asset price bubbles in
+economics. Motivated in part by the behavior of internet stocks during the late nineties, a
+surge in new research has arrived at two conclusions. The first is that differences of opinion
+among investors and short sales constraints are sufficient to generate a price bubble.1 The
+second is that once a bubble begins, it is difficult for smart money to eliminate the mispricing
+(i.e. there are limits of arbitrage).2 All these studies take as given that investors disagree
+about asset values. But where does this divergence of opinion come from?
+In this paper, we develop a model of the origins of bubbles. Two sets of stylized facts
+motivate our analysis. The first is that asset price bubbles tend to occur during periods of
+excitementaboutnewtechnologies.3 IntheU.S.,speculativeepisodeshavecoincidedwiththe
+following major technological breakthroughs: (1) railroads, (2) electricity, (3) automobiles,
+(4) radio, (5) micro-electronics, (6) personal computers, (7) biotechnology, and most recently
+(8) the Internet.4 The second is that in the aftermath of the Internet bubble, the media and
+regulators placed much of the blame on biased advisors for manipulating the expectations
+of naive investors. While not directly related to the Internet experience, indirect evidence
+from academic research in support of this view held by the media and regulators include:
+(1) analyst incentives to generate biased, optimistic forecasts; (2) naive individual investors
+who do not recognize that these biased recommendations are motivated by incentives to sell
+1See, e.g., Miller (1977), Harrison and Kreps (1978), Chen, Hong and Stein (2002), and Scheinkman and
+Xiong(2003). ExtensiveempiricalworkconfirmingthispremiseincludeDiether,MalloyandScherbina(2002),
+LamontandThaler(2003),andOfekandRichardson(2003). Thisliteraturestandsincontrasttotherational
+bubble literature (see, e.g., Blanchard and Watson, 1982) in which these two ingredients are not crucial in
+an infinite horizon setting. However, Allen, Morris, and Postlewaite (1993) show that these two ingredients
+emerge as relevant again to generate a rational bubble in a finite horizon setting.
+2See, e.g., Shleifer and Vishny (1997), Abreu and Brunnermeier (2003).
+3See, e.g., Malkiel (2003), Nairn (2002), Shiller (2000).
+4SeeDeMarzo,KanielandKremer(2006)andPastorandVeronesi(2006)forrationalexplanationsofhigh
+stock prices for new technologies.
+1
+
+stocks; and (3) analysts’ optimistic forecasts have an impact on prices.5
+We focus on the role of advisors and their communication process with investors in gen-
+erating divergence of opinion and asset price bubbles. Building on the existing literature, we
+assumethattherearetwotypesofinvestors,smartandnaive,whoareshortsalesconstrained.
+While smart investors recognize the heterogeneity in advisors, naive ones take whatever rec-
+ommendations they receive at face value. Importantly, all advisors are well-intentioned in
+that they care about the welfare of their advisees and want to honestly disclose their signals
+to investors. We also assume that at times of technological innovation, only some advi-
+sors understand the new technology (the tech-savvies); others do not and can only make
+a downward-biased recommendation (the old-fogies). We also consider an alternative as-
+sumption in which the old-fogies are replaced by dreamers who only issue upward-biased
+recommendations. The divergence of opinion and price bias results do not depend on this as-
+sumption but the old-fogey assumption is more theoretically interesting and there is evidence
+that it is relevant at a minimum for the recent internet experience.6
+A key contribution of our model is that it serves as a warning that even if a stock appears
+over-valued, it may not be due to investors overreacting to news nor to sell-side bias. We
+are not disclaiming the role of sell-side bias in the dot-com bubble—only that such bias is
+not needed to generate asset price bubbles. Indeed, it is not clear that such bias can explain
+bubbles that have occurred during earlier periods. We observe that during the dot-com
+period, even so-called objective research firms with no investment-banking business, such as
+Sanford and Bernstein, issued recommendations every bit as optimistic as investment banks
+5See,e.g.,LinandMcNichols(1998),HongandKubik(2003)forevidenceonanalystincentives,Malmendier
+and Shantikumar (2004) for evidence on investor reaction to recommendations and Michaely and Womack
+(1999) for evidence on price impact.
+6Throughout The Painted Word, from which our epigraph is drawn, Tom Wolfe describes the loss of
+credibility suffered by art critics who were perceived as not ”getting” the new pop art movement of the late
+fifties. There is ample anecdotal evidence suggesting that advisors during the dot-com bubble faced similar
+concerns. For instance, Stanley Druckenmiller, a self-confessed old economy dinosaur and value investor,
+reversedcourseduringtheInternetboomperiodanddeclaredthatheunderstoodtheInternetafterameeting
+with guru Andrew Grove (see Pacelle, 2000). Famous examples of old-fogies include Jonathan Cohen, a
+sell-side analyst covering Internet stocks for Merrill Lynch who was fired for his skeptical reports about the
+Internet. In contrast, Mary Meeker, a vocal proponent of the Internet revolution, not only prospered during
+the Internet era but continues to be an influential voice in technology even after the bursting of the bubble.
+Finally, there also is evidence that young mutual fund managers were more aggressively holding technology
+stocks during the dot-com bubble as compared to their older counterparts (see, e.g. Greenwood and Nagel,
+2006).
+2

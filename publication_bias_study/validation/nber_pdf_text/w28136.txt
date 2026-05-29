@@ -1,0 +1,141 @@
+NBER WORKING PAPER SERIES
+AUTO DEALER LOAN INTERMEDIATION:
+CONSUMER BEHAVIOR AND COMPETITIVE EFFECTS
+Andreas Grunewald
+Jonathan A. Lanning
+David C. Low
+Tobias Salz
+Working Paper 28136
+http://www.nber.org/papers/w28136
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+November 2020
+The views expressed are those of the authors and do not necessarily reflect those of the Consumer
+Financial Protection Bureau, the Federal Reserve Bank of Chicago, the Federal Reserve System,
+the United States, or the National Bureau of Economic Research. Andreas Grunewald and Tobias
+Salz thank the Institute for Social and Economic Research and Policy at Columbia University and
+the Russel Sage Foundation for financial support. We thank Brian Bucks, Glenn Ellison, Matt
+Gentzkow, Kate Ho, Éva Nagypál, Michael Riordan, Mike Whinston, Maximilian Voigt, and
+audiences at Berkeley, BRIQ Bonn Structural Behavioral Conference, Boston College, IO
+workshop at CREST, CFPB, University of Cologne, University of Copenhagen, DICE
+Duesseldorf, EIEF Junior Conference, Frankfurt School, German Economist Abroad Conference,
+Goethe University Frankfurt, Harvard, University of Mainz, University of Marburg, University of
+Minnesota, University of Konstanz, NYU, University of Oregon, University of Pennsylvania,
+Penn State, Solvay Brussels School / Ecare, Stanford, Toulouse School of Economics, and Yale
+for helpful comments and suggestions. Guy Aridor, Jasper Clarkberg, Thi Mai Anh Nguyen, and
+Yining Zhu provided outstanding research assistance.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Andreas Grunewald, Jonathan A. Lanning, David C. Low, and Tobias Salz. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+Auto Dealer Loan Intermediation: Consumer Behavior and Competitive Effects
+Andreas Grunewald, Jonathan A. Lanning, David C. Low, and Tobias Salz
+NBER Working Paper No. 28136
+November 2020
+JEL No. G41,G51,L0,L13,L5,L62
+ABSTRACT
+This paper studies the intermediation of auto loans through auto dealers using new and
+comprehensive administrative data. The arrangements between auto dealers and lenders
+incentivize dealers to increase loan prices. We leverage details of the corresponding contracts to
+demonstrate that many consumers are less responsive to finance charges than to vehicle charges.
+Taking this behavior into account, we estimate an equilibrium model of dealer price setting and
+lender competition. We explore counterfactuals where dealers have no discretion to price loans
+and final rates are set by lenders instead. We find large gains in consumer surplus from such a
+policy.
+Andreas Grunewald David C. Low
+Frankfurt School of Finance and Management CFPB
+Adickesallee 32-34 1700 G St. NW
+Frankfurt, Hess 60322 Washington, DC 20002
+Germany david.low@cfpb.gov
+gruni06@googlemail.com
+Tobias Salz
+Jonathan A. Lanning MIT Deparatment of Economics
+Federal Reserve Bank of Chicago 77 Massachusetts Avenue, E52-404
+2018 W Churchill St Cambridge, MA 02139
+Chicago, IL 60647 and NBER
+jonlanning@gmail.com tsalz@mit.edu
+
+1 Introduction
+In retail financial markets consumers make infrequent, high-stakes decisions about complex
+products. Often, such decisions are made in negotiations with professional intermediaries,
+brokers, or sales agents who are incentivized to extract revenue from consumers. A key
+questionisthereforetowhatextentthepricingdiscretionoftheseagentscanharmconsumers.
+In particular, the dispersion in markups enabled by such discretion likely reflects differences
+in consumers’ knowledge about the terms of financial products and their ability to assess
+prices correctly. While regulations, such as the Equal Credit Opportunity Act, are meant to
+curb certain sources of price dispersion, in practice different consumers may achieve very
+differentoutcomesinsuchmarkets.
+In this context, the market for financed vehicles has received considerable attention from
+regulatorsandconsumeradvocacygroups. Autodealersactasintermediariesbetweenlenders
+and consumers for the financing of the car. Specifically, lenders suggest loan prices but al-
+low dealers to increase them; dealers often do so and are compensated with a share of the
+resulting profit through incentive contracts. Dealer loan intermediation is of outsize impor-
+tanceforAmericanconsumersastheyholdmorethan$1trillioninautodebt,andmorethan
+eighty percent of auto loans are obtained “indirectly” through dealers.1 Several regulators,
+including the Federal Trade Commission (FTC), the Consumer Financial Protection Bureau
+(CFPB),andtheU.K.’sFinancialConductAuthority(FCA)havestatedthatthearrangements
+between lenders and dealers can harm consumers.2 In particular, if some consumers respond
+less to loan price markups than to financially-equivalent vehicle price markups, dealers can
+tailor “price bundles” to extract more revenue from consumers who are less responsive to
+loan prices. Understanding the market for financed vehicles therefore requires understand-
+ing how lenders incentivize dealers to price loans and how these incentives affect dealer and
+consumerbehavior.
+This paper uses new and comprehensive administrative data to study the agreements be-
+tweendealersandlendersandhowtheyaffectthemarketforfinancedvehicles. Firstweshow
+that consumers are substantially more sensitive to changes in car prices than loan prices. To
+thisend,weleveragetheincentivestructureunderwhichdealersmakethosedecisions,which
+weobserveinourdata. Theintuitionforourapproachissimple: dealerskeepnearlyallprofit
+from car price markups, but share profits from loan price markups with lenders. Thus, if a
+consumerisequallyresponsivetocarandloanmarkups,adealermaximizesprofitbycharg-
+ingthehighestcarpricethatconsumerwillacceptandsettingtheloanmarkuptozero. Con-
+1Foranestimateoftotalautoloandebtoutstanding, seehttps://www.newyorkfed.org/medialibrary/interactives/householdcredit/d
+ata/pdf/HHDC2019Q4.pdf. Weestimatethe percentof autoloans obtainedindirectly inAppendix D.3; seealsoDavis (2012). The
+affordabilityofautoloansisincreasinglyaconcern.See,forexample,https://www.wsj.com/articles/the-seven-year-auto-loan-americas-m
+iddle-class-cant-afford-their-cars-11569941215andhttps://www.npr.org/2019/10/31/773409100/the-7-year-car-loan-watch-your-wallet.
+2SeeCFPB(2016),FCA(2019),ReynoldsandCox(2020)andSullivanetal.(2020).
+1
+
+versely,ifconsumersaresufficientlyunresponsivetoloanmarkups,thendealersshouldmark
+uploanseventhoughtheykeeponlyafractionoftheprofitsthatloanmarkupsgenerate. Loan
+markupsthereforecontaininformationaboutconsumers’sensitivitytoloanpricesrelativeto
+vehicle prices. This argument requires only mild assumptions about consumer preferences
+and market structure. Furthermore, since we observe the markup on every loan in our data,
+we can derive consumer-specific estimates of the wedge between the responsiveness to loan
+andvehicleprices.
+We find that, on average, consumers behave as if they would pay a dollar more in finance
+charges to reduce the vehicle price by $0.86. Hence, consumers respond substantially more
+to vehicle prices than to loan prices. We also find that on average consumers act as if they
+perceivefinancechargestobeatleast$380lessthanactualfinancecharges. Sinceweobtain
+these measures at the consumer level, we can study the heterogeneity in this wedge. We
+find that there are large differences across consumers. Consumers in the 10th percentile are
+willing to pay a dollar in finance charges to reduce the vehicle price by just 77 cents, but at
+the90thpercentileconsumersareessentiallyindifferentbetweenfinanceandvehiclecharges.
+Weconsiderseveralpotentialexplanationsforourfindings,includingtimediscountingand
+credit constraints, vehicle taxes, loan prepayment, and repeated dealer-lender interactions.
+These factors cannot account for our results either qualitatively or quantitatively. However,
+our findings are consistent with evidence that several regulators such as the FTC, the FCA,
+andtheCFPBhavecollectedindicatingthatmostconsumersdonotfullyunderstandthatloan
+terms are negotiable or do not correctly assess loan prices (Center for Responsible Lending
+et al., 2012, CFPB, 2016, FCA, 2019, Reynolds and Cox, 2020, Sullivan et al., 2020).3 Our
+results are also consistent with the literature on add-on pricing, which argues that firms can
+charge higher prices on less transparent dimensions of a product (Lal and Matutes, 1994,
+Verboven,1999,Ellison,2005).
+In the second part of this project, we explore the equilibrium implications of dealer dis-
+cretion, taking into account our estimates for consumer behavior from the previous part. We
+assumethatdealersplayadifferentiated-productpricinggame(Berryetal.,1995)bysetting
+both prices and interest rates strategically to compete for consumers. Lenders compete in
+interestrateauctionsforthebusinessofdealers. Weusethemodeltoexplorethequantitative
+effectsoftwocounterfactuals.
+In our first counterfactual, we recompute equilibria under the assumption that consumers
+respond equally to car and loan prices. This counterfactual delineates how the consumer
+behavior that we document is reflected in the market equilibrium. We find that total prices
+3Consumersmayfailtominimizetotalexpensesforanumberofreasons. Theymightlackfinancialliteracyingeneral(Lusardiand
+Mitchell,2014),thecarpricemightbemoresalienttothem(Chettyetal.,2009,Ko˝szegiandSzeidl,2012,Bordaloetal.,2013),dealers
+mightexploitthecomplexityoffinancialcontractstoshroudorobfuscatecrucialinformation(GabaixandLaibson,2006,Ellisonand
+Ellison,2009),orconsumersmightneglectsomedimensionsofthepricebecausetheircapacitytoprocessinformationislimited(Sims,
+2006,Mackowiaketal.,2018).
+2

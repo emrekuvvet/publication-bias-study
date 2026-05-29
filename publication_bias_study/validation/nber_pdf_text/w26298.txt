@@ -1,0 +1,144 @@
+NBER WORKING PAPER SERIES
+MONEY RUNS
+Jason R. Donaldson
+Giorgia Piacentino
+Working Paper 26298
+http://www.nber.org/papers/w26298
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2019
+For valuable comments, we thank David Andolfatto, Vladimir Asriyan, Svetlana Bryzgalova,
+Charlie Calomiris, Catherine Casamatta, John Cochrane, Doug Diamond, Phil Dybvig, Darrell
+Duffie, Raj Iyer, Douglas Gale, Brett Green, Robert Hauswald, Todd Keister, Peter Koudijs,
+Arvind Krishnamurthy, John Kuong, Mina Lee, Hanno Lustig, Nadya Malenko, David Martinez-
+Miera, Cyril Monnet, Sophie Moinas, Ed Nosal, Guillermo Ordoñez, Dimitri Orlov, Cecilia
+Parlatore, Sébastien Pouget, Uday Rajan, Roberto Robatto, Hugo Rodriguez, Maya Shaton,
+Richard Stanton, Bruno Sultanum, Anjan Thakor, Alberto Trejos, Laura Veldkamp, Randy
+Wright, Victoria Vanasco, Adam Zawadowski, Peter Zimmerman, and seminar participants at
+Amsterdam Business School, the 9th Annual Conference in Money, Banking, and Asset Markets
+Conference at the University of Winsconsin, the 17th Annual FDIC Bank Research Conference,
+the 10th Annual Paul Woolley Conference, the 7th Banco de Portugal Conference on Financial
+Intermediation, Berkeley, the 2017 CEPR European Summer Finance Symposium at Gerzensee,
+Columbia, EIEF, the Federal Reserve Bank of Philadelphia, the 2018 FIRS Conference, the 2017
+FTG Summer Meeting at the LSE, the 2016 IDC Summer Conference, the 2017 OxFIT
+Conference, the 2017 Summer Workshop on Money, Banking, Payment and Finance (Bank of
+Canada), Stanford GSB (FRILLS), Stanford (Macro Lunch), the Toulouse School of Economics,
+the University of Minnesota, WAPFIN@Stern, Washington University in St. Louis, the 2017
+WFA, the 2017 Wharton Liquidity and Financial Fragility Conference, and Yale. The views
+expressed herein are those of the authors and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2019 by Jason R. Donaldson and Giorgia Piacentino. All rights reserved. Short sections of text,
+not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Money Runs
+Jason R. Donaldson and Giorgia Piacentino
+NBER Working Paper No. 26298
+September 2019
+JEL No. G01,G21
+ABSTRACT
+We develop a model in which, as in practice, bank debt is both a financial security used to raise
+funds and a kind of money used to facilitate trade. This dual role of bank debt provides a new
+rationale for why banks do what they do. In the model, banks endogenously perform the essential
+functions of real-world banks: they transform liquidity, transform maturity, pool assets, and have
+dispersed depositors. Moreover, they make their debt redeemable on demand. Thus, they are
+endogenously fragile. We show novel effects of narrow banking, suspension of convertibility, and
+some other policies.
+Jason R. Donaldson
+Olin Business School
+Washington University in St. Louis
+Simon Hall
+1 Olympian Way
+St Louis, MO 63130
+j.r.donaldson@wustl.edu
+Giorgia Piacentino
+Columbia Business School
+3022 Broadway
+Uris Hall 813
+New York, NY 10027
+and NBER
+g.piacentino@gsb.columbia.edu
+
+In the use of money, every one is a trader.
+David Ricardo (1876)
+1 Introduction
+What is money? Some money, like the physical currency you exchange by hand, is created
+by central banks. But most money, like the deposit you exchange electronically by debit card
+or bank transfer, is created by private banks.1 Such bank money is not a new thing. Bank
+debt has served as a means of payment for hundreds of years. For example, bank-drawn bills
+of exchange served as money in early modern Europe, bank-issued notes served as money in
+the 19th-century US, and bank-certified checks served as money more recently.
+But bank debt is not only a form of money that you can use to make payments, it is also
+a financial security that banks use to raise funds. Thus, when banks choose what security
+to issue to raise funds, they should take its value as money into account. In practice, banks
+choose to issue securities, like banknotes and deposits, that are redeemable on demand. But
+such demandable debt can be an unstable form of money. Indeed, many bank panics and
+financial crises throughout history, from 18th-century London to contemporary Greece, seem
+to have followed from the failure of bank debt to be accepted as money (see below). In such
+crises, convertibility is often suspended. This prevents bank runs—you are unable to run on
+a bank if you cannot redeem your debt on demand. But it has been argued that it could
+also impede circulation—you could be unlikely to accept the debt as payment if you cannot
+redeem it on demand.2 Remarkably, however, this has not always been the case. To the
+contrary, bank debt sometimes resumes circulation when convertibility is suspended.3
+Despite historical precedents, most current theories of why banks choose a fragile fi-
+nancial structure are not linked to how bank debt serves as private money (see, notably,
+Calomiris and Kahn(1991), Diamond and Dybvig (1983), andDiamond and Rajan(2001b),
+discussed further in Section 7). To develop a model based on this link, we model how bank
+1E.g., the Bank of Englandestimates that 97%ofbroadmoney is createdby banks (McLeay,Radia,and
+Thomas (2014)).
+2See, e.g., Dewald (1972) on how the “trade journals reported that depression was accountable to sus-
+pension and a lack of loans to sustaintrade” (p. 939),i.e. on how some arguedthat the suspensionimpeded
+payments/trade. See also Sprague (1910).
+3For example, in the crisis of 1907,despite suspensionof convertibility, bank debt in the formof clearing
+house certificates started to circulate as money. See, e.g., Andrew (1908), on how “[s]hops and stores and
+places of amusement...generally accepted [certificates], and it is, indeed, surprising...how little real difficulty
+wasexperiencedingettingthemtocirculateinlieuofcash” (p.513). Perhapsasaresult,banksremainedsol-
+ventinthe panic. Indeed,see,e.g.,Calomiris and Gorton(1991)onhow“the Panicof1907[was]practically
+a non-event from the standpoint of national bank failures” (p. 156).
+1
+
+debt serves as a means of payment explicitly, following the new monetarist literature (see
+Lagos, Rocheteau, and Wright (2017) for a survey).
+We use the model to address the following questions. Why is bank money almost always
+redeemable on demand, regardless of the form it takes, from physical banknotes to electronic
+deposits? Why is demandable debt a fragile form of money? Given it is, why do banks still
+choose to issue it, exposing themselves to sudden redemptions, and making the financial
+system fragile too? And what are the effects of financial regulations, such as “narrow”
+banking and suspension of convertibility?
+By modeling the dual role of bank debt—to provide a means of funding to banks and a
+means of payment for depositors—we uncover a new rationale for why banks do what they
+do. Banks choose to fund themselves with demandable debt to take advantage of a “price
+effect of demandability”: demandable debt trades at a high price in the secondary market,
+and hence increases banks’ debt capacity in the primary market. But this high price is not
+always a good thing. Reluctant to pay it, potential counterparties may decide not to buy
+the debt at all, and therefore leave the holder with something he cannot trade, but only
+redeem on demand. Such redemption constitutes a new kind of bank run, or “money run,”
+resulting entirely from the failure of debt to circulate as money in the secondary market.
+In our model, banks are fragile because money is fragile, not the other way around (cf.
+Friedman and Schwartz (1963)). However, banks continue to issue demandable debt. To do
+so, they exploit economies of scale that arise solely from the price effect of demandability
+(independent of the diversification benefits in Diamond and Dybvig (1983) and Diamond
+(1984)). Specifically, they transform liquidity, transform maturity, pool assets, and borrow
+from dispersed depositors. I.e. they do something that looks like real-world banking. But,
+to do it effectively, they exacerbate their exposure to money runs. Narrow banking limits
+this fragility, but can also inefficiently constrain bank funding. Suspension of convertibility,
+on the other hand, can not only prevent runs, but can, in fact, facilitate circulation.
+Model preview. Because we want to show how banking can arise endogenously, we
+start with a single borrower B with a single investment (e.g., a corporate loan). Ultimately,
+multiple borrowers will form an institution that assumes features of real-world banks. But,
+for now, B resembles a bank only insofar as its debt plays a dual role. To capture its role as
+a funding instrument, we assume that B is penniless and needs to fund an investment from
+a creditor C (i.e. a depositor). To capture its role as a means of payment, we make two
+0
+assumptions. First, C could be hit by a liquidity shock before B’s investment pays off, as in
+0
+Diamond and Dybvig (1983). Thus, C couldwant to tradeB’sdebt togetliquidity. Second,
+0
+C must trade bilaterally in a decentralized market, similar to those in Trejos and Wright
+0
+(1995) and Duffie, Gârleanu, and Pedersen (2005). We assume that to acquire B’s debt from
+2

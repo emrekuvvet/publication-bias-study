@@ -1,0 +1,107 @@
+NBER WORKING PAPER SERIES
+IS THERE HEDGE FUND CONTAGION?
+Nicole M. Boyson
+Christof W. Stahel
+René M. Stulz
+Working Paper 12090
+http://www.nber.org/papers/w12090
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+March 2006
+Boyson is at Northeastern University, Stahel is at George Mason University, and Stulz is at The Ohio State
+University, NBER, and ECGI. Corresponding author is Stulz: stulz@cob.osu.edu, (614) 292-1970. We wish
+to thank participants in seminars at the University of Kansas and Bentley College. We also wish to thank
+Jake Vukelic at Standard and Poor’s and Lisa Martin at Hedge Fund Research for assistance regarding their
+firms’ products. The views expressed herein are those of the author(s) and do not necessarily reflect the
+views of the National Bureau of Economic Research.
+©2006 by Nicole M. Boyson, Christof W. Stahel and René M. Stulz. All rights reserved. Short sections of
+text, not to exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Is There Hedge Fund Contagion?
+Nicole M. Boyson, Christof W. Stahel and René M. Stulz
+NBER Working Paper No. 12090
+March 2006
+JEL No. G11, G12, G18
+ABSTRACT
+We examine whether hedge funds experience contagion. First, we consider whether extreme
+movements in equity, fixed income, and currency markets are contagious to hedge funds. Second,
+we investigate whether extreme adverse returns in one hedge fund style are contagious to other hedge
+fund styles. To conduct this examination, we estimate binomial and multinomial logit models of
+contagion using daily returns on hedge fund style indices as well as monthly returns on indices with
+a longer history. Our main finding is that there is no evidence of contagion from equity, fixed
+income, and foreign exchange markets to hedge funds, except for weak evidence of contagion for
+one single daily hedge fund style index. By contrast, we find strong evidence of contagion across
+hedge fund styles, so that hedge fund styles tend to have poor coincident returns.
+Nicole M. Boyson
+Northeastern University
+n.boyson@neu.edu
+Christof W. Stahel
+George Mason University
+cstahel@gmu.edu
+René M. Stulz
+Fisher College of Business
+Ohio State University
+806A Fisher Hall
+2100 Neil Avenue
+Columbus, OH 43210-1144
+and NBER
+stulz@cob.osu.edu
+
+Assets managed by hedge funds have grown tremendously, with more than $1 trillion in assets under
+management in the United States alone.1 This growth has led regulators to become concerned about the
+risks that hedge funds might create for the financial system. Hedge funds could create systemic risk if
+normal relations between hedge funds and financial markets break down when financial markets perform
+poorly, and the probability of extreme negative returns for hedge funds when financial markets
+experience extreme negative returns is much higher than could be predicted based on correlations
+between hedge funds and financial markets. Paradoxically, however, a major reason for the tremendous
+growth in assets managed by hedge funds is that investors believe these funds offer a valuable source of
+diversification because of low correlations between hedge fund returns and returns on other asset classes.
+For example, in a 2003 survey of institutional pension managers sponsored by State Street Global
+Advisors, 77% of the respondents cited diversification as an “important” or “extremely important” reason
+for including hedge funds in a portfolio.2 If there is contagion between hedge funds and financial
+markets, the diversification benefit of investing in hedge funds would be least valuable when it is needed
+most, i.e., when financial markets in general perform poorly. In this paper, we investigate whether there is
+contagion between hedge funds and financial markets and within the hedge fund sector.
+Studies have shown that hedge fund returns do not follow a normal distribution, that they tend to be
+heavily skewed, and that their correlations with risk factors are not stationary.3 It is well-known that
+correlation is a poor measure of dependence under such conditions (see, e.g., Embrecht, McNeil, and
+Straumann, 2002). Consequently, the correlations that play a central role in modern portfolio theory can
+1 A survey by Hedge Fund Manager magazine and Advent Software administered in November, 2005, which
+included 44 hedge fund administrators, indicated that assets of about $1.3 trillion are managed by U.S. hedge funds.
+The total assets under management worldwide is estimated at over $2 trillion. See full results at:
+http://www.advent.com/collateral/HFMAdventNOV2006surveyfinal.pdf
+2 Survey was administered by InvestorForce and included 111 large pension sponsors. See full results at:
+http://www.investorforce.com/images/flonetwork/Hedge_Fund_Survey_2003.pdf.
+3 See, for example, Agarwal and Naik (2000), Amin and Kat (2004), Bacmann and Gawron (2004), Brealey and
+Kaplanis (2001), Chan, Getmansky, Haas, and Lo (2005), Fung and Hsieh (1997, 1999, 2001), Geman and Karoubi
+(2003), Getmansky, Lo, and Makarov (2004) and Lo (2002).
+2
+
+lead to misleading inferences about the risk of hedge fund investments and the systemic risks created by
+the growth of the hedge fund industry.
+The most worrisome weakness of correlation, given the properties of hedge fund returns, is that it
+fails to adequately capture contagion if contagion is present. By contagion, we mean the phenomenon
+that regardless of the general correlation between assets, during bad times these assets tend to move
+together more closely than could be predicted using correlations. Hence, contagion measures a nonlinear
+effect that is not captured by correlation. For instance, during periods of contagious emerging market
+crises, there is a greater probability that many markets perform poorly which is not what one would
+expect if relying solely on correlations (see, for instance, Bae, Karolyi, and Stulz, 2003, hereafter BKS).
+The possibility of contagion from traditional asset classes to hedge funds as well as between hedge
+funds is important for investors, for risk managers, and for regulators. If there is a high probability of
+contagion from traditional asset classes to hedge funds, the diversification benefits of hedge funds do not
+extend to periods of extremely poor returns in traditional asset classes. If there is a high probability of
+contagion within the hedge fund sector, diversification across hedge fund styles does not offer good
+protection against extremely poor returns in a specific style. Further, there should be more of a concern
+of systemic risk from hedge funds if there is contagion between hedge fund styles, because in bad times a
+significant number of hedge funds will perform poorly.
+Our paper contributes to a large and growing literature on the exposure of hedge funds to risk factors.
+A number of studies, including Fung and Hsieh (1997, 1999, 2001), Brown, Goetzmann and Ibbotson
+(1999), Ackermann, McEnally and Ravenscraft (1999), Liang (1999), and Agarwal and Naik (2000,
+2004), have examined the relationship between hedge fund returns and broad market returns. The studies
+that focus on linear measures of association, such as beta, generally find a weak relationship between
+market returns and hedge fund returns. However, when studies relax the assumption of linearity, a more
+complicated relationship is uncovered. For example, Edwards and Caglayan (2001) examine performance
+in up and down markets, and show that, on average, hedge funds have stronger positive correlations with
+3

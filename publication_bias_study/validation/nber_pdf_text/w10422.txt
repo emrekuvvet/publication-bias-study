@@ -1,0 +1,126 @@
+NBER WORKING PAPER SERIES
+OPTIMAL RECURSIVE REFINANCING AND
+THE VALUATION OF MORTGAGE-BACKED SECURITIES
+Francis A. Longstaff
+Working Paper 10422
+http://www.nber.org/papers/w10422
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+April 2004
+I am grateful for helpful discussions with David Armstrong, Douglas Breeden, Stephen Cauley, Robert
+Edelstein, Jim Gammill, Kent Hatch, Lakhbir Hayre, Dwight Jaffe, Hedi Kallal, Stanley Kon, Eduardo
+Schwartz, Tony Sanders, Roberto Sella, Chester Spatt, Richard Stanton, and Nancy Wallace and for the
+comments of seminar participants at the University of California at Berkeley, Brigham Young University,
+Citigroup, Cornell University, Morgan Stanley, New York University, Stanford University, The Wharton
+School at the University of Pennsylvania, and Yale University. I am also grateful to Brett Myers for research
+assistance. All errors are my responsibility. The views expressed herein are those of the author(s) and not
+necessarily those of the National Bureau of Economic Research.
+©2004 by Francis A. Longstaff. All rights reserved. Short sections of text, not to exceed two paragraphs, may
+be quoted without explicit permission provided that full credit, including © notice, is given to the source.
+
+Optimal Recursive Refinancing and the Valuation of Mortgage-Backed Securities
+Francis A. Longstaff
+NBER Working Paper No. 10422
+April 2004
+JEL No. G1
+ABSTRACT
+We study the optimal recursive refinancing problem where a borrower minimizes his lifetime
+mortgage costs by repeatedly refinancing when rates drop sufficiently. Key factors affecting the
+optimal decision are the cost of refinancing and the possibility that the mortgagor may have to
+refinance at a premium rate because of his credit. The optimal recursive strategy often results in
+prepayment being delayed significantly relative to traditional models. Furthermore, mortgage values
+can exceed par by much more than the cost of refinancing. Applying the recursive model to an
+extensive sample of mortgage-backed security prices, we find that the implied credit spreads that
+match these prices closely parallel borrowers’ actual spreads at the origination of the mortgage.
+These results suggest that optimal recursive models may provide a promising alternative to the
+reduced-form prepayment models widely used in practice.
+Francis A. Longstaff
+UCLA
+Anderson Graduate School of Management
+110 Westwood Plaza, Box 951481
+Los Angeles, CA 90095-1481
+and NBER
+francis.longstaff@anderson.ucla.edu
+
+1. INTRODUCTION
+Since its inception in the 1970s, the mortgage-backed security market has experi-
+enced dramatic growth in the United States. As of June 30, 2002, the total notional
+amount of Agency mortgage-backed securities and collateralized mortgage obligations
+outstanding was more than $3.9 trillion. This means that the size of these markets
+now exceeds the $3.5 trillion notional amount of publicly-traded U.S. Treasury debt.
+Despite the importance of these markets, however, the goal of developing a fun-
+damental theory of mortgage valuation represents an ongoing challenge to researchers.
+The key element that has proven difficult to explain within a rational model is how
+mortgageborrowerschoosetorefinancetheirloans. InfluentialearlyworkbyDunnand
+McConnell (1981a, b), Brennan and Schwartz (1985), and others applies contingent
+claims techniques to the problem by modeling prepayment as an endogenous decision
+made by the borrower in minimizing the present value of his current mortgage. More
+recently, Dunn and Spatt (1986) and Stanton and Wallace (1998) extend this classical
+approach in an important way by modeling the prepayment decision as the result of
+the borrower minimizing his lifetime mortgage costs. As discussed by Schwartz and
+Torous (1989, 1992, 1993), however, actual prepayment behavior appears very subop-
+timal relative to the optimal behavior implied by these models. Furthermore, these
+models all have the property that mortgage-backed security prices cannot exceed par
+plus the number of points paid to refinance the loan. As demonstrated by Stanton
+(1995), Boudoukh, Whitelaw, Richardson, and Stanton (1997), and others, this upper
+bound is nearly always violated in practice.
+The apparent failure of the optimal prepayment literature led to the current gen-
+eration of reduced-form or behavioral mortgage valuation models. In this approach,
+econometric models of prepayment behavior are estimated from historical data and
+are then used to forecast future prepayments. Important examples of this widely-
+used modeling approach include Schwartz and Torous (1989, 1992, 1993), Boudoukh,
+Whitelaw, Richardson, and Stanton (1997), Hayre (2001), and many others. An im-
+portant drawback of these descriptive models, however, is that they may do very
+poorly out of sample when the current or expected shape of the term structure differs
+from those experienced during the historical calibration period. Thus, this approach
+can impose significant model risk on market participants during periods when the
+characteristics of the market differ from their historical patterns.
+The drawbacks of reduced-form models provide a strong motivation for revis-
+iting the optimal prepayment modeling approach. Interestingly, a common feature
+throughout the earlier literature is the assumption that the rate at which a borrower
+can refinance his loan is independent of his financial status. In actuality, however, a
+1
+
+borrower who does not satisfy the strictest underwriting guidelines may have to refi-
+nance at a higher rate than other more-qualified borrowers. This clearly would reduce
+his incentives for prepaying his current mortgage and affect his optimal refinancing
+strategy. Thus, even though principal and interest on an Agency mortgage-backed
+security are guaranteed, the actual timing of these cash flows could be affected by the
+credit of the borrower, which in turn would be reflected in the value of the security.
+In this paper, we solve for the optimal recursive refinancing strategy of a borrower
+whoseobjectiveistominimizehislifetimemortgagecosts, andthenexaminetheimpli-
+cations of this strategy for the valuation of mortgage-backed securities. Our approach
+incorporatestheeffectsofthefollowingkeyfactorsontheoptimalrefinancingstrategy:
+The transaction costs associated with refinancing a mortgage.
+•
+The probability of prepaying for exogenous reasons.
+•
+The credit spread faced by a borrower who is considering refinancing.
+•
+Since the nature of the recursive problem requires considering the effects of decisions
+going far beyond the current mortgage, it is important to use a modeling framework
+that reflects the actual intertemporal behavior of the term structure. In light of
+this, we develop the model within a realistic multi-factor term-structure setting that
+matches both the current term structure and the values of fixed income options. The
+use of a multi-factor model is also consistent with Boudoukh, Whitelaw, Richardson,
+and Stanton (1997) and Downing, Stanton, and Wallace (2002) who find evidence that
+mortgage-backed security prices are driven by multiple term-structure factors. Since
+the recursive refinancing problem is essentially an American option valuation problem,
+we use the least-squares simulation method of Longstaff and Schwartz (2001) to solve
+for the optimal recursive strategy and value mortgage-backed securities in this multi-
+factor framework.
+We show that the optimal recursive strategy implies prepayment behavior very
+different from that given by classical rational prepayment models. For example, the
+mean time to prepayment of the current mortgage can be several years later under
+the optimal recursive strategy when the borrower is not able to refinance at the par
+mortgage rate. Furthermore, a borrower attempting to minimize lifetime mortgage
+costs has a strong incentive to minimize the number of times he refinances his mort-
+gage because of the associated transaction costs. Thus, a borrower who believes that
+mortgage rates may be going down further in the near future may choose to delay re-
+financing his loan. This is particularly true when there is a significant possibility that
+the borrower may need to pay off the loan for exogenous reasons in the near future
+anyway. Because the first prepayment may occur much later when the optimal recur-
+sive strategy is followed, the value of a mortgage-backed security can be significantly
+higher than par plus the costs of refinancing.
+2

@@ -1,0 +1,123 @@
+NBER WORKING PAPER SERIES
+DO COLLATERAL SANCTIONS WORK? EVIDENCE FROM THE IRS’ PASSPORT
+CERTIFICATION AND REVOCATION PROCESS
+Paul R. Organ
+Alex Ruda
+Joel Slemrod
+Alex Turk
+Working Paper 29029
+http://www.nber.org/papers/w29029
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2021
+We thank Nick Gebbia, Tatiana Homonoff, Jeff Hoopes, Jan Millard, Stacy Orlett, and participants at
+the 2020 National Tax Association annual conference, the 2021 IRS/TPC Joint Research Conference
+on Tax Administration, and University of Michigan seminars for helpful comments. All data work for
+this project involving confidential taxpayer information was done on IRS computers by IRS
+employees, and at no time was confidential taxpayer data ever outside of the IRS computing
+environment. Organ is a student volunteer with the IRS through the Joint Statistical Research Program.
+Slemrod is an IRS employee under an agreement made possible by the Intragovernmental Personnel
+Act of 1970 (5 U.S.C. 3371-3376). The views and opinions presented in this paper reflect those of the
+authors. They do not necessarily reflect the views or the official position of the Internal Revenue
+Service or the National Bureau of Economic Research. All results have been reviewed to ensure that
+no confidential information is disclosed.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2021 by Paul R. Organ, Alex Ruda, Joel Slemrod, and Alex Turk. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Do Collateral Sanctions Work? Evidence from the IRS’ Passport Certification and Revocation
+Process
+Paul R. Organ, Alex Ruda, Joel Slemrod, and Alex Turk
+NBER Working Paper No. 29029
+July 2021
+JEL No. H2,H24,H26
+ABSTRACT
+Penalties for tax evasion are typically financial, but many jurisdictions also utilize collateral
+sanctions that deny access to some government-provided service. To learn about the effectiveness
+of such penalties, we examine a U.S. policy restricting passport access for taxpayers with
+substantial tax debt, known as “certification.” We find an immediate and strong positive effect on
+compliance actions when a passport request is denied. We then take advantage of randomization
+during the policy rollout to identify the direct compliance effect of certification, and find smaller
+but non-trivial effects whose heterogeneity is consistent with measures of taxpayers’ value of
+having a passport.
+Paul R. Organ Joel Slemrod
+University of Michigan University of Michigan
+prorgan@umich.edu 701 Tappan Street
+Room R5396
+Alex Ruda Ann Arbor, MI 48109-1234
+Internal Revenue Service and NBER
+Research, Applied Analytics, and Statistics jslemrod@umich.edu
+77 K Street NE
+Washington, DC 20222 Alex Turk
+Alexander.C.Ruda@irs.gov Internal Revenue Service
+30 East 7th Street
+Wells Fargo Place
+St. Paul, MN 55101
+Alex.H.Turk@irs.gov
+
+1. Introduction and motivation
+According to the canonical model of Allingham and Sandmo (1972), tax evasion is constrained
+by the threat of detection and punishment. Traditionally, the punishment for actions deemed to be
+evasion has been largely financial and, very occasionally, imprisonment. But there is a third tool,
+known as a collateral sanction. Blank (2013) defines these as measures that are applied in
+addition to formal tax penalties, rescind government-provided benefits or privileges, and are
+usually enforced by an agency other than the tax agency. Although empirical analyses of the
+effectiveness of traditional enforcement policies have recently proliferated, as surveyed in
+Slemrod (2019), little attention has been paid to the effectiveness of collateral sanctions.
+This paper addresses that gap by examining a recent U.S. initiative that can restrict passport
+access—denying an application or renewal, and even revocation of an existing passport—to
+taxpayers with substantial tax debt. We estimate the direct and indirect effects on taxpayer
+behavior of this new authority, including specifically, but not limited to, the effects on payment
+speed and amount, the likelihood of entering into an installment agreement, and the likelihood of
+bankruptcy filing. Of the direct effects, we examine the impact of having a passport application
+denied as well as receiving notification that certification of such an action has been initiated. We
+take advantage of a randomized controlled trial (RCT) embedded in the certification to identify
+the latter effect. To study the indirect effects of the program, we analyze trends in taxpayer
+counts and balances over time, look for bunching under the statutory threshold, and plan to study
+the total effect of the program by studying how behavior changes over time for cohorts impacted
+differently by the program.
+Understanding both the direct and indirect effects of this program is critical for analyzing the
+costs and benefits of the program, as well as for optimizing the design of this and other similar
+programs. It also fleshes out a central component of the Allingham-Sandmo model of tax
+evasion, the expected penalty for non-compliance, which depends not only on the ability of the
+tax agency to detect non-compliance but also on its ability to collect any assessed liability.
+The collateral sanction we examine—restricting passport access for certain tax debtors—was
+enacted as part of the Fixing America’s Surface Transportation (FAST) Act of 2015, which was
+2
+
+passed by Congress on December 3 and signed by President Obama a day later.1 This Act
+required the Internal Revenue Service (IRS) to notify the State Department of taxpayers owing a
+seriously delinquent tax debt (initially $50,000 or more, $54,000 or more as of 2021). The State
+Department may then deny passport applications or renewals for these taxpayers, and may also
+revoke existing passports. In February 2018, the IRS began notifying taxpayers of their
+certification with Notice CP508C and sending certifications of unpaid tax debt to the State
+Department. TIGTA (2019) discusses some issues with its implementation.
+To put into perspective the enforcement potential of the passport sanction program, according to
+GAO (2011), in fiscal year 2008, of the 16 million passports issued, 224,000 were issued to
+individuals who owed a total of $5.8 billion in unpaid federal taxes. The TIGTA (2019) report
+provides a snapshot of the passport certification program as of May 17, 2019. By that date, the
+IRS had certified 388,701 taxpayers as having “seriously delinquent tax debt” under the FAST
+Act.2 A total of $961 million in payments had been made to these taxpayer accounts, including
+$551 million in fully paid balances. As a result of these collections efforts, over 40,000 taxpayers
+had received decertifications for having paid in full or otherwise moving towards being tax
+compliant. This accounted for 40% of all decertifications through May 17, 2019, with the
+remaining 60% of decertifications resulting from taxpayers falling into one of several categories,
+the most prevalent being taxpayers living in disaster zones (27%), whose tax debts have become
+uncollectible due to statute expiration (12%), or qualifying for hardship exemptions (9%).
+What these numbers do not reveal is the counterfactual—how much of this debt would have been
+paid off in the absence of the passport sanctions program—and therefore they do not provide an
+estimate of the causal impact of the passport revocation program. In this paper we take advantage
+of micro-level tax administration data and a randomized control trial embedded in the
+implementation of the program to provide credible causal estimates of its impact.
+1 The idea was first introduced in fall 2011 as part of Sen. Barbara Boxer (D-CA)’s bill called MAP-21, a precursor
+to the FAST Act (Urist (2012)). There is some precedent for restricting access to passports for certain individuals;
+the Conference Report on the FAST Act notes that under then-present law, the Secretary of State could “refuse to
+issue or renew a passport if the applicant owes child support in excess of $2,500 or owes certain types of Federal
+debts.” (U.S. House (2015)
+2 The report notes that this includes some repeat certifications, where a taxpayer was certified, de-certified, and later
+certified again. In this paper, we focus on first-time certifications.
+3

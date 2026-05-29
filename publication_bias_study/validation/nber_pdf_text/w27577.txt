@@ -1,0 +1,125 @@
+NBER WORKING PAPER SERIES
+CONFLICTING INTERESTS AND THE EFFECT OF FIDUCIARY DUTY — EVIDENCE
+FROM VARIABLE ANNUITIES
+Mark L. Egan
+Shan Ge
+Johnny Tang
+Working Paper 27577
+http://www.nber.org/papers/w27577
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2020, Revised November 2021
+We are grateful for comments and suggestions by Vivek Bhattacharya (discussant), Stephen
+Karolyi (discussant), Ralph Koijen, Andrei Shleifer, Richard Rosen, Annette Vissing-Jorgensen,
+Motohiro Yogo, and the seminar participants at Berkeley, Duke University, the FDIC, Harvard
+Business School, HEC Paris, University of Hong Kong, Ohio State University, MIT Sloan School
+of Management, NBER Insurance Meeting, New York University, the SEC, the Stanford Institute
+for Theoretical Economics Financial Regulation Workshop, Stanford University, Temple
+University, the Vienna Graduate School of Finance, Washington University in St. Louis, the
+University of Illinois Urbana-Champaign, the WFA Early Career Women in Finance Conference,
+and NFA. Shan Ge acknowledges financial support of the Center for Global Economy and
+Business at NYU. The views expressed herein are those of the authors and do not necessarily
+reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Mark L. Egan, Shan Ge, and Johnny Tang. All rights reserved. Short sections of text,
+not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Conflicting Interests and the Effect of Fiduciary Duty — Evidence from Variable Annuities
+Mark L. Egan, Shan Ge, and Johnny Tang
+NBER Working Paper No. 27577
+July 2020, Revised November 2021
+JEL No. D18,D22,G22,G24,G28
+ABSTRACT
+We examine the drivers of variable annuity sales and the impact of a proposed regulatory change.
+Variable annuities are popular retirement products with over $2 trillion in assets in the United
+States. Insurers typically pay brokers a commission for selling variable annuities that ranges from
+0% to over 10% of investors’ premium payments. Brokers earn higher commissions for selling
+inferior annuities, in terms of higher expenses and more ex-post complaints. Our results indicate
+that variable annuity sales are roughly four times as sensitive to brokers’ financial interests as to
+investors’. To help limit conflicts of interest, the Department of Labor proposed a rule in 2016
+that would hold brokers to a fiduciary standard when dealing with retirement accounts. We find
+that after the proposed fiduciary rule, sales of high-expense variable annuities fell by 52% as
+sales became more sensitive to expenses and insurers increased the relative availability of low-
+expense products. Based on our structural model estimates, investor welfare improved as a result
+of the fiduciary rule under conservative assumptions.
+Mark L. Egan Johnny Tang
+Harvard Business School Littauer Center
+Baker Library 365 Harvard University
+Soldiers Field Cambridge, MA 02138
+Boston, MA 02163 johnny.jt.tang@gmail.com
+and NBER
+megan@hbs.edu
+Shan Ge
+New York University
+44 West 4th Street, 9-81
+New York, NY 10012
+sge@stern.nyu.edu
+
+1 Introduction
+Variable annuities are one of the most popular retirement products in the United States. As of
+2018,Americanhouseholdsheldover$2.2trillionofassetsinvariableannuityaccounts. However,
+despitetheirpopularity,variableannuitieshavebeencriticizedforhavinghighexpensesandarethe
+most commonly cited financial products in brokerage customer complaints (Egan et al. (2019)).1
+Part of the criticism pertains to the distribution of variable annuities.2 Variable annuities are sold
+through brokers who are typically paid a commission by the insurance company for selling its
+products. There is substantial heterogeneity in commissions, ranging from 0 to over 10% of the
+investment, which provides strong incentives for brokers to sell certain variable annuities over
+others and potentially creates conflicts of interest between brokers and their clients.
+Concerns over conflicts of interest in these types of retirement products prompted the United
+States Department of Labor (DOL) to propose a rule imposing fiduciary duty on brokers, which
+was announced in 2015 and issued in 2016. The rule would obligate brokers to act in their clients’
+best interests when selling retirement products such as variable annuities. Although the rule was
+ultimatelyvacated in2018, the annuityindustryunderwentmany changestocomplywith therule
+starting around 2016.
+This paper has two goals. First, we study the drivers of variable annuity sales and examine
+howsales respondtobrokerand investorincentives. While investorincentivesmatter, wefindthat
+broker incentives play a more important role in determining sales. Moreover, brokers’ incentives
+conflict with those of their clients: brokers earn higher commissions for selling inferior annuities
+that have higher expenses, as well as fewer and worse-performing investment options. Second,
+we examine how the proposed fiduciary rule, which was intended to limit conflicts of interest,
+impacted the variable annuity market in the United States. We examine how the composition of
+variable annuities both offered by insurers and sold by brokers changed in response to the DOL
+rule. We find that the rule helped reduce conflicts of interest. In response to the rule, brokers
+stopped selling high-expense annuities (i.e. annuities ranked in the top quartile of expenses) as
+sales of such annuities fell by 52%. Similarly, insurers responded by updating their product suite
+1Examples: https://www.wsj.com/articles/how-to-avoid-paying-high-fees-for-variable-annuities-14
+57001002[accessed7/30/2020]
+2See e.g. FINRA (https://www.finra.org/sites/default/files/InvestorDocument/p125846.pdf [accessed
+7/30/2020])
+1
+
+and by increasing the availability of low-expense annuities to comply with the rule.
+We study the variable annuity market using a panel data set that we construct from Morn-
+ingstar and regulatory filings. A key novel feature of our data set is that we observe data on the
+commission rates that insurers pay to brokers for selling variable annuities. This variable allows us
+to separate the effect of brokers’ preferences from those of investors. Conditional on the risks and
+return characteristics of a variable annuity, investors should be indifferent towards the associated
+brokeragecommissions. Inadditiontocommissions,wealsoobservedetailedcharacteristicsofthe
+variable annuity products(e.g. expense ratios, investment options, and benefits/riders). We match
+commission rates and product characteristics with quarterly product sales data.
+Our analysis consists of four parts. First, we study what factors drive the sales of variable
+annuities by analyzing how sales are related to product expense ratios, brokerage commissions,
+and other product characteristics. We find a strong negative relationship between expense ratios
+andsales,consistentwiththenotionthatinvestorsdislikehigh-expenseproducts. Wealsofindthat
+brokerage commissions play a critical role in driving investment flows. Our estimates suggest that
+a one standard deviation increase in brokerage commissions is associated with a 38% increase in
+variable annuity sales. Our baseline estimates suggest that variable annuity sales are roughly four
+times as sensitive to broker incentives as to investor incentives. These results remain robust after
+accounting for a wide range of product characteristics including investment options and returns,
+the availability of benefits and riders, and the insurance companies underwriting the products. We
+alsoexploitvariationwithinthesameproductacrossshareclasses,whereaninsureroffersthesame
+variableannuitywithdifferentexpenseratiosandcommissionrates,whichhelpsmitigateconcerns
+about omitted variables. We find similar patterns across share classes of the same variable annuity.
+Thesepatternsalsoholdwhenusinginstrumentalvariablestoaddressthepotentialendogeneityof
+commissions and expenses.
+Second, we present evidence of conflicts of interest in the variable annuity market. We start
+by examining the types of variable annuities that brokers are incentivized to sell. We document
+that there is substantial heterogeneity in brokerage commissions. The average commission rate is
+6% of the principal invested and the standard deviation is 2.4%. The level and heterogeneity in
+commissionscouldcreateconflictsofinterestiftheyincentivizebrokerstosellproductsthatarenot
+desirable for investors. Indeed, consistent with commissions creating conflicts of interest, we find
+2

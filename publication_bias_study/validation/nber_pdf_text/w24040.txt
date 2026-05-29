@@ -1,0 +1,119 @@
+NBER WORKING PAPER SERIES
+UPSTREAM, DOWNSTREAM:
+DIFFUSION AND IMPACTS OF THE UNIVERSAL PRODUCT CODE
+Emek Basker
+Timothy Simcoe
+Working Paper 24040
+http://www.nber.org/papers/w24040
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+November 2017, Revised August 2020
+Any opinions and conclusions expressed herein are those of the authors and do not necessarily
+represent the views of the U.S. Census Bureau or the National Bureau of Economic Research.
+The Census Bureau's Disclosure Review Board and Disclosure Avoidance Officers have
+reviewed this data product for unauthorized disclosure of confidential information and
+have approved the disclosure avoidance practices applied to this release (DRB Approval
+Numbers: DRB-B0057-CED-20190530 and CBDRB-FY20- CES006-003). We thank Ali
+Hortaçsu and two anonymous referees for comments that have greatly improved the paper. We
+also thank Markus Mobius and David Weil for help obtaining the UPC data, Nathan Goldschlag
+and Nikolas Zolas for help with the trademark data and for their trademark-firm bridge file,
+and Randy Becker, James Bessen, David Brown, Nathan Chan, James Conley, Emin Dinlersoz,
+Lucia Foster, Nathan Goldschlag, Micha l Grajek, Dan Gross, Fariha Kamal, Alex
+Krasnikov, Mark Kutzbach, Florin Maican, Paul Messinger, Guy Michaels, Matilda Orth, Pham
+Hoang Van, Jennifer Poole, Horst Raff, Rich Richardson, Marc Rysman, Martha Stinson, Mary
+Sullivan, Dan Trefler, Kirk White, Zoltan Wolf, and seminar participants at the U.S. Census
+Bureau, MINES-ParisTech, Seoul National University, Cornell, Queen's University, Bocconi
+University, University of Massachusetts, University of Michigan, Harvard Business School,
+Toulouse School of Economics, KU Leuven, LMU Munich, NBER Productivity Lunch, 2017
+AEA (Chicago), 2017 IIOC (Boston), 2017 FSRDC Conference (Los Angeles), 2017 CAED
+Conference (Seoul), 2018 NBER Summer Institute, and 2018 Israeli IO Day (Jerusalem) for
+helpful comments and conversations.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2017 by Emek Basker and Timothy Simcoe. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Upstream, Downstream: Diffusion and Impacts of the Universal Product Code
+Emek Basker and Timothy Simcoe
+NBER Working Paper No. 24040
+November 2017, Revised August 2020
+JEL No. L11,L15,L81,O33
+ABSTRACT
+We study the adoption, diffusion, and impacts of the Universal Product Code (UPC) between
+1975 and 1992, during the initial years of the barcode system. We find evidence of network
+effects in the diffusion process. Matched-sample difference-in-difference estimates show that
+firm size and trademark registrations increase following UPC adoption by manufacturers.
+Industry-level import penetration also increases with domestic UPC adoption. Our findings
+suggest that barcodes, scanning, and related technologies helped stimulate variety-enhancing
+product innovation and encourage the growth of international retail supply chains.
+Emek Basker
+US Census Bureau
+Center for Economic Studies
+4600 Silver Hill Road
+Washington, DC 20233-9100
+emek@emekbasker.org
+Timothy Simcoe
+Boston University
+Questrom School of Business
+595 Commonwealth Avenue
+Boston, MA 02215
+and NBER
+tsimcoe@bu.edu
+
+1 Introduction
+The Universal Product Code (UPC) is widely touted as a major success of voluntary stan-
+dardization. It was conceived in 1969 as a “standard human- [and machine-] readable code,
+to be used at all levels in the distribution channel” (Wilson, Jr., 2001, p. 2). The UPC has
+been credited with increasing product selection in stores (Holmes, 2001; Mann, 2001), shift-
+ing the balance of power along the supply chain from manufacturers to retailers (Messinger
+and Narasimhan, 1995), and stimulating labor-productivity growth by promoting the rise of
+large retail chains (Sieling, Friedman, and Dumas, 2001; Foster, Haltiwanger, and Krizan,
+2002).1
+Although casual observation reveals that scanners and barcodes are ubiquitous in mod-
+ern retail supply chains, there remains very little quantitative evidence of their effects. We
+provide new evidence on the diffusion and impacts of the UPC by linking archival data on
+UPC registrations to firm-level data on employment, revenue, and trademarking, as well
+as industry-level data on trade flows. Our findings illustrate the role of network effects in
+the adoption of the UPC system, and suggest that barcodes, scanning, and related tech-
+nologies helped stimulate variety-enhancing product innovation and encourage the growth
+of international retail supply chains.
+PreviousaccountsofUPCdiffusionhaveemphasizedthatbarcodesoriginatedwithinthe
+grocery industry before spreading to general merchandising and other retail supply chains
+(Dunlop and Rivkin, 1997). We examine the role of network effects within this diffusion
+process. Two-sided network effects imply that the return to adoption is higher for upstream
+producers supplying “UPC-ready” retailers, and vice versa. Retailers become UPC-ready by
+installing scanners and developing electronic data interchange (EDI) capabilities, including
+electronic payments (Abernathy, Dunlop, Hammond, and Weil, 1999; Basker, 2012). Al-
+1TimHarfordevennamedthebarcodeoneof“50ThingsThatShapedtheModernEconomy.” Theother
+economy-shaping discoveries, inventions, and innovations include paper, the bicycle, and antibiotics. For his
+explanation of this choice, see http://www.bbc.co.uk/programmes/p04k0066.
+
+though we lack comprehensive data on scanner adoption, we provide indirect evidence of
+network effects by showing that there are positive spillovers in upstream UPC adoption.
+Specifically, manufacturers became more likely to register for a UPC when other manufac-
+turing firms that use the same retail distribution channels also register.
+After examining UPC diffusion, we study firm-level impacts of UPC adoption on em-
+ployment, revenue, andtrademarking, aswellastheindustry-levelrelationshipbetweenUPC
+adoption and international trade. Difference-in-difference regressions on a matched sample
+of UPC adopters and non-adopters from the manufacturing sector show that UPC regis-
+tration is associated with increased revenue and employment. We discuss several possible
+mechanisms for this result, including that firms select into UPC registration due to antic-
+ipated demand shocks; that UPC registration coincides with adoption of a broader set of
+complementary technologies, such as EDI and inventory-control systems, which can increase
+demand or lower costs (Hwang and Weil, 1998; Holmes, 2001); and that UPC registration
+promotes growth through business diversion because retailers prefer to work with upstream
+vendors that have adopted barcodes. An event-study specification shows that manufacturer
+employment increased by ten percent in the year of initial UPC registration, and another ten
+percent over the next two years. We argue that this pattern is consistent with a combination
+of selection on positive demand shocks and business diversion by manufacturers that can
+integrate into large retailers’ supply chains more readily after registering for a UPC. We also
+show that the increases in revenue and employment following UPC registration are greater
+when there is more UPC adoption by other firms selling through the same retail channels,
+consistent with the presence of network effects.
+Aggregate time-series data show that within the grocery industry, growth in trademark
+applications, new product introductions, and the number of Stock Keeping Units (SKUs)
+stocked by a typical supermarket all increased dramatically in the early 1980s, just as scan-
+2

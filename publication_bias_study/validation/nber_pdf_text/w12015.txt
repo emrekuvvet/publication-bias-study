@@ -1,0 +1,132 @@
+NBER WORKING PAPER SERIES
+DO HOT HANDS EXIST AMONG HEDGE FUND MANAGERS? AN EMPIRICAL
+EVALUATION
+Ravi Jagannathan
+Alexey Malakhov
+Dmitry Novikov
+Working Paper 12015
+http://www.nber.org/papers/w12015
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+February 2006
+We would like to thank Vikas Agarwal, Dmitri Alexeev, Torben Andersen, Duke Bristow, Art Bushonville,
+Bhagwan Chowdhry, Randolph Cohen, Kent Daniel, Harry DeAngelo, Dobrislav Dobrev, Shingo
+Goto, David Hsieh, Ken Judd, Robert Korajczyk, Ken Kroner, Ananth Madhavan, Rosa Matzkin, Narayan
+Naik, Todd Pulvino, Bryan Routledge, Che-Lin Su, Melvyn Teo, Sergey Tsyplakov, Motohiro Yogo,
+participants of the 2006 NBER Asset Pricing Program Meeting, 2006 Western Finance Association
+Meeting, 2007 American Finance Association Meeting, 2007 Advances in Theory Based Estimation:
+a Conference in Honor of Lars Hansen and Ken Singleton, and seminar participants at Barclays Global
+Investors, China Europe International Business School, East Carolina University, Georgia State University,
+Indian School of Business, National University of Singapore, Northwestern University, Singapore
+Management University, University of Arkansas, University of Illinois at Urbana-Champaign, University
+of Melbourne, University of New South Wales, University of North Carolina at Chapel Hill, University
+of South Carolina, University of Southern California, York University for their helpful discussions
+and suggestions. We are grateful to HFR Asset Management for providing us with the data. The views
+expressed herein are those of the author(s) and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+© 2006 by Ravi Jagannathan, Alexey Malakhov, and Dmitry Novikov. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Do Hot Hands Exist Among Hedge Fund Managers? An Empirical Evaluation
+Ravi Jagannathan, Alexey Malakhov, and Dmitry Novikov
+NBER Working Paper No. 12015
+February 2006, Revised August 2008
+JEL No. I1
+ABSTRACT
+We examine whether hot hands exist among hedge fund managers. In measuring performance persistence,
+we use hedge fund style benchmarks. This allows us to identify managers with valuable skills, and
+also to control for option-like features inherent in returns from hedge fund strategies. We take into
+account the possibility that reported asset values may be based on stale prices. We develop a statistical
+model that relates a hedge fund’s performance to its decision to liquidate or close in order to infer
+the performance of a hedge fund that left the database. While we find significant performance persistence
+among superior funds we find little evidence of persistence among inferior funds.
+Ravi Jagannathan Dmitry Novikov
+J.L. Kellogg Graduate School of Management Goldman, Sachs & Co.
+2001 Sheridan Road dmitry.novikov@gs.com
+Leverone/Anderson Complex
+Evanston, IL 60208-2001
+and NBER
+rjaganna@northwestern.edu
+Alexey Malakhov
+College of Business
+University of Arkansas
+malakhov@walton.uark.edu
+
+1 Introduction
+The hedge fund industry has grown at an astounding pace from 610 funds controlling $39
+billion in 1990 to more than 9,000 funds with $1.9 trillion in 2007.1 While it appears
+that investors have enthusiastically embraced hedge funds as an investment vehicle, and are
+especiallyeagertoinvestinhedgefundsthathaveexhibitedoutstandingpastreturns,thereis
+littleconsensusintheempiricalfinanceliteratureonwhetherthereisperformancepersistence
+among hedge funds. In part that is due to the fact that any rigorous research about hedge
+fund performance has to overcome numerous biases and irregularities in the available data.
+These biases arise due to the unregulated nature of the hedge fund industry. There are
+no legal requirements for hedge funds to report performance numbers, although there are
+several different databases, to which hedge funds provide information about themselves on
+a voluntarily basis.2 Ackerman, McEnally, and Ravenscraft (1999), Liang (2000), Fung and
+Hsieh (2000) and Fung and Hsieh (2002) discuss the issues that arise when using data from
+these sources.
+In this paper we study performance persistence among hedge fund managers, while cor-
+recting for measurement errors as well as for the backfill, serial correlation, and look-ahead
+biases in the data. We conjecture that certain types of skills are more valuable at certain
+points in time but the match decays over time. Given the decay, we cannot use a long time
+seriestoidentifythosemanagerswhoseskillswillbeindemandinthenearfuture. Therefore,
+we use peer3 evaluation to identify managers who are likely to have superior skills relative to
+their peer group, i.e., positive relative alpha. To the extent that there are common factors
+thataffectallmanagersinapeergroup,relativealphascanbeestimatedmorepreciselythan
+alphas by controlling for these common effects. This is especially true with short time series
+of hedge fund return data on individual hedge fund managers. However, evidence of the rel-
+ative performance persistence cannot be directly interpreted as superior fund performance
+to an investor. Indeed, outperforming the group of peers does not guarantee superior alpha
+in absolute terms, as the entire peer group may have inferior performance. We examine
+whether managers with superior historical relative alpha indeed also have superior future
+alpha in the following way. We construct managed portfolios of hedge funds based on their
+historical relative alpha, and examine their out-of-sample performance using the multifactor
+hedge fund performance evaluation model of Fung and Hsieh (2004).
+An important feature of a hedge fund database is backfill bias - the case when hedge
+funds bring their history with them when they join a database. Since only funds with
+1“Plenty of Alternatives,” The Economist, Feb 28, 2008.
+2Among them are CISDM, TASS and HFR (we use the HFR database in the paper).
+3We define “peers” as a group of hedge funds pursuing similar strategies.
+2
+
+relatively superior historical performance enter a database, when possible backfilling of data
+is ignored, it results in a bias toward mistakenly assigning superior ability to managers of
+funds in their earlier years. Since our HFR data contains the information on when funds
+actually joined the database, we are able to eliminate the backfill bias by deleting all the
+backfill observations in our data set. Moreover, our data is survivorship bias free, since the
+HFR database retains all hedge funds, including those that ceased to exist.
+Another issue with hedge fund analysis is that hedge fund returns exhibit substantial
+serial correlation, a feature that is extensively investigated in Getmansky, Lo, and Makarov
+(2004) and Okunev and White (2003). They showed that the presence of illiquid assets in
+hedge fund portfolios are the primary source for the serial correlation. If serial correlation is
+not accounted for properly, the manager’s performance measure will be biased. Notice that
+whenhedgefundreturnsexhibitserialcorrelationduetothepresenceofilliquidassetsinthe
+portfolio, benchmark style index factor returns will also exhibit such serial correlation. We
+assumethatunobserved“true”returnsonassetsareseriallyuncorrelated, andidentifythem
+using the MA2 approach suggested by Getmansky, Lo, and Makarov (2004). We measure
+performance relative to a carefully chosen portfolio of fund specific style index benchmarks
+and a broad stock market index, i.e., we use alpha relative to peers. To the extent peers
+within each hedge fund style take similar risks, we are able to control for option-like features
+in returns.
+We evaluate hedge fund performance persistence by comparing the alphas over consec-
+utive nonoverlapping three year intervals. This is a fairly long time period relative to the
+time periods examined in the literature reviewed in the following section. Considering a
+three-year period allows us to accurately capture relative alphas for individual funds, and
+also provides us with a better sense of investor returns accounting for lockup, notice, and
+redemption periods. For example, an investor in a fund with a two year lockup period can
+realistically expect to receive her money from two years and three months to two years and
+six months later. Lockup periods vary among different funds, but periods of two years or
+more have gotten more common in recent years.4 Following Hsieh,5 we employ a method
+of weighted least squares in order to minimize the downward bias in persistence caused by
+measurement errors in alphas. We assign more weight to more precisely measured alphas in
+our sample. We further apply this approach to study persistence among the best performing
+and the worst performing funds separately.
+4For example, in 1996, LTCM allowed to withdraw one third of investor’s capital in years 2, 3, and 4
+(Perold (1999)). The adoption of a new SEC rule in December 2004 provided further incentives for hedge
+funds to adopt lockup periods in excess of two years (the rule was struck down by the US Court of Appeals
+in June 2006).
+5Mimeo, private communication.
+3

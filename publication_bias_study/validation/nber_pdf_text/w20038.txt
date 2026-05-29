@@ -1,0 +1,149 @@
+NBER WORKING PAPER SERIES
+UNCERTAINTY, FINANCIAL FRICTIONS, AND INVESTMENT DYNAMICS
+Simon Gilchrist
+Jae W. Sim
+Egon Zakrajšek
+Working Paper 20038
+http://www.nber.org/papers/w20038
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+April 2014
+We are grateful to Jeff Campbell, Martin Ellison, Nobuhiro Kiyotaki, Frank Smets, Dino Palazzo, and
+Neng Wang for helpful comments. We also thank seminar and conference participants at the Federal
+Reserve Board; the Federal Reserve Banks of Atlanta, Boston, Chicago, Dallas, and San Francisco;
+the European Central Bank; De Nederlandsche Bank; the Bank of England; the 2009 LAEF conference;
+the 2010 Winter Meeting of the Econometric Society; the 2010 Meeting of the Society for Economic
+Dynamics; the 2010 and 2013 NBER Summer Institute; the 2010 MNBCEPR workshop; the 2011
+and 2012 EABCN meetings; Bilkent University; Georgetown; Iowa State; Johns Hopkins; Michigan;
+Nottingham; NYU; Princeton; Rochester; Rutgers; and Yale. Jane Brittingham, Samuel Haltenhof,
+Robert Kurtzman, and Oren Ziv provided outstanding research assistance at various stages of the project.
+All errors and omissions are our own responsibility alone. The views expressed in this paper are solely
+the responsibility of the authors and should not be interpreted as reflecting the views of the Board
+of Governors of the Federal Reserve System, anyone else associated with the Federal Reserve System,
+or the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2014 by Simon Gilchrist, Jae W. Sim, and Egon Zakrajšek. All rights reserved. Short sections of
+text, not to exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Uncertainty, Financial Frictions, and Investment Dynamics
+Simon Gilchrist, Jae W. Sim, and Egon Zakrajšek
+NBER Working Paper No. 20038
+April 2014
+JEL No. E22,E32,G31
+ABSTRACT
+Micro- and macro-level evidence indicates that fluctuations in idiosyncratic uncertainty have a large
+effect on investment; the impact of uncertainty on investment occurs primarily through changes in
+credit spreads; and innovations in credit spreads have a strong effect on investment, irrespective of
+the level of uncertainty. These findings raise a question regarding the economic significance of the
+traditional “wait-and-see” effect of uncertainty shocks and point to financial distortions as the main
+mechanism through which fluctuations in uncertainty affect macroeconomic outcomes. The relative
+importance of these two mechanisms is analyzed within a quantitative general equilibrium model,
+featuring heterogeneous firms that face time-varying idiosyncratic uncertainty, irreversibility, nonconvex
+capital adjustment costs, and financial frictions. The model successfully replicates the stylized facts
+concerning the macroeconomic implications of uncertainty and financial shocks. By influencing the
+effective supply of credit, both types of shocks exert a powerful effect on investment and generate
+countercyclical credit spreads and procyclical leverage, dynamics consistent with the data and counter
+to those implied by the technology-driven real business cycle models.
+Simon Gilchrist Egon Zakrajšek
+Department of Economics Division of Monetary Affairs
+Boston University Federal Reserve Board
+270 Bay State Road 20th Street & Constitution Avenue, NW
+Boston, MA 02215 Washington, D.C. 20551
+and NBER egon.zakrajsek@frb.gov
+sgilchri@bu.edu
+Jae W. Sim
+Division of Research & Statistics
+Federal Reserve Board
+20th Street & Constitution Avenue, NW
+Washington, D.C. 20551
+jae.w.sim@frb.gov
+
+1 Introduction
+Macroeconomists have made a convincing argument that the well-documented countercyclical be-
+havior of the cross-sectional dispersion of economic variables such as labor income, business prof-
+its, productivity, and stock returns reflects fluctuations in the volatility of the underlying eco-
+nomic shocks—that is, swings in economic uncertainty.1 How such uncertainty fluctuations in-
+fluence business cycle dynamics has traditionally been analyzed within the framework of irre-
+versibleinvestment(seeBernanke,1983;Bertola and Caballero,1994;Abel and Eberly,1994,1996;
+Caballero and Pindyck, 1996; Bloom, 2009; Bloom et al., 2011; Bachmann and Bayer, 2009, 2013).
+This approach to corporate resource allocation treats the firm’s future investment opportunities as
+“realoptions”andemphasizestheimportanceofwaitingandstagingflexibilitywhenmakinginvest-
+ment decisions—in response to increased uncertainty, firms should wait and see until uncertainty
+is resolved and the project is more clearly successful.2
+Spurred by the surge in asset price volatility and the blowout in credit spreads during the
+2007–09 financial crisis, an emergent literature has pointed to financial market frictions as an
+additional channel through which volatility fluctuations can affect macroeconomic outcomes (see
+Arellano et al., 2012; Christiano et al., 2014). According to the canonical framework used to price
+risky debt, the return on levered equity resembles—under limited liability—the payoff of a call
+option, whereas the bondholders face the payoff structure that mimics that of an investor writing
+a put option. An increase in the riskiness of the firm’s assets thus benefits equity holders at the
+expenseofbondholders, implyingariseincreditspreadstocompensatebondholdersforheightened
+uncertainty. To the extent that external finance—both through the debt and equity markets—is
+subject to agency and/or moral hazard problems, an increase in uncertainty will raise the user cost
+of capital, inducing a decline in investment spending.
+Given these two complementary channels of how changes in uncertainty can affect the real
+economy, this paper seeks to answer the following question: How much of the impact of fluc-
+tuations in uncertainty on aggregate investment reflects capital adjustment frictions associated
+with irreversibility—the traditional wait-and-see effect—and how much of it can be attributed to
+distortions in financial markets? We answer this question by developing a quantitative business
+cycle model that allows us to analyze the effect of fluctuations in uncertainty on investment dy-
+namics in a general equilibrium setting featuring partial irreversibility and frictions in both the
+debt and equity markets. Specifically, we formulate a capital accumulation problem, in which het-
+1See Campbell and Taksler (2003), Storesletten et al. (2004), Eisfeldt and Rampini (2006), Bloom (2009), and
+Bloom et al.(2011)forargumentsandevidence. Itisworthemphasizing,however,thatthereisnoobjectivemeasure
+of time-varying economic uncertainty. In addition to the uncertainty proxies noted above, this burgeoning litera-
+ture has employed indexes based on the frequency of “uncertainty-related” words or phrases that occur across a
+large number of news sources (Baker et al., 2013), the cross-sectional dispersion of survey-based business forecasts
+(Bachmann et al.,2013b),andthecommonvariationintheunforecastablecomponentofalargenumberofeconomic
+indicators (Jurado et al., 2013) to infer fluctuations in uncertainty.
+2Despite its intuitive appeal, the effect of uncertainty on investment in the presence of irreversibilities can be
+theoreticallyambiguous. Asshown,forexample,byAbel(1983)andVeracierto(2002),theeffectdependsimportantly
+on the assumptions regarding the initial accumulation of capital, market structure, and the equilibrium setting.
+1
+
+erogeneous firms employ a decreasing returns-to-scale production technology that is subject to a
+persistent idiosyncratic shock, the variance of which is allowed to vary over time according to a
+stochastic law of motion. The capital accumulation problem is subject to partial irreversibility
+and fixed adjustment costs, two forms of adjustment frictions emphasized in the influential work of
+Abel and Eberly (1994, 1996), Caballero et al. (1995), Doms and Dunne (1998), Caballero (1999),
+Cooper et al. (1999), Cooper and Haltiwanger (2006), and Bachmann et al. (2013a).
+On the financial side, firms make investment decisions subject to a full range of choices regard-
+ing their capital structure—internal funds, debt, and equity financing—in an environment where
+external funds are costly because of agency problems in financial markets. The partial investment
+irreversibility plays two roles in our model. First, it creates the option value of waiting. In re-
+sponse to increased uncertainty, the investment inaction region expands, which causes some firms
+to delay exercising their growth options—that is, they adopt a wait-and-see posture. Second, the
+greater downside risk limits the firms’ debt capacity because heightened uncertainty—under lim-
+ited liability—favors the firm’s shareholders over its bondholders, thereby inducing a decline in
+the market value of debt claims. Thus, the model provides a unified quantitative framework for
+analyzing the implications of the interaction between the capital and debt overhang problems for
+business cycle dynamics.3
+Our analysis of the interaction between uncertainty and financial conditions is informed im-
+portantly by new empirical evidence that highlights the strong relationship between uncertainty,
+investment, and credit spreads on corporate bonds, a commonly used indicator of the degree of fi-
+nancial market frictions.4 Specifically, we construct a new proxy for idiosyncratic uncertainty using
+high-frequency firm-level stock market data, a measure that arguably reflects exogenous changes
+in uncertainty, rather than the endogenous effects of informational and contractual frictions that
+have been theoretically linked to the countercyclical dispersion in economic returns. For a subset
+of large corporations, we match this estimate of uncertainty to the firms’ income and balance sheet
+statements and, most importantly, to prices of their individual corporate bonds trading in the
+secondary market.
+Using this novel micro-level data set, we find that conditional on the firm’s leverage, prof-
+itability, and other indicators of creditworthiness, idiosyncratic volatility is an important determi-
+nant of credit spreads on the firm’s outstanding bonds. We also show that conditional on invest-
+ment fundamentals—that is, proxies for the marginal product of capital—increases in idiosyncratic
+volatility are associated with a substantial decline in the rate of capital formation. However, once
+theinformationcontentofcreditspreadsistakenintoaccount,theimpactofuncertaintyonbusiness
+3Earlier theoretical explorations of this interaction can be found in Shleifer and Vishny (1992), Eisfeldt (2004),
+and Manso (2008).
+4Thefactthatthelevelofcreditspreadsprovidesausefulmetricforgaugingthetightnessoffinancialconditions
+intheeconomyandthustheimplieddegreeofdeparturefromtheModigliani–Millerparadigmoffrictionlessfinancial
+markets is supported by considerable empirical evidence showing that corporate bond credit spreads form the most
+informative and reliable class of financial indicators for future economic activity and that shocks to credit spreads
+leadtoadversemacroeconomicoutcomes(seeGertler and Lown,1999;Gilchrist et al.,2009;Gilchrist and Zakrajˇsek,
+2012; Faust et al., 2013).
+2

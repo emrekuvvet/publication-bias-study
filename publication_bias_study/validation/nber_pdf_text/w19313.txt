@@ -1,0 +1,131 @@
+NBER WORKING PAPER SERIES
+A THEORY OF MACROPRUDENTIAL POLICIES IN THE PRESENCE OF NOMINAL
+RIGIDITIES
+Emmanuel Farhi
+Iván Werning
+Working Paper 19313
+http://www.nber.org/papers/w19313
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+August 2013
+This paper was first circulated under the title "On the Inefficiency of Financial Market Equilibria in
+Macroeconomic Models with Nominal Rigidities". We thank Fernando Alvarez, Adrien Auclert, Markus
+Brunnermeier, Gauti Eggertsson, Olivier Jeanne, Guido Lorenzoni, Nobuhiro Kiyotaki, Anton Korinek,
+John Geanakoplos, Ben Moll, Herakles Polemarchakis, Tomas Sargent, Jean Tirole, Jaume Ventura,
+for useful comments. We thank seminar and conference participants at various seminars and conferences.
+Ben Hebert provided outstanding research assistance. The views expressed herein are those of the
+authors and do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2013 by Emmanuel Farhi and Iván Werning. All rights reserved. Short sections of text, not to exceed
+two paragraphs, may be quoted without explicit permission provided that full credit, including © notice,
+is given to the source.
+
+A Theory of Macroprudential Policies in the Presence of Nominal Rigidities
+Emmanuel Farhi and Iván Werning
+NBER Working Paper No. 19313
+August 2013, Revised May 2015
+JEL No. D5,D6,D62,E3,E4,E5,E58
+ABSTRACT
+We propose a theory of monetary policy and macroprudential interventions in financial markets. We
+focus on economies with nominal rigidities in goods and labor markets and subject to constraints on
+monetary policy, such as the zero lower bound or fixed exchange rates. We identify an aggregate demand
+externality that can be corrected by macroprudential interventions in financial markets. Ex post, the
+distribution of wealth across agents affects aggregate demand and output. Ex ante, however, these
+effects are not internalized in private financial decisions. We provide a simple formula for the required
+financial interventions that depends on a small number of measurable sufficient statistics. We also
+characterize optimal monetary policy. We extend our framework to incorporate pecuniary externalities,
+providing a unified approach to both externalities. Finally, we provide a number of applications which
+illustrate the relevance of our theory.
+Emmanuel Farhi
+Harvard University
+Department of Economics
+Littauer Center
+Cambridge, MA 02138
+and NBER
+efarhi@harvard.edu
+Iván Werning
+Department of Economics, E17-234
+MIT
+77 Massachusetts Avenue
+Cambridge, MA 02139
+and NBER
+iwerning@mit.edu
+
+A Theory of Macroprudential Policies in the Presence
+∗
+of Nominal Rigidities
+Emmanuel Farhi Iván Werning
+Harvard University MIT
+June 2015
+We propose a theory of monetary policy and macroprudential interventions in financial mar-
+kets. We focus on economies with nominal rigidities in goods and labor markets and subject
+to constraints on monetary policy, such as the zero lower bound or fixed exchange rates. We
+identify an aggregate demand externality that can be corrected by macroprudential interven-
+tions in financial markets. Ex post, the distribution of wealth across agents affects aggregate
+demand and output. Ex ante, however, these effects are not internalized in private financial
+decisions. We provide a simple formula for the required financial interventions that depends
+on a small number of measurable sufficient statistics. We also characterize optimal monetary
+policy. We extend our framework to incorporate pecuniary externalities, providing a unified
+approach to both externalities. Finally, we provide a number of applications which illustrate
+therelevanceofourtheory.
+1 Introduction
+During the period known as the Great Moderation, a soft consensus emerged suggesting that
+macroeconomic stabilization should be handled first and foremost by monetary policy. This con-
+sensus has been shattered by the Great Recession. A new set of policies aimed at supplementing
+monetary policy is gaining traction in policy circles. These so-called macroprudential policies in-
+volve interventions in financial markets, in the form of taxes or quantity restrictions. Economists
+are still searching for a comprehensive theoretical model that encompasses both monetary and
+macroprudentialpolicies. Thegoalofthispaperistoprovidesuchaframework.
+∗We thank Fernando Alvarez, Adrien Auclert, Markus Brunnermeier, Gauti Eggertsson, Olivier Jeanne, Guido
+Lorenzoni, Nobuhiro Kiyotaki, Anton Korinek, John Geanakoplos, Ben Moll, Herakles Polemarchakis, Tomas Sar-
+gent, Jean Tirole, Jaume Ventura, for useful comments. We thank seminar and conference participants at various
+seminarsandconferences. BenHebertprovidedoutstandingresearchassistance.
+1
+
+One of the dominant existing theoretical justifications for macroprudential policies is based
+on pecuniary externalities, which were first shown to arise when a simple friction, market in-
+completeness,isintroducedintotheArrow-Debreuframework(seee.g.Hart,1975;Stiglitz,1982;
+Geanakoplos and Polemarchakis, 1985; Geanakoplos et al., 1990). The logic is as follows. When
+assetmarketsareincompleteandthereismorethanonecommodity,aredistributionofassethold-
+ings generically induces relative price changes in spot markets, in each state of the world. These
+relative price changes, in turn, affect the spanning properties of the limited assets that are avail-
+able,potentiallyimprovinginsurance. Suchapecuniaryexternalityisnotinternalizedbyprivate
+agents. As a result, the equilibrium is generically constrained inefficient: it can be improved upon
+by interventions in the existing financial markets. Similar results obtain in economies with bor-
+rowingconstraintsthatdependonpricesofgoodsandassets,orwhencontractingisconstrained
+by private information (see e.g. Greenwald and Stiglitz, 1986). A large literature has leveraged
+thesetheoreticalinsightstojustifymacroprudentialinterventions.1
+In this paper, we offer an alternative general theory for macroprudential policies based on a
+different set of frictions. Indeed, in our baseline model, the only frictions are nominal rigidities
+and, possibly, constraints on monetary policy such as the zero lower bound or a fixed exchange
+rate. Instead of pecuniary externalities, our theory emphasizes aggregate demand externalities. In
+addition to providing a new foundation for macroprudential policies, our framework, focusing
+on monetary policy and nominal rigidities, is well posed for the joint study of monetary and
+macroprudentialpolicy.
+We provide two sets of results. First, using a perturbation argument similar in spirit to that
+in Geanakoplos and Polemarchakis (1985), we show that equilibria that are not first best can be
+improved upon by interventions in financial markets, except in non-generic knife-edged cases.
+Althoughwesharethefocusonconstrainedinefficiencywiththepecuniaryexternalityliterature,
+thesourceofinefficiencyiscompletelydifferent.2 Inthatliterature,thekeyfrictionslieinfinancial
+marketsthemselves;inourbaselinemodel,weassumecompletemarkets. Pecuniaryexternalities
+rely on price movements; in our framework price rigidities tend to negate such effects.3 Our
+1Seee.g. CaballeroandKrishnamurthy(2001);Lorenzoni(2008);Farhietal.(2009);BianchiandMendoza(2010);
+JeanneandKorinek(2010);Bianchi(2011);Korinek(2011);Davilla(2011);Stein(2012);Korinek(2012a,b);Jeanneand
+Korinek (2013). Woodford (2011) studies a model with nominal rigidities and pecuniary externalities, and charac-
+terizesoptimalmonetarypolicyandoptimalmacroprudentialpolicy. Importantly,andincontrasttoourtheory,the
+justificationformacroprudentialinterventionsinhismodelisentirelydrivenbythepresenceofpecuniaryexternali-
+ties.
+2Byconstrainedinefficiencywemean,inbothcases,thattheplannerdoesnotnecessarilyhavethetoolsnecessary
+to entirely overcome the frictions leading to inefficiencies. For example, in our applications the policy instruments
+can be interpreted as taxes or regulation on borrowing or portfolio decisions. It is also important that monetary
+policybe constrainedand unableto overcome thenominal rigidities. Insome applicationsit isalso importantthat
+taxinstrumentsbesomewhatconstrained,toavoidbeingabletocontrolallrelativepricesandeffectivelyundoprice
+rigidities.
+3Using a disequilibrium approach, Herings and Polemarchakis (2005) show that under some conditions, it is
+possibletoconstructfix-priceequilibriathatParetodominatecompetitive(flex-price)equilibriawhenassetmarkets
+areincompleteintheabsenceofassetmarketinterventions. Insomeway,ourapproachisthepolaropposite. Ittakes
+price rigidities as a constraint (if prices were flexible, competitive equilibria would be Pareto efficient) and looks
+2

@@ -1,0 +1,105 @@
+NBER WORKING PAPER SERIES
+ON FREQUENT BATCH AUCTIONS FOR STOCKS
+Ravi Jagannathan
+Working Paper 26341
+http://www.nber.org/papers/w26341
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2019
+I did not receive any outside funding – and was funded entirely by the Kellogg School of
+Management. The data was made available to me by the Indian School of Business and the
+National Stock Exchange of India. I have no material consulting arrangements to disclose. The
+views expressed herein are those of the author and do not necessarily reflect the views of the
+National Bureau of Economic Research. I thank Lawrence Glosten, Robert Korajczyk, and Ernst
+Schaumburg for helpful comments; and Honghao Wang and Tiange Ye for research assistance.
+Special thanks to Shumiao Ouyang for valuable discussions and research assistance.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2019 by Ravi Jagannathan. All rights reserved. Short sections of text, not to exceed two
+paragraphs, may be quoted without explicit permission provided that full credit, including ©
+notice, is given to the source.
+
+On Frequent Batch Auctions for Stocks
+Ravi Jagannathan
+NBER Working Paper No. 26341
+October 2019
+JEL No. G0,G1,G12,G2
+ABSTRACT
+I show that frequent batch auctions for stocks have the potential to reduce the severity of stock
+price crashes when they occur. For a given sequence of orders from a continuous electronic limit
+order book market, matching orders using one second apart batch auctions results in nearly the
+same trades and prices. Increasing the time interval between auctions to one minute significantly
+reduces the severity stock price crashes. In spite of this and other advantages pointed out in the
+literature, frequent batch auctions have not caught on. There is a need for carefully designed
+market experiments to understand why, and what aspect of reality academic research may be
+missing.
+Ravi Jagannathan
+Kellogg Graduate School of Management
+Northwestern University
+2001 Sheridan Road
+Leverone/Anderson Complex
+Evanston, IL 60208-2001
+and NBER
+rjaganna@kellogg.northwestern.edu
+
+How stocks are traded has dramatically changed during the past two decades1. Tech-
+nological innovations have made continuous trading through anonymous electronic order
+book markets become the preferred mechanism for securities trading, as foreseen by
+Glosten, 1994, and now accounts for a major share of trading in stocks.2 There is
+some concern that this may have increased some of the indirect costs. For example,
+electronic continuous trading has led to the rise of algorithmic High Frequency Traders
+(HFTs). Weller, 2017 finds that algorithmic trading decreases the incentives for gathering
+pre- earnings announcement information. Budish, Cramton, and Shim, 2015a show that
+competition among HFTs has led to an arms race for speed, resulting in socially wasteful
+investment in speed-trading infrastructure, and advocate using frequent, just milliseconds
+apart, batch auctions instead of continuous trading.
+I argue that frequent batch auctions have another important advantage that has been
+overlooked. Allowing for sufficient time interval between successive auctions facilitates
+enough orders to arrive before the clearing price is set thereby reducing the severity of
+stock price crashes3.
+I find that for a given sequence of orders that traders had placed in a continuous limit
+order book market, prices and trading volumes will be the same when orders are matched
+using periodic batch auctions instead of using a continuously updated limit order book
+provided the auction frequency is sufficiently high. Consequently, traders may not have
+an incentive to change their behavior when moving to very frequent batch auctions4.
+When the time interval between auctions is increased to one minute, prices, volumes,
+1See Fox, Glosten, and Rauterberg, 2015 for an excellent discussion
+2This is evidenced by the fact that 65% of the 5-day average notional trading volume in U.S. equities
+on 8/1/2018 of about $366 billion was due to trading in electronic limit order book markets, i.e., other
+than NASDAQ (DQ) and NYSE (DN).
+3Technological innovations has made it feasible for making the time interval between batch auctions
+a function of market conditions like the depth of the aggregate order book.
+4This is not necessarily true. The set of profitable trading strategies under continuous trading may
+become infeasible under frequent batch auctions and vice verse. For example, as mentioned earlier,
+Budish, Cramton, and Shim, 2015b show that investing in speed would become less attractive under
+frequent batch auctions
+1
+
+and order fill rates change; crash severity and volumes come down, and some traders
+find better execution of their orders. Further, short term traders who carried very little
+inventory overnight and contributed to a significant fraction of the volume are worse off
+during crashes. Hence we should expect traders’ order submission behavior to change
+when moving to one minute apart periodic auctions from continuous trading. However,
+even when the change in trader behavior is taken into account, the conclusion that trading
+volume would be lower under periodic auctions is likely to hold, since natural buyers and
+sellers are more likely to cross without the need for an intermediary. Crashes are likely
+to be less severe to the extent they were due to lack of order book depth, since the time
+interval between auctions would allow more new orders to come in.
+My analysis ignored information gathering and informativeness of prices, which could
+be adversely affected. To provide a definitive answer we need a better understanding of
+the types of traders in the stock market, their motives for trading, and the difficulties
+they face in learning and developing their trading strategies. For example, small and
+infrequent impatient traders may feel that learning to bid in auctions involves formidable
+set up costs when compared to trading against the limit order book using a marketable
+limit order.5
+The rest of the paper is organized as follows. I examine how trading volume, trader
+surplus, and crash severity change when moving from continuous trading to a batch
+auction in Section I. In Section II, I describe the data. I discuss the findings in Section
+III and conclude in Section IV.
+I. Batch Auction vs Continuous Trading in a Model Economy
+In this section I explain why we are likely to see lower trading volumes, higher trader
+surplus (ignoring the benefits to immediacy), and less severe crashes under batch auctions
+5See Jagannathan, Jirnyi, and Sherman (2015) for related observations.
+2

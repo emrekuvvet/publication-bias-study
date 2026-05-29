@@ -1,0 +1,116 @@
+NBER WORKING PAPER SERIES
+EFFICIENTLY INEFFICIENT MARKETS FOR ASSETS AND ASSET MANAGEMENT
+Nicolae B. Gârleanu
+Lasse H. Pedersen
+Working Paper 21563
+http://www.nber.org/papers/w21563
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2015
+We are grateful for helpful comments from Jules van Binsbergen, Ronen Israel, Stephen Mellas, Jim
+Riccobono, Andrei Shleifer, and Morten Sorensen, as well as from seminar participants at Harvard
+University, New York University, UC Berkeley-Haas, CEMFI, IESE, Toulouse School of Economics,
+MIT Sloan, Copenhagen Business School, and the conferences at Queen Mary University of London,
+the Cowles Foundation at Yale University, the European Financial Management Association Conference,
+the 7th Erasmus Liquidity Conference, the IF2015 Annual Conference in International Finance, the
+FRIC'15 Conference, and the Karl Borch Lecture. Pedersen gratefully acknowledges support from
+the European Research Council (ERC grant no. 312417) and the FRIC Center for Financial Frictions
+(grant no. DNRF102) The views expressed herein are those of the authors and do not necessarily reflect
+the views of the National Bureau of Economic Research.
+At least one co-author has disclosed a financial relationship of potential relevance for this research.
+Further information is available online at http://www.nber.org/papers/w21563.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2015 by Nicolae B. Gârleanu and Lasse H. Pedersen. All rights reserved. Short sections of text,
+not to exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Efficiently Inefficient Markets for Assets and Asset Management
+Nicolae B. Gârleanu and Lasse H. Pedersen
+NBER Working Paper No. 21563
+September 2015
+JEL No. D4,D53,D83,G02,G12,G14,G23,L10
+ABSTRACT
+We consider a model where investors can invest directly or search for an asset manager, information
+about assets is costly, and managers charge an endogenous fee. The efficiency of asset prices is linked
+to the efficiency of the asset management market: if investors can find managers more easily, more
+money is allocated to active management, fees are lower, and asset prices are more efficient. Informed
+managers outperform after fees, uninformed managers underperform after fees, and the net performance
+of the average manager depends on the number of "noise allocators." Finally, we show why large investors
+should be active and discuss broader implications and welfare considerations.
+Nicolae B. Gârleanu
+Haas School of Business
+F628
+University of California, Berkeley
+Berkeley, CA 94720
+and NBER
+garleanu@haas.berkeley.edu
+Lasse H. Pedersen
+Copenhagen Business School
+Solbjerg Plads 3, A5
+DK-2000 Frederiksberg
+DENMARK
+and NYU
+lpederse@stern.nyu.edu
+
+In the real world, asset managers play a central role in making markets efficient as their
+size allows them to spend significant resources on acquiring and processing information.
+The asset management market is subject to its own frictions, however, since investors must
+search for informed asset managers. Indeed, institutional investors — e.g., pension funds
+and insurance companies — literally fly around the world to examine asset managers in
+person. They seek to assess the manager’s investment process, the number and quality of the
+investment professionals, the trading infrastructure, information flow, and risk management,
+and perform due diligence on the back office, valuation practices, the custody of the assets,
+IT security, disaster recovery plan, and so on. Similarly, individual investors search for asset
+managers, some via local branches of financial institutions, others with the aid of investment
+advisors, and yet others via the internet or otherwise. How do the search frictions in the
+market for asset management affect the efficiency of the underlying security market? Which
+types of securities are likely to be priced efficiently? What determines asset management
+fees? How large of an outperformance can investors expect from asset managers before and
+after fees? Which type of investors should use active, rather than passive, investing?
+We seek to address these questions in a model with two levels of frictions: (a) investors’
+search frictions of finding and vetting asset managers and (b) asset managers’ cost of col-
+lecting information about assets. The levels of inefficiency in the security market and the
+market for asset management are closely linked, yielding several new predictions: (1) In-
+formed managers outperform after fees, uninformed managers underperform after fees, and
+the net performance of the average manager depends on the number of “noise allocators.”
+(2) If investors can find managers more easily, more money is allocated to active manage-
+ment, fees are lower, and security prices are more efficient. (3) As search costs diminish,
+asset prices become efficient in the limit, even if information-collection costs remain large.
+(4) Managers of complex assets earn larger fees and are fewer, and such assets are less ef-
+ficiently priced. (5) Allocating to active managers is attractive for large or sophisticated
+investors with small search cost, while small or unsophisticated investors should be passive.
+(6) Finally, we discuss the economic magnitude of our predictions and welfare considerations.
+2
+
+Asawayofbackground, thekeybenchmarkisthatsecuritymarketsareperfectlyefficient
+(Fama (1970)), but this leads to two paradoxes: First, no one has an incentive to collect
+information in an efficient market, so how does the market become efficient (Grossman and
+Stiglitz (1980))? Second, if asset markets are efficient, then positive fees to active managers
+implies inefficient markets for asset management (Pedersen (2015)).
+GrossmanandStiglitz(1980) show thatthefirstparadoxcanbe addressedbyconsidering
+informed investing in a model with noisy supply, but, when an agent has collected informa-
+tion about securities, she can invest on this information on behalf of others, so professional
+asset managers arise naturally as a result of the returns to scale in collecting and trading on
+information (Admati and Pfleiderer (1988), Ross (2005), Garcia and Vanden (2009)). There-
+fore, we introduce professional asset managers into the Grossman-Stiglitz model, allowing
+us to study the efficiency of asset markets jointly with the efficiency of the markets for asset
+management.
+One benchmark for the efficiency of asset management is provided by Berk and Green
+(2004), who consider the implications of perfectly efficient asset-management markets (in
+the context of exogenous and inefficient asset prices). In contrast, we consider an imperfect
+market for asset management due to search frictions, consistent with the empirical evidence
+of Sirri and Tufano (1998), Jain and Wu (2000), Horta¸csu and Syverson (2004), and Choi,
+Laibson, and Madrian (2010). We focus on investors’ incentive to search for informed man-
+agers and managers’ incentives to acquire information about assets with endogenous prices,
+abstracting from how agency problems and imperfect contracting can distort asset prices
+(Shleifer and Vishny (1997), Stein (2005), Cuoco and Kaniel (2011), Buffa, Vayanos, and
+Woolley (2014)).
+Our equilibrium works as follows. Among a large group of asset managers, an endoge-
+nous number decide to acquire information about a security. Investors must decide whether
+to expend search costs to find one of the informed asset managers. In an interior equilib-
+rium, investors are indifferent between passive investing (i.e., investing that does not rely
+on information collection) and searching for an informed asset manager. Investors do not
+3

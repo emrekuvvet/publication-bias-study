@@ -1,0 +1,130 @@
+NBER WORKING PAPER SERIES
+BANKING ON DEPOSITS:
+MATURITY TRANSFORMATION WITHOUT INTEREST RATE RISK
+Itamar Drechsler
+Alexi Savov
+Philipp Schnabl
+Working Paper 24582
+http://www.nber.org/papers/w24582
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2018
+We thank Markus Brunnermeier, Eduardo Davila, John Driscoll, Mark Egan, Mark Flannery, Raj Iyer,
+Arvind Krishnamurthy, Yueran Ma, Gregor Matvos, Monika Piazzesi, Anthony Saunders, David Scharfstein,
+Andrei Shleifer, Philip Strahan, Adi Sunderam, Bruce Tuckman, James Vickery, and seminar participants
+at the American Economic Association Meeting, BIS Research Meeting, Brandeis University, Carnegie
+Mellon, Chinese University in Hong Kong, ECB Monetary Policy Forum, FDIC, FRB Chicago, FRB
+New York, FRB Philadelphia, FRB San Francisco, Federal Reserve Board, Hong Kong University
+of Science and Technology, International Research Forum on Monetary Policy, LBS Summer Symposium,
+MIT Macroeconomics Seminar, NBER Summer Institute Corporate Finance, NBER Monetary Economics,
+Northwestern Macroeconomics Seminar, Ohio State University, Office of Financial Research, Princeton
+University, Purdue University, SITE, University of Amsterdam, University of Michigan, University
+of Pittsburgh, University of Rochester, and Yale University for their comments. We also thank Patrick
+Farrell, Manasa Gopal, and Pauline Liang for excellent research assistance. The views expressed herein
+are those of the authors and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2018 by Itamar Drechsler, Alexi Savov, and Philipp Schnabl. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Banking on Deposits: Maturity Transformation without Interest Rate Risk
+Itamar Drechsler, Alexi Savov, and Philipp Schnabl
+NBER Working Paper No. 24582
+May 2018, Revised January 2020
+JEL No. E43,E52,G21,G31
+ABSTRACT
+We show that maturity transformation does not expose banks to significant interest rate risk|it hedges
+it. This is due to banks' deposit franchise. The deposit franchise gives banks substantial market power
+over deposits, allowing them to pay deposit rates that are low and insensitive to market interest rates.
+Maintaining this power requires banks to incur large, interest-insensitive operating costs, so that the
+total costs of deposits are similar to fixed-rate, long-term debt. Hedging these costs therefore requires
+banks to lend long term|i.e., to do maturity transformation. As predicted by this theory, we document
+that banks' net interest margins have been highly stable and insensitive to interest rates, and banks'
+net worth is largely insulated from monetary policy shocks. We further show that banks match the
+interest-rate sensitivities of their expenses and income one-for-one, so that banks with less interest-sensitive
+deposits (more market power) hold assets with substantially longer duration. Our results show that
+deposits are special because they are short-term and yet have interest-insensitive costs, which explains
+why banks are able to supply long-term credit.
+Itamar Drechsler Philipp Schnabl
+Wharton School Stern School of Business
+University of Pennsylvania New York University
+3620 Locust Walk 44 West Fourth Street
+Philadelphia, PA 19104 New York, NY 10012
+and NBER and NBER
+idrechsl@wharton.upenn.edu schnabl@stern.nyu.edu
+Alexi Savov
+Stern School of Business
+New York University
+44 West Fourth Street, Suite 9-80
+New York, NY 10012
+and NBER
+asavov@stern.nyu.edu
+
+I Introduction
+A defining function of banks is maturity transformation—borrowing short term and lending
+long term. This function is important because it supplies firms with long-term credit and
+households with short-term, liquid deposits. In textbook models, banks engage in maturity
+transformation to earn the average difference between the long- and short-term rates—the
+term premium—but this exposes them to interest rate risk. An unexpected increase in the
+short rate makes banks’ interest expenses rise relative to interest income, pushing down
+net interest margins and depleting banks’ capital. Interest rate risk is therefore viewed as
+fundamental to the economic model of banking, and it underlies discussion of how monetary
+policy impacts the banking sector.1
+In this paper, we show that in fact banks do not take on interest rate risk, despite having
+a large maturity mismatch. The reason for this is the deposit franchise. Because of the
+deposit franchise, maturity transformation actually reduces the amount of risk banks take
+on. The deposit franchise has two essential properties that drive this result. The first is that
+it gives banks market power over retail deposits, which allows them to borrow at rates that
+are both low and insensitive to the market short rate. The second is that running a deposit
+franchise incurs high costs (branches, salaries, marketing), but these costs are largely fixed
+and hence also insensitive to the short rate. Therefore, even though deposits are short-term,
+funding via a deposit franchise resembles funding with long-term fixed-rate debt.
+This makes it natural for banks to hedge their deposit franchise by holding long-term
+fixed-rate assets. And since deposits are very large, so too are banks’ long-term asset hold-
+ings. Thus, a big maturity mismatch actually insulates banks’ profits from interest rate risk.
+We show empirically that this is true in the aggregate: bank profits are insensitive to even
+large fluctuations in interest rates. It is also true in the cross section: banks that have a
+stronger deposit franchise—and hence less sensitive interest expenses—hold more long-term
+assets. Moreover, there is a close quantitative match: banks with less sensitive interest ex-
+penses have one-for-one less sensitive interest income, which makes their profits fully hedged
+1In 2010, Federal Reserve Vice Chairman Donald Kohn argued that “Intermediaries need to be sure that
+as the economy recovers, they aren’t also hit by the interest rate risk that often accompanies this sort of
+mismatch in asset and liability maturities” (Kohn 2010). See also Boivin, Kiley, and Mishkin (2010).
+1
+
+with respect to interest rates.
+Our findings have several important implications. First, they explain why deposit taking
+and long-term lending take place within the same institution, thereby providing a new an-
+swer to one of the fundamental questions in banking (e.g., Kashyap, Rajan, and Stein 2002).
+This question underlies the renewed debate surrounding narrow banking, which argues for
+separating deposit taking from long-term lending (Friedman 1960, Cochrane 2014). Our re-
+sults suggest that narrow banking could make banks more exposed to interest rate risk and
+reduce the supply of long-term credit.2 Second, our findings have implications for the trans-
+mission of monetary policy. In particular, they imply that banks are largely insulated from
+the balance sheet channel of monetary policy, the idea that interest rate changes influence
+bank lending by shocking their net worth (Bernanke and Gertler 1989, Bernanke, Gertler,
+and Gilchrist 1999).3 More broadly, our results show that, in a world where interest rates
+fluctuate widely, the deposit franchise is the reason why banks can provide long-term loans
+without taking on interest rate risk.
+Webegintheanalysisbydocumentingthatbanksdoinfactengageinsignificantmaturity
+transformation. Aggregate bank assets have an average estimated duration of 4.2 years,
+versus only 0.4 years for liabilities. This mismatch of about 4 years is large and stable
+over time. It implies that if banks paid market rates on their liabilities (as assumed in the
+textbook model), then a 100-bps level shock to interest rates would cause a cumulative 400-
+bps reduction in net interest margins (interest income minus interest expenses, divided by
+assets) over the following years. This loss in profits would lead to a 4% decline in the book
+value of assets relative to liabilities over the same period. This is a very large hit for banks;
+it amounts to four years worth of profits given that the industry return on assets is just 1%.
+Although it would take time for the losses to be reflected in book values, investors would
+immediately price in the full 4% drop in market values. And since banks are levered ten to
+one, the 4% drop in assets would translate to a 40% drop in banks’ stock prices.
+Yet in practice we find that a 100-bps shock to interest rates induces only a 4.2% drop
+2We understand narrow banking as allowing banks to invest only in short-term safe claims, precisely to
+avoid the interest-rate exposure that the literature associates with maturity transformation.
+3Drechsler, Savov, and Schnabl (2017) present an alternative channel of monetary policy that does not
+rely on variation in banks’ net worth.
+2

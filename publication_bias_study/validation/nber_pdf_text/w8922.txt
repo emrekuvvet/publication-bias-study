@@ -1,0 +1,114 @@
+NBER WORKING PAPER SERIES
+RISK REDUCTION IN LARGE PORTFOLIOS:
+WHY IMPOSING THE WRONG CONSTRAINTS HELPS
+Ravi Jagannathan
+Tongshu Ma
+Working Paper 8922
+http://www.nber.org/papers/w8922
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2002
+We thank Torben Andersen, Gopal Basak, Louis Chan, Gregory Connor, Kent Daniel, Bernard Dumas,
+Ludger Hentschel, Philippe Henrotte, Ioulia Io .e, Andrew Lo, Jesper Lund, Robert McDonald, Steve Ross,
+Jay Shanken and seminar participants at Copenhagen Business School, Emory University, HEC, Insead, MIT,
+Norwegian School of Management, Hong Kong University of Science and Technology, University of Illinois
+at Urbana-Champaign, University of Iowa, University of Rochester, and University of Utah for helpful
+comments. We thank the editor, Richard Green, and two anonymous referees, for a number of suggestions
+that have helped us sharpen the focus of the article. We are responsible for any errors or omissions. The
+views expressed herein are those of the authors and not necessarily those of the National Bureau of Economic
+Research.
+© 2002 by Ravi Jagannathan and Tongshu Ma. All rights reserved. Short sections of text, not to exceed two
+paragraphs, may be quoted without explicit permission provided that full credit, including © notice, is given
+to the source.
+
+Risk Reduction in Large Portfolios: Why Imposing the Wrong Constraints Helps
+Ravi Jagannathan and Tongshu Ma
+NBER Working Paper No. 8922
+May 2002
+JEL No. C49, G11, G12
+ABSTRACT
+Mean-variance efficient portfolios constructed using sample moments often involve taking
+extreme long and short positions. Hence practitioners often impose portfolio weight constraints when
+constructing efficient portfolios. Green and Hollifield (1992) argue that the presence of a single dominant
+factor in the covariance matrix of returns is why we observe extreme positive and negative weights. If
+this were the case then imposing the weight constraint should hurt whereas the empirical evidence is often
+to the contrary. We reconcile this apparent contradiction. We show that constraining portfolio weights
+to be nonnegative is equivalent to using the sample covariance matrix after reducing its large elements
+and then form the optimal portfolio without any restrictions on portfolio weights. This shrinkage helps
+reduce the risk in estimated optimal portfolios even when they have negative weights in the population.
+Surprisingly, we also find that once the nonnegativity constraint is imposed, minimum variance
+portfolios constructed using the monthly sample covariance matrix perform as well as those constructed
+using covariance matrices estimated using factor models, shrinkage estimators, and daily data. When
+minimizing tracking error is the criterion, using daily data instead of monthly data helps. However, the
+sample covariance matrix without any correction for microstructure effects performs the best.
+Ravi Jagannathan Tongshu Ma
+Department of Finance Department of Finance
+Kellogg Graduate School of Management David Eccles School of Business
+Northwestern University University of Utah
+Evanston, IL 60208 Salt Lake City, UT 84112
+and NBER 801-581-7506
+847-491-8338 fintsm@business.utah.edu
+rjaganna@nwu.edu
+
+I Introduction
+Markowitz’s (1952, 1959) portfolio theory is one of the most important the-
+oretical developments in finance. Mean-variance efficient portfolios play an
+important role in this theory. Such portfolios constructed using sample mo-
+ments often involve taking large short positions in a number of assets and
+large long positions in some other assets. Since negative portfolio weights
+(short positions) are difficult to implement in practice, most investors impose
+the constraint that portfolio weights should be nonnegative when construct-
+ing mean-variance efficient portfolios.
+GreenandHollifield(1992)arguethatitisdifficulttodismisstheobserved
+extreme negative and positive weights as entirely due to imprecise estimation
+of the inputs used to construct mean-variance efficient portfolios. According
+tothemtheextremeweightsinsampleefficientportfoliosaretoalargeextent
+due to the existence of a single dominance factor in the covariance structure
+of stock returns and the small amount of cross-sectional diversity in asset
+betas. To understand the Green and Hollifield argument, note that minimum
+variance portfolios can be constructed in two steps. First we naively diversify
+over the set of high beta stocks and the set of low beta stocks separately.
+The resulting two portfolios will have very low residual risk and different
+betas. Next we short the high beta portfolio and long the low beta portfolio
+to get rid of the systematic risk. Clearly, the second step involves taking
+extremelongandshortpositionswhenthereislittledispersioninthebetasof
+different assets. This is why minimum variance portfolios take large positive
+and negative positions in the underlying assets.
+If extreme negative weights in efficient portfolios arise due to the pres-
+ence of a single dominant factor then it would appear that imposing the
+nonnegativity constraints would lead to a loss in efficiency. However, empir-
+ical findings suggest that imposing these constraints improves the efficiency
+1
+
+of optimal portfolios constructed using sample moments1. Does this mean
+that the evidence does not support the Green and Hollifield (1992) view?
+In this paper we provide an answer to this question. We show that im-
+posing the nonnegativity constraint on portfolio weights can help even when
+Green and Hollifield are right – i.e., the true covariance matrix is such that
+efficient portfolios involve taking large negative positions in a number of as-
+sets. We show that each of the no-shortsales constraints is equivalent to
+reducing the sample covariances of the corresponding asset with other assets
+by a certain amount. Stocks that have high covariances with other stocks
+tend to receive negative portfolio weights. Hence, to the extent that high
+estimated covariances are more likely to be caused by upward-biased estima-
+tion error, imposing the nonnegativity constraint can reduce the sampling
+error. It follows from the theory of shrinkage estimators that imposing the
+no-shortsales constraint can help even when the constraints do not hold in
+the population.
+We also study the impact of upper bounds on portfolio weights since
+they are also commonly imposed by practitioners. We show that each up-
+per bound constraint is equivalent to increasing the sample covariances of
+the corresponding asset with other assets by a certain amount. Since stocks
+that have low covariances with other stocks tend to get extreme high port-
+folio weights, and these extreme low estimated covariances are more likely
+to be caused by downward-biased estimation error, this adjustment in esti-
+mated covariances could reduce sampling error and help the out-of-sample
+performance of the optimal portfolios. Our empirical evidence suggests that
+imposing upperbounds on portfolio weights does not lead to a significant
+improvement in the out-of-sample performance of minimum risk portfolios
+when no-shortsales restrictions are already in place. Therefore the role of
+upperbounds is more to ensure that the minimum risk portfolios that come
+out of the optimization exercise can be constructed in practice.
+1See Frost and Savarino (1988) for an excellent discussion.
+2

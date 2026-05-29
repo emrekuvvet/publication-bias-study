@@ -1,0 +1,130 @@
+NBER WORKING PAPER SERIES
+BANK FUNDING RISK, REFERENCE RATES, AND CREDIT SUPPLY
+Harry R. Cooperman
+Darrell Duffie
+Stephan Luck
+Zachry Z. Wang
+Yilin Yang
+Working Paper 30907
+http://www.nber.org/papers/w30907
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+February 2023, revised December 2023
+The authors thank discussants Anne Duquerroy, Dan Greenwald, David Glancy, Anil Kashyap, Elie
+Lewi, Jose-Luis Peydro, and Peter Zimmermann, and also thank Alena-Kang Landsberg for her
+excellent research assistance. The authors are also grateful for conversations with Gara Afonso,
+Yacov Amihud, Leif Andersen, Viral Acharya, Roc Armenter, Tom Baxter, Antje Berndt, Alastair
+Borthwick, Tim Bowler, Laurent Clerc, Natalie Cox, Tom Deas, Fulvia Fringuelotti, Jason Granet,
+Vivien Lévy-Garboua, Andrei Magasiner, John Marynowski, Bill Nelson, Peter Phelan, Michael
+Roberts, Richard Sandor, Gagan Singh, Jeremy Stein, Jonathan Wallen, and Nathaniel Wuerffel, as
+well as seminar and conference participants at FRBNY, Stanford University, NYU Stern, Wharton,
+Federal Reserve Bank of San Francisco, Financial Stability Conference at the Federal Reserve Bank
+of Cleveland, System Committee on Financial Institutions, Regulation, and Markets held at the
+Federal Reserve Bank of Kansas City, ES European Winter Meeting 2022, EFA 2022, AFA 2023 in
+New Orleans, Banque de France, Symposium on Private Firms at University of Chicago, and Summer
+Finance Symposium at London Business School. Duffie is an NBER Research Associate, CDI
+Research Fellow, and Resident Scholar at FRBNY. The views stated in this paper are those of the
+authors and are not necessarily those of the Federal Reserve Bank of New York, the Federal Reserve
+System, or the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2023 by Harry R. Cooperman, Darrell Duffie, Stephan Luck, Zachry Z. Wang, and Yilin Yang.
+All rights reserved. Short sections of text, not to exceed two paragraphs, may be quoted without
+explicit permission provided that full credit, including © notice, is given to the source.
+
+Bank Funding Risk, Reference Rates, and Credit Supply
+Harry R. Cooperman, Darrell Duffie, Stephan Luck, Zachry Z. Wang, and Yilin Yang
+NBER Working Paper No. 30907
+February 2023, revised December 2023
+JEL No. E4,E43,G00,G01,G02,G20,G21
+ABSTRACT
+Corporate credit lines are drawn more heavily when funding markets are more stressed. This
+covariance elevates expected bank funding costs. We show that credit supply is dampened by the
+associated debt-overhang cost to bank shareholders. Until 2022, this impact was reduced by
+linking the interest paid on lines to credit-sensitive reference rates such as LIBOR. We show that
+transition to risk-free reference rates may exacerbate this friction. The adverse impact on credit
+supply is offset if drawdowns are expected to be left on deposit at the same bank, which
+happened at some of the largest banks during the COVID recession.
+Harry R. Cooperman Zachry Z. Wang
+Maiden Lane Stanford University
+New York zzwang28@stanford.edu
+hcoop18@stanford.edu
+Yilin Yang
+Darrell Duffie City University of Hong Kong
+Graduate School of Business 9-216, Lau Ming Wai Academic Building
+Stanford University 83 Tat Chee Ave
+Stanford, CA 94305-7298 Kowloon Tong
+and NBER Hong Kong
+duffie@stanford.edu yiliyang@cityu.edu.hk
+Stephan Luck
+Federal Reserve Bank of New York
+33 Liberty St
+New York, NY 10045
+stephan.luck@ny.frb.org
+
+1 Introduction
+In the US, most bank lending to corporations takes the form of revolving credit lines that give
+borrowers the option to draw any amount of credit, up to an agreed line limit, at any time before
+maturity and at committed pricing terms. Until 2022, the majority of US corporate loans, including
+revolvers, had interest rates set to the London interbank offered rate (LIBOR) plus a fixed spread.1
+In most of the world, however, banking has made a transition from credit-sensitive interest rate
+benchmarks such as LIBOR to new “risk-free” benchmark reference rates such as the secured
+overnight financing rate (SOFR). Credit-sensitive reference rates like LIBOR reduce a borrowers’
+incentives to draw on committed credit lines when the cost to banks of funding these drawdowns is
+high, for example during the global financial crisis (GFC) and the COVID recession. Risk-free loan
+reference rates, in contrast, typically fall when markets are stressed, encouraging borrowers to draw
+more heavily on credit lines just when bank funding costs rise sharply. Because of this, a collection
+of large US banks argued that the transition to risk-free reference rates may reduce ex-ante incentives
+for providing bank credit.2
+This paper shows how the choice of loan reference rate affects the supply of revolving credit
+lines. When banks are forced to fund line draws by issuing new debt, their shareholders bear a
+disproportionate share of the interest expense, a form of debt overhang. This debt-overhang wedge
+is priced ex-ante into the terms of credit lines. We show that the resulting adverse impact on
+credit provision is in many cases mitigated by credit-sensitive reference rates that reduce borrowers’
+incentives to draw on their lines when bank funding spreads are high.
+We show that the transition from LIBOR to SOFR will lead to heavier drawdowns on credit
+lines when bank credit spreads rise sharply. Our calibrated representative bank prices this behavior
+into the terms of newly originated lines, increasing the expected cost of drawn credit by about 15
+basis points, reducing total line commitments by around 6%, and reducing the expected quantity
+of drawn credit by roughly 3%. The corresponding welfare loss is about 2.6%. The magnitudes of
+these results are sensitive to assumptions, especially a bank’s prediction for how much of crisis line
+draws will simply be left on deposit at the bank, reducing the bank’s marginal need for expensive
+1We find that at the end of 2019, more than 70% of all US bank-firm lending referenced LIBOR as the underlying
+floatinginterestrate.
+2See the letter of September 23, 2019 of banks in the Credit Sensitivity Group to Randall Quarles, vice chair of
+supervisionoftheBoardofGovernorsoftheFederalReserveSystem,JosephOtting,ComptrolleroftheCurrency,and
+JelenaMcWilliams,ChairFederalDepositInsuranceCorporation.
+1
+
+external funding. If most line draws are anticipated to be left on deposit, then a transition to risk-free
+reference rates could even increase the provision of credit lines.
+Our analysis proceeds in three steps. First, we provide a simple equilibrium model of credit
+provision. We show that giving borrowers the option to draw funds at a pre-agreed fixed spread
+over a floating reference rate induces a debt-overhang cost to bank shareholders. This debt-overhang
+wedge inefficiently dampens banks’ incentives to offer committed lines of credit. However, the
+adverseimpactoncreditsupplyisattenuatedtotheextentthat: (1)referenceratesarecredit-sensitive
+and(2)whenoriginallycontractingthelines, thebankexpectstohavealowmarginalcostoffunding
+once the lines are eventually drawn. For example, the bank could anticipate that borrowers will leave
+much of the drawn credit on deposit, which we show occurred during the COVID pandemic. Or, the
+bank could anticipate that its marginal source of funding will be other source of deposits (Gatev and
+Strahan, 2006) or low-cost emergency liquidity from the central bank.
+The second part of our analysis is an empirical evaluation of funding costs associated with the
+provisionofrevolvingcredit. Weuseconfidentialbank-leveldatafromtheFederalReserve’sFR2052a
+report and Y14Q data collection that allow us to pin down the composition and dynamics of bank
+funding costs for large US Bank Holding Companies (BHCs) in much more detail than was possible
+in prior work. As of 2019, for our main sample consisting of the 20 largest US BHCs, non-financial
+firms borrowed more from large banks by utilizing credit lines ($544 billion) than with conventional
+term loans and other forms of commercial and industrial (C&I) lending ($444 billion). Moreover, the
+largest 20 BHCs alone had around $1.3 trillion of undrawn credit-line commitments, more than the
+total utilized credit from term lending and revolving credit combined. Contractually, these lines can
+be drawn at any time, including under stressed-market conditions when wholesale bank funding
+spreads are elevated.
+Consistent with the premise of our theoretical model, we find that banks were indeed subject to
+substantial draws on credit lines during the GFC (Ivashina and Scharfstein, 2010) and the COVID
+recession (Acharya and Steffen, 2020; Greenwald, Krainer, and Paul, 2020). However, we find that
+banksfundedlinedrawsmuchdifferentlyacrossthesetwoepisodes. DuringtheGFC,alargefraction
+of cash drawn on credit lines left the banking sector, forcing banks to fund drawdowns with other
+new borrowing, just when wholesale bank funding spreads were historically high (Acharya and
+Mora, 2015). In contrast, we show that during the COVID recession, drawdowns were generally of
+2

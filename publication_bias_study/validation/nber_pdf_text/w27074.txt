@@ -1,0 +1,124 @@
+NBER WORKING PAPER SERIES
+OPTIMAL BAILOUTS AND THE DOOM LOOP WITH A FINANCIAL NETWORK
+Agostino Capponi
+Felix C. Corell
+Joseph E. Stiglitz
+Working Paper 27074
+http://www.nber.org/papers/w27074
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2020, Revised January 2022
+We would like to thank the editor, three anonymous referees, Árpád Ábrahám, Viral Acharya,
+Thorsten Beck, Edouard Challe, Nicola Fuchs-Schündeln, Paul Glasserman, Piero Gottardi,
+Philipp Grübener, Philipp Kircher, Anton Korinek, Steve Kou, Ramon Marimon, Lukas Nord,
+Giorgia Piacentino, Vincenzo Quadrini, Rafael Repullo, Stefan Schmitz, our discussants Flora
+Lutz, Anjan Thakor, and Dimitri Vayanos, conference participants at the 5th Annual Conference
+on Network Science in Economics, the EEA Virtual Congress 2020, the 7th Sovereign Bond
+Markets Conference 2020 (Bank of England), the 9th Workshop on Banks and Financial Markets
+(Vienna), the 2021 SED Annual Meeting, the 20th Annual FDIC/JFSR Bank Research
+Conference, and seminar participants at NYU and EUI for their helpful comments. The views
+expressed herein are those of the authors and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Agostino Capponi, Felix C. Corell, and Joseph E. Stiglitz. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Optimal Bailouts and the Doom Loop with a Financial Network
+Agostino Capponi, Felix C. Corell, and Joseph E. Stiglitz
+NBER Working Paper No. 27074
+May 2020, Revised January 2022
+JEL No. G01,G21,G28,H63,H81
+ABSTRACT
+Banks usually hold large amounts of domestic debt which makes them vulnerable to their own
+sovereign's default risk. At the same time, governments often resort to costly bailouts when their
+banking sector is in trouble. We investigate how the network structure and the distribution of
+ownership of sovereign debt within the banking sector jointly affect the optimal bailout policy
+under this “doom loop”. We argue that rescuing banks with high domestic sovereign exposure is
+optimal if these banks are sufficiently central, even though that requires larger bailout
+expenditures than rescuing otherwise identical low-exposure banks. Our model illustrates how the
+“doom loop” exacerbates the “too interconnected to fail” problem.
+Agostino Capponi Joseph E. Stiglitz
+Mudd Hall 535-G Uris Hall, Columbia University
+Columbia University 3022 Broadway, Room 212
+500 W 120th St. New York, NY 10027
+New York, NY 10027 and NBER
+ac3827@columbia.edu jes322@columbia.edu
+Felix C. Corell
+Department of Economics
+European University Institute
+felix.corell@eui.eu
+
+Optimal Bailouts and the Doom Loop with a Financial Network(cid:63)
+Agostino Capponia,∗, Felix Corellb, Joseph E. Stiglitza
+aColumbia University, 3022 Broadway, New York, NY 10027
+bEuropean University Institute, Via delle Fontanelle 18, 50014 San Domenico di Fiesole
+Abstract
+Banks usually hold large amounts of domestic debt which makes them vulnerable to their
+own sovereign’s default risk. At the same time, governments often resort to costly bailouts
+when their banking sector is in trouble. We investigate how the network structure and the
+distribution of ownership of sovereign debt within the banking sector jointly affect the optimal
+bailout policy under this “doom loop”. We argue that rescuing banks with high domestic
+sovereign exposure is optimal if these banks are sufficiently central, even though that requires
+larger bailout expenditures than rescuing otherwise identical low-exposure banks. Our model
+illustrates how the “doom loop” exacerbates the “too interconnected to fail” problem.
+Keywords: Financial networks, home bias, sovereign debt, bailouts, doom loop
+1. Introduction
+Throughout modern economic history, almost every major crisis has added its own signature
+terms to the dictionary of economic thought. For the European sovereign debt crisis that
+followed the Great Recession in 2008/09, one of the front-running candidates is certainly the
+so-called bank-sovereign “doom loop” - a term that has made its way into the vocabulary of
+5
+policymakers, journalists, and researchers alike. The nexus between sovereigns and banks was
+(cid:63)We would like to thank the editor, three anonymous referees, A´rp´ad A´brah´am, Viral Acharya, Thorsten
+Beck, Edouard Challe, Nicola Fuchs-Schu¨ndeln, Paul Glasserman, Piero Gottardi, Philipp Gru¨bener, Philipp
+Kircher, Anton Korinek, Steve Kou, Ramon Marimon, Lukas Nord, Giorgia Piacentino, Vincenzo Quadrini,
+Rafael Repullo, Stefan Schmitz, our discussants Flora Lutz, Anjan Thakor, and Dimitri Vayanos, conference
+participants at the 5th Annual Conference on Network Science in Economics, the EEA Virtual Congress 2020,
+the7th SovereignBondMarketsConference2020(BankofEngland),the9th WorkshoponBanksandFinancial
+Markets (Vienna), the 2021 SED Annual Meeting, the 20th Annual FDIC/JFSR Bank Research Conference,
+and seminar participants at NYU and EUI for their helpful comments.
+∗Corresponding author
+Email address: ac3827@columbia.edu (Agostino Capponi)
+Preprint submitted to Journal of Monetary Economics January 9, 2022
+
+identified as a major culprit responsible for the amplification of adverse shocks during the crisis.
+The doom loop can be described as follows: Banks usually hold large amounts of domestic
+public debt which makes them vulnerable to sovereign default risk. For instance, as of March
+2021 some euro area banking sectors held well beyond 15% of their government’s total stock
+10
+of outstanding debt securities. At the same time, governments often resort to costly public
+bailouts when their domestic banking sector is at risk. If these bailouts are debt-financed and
+lead to an increase in risk premia on sovereign debt (i.e., a decrease in bond prices), bank assets
+drop in value and the size of the bailouts required to keep the banks solvent increases further. If
+a significant fraction of banks’ assets consists of domestic sovereign debt, this adverse feedback
+15
+loop can leave both the government’s and banks’ balance sheets severely impaired.1
+[Figure 1 about here.]
+Historical examples for the devastating force of the “doom loop” include Greece, where turmoil
+in sovereign debt markets damaged Greek banks’ balance sheets and made large bailouts nec-
+essary that further weakened Greece’s fiscal position; and Ireland, where the loop originated in
+20
+the banking sector and thus worked in the opposite direction.
+Even though it was the European sovereign debt crisis that provided the blueprint for a
+crisis of the “doom loop” type, there is renewed public and academic interest in the topic in
+the face of the recent Covid-19 pandemic. Hard-hit countries such as Italy (where the public
+debt-to-GDP ratio was already relatively high prior to the pandemic) provide the most fertile
+25
+ground for a revival of the doom loop. On the one hand, strict shutdown measures during the
+pandemic led to high amounts of non-performing loans that weighed on banks’ balance sheets.
+On the other hand, unprecedented fiscal spending efforts exerted upward pressure on the level
+of sovereign debt and, most likely, interest rate spreads. It is therefore not surprising that the
+topic of bank bailouts has returned to the agenda of policymakers in Italy and elsewhere.2
+30
+In this paper, we investigate how the distribution of sovereign debt across banks and the
+1Note for example that Italian banks currently hold around 10% of their assets in domestic sovereign debt
+(Figure 1).
+2Forexample,on28April2020theratingagencyFitchloweredItaly’ssovereignratingonthegroundsofthe
+expectedrepercussionsfromtheCovid-19pandemic; justtwoweekslater, on12May2020, adowngradeoffour
+of the biggest Italian banks (UniCredit, Intesa Sanpaolo, Mediobanca, UBI) followed suit. However, thanks in
+part to the ECB’s accommodative monetary policy, Italian sovereign spreads have not persistently increased.
+2

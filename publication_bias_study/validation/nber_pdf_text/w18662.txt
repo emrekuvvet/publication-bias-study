@@ -1,0 +1,123 @@
+NBER WORKING PAPER SERIES
+WANNA GET AWAY? RD IDENTIFICATION AWAY FROM THE CUTOFF
+Joshua Angrist
+Miikka Rokkanen
+Working Paper 18662
+http://www.nber.org/papers/w18662
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2012
+Our thanks to Parag Pathak for many helpful discussions and comments, and to seminar participants
+at Berkeley, CREST, and Stanford for helpful comments. Thanks also go to Peter Hull for expert research
+assistance. Angrist gratefully acknowledges funding from the Institute for Education Sciences. The
+views expressed here are those of the authors alone and do not necessarily reflect the views of the
+National Bureau of Economic Research or The Institute for Education Sciences.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2012 by Joshua Angrist and Miikka Rokkanen. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit, including
+© notice, is given to the source.
+
+Wanna Get Away? RD Identification Away from the Cutoff
+Joshua Angrist and Miikka Rokkanen
+NBER Working Paper No. 18662
+December 2012
+JEL No. C26,C31,C36,I21,I24,I28,J24
+ABSTRACT
+In the canonical regression discontinuity (RD) design for applicants who face an award or admissions
+cutoff, causal effects are nonparametrically identified for those near the cutoff. The impact of treatment on
+inframarginal applicants is also of interest, but identification of such effects requires stronger assumptions
+than are required for identification at the cutoff. This paper discusses RD identification away from
+the cutoff. Our identification strategy exploits the availability of dependent variable predictors other
+than the running variable. Conditional on these predictors, the running variable is assumed to be ignorable.
+This identification strategy is illustrated with data on applicants to Boston exam schools. Functional-form-based
+extrapolation generates unsatisfying results in this context, either noisy or not very robust. By contrast,
+identification based on RD-specific conditional independence assumptions produces reasonably precise
+and surprisingly robust estimates of the effects of exam school attendance on inframarginal applicants.
+These estimates suggest that the causal effects of exam school attendance for 9th grade applicants
+with running variable values well away from admissions cutoffs differ little from those for applicants
+with values that put them on the margin of acceptance. An extension to fuzzy designs is shown to identify
+causal effects for compliers away from the cutoff.
+Joshua Angrist
+Department of Economics
+MIT, E52-353
+50 Memorial Drive
+Cambridge, MA 02142-1347
+and NBER
+angrist@mit.edu
+Miikka Rokkanen
+Department of Economics
+MIT(cid:15)(cid:3)(cid:40)(cid:24)(cid:21)(cid:16)(cid:22)(cid:28)(cid:20)
+50 Memorial Drive
+Cambridge, MA 02142-1347
+rokkanen@mit.edu
+
+Both the tie-breaking experiment and the regression-discontinuity analysis are partic-
+ularly subject to the external validity limitation of selection-X interaction in that the
+effect has been demonstrated only for a very narrow band of talent, i.e., only for those
+at the cutting score... Broader generalizations involve the extrapolation of the below-X
+fit across the entire range of X values, and at each greater degree of extrapolation, the
+number of plausible rival hypotheses becomes greater.
+–DonaldT.CampbellandJulianStanley(1963; ExperimentalandQuasi-Experimental
+Designs for Research)
+1 Introduction
+In a regression discontinuity (RD) framework, treatment status changes discontinuously as a func-
+tion of an underlying covariate, commonly known as the running variable. Provided conditional
+mean functions for potential outcomes given the running variable are reasonably smooth, changes
+in outcome distributions at the assignment cutoff must be driven by discontinuities in the likelihood
+of treatment. RD identification comes from a kind of virtual random assignment, where small and
+presumably serendipitous variation in the running variable across the point of discontinuity manip-
+ulates treatment. On the other hand, because the running variable is typically related to outcomes,
+claims for unconditional “as-if random assignment” are most credible for observations near the point
+of discontinuity. RD methods need not identify causal effects for larger and perhaps more represen-
+tative groups of subjects. Our epigraph suggests this point was no less apparent to RD’s inventors
+than to today’s RD nonparametricians.
+A recent study of causal effects at Boston’s selective public schools – known as “exam schools”
+– highlights the possibly local and potentially limiting nature of RD findings. Boston exam schools
+choose their students based on an index that combines admissions test scores with a student’s
+grade point average (GPA). Abdulkadiroğlu, Angrist, and Pathak (2012) use parametric and non-
+parametric RD estimators to capture the causal effects of exam school attendance for exam school
+applications with index values in the neighborhood of admissions cutoffs. In this case, nonparamet-
+ric RD compares students just to the left and just to the right of each cutoff. For most of these
+marginal students, the resulting estimates suggest that exam school attendance does little to boost
+achievement.1 But applicants who only barely manage to gain admission to, say, the highly selec-
+tive Boston Latin School, might be unlikely to benefit from an advanced exam school curriculum.
+1Dobbie and Fryer (2012) report similar results for applicants to New York exam schools.
+1
+
+Stronger applicants who qualify more easily may benefit more from an elite public school education.
+Debates over affirmative action also focus attention on inframarginal applicants, including some
+who stand to gain seats and some who stand to lose should affirmative action considerations be
+introduced.
+Motivated by the question of how exam school attendance affects achievement for inframarginal
+applicants, this paper tackles the theoretical problem of how to identify causal effects in an RD
+setting for applicants other than those in the immediate neighborhood of admissions cutoffs. Our
+first tack extrapolates parametric models for conditional mean functions estimated to the left and
+right of cutoffs. As noted by Angrist and Pischke (2009), in a parametric RD world, extrapolation
+is easy. In a closely-related approach, inspired by an argument in Dong and Lewbel (2011), we
+also use derivatives estimated at the cutoff to extrapolate treatment effects. Dong and Lewbel
+exploit the fact that derivatives at the cutoff are non-parametrically identified, though, in practice,
+our implementation of derivative-based extrapolation looks a lot like a parametric polynomial. We
+therefore see parametric and derivative-based extrapolation as two versions of a common functional-
+form-based approach.
+As it turns out, functional-form-based estimation procedures fail to produce compelling results
+for the empirical questions that motivate our theoretical inquiry. The resulting estimates of exam
+school effects away from the cutoff are mostly imprecise and sensitive to the polynomial used for
+extrapolation, with or without the implicit weighting induced by a nonparametric bandwidth. We
+therefore turn to a conditional independence argument that exploits a key feature of most RD
+assignmentmechanisms: RDtreatmentsareassignedasadeterministicfunctionofasingleobserved
+covariate, the running variable. The association between running variable and outcome variables is
+therefore the only source of omitted variables bias in RD estimates. If, for example, the running
+variable were randomly assigned, or otherwise made independent of potential outcomes, we could
+ignore it and analyze data from RD designs as if from a randomized trial.
+This unique feature of RD assignment leads us to a conditional independence assumption (CIA)
+that identifies causal effects by conditioning on covariates besides the running variable, with an eye
+to eliminating the relationship between running variable and outcomes. It’s not always possible to
+find such good controls, of course, but, as we show below, a straightforward statistical test isolates
+promising candidates. As an empirical matter, we show that conditioning on baseline scores and
+demographic variables largely eliminates the relationship between running variables and test score
+outcomes for 9th grade applicants to Boston exam schools. This finding lays the foundation for a
+matching strategy that identifies causal effects for inframarginal applicants.
+2

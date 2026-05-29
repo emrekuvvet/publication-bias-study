@@ -1,0 +1,104 @@
+NBER WORKING PAPER SERIES
+THE BOND MARKET'S Q
+Thomas Philippon
+Working Paper 12462
+http://www.nber.org/papers/w12462
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+August 2006
+This paper was first circulated under the title "The y-theory of investment". I thank Daron Acemoglu,
+Mark Aguiar, Manuel Amador, Luca Benzoni, Olivier Blanchard, Xavier Gabaix, Mark Gertler, Simon
+Gilchrist, Bob Hall, Guido Lorenzoni, Sydney Ludvigson, Pete Kyle, Lasse Pedersen, Christina Romer,
+David Romer, Ivan Werning, Toni Whited, Jeff Wurgler, Egon Zakrajsek and seminar participants
+at NYU, MIT, the SED 2007, London Business School, Ente Einaudi (Rome), University of Salerno,
+Toulouse University, Duke University, and the NBER Summer Institutes 2006 and 2007.
+© 2006 by Thomas Philippon. All rights reserved. Short sections of text, not to exceed two paragraphs,
+may be quoted without explicit permission provided that full credit, including © notice, is given to
+the source.
+
+The Bond Market's q
+Thomas Philippon
+NBER Working Paper No. 12462
+August 2006, Revised February 2008
+JEL No. E0,E44,G31
+ABSTRACT
+I propose an implementation of the q-theory of investment using bond prices instead of equity prices.
+Credit risk makes corporate bond prices sensitive to future asset values, and q can be inferred from
+bond prices. The bond market's q performs much better than the usual measure in standard investment
+equations. With aggregate data, the fit is three times better, cash flows are driven out and the implied
+adjustment costs are reduced by more than an order of magnitude. The new measure also improves
+firm level investment equations.
+Thomas Philippon
+NYU Stern School of Business
+Department of Finance
+44 West 4th Street, Suite 9-190
+New York, NY 10012-1126
+and NBER
+tphilipp@stern.nyu.edu
+
+In his 1969 article, James Tobin argued that “the rate of investment — the speed at
+which investors wish to increase the capital stock — should be related, if to anything, to q,
+the value of capital relative to its replacement cost.1” Tobin also recognized, however, that
+q must depend on “expectations, estimates of risk, attitudes towards risk, and a host of
+other factors,” and he concluded that “it is not to be expected that the essential impact
+of [..] financial events will be easy to measure in the absence of direct observation of the
+relevant variables (q in the models).” The quest for an observable proxy for q was therefore
+recognized as a crucial objective from the very beginning.
+Subsequent research succeeded in integrating Tobin’s approach with the neoclassical
+investment theory of Jorgenson (1963). Lucas and Prescott (1971) proposed a dynamic
+model of investment with convex adjustment costs, and Abel (1979) showed that the rate of
+investmentisoptimalwhenthemarginalcostofinstallmentisequaltoq 1. Finally,Hayashi
+−
+(1982) showed that, under perfect competition and constant returns to scale, marginal
+q (the market value of an additional unit of capital divided by its replacement cost) is
+equal to average q (the market value of existing capital divided by its replacement cost).
+Since average q is observable, the theory became empirically relevant. Unfortunately, its
+implementation proved disappointing. The investment equation fits poorly, leaves large
+unexplained residuals correlated with cash flows, and implies implausible parameters for
+the adjustment cost function (see Summers (1981) for an early contribution, and Hassett
+and Hubbard (1997) and Caballero (1999) for recent literature reviews).
+Several theories have been proposed to explain this failure. Firms could have market
+power, and might not operate under constant returns to scale. Adjustment costs might
+not be convex (Dixit and Pindyck (1994), Caballero and Engle (1999)). Firms might be
+credit constrained (Fazzari, Hubbard, and Petersen (1988), Bernanke and Gertler (1989)).
+Finally, there could be measurement errors and aggregation biases in the capital stock or
+the rate of investment.
+None of these explanations is fully satisfactory, however. The evidence for constant
+returnsandpricetakingseemsquitestrong(Hall(2003)). Adjustmentcostsarecertainlynot
+convex at the plant level, but it is not clear that it really matters in the aggregate (Thomas
+(2002), Hall (2004)), although this is still a controversial issue (Bachmann, Caballero, and
+1Tobin (1969), page 21.
+2
+
+Engel(2006)). Gomes(2001)showsthatTobin’sq cancapturemostofinvestmentdynamics
+evenwhentherearecreditconstraints. Heterogeneityandaggregationdonotseemtocreate
+strong biases (Hall (2004)).
+In fact, an intriguing message comes out of the more recent empirical research: the
+market value of equity seems to be the culprit for the empirical failure of the investment
+equation. GilchristandHimmelberg(1995),followingAbelandBlanchard(1986),useVARs
+to forecast cash flows and to construct q, and they find that it performs better than the
+traditionalmeasurebasedonequityprices. Cumins, Hasset, andOliner(2006)useanalysts’
+forecasts instead of VAR forecasts, and reach similar conclusions. Erickson and Whited
+(2000) and Erickson and Whited (2006) use GMM estimators to purge q from measurement
+errors. They find that only 40 percent of observed variations are due to fundamental
+changes, and, once again, that market values contain large ‘measurement errors’.
+Applied research has therefore reached an uncomfortable situation, where the bench-
+mark investment equation appears to be successful only when market prices are not used
+to construct q. This is unfortunate, since Tobin’s insight was precisely to link observed
+quantities and market prices. The contribution of this paper is to show that a market-
+based measure of q can be constructed from corporate bond prices, and that this measure
+performs much better than the traditional one.
+Why would the bond market’s q perform better than the usual measure? There are
+several possible explanations. First, the bond market might be less susceptible to bubbles
+than the equity market. In fact, there is empirical and theoretical support for the idea that
+mispricingismorelikelytohappenwhenreturnsarepositivelyskewed. BarberisandHuang
+(2007) show that cumulative prospect theory predicts that a positively skewed security can
+be overpriced. Brunnermeier, Gollier, and Parker (2007) argue that preference for skewness
+arises endogenously because investors chooses to be optimistic about the states associated
+with the most skewed Arrow-Debreu securities. Empirically, Mitton and Vorkink (2007)
+document that under-diversification is largely explained by the fact that investors sacrifice
+mean-variance efficiency for higher skewness exposure. Purely rational explanations can
+also be proposed. These explanations typically involve different degrees of asymmetric
+information, market segmentation, and heterogeneity in adjustment costs and stochastic
+3

@@ -1,0 +1,110 @@
+NBER WORKING PAPER SERIES
+SUBSIDIZING THE STORK: NEW EVIDENCE ON TAX INCENTIVES AND FERTILITY
+Kevin Milligan
+Working Paper 8845
+http://www.nber.org/papers/w8845
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+March 2002
+This research was financially supported in part by the Social Science and Humanities Research Council and
+by the Canadian International Labour Network. I thank Michael Baker, Dwayne Benjamin, Jonathan Gruber,
+Robert McMillan, Jack Mintz, Aloysius Siow, Michael Smart, and seminar participants at many institutions
+for comments that have greatly improved the paper. The views expressed herein are those of the author and
+not necessarily those of the National Bureau of Economic Research.
+© 2002 by Kevin Milligan. All rights reserved. Short sections of text, not to exceed two paragraphs, may
+be quoted without explicit permission provided that full credit, including © notice, is given to the source.
+
+Subsidizing the Stork: New Evidence on Tax Incentives and Fertility
+Kevin Milligan
+NBER Working Paper No. 8845
+March 2002
+JEL No. H3, J1
+ABSTRACT
+Variation in tax policy presents an opportunity to estimate the responsiveness of fertility to prices.
+This paper exploits the introduction of a pro-natalist transfer policy in the Canadian province of Quebec
+that paid up to C$8,000 to families having a child. I implement a quasi-experimental strategy by forming
+treatment and control groups defined by time, jurisdiction, and family type. This permits a triple-
+difference estimator to be implemented — both on the program’s introduction and cancellation.
+Furthermore, the incentive was available broadly, rather than to a narrow subset of the population as
+studied in the literature on AFDC and fertility. This provides a unique opportunity to investigate
+heterogeneous responses. I find a strong effect of the policy on fertility, and some evidence of a
+heterogeneous response that may help reconcile these results with the AFDC literature.
+Kevin Milligan
+Department of Economics
+University of British Columbia
+#997-1873 East Mall
+Vancouver, BC
+Canada V6T 1Z1
+and NBER
+kevinmil@interchange.ubc.ca
+
+1 Introduction
+Families with children receive special treatment under the tax and transfer provisions of
+twenty-six of the twenty-nine OECD countries (OECD (2000)). These policies may be mo-
+tivated by a concern for equity: the presence of children alters their parents’ ability to pay,
+and so merits recognition in the tax liability assigned to the family.1 In addition to equity
+considerations, family fiscal policy has efficiency consequences if fertility depends on the cost
+of children.2 Economic models of fertility following Becker (1960) have studied the influence
+of the cost of children on fertility decisions. In turn, empirical researchers have shown great
+interest in trying to uncover evidence of a relationship between prices and fertility. The
+endogeneity of key variables has frustrated this effort.3 Hotz et al. (1997) conclude their
+survey on the economics of fertility by stating that “the crucial challenge is to find plausibly
+exogenous variation in proxies for the price and income concepts appearing in the theories.”
+Tax policy may present a solution to this problem. If families with children are treated
+differently by tax and transfer policies than families without children, then the tax system
+introduces variation in the after-tax price of children. If this variation is unrelated to indi-
+viduals’ choices, then it can be used to test for evidence of a relationship between fertility
+and prices.
+Many researchers have studied the impact of fiscal incentives on fertility. In one strand of
+the literature, researchers regress an aggregate time series of fertility on policy variables and
+controlvariables.4 Threedistinct problems arise in these aggregate time-series studies. First,
+the identification of policy effects from these regressions relies solely on time-series variation.
+This leaves the identification vulnerable to trends in unobserved variables. Specifically, if
+different cohorts of mothers have different unobservable characteristics that are important
+for their child-bearing decisions, then time-series variation in general is not sufficient to
+1See, for example, Pechman (1983) or Davies (1990) for the development of these arguments.
+2Thecostofachildcomprisesboththedirectcostofthechild’sconsumptionandtheopportunitycostof
+the parents’ time used in raising the child. Nerlove et al. (1984) and Batina (1986) set out optimal taxation
+frameworks in which the optimal child subsidy and income tax rates depend on the elasticity of the demand
+for children, and how this elasticity varies with income.
+3Women may have unobserved proclivities for different family sizes. If differences in these proclivities
+leadtodifferenthumancapitalaccumulationandmaritaldecisions, thentheopportunitycostoftimeoutof
+the labor market will be jointly determined with fertility. See, for example, Rosenzweig and Wolpin (1980).
+4Examples include Whittington et al. (1990), Hyatt and Milne (1991), Zhang et al. (1994), and Gauthier
+and Hatzius (1997).
+2
+
+identify fertility effects of policy. Second, the assumptions about the timing of the response
+to policy are arbitrary. Reactions to changes in fertility policy will be delayed by a nine-
+monthgestationallag, aswellasanytimenecessaryforthediffusionofinformationaboutthe
+change in policy. This makes it unclear which year’s policy influences which year’s fertility.
+Finally, many of these time-series studies suffer from the common problem of short series
+and the resulting small sample size. This reduces the credibility of asymptotic inferences.
+Another large set of studies uses microdata to study the effects of policy on fertility.
+Whittington (1992) and Whittington (1993) find a fertility-enhancing effect of the dependent
+exemption in the PSID. However, these studies are hampered by small sample sizes and
+lack of substantial variation. The bulk of the recent literature, however, focuses on the
+incentive effects of payments through Aid to Families with Dependent Children (AFDC)
+on female headship and fertility decisions.5 The surveys of this literature in Moffit (1998)
+and Hoynes (1997b) both make a distinction between the findings of studies including state
+fixed effects and those that do not. On the question of female headship, Moffitt (1994) and
+Hoynes (1997a) provide evidence that the inclusion of state-level fixed effects wipes out the
+explanatory power of welfare policy. If some unmeasured state-varying factor influences both
+femaleheadshipandthedeterminationofstateAFDCrates,thenexcludingstatefixedeffects
+from the regression will attribute to the policy what should be attributed to the excluded
+variables. This leads Hoynes (1997b) to conclude that there is no compelling evidence of
+a response to policy. For fertility, the Hoynes (1997b) survey reaches a similar conclusion.
+Moffit (1998), on the other hand, interprets the evidence as being in favor of a relationship,
+although without robustness. Harvey et al. (2000) survey the recent experimental literature
+on welfare. They conclude that the “evaluations have produced inconsistent results” on the
+relationship between family size and welfare benefits.
+More recently, Rosenzweig (1999) brings a different approach to the estimation of AFDC
+effects on behavior. In his paper, the marital and child-bearing decisions of the woman are
+modelled jointly, and estimated as a multinomial logit. This differs from other models that
+5AFDCwasatransferprogramforsingleparentswithlowincome. Hoynes(1997b)describesthefeatures
+of AFDC in more detail. There is also some work on welfare and behavior in Canada. Allen (1993) finds
+some effect of welfare on fertility in a 1986 cross section of microdata. Dooley et al. (2000) study welfare
+benefits and female headship in Canada using provincial variation through time, finding no evidence of a
+relationship.
+3

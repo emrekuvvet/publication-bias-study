@@ -1,0 +1,128 @@
+NBER WORKING PAPER SERIES
+ZOMBIE LENDING AND POLICY TRAPS
+Viral V. Acharya
+Simone Lenzu
+Olivier Wang
+Working Paper 29606
+http://www.nber.org/papers/w29606
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2021, Revised December 2025
+First draft: September 2021. Stefano Pastore provided excellent research assistance. We are grateful
+to three anonymous referees, as well as Juliane Begenau, Ricardo Caballero, Charles Calomiris,
+Tim Eisert, Kinda Hachem, Martina Jasova, Anil Kashyap, David Martinez-Miera, Simon Mayer,
+Cecilia Parlatore, Enrico Perotti, Silvio Petriconi, Giorgia Piacentino, Alexi Savov, Philipp
+Schnabl, Sascha Steffen, Johannes Stroebel, Javier Suarez, and seminar participants at Amsterdam
+Business School, NYU Stern, Norges Bank, the Virtual Finance Theory Seminar, the Fixed Income
+and Financial Institutions (FIFI) Conference at University of South Carolina, Richmond Fed, Bank
+of Italy, IMF, Northwestern Kellogg, Pompeu Fabra, CEMFI, FIRS, SED, EFA and Yale SOM for
+comments. We are also highly indebted to Tim Eisert for providing us with data underlying the
+motivating evidence for Europe. The views expressed herein are those of the authors and do not
+necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2021 by Viral V. Acharya, Simone Lenzu, and Olivier Wang. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Zombie Lending and Policy Traps
+Viral V. Acharya, Simone Lenzu, and Olivier Wang
+NBER Working Paper No. 29606
+December 2021, Revised December 2025
+JEL No. E44, E52, G01, G21, G28, G33
+ABSTRACT
+We model how accommodative policy can become trapped due to credit misallocation and its
+spillovers, as witnessed in Japan in the 1990s and in Europe in the 2010s. Following large negative
+shocks, the effective lower bound prevents stimulating bank lending through rate cuts.
+Unconventional policies that subsidize risk-taking such as regulatory forbearance can still expand
+credit, but excessive accommodation induces poorly-capitalized banks to lend to low-productivity
+“zombie” rms. Due to persistent congestion externalities of zombie lending on healthier rms,
+policymakers avoiding short-term recessions can get trapped into protracted low rates, excessive
+forbearance, and persistent output losses.
+Viral V. Acharya Olivier Wang
+New York University New York University
+Leonard N. Stern School of Business olivier.wang@nyu.edu
+and CEPR
+and also NBER
+vacharya@stern.nyu.edu
+Simone Lenzu
+New York University
+slenzu@stern.nyu.edu
+
+1 Introduction
+Inthispaper,webuildamodelwithheterogeneousfirmsandbankstoanalyzehowmonetaryand
+banking policies affect credit allocation and long-term economic outcomes. In particular, we ex-
+plainwhypolicymaygettrappedintoprotractedlowratesandexcessiveregulatoryforbearance
+towardsbanksthatarecoincidentwithpermanentoutputlosses.
+Since the housing and banking crisis in Japan in the early 1990s, regulatory forbearance to-
+wards banks—effectively allowing severely under-capitalized or insolvent banks to continue op-
+eratingbybackstoppingbankcreditors—hasbeenincreasinglyusedinconjunctionwithaccom-
+modative monetary policy in a bid to restore economic growth in the aftermath of aggregate
+shocks. This policy combination also found favor in the Eurozone following the global finan-
+cial crisis of 2007–08 and especially after the European sovereign debt crisis in 2010–12. In both
+cases,despiteanoperativeperiodexceedinginlengththeinitialintentionsandexpectations,this
+policy script’s impact on economic growth remained relatively muted. Starting with Peek and
+Rosengren(2005)andCaballero,HoshiandKashyap(2008),theliteraturehasattributedthisinef-
+fectivenessofemployedpolicies(atleastinpart)tocreditmisallocationand,inparticular,tothe
+phenomenonofzombielending: theprovisionofsubsidizedcredittopoorly-performingfirmsby
+weakly-capitalizedbanks.1
+Section2putstheexperiencesofJapanandEuropeintoperspective,presentingstylizedfacts
+that document the proliferation of zombie lending in the aftermath of the crisis outbreaks, the
+negativeexternalitiesthatzombielendinggenerated,anditsfeedbackloopwithpolicyinterven-
+tions. Importantly, the evidence suggests that adverse effects of credit misallocation due to the
+proliferationofzombielendingpersistandevencompoundovertime.
+Motivatedbythesefacts,webuildatractablemodelthatprovidesaunifiedframeworksimul-
+taneouslyexplainingandconformingtoallofthem. Theeconomyispopulatedbyheterogeneous
+firms that differ in their productivity and risk. Firms’ investments require credit, which is pro-
+vided by banks that are themselves heterogeneous in their level of capitalization. Banks face a
+portfolioproblem,whosesolutiondependsontheircapital: theydecidewhethertoinvestinsafe
+assets (meant to capture a wide range of non-loan assets, such as central bank reserves or safe
+government bonds and mortgage-backed securities) or lend to the corporate sector, and if so, to
+whichtypeoffirms.
+Policies play a crucial role in banks’ incentives, and thereby the equilibrium allocation of
+credit. We summarize all the components of policy that affect bank decisions into two simple
+1Poorly-capitalizedbankssupplycredittopoorly-performingfirmseitherbecausetheyareincentivizedtoen-
+gage in risk-shifting (gambling for resurrection) or because they attempt to avoid reporting losses on distressed
+positions,asdocumentedinGiannettiandSimonov(2013),Acharyaetal.(2019),Blattneretal.(2023),Groppetal.
+(2020),FariaECastroetal.(2021),Acharyaetal.(2021),andSchivardietal.(2021),amongothers.
+2
+
+instruments: the risk-free rate Rf set by conventional monetary policy, and an unconventional
+“forbearancepolicy”p thatdeterminesthelevelofgovernmentguaranteesgrantedtobanksthat
+are willing to lend. Accommodative conventional monetary policy makes lending to corporates
+more attractive relative to the alternative, by lowering the return on the safe assetsRf. This is a
+standard bank lending channel. Increasing forbearance also stimulates lending, by compressing
+the cost of funds associated with lending: a higher p lowers the cost of funds because a larger
+partofthebankloanriskisbornebypublicauthorities(thegovernment,thecentralbank,orthe
+deposit insurance agency). However, excessive forbearance can shift banks’ portfolios towards
+riskierloanstolessproductivefirms,whichwerefertoasthe“zombielendingchannel”.
+Thetwo-sidedfirm-bankheterogeneityopensthedoortothe“diabolicalsorting”documented
+in the data: banks with low capital and high leverage end up lending to less productive firms,
+even though aggregate output would be raised by letting these firms exit and be replaced by
+more productive entrants. The reason is that the subsidy from forbearance increases with the
+interaction of banks’ asset risk and leverage. This sorting between banks and firms leads to a
+delicate policy trade-off. While zombie lending and depressed creative destruction are the main
+perilsonthesideofpoorly-capitalizedbanks,policymakersmustalsoencouragewell-capitalized
+banks to lend to the good firms. Well-capitalized banks are not tempted by zombie lending, but
+may simply invest in safe assets. The tension between inducing well-capitalized banks to lend
+and preventing poorly-capitalized banks from engaging in zombie lending is at the heart of our
+analysisoftheoptimalpolicymixinresponsetoexogenousshocks.
+Suppose that an aggregate productivity or demand shock hurts firms’ profitability. If both
+zombie loans and safe assets generate less output than loans to good firms, output reaches its
+potentialifandonlyifallbankslendandthereisnozombielending. Aslongastherisk-freerate
+isnotconstrained,conventionalmonetarypolicyalonewithoutanyforbearancecanachievethis
+objective. Without forbearance, there is no zombie lending by weak banks, while a sufficiently
+low risk-free rate (i.e., the “natural interest rate” in our economy) encourages banks to lend.
+However, larger negative shocks to healthy firms’ profitability must be accommodated by lower
+interest rates. Hence, if the shocks are large enough, conventional monetary policy runs into an
+effective lower bound on interest rates (ELB), assumed exogenously in the model. This is where
+unconventional policy in the form of regulatory forbearance and its unintended consequences
+comeintoplay.
+We show that a small amount of forbearance is always beneficial, as it can substitute for the
+constrained conventional monetary policy and help lower banks’ funding costs, thereby stimu-
+lating lending and output. Pushing on the forbearance string, however, eventually spurs zombie
+lending by weak banks. Zombie lending reduces aggregate output and productivity because of
+themisallocationofcreditand,asdocumentedintheempiricalliterature,becauseitcangenerate
+3

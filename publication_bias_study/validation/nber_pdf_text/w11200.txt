@@ -1,0 +1,125 @@
+NBER WORKING PAPER SERIES
+SYSTEMIC RISK AND HEDGE FUNDS
+Nicholas Chan
+Mila Getmansky
+Shane M. Haas
+Andrew W. Lo
+Working Paper 11200
+http://www.nber.org/papers/w11200
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+March 2005
+Prepared for the NBER Conference on the Risks of Financial Institutions. The views and opinions expressed
+in this article are those of the authors only, and do not necessarily represent the views and opinions of
+AlphaSimplex Group, MIT, the University of Massachusetts, or any of their affiliates and employees. The
+authors make no representations or warranty, either expressed or implied, as to the accuracy or completeness
+of the information contained in this article, nor are they recommending that this article serve as the basis for
+any investment decision|this article is for information purposes only. Research support from AlphaSimplex
+Group and the MIT Laboratory for Financial Engineering is gratefully acknowledged. We thank David
+Modest and participants of the NBER Conference on The Risks of Financial Institutions for helpful
+comments and discussion. Parts of this paper include ideas and exposition from several previously published
+papers and books of some of the authors. Where appropriate, we have modi ed the passages to suit the
+current context and composition without detailed citations and quotation marks so as preserve continuity.
+Readers interested in the original sources of those passages should consult Getmansky (2004), Getmansky,
+Lo, and Makarov (2004), Getmansky, Lo, and Mei (2004), and Lo (2001, 2002). The views expressed herein
+are those of the author(s) and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+© 2005 by Nicholas Chan, Mila Getmansky, Shane M. Haas, and Andrew W. Lo. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Systemic Risk and Hedge Funds
+Nicholas Chan, Mila Getmansky, Shane M. Haas, and Andrew W. Lo
+NBER Working Paper No. 11200
+March 2005
+JEL No. G12
+ABSTRACT
+Systemic risk is commonly used to describe the possibility of a series of correlated defaults among
+financial institutions---typically banks---that occur over a short period of time, often caused by a
+single major event. However, since the collapse of Long Term Capital Management in 1998, it has
+become clear that hedge funds are also involved in systemic risk exposures. The hedge-fund industry
+has a symbiotic relationship with the banking sector, and many banks now operate proprietary
+trading units that are organized much like hedge funds. As a result, the risk exposures of the hedge-
+fund industry may have a material impact on the banking sector, resulting in new sources of systemic
+risks. In this paper, we attempt to quantify the potential impact of hedge funds on systemic risk by
+developing a number of new risk measures for hedge funds and applying them to individual and
+aggregate hedge-fund returns data. These measures include: illiquidity risk exposure, nonlinear factor
+models for hedge-fund and banking-sector indexes, logistic regression analysis of hedge-fund
+liquidation probabilities, and aggregate measures of volatility and distress based on regime-switching
+models. Our preliminary findings suggest that the hedge-fund industry may be heading into a
+challenging period of lower expected returns, and that systemic risk is currently on the rise.
+Nicholas Chan Shane M. Haas
+AlphaSimplex Group, LLC AlphaSimplex Group, LLC
+One Cambridge Center One Cambridge Center
+Cambridge, MA 0214 Cambridge, MA 02142
+nchan@alphasimplex.com shaas@alphasimplex.com
+Mila Getmansky Andrew W. Lo
+Isenberg School of Management MIT Sloan School of Management
+University of Massachusetts 50 Memorial Drive, E52-432
+Amherst, MA 01003 Cambridge, MA 02142
+msherman@som.umass.edu and NBER
+alo@mit.edu
+
+Contents
+1 Introduction 1
+1.1 Tail Risk . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+1.2 Phase-Locking Risk . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+2 Literature Review 17
+3 The Data 20
+3.1 CSFB/Tremont Indexes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+3.2 TASS Data . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+4 Measuring Illiquidity Risk 36
+4.1 Serial Correlation and Illiquidity . . . . . . . . . . . . . . . . . . . . . . . . . 37
+4.2 An Econometric Model of Smoothed Returns . . . . . . . . . . . . . . . . . . 41
+4.3 Maximum Likelihood Estimates of Smoothing Pro(cid:12)les . . . . . . . . . . . . . 47
+4.4 An Aggregate Measure of Illiquidity . . . . . . . . . . . . . . . . . . . . . . . 54
+5 Hedge-Fund Liquidations 56
+5.1 Attrition Rates . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 61
+5.2 Logit Analysis of Liquidations . . . . . . . . . . . . . . . . . . . . . . . . . . 66
+6 Other Hedge-Fund Measures of Systemic Risk 79
+6.1 Risk Models for Hedge Funds . . . . . . . . . . . . . . . . . . . . . . . . . . 80
+6.2 Hedge Funds and the Banking Sector . . . . . . . . . . . . . . . . . . . . . . 87
+6.3 Regime-Switching Models . . . . . . . . . . . . . . . . . . . . . . . . . . . . 90
+7 The Current Outlook 97
+A Appendix 98
+A.1 TASS Category De(cid:12)nitions . . . . . . . . . . . . . . . . . . . . . . . . . . . . 98
+A.2 Constrained Optimization . . . . . . . . . . . . . . . . . . . . . . . . . . . . 99
+
+1 Introduction
+The term\systemic risk"iscommonly used todescribe thepossibility ofaseries ofcorrelated
+defaults among (cid:12)nancial institutions|typically banks|that occurs over a short period of
+time, often caused by a single major event. A classic example is a banking panic in which
+large groups of depositors decide to withdraw their funds simultaneously, creating a run on
+bank assets that can ultimately lead to multiple bank failures. Banking panics were not
+uncommon in the U.S. during the nineteenth and early twentieth centuries, culminating in
+the 1930{1933 period with an average of 2,000 bank failures per year during these years
+according to Mishkin (1997), and which prompted the Glass-Steagall Act of 1933 and the
+establishment of the Federal Deposit Insurance Corporation in 1934.
+Althoughtodaybankingpanics arevirtually non-existent thanks totheFDICandrelated
+central banking policies, systemic risk exposures have taken shape in other forms. With the
+repeal in 1999 of the Glass-Steagall Act, many banks have now become broad-based (cid:12)nan-
+cial institutions engaging in the full spectrum of (cid:12)nancial services including retail banking,
+underwriting, investment banking, brokerage services, asset management, venture capital,
+and proprietary trading. Accordingly, the risk exposures of such institutions have become
+considerably more complex and interdependent, especially in the face of globalization and
+the recent wave of consolidations in the banking and (cid:12)nancial services sectors.
+In particular, innovations in the banking industry have coincided with the rapid growth
+of hedge funds, unregulated and opaque investment partnerships that engage in a variety
+of active investment strategies, often yielding double-digit returns and commensurate risks.1
+Currently estimated at over $1 trillion in size, the hedge fund industry has a symbiotic rela-
+tionship with the banking sector, providing an attractive outlet for bank capital, investment
+management services for banking clients, and fees for brokerage services, credit, and other
+banking functions. Moreover, many banks now operate proprietary trading units which are
+organized much like hedge funds. As a result, the risk exposures of the hedge-fund industry
+may have a material impact on the banking sector, resulting in new sources of systemic
+risks. And although many hedge funds engage in hedged strategies|where market swings
+are partially or completely o(cid:11)set through strategically balanced long and short positions in
+various securities|such funds often have other risk exposures such as volatility risk, credit
+risk, and liquidity risk. Moreover, many hedge funds are not hedged at all, and also use
+1Although hedge funds have avoided regulatory oversight in the past by catering only to \quali(cid:12)ed"
+investors(investorsthatmeetacertainminimumthresholdintermsofnetworthandinvestmentexperience)
+and refraining from advertising to the general public, a recent ruling by the U.S. Securities and Exchange
+Commission (Rule 203(b)(3){2) will require most hedge funds to register as investment advisers under the
+Investment Advisers Act of 1940by February 1, 2006.
+1

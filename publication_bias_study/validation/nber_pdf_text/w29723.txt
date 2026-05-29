@@ -1,0 +1,126 @@
+NBER WORKING PAPER SERIES
+MACHINE-LEARNING THE SKILL OF MUTUAL FUND MANAGERS
+Ron Kaniel
+Zihan Lin
+Markus Pelger
+Stijn Van Nieuwerburgh
+Working Paper 29723
+http://www.nber.org/papers/w29723
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+February 2022
+The authors have no conflicts of interest to disclose. The views expressed herein are those of the
+authors and do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2022 by Ron Kaniel, Zihan Lin, Markus Pelger, and Stijn Van Nieuwerburgh. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+Machine-Learning the Skill of Mutual Fund Managers
+Ron Kaniel, Zihan Lin, Markus Pelger, and Stijn Van Nieuwerburgh
+NBER Working Paper No. 29723
+February 2022
+JEL No. G0,G11,G23,G5
+ABSTRACT
+We show, using machine learning, that fund characteristics can consistently differentiate high
+from low-performing mutual funds, as well as identify funds with net-of-fees abnormal returns.
+Fund momentum and fund flow are the most important predictors of future risk-adjusted fund
+performance, while characteristics of the stocks that funds hold are not predictive. Returns of
+predictive long-short portfolios are higher following a period of high sentiment or a good state of
+the macro-economy. Our estimation with neural networks enables us to uncover novel and
+substantial interaction effects between sentiment and both fund flow and fund momentum.
+Ron Kaniel Markus Pelger
+University of Rochester Stanford University
+Simon School of Business Department of Management Science
+500 Wilson BLVD & Engineering
+Carol Simon Hall 312 Huang Engineering Center
+Box 270100 (Room CS3-312) Stanford, CA 94305
+ron.kaniel@simon.rochester.edu mpelger@stanford.edu
+Zihan Lin Stijn Van Nieuwerburgh
+Stanford University Columbia University
+475 Via Ortega Graduate school of Business
+Suite B060 Uris Hall, office 809
+Stanford, CA 94305 3022 Broadway
+zihanl@stanford.edu New York, NY 10027
+and NBER
+svnieuwe@gsb.columbia.edu
+
+1 Introduction
+Theassetmanagementindustryisenormousandgrowingrapidly. U.S.mutualfundshad$24tril-
+lioninassetsundermanagementattheendof2020,morethanhalfofwhichwereinequitymutual
+funds. Over100millionAmericansrelyonsuchfundstosaveforretirementandmeetotherfinan-
+cialobjectives. Manyofthesemutualfundsactivelytradestocksinanefforttoout-performtheir
+benchmarks and create value for their investors. The literature has found mixed results in terms
+of the investment performance of actively-traded equity mutual funds. We revisit the evidence
+usingmoderntechniques,andaskwhich–ifany–characteristicsofmutualfundsandofthestocks
+they hold can help separate the corn from the chaff. We uncover new evidence that fund flows
+and fund return momentum are the only two characteristics that can meaningfully and robustly
+helpdistinguishfundsthatoutperformfromthosethatunder-perform. Therelativeperformance
+oftopandbottomperformersisparticularlylargeintimesofhighinvestorsentiment.
+Specifically, we study the universe of actively-traded U.S. equity mutual funds between 1980
+and2019andthestocksthattheyhold. Theobjectwepredictistheabnormalfundreturn,defined
+asthefour-factoralphaofthemutualfund. Thepredictorsarealonglistof46stockcharacteristics
+weightedbythefunds’holdingsand13fundandfund-familycharacteristics. Fundcharacteristics
+include fund return momentum and fund flow. We also include a variable that summarizes the
+overall state of the market, either proxied by investor sentiment or by a comprehensive measure
+of macro-economic activity. Our main method is an artificial neural network model, namely a
+feedforwardneuralnetwork,whichcanreliablyestimateacomplexfunctionalrelationshipamong
+alargesetofvariables. Itistrainedandtunedononesubsetofthedataandevaluatedonanother
+subsetofthedata. Hence,allofourpredictionsareout-of-sample. Itidentifiesfundcharacteristic
+information, and specifically fund flow and fund momentum, as the key predictors of mutual
+fundout-performance. Moreover,thesetwofundcharacteristicsmattermuchmorewheninvestor
+sentimentishigh. Thatis,thereisanimportantinteractioneffect,whichlinearmodelsfailtopick
+up.
+The model predictions generate a large difference in performance out-of-sample. Buying the
+tenpercentofmutualfundswiththebestpredictedperformanceeachmonth,andusingthemodel
+notonlytoselectbutalsotoweightthefundswithinthetopdecile,generatesacumulativeabnor-
+malreturnof72%overoursampleperiod. Buyingthetenpercentofmutualfundswiththeworst
+predicted performance each month produces a cumulative abnormal return of -119%. The 191%
+difference in out-of-sample performance based on the model’s predictions is economically large
+andstatisticallysignificant. Sincethebestandtheworstfundshavesimilarfees,itholdsforboth
+before-andafter-feeabnormalreturns. Moreover,topperformingfundsexhibitpositiveabnormal
+performance net-of-fees as well. This performance improves further when we use a model that
+directlypredictsnet-of-feesperformance
+1
+
+Theperformancedifferentialisnearlyidenticalifweconstrainthemodelbyremovingallstock
+characteristicinformation. Infact,wecanalsoremovemostfundandfundfamilycharacteristics.
+Thepredictionsofamodelthatareonlyfedfundflow,fundmomentum,andsentimentarenearly
+as good as those of the full model. They deliver out-performance of nearly 50 basis points per
+monthforthetoprelativetothebottomdecilesofpredictedperformers. TheSharperatioonthis
+strategyis0.25permonth.
+Having uncovered flow and fund momentum as the key predictors, we show that they each
+predict fund performance in a univariate analysis. However, such a univariate analysis fails to
+accountforthenon-linearinteractioneffectsofthesetwocharacteristicswithinvestorsentiment.
+Thestateofthemacro-economy,measuredbytheChicagoFedNationalActivityIndex(CFNAI),
+predictsthebestandworstfundperformersaswellassentimentdoeswhencombinedwithfund
+characteristics. However, CFNAI is not as good at predicting the relative returns within the top
+and bottom deciles as sentiment. We trace back this difference to a lack of interaction effects
+betweenCFNAIandfundcharacteristics.
+We decompose the fund abnormal return into a between-disclosure component, which holds
+fixedthefunds’stockholdingsattheirpreviousquarter-endvalues,andawithin-disclosurecom-
+ponent, which accounts for mutual fund trades during the quarter. The latter is the sum of the
+returngapandariskexposuredifferential.1 Wefindthatabouthalfoftheoutperformancecomes
+from the model’s ability to predict between-disclosure abnormal returns and the other half from
+predicting within-disclosure abnormal returns. Both fund flow and fund momentum predict the
+return gap and the risk exposure differential, while most stock characteristics that predict the re-
+turn gap do so by taking on more systematic risk resulting in little within-disclosure abnormal
+return. Theseresultsshedadditionallightonthesourcesandpersistenceofout-performance.
+Insum,mutualfundreturnsarepredictableinrealtime. Thepredictabilitylastsforthreeyears,
+andiseconomicallymeaningful. About10-20%offundsgeneratepositiveabnormalreturnseven
+afterfees. Mostofthebenefitsaccruefromavoidingtheworst-performingfunds.
+The salience of flow and fund return momentum as the key predictors suggests that some
+investors can detect skill and (re)allocate their investment towards such skilled managers. This
+reallocationofinvestmentflowsisnotasstrongasthefrictionlessmodelofBerkandGreen(2004)
+predicts. Skill leaves a trail in the form of fund return momentum for investors to exploit in the
+next period. Put differently, the flows are gradual and small enough that it takes several periods
+untilthefundrunsintozeromarginalabnormalreturns.
+Theresultsarepotentiallyalsoconsistentwithfundsandfundfamiliesattractingflowsthrough
+marketing rather than—or in addition to—through investment skill (Ibert, Kaniel, Van Nieuwer-
+burgh, and Vestman, 2018; Roussanov, Ruan, and Wei, 2021). Marketing-induced inflows create
+1The return gap is the difference between the fund’s actual returns over the period and the hypothetical returns
+generatedbykeepingthefund’sportfolioholdingsconstant.
+2

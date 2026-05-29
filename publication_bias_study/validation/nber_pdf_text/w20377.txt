@@ -1,0 +1,136 @@
+NBER WORKING PAPER SERIES
+DISCOUNT SHOCK, PRICE-RENT DYNAMICS, AND THE BUSINESS CYCLE
+Jianjun Miao
+Pengfei Wang
+Tao Zha
+Working Paper 20377
+http://www.nber.org/papers/w20377
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+August 2014
+We thank Mark Bils, Larry Christiano, Marty Eichenbaum, Jordi Gali, Lars Hansen, Simon Gilchrist,
+Pat Higgins, Lee Ohanian, Sergio Rebelo, Richard Rogerson, Giorgio Valente, Gianluca Violante,
+Wei Xiong, and seminar participants at University of Pennsylvania, University of North Carolina,
+the NBER Summer Institute, the AFR Summer Institute of Economics and Finance, the PBC Finance
+School of Tsinghua University, Hong Kong Monetary Authority, University of Toronto, Vanderbilt
+University, and University of Rochester for helpful discussions. The research is supported in part by
+the National Science Foundation Grant SES 1558486 through the NBER and by the National Natural
+Science Foundation of China Research Grants (71473168, 71473169, and 71633003). The views expressed
+herein are those of the authors and do not necessarily reflect the views of the Federal Reserve Bank
+of Atlanta or the Federal Reserve System or the National Bureau of Economic Research.
+At least one co-author has disclosed a financial relationship of potential relevance for this research.
+Further information is available online at http://www.nber.org/papers/w20377.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2014 by Jianjun Miao, Pengfei Wang, and Tao Zha. All rights reserved. Short sections of text, not
+to exceed two paragraphs, may be quoted without explicit permission provided that full credit, including
+© notice, is given to the source.
+
+Discount Shock, Price-Rent Dynamics, and the Business Cycle
+Jianjun Miao, Pengfei Wang, and Tao Zha
+NBER Working Paper No. 20377
+August 2014, Revised January 2020
+JEL No. E22,E32,E44
+ABSTRACT
+The price-rent ratio is highly volatile and predicts future returns for commercial real estate. Price-rent
+variations in commercial real estate also tend to comove with investment and output. We develop a
+general equilibrium model that explicitly introduces a rental market and incorporates collateral constraints
+on production as a key ingredient. Our estimation identifies discount-rate shocks as the most important
+factor in (1) driving price-rent variations, (2) producing the long-horizon predictability of real estate
+returns, and (3) linking the dynamics in commercial real estate to those in the production sector.
+Jianjun Miao Tao Zha
+Department of Economics Department of Economics
+Boston University Emory University
+270 Bay State Road Rich Memorial Building
+Boston, MA 02215 1602 Fishburne Drive
+miaoj@bu.edu Atlanta, GA 30322-2240
+and Federal Reserve Bank of Atlanta
+and also NBER
+tzha@emory.edu
+Pengfei Wang
+Department of Economics
+Hong Kong University of Science and Technology
+Hong Kong
+and HSBC Business School
+Peking University
+Shenzhen, China
+pfwang@phbs.pku.edu.cn
+
+DISCOUNT SHOCK, PRICE-RENT DYNAMICS, AND THE BUSINESS CYCLE 1
+I. Introduction
+The rise and fall of real estate prices in the past decades and the 2008 financial crisis
+triggered by the collapse of real estate prices have generated a great deal of research on the
+impact of real estate prices on the macroeconomy. Most research has focused on consumers’
+behavior and the residential real estate market. When we study firms’ investment dynamics,
+it is often the commercial real estate market that becomes relevant. In a recent paper,
+Chaney, Sraer, and Thesmar (2012) provide micro evidence that links the commercial real
+estate price to investment. They estimate that a $1 increase in a representative U.S. firm’s
+value of real estate raises its investment by $0.06. At the aggregate level, however, the link
+between commercial real estate prices and investment dynamics has been largely unexplored.
+In this paper we develop a medium-size dynamic stochastic general equilibrium (DSGE)
+model and show that this model is capable of reproducing quantitatively a variety of stylized
+facts about the commercial real estate price and the business cycle if one incorporates two
+key ingredients: shocks to households’ discount rate and collateral constraints on firms’ pro-
+duction. We confront our model with financial and macroeconomic time series and estimate
+the model using the Bayesian method to account for the following facts:
+(1) Volatility: Commercial real estate price fluctuates much more than rent and output
+do. Over the past 20 years, while the volatility (measured by the standard deviation
+of quarterly changes) is 1.245% for rent and 0.697% for output, the volatility of real
+estate prices is 4.171%.
+(2) Long-horizon predictability: Price-rent variation predicts long-horizon real estate re-
+turns.1 Simple ordinary least squares (OLS) regressions of real estate returns at
+different horizons on the rent-price ratio (the valuation ratio) show that the slope
+coefficients are significantly positive and they increase with the horizon and that the
+fit measure, R2, also increases with the horizon. Figure 1 plots the contemporaneous
+price-rent ratio against real estate returns of the subsequent five years to capture the
+key fact: high prices relative to rents have preceded many years of low returns and
+low prices have preceded high returns.
+(3) Comovement: The price-rent ratio tends to comove with output as demonstrated by
+Figure 2. The contemporaneous correlation between output and price-rent ratio is
+0.83 for log level and 0.48 for year-over-year growth.2
+Howto reproduceall these macro-financefacts within onestructural framework hasbeen a
+central but challenging task in the macro-finance literature. Our model builds on the DSGE
+1See Ghysels, Plazzi, Torous, and Valkanov (2012) for an extensive survey of this literature.
+2When output and the price-rent ratio are log-linearly detrended, the correlation is 0.47. When these
+series are hp-filtered, the correlation is 0.63.
+
+DISCOUNT SHOCK, PRICE-RENT DYNAMICS, AND THE BUSINESS CYCLE 2
+literature with a combination of two distinctive features: we introduce a rental market
+of commercial real estate and assume that firms face collateral constraints when financing
+working capital. Without modeling the rental market explicitly, the existing macroeconomic
+models (Iacoviello, 2005;IacovielloandNeri, 2010;Liu, Wang, andZha,2013; Liu, Miao, and
+Zha, 2016, for example) show that real estate price and rent move in comparable magnitude
+so that there is little price-rent variation in comparison to the data. But price-rent variation
+is central to both the long-horizon predictability of real estate returns (Cochrane, 2011;
+Ghysels, Plazzi, Torous, and Valkanov, 2013) and the business cycle (Figure 2).
+By controlling for an array of commonly used shocks such as technology and labor supply
+shocks, we find that shocks to the discount rate are the key to generating the data dynamics
+that quantitatively reproduce stylized facts (1)-(3). The key intuition is that the rental price
+of commercial real estate is determined by the marginal product of the real estate property
+in firms’ production, but the real estate price is a forward looking variable, equal to the
+discounted present value of future rents. Shocks to such a discount are intertemporal and
+affect future appreciations of the price; they do not directly affect the current rent.
+The discount-rate shock is a parsimonious way of modeling the variation in discount rates
+stressed by Hansen and Jagannathan (1991), Campbell and Ammer (1993) and Cochrane
+(2011) and can sometimes be interpreted as a sentiment shock as in Barberis, Shleifer, and
+Vishny (1998) and Dumas, Kurshev, and Uppal (2009). In the macroeconomic literature
+(Smets and Wouters, 2003; Primiceri, Schaumburg, and Tambalotti, 2006; Gal´ı, 2015, for
+example), thediscount-rateshockiscalleda“preference”shocktocaptureshiftsinaggregate
+demand; itsassetpricingimplicationswerefirstdiscussedbyAlbuquerque,Eichenbaum,Luo,
+and Rebelo (2016), who construct a general equilibrium model of an endowment economy to
+show that discount-rate shocks can generate the observed risk premium and weak correlation
+between consumption growth and stock returns. In their model, however, these shocks do
+not affect macroeconomic movements or generate the long-horizon predictability of excess
+stock returns.
+We follow Albuquerque, Eichenbaum, Luo, and Rebelo (2016) by introducing discount-
+rate shocks and extend their model to a production economy with an emphasis on the
+implications of commercial real estate prices on investment and the business cycle. One key
+contribution of our paper is to show that in our production economy model, discount-rate
+shocks can generate price-rent fluctuations over the business cycle. Because firms’ collateral
+assets provide the collateral (liquidity) premium, discount-rate shocks can also generate the
+long-horizon predictability of excess real estate returns. These discoveries are important
+for several reasons. First, the long-horizon predictability is prevalent in the asset pricing
+literature in general and the real estate literature in particular. Which shock in general
+equilibrium models can generate the data dynamics reproducing the predictability result has

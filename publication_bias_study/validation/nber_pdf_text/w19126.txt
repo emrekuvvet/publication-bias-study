@@ -1,0 +1,132 @@
+NBER WORKING PAPER SERIES
+THE EFFECT OF MERGERS IN SEARCH MARKET:
+EVIDENCE FROM THE CANADIAN MORTGAGE INDUSTRY
+Jason Allen
+Robert Clark
+Jean-François Houde
+Working Paper 19126
+http://www.nber.org/papers/w19126
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2013
+Jean-Francois Houde thanks NSF for funding (SES- 1024840). We thank the Canada Mortgage and
+Housing Corporation and Genworth Financial for providing us with the data.The views of this paper
+are those of the authors and do not necessarily reflect those of the Bank of Canada or the National
+Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2013 by Jason Allen, Robert Clark, and Jean-François Houde. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+The Effect of Mergers in Search Market: Evidence from the Canadian Mortgage Industry
+Jason Allen, Robert Clark, and Jean-François Houde
+NBER Working Paper No. 19126
+June 2013
+JEL No. L11,L41,L85
+ABSTRACT
+We examine the relationship between concentration and price dispersion using variation induced by
+a merger in the Canadian mortgage market. Since interest rates are determined through a search and
+negotiation process, consolidation eliminates a potential negotiation part- ner, weakening consumers
+bargaining positions. We combine reduced-form techniques to es- timate the mergers distributional
+impact, with a structural model to measure market power across consumers with different search costs.
+Our results show that competition benefits only consumers at the bottom and middle of the transaction
+price distribution. Estimates from a search and negotiation model attribute these differences to the
+presence of large search frictions.
+Jason Allen Jean-François Houde
+Bank of Canada Wharton School
+234 Wellington Street University of Pennsylvania
+Ottawa, ON K1A 0G9 3620 Locust Walk
+jallen@bankofcanada.ca 3008 Steinberg Hall - Dietrich Hall
+Philadelphia, PA 19104
+Robert Clark and NBER
+Institute of Applied Economics houde@wharton.upenn.edu
+HEC Montreal
+3000, chemin de la Cote-Sainte-Catherine
+Montreal (Quebec) H3T 2A7
+Canada
+Robert.Clark@hec.ca
+
+Introduction
+Like many consumer-finance products, mortgage contracts are negotiable: lenders post a com-
+mon sticker price, and contract terms are determined through a search and negotiation process
+between local branch managers and individual borrowers. This allows informed consumers to
+gather multiple quotes and obtain an interest rate that reflects the expected lending cost, even
+withasmallnumberofcompetinglenders. Inpractice,however,consumersdifferintheirability
+to understand the subtleties of financial contracts and their willingness to negotiate and search
+for multiple quotes. Indeed, recent surveys in North America show that while some buyers get
+multiplequoteswhenshoppingfortheirmortgagecontract,nearlyhalfonlygetone.1
+These features lead to price dispersion. In Allen et al. (2013) we document that the Canadian
+mortgagemarketexhibitssubstantialdispersion,evenforcontractswithhomogeneoustermsand
+for which lenders are fully protected against the risk of default by a government-backed insur-
+anceprogram. Theinter-quartilerangeofthenettransactioninterestspreadapproaches100basis
+pointsandthecoefficientofvariationisabout59%. Importantly,morethan60%ofthedispersion
+inmarginsisunexplainedbystandardborrowerandcontractcharacteristics.
+Similarphenomenahavebeendocumentedbyagrowingliteratureanalyzingpricedispersion
+in retail markets: new cars (e.g. Goldberg (1996), Scott Morton et al. (2003), Busse et al. (2006),
+and Langer (2012)), mortgage broker fees (Hall and Woodward (2012)), real-estate (Hendel et al.
+(2009)),andhealthcareservices(e.g. Sorensen(2001),Grennan(2013)). BuildingonStigler(1961),
+many of these papers have provided evidence that a significant fraction of the observed disper-
+sion in prices is caused by the inability of (some) consumers to gather information and negotiate
+discounts,suggestingthatsearchandinformationfrictionsareimportantfactorsinthesemarkets.
+In contrast, we know relatively little about the impact of market structure and competition
+on the distribution of negotiated prices.2 It remains an empirical question whether the benefit
+ofcompetitionisspreadequallyacrossconsumers,andwhethercompetitionraisesorlowersthe
+dispersionoftransactionprices. Indeed, search-theoreticmodelsofpricedispersionprovideam-
+biguouspredictionswithrespecttotheimpactofconcentrationonpricedispersion,asdiscussed
+inJanssenandMoraga-Gonza´lez(2004)andBayeetal. (2006).3
+Our objective is to measure the role of competition in determining the distribution of prices
+in markets with price negotiation. Unlike in markets without search frictions, in our context the
+1InCanada,theCanadianAssociationofAccreditedMortgageProfessionalsconductsanannualsurveyonthestate
+ofthemortgagemarketandonaveragehavereportedthatabout45%ofnewhomebuyersvisitonelender.Forsimilar
+U.S.evidenceseeLeeandHogarth(2000).
+2An exception is the recent literature on negotiation between buyer and seller networks (e.g. Town and Vistnes
+(2001),CrawfordandYurukoglu(2012),LewisandPflum(2013),Gowrisankaranetal. (2013)). Whileitanalyzesthe
+impactofmarketstructureontherelativebargainingleverageofparties,itdoesnotprovideaconvincinginterpretation
+ofresidualpricedispersion,andabstractsfromtheroleofinformationandsearchfrictions.
+3Thesameistruefordiscrimination-basedtheories:the“textbook”pricediscriminationmodelsuggestsanegative
+relationshipbetweendispersionandcompetition,whileBorenstein(1985)andHolmes(1989)showthatanincreasein
+competitioninmarketswiththird-degreepricediscriminationleadtomoredispersion.
+1
+
+effectofcompetitiononpricesdependsnotonlyontherelativemarketpoweroffirms,butalsoon
+the willingness and ability of consumers to haggle with sellers. If there is heterogeneity in these
+abilities across consumers and markets, then variation in transaction prices induced by changes
+in competition may not reveal the importance of market power. Because of this ambiguity, we
+combine reduced-form econometrics techniques to estimate the impact of losing a competitor on
+negotiated prices, with a structural econometric model to measure the extent of market power
+acrossconsumerswithdifferentsearchandnegotiationcosts.
+Toperformouranalysis, weuseadministrativedataoninsuredmortgagecontracts, andtake
+advantage of the quasi-experimental variation created by a horizontal merger between two im-
+portant mortgage lenders in Canada. Our empirical strategy relies on the idea that the merger
+of two banks’ networks creates discrete changes in the choice-set of consumers located near the
+branches of both merging parties, while the number of options offered to consumers living close
+toonlyoneorneitherremainsunchanged.
+This variation naturally leads to a difference-in-difference estimator with which we infer the
+average price changes among consumers directly affected by the merger by looking at the evo-
+lutionofpricesincomparablelocalmarketsinwhichthenumberoflendersremainedconstant.4
+Ourfirstsetofresultsshowsthatthelossofacompetitorledtoanincreaseintheaverageinterest
+rateintreatedmarketsofapproximately6basispoints(bps), whichcorrespondstoabout15%of
+residualpricedispersioninoursample.
+Wethenestimatethedistributionaleffectofthemerger,anaspectofmergerevaluationthathas
+beenignoreduptonowbytheliterature. Todoso,weusethechange-in-changeestimatorproposed
+by Athey and Imbens (2006) to recover the counter-factual distribution of negotiated rates that
+would have been observed if the merger had not been approved by antitrust authorities. This
+allowsustodocumentsubstantialheterogeneityintheimpactofthemergeralongthedistribution
+of negotiated rates. In particular, our second set of results show that the loss of a competitor
+increasedinterestratesbetween7and9bpsforconsumersinthelowerandmiddlepercentilesof
+thedistribution,andhadnoeffectonconsumersinthetop30%. Thisresultimpliesthatborrowers
+whoarethemostadverselyaffectedbyanegotiation-basedpricingpolicydonotbenefitfroman
+increaseinthedegreeofcompetitionbetweenlenders.
+Having estimated the pre- and post-merger price distribution, we measure the impact of the
+merger on residual price dispersion. Our third set of results shows that the merger led to a 16%
+decrease in the inter-quartile range, while the coefficient of variation decreased by 15%. This
+establishes a positive relationship between the number of firms and residual price dispersion in
+marketswithnegotiatedprices.
+We then develop and estimate a model of search and price negotiation that is consistent with
+4Thisstrategyhasrecentlybeenusedtostudytheimpactofmergersingasolinemarkets(e.g. Hastings(2004),and
+Houde(2012)),cementindustry(e.g.HortacsuandSyverson(2007)),health-careindustry(e.g.Dafnyetal.(2011)),and
+durablegoods(e.g.Weinbergetal.(2013)).
+2

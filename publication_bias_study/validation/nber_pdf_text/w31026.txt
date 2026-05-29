@@ -1,0 +1,136 @@
+NBER WORKING PAPER SERIES
+THE MACROECONOMICS OF TRADE CREDIT
+Luigi Bocola
+Gideon Bornstein
+Working Paper 31026
+http://www.nber.org/papers/w31026
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+March 2023
+We thank Alessandro Dovis and Nobuhiro Kiyotaki for extensive discussions that shaped the
+direction and scope of our paper. We also thank Adrien Auclert, Javier Bianchi, Saki Bigio, Laura
+Castillo-Martinez, Luigi Iovino, Victoria Vanasco, Jaume Ventura, Rob Townsend, and seminar
+participants at Stanford, Berkeley, LSE, CREi, UAB, University of Barcelona, UC3M, ECB,
+EIEF, and Luiss for insightful comments. We thank Mohamad Adhami for research assistance.
+Luigi Bocola thanks the Alfred P. Sloan foundation and the National Science Foundation for
+generous funding. The views expressed herein are those of the authors and do not necessarily
+reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2023 by Luigi Bocola and Gideon Bornstein. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+The Macroeconomics of Trade Credit
+Luigi Bocola and Gideon Bornstein
+NBER Working Paper No. 31026
+March 2023
+JEL No. E44,G01,G30
+ABSTRACT
+In most countries, suppliers of intermediate goods and services are also the main providers of
+short-term financing to firms. This paper studies the macroeconomic implications of these
+financial links. In our model, trade credit is the outcome of a long-term contract between firms
+linked in the production process, and it is sustained in equilibrium by reputation forces as
+customers lose the relationship with their suppliers in case of a default. These financial links give
+rise to a credit multiplier: suppliers can enforce repayment of these IOUs, and they can discount
+these bills with banks to obtain liquidity. This process can either dampen or amplify the output
+effects of financial shocks, depending on the borrowing capacity of suppliers. Using Italian data,
+we find that the credit multiplier is sizable and show that trade credit amplified the output costs of
+the Great Recession by 45%.
+Luigi Bocola
+Department of Economics
+Landau 342
+Stanford University
+579 Jane Stanford Way
+Stanford, CA 94305-6072
+and NBER
+lbocola@stanford.edu
+Gideon Bornstein
+3620 Locust Walk
+2317 Steinberg-Dietrich Hall
+Philadelphia, PA 19104
+United States
+gideonbo@wharton.upenn.edu
+
+1 Introduction
+After the Great Recession, a significant amount of research was dedicated to determin-
+ing the role of financial factors in overall economic instability. Most of the models used
+by economists to gauge the impact of financial shocks—for instance, those building on
+the pioneering work of Kiyotaki and Moore (1997b) and Bernanke, Gertler, and Gilchrist
+(1999)—put capital markets and financial intermediaries at the forefront. In these models,
+companies’ funding needs are solely met by these institutions, implying, by construction,
+direct spillovers of financial shocks to the demand for capital and labor by businesses.
+In reality, however, most companies around the world address the bulk of their liquidity
+needs using trade credit—the financing that suppliers of intermediate inputs provide in
+the form of extended payment terms. Figure 1 shows the significance of this phenomenon
+for non-financial businesses for a selection of advanced economies. Noticeable in the figure
+is that trade credit claims are usually as large—and in countries such as Spain and Italy,
+evenlargerthan—short-termdebtsecuritiesandloansissuedbynon-financialcorporations
+combined. Inaddition,tradecreditisoftenmorevolatilethantheseotherdebtinstruments,
+underscoring the importance of understanding its drivers and the economic effects of these
+movements.
+In this study, we propose a framework for examining the macroeconomic significance of
+this phenomenon and reevaluate the question of how financial shocks spread through the
+restoftheeconomy. Inourmodel, firmscanborrowfrombanksandfromtheirsuppliersof
+intermediate inputs. Unlike bank debt, which is partially upheld by law, trade credit relies
+on a reputation mechanism for enforcement, with customers having an incentive to repay
+it to avoid being cut off from future supplies of the goods.1 Suppliers can then discount
+these claims with banks, enhancing in this fashion the liquidity of the overall system. We
+show that this credit multiplier reduces the economic distortions due to financial frictions
+on average, but it also makes the economy potentially more exposed to financial market
+disruptions—in that credit supply shocks not only affect firms bank financing but also
+hinder the ability of their suppliers to provide trade credit. Indeed, when calibrating our
+model to Italian data, we show that the presence of trade credit amplified the output costs
+of the Great Recession by 45%.
+We consider an economy in which households consume a basket of differentiated goods.
+The production of these goods is organized on different supply chains (or sectors), with
+upstream firms producing intermediate goods using labor and downstream firms using
+1We introduce this asymmetry in the legal enforcement of bank and trade credit because, in most legis-
+lations, trade credit is one of the most junior forms of credit. See Cuñat and García-Appendini (2012) and
+JacobsonandVonSchedvin(2015)foradiscussion.
+1
+
+1.4
+Trade credit as a share of short term financing
+Relative volatility of trade credit
+1.24
+1.2
+1.06
+1.01
+1 0.98
+0.81
+0.8
+0.75
+0.6 0.60
+0.56
+0.49
+0.46
+0.44
+0.4
+0.21
+0.2
+0
+Spain Italy Germany France USA UK
+Figure 1: Relative size and volatility of trade credit
+Note: OurcalculationsfromannualEurostatInstitutionalSectorAccountsforthe1995-2017period. Trade
+creditis"Tradecreditandotherreceivables"onthe(unconsolidated)liabilitysideofnon-financialcorpo-
+rations. Short-term debt is the sum of "Short-term debt securities" and "Short-term loans" on the liability
+sideofnon-financialcorporations. Wedefineshort-termfinancingasthesumofshort-termdebtandtrade
+credit. The blue bar reports for each country the sample mean of trade credit as a fraction of short-term
+financing. Toconstructtheredbar,wefirstHP-filterthelogoftradecreditandshort-termdebt,compute
+thestandarddeviationsofbothseries,anddeterminetheirratio. Avalueabove1indicatesthatthecyclical
+componentoftradecreditismorevolatilethanthatofshort-termdebt.
+these inputs to produce consumption goods. We follow Bigio and La’o (2020) and assume
+that part of the revenues of the final good firms are realized only after they purchase
+inputs, so these firms need credit to operate. Banks can lend to firms, but because of
+limited commitment, they can lend only up to a fraction of the firms’ revenues. As in
+Jermann and Quadrini (2012), this debt limit is time-varying and stochastic, and we will
+think about an unexpected tightening as a negative credit supply shock. Importantly, we
+allow the downstream firms to borrow also from their suppliers within the context of a
+long-term contract. These contracts specify not only the quantity of the good supplied and
+its price but also the financing—whether payments occur at the beginning or at the end of
+the period. We refer to the payments that occur at the end of the period as trade credit.
+Trade credit can emerge in equilibrium as part of the optimal contract between down-
+2

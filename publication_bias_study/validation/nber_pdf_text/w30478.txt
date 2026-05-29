@@ -1,0 +1,116 @@
+NBER WORKING PAPER SERIES
+REAL-TIME FORWARD-LOOKING SKEWNESS OVER THE BUSINESS CYCLE
+Ian Dew-Becker
+Working Paper 30478
+http://www.nber.org/papers/w30478
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2022
+I appreciate helpful comments from Stefano Giglio, Simon Oh, Laura Veldkamp, Matthias
+Kehrig, Hugues Langlois, Thiago Ferreira, Niels Gormsen, and participants at the NBER Summer
+Institute, Canadian Derivatives Institute, and Copenhagen Busines School. The Berkeley Options
+Database was saved by Stewart Mayhew, without whom this research would not be possible. The
+views expressed herein are those of the author and do not necessarily reflect the views of the
+National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2022 by Ian Dew-Becker. All rights reserved. Short sections of text, not to exceed two
+paragraphs, may be quoted without explicit permission provided that full credit, including ©
+notice, is given to the source.
+
+Real-Time Forward-Looking Skewness over the Business Cycle
+Ian Dew-Becker
+NBER Working Paper No. 30478
+September 2022
+JEL No. E0,E22,E27,E3,G13
+ABSTRACT
+This paper measures option-implied skewness for individual firms and the overall stock market
+between 1980 and 2021, giving real-time measures of conditional micro and macro skewness.
+There are three key results: 1. Micro skewness is significantly procyclical, while macro skewness
+is acyclical; 2. Micro skewness leads the business cycle and is strongly linked to credit spreads,
+suggesting one potential causal channel; 3. Micro skewness is significantly, and not
+mechanically, correlated with macro volatility, implying that there is a common shock driving
+them both, which is also linked to the business cycle.
+Ian Dew-Becker
+Kellogg School of Management
+Northwestern University
+2001 Sheridan Road
+Evanston, IL 60208
+and NBER
+ian.dewbecker@gmail.com
+
+Real-time forward-looking skewness over the business
+cycle
+*
+Ian Dew-Becker
+August 16, 2022
+Abstract
+This paper measures option-implied skewness for individual firms and the overall
+stock market between 1980 and 2021, giving real-time measures of conditional micro
+and macro skewness. There are three key results: 1. Micro skewness is significantly
+procyclical, while macro skewness is acyclical; 2. Micro skewness leads the business
+cycleandisstronglylinkedtocreditspreads,suggestingonepotentialcausalchannel;3.
+Micro skewness is significantly, and not mechanically, correlated with macro volatility,
+implying that there is a common shock driving them both, which is also linked to the
+business cycle.
+1 Introduction
+Background
+A growing literature has developed evidence that the conditional distributions of eco-
+nomic variables, at both the aggregate and micro levels, varies over time. There is work on
+shocks to volatility and uncertainty at the aggregate level, including time-varying disaster
+risk, along with estimates of cross-sectional variance and skewness of outcomes at the micro
+level.1 The evidence on micro outcomes has come from analyses of the distribution of realized
+outcomes, often (though not exclusively) at just an annual frequency. For example, research
+has measured the skewness of the distribution of annual firm-level employment growth and
+*Northwestern University and NBER. I appreciate helpful comments from Stefano Giglio, Simon Oh,
+Laura Veldkamp, Matthias Kehrig, Hugues Langlois, Thiago Ferreira, Niels Gormsen, and participants at
+theNBERSummerInstitute,CanadianDerivativesInstitute,andCopenhagenBusinesSchool. TheBerkeley
+Options Database was saved by Stewart Mayhew, without whom this research would not be possible.
+1On uncertainty, see, among many others, Bloom et al. (2018), Adrian, Boyarchenko, and Giannone
+(2019), and Berger, Dew-Becker, and Giglio (2020). On disasters and skewness, see Barro (2006), Gabaix
+(2012), Gourio (2012, 2013), and Wachter (2013). At the micro level, see also Storesletten, Telmer, and
+Yaron (2004), Guvenen, Ozkan, and Song (2014), and Kehrig (2015).
+1
+
+annual individual income growth. There is also a literature on realized skewness of firm
+stock returns at the monthly level.2
+But in models in which time-varying risk – whether through volatility or skewness – is
+a driving force (e.g. Salgado, Guvenen, and Bloom (2020)), it is typically agents’ ex ante
+beliefs about future skewness that matter. Forward-looking decisions, such as firm- and
+household-level investment, depend (by definition) on beliefs about the moments of future
+shocks, rather than the moments of the shocks that were already realized.3 And realizations
+are always equal to expectations plus an error, meaning that they are noisy relative to the
+true conditional expectation. The transitory or “measurement error” component of cross-
+sectional stock return skewness in fact accounts for over half of its variance.
+Beyond that, the use of annual data makes estimation and measurement difficult, since
+there are so few observations and they come at a low frequency relative to, for example, the
+length of the typical recession.4 Policymakers also benefit from having measures available in
+real time that can be used for decision-making, which explains the wide use of the VIX for
+measuring real-time uncertainty, even though it is suboptimal from a theoretical perspective
+since it does not measure fundamental economic uncertainty.
+Estimation and testing of models based on time-varying risk, whether volatility or skew-
+ness, and also using measures of risk as inputs to policy, therefore significantly benefits from
+high-frequency, real-time measures of conditional moments.
+Finally, past work has not distinguished the importance of the skewness of idiosyncratic
+versus aggregate shocks. There are independent analyses of both aggregate (macro) and
+firm- and household-level (micro) skewness, but nothing that analyzes them jointly. To see
+the macro/micro distinction, consider a simple specification,
+x = µ +ε (1)
+i,t+1 t+1 i,t+1
+where x is some firm-level outcome, µ is an aggregate shock, and ε is an idiosyn-
+i,t+1 t+1 i,t+1
+2For variance, Campbell et al. (2001), Bloom (2009), Herskovic et al. (2016), and Bloom et al. (2018)
+all examine measures of realized dispersion rather than conditional variances. Guvenen, Ozkan, and Song
+(2014), Ferreira (2018), Jondeau, Zhang, and Zhu (2019), Oh and Wachter (2019), Salgado, Guvenen, and
+Bloom (2020), Gomez, Haddad, and Loualiche (2020), and Stockl and Kaiser (2021) study skewness. The
+evidence on stock returns in those papers is the exception to the general pattern that research has typically
+looked at low frequencies. However, the work on stock returns is on skewness in the cross-section of realized
+returns, not conditional skewness at either the aggregate or firm level.
+3This is not to say that realized moments cannot matter – they will, for example, any time reallocation
+has real effects, for example if firms or households face borrowing constraints so that the cross-sectional
+distributions of firm equity and household wealth become relevant.
+4See Guvenen, Ozkan, and Song (2014), Harmenberg and Sieversten (2017), Busch et al. (2018), Ilut,
+Kehrig, and Schneider (2018), and Salgado, Guvenen, and Bloom (2020).
+2

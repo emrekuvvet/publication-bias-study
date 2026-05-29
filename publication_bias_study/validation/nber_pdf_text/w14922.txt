@@ -1,0 +1,129 @@
+NBER WORKING PAPER SERIES
+INTERVIEWING IN TWO-SIDED MATCHING MARKETS
+Robin S. Lee
+Michael Schwarz
+Working Paper 14922
+http://www.nber.org/papers/w14922
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+April 2009, Revised March 2017
+We thank Neil Thakral for exceptional research assistance, and Itay Fainmesser, Kyna Fong,
+Rachel Kranton, David McAdams, Michael Ostrovsky, Al Roth, Lones Smith, two anonymous
+referees and the editor for helpful comments. All errors are our own. The views expressed herein
+are those of the author(s) and do not necessarily reflect the views of the National Bureau of
+Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2009 by Robin S. Lee and Michael Schwarz. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Interviewing in Two-Sided Matching Markets
+Robin S. Lee and Michael Schwarz
+NBER Working Paper No. 14922
+April 2009, Revised March 2017
+JEL No. C78,D85,J01
+ABSTRACT
+We introduce the interview assignment problem, which generalizes the one-to-one matching
+model of Gale and Shapley (1962) by introducing a stage of costly information acquisition. Firms
+learn preferences over workers via costly interviews. Even if all firms and workers conduct the
+same number of interviews, realized unemployment depends also on the extent to which agents
+share common interviewing partners. We introduce the concept of overlap that captures this
+notion, and prove that unemployment is minimized with perfect overlap: i.e., if two firms
+interview any common worker, they interview the exact same set of workers.
+Robin S. Lee
+Department of Economics
+Harvard University
+Littauer Center 120
+Cambridge, MA 02138
+and NBER
+robinlee@fas.harvard.edu
+Michael Schwarz
+Googe
+schwarz.m@gmail.com
+
+1 Introduction
+The theory of two-sided matching generally assumes that agents know their true preferences over
+potential partners prior to engaging in a match.1 However, in many matching markets, information
+acquisitionplaysanimportantrole: inlabormarkets, firmsinterviewworkers; inmarriagemarkets,
+men and women date; and in real estate markets, buyers attend open-houses. Such interviews,
+dates, and meetings are often costly and scarce—e.g., firms pay up to a third of an employee’s
+annualsalaryascommissiontoheadhuntersjusttonarrowdownthepotentialfieldofcandidatesto
+interview (cf. Coles et al., 2008)— and because these interviews affect the formation of preferences,
+their assignment can crucially affect the outcome of the eventual matching process.
+Our article generalizes the one-to-one matching model of Gale and Shapley (1962) to allow for a
+stage of costly information acquisition. To our knowledge, this article is one of the first to analyze
+the interview assignment problem in the context of two-sided matching. Throughout this article
+we will refer to agents as “firms” and “workers,” but this label can be changed to men and women,
+colleges and students, hospitals and doctors, and so forth. Firms and workers do not ex ante know
+their idiosyncratic preferences over potential matching partners and must discover them through a
+costly interviewing process.
+We analyze a two-stage game: in the first stage, firms simultaneously choose a subset of work-
+ers to interview, and in the second stage firms and workers are matched one-to-one using a firm-
+proposing deferred acceptance algorithm in which firms make “job offers” to workers. We primarily
+focus on the first stage interviewing decisions, and use standard results from the one-to-one match-
+ing literature to analyze the second stage assignment. Even so, the interview assignment problem
+is generally difficult and possibly intractable. To allow for analysis while still maintaining a model
+rich enough to yield meaningful results, we make the following assumptions: firms bear the full
+cost of interviewing; a firm and worker must interview in order to be matched; workers prefer being
+matched to any firm than to being unemployed; firms may find some workers unacceptable and
+choose to remain unmatched; and workers and firms are ex ante homogeneous, with preferences
+over partners independent and idiosyncratic to each agent.2
+Even if all firms and workers are ex ante identical (prior to the realization of their idiosyncratic
+preferences), our model emphasizes that agents are not indifferent over whom they interview with.
+As interviews are costly, firms care about how many interviews a potential interviewee has: as
+the number of interviews a worker has increases, the probability of a job offer being accepted
+declines as the worker might obtain and accept an offer from another firm. All else being equal,
+workers who have few interviews are more attractive to interview because they are more likely
+1For a survey, see Roth and Sotomayor (1990).
+2Althoughhomogeneityisastrongassumptiontoapplyforanentiremarket,itispotentiallyplausibleifamarket
+is partitioned into subsets of workers and firms of similar quality. For example, although workers in general may
+have a greater likelihood of preferring a “top-tier” firm in the entire market over a “bottom-tier” firm, within a tier
+worker preferences may be fairly evenly distributed; this also may be true with firm preferences over workers within
+a tier. Thus, in the sense that workers and firms of similar quality are the only ones that interview and match with
+each other, and—conditional on all available information—worker and firm preferences are generally uniform and
+i.i.d. among a particular subset of agents, our model is less restrictive than it might appear.
+2
+
+to accept if an offer is made. As a result, even though there are equilibria in which firms all
+conduct the same number of interviews, firms would prefer not to randomize over workers but
+instead coordinate so that all workers receive the same number of interviews. We prove that for
+any number of interviews conducted by all firms, there are values of interviewing costs where firms
+randomly choosing workers to interview comprise an equilibrium of our game; additionally, there
+are (potentially different) values of interviewing costs so that all firms and workers conducting the
+same number of interviews is also an equilibrium.
+We then investigate a more subtle form of coordination which also proves to have significant
+effects on equilibrium employment. For our analysis, we focus on symmetric interview assignments,
+which we define to be interview assignments in which each firm and worker has the same number
+of interviews, and even if two firms or two workers swap their interview assignments, the original
+interview assignment can be obtained via a renaming of other agents. Although there may exist
+manyequilibriainwhichallagentsconductthesamenumberofinterviews, thenumberofexpected
+hires in the match can be very different depending on whether or not the interview assignment
+exhibits greater overlap—a partial ordering that we define formally which captures the number of
+common interview partners among agents.
+To illustrate why overlap matters, consider two firms, f and f(cid:48), who are the only firms that
+interview workers w and w(cid:48): if f has an offer rejected by w, it must be that the worker accepted an
+offer from f(cid:48); consequently, f will then face no “competition” for w(cid:48) and obtain him for certain if
+it makes him an offer. If f and f(cid:48) did not interview the same set of workers, then f could possibly
+be rejected by both w and w(cid:48) and not be matched despite making offers to both workers (because
+being rejected by w no longer implies obtaining w(cid:48) for certain). Thus, a firm’s expected payoff
+depends not only on the number of interviews its workers receive, but also the identities of the
+firms interviewing those workers.
+The main result of this article is that if the ex ante probability that a worker is found to be
+unacceptable to a firm is sufficiently small, then among all symmetric interview assignments in
+which every firm and worker conducts the same number of interviews, any assignment with perfect
+overlap—i.e., if any two firms interview the same worker, they interview exactly the same set of
+workers—minimizes unemployment for any firm or worker. We note that this result is also not
+fragile to the i.i.d. assumption over preferences: e.g., an interview assignment with perfect overlap
+also minimizes unemployment when firm preferences over workers are perfectly correlated.
+We also use simulation results to quantify the impact on unemployment from two forms of
+coordination if all firms interview the same number of workers: (i) allowing firms to ensure that
+all workers receive the same number of interviews (as opposed to randomly assigning interviews),
+and (ii) conditional on all workers receiving the same number of interviews, increasing the amount
+of overlap in the interview assignment. We find that unemployment reductions from both forms of
+coordination can be substantial.
+Ouranalysissuggeststhatinstitutionswhich,conditionalonthetotalnumberofinterviewsthat
+are conducted, limit the number of interviews that candidates receive or segment the market such
+3

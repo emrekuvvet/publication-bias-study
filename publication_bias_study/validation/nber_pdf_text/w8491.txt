@@ -1,0 +1,116 @@
+NBER WORKING PAPER SERIES
+FIXED VERSUS FLEXIBLE: LESSONS FROM EMS ORDER FLOW
+William P. Killeen
+Richard K. Lyons
+Michael J. Moore
+Working Paper 8491
+http://www.nber.org/papers/w8491
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2001
+Killeen now works for Setanta Asset Management in Dublin. The original version of this paper was written while
+Killeen worked at BNP Paribas Asset Management in London. We thank the following for valuable comments:
+Kathryn Dominguez, Ken Froot, Carol Osler, Helene Rey, Andrew Rose, participants at the Fall 2000 NBER IFM
+meeting, and the lunch- groups at Berkeley and Queens. Killeen also wishes to thank Mr. Loic Meinnel, Global
+Head of Foreign Exchange, BNP Paribas for very useful discussions on FX markets during this project. Thanks
+too to Tina Kane. Lyons thanks the National Science Foundation for financial assistance. The views expressed
+herein are those of the authors and not necessarily those of the National Bureau of Economic Research, BNP
+Paribas or Setanta Asset Management.
+© 2001 by William P. Killeen, Richard K. Lyons and Michael J. Moore. All rights reserved. Short sections of
+text, not to exceed two paragraphs, may be quoted without explicit permission provided that full credit, including
+© notice, is given to the source.
+
+Fixed versus Flexible: Lessons from EMS Order Flow
+William P. Killeen, Richard K. Lyons and Michael J. Moore
+NBER Working Paper No. 8491
+September 2001
+JEL No. F31, G12, G15
+ABSTRACT
+This paper addresses the puzzle of regime-dependent volatility in foreign exchange. We extend
+the literature in two ways. First, our microstructural model provides a qualitatively new explanation for
+the puzzle. Second, we test implications of our model using Europe’s recent shift to rigidly fixed rates
+(EMS to EMU). In the model, shocks to order flow induce volatility under flexible rates because they
+have portfolio-balance effects on price, whereas under fixed rates the same shocks do not have portfolio-
+balance effects. These effects arise in one regime and not the other because the elasticity of speculative
+demand for foreign exchange is (endogenously) regime-dependent: low elasticity under flexible rates
+magnifies portfolio-balance effects; under credibly fixed rates, elasticity of speculative demand is infinite,
+eliminating portfolio-balance effects. New data on FF/DM transactions show that order flow had
+persistent effects on the exchange rate before EMU parities were announced. After announcement,
+determination of the FF/DM rate was decoupled from order flow, as predicted by the model.
+William P. Killeen Richard K. Lyons Michael J. Moore
+Setanta Asset Management Haas School of Business, S545 School of Mgmt and Economics
+College Park House U.C. Berkeley Queen’s University, Belfast
+South Frederick Street Berkeley, CA 94720-1900 Belfast BT7 1NN
+Dublin 2 Ireland and NBER Northern Ireland, UK
+Tel: 510-642-1059
+Fax: 510-642-4700
+Email: lyons@haas.berkeley.edu
+
+Fixed versus Flexible: Lessons from EMS Order Flow
+1. Introduction
+If there is a topic at the center of international macroeconomics, it is fixed versus
+flexible exchange rates. Whether teaching Mundell-Fleming, speaking about the
+Impossible Trinity, or writing about “excess” volatility, the fixed-versus-flexible debate
+is deeply relevant. At the same time, many of the issues in this debate remain unresolved.
+Important among them is the regime-volatility puzzle: similar macroeconomic
+environments produce much more exchange-rate volatility under flexible-rate regimes
+(e.g., Flood and Rose 1995).1 This finding has prompted many authors to conclude that
+the critical determinants of flexible-rate volatility are not macroeconomic. It is unclear,
+however, what these non-macro determinants might be.
+This paper addresses the regime-volatility puzzle from a new perspective. Our
+approach augments the traditional macro-asset approach with some price-determination
+microeconomics. In particular, we focus our theoretical and empirical analysis on the role
+of order flow. (Order flow is signed volume; seller-initiated trades are negative order
+flow and buyer-initiated trades are positive order flow.) In microeconomic models of
+asset-price determination, order flow plays an important causal role that arises because
+order flow conveys information. The type of information that order flow conveys
+includes any information that is relevant to the realization of uncertain demands, so long
+as that information is not common knowledge. (If common knowledge—as is generally
+assumed in macro exchange-rate models—then price adjusts without any need for an
+order-flow role.) For example, order flow may convey information about dispersed shifts
+in portfolio balance (e.g., shifts in hedging demands or risk tolerances), or about
+differential interpretation of common news. In a non-common-knowledge setting, order
+1 To some, lower volatility under fixed rates may seem obvious. But empirically, fixed rates do have a distribution over
+time (due to parity changes). And in most models, keeping the variance of this distribution below that under flexible
+rates requires keeping the variance of fundamentals below that under flexible rates. As an empirical matter, this has not
+been the case, per Flood and Rose (1995). Our explanation provides a source of volatility that operates only under
+flexible rates, but is not included among the fundamentals previously considered.
+1
+
+flow becomes the intermediate link between evolving information and price—a
+proximate cause of price movements (Evans and Lyons 1999).
+Order flow is potentially relevant for a high-level debate like fixed-versus-flexible
+because its impact on exchange rates is persistent. Though our model makes this
+persistence explicit, let us provide some perspective. Note that if order flow conveys
+information, then its price impact should persist, at least under the identifying assumption
+used regularly in empirical work that information effects on price are permanent (e.g.,
+French and Roll 1986, Hasbrouck 1991). That is not to suggest that order flow cannot
+also have transitory effects on price, e.g., from temporary indigestion effects (sometimes
+called inventory effects). But insofar as order flow communicates information—along the
+lines noted in the previous paragraph—then some portion of order flow’s effects on price
+will persist.
+Order flow may be key to resolving the regime-volatility puzzle. One reason it has
+not been considered to date is because empirical work on this puzzle examines macro
+determinants, whereas order flow is generally viewed as non-macro.2 If order flow is
+indeed a determinant, then it might explain why flexible regimes produce more volatility
+than macroeconomics predicts. There is now considerable evidence that the “if” part of
+that last sentence is met: order flow is a determinant (Lyons 1995, Evans 1999, Payne
+1999, Evans and Lyons 1999, Rime 2000). Whether the relation found by these authors
+for flexible rates is affected by differences in exchange-rate regime is an open question,
+however, one that we address in this paper (both theoretically and empirically).
+The main lesson from the theoretical portion of the paper is the following: exchange
+rates are more volatile under flexible rates because of order flow. Importantly, this is not
+because order flow is more volatile under flexible rates (indeed, its volatility is
+unchanged in our model across regimes). The intuition for order flow’s role is tied to the
+2 Though generally viewed as non-macro, order flow need not be divorced from macro. Consider models in
+microstructure finance, where order flow signals that some agents’ expectations about future fundamentals have
+changed. For exchange rates, one can write the price of foreign exchange, P, as a function of current and expected
+t
+future macro fundamentals: Ptt =gt(,f fe +)1 . Order flow may be the way that price-setters learn about changes in ft e +1 .
+Under this hypothesis, order flow is a proximate cause of price changes, but macro (macro expectations) remains the
+underlying cause. Note too that this hypothesis offers a potential explanation for the empirical results of Meese and
+Rogoff (1983): if the macro variables that order flow forecasts are largely beyond the one-year horizon, then the
+empirical link between exchange rates and current macro variables will be loose. That Meese-Rogoff-style empirical
+results are more positive at horizons beyond one year is consistent with this “anticipation” hypothesis.
+2

@@ -1,0 +1,109 @@
+NBER WORKING PAPER SERIES
+HIGH FREQUENCY TRADERS:
+TAKING ADVANTAGE OF SPEED
+Yacine Aït-Sahalia
+Mehmet Saglam
+Working Paper 19531
+http://www.nber.org/papers/w19531
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2013
+The views expressed herein are those of the authors and do not necessarily reflect the views of the
+National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2013 by Yacine Aït-Sahalia and Mehmet Saglam. All rights reserved. Short sections of text, not
+to exceed two paragraphs, may be quoted without explicit permission provided that full credit, including
+© notice, is given to the source.
+
+High Frequency Traders: Taking Advantage of Speed
+Yacine Aït-Sahalia and Mehmet Saglam
+NBER Working Paper No. 19531
+October 2013
+JEL No. G12
+ABSTRACT
+We propose a model of dynamic trading where a strategic high frequency trader receives an imperfect
+signal about future order flows, and exploits his speed advantage to optimize his quoting policy. We
+determine the provision of liquidity, order cancellations, and impact on low frequency traders as a
+function of both the high frequency trader's latency, and the market volatility. The model predicts
+that volatility leads high frequency traders to reduce their provision of liquidity. Finally, we analyze
+the impact of various policies designed to potentially regulate high frequency trading.
+Yacine Aït-Sahalia
+Department of Economics
+Bendheim Center for Finance
+Princeton University
+Princeton, NJ 08540
+and NBER
+yacine@princeton.edu
+Mehmet Saglam
+Bendheim Center for Finance
+Princeton University
+msaglam@princeton.edu
+
+1. Introduction
+High-frequencytraders(HFTs)havebecomeapotentforceinmanyequityandfuturesmarkets. HFTs
+invest in and develop a trading infrastructure designed to analyze a variety of trading signals and send
+orders to the marketplace in a fraction of a second. The potential profit from any single transaction
+resulting from an execution may be very tiny, and be achieved ex ante with a probability only slightly
+above 50%, but HFTs rely on this process being repeated thousands, if not more, times a day. As
+the law of large numbers and the central limit theorem relentlessly take their hold, profits ensue and
+presumably justify their large investment in trading technology.
+Speed has always been of the essence in financial markets. Traders were among the first to adopt
+the telegraph and then the telephone. Closer to us, “high frequency” meant anything intraday; then
+minute-by-minute transactions became the norm, quickly to be replaced by second-by-second time
+stamps. The time it now takes for an order to be sent and displayed on an electronic exchange, that
+is, the latency associated with the implementation of an order, is currently measured in milliseconds.
+The latest software and infrastructure developments are making it possible for the most cutting-edge
+trading firms to implement microsecond-based algorithms.
+MeasuringtheextentofHFTactivityisinherentlyacomplextask. Althoughestimatesvaryacross
+markets,tradingvenuesandtimeperiod,itisgenerallythoughtthatHFTsrepresentanywherebetween
+40 and 70% of the trading volume in US futures and equity markets, and slightly less in European,
+Canadian and Australian markets (see Biais and Woolley (2011)). The trend points towards high
+frequency trading having perhaps plateaued in some of the markets where it was first introduced, but
+still expanding globally in new markets.
+Thissignificantamountofmarketactivityhasbeenaccompaniedbytheoreticalresearchaddressing
+some of issues arising from the rapid rise of HFTs1. In particular, Foucault et al. (2012) consider
+a setting in which a HFT enjoys a speed advantage when gathering information. They compare
+two models of trading under asymmetric information which differ in the presence of an informed
+trader precessing information faster than the other market participants, and extend Kyle’s model by
+incorporating heterogeneity in the speed of information processing. Foucault et al. (2013) develop
+a model in which HFTs choose the speed at which to react to news, based on a trade-off between
+the advantages of trading first compared to the attention costs of following the news. They focus in
+1See forexamplePagnottaandPhilippon(2011),JarrowandProtter(2012), MoallemiandSaglam (2012), Pagnotta
+(2010), Cespa and Foucault (2008).
+1
+
+particular on liquidity cycles, where traders compete alternatively to make (by positing limit orders)
+andtake(bysendingmarketorders)liquidityfromthemarket. Biaisetal.(2011)analyzethearmsrace
+and equilibria arising in a model where traders choose whether to invest in fast trading technologies.
+Jovanovic and Menkveld (2010) study the effect of high frequency trading activity on welfare and
+adverse selection costs. Cvitani´c and Kirilenko (2010) study the distribution of prices in a market
+before and after the introduction of HFTs. They find that the introduction of HFTs results in more
+mass around the center of the distribution and thinner tails.
+The innovation in our paper is the modeling of a fully dynamically optimizing HFT. The dynamic
+optimizationnatureofthequotingprocessbyHFTsisadeparturefromtheexistingliterature,allowing
+us to address a new set of inherently dynamic questions: we use the model to study the quoting
+optimization by a HFT, initially in a monopolistic position, who enjoys a latency advantage and
+trades against many uninformed LFTs; quantify the HFT’s latency advantage over LFTs; determine
+why HFTs cancel their orders at a very rapid rate; how their (endogenous) inventory constraints help
+shape their order placement and cancellation strategies; how the HFT’s provision of liquidity can be
+expectedtochangeindifferentmarketenvironments,suchashighvolatilityones; andhowcompetition
+among HFTs can be expected to affect the provision of liquidity and the welfare of LFTs.
+Additionally, anumberofregulatoryproposalshaverecentlybeendiscussed, andinsomecountries
+implemented, generally aiming at curbing the growth of trading by HFTs. Some of the proposed
+provisions include a transaction tax, limiting the ability of HFTs to cancel orders before some amount
+of time has elapsed, or taxing such cancellations. Using the model of the paper, we analyze the
+potential impact of these proposed regulations.
+Technically, the innovation is the use of multiple, staggered, Poisson processes to represent the
+arrival of the various elements of the model: market orders by LFTs, signals to the HFT, changes
+in the asset’s fundamental price, arrival of a competing trader who also provides liquidity, etc. This
+modelingdevicekeepstheanalysisof thedynamicoptimizationproblemfacingtheHFTtractableand
+flexible, and makes it possible to analyze different market environments by varying the parameters of
+the model.
+In our model, a HFTis able to(imperfectly) predict theupcoming order flow andexploit his speed
+advantage by placing and possibly canceling limit orders ahead of incoming market orders by LFTs.
+The HFT receives a private signal about the likely type of the next upcoming market order, buy or
+sell, and decides to quote or not to quote a limit order at the best available prices. These signals can
+2

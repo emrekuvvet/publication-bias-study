@@ -1,0 +1,144 @@
+NBER WORKING PAPER SERIES
+BENCHMARKS IN SEARCH MARKETS
+Darrell Duffie
+Piotr Dworczak
+Haoxiang Zhu
+Working Paper 20620
+http://www.nber.org/papers/w20620
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2014
+We are grateful for useful discussions with and comments from members of the Market
+Participants Group on Reference Rate Reform (MPG), as well as Ana Babus, Bruno Biais, David
+Bowman, Gregory Connor, Willie Fuchs, Will Gornall, Brett Green, Terry Hendershott, Gustavo
+Manso, Jose Moraga-Gonzalez, Konstantin Milbradt, Paul Milgrom, Marzena Rostek, Ali
+Shourideh, Andy Skrzypacz, Chester Spatt, Jeremy Stein, Gabor Virag, and Xavier Vives.
+Helpful comments were offered by seminar and conference participants at Stanford University,
+Princeton University, U.C. Berkeley, Harvard University, MIT, Finance Theory Group, SFS
+Cavalcade, European Central Bank, Paul Woolley Centre Annual Conference, Barcelona GSE
+Summer Forum, Western Finance Association annual meeting, Bonn Workshop on Information
+Aggregation, Society for Economic Dynamics meeting, NBER Summer Institute Asset Pricing
+meeting, Econometric Society World Congress, Philadelphia Fed Search and Matching
+Conference, the 11th Central Bank Workshop on Microstructure of Financial Markets,
+Conference on Monetary Policy Implementation and Transmission in the Post-Crisis Period, and
+American Finance Association annual meeting. The views expressed herein are those of the
+authors and do not necessarily reflect the views of the National Bureau of Economic Research.
+At least one co-author has disclosed a financial relationship of potential relevance for this
+research. Further information is available online at http://www.nber.org/papers/w20620.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2014 by Darrell Duffie, Piotr Dworczak, and Haoxiang Zhu. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that
+full credit, including © notice, is given to the source.
+
+Benchmarks in Search Markets
+Darrell Duffie, Piotr Dworczak, and Haoxiang Zhu
+NBER Working Paper No. 20620
+October 2014, Revised September 2016
+JEL No. D43,D47,D83,G12,G14,G18,G21,G23
+ABSTRACT
+We characterize the price-transparency role of benchmarks in over-the-counter markets. A
+benchmark can, under conditions, raise social surplus by increasing the volume of beneficial
+trade, facilitating more efficient matching between dealers and customers, and reducing search
+costs. Although the market transparency promoted by benchmarks reduces dealers' profit
+margins, dealers may nonetheless introduce a benchmark to encourage greater market
+participation by investors. Low-cost dealers may also introduce a benchmark to increase their
+market share relative to high-cost dealers. We construct a revelation mechanism that maximizes
+welfare subject to search frictions, and show conditions under which it coincides with announcing
+the benchmark.
+Darrell Duffie Haoxiang Zhu
+Graduate School of Business MIT Sloan School of Management
+Stanford University 100 Main Street, E62-623
+Stanford, CA 94305-7298 Cambridge, MA 02142
+and NBER and NBER
+duffie@stanford.edu zhuh@mit.edu
+Piotr Dworczak
+Graduate School of Business
+Stanford University
+655 Knight Way
+Stanford, CA, 94305
+dworczak@stanford.edu
+
+1 Introduction 1
+1 Introduction
+An enormous quantity of over-the-counter (OTC) trades are negotiated by counterparties
+whorelyontheobservationofbenchmarkprices. Thispaperexplainshowbenchmarksaffect
+pricing and trading behavior by reducing market opacity, characterizes the welfare impact of
+benchmarks, and shows how the incentives of regulators and dealers to support benchmarks
+depend on market structure.
+TrillionsofdollarsinloansarenegotiatedataspreadtoLIBORorEURIBOR,benchmark
+interbank borrowing rates.1 The WM/Reuters daily fixings are the dominant benchmarks in
+theforeignexchangemarket, whichcoversover$5trillionperdayintransactions.2 Thereare
+popular benchmarks for a range of commodities including silver, gold, oil, and natural gas,
+among others.3 Benchmarks are also used to provide price transparency for manufactured
+products such as pharmaceuticals and automobiles.4
+Among other roles, benchmarks mitigate search frictions by lowering the informational
+asymmetry between dealers and their “buy-side” customers. We consider a market for an
+asset in which dealers offer price quotes to customers who are relatively uninformed about
+the typical cost to dealers of providing the asset. We provide conditions under which adding
+a benchmark to an opaque OTC market can improve efficiency by encouraging entry by
+customers, improving matching efficiency, and reducing total searchcosts.
+Recent major scandals over the manipulation of benchmarks for interest rates, foreign
+currencies, commodities, and other assets have made the robustness of benchmarks a major
+concern of international investigators and policymakers. This paper offers a theoretical
+foundation for the public-policy support of transparent financial benchmarks. Section 5
+discusses the manipulation of benchmarks in more detail.
+1LIBOR is the London Interbank Offered Rate. EURIBOR is the Euro Interbank Offered Rate. For
+U.S. dollar Libor alone, the Market Participants Group on Reference Rate Reform(2014) (chaired by one of
+the authors of this paper) reports that over 3 trillion dollars in syndicated loans and over 1 trillion dollars
+in variable-rate bonds are negotiated relative to LIBOR. The MPG report lists many other fixed-income
+products that are negotiated at a spread to the “interbank offered rates” known as LIBOR, EURIBOR, and
+TIBOR,acrossfivemajorcurrencies. Asoftheendof2013,BankforInternationalSettlements(2014)report
+atotalnotionaloutstandingofinterestratederivativesof583trillionU.S.dollars,thevastmajorityofwhich
+referenceLIBORorEURIBOR.Theseswapcontractsandmanyotherderivativesreferencebenchmarks,but
+are not themselves benchmark products. Other extremely popular benchmarks for overnight interest rates
+include SONIA, the Sterling OverNight Index Average, and EONIA, the Euro OverNight Index Average.
+2See Foreign Exchange Benchmark Group (2014), which reports that 160 currencies are covered by the
+WM/Reuters benchmarks. These benchmarks are fixed at least daily, and by currency pair within the 21
+major “trade” currencies.
+3The London Bullion Market Association provides benchmarks for gold and silver. Platts provides
+benchmarks for oil, refined fuels, and iron ore (IODEX). Another major oil price benchmark is ICE Brent.
+ICIS Heren provides a widely used price benchmark for natural gas.
+4For a discussion of the Average Wholesale Price (AWP) drug-price benchmarks, see Gencarelli (2005).
+The Kelly Blue Book publishes the “Fair Purchase Price” of automobiles, based on the average transaction
+price by model and location.
+
+1 Introduction 2
+Our model works roughly as follows. In an OTC market with a finite number of dealers
+andacontinuumofinvestorsthatwecall“traders,” thecosttoadealerofprovidingtheasset
+to a trader is the sum of a dealer-specific (idiosyncratic) component and a component that
+is common to all dealers. (In practice the clients of financial intermediaries may be buying
+or selling the asset. We take the case in which traders wish to buy. The opposite case is
+effectively the same, up to sign changes.) The existence of a benchmark is taken to mean
+that the common cost component is publicly announced. Each trader observes, privately,
+whether her search cost is high or low. Traders are searching for a good price, and dealers
+offer them price quotes that depend endogenously on the presence of a benchmark. Each
+dealer posts an offer price, available for execution by any trader, anonymously. Traders,
+who have a commonly known value for acquiring the asset, contact the dealers sequentially,
+expending a costly search effort, or costly delay, with each successive dealer contacted. At
+each point in time the trader, given all of the information available to her at that time
+(including past price offers and, if published, the benchmark) decides whether to buy, keep
+searching, or exit the market. All market participants maximize their conditional expected
+net payoffs, at all times, in a perfect Bayesian equilibrium.
+Under natural parameter assumptions, which vary with the specific result, we show that
+publishing the benchmark is socially efficient because of the following effects. First, publi-
+cation of the benchmark encourages efficient entry by traders, thus increasing the realized
+gains from trade. The benchmark improves the information available to traders about the
+likely price terms they will face. This assists traders in deciding whether to participate in the
+market, based on whether there is a sufficiently large conditional expected gain from trade.
+The increased transparency of prices created by the benchmark causes dealers to compete
+more aggressively in their quotes. In this sense, publication of the benchmark mitigates the
+hold-up problem caused by dealers’ incentives to quote less attractive prices once the search
+costs of traders have been sunk.
+Second, benchmarkscanimprovematchingefficiency, leadingtoahighermarketsharefor
+low-cost dealers. When the benchmark is not observed by traders, high-cost dealers exploit
+the ignorance of traders about the cost of providing the asset and may conduct sales despite
+the presence of more efficient competitors. The benchmark allows traders to decompose
+a price offer into a common-cost component and a dealer-specific component for cost and
+profit margin. As a result, if search costs are sufficiently small, customers trade with the
+most efficient dealers. Third, benchmarks reduce wasteful search by (i) alerting traders that
+gains from trade are too small to justify entry, and (ii) helping traders infer whether they
+should stop searching because they have likely encountered a low-cost dealer.
+We also characterize cases in which the introduction of a benchmark lowers welfare. This

@@ -1,0 +1,86 @@
+NBER WORKING PAPER SERIES
+STOCHASTIC DOMINANCE BOUNDS ON DERIVATIVE PRICES IN A MULTIPERIOD
+ECONOMY WITH PROPORTIONAL TRANSACTION COSTS
+George M. Constantinides
+Stylianos Perrakis
+Working Paper 8867
+http://www.nber.org/papers/w8867
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+April 2002
+We thank Michael Brennan, Phil Dybvig, Steve Heston, Haim Levy, Rajnish Mehra (the editor), Rene Stulz,
+Robert Tompkins (the referee), and Thaleia Zariphopoulou, for helpful comments. We also thank Ilan Cooper
+for computational assistance. We remain responsible for errors. Constantinides acknowledges financial
+support from the Center for Research in Security Prices, University of Chicago. The views expressed herein
+are those of the authors and not necessarily those of the National Bureau of Economic Research.
+© 2002 by George M. Constantinides and Stylianos Perrakis. All rights reserved. Short sections of text, not
+to exceed two paragraphs, may be quoted without explicit permission provided that full credit, including ©
+notice, is given to the source.
+
+Stochastic Dominance Bounds on Derivative Prices in a
+Multiperiod Economy with Proportional Transaction Costs
+George M. Constantinides and Stylianos Perrakis
+NBER Working Paper No. 8867
+April 2002
+JEL No. G13
+ABSTRACT
+By applying stochastic dominance arguments, upper bounds on the reservation write price of
+European calls and puts and lower bounds on the reservation purchase price of these derivatives are
+derived in the presence of proportional transaction costs incurred in trading the underlying security. The
+primary contribution is the derivation of bounds when intermediate trading in the underlying security is
+allowed over the life of the option. A tight upper bound is derived on the reservation write price of a call
+and a tight lower bound is derived on the reservation purchase price of a put. These results jointly impose
+tight upper and lower bounds on the implied volatility.
+George M. Constantinides Stylianos Perrakis
+Graduate School of Business The John Molson School of Business
+University of Chicago Concordia University
+1101 E. 58th Street 1445 de Maisonneuve W.
+Chicago, IL 60637 Montreal, Quebec
+and NBER Canada H3G 1M8
+773-702-7258
+gmc@gsb.uchicago.edu
+
+1. Introduction and Summary
+The paper examines the role of one market imperfection—proportional transaction costs in
+trading the underlying security—on the observed discrepancy of European option prices from the
+prices that would prevail in a frictionless market. We derive upper bounds on the reservation
+write prices of call and put options and lower bounds on the reservation purchase prices of call
+and put options by extending stochastic dominance arguments to incorporate proportional
+transaction costs.
+The main contribution of this paper is the derivation of stochastic dominance bounds in the case
+that trading is permitted over the life of the option. These bounds are tight. Furthermore, the
+upper bound on the reservation write price of a European call option, derived in Proposition 1,
+and the lower bound on the reservation purchase price of a European put option, derived in
+Proposition 6, are invariant to the frequency of trading permitted over the life of the option.
+These results are to be contrasted to the upper bounds on the call option price derived by the
+super-replication method of Bensaid et. al. (1992) and the approximate replication method of
+Leland (1985). The latter upper bounds tend to the stock price, as the frequency of trading
+increases.
+An attractive feature of our bounds is that they may be derived for any given arbitrary
+distribution of the stock price, if the stock price is bounded below by zero and the first moment
+exists. In particular, as the trading frequency increases, the stock price process need not
+1
+
+converge to the lognormal, but may converge to a mixed diffusion - point process. Even if we
+were to set the transaction cost rate equal to zero, it is nowhere assumed that the market is either
+complete or tends to a complete market, as the frequency of trading increases. Thus, the model
+accommodates stochastic volatility and stock price jumps.1
+The results of this paper are related to earlier results on option bounds in incomplete markets,
+originally derived by Perrakis and Ryan (1984) and extended by Ritchken (1985) and Levy
+(1985). These bounds were extended to a multiperiod setup by Perrakis (1986, 1988), and
+Ritchken and Kuo (1988), as a generalization of the binomial option pricing model.2
+The results of this paper are also related to earlier results by Constantinides and Zariphopoulou
+(1999, 2001).3 Specifically, Constantinides and Zariphopoulou (2001) assumed that (i) the utility
+1 Since the market is incomplete, the bounds need not tend to the Black-Scholes option price, as the frequency of
+trading increases, even if the transaction costs rate is set equal to zero.
+2 Indeed, these bounds have been shown to coincide with the binomial option price when the return distribution
+achieves only two values, and to converge to the Black-Scholes (1973) value when the multiperiod returns tend to a
+diffusion process. See Perrakis (1986) for the binomial model and Perrakis (1988) for the convergence in the
+trinomial model to the Black-Scholes price.
+3 The basic idea behind both papers is the following. One finds the minimal wealth level of an investor at which it is
+feasible to write a call option. At that minimal wealth level, the optimal policy over the lifetime of the option is to
+consume nothing and refrain from trading. This property simplifies the derivation of the reservation write price of a
+call option at the minimal wealth level. The last but non-trivial step is the demonstration that the reservation write
+price at the minimal wealth level serves as an upper bound on the reservation write price at all feasible wealth
+2

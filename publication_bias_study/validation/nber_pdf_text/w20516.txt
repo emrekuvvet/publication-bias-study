@@ -1,0 +1,136 @@
+NBER WORKING PAPER SERIES
+STRATEGIC TRADING IN INFORMATIONALLY COMPLEX ENVIRONMENTS
+Nicolas S. Lambert
+Michael Ostrovsky
+Mikhail Panov
+Working Paper 20516
+http://www.nber.org/papers/w20516
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2014
+We are grateful to the National Science Foundation for financial support (grant CCF-1101209). Ostrovsky
+also thanks the Alfred P. Sloan Foundation for financial support. The views expressed herein are those
+of the authors and do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2014 by Nicolas S. Lambert, Michael Ostrovsky, and Mikhail Panov. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission provided
+that full credit, including © notice, is given to the source.
+
+Strategic Trading in Informationally Complex Environments
+Nicolas S. Lambert, Michael Ostrovsky, and Mikhail Panov
+NBER Working Paper No. 20516
+September 2014
+JEL No. D53,D82,D84,G12,G14
+ABSTRACT
+We study trading behavior and the properties of prices in informationally complex markets. Our model
+is based on the single-period version of the linear-normal framework of Kyle (1985). We allow for
+essentially arbitrary correlations among the random variables involved in the model: the value of the
+traded asset, the signals of strategic traders and competitive market makers, and the demand from liquidity
+traders. We show that there always exists a unique linear equilibrium, characterize it analytically, and
+illustrate its properties in a series of examples. We then use this characterization to study the informational
+efficiency of prices as the number of strategic traders becomes large. If liquidity demand is positively
+correlated (or uncorrelated) with the asset value, then prices in large markets aggregate all available
+information. If liquidity demand is negatively correlated with the asset value, then prices in large markets
+aggregate all information except that contained in liquidity demand.
+Nicolas S. Lambert Mikhail Panov
+Stanford University Stanford University
+Graduate School of Business Graduate School of Business
+655 Knight Way 655 Knight Way
+Stanford, CA 94305 Stanford, CA 94305
+nlambert@stanford.edu mpanov@stanford.edu
+Michael Ostrovsky
+Stanford University
+Graduate School of Business
+655 Knight Way
+Stanford, CA 94305
+and NBER
+ostrovsky@stanford.edu
+An Online Appendix is available at
+http://faculty-gsb.stanford.edu/ostrovsky/papers/st%20-%20online%20appendix.pdf
+
+1 Introduction
+Whether and how dispersed information enters into market prices is one of the central questions of
+information economics. A key obstacle to full information revelation and aggregation in markets is
+thestrategicbehaviorofinformedtraders. Atraderwhohasprivateinformationaboutthevalueof
+anassethasanincentivetotradeinthedirectionofthatinformation. However, themorehetrades,
+the more he reveals his information, and the more he moves the prices closer to the true value of
+an asset. Thus, to maximize his profits, an informed trader may stop short of fully revealing his
+information, and so the informational efficiency of market prices may fail.
+Thus, an important and natural question is when we should expect market prices to in fact
+reflect all information available to market participants. One stream of literature considers trading
+in dynamic environments, with informed traders having multiple opportunities for trading.1 In
+these settings, in each period, traders may have an incentive to withhold some of their information
+in order not to eliminate their profits. However, over time, traders will gradually reveal all of their
+information, and in many (although not all) cases, by the end of trading, market prices will in fact
+aggregate all available information.
+One issue with the case of dynamic trading is that while at the end, market prices accurately
+reflect all available information, that is generally not the case during most of the time the market
+is in operation—and thus much of the trading may happen at prices that are far away from the
+ones that would prevail if all private information was publicly available to all market participants.
+Therefore, another important stream of research abstracts away from the time dimension and
+repeated trading in markets, and considers instead an alternative intuition for when market prices
+may accurately reflect information: when the number of informed traders is large, and each one
+of them is informationally small. In that case, each of the informed traders has limited impact on
+market prices, but their aggregate behavior does in fact reflect the aggregate information available
+in the market. As a result, market prices are close to those that would prevail if all private
+information were publicly available, and all trades happen at those prices.
+Non-strategic explorations of this intuition go back to Hayek (1945), Grossman (1976), and
+Radner (1979).2 Subsequently, a line of research (which we discuss in more detail in Section 2) has
+consideredstrategicfoundationsforthisintuition, studyingstrategicbehaviorofinformedagentsin
+finite markets, and then considering the properties of prices as the number of these agents becomes
+large. This stream of work, however, imposes very strict assumptions on how information is dis-
+tributedamongtheagents,typicallyassumingthatthesignalsofinformedagentsaresymmetrically
+1See, e.g., Hellwig (1982), Kyle (1985), Dubey et al. (1987), Wolinsky (1990), Foster and Viswanathan (1996),
+Back et al. (2000), Ostrovsky (2012), and Golosov et al. (2014), among others.
+2OtherfoundationalpapersintherichliteratureonRationalExpectationsEquilibriumandrelatednon-strategic
+solution concepts include Kreps (1977), Hellwig (1980), Allen (1981), and Anderson and Sonnenschein (1982); for
+surveys of the literature, see Jordan and Radner (1982), Allen and Jordan (1998), and Glycopantis and Yannelis
+(2005). These papers focus on equilibrium existence and the amount of information aggregated and communicated
+by prices in equilibrium, but only consider environments with either an infinite number of infinitesimally small
+traders, or with a finite number of traders who essentially ignore the impact they have on market prices and behave
+non-strategically.
+2
+
+distributed, or satisfy other related restrictions so that in equilibrium, the strategies of all informed
+traders are identical (see Section 2). In practice, however, the distribution of information in the
+economy can be much more complex. Some agents may be strictly more informed than others.
+Groups of agents may have access to different sources of information, so that the correlations of
+signalswithinagroupareverydifferentfromcorrelationsacrossgroups(andthesizesofthegroups
+may be different, and the correlations of signals between different groups may be different as well).
+Some agents may be informed about the fundamental value of the security, while others may be
+uninformed about the fundamentals but possess some “technical” information about the market or
+other traders. And of course all such possibilities may be present in a market at the same time.
+Our paper makes two main contributions.
+First, we present an analytically tractable framework that makes it possible to study trading in
+such informationally complex environments. Our model is based on the single-period version of the
+modelofKyle(1985). Asinthatpaper,animportantassumptionthatmakesourmodelanalytically
+tractable is the assumption of joint normality of random variables involved in the setting: the true
+value of the traded asset, the signals of strategic traders, the signals of competitive market makers,
+and the demand coming from liquidity traders. Beyond that assumption, however, we impose
+essentially no restrictions on the joint distribution of these variables, making it possible to model
+informationally rich situations such as those described above. In this framework, we show that
+there always exists a unique linear equilibrium, which can be computed analytically.
+Second, weexploretheinformationalpropertiesofequilibriumpricesasthenumberofinformed
+agents becomes large. We assume that there are several types of agents, with each agent of a given
+type receiving the same information, and fix the matrix of correlations of signals across the types
+(and other random variables in the model). We then allow the numbers of agents of every type to
+grow (without restricting the rates of growth in any way; e.g., the number of agents of one type
+may grow much faster than the number of agents of another type). We find that the informational
+properties of prices in these large markets depend on the informativeness of the demand from
+liquidity traders. If the demand from liquidity traders is uncorrelated with the true value of the
+asset or is positively correlated with it (conditional on other signals), then prices in large markets
+aggregate all available information. If, however, the demand from liquidity traders is negatively
+correlated with the true value of the asset, then prices in large markets aggregate all available
+information except that contained in liquidity demand.
+We also illustrate our model with several applications. One example shows that under fairly
+simple (but, crucially, asymmetric) information structures, an informed trader may choose to trade
+“against” his information, i.e., sell the asset when his signal implies that the expected value of the
+asset is positive, and vice versa. Two examples explore the profitability of “technical” trading,
+and show that a trader may be able to make substantial positive expected profit even if he has
+no information about the value of the asset, provided there is at least one other (“fundamental”)
+trader who does, and provided that the technical trader has information about the demand from
+liquidity traders or about the mistakes of the fundamental trader. Our last set of examples shows
+3

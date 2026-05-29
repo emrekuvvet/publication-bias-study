@@ -1,0 +1,125 @@
+NBER WORKING PAPER SERIES
+OPTIMAL ASSET ALLOCATION IN ASSET LIABILITY MANAGEMENT
+Jules H. van Binsbergen
+Michael W. Brandt
+Working Paper 12970
+http://www.nber.org/papers/w12970
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+March 2007
+We thank Tim Bollerslev, Frank de Jong, Joachim Inkmann, Ralph Koijen, Vinay Nair, Theo Nijman,
+Anamaria Pieschacon, George Tauchen, Bas Werker, and seminar participants at the 2005 SAMSI
+conference on Financial Mathematics, Statistics and Econometrics, Duke University, Tilburg University
+and ABP Investments for helpful discussions and comments. Jules van Binsbergen thanks the Prins
+Bernhard Cultuurfonds for generous financial support. The views expressed herein are those of the
+author(s) and do not necessarily reflect the views of the National Bureau of Economic Research.
+© 2007 by Jules H. van Binsbergen and Michael W. Brandt. All rights reserved. Short sections of
+text, not to exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Optimal Asset Allocation in Asset Liability Management
+Jules H. van Binsbergen and Michael W. Brandt
+NBER Working Paper No. 12970
+March 2007
+JEL No. G0,G11,G23
+ABSTRACT
+We study the impact of regulations on the investment decisions of a defined benefits pension plan.
+We assess the influence of ex ante (preventive) and ex post (punitive) risk constraints on the gains
+to dynamic, as opposed to myopic, decision making. We find that preventive measures, such as Value-at-Risk
+constraints, tend to decrease the gains to dynamic investment. In contrast, punitive constraints, such
+as mandatory additional contributions from the sponsor when the plan becomes underfunded, lead
+to very large utility gains from solving the dynamic program. We also show that financial reporting
+rules have real effects on investment behavior. For example, the current requirement to discount liabilities
+at a rolling average of yields, as opposed to at current yields, induces grossly suboptimal investment
+decisions.
+Jules H. van Binsbergen
+Fuqua School of Business
+Duke University
+Box 90120
+One Towerview Drive
+Durham, NC 27708
+jules.vanbinsbergen@duke.edu
+Michael W. Brandt
+Fuqua School of Business
+Duke University
+Box 90120
+One Towerview Drive
+Durham, NC 27708
+and NBER
+mbrandt@duke.edu
+
+1 Introduction
+The investment behavior of corporate pension plans is receiving increasing attention. A
+recentstudybythePensionBenefitGuaranteeCorporationshowsthatthenumberofpension
+plans that are more than $50 million short of promised benefit levels has risen from 221 in
+2000 to 1,108 in 2004 with an aggregate of $786.8 billion in assets to cover $1.14 trillion
+in liabilities.1 In response to this crisis, a set of funding rule reforms has been proposed
+to strengthen the pension system. These proposed reforms include limits on the deviation
+of the actuarial values of assets and liabilities from their market values and more stringent
+guidelines for pension plans to make up shortfalls in the value of their assets, relative to that
+of their liabilities, through additional financial contributions (AFCs) to the plan. We study
+in this paper the optimal asset allocation decisions of an investment manager of a defined
+benefit pension plan as a function of the plan’s funding ratio (defined as the ratio of its
+assets to liabilities), interest rates, and the equity risk premium. We compare the optimal
+investment decisions under several policy alternatives to understand better the real effects
+of financial reporting and risk management rules.
+We focus on two general mechanisms a regulator or principal can apply to keep an agent
+fromtakingundesirableactions: preventionandpunishment. Toillustratethesemechanisms,
+consider the example of a truck driver. The carrier rewards the truck driver for delivering the
+goods he transports early, but wants to keep him from taking excessive risk when speeding.
+One way to achieve the latter is to provide the driver with a truck that mechanically cannot
+exceed the speed limit (prevention). Alternatively, the carrier can make the driver pay
+for the damage in case he is involved in an accident, for example in the form of a salary
+cut (punishment). In the context of investment management, ex ante (preventive) risk
+constraints, such as Value-at-Risk (VaR) constraints, short-sale constraints and a maximum
+weight in stocks, restrict the investment manager’s set of allowable portfolio weights. The
+manager is required to adhere to these ex ante constraints but is not held responsible for bad
+return realizations ex post. In contrast, ex post (punitive) risk constraints, when triggered,
+lead to a punitive action that decreases the investment manager’s utility either through loss
+of personal compensation or reputation. Such ex post constraints do not restrict investment
+choices ex ante, but the manager is held accountable for a bad return realizations ex post.
+The ex post constraint we focus on, is the requirement to draw AFCs from the plan sponsor
+whenever the plan becomes underfunded.2
+12004 Pension Insurance Data Book, Pension Benefit Guarantee Corporation.
+2Another important example of an ex post constraint is a firing rule for investment managers based on
+their performance.
+1
+
+At first glance, ex ante and ex post risk constraints may seem similar as both aim
+to decrease the risk-taking behavior of the manager. However, we show that they have
+profoundly different implications for the gains to dynamic, as opposed to myopic, decision
+making. Weshowthatexante(preventive)constraintstendtodecrease thegainstodynamic
+investment. Expost(punitive)constraints, incontrast, largelyincrease theutilitygainsfrom
+solving the dynamic program. In other words, under ex ante constraints, the myopic solution
+provides a good approximation for the optimal solution whereas under ex post constraints
+it requires dynamic optimization to make the optimal investment decision. As such, ex post
+constraints induce the manager to behave strategically.
+Another important aspect of the asset liability management (ALM) problem is the
+discount factor used for computing the present value of a pension plan’s liabilities. Recently,
+the discount factor has received a lot of attention for its impact on the reported financial
+position of the plan. On one hand, discounting by current yields guarantees an accurate
+description of the fund’s financial situation. On the other hand, using a constant yield
+smoothes out temporary fluctuations in the present value of the liabilities and gives a
+more long-term description of the fund’s financial condition. Under current regulations, the
+discount factor equals a four-year rolling average of the 30-year government (or corporate)
+bond yield, which constitutes a compromise between the two options described above. What
+has received much less attention, however, is the effect that these financial reporting rules
+have on the optimal decisions of the investment manager of the pension plan. We show that
+the way liabilities are computed can drive an important wedge between the fund manager’s
+long-term objective of maximizing the funding ratio and his short-term objective (and/or
+requirement) of satisfying risk constraints and avoiding AFCs from the plan sponsor as
+described above. The key to this wedge is the fact that these risk constraints are based
+on the (smoothed) reported liabilities instead of on the actual liabilities that enter into the
+investment manager’s long-term objective.
+We thus examine two important issues in a stylized ALM problem. First, we address
+the role of hedging demands. ALM problems are inherently long-horizon problems with
+potentiallyimportantstrategicaspects.3 Theydifferfromstandardportfoliochoiceproblems
+(Markowitz (1952), Merton (1969,1971), Samuelson (1969) and Fama (1970)), not only
+because of the short position in the pension liabilities, but also because of the regulatory
+risk constraints and mandatory AFCs discussed above. We assume that the investment
+manager dislikes drawing AFCs from the plan sponsor and directly model this dislike as a
+utility cost. We interpret this utility cost as a reduced form for the loss of compensation or
+3Recent strategic asset allocation studies include Kim and Omberg (1996), Campbell and Viceira (1999),
+Brandt (1999,2005), A¨ıt-Sahalia and Brandt (2001), and Sangvinatsos and Wachter (2005).
+2

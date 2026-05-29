@@ -1,0 +1,143 @@
+NBER WORKING PAPER SERIES
+FRICTIONAL INTERMEDIATION IN OVER-THE-COUNTER MARKETS
+Julien Hugonnier
+Benjamin Lester
+Pierre-Olivier Weill
+Working Paper 24956
+http://www.nber.org/papers/w24956
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+August 2018
+This paper merges and extends three earlier working papers of ours, Hugonnier (2012),
+Lester and Weill (2013), and Hugonnier, Lester, and Weill (2014). The present version is
+dated August 13, 2018. We thank, for fruitful discussions and suggestions, Gadi Barlevy,
+Julien Cujean, Jaksa Cvitanic, Darrell Duffie, Rudi Fahlenbrach, Mahyar Kargar, Shuo Liu,
+Semyon Malamud, Thomas Mariotti, Artem Neklyudov, Ezra Oberfield, Remy Praz,
+Guillaume Rocheteau, Mengbo Zhang, and seminar participants at the 2012 Gerzensee
+workshop on Search and Matching in Financial Markets, the 2012 Bachelier workshop, the
+2013 AFFI Congress, EPFL, the University of Lausanne, the Federal Reserve Bank of
+Philadelphia, the 2014 SaM Conference in Edinburgh, the 2014 conference on Recent
+Advances in OTC Market Research in Paris, Royal Holloway, UCL, CREST, the 2014
+KW25 Anniversary conference, the 2014 Summer Workshop on Money, Banking,
+Payments and Finance at the Chicago Fed, the Fall 2014 SaM Conference in
+Philadelphia, the Wharton macro lunch seminar, the University of Chicago, Yale University,
+Carnegie Mellon University, Cornell University, the Desautels Faculty of Management at McGill
+University, the McCombs School of Business at UT Austin, the Fall 2014 meeting of the Finance
+Theory Group, UC Irvine, the Kellogg School of Management, UNC Kenan-Flagler Business
+School, the 2015 Trading and post-trading conference at the Toulouse School of Economics, the
+2016 SED Meeting in Toulouse, UC Riverside, UC Davis, Stanford University, Erasmus
+University, University of Lugano, and EDHEC. The views expressed here are those of the authors
+and do not necessarily reflect the views of the Federal Reserve Bank of Philadelphia or the
+Federal Reserve System. This project was started when Pierre-Olivier Weill was a visiting
+professor at the Paris School of Economics, whose hospitality is gratefully acknowledged.
+Financial support from the Swiss Finance Institute is gratefully acknowledged by Julien
+Hugonnier. The views expressed herein are those of the authors and do not necessarily reflect the
+views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2018 by Julien Hugonnier, Benjamin Lester, and Pierre-Olivier Weill. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Frictional Intermediation in Over-the-counter Markets
+Julien Hugonnier, Benjamin Lester, and Pierre-Olivier Weill
+NBER Working Paper No. 24956
+August 2018
+JEL No. G11,G12,G21
+ABSTRACT
+We extend Duffie, Garleanu, and Pedersen’s (2005) search-theoretic model of over-the-counter
+asset markets, allowing for a decentralized inter-dealer market with arbitrary heterogeneity in
+dealers’ valuations or inventory costs. We develop a solution technique that makes the model
+fully tractable and allows us to derive, in closed form, theoretical formulas for key statistics
+analyzed in empirical studies of the intermediation process in OTC market. A calibration to the
+market for municipal securities reveals that the model can generate trading patterns and prices
+that are quantitatively consistent with the data. We use the calibrated model to compare the gains
+from trade that are realized in this frictional market with those from a hypothetical, frictionless
+environment, and to distinguish between the quantitative implications of various types of
+heterogeneity across dealers.
+Julien Hugonnier Pierre-Olivier Weill
+Ecole Polytechnnique Fédérale de Lausanne Department of Economics
+Quartier UNIL Dorigny Extranef #212 University of California, Los Angeles
+1015 Lausanne Switzerland Bunche Hall 8283
+and Swiss Finance Institute Los Angeles, CA 90095
+Julien.Hugonnier@epfl.ch and NBER
+poweill@econ.ucla.edu
+Benjamin Lester
+Research Department
+Federal Reserve Bank of Philadelphia
+10 Independence Mall
+Philadelphia, PA 19106
+Benjamin.Lester@phil.frb.org
+
+1 Introduction
+Recent empirical studies have uncovered detailed stylized facts about the intermediation
+process in over-the-counter (OTC) markets.1 Notably, assets tend to be reallocated from
+onecustomertoanotherthroughasequenceorchainofdealers,anddealersareheteroge-
+neous with respect to their typical positions in these chains, the frequency and direction
+withwhichtheytrade,andthepricesatwhichtheytransact. Moreover,thedetailsofthis
+intermediation process—including the number and types of dealers that are involved
+in chains—are related to important market outcomes, such as bid-ask spreads, trading
+volume, and other measures of market quality or liquidity.2 These observations pose a
+clear challenge to benchmark search-theoretic models of OTC markets, such as Duffie,
+Gaˆrleanu, and Pedersen (2005) and Lagos and Rocheteau (2009), in which dealers are
+homogenousandtheinter-dealermarketisfrictionless.
+In this paper, we develop a search-theoretic framework that is capable of confronting
+these facts, and yet tractable enough to provide clear insights into the underlying eco-
+nomicforces,andintotheaggregateimplicationsforprices,allocation,andefficiency. As
+in Duffie et al. (2005), we assume that there is a measure of customers who periodically
+experience shocks that change their flow valuation for an asset, and that these customers
+must search for a dealer with whom to trade. Our first key innovation is to model the
+dealer sector as a decentralized market, where dealers periodically meet other dealers
+who may be willing and able to trade. Our second key innovation is to allow for an
+arbitrary, continuous distribution of dealers’ flow valuations (or, equivalently, inventory
+costs). Taken together, these assumptions generate intermediation chains of stochastic
+lengths and imply that, as in the data, dealers will differ with respect to their typical
+position within a chain, the frequency and direction with which they trade, and their
+contributiontotradingvolume.
+1Examples of assets that trade in OTC markets include corporate and municipal bonds, asset-backed
+securities, foreign exchange swaps, and fed funds, to name a few. OTC markets were traditionally
+opaquebecausetradesareconductedviaprivate,bilateralnegotiations. Inrecentyears,severalregulatory
+initiativesaimedatpromotingtransparencyincertainprominentOTCmarketshaveproducedhighquality,
+transaction-level data. Examples include the Municipal Securities Rulemaking Board (MSRB) in the
+municipal securities market, and the Trade Reporting and Compliance Engine (TRACE) in the markets
+forcorporatebondsandsecuritizedassets.
+2See, for example, Li and Schu¨rhoff (2014), Hollifield, Neklyudov, and Spatt (2014), and Di Maggio,
+Kermani,andSong(2017),amongothers.
+1
+
+While these innovations clearly generate a richer model, they also introduce some
+significant technical hurdles, as the reservation values of customers and dealers solve a
+system of dynamic programming equations for which the relevant state variable is an
+infinite-dimensional object: the joint distributions of flow valuations and asset holdings
+across the populations of customers and dealers. However, despite this greater com-
+plexity, we are able to establish key properties of equilibrium trading patterns, which
+allows for a parsimonious characterization of the equilibrium distributions. As a result,
+themodelremainsfullytractable,whichoffersthreedistinctadvantages.
+First,wecanreducethecharacterizationofequilibriumtoafixed-pointproblemovera
+two-dimensionalendogenousvariable,whichcanbeusedtoderiveotherequilibriumob-
+jects in closed-form. This allows us to establish existence of an equilibrium, and provide
+sufficient conditions for uniqueness. We also derive necessary and sufficient conditions
+fordealerstoactivelyintermediatetradesbetweencustomers. Theseintuitiveconditions
+identify the role of preferences, meeting rates, and bargaining powers in explaining the
+size of the dealer sector and, more generally, why the presence of intermediaries varies
+acrossmarkets.
+Second, we explicitly derive and analyze a number of model-implied statistics that
+havedirectcounterpartsintheempiricalliteraturethatstudiestheintermediationprocess
+in OTC markets. These derivations include the average time-to-trade for customers and
+(alltypesof)dealers;thedistributionoverthelengthofintermediationchains;thevolume
+of trade generated by customer-dealer and dealer-dealer trades; the concentration of
+tradingvolumeacrossdealers;andtherelationshipbetweenintermediationchainlength
+andthebid-askspreador“markup.” Usingthesederivations,wearguethatthemodelis
+qualitativelyconsistentwithanumberofstylizedfacts.
+Third,exploitingourclosed-formsolutions,wecalibratethemodelinasimple,trans-
+parent fashion. We focus on the market for municipal securities because it shares many
+fundamental features with our model, and the available micro-data offers a detailed
+description of the prevailing intermediation process. Our calibration exactly matches
+key targets in the data—including turnover, the average inventory duration of dealers,
+theaveragelengthofintermediationchains,andtheaverageliquidityyieldspread—and
+revealstherelativeimportanceofthearrivalratesofpreferencesshocks,tradingopportu-
+nitiesbetweencustomersanddealers,andtradingopportunitieswithinthedealersector.
+Italsogeneratespredictionsthatarequiteclosetoseveralnon-targetedmoments.
+2

@@ -1,0 +1,136 @@
+NBER WORKING PAPER SERIES
+ECB POLICIES INVOLVING GOVERNMENT BOND PURCHASES:
+IMPACT AND CHANNELS
+Arvind Krishnamurthy
+Stefan Nagel
+Annette Vissing-Jorgensen
+Working Paper 23985
+http://www.nber.org/papers/w23985
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+November 2017
+We are grateful for comments from Alex Edmans, Jacob Goldfield, Bob Hall, Ricardo Reis,
+Massimo Rostagno, Bernd Schwaab, Paul Soderlind, Frank Smets, an anonymous referee and
+seminar and conference participants at the Copenhagen Business School, University of Michigan,
+Goldman Sachs, the European Finance Association Meeting, and the American Finance
+Association Meeting. This research was supported by a grant from the Global Markets Institute at
+Goldman Sachs. Any opinions, findings, conclusions, or recommendations expressed in this
+paper are those of the authors and do not necessarily reflect the views of Goldman Sachs or the
+Global Markets Institute. The views expressed herein are those of the authors and do not
+necessarily reflect the views of the National Bureau of Economic Research.
+At least one co-author has disclosed a financial relationship of potential relevance for this
+research. Further information is available online at http://www.nber.org/papers/w23985.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2017 by Arvind Krishnamurthy, Stefan Nagel, and Annette Vissing-Jorgensen. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+ECB Policies Involving Government Bond Purchases: Impact and Channels
+Arvind Krishnamurthy, Stefan Nagel, and Annette Vissing-Jorgensen
+NBER Working Paper No. 23985
+November 2017
+JEL No. E4,F45,G01,G18
+ABSTRACT
+We evaluate the effects of three ECB policies (the Securities Markets Programme, the Outright
+Monetary Transactions, and the Long-Term Refinancing Operations) on government bond yields.
+We use a novel Kalman-filter augmented event-study approach and yields on euro-denominated
+sovereign bonds, dollar-denominated sovereign bonds, corporate bonds, and corporate CDS rates
+to understand the channels through which policies reduced sovereign bond yields. On average
+across Italy, Spain and Portugal, considering both the Securities Markets Programme and the
+Outright Monetary Transactions, yields fall considerably. Decomposing this fall, default risk
+accounts for 37% of the reduction in yields, reduced redenomination risk for 13%, and reduced
+market segmentation effects for 50%. Stock price increases in distressed and core countries
+suggest that these policies also had beneficial macro-spillovers.
+Arvind Krishnamurthy Annette Vissing-Jorgensen
+Stanford Graduate School of Business Haas School of Business
+Stanford University University of California, Berkeley
+655 Knight Way 545 Student Services Building, #1900
+Stanford, CA 94305 Berkeley, CA 94720
+and NBER and NBER
+akris@stanford.edu vissing@haas.berkeley.edu
+Stefan Nagel
+University of Chicago
+Booth School of Business
+5807 South Woodlawn Avenue
+Chicago, IL 60637
+and NBER
+stefan.nagel@chicagobooth.edu
+
+I. Introduction
+During the most intense periods of the European financial crisis, Greece, Ireland, Italy, Portugal
+and Spain (the “GIIPS” countries) saw large increases in their government bond yields. Figure 1
+graphs 2-year yields for GIIPS government bonds from 2010 onward. Italian and Spanish yields
+peak around 7% in the fall of 2011, while Portuguese and Irish bonds peak around 20%. Greek
+2-year yields rise above 200% prior to the Greek default in early 2012. In response, the ECB
+introduced programs aimed at lowering government bond yields on the presumption that such
+a reduction would have beneficial macroeconomic spillovers. The ECB programs included direct
+purchases of government debt (the Securities Markets Programme, SMP), conditional
+commitments to purchase government debt (the Outright Monetary Transactions, OMT), and 3-
+year loans to banks which banks partly used to buy government debt (the Long-Term
+Refinancing Operations, LTROs). The objective of our paper is to assess these programs and
+shed light on the economic mechanisms through which the programs may have worked. Did
+they succeed in lowering government bond yields and improving the macroeconomic outlook?
+What are the channels through which ECB policies worked to reduce bond yields?
+As with many unconventional central bank operations in recent years, little is known about the
+effects of these policies. The ECB has publicly stated that these policies reduce redenomination
+risk, i.e., the risk that the Eurozone might break up and countries redenominate domestic debt
+into new domestic currencies, and financial market “dysfunctionality,” i.e., segmentation- and
+illiquidity-induced pricing anomalies.1 However, the relative importance of these channels is
+unknown and there are likely to be additional channels. Most importantly, the ECB’s policies
+may have reduced the default risk component of GIIPS sovereign yields. A reduction in the
+default risk component could arise from the perception that the ECB might step in as a lender
+of last resort, or from the effects that conditions attached to these programs might have on
+GIIPS fiscal policies. If a policy is counter-productive, it could even result in a rise in the default
+risk component. Furthermore, traditional monetary policy channels through the default-free
+yield curve may play a role, too. In this paper, we provide quantitative estimates of five
+components of sovereign bond yields: an expectations hypothesis component, a euro-rate term
+premium, a default risk premium, a redenomination risk premium and sovereign bond market
+segmentation. We uncover the effects of ECB policies by asking how they impact each of these
+components.
+1 As examples, see the speeches of ECB’s Executive Board Members Benoît Cœuré (September 3, 2013,
+http://www.ecb.europa.eu/press/key/date/2013/html/sp130902.en.html ) who emphasizes redenomination risk
+when discussing the OMT, and José Manuel González-Páramo (November 4, 2011
+http://www.ecb.europa.eu/press/key/date/2011/html/sp111104_1.en.html ) who emphasizes financial market
+dysfunctionality when discussing the SMP.
+2
+
+Disentangling these channels is valuable both for policy-making and academic research. For
+assessing policy, our empirical tests are informative about the joint hypothesis that a particular
+problem (e.g., redenomination risk concerns) exists, and that a given ECB program had an effect
+on this problem. Furthermore, understanding the channels can help to guide better policy. For
+example, if the main concern is redenomination risk, then actions to strengthen the Eurozone’s
+commitment to the euro as opposed to purchases of sovereign bonds or liquidity injections to
+banks are likely to more directly address the risk. Such actions may involve both the monetary
+and fiscal authorities. On the other hand, if the main problem is market segmentation and
+illiquidity, then bond purchases as well as actions to improve the plumbing of the asset
+markets, such as enhancing trading platforms and repo market infrastructure can help address
+the problem. Finally, our channel decomposition is valuable for the theoretical literature in
+international finance on the determinants of sovereign bond yields (see Aguiar and Amador,
+2014). This literature understands sovereign bonds yields almost exclusively through the lens
+of the default risk channel. The Euro crisis has brought to fore concerns regarding
+redenomination risk. Redenomination has similarities and differences with sovereign default.
+Lenders suffer losses in both a default as well redenomination event. But, relative to outright
+default, redenomination has a direct impact on private borrowers in the defaulting country, as
+it reduces these borrowers’ Euro debt obligations. We provide estimates of redenomination
+risk which may be helpful in guiding theory. We also highlight that market segmentation can be
+an important factor in sovereign bond yields. While the finance literature has understood that
+segmentation can play an important role in many asset markets (see Darrell Duffie’s (2010)
+presidential address to the American Finance Association), models of sovereign debt largely set
+aside such frictions.
+We first document via a standard event-study that the SMP and OMT led to large reductions in
+GIIPS sovereign bond yield. The effects are biggest at the 2-year maturity with reductions
+around 200 basis points (bp) for Italy and Spain, 500bp for Portugal and Ireland, and more than
+1,000bp for Greece. The LTROs had generally small effects on sovereign yields, with the largest
+(but still modest) effects of around 50bp seen for Spain. It is important to note that these event
+study estimates of yield changes are likely to capture only part of the overall effect of policies
+on yields given that the probability of policies being put in place was unlikely to be zero even
+before our first event date and may have increased between event dates.
+The main contribution of our analysis is then to tease out the channels through which ECB
+policies affected interest rates. For data reasons this part of the analysis focuses on Italy, Spain
+and Portugal, although we also present some results for Greece around the SMP. We
+decompose euro-denominated government bond yields into two components that are common
+across all countries using the euro (an expectations hypothesis component and a euro-rate
+3

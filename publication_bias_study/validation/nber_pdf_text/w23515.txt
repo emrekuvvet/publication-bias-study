@@ -1,0 +1,137 @@
+NBER WORKING PAPER SERIES
+REORGANIZATION OR LIQUIDATION:
+BANKRUPTCY CHOICE AND FIRM DYNAMICS
+Dean Corbae
+Pablo D'Erasmo
+Working Paper 23515
+http://www.nber.org/papers/w23515
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2017
+We thank Gian Luca Clementi, Hulya Eraslan, and Vincenzo Quadrini as well as seminar
+participants at Carnegie Mellon, Rice University, University College London, Ohio State
+University, BI Norwegian Business School, Bank of Canada, Konstanz University, Macro
+Finance Society, Society for Economic Dynamics Meetings, and the Econometric Society
+Summer Meetings for helpful comments. The views expressed in this paper are those of the
+authors and do not necessarily reflect those of the Federal Reserve Bank of Philadelphia, the
+Federal Reserve System, or the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2017 by Dean Corbae and Pablo D'Erasmo. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Reorganization or Liquidation: Bankruptcy Choice and Firm Dynamics
+Dean Corbae and Pablo D'Erasmo
+NBER Working Paper No. 23515
+June 2017
+JEL No. E22,G32,G33
+ABSTRACT
+In this paper, we ask how bankruptcy law affects the financial decisions of corporations and its
+implications for firm dynamics. According to current U.S. law, firms have two bankruptcy
+options: Chapter 7 liquidation and Chapter 11 reorganization. Using Compustat data, we first
+document capital structure and investment decisions of non-bankrupt, Chapter 11, and Chapter 7
+firms. Using those data moments, we then estimate parameters of a firm dynamics model with
+endogenous entry and exit to include both bankruptcy options in a general equilibrium
+environment. Finally, we evaluate a bankruptcy policy change recommended by the American
+Bankruptcy Institute that amounts to a “fresh start” for bankrupt firms. We find that changes to
+the law can have sizable consequences for borrowing costs and capital structure which via
+selection affects productivity (allocative efficiency rises by 2.58%) and welfare (rises by 0.54%).
+Dean Corbae
+Department of Economics
+University of Wisconsin, Madison
+1180 Observatory Drive
+Madison, WI 53706
+and NBER
+corbae@ssc.wisc.edu
+Pablo D'Erasmo
+Federal Reserve Bank of Philadelphia
+Research Department
+Ten Independence Mall
+Philadelphia PA 19106
+pabloderasmo@gmail.com
+
+1 Introduction
+According to Aghion, Hart, and Moore [2] (p. 524), Western bankruptcy procedures “are
+thoughteithertocausetheliquidationofhealthyfirms(asinChapter7oftheU.S.Bankruptcy
+Code) or to be inefficient and biased toward reorganization under incumbent management (as
+in Chapter 11 in the United States).” Aghion, et. al. [2] go on to propose a bankruptcy policy
+similar to a recent proposal by the American Bankruptcy Institute that amounts to a “fresh
+start” for the firm (existing debt is forgiven, and the new all-equity firm is allocated to former
+claim holders using the priority rule).1 To evaluate the implications of bankruptcy procedures
+for firm value, industry dynamics, and household welfare, we estimate a structural corporate
+finance model with both Chapter 7 and Chapter 11 bankruptcy options using Compustat data
+and then consider the above mentioned policy counterfactual.
+We find that the reform results in a considerable reduction of the bankruptcy rate (by
+51.1%) and a shift toward reorganization (away from inefficient liquidation) with a modest
+contraction of the exit rate. There is a significant increase in the investment rate (+19.1%)
+at the firm level due, in most part, to a large reduction in the fraction of firms that operate
+in the “inaction” region (i.e., firms operating with investment rates close to 0%). Prior to
+the reform, incentives to hold capital as collateral are stronger and induce firms to operate
+at an inefficient scale. Better credit terms after the reform result in a change in the firm
+size distribution (the average size of incumbent decreases, and the average size of the entrant
+increases), reduce the fraction of firms with investment bursts (by more than 5%), improve
+allocative efficiency, and increase output weighted productivity by close to 0.5% (measured
+total factor productivity (TFP) increases by a similar percentage). The combination of these
+effects results in a reduction in aggregate adjustment and bankruptcy costs that induce an
+increase in aggregate consumption (+0.54%).2
+Besides evaluating an important policy counterfactual, our paper makes two further con-
+tributions to the literature. First, using Compustat data from 1980 to 2014, we document
+capital structure and investment differences between non-bankrupt, Chapter 11 and Chapter
+7 firms.3 Our paper thus complements several studies that document heterogeneity among
+firms that choose Chapter 7 and Chapter 11 bankruptcy. One of the most recent papers is by
+Bris, Welch, and Zhu [10] who provide a comprehensive study of the costs of Chapter 7 versus
+Chapter 11 in a sample of 300 public and private firms in Arizona and New York from 1995
+to 2001. Reorganization by Chapter 11 comprises 80% of their sample. Chapter 11 firms are
+1A Chapter 7 bankruptcy policy that gives consumers a “fresh start” has been in practice since 1978. For an
+analysis of the policy, see Livshits, MacGee and Tertilt [30] and Chatterjee, et. al. [12].
+2The idea that policies that affect the cost of exit can have important implications for entry, the firm size
+distribution, and welfare is not new. For instance, Hopenhayn and Rogerson [26] (see Table 3) find that firing costs
+can have a significant impact on hiring, the firm size distribution, and welfare.
+3We complement Compustat with information from the UCLA-LoPucki Bankruptcy Research Database.
+2
+
+substantially larger in terms of assets, have a larger fraction of secured debt, and have roughly
+similar debt-to-asset ratios to Chapter 7 (see their Table 1). Importantly, their paper docu-
+ments substantial differences in recovery rates. In particular, Table 13 documents the median
+(mean) recovery rate (as a percentage of the initial claim) as 5.8% (27.4%) for Chapter 7,
+while it is 79.2% (69.4%) for Chapter 11. Further, the fraction of firms that have 0% recovery
+is 79% for Chapter 7 and 0% for Chapter 11. These means are similar to those by Acharya,
+Barath, and Srinivasan [1], who document (Table 8) that the mean recovery rate for Chapter
+7 is 26.38% and for Chapter 11 is 68.43%.4
+AsBris,et. al. [10]pointout,whetheracorporationfilesforChapter7or11isendogenous,
+and self-selection can contaminate the estimation of bankruptcy costs. In particular, if firms
+self-select, then it could be misleading to compare the cost of procedures without controlling
+for endogeneity of chapter choice. The authors carefully attempt to control for self-selection
+into bankruptcy chapter (Chapter 7 or 11) in their regressions. Endogeneity issues lead us
+to consider a structural framework. Our second contribution is to extend the basic structural
+corporate finance models of Cooley and Quadrini [13], Gomes [20], and Hennessy and Whited
+[23]toincorporateanon-trivialbankruptcychoice.5,6,7 Addinganon-trivialbankruptcychoice
+toanenvironmentwherecashflowscanturnnegative(duetofixedcosts,asinHopenhayn[24])
+has important implications beyond the selection issues raised above. For instance, it implies
+that liquidation arises in equilibrium for a subset of firms in our model, while it does not in
+Cooley and Quadrini [13] or Hennessy and Whited [23]. It even shows up methodologically
+since, with liquidation costs that depend on the amount of collateral, here we must expand
+the state space and cannot simply use net worth. Further, these papers only consider take-it-
+or-leave-it bargaining in renegotiation.8
+Our paper proceeds as follows. In Section 2, we document bankruptcy facts in the Compu-
+stat dataset. In Section 3, we propose a general equilibrium environment with firm dynamics
+where there are Chapter 7 and Chapter 11 bankruptcy choices. Section 4 defines an equi-
+librium, and Section 5 estimates model parameters for that environment. Section 6 presents
+equilibrium capital structure and investment decision rules in the presence of competitive debt
+4These values are themselves averages between no industry distress and industry distress states.
+5Inanimportantcorporatefinancepaper,Broadie,Chernov,andSundaresan[11]studyChapter7versusChapter
+11 decision problem but in a much simpler model with exogenous cash flows and initial bond finance of fixed
+investment. Also related are Peri [35], who in a model with fixed capital, focuses on labor contract renegotiations
+duringChapter11reorganization, andTamayo[40], whostudiestheeffectsofeliminatingChapter11reorganization
+in a partial equilibrium model with private information where default can lead to liquidation or reorganization but
+debt is constant over the life of the firm.
+6Other closely related papers that incorporate liquidation include Arellano, Bai and Zhang [6]; D’Erasmo and
+Moscoso Boedo [16]; Khan, Senga, and Thomas [28]; Meh and Terajima [32]; and Cooper and Ejarque [14].
+7Our paper also contributes to the literature on firm dynamics and misallocation pioneered by Restuccia and
+Rogerson [36] and Hsieh and Klenow [27], with important contributions by Guner, Ventura, and Xu [21]; Midrigan
+and Xu [31]; and Moll [33]. See Hopenhayn [25] for a recent review of the literature.
+8Eraslan [18] studies Chapter 11 in a more general bargaining environment.
+3

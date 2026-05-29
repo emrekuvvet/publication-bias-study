@@ -1,0 +1,111 @@
+NBER WORKING PAPER SERIES
+TO POOL OR NOT TO POOL? SECURITY DESIGN IN OTC MARKETS
+Vincent Glode
+Christian C. Opp
+Ruslan Sverchkov
+Working Paper 27361
+http://www.nber.org/papers/w27361
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2020
+The authors thank Jason Donaldson, Thomas Eisenbach, Barney Hartman-Glaser, Rich
+Kihlstrom, Chester Spatt, Basil Williams, Marius Zoican, Pavel Zryumov, and audiences at the
+Bank of England, BI-Oslo, EIEF, Illinois, INSEAD, Norwegian School of Economics (NHH),
+Rochester, UT-Dallas, Wharton, the Financial Intermediation Research Society conference, the
+Northern Finance Association meetings, the Oxford Financial Intermediation Theory conference,
+the Society of Financial Studies cavalcade, and the Western Finance Association meetings for
+their helpful comments. The views expressed herein are those of the authors and do not
+necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Vincent Glode, Christian C. Opp, and Ruslan Sverchkov. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+To Pool or Not to Pool? Security Design in OTC Markets
+Vincent Glode, Christian C. Opp, and Ruslan Sverchkov
+NBER Working Paper No. 27361
+June 2020
+JEL No. D82,G32,L14
+ABSTRACT
+We study security issuers' decision whether to pool assets when facing counterparties endowed
+with market power, as is common in over-the-counter markets. Unlike in competitive markets,
+pooling assets may be suboptimal in the presence of market power - both privately and socially -
+in particular, when the potential gains from trade are large. In these cases, pooling assets reduces
+the elasticity of trade volume in the relevant part of the payoff distribution, exacerbating
+inefficient rationing associated with the exercise of market power. Our results shed light on
+recently observed time-variation in the prevalence of pooling in financial markets.
+Vincent Glode Ruslan Sverchkov
+University of Pennsylvania University of Pennsylvania
+Wharton School Wharton School
+3620 Locust Walk 3620 Locust Walk
+Phildelaphia, PA 19104 Philadelphia, PA 19104
+USA USA
+vglode@wharton.upenn.edu ruslans@wharton.upenn.edu
+Christian C. Opp
+Simon Business School
+University of Rochester
+3-110N Carol Simon Hall
+Rochester, NY 14627
+and NBER
+opp@rochester.edu
+
+1 Introduction
+Structured products are typically originated in over-the-counter (OTC) markets, where
+asymmetric information and market power have been shown to be prevalent frictions.1
+In these markets, issuers may face prices that are not fully competitive, especially when
+only few financial institutions are well-positioned to acquire new securities. For example,
+asmostinstitutionsaresubjecttosimilarregulatoryconstraints,holdingcostscanincrease
+simultaneously for many market participants, leaving only few institutions well positioned
+toprovideliquidity.
+Motivated by these observations, we study the security design problem of a privately
+informedissuerwhopossessesmultipleassetsandfacesliquiditysuppliers,orbuyers,that
+are potentially endowed with market power. Our analysis reveals how the allocation of
+marketpowerhasrelevantandrobustimplicationsforsecuritydesignthatcontrastwiththe
+takeaways from models considering only competitive environments. To isolate the effect
+ofmarketpower,weconsiderbothcompetitiveandnon-competitivemarkets.
+When buyers act competitively, our results echo the findings of the existing literature
+(e.g., DeMarzo 2005) — pooling all assets into one security is optimal for the issuer. As
+diversification reduces an issuer’s informational advantage, pooling assets helps alleviate
+adverse selection problems, which is in the interest of the issuer when prices are set com-
+petitively, since in this case, the issuer fully internalizes the benefits of improving the effi-
+ciencyoftrade.
+In contrast, when an issuer receives non-competitive offers for his securities, pool-
+ing assets still has the advantage of reducing adverse selection concerns, but it now also
+1For evidence that OTC trading often involves heterogeneously informed traders, see Green, Hollifield,
+andSchu¨rhoff(2007),JiangandSun(2015),andHollifield,Neklyudov,andSpatt(2017). Forevidencethat
+OTC trading tends to be concentrated among a small set of players, see Cetorelli et al. (2007), Atkeson,
+Eisfeldt,andWeill(2014),Begenau,Piazzesi,andSchneider(2015),DiMaggio,Kermani,andSong(2017),
+Hendershottetal.(2017),LiandSchu¨rhoff(2019),andSiriwardane(2019).
+1
+
+comes at a cost, namely, a potential reduction in the issuer’s information rents. Counter
+to conventional wisdom, a privately informed issuer may prefer not to pool assets in this
+case, especially when the potential gains from trade are large relative to the information
+asymmetry between the issuer and prospective buyers. In fact, any pooling decision that
+achieves perfect diversification is never optimal for an issuer facing market power on the
+demand side. We provide explicit, sufficient conditions under which the issuer’s best op-
+tion is to simply sell all assets separately. Under these conditions, separate sales are not
+onlyprivatelyoptimalbutalsoachievethefirst-bestleveloftotaltradesurplus. Incontrast,
+when assets are pooled, both the issuer’s private surplus and the total surplus from trade
+are strictly lower, as diversification invites strategic buyers with market power to choose
+pricing strategies that lead to inefficient rationing. As pooling affects the shape of the
+distributions characterizing information asymmetries between issuers and buyers, it alters
+how elastically trade volume responds to prices, which is crucial in settings with market
+power. In particular, pooling would typically worsen inefficient rationing when selling as-
+sets separately leads to little or no exclusion of buyer types. Diversification causes payoff
+distributions to have thinner tails, which, in turn, leads to less elastic trade volume in the
+righttailofthedistributionandgreaterrationinginequilibrium.
+Our results highlight how, in recent years, liquidity shortages among major institu-
+tions actively trading in OTC markets might have been an important driver of the dramatic
+declines in asset-backed security (ABS) issuances, which occurred concurrently with an
+increase in the volume of assets sold separately.2 Our analysis shows that, when liquidity
+becomes scarce and concentrated among few market participants, the benefits of pooling
+assetshighlightedintheliteraturecanbeoutweighedbyanassociatedincreaseinthesever-
+2In 2015, issuance volume of ABS in the U.S. was 60% lower than it was in 2006, while the issuance
+volume of CDO was 80% lower. In contrast, the total issuance volume in fixed income markets was 3%
+higherin2015thanin2006. Formoredata,seetheSecuritiesIndustryandFinancialMarketsAssociation:
+http://www.sifma.org/research/statistics.aspx.
+2

@@ -1,0 +1,141 @@
+NBER WORKING PAPER SERIES
+INCONSISTENT REGULATORS:
+EVIDENCE FROM BANKING
+Sumit Agarwal
+David Lucca
+Amit Seru
+Francesco Trebbi
+Working Paper 17736
+http://www.nber.org/papers/w17736
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+January 2012
+The authors would like to thank John Cochrane and Randy Kroszner for detailed comments. We also
+thank Gadi Barlevy, Paul Beaudry, Matilde Bombardini, Richard Crump, Doug Diamond, Gene Fama,
+Mark Flannery, Gary Gorton, Bev Hirtle, Cathy Lemieux, Thomas Lemieux, Anna Paulson, Raghuram
+Rajan, Uday Rajan, Rich Rosen, Jesse Shapiro, Robert Vishny, and Luigi Zingales, as well as seminar
+participants at Chicago Booth Finance, Chicago Booth Microeconomics, the Chicago Fed, NY Fed,
+SFU, and UBC for useful discussions. Caitlin Kearns, Tanya Mann, and Justin McPhee provided outstanding
+research assistance. The views expressed in this paper are those of the authors and do not necessarily
+reflect the views of the Federal Reserve Bank of Chicago, Federal Reserve Bank of New York, the
+Federal Reserve System, or the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2012 by Sumit Agarwal, David Lucca, Amit Seru, and Francesco Trebbi. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission provided
+that full credit, including © notice, is given to the source.
+
+Inconsistent Regulators: Evidence From Banking
+Sumit Agarwal, David Lucca, Amit Seru, and Francesco Trebbi
+NBER Working Paper No. 17736
+January 2012, Revised January 2012
+JEL No. G21,G28
+ABSTRACT
+US state chartered commercial banks are supervised alternately by state and federal regulators. Each
+regulator supervises a given bank for a fixed time period according to a predetermined rotation schedule.
+We use unique data to examine differences between federal and state regulators for these banks. Federal
+regulators are significantly less lenient, downgrading supervisory ratings about twice as frequently
+as state supervisors. Under federal regulators, banks report higher nonperforming loans, more delinquent
+loans, higher regulatory capital ratios, and lower ROA. There is a higher frequency of bank failures
+and problem-bank rates in states with more lenient supervision relative to the federal benchmark. Some
+states are more lenient than others. Regulatory capture by industry constituents and supervisory staff
+characteristics can explain some of these differences. These findings suggest that inconsistent oversight
+can hamper the effectiveness of regulation by delaying corrective actions and by inducing costly variability
+in operations of regulated entities.
+Sumit Agarwal Amit Seru
+Federal Reserve Bank of Chicago Booth School of Business
+230 South LaSalle Street University of Chicago
+Chicago, IL 60604 5807 South Woodlawn Avenue
+ushakri@yahoo.com Chicago, IL 60637
+and NBER
+David Lucca amit.seru@chicagobooth.edu
+Federal Reserve Bank of New York
+33 Liberty Street Francesco Trebbi
+New York, NY 10045 University of British Columbia
+david.lucca@ny.frb.org 1873 East Mall
+Vancouver, BC, V6T1Z1
+Canada
+and NBER
+ftrebbi@mail.ubc.ca
+
+1. Introduction
+At least since Pigou (1938), economists have been interested in effective regulatory design. A
+critical element of this design involves assessing how regulatory institutions themselves affect
+the implementation of regulations. This is a complex question, as it often entails understanding
+the interactions among several regulatory agencies with overlapping jurisdictions, as well as the
+degree to which they are consistent in implementing the rules. Several anecdotes suggest that
+inconsistent oversight by regulators could hinder regulatory effectiveness, none clearer than the
+demise of Washington Mutual Bank (WaMu), a $300 billion thrift and the sixth largest US bank
+at the time of its failure.1 According to a formal congressional investigation, WaMu’s failure –
+the largest bank failure in US history – was, to a large extent, due to delayed corrective action
+that resulted from inconsistent oversight by its regulators, the Office of Thrift Supervision (OTS)
+and the Federal Deposit Insurance Corporation (FDIC).2 Despite the relevance of this issue, little
+systematic evidence exists on whether there is differential implementation of regulation by
+regulators – in banking or other industries – its drivers, or its consequences. We attempt to fill
+this gap by analyzing supervisory decisions of US banking regulators.
+The current regulatory structure in US banking provides a convenient laboratory for studying the
+issue of regulatory inconsistency because it involves dual supervision of institutions – i.e.,
+supervision by both state and federal regulators. Using a natural experiment to circumvent the
+issue of banks self-selecting into different regulatory environments, we provide evidence of
+inconsistent implementation of identical rules by federal and state regulators. This inconsistency
+arises due to differences in the institutional design and incentives of these regulators.
+Furthermore, we show that this inconsistency may be costly, as it induces variability in bank
+operations, and that it may hamper the effectiveness of regulation by delaying corrective action.
+Inconsistent implementation of regulation by state and federal regulators relates broadly to the
+debate on effectiveness of dual regulatory structure that has taken place in several industries,
+including banking (see Scott 1977; Dixon and Weiser 2006). The fallout from the recent
+financial crisis has triggered massive regulatory reform in banking (see Brunnermeier et al.
+(2009)). However, most of these reforms have targeted activities that should be regulated, while
+the discussion on reforming the current dual structure of supervision in banking has been less
+active. This paucity of discussion is not due to the lack of arguments for and against the current
+1 More anecdotes on ineffective regulation due to inconsistent supervision by US state and federal banking
+regulators are available in Committee on Banking, Housing, and Urban Affairs (1994). There are also abundant
+examples of regulatory impediments due to inconsistencies between state and federal regulators in other industries
+(see for example Lane (2004) for securities regulation, Dixon and Weiser (2006) for telecommunication regulation
+and Esworthy (2008) for regulations on pollution control).
+2 Absent a deal between the FDIC and JP Morgan Chase to take over WaMu’s assets, this failure would have
+exhausted the entire Deposit Insurance Fund. More detail on the tussle between the OTS and FDIC in the run up to
+WaMu’s failure in September 2008 is available in the Office of Inspector General (2010) and the congressional
+investigation report (Committee on Homeland Security and Governmental Affairs (2011)).
+1
+
+regulatory structure.3 On the one hand, proponents argue that informational advantage of state
+supervisors coupled with broader perspective of federal supervisors enhances the nature of
+decision making. In addition, having competing supervisors allows for lower political
+interference, giving banks the choice of picking the less “tyrannical” regulator and a more
+efficient allocation in the sense of Tiebout (1956). On the other hand, critics suggest that such a
+complex supervisory structure may create coordination and informational problems between
+entities. It may also produce regulatory inconsistencies and result in a “race to the bottom” in
+terms of regulatory laxity. Lack of empirical evidence validating or refuting these claims has
+implied that the debate on the effectiveness of the current regulatory structure has been muted
+and largely informed by anecdotes.
+The lack of empirical evidence stems from two main difficulties. First, it is hard to find
+comparable metrics of behavior across the myriad of dimensions affected by different regulators
+overseeing different firms, in particular complex entities such as banks. To overcome this issue,
+we rely on the easy-to-compare results of safety and soundness on-site examinations by
+regulators, which are crucial micro-prudential supervisory tools. These examinations culminate
+in the assignment of a CAMELS rating, which summarizes the conditions of the bank on a
+numerical scale. Second, and perhaps more challenging, it is difficult to tell if a bank picked the
+supervisor more suited to actions it intended to undertake or the regulator itself changed the
+actions taken by a bank. More precisely, a bank’s regulatory setting is not random, rather it is
+determined endogenously through a charter choice, and thus, driven by observable and
+unobservable bank characteristics.
+Our identification strategy exploits a legally determined rotation policy that assigns federal and
+state supervisors to the same banks at exogenously predetermined time intervals. This allows us
+to circumvent the issue of banks sorting into different regulatory settings. The policy on
+alternating examinations was introduced in the Riegle Act of 1994 and subsequent regulatory
+provisions with the goal of reducing administrative requirements for insured depository
+institutions (that is, eliminating the burden of facing both federal and state examination in the
+same year). The law assigns state chartered commercial banks to fixed 12-month or 18-month
+rotations between state and federal supervisors. In particular, the rotation involves state
+regulators and the FDIC for non-member banks (NMBs) and state regulators and the Federal
+Reserve (Fed) for state member banks of the Federal Reserve System (SMBs). SMB and NMB
+entities combined cover a substantial portion of the US banking industry, about 30 percent in
+terms of total assets and 80 percent in terms of the number of commercial banks.4
+3 See House Committee on Banking and Currency.(1965), Scott (1977), Butler and Macey (1987).
+4 Unfortunately, this excludes interesting subsamples, such as national banks, primarily overseen by the Office of the
+Comptroller of the Currency (OCC) and thrifts, overseen by the Office of Thrift Supervision until 2011:Q1, and
+currently by the OCC. We discuss the applicability of our results to this set of banks in Section 6.
+2

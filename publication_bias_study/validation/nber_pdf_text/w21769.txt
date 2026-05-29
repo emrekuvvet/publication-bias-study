@@ -1,0 +1,128 @@
+NBER WORKING PAPER SERIES
+PATENT RIGHTS, INNOVATION AND FIRM EXIT
+Alberto Galasso
+Mark Schankerman
+Working Paper 21769
+http://www.nber.org/papers/w21769
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2015, Revised May 2017
+Previously circulated as "Patents Rights and Innovation by Small and Large Firms." We are
+grateful to two anonymous referees and the Editor for very constructive suggestions that greatly
+improved the paper. We also thank Philippe Aghion, Iain Cockburn, Petra Moser, Florian
+Schuett, Carlos Serrano, Mariagrazia Squicciarini, Heidi Williams and participants in seminars at
+Bocconi University, Cattolica University, CEPR Conference on Applied IO, Duke, Einaudi
+Institute in Rome, IESE Barcelona, Tel Aviv University, UC Berkeley, University of Toronto,
+ZEW Mannheim, NBER and Paris School of Economics for helpful comments. We thank John
+Golden and David Schwartz for their help in clarifying points regarding the legal doctrine and
+procedure governing patent invalidation suits. Joanne Evangelista provided excellent research
+assistance. The views expressed herein are those of the authors and do not necessarily reflect the
+views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2015 by Alberto Galasso and Mark Schankerman. All rights reserved. Short sections of text,
+not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Patent Rights, Innovation and Firm Exit
+Alberto Galasso and Mark Schankerman
+NBER Working Paper No. 21769
+December 2015, Revised May 2017
+JEL No. K41,L24,O31,O32,O34
+ABSTRACT
+We study the causal impact of patent invalidation on subsequent innovation and exit by the patent
+holder. The analysis is based on patent litigation at the U.S. Court of Appeals for the Federal
+Circuit, and exploits the random allocation of judges to control for endogeneity of the judicial
+decision. Invalidation causes the patent holder to reduce subsequent patenting over a five-year
+window by 50 percent on average, but the effect is heterogeneous. The impact is large for small
+and medium-sized firms, particularly in technology fields where they face many large
+competitors, and for patents central to their technology portfolio. We find no significant effect for
+large firms. Invalidation also significantly increases the likelihood that small firms exit from
+patenting entirely.
+Alberto Galasso
+Rotman School of Management
+University of Toronto
+105 St. George Street
+Toronto, ON M5S 3E6
+CANADA
+and NBER
+alberto.galasso@rotman.utoronto.ca
+Mark Schankerman
+Department of Economics, R.516
+London School of Economics
+Houghton Street
+London WC2A 2AE
+UK
+M.Schankerman@lse.ac.uk
+
+1 Introduction
+Innovationliesattheheartofhigh-techentrepreneurshipandeconomicgrowth. Modernmacro-
+economic growth models give a central role to innovation and the competition that generates
+incentives for it, including the interaction between small entrants and large incumbents in this
+process (Aghion and Howitt, 1992; Acemoglu, Akcigit, Bloom and Kerr, 2013). At the same
+time, a large body of microeconomic evidence shows that there is underinvestment in R&D,
+with social rates of return being more than twice as large as the private rates (Jones and
+Williams 1998; Bloom, Schankerman and Van Reenen, 2013). This is a primary justification
+for government support of innovation, and patent rights are one of the key policy instruments
+for this purpose. It is important to understand whether patents are actually an effective in-
+novation incentive and, importantly, whether they work equally well for small and large firms
+and in different competitive environments.
+Anumberofeconomicandlegalscholarshaveraisedseriousdoubtsaboutwhetherpatent
+rights actually promote innovation, and there is a widespread view that current patent policy,
+and debates over patent reform, are not based on empirical evidence (Boldrin and Levine,
+2013; Burk, 2016). One of the most prominent legal scholars in the area argues that much of
+the patent policy discussion is ‘faith-based’, with “participants on both sides of the IP debates
+increasinglytakingoutpositionsthatsimplydonotdependonevidenceatall.”(Lemley, 2015).
+In a recent paper, Williams (forthcoming) provides a thoughtful and balanced analysis of the
+issues and the evidence on how patent rights affect innovation and welfare, and identifying the
+gaps in our empirical knowledge that need to be filled to reach definitive conclusions. As she
+putsit,“Whilepatentsystemshavebeenquitewidelyusedbothhistoricallyandinternationally,
+there is nonetheless a tremendous amount of controversy over whether the patent system is —
+in practice — improving the alignment between private returns and social contributions.”
+To address this need for more empirical evidence, in this paper we analyze how the loss
+of patent rights affects a firm’s level of subsequent innovation, and the likelihood that a firm
+exits from patenting activity entirely, for small and large firms across a range of technology
+fields. Todothis, westudytheimpactofjudicialinvalidationofexistingpatentsontheowner’s
+subsequent patenting activity over a five year window. Our analysis shows that patents have
+an impact on future patenting for small and medium-sized firms, but we find no evidence of
+significant impact on large firms. We also show how the effectiveness of patent rights depends
+on specific features of competition in the technology markets.
+1
+
+From a theoretical perspective, the impact of patent invalidation on future innovation
+is not obvious. The conventional view is that patents enhance the ability of firms to capture
+innovation rent, but at the cost of creating a static efficiency loss from higher prices (Arrow,
+1962). We show that more complex interactions arise from two sources when innovation is
+cumulative. The first is complementarity between the current and subsequent generation of
+innovation: the ability of a firm to innovate in the future and capture the rents from that
+innovation will depend on the firm’s current stock of patents. Second, patent invalidation
+triggers a potential patent race building on the innovation by opening up the technology to
+potential competitors. The model developed in this paper highlights the trade-offs involved
+and shows that the qualitative effect of patent rights on future patenting is ambiguous, as it
+depends on features of the firm and the technological competition they face. Thus empirical
+analysis is essential to inform patent policy.
+Despite its central importance, there are relatively few studies with causal evidence
+on whether patent rights are an effective incentive for innovation, and the existing studies
+do not speak with one voice.1 For example, Budish, Roin and Williams (2015) show that
+there is more innovation, as measured by clinical trials, on late-stage cancer drugs that have
+longereffectivepatentlives(duetoshorterregulatoryscreeningtimes). Similarly,Farre-Mensa,
+HegdeandLjungqvist(2015)usethequasi-randomassignmentofpatentexaminerstostudythe
+impact of patent rights on new start-up firms. They find that a patent grant strongly increases
+subsequent patent applications and growth, and also raises the probability of an IPO. On the
+other hand, Sampat and Williams (2015) use quasi-random assignment of patent examiners to
+study whether human gene patents affect subsequent innovation by the patentee (and others)
+and find no significant effect. Even more surprising, Baten, Bianchi and Moser (2015) show
+that the imposition of compulsory licensing on chemical patents by German firms after WWI
+increased subsequent patenting by the (large) chemical firms that owned them. Our paper
+develops a model which reconciles these apparently contradictory findings in the literature.
+Patent rights can affect innovation, especially for small firms, through several channels.
+First, patents shape the nature of competition in product and technology markets, especially
+in settings where small firms interact with large incumbents (Spulber, 2013; Aghion, Howitt
+1In a related strand of the literature, there are studies that use patent renewal data and other approaches
+to measure the incremental incentives provided by patent rights (Schankerman and Pakes, 1986; Schankerman,
+1998; Arora, Ceccagnoli and Cohen, 2008). They show that patents are associated with greater private value
+derivedfrominventions. However,thesestudiesdonotprovidecausalevidenceonthelinkbetweenpatentrights
+and the level of innovation.
+2

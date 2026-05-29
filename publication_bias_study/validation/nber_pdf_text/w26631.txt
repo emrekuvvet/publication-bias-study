@@ -1,0 +1,123 @@
+NBER WORKING PAPER SERIES
+TRANSPARENCY IN STRUCTURAL RESEARCH
+Isaiah Andrews
+Matthew Gentzkow
+Jesse M. Shapiro
+Working Paper 26631
+http://www.nber.org/papers/w26631
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+January 2020
+Prepared as a discussion paper for the Journal of Business and Economic Statistics. We
+acknowledge funding from the National Science Foundation, the Brown University Population
+Studies and Training Center, and the Stanford Institute for Economic Policy Research (SIEPR).
+Patrick Kline, Emi Nakamura, participants in a 2020 ASSA session, discussants Stephane
+Bonhomme, Christopher Taber, and Elie Tamer, editor Christian Hansen, and an anonymous
+associate editor provided valuable comments. We thank our many dedicated research assistants
+for their contributions to this project.The views expressed herein are those of the authors and do
+not necessarily reflect the views of the National Bureau of Economic Research.
+At least one co-author has disclosed a financial relationship of potential relevance for this research.
+Further information is available online at http://www.nber.org/papers/w26631.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2020 by Isaiah Andrews, Matthew Gentzkow, and Jesse M. Shapiro. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Transparency in Structural Research
+Isaiah Andrews, Matthew Gentzkow, and Jesse M. Shapiro
+NBER Working Paper No. 26631
+January 2020, Revised July 2020
+JEL No. C10
+ABSTRACT
+We propose a formal definition of transparency in empirical research and apply it to structural
+estimation in economics. We discuss how some existing practices can be understood as attempts
+to improve transparency, and we suggest ways to improve current practice, emphasizing
+approaches that impose a minimal computational burden on the researcher. We illustrate with
+examples.
+Isaiah Andrews Jesse M. Shapiro
+Department of Economics Economics Department
+Harvard University Box B
+Littauer M18 Brown University
+Cambridge, MA 02138 Providence, RI 02912
+and NBER and NBER
+iandrews@fas.harvard.edu jesse_shapiro_1@brown.edu
+Matthew Gentzkow
+Department of Economics
+Stanford University
+579 Jane Stanford Way
+Stanford, CA 94305
+and NBER
+gentzkow@stanford.edu
+
+1 Introduction
+Structural empirical research can sometimes look like a black box. Once upon a time, a structural
+paper might begin with an elaborate model setup containing dozens of assumptions, present a
+similarly complex recipe for estimation, and then jump immediately to reporting model estimates
+and counterfactuals that answer the research question of interest. A reader who accepted the full
+list of assumptions could walk away having learned a great deal. A reader who questioned even
+one of the assumptions might learn very little, as they would find it hard or impossible to predict
+howtheconclusionsmightchangeunderalternativeassumptions.
+Modernresearcharticlestakingastructuralapproachoftenlookverydifferentfromthiscarica-
+ture. Many devote significant attention to descriptive analysis of important facts and relationships
+inthedata. Manyprovidedetaileddiscussionsofhowthesedescriptivestatisticsrelatetothestruc-
+tural estimates, connecting specific data features to key parameter estimates or conclusions. Such
+analysis has the potential to make structural estimates more transparent, helping skeptical readers
+learnfromtheresultsevenwhentheydonotfullyacceptallthemodelassumptions.
+Inthispaper,weconsiderthevalueoftransparencyinstructuralresearch. Weproposeaformal
+definition of the transparency of a statistical report. We argue that our definition provides a ratio-
+nale for many current practices, and suggests ways these practices can be improved. We discuss
+these potential improvements, emphasizing those that impose a minimal computational burden on
+theresearcher.
+Our definition of transparency follows the one proposed in Andrews et al. (2017).1 We situate
+it in a model of scientific communication based on Andrews and Shapiro (2020). In the model, a
+researcher observes data informative about a quantity of interest c. The researcher reports an esti-
+matecˆofcalongwithauxiliarystatisticstˆtoasetof readersindexedbyr. Undertheresearcher’s
+maintainedassumptionsa ,cˆisvalid,forexampleinthesensethatitisasymptoticallynormaland
+0
+unbiased. Notallreadersaccepta ,however,anddifferentreadersmayentertaindifferentalterna-
+0
+tive assumptions a (cid:54)= a . After receiving the report (cˆ,tˆ), each reader updates their prior beliefs,
+0
+selectsanestimated ofc,andrealizesaquadraticloss(d −c)2 . Foragivenreader,wedefinethe
+r r
+transparencyofthereporttobethereductioninexpectedlossfromobserving(cˆ,tˆ),relativetothe
+reduction from observing the full data. In other words, research is transparent to the extent that it
+makes it easy for readers to reach the same inference about c that they would reach by analyzing
+1SeealsothediscussionsoftransparencyinAngristandPischke(2010)andHeckman(2010).
+2
+
+thedatainfullundertheirpreferredassumptions. Weshowthattransparencyisdistinctfromother
+econometricdesideratasuchasefficiencyandrobustness.
+After describing our model and definition of transparency in section 2, we discuss several
+practices that we believe can improve the transparency of structural estimation. We illustrate
+throughout with stylized examples drawn from our model and real-world examples drawn from
+theliterature.
+Section3discussesdescriptiveanalysis,whichweinterpretasincludingintˆstatisticssˆthatare
+either directly informative about the parameter of interest c, or informative about the plausibility
+oftheassumptionsa . Wearguethatdescriptivestatisticsofbothkindscanaidtransparency.
+0
+Section 4 discusses the analysis of identification. Although transparency is a distinct property
+frommodelidentification,wearguethatcleardiscussionofidentificationcanimprovetransparency
+bysharpeningreaders’beliefsabouttheappropriatenessoftheresearcher’sassumptions.
+Section 5 discusses ways to improve the transparency of the estimator. We argue that trans-
+parency is improved when cˆdepends to a large degree on some interpretable statistics sˆand when
+theformoftherelationshipbetweenthetwoismadecleartothereader. Wesuggestthisasaratio-
+nale for targeting descriptive statistics directly in estimation. Building on work by Andrews et al.
+(2017, forthcoming), we discuss how local approximations can be used to clarify the relationship
+betweencˆandsˆ.
+Section 6 discusses sensitivity analysis, which we take to encompass a range of approaches
+for demonstrating the sensitivity of conclusions to alternative assumptions. When readers are
+concerned about a small number of known alternative assumptions a, the researcher can improve
+transparency by reporting estimates cˆ that are valid under these alternatives, as in a traditional
+a
+sensitivity analysis. When readers are concerned about a richer or unknown set of alternatives a,
+then it is no longer practical to report an estimate corresponding to each of these. Building on
+work by Conley et al. (2012) and Andrews et al. (2017), we discuss how including in tˆstatistics
+basedonlocalapproximationscanhelpreadersassessalargersetofassumptions. Forcaseswhere
+a qualitative conclusion (e.g., the direction of a causal effect or welfare change) is important, we
+alsodiscussthevalueofreportingfeaturesofalternativerealizationsofthedatathatwouldleadto
+aconclusiondifferentfromtheresearcher’s.
+3

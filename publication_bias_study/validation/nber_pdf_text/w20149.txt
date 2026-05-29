@@ -1,0 +1,118 @@
+NBER WORKING PAPER SERIES
+DOES FINANCING SPUR SMALL BUSINESS PRODUCTIVITY? EVIDENCE FROM
+A NATURAL EXPERIMENT
+Karthik Krishnan
+Debarshi Nandy
+Manju Puri
+Working Paper 20149
+http://www.nber.org/papers/w20149
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2014
+We would like to thank seminar participants at the 2013 Boston Area Finance Symposium, the 2013
+CAFRAL Conference on Contemporary Issues in Banking and Finance, the 2013 FIRS annual meetings,
+the 2013 NBER Productivity, Innovation, and Entrepreneurship meetings, the 2013 SFS Cavalcade,
+Brandeis University, Duke University, Northeastern University, and Virginia Tech. Karthik Krishnan
+gratefully acknowledges summer research support provided by the D’Amore-McKim School of Business.
+The research presented in this paper was conducted while the authors were Special Sworn Status Researchers
+at the Boston Research Data Center (RDC) of the U.S. Census Bureau. The research results and conclusions
+expressed are those of the authors and do not necessarily indicate concurrence of the U.S. Census Bureau
+or the National Bureau of Economic Research. All results in this paper have been reviewed to ensure
+that no confidential information is disclosed. Any errors and omissions are the responsibility of the
+authors.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2014 by Karthik Krishnan, Debarshi Nandy, and Manju Puri. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Does Financing Spur Small Business Productivity? Evidence from a Natural Experiment
+Karthik Krishnan, Debarshi Nandy, and Manju Puri
+NBER Working Paper No. 20149
+May 2014
+JEL No. G21
+ABSTRACT
+We analyze how increased access to financing affects firm total factor productivity (TFP) by exploiting
+a natural experiment following interstate banking deregulations which increased access to bank financing.
+We find that firms' TFP increases after their states implement these deregulations. Using a regression
+discontinuity approach based on Small Business Administration’s funding eligibility criteria, we show
+that TFP increases following the deregulations are significantly greater for financially constrained
+firms. Our results suggest that greater access to financing allows financially constrained firms to invest
+in productive projects that may otherwise not be taken up.
+Karthik Krishnan Manju Puri
+Northeastern University Fuqua School of Business
+D'Amore-McKim School of Business Duke University
+Hayden 413, 360 Huntington Avenue 1 Towerview Drive, Box 90120
+Boston, MA 02115 Durham, NC 27708-0120
+k.krishnan@neu.edu and NBER
+mpuri@duke.edu
+Debarshi Nandy
+International Business School
+Brandeis University
+415 South Street
+Waltham, MA, 02454
+dnandy@brandeis.edu
+
+Does Financing Spur Small Business Productivity? Evidence from
+a Natural Experiment
+1 Introduction
+Access to adequate …nancing is an important issue for …rms, particularly for younger and smaller
+entrepreneurial …rms. Given the important role that small businesses and entrepreneurial …rms
+play in the process of creative destruction - it is not surprising that alleviating …nancial constraints
+for entrepreneurial start-ups and small business is an important policy concern across the world.
+Morerecently, the…nancialcrisisof2008clearlydemonstratedhowcriticalaccesstobank…nancing
+is, at both the …rm and economy-wide levels. While prior studies have shown how availability of
+…nancing a¤ects entrepreneurial …rm starts and closures (e.g., Black and Strahan (2002), Kerr and
+Nanda (2009)), no study has directly analyzed the link between increased access to bank …nancing
+and …rm productivity, particularly for smaller …rms where access to …nancing is critical. This is
+important given the result in a recent paper by Robb and Robinson (2013) that, counter to existing
+wisdom, most start-ups rely heavily on some form of bank-debt …nancing.
+There are two important limitations that studies relating increased bank …nancing to …rm pro-
+ductivity need to overcome. First, bank …nancing is considerably more important for private …rms,
+and data on the performance of such …rms is not easily accessible. Second, reverse causality and
+endogeneityissueshinderproperinterpretationofregressioncoe¢ cientsrelatingincreasedaccessof
+bank …nancing to …rm productivity. A positive relation between increased access to bank …nancing
+and productivity can be interpreted in di¤erent ways. One interpretation is that more productive
+…rms seek additional bank …nancing. Another interpretation is that increased access to bank …-
+nancing can enhance productivity of …rms. Yet another alternative interpretation is that there are
+potentially unobservable factors which might a¤ect both access to …nancing and productivity. Dis-
+entangling these e¤ects requires a natural experiment setting where one can consider an exogenous
+shift in the availability of bank …nancing.
+Inthispaper, weexploitsuchanaturalexperimentandcontributebyanalyzinghowanincrease
+inaccesstobank…nancingfollowinginterstatebankbranchingderegulationsa¤ectstheproductivity
+of…rmsintheUnitedStates. Weovercomethedataavailabilityissuedescribedabovebyusingdata
+1
+
+on private and public manufacturing …rms from the U.S. Census Bureau’s Longitudinal Research
+Database (LRD). This database contains detailed data for small and large manufacturing …rms in
+the U.S. over a long time-series from 1976 to 2005, which allows us to calculate productivity and
+performance measures at the …rm level. We deal with the reverse causality concern by exploiting
+an exogenous shift in …rms’access to bank …nancing as a result of interstate bank branching
+deregulations. In particular, over the 1990s, U.S. states began allowing out-of-state banks to set up
+andacquirelocalbank branches. This shiftled toan overallincreaseininterstatebanking andthus
+allowed greater access to …nancing for …rms. Consistent with the prior literature (e.g., Rice and
+Strahan(2010)), whichhasshownthatthesederegulationswereexogenous, wealsoshowthatthese
+deregulations were not driven by the prior productivity of …rms. In our main analyses, we utilize
+a regression discontinuity (RD) framework that distinguishes between …nancially constrained and
+unconstrained …rms. We argue that private …rms that are just above or just below the threshold
+for …nancial support from the U.S. Small Business Administration (SBA) are similar in all respects
+except for the degree of …nancial constraint they face. Since …rms that are just above the threshold
+are not eligible for SBA funding, they are more …nancially constrained relative to those just below
+the threshold. This allows us to analyze the causal impact of …rm …nancial constraints on the
+relation between access to …nancing and productivity.
+Rice and Strahan (2010) suggest that the interstate banking deregulations in the U.S. reduced
+the cost of …nancing. A natural question that follows is whether this increased access to cheaper
+bank …nancing following the deregulations is dissipated by …rms taking on unproductive or less
+productive pet projects or whether this increases …rms’ability to undertake additional productive
+projectsthattheywereunabletotakeonpriortothederegulation.1 Weusetotalfactorproductivity
+(TFP) of …rms as our metric of analysis to address this question. Since our measure of total factor
+productivity re‡ects the di¤erence between expected output, given the technology in place, and
+the actual output produced by the …rm, gains in productivity as a result of increased access to
+…nancing is not simply a result of increase in the scale of operations, but rather the result of access
+to additional productive projects that allows a …rm to become more e¢ cient. Thus, increased
+access to …nancing should therefore lead to the highest increase in productivity for those …rms that
+1Notethatthroughtthispaper,increasedaccessto…nancingreferstobothaccesstogreatervolumeofbankloans
+as well as bank …nancing at more favorable terms.
+2

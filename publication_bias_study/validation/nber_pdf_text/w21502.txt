@@ -1,0 +1,132 @@
+NBER WORKING PAPER SERIES
+TRI-PARTY REPO PRICING
+Grace Xing Hu
+Jun Pan
+Jiang Wang
+Working Paper 21502
+http://www.nber.org/papers/w21502
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+August 2015
+We have benefited from comments from and discussions with Darrell Duffie, Haoxiang Zhu, Dmitry
+Orlov, Fan Yu, and seminar participants at the WFA 2015 and CICF 2015 meetings. We thank Bo
+Meng, Ai He, Xiang Yun and Yue Hu for excellent research assistance. The financial support from
+a Hong Kong RGC Research Grant (Project #17501014) is gratefully acknowledged. The views expressed
+herein are those of the authors and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2015 by Grace Xing Hu, Jun Pan, and Jiang Wang. All rights reserved. Short sections of text, not
+to exceed two paragraphs, may be quoted without explicit permission provided that full credit, including
+© notice, is given to the source.
+
+Tri-Party Repo Pricing
+Grace Xing Hu, Jun Pan, and Jiang Wang
+NBER Working Paper No. 21502
+August 2015
+JEL No. G1,G12
+ABSTRACT
+In this paper, we examine the pricing determinants in the systemically important tri-party repo market.
+Taking advantage of the recently available N-MFP reports filed by money market funds, we construct
+a novel dataset that contains tri-party repo transactions between money market funds and dealer banks.
+We find a large cross-sectional heterogeneity in repo pricing, reflected most significantly in the haircuts
+of repos backed by equity and corporate bonds. Surprisingly, it is the fund families, not bank dealers,
+who are the dominant factor in determining the pricing. Moreover, the repo market exhibits significant
+segmentation, with fund families adopting three different pricing schemes: counter-party sensitive,
+counter-party and collateral sensitive, and uniform. Most fund families use uniform haircuts by fixing
+a constant haircut, which itself varies across families, for all repos within each asset class, regardless
+of the quality of collateral or counter-party. Investigating further on the lending/borrowing relationship
+between fund families and dealers, we find that, when faced with such a rich pricing pattern, dealers
+do not shop around for a better haircut and are inclined to maintain a stable relationship with their
+lenders. Finally, for repos backed by Treasury securities, there is little variation in both haircuts and
+spreads, regardless of the fund family.
+Grace Xing Hu Jiang Wang
+818 K.K.Leung MIT Sloan School of Management
+University of Hong Kong 100 Main Street, E62-614
+Hong Kong Cambridge, MA 02142
+gracexhu@hku.hk and NBER
+wangj@mit.edu
+Jun Pan
+MIT Sloan School of Management
+100 Main Street, E62-624
+Cambridge, MA 02142
+and NBER
+junpan@mit.edu
+
+1 Introduction
+Repurchase agreements (repos) are considered to be the largest and the most important
+short-term (cid:12)nancing channel for a variety of (cid:12)nancial institutions.1 For these institutions,
+the loss of access to the repo market could be devastating. Moreover, there exists a strong
+spillover effect due to the highly interconnected structure of the repo market. As we experi-
+enced in the recent (cid:12)nancial crisis, disruptions in the repo market could impose a great risk
+to the broad (cid:12)nancial sector, adversely affecting not only repo market participants but also
+other investors holding similar assets. Despite of its systemic importance, the repo market
+remains opaque to most market participants, including even the regulators. Because no of-
+(cid:12)cial data on repos exists, questions as basic as the overall size of the market are difficult to
+answer, let alone (cid:12)nding information on the market structure, activity and pricing. Lack of
+data is the main reason why empirical work lags behind theoretical discussions in this area.2
+Using the recently available N-MFP reports (cid:12)led by U.S. money market funds (MMFs),
+we construct a novel data set that contains a large sample of monthly tri-party repo trans-
+actions with key information on counter-parties, amount, haircut, rate, tenor and collateral.
+Tri-party repos, with details discussed in Copeland, Duffie, Martin, and McLaughlin (2012),
+are an important segment of the repo market.3 The main advantage of our tri-party repo
+data is that the information is at the transaction-level and contains details of the underlying
+collateral, including descriptions of issuer names, types of securities, coupons and maturity
+dates. Using these descriptions, we hand match the collateral to the relevant databases,
+security by security. The entire collateral pool covers a wide range of asset classes, but we
+1Because repo deals are transacted over-the-counter, the exact size of the aggregate repo volume is
+unknown. Several papers, including Gorton and Metrick (2010), Gorton and Metrick (2012) and FRBNY
+(2010), estimate the total outstanding amount to be approximately $10 trillion in the U.S. before the 2008
+(cid:12)nancial crisis.
+2The theoretical discussions include Brunnermeier and Pedersen (2009), He and Xiong (2012), Martin,
+Skeie, and Thadden (2014), Zhang (2014), Lee (2015), among others.
+3Tri-party repos are an important form of secured short-term lending for money market funds. Money
+marketfundsarealwayscashlenders,anddealerbanksarealwayscashborrowersinoursample. Collectively,
+money market funds account for around one-third of the total lending in the tri-party repo market. Money
+marketfundsaregenerallyregardedassafeinvestmentsbecausetheycanonlyholdshort-term, high-quality
+and high-liquidity assets. The weakness of industry was revealed by the Reserve Primary Fund’s \breaking
+the buck" event in September 2008 and the subsequent \run" on money market funds. In the wake of the
+crisis, money market funds in the U.S. went through a major regulatory reform in 2010, which aims to
+strengthen the regulatory requirement for the industry and better protect investors. Under the new rules,
+all U.S. money market funds need to disclose the details of their portfolio holdings with the SEC, through
+the monthly N-MFP (cid:12)lings.
+1
+
+focus on matching repos on equities, corporate bonds and Treasuries, which have standard
+and publicly accessible databases.4
+To our best knowledge, this level of granular collateral information has never been col-
+lected and studied before. There are only two existing data sets on tri-party repos that we
+are aware of.5 The one most related to ours is discussed in Krishnamurthy, Nagel, and Orlov
+(2014), which is based on the top 20 money market fund families’ quarterly (cid:12)lings (N-CSR,
+N-CSRS and N-Q) before the 2010 MMF reform. Since money market funds disclose only
+the general asset classes in their quarterly (cid:12)lings, their repo data doesn’t have the collateral
+information at the security level. The focus on only the top 20 fund families also raises the
+question of how representative these repo transactions are. By contrast, our data covers the
+repo transactions of all U.S. money market funds, totaling 751 individual funds from 160
+fund families. Another set of tri-party repo data is collected by the Federal Reserve Bank of
+New York, as discussed in Copeland, Martin, and Walker (2014). Their data contains aggre-
+gate quantity numbers across lender-dealer pairs for various collateral asset classes. Due to
+the aggregation, transaction-level repo information is lost. Hence the authors focus on the
+average haircuts faced by each dealer in each collateral asset class.
+Taking advantage of our unique data, we investigate the determinants of tri-party repo
+pricing, namely, haircuts and interest rates. We are particularly interested in how theoret-
+ically important factors, such as the collateral characteristics, counter-party risk, lending
+relationship and credit market conditions, affect repo prices. Our repo data is ideal for these
+pricing tests because the collateral details make it possible for us to quantify the risk of the
+collateral pool and thereby examine the repo price sensitivity with regards to the collat-
+eral. Moreover, we are able to control the collateral characteristics when investigating the
+relations between repo prices and other potential factors such as counter-party risk. This is
+important because results would be inconclusive and potentially misleading if the collateral
+characteristics are left uncontrolled.
+4For the equity securities, we match them to the Compustat/CRSP database according to the issuer
+names, and then use the historical returns to calculate volatilities and obtain other (cid:12)rm-level information
+such as size and industry. For the corporate bonds, we match them to the Mergent FISD database by a
+combinationofissuernames, maturitydatesandcoupons. Forthematchedbonds, weobtainthebond-level
+characteristics including ratings, issuance size, age and maturities. Similarly, for the Treasury securities, we
+match them to the CRSP database according to the maturity dates and coupons.
+5In Gorton and Metrick (2010) and Gorton and Metrick (2012), the authors use a private repo data
+provided by an anonymous dealer. However, the data covers only bilateral repos in the interbank market,
+different from the tri-party repos that we discuss in this paper.
+2

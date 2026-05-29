@@ -1,0 +1,104 @@
+NBER WORKING PAPER SERIES
+VULNERABLE BANKS
+Robin Greenwood
+Augustin Landier
+David Thesmar
+Working Paper 18537
+http://www.nber.org/papers/w18537
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+November 2012
+We are grateful to Tobias Adrian, Laurent Clerc, Linda Goldberg, Sam Hanson, Anil Kashyap, Yueran
+Ma, Jamie McAndrews, Thomas Philippon, Carmen Reinhart, Andrei Shleifer, Jeremy Stein, Adi Sunderam,
+and seminar participants at the Federal Reserve Bank of New York, Federal Reserve Board of Governors,
+the European Central Bank, TSE-Banque de France conference in Paris, Harvard, Sciences-Po, Zûrich,
+and the NBER IFM and Risks of Financial Institutions meetings for their input. Greenwood received
+funding from the George F. Baker Foundation at the Harvard Business School. Landier aknowledges
+financial support from the Scor Chair at Fondation Jean-Jacques Laffont at the Toulouse School of
+Economics. Thesmar thanks the HEC foundation for funding. The views expressed herein are those
+of the authors and do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2012 by Robin Greenwood, Augustin Landier, and David Thesmar. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Vulnerable Banks
+Robin Greenwood, Augustin Landier, and David Thesmar
+NBER Working Paper No. 18537
+November 2012
+JEL No. G01,G21,G38
+ABSTRACT
+When a bank experiences a negative shock to its equity, one way to return to target leverage is to sell
+assets. If asset sales occur at depressed prices, then one bank’s sales may impact other banks with
+common exposures, resulting in contagion. We propose a simple framework that accounts for how
+this effect adds up across the banking sector. Our framework explains how the distribution of bank
+leverage and risk exposures contributes to a form of systemic risk. We compute bank exposures to
+system-wide deleveraging, as well as the spillover of a single bank’s deleveraging onto other banks.
+We show how our model can be used to evaluate a variety of crisis interventions, such as mergers
+of good and bad banks and equity injections. We apply the framework to European banks vulnerable
+to sovereign risk in 2010 and 2011.
+Robin Greenwood David Thesmar
+Harvard Business School HEC Paris
+Baker Library 267 1 rue de la libération
+Soldiers Field 78351 Jouy-en-Josas cedex
+Boston, MA 02163 France
+and NBER thesmar@hec.fr
+rgreenwood@hbs.edu
+Augustin Landier
+the Toulouse School of Economics
+21 Allée de Brienne
+31000 Toulouse, FRANCE
+augustin.landier@tse-fr.eu
+
+I. Introduction
+Financial stress experienced by banks can contaminate other banks and spiral into a shock
+that threatens the broader financial system: this is systemic risk. The measurement of systemic risk
+has been high on financial regulators’ priority list since the 2008 collapse of Lehman Brothers,
+which triggered widespread financial distress among large US financial institutions. The recent
+sovereign debt crisis and corresponding concerns about the solvency of European banks system have
+only made the need to measure system-wide stability more acute.
+Recent literature emphasizes two main channels through which the linkages between
+financial institutions can create contagion. The first relies on contractual dependencies: when two
+banks write a financial contract such as a swap agreement, a negative shock to one bank can transmit
+to the other party as soon as one of the banks is unable to honor the contract (e.g., Allen and Babus
+2009, Gorton and Metrick 2010, Giglio, 2011). Bilateral links of this kind can propagate distress,
+because the creditor bank may in turn lack the funds needed to deliver on its on its obligations to
+third parties (Duffie 2010, Kallestrup et al., 2011, Diebold and Yilmaz, 2011).1
+A second type of linkage comes from fire-sale spillovers: when a bank is forced to sell
+illiquid assets, the sale may depress prices because of a lack of unconstrained buyers, which in turn
+can prompt financial distress at other banks that hold the same assets. Liquidation spirals of this sort
+have been explored in an extensive theoretical literature.2 In a financial system of greater complexity
+and in which claims on households and firms are increasingly tradable (Schwarcz, 2008), such
+spirals are widely believed to have become an important contributor to systemic risk.
+1 See also Kalemli-Ozcan et al. (2011) who investigate the impact of inter-bank linkages on business cycle
+synchronization.
+2 See for instance Shleifer and Vishny (1992, 2010), Gromb and Vayanos (2007), Brunnermeier and Pedersen (2009),
+Allen, Babus, and Carletti (2011), Wagner (2011).
+1
+
+This paper puts forth a simple and easily calibratable model of fire-sales spillovers that can
+be readily estimated using available data. The model takes as given (1) the asset holdings of each
+financial institution, (2) an adjustment rule applied by institutions when they are hit by adverse
+shocks and (3) the liquidity of these assets on the secondary market (i.e., the ability of banks to sell
+these assets quickly with little price discount). Our main objective is to develop simple formulas of
+how fire sale spillovers add up across the financial sector, and how susceptible individual banks are
+to episodes of deleveraging by other banks.
+An appealing feature of our approach is that we distinguish between a bank’s contribution to
+financial sector fragility (which we call its “systemicness”), and a bank’s vulnerabilty to
+deleveraging by other banks. Our model allows us to compute formulas for both. To see the
+difference, consider a small but highly levered bank with a portfolio of risky assets. Such a bank
+may be quite vulnerable to financial sector deleveraging, yet is unlikely to be systemic. This is
+because asset sales triggered by its potential distress will be modest in size, thus not triggering much
+in the way of spillovers.
+The model has a number of intuitive properties concerning how the distribution of leverage
+and risk exposures across banks determines systemic risk. For instance, consider a negative return
+shock experienced by an asset that is held by relatively levered banks. This shock has a larger
+aggregate impact than if the same asset was held by the less levered institutions. More generally, we
+show that the banking system is less stable to shocks when asset classes that are large in dollar terms
+are also held by the most levered banks. If the goal is to reduce fire sale spillovers, then assets that
+are both volatile and illiquid should be dispersed across banks, since the same shocks generate less
+price impact in a deleveraging cycle. In contrast, if illiquid assets have low price volatility, then it is
+2

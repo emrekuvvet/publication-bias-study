@@ -1,0 +1,131 @@
+NBER WORKING PAPER SERIES
+MEASURING INTANGIBLE CAPITAL WITH MARKET PRICES
+Michael Ewens
+Ryan H. Peters
+Sean Wang
+Working Paper 25960
+http://www.nber.org/papers/w25960
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2019, Revised October 2023
+The paper previously circulated under the title “Acquisition Prices and the Measurement of
+Intangible Capital.” Special thanks to Dimitris Papanikolaou and Luke Taylor. We thank Gordon
+Phillips for providing data for the SDCCompustat merge and Shiyu Zhang for research
+assistance. Jan Bena (discussant), Nagpurnanand Prabhala (discussant), Hila Fogel-Yaari, Arthur
+Korteweg, Pierre Liang, Song Ma, Tom Ruchti and seminar participants at Columbia University,
+Cornell University (accounting and finance), University of Rochester, Michigan State University,
+University of Michigan, UT-Dallas, Southern Methodist University, Singapore Management
+University, National University of Singapore, HKUST, University of Hong Kong, CityU Hong
+Kong, University of Utah, Tulane University, Caltech, American Finance Association, Paris
+Financial Management conference, Washington University Conference on Corporate Finance,
+Midwest Finance Association, the Cass Mergers and Acquisitions Conference, and the Finance,
+Organizations and Market Conference (2018) provided helpful feedback. Code and data to
+incorporate the intangible capital measures can be found at: http://bit.ly/intan_cap. First version:
+September 2018. The views expressed herein are those of the authors and do not necessarily
+reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2019 by Michael Ewens, Ryan H. Peters, and Sean Wang. All rights reserved. Short sections of
+text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Measuring Intangible Capital with Market Prices
+Michael Ewens, Ryan H. Peters, and Sean Wang
+NBER Working Paper No. 25960
+June 2019, Revised October 2023
+JEL No. G30,G32,G34,O3,O34
+ABSTRACT
+Accounting standards prohibit internally created knowledge and organizational capital from being
+disclosed on firm balance sheets. As a result, balance sheets exhibit downward biases that have become
+exacerbated by increasing levels of intangible investments. To offset these biases, researchers must
+estimate the value of these off-balance sheet intangibles by capitalizing prior flows of R&D and SG&A.
+In doing so, a set of capitalization parameters must be assumed, i.e., the R&D depreciation rate and
+the fraction of SG&A that represents a long-lived asset. We estimate these parameters using market
+prices from firm exits and use them to capitalize intangibles for a comprehensive panel of firms from
+1978-2017. We then use a series of validation tests to examine the performance of our intangible capital
+stocks versus those developed from commonly used parameters. On average, our estimates of intangible
+capital are 15% smaller than estimates from status-quo parameters while exhibiting larger variation
+across industry. Intangible capital stocks derived from exit price parameters outperform existing measures
+when explaining market enterprise values and identifying human capital risk. Adjusting book values
+with exit-based intangible capital stocks markedly attenuates well-documented biases in market-to-book
+and return on equity ratios while increasing the precision of the HML asset pricing factor. We conclude
+that our capitalization parameters create intangible stocks that perform equal to or better than status-quo
+measures in various applications.
+Michael Ewens Sean Wang
+Columbia Business School Southern Methodist University
+665 W 130th St 6425 Boaz Lane
+Henry Kravis Hall, 732 Dallas, TX 75205
+New York, NY 10027 seanwang@mail.smu.edu
+and NBER
+me2731@columbia.edu
+Ryan H. Peters
+Tulane University
+7 McAlister Dr Suite 365
+New Orleans, LA 70118
+rpeters4@tulane.edu
+A appendix is available at http://www.nber.org/data-appendix/w25960
+
+Corporateinvestmenthastransformedoverthelastfewdecades,withU.S.firmsspendinglesson
+tangible assets and more on intangibles related to knowledge and organizational capital (Figure 1).
+This reduction in physical capital investments, along with the weaker connection between physical
+capital investments and firm valuation, is described as a “broader investment puzzle” by Guti´errez
+and Philippon (2017) and Crouzet and Eberly (2019). A shared conclusion of both papers is that
+standard investment measures on firms’ balance sheets fail to capture the growing importance of
+intangible assets, resulting in a downward bias in the recorded book values of invested capital.1
+This bias has grown over time, as evidenced by the dramatic upward trend in market-to-book
+ratios.
+Reliable measures of intangible capital are becoming increasingly important for capital markets
+and financial managers. For instance, numerous studies have provided evidence of mispriced equity
+forfirmswithhigherlevelsofintangiblecapital,whichcouldleadtosuboptimalresourceallocation.2
+Indebtmarkets,banksarelesswillingtolendtofirmswithhigherinformationasymmetryandmore
+uncertaintyabouttheirliquidationvalues,twoprimarycharacteristicsofintangible-intensivefirms.3
+In corporate finance, financial managers making capital budgeting decisions must estimate book
+values of intangible capital to calculate returns to intangible capital (Hall, Mairesse, and Mohnen,
+2010). To adjust for the downward bias in invested capital, researchers estimate the off-balance
+sheet intangible capital with accumulated flows of R&D4, SG&A5, or both.6 Such adjustments
+require assumptions about the capital accumulation process, such as intangible depreciation rates
+and the fraction of SG&A to be capitalized. Unfortunately, as Corrado, Hulten, and Sichel (2009)
+1Accounting rules for intangibles originated in 1974 when intangibles were a small proportion of the economy,
+andtheyhavenotchanged,despiteafundamentalchangetowardsintangiblesaseconomicvaluedrivers. Specifically,
+internal Research and Development (R&D) costs and Selling, General, and Administrative (SG&A) activities are
+expensed, and thus intangible values do not appear on the balance sheet. Such expensing has been shown to reduce
+the overall usefulness of accounting statements (Lev and Zarowin, 1999).
+2A partial list of these studies includes Daniel and Titman (2006); Eberhart, Maxwell, and Siddique (2004);
+Aksoy, Cooil, Groening, Keiningham, and Yalc¸ın (2008); Edmans (2011); Eisfeldt and Papanikolaou (2013).
+3Williamson (1988); Shleifer and Vishny (1992); Loumioti (2012); Mann (2018)
+4Bernstein and Nadiri (1988); Chan, Lakonishok, and Sougiannis (2001); Hirshleifer, Hsu, and Li (2013)
+5Eisfeldt and Papanikolaou (2013, 2014); Belo, Lin, and Vitorino (2014)
+6Falato, Kadyrzhanova, Sim, and Steri (2022); Peters and Taylor (2017)
+1
+
+highlight, “relatively little is known about depreciation rates for intangibles” (pp 674). While there
+is no clear consensus on parameter values, the most recently updated rates for knowledge capital
+depreciation use Bureau of Economic Analysis (BEA) data based on multiple data sets, including
+NSF surveys, where depreciation rates are based on the Li and Hall (2020) forward-looking profit
+model. Hulten and Hao (2008) provide the main parameter for organizational capital (hereafter,
+we refer to the combination of these parameters as “BEA-HH”). These capitalization parameters,
+however, are limited by gaps in industry coverage.7
+We propose a capitalization model that uses the market values of intangible assets to estimate
+a new set of intangible capitalization parameters (hereafter referred to as “Exits” or “exit-based”
+parameters) from a firm’s prior flows of intangible investments. Specifically, we obtain market
+values of intangible assets from firm exits that include acquisitions, liquidations, and bankruptcies.
+We identify the market prices of identifiable intangible assets and goodwill from these firms and
+match these prices to the firm’s past spending on R&D and SG&A to estimate parameters that
+capture(1)thedepreciationrateofpriorR&Dinvestmentinknowledgecapitaland(2)thefraction
+of SG&A that represents an investment into organizational capital.
+The results of our parameter estimation imply an average 33% annual depreciation rate for
+R&D versus 23% for BEA R&D depreciation rates where industry coverage is available.8 Across
+industries, we find a significantly higher depreciation rate for the two industries with the highest
+R&D intensity: healthcare (33% vs 17%) and high-tech (42% vs 28%). For organizational capital,
+we find that our 28% estimate of the fraction of SG&A representing invested capital is similar
+to that used in earlier work (30%). However, while prior studies have assumed this ratio to be
+constant across industries, this ratio varies dramatically across industries, from 20% (consumer) to
+51% (healthcare).
+7Approximately46%of4-digitSICcodesforpublicfirmshavedepreciationratesforknowledgecapitalusingBEA
+parametersfoundhere: https://apps.bea.gov/national/FA2004/Details/xls/DetailNonres_rate.xlsx. Organi-
+zational capital parameters have only been estimated in the pharmaceutical industry.
+8Some53%of4-digitSICcodesaremissingdepreciationratesforR&D,andadepreciationrateof15%isgenerally
+assumed by prior papers when a depreciation rate is unavailable for the given industry.
+2

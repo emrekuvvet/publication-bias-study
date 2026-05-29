@@ -1,0 +1,114 @@
+NBER WORKING PAPER SERIES
+INFORMATION ACQUISITION, EFFICIENCY, AND NON-FUNDAMENTAL VOLATILITY
+Benjamin M. Hébert
+Jennifer La'O
+Working Paper 26771
+http://www.nber.org/papers/w26771
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+February 2020, Revised April 2021
+We thank John Leahy, Andrew Caplin, and Alessandro Pavan for their excellent discussions and
+feedback on our paper. We also thank Marios Angeletos, Navin Kartik, Elliot Lipnowski, and
+Mike Woodford for their insightful advice and comments. We would like to thank Harald Uhlig
+(editor) and four anonymous referees for comments and suggestions that helped improve the
+paper. All remaining errors are our own. The views expressed herein are those of the authors and
+do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Benjamin M. Hébert and Jennifer La'O. All rights reserved. Short sections of text, not
+to exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Information Acquisition, Efficiency, and Non-Fundamental Volatility
+Benjamin M. Hébert and Jennifer La'O
+NBER Working Paper No. 26771
+February 2020, Revised April 2021
+JEL No. C72,D62,D83
+ABSTRACT
+We analyze non-fundamental volatility and efficiency in large games featuring strategic
+interaction and endogenous information acquisition. We adopt the rational inattention approach to
+information acquisition but generalize to a large class of information costs. Agents can learn
+about exogenous states as well as endogenous aggregate actions. We study how properties of
+information costs relate to properties of equilibria. We provide necessary and sufficient
+conditions to guarantee zero non-fundamental volatility in equilibrium and another set of
+necessary and sufficient conditions to guarantee constrained efficient equilibria. Mutual
+information, the cost typically assumed in rational inattention models, precludes non-fundamental
+volatility and imposes efficiency.
+Benjamin M. Hébert
+Graduate School of Business
+Stanford University
+655 Knight Way
+Stanford, CA 94305
+and NBER
+bhebert@stanford.edu
+Jennifer La'O
+Columbia University
+Department of Economics
+1105A International Affairs Building
+420 West 118th Street
+New York, NY 10027
+and NBER
+jl4196@columbia.edu
+
+Information Acquisition, Efficiency, and
+Non-Fundamental Volatility∗
+BenjaminHe´bert† JenniferLa’O‡
+April26,2021
+Abstract
+We analyze non-fundamental volatility and efficiency in large games featuring strategic
+interactionandendogenousinformationacquisition. Weadopttherationalinattentionap-
+proachtoinformationacquisitionbutgeneralizetoalargeclassofinformationcosts.Agents
+can learn about exogenous states as well as endogenous aggregate actions. We study how
+propertiesofinformationcostsrelatetopropertiesofequilibria. Weprovidenecessaryand
+sufficient conditions to guarantee zero non-fundamental volatility in equilibrium and an-
+othersetofnecessaryandsufficientconditionstoguaranteeconstrainedefficientequilibria.
+Mutual information, the cost typically assumed in rational inattention models, precludes
+non-fundamentalvolatilityandimposesefficiency.
+JELcodes:C72,D62,D83
+Keywords:InformationAcquisition,LargeGames,BeautyContests,RationalInattention
+∗We thank John Leahy, Andrew Caplin, and Alessandro Pavan for their excellent discussions and feedback on
+ourpaper. WealsothankMariosAngeletos,NavinKartik,ElliotLipnowski,andMikeWoodfordfortheirinsightful
+adviceandcomments.WewouldliketothankHaraldUhlig(editor)andfouranonymousrefereesforcommentsand
+suggestionsthathelpedimprovethepaper.Allremainingerrorsareourown.
+†StanfordUniversityandNBER,bhebert@stanford.edu.
+‡ColumbiaUniversityandNBER,jenlao@columbia.edu.
+
+1 Introduction
+Inmanyeconomicenvironments,agentsmakechoicesunderincompleteinformationandhave
+incentives to align their actions with both economic “fundamentals” and the actions of other
+agents [Morris and Shin, 2002, Angeletos and Pavan, 2007]. These games of strategic interac-
+tionformtheunderlyingbasisformanymicro-foundedmacroeconomicenvironments;exam-
+plesincludefirms’nominalprice-settingdecisionsinNewKeynesianmodels[Woodford,2003],
+firms’realquantitychoicesinbusinesscyclemodels[AngeletosandLa’O,2010,2013],aswellas
+investors’assetpositionsinmodelsoffinancialtrade[GrossmanandStiglitz,1976,1980].
+In these environments, agents’ beliefs over exogenous fundamentals and the endogenous
+actions of others play a key role in determining equilibrium outcomes. But where do these
+beliefscomefromandhowaretheyformed?
+In this paper we investigate the endogenous acquisition of information within games of
+strategic interaction. We ask two questions. First, what properties of the agents’ information
+acquisition costs guarantee that an equilibrium of the game features or does not feature non-
+fundamental volatility? Second, what properties of the agents’ information acquisition costs
+guaranteethatanequilibriumexiststhatisconstrainedefficient?
+Ourframework. Westudyaclassoflargegamesofstrategicinteraction. Acontinuumofex-
+anteidenticalagentstakeactionsunderincompleteinformation.Eachagenthasanincentiveto
+alignheractionwithanexogenous,payoff-relevantstateaswellaswiththeendogenousmean
+action.
+Agents acquire information endogenously. In particular, we adopt the rational inattention
+approach to costly information acquisition proposed by Sims [2003]. However, relative to the
+standardrationalinattentionframework,wemakethreesignificantdepartures.
+First, we do not assume information costs are proportional to mutual information—the
+typical cost function introduced by Sims [2003] and used widely throughout the rational inat-
+tention literature. We instead consider a more general class of cost functions: costs that are
+“posterior-separable”intheterminologyofCaplin,Dean,andLeahy[2021].Posterior-separable
+costfunctionscanbedescribedastheexpecteddivergencefromtheagents’priortoposterior
+beliefs. This class nests the standard mutual information cost function as a special case, but
+alsoincludesmanyothercostfunctions,includingthelog-likelihoodratio(LLR)costfunctions
+of Pomatto et al. [2020], the Tsallis entropy costs of Caplin, Dean, and Leahy [2021], and the
+neighborhood-based cost functions of He´bert and Woodford [2021]. These alternative cost
+functionshavebeenproposedinpartbecausetheyarebetterabletomatchobservedbehavior
+inexperiments(see,e.g.,DeanandNeligh[2019]).
+Second, we introduce exogenous noisy public signals. Noisy public signals are standard
+components of exogenous information sets in beauty contest games [Morris and Shin, 2002,
+1

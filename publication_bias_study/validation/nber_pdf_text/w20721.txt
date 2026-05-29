@@ -1,0 +1,107 @@
+NBER WORKING PAPER SERIES
+A TAXONOMY OF ANOMALIES AND THEIR TRADING COSTS
+Robert Novy-Marx
+Mihail Velikov
+Working Paper 20721
+http://www.nber.org/papers/w20721
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2014
+Professor Novy-Marx currently consults with Dimensional Fund Advisors, an investment firm headquartered
+in Austin, Texas. The views expressed herein are those of the authors and do not necessarily reflect
+the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2014 by Robert Novy-Marx and Mihail Velikov. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit, including
+© notice, is given to the source.
+
+A Taxonomy of Anomalies and their Trading Costs
+Robert Novy-Marx and Mihail Velikov
+NBER Working Paper No. 20721
+December 2014
+JEL No. G12,G14
+ABSTRACT
+This paper studies the performance of a large number of anomalies after accounting for transaction
+costs, and the effectiveness of several transaction cost mitigation strategies. It finds that introducing
+a buy/hold spread, which allows investors to continue to hold stocks that they would not actively trade
+into, is the single most effective simple cost mitigation strategy. Most of the anomalies that we consider
+with one-sided monthly turnover lower than 50% continue to generate statistically significant net spreads,
+at least when designed to mitigate transaction costs. Few of the strategies with higher turnover do.
+In all cases transaction costs reduce the strategies’ profitability and its associated statistical significance,
+increasing concerns related to data snooping.
+Robert Novy-Marx
+Simon Graduate School of Business
+University of Rochester
+305 Schlegel Hall
+Rochester, NY 14627
+and NBER
+Robert.Novy-Marx@Simon.Rochester.edu
+Mihail Velikov
+Simon Graduate School of Business
+University of Rochester
+305 Schlegel Hall
+Rochester, NY 14627
+mihail.velikov@simon.rochester.edu
+
+1. Introduction
+This paper provides a taxonomy of the most important anomalies, and calculates the
+cost of trading each strategy. It also studies several simple transaction cost mitigation
+techniques,andshowsthatwhiletransactioncostsdramaticallyreducetheprofitabil-
+ity of many anomalies, especially those with high turnover, designing strategies to
+minimize transaction costs significantly reduces these costs. It also shows that equal-
+weightedportfolioresults,popularintheacademicliteraturebecausetheyfrequently
+provide stronger results than value-weighted results, are misleading and should be
+viewed skeptically. Because equal-weighted strategies are more expensive to trade,
+equal-weightingoftenresultsinadeteriorationofnetperformance.
+Over the last 30 years academic researchers have documented hundreds of cross-
+sectional “anomalies," a term which has come to mean size, value, momentum, and
+any other strategy that generates a significant positive alpha relative to a four-factor
+model that accounts for these first three. The incentives to find these strategies are
+high both within academia (publications and tenure) and on the street (a marketable
+story and a bigger paycheck). This raises significant data snooping concerns. Harvey
+etal.(2014)argueoneconometricgroundsthatthreeshouldbethenewtwofort-stats,
+and conclude that “most claimed research findings in financial economics are likely
+false.” This paper ignores transaction costs, however, meaning that even the spreads
+reported in the literature often dramatically overstate the profitability of attempting
+totradethesestrategies.
+McLean and Pontiff (2014) study the post-publication performance of 82 anoma-
+lies and find average post-publication performance decay of 35%. They attribute less
+than a third of this decay to statistical bias, and the rest to price pressure by newly
+aware investors, arguing that their results are “consistent with costly (limited) arbi-
+trage,” because post-publication return declines are more pronounced for strategies
+thatdisproportionatelytakepositionsinstocksthatareeasiertotrade.
+Limits to arbitrage are important for addressing questions related to market effi-
+1
+
+ciency. Market anomalies are often used as potential evidence against efficiency. We
+generally believe that markets should be fairly efficient because of the forces of ar-
+bitrage, however, and these so called anomalies do not test market efficiency if they
+should not attract arbitrage capital because they are not actually profitable to trade.
+In this case they may indicate suboptimal behavior on the part of some individual
+traders,buttheyarenotsuggestiveofaggregatemispricing.
+Several authors have studied the limits trading costs impose when implementing
+momentum strategies. Lesmond et al. (2004) argue that while the large gross spreads
+observedonmomentumtradescreatean“illusionofprofitopportunitywhen,infact,
+noneexists.” KorajczykandSadka(2004)considerthepriceimpactoftradingmomen-
+tum,andconcludethatitwouldonlybeprofitabletotradeonaverysmallscale. These
+papers do not, however, study momentum strategies designed to minimize transac-
+tion costs. More recently Frazzini et al. (2014) have argued that “actual trading costs
+are less than a tenth as large as, and therefore the potential scale of these strategies is
+morethananorderofmagnitudelargerthan,previousstudiessuggest,"andconclude
+that the strategy is “robust [and] implementable,” but their study is conducted using
+proprietary data that covers a relatively short time-series, limited to larger stocks. No
+studiesprovideacomprehensiveanalysisofthecostoftradingmorethanafewofthe
+known anomalies, especially over longer horizons or using the entire cross-section of
+stocks.
+We consider a large array of well known anomalies, evaluating their after transac-
+tioncostperformanceoverlonghorizonsandacrossdifferenttypesofstocks. Inorder
+to do this we develop a new performance metric. This measure agrees with common
+notions of alpha when trading is frictionless, but provides unambiguous information
+about the extent to which an asset improves the investment opportunity set, some-
+thing about which the common notion of alpha can be misleading in the presence of
+tradingfrictions.
+We also evaluate three simple strategies for reducing transaction costs: limiting
+2

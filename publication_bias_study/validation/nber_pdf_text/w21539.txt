@@ -1,0 +1,110 @@
+NBER WORKING PAPER SERIES
+TRADING DOWN AND THE BUSINESS CYCLE
+Nir Jaimovich
+Sergio Rebelo
+Arlene Wong
+Working Paper 21539
+http://www.nber.org/papers/w21539
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2015, Revised October 2017
+This research was conducted with restricted access to the Bureau of Labor Statistics (BLS) data.
+The views expressed here are those of the authors and do not necessarily reflect the views of the
+BLS, the Federal Reserve Bank of Minneapolis, the Federal Reserve System, or the National
+Bureau of Economic Research. We thank our project coordinator at the BLS, Ryan Ogden, for
+help with the data, and Yuriy Gorodnichenko and Michael Weber for making their data and code
+available to us. We are grateful for comments from David Berger, Erik Hurst, Guido Menzio,
+Emi Nakamura, Aviv Nevo, Raphael Schoenle, Henry Siu, and Jon Steinsson.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2015 by Nir Jaimovich, Sergio Rebelo, and Arlene Wong. All rights reserved. Short sections of
+text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Trading Down and the Business Cycle
+Nir Jaimovich, Sergio Rebelo, and Arlene Wong
+NBER Working Paper No. 21539
+September 2015, Revised October 2017
+JEL No. E1,E2,E3
+ABSTRACT
+We document two facts. First, during the Great Recession, consumers traded down in the quality
+of the goods and services they consumed. Second, the production of low-quality goods is less
+labor intensive than that of high-quality goods. When households traded down, labor demand fell,
+increasing the severity of the recession. We find that the trading-down phenomenon accounts for
+a substantial fraction of the fall in U.S. employment in the recent recession. We show that
+embedding quality choice in a business-cycle model improves the model's amplification and
+comovement properties.
+Nir Jaimovich Arlene Wong
+Department of Economics Department of Economics
+University of Zurich Princeton University
+Office: SOF H-16 192A Julis Romo Rabinowitz Building
+Zurich, Switzerland Princeton, NJ 08544
+and NBER and NBER
+nir.jaimovich@uzh.ch arlenewong@princeton.edu
+Sergio Rebelo
+Northwestern University
+Kellogg School of Management
+Department of Finance
+Leverone Hall
+Evanston, IL 60208-2001
+and CEPR
+and also NBER
+s-rebelo@northwestern.edu
+
+1 Introduction
+One of the classic research areas in macroeconomics is the study of how households
+make consumption choices and how these choices impact the economy. There is a large
+empirical literature on this topic going as far back as the work of Burns and Mitchell
+(1946). This literature has received renewed attention after the Great Recession.1
+In this paper, we contribute to this line of research as follows. First, we show that
+during the Great Recession, consumers traded down in the quality of the goods and
+services they consumed. Second, we show that the production of low-quality goods is
+generally less labor intensive than that of high-quality goods. These two facts imply
+that when households traded down, labor demand fell, increasing the severity of the
+Great Recession.
+To quantify the implications of “trading down” for employment during the Great
+Recession, we combine various data sources to construct a data set with firm-level
+measuresofproductquality, laborintensity, andmarketshare. Formostofouranalysis,
+we use prices as a proxy for quality. Our assumption is that, if consumers are willing
+to pay more for an item, they perceive it to be of higher quality. We corroborate the
+plausibility of this assumption using data with independent measures of quality and
+price.
+We obtain price measures from two sources: data scraped from the Yelp!, a website
+where consumers post information about different goods and services, and the confiden-
+tial micro data set used to construct the Producer Price Index (PPI). We merge these
+data with Compustat data to measure labor intensity and market share for each firm
+in our sample. We estimate that around half of the decline in employment in the Great
+Recession is accounted for by consumers trading down in the quality of the goods and
+services they purchased.
+1Recent contributions to this literature include Aguiar, Hurst, and Karabarbounis (2013), Kaplan
+and Menzio (2015), Stroebel and Vavra (2015), and Nevo and Wong (2015).
+1
+
+Tostudytheeffectsoftradingdownfromatheoreticalperspective,weembedquality
+choice into an otherwise standard business-cycle model. We find that the presence of
+quality choice magnifies the response of these economies to shocks, generating larger
+booms and deeper recessions. To understand this amplification mechanism consider
+a negative shock that reduces the household’s income. This fall in income, leads the
+household to trade down in the quality of the goods it consumes. Since lower quality
+goods use less labor, trading down reduces labor demand.
+The quality-augmented model has two other interesting properties. First, it can
+generate comovement between employment in the consumption and investment sectors,
+a property that is generally difficult to obtain (see Christiano and Fitzgerald (1998)).
+Second, the model produces an endogenous, countercyclical labor wedge. As Shimer
+(2009) emphasises, this type of wedge is necessary in order to reconcile business-cycle
+models with the empirical behavior of hours worked.
+Our paper is organized as follows. In Section 2, we describe our data and present
+our empirical results. We study the quantitative properties of two models with quality
+choice in Section 3. The first model has a representative agent while the second has
+heterogenous agents. Section 4 concludes.
+2 Empirical findings
+In this section, we analyze the impact of trading down on labor demand. By trading
+down we mean shifts in the composition of consumption across firms within narrowly
+defined sectors towards lower quality goods. To study the effect of trading down on em-
+ployment, we estimate the labor intensity of different quality levels within each sector.
+We then study how shifts in the market share of the different quality levels affects em-
+ployment. This within-sector trading-down channel differs from other channels through
+which demand can affect employment, such as shifts in spending across sectors (e.g.
+2

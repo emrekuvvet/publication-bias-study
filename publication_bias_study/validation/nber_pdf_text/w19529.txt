@@ -1,0 +1,130 @@
+NBER WORKING PAPER SERIES
+INCENTIVES, SELECTION, AND TEACHER PERFORMANCE:
+EVIDENCE FROM IMPACT
+Thomas Dee
+James Wyckoff
+Working Paper 19529
+http://www.nber.org/papers/w19529
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2013
+We received exceptional research assistance from Mindy Adnot and Veronica Katz at the University
+of Virginia. We are grateful to the District of Columbia Public Schools for the data employed in this
+paper and to Scott Thompson, Kim Levengood and Austin Zentz of DCPS for addressing our questions
+regarding the data and IMPACT. We received financial support for this research from the Carnegie
+Corporation of New York and the National Center for the Analysis of Longitudinal Data in Education
+Research (CALDER). CALDER is supported by IES Grant R305A060018. The views expressed in
+the paper are solely those of the authors and may not reflect those of the funders. Any errors are attributable
+to the authors. The views expressed herein are those of the authors and do not necessarily reflect the
+views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2013 by Thomas Dee and James Wyckoff. All rights reserved. Short sections of text, not to exceed
+two paragraphs, may be quoted without explicit permission provided that full credit, including © notice,
+is given to the source.
+
+Incentives, Selection, and Teacher Performance: Evidence from IMPACT
+Thomas Dee and James Wyckoff
+NBER Working Paper No. 19529
+October 2013
+JEL No. I2,J45
+ABSTRACT
+Teachers in the United States are compensated largely on the basis of fixed schedules that reward experience
+and credentials. However, there is a growing interest in whether performance-based incentives based
+on rigorous teacher evaluations can improve teacher retention and performance. The evidence available
+to date has been mixed at best. This study presents novel evidence on this topic based on IMPACT,
+the controversial teacher-evaluation system introduced in the District of Columbia Public Schools
+by then-Chancellor Michelle Rhee. IMPACT implemented uniquely high-powered incentives linked
+to multiple measures of teacher performance (i.e., several structured observational measures as well
+as test performance). We present regression-discontinuity (RD) estimates that compare the retention
+and performance outcomes among low-performing teachers whose ratings placed them near the threshold
+that implied a strong dismissal threat. We also compare outcomes among high-performing teachers
+whose rating placed them near a threshold that implied an unusually large financial incentive. Our
+RD results indicate that dismissal threats increased the voluntary attrition of low-performing teachers
+by 11 percentage points (i.e., more than 50 percent) and improved the performance of teachers who
+remained by 0.27 of a teacher-level standard deviation. We also find evidence that financial incentives
+further improved the performance of high-performing teachers (effect size = 0.24).
+Thomas Dee
+Stanford University
+520 Galvez Mall, CERAS Building, 5th Floor
+Stanford, CA 94305-3084
+and NBER
+tdee@stanford.edu
+James Wyckoff
+Curry School of Education
+University of Virginia
+P.O. Box 400277
+Charlottesville, VA 22904-4277
+wyckoff@virginia.edu
+
+1
+INTRODUCTION
+In recent years, a research consensus has coalesced around the notion that teacher quality is a
+critically important determinant of student development and achievement (Sanders and Rivers,
+1996; Aaronson, Barrow and Sander, 2007; Rockoff, 2004; Rivkin, Hanushek and Kain, 2005) as
+well as later life outcomes (Chetty et al., 2011). However, there is no similarly wide agreement
+on how to systematically drive improvements in the quality of the teacher workforce. Districts
+and schools allocate substantial resources to teacher professional development (e.g., in-service
+training) despite the fact that there is surprisingly little rigorous evidence on the efficacy of these
+efforts (e.g., Yoon et al. 2007). Moreover, almost none of this professional development is driven
+by rigorous assessments of the teaching strengths and weaknesses of individual teachers
+(Weisberg et al, 2009). Furthermore, decades of empirical research have provided relatively little
+evidence on observed teacher traits that can consistently predict teacher quality. Nonetheless, the
+“single salary” schedules commonly used in U.S. public school districts compensate teachers
+according to tightly structured rules that typically reward only teacher experience and education
+credentials; traits among those without consistent links to teacher quality.
+Critics of this status quo argue that such rigid and misaligned compensation systems cannot
+adequately attract and retain a high-quality teacher workforce (see, for example, Johnson and
+Papay, 2009; Hanushek, 2007; Murnane and Olsen, 1989). This misalignment is thought to be
+especially acute in difficult-to-staff schools where the working conditions are more difficult yet
+the compensation, due to the single salary schedule, is often similar to schools with better
+working conditions. This dissatisfaction has motivated new efforts to design and implement
+programs to assess and reward teacher performance (Johnson and Papay 2009; Cavanagh 2011).
+The enthusiasm for such reforms among some policymakers and some practitioners is
+underscored by new federal and state initiatives (e.g., the Teacher Incentive Fund, Race to the
+Top, state waivers from the federal requirements under the No Child Left Behind Act) that
+promote, among other goals, the design and use of measures of teacher performance in
+compensation and other personnel decisions. However, these efforts are also extraordinarily
+controversial and their ongoing implementation appears to be uneven among school districts
+nationwide. For example, several large urban school districts recently terminated their federally
+sponsored programs after failing to secure the required buy-in of their teachers’ unions
+(Zubrzycki 2012). New York State Commissioner of Education, John King recently imposed a
+!
+!
+
+2
+teacher assessment system on New York City after the New York City Department of Education
+and the United Federation of Teachers failed to agree on one, resulting in a loss of $250 million
+in state aid (Joseph, 2013). More generally, there appears to be renewed resistance to the use of
+teacher evaluations to assess performance, especially for high-stakes financial and dismissal
+decisions (McNeil 2013a; Weiss and Long, 2013).
+The heated and ongoing national discussion about reforming teacher evaluation and
+compensation arguably has its recent genesis in the seminal policy innovations introduced in the
+District of Columbia Public Schools (DCPS) several years ago under then-Chancellor Michelle
+Rhee. In the 2009-10 academic year, DCPS introduced IMPACT, a high-stakes teacher
+evaluation system designed to drive improvements in teacher quality and student achievement.
+IMPACT established several explicit measures of teacher performance and linked the overall
+measured performance of individual teachers both to the possibility of large financial incentives
+as well as to the threat of dismissal. Specifically, during the first 3 years under this nationally
+visible program, teachers rated as “highly effective” (HE) have received substantial increases in
+one-time and base compensation while hundreds of teachers rated as ineffective (or minimally
+effective for two consecutive years) have been forcibly separated.
+State and local efforts to provide stronger incentives to teachers are by no means new (e.g.,
+Murnane and Cohen 1986). A recent body of smaller-scale experimental studies (e.g., Springer et
+al. 2010) suggests that short-term financial incentives linked only to the test performance of a
+teacher’s students are largely ineffective. However, IMPACT has several design features that
+make it distinctive relative to the conventional teacher incentives piloted in prior studies. For
+example, IMPACT has created especially high-powered incentives for teachers; most notably, a
+dismissal threat for low-performing teachers but also exceptionally large financial rewards for
+high-performing teachers. This design feature implies that IMPACT targets differential retention
+of low- and high-performing teachers as well as performance-based financial incentives. A
+second unique feature of IMPACT is that its incentives are linked to a multi-dimensional
+measure of teacher performance (e.g., multiple classroom observations as well as test scores) that
+is likely to have more validity than test scores alone (e.g., MET 2013). This targeted
+performance measure may also enhance the efficacy of IMPACT’s incentives because it places
+some weight on actions teachers control more clearly and directly (e.g., how their classroom
+practice relates to defined standards of effective instruction). Third, DCPS provided teachers
+!
+!

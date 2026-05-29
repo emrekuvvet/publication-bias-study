@@ -1,0 +1,142 @@
+NBER WORKING PAPER SERIES
+DEMAND-BASED OPTION PRICING
+Nicolae Garleanu
+Lasse Heje Pedersen
+Allen M. Poteshman
+Working Paper 11843
+http://www.nber.org/papers/w11843
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2005
+We are grateful for helpful comments from David Bates, Nick Bollen, Oleg Bondarenko, Menachem Brenner,
+Andrea Buraschi, Josh Coval, Apoorva Koticha, Sophie Ni, Jun Pan, Neil Pearson, Mike Weisbach, Josh
+White, and especially from Steve Figlewski, as well as from seminar participants at the Caesarea Center
+Conference, Columbia University, Harvard University, HEC Lausanne, the 2005 Inquire Europe Conference,
+London Business School, the 2005 NBER Behavioral Finance Conference, the 2005 NBER Universities
+Research Conference, the NYU-ISE Conference on the Transformation of Option Trading, New York
+University, Oxford University, Stockholm Institute of Financial Research, Texas A&M University, the
+University of Chicago, University of Illinois at Urbana-Champaign, the University of Pennsylvania,
+University of Vienna, and the 2005 WFA Meetings. The views expressed herein are those of the author(s)
+and do not necessarily reflect the views of the National Bureau of Economic Research.
+©2005 by Nicolae Garleanu, Lasse Heje Pedersen, and Allen M. Poteshman. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Demand-Based Option Pricing
+Nicolae Garleanu, Lasse Heje Pedersen, and Allen M. Poteshman
+NBER Working Paper No. 11843
+December 2005
+JEL No. G0, G12, G13, G14, G2
+ABSTRACT
+We model the demand-pressure effect on prices when options cannot be perfectly hedged. The model
+shows that demand pressure in one option contract increases its price by an amount proportional to
+the variance of the unhedgeable part of the option. Similarly, the demand pressure increases the price
+of any other option by an amount proportional to the covariance of their unhedgeable parts.
+Empirically, we identify aggregate positions of dealers and end users using a unique dataset, and
+show that demand-pressure effects help explain well-known option-pricing puzzles. First, end users
+are net long index options, especially out-of-money puts, which helps explain their apparent
+expensiveness and the smirk. Second, demand patterns help explain the prices of single-stock
+options.
+Nicolae Garleanu
+Wharton School of Business
+University of Pennsylvania
+3620 Locust Walk
+Philadelphia, PA 19104
+garleanu@wharton.upenn.edu
+Lasse Heje Pedersen
+NYU Stern Finance
+44 West Fouth Street
+Suite 9-190
+New York, NY 10012
+and NBER
+lpederse@stern.nyu.edu
+Allen M. Poteshman
+University of Illinois at Urbana-Champaign
+340 Wohlers Hall
+1206 South Sixth Street
+Champaign, IL 61820
+poteshma@uiuc.edu
+
+1 Introduction
+“[Option implied volatility] skew is heavily influenced by supply and de-
+mand factors.”
+— Gray, director of global equity derivatives, Dresdner Kleinwort Benson
+“The number of players in the skew market is limited. ... there’s a huge
+imbalance between what clients want and what professionals can provide.”
+— Belhadj-Soulami, head of equity derivatives trading for Europe, Paribas
+“To blithely attribute divergences between objective and risk-neutral prob-
+ability measures to the free ‘risk premium’ parameters within an affine
+model is to abdicate one’s responsibilities as a financial economist. ... a re-
+newed focus on the explicit financial intermediation of the underlying risks
+by option market makers is needed.”
+— Bates (2003)
+We take on this challenge by providing a model of option intermediation, and by
+showing empirically using a unique dataset that demand pressure can help explain the
+main option-pricing puzzles.
+The starting point of our analysis is that options are traded because they are useful
+and, therefore, options cannot be redundant for all investors (Hakansson (1979)). We
+denote the agents who have a fundamental need for option exposure as “end users.”
+Intermediaries such as market makers and proprietary traders provide liquidity to
+end users by taking the other side of the end-user net demand. If intermediaries can
+hedge perfectly — as in a Black and Scholes (1973) and Merton (1973) economy —
+then option prices are determined by no-arbitrage and demand pressure has no effect.
+In reality, however, even intermediaries cannot hedge options perfectly because of the
+impossibilityoftradingcontinuously, stochasticvolatility, jumpsintheunderlying, and
+transaction costs (Figlewski (1989)).1
+To capture this effect, we depart from the standard no-arbitrage literature that
+follows Black-Scholes-Merton by considering explicitly how options are priced by com-
+petitive risk-averse dealers who cannot hedge perfectly. In our model, dealers trade an
+arbitrary number of option contracts on the same underlying at discrete times. Since
+the dealers trade many option contracts, certain risks net out, while others do not. The
+dealers can hedge part of the remaining risk of their derivative positions by trading the
+underlying security and risk-free bonds. We consider a general class of distributions
+for the underlying, which can accommodate stochastic volatility and jumps. Dealers
+trade with end users. The model is agnostic about the end users’ reasons for trade.
+We compute equilibrium prices as functions of demand pressure, that is, the prices
+that make dealers optimally choose to supply the options that the end users demand.
+1Also, traders have capital constraints as emphasized, e.g., by Shleifer and Vishny (1997).
+2
+
+We show explicitly how demand pressure enters into the pricing kernel. Intuitively,
+a positive demand pressure in an option increases the pricing kernel in the states of
+nature in which an optimally hedged position has a positive payoff. This pricing-kernel
+effect increases the price of the option, which entices the dealers to sell it. Specifically,
+a marginal change in the demand pressure in an option contract increases its price by
+an amount proportional to the variance of the unhedgeable part of the option, where
+the variance is computed under a certain probability measure. Similarly, the demand
+pressure increases the price of any other option by an amount proportional to the
+covariance of their unhedgeable parts. Hence, while demand pressure in a particular
+option raises its price, it also raises the price of other options on the same underlying,
+especially similar contracts.
+Empirically, we use a unique dataset to identify aggregate daily positions of dealers
+and end users. In particular, we define dealers as market makers and end users as
+proprietary traders and customers of brokers.2 We find that end users have a net long
+position in S&P500 index options with large net positions in out-of-the-money puts.
+Hence, since options are in zero net supply, dealers are short index options. While it
+is conventional wisdom among option traders that Wall Street is short index volatility,
+this paper is the first to demonstrate this fact using data on option holdings. This
+can help explain the puzzle that index options appear to be expensive, and that low-
+moneyness options seem to be especially expensive (Longstaff (1995), Bates (2000),
+Coval and Shumway (2001), Amin, Coval, and Seyhun (2004), Bondarenko (2003)). In
+the time series, demand for index options is related to their expensiveness, measured
+by the difference between their implied volatility and the volatility measure of Bates
+(2005). Further, the steepness of the smirk, measured by the difference between the
+implied volatility of low-moneyness options and at-the-money options, is positively
+related to the skew of option demand, measured by the demand for low-moneyness
+options minus the demand for high-moneyness options.
+Jackwerth (2000) finds that a representative investor’s option-implied utility func-
+tion is inconsistent with standard assumptions in economic theory.3 Since options are
+in zero net supply, a representative investor holds no options. We reconcile this finding
+for dealers who have significant short index option positions. Intuitively, an investor
+will short index options, but only a finite number of options. Hence, while a standard-
+utility investor may not be marginal on options given a zero position, he is marginal
+given a certain negative position. We do not address why end users buy these op-
+tions; their motives might be related to portfolio insurance and agency problems (e.g.
+between investors and fund managers) that are not well captured by standard utility
+theory.
+Another option-pricing puzzle is that index option prices are so different from the
+prices of single-stock options despite the fact that the distributions of the underlying
+2The empirical results are robust to classifying proprietary traders as either dealers or end users.
+3See also Driessen and Maenhout (2003).
+3

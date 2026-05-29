@@ -1,0 +1,136 @@
+NBER WORKING PAPER SERIES
+EXECUTIVE COMPENSATION:
+A MODERN PRIMER
+Alex Edmans
+Xavier Gabaix
+Working Paper 21131
+http://www.nber.org/papers/w21131
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+April 2015
+We thank Steven Durlauf (the editor), two anonymous referees, Taylor Begley, David Dicks, Steve
+Kaplan, Robert Miller, Yuliy Sannikov, Fenghua Song, Luke Taylor, David Yermack, and especially
+Pierre Chaigneau for helpful comments, and Deepal Basak, Olivia Domba, and Jan Starmans for valuable
+research assistance. The views expressed herein are those of the authors and do not necessarily reflect
+the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2015 by Alex Edmans and Xavier Gabaix. All rights reserved. Short sections of text, not to exceed
+two paragraphs, may be quoted without explicit permission provided that full credit, including © notice,
+is given to the source.
+
+Executive Compensation: A Modern Primer
+Alex Edmans and Xavier Gabaix
+NBER Working Paper No. 21131
+April 2015
+JEL No. D86,G34
+ABSTRACT
+This article studies traditional and modern theories of executive compensation, bringing them together
+under a unifying framework. We analyze assignment models of the level of pay, and static and dynamic
+moral hazard models of incentives, and compare their predictions to empirical findings. We make
+two broad points. First, traditional optimal contracting theories find it difficult to explain the data,
+suggesting that compensation results from "rent extraction" by CEOs. In contrast, more modern theories
+that arguably better capture the CEO setting do deliver predictions consistent with observed practices,
+suggesting that these practices need not be inefficient. Second, seemingly innocuous features of the
+modeling setup, often made for tractability or convenience, can lead to significant differences in the
+model's implications and conclusions on the efficiency of observed practices. We close by highlighting
+apparent inefficiencies in executive compensation and additional directions for future research.
+Alex Edmans
+The Wharton School
+University of Pennsylvania
+2460 Steinberg Hall - Dietrich Hall
+3620 Locust Walk
+Philadelphia, PA 19104
+and NBER
+aedmans@wharton.upenn.edu
+Xavier Gabaix
+New York University
+Finance Department
+Stern School of Business
+44 West 4th Street, 9th floor
+New York, NY 10012
+and NBER
+xgabaix@stern.nyu.edu
+
+1. Introduction
+There is considerable debate onexecutive compensationinboththepublic arenaandacademia.
+This debate spans several important topics in economics, such as contract theory, corporate
+…nance, corporate governance, labor economics, and income inequality. One side is the “rent
+extraction”view, whichclaimsthatcurrentcompensationpracticessharplycontrastthepredic-
+tions of traditional optimal contracting models (e.g. Holmstrom (1979)). Thus, contracts are
+not chosen by boards to maximize shareholder value, but instead by the executives themselves
+to maximize their own rents. This perspective, espoused most prominently by Bebchuk and
+Fried(2004), has beentakenveryseriouslybybothscholars andpolicymakers, andledtomajor
+regulatory changes. In the U.S., the Securities and Exchange Commission (“SEC”) mandated
+increased disclosure of compensation in 2006, and say-on-pay legislation was passed as part of
+Dodd-Frank in 2007. In 2013, the European Union capped bankers’bonuses at the level of
+their salary, or twice their salary if shareholders agree. In the same year, the SEC passed a
+rule requiring …rms to disclose the ratio of Chief Executive O¢ cer (“CEO”) pay to median
+employee pay, and Switzerland held an ultimately unsuccessful referendum to limit CEO pay
+to twelve times the pay of the lowest worker.
+The “optimal contracting”view reaches a di¤erent conclusion. While it acknowledges stan-
+dard agency models are inconsistent with practice, it argues that such models do not capture
+the speci…cs of the CEO setting, since they were created as frameworks for the principal-agent
+problem in general. For example, CEOs have a very large e¤ect on …rm value compared to
+rank-and-…le employees. Thus, in a competitive labor market, it may be optimal to pay high
+wages to attract talented CEOs, and implement high e¤ort from them even though doing so
+requires paying a premium.1 Newer optimal contracting models aim to capture the speci…cs
+of the CEO employment relationship, and do indeed generate predictions consistent with the
+data. Under this perspective, regulation will do more harm than good.
+This article critically assesses the rent extraction vs. optimal contracting debate, by ana-
+lyzing newer models of executive compensation and evaluating the extent to which they can
+explain observed practices. In particular, while recent theories have used di¤erent frameworks
+and focused on di¤erent dimensions of the contracting problem, we present a tractable unifying
+modeltobringtogethertheconclusionsofthislargeliterature, startingwithclassictheoriesand
+then moving to modern ones. In Section 2 we begin by analyzing the determinants of the level
+of pay, starting with neoclassical production models of the …rm and then moving to modern
+assignment models. These assignment models yields empirical predictions for how CEO pay
+varies cross-sectionally between …rms of di¤erent sizes, and over time as the size of the average
+…rm in the economy changes.
+Having determined the level of pay, we then move to incentives. In Section 3 we consider a
+1AsimplemodelcanjustifyhighCEOpaysimplybyassumingahighlevelforthereservationutility,which
+is an exogenous parameter. Modern assignment models endogenize the reservation utility.
+2
+
+static moral hazard model where the CEO takes an action that improves expected …rm value,
+starting in Section 3.1 with the risk-neutral case and moving to risk aversion in Section 3.2.
+While this setting appears quite standard, we will show that seemingly innocuous features of
+the modeling setup, often made for convenience or tractability (e.g. the choice between additive
+ormultiplicative utilityandproductionfunctions, andbinary orcontinuous actions) canleadto
+signi…cant di¤erences in the model’s implications –and thus conclusions as to whether observed
+practices are consistent with theory. We also discuss various frameworks that researchers can
+use to yield tractable solutions to the contracting problem, and the appropriate empirical
+measure of incentives. Section 3.3 embeds the moral hazard model into a market equilibrium
+to generate additional empirical implications, and Section 3.4 discusses the evidence. Section
+3.5 considers the case of multiple signals. In contrast to the Holmstrom (1979) informativeness
+principle, CEO pay in reality depends on industry shocks outside his control, which Bebchuk
+and Fried (2004) argue is strong evidence that contracting is suboptimal. We show that the
+theory does not unambiguously predict that industry shocks should be …ltered out due to other
+considerations in a CEO setting that are absent from Holmstrom (1979). Section 3.6 allows
+the CEO to a¤ect the volatility as well as mean of …rm value, by choosing the …rm’s risk.
+It discusses how options can encourage “good”risk-taking, and debt-based compensation can
+deter “bad”risk-shifting if the …rm is levered.
+Section 4 moves to a multi-period model. A dynamic setting poses several challenges absent
+from a single-period model: contracts that are initially optimal may lose their incentive e¤ect
+over time, the CEO can take myopic actions that boost short-term returns at the expense
+of long-run value, and he may undo the contract by private saving. In addition to these
+complications, a dynamic setting provides the principal with additional opportunities: she can
+provide incentives through the threat of termination, and base the CEO’s pay on returns in
+previous as well as current periods.
+Each section will compare the empirical predictions of the theories with the evidence.
+Broadly speaking, we will argue that many, but not all, features of observed contracts that
+are frequently criticized are actually consistent with e¢ ciency. However, empirical correlations
+cannot be interpreted as de…nitive proof of the optimal contracting view, given the di¢ culties
+in identifying causality. Section 5 highlights apparent ine¢ ciencies in executive compensation,
+as well as open questions for future research. Section 6 concludes.
+This article aims to di¤er from existing surveys of executive compensation. Core, Guay, and
+Larcker (2003), Jensen and Murphy (2004) and Frydman and Jenter (2010) focus largely on the
+empirical evidence. Murphy (2013) provides a historical perspective and discusses the role of
+institutional constraints. Edmans and Gabaix (2009) focus exclusively on recent theories and
+use verbal descriptions rather than a formal model. Our main contribution is to study both
+traditional and modern contracting theories, with a particular attention to the role of modeling
+choices, andcombinetheir…ndingsintoasingleunifyingframework. Aswithanysurvey, weare
+forced to draw boundaries and thus the analysis of asymmetric information focuses on moral
+3

@@ -1,0 +1,130 @@
+NBER WORKING PAPER SERIES
+INTERMEDIARY BALANCE SHEETS AND THE TREASURY YIELD CURVE
+Wenxin Du
+Benjamin M. Hébert
+Wenhao Li
+Working Paper 30222
+http://www.nber.org/papers/w30222
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2022, Revised May 2023
+A portion of this research was conducted at the Becker-Friedman Institute, whose hospitality B.
+Hébert gratefully acknowledges. We would like to thank Adrien Auclert, Patrick Augustin, Bruno
+Biais, Rohan Kekre, Darrell Duffie, Michael Fleming, Thierry Foucault, Valentin Haddad,
+Terrence Hendershott, Sebastian Infante, Arvind Krishnamurthy, Ralph Koijen, Toomas Laarits,
+Tim Landvoigt, Stefan Nagel, Vania Stavrakeva, Dominik Supera, and Fabrice Tourre for
+insightful comments, as well as seminar and conference participants at Bank of England, BIS,
+Boston College, Chicago Fed, Cleveland Fed, CTFC, Cornell, CUHK, Fixed Income and
+Financial Institutions Conference, Florida International University, Washington University in St.
+Louis, NBER LTAP, HEC Paris, HKU, Duke, Michigan, Treasury Office for Financial Research,
+University of British Columbia, UC Berkeley, USC, and UT Austin Junior Macro. We in
+particular would like to thank Ken Singleton for both his insightful feedback and for sharing his
+term structure estimation code. We thank Filippo Cavaleri for excellent research assistance. The
+views in this paper are solely the responsibility of the authors and should not be interpreted as
+reflecting the views of the Federal Reserve Bank of New York, the Federal Reserve System, or
+the National Bureau of Economic Research. All remaining errors are our own.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2022 by Wenxin Du, Benjamin M. Hébert, and Wenhao Li. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that
+full credit, including © notice, is given to the source.
+
+Intermediary Balance Sheets and the Treasury Yield Curve
+Wenxin Du, Benjamin M. Hébert, and Wenhao Li
+NBER Working Paper No. 30222
+July 2022, Revised May 2023
+JEL No. F3,G12,G15,G2
+ABSTRACT
+We document a regime change in the Treasury market post-Global Financial Crisis (GFC):
+dealers switched from net short to net long Treasury bonds. We construct “net-long” and
+“netshort” curves that account for balance sheet and financing costs, and show that actual yields
+moved from the net short curve pre-GFC to the net long curve post-GFC. Our theory shows the
+regime shift caused negative swap spreads and co-movement among swap spreads, dealer
+positions, and covered-interest-parity violations. Furthermore, the effects of various monetary and
+regulatory policies are regime-dependent. We highlight Treasury supply as a plausible driver of
+this regime shift.
+Wenxin Du Wenhao Li
+Booth School of Business University of Southern California
+University of Chicago Marshall School of Business
+5807 S. Woodlawn Avenue Los Angeles, CA
+Chicago, IL 60637 liwenhao@marshall.usc.edu
+and NBER
+Wenxin.Du@chicagobooth.edu
+Benjamin M. Hébert
+Graduate School of Business
+Stanford University
+655 Knight Way
+Stanford, CA 94305
+and NBER
+bhebert@stanford.edu
+A internet appendix is available at https://www.nber.org/data-appendix/w30222
+
+Introduction
+Prior to the GFC, yields on Treasury bonds were below the fixed rates on interest rate swaps
+(specifically, overnight index swaps (OIS)) of the same maturity. This positive swap-Treasury
+spread (“swap spread,” for short) pre-GFC was in part due to the “convenience yield” of the Trea-
+sury bonds (à la Krishnamurthy and Vissing-Jorgensen (2012)). However, post-GFC, yields on
+U.S. Treasury bonds have been consistently above the corresponding swap rates, suggesting that
+Treasurybondsarenowinsomesense“inconvenient.” Likewise,priortotheGFC,CIPdeviations
+were almost non-existent, but have emerged as significant and persistent following the crisis. The
+emergenceofCIPdeviationsandthechangeinthesignofswapspreadsarebothwell-documented
+intheliterature.1
+We provide new empirical evidence to link swap spreads and CIP deviations with regimes in
+whichprimarydealersarenetlongornetshortwithrespecttoTreasurybonds. Figure1illustrates
+a significant change in the Treasury market over the past twenty years. Pre-GFC, primary dealers
+onnetmaintainedashortpositioninTreasurybonds,andtheswapspreadwaspositive. Post-GFC,
+primary dealers switched to a net long position in Treasury bonds, and the swap spread became
+negative. Thatis,dealerswereshortTreasurybondswhenthosebondshadyieldslowerthanswap
+rates, and became long Treasury bonds once those bonds had higher yields than swap rates. The
+signswitchintheswapspreadexactlycoincidedwiththesignswitchindealers’netposition.
+We explain the collection of evidence in Figure 1 via a unified framework that incorporates
+the convenience (or lack thereof) of Treasury bonds, covered interest rate parity (CIP) deviations,
+and primary dealers’ net Treasury positions. Our framework emphasizes the role of balance-sheet
+constrained dealers in the Treasury market. This framework naturally leads to regimes in which
+dealersarenetlong,netshort,orflatwithrespecttoTreasurybonds. Intuitively,inthelongregime,
+Treasuryyieldshouldbeabovetheswaprateofthesamematuritytocompensateforbalancesheet
+costs, while in the short regime, both balance sheet costs and financing spreads lower Treasury
+yieldsrelativetoswaprates.
+Our paper shows that the Treasury market regime is central to understanding pricing dynam-
+1On the sign switch for long-maturity LIBOR swap spreads, see Klingler and Sundaresan (2019) and Jermann
+(2020). On the sign switch at all maturities for OIS swaps, which are swaps based on the effective federal funds
+rate, see Augustin et al. (2021) and Fleckenstein and Longstaff (2021). On the CIP deviations, see Du, Tepper, and
+Verdelhan(2018b).
+1
+
+ics and the effects of policy implications. Specifically, relative to the existing literature on swap
+spreads and CIP deviations, our main contributions are four-fold. First, we quantitatively demon-
+strate that the same balance sheet costs that rationalize CIP violations can also rationalize swap
+spreads, both before and after the GFC (i.e. across regimes), after properly accounting for the
+differences between the financing rates of long and short positions. Second, we show that deal-
+ers’actualnetTreasurybondpositionsco-movewiththeirincentivetoactasarbitrageursbetween
+Treasury bonds and swaps. That is, dealers’ net Treasury demand curves are motivated by arbi-
+trage. Third, we propose a framework to endogenize dealers’ position, and suggest that Treasury
+supplyisasignificantdriveroftheregimeshiftandhenceofnegativeOISswapspreadsatallma-
+turities (complementing the pension demand channel of Klingler and Sundaresan (2019), which
+is relevant primarily at the 30yr maturity). Lastly, we show that effects of a wide range of mone-
+tary policies and regulatory policies are regime-dependent, and use our framework to explain why
+Treasury yields fell relative to other interest rates during the Global Financial Crisis (GFC) but
+roseduringtheMarch2020COVID-19crisis(He,Nagel,andSong(2022)andDuffie(2020)).
+Ourformalanalysisproceedsinthefollowingsteps. Wefirstderivewhatwecallthe“net-long”
+and“net-short”curves. ThenetlongcurvedescribesaTreasuryyieldabovewhichadealerwould
+always want to be net long Treasury bonds, regardless of its beliefs about future Treasury yields.
+Similarly,thenetshortcurveprovidesayieldbelowwhichadealerwouldalwaysbewillingtobe
+net short the bond. We construct these curves taking the interest rate swap curve and the structure
+ofCIPviolationsasgiven. Ourconstructionusesinterest-rateswapstomeasurediscountratesfree
+from balance sheet costs, CIP violations to measure balance sheet costs,2 and takes into account
+thespreadsbetweenfinancingratesanddiscountrates.
+TheuseofswapratesandCIPviolationsismotivatedbyasingleassumption: thatallzero-cost,
+zero-balance-sheet trading strategies are at least weakly unprofitable under a common stochastic
+discount factor (SDF).3 This assumption allows us to compare the strategy of financing the pur-
+chase of a Treasury bond with the strategy of borrowing unsecured and engaging in CIP arbitrage
+(the difference between these is a zero-cost, zero-balance-sheet strategy). We use this comparison
+toderiveournetlongcurve,andconstructournetshortcurveinasimilarmanner.
+2TheinterpretationofthesecostsisconsistentwiththeviewofJermann(2020)thatswapspreadsareaffectedby
+“bondholdingcosts,”butmorespecificinthatthesecostsaffectbothswapspreadandCIPdeviations.
+3This assumption is implicit in the models of Jermann (2020) and Du et al. (2022). Under this assumption, the
+SDFpriceszero-costandzero-balance-sheetstrategies(e.g. derivativesincludingswapswithnegligiblebalancesheet
+costandzeroinitialcost),butdoesnotdirectlydeterminethepriceofcashsecuritiessuchasTreasuries.
+2

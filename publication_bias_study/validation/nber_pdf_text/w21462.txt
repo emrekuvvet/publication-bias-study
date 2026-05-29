@@ -1,0 +1,122 @@
+NBER WORKING PAPER SERIES
+AN EMPIRICAL ANALYSIS OF FUNDING COSTS SPILLOVERS IN THE EURO-ZONE
+WITH APPLICATION TO SYSTEMIC RISK
+Pietro Bonaldi
+Ali Hortaçsu
+Jakub Kastl
+Working Paper 21462
+http://www.nber.org/papers/w21462
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+August 2015
+The paper was previously circulated under the title "An Empirical Analysis of Systemic Risk in the
+EURO-zone." We thank Aureo de Paula, Vasco Carvalho, Thomas Phillipon, Marzena Rostek, Jose-Luis
+Peydro, David Skeie, Charles M. Kahn, Christian B. Hansen, Azeem Shaikh, Fernando Alvarez and
+seminar participants at Berkeley, EUI, Minneapolis Fed, NYU, Princeton, Stanford, UCLA, UCL,
+Wisconsin, 2013 GSE Summer Forum, 2013 Wharton Conference on Liquidity and Financial Crises,
+2013 Asian Meeting of the Econometric Society, 2014 NBER Summer Institute, 50th Annual Conference
+on Bank Structure and Competition, Bank of England's Conference on Systemic Risk and Macro-Prudential
+Regulation and 3rd European Meeting on Networks for helpful comments. We are also grateful to
+Winnie van Dijk for valuable research assistance. Hortacsu acknowledges financial support from the
+NSF (SES-1124073 and ICES-1216083). Kastl acknowledges financial support from the NSF (SES-1123314
+and SES-1352305) and the Sloan Foundation. The views expressed in this paper are our own and
+do not necessarily reflect the view of the European Central Bank or the National Bureau of Economic
+Research. All remaining errors are ours.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2015 by Pietro Bonaldi, Ali Hortaçsu, and Jakub Kastl. All rights reserved. Short sections of text,
+not to exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+An Empirical Analysis of Funding Costs Spillovers in the EURO-zone with Application to
+Systemic Risk
+Pietro Bonaldi, Ali Hortaçsu, and Jakub Kastl
+NBER Working Paper No. 21462
+August 2015
+JEL No. G1,G2,L0
+ABSTRACT
+We propose a framework for estimation of spillovers between funding costs of individual banks. The
+estimation proceeds in three steps: First, using data from liquidity auctions of the European Central
+Bank, we estimate the funding costs in a given week for each individual bank. In the second step, we
+apply the adaptive elastic net (a LASSO type estimator) to this panel to estimate the financial network.
+Finally, using the estimated network we propose new measures of the systemicness and vulnerability
+of each bank. Our measure of systemicness has quite a natural interpretation, since it can roughly be
+viewed as the total externality a bank would impose on the funding costs of all other banks in the system.
+We estimate that most of the banks have fairly weak links and, therefore, if one were to suffer an adverse
+shock there would likely be a rather limited effect on the other ones. On the other hand, there are a
+few banks that are quite central: an increase in their funding costs would result in a very significant
+increase (up to 95 bp per 100 bp shock) in the funding costs of the other banks. Our vulnerability scores
+estimated using data from 2007-2008 are positively correlated with the probability of a bank being
+bailed out later.
+Pietro Bonaldi Jakub Kastl
+University of Chicago Department of Economics
+bonaldi@uchicago.edu Princeton University
+Fisher Hall
+Ali Hortaçsu Princeton, NJ 08544-1021
+Department of Economics a n d NBER
+University of Chicago jkastl@princeton.edu
+1126 East 59th Street
+Chicago, IL 60637
+a n d NBER
+hortacsu@uchicago.edu
+
+JEL Classification: D44, E58, G01
+1 Introduction
+Starting with Rochet and Tirole (1996) and Allen and Gale (2000), the importance of the intercon-
+nectivity structure of financial institutions for the stability of the financial system has been seen
+as a topic of first-order importance. Additional theoretical research by Freixas, Parigi and Ro-
+chet (2000), Eisenberg and Noe (2001), Elliot, Golub and Jackson (2013), Glasserman and Young
+(2015) and Acemo˘glu, O¨zda˘glar and Tahbaz-Salehi (2013) among others, has shown that certain
+network structures can lead to the presence of “systemic” institutions, i.e. institutions which, due
+to their connectedness, can transmit adverse shocks to the entire system. The empirical character-
+ization of the actual interconnectivity structure of banks, however, is relatively scarce. This delay
+is undoubtedly related to the lack of direct data on interbank credit relations, save for informa-
+tion available through intraday payment and settlement systems (see, for example, Boss, Elsinger,
+Summer and Thurner (2004), Bech and Atalay (2008), Iori, Masi, Precup, Gabbi and Caldarelli
+(2008), Wetherilt, Zimmerman and Soramki (n.d.) and Ashcraft, McAndrews and Skeie (2011)).
+In this paper, we attempt to provide empirical tools that would allow Central Banks or poten-
+tiallyotherregulatorstoinferthestructureofthenetworkofspillovereffectsbasedoncomovements
+of banks’ short-term funding costs. Such comovements can be generated as the result of the prop-
+agation of solvency shocks as modeled in Eisenberg and Noe (2001), and Acemo˘glu et al. (2013).
+Once we estimate the financial network, we use centrality measures typically used in network anal-
+ysis (e.g., Ballester, Calv-Armengol and Zenou (2006)) to estimate the extent to which a particular
+bank is crucial for the working of the whole system, i.e., to determine the set of systemic banks.
+Our method provides a measure of such “systemicness” as expressed by that bank’s impact on the
+future cost of funding of other banks. Similarly, we measure to what extent each bank is affected
+by shocks to the funding costs of other banks in the system, in other words, how vulnerable to
+contagion each bank is.
+Whiledifferentproxiesforfundingcostsofbanksmaybeutilized(CDSspreads,LIBOR/EURIBOR
+quotes, imputed interest rates from overnight markets etc.), we focus on a particular measure that
+2
+
+is (i) revealed by actions that are directly affecting payoffs as opposed to stated willingness-to-pay
+for credit as elicited in a survey, and (ii) available for a large set of banks at a fairly high frequency
+(weekly). In particular, following our prior work (Cassola, Hortac¸su and Kastl (2013)) we use data
+on European banks’ bids in the ECB’s short-term refinancing auctions and infer banks’ revealed
+funding costs using a structural econometric model of strategic bidding in these auctions. In Cas-
+sola et al. (2013), we looked at the evolution of banks’ behavior before and during the early part
+of the financial crisis and argued that the bidding data from the main refinancing operations of
+the ECB is predictive of the financial woes of system banks. We also argued that interpreting the
+data through a structural model is important, since changes in the bidding behavior itself involve
+also strategic adjustment to the changes in other bidders’ behavior (strategies), which in case of
+a financial turmoil may be quite important. In other words, a bank i may be bidding higher not
+because its underlying opportunity cost of funding increased, for example due to unfavorable de-
+velopment of other banks’ perceptions of i’s default risk, but because other banks increased their
+bids and i thus also increased its bid so as to optimally resolve the trade-off between the surplus on
+the marginal amount of the loan and the probability of winning this marginal amount. That prior
+paper also showed that the estimates of the changes in banks’ funding costs coming from the model
+are consistent with the ex-post observed changes in accounting measures of banks’ performance
+such as cost-to-income ratio or return on equity.
+Given our panel of banks’ revealed short-term funding costs, we characterize the network struc-
+ture by looking at the covariation of a given bank’s funding cost with other system banks’ (lagged)
+funding costs, controlling for various sources of comovement due to common asset exposures, such
+as holdings of sovereign bonds (we conduct numerous robustness exercises for our specification in
+the paper and in the Appendix, including an instrumental variables strategy). Implementing this
+through traditional linear regression, however, yields a dimensionality problem: the number of co-
+variates in our regressions potentially exceeds the number of data points we have for each bank in
+our data set. To combat this problem, which is commonly encountered in Genetics and Machine
+learning, we utilize the adaptive elastic net method of Zou and Zhang (2009) and Zou and Hastie
+(2005). As will be discussed in Section 4.3, the elastic net is a modification of the Least Absolute
+3

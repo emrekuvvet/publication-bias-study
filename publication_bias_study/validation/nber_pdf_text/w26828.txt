@@ -1,0 +1,124 @@
+NBER WORKING PAPER SERIES
+MARKET FRAGMENTATION
+Daniel Chen
+Darrell Duffie
+Working Paper 26828
+http://www.nber.org/papers/w26828
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+March 2020
+We are grateful for research assistance from David Yang and for conversations with Mohammad
+Akbarpour, Bob Anderson, Anirudha Balusubramanian, Eric Budish, Ananth Madhavan, Albert
+Menkveld, Michael Ostrovsky, Marcos Salgado, Yuliy Sannikov, Yazid Sharaiha, Andy
+Skrzypacz, Bob Wilson, Milena Wittwer, and Haoxiang Zhu. The views expressed herein are
+those of the authors and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Daniel Chen and Darrell Duffie. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Market Fragmentation
+Daniel Chen and Darrell Duffie
+NBER Working Paper No. 26828
+March 2020
+JEL No. D47,D82,G14
+ABSTRACT
+We model a simple market setting in which fragmentation of trade of the same asset across
+multiple exchanges improves allocative efficiency. Fragmentation reduces the inhibiting effect of
+price-impact avoidance on order submission. Although fragmentation reduces market depth on
+each exchange, it also isolates cross-exchange price impacts, leading to more aggressive overall
+order submission and better rebalancing of unwanted positions across traders. Fragmentation also
+has implications for the extent to which prices reveal traders’ private information. While a given
+exchange price is less informative in more fragmented markets, all exchange prices taken
+together are more informative.
+Daniel Chen
+Graduate School of Business
+Stanford University
+Stanford, CA 94305-7298
+dtchen@stanford.edu
+Darrell Duffie
+Graduate School of Business
+Stanford University
+Stanford, CA 94305-7298
+and NBER
+duffie@stanford.edu
+
+1 Introduction
+In modern financial markets, many financial instruments trade simultaneously on multiple
+exchanges (Budish, Lee, and Shim, 2019; Gresse et al., 2012; Pagnotta and Philippon, 2018).
+Market fragmentation raises concerns over market depth. One might therefore anticipate
+that fragmentation worsens allocative efficiency through the strategic avoidance of price
+impact, which inhibits beneficial gains from trade (Vayanos, 1999; Du and Zhu, 2017). Less
+aggressive trade could in turn impair price informativeness, relative to a centralized market
+in which all trade flows are consolidated. Perhaps surprisingly, we offer a simple model
+of how fragmentation of trade across multiple exchanges, despite reducing market depth,
+actually improves allocative efficiency and price informativeness.
+In the equilibrium of our market setting, the option to split orders across different ex-
+changes reduces the inhibiting effect of price-impact avoidance on total order submission.
+Though market depth on each exchange decreases with fragmentation, the common practice
+of order splitting allows traders to shield orders submitted to a given exchange from the
+price impact of orders submitted to other exchanges. This effect is sufficiently strong that
+fragmentation increases overall order aggressiveness. This in turn can result in a more effi-
+cient redistribution of unwanted positions across traders and cause prices, collectively across
+all exchanges, to better reflect traders’ private information. Once fragmentation is suffi-
+ciently severe, however, any additional fragmentation causes trade to become too aggressive,
+from a welfare perspective. However, in our model setting, any degree of fragmentation is
+welfare-superior to a centralized market.
+Oursimplemodelabstractsfromsomeimportantaspectsoffunctioningfinancialmarkets.
+Wedonotconsidertheimpactoffragmentationonexchangecompetitionortransactionfees.1
+Wealsoabstractfromtraderinferencesrelatedtocross-exchangecross-timeordersubmission
+and the associated adverse impact of sniping by fast traders (Budish, Cramton, and Shim,
+2015; Malinova and Park, 2019; Pagnotta and Philippon, 2018). Given these and other
+limitations of our model, we avoid taking a normative or policy stance on fragmentation.
+Our primary marginal contribution is to identify a potentially important new economic
+channel for the welfare implications of market fragmentation.
+We now briefly summarize our model and the main results. A single asset is traded in a
+single period by N strategic traders participating on E exchanges. Prior to trade, strategic
+trader i is endowed with a quantity X of the asset that is privately observed by trader
+i
+i. Each trader submits a package of limit orders (forming a demand function) to each of
+the exchanges, simultaneously. As in common practice (Wittwer, 2020), orders to a given
+1As shown by Budish, Lee, and Shim (2019), transaction fees are economically small.
+1
+
+exchange cannot be made contingent on clearing prices at other exchanges. The objective of
+each strategic trader, given the conjectured order submission strategies of the other traders,
+is to maximize the total expected cash compensation received for executed orders, net of
+a holding cost that is quadratic in the trader’s final asset position, as in the one-exchange
+model of Du and Zhu (2017).
+At each exchange, “liquidity traders” submit non-discretionary market orders. The ag-
+gregate quantities of market orders submitted by liquidity traders to the various exchanges
+are exogenous random variables, independently and identically distributed across exchanges.
+We also consider a version of the model with no liquidity traders, and a version in which
+liquidity traders are replaced by a “competitive fringe” of traders that are strategic with
+respect to order quantities. In any version of the model, because agents’ preferences are
+quasilinear in cash and because total cash payments net to zero by market clearing, an un-
+ambiguous measure of allocative efficiency is the expected sum of strategic traders’ quadratic
+holding costs.
+Price impact is increased by market fragmentation because of cross-exchange price in-
+ference, by which traders choose order submissions in light of the positive equilibrium cor-
+relation between exchange prices. For example, conditional on a clearing price on a given
+exchange that is lower than expected, a buyer expects to be assigned higher quantities on
+all exchanges. This effect dampens the aggressiveness of order submissions, which reduces
+market depth and heightens market impact, relative to a single-exchange setting. Despite
+this reduction in market depth, the ability to split orders across exchanges ensures that, in
+equilibrium, the total order submission of each strategic trader is more aggressive. This nat-
+ural implication of fragmentation is novel to this paper, as far as we know. As the number of
+exchanges increases, the equilibrium allocation becomes more efficient until a point at which
+trade becomes “too aggressive.” We find that the socially optimal number of exchanges de-
+pends only on (a) the number of strategic traders and (b) the ratio of the variance of the
+endowments of strategic traders to the variance of liquidity trade. We show that when there
+are more exchanges, the price on any individual exchange is less informative of the aggregate
+endowment of strategic traders, the key “state variable” of our model, yet the exchange
+prices taken together are more informative.
+The remainder of the paper is organized as follows. Section 2 provides additional back-
+ground on exchange market fragmentation and related research. Section 3 gives the setup of
+the most basic version of our model. Section 4 characterizes properties of the equilibrium.
+Section 5 presents the implications of fragmentation on price impact, allocative efficiency,
+and price informativeness. Section 6 studies a formulation of the model in which traders
+observe the aggregate asset endowment before order submission. Section 7 summarizes the
+2

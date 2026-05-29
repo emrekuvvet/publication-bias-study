@@ -1,0 +1,134 @@
+NBER WORKING PAPER SERIES
+ALIGNED WITH WHOM? DIRECT AND SOCIAL GOALS FOR AI SYSTEMS
+Anton Korinek
+Avital Balwit
+Working Paper 30017
+http://www.nber.org/papers/w30017
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2022
+This paper was prepared for the Oxford Handbook of AI Governance. We would like to thank
+Ondřej Bajgar, Damon Binder, Justin Bullock, Alexis Carlier, Carla Zoe Cremer, Allan Dafoe,
+Ben Garfinkel, Lewis Hammond, Fin Moorhouse, Luca Righetti, Toby Shevlane, Joseph Stiglitz,
+and participants at the Spring 2021 Handbook of AI Governance conference for helpful
+comments and discussions. Any remaining misalignment is our own. Korinek acknowledges
+financial support from the David M. Rubenstein Fellowship program at the Brookings Institution.
+The views expressed herein are those of the authors and do not necessarily reflect the views of the
+Brookings Institution or the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2022 by Anton Korinek and Avital Balwit. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Aligned with Whom? Direct and Social Goals for AI Systems
+Anton Korinek and Avital Balwit
+NBER Working Paper No. 30017
+May 2022
+JEL No. D6,O3
+ABSTRACT
+As artificial intelligence (AI) becomes more powerful and widespread, the AI alignment problem
+—how to ensure that AI systems pursue the goals that we want them to pursue—has garnered
+growing attention. This article distinguishes two types of alignment problems depending on
+whose goals we consider, and analyzes the different solutions necessitated by each. The direct
+alignment problem considers whether an AI system accomplishes the goals of the entity operating
+it. In contrast, the social alignment problem considers the effects of an AI system on larger
+groups or on society more broadly. In particular, it also considers whether the system imposes
+externalities on others. Whereas solutions to the direct alignment problem center around more
+robust implementation, social alignment problems typically arise because of conflicts
+between individual and group-level goals, elevating the importance of AI governance to mediate
+such conflicts. Addressing the social alignment problem requires both enforcing existing norms
+on their developers and operators and designing new norms that apply directly to AI systems.
+Anton Korinek
+Department of Economics
+University of Virginia
+Monroe Hall 246
+248 McCormick Rd
+Charlottesville, VA 22904
+and NBER
+anton@korinek.com
+Avital Balwit
+Oxford University
+Future of Humanity Institute
+Trajan House
+Mill St
+Oxford OX2 0DJ
+United Kingdom
+avital.balwit@gmail.com
+
+I. Introduction
+We are building artificially intelligent systems which are increasingly competent and general.
+Already, AI systems can have impacts that occur almost instantly and anywhere in the world.1
+While speed and reach are factors that AI shares with other technologies like malware or
+nuclear weapons, AI systems are also different, becoming increasingly autonomous and
+behaving like agents of their own.
+When we delegate tasks to AI systems, an important challenge is to endow the systems with
+“desirable goals” — this is frequently labeled the AI alignment problem. For a good survey of
+recent research on AI alignment see, e.g., Ngo (2020). However, when speaking of alignment, it
+is important to be explicit about whose goals an AI system is aligned with. This paper
+distinguishes between two types of AI alignment that are both important in AI development but
+that require distinct governance approaches:
+Direct alignment: when an AI system is pursuing goals consistent with the goals of its operator,
+irrespective of whether it imposes externalities on other parties.2
+Social alignment: when an AI system is pursuing goals that are consistent with the broader
+goals of society, taking into account the welfare of everybody who is impacted by the system.
+There are multiple challenges to achieving direct alignment, including identifying the right goal to
+give to an AI system, conveying that goal, and getting the AI system to correctly implement the
+goal.3 Social alignment adds the challenge of including all of those impacted — not merely the
+operator of a system — to the extent that society views this as desirable when determining what
+goal to give the system.
+What would it entail to consider all those affected? We describe a conceptual benchmark for
+social alignment based on welfare economics that we call ideal social alignment and analyze
+how social alignment differs from direct alignment in that it considers externalities. We provide
+examples of ideal social welfare functions that could, in principle, be employed to formally study
+social alignment. Since ideal social alignment is unattainable in practice, we explain how it is
+possible to determine a partial ordering of social preferences and that in practice, social
+alignment means aligning AI systems with this more limited set of instructions. Social alignment
+1 An example are AI-powered financial trading systems (see e.g. Boukherouaa and Shabsigh, 2021).
+2 Throughout the paper, we use the convention of referring to the entity that is creating, operating, and
+controlling an AI system as the “operator.” In principle, each of these tasks could be performed by
+different entities, adding additional complexity to the challenge of AI alignment.
+3 There are many alternative ways of defining alignment but with similar flavor. For example, an AI system
+could be aligned to the human’s instructions, intentions, revealed preferences, informed preferences,
+interests, or values, among other options. See Gabriel (2020) for a fuller discussion.
+3
+
+will generally require external interventions and a broader governance framework. We discuss
+how regulatory solutions provided by social norms, laws, markets, and architecture could be
+used to achieve social alignment, and we highlight the importance of AI governance to achieve
+social alignment.
+We believe ensuring that AI systems satisfy both direct and social alignment will become ever
+more important in the future. Currently, we delegate fairly narrow tasks to AI systems — we ask
+them to classify images, rank our search results, recommend movies and music, and
+autocomplete bits of our emails. But we are starting to use AI in increasingly higher stakes
+environments, like evaluating loan and job applicants, financial trading, utility management, and
+national defense. Importantly, the range and complexity of tasks that we turn over to our AI
+systems are continuing to grow.
+AI Alignment — the challenge of how to endow AI systems with goals that are consistent with
+our goals — becomes ever more important as delegation from humans to AI systems (i)
+happens more often, creating more opportunities for misalignment to cause harm; (ii) involves
+higher stakes situations, where misalignment would be more costly or even catastrophic; and
+(iii) occurs in situations where we have less ability to provide oversight, which makes it more
+difficult to assess whether the system is aligned and less likely that we catch alignment failures
+early.
+II. Concepts
+We start by clarifying several theoretical concepts that are relevant for our discussion of
+alignment. Readers who are most interested in the comparison of direct and social alignment
+may wish to skip to the following section.
+Agents and goals
+Agents: We call entities that interact with their environment “agents” whenever it is useful to
+describe them as pursuing goals.4 A goal is a summary description of what an entity is
+attempting to achieve. Humans clearly fit our description of agents—we think of ourselves and
+each other as pursuing goals, and this is useful because inferring people’s goals makes for a
+more efficient description of what to expect from them next. For example, if a driver sees a
+person walking straight up to a crosswalk, it is useful to infer that the person’s goal is to cross
+the street, and this is more efficient than to ponder how the person’s leg movements will
+translate into the person’s physical location over the ensuing seconds.
+4 This is a shallow definition of agency that is, however, useful for our purposes here. It is inspired by but
+distinct from Dennett’s work on stances (see e.g. Dennett, 1987). In different contexts, other definitions
+may be more useful - for example, in ethics, a moral agent is an entity that is morally accountable for its
+actions. For an elaboration on alternative concepts of agency, see e.g. Franklin and Graesser (1996) or
+Orseau et al. (2018).
+4

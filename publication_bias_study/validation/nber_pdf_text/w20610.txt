@@ -1,0 +1,141 @@
+NBER WORKING PAPER SERIES
+INVESTMENT UNDER UNCERTAINTY WITH FINANCIAL CONSTRAINTS
+Patrick Bolton
+Neng Wang
+Jinqiang Yang
+Working Paper 20610
+http://www.nber.org/papers/w20610
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2014, Revised July 2019
+We are deeply grateful to Pierre-Olivier Weill for his insightful and detailed comments. This
+paper was previously circulated under the title “Investment under Uncertainty and the Value of
+Real and Financial Flexibility” (2014, NBER wp 20601.) We thank Andrew Abel, Ilona Babenka,
+Martin Cherkes, Min Dai, Sudipto Dasgupta, Peter DeMarzo, Janice Eberly, Mark Gertler, Simon
+Gilchrist, Steve Grenadier, Lars Peter Hansen, Vicky Henderson, Robert Hodrick, Harrison
+Hong, Wei Jiang, Bart Lambrecht, Erica Xuenan Li, Xiaoji Lin, Robert McDonald, Stewart
+Myers, Alessandro Pavan (Editor), Robert Pindyck, Tom Sargent, Suresh Sundaresan, Vladimir
+Vladimirov, and seminar participants at American Finance Association (AFA) 2014 meetings in
+Philadelphia, Boston University, China International Conference in Finance (CICF), Columbia
+University, HKUST 2013 Finance Symposium, the Paul Woolley Centre Conference at UTS
+Sydney, Rutgers University, University of Cambridge, University of Minnesota Carlson School,
+Zhejiang University, and the workshops hosted by the China Young Finance Scholars Society for
+helpful comments. Jinqiang Yang acknowledges support from the National Natural Science
+Foundation of China (71772112, 71472117, 71573033, 71532009, and 71532012) and Innovative
+Research Team of Shanghai University of Finance and Economics (#2016110241) The views
+expressed herein are those of the authors and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2014 by Patrick Bolton, Neng Wang, and Jinqiang Yang. All rights reserved. Short sections of
+text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Investment under Uncertainty with Financial Constraints
+Patrick Bolton, Neng Wang, and Jinqiang Yang
+NBER Working Paper No. 20610
+October 2014, Revised July 2019
+JEL No. E22,G31,G32
+ABSTRACT
+We develop an integrated theory of investment, seasoned equity offerings (SEOs), liquidation,
+and corporate savings under uncertainty for a financially constrained firm, which features
+endogenous growth options, abandonment options, and payout policies. Facing costly external
+financing, the firm prefers to fund its investment internally, so that its optimal policies and value
+depend on both its earnings fundamentals and liquidity holdings. The firm values not only real
+flexibility but also financial flexibility. The interaction of real and financial flexibility generates
+novel real options results: (1) Limited financial slack significantly erodes the value of growth &
+abandonment options; (2) Firms prefer projects with front-loaded cash-flows; (3) The firm's
+incentive to forgo costly external financing and to accumulate internal funds may cause
+substantial delay in investment; (4) A financially constrained firm over-invests in early stages of
+its life-cycle in an effort to quickly build up its cash-flow generating capacity; (5) SEOs are
+driven by both firm survival and growth motives. A firm in the mature phase may find itself in
+three mutually exclusive regions: payout, inaction, and liquidation. A firm in its growth phase
+may find itself in two additional regions: a region where investment is partly financed with an
+SEO and a region where investment is solely financed with internal funds. These regions depend
+on both firm savings and earnings fundamentals.
+Patrick Bolton Jinqiang Yang
+Columbia Business School Shanghai University of Finance
+804 Uris Hall and Economics
+New York, NY 10027 Guoding Rd. 777
+and NBER Shanghai, 200433
+pb2208@columbia.edu China
+yang.jinqiang@mail.sufe.edu.cn
+Neng Wang
+Columbia Business School
+3022 Broadway, Uris Hall 812
+New York, NY 10027
+and NBER
+nw2128@columbia.edu
+
+1 Introduction
+Real-options theory following McDonald and Siegel (1986) and Dixit and Pindyck
+(1994) assumes that firms operate in a Modigliani-Miller (MM) environment. This
+is for a good reason. The firm’s investment decision can then be formulated as an
+American option-exercise and valuation problem that can be solved by using the
+classical option pricing tools of Black and Scholes (1973) and Merton (1973).
+But, in reality firms operate under imperfect capital markets and face signifi-
+cant external financing costs that arise from informational asymmetry, moral hazard,
+transaction costs, and other frictions. In order to avoid incurring these costs too fre-
+quently firms optimally retain earnings and attempt to mostly internally finance their
+investments and cover their operating costs. Indeed, according to Chen, Karabarbou-
+nis, and Neiman (2017), “nowadays nearly two-thirds of global investment is funded
+by corporate saving.” Also the surveys of chief financial officers (CFOs) by Graham
+and Harvey (2001, 2002) have revealed the great importance CFOs attach to main-
+taining financial flexibility by holding internal funds.
+In practice, the value of real flexibility derived from the optimal timing of real
+options is intertwined with the value of financial flexibility derived from the optimal
+management of retained earnings and the optimal external financing timing and
+issuance decisions. Both the effective discount rate used to determine the value of a
+growth opportunity and the cost of investment depend on the firm’s marginal value of
+cash, whichvarieswithboththesizeofthefirm’scashholdingsandthefirm’searnings
+fundamentals. Thereasonisthatthefirmtakesaccountnotonlyofitscurrentstock of
+internal funds but also the information about its future cash flow prospects contained
+in persistent earnings shocks. Through the firm’s evolving marginal value of cash, the
+real option problem becomes a fundamentally two-dimensional problem, which entails
+asignificantgeneralizationoftheclassicalone-dimensionalproblemsofMcDonaldand
+Siegel (1986) and Dixit and Pindyck (1994).
+Weembarkonsuchageneralizationinthispaperandderivehowoptimalinvestment-
+timing and abandonment-timing decisions are made, as well as how assets in place
+and growth options are valued, when firms face external financing costs. By intro-
+ducing external financing costs, we are, in effect, integrating two strands of literature,
+the classical real options literature following McDonald and Siegel (1985, 1986) and
+Dixit and Pindyck (1994) with the corporate finance literature following Miller and
+2
+
+Orr (1966). Our continuous-time model allows us to not only derive optimal invest-
+ment, abandonment, and equity issue size and timing policies but also to carry out a
+systematic valuation analysis.
+We model the firm’s life-cycle and its evolving collection of assets in place and
+growth opportunities in the spirit of Myers (1977). Although we do not explicitly
+model adverse selection, one interpretation of costly external financing in our model
+is equity dilution cost (due to mis-pricing a la arguments in Myers and Majluf (1984).
+In our model, the firm’s investment, financing, payout and abandonment policies
+depend on both earnings fundamentals and the firm’s financial slack. Therefore, our
+model can explain why following a recession low investment persists even though
+earnings fundamentals have recovered. The reason is that following a recession firms
+are generally in repair mode, seeking to rebuild their financial slack. Similarly, in our
+model firms have a preference for investments with front-loaded earnings. We show
+that, as a result, a start-up firm may choose to invest in a project sooner than pre-
+dicted by the classical real-option theory in an effort to build future internal funding
+capacity. We also show that the firm’s payout policy is fundamentally different de-
+pending on whether it is in the growth phase or in the mature phase. In the mature
+phase a more profitable firm pays out more, while in the growth phase it pays out
+less.
+Our model also predicts that the value of growth and abandonment options effec-
+tively vanishes for firms with low internal financing ability. Firms with scarce internal
+funds are forced into inefficiently liquidating their valuable operating assets. We also
+find that the hurdle for investment in the growth phase is a non-monotonic function
+of the firm’s internal funds. When the firm’s savings are sufficient to entirely cover
+the investment cost, the firm’s investment hurdle decreases with its internal funds.
+But when its internal funds cannot entirely cover the cost of investment, the hur-
+dle is increasing with the firm’s internal funds. The reason is that when the firm
+is approaching the point where it may be able to entirely fund its investment with
+retained earnings it has a stronger and stronger incentive to delay investment until it
+has sufficient funds to be able to avoid tapping costly external funds. An important
+implication of this result is that investment is not necessarily more likely when the
+firm has more cash. Investment could well be delayed further, as the firm’s priority
+becomes avoiding costly external financing.
+We also show that financially constrained firms prefer growth opportunities with
+3

@@ -1,0 +1,125 @@
+NBER WORKING PAPER SERIES
+DARK TRADING AT THE MIDPOINT:
+PRICING RULES, ORDER FLOW, AND HIGH FREQUENCY LIQUIDITY PROVISION
+Robert P. Bartlett, III
+Justin McCrary
+Working Paper 21286
+http://www.nber.org/papers/w21286
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2015
+We are grateful to a great number of colleagues and seminar participants, including those at the NYU/Penn
+Law and Finance Conference, the University of California, Berkeley, the University of Carlos III of
+Madrid, the Center for Monetary and Financial Studies (CEMFI), Columbia University, the Conference
+on Empirical Legal Studies, Duke University, Erasmus University, Fordham Law School, the University
+of Gothenburg, the University of Rotterdam, the University of Texas, the University of Warwick, and
+Yale Law School. For helpful comments, we particularly thank Jim Angel, Ken Ayotte, Brian Broughman,
+Steven Davidoff Solomon, Merritt Fox, Jesse Fried, Stavros Gadinis, Mira Ganor, John Golden, Jeff
+Gordon, Larry Glosten, Sean Griffith, Kevin Haeberle, Joel Hasbrouck, Frank Hathaway, Terry Hendershott,
+Christine Jolls, Jonathn Klick, Chris Naggy, Roberta Romano, Gordon Smith, Jesse Fried, Chester
+Spatt, Alan Schwartz, Eric Talley, Steve Thel, and Heather Tookes. The bulk of this paper was written
+while McCrary was visiting at the Bank of Spain, which provided research support, as did the University
+of California, Berkeley. The views expressed herein are those of the authors and do not necessarily
+reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2015 by Robert P. Bartlett, III and Justin McCrary. All rights reserved. Short sections of text, not
+to exceed two paragraphs, may be quoted without explicit permission provided that full credit, including
+© notice, is given to the source.
+
+Dark Trading at the Midpoint: Pricing Rules, Order Flow, and High Frequency Liquidity Provision
+Robert P. Bartlett, III and Justin McCrary
+NBER Working Paper No. 21286
+June 2015
+JEL No. G10,G15,G18,G23,G28,K22
+ABSTRACT
+Using over eight trillion observations of market data, we use a regression discontinuity design to analyze
+the effect of increasing the minimum price variation (MPV) for quoting equity securities in light of
+recent proposals to increase the MPV from $0.01 to $0.05. We show that a larger MPV encourages
+investors to trade in dark venues at the midpoint of the national best bid and offer. Enhanced order
+flow to dark venues reduces price competition by exchange liquidity providers, especially those using
+high frequency trading (HFT). Trading in dark venues due to a wider MPV reduces volatility and increases
+trading volume.
+Robert P. Bartlett, III
+890 Simon Hall
+University of California, Berkeley
+Berkeley, CA 94720
+rbartlett@law.berkeley.edu
+Justin McCrary
+School of Law
+University of California, Berkeley
+586 Simon Hall
+Berkeley, CA 94720-7200
+and NBER
+jmccrary@berkeley.edu
+
+1. Introduction
+A central question for the organization of equity markets is how to provide incentives for
+traders to provide liquidity on public stock exchanges while protecting the interests of traders
+wanting to access it. By standing ready to buy or sell a security at disclosed prices, liquidity
+providers allow liquidity takers to execute trades immediately, facilitate the continuous pricing
+of securities on which markets depend, and most fundamentally, encourage the holding of
+securities in the first place. Yet given well-known adverse selection and market risks for
+standing ready to trade at a fixed price, liquidity providers demand compensation for doing so in
+the form of the bid-ask spread (Glosten & Harris, 1988). By buying securities at a “bid” quote
+that is always lower than the “ask” quote demanded for selling, liquidity providers effectively
+force liquidity takers to compensate them for the public good of displayed liquidity. While in
+theory this distributional conflict could be resolved through the price mechanism, rules
+regulating the smallest allowable improvement to a bid or an ask—or a quote’s minimum price
+variation (MPV)—effectively place a floor on the size of the bid-ask spread.1 The fact that the
+MPV has always been regulated thus immediately places securities regulators in the position of
+allocating gains from trade between liquidity providers and liquidity takers.
+In this paper we investigate the effects of the current MPV rule on this allocation of gains in
+light of mounting concerns that it sub-optimally impairs the provision of displayed liquidity (see,
+e.g., Kwan, Masulis, and McInish, 2014; Weild, Kim and Newport, 2012; Buti, Rindi, and
+Werner, 2011). The rule, which is contained in Rule 612 of Regulation National Market System
+(NMS), requires all quotations submitted to exchanges and priced at or above $1.00 per share to
+be priced in penny increments. As a result, the spread between the published national best bid
+and offer (NBBO) for an actively traded security commonly hovers at or just above a penny.
+More importantly, in promulgating Rule 612, the SEC explicitly permitted the ability to trade in
+sub-penny increments (the “Trade Exclusion”) so that liquidity takers (e.g., retail traders using
+market orders) might avoid paying even this penny spread by routing marketable orders to non-
+exchange “dark” venues such as dark pools and broker-dealer internalizers.2 For instance, where
+1 The MPV is currently a penny, but up until 20 years ago was an eighth of a dollar, or 0.125.
+2 We adopt the conventional practice of classifying non-exchange trading venues as either dark pools or broker-dealer
+internalizers (see Securities Exchange Commission, 2010). As described in more detail below, dark pools are equity trading
+systems that do not display their best priced-orders for inclusion in the consolidated quotation feed that is used to calculate the
+NBBO. While the precise structure of dark pools varies (Zhu, 2014), they generally provide a means to trade securities for
+1
+
+the NBBO for a security is $10.01 x $10.02, a trader might seek to sell at a price that is better
+than the national best bid of $10.01 by routing a marketable sell order to a dark pool in hopes of
+crossing with a buy order at the midpoint of the NBBO (e.g., $10.015). In this fashion, Rule
+612’s Trade Exclusion induces liquidity takers and their brokers to route orders to dark trading
+venues instead of exchanges, but at the cost of potentially undermining the incentive of liquidity
+providers to display quotations on public exchanges. In light of these concerns, the SEC recently
+finalized a pilot study that will widen the MPV from a penny to a nickel, including a
+controversial “trade-at” rule that will prohibit any venue from trading a security unless it
+previously quoted the security at the NBBO.
+Motivated by the controversy surrounding the trade-at rule, this paper empirically explores
+how Rule 612’s Trade Exclusion allocates gains from trade between liquidity providers and
+liquidity takers and, consequently, how it affects the incentive to provide displayed liquidity.
+Notwithstanding evidence that the Trade Exclusion facilitates off-exchange trading (Kwan,
+Masulis, and McInish, 2014), the extent to which it actually redistributes gains from liquidity
+providers to liquidity takers and how it affects the provision of displayed liquidity remain open
+empirical questions. Because Rule 612 does not currently require a minimum amount of price
+improvement over the NBBO for off-exchange trades, prevailing studies of this phenomenon
+have generally emphasized that while traders might route orders to dark venues in hopes of
+securing price improvement, liquidity providers in dark venues are under no obligation to
+provide it. As such, liquidity providers in dark venues who use the Trade Exclusion to fill in-
+bound marketable orders instead of competing for those orders on exchanges at the NBBO—a
+practice commonly described as “queue-jumping”—are presumed to do so by “providing little or
+no price improvement” (Kwan, Masulis, and McInish, 2014; p. 4). If accurate, such a practice
+would represent a wealth transfer from providers of displayed liquidity to providers of non-
+displayed liquidity in dark trading venues, thereby undermining the SEC’s purported goal of
+reducing trading costs for liquidity takers. Yet as we show, the trading rules of the most active
+dark venues are commonly designed to facilitate trades occurring at the midpoint of the
+investors who seek to execute large transactions without displaying their trading interest to minimize the movement of prices
+against them before a trade can occur. Broker-dealer internalizers represent broker-dealers that fill marketable orders received
+from customers (or marketable orders purchased from other broker-dealers) using their own proprietary capital or by matching
+customer orders against one another. Trades executed in either type of venue are, however, reported publicly on the consolidated
+tape as having been executed at a FINRA trade reporting facility. We use the term “dark venue” to refer collectively to dark
+pools and broker-dealer internalizers.
+2

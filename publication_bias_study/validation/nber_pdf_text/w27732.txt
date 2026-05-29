@@ -1,0 +1,135 @@
+NBER WORKING PAPER SERIES
+REPURCHASE OPTIONS IN THE MARKET FOR LEMONS
+Saki Bigio
+Liyan Shi
+Working Paper 27732
+http://www.nber.org/papers/w27732
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+August 2020
+We would like to thank Andrew Atkeson, Jack Bigio, Simon Board, Patrick Bolton, Andres Drenik,
+Andrea Eisfeldt, Piero Gottardi, Veronica Guerrieri, Barney Hartman-Glaser, Pablo Kurlat, Ken Miyahara,
+Facundo Piguillem, Joao Ramos, Pablo Ottonoello, Tano Santos, Joseph Stiglitz, Victoria Vanasco,
+Moritz Meyer-ter-Vehn, and William Zame for useful conversations. We are especially thankful to
+Florian Scheuer, whose sharp questions helped us clarify important features of this paper. Bigio thanks
+the hospitality of the Federal Reserve Bank of San Francisco. Also, we would like to thank seminar
+participants at EIEF, Stanford, and UCLA. The views expressed herein are those of the authors and
+do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2020 by Saki Bigio and Liyan Shi. All rights reserved. Short sections of text, not to exceed two
+paragraphs, may be quoted without explicit permission provided that full credit, including © notice,
+is given to the source.
+
+Repurchase Options in the Market for Lemons
+Saki Bigio and Liyan Shi
+NBER Working Paper No. 27732
+August 2020
+JEL No. D82,G23,G32
+ABSTRACT
+We study repurchase options (repo contracts) in a competitive asset market with asymmetric
+information. Gains from trade emerge from a liquidity need, but private information about asset
+quality prevents the full realization of trade. We obtain a unique equilibrium, which features a
+pooling repo contract and full participation among borrowers. The equilibrium repo contract
+resolves adverse selection: the embedded repurchase option prevents the market unraveling that
+occurs in asset-sale markets. However, the contract is inefficient due to cream skimming.
+Competition to attract high-quality borrowers through the terms of the repurchase option
+inefficiently lowers liquidity. The equilibrium contract has a closed form and is portable to many
+applications.
+Saki Bigio
+Department of Economics
+University of California at Los Angeles
+8283 Bunche Hall
+Box 951477
+Los Angeles, CA 90095-1477
+and NBER
+sbigio@econ.ucla.edu
+Liyan Shi
+EIEF
+Via Sallustiana 62
+Rome
+Italy
+liyan.shi@eief.it
+An online appendix is available at http://www.nber.org/data-appendix/w27732
+
+1 Introduction
+Many financial contracts such as collateralized debt, bridge loans, factoring, and loan discounts
+are de facto asset-sale contracts that embed a repurchase option. Strip away legal differences
+and all of these contracts have a common structure: they all specify a collateral security, a loan
+amount, and a loan principal.1 Because these contracts are non-recourse or rarely settled in
+court, borrowers have the option to default. The option to default is, de facto, an option to
+repurchase the asset. We refer to contracts embedding repurchase options broadly as repos.
+Why do so many financial contracts take the form of repos? Why don’t borrowers simply sell
+securities and buy them back later?
+This paperarguesthat, inany assetmarketwhere asymmetric informationis prevalent, repos
+emerge as a natural market response to adverse selection. We consider a market where borrowers
+needfundstocarryoutinvestmentprojects. Borrowersraisefundsbytradingpre-existingassets.
+The issue is that only borrowers know the assets’ payoffs. If borrowers can only sell assets, as
+in the classic lemons market, the ones with good assets desist from selling because the price is
+too low. Adverse selection ensues (Akerlof, 1970). Lenders can resolve this adverse selection by
+offering a repurchase option. Indeed, any borrower who is unwilling to sell an asset at a low
+price will change her mind if she is also offered the option to repurchase the asset at a price
+below its worth, even if this repurchase price has a slight premium (an implicit interest charge).
+Of course, the borrowers with bad assets will take advantage by selling their lemons and never
+returning for them, implicitly defaulting. If rightly set, the premia can compensate lenders for
+default losses and induce good borrowers to participate, thereby resolving adverse selection.
+By virtue of resolving the adverse selection problem, repos can possibly increase the funding
+of investment projects. However, lender competition brings about another problem, cream skim-
+ming. Theissuewithreposisthattheirbidimensionalpricenatureenableslenderstopoachgood
+borrowers, by lowering the repurchase premium of their contracts. Ultimately, cream skimming
+is detrimental to liquidity to the point that it can even offset the advantages of repos.
+To understand the contribution of this paper, consider the example in Table 1. A set of
+borrowers have investment opportunities that yield a 20% return.2 Among the borrowers, half
+own assets worth $40, and the other half own assets worth $80. If only asset sales are possible,
+owners of the $80 asset would not sell at the average price of $60: A 20% return on $60 yields
+$72 whereas the asset is worth $80. Thus, selling the $80 asset leads to a loss of $8 and the
+1These contracts are not a modern financial innovation. In fact, an early form of collateralized debt contract,
+the Pignus, was already stipulated in Roman Law. Holmstrom (2014) considers pawning dating back to Tang-
+dynasty China, circa 650 AD, as the precursor of these contracts.
+2In the original Akerlof (1970) setup, buyers (hereafter lenders) have higher valuations for assets than sellers
+(hereafter borrowers), but we can equivalently think of gains from trade arising from borrowers having a higher
+needforcashthanlenders,albeitbothhavingthesamevaluationfortheasset. Whatiscriticalfortheimpediment
+to trading is that borrowers have private information about the asset.
+1
+
+Table 1: Illustrative Example
+Collateral Value
+Low Quality $40
+High Quality $80
+Sales Repurchase Average
+Added Value
+Price Price Funds Lent
+Sale $40 ∞ $20 $4
+Repo $50 $60 $50 $10
+market therefore unravels. Things change if a lender offers a repo where the borrowers are paid
+$50 for the asset, but can repurchase it for $60. A 20% return on $50 yields $60 so the good
+borrower breaks even. The example illustrates how repos attract all borrowers, lenders break
+even,3 and the total funding liquidity more than doubles.
+Although the example illustrates the advantages of repos, it does not describe an actual
+marketoutcome. Intheexample,anewentrantlendercouldofferarepofor$45witharepurchase
+price of $50. Because the implicit rate is much lower, the offer would attract the $80 borrower.4
+This cream skimming would in turn lead to less funding. The example is therefore silent about
+which contracts we should expect to emerge. The rest of the paper is devoted to the study
+of market competition for repos in this lemons market. The paper characterizes the set of
+equilibrium contracts, distills the operating forces, and characterizes conditions under which
+repos increase investment funding.
+To conduct the analysis, the paper adopts a modern approach to competitive markets with
+private information. Asset qualities can be drawn from any arbitrary continuous distribution.
+WeconsiderthetiminginNetzerandScheuer(2014), inwhichlenderscanpostcontractsbutcan
+withdrawthemafterobservingthecontractspostedbytheircompetitors. Thisisafoundationfor
+the well-known Miyazaki-Wilson-Spence equilibrium (henceforth MWS). The positive analysis
+of the environment reveals that the equilibrium is unique and features a single pooling contract
+that induces full participation.
+A key result is that any possible equilibrium features a default threshold quality—borrowers
+with collateral worse than the threshold quality default. This property narrows the set of traded
+contracts in any possible equilibrium to two traded contracts at most: a highest sales-price con-
+tractthatattractsthedefaultborrowersandahighestnondefaultvaluecontractthatattractsthe
+3We know that low-quality borrowers will not exercise the repurchase option so each low-quality borrower
+costs the lender $10: the lender pays $50 and ends with a $40 asset. However, lenders make $10 on high-quality
+borrowers offsetting this loss.
+4Low-quality borrowers would prefer the original {$50,$60} contract; they will default regardless of the con-
+tract. The new contract would attract high-quality borrowers, who obtain an investment payoff of $54 dollars.
+The deviation is profitable to the lender and would cannibalize the original contract.
+2

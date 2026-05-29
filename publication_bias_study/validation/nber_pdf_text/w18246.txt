@@ -1,0 +1,137 @@
+NBER WORKING PAPER SERIES
+CARRY-ALONG TRADE
+Andrew B. Bernard
+Emily J. Blanchard
+Ilke Van Beveren
+Hylke Y. Vandenbussche
+Working Paper 18246
+http://www.nber.org/papers/w18246
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2012
+A special thanks goes to Jean-Marc Troch at the National Bank of Belgium for assistance and help
+with the data. We are also grateful to Stefania Garetto, David Green and seminar participants at the
+NBER, ERWIT, Dartmouth and UBC for helpful comments, Christophe Piette and Kris de Spiegelaere
+for data clarifications and Danny Delcambre for providing us with supplementary files and help with
+the CN concordance. Vandenbussche thanks ARC, UCL and Excellence Centre LICOS for support.
+This paper was written while Van Beveren and Vandenbussche were visiting the National Bank of
+Belgium. The views expressed in this paper are those of the authors and do not necessarily reflect
+the views of the National Bank of Belgium, the National Bureau of Economics Research or the Centre
+for Economic Policy Research. All remaining errors are our own. The views expressed herein are those
+of the authors and do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2012 by Andrew B. Bernard, Emily J. Blanchard, Ilke Van Beveren, and Hylke Y. Vandenbussche.
+All rights reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+Carry-Along Trade
+Andrew B. Bernard, Emily J. Blanchard, Ilke Van Beveren, and Hylke Y. Vandenbussche
+NBER Working Paper No. 18246
+July 2012
+JEL No. F12,F13,F14,L11
+ABSTRACT
+Large multi-product firms dominate international trade flows. This paper documents new facts about
+multi-product manufacturing exporters that are not easily reconciled with existing multi-product models.
+Using novel linked production and export data at the firm-product level, we find that the overwhelming
+majority of manufacturing firms export products that they do not produce. Three quarters of the exported
+products and thirty percent of export value from Belgian manufacturers are in goods that are not produced
+by the firm, so-called Carry-Along Trade (CAT). The number of CAT products is strongly increasing
+in firm productivity while the number of produced products that are exported is weakly increasing
+in firm productivity. We propose a general model of production and sourcing at multi-product firms.
+While the baseline model fails to reconcile the relationships between firm productivity and the numbers
+of exported products observed in the data, several demand and supply-side extensions to the model
+are more successful. Looking at export price data, we find support for a novel theoretical extension
+based on demand-scope complementarities.
+Andrew B. Bernard Ilke Van Beveren
+Tuck School of Business at Dartmouth KU Leuven, Lessius
+100 Tuck Hall Department of Business Studies
+Hanover, NH 03755 Korte Nieuwstraat 33
+and NBER 2000 Antwerp, Belgium
+Andrew.B.Bernard@dartmouth.edu ilke.vanbeveren@kuleuven.be
+Emily J. Blanchard Hylke Y. Vandenbussche
+Tuck School of Business at Dartmouth Université Catholique de Louvain
+100 Tuck Hall Department of Economics
+Hanover, NH 03755 Place Montesquieu 3
+emily.j.blanchard@tuck.dartmouth.edu 1348 Louvain-la-neuve
+Belgium
+hylke.vandenbussche@uclouvain.be
+
+Carry-Along Trade
+1 Introduction
+Exports are well-known to be highly concentrated in a relatively small number of firms that ship
+many products abroad. Existing models of multi-product exporters describe firms that make
+one or more products and ship some or all of those products abroad.1 We present the first
+evidence that these multi-product exporters are, in fact, not making most of the products that
+they export. Instead, the most productive firms both make and source products that they then
+selltothemarket.Inthispaper, weexplorethisphenomenonbothempiricallyandtheoretically.
+Thisresearchcontributestothesmallbutgrowingliteraturedocumentingtheprevalenceand
+importance of multi-product firms in international trade. Unlike most previous work on multi-
+product firms, we are able to link data on domestic production and international trade at the
+firm-product level. This allows us to compare domestic output and exports at the firm-product
+level. We document the surprising fact that a large majority of manufacturing exporters export
+manyproductsthattheydonotproduce. Inaddition,asmallersetofthelargestmanufacturing
+firms produce goods where they export more than they produce. We refer to these export
+activities together as Carry-Along Trade (CAT).
+We find that Carry-Along Trade, i.e. exports of goods where the firm exports more than
+it produces, is widespread and important, occurring at more than 90 percent of exporters,
+appearing in more than 95 percent of exported products and accounting for more than 30
+percent of export value.
+While most firms export products they do not make, it is the most productive firms that are
+mostheavilyengagedinCarry-AlongTrade. Firmproductivityhasbeenshowntobepositively
+relatedbothtothenumberofproductsmadebythefirmandespeciallytothenumberofproducts
+exported.2 Our findings confirm those results but highlight the relationship between measures
+of firm productivity and exported CAT products. The total number of products supplied to
+export markets is strongly increasing in firm productivity. While more productive firms do
+export more of their own produced products, most of the increase in export scope is due to
+a strong positive relationship between firm productivity and sourced (CAT) products that are
+exported. The share of CAT products in total exported products is rising in productivity.
+Totalfirmexportsarealsoknowntobestronglypositivelyassociatedwithfirmproductivity.
+In contrast to the number of products, the majority of export value does come from products
+that are produced by the firm. The share of CAT exports in total export value is much smaller
+than that of produced products and does not systematically change with firm productivity.
+1Bernardetal. (2007)andMayerandOttavianio(2008)provideevidenceontheimportanceofmulti-product
+exporters. Theoretical models of multi-product exporting firms include Eckel and Neary (2010), Bernard et al.
+(2011), Arkolakis and Muendler (2011) and Mayer et al. (2011).
+2See Bernard et al. (2011), Arkolakis and Muendler (2011) and Mayer et al. (2011).
+1
+
+Carry-Along Trade
+To understand the observed phenomenon where firms sell more products to the market than
+they actually produce, we develop a general model of multi-product producers and sourcing.
+Althoughthetheoreticalexerciseismotivatedbytradedata, ourmodelisintentionallydesigned
+to study how firms serve markets, broadly defined. Our modeling approach is intrinsically
+agnostic so that we can consider a variety of potential explanations for Carry-Along Trade.
+For each, we outline the plausible underlying cause of CAT, formalize the implied relationship
+between CAT and firm characteristics, and then briefly evaluate the relative likelihood that the
+mechanism is at play given observed patterns in the data.
+Our model features heterogeneous, multi-product firms that face a two-tiered problem: to
+choose the optimal product scope (how many varieties to sell to the market, and how much at
+what price for each variety), and a make or source decision – the question of whether (or to
+what extent) to produce goods in-house versus through arms-length suppliers, i.e. CAT. In the
+spirit of Mrazova and Neary (2011), we focus on equilibrium selection among heterogeneous
+firms – specifically the relationship between firm productivity, product scope, and the make-or-
+source decision margin – and purposely set aside derivation of the full general equilibrium. This
+approach has the important advantage that we are not compelled to make specific functional
+form assumptions, allowing us to develop a unified framework in which to identify and discuss
+important differences among broad classes of both supply side and preference structures.
+We adopt a three step approach to the theoretical exercise. We begin by outlining a simple
+versionofamulti-productheterogeneousfirmmodelwithamake-or-sourcedecision. Weobserve
+that a broad class of models shares the common feature that core productivity and the extent
+of Carry-Along Trade is sub-modular in a firm’s payoff structure. Intuitively, for any given total
+numberofproductsdeliveredtothemarketbyafirm, productivefirmswillmakeagreatershare
+of those products in-house – and thus necessarily source fewer products via CAT – than will less
+productive firms. The empirical prediction from this baseline modeling structure is thus that
+the least productive firms would do the most Carry-Along Trade – which is the opposite of what
+we observe in the data.
+We go on to introduce simple extensions of the model, first on the supply side, then on the
+demandside. Ineverycase,weoutlineasetofnecessaryconditionsthatwouldhavetoholdfora
+model to rationalize the key features of the data. Again, the intuition is straightforward: higher
+productivity firms must have sufficiently greater total product scope than lower productivity
+firms, inorderforbothin-houseandsourcedproductscopetobeincreasinginfirmproductivity.
+Many natural extensions of the basic multi-product model do not reconcile the theory with
+the data. However, we find that it is possible to match the empirical facts through certain
+adjustments to either the supply or demand side of the basic model.
+2

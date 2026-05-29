@@ -1,0 +1,136 @@
+NBER WORKING PAPER SERIES
+BENCHMARK REGULATION OF MULTIPRODUCT FIRMS:
+AN APPLICATION TO THE RAIL INDUSTRY
+Wesley W. Wilson
+Frank A. Wolak
+Working Paper 25268
+http://www.nber.org/papers/w25268
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+November 2018
+This paper evolved from the authors' participation in a National Academy of Sciences (NAS)
+panel review of regulation in the railroad industry, Modernizing Freight Rail Regulation (2015),
+National Academies Press, Washington, DC. The other panel members provided a number of
+invaluable comments throughout the process. These are: Richard Schmalensee, Ken Boyer, Jerry
+Ellig, José A. Gómez-Ibáñez, Anne Goodchild, and Thomas Menzies. In addition, earlier versions
+of this paper have been presented to the Association of Transport, Trade, and Service Studies,
+Railroad-Shipper Transportation Advisory Council, the Advanced Workshop in Regulation and
+Competition. The authors gratefully acknowledge comments and discussions that emanated from
+these audiences. We thank Kevin Henrickson for research assistance. The views expressed herein
+are those of the authors and do not necessarily reflect the views of the National Bureau of
+Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2018 by Wesley W. Wilson and Frank A. Wolak. All rights reserved. Short sections of text, not
+to exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Benchmark Regulation of Multiproduct Firms: An Application to the Rail Industry
+Wesley W. Wilson and Frank A. Wolak
+NBER Working Paper No. 25268
+November 2018
+JEL No. L5,L9,L92
+ABSTRACT
+A number of formerly regulated multiproduct industries have a transitional or permanent residual
+regulatory mandate to protect consumers from "excessive" prices. The legislation that deregulated
+most rail rates contains a statutory mandate for the regulator to protect shippers from "excessive"
+prices. Fulfilling this mandate has been challenging because of the cost and administrative burden
+to shippers in obtaining regulatory relief. Moreover, as argued by Wilson and Wolak (2016), the
+existing rate relief mechanism is based on a cost concept that does not reflect the actual
+incremental cost of a shipment and it does not adequately address the question of what constitutes
+an "excessive" rate for a multiproduct firm with significant common costs. This paper analyzes a
+benchmark price approach to identifying "excessive" prices in multiproduct industries subject to
+residual price regulation. Our empirical analyses demonstrate how the mechanism can be used to
+fulfill the statutory mandate to protect shippers from "excessive" prices at substantially lower
+cost, with less administrative burden, and without significant adverse consequences for the long-
+term financial viability of the railroads.
+Wesley W. Wilson
+Department of Economics
+1285 University of Oregon
+Eugene, OR 97403-1285
+wwilson@uoregon.edu
+Frank A. Wolak
+Department of Economics
+Stanford University
+Stanford, CA 94305-6072
+and NBER
+wolak@zia.stanford.edu
+
+1. Introduction
+A number of formerly regulated multiproduct industries have a transitional or permanent
+residual regulatory mandate to protect consumers from ”excessive” prices. The Federal
+Energy Regulatory Commission (FERC) is required to ensure that all wholesale electricity
+prices are ”just and and reasonable” and ”not unduly discriminatory or preferential,” even
+in parts of the United States with bid-based short-term markets for wholesale electricity.
+FERC has a similar regulatory mandate for natural gas transportation despite the fact that
+prices for most natural gas movements are set through bilateral negotiations between the
+pipeline owner and purchaser of wholesale natural gas. In the aftermath of the Airline
+Deregulation Act of 1978, the Civil Aeronautics Board (CAB) had a transitional mandate
+to ensure that airfares were not ”unjust and unreasonable.” The Staggers Act of 1980, which
+partially deregulated the railroad industry, imposes a regulatory mandate on the Surface
+Transportation Board (STB), the industry regulator that replaced the Interstate Commerce
+Commission (ICC), to protect captive shippers from excessive prices.
+These regulatory mandates have proven challenging to enforce to the satisfaction of the
+parties involved because of the conceptual difficulty in defining a ”just and reasonable” price
+for a multiproduct firm with substantial economies to scope in production. Gaskins (2008)
+argues that this residual regulatory challenge in the railroad industry ”still has not been
+solved to everyone’s satisfaction after 150 years of effort.” (Gaskins (2008), p. 1). The
+essential challenge is that a railroad provides thousands of varieties of shipments, depending
+on the product and distance shipped, and both the incremental cost of a shipment and
+marginal cost of shipping an additional ton exclude the vast majority of the railroad’s total
+cost of production.1 This implies that setting each shipment price equal to either the average
+incremental cost of the shipment or the marginal cost of shipping an additional ton of that
+product would not recover sufficient revenue for the railroad to cover its annual costs.
+Consequently, in order to recover its total cost of production, the railroad must charge
+prices above the average incremental cost and the marginal cost of shipping an additional
+ton for a substantial fraction, if not all, of its shipments. A major goal of the Staggers Act
+was to grant railroads the freedom to do this, subject to protecting captive shippers from
+”excessive” prices. The large number of products sold by railroads and the large share of
+common costs in the railroad’s total cost of production imply that even if the railroad’s
+multiproduct cost function was known with certainty, this would not make the job of setting
+the threshold for an excessive price any easier. As Wilson and Wolak (2016) note, it would
+only change the regulator’s problem from one of determining the value of an excessive price
+1Costsnotcausedbyamovementormovinganadditionaltonincludethecostofthetrack,rollingstock,
+management salaries and benefits, and the vast majority of labor costs.
+1
+
+a shipment to determining the value of an excessive markup over the average incremental
+cost or marginal cost of a shipment.
+Thetotalwelfare-maximizingRamsey-pricingsolutionofsettingthemarkupovermarginal
+cost for each shipment proportional to the inverse of the elasticity of the demand for the
+shipment flies in the face of Staggers Act mandate to protect captive shippers. By defini-
+tion, captive shippers have no other economically viable alternative but the railroad for their
+shipment and for that reason have a small elasticity of demand for the shipment. This logic
+rules out a solution that places a significant burden for common cost recovery on captive
+shippers, as would be the case under Ramsey pricing.2
+This paper analyzes an alternative approach to determining whether the price charged by
+multiproduct firm is ”excessive” that does not require knowledge of the multiproduct firm’s
+cost function or the elasticity of demand of individual products. Our methodology relies on
+a set of circumstances that is increasingly prevalent in many formerly regulated industries,
+the existence of a large sample of ”competitive prices” for products along with the observable
+characteristics of each of these products. We use this sample to nonparametrically estimate
+the conditional distribution of competitive prices given product characteristics and then
+use this conditional distribution to construct a benchmark price based on the observable
+characteristics of a shipment suspected of having an ”excessive” price. If the actual price
+exceeds this benchmark price, then price of the shipment could be deemed ”excessive” and
+therefore worthy of further regulatory scrutiny.
+There are two important considerations in setting the value of a benchmark price for a
+shipment. First is the probability of false positives–competitive prices that are incorrectly
+found to exceed the benchmark. Second is the possibility of false negatives–non-competitive
+pricesthatareincorrectlyfoundnottoexceedthebenchmarkprice. Weinvestigatethisissue
+with a Monte Carlo study where we first estimate the conditional distribution of competitive
+prices given shipment characteristics on data simulated from ”competitive markets” and
+then apply our competitive benchmark methodology using this estimated distributed to
+data simulated from a mixture of ”competitive and non-competitive markets.”
+Similar to the case of statistical hypothesis testing, a rule for setting the benchmark price
+that minimizes the sum of squares of misclassification errors argues in favor of approach that
+requires overwhelming statistical evidence against a price being the result of a competitive
+market before it is deemed ”excessive.” Our Monte Carlo results finds that setting the value
+of the benchmark price between the upper 5 percent and upper 1 percent of the conditional
+2For the case of zero cross-price elasticities of demand for the products sold by the multiproduct firm,
+Ramsey pricing implies setting the highest markups over marginal cost for products with the smallest (in
+absolute value) own-price elasticity of demand. This logic implies that captive shippers would face the
+highest markups over marginal cost under Ramsey pricing.
+2

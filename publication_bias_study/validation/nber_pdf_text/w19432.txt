@@ -1,0 +1,122 @@
+NBER WORKING PAPER SERIES
+DO MANAGERS DO GOOD WITH OTHER PEOPLE'S MONEY?
+Ing-Haw Cheng
+Harrison Hong
+Kelly Shue
+Working Paper 19432
+http://www.nber.org/papers/w19432
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2013
+Hong acknowledges support from the National Science Foundation through grant SES-0850404.
+We(cid:3)thank Jeremy Stein, Vicente Cuñat, Uday Rajan, E. Han Kim, Amy Dittmar, Nadja Guenster
+and seminar(cid:3)participants at the Swedish Institute for Financial Research, St. Gallen, the Berkeley-
+ECGI Conference(cid:3)on CSR, U of Texas at Dallas, 2013 Meetings of the American Finance Association,
+2013 UC Davis-CalPERS(cid:3)Sustainability Symposium and Gamma Foundation Conference for helpful
+comments. Online appendix(cid:3)available at http://www.dartmouth.edu/~icheng/. The views expressed
+herein are those of the authors(cid:3)and do not necessarily reflect the views of the National Bureau of
+Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2013 by Ing-Haw Cheng, Harrison Hong, and Kelly Shue. All rights reserved. Short sections of
+text, not to exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Do Managers Do Good with Other People's Money?
+Ing-Haw Cheng, Harrison Hong, and Kelly Shue
+NBER Working Paper No. 19432
+September 2013
+JEL No. D03,G02,G10,G3,G39
+ABSTRACT
+We find support for two key predictions of an agency theory of unproductive corporate social
+responsibility. First, increasing managerial ownership decreases measures of firm goodness. We
+use the 2003 Dividend Tax Cut to increase after-tax insider ownership. Firms with moderate levels
+of insider ownership cut goodness by more than firms with low levels (where the tax cut has no
+effect) and high levels (where agency is less of an issue). Second, increasing monitoring reduces
+corporate goodness. A regression discontinuity design of close votes around the 50% cut-off finds
+that passage of shareholder governance proposals leads to slower growth in goodness.
+Ing-Haw Cheng Kelly Shue
+100 Tuck Hall University of Chicago
+Tuck School of Business Booth School of Business
+Dartmouth College 5807 S. Woodlawn Avenue
+Hanover, NH 03755 Chicago, IL 60637
+ing-haw.cheng@tuck.dartmouth.edu kelly.shue@chicagobooth.edu
+Harrison Hong
+Department of Economics
+Princeton University
+26 Prospect Avenue
+Princeton, NJ 08540
+and NBER
+hhong@princeton.edu
+An online appendix is available at:
+http://www.nber.org/data-appendix/w19432
+
+1. Introduction
+Milton Friedman (1970), in a biting op-ed for the New York Times, declared that the only social
+responsibility of corporations is to make money. His view regarding spending on corporate
+social responsibility (CSR) is one of agency problems, managerial perks and pet projects. In
+other words, managers are doing good with other people’s money. A contrasting popular
+view of the business case for corporate goodness is that firms do well by doing good. Firm
+goodness spending generates a halo effect that increases firm profits and insulates firms from
+risks associated with litigation or regulation.1
+Despite the many papers that have been written on this topic, it is difficult to draw causal
+conclusions regarding the motives for corporate goodness spending because of a lack of a clear
+identification strategy. Notably, the large literature on “doing well by doing good” explores
+the correlation between firm performance and CSR and concludes in favor of the profit thesis.
+Evidence from experiments and field studies also suggest that there are potential halo effects
+from being charitable or good (see, e.g., Elfenbein, Fisman, and McManus, 2012; List, 2006).
+However, altruistic managers may invest in CSR to protect stakeholders such as employees or
+the broader community, in ways that do not directly contribute to shareholder wealth. As
+Tirole (2001) points out, a stakeholder instead of shareholder maximization paradigm can very
+quickly lead to mission creep and agency perils.
+Indeed, recent research on the thesis of doing well by doing good finds that market reactions
+to increased goodness announcements are mixed, consistent with the idea that some forms of
+goodness may be value destroying (Kruger, 2013). Even more troubling, using financial shocks
+such as the bursting of the Internet bubble and the credit crisis of 2007, Hong, Kubik, and
+Scheinkman (2011) show that the correlation between performance and goodness is related to
+omitted variables bias in the form of heterogeneity in firm financial constraints.
+1Thethesisof“doingwellbydoinggood” haslongbeenadvancedinthemanagementliteratureandisreviewed
+in Benabou and Tirole (2010) and Heal (2005). A number of theories implicitly rely on the idea that firms are
+well-positionedtodeliverwarm-glowfeelings(Becker,1974;Andreoni,1989)toconsumers. Forinstance,Besley
+and Ghatak (2005) models strategic complementarities involving goodness in the production function. Baron
+(2001)modelsstrategicdeterrenceofregulationthroughtheuseofcorporategoodness. Goodnessmayalsopay
+by improving employee efficiency, reducing conflicts among stakeholders, mitigating litigation risk, deterring
+potential regulation, signaling product quality, and improving investor and consumer relations by preventing
+product or capital market boycotts by socially responsible consumers or investors.
+1
+
+Yet, the stakes in this debate have never been higher. Anecdotal evidence suggests that
+some firms, especially large corporations, invest hundreds of millions of dollars annually on
+energy conservation projects, employee and community development programs, or other al-
+truistic endeavors.2 Many institutional investors are increasingly adopting socially responsible
+factors, also known as “environmental, social and governance” (ESG) factors, in their portfolio
+choices. For example, the United Nations Principles of Responsible Investing (UNPRI) has
+institutions that manage around 1.5 trillion dollars globally as signatories. The ESG movement
+tends to make the argument for socially responsible investing on the basis of a combination of
+the business case for corporate goodness and moral principles.
+In this paper, we provide a first attempt to identify whether there is an agency motive for
+CSR. Namely, we test the two key predictions of an agency theory in which managers engage in
+unproductiveCSRasawaytoenjoyprivatebenefits. Thesetwokeypredictionstypicallyemerge
+from most variants of agency models in which low managerial ownership stakes and imperfect
+monitoring lead to managers who maximize a combination of private benefits and firm profits.
+Our novel perspective here is that agency problems need not simply manifest themselves as
+managerial selfish perks, as has traditionally been framed since Jensen and Meckling (1976),
+butalsoasmanagerialaltruismorsocialpreferences(see,e.g.,FehrandSchimdt,1999;Charness
+and Rabin, 2002).
+The first and most basic prediction is that increasing the ownership stakes of a manager
+leads to a reduction in firm goodness. Since managerial ownership stakes regulate the degree of
+agency conflicts between the manager and shareholders, these models predict that larger stakes
+lead to less of an agency conflict and lower unproductive CSR spending. The second prediction
+is that an increase in monitoring leads to less firm goodness. Monitoring is costly and is a
+substitute for larger managerial ownership stakes, so increasing monitoring through improved
+governance yields the same comparative statics as increasing managerial stakes.
+We measure corporate social responsibility using the most comprehensive scores in the
+literature, the Kinder, Lydenberg and Domini (KLD) scores of CSR. KLD scores are developed
+2Hong, Kubik, and Scheinkman (2011) provide some figures, including $100 million for global education
+programs and energy conservation by Intel, $160 million to community and employee philanthropic programs
+andearmarkedbillionsmoreforthedevelopmentofeco-friendlyproductsbyGeneralElectric, andGoogle’s1%
+program to invest 1% of its profits in philanthropic and non-profit interests. In addition, firms may switch to
+greener and more costly production processes or voluntarily choose to pay living wages to employees.
+2

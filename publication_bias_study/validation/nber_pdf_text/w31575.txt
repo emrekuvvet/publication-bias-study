@@ -1,0 +1,115 @@
+NBER WORKING PAPER SERIES
+THE VALUE OF INTERMEDIARIES FOR GSE LOANS
+Joshua Bosshardt
+Ali Kakhbod
+Amir Kermani
+Working Paper 31575
+http://www.nber.org/papers/w31575
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+August 2023, Revised May 2024
+We thank Darren Aiello, Bob Avery, Matteo Benetton, Greg Buchak, Justin Contat, Len Costa,
+Will Doerner, Robert Dunsky, Mehran Ebrahimian, Ben Hébert, Erica Jiang, Dmitry Livdan,
+Karen Pence, David Sraer, Constantine Yannelis, and numerous seminar and conference
+participants for their helpful comments. The views expressed in this paper are solely those of the
+authors and not necessarily those of the Federal Housing Finance Agency, the U.S. Government,
+or the National Bureau of Economic Research. Any errors or omissions are the sole responsibility
+of the authors.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2023 by Joshua Bosshardt, Ali Kakhbod, and Amir Kermani. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+The Value of Intermediaries for GSE Loans
+Joshua Bosshardt, Ali Kakhbod, and Amir Kermani
+NBER Working Paper No. 31575
+August 2023, Revised May 2024
+JEL No. G21,G23,G5
+ABSTRACT
+We analyze the costs and benefits of intermediaries for government-sponsored enterprise (GSE)
+mortgages using regulatory data. We find evidence of lenders pricing for observable and
+unobservable default risk independently from the GSEs. We then develop and estimate a model
+of competitive lending in which lenders have skin-in-the-game. Lenders reduce costs by
+acquiring information beyond the GSEs’ criteria but charge markups. On net, interest rates are
+higher compared to a counterfactual in which the GSEs’ criteria are implemented passively. In an
+extension, the observed differences between banks and nonbanks are more consistent with
+differences in their skin-in-the-game rather than screening quality.
+Joshua Bosshardt Amir Kermani
+Federal Housing Finance Agency Haas School of Business
+Constitution Center University of California, Berkeley
+400 7th Street SW 545 Student Services Building #1900
+Washington, DC 20219 Berkeley, CA 94720
+joshua.bosshardt@fhfa.gov and NBER
+kermani@berkeley.edu
+Ali Kakhbod
+Haas School of Business
+University of California, Berkeley
+2220 Piedmont Ave
+Berkeley, CA 94720
+akakhbod@berkeley.edu
+A internet appendix is available at http://www.nber.org/data-appendix/w31575
+
+1 Introduction
+Mortgage debt is by far the largest component of household debt in the U.S., accounting
+for more than 70% of the $16.5 trillion in household liabilities (Federal Reserve Bank of
+NewYork(2022)). Accesstomortgagecreditsignificantlydependsontheprevailingcredit
+profiles in the mortgage market segment supported by the government-sponsored enter-
+prises (GSEs) Fannie Mae and Freddie Mac, which comprises the majority of originations
+since the financial crisis.1 In this market segment, access to credit depends on two fac-
+tors: the GSEs’ underwriting criteria as implemented through their respective automated
+underwritingsystems(DesktopUnderwriterforFannieMaeandLoanProspectorforFred-
+die Mac) and potential additional restrictions or “overlays” imposed by private mortgage
+lenders, which serve as intermediaries by originating the loans that the GSEs eventually
+securitize.2
+Considering that the GSEs provide insurance against mortgage default risk and the
+progress made on the automated underwriting systems, a critical question arises: What
+extra value do intermediaries’ discretionary overlays and pricing of mortgages offer? We
+specifically focus on a trade-off in which intermediaries can reduce the cost of lending by
+screeningoutborrowerswhoaremorelikelytodefaultrelativetotheireasilyobservedrisk
+characteristics (such as credit score, loan-to-value (LTV) ratio, and debt-to-income (DTI)
+ratio), but they also charge markups. We study the welfare of different types of borrowers
+under the current arrangement versus a counterfactual setting in which the discretionary
+behaviorofintermediariesiseliminated.
+We study the trade-off between better screening and lenders’ market power using
+proprietary regulatory data on all loans acquired by the GSEs during 2016-2017, a period
+duringwhichwecanpreciselyobservetheguaranteefees,org-fees,thattheGSEschargeto
+1Inthispaper,“theGSEs”referstoFannieMaeandFreddieMacandnotanyothergovernment-sponsored
+enterprises.
+2Wefocusontheroleofintermediariesatloanoriginationandnotsubsequentservicingorotherinvestor
+activity.
+1
+
+insurealoan. Wefirstprovidereduced-formevidencethatintermediariespriceobservable
+and unobservable risk independently of the GSEs. These facts collectively suggest that
+intermediaries have some skin-in-the-game and perform additional screening. However,
+we also find evidence of significant markups charged by the lenders. We then develop a
+modelofcompetitivelendingbyintermediariesinwhichlendersperformcostlyscreening
+but also have market power. We estimate the parameters based on the moments from the
+reduced form observations and use the model to study the interest rates and denial rates
+thatdifferenttypeofhouseholdswouldfaceifwechangedthecurrentsystemtoanewone
+inwhichGSEs’underwritingcriteriaareimplementedpassively.
+We start our reduced form analysis by showing that interest rates increase with mea-
+suresofex-anteobservabledefaultrisk. Wedefineobservableriskastheprobabilityofde-
+fault predicted by a borrower’s credit score, LTV ratio, and DTI ratio. We rely on variation
+of interest rates net of g-fees for loans offered by the same lender and within the same ZIP
+code and show that a one percentage point increase in observable risk is associated with a
+4.2 basis point increase in interest rates net of g-fees. This result is consistent with lenders
+having skin-in-the-game, or a positive loss given default, due to the threat of repurchases
+andexclusionfromtheGSEs.3 Wealsolookatthedistributionofinterestratesasafunction
+ofobservableriskandfindthatthegapbetweentheaverageandthe10thpercentile(orbe-
+tween the 90th percentile and the 10th percentile) of interest rates for the safest borrowers
+is23(49)basispoints. ThisgapsuggeststhatGSEintermediariesexploitsignificantmarket
+power. Moreover, we find that the 10th (90th) percentile increases by 1.4 (5.1) basis points
+foreachonepercentagepointincreaseinobservablerisk. Thedifferencebetweentheslope
+of the average versus the 10th percentile of interest rates as a function of observable risk
+disciplines the parameters of the model to disentangle between lenders’ skin-in-the-game
+3A “repurchase”, sometimes also referred to as a “put-back”, refers to when a GSE requires a lender to
+repurchase a loan based on charges of violating representations and warranties, which can be interpreted
+as errors in the underwriting process required for delivering a loan to the GSEs. The rate of repurchases
+increasedduringthefinancialcrisisbuthassinceremainedlow. Nevertheless,Goodman(2017)presentsev-
+idencethatlendershaveincreasedtheirinvestmentincarefulunderwritingandimposedoverlaystoprotect
+themselvesagainstrepurchases.
+2

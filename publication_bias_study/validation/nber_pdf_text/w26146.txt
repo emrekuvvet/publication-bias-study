@@ -1,0 +1,138 @@
+NBER WORKING PAPER SERIES
+CAN PIGOU AT THE POLLS STOP US MELTING THE POLES?
+Soren T. Anderson
+Ioana Marinescu
+Boris Shor
+Working Paper 26146
+http://www.nber.org/papers/w26146
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+August 2019
+We thank: Aria Kovalovich, Doug Murdoch, Anna Terkelsen, and Yuxian Xiao for valuable
+research assistance; Nicholas Pharris at the Washington Secretary of State for providing data and
+GIS expertise; Yoram Bauman, Gail Gatton, Ben Silesky, and Greg Small for helpful background
+and detailed comments; Matt Kahn, Jim Hines, and Matthew Incantalupo for detailed comments;
+and seminar participants at UC Davis, Energy Policy Institute at Chicago, UC Berkeley Energy
+Camp, MSU-UM-WMU EEE Day Workshop, Purdue University, Heartland Environmental &
+Resource Economics Workshop @ Illinois, Oberlin College, the ASSA Annual Meetings in
+Philadelphia, Michigan State University, the MPSA meetings in Chicago, the SPPC meeting in
+College Park, the NBER Summer Institute, Macalester College, and Brigham Young University
+for many helpful comments and suggestions. Ioana Marinescu acknowledges financial support
+from the Kleinman Center for Energy Policy at the University of Pennsylvania. The views
+expressed herein are those of the authors and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2019 by Soren T. Anderson, Ioana Marinescu, and Boris Shor. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Can Pigou at the Polls Stop Us Melting the Poles?
+Soren T. Anderson, Ioana Marinescu, and Boris Shor
+NBER Working Paper No. 26146
+August 2019
+JEL No. D72,H23,H71,H72,Q52,Q54,Q58
+ABSTRACT
+Surveys show majority U.S. support for a carbon tax. Yet none has been adopted. Why? We
+study two failed carbon tax initiatives in Washington State in 2016 and 2018. Using a difference-
+in-differences approach, we show that Washington's real-world campaigns reduced support by 20
+percentage points. Resistance to higher energy prices explains opposition to these policies in the
+average precinct, while ideology explains 90% of the variation in votes across precincts.
+Conservatives preferred the 2016 revenue-neutral policy, while liberals preferred the 2018 green-
+spending policy. Yet we forecast both initiatives would fail in other states, demonstrating that
+surveys are overly optimistic.
+Soren T. Anderson Boris Shor
+Michigan State University Department of Political Science
+Department of Economics University of Houston
+486 West Circle Drive PGH 389, 3551 Cullen Blvd
+East Lansing, MI 48824-1038 Houston, TX 77204
+and NBER boris@bshor.com
+sta@msu.edu
+Ioana Marinescu
+University of Pennsylvania School
+of Social Policy & Practice 3701
+Locust Walk
+Philadelphia PA, 19104-6214 and
+NBER
+ioma@upenn.edu
+
+1 Introduction
+Estimates for 2015 put the social cost of carbon at $11-$105 per metric ton of CO .1 A Pigouvian tax
+2
+on emissions can internalize the social cost of carbon—as can a system of tradable emissions permits (“cap-
+and-trade”). Price incentives equalize the marginal cost of reducing emissions across different sources and
+thereby minimize the total cost of meeting a given emissions target. Meanwhile, revenue from a carbon
+tax can be used (“recycled”) to lower other taxes or to mitigate impacts on low-income households and
+energy-intensive industries. This logic appeals to economists from across the political spectrum, as well as
+to many commentators and politicians, as exemplified by the informal Pigou Club and more formal Climate
+Leadership Council.2 Yet these economic arguments inevitably must confront a key political hurdle: carbon
+taxesleadtohigherenergyprices,whicharehighlyunpopular(seee.g.Knittel2014,forgastaxes). Howthen
+couldacarbontaxbepassed? Oneargumentisthatformingabipartisancoalitionwouldbeeasierifcarbon
+taxesweremoreacceptabletoconservativeswhotendtofavorlimitedgovernment. Thus,thisviewsupports
+using carbon tax revenue to lower other taxes, i.e. a revenue-neutral policy. An alternative argument sees
+thebipartisanapproachasdoomedtofailuresincetherightwouldrejectacarbontaxofanyflavor,whilethe
+left would actually prefer to increase government spending. Thus, this alternative view supports spending
+carbon tax revenue on green projects and social programs to maximize liberal support.
+Running parallel to this economic and political debate, recent research in the social science literature
+uses surveys to measure public support for environmental policies, including a carbon tax. This literature
+often finds broad, majority support for a carbon tax—depending on how the tax revenue is used (Amdur,
+Rabe, and Borick 2014; Kotchen, Turk, and Leiserowitz 2017). For example, 50% of Americans in a 2016
+survey say they support reducing greenhouse gas emissions by taxing carbon-based fuels.3 Meanwhile, 68%
+of Americans in a 2018 survey say they support requiring fossil-fuel companies to pay a carbon tax.4 This
+number climbs to 72% in 2019.5 Yet to date, we have seen no carbon tax adopted in the United States, be
+it a revenue-neutral policy or a tax-and-spend policy.6 What explains this disconnect? Are opinion surveys
+reliable measures of voter preferences for a carbon tax? To what extent are voters actually willing to trade
+1See here: https://www.epa.gov/sites/production/files/2016-12/documents/social_cost_of_carbon_fact_sheet.pdf.
+Thesocialcostcarbonisthepresent-discountedvalueofthestreamofpresentandfutureeconomicdamagesfromclimatechange,
+causedbyreleasingoneadditionaltonofcarbonintotheatmosphere. Alsoseehere: https://openknowledge.worldbank.org/
+bitstream/handle/10986/24288/CarbonPricingWatch2016.pdf?sequence=4&isAllowed=y.
+2The“PigouClub”isadesignationcreditedtofoundingmemberandconservativeeconomist,GregMankiw,andincludes:
+fellow economists such as Paul Krugman, Ed Glaeser, Kevin Hassett, and William Nordhaus; Democratic politicians such as
+Al Gore; Republican politicians such as Rex Tillerson and Lindsey Graham; conservative/libertarian pundits such as David
+FrumandMeganMcArdle;liberal/progressivepunditssuchasBillNyeandDavidLeonhardt;andmanyothersfromacrossthe
+political spectrum. The Climate Leadership Council is a bipartisan policy institute founded by Ted Halstead in 2017, which
+countsformerFederalReservechairsBenBernankeandJanetYellenamongitsfoundingmembers.
+3Seehere: http://closup.umich.edu/files/ieep-nsee-2016-fall-carbon-tax.pdf
+4See here: https://climatecommunication.yale.edu/visualizations-data/ycom-us-2018/?est=happening&type=value&
+geo=county
+5Seehere: https://climatecommunication.yale.edu/publications/politics-global-warming-april-2019/2/
+6SeveralCanadianprovinceshaveimplementedacarbontax—thoughAlbertarecentlyrepealeditscarbontax.
+1
+
+off higher energy prices for reduced emissions and tax rebates? Does the use of revenue matter politically in
+the real world?
+To answer these questions, we study voting patterns in two recent, failed carbon tax initiatives in Wash-
+ington State from 2016 and 2018. Initiative 732 (I-732) from 2016 would have lowered the state sales tax
+from6.5%to5.5%andmatchedthefederalEarnedIncomeTaxCredit(EITC)by25%,whileInitiative1632
+(I-1631)from2018wouldhavedevoted95%ofcarbontaxrevenuetogreenprojects(e.g.,renewableenergy).
+These policies were otherwise quite similar, i.e. with tax rates starting at $15/tCO and rising gradually
+2
+thereafter (see table 1). Thus, these initiatives offer an unprecedented opportunity to measure voter pref-
+erences for two different flavors of a carbon tax based on actual voting. Our analysis relies on detailed,
+precinct-level elections data from Washington State for 2016 and 2018. We complement these data with a
+nationalsurveyof3,000peoplefieldedonAmazonMechanicalTurkduringtheNovember2018election(but
+before the election results were known).
+Our findings address five key questions.
+First: What drives differences in support for a carbon tax among voters? Overwhelmingly, we find it to
+be ideology. This message emerges clearly from our analysis of precinct-level voting data and is confirmed
+in our individual survey data. In both cases, we infer latent ideology from votes and opinions on other
+policies (e.g., stricter gun laws or a higher minimum wage). Ideology alone explains 91% of the variation
+in actual vote shares across precincts and predicts votes better than partisanship. In contrast, proxies for
+higher tax incidence (e.g., car commute or home size), which correlate negatively with support for a carbon
+tax,explainrelativelylittleofthevariationacrossprecincts. Likewise,amongindividualsurveyrespondents,
+latentideologyexplainstwotimesmoreofthevariationinsupportacrossrespondentsthanpartyaffiliation,
+and the results barely budge when including proxies for the incidence of a carbon tax or other demographic
+controls. The key takeaway is that ideology is the main driver of support for a state carbon tax in a
+referendum.
+Second: Do voters prefer a revenue-neutral tax, or spending on green projects? Again, we find that the
+answer depends on ideology. I-732 was designed by an economist to be revenue-neutral in an explicit appeal
+to political moderates, while I-1631 was designed by a progressive coalition with social and environmental
+justiceobjectives. Consistentwiththesedifferentstrategies,wefindinprecinct-levelvotingdatathatI-1631
+performed better in liberal precincts, where it picked up 3.3 percentage points—but worse in conservative
+precincts, where it lost 0.7 percentage points relative to I-732. Thus, while the green-spending policy
+performed slightly better overall (43.4% for I-1631 versus 40.8% for I-732), it also failed to gain majority
+support. This failure has less to do with opposition from conservatives, whose support fell slightly, than
+tepid enthusiasm among progressives, whose support only grew modestly.
+2

@@ -1,0 +1,107 @@
+NBER WORKING PAPER SERIES
+IDENTIFYING DEMAND WITH MULTIDIMENSIONAL UNOBSERVABLES:
+A RANDOM FUNCTIONS APPROACH
+Jeremy T. Fox
+Amit Gandhi
+Working Paper 17557
+http://www.nber.org/papers/w17557
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+November 2011
+Thanks to Daniel Ackerberg, Richard Blundell, Andrew Chesher, Philip Haile and Jack Porter for
+helpful comments. Thanks to Philip Reny for earlier collaboration. Our email addresses are jtfox@umich.edu
+and agandhi@ssc.wisc.edu. The views expressed herein are those of the authors and do not necessarily
+reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2011 by Jeremy T. Fox and Amit Gandhi. All rights reserved. Short sections of text, not to exceed
+two paragraphs, may be quoted without explicit permission provided that full credit, including © notice,
+is given to the source.
+
+Identifying Demand with Multidimensional Unobservables: A Random Functions Approach
+Jeremy T. Fox and Amit Gandhi
+NBER Working Paper No. 17557
+November 2011
+JEL No. C0,L0
+ABSTRACT
+We explore the identification of nonseparable models without relying on the property that the model
+can be inverted in the econometric unobservables. In particular, we allow for infinite dimensional
+unobservables. In the context of a demand system, this allows each product to have multiple
+unobservables. We identify the distribution of demand both unconditional and conditional on market
+observables, which allows us to identify several quantities of economic interest such as the (conditional
+and unconditional) distributions of elasticities and the distribution of price effects following a merger.
+Our approach is based on a significant generalization of the linear in random coefficients model that
+only restricts the random functions to be analytic in the endogenous variables, which is satisfied by
+several standard demand models used in practice. We assume an (unknown) countable support for
+the distribution of the infinite dimensional unobservables.
+Jeremy T. Fox
+Economics Department
+University of Michigan
+238 Lorch Hall
+611 Tappan St.
+Ann Arbor, MI 48104
+and NBER
+jeremyfox@gmail.com
+Amit Gandhi
+University of Wisconsin
+1180 Observatory Drive
+Madison, WI 53706-1393
+agandhi@ssc.wisc.edu
+
+1 Introduction
+In this paper we study the identification of nonseparable demand systems
+Q=D(P,ξ), (1)
+where Q is a vector of market level quantities demanded for a set of goods, P is a vector of prices
+for these goods, ξ ∈ Ξ is a demand error, and D(·,·) is the demand system. We do not impose that
+ξ is independent of P, as price may be determined in market equilibrium. Rather, we assume that
+the demand error ξ is independent of a vector of instruments Z. The non-separable demand system
+contrasts with models that assume the error is additively separable, i.e.,
+D(P,ξ)=D(P)+ξ.
+Althoughadditiveseparabilityhasconvenienteconometricfeatures,thereislittleunderlyingeconomic
+basis for demand shocks being separable. For example, when market demand is the aggregation of
+individual discrete choices, the quantity sold of product j in a market is a function of the demand
+errorsforproductj andallcompetingproductsinthemarket, whichisinconsistentwiththeadditive
+structure above (Berry, 1994). Our interest thus centers on identification of the non-separable model
+(1).
+Therearetwomajorexistingliteraturesontheidentificationofnonseparablemodelswithendoge-
+nous regressors. First, the literature on the nonparametric identification of simultaneous equation
+modelstakesasitsstartingpointtheassumptionthatthedemandsystem(1)isinvertibleintheerror
+ξ (Brown,1983;Roehrig,1988;BenkardandBerry,2006;Matzkin,2008;BerryandHaile,2010;Berry
+et al., 2011). In contrast, we do not require invertibility. Invertibility in ξ requires, at a minimum,
+the order restriction that there are only as many unobservables as there are products demanded; the
+dimensionality of ξ equals the dimensionality of Q. Instead, we allow the error to be infinite dimen-
+sional and hence do not impose the structure that demand is invertible in the unobservable ξ. This
+allows for considerable richness in the unobserved market level heterogeneity of demand models, as
+2
+
+we illustrate later using the standard discrete choice setting for demand for differentiated products
+(see e.g., Berry, Levinsohn and Pakes (1995) or BLP).
+Anotherliteraturethatcanbeappliedtodemandidentificationistheliteratureonnonparametric
+control functions (Altonji and Matzkin, 2005; Chesher, 2003; Imbens and Newey, 2009; Blundell and
+Matzkin, 2010). This literature can allow for multiple unobservables in the demand equation, and in
+particular more unobservables than the number of goods, but cannot allow for such multidimensional
+unobservability in the equilibrium pricing equations. This means adapting these approaches to de-
+mand models requires that strong assumptions be placed on the reduced form pricing equation that
+areatoddswithstandardsupplysidemodels: boththedemandand supplysideunobservablesshould
+impact equilibrium prices under standard mechanisms according to which prices are set. Thus allow-
+ing for multidimensional unobservables in demand requires that we also allow for multidimensional
+unobservables to affect prices in order to be consistent with standard economic theory.
+As far as we are aware, the identification problem of introducing multiple unobservables per prod-
+uct in a standard supply and demand setting has yet to be studied. As discussed above, multiple
+unobservables preclude inverting demand, and thus the demand unobservables themselves (for any
+realization of a market) cannot be identified. Instead, we will seek identification of the distribution
+of demand functions, both conditional and unconditional on the realization of the market observ-
+ables. We will assume that any realization of the demand function function D(·,ξ) for ξ ∈ Ξ is a
+real analytic function in prices, which nonparametrically generalizes a property of various well known
+demand systems used in practice (e.g., the AIDS model, the mixed logit BLP model). The key to
+our approach is then showing that under a general mechanism that governs how prices are set (which
+allows for multidimensional unobservables that include the demand unobservable ξ, and is consistent
+withstandardmodelsofpriceequilibrium), thereducedformofthemodeltakesontheformofasys-
+tem of random analytic functions that are indexed by an infinite dimensional unobservable consisting
+of both the demand unobservables ξ and the supply unobservables ω. We first show this system of
+randomanalyticfunctionsrepresentingthereducedformofthemodelcanbeuniquelyidentifiedfrom
+the data. We then show that, given a minimal relevance condition on the instruments, the structural
+demand feature of interest, namely the distribution of demand functions, can be recovered from the
+3

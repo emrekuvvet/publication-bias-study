@@ -1,0 +1,133 @@
+NBER WORKING PAPER SERIES
+INVESTMENT AND THE COST OF CAPITAL:
+NEW EVIDENCE FROM THE CORPORATE BOND MARKET
+Simon Gilchrist
+Egon Zakrajsek
+Working Paper 13174
+http://www.nber.org/papers/w13174
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2007
+We appreciate helpful comments and suggestions from Eileen Mauskopf, Stacey Tevlin, Jonathan
+Wright, and seminar participants at the Federal Reserve Board, the European Central Bank, the Bank
+of Canada, the Federal Reserve Bank of San Francisco, the Bank of Japan and the University of Tokyo.
+Jason Grimm and Isaac Laughlin provided superb research assistance. Simon Gilchrist thanks the National
+Science Foundation for financial support. The views expressed in this paper are solely the responsibility
+of the authors and should not be interpreted as reflecting the views of the Board of Governors of the
+Federal Reserve System, or those of anyone else associated with the Federal Reserve System, or the
+views of the National Bureau of Economic Research.
+© 2007 by Simon Gilchrist and Egon Zakrajsek. All rights reserved. Short sections of text, not to exceed
+two paragraphs, may be quoted without explicit permission provided that full credit, including © notice,
+is given to the source.
+
+Investment and the Cost of Capital: New Evidence from the Corporate Bond Market
+Simon Gilchrist and Egon Zakrajsek
+NBER Working Paper No. 13174
+June 2007
+JEL No. E22,E44,E62
+ABSTRACT
+We study the effect of variation in interest rates on investment spending, employing a large panel data
+set that links yields on outstanding corporate bonds to the issuer income and balance sheet statements.
+The bond price data -- based on trades in the secondary market -- enable us to construct a firm-specific
+measure of the user cost of capital based on the marginal cost of external finance as determined in
+the market for long-term corporate debt. Our results imply a robust and quantitatively important effect
+of the user cost of capital on the firm-level investment decisions. According to our estimates, a 1 percentage
+point increase in the user cost of capital implies a reduction in the investment rate of 50 to 75 basis
+points and, in the long run, a 1 percent reduction in the stock of capital.
+Simon Gilchrist
+Department of Economics
+Boston University
+270 Bay State Road
+Boston, MA 02215
+and NBER
+sgilchri@bu.edu
+Egon Zakrajsek
+Division of Monetary Affairs
+Federal Reserve Board
+20th Street & Constitution Avenue, NW
+Washington, D.C. 20551
+egon.zakrajsek@frb.gov
+
+1 Introduction
+The notion that business spending on fixed capital falls when interest rates rise is a the-
+oretically unambiguous relationship that lies at the heart of the monetary transmission
+mechanism. Nevertheless, the presence of a robust negative relationship between invest-
+ment expenditures and real interest rates—or the user cost of capital more generally—has
+been surprisingly difficult to document in actual data (e.g., Abel and Blanchard [1986] and
+Schaller [2006]). Similarly, the magnitude of the response of investment to changes in cor-
+porate tax policies is a key parameter that fiscal policy makers rely on when weighing the
+costs and benefits of altering the tax code. With the exception of Cummins, Hassett, and
+Hubbard [1994], whose methodology utilizes firm-level variation in investment expenditures
+within a context of a “natural” experiment, researchers have had a difficult time identify-
+ing the relationship between capital formation and changes in corporate tax policy (e.g.,
+Schaller [2006] and Chirinko, Fazzari, and Meyer [1999, 2004]).1
+The empirical difficulties associated with estimating the effects of changes in interest
+rates and corporate tax policies on business fixed investment are often blamed on a lack of
+identification. At the macroeconomic level in particular, long-term interest rates (through
+monetary policy actions) and corporate tax obligations (through investment tax credits or
+partial expensing allowances) are often lowered when investment spending is weak.2 In
+the extreme, the endogeneity between both monetary and fiscal policy actions and the
+macroeconomy may result in a positive relationship between investment expenditures and
+the user cost of capital.
+In this paper, we revisit this apparent and long-standing empirical anomaly. We do
+so by constructing a new data set that links income and balance sheet information for
+about 900 large U.S. nonfinancial corporations to interest rates on their publicly-traded
+debt. Covering the last three decades, this new data set enables us to evaluate and to
+quantify empirically the relationship between firms’ investment decisions and fluctuations
+inthefirm-specific usercostofcapitalbasedonmarginalfinancingcostsasmeasuredbythe
+changes in secondary market prices of firms’ outstanding bonds. Our results indicate that
+investmentspendingishighlysensitive—botheconomicallyandstatistically—tomovements
+in the firm-specific measure of the user cost of capital. The sensitivity of capital formation
+to changes in the user cost is robust to the inclusion of various measures of investment
+1For extensive surveys of this topic, see Auerbach [1983] and Chirinko [1993]; see also Hassett and
+Hubbard [1997] and Devereux, Keen, and Schiantarelli [1994].
+2Partial expensing allowances permit firms to deduct a portion of their newly purchased capital goods
+from their taxable income. In that sense, both an investment tax credit (ITC) and an expensing allowance
+raisethefirm’safter-taxincomewhenthefirmpurchasescapitalgoods. Thetwotaxpolicies,however,differ
+in that under partial expensing, the firm is not allowed to claim any future depreciation allowances for its
+expensed capital, whereas under an ITC, such a restriction is partly or wholly absent.
+1
+
+opportunities emphasized by frictionless neoclassical models and to an estimation approach
+that controls for the potential endogeneity between investment and financial policy at the
+firm level.
+The remainder of the paper is organized as follows. In Section 2, we provide a brief
+overview of the user-cost framework and review the evidence—at both the macro and micro
+levels—onthelinkbetweenfinancingcostsandinvestmentspending. Section3describesour
+new data set and highlights its key feature. Section 4 outlines our panel-data econometric
+methodology, and Section 5 presents our benchmark results. In Section 6, we consider an
+alternative estimation approach that addresses the potential endogeneity between interest
+rates and investment decisions at the firm level. This approach involves constructing an
+instrument for the user cost of capital that explicitly controls for firm-specific expected
+defaultriskusingbothoption-theoreticmeasuresofdefaultprobabilitiesandexternalcredit
+ratings of firms’ debt. Section 7 concludes.
+2 Empirical Framework
+In this section, we briefly outline the user-cost framework that motivates our empirical
+analysis. We assume that output of the firm in period t—denoted by Y —is a CES function
+t
+of capital (K ) and variable inputs (L ):3
+t t
+Y = (aKσ +bLσ)1/σ,
+t t t
+where 0 < a,b < 1 and σ ≤ 1. Letting CK denote the cost of capital in period t, then the
+t
+firm’s desired capital stock K∗ satisfies the optimality condition
+t
+1−σ
+Y
+a t = CK.
+K∗ t
+(cid:18) t (cid:19)
+Assuming a simple partial adjustment between actual and desired capital implies the fol-
+lowing log-specification for the growth rate of the capital stock:
+Y 1
+∆lnK = η+λ ln t − lnCK ,
+t K 1−σ t
+(cid:20) (cid:18) t(cid:19) (cid:18) (cid:19) (cid:21)
+where the parameter 0 < λ < 1 measures the speed of adjustment to the desired stock
+of capital and 1/(1−σ) is the long-run elasticity of capital with respect to the user cost.
+The partial adjustment model is typically implemented empirically with a variant of the
+3We adopt the convention that the time subscript t on stock variables indicates the beginning of the
+period—that is, Kt denotes the stock of capital at the beginning of period t.
+2

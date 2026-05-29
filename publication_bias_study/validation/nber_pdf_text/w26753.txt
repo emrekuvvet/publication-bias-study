@@ -1,0 +1,140 @@
+NBER WORKING PAPER SERIES
+CENTRAL BANK DIGITAL CURRENCY:
+CENTRAL BANKING FOR ALL?
+Jesús Fernández-Villaverde
+Daniel Sanches
+Linda Schilling
+Harald Uhlig
+Working Paper 26753
+http://www.nber.org/papers/w26753
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+February 2020
+The contribution of Linda Schilling has been prepared under the Lamfalussy fellowship program
+sponsored by the ECB. The views expressed in this paper are those of the authors and do not
+necessarily reflect the views of the ECB, the Federal Reserve Bank of Philadelphia, or the Federal
+Reserve System. The project was partially written during a research stay of Linda Schilling at the
+Simons Institute at UC Berkeley. T The views expressed herein are those of the authors and do
+not necessarily reflect the views of the National Bureau of Economic Research.
+At least one co-author has disclosed a financial relationship of potential relevance for this
+research. Further information is available online at http://www.nber.org/papers/w26753.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Jesús Fernández-Villaverde, Daniel Sanches, Linda Schilling, and Harald Uhlig. All
+rights reserved. Short sections of text, not to exceed two paragraphs, may be quoted without
+explicit permission provided that full credit, including © notice, is given to the source.
+
+Central Bank Digital Currency: Central Banking For All?
+Jesús Fernández-Villaverde, Daniel Sanches, Linda Schilling, and Harald Uhlig
+NBER Working Paper No. 26753
+February 2020
+JEL No. E58,G21
+ABSTRACT
+The introduction of a central bank digital currency (CBDC) allows the central bank to engage in
+large-scale intermediation by competing with private financial intermediaries for deposits. Yet,
+since a central bank is not an investment expert, it cannot invest in long-term projects itself, but
+relies on investment banks to do so. We derive an equivalence result that shows that absent a
+banking panic, the set of allocations achieved with private financial intermediation will also be
+achieved with a CBDC. During a panic, however, we show that the rigidity of the central bank's
+contract with the investment banks has the capacity to deter runs. Thus, the central bank is more
+stable than the commercial banking sector. Depositors internalize this feature ex-ante, and the
+central bank arises as a deposit monopolist, attracting all deposits away from the commercial
+banking sector. This monopoly might endangered maturity transformation.
+Jesús Fernández-Villaverde Linda Schilling
+Department of Economics Ecole Polytechnique CREST
+University of Pennsylvania 5 Avenue le Chatelier
+The Ronald O. Perelman Center Palaiseau, Fran 91120
+for Political Science and Economics France
+133 South 36th Street Suite 150 and CEPR
+Philadelphia, PA 19104 lin.schilling@gmail.com
+and CEPR
+and also NBER Harald Uhlig
+jesusfv@econ.upenn.edu Dept. of Economics
+University of Chicago
+Daniel Sanches 1126 E 59th Street
+Federal Reserve Bank of Philadelphia Chicago, IL 60637
+Ten Independence Mall and CEPR
+Philadelphia, PA 19106-1574 and also NBER
+Daniel.Sanches@phil.frb.org huhlig@uchicago.edu
+
+1 Introduction
+Recent advances in cryptographic and distributed ledger techniques (von zur Gathen,
+2015;Narayananetal.,2016)haveopenedthedoortothewidespreaduseofdigitalcurrencies.
+While the lead in the introduction of these currencies came from private initiatives such as
+Bitcoin, Ethereum, and Libra, researchers and policymakers have explored the possibility
+that central banks can also issue their own digital currencies, aptly called a central bank
+digital currency (CBDC).1
+The introduction of a CBDC can represent an important innovation in money and bank-
+ing history. Besides its potential role in eliminating physical cash, a CBDC will allow the
+central bank to engage in large-scale intermediation by competing with private financial in-
+termediaries for deposits (and, likely, engaging in some form of lending of those deposits). In
+other words, a CBDC amounts to giving consumers the possibility of holding a bank account
+with the central bank directly.
+Defenders of a CBDC have been rather explicit about this implication. For instance,
+Barrdear and Kumhof (2016, p. 7) state: “By CBDC, we refer to a central bank granting
+universal, electronic, 24x7, national-currency-denominated and interest-bearing access to its
+balance sheet.” In this paper, we will use these authors’ definition as the working concept of
+a CBDC.2
+Similarly, Bordo and Levin (2017) propose that either a “an account-based CBDC could
+be implemented via accounts held directly at the central bank” [p. 7], or “CBDC could be
+provided to the public via specially designated accounts at supervised commercial banks,
+which would hold the corresponding amount of funds in segregated reserve accounts at the
+central bank” [p. 8], and which is now often referred to as a synthetic CBDC. In this formu-
+lation, the differences between a CBDC held directly at the central bank or at a commercial
+1See, as examples and without trying to be exhaustive, Adrian and Mancini-Griffoli (2019), Agur et al.
+(2019), Barontini and Holden (2019), Berentsen and Schar (2018), Brunnermeier et al. (2019), Barrdear and
+Kumhof(2016),BordoandLevin(2017),DanezisandMeiklejohn(2015),DysonandHodgson(2016),Ketterer
+and Andrade (2016), Mancini-Griffoli et al. (2018), Rogoff (2014), and Wadsworth (2018). In terms of cen-
+tral banks, the BIS has circulated numerous position papers on CBDCs, the Sveriges Riksbank has studied
+this issue in detail with its E-krona project, and the Bank of Japan has reported on the legal issues re-
+garding CBDCs. See https://www.bis.org/cpmi/publ/d174.pdf and https://www.riksbank.se/en-gb/
+payments--cash/e-krona/ and http://www.boj.or.jp/en/research/wps_rev/lab/lab19e03.htm/.
+2Notice, therefore, that the sense in which most economists have defined a CBDC as an account-based
+currency goes well beyond a basic notion of central bank-issued electronic money (which may or may not
+fully replace physical cash). To focus our investigation, we will avoid the discussion of the relative merits
+of other forms of central bank-issued electronic money, such as a token-based central bank cryptocurrency
+or traditional electronic reserves. Conversely, one could consider situations where the central bank opens its
+account facilities to all citizens, even in the absence of a CBDC. As we will see in Section 2, this opening has
+occurred often in history, and it was defended in the 1980s by Tobin (1987, p. 172) as “deposited currency.”
+Nearly all of the analysis in our paper carries over to a “deposited currency” environment.
+1
+
+bank with segregated reserves are mostly inconsequential for our analysis, for they have the
+same implications for financial intermediation.
+We could be, thus, at a juncture where changes in technology –namely, the introduction
+of digital currencies– may justify a fundamental shift in the architecture of a financial system,
+a central bank “open to all.” As argued by Friedman and Schwartz (1986) in a classic paper,
+external forces –in this case, technological innovations– might shape how we think about the
+role of government in setting up monetary and financial institutions and make us opt for
+alternative arrangements.
+These considerations are already relevant to monetary policy. In June 2018, Swiss voters
+turned down the sovereign-money (Vollgeld) initiative that would have given the central bank
+a monopoly on issuing demand deposits, an idea motivated in part by the possibility of a
+Swiss CBDC. Despite the Vollgeld initiative being soundly defeated at the ballot box, similar
+designs are bound to be widely discussed during the coming years.
+What effects will the introduction of a CBDC and the opening of central bank facilities
+have on financial intermediation? Will a CBDC impair the role of the financial system in
+allocating funds to productive projects? Or can we reorganize the financial system in such a
+way that a CBDC will still allow the right flow of funds between savers and investors? Will
+a CBDC make bank runs disappear and stabilize the financial system?
+In this paper, we investigate the implications of a CBDC on financial intermediation by
+building on the classic model by Diamond and Dybvig (1983), augmented by the presence
+of a central bank. We select this model because it emphasizes the role of banks in maturity
+transformation: banks finance long-term projects with demand deposits, which may be with-
+drawn at a shorter horizon. We find that exploring how a CBDC will interact with maturity
+transformation is a first-order consideration that has not been thoroughly examined by the
+literature, often more interested in questions such as the consequences of a CBDC for interest
+rates, tax evasion, or anonymity (for a review of that literature, see Beniak, 2019). Further-
+more, the model by Diamond and Dybvig (1983) allows us to easily explore how bank runs
+might change with the introduction of a CBDC and to compare those results with previous
+findings in the literature.
+More concretely, we consider a framework in which the CBDC takes the form of demand
+deposit accounts of the public at the central bank. Like a commercial bank, the central bank
+holds assets to fund these liabilities, but in contrast to commercial banks, we assume that the
+central bank cannot invest in long-term projects itself. This might be due to the central bank
+not having a good technology to screen, monitor, and liquidate productive projects. The
+central bank can, instead, rely on investment banks to engage in wholesale loans. We derive
+an interesting equivalence result that shows that the set of allocations achieved with private
+2

@@ -1,0 +1,155 @@
+NBER WORKING PAPER SERIES
+LENDER AUTOMATION AND RACIAL DISPARITIES IN CREDIT ACCESS
+Sabrina T. Howell
+Theresa Kuchler
+David Snitkof
+Johannes Stroebel
+Jun Wong
+Working Paper 29364
+http://www.nber.org/papers/w29364
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2021, Revised November 2022
+Previously circulated as “Automation and Racial Disparities in Small Business Lending:
+Evidence from the Paycheck Protection Program”. This paper subsumes results in an earlier note
+from December 2020 titled “Which lenders had the highest minority share among their Payment
+Protection Program (PPP) loans?” We are grateful to Georgij Alekseev, Sara Gong, and
+Cangyuan Li for superb research assistance, and to Enigma, Middesk, Lendio, Biz2Credit, and
+Ocrolus for sharing part of their data. In particular, we thank Scott Monaco at Ocrolus for his
+insights and analytical work. We are also grateful for help from Sriya Anbil, Rohit Arora,
+Venkatesh Bala, Brock Blake, Katherine Chandler, Christine Dobridge, Kyle Mack, Karen Mills,
+David Musto, Hicham Oudghiri, Madeline Ross, Kurt Ruppel, and Sam Taussig. We thank
+seminar and conference participants at the NBER, the AFA Meetings, Cornell, Chicago Booth,
+Princeton, Maryland Smith, Arizona State University, the Government Accountability Office,
+Northeastern University, the Boston Fed, the Virtual Corporate Finance Seminar, NYU, the NY
+State Department of Financial Services, and the University of Georgia as well as Michael
+Faulkender and the reviewing team at the Journal of Finance (the editor Amit Seru, as well as an
+associate Editor and multiple anonymous referees) for their helpful comments. Howell’s work on
+this project is funded by the Kauffman Foundation. Snitkof is an employee and Howell an unpaid
+contractor at Ocrolus, which provided some data for the project. There are no further relevant
+financial or other conflicts of interest to disclose.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2021 by Sabrina T. Howell, Theresa Kuchler, David Snitkof, Johannes Stroebel, and Jun
+Wong. All rights reserved. Short sections of text, not to exceed two paragraphs, may be quoted
+without explicit permission provided that full credit, including © notice, is given to the source.
+
+Lender Automation and Racial Disparities in Credit Access
+Sabrina T. Howell, Theresa Kuchler, David Snitkof, Johannes Stroebel, and Jun Wong
+NBER Working Paper No. 29364
+October 2021, Revised November 2022
+JEL No. G21,G23,G28,G41,J15
+ABSTRACT
+Process automation reduces racial disparities in credit access through enabling smaller loans, broadening
+banks’ geographic reach, and removing human biases from decision-making. We document these findings
+in the context of the Paycheck Protection Program (PPP), a setting where private lenders faced no
+credit risk but decided which firms to serve. Black-owned firms primarily obtained PPP loans from
+automated fintech lenders, especially in areas with high racial animus. After traditional banks automated
+their loan processing procedures, their PPP lending to Black-owned firms increased. Our findings
+cannot be fully explained by racial differences in loan application behaviors, pre-existing banking
+relationships, firm performance, or fraud rates.
+Sabrina T. Howell Johannes Stroebel
+NYU Stern School of Business Stern School of Business
+KMC 9-93 New York University
+44 West 4th Street 44 West 4th Street
+New York, NY 10012 New York, NY 10012
+and NBER and NBER
+showell@stern.nyu.edu johannes.stroebel@nyu.edu
+Theresa Kuchler Jun Wong
+Stern School of Business University of Chicago
+New York University junwong@uchicago.edu
+44 West 4th Street
+New York, NY 10012
+and NBER
+tkuchler@stern.nyu.edu
+David Snitkof
+Ocrolus
+101 Greenwich St
+New York, NY 10006
+dsnitkof@ocrolus.com
+
+Researchers and policy makers in the U.S. and elsewhere have long been concerned about racial
+disparities in access to financial services (Crutsinger, 2021; Abrams, 2021; Crowell, 2021). The recent
+emergenceoffintechlendershasraisednewandimportantquestionsabouthowtheirtechnologies—notably
+algorithmic underwriting and process automation—might affect racial disparities in lending. Much of the
+resulting literature has focused on the effects of algorithmic underwriting practices on racial disparities in
+creditaccess(Blattneret al.,2021;Bartlettetal.,2021; Fuster etal.,2022). Inthispaper, westudytherole
+ofprocessautomationseparatelyfromthatofalgorithmicunderwriting,andshowthatautomatingprocesses
+suchasincomeandpayrollverificationcansubstantiallyreduceracialdisparitiesinsmallbusinesslending.
+Weexplorethreepossiblechannelsforthisfinding. First,sinceautomatedlendershavelowerfixedcosts
+per loan, they can serve smaller businesses, which are more likely to be minority-owned. Second,
+automation generally goes hand-in-hand with online loan origination procedures. This allows automated
+lenders to more easily serve customers in regions with higher minority shares that are traditionally
+underserved by the branch networks of less automated lenders. Third, automation reduces human influence
+on decisions such as the order in which to process loans when facing capacity constraints, and can thus
+mitigate racial discrimination—whether of the taste-based or statistical variety—in lending. Using an array
+of novel datasets, we show that automation appears to reduce racial disparities in small business lending
+throughallthreechannels,includingthroughaneconomicallyimportantreductionindiscrimination.
+One challenge to understanding the determinants of racial disparities in credit markets is the need to
+disentangle the independent role of race from other factors, such as differences in credit risk, that might be
+correlatedwithracewhilealsodirectlyinfluencingcreditoutcomes. Toovercomethesechallenges,westudy
+small business lending in an important setting with no role for confounding factors such as credit risk and
+selectiononcontractterms. OursettingisthePaycheckProtectionProgram(PPP),whichwasestablishedby
+the CARES Act in March 2020 to help small businesses struggling during the COVID-19 pandemic. With
+morethan$800billioninloans,itisoneofthelargestsinglepublicfinanceprogramsinU.S.history. Three
+featuresmakethePPPapromisingsettingtostudyracialdisparitiesinsmallbusinesslending.
+First,PPPloansizewassetasafixedpercentageofpayroll,andtherewasnovariationinothercontract
+terms. Second, PPP loan distribution occurred via private lenders, which were compensated with a fixed
+share of the loan amount. Most lenders originated PPP loans using processes designed for pre-existing
+small business lending volume. When confronted with 100 or 1,000 times the normal application volumes,
+lenders faced severe capacity constraints, forcing them to prioritize among applicants (Morel et al., 2021;
+Zhou, 2020; Flitter and Cowley, 2020). The Small Business Administration (SBA) did not issue specific
+guidance on loan distribution, leaving the private lenders to independently determine which businesses to
+servegiventhefeestructureandotherfactorssuchaslendercoststructureorprocessingcapacity. Third,PPP
+loanswere100%guaranteedbythefederalgovernment,sotheoriginatinglendershadnofinancialexposure
+to the borrower’s performance. Consequently, any observed racial disparities in lending should not reflect
+differencesinexpectedinterestrevenuesorloanlosses. Studyingasettingwithnocreditriskalsoallowsus
+to isolate the role of process automation (e.g., automating application intake and payroll verification) from
+the role of algorithmic underwriting (e.g., predicting default risk using machine learning), which has been
+thefocusofmuchoftherelatedresearchinfinancialeconomics.
+WeworkwithpublicadministrativedatafromtheSBAon11.8millionPPPloansmadebetweenApril3,
+1
+
+2020,andMay31,2021. Werestrictthesampleto“firstdraw”loansmadebeforeFebruary24,2021,when
+program rules were changed to explicitly prioritize lending to small firms and minority-owned businesses.
+Inafirststep,webuildonawell-establishedliteraturetopredicttheraceorethnicityoftheownersofPPP-
+funded businesses based on the owners’ names and locations (Imai and Khanna, 2016; Humphries et al.,
+2019; Tzioumis, 2018). After collecting owner names from business registrations in collaboration with the
+data analytics firm Middesk, we assign race and ethnicity to the business owners for 4.2 million PPP loans.
+This predicted race based on signals provided by name and location is particularly relevant in our context,
+sinceloanofficerstypicallyobservethosecharacteristicsbutdonotknowborrowers’actualrace. However,
+ourresultsarerobusttousingonlythesubsampleofPPPborrowerswithinformationonself-identifiedrace.
+Ourapproachtoestablishingtheeffectofautomationonracialdisparitiesinsmallbusinesslendinguses
+two sets of comparisons. First, we study the rates of lending to minority-owned businesses across lender
+types with different degrees of automation, with a particular focus on fintech firms as the lenders with the
+most automated lending systems, and small banks as those with the least automated systems. (We use data
+on bank branch-level software spending to show that automation generally increases in bank size.) Second,
+we analyze within-lender changes in PPP lending to minority-owned businesses in a subset of traditional
+lenders which automated their loan origination processes during the PPP period. Across both types of
+analyses, we show that lenders with more automated loan processing systems were more likely to extend
+PPP loans to minority-owned firms. Our evidence suggests this happens partly because lenders with more
+automated systems can make smaller loans and loans in higher-minority areas, and partly because
+automated loan processing reduces the scope for human biases to lead to discrimination of minority-owned
+firms. DatafromasubsetofPPPloanapplicationsprovidesevidencethatracialdifferencesinloanapproval
+ratesatconventionallenders(butnotatfintechs)contributestotheobservedacross-lenderpatterns.
+Wefirstdocumentvariationacrosstypesoffinancialinstitutionsintheunconditionalpropensitytoextend
+PPPloanstobusinessesownedbydifferentraces. Fintechlenderswiththemostautomatedlendingsystems
+made 26.5% of their PPP loans to Black-owned businesses. Among traditional banks, PPP loan shares to
+Black-owned businesses increased with bank size, ranging from 3.3% at small banks to 6.2% at the largest
+fourbanks(WellsFargo,BankofAmerica,JPMorganChase,andCitibank). Wealsoshowthatbankbranches
+withmoreautomation,asmeasuredbysoftwarespending,lendmoretoBlack-ownedfirms. Overall,fintech
+lenders were responsible for 53.6% of PPP loans to Black-owned businesses, while only accounting for
+17.4% of all PPP loans. There are also some smaller differences across lenders in the propensity to lend to
+White-, Asian-, and Hispanic-owned firms. However, the differences in lending to Black-owned businesses
+acrossdifferentlendertypesaremuchmoredramatic,sowefocusourpaperonunderstandingthisdisparity.
+To directly test whether automating the loan origination process increases PPP lending to Black-owned
+businesses, we analyze lending at a number of smaller banks that automated during the PPP period by
+outsourcing theback-end processingof theirPPP loan applications toa third-partysoftware provider. Inan
+event study differences-in-differences analysis, we find that relative to other comparable banks that did not
+automate their processes, automation increased the automating banks’ shares of PPP loans to Black-owned
+businessesby6percentagepoints,relativetoapre-automationshareof4.4%.
+We next explore why automation might increase lending to Black-owned businesses. We first focus on
+automated lenders’ ability to make smaller loans and originate loans without relying on a branch network.
+2

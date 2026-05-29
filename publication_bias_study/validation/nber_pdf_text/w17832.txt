@@ -1,0 +1,138 @@
+NBER WORKING PAPER SERIES
+CREDIT SUPPLY AND HOUSE PRICES:
+EVIDENCE FROM MORTGAGE MARKET SEGMENTATION
+Manuel Adelino
+Antoinette Schoar
+Felipe Severino
+Working Paper 17832
+http://www.nber.org/papers/w17832
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+February 2012
+We thank Viral Acharya, Chris Foote, Gustavo Manso, Atif Mian, Sendhil Mullainathan, Chris Mayer,
+David Scharfstein, Todd Sinai, Mathew Slaughter, Jeremy Stein, Bill Wheaton, and seminar participants
+at the 2012 AEA Conference, CFS-EIEF Conference on Household Finance, Columbia Business School,
+Dartmouth College, Duke University, Federal Reserve Bank of Boston, Federal Reserve Bank of Philadelphia,
+Federal Reserve Board, McGill University, MIT Finance Lunch, NBER Asset Pricing and Household
+Finance meetings, Princeton University, University of California at Berkeley, Weimer School May
+2012 Meetings, Western Finance Association 2012 Meetings, and Yale School of Management for
+thoughtful comments. We also thank Andrew Cramond from Dataquick for help with the data. The
+views expressed herein are those of the authors and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2012 by Manuel Adelino, Antoinette Schoar, and Felipe Severino. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Credit Supply and House Prices: Evidence from Mortgage Market Segmentation
+Manuel Adelino, Antoinette Schoar, and Felipe Severino
+NBER Working Paper No. 17832
+February 2012, Revised March 2013
+JEL No. D12,G10,R20
+ABSTRACT
+We show that easier access to credit significantly increases house prices by using exogenous changes
+in the conforming loan limit as an instrument for lower cost of financing. Houses that become eligible
+for financing with a conforming loan show an increase in house value of 1.16 dollars per square foot
+(for an average price per square foot of 220 dollars) and higher overall house prices controlling for
+a rich set of house characteristics. However, these estimated coefficients are consistent with a local
+elasticity of house prices to interest rates that is lower than some previous studies proposed (below
+10). In addition, loan to value ratios around the conforming loan limit deviate significantly from the
+common 80 percent norm, which confirms that it is an important factor in the financing choices of
+home buyers. In line with our interpretation, the results are stronger in the first half of our sample (1998-2001)
+when the conforming loan limit was more important, given that other forms of financing were less
+common and substantially more expensive. Results are also stronger in zip codes where personal income
+growth is low or declining, and in regions with lower elasticity of housing supply.
+Manuel Adelino Felipe Severino
+Duke University MIT Sloan School of Management
+Fuqua School of Business 100 Main Street, E62-678
+100 Fuqua Drive Cambridge, MA 02142
+Durham, NC 27708-0120 fseverin@mit.edu
+manuel.adelino@gmail.com
+Antoinette Schoar
+MIT Sloan School of Management
+100 Main Street, E62-638
+Cambridge, MA 02142
+and NBER
+aschoar@mit.edu
+An online appendix is available at:
+http://www.nber.org/data-appendix/w17832
+
+1 Introduction
+One of the central debates in finance is about the role of credit on the level of asset prices
+and the creation of bubbles (Kiyotaki and Moore, 1997; Allen and Gale, 1998; Bernanke
+and Gertler, 2001; Kindleberger, Aliber, Solow, 2005; Mian and Sufi, 2009; Brunnermeier,
+Eisenbach and Sannikov, 2012). A salient recent example is the US housing market: many
+observers of the crisis have proposed that easy access to credit, and the reduced cost of
+credit, were the central factors fueling the increase in housing prices as well as the subse-
+quent reversal in house price growth when credit dried up (Favilukis, Ludvigson, and Van
+Nieuwerburgh, 2010; Hubbard and Mayer, 2008; Khandani, Lo, and Merton, 2009; Pavlov
+and Wachter, 2010; Mayer, 2011). Proponents on the other side of the debate argue that
+cheap credit alone cannot explain the house price boom and bust, and that other forces are
+likely to have been at play (Glaeser, Gottlieb, and Gyourko, 2010).
+The key difficulty in measuring the effect of credit on the price of housing is establishing
+the direction of causality between credit conditions and house price growth: On the one
+hand, easier and cheaper access to credit might reduce borrower financing constraints and
+increase total demand for housing, which in turn would lead to higher prices. On the other
+hand, however, credit conditions might be responding to expectations of stronger housing
+demand and, as a consequence, higher house prices. In this latter scenario, cheaper credit
+is not the driver of house price increases, but a byproduct of increased demand for housing,
+since housing as collateral becomes more valuable. As we see in the existing literature, it
+has been very difficult to separate these two effects.1
+Inthispaper, weuseannualchangesintheconformingloanlimit(CLL)asaninstrument
+for exogenous variation in the cost of credit, and in the availability of credit itself. The
+CLL determines the maximum size of a mortgage that can be purchased or securitized by
+Fannie Mae or Freddie Mac. This implicit (and since 2008, explicit) government support
+for loans below the conforming loan limit provides easier access to credit for a wide range of
+borrowers and reduces the cost of credit relative to jumbo loans. The difference in interest
+rates between conforming loans and jumbo loans (those that are above the conforming limit)
+is estimated to be up to 24 basis points in the 90’s and 2000’s (McKenzie, 2002; Ambrose,
+LaCour-Little, and Sanders, 2004; Sherlund, 2008; Kaufman, 2012). Loutskina and Strahan
+(2009, 2011)showthatlendersscreenborrowersforjumboloansmoreintenselythantheydo
+those that apply for conforming loans, which implies that mortgages below the conforming
+loan limit are both cheaper and easier to obtain than above this limit.
+1ArecentpaperbyFavaraandImbs(2011)usesbranchingderegulationinthe1990stoidentifythecausal
+link between credit supply and house prices and finds that states where there is deregulation subsequently
+experience larger house price increases.
+2
+
+The key idea of our identification strategy is that changes in the conforming loan limit
+(CLL) from one year to the next are exogenous not only to individual transactions, but also
+to the conditions of local housing markets or the local economy, since this change is based
+on the countrywide average appreciation in house prices. Our empirical approach involves
+comparing transactions with a price that can be financed more easily using a conforming
+loan, and houses that are more expensive and for which buyers need to obtain larger loans
+to maintain the same loan-to-value ratio. We track houses in this price range in the year
+that the limit is in effect as well as the subsequent year, once the limit is raised and all
+houses in the sample become eligible for conforming loans. This setup enables us to cleanly
+identify the effect of the cost and access to credit based on the exogenous variation of the
+CLL and control for any overall trends in house prices.
+The threshold that we use to define houses that are “easy” to finance with a conforming
+loan in a given year is the conforming loan limit divided by 0.8.2 By construction, buyers
+of houses with a price below this threshold can get a conforming loan that makes up 80
+percent of the price of the house, whereas, if the price of the house is above 125 percent of
+the CLL, it can no longer be financed at 80 percent with a conforming loan.3 Above this
+price threshold, borrowers either finance their home with an 80 percent first mortgage using
+a jumbo loan (i.e. a loan above the CLL) at a higher interest rate, or, if they want to take
+advantage of the lower interest rate below the CLL, they have to use savings or alternative
+forms of financing to make a larger down payment.
+The intuition behind this estimation strategy is that transactions that fall just above
+the threshold are harder to finance, and thus, their prices have been bid up less relative to
+the underlying fundamentals of the house. An increase in the conforming loan limit should
+affect this part of the house price distribution more strongly since it allows borrowers who
+previously were not able to get attractive financing to enter this segment of the market.
+Importantly, our sample includes all transactions in this price range independent of the
+financing choice of each borrower. This excludes any bias from our estimates that might
+come from the endogenous choice of financing of a specific transaction, e.g. richer people
+whocanaffordtoputmoremoneydownmightalsopurchasehousesthataremoreexpensive
+based on (unobservable) quality dimensions.
+We first confirm that the conforming loan limit has a significant impact on borrowers’
+2Kaufman (2012) uses this threshold for appraisal values to study the effect of the conforming status of
+a loan on its cost and contract structure.
+380 percent loan to value ratios (LTV) are widely used in the industry as an important threshold for
+first lien mortgages. Loans with an LTV ratio below 80 are associated with more attractive terms and
+conforming loans above 80 percent require private mortgage insurance in order to qualify for purchase by
+Fannie Mae or Freddie Mac (Green and Wachter, 2005).
+3

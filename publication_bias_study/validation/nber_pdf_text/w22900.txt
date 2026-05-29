@@ -1,0 +1,138 @@
+NBER WORKING PAPER SERIES
+ELITE COLLEGES AND UPWARD MOBILITY TO TOP JOBS AND TOP INCOMES
+Seth D. Zimmerman
+Working Paper 22900
+http://www.nber.org/papers/w22900
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2016, Revised September 2018
+This paper was previously circulated under the title ‘Making the One Percent: The Role of Elite
+Universities and Elite Peers.’ I thank Joseph Altonji, Marianne Bertrand, Eduardo Engel,
+Francisco Gallego, Martin Hackmann, Lisa Kahn, Adam Kapor, Amanda Kowalski, Fabian
+Lange, Costas Meghir, Craig Palsson, Jamin Speer, Ebonya Washington, and numerous seminar
+participants for valuable comments. I thank Justine Hastings and Christopher Neilson for detailed
+discussions and for their collaboration in developing the datasets used for this project. I thank
+Cristobal Huneeus and Federico Huneeus for valuable comments and for support in data access. I
+thank DEMRE Directors Ivan Silva and Eduardo Rodriguez for access to college application
+data. I thank Pablo Maino, Valeria Maino, and Nadia Vazquez for assistance with archival
+research. I thank SII staff for their support in access to tax records. I thank Anely Ramirez for her
+invaluable contributions to data collection and institutional research. I thank Sean Hyland and
+Raimundo Smith for excellent research assistance. I thank the Yale Program in Applied
+Economics and Policy, the Cowles Structural Microeconomics Program, and the University of
+Chicago Booth School of Business for financial support. All errors are my own. Required
+disclosure: Information contained herein comes from taxpayers’ records obtained by the Chilean
+Internal Revenue Service (Servicio de Impuestos Internos), which was collected for tax purposes.
+Let the record state that the Internal Revenue Service assumes no responsibility or guarantee of
+any kind for the use or application made of the aforementioned information, especially in regard
+to the accuracy, currency, or integrity. The views expressed herein are those of the author and do
+not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2016 by Seth D. Zimmerman. All rights reserved. Short sections of text, not to exceed two
+paragraphs, may be quoted without explicit permission provided that full credit, including ©
+notice, is given to the source.
+
+Elite Colleges and Upward Mobility to Top Jobs and Top Incomes
+Seth D. Zimmerman
+NBER Working Paper No. 22900
+December 2016, Revised September 2018
+JEL No. I24,I26
+ABSTRACT
+This paper asks whether elite colleges help students outside of historically advantaged groups
+reach top positions in the economy. I combine administrative data on income and leadership
+teams at publicly traded firms with a regression discontinuity design based on admissions rules at
+elite business-focused degree programs in Chile. The 1.8% of college students admitted to these
+programs account for 41%of leadership positions and 39% of top 0.1% incomes. Admission
+raises the number of leadership positions students hold by 44% and their probability of attaining a
+top 0.1% income by 51%. However, these gains are driven by male applicants from high-tuition
+private high schools, with zero effects for female students or students from other school types
+with similar admissions test scores. Admissions effects are equal to 38% of the gap in rates of top
+attainment by gender and 54% of the gap by high school background for male students. A
+difference-in-differences analysis of the rates at which pairs of students lead the same firms
+suggests that peer ties formed between college classmates from similar backgrounds may play an
+important role in driving the observed effects.
+Seth D. Zimmerman
+Booth School of Business
+University of Chicago
+5807 S. Woodlawn Avenue
+Chicago, IL 60637
+and NBER
+seth.zimmerman@chicagobooth.edu
+An online appendix is available at
+http://www.nber.org/data-appendix/w22900/Zimmerman_Top_Jobs_appendix.pdf
+
+1 Introduction
+This paper asks whether elite colleges help students outside of historically advantaged groups
+reach top positions in the economy. What determines upward mobility into top jobs and top
+incomesisthesubjectofalongstandingdebate,thestakesofwhichhavegrownovertimeastop
+incomeshareshaverisen.1 Eliteuniversitiesareanimportantcausalchanneltoexplorebecause
+theirgraduatesholdlargesharesoftoppositions. Forexample,CapelliandHamori(2004)report
+that 10% of Fortune 100 executives in 2001 attended an Ivy League college, while Cohen et al.
+(2008) find that 10% of publicly traded firms in the US have at least one senior manager from
+Harvard. Whathappensateliteuniversitiesmayaffectnotjustaccesstotopjobsforindividual
+students,butthecompositionoftoppositionsoverall. Further,helpingtalentedstudentsaccess
+economicopportunityregardlessofbackgroundisacorepolicyobjectiveforcollegesingeneral
+andeliteuniversitiesinparticular(HoxbyandAvery2013,Chettyetal.2017).
+Inthispaper,IcombineadministrativeandarchivaldatafromChilewitharegressiondisconti-
+nuitydesigntostudyhowadmissiontoelitebusiness-focuseddegreeprogramsaffectstherates
+at which students from different backgrounds reach top positions in the economy. I link data
+on applications to elite degree programs dating back more than 40 years to administrative tax
+recordsaswellastorecordsoftopmanagementteamsatpubliclytradedcorporations,anduse
+variationinadmissionsoutcomesgeneratedbyscore-basedcutoffrulestoidentifythecausalef-
+fectsofadmission. Inadditiontofacilitatingmeasurementoftopoutcomesandcrediblecausal
+inference,theChileansettingisaninformativeonebecauseintergenerationalincomeelasticities,
+top income shares, and measures of business transparency suggest opportunities for upward
+mobilitysimilartothoseinmanyLatinAmericanandEUmemberstates.2
+I have three findings. First, a small number of highly selective, business-focused degree pro-
+gramsaccountforlargesharesofleadershippositionsandtopincomes. Second,gainingadmis-
+siontooneoftheseprogramsratherthanalessselectiveprogramraisesmeanincomeandrates
+oftopattainmentformalestudentsfromwealthybackgrounds, butnotforotherstudents. Ad-
+missionthuswidensgapsintopattainmentbygenderandbaselinesocioeconomicstatus(SES).
+Third, elevated returns for high-SES men are hard to explain with differences in baseline skills,
+propensity to work in high-paying industries, or college completion rates. However, college
+classmates from wealthy backgrounds are more likely to lead the same firms than comparable
+pairsofnon-peersorclassmatesfromlow-SESbackgrounds. Peertiesformedbetweenhigh-SES
+classmatesmaybeonemechanismthroughwhicheliteuniversitiesraisetopattainment.
+1See, e.g., Miller (1949), Miller (1950), Urahn et al. (2012), or Rivera (2016) for a discussion of mobility to top
+positions,andAtkinsonetal.(2011)orAlvaredoetal.(2013)fortrendsintopincomeshares.
+2NoraretheyobviouslyworsethanintheUS.SeeSection2fordetails.
+1
+
+Theanalysisproceedsinthreesteps. Ifirstpresentnewdescriptiveevidenceonthedistribution
+offirmleadershipandtopincomeattainmentbyeducationalbackgroundandstudentcharacter-
+istics. I use data on the population of college-bound high-school graduates3 from 1980 through
+2001,andfocusontwomeasuresoftopattainment: holdinganexecutivemanagementposition
+or board seat at a publicly traded firm, or having an income in the top 0.1% of the observed
+income distribution. I measure these outcomes for students who are between 12 and 39 years
+removed from the year of college application, or roughly ages 30 through 57. This allows time
+forstudentstocompleteschoolingandreachtheircareerpeaks.
+I find that the 1.8% of students admitted to three business-focused majors at the two most se-
+lective universities in Chile (henceforth ‘elite degree programs’) make up 41% of all directors
+and top managers, 27% of the top 1% of the income distribution between 2005 and 2013, 39%
+of the top 0.1%, and 45% of the top 0.01%. The gap between rates of leadership attainment at
+these elite degree programs and the average program is roughly similar to the gap observed
+in the US between Ivy League graduates and the average college graduate. Conditional on se-
+lectivity,majormatters: studentsintopbusiness-focusedprogramsare16.6timesmorelikelyto
+haveanincomewithinthetop0.1%ofthedistributionthanstudentsinequallyselectivemedical
+programs, where average incomes are also high. For students at elite degree programs, gender
+andfamilybackgroundarecriticaldeterminantsoftopattainment. Takingattendanceatahigh-
+tuition private high school as a proxy for parental SES, I find that compared to male students
+from other backgrounds (female students), high-SES male students hold 3.4 (6.7) times more
+leadershippositionsandare4.2(11.4)timesmorelikelytohavetop0.1%incomes.
+Thesecondstageoftheanalysisusesaregressiondiscontinuitydesignbasedonadmissionscut-
+offstomeasurethecausaleffectsofelitedegreeprogramsontherateatwhichstudentsreachtop
+positions. Studentscrossingthethresholdforadmissiontoelitedegreeprogramsaremostoften
+drawnfromlessselectiveprogramsinsimilarfields. Thismeansthateffectscanbeinterpretedin
+termsofchangingselectivitywithincareerpath,ratherthan,forexample,switchesfrommedical
+tobusinesscareerswithintopuniversities.
+Admission to an elite degree program raises the number of leadership positions students hold
+by44%andtheprobabilityofattaininganincomeinthetop0.1%ofthedistributionby51%rel-
+ativetothebelow-thresholdmean. However,gainsaccrueonlytomaleapplicantsfromprivate
+high schools, for whom rates of leadership (top income) attainment rise by 54% (69%). Effects
+forwomenandmalestudentsnotfromprivate highschoolsaresmallandstatisticallyindistin-
+guishablefromzero. Thedifferencebetweentheeffectofadmissionformalevs. femalestudents
+is equal to 36% of the gender gap in top income attainment for students at top programs. The
+3Specifically,thepopulationofstudentswhotakearequiredcollegeadmissionsexam.
+2

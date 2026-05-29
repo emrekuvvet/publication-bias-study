@@ -1,0 +1,134 @@
+NBER WORKING PAPER SERIES
+TWO TALES OF DEBT
+Amir Kermani
+Yueran Ma
+Working Paper 27641
+http://www.nber.org/papers/w27641
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+August 2020, Revised November 2020
+We thank Douglas Baird, Bo Becker, Mitchell Berlin, Doug Diamond, Jason Donaldson, Andrea
+Eisfeldt, Victoria Ivashina, Steve Kaplan, Anil Kashyap, John Moore, Justin Murfin, Giorgia
+Piacentino, Raghu Rajan, Michael Roberts, José Scheinkman, Per Stromberg, Amir Sufi, Harald
+Uhlig, seminar participants at BIS, Chicago Booth, Chinese University of Hong Kong, Columbia
+GSB, LSE, Maryland, NYU Stern, Philadelphia Fed, Swedish House of Finance, University of
+Hawaii, Virtual Finance Workshop, and WashU Olin, and conference participants at Red Rock
+for insightful comments and discussions. We also thank finance professionals John Coons and
+Doug Jung for sharing their knowledge. We are grateful to Fatin Alia Ali, Leonel Drukker, Abbas
+Rezaei, and Julien Weber for outstanding research assistance. The views expressed herein are
+those of the authors and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Amir Kermani and Yueran Ma. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Two Tales of Debt
+Amir Kermani and Yueran Ma
+NBER Working Paper No. 27641
+August 2020, Revised November 2020
+JEL No. G32,G33
+ABSTRACT
+We analyze the heterogeneous nature of corporate debt contracts, some focusing on liquidation
+values of discrete assets whereas others on going-concern values of the business. Using hand-
+collected data on firm attributes, we present several findings. First, firms on average have limited
+liquidation values. Second, companies with lower liquidation values have more debt backed by
+going-concern values and more intensive monitoring of firm performance. They have higher
+interest rates only for debt against discrete assets. Third, secured debt is not always tied to
+liquidation values of discrete assets. We present a model that matches the empirical findings,
+which demonstrates how creditor monitoring and covenants facilitate borrowing well beyond
+liquidation values.
+Amir Kermani
+Haas School of Business
+University of California, Berkeley
+545 Student Services Building #1900
+Berkeley, CA 94720
+and NBER
+kermani@berkeley.edu
+Yueran Ma
+The University of Chicago
+Booth School of Business
+5807 S. Woodlawn Ave.
+Chicago, IL 60637
+Yueran.Ma@chicagobooth.edu
+
+1 Introduction
+Debt is one of the most widely used contracts for financing companies around the
+world. The nature and enforcement of debt contracts have long been key questions in
+economics research. Broadly speaking, there are two general approaches of debt en-
+forcement (Djankov, Hart, McLiesh, and Shleifer, 2008; Diamond, Hu, and Rajan, 2020).
+In one approach, creditors lend against the liquidation value of discrete assets, namely
+separable and often tangible assets that can be evaluated (and if needed repossessed) on
+a standalone basis. For this type of debt, lenders mainly focus on assessing liquidation
+valuesoftheassetspledgedtothem, whichcanbereliedonevenifthefirmisgone, and
+set borrowing limits accordingly. In another approach, creditors lend against the value
+of the firm as an operating business (i.e., going-concern value)—this value may benefit
+from human capital, organizational structure, and business relations, and may not be
+captured by discrete or tangible assets. For this type of debt, lenders’ payoffs are tied
+to the value created by the business, and the allocation of control rights (over business
+decisions) between firms and creditors can play an important role.
+These two approaches of debt enforcement are also reflected in the rich collection of
+corporate debt contracts in the US.1 In particular, firms’ debt contracts can be backed
+by different aspects of the firm, as exemplified by the priority rules in bankruptcy. For
+instance, in Chapter 11 a debt contract secured by a piece of equipment has the highest
+priority claim against the value of the equipment (i.e., it obtains a senior claim up to the
+transaction or liquidation value of the equipment). On the other hand, a debt contract
+secured by a blanket lien on the firm as a whole has the highest priority claim against
+the going-concern value of the firm (i.e., it obtains a senior claim up to the firm’s going-
+concern value, minus the liquidation value of any discrete assets pledged separately).
+These different types of debt can also differ substantially in creditor monitoring and
+represent lending technologies that require different creditor expertise. The multiple
+forms of debt contracts and multifaceted priority rules echo the observation of debt
+heterogeneity emphasized by Rauh and Sufi (2010), and paint a more intricate picture
+than classic benchmarks such as Townsend (1979).
+Why do firms use different types of debt, some of which focus on the liquidation
+valueofdiscreteassetswhileothersfocusonthegoing-concernvalueofthecompanyas
+a whole? What determines the prevalence of each type? What ultimately shapes firms’
+total debt capacity? We address these questions using a new hand-collected dataset that
+1Commercial mortgages, equipment loans, and loans against working capital are standard examples
+oflendingagainstdiscreteassets,whileasubstantialportionofbusinessloansandmostcorporatebonds
+intheUSarebackedbythecashflowvalueofthefirmasawhole(LianandMa,2020).
+1
+
+documents the liquidation values of discrete assets and going-concern values of firms in
+different industries. We use these variations in firm attributes to demonstrate how the
+focusofdebtenforcementshiftsandwhy. Empirically, weshowthatthetwoapproaches
+of debt enforcement account for a number of debt features, including debt composition,
+monitoring mechanisms, interest rates, and creditor recovery rates in default. We then
+present a model that explains the usage of different types of debt, their contractual
+provisions, and why they take priority against different aspects of the firm. Overall,
+the empirical evidence and the theory point towards an integrated view of debt contract
+features where the multifaceted priority rules, combined with provisions like covenants,
+strengthen creditors’ incentives to monitor firm performance and help firms borrow
+beyond the liquidation value of discrete assets.
+Measuring the liquidation values of various types of assets across industries is an
+essential but challenging task. We hand collect this information from one of the most
+systematic disclosure sources, based on Chapter 11 filings between 2000 and 2016. We
+obtain estimated liquidation recovery rates (i.e., liquidation value as a fraction of net
+book value) for each main asset category (fixed asset, inventory, receivable, etc.), which
+reflect projected liquidation values if the firm were to cease operations and liquidate
+its assets in a piecemeal manner.2 We take the average liquidation recovery rate of
+each asset class in each two-digit SIC industry to reduce noise. We then estimate the
+liquidation values of Compustat firms using the liquidation recovery rates of each type
+of asset in their industry, and the book value of assets they have. In addition, we also
+use the Chapter 11 cases to collect firms’ going-concern values in restructuring. We use
+firms’ market values (or acquisition values) after emergence if available, and firm value
+estimates in Chapter 11 plans otherwise. We normalize the going-concern value by total
+book assets at filing to compute the going-concern recovery rate, and take the average
+for each two-digit SIC.
+We perform extensive checks about the informativeness of the data. For liquidation
+valuesofdifferentassets, wecrosscheckwithpriorworkthatdocumentsequipmentliq-
+uidation values using auctions data in a particular industry (Ramey and Shapiro, 2001)
+and with realized liquidation proceeds in Chapter 7 cases. These checks verify that our
+data is consistent with market-based transactions. We also cross check with liquidation
+value benchmarks that creditors use in ex ante lending decisions for non-financial firms
+2These estimates commonly derive from appraisals by specialists in asset valuations and conducting
+liquidations, who perform on-site field exams and simulate live liquidations. Later we also analyze
+default recovery rates of debt from Moody’s, which do not directly measure liquidation values of firms’
+assets because most cases in Moody’s data are restructurings not liquidations, payments to non-debt
+stakeholders (e.g., tax claims, trade creditors) are often not included, and payments to debt also depend
+onseniorityetc.
+2

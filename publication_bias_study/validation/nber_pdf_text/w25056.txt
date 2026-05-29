@@ -1,0 +1,152 @@
+NBER WORKING PAPER SERIES
+MARKETING MUTUAL FUNDS
+Nikolai Roussanov
+Hongxun Ruan
+Yanhao Wei
+Working Paper 25056
+http://www.nber.org/papers/w25056
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2018
+We benefited from comments and suggestions by Eduardo Azevedo, Tony Cookson, Mark Egan,
+Rich Evans, Joao Gomes, Marcin Kacperczyk, Ron Kaniel, Juhani Linnainmaa, Dmitry Livdan,
+Gregor Matvos, Igor Makarov, David Musto, Stijn van Nieuwerburgh, Amit Seru, Jesse Shapiro,
+Clemens Sialm, Kent Smetters, Rob Stambaugh, Luke Taylor, Jessica Wachter, and Eric
+Zitzewitz, as well as audiences at ANU, BU, John Cochrane’s Birthday Conference at Hoover,
+ESSFM Gerzensee, GSU CEAR Conference, LBS, LSE, Marketing Science Conference 2017,
+MIT Sloan, RCFS Nassau Conference, SFS Cavalcade North America 2018, UBC Winter
+Conference, UT Dallas, University of Sydney, and Wharton. Authors are listed in alphabetical
+order. The views expressed herein are those of the authors and do not necessarily reflect the
+views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2018 by Nikolai Roussanov, Hongxun Ruan, and Yanhao Wei. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Marketing Mutual Funds
+Nikolai Roussanov, Hongxun Ruan, and Yanhao Wei
+NBER Working Paper No. 25056
+September 2018
+JEL No. D14,D83,G11,G23,G28,M3
+ABSTRACT
+Marketing and distribution expenses are responsible for about a third of the cost of active
+management in the mutual fund industry. We develop and estimate a structural model of
+mutual fund marketing with learning about unobserved skill and costly investor search. Our
+estimates suggest that marketing is nearly as important as performance and fees for
+determining fund size. Eliminating marketing substantially improves welfare, as capital
+shifts towards cheaper funds and competition decreases fees. Average alpha increases as
+active funds shrink, and capital allocation becomes more closely aligned with manager skill
+net of fees. Declining investor search costs over time imply a reduction in marketing
+expenses and management fees as well as a shift towards passive investing, as observed
+empirically.
+Nikolai Roussanov Yanhao Wei
+University of Pennsylvania University of Southern California
+The Wharton School Marshall School of Business
+Finance Department Marketing Department
+2400 Steinberg-Dietrich Hall 701 Exposition Blvd, HOH 306
+3620 Locust Walk Los Angeles, CA 90089
+Philadelphia, PA 19104-6367 yanhaowe@usc.edu
+and NBER
+nroussan@wharton.upenn.edu
+Hongxun Ruan
+Peking University
+Guanghua School of Management
+Finance Department
+Beijing, China
+hongxunruan@gsm.pku.edu.cn
+
+1 Introduction
+In 2015, U.S. mutual fund industry managed a total of $16 trillion of investor assets, generating
+fee revenue on the order of $100 billion.1 Historically, about one third of this revenue has
+been designated as expenditures associated with marketing, largely consisting of sales loads and
+distribution costs (known as 12b-1 fees). Positive relationship between funds’ marketing efforts
+and investor flows is well-documented (e.g., Sirri and Tufano 1998, Barber, Odean, and Zhang
+2005,Gallaher,Kaniel,andStarks2006,ReuterandZitzewitz2006,Bergstresser,Chalmers,and
+Tufano2009,ChalmersandReuter2012,Christoffersen,Evans,andMusto2013). Yetmarketing
+expenses contribute substantially to total fund costs, thus reducing returns earned by investors
+for a given level of fund manager’s skill. Is marketing a purely wasteful rat race, or does it help
+imperfectly informed investors find attractive investment opportunities more easily?2 Does it
+enable capital to flow towards more skilled managers or, instead, distort allocation of assets by
+channeling them towards underperforming funds?
+We start with a benchmark model based on Berk and Green (2004), which describes allo-
+cation of assets to mutual funds by rational investors in a frictionless market. By estimating
+the model, we document substantial differences between such an efficient allocation and the ob-
+served distribution of fund size. The vast majority of funds are “too big” relative to the model
+and deliver substantially negative abnormal returns to investors, while the top decile of funds,
+based on the Bayesian forecast of skill net of fees, are actually smaller than is “efficient,” and
+thus are able to outperform.3 To explain these differences, we introduce information frictions
+by generalizing the framework developed by Hortaçsu and Syverson (2004) in the context of
+index funds. We allow funds’ marketing activities, as well as exogenous characteristics that
+capture funds’ “brand value,” to affect their inclusion in the investors’ information sets. In our
+setting, both the expense ratios (fees paid by investors) and the marketing/distribution costs
+(components of these fees related to broker compensation) are endogenous choices of each fund.
+By estimating our structural model we find that marketing expenses are nearly as important as
+price (i.e., expense ratio) or performance (i.e., the Bayesian estimate of manager skill based on
+historical returns) for explaining the observed variation in fund size. Even though marketing
+in our model is informative, and indeed complementary with fund skill, counterfactual analysis
+indicates that it reduces welfare due to the positional arms race that it entails.
+Following Hortaçsu and Syverson (2004), we model impediments to optimal allocation of
+1Berk and Green (2004), Chen, Hong, Huang, and Kubik (2004), Pollet and Wilson (2008), Pástor and
+Stambaugh(2012), BerkandvanBinsbergen(2015), Pástor, StambaughandTaylor(2015), amongothers, focus
+ontherelationshipbetweenmutualfundsize,performance,andfees. Understandinginvestordemandfor(active)
+asset management is central to a broader debate about the size and value added of the finance industry as a
+whole, e.g. French (2008), Cochrane (2013), Greenwood and Scharfstein (2013), Malkiel (2013), Philippon and
+Reshef (2013), Gennaioli, Shleifer and Vishny (2014), and Philippon (2015).
+2For example, Stigler (1961) argued that advertising serves to reduce information costs for consumers, thus
+helpingreducepricedispersion. Whilecommissions/kickbackstofinancialintermediariesconstituteamuchlarger
+portion of mutual fund marketing expenses than does advertising, it might seem reasonable to extend his classic
+logic to this more general notion of marketing, whereby it lowers effective search costs for imperfectly informed
+investors. In contrast, Mullainathan, Schwartzstein and Shleifer (2008) interpret empirical patterns of mutual
+fund advertising using a model of marketing that is purely persuasive, rather than informative.
+3Following Jensen (1968), the bulk of empirical evidence of performance persistence among mutual funds
+indicates that consistent underperformance is much more prevalent than outperformance - e.g. Hendricks, Patel
+and Zeckhauser (1993), Brown and Goetzmann (1995), Carhart (1997).
+1
+
+capital to mutual funds as a search friction, whereby investors randomly sample and evaluate
+funds until deciding to invest in one of the funds drawn. Heterogeneity in search costs faced
+by investors captures the wide variation in financial sophistication (and perhaps even cognitive
+ability) required to consider and analyze the different investment alternatives. This approach
+is intuitive, at least when applied to retail investors: the task of choosing among thousands of
+funds can be daunting even for the most sophisticated individuals, and far more so for those
+lacking even basic financial literacy.4 Mutual fund performance is determined by managerial
+skill as well as decreasing returns to scale. Investors care about funds’ expected performance
+and expense ratios, but must learn about latent fund skill from past performance. Hence, our
+model nests Berk and Green (2004) as a limiting special case where search costs go to zero.
+Our key innovation is allowing mutual funds to influence the likelihood of being observed by
+investors through costly marketing (e.g., via broker commissions). Thus, mutual funds choose
+theirexpenseratiosandmarketingexpenses,whichincreaseafund’sprobabilityofbeingsampled
+but decrease its profit margin.
+We estimate our structural model using data on well-diversified U.S. domestic equity mutual
+funds. Our estimation results reveal sizable information frictions in the mutual fund market.
+The average investor implicitly incurs a cost of 39 basis points to “sample” an additional mutual
+fund. This friction’s magnitude is about 2/3 of the mean annual gross alpha in our sample. The
+largemagnitudeoftheestimatedsearchcostisamanifestationoftheassetmisallocationproblem
+that we document. The intuition is simple: high search costs prevent investors from sampling
+more funds. Less intensive search leads to an inferior allocation, as many investors are forced to
+“settle”forhigh-cost, low-skillfunds, sinceitistoocostlyforthemtosearchfurther(inpractice,
+this could mean investors who lack financial sophistication following a broker’s recommendation
+without questioning it, consulting other sources, etc.). In comparison, Hortaçsu and Syverson
+(2004) estimate the mean search cost for an average investor of S&P 500 index fund between 11
+and 20 basis points. This difference should not be surprising since it is far easier for investors
+to evaluate index funds (which are essentially identical in terms of the returns they deliver, at
+least before fees) than actively managed funds. It is also possible that the index fund market is
+dominated by more sophisticated investors (i.e., those who know to look for relatively low-cost
+passive funds). Our higher estimated search cost indicates that asset misallocation problem is
+more severe in the mutual fund industry as a whole (including both active funds and passive
+index funds) than it is within the narrow confines of the S&P 500 index fund sector.
+In order to verify that our estimates are not overly influenced by the assumption of verti-
+cal differentiation that we adopt from Berk and Green (2004) – that is, the assumption that
+investors only care about the fund’s (expected) abnormal return and expense ratio and there
+is no heterogeneity across investors – we estimate an extended model that allows for horizon-
+tal differentiation. Specifically, we consider the possibility that different investors pursue funds
+that follow different investment “styles” or factors. Accordingly, in the model, we allow some
+investors to only sample funds from a particular Morningstar Style Box. We find that allowing
+4Indeed,Bronnenberg,Dubé,GentzkowandShapiro(2015)findthatinformedretailconsumersarelesslikely
+topaythebrandpremiumthatisassociatedwithheavily-marketedproducts. Inthemutualfundcontext, Choi,
+Laibson and Madrian (2010) show experimentally that financial literacy helps investors avoid high-cost index
+funds.
+2

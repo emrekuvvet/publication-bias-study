@@ -1,0 +1,144 @@
+NBER WORKING PAPER SERIES
+HOW QUANTITATIVE EASING WORKS:
+EVIDENCE ON THE REFINANCING CHANNEL
+Marco Di Maggio
+Amir Kermani
+Christopher Palmer
+Working Paper 22638
+http://www.nber.org/papers/w22638
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2016
+A previous version of this paper was circulated under the title, “Unconventional Monetary Policy
+and the Allocation of Credit.” For helpful comments and discussions, we thank our discussants,
+Florian Heider, Anil Kashyap, Deborah Lucas, Philipp Schnabl, and Felipe Severino; Adam
+Ashcraft, Charles Calomiris, Andreas Fuster, Robin Greenwood, Sam Hanson, Arvind
+Krishnamurthy, Michael Johannes, David Romer, David Scharfstein, Jeremy Stein, Johannes
+Stroebel, Stijn Van Nieuwerburgh, Annette Vissing-Jørgensen, and Paul Willen; workshop
+participants at Berkeley and Columbia; and seminar participants at NBER Monetary Economics,
+the Econometric Society 2016 Meetings, the EEA 2016 meetings, Federal Reserve Board, HEC
+Paris, Northwestern-Kellogg, NYU-Stern, NY Fed/NYU Stern Conference on Financial
+Intermediation, the Paul Woolley Conference at LSE, Penn State, San Francisco Federal Reserve,
+Stanford, Stanford GSB, St. Louis Fed Monetary Policy and the Distribution of Income and
+Wealth Conference, University of Minnesota-Carlson, University of Illinois at Urbana-
+Champaign, and USC-Price. We also thank Sam Hughes, Sanket Korgaonkar, Christopher Lako,
+and Jason Lee for excellent research assistance. The views expressed herein are those of the
+authors and do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2016 by Marco Di Maggio, Amir Kermani, and Christopher Palmer. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+How Quantitative Easing Works: Evidence on the Refinancing Channel
+Marco Di Maggio, Amir Kermani, and Christopher Palmer
+NBER Working Paper No. 22638
+September 2016, Revised September 2016
+JEL No. E21,E58,E65,G01,G18,G21,R28
+ABSTRACT
+Despite massive large-scale asset purchases (LSAPs) by central banks around the world since the
+global financial crisis, there is a lack of empirical evidence on whether and how these programs
+affect the real economy. Using rich borrower-linked mortgage-market data, we document that
+there is a “flypaper effect” of LSAPs, where the transmission of unconventional monetary policy
+to interest rates and (more importantly) origination volumes depends crucially on the assets
+purchased and degree of segmentation in the market. For example, QE1, which involved
+significant purchases of GSE-guaranteed mortgages, increased GSE-eligible mortgage
+originations significantly more than the origination of GSE-ineligible mortgages. In contrast,
+QE2’s focus on purchasing Treasuries did not have such differential effects. We find that the
+Fed’s purchase of MBS (rather than exclusively Treasuries) during QE1 resulted in an additional
+$600 billion of refinancing, substantially reducing interest payments for refinancing households,
+leading to a boom in equity extraction, and increasing consumption by an additional $76 billion.
+This de facto allocation of credit across mortgage market segments, combined with sharp
+bunching around GSE eligibility cutoffs, establishes an important complementarity between
+monetary policy and macroprudential housing policy. Our counterfactual simulations estimate
+that relaxing GSE eligibility requirements would have significantly increased refinancing activity
+in response to QE1, including a 20% increase in equity extraction by households. Overall, our
+results imply that central banks could most effectively provide unconventional monetary stimulus
+by supporting the origination of debt that would not be originated otherwise.
+Marco Di Maggio Christopher Palmer
+Harvard Business School Haas School of Business
+Baker Library 265 University of California, Berkeley
+Soldiers Field 545 Student Services Building #1900
+Boston, MA 02163 Berkeley, CA 94720
+and NBER cjpalmer@berkeley.edu
+mdimaggio@hbs.edu
+Amir Kermani
+Haas School of Business
+University of California, Berkeley
+545 Student Services Building #1900
+Berkeley, CA 94720
+and NBER
+kermani@berkeley.edu
+
+1 Introduction
+In recent years, many central banks have undertaken unconventional monetary policy to stimulate
+their economies, mainly through long-duration large-scale asset purchase programs (LSAPs). A
+common feature of these programs is their significant size; the Federal Reserve, for example, has
+increased the size of its balance sheet more than fivefold ($3.6 trillion) since 2008 (see Figure 1).
+However, LSAPs have varied significantly in the type of assets purchased by central banks, e.g.,
+from Treasuries and Agency debt in the U.S. to ETFs and corporate bonds in Japan. Despite
+the newfound popularity of LSAPs worldwide, their effectiveness and the channels through which
+they affect the real economy have been at the center of a vigorous policy and academic debate.
+We contribute to this debate by investigating the channels through which LSAPs impact the real
+economy and, in particular, household debt issuance.1
+There is no clear consensus on whether LSAPs do benefit an economy or on potential transmis-
+sion mechanisms. Non-standard open-market operations are inconsequential in a frictionless world,
+as shown by Wallace (1981) and Eggertsson and Woodford (2003). Moving away from a friction-
+less world, the literature on unconventional monetary policy has suggested multiple explanations
+for why LSAPs may have real effects. We highlight three of these pathways—see Krishnamurthy
+and Vissing-Jorgensen (2011) for a comprehensive treatment of such channels along with empirical
+evidence from asset yields on the relative importance of each. First, under the portfolio-balancing
+channel, the central bank affects the return of different assets by affecting their relative supply.2
+Second, the segmentation channel posits that LSAPs are effective when capital-constrained inter-
+mediaries in the secondary market are unable to arbitrage in the short run across different market
+segments (e.g., Vayanos and Vila, 2009, He and Krishnamurthy, 2013 and Greenwood et al., 2015).3
+Third, the capital-constraints channel highlights how LSAPs can offset the decline in private lend-
+1Asdiscussedbelow, the“whatyoubuymatters” pointwasfirstmadebyKrishnamurthyandVissing-Jørgensen
+(2011) using asset prices and credit spreads.
+2LSAPs could have real effects by taking safe assets out of the market and therefore inducing cautious investors
+to take more risk. For related arguments, see Gurley and Shaw (1960), Tobin and Brainard (1963), Tobin (1969),
+and Brunner et al. (1973).
+3We refer to this channel as the duration-segmentation channel if the inhibiting segmentation is along asset
+duration. Thekeyassumptioninthesemodelsisthatmostinvestorsintheassetmarketspecializeintradingaspecific
+assetclass–orhavestrongpreferencesforaspecificassetclass–whiletherearefewcapital-constrainedintermediaries
+who arbitrage between different markets. Thus, by directly purchasing specific assets, the Fed increases the price of
+thatassetclassmorethanothersintheshortrun. Themoreconstrainedthearbitrageursare,thelongeritwilltake
+other asset class prices to be affected by the LSAPs.
+2
+
+ing from disruptions in financial intermediation (see Gertler and Karadi, 2011 and Curdia and
+Woodford, 2011).4
+Under the portfolio-balancing and duration-segmentation channels, only the duration (or riski-
+ness)ofassetspurchaseddrivestheireffectivenessbecauseinvestorswillreallocatetheirresourcesto
+other similar assets not purchased by the central bank. However, if investors specialize in trading a
+specific asset class, or if the financial intermediation sector is constrained, there will be only limited
+spilloversofcentral-bankpurchasestootherassetclasses, andtheeffectivenessandallocativeeffects
+of LSAPs will depend on not only the duration but also the specific type of assets purchased. In
+other words, to the extent that portfolio rebalancing or duration-segmentation is driving the effec-
+tiveness of LSAPs, we should observe spillovers from central-bank purchases to other assets with
+similar duration. An absence of such spillovers would support the view that LSAPs stimulate real
+activity through the capital constraints channel/narrow-segmentation channel. This paper provides
+new empirical evidence for this narrow segmentation channel.
+Identifying the effects of aggregate policies is particularly challenging given that such policies
+intentionally respond to current and anticipated aggregate shocks. For traction, most of the litera-
+ture has used event studies of short-run asset-price changes immediately surrounding central bank
+policy announcements. We supplement such before/after comparisons with an identification strat-
+egy that exploits the segmentation of the U.S. mortgage market and the legal restriction that the
+Fed can only purchase mortgages guaranteed by the Government Sponsored Enterprises (GSEs).
+The outstanding balance on GSE-guaranteed mortgages must be less than so-called conforming
+loan limits and must have loan-to-value ratios at or below 80 percent.5 This allows us to estimate
+the effects of quantitative easing by contrasting how each LSAP campaign affected refinancing ac-
+tivities in the conforming and non-conforming segments. Specifically, finding spillovers between
+these two segments supports the portfolio-rebalancing channel or duration-segmentation channels
+of unconventional monetary policy, while rejecting spillovers would be more consistent with the
+4In contrast to the segmentation channel, the capital constraint channel highlights the role of loan originators,
+ratherthaninvestorsinthesecondarymarket,beingconstrained. Itpositsthatdisruptionsinprivatelendingmight
+be alleviated by the Fed’s financing of loans to the most affected sectors, i.e. Fed supporting mortgage originations
+in response to the housing market crash.
+5Animportantexceptiontothe80%LTVcutoffwasmadepossiblebytheHomeAffordableRefinancingProgram
+(HARP), a policy we show had visible effects on the effectiveness of Fed MBS purchases. Additionally, mortgages
+with (often expensive) private mortgage insurance (PMI) are exempt from the 80% LTV requirement, although the
+PMI industry was virtually nonexistent in 2009.
+3

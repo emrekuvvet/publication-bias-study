@@ -1,0 +1,142 @@
+NBER WORKING PAPER SERIES
+ARBITRAGE CAPITAL OF GLOBAL BANKS
+Alyssa G. Anderson
+Wenxin Du
+Bernd Schlusche
+Working Paper 28658
+http://www.nber.org/papers/w28658
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+April 2021
+Previously circulated under the title “Money Market Fund Reform and Arbitrage Capital.” We
+thank Isha Agarwal, Nina Boyarchenko, John Campbell, Nicola Cetorelli, Mark Carlson, Douglas
+Diamond, Victoria Ivashina, Anil Kashyap, Hanno Lustig, Thomas Mertens, Alan Moreira, Bill
+Nelson, Romain Ranciere, Marc Saidenberg, Asani Sarkar, Philipp Schnabl, Antoinette Schoar,
+Jeremy Stein, David Thesmar, Judit Temesvary, Adrien Verdelhan, Kairong Xiao, Yao Zeng; seminar
+participants at Arrowstreet Capital, Boston University, Chicago Booth/Economics Department, CREI-
+UPF, Duke Fuqua, the Federal Reserve Bank of San Francisco, the Federal Reserve Board, Harvard
+Business School, MIT Sloan, London Business School, UT Austin, University of Washington; and
+conference participants at the AFA, the Columbia-BPI Conference on Banking Regulations, the
+Columbia Junior Macro Conference, the ECB Conference on Money Markets and Central Bank
+Balance Sheets, the Federal Reserve System Day Ahead Conference, Federal Reserve Bank of New
+York, Federal Reserve Board, Federal Reserve System Committee on Financial Institutions,
+Regulation and Markets, NBER IFM, the NYU Stern WAPFIN conference, the Oregon Summer
+Finance Conference, the SFS Cavalcade, the UCLA Anderson Fink Center Conference on Financial
+Markets, and the WFA for helpful comments and suggestions. This paper uses data licensed from
+DTCC Solutions LLC, an affiliate of The Depository Trust & Clearing Corporation. Neither DTCC
+Solutions LLC nor any of its affiliates shall be responsible for any errors or omissions in any DTCC
+data included in this paper, regardless of the cause and, in no event, shall DTCC or any of its
+affiliates be liable for any direct, indirect, special or consequential damages, costs, expenses, legal
+fees, or losses (including lost income or lost profit, trading loses and opportunity costs) in connection
+with this paper. We thank Anya Clowers for excellent research assistance.The views in this
+paper are solely the responsibility of the authors and should not be interpreted as reflecting the
+views of the Board of Governors of the Federal Reserve System, any other person associated
+with the Federal Reserve System, or the National Bureau of Economic Research. All remaining
+errors are our own.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2021 by Alyssa G. Anderson, Wenxin Du, and Bernd Schlusche. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Arbitrage Capital of Global Banks
+Alyssa G. Anderson, Wenxin Du, and Bernd Schlusche
+NBER Working Paper No. 28658
+April 2021
+JEL No. E4,F3,G2
+ABSTRACT
+We show that the role of unsecured, short-term wholesale funding for global banks has changed
+significantly in the post-financial-crisis regulatory environment. Global banks mainly use such
+funding to finance liquid, near risk-free arbitrage positions—in particular, the interest on excess
+reserves arbitrage and the covered interest rate parity arbitrage. In this environment, we examine
+the response of global banks to a large negative wholesale funding shock as a result of the U.S.
+money market mutual fund reform implemented in 2016. In contrast to past episodes of wholesale
+funding dry-ups, we find that the primary response of global banks to the reform was a cutback in
+arbitrage positions that relied on unsecured funding, rather than a reduction in loan provision.
+Alyssa G. Anderson Bernd Schlusche
+Federal Reserve Board Federal Reserve Board
+20th and Constitution Ave. NW 20th and C Streets
+Washington, DC 20551 Washington DC 20551
+alyssa.g.anderson@frb.gov bernd.schlusche@frb.gov
+Wenxin Du
+Booth School of Business
+University of Chicago
+5807 S. Woodlawn Avenue
+Chicago, IL 60637
+and NBER
+Wenxin.Du@chicagobooth.edu
+
+Arbitrage Capital of Global Banks∗
+Alyssa Anderson Wenxin Du Bernd Schlusche †
+Federal Reserve Board Chicago Booth and NBER Federal Reserve Board
+March 2021
+Abstract
+We show that the role of unsecured, short-term wholesale funding for global banks
+has changed significantly in the post-financial-crisis regulatory environment. Global
+banks mainly use such funding to finance liquid, near risk-free arbitrage positions—
+in particular, the interest on excess reserves arbitrage and the covered interest rate
+parity arbitrage. In this environment, we examine the response of global banks
+to a large negative wholesale funding shock as a result of the U.S. money market
+mutual fund reform implemented in 2016. In contrast to past episodes of wholesale
+funding dry-ups, we find that the primary response of global banks to the reform
+was a cutback in arbitrage positions that relied on unsecured funding, rather than
+a reduction in loan provision.
+Keywords: Money Market Mutual Funds, Wholesale Funding, Arbitrage
+JEL Classifications: G2, F3, E4
+∗Previously circulated under the title “Money Market Fund Reform and Arbitrage Capital.” We
+thank Isha Agarwal, Nina Boyarchenko, John Campbell, Nicola Cetorelli, Mark Carlson, Douglas Di-
+amond, Victoria Ivashina, Anil Kashyap, Hanno Lustig, Thomas Mertens, Alan Moreira, Bill Nelson,
+Romain Ranciere, Marc Saidenberg, Asani Sarkar, Philipp Schnabl, Antoinette Schoar, Jeremy Stein,
+David Thesmar, Judit Temesvary, Adrien Verdelhan, Kairong Xiao, Yao Zeng; seminar participants
+at Arrowstreet Capital, Boston University, Chicago Booth/Economics Department, CREI-UPF, Duke
+Fuqua, the Federal Reserve Bank of San Francisco, the Federal Reserve Board, Harvard Business School,
+MIT Sloan, London Business School, UT Austin, University of Washington; and conference participants
+at the AFA, the Columbia-BPI Conference on Banking Regulations, the Columbia Junior Macro Con-
+ference, the ECB Conference on Money Markets and Central Bank Balance Sheets, the Federal Reserve
+System Day Ahead Conference, Federal Reserve Bank of New York, Federal Reserve Board, Federal Re-
+serveSystemCommitteeonFinancialInstitutions,RegulationandMarkets,NBERIFM,theNYUStern
+WAPFIN conference, the Oregon Summer Finance Conference, the SFS Cavalcade, the UCLA Anderson
+FinkCenterConferenceonFinancialMarkets, andtheWFAforhelpfulcommentsandsuggestions. This
+paper uses data licensed from DTCC Solutions LLC, an affiliate of The Depository Trust & Clearing
+Corporation. Neither DTCC Solutions LLC nor any of its affiliates shall be responsible for any errors
+or omissions in any DTCC data included in this paper, regardless of the cause and, in no event, shall
+DTCC or any of its affiliates be liable for any direct, indirect, special or consequential damages, costs,
+expenses, legal fees, or losses (including lost income or lost profit, tradinglosesand opportunity costs) in
+connection with this paper. We thank Anya Clowers for excellent research assistance. The views in this
+paper are solely the responsibility of the authors and should not be interpreted as reflecting the views of
+the Board of Governors of the Federal Reserve System or any other person associated with the Federal
+Reserve System. All remaining errors are our own.
+†Anderson: Federal Reserve Board, 20th and C Streets NW, Washington, DC 20551. Email:
+alyssa.g.anderson@frb.gov. Du: University of Chicago Booth School of Business and NBER, 5807 South
+WoodlawnAvenue,Chicago,IL60637. Email: wenxin.du@chicagobooth.edu. Schlusche: FederalReserve
+Board, 20th and C Streets NW, Washington, DC 20551. Email: bernd.schlusche@frb.gov.
+
+1 Introduction
+In addition to deposits, banks rely on short-term wholesale funding markets, such as the
+marketsforfederalfunds, Eurodollars, certificatesofdeposit, commercialpaper, andrepos
+to finance their operations.1 In contrast to deposits, which are often insured, wholesale
+funding is more “fragile” and subject to sudden dry-ups (for example, Pérignon, Thesmar,
+and Vuillemey, 2018; Kacperczyk and Schnabl, 2013). Such large negative wholesale
+funding shocks have led to fire sales of assets, significant contractions in credit supply, and
+elevated financial distress (for example, Diamond and Rajan, 2009; Shin, 2009; Schnabl,
+2012; Chernenko and Sunderam, 2014; Ivashina, Scharfstein, and Stein, 2015).
+In this paper, we document an important transformation of the role of unsecured
+short-term wholesale funding for global banks in the post-financial-crisis regulatory envi-
+ronment. In particular, many large global banks have transitioned to a business model in
+which they mainly use unsecured wholesale funding to finance liquid assets as part of near
+risk-free arbitrage positions. In other words, short-term wholesale funding has become
+arbitrage capital for global banks. Through our analysis, we uncover about $1.5 trillion
+of potential arbitrage capital for global banks. As a result of this business model, global
+bankshavebecomemoreresilienttonegativewholesalefundingshocks, astheycanswiftly
+reduce their arbitrage positions in response to wholesale funding dry-ups. However, the
+use of wholesale funding as arbitrage capital also reduces the usefulness of short-term
+wholesale funding in spurring lending to the real economy.
+The changing nature of unsecured wholesale funding occurs against the backdrop of
+significant regulatory reforms to the banking sector since the Global Financial Crisis
+(GFC). Importantly, to address global banks’ vulnerability due to over-reliance on un-
+secured wholesale funding, Basel III introduced the Liquidity Coverage Ratio (LCR) re-
+1When we refer to “banks”, we mean the entire banking organization, not strictly the commercial
+banking arm.
+1

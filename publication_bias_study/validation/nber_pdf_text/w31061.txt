@@ -1,0 +1,135 @@
+NBER WORKING PAPER SERIES
+TRACING THE INTERNATIONAL TRANSMISSION OF A CRISIS THROUGH
+MULTINATIONAL FIRMS
+Marcus Biermann
+Kilian Huber
+Working Paper 31061
+http://www.nber.org/papers/w31061
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+March 2023
+We are grateful to Gianmarco Ottaviano, Veronica Rappoport, Daniel Sturm, Catherine Thomas,
+Rodrigo Adao, Javier Cravino, Swati Dhingra, Doireann Fitzgerald, Basile Grassi, Gregor
+Matvos, Isabelle Mejean, Eduardo Morales, Holger Mueller, Stefan Nagel, Brent Neiman, Steve
+Pischke, Esteban Rossi-Hansberg, Thomas Sampson, Rishi Sharma, Amir Sufi, Chad Syverson,
+Felix Tintelnot, Emil Verner, and numerous seminar audiences for helpful comments. We thank
+the Research Data and Service Centre of the Deutsche Bundesbank for their hospitality and for
+access to the Microdatabase Direct Investment (MiDi) and corporate balance sheets (Ustan).
+Valerii Baidin, Jian Li, and Sixun Tang provided excellent research assistance. Biermann
+gratefully acknowledges financial support from the German National Academic Foundation and
+the Fund for Scientific Research (FNRS Grant PDR/GTO T.0180.19). The views expressed
+herein are those of the authors and do not necessarily reflect the views of the National Bureau of
+Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2023 by Marcus Biermann and Kilian Huber. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Tracing the International Transmission of a Crisis Through Multinational Firms
+Marcus Biermann and Kilian Huber
+NBER Working Paper No. 31061
+March 2023
+JEL No. E4,F2,F3,G01,G2,G3
+ABSTRACT
+We show that multinational firms transmit shocks across countries through their internal capital
+markets. We study a credit supply shock to parent firms in Germany. International affiliates
+outside Germany supported their parents through internal lending, became financially constrained
+themselves, and experienced lower real growth. We find that managers were "Darwinist" with
+respect to international affiliates but "Socialist" in the home country, that internal capital markets
+transmitted the credit shock more strongly than a non-financial shock, and that access to
+developed credit markets attenuated the real effects. The total real impact of shock transmission
+through multinationals on foreign economies was large.
+Marcus Biermann
+Department of Business Administration
+and Economics
+Bielefeld University
+Universitätsstraße 25
+33615 Bielefeld
+Germany
+marcus.biermann@uni-bielefeld.de
+Kilian Huber
+Booth School of Business
+University of Chicago
+5807 S. Woodlawn Avenue
+Chicago, IL 60637
+and NBER
+kilianhuber@uchicago.edu
+An internet appendix is available at http://www.nber.org/data-appendix/w31061
+
+I Introduction
+Theinternalcapitalmarketsofmultinationalfirmsareakeydeterminantofglobalcapitalmove-
+ments. Inrecentyears,internalcapitalflowsbetweenmultinationalparentfirmsandtheirinter-
+national affiliates accounted for over 50 percent of total capital inflows in the median country.
+Internal capital flows are also large relative to aggregate output, amounting to 3.6 percent of
+GDPinthemediancountry.1
+Despite their size and ubiquity, it has not been fully established how internal capital mar-
+kets of multinationals operate and whether they impact the real economy. Do internal capital
+marketstransmitshocksacrosscountries? Whichmechanismsandfrictionsplayarole,forex-
+amplemanagerialbiases,accesstoexternalcreditmarkets,differentcurrencies,andgeographic
+distance? Do internal capital markets transmit financial and non-financial shocks differently?
+How large and persistent are the real effects of internal capital market shocks? Evidence on
+these questions has been limited because causal identification is challenging and data on inter-
+nalcapitalflowsarescarce.
+We address these questions by combining a quasi-experimental research design with de-
+tailed micro data on internal capital positions of German multinationals. We study a lending
+cutbyCommerzbank,alargeGermanbank,whichdirectlyreducedthecreditsupplyofparent
+corporationsofmultinationalslocatedinGermany,butnotthecreditsupplyofinternationalaf-
+filiates of these multinationals. We show that German parents indirectly transmitted the credit
+shock to their international affiliates. Sales and employment of international affiliates with
+affectedparentsfellsharplyandremainedlowforthreeyears,relativetounaffectedaffiliates.
+Wearguethatinternalcapitalmarketscontributedtoshocktransmission,astherealeffects
+were concentrated among affiliates that increased internal lending to their parent and became
+financially constrained themselves. Weak international affiliates were hit more strongly, sug-
+gesting that managers of multinationals are relatively "Darwinist" with respect to international
+affiliates. Incontrast,affiliateswithinGermanywerenotsignificantlyharmed,eveniftheywere
+weak, implying that managers are home biased and have relatively "Socialist" preferences to-
+ward home country affiliates. Frictions due to currency, geography, and capital controls were
+not important, but developed external credit markets helped affiliates to partially attenuate the
+negativerealeffects.
+We calculate that the transmission of Commerzbank’s lending cut through multination-
+als had large effects on countries outside Germany. For instance, the total impact amounted
+1Parents and international affiliates together produce 36 percent of global output. Foreign-owned affiliates
+alone produce 11 percent of output globally, 8 percent in the US, and 21 percent in the EU (OECD Analytical
+AMNEdatabasefor2016). SeeBroneretal.2010andIMFdata.
+1
+
+to roughly 0.4 percent of aggregate sales in Austria and the Czech Republic and 0.1 percent
+in Spain and the UK. In comparison, a non-financial flooding shock to parents did not have
+significant effects, suggesting that the internal capital markets transmit financial shocks more
+strongly.
+Identifying the role of multinationals and internal capital markets in shock transmission is
+difficult. The key empirical challenge is that parents and their affiliates are subject to common
+shocks. For example, parents and affiliates frequently use similar raw materials, sell similar
+products, and share similar productivity, size, and other characteristics (Guadalupeet al. 2012;
+Fort et al. 2013; Foster et al. 2016). Shocks to common input prices, to common product de-
+mand,andtofirmswithcorrelatedcharacteristicscouldgeneratecomovementbetweenparents
+and affiliates, even if shocks to the parent are not transmitted to affiliates. Common shocks
+also affect internal capital flows, for example if affiliates transfer revenue to their parent after
+acommon demandshock. Inthis case,internalcapital flowswouldspuriously co-occurwitha
+demandshocktotheparent,butwecouldnotconcludethatinternalcapitalmarketscontributed
+toshocktransmissionfromparenttoaffiliate.
+We overcome the empirical challenge by studying a shock that directly affected only par-
+ents of German multinationals and not their international affiliates. The shock was a lending
+cut by Commerzbank, a large German bank. Commerzbank experienced significant losses on
+its financial investments during the 2008/09 financial crisis. The losses were caused by a com-
+bination of misjudgments and bad luck in the international investment and trading divisions.
+Crucially, the origin of the losses was independent of Commerzbank’s corporate lending di-
+vision. We present a range of evidence that firms borrowing from Commerzbank would have
+beenonsimilargrowthpathsasborrowersofotherGermanbanks,hadthelendingcutnothap-
+pened. The lending cut eventually affected corporate borrowers, however, because the losses
+forcedCommerzbanktoreduceloansupplytoitsborrowers.
+Commerzbank’s exposure to the crisis and its lending cut were severe compared to other
+German banks.2 Existing evidence shows that European firms of all sizes, including multina-
+tionals,struggletoraisefinancingwhenarelationshipbankcutslending(Bentolilaetal.2018;
+Huber 2018). As a result, Commerzbank’s lending cut was an exogenous shock to the credit
+supply of German firms with a preexisting relationship to Commerzbank, relative to German
+firmsborrowingfromotherbanks. Parentswithhigherpre-crisisdependenceonCommerzbank
+reducedbankdebt,didnotusealternativesourcesofexternalfinancing,andexperiencedlower
+2The vast majority of German banks had not invested in international financial markets. A few other banks
+alsosufferedlossesin2008/09(Purietal.2011). Foridiosyncraticreasons,theseotherbanksdidnotcutlending
+orarenotwellsuitedtoidentifyingaquasi-experimentalshocktofirmcreditsupply,aswediscussinSectionsII,
+VII.G,andAppendixC.
+2

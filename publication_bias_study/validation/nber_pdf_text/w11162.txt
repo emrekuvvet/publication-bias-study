@@ -1,0 +1,113 @@
+NBER WORKING PAPER SERIES
+PRIVATE BENEFITS OF CONTROL, OWNERSHIP,
+AND THE CROSS-LISTING DECISION
+Craig Doidge
+G. Andrew Karolyi
+Karl V. Lins
+Darius P. Miller
+René M. Stulz
+Working Paper 11162
+http://www.nber.org/papers/w11162
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+March 2005
+We thank Stijn Claessens, Simeon Djankov, Mara Faccio, and Larry Lang for access to their ownership data;
+William Megginson, as well as seminar participants at the University of Oklahoma for helpful comments;
+and, Ivalina Kalcheva for excellent research assistance. Karolyi is grateful to the Dice Center for Financial
+Economics for financial support. This research is supported by the NSF under Grant No. NSF-0215754. The
+views expressed herein are those of the author(s) and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+© 2005 by Craig Doidge, G. Andrew Karolyi, Karl V. Lins, Darius P. Miller, and René M. Stulz. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Private Benefits of Control, Ownership, and the Cross-Listing Decision
+Craig Doidge, G. Andrew Karolyi, Karl V. Lins, Darius P. Miller, and René M. Stulz
+NBER Working Paper No. 11162
+March 2005
+JEL No. G15, G34, K00, P51
+ABSTRACT
+This paper investigates how a foreign firm’s decision to cross-list its shares in the U.S. is related to
+the concentration of the ownership of its cash flow rights and of its control rights. Theory has
+proposed that when private benefits are high, controlling shareholders are less likely to choose to list
+their firm’s shares in the U.S. because the higher standards for transparency and disclosure, as well
+as the increased monitoring associated with such listings, limit their ability to extract private
+benefits. We offer evidence that confirms this hypothesis using data on more than 4,000 firms from
+31 countries. Using logistic regression analysis, we show that the control rights held by controlling
+shareholders, as well as the difference between their control rights and their cash flow rights are
+significantly and negatively related to the existence of a U.S. listing. In addition, we employ duration
+analysis using a Cox proportional-hazard model to show that the probability of listing in a given year
+from 1995 to 2001, conditional on not yet having listed, is significantly lower for firms whose
+managers have high levels of control and for firms whose controlling shareholder owns more control
+rights than cash flow rights.
+Craig Doidge René M. Stulz
+University of Toronto Fisher College of Business
+craig.doidge@rotman.utoronto.ca The Ohio State University
+806A Fisher Hall
+G. Andrew Karolyi 2100 Neil Avenue
+The Ohio State University Columbus, OH 43210-1144
+karolyi@cob.osu.edu stulz@cob.osu.edu
+Karl V. Lins
+University of Utah
+finkvl@business.utah.edu
+Darius P. Miller
+Indiana University
+damiller@indiana.edu
+
+1. Introduction.
+Academics and practitioners have developed extensive lists of reasons why foreign firms
+choose to list in the U.S. Benefits of access to U.S. markets that have been discussed include the
+increased ability to raise equity, growth of the firm’s shareholder base, increased liquidity, lower
+cost of capital, and greater visibility and prestige.1 Recently, however, much attention has been paid
+to the corporate governance implications of U.S. cross-listings.
+Controlling shareholders of foreign firms listed in the U.S. face more constraints and have more
+obligations than controlling shareholders of firms not listed in the U.S.2 For instance, a U.S. cross-
+listing typically improves transparency by imposing disclosure requirements on firms that are
+stronger than the disclosure requirements they face in their home country. Additionally, by
+choosing to list in the U.S., controlling shareholders accept the consequence of being subject to an
+additional layer of monitoring by a variety of U.S. market intermediaries. For example, the cross-
+listing subjects them to enforcement actions initiated by the U.S. Securities and Exchange
+Commission (SEC) and to scrutiny from U.S. analysts and journalists. Further, if they raise funds in
+the U.S., these firms are subjected to monitoring by underwriters. This commitment to improve
+governance through greater transparency and monitoring is consistent with the existing evidence
+that firms experience positive abnormal returns when they announce their intention to list in the
+U.S. (Foerster and Karolyi, 1999; Miller, 1999), that they subsequently raise more capital after
+listing (Reese and Weisbach, 2002; Lins, Strickland, and Zenner, 2005), that their cost of capital is
+lower (Hail and Leuz, 2004), that estimates of private benefits of control are lower (Doidge, 2004a),
+1 Surveys by Karolyi (1998, 2004), Claessens, Klingebiel, and Schmukler (2002), and Benos and Weisbach
+(2004) evaluate over 150 different published studies that examine the decision to cross-list shares on foreign
+markets. Some new studies focus on the importance of geographic proximity (Sarkissian and Schill, 2004)
+and product market linkages (Pagano, Roell, and Zechner, 2002) as factors in firms’ decisions about where
+and when to cross-list shares.
+2 Non-U.S. firms are typically controlled by large shareholders (see La Porta, Lopez-de-Silanes, and Shleifer,
+1999). We therefore use the term controlling shareholders to denote the group which controls the firm (which
+can include managers and/or large blockholders).
+1
+
+and that foreign firms listed in the U.S. are valued more highly than firms that do not list in the U.S.
+(Doidge, Karolyi, and Stulz, 2004).
+To the extent that control of a firm is valuable because it enables those who have it to extract
+private benefits from the firm, we would expect firms in which controlling shareholders have
+greater ownership of voting rights, and, therefore, tighter control of the firm, to be less likely to
+choose to list in the U.S. (see Coffee, 2002, for related arguments). We investigate this proposition
+using comprehensive ownership and control data on more than 4,000 firms from 31 countries in
+Asia, Europe, Latin America, and elsewhere. The data include the control rights for controlling
+shareholders, such as top managers and their family members, governments, other corporations, and
+financial institutions. Using logistic regression analysis, we find strong evidence that when
+controlling shareholders have high levels of control, their firms are less likely to be listed in the
+U.S. Similarly, we find that firms controlled by their top managers and their families are less likely
+to be listed in the U.S. We also employ duration analysis using a Cox proportional-hazard model to
+show that the probability of listing in a given year over the 1995 to 2001 period, conditional on not
+yet having listed, is significantly lower when controlling shareholders have high levels of control
+and when firms are controlled by their top managers.
+The corporate governance literature makes an important distinction between ownership of
+voting rights and ownership of cash flow rights. If controlling shareholders have a majority of
+voting rights but own negligible cash flow rights, they have little incentive to take steps to increase
+the value of the firm’s equity. However, as controlling shareholders’ ownership of cash flow rights
+increases, any action they take to benefit themselves at the expense of other equity holders has a
+cost in that it decreases the value of the shares controlling shareholders own. If controlling
+shareholders own almost all of the cash flow rights, it makes little sense for them to expend
+resources to extract private benefits at the expense of minority shareholders. This reasoning
+suggests that, for a given level of cash flow rights, controlling shareholders are less likely to seek a
+2

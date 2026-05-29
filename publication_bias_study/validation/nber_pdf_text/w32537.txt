@@ -1,0 +1,146 @@
+NBER WORKING PAPER SERIES
+THE EFFECTS OF SHORT-TERM RENTAL REGULATION:
+INSIGHTS FROM CHICAGO
+Ginger Zhe Jin
+Liad Wagman
+Mengyi Zhong
+Working Paper 32537
+http://www.nber.org/papers/w32537
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2024, Revised July 2024
+We are grateful to AirDNA and Smith Travel Research for providing the data, and to our home
+universities as well as the Illinois Institute of Technology (Wagman’s former employer while we
+conducted part of the research) for financial support. Giacomo Calzolari, Pierre Dubois, Peter
+Coles, one anonymous referee, and participants at the 2023 European Association for Research in
+Industrial Economics (EARIE) annual conference, the 2023 Conference in Honor of V. Joseph
+Hotz at Duke University, and the 2024 International Industrial Organization Conference (IIOC)
+have provided constructive comments. We also received useful comments from a number of
+Airbnb employees. The content and analyses in this paper reflect the authors’ own work and do
+not relate to any institution or organization with whom the authors are affiliated. None of us has a
+financial relationship with Airbnb or competing short term rental platforms. All rights reserved.
+All errors are our own. The views expressed herein are those of the authors and do not necessarily
+reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2024 by Ginger Zhe Jin, Liad Wagman, and Mengyi Zhong. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that
+full credit, including © notice, is given to the source.
+
+The Effects of Short-Term Rental Regulation: Insights from Chicago
+Ginger Zhe Jin, Liad Wagman, and Mengyi Zhong
+NBER Working Paper No. 32537
+June 2024, Revised July 2024
+JEL No. K23,L51,L86,R12,R31
+ABSTRACT
+We provide an in-depth study of short-term rental (STR) regulation in Chicago. While many
+municipalities choose between outright bans or laissez-faire strategies concerning STR activities,
+Chicago pioneered a middle-ground ordinance, enabling the market to exist with limitations and
+registrations, and imposing a new tax. We show that compared to three control cities, the number
+of active Airbnb listings in Chicago declined 16.4% in the two years after the ordinance, but this
+effect is only significant after the city began receiving detailed data feeds from STR platforms.
+We further demonstrate (i) localized reductions in burglaries near buildings that prohibit STR
+listings as part of a new capability of the ordinance,(ii) Airbnb revenues declined more in zip
+codes with above-median hotel revenues, and (iii) Chicago’s middle ground approach generated
+different and nuanced effects on different STR stakeholders, including the city itself in terms of
+its STR tax revenues.
+Ginger Zhe Jin Mengyi Zhong
+University of Maryland myzhong6@umd.edu
+Department of Economics
+College Park, MD 20742-7211
+and NBER
+ginger@umd.edu
+Liad Wagman
+Lally School of Management
+Rensselaer Polytechnic Institute
+110 8th Street
+Troy, NY 12180-3590
+wagman@rpi.edu
+
+1 Introduction
+Thesurgeinhome-sharingserviceshassparkedvigorousdebateonwhetherandhowtoregulateshort-term
+rental(STR)markets. SincethelaunchofVRBOin1995andAirbnbin2008,STRplatformshaveenabled
+hosts to list entire homes, private rooms, and shared spaces for short-term stays. Currently, STR platforms
+provide more listings than the top 5 hotel brands combined. Airbnb alone had more than 7 million rental
+listingsin2022,distributedacross100,000citiesin220countries(Mariotti,2023).
+As shown by Farronato and Fradkin (2022), Airbnb, the largest STR platform in the US, enables trav-
+elers to access alternative accommodation options that are less expensive and more diverse than hotels,
+whileenablinghoststobetterutilizetheirsurpluscapacityandgenerateadditionalrevenues. STRbookings
+also provide a revenue source for local governments. According to a report published by Airbnb in April
+2023 (Airbnb, 2023), the platform has collected and remitted over $7 billion in tourism taxes around the
+world; in the US alone, Airbnb has collected and remitted over $1.9 billion in tourism taxes in the year of
+2022.
+Despite these benefits, the rapid expansion of STR listings has prompted intensive debates due to the
+externalitiestheygenerate. Inparticular,profitableSTRmarketslureinvestorsintoacquiringpropertiesand
+dwellingstoavailtoothersforashortterm. Consequently,themarketcomprisesnotonlycasualhoststhat
+sharetheirhomesforadditionalincomebutalsocommercialoperatorsthatrunfull-fledgedSTRbusinesses
+withmultiplepropertiesinoneormorecities. ThecontentionisthatSTRshavedisruptedtheconventional
+lodging industry, diminished the availability of long-term rental (LTR) dwellings, and adversely affected
+the accessibility and affordability of LTR housing for local residents (Gurran and Phibbs, 2017). More-
+over, residents have complained about increased noise, traffic congestion, parking and waste management
+difficulties, and safety concerns because STR listings frequently attract transient visitors to local residen-
+tial areas (Gallagher, 2018; Gurran and Phibbs, 2017). Residents in Venice and Barcelona even organized
+anti-tourismmarchestovoicetheirangertowardrisingrentsandexcessivetransiencyintheircommunities
+(Reed,2017).
+TheseconcernshavemotivatedmanylocalgovernmentstoadoptorconsiderSTRregulations,butregu-
+latingSTRmarketsturnsouttobeachallengingtask. Manycities,suchasWashingtonD.C.,haveinitiated
+thediscussiononSTRregulationrelativelyearly,buttookyearstoenactanewSTRlawbecauseofobjec-
+tionsfromplatformsandhosts,aswellasdifficultieswithenforcement. ForcitiesthatdidenactanSTRlaw
+andbeganenforcement,itremainsunclearwhethertheregulationiseffectiveandwhetherithasunintended
+effectsonhosts,guests,andlocalresidents.
+UsingSTRdatafromChicago,thispaperprovidesanin-depthstudyontheimpactofSTRregulation.1
+ChicagowasoneofthefirstUScitiesthatattemptedtoregulateSTRactivitiesinacomprehensiveway. The
+city’sordinanceaimstoallowamarketforSTRlistingsontheonehandwhileaddressingSTR-relatedcon-
+cerns regarding public safety, consumer protection, and affordable housing for local residents on the other.
+Thisapproachisnotablydifferentfromotherlargecities,suchasNewYorkCity,withregulationsinplace
+that nearly ban STR activities and any corresponding tax revenue collection, yet face severe enforcement
+difficulties.2
+1WerefertoSTRregulationasordinance,regulationandlegislationinterchangeably.
+2NewYorkState,includingNewYorkCity,haspracticallybannedentire-homeSTRlistingsunlessthedwelling’spermanent
+1
+
+In particular, Chicago’s STR legislation requires hosts to register and follow strict regulations. These
+regulations limit the number of units that can be offered as STR in a multi-unit building and mandate
+that STR hosts provide insurance and meet safety standards, such as installing smoke detectors and fire
+extinguishers. Chicago also imposes an additional tax surcharge on STR bookings on top of Chicago’s
+overall17.4percenthotelaccommodationtax(which, amongothers, alsoincludesstateandcountytaxes).
+Besides the citywide regulation, Chicago facilitates locality-specific STR restrictions based on the varying
+needs of communities. For example, owners of a residential building may choose to add the building to
+the city’s Prohibited Buildings List so that no STR listings are allowed in that building.3 Such a hybrid
+approach provides an excellent opportunity to study the effectiveness of different policies concerning STR
+activities. Another unique feature of Chicago is its collaboration with STR platforms: as of March 2017,
+nine months after its June 2016 STR legislation was enacted, Chicago began receiving direct data feeds
+from STR platforms to enhance its enforcement capability. The collaborative and relatively permissive
+mentality for STR listings, the city’s hybrid approach, combined with STR-specific tax surcharge and data
+feedsfromSTRplatforms, highlightChicago’scommitmenttoprovidingarelativelyflexibleandeffective
+STRregulation.
+We analyze Chicago’s regulation from three perspectives: First, is the STR regulation effective in con-
+trollingthenumberofactiveSTRlistings? IsenactingtheregulationsufficienttoregulateSTRlistings, or
+areadditionalstepsneeded? Second,intermsofeconomicperformance,howdoestheregulationaffectthe
+price, revenue, and quality of STR listings that remain in the market? How does it affect Airbnb’s Gross
+BookValue(GBV)inChicago? HowdoesitaffectthetaxrevenuethatlocalgovernmentscollectfromSTR
+bookings in Chicago? Third, for other stakeholders aside from STR platforms, does the STR regulation
+boost hotel revenues? Is the regulation effective in reducing local crime rates in Chicago? Due to data
+limitations,ourresearchquestionscannotcoverallofthepotentialexternalitiesfromSTRactivities,butthe
+above perspectives can provide a balanced view on the effects of STR regulation on different stakeholders
+and offer valuable insights to other local jurisdictions as they aim to update and implement their own STR
+policies.
+By comparing Airbnb listings in Chicago with three other large US cities from January 2016 to May
+2018, we show that Chicago’s regulation has led to a 16.4% decline in the total number of active listings,
+and this decline is driven by both more exits and fewer entries in Chicago. Conditional on the listings
+thathaveexistedasofJanuary2016,wefurtherdistinguishprofessionalandindividualhostsdependingon
+whethertheyoperatedthreeormorepropertiesacrossallsampledcitiesbeforetheregulation. Forthelistings
+operatedbyindividualhosts,theprobabilityofbeingactivedecreasesassoonasthelegislationwasenacted;
+butforlistingsmanagedbyprofessionalhosts, theprobabilityofbeingactivedidnotstartdecreasinguntil
+theenforcementwassupplementedbydatafeedsfromSTRplatforms. Moreover,afterAirbnbbegansharing
+occupantispresentduringtheguest’sstay.SeeJiaandWagman(2020)forananalysisoftheeffectoftwoenforcementcampaigns
+inManhattan.InSeptember2023,NYCbeganenforcingitsJanuary2022STRlaw,whichtheWallStreetJournaldescribesasade
+factobanofSTRsduetoanumberofstringentrequirementsinthelaw.SeeWallStreetJournal“NewYorkCity’s’DeFactoBan’
+onAirbnb”(2023/9/5)athttps://www.wsj.com/podcasts/the-journal/new-york-citys-de-facto-ban-on-airbnb/
+b1ec6fd1-dc6a-4819-b231-9110918b8d85.
+3AsdetailedinSection2,domeprecinctsmayalsoapplytobeaRestrictedResidentialZone(RRZ),whichallowsexistingSTR
+listingstocontinueoperatingbutprohibitsnewSTRlistings. Thisisstricterthanthecitywiderequirementbutlessstrictthana
+prohibitedbuilding.
+2

@@ -1,0 +1,136 @@
+NBER WORKING PAPER SERIES
+SECRECY RULES AND EXPLORATORY INVESTMENT:
+THEORY AND EVIDENCE FROM THE SHALE BOOM
+Thomas R. Covert
+Richard L. Sweeney
+Working Paper 30548
+http://www.nber.org/papers/w30548
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2022
+Funding provided in part by the Initiative on Global Markets at the University of Chicago Booth
+School of Business. Both authors declare they have no interests, financial or otherwise, that
+relate to the research described in this paper, nor do they have any current ties, directly or
+indirectly to the energy industry. We thank Mehmet Ekmekci, Alex Frankel, Michael Grubb,
+Ryan Kellogg, Jacob Leshno, and Pete Maniloff for comments. Yixin Sun, Eric Karsten, and
+Christoph Schlom provided excellent research assistance. The views expressed herein are those of
+the authors and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2022 by Thomas R. Covert and Richard L. Sweeney. All rights reserved. Short sections of text,
+not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Secrecy Rules and Exploratory Investment: Theory and Evidence from the Shale Boom
+Thomas R. Covert and Richard L. Sweeney
+NBER Working Paper No. 30548
+October 2022
+JEL No. D82,L51,L71
+ABSTRACT
+We analyze how information disclosure policy affects investment efficiency in non-cooperative
+settings with information externalities. In a two-firm, two-period model, we characterize
+equilibrium behavior under policies which disclose whether investment returns exceed a
+predefined level. These policies include complete secrecy, in which players only observe rival
+actions, as well as full disclosure, in which players also perfectly observe rival returns. With less
+disclosure (higher disclosure thresholds), there is less free riding, but additional losses from
+incomplete information aggregation. We characterize the surplus maximizing disclosure
+threshold in this environment, and show how it depends on firms' patience. We then apply the
+model to the early years of the shale boom in Pennsylvania and West Virginia, which at the time
+were governed by complete secrecy and full disclosure, respectively. We find that full disclosure
+would have maximized surplus in both states, generating 49% and 160% more value than
+complete secrecy.
+Thomas R. Covert
+Booth School of Business
+University of Chicago
+5807 South Woodlawn Avenue
+Chicago, IL 60637
+and NBER
+thomas.covert@chicagobooth.edu
+Richard L. Sweeney
+Economics Department
+Boston College
+Chestnut Hill, MA 02467
+sweeneri@bc.edu
+
+1 Introduction
+In non-cooperative environments, correlated outcomes from risky investment opportuni-
+ties generate information externalities: one player’s investment choice can change another
+player’s beliefs about the returns to investment. Oil and gas exploration with decentral-
+ized landownership is a classic example of this phenomenon. Once one firm drills its land,
+neighboring firms can learn that this investment happened, possibly learn the returns to it,
+and, armed with this knowledge, make a less risky investment decision. The potential for
+firms to “free ride” on other’s exploratory effort has been shown to generate costly delay,
+suboptimal information acquisition and inefficient sequencing of investment choices (Hen-
+dricks and Kovenock, 1989). Although this paper is about oil and gas exploration, the
+underlying economic forces we study generalize to other innovative settings, like uncertain
+demand (Chamley and Gale, 1994; Rob, 1991), real estate investment (Grenadier, 1999),
+and pharmaceutical development (Krieger, 2021).
+A common response to the prospect of free riding on innovative efforts is to allow firms
+to keep secrets (Friedman et al., 1991). For example, in oil and gas exploration, many
+governments keep the production information of newly drilled wells that they collect for tax
+purposes confidential. By delaying or eliminating the possibility of observing rival outcomes,
+strict secrecy reduces free riding. However, secrecy can exacerbate losses from incomplete
+information aggregation. During a secrecy period, some wells which shouldn’t be drilled
+(based on all available information) will be, while other opportunities which are profitable
+will go unexploited.
+In this paper, we study the net effect of these forces, and ask whether confidentiality laws
+improve investment efficiency. In the first part of the paper, we theoretically analyze invest-
+ment behavior under two extreme information disclosure policies: complete secrecy, under
+which firms who wait learn only whether or not their rival invested, and full disclosure, un-
+der which firms whose rivals invest also learn the outcome of that investment. Our analysis
+generates predictions about the level and timing of investment across these two regimes, and
+allows us to characterize the conditions under which each regime generates more efficient
+investment than the other. We then generalize our theoretical analysis to consider interme-
+diate information disclosure policies. In the second part of the paper, we apply this model
+to rich oil and gas exploration data in the Appalachian shale basin where, at the start of
+the recent shale boom, Pennsylvania had a policy of complete secrecy, while neighboring
+West Virginia had a policy of full disclosure. We fit our theoretical model of each regime to
+the data, estimate the underlying primitives for this setting, and simulate outcomes under
+2
+
+counterfactual disclosure policies to identity the optimum.1
+To model strategic responses to secrecy policy, we build on the social learning model of
+Hendricks and Kovenock (1989) (henceforth HK), who study the behavior of competing oil
+firms under a full disclosure policy.2 The HK model features two firms, each endowed with a
+noisy signal of the common return to drilling, as well as a two period investment opportunity.
+The environment they study has a full disclosure (FD) information policy because a firm
+who waits will learn whether its rival waited, as well as the true return to drilling if its
+rival drilled first. HK show that the unique symmetric Bayes-Nash equilibrium of this game
+involves cutoff strategies: firms with high signals drill in the first period, while firms with
+lower signals wait. If one firm drills early, and the other waits, the waiting firm learns the
+returns to drilling and makes an efficient investment decision.
+We modify the HK model to understand strategic responses to a policy of complete
+secrecy (CS). In this environment, a firm that waits learns no information about the outcome
+of investment if its rival invests in period one, but it does learn that investment happened.3
+This induces some free riding, as firms who wait learn something about their rival’s signal.
+We show that this game also has a symmetric equilibrium in cutoff strategies, in which firms
+with high signals drill early, while firms with lower signals wait. Consistent with the fact
+that the information revealed to those who wait is less valuable in CS, we show that there is
+less free riding, compared to FD. Whether this reduction in free riding generates a welfare
+gain depends on the value of the informational spillovers that do not occur in CS but will in
+FD. While the net effect depends on the primitives of the problem, we provide a sufficient
+1In this paper, we only consider the private benefits and costs associated with investment. In the case of
+oil and gas extraction however, investment also generates significant external costs. Truly “optimal,” social
+welfare maximizing, disclosure policy in this context would incorporate these social costs. Nevertheless, for
+ease of exposition, throughout the text we refer the policy that maximizes private payoffs as “optimal,” and
+private surplus as “welfare.”
+2The economic theory on bandit games has also explored the equilibrium effects of investment disclosure
+in games with information spillovers. Rosenberg et al. (2013) studies an irreversible exit version of the
+exponential bandit setting pioneered by Keller et al. (2005), finding that games with publicly disclosed
+outcomes deliver higher equilibrium payoffs than similar games with no outcome disclosure. Heidhues et
+al. (2015) studies a traditional discrete time multi-armed bandit game, allowing for communication between
+players, and comes to the opposite conclusion, that equilibrium payoffs can actually be higher in a game
+without publicly disclosed outcomes. Both papers assume that players face an infinite investment horizon.
+In contrast, our motivating policy example and empirical application is oil and gas exploration, which is
+inherently finite horizon. Furthermore, both papers envision an intensive margin of investment, whereas
+mineral exploration (and clinical trials) are inherently binary decisions.
+3In the motivating examples of mineral exploration, clinical trials and real estate development, the act
+of investment is essentially unhideable. However, in other settings this may not be the case. Bonatti and
+H¨orner (2017) studies the role of disclosure of investment actions in games with information spillovers,
+assuming outcomes are always observable. Using a Keller et al. (2005) style model they conclude that
+equilibriumpayoffscanincreaseordecreaseinresponsetomakingactionsobservable,dependingonwhether
+the information that actions convey reflects “good” or “bad” news about the unobserved state of the world.
+3

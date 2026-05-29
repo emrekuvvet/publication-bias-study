@@ -1,0 +1,136 @@
+NBER WORKING PAPER SERIES
+THE FIRM-LEVEL CREDIT MULTIPLIER
+Murillo Campello
+Dirk Hackbarth
+Working Paper 17805
+http://www.nber.org/papers/w17805
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+February 2012
+We thank Yiorgos Allayannis, Heitor Almeida, Janice Eberly, Espen Eckbo, Alex Edmans, Antônio
+Galvão, Erasmo Giambona, Anzhela Knyazeva, Marc Martos-Vila, David Mauer, Kristian Miltersen,
+David Schoenherr, Phil Strahan, Erik Theissen, and Mike Weisbach for their comments and suggestions.
+Comments from seminar participants at Boston College, Dartmouth College, Drexel University, Erasmus
+University, the 2008 European Finance Association Meetings (Athens), Florida State University, ISCTE/Nova
+de Lisboa University, the 2008 JH Finance Group's Conference, Stockholm School of Economics,
+the 2008 Symposium on Finance, Banking, and Insurance (Karlsruhe), University of Amsterdam, University
+of Bonn, University of Illinois at Chicago, University of Iowa, University of Miami, University of
+Missouri, University of North Carolina, University of South Florida, University of Texas at Dallas,
+University of Virginia, University of Zürich, Washington University in St. Louis, and the 2008 Western
+Finance Association Meetings (Waikoloa) are also appreciated. Bruno Laranjeira and Dongming Sun
+provided excellent research assistance. The views expressed herein are those of the authors and do
+not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2012 by Murillo Campello and Dirk Hackbarth. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit, including
+© notice, is given to the source.
+
+The Firm-Level Credit Multiplier
+Murillo Campello and Dirk Hackbarth
+NBER Working Paper No. 17805
+February 2012
+JEL No. G31,G32
+ABSTRACT
+We study the effect of asset tangibility on corporate financing and investment decisions. Financially
+constrained firms benefit the most from investing in tangible assets because those assets help relax
+constraints, allowing for further investment. Using a dynamic model, we characterize this effect –
+which we call firm-level credit multiplier – and show how asset tangibility increases the sensitivity
+of investment to Tobin’s Q for financially constrained firms. Examining a large sample of manufacturers
+over the 1971-2005 period as well as simulated data, we find support for our theory’s tangibility–investment
+channel. We further verify that our findings are driven by firms’ debt issuance activities. Consistent
+with our empirical identification strategy, the firm-level credit multiplier is absent from samples of
+financially unconstrained firms and samples of financially constrained firms with low spare debt capacity.
+Murillo Campello
+Johnson Graduate School of Management
+Cornell University
+114 East Avenue
+369 Sage Hall
+Ithaca, NY 148531-6201
+and NBER
+campello@cornell.edu
+Dirk Hackbarth
+University of Illinois at Urbana-Champaign
+515 East Gregory Drive, 4035 BIF
+Champaign, IL, 61820
+dhackbar@uiuc.edu
+
+1 Introduction
+The interplay between real and financial decisions is a central issue in corporate finance research.
+Accordingly, a large body of literature examines when firms should invest and how they should
+finance their projects. The literature, however, often fails to appreciate the impact of contracting
+frictions on firms’ ability to raise funds for investment. As a result, the investment process is
+generally taken as exogenous to firms’ financial status and financing decisions.
+Financing frictions manifest themselves in many different ways. They typically make it harder
+for firms to raise fairly-priced funds to finance their projects. As a result, the availability of financ-
+ing—ratherthantheavailabilityofinvestmentopportunities—drivesfirms’investmentspending.
+Some of the most commonly observed financing frictions stem from the limited enforceability of
+contracts, especially in poor states of the world. Evidence suggests that firms strategically default
+on their contractual obligations when liquidation values are too low to keep investors committed to
+termination (Gilson et al. (1990) and Altman (1991)). Theoretical models recognize this problem
+and characterize financing arrangements that commit investors to costly termination outcomes (see
+Harris and Raviv (1990) and Bolton and Scharfstein (1990)). Although they vary in their design,
+the element that makes these contracts enforceable has a common real-world counterpart: the sal-
+ability or “tangibility” of the company’s assets.1 The tangibility of corporate assets is not only tied
+to the firm’s investment process (asset tangibility is a function of the firm’s line of business and
+capital accumulation process), but also to the firm’s ability to raise external funds.
+This paper explores an inherent attribute of the firm — the tangibility of its operating assets —
+to characterize an endogenous relation between firms’ real and financial decisions in the presence
+of financing imperfections. The tangibility of a firm’s assets affects its ability to pledge collateral,
+which serves as creditors’ “enforceable” outside option in contract renegotiations. As such, asset
+tangibility reduces debtors’ incentive to default strategically, enlarging the firm’s debt capacity.
+While variants of the asset tangibility–investment channel have been described in prior work in
+macroeconomics(seeKiyotakiandMoore(1997)andBernankeetal.(2000)), theideahasnotbeen
+articulated in a firm-level setting. The extant literature lacks a theory with implications for cross-
+sectional investment as well as empirical tests for the real effects of contract enforceability frictions.
+We argue that firms that face financing frictions can benefit the most from the larger debt
+capacity that is created by tangible assets. In particular, access to more (or cheaper) credit allows
+firms to invest more without resorting to costly external equity or public unsecured debt. We
+show that the additional investment — in tangible assets — further relaxes constraints, albeit at
+a diminishing rate. In this way, investment is amplified by a financing feedback of asset tangibility
+that arises endogenously in the presence of contracting frictions. Our analysis formalizes the mech-
+anism through which asset tangibility amplifies the impact of shocks to the firm’s opportunity set
+1Hereinafter, theterm“assettangibility”isgenerallyadoptedandmeanttosummarizetheliquidation value and
+ease of redeployment of a firm’s capital from the perspective of outside creditors in the event of default.
+1
+
+onto the firm’s investment and financing across time. We call this mechanism the firm-level credit
+multiplier. The mechanism we characterize arises from the interplay between asset tangibility,
+renegotiable bank debt, costly equity financing, and investment and differs from the economy-wide
+credit multiplier discussed in the macroeconomics literature. As we discuss below, the firm-level
+credit multiplier yields a number of new testable predictions, such as the increased sensitivity of
+investment to Tobin’s Q for financially constrained firms.
+The dynamic model we use is uniquely suitable for the purpose of our analysis. Among other
+features, it allows us to compute security values, characterize dynamic aspects of the credit multi-
+plier, and gauge the impact of financing–investment interactions upon a number of variables that
+are of wide interest for empirical research (e.g., Q and debt issuance). In addition to closed-form
+solutions for constrained and unconstrained firm values and financing–investment strategies, the
+model enables us to simulate artificial panel data sets and conduct cross-sectional tests similar to
+those later performed in our empirical tests (based on COMPUSTAT data).
+Our model’s central results guide us in performing novel empirical tests on the extensively stud-
+ied relation between corporate investment and Q. The model shows, for example, that the impact
+of the credit multiplier on investment is only significant for firms that face financing frictions and
+that it increases with the degree of tangibility of those firms’ assets. Empirically, both Q and
+asset tangibility are expected to affect investment behavior, but the model’s credit multiplier effect
+implies that the interaction of these two variables will have a strong positive impact on investment
+in a cross-section of financially constrained firms. Put differently, our theory predicts that positive
+innovations to investment prospects prompt stronger responses in observed capital spending when
+the firm solves a constrained optimization problem and its assets are more tangible.
+Wetestourtheoryusingalargesampleofmanufacturersoverthe1971–2005period. Asisstan-
+dard in the corporate investment literature, we identify the predictions of our model based on com-
+parisons between firms that are likely to be more financially constrained (“constrained firms”) and
+firms thatare likely tobe lessconstrained (“unconstrainedfirms”). We employ multipleschemes to
+partition the data into constrained and unconstrained subsamples. These are based on firm char-
+acteristics, such as payout policy, firm size, and debt ratings (bond and commercial paper ratings).
+Foreachconstraintpartitionscheme,wefindthatassettangibilitypromotesinvestmentthrough
+a credit multiplier effect for constrained firms, but not for unconstrained firms. As discussed above,
+because of the role of asset tangibility in simultaneously boosting financing and investment, our
+theory implies that the credit multiplier will be finely identified in the cross-section by interacting
+asset tangibility with Q. Consistent with this prediction, our tests show that estimates for this
+interaction term reliably explain investment across financially constrained firms. Moreover, we find
+that this interaction effect is even more pronounced in a more refined set of tests in which we split
+constrainedfirmsintosubsampleswithlowandhighincremental(or“spare”)debtcapacity. Inpar-
+ticular, in line with our theory, we find that constrained firms with largely untapped debt capacity
+2

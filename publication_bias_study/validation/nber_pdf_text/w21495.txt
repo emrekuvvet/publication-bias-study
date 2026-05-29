@@ -1,0 +1,115 @@
+NBER WORKING PAPER SERIES
+EFFICIENCY AND INFORMATION TRANSMISSION IN BILATERAL TRADING
+Robert Shimer
+Iván Werning
+Working Paper 21495
+http://www.nber.org/papers/w21495
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+August 2015
+This research was supported by a grant from the Global Markets Institute at Goldman Sachs. Any
+opinions, findings, conclusions or recommendations expressed in this material are those of the authors
+and do not necessarily reflect the views of Goldman Sachs, the Global Markets Institute, or the National
+Bureau of Economic Research. We are grateful for comments and discussions with Xavier Gabaix,
+Robert Hall, Pablo Kurlat, John Leahy, Guido Lorenzoni, Matthew Rognlie and Juuso Toikka, as
+well as conference and seminar participants.
+At least one co-author has disclosed a financial relationship of potential relevance for this research.
+Further information is available online at http://www.nber.org/papers/w21495.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2015 by Robert Shimer and Iván Werning. All rights reserved. Short sections of text, not to exceed
+two paragraphs, may be quoted without explicit permission provided that full credit, including © notice,
+is given to the source.
+
+Efficiency and Information Transmission in Bilateral Trading
+Robert Shimer and Iván Werning
+NBER Working Paper No. 21495
+August 2015
+JEL No. D82,D83,G14
+ABSTRACT
+We study pairwise trading mechanisms in the presence of private information and limited commitment,
+whereby either trader can walk away from a proposed trade when he learns the trading price. We show
+that when one trader's information is relevant for the other trader's value of the asset, optimal trading
+arrangements may necessarily conceal the traders' information. While limited commitment itself may
+not be costly, it shapes how prices transmit information.
+Robert Shimer
+Department of Economics
+University of Chicago
+1126 East 59th Street
+Chicago, IL 60637
+and NBER
+shimer@uchicago.edu
+Iván Werning
+Department of Economics, E17-234
+MIT
+77 Massachusetts Avenue
+Cambridge, MA 02139
+and NBER
+iwerning@mit.edu
+
+1 Introduction
+How does dispersed information get transmitted and aggregated by financial
+markets? What are the impediments to information revelation? Is information
+passed on from informed to uninformed traders? Is information transmission
+alwaysdesirable?
+Economists have important paradigms to address these classical questions.
+Grossman(1976)firstshowedthatrationalexpectationmodelsaggregatedispersed
+informationthroughprices,formalizingtheideasinHayek(1945). Indeed,under
+someconditions,pricesmayrevealinformationperfectly. Thisleadstoaparadox:
+ifprivateinformationisinstantlyrevealedthentherearenoincentivestogatherit.
+Inresponse,GrossmanandStiglitz(1980)andKyle(1985)introducednoisetraders,
+alongside informed and uninformed traders. Informed traders do their part to
+revealinformation,buttheireffectonthepriceisdistortedbythepresenceofnoise
+traders. An alternative recent approach considers decentralized settings where
+informationtakestimetopercolatethroughtheentiremarket(seee.g.Duffieand
+Manso,2007;Duffie,MalamudandManso,2014). Traderslearnfromeachother
+in each meeting, but it takes time for this information to get around. In all these
+theoriesinformationtransmissionenhancestheefficiencyofthemarket,butitmay
+behinderedbynoisetradersordelayedbyilliquidmarkets.
+The purpose of this paper is to propose and explore a different paradigm for
+thinkingaboutthesequestions. Wealsofocusondecentralizedover-the-counter
+markets; however, we take a step back from the slow diffusion of information
+acrossthemarketinordertozoominonhowinformationistransmittedwithina
+bilateralmeeting. Toavoidadhocassumptionsontradingarrangements,weuse
+a mechanism design approach (Kennan and Wilson, 1993). Any specific trading
+arrangement,suchasaparticularbargainingprotocol,isaspecialcaseofthemech-
+anismsweconsider. Ourmainresultsquestiontheassumptionthatinformationis
+revealedinbilateraltrades. Indeed,wearguethatefficienttradingarrangements,
+includingmanyformsofbargaining,preventtherevelationofinformationinorder
+toenhance thebilateralgainsfromtrade. Informationrevelation isimperfectby
+2
+
+design,notbecauseofexternalimpedimentsorconstraints.
+Ourapproachisfirmlyrootedinclassicalmicroeconomicinformationtheory
+andrecentadvancesinmechanismdesign. Indeed,wewillleverageseveraluseful
+concepts and results from this literature. However, our focus and perspective is
+quite different, since the existing literature has focused on the impediments to
+efficienttradingduetoprivateinformation,ratherthanaddressingthequestions
+aboutinformationtransmissionintrade.
+Wefocusonabilateraltradesituationunderincompleteinformation. Asingle
+buyer and a single seller meet and there are gains from trade. Each trader may
+havesomeprivateinformationthatispossiblyrelevanttobothtraders’valuations.
+Thetwotradersnegotiateoveratradingprice,buteachretainstheoptiontowalk
+away from the negotiation at any time. We ask whether the negotiation process,
+includingthetradingprice,revealseachtrader’sinformationtotheother. Wefind
+thattheanswerdependsonhownegotiationsarestructured,bywhichwemean
+the mechanism that links the structure of the model, including the traders’ private
+information, to the terms of trade. There are mechanisms that fully reveal each
+trader’sinformationtotheother. However,sometimesParetoefficientmechanisms
+musthidesomeinformation. Asaresult,Paretoefficientmechanismsmaysome-
+timesallowonetradertoprofitattheexpenseoftheother. Thisistrueeventhough
+there exist feasible (but Pareto inefficient) mechanisms where all information is
+revealed and no individual ever regrets a trade. If existing arrangements strive
+for trading efficiency, then our results imply that information transmission may be
+purposefullypreventedinthemarketplace.
+Webelievethisinsightmaybeusefulforunderstandingtradingpatternsand
+informationrevelationinover-the-countersecuritiesmarkets. Akeyattributeof
+thesemarketsisthatmanybuyersandsellersarefinanciallysophisticatedtraders
+who, under certaincircumstances, may have private informationabout an asset’s
+cashflow. Theinformationmaynotbedirectlyaboutthequalityoftheassetthey
+aretrading,butinsteadmightbeabouttheunderlyingeconomicenvironment. For
+example, traders may disagree about how to model the stochastic process for a
+newsecurity’scashflow. Overtime,amplehistoricaldatamaylimitthescopefor
+3

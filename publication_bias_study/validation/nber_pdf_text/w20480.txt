@@ -1,0 +1,138 @@
+NBER WORKING PAPER SERIES
+ASSET MANAGEMENT CONTRACTS AND EQUILIBRIUM PRICES
+Andrea M. Buffa
+Dimitri Vayanos
+Paul Woolley
+Working Paper 20480
+http://www.nber.org/papers/w20480
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2014, Revised October 2019
+We thank Ricardo Alonso, Daniel Andrei, Oliver Bought, Jennifer Carpenter, Sergey Chernenko,
+Chris Darnell, Peter DeMarzo, Philip Edwards, Ken French, Willie Fuchs, Diego Garcia, Jeremy
+Grantham, Zhiguo He, Apoorva Javadekar, Ron Kaniel, Ralph Koijen, Dong Lou, John Moore,
+Dmitry Orlov, Marco Pagano, Anna Pavlova, Gabor Pinter, seminar participants at the Bank of
+England, Banque de France, Bocconi, Boston University, CEU, Cheung Kong, Dartmouth, Duke,
+EIEF, Glasgow, Indiana, Insead, Louvain, LSE, Maryland, Minnesota, MIT, Naples, NY Fed,
+SMU, Stanford, Toulouse, UT Austin, Yale, Vienna and conference participants at AEA, ASAP,
+BoE Macro-Finance, BIS, CEMFI, CRETE, ESSFM Gerzenzee, FCA, FIRS, FRIC, FTG, Inquire
+UK, Jackson Hole, LSE PWC, NBER Asset Pricing, SFS Cavalcade, Utah, and WFA for helpful
+comments. The views expressed herein are those of the authors and do not necessarily reflect the
+views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2014 by Andrea M. Buffa, Dimitri Vayanos, and Paul Woolley. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Asset Management Contracts and Equilibrium Prices
+Andrea M. Buffa, Dimitri Vayanos, and Paul Woolley
+NBER Working Paper No. 20480
+September 2014, Revised October 2019
+JEL No. D86,G12,G14,G18,G23
+ABSTRACT
+We derive equilibrium asset prices when fund managers deviate from benchmark indices to
+exploit noise-trader induced distortions but fund investors constrain these deviations. Because
+constraints force managers to buy assets that they underweight when these assets appreciate,
+overvalued assets have high volatility, and the risk-return relationship becomes inverted. Noise
+traders bias prices upward because constraints make it harder for managers to underweight
+overvalued assets, which have high volatility, than to overweight undervalued ones. We
+endogenize the constraints based on investors' uncertainty about managers' skill, and show that
+asset-pricing implications can be significant even for moderate numbers of unskilled managers.
+Andrea M. Buffa Paul Woolley
+Department of Finance Financial Markets Group
+Boston University London School of Economics
+595 Commonwealth Avenue London WC2A 2AE
+Boston, MA 02215 UNITED KINGDOM
+buffa@bu.edu p.k.woolley@lse.ac.uk
+Dimitri Vayanos
+Department of Finance, OLD 3.41
+London School of Economics
+Houghton Street
+London WC2A 2AE
+UNITED KINGDOM
+and CEPR
+and also NBER
+d.vayanos@lse.ac.uk
+
+1 Introduction
+Financial markets have become highly institutionalized. For example, individual investors were
+holding directly 47.9% of U.S. stocks in 1980, but only 21.5% in 2007, with most of the remain-
+der held by financial institutions such as mutual funds and pension funds (French (2008)). The
+portfolios of these institutions are chosen by professional asset managers.
+The institutionalization of financial markets has stimulated research on the performance of
+professional managers and their effects on equilibrium asset prices and market efficiency. A vast
+literatureexamineswhetheractively-managedfundsoutperformpassively-managedones. Arelated
+literature investigates whether the growth of passive funds has made markets less efficient, and
+whether efficiency increases in the ratio of active to passive.1
+Drawing a sharp distinction between passive funds constrained to hold specific portfolios, and
+active funds investing without constraints, is in some ways misleading. This is because much of
+active management is done around benchmark portfolios, with managers being constrained in how
+muchtheycandeviatefromthem. Theconstraintscanboundamanager’strackingerror(standard
+deviation of the difference between the manager’s portfolio’s return and the return of a benchmark
+portfolio), or the difference between the weight that the manager allocates to each asset class,
+geographical area, or industry sector, and the corresponding benchmark weight.2 Viewing asset
+management as a continuum between active and passive, depending on the tightness of managers’
+constraints, seems a better description of reality. In this paper we adopt that alternative view and
+show that its implications for equilibrium asset prices and market efficiency differ significantly from
+the conventional view.
+A simple example helps motivate our analysis. Suppose that some asset managers must keep
+their portfolio weight in each industry sector within 5% of the sector’s weight in a benchmark
+portfolio. Suppose also that a sector that these managers view as overvalued has 10% weight in
+the benchmark, while the managers give it 5% weight. If the sector doubles in value, reaching 20%
+weight in the benchmark, then its weight in the managers’ portfolio doubles to 10%, but must rise
+1See, for example, Elton and Gruber (2013) for a survey of the literature on mutual-fund performance, and
+Franzoni,Ben-David,andMoussawi(2017)forasurveyofexchange-tradedfunds(ETFs)andtheireffectsonmarket
+performance.
+2Foradiscussionoftracking-errorconstraintsandtheirimplicationsforfinancialmarkets,seethe2003reportby
+the Committee on the Global Financial System (BIS (2003)). According to that report, bounds on tracking error
+are on average 1% for actively-managed bond portfolios and between 2-6% for actively-managed stock portfolios
+(p.20). The Norwegian Sovereign Wealth Fund (NBIM), one of the largest institutional investors globally, reports
+the following regarding its tracking-error constraint: “The Ministry of Finance has set limits for how much risk
+NBIM may take in its active management of the fund. The most important limit is expressed as expected relative
+volatility (tracking error) and puts a ceiling on how much the return on the fund may be expected to deviate
+from the return on the benchmark portfolio. The expected tracking error limit is 125 basis points, or 1.25%.”
+(https://www.nbim.no/en/investments/investment-risk/)
+1
+
+furtherto15%sothattheconstraintismet. Buyingpressurebythemanagersamplifiesthesector’s
+appreciation, raising its volatility. Overvalued sectors thus have high volatility, in addition to their
+low expected return, causing the risk-return relationship to become weak or inverted, consistent
+with empirical evidence.3 Amplification does not arise when managers are constrained to hold the
+benchmark portfolio, or when they are fully unconstrained. The example implies additionally that
+overvaluation is harder to correct than undervaluation. Indeed, managers must stick closer to the
+benchmarkinovervaluedsectors: a5%differenceinweightallowslessleewayinrelativetermswhen
+the sector’s benchmark weight is large. The links between portfolio constraints of asset managers
+and amplification or overvaluation have been recognized by policy-makers.4
+In our model’s basic version, described in Section 2, investors can invest in a riskless and a risky
+asset over an infinite horizon and continuous time. The riskless rate is constant, and the dividend
+flow per share of the risky asset follows a square-root process. Investors maximize a mean-variance
+objective over instantaneous changes in wealth. Some investors are unconstrained, while others
+face a constraint limiting the volatility or the dollar value of the deviation between their risky-asset
+position and a benchmark position. Investors may want to deviate from the benchmark position
+to exploit price distortions caused by noise traders.
+Section 3 derives the equilibrium price of the risky asset taking the constraint as exogenous
+and not distinguishing between investors and the asset managers they employ. Two polar cases
+are analyzed first: no constraint, in which case all investors are fully active; and an infinitely tight
+constraint, in which case constrained investors must hold the benchmark position and hence are
+fully passive. In both cases, we derive a novel closed-form solution for the price and show that it
+is affine in the dividend flow. An increase in noise-trader demand raises the price and lowers the
+asset’s expected return. It does not affect, however, the asset’s return volatility: the price becomes
+more sensitive to the dividend flow, but the effect is proportional to the increase in the price level.
+Moving from no constraint (all investors fully active) to an infinitely tight constraint (constrained
+investors fully passive) exacerbates the price distortions created by noise traders. This is because
+the constraint prevents constrained investors from absorbing noise-trader demand. The constraint
+does not affect return volatility, however, because volatility is independent of demand.
+Section3nextanalyzesthegeneralcase. Theequilibriuminvolvesaregionwheretheconstraint
+3References to the empirical literature are in Section 3.4.
+4For example, the BIS (2003) report notes: “Overvalued assets/stocks tend to find their way into major indices,
+which are generally capitalization-weighted and therefore will more likely include overvalued securities than under-
+valued securities. Asset managers may therefore need to buy these assets even if they regard them as overvalued;
+otherwise they risk violating agreed tracking errors.” (p.19). In a similar spirit, a 2015 IMF working paper (Jones
+(2015)) notes: “Another source of friction capable of amplifying bubbles stems from the captive buying of securities
+in momentum-biased market capitalization-weighted financial benchmarks. Underlying constituents that rise most
+in price will see their benchmark weights increase irrespective of fundamentals, inducing additional purchases from
+fund managers seeking to minimize benchmark tracking error.”
+2

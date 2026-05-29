@@ -1,0 +1,126 @@
+NBER WORKING PAPER SERIES
+MOONSHOT: PUBLIC R&D AND GROWTH
+Shawn Kantor
+Alexander T. Whalley
+Working Paper 31471
+http://www.nber.org/papers/w31471
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2023, Revised March 2024
+We thank the coeditors, Emi Nakamura and Stefano DellaVigna, as well as three anonymous
+referees for many helpful comments. We also thank David Albouy, Nathaniel Baum-Snow,
+Adrien Bilal, Bruno Caprettini, William Collins, Rebecca Diamond, Jonathan Dingel, James
+Fenske, Lee Fleming, Andrew Garin, Nicolas Gendron-Carrier, Kirti Gupta, Douglas Hanley,
+Caroline Hoxby, Taylor Jaworski, Ben Jones, Larry Katz, Carl Kitchens, Ross Levine, Jeffrey
+Lin, Eric Mbakop, Enrico Moretti, Tom Nicholas, Carlianne Patrick, Elisabeth Perlman, Martin
+Rotemberg, Michel Serafinelli, Paolo Surico, Fabian Waldinger, Russell Weinstein, Jonathan V.
+Winters, and Paolo Zacchia for helpful discussions. We are equally grateful to seminar
+participants at Berkeley, Colorado, Harvard, Illinois, Imperial College, Institute of Economics,
+London Business School, Montreal, McMaster, Queen’s, Vanderbilt, and Warwick, and to
+participants at the All-UC/Caltech Economic History, Economic History Association, Hoover
+Institution IP2, Urban Economics Association, World Economic History Congress, and
+Conference on Urban and Regional Economics conferences and the NBER DAE meetings. We
+gratefully acknowledge financial support from the National Science Foundation under grant
+1158794, the Social Sciences and Humanities Research Council of Canada, and the Westman
+Centre for Real Estate Studies. We thank Susan Greco from the IBM archives, Taylor Jaworski,
+Carl Kitchens, and Paul Rhode for sharing data. We would like to especially thank Arthur Novaes
+de Amorim for outstanding research assistance and also acknowledge valuable assistance from
+Daniel Ma, Sam Plaquin, Timothy Rooney, Karen Sondergard, and Connor Valde. The views
+expressed herein are those of the authors and do not necessarily reflect the views of the NSF or
+the National Bureau of Economic Research.
+At least one co-author has disclosed additional relationships of potential relevance for this
+research. Further information is available online at http://www.nber.org/papers/w31471
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2023 by Shawn Kantor and Alexander T. Whalley. All rights reserved. Short sections of text,
+not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Moonshot: Public R&D and Growth
+Shawn Kantor and Alexander T. Whalley
+NBER Working Paper No. 31471
+July 2023, Revised March 2024
+JEL No. H54,N12,N72,O32,R11
+ABSTRACT
+We estimate the long-term effect of public R&D on growth in manufacturing by analyzing new
+data from the Cold War era Space Race. We develop a novel empirical strategy that leverages
+US-Soviet rivalry in space technology to isolate windfall R&D spending. Our results demonstrate
+that public R&D conducted by NASA contractors increased manufacturing value added,
+employment, and capital accumulation in space related sectors. While migration responses were
+important, they were not sufficient to generate a wedge between local and national effects. The
+iconic Moonshot R&D program had only modest economic effects for both the local and national
+space-related sectors.
+Shawn Kantor
+Department of Economics
+Florida State University
+Tallahassee, FL 32306
+and NBER
+skantor@fsu.edu
+Alexander T. Whalley
+Department of Economics
+University of Calgary
+2500 University Drive
+Calgary, AB T2N 1N4
+Canada
+awhalley@gmail.com
+A data appendix is available at http://www.nber.org/data-appendix/w31471
+
+Technological progress plays a central role in theories of economic growth
+(Solow 1957; Romer 1990; Aghion and Howitt 1992). Because social returns to
+research and development may be larger than private returns, firms may
+underinvest in innovation, thus reducing the rate of technological progress (Arrow
+1962; Griliches 1992; Bloom, Schankerman, and Van Reenen 2013). Can
+government-funded R&D fill this gap and generate long-term growth? Despite the
+fact that governments expend significant resources on R&D every year – over $158
+billion within the Organisation for Economic Cooperation and Development
+(OECD) countries in 2020 (OECD 2022) – the answer remains unclear.
+In this paper we provide new evidence on the effects of public R&D on long-term
+economic growth by analyzing a unique episode in US history – the race to beat the
+Soviet Union to the Moon during the 1960s. The shock of the Soviet launch of the
+first satellite Sputnik in 1957 led to a geopolitical crisis that initiated the creation
+of the National Aeronautics and Space Administration (NASA) in 1958 and
+launched the race to the Moon in 1961. Figure 1 shows that the ambitious mission
+to send (and return) a manned crew to (and from) the Moon led to a massive
+expansion of federal investment in R&D – NASA received over 0.7 percent of GDP
+in the mid-1960s (Weinzierl 2018) and employed over 400,000 workers at the peak
+of the Space Race. To the extent that we hope to uncover the nuances of how public
+R&D seeds economic growth, the Cold War era Space Race provides a unique
+episode in modern US economic history to examine in depth.
+We analyze the effects of this large R&D windfall on growth in manufacturing
+in the short- and long-terms. Focusing on manufacturing growth is likely to capture
+the indirect effects of space R&D well because getting to the Moon not only
+required new ideas and technologies, but also the production of real products.
+Innovations of the Space Race era were embodied, for example, in spacecraft,
+2
+
+satellites, thrusters, navigation and communications equipment, computer software
+and hardware, and launch infrastructure.
+To estimate our models we develop a novel empirical approach to isolate the
+exogenous variation in NASA contractor R&D. The imperative to win the Space
+Race meant that NASA was compelled to rapidly allocate funding to space sector
+firms already specialized in the technological building blocks needed to complete
+the mission. NASA did not invest in technologies randomly, but sought to harvest
+any promising space technologies that American firms could supply to win the race
+to the Moon.
+We address technology harvesting in two steps. We first utilize the Central
+Intelligence Agency’s (CIA) declassified National Intelligence Estimates of Soviet
+Space Technology (NIE) from the post-Sputnik era to define the set of technologies
+demanded by the space mission. We then search for these technologies in US
+patents before 1958 to determine which US industries in which counties specialized
+in space-relevant technologies before the Space Race began. We term county-
+industries as having “High Space Capability" if their pre-1958 technological
+specialization matched post-1958 space technology demand, as seen through the
+perspective of the Soviet space program not NASA’s. Isolating variation in NASA
+R&D that is virtually independent of location-specific unobservables, our research
+design compares changes in outcomes between space industries to other industries,
+before and after the Space Race, in county-industries with varying pre-1958 space
+technology capabilities.
+To carry out our empirical analysis we construct a new panel dataset containing
+highly granular data on US manufacturing and NASA activity for large urban
+counties from 1947 to 1992. For each county-industry we have digitized the amount
+that NASA contractors received. We then match this information to manufacturing
+value added, employment, and labor income from the Census of Manufactures at
+the county ´ 2-digit industry level to estimate our models. We also utilize newly
+3

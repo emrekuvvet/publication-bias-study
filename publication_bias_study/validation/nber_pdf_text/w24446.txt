@@ -1,0 +1,152 @@
+NBER WORKING PAPER SERIES
+MORTGAGE DESIGN IN AN EQUILIBRIUM MODEL OF THE HOUSING MARKET
+Adam M. Guren
+Arvind Krishnamurthy
+Timothy J. McQuade
+Working Paper 24446
+http://www.nber.org/papers/w24446
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+March 2018
+The authors would like to thank Chaojun Wang and Xuiyi Song for excellent research assistance and
+seminar participants at SED, SITE, Kellogg, Queen's, Indiana, LSE, Boston University, HULM, Housing:
+Micro Data, Macro Problems, NBER Summer Institute Capital Markets and the Economy, CEPR Housing
+and the Macroeconomy, Chicago Booth Asset Pricing, UCLA, University of Pittsburgh, MIT Sloan,
+Wharton, the University of Pennsylvania, Tomasz Piskorski, Erwan Quintin, Jan Eberly, Alex Michaelides,
+Alexei Tchistyi, and Andreas Fuster for useful comments. Guren acknowledges research support from
+the National Science Foundation under grant #1623801 and from the Boston University Center for
+Finance, Law, and Policy. The views expressed herein are those of the authors and do not necessarily
+reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2018 by Adam M. Guren, Arvind Krishnamurthy, and Timothy J. McQuade. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission provided
+that full credit, including © notice, is given to the source.
+
+Mortgage Design in an Equilibrium Model of the Housing Market
+Adam M. Guren, Arvind Krishnamurthy, and Timothy J. McQuade
+NBER Working Paper No. 24446
+March 2018, Revised December 2019
+JEL No. E4,G0,G01,G2
+ABSTRACT
+How can mortgages be redesigned to reduce housing market volatility, consumption volatility, and
+default? How does mortgage design interact with monetary policy? We answer these questions using
+a quantitative equilibrium life cycle model with aggregate shocks, long-term mortgages, and an equilibrium
+housing market, focusing on designs that index payments to monetary policy. Designs that raise mortgage
+payments in booms and lower them in recessions do better than designs with fixed mortgage payments.
+The benefits are quantitatively substantial: In a simulated crisis under a monetary regime in which
+the central bank lowers real interest rates in a bust, house prices fall 2.24 percentage points less, 23
+percent fewer households default, and consumption falls by 0.79 percentage points less with ARMs
+relative to FRMs. Among designs that reduce payments in a bust, we show that those that front-load
+the payment reductions and concentrate them in recessions outperform designs that spread payment
+reductions over the life of the mortgage. Front-loading alleviates household liquidity constraints in
+states where they are most binding, reducing default and stimulating housing demand by new homeowners.
+To isolate this channel, we compare an FRM with a built-in option to be converted to an ARM with
+an FRM with an option to be refinanced at the prevailing FRM rate. Under these two contracts, the
+present value of a lender's loan falls by roughly an equal amount, but the FRM that can be converted
+to an ARM, which front loads payment reductions, reduces the declines in prices and consumption
+six times as much, and reduces default three times as much.
+Adam M. Guren Timothy J. McQuade
+Department of Economics Stanford Graduate School of Business School
+Boston University 655 Knight Way
+270 Bay State Road Stanford, CA 94305
+Boston, MA 02215 tmcquade@stanford.edu
+and NBER
+guren@bu.edu
+Arvind Krishnamurthy
+Stanford Graduate School of Business
+Stanford University
+655 Knight Way
+Stanford, CA 94305
+and NBER
+akris@stanford.edu
+
+1 Introduction
+The design of mortgages is crucial to both household welfare and the macroeconomy. Home equity
+is the largest component of wealth for most households, and mortgages tend to be their dominant
+source of credit, so the design of mortgages has an outsized effect on household balance sheets
+(Campbell, 2013). In the mid-2000s boom and subsequent bust, housing wealth extraction through
+the mortgage market boosted consumption in the boom and reduced consumption in the bust (e.g.,
+MianandSufi, 2011; Mian, Rao, andSufi, 2013). Mortgagedebtalsoledtothewaveofforeclosures
+that resulted in over six million households losing their homes, badly damaging household balance
+sheets and crippling the housing market (e.g., Guren and McQuade, 2019; Mian, Sufi, and Trebbi,
+2015). Finally, in the wake of the recession, there has been increased attention paid to the role
+that mortgages play in the transmission of monetary policy to the real economy through household
+balance sheets (e.g., Auclert, 2019; Wong, 2019; Di Maggio et al., 2017; Beraja et al., 2019).
+In this paper, we study how to best design mortgages in order to reduce household consump-
+tion volatility and default and to increase household welfare. There is considerable evidence that
+implementation frictions prevent financial intermediaries from modifying mortgages ex post in a
+crisis (e.g., Agarwal et al., 2017a; Agarwal et al., 2017b). As a result, a better-designed ex ante
+contract can likely deliver significant welfare benefits (e.g., Campbell and Cocco, 2015; Piskorski
+andTchistyi,2017; Greenwald,Landvoigt,andVanNieuwerburgh,2018; PiskorskiandSeru,2018).
+We are further motivated by the evidence that not just the level of household mortgage debt (e.g.,
+loan-to-value or payment-to-income ratio), but also the design of such debt and in particular the
+time path of payments, can impact household outcomes including consumption and default. For
+example, Fuster and Willen (2017) and Di Maggio et al. (2017) study cohorts of borrowers with
+hybrid adjustable rate mortgages contracted in the years before the crisis. Exploiting heterogeneity
+in the timing of monthly payment reductions as mortgages transitioned from initial fixed rates to
+adjustable rates during the crisis, these papers show that downward resets resulted in substantially
+lowerdefaultsandincreasedconsumption. Similarly, studiesthatexploitquasi-randomvariationin
+housing market interventions in the Great Recession such as the Home Affordable Refinance Pro-
+gram (HARP) (Agarwal et al., 2017b) and the Home Affordable Modification Program (HAMP)
+(Agarwal et al., 2017a; Ganong and Noel, 2019) have found that monthly payment reductions
+significantly reduced default and increased consumption.
+Such empirical evidence suggests that given the cyclicality of interest rates, indexing mortgage
+paymentstointerestratescanimprovehouseholdoutcomesandwelfare. Wepursuethisindexation
+questionsystematicallyusingaquantitativeequilibriummodelfeaturingheterogeneoushouseholds,
+endogenousmortgagespreads,andendogenoushouseprices. Inacrisis,defaultincreasesthesupply
+of homes on the market, further pushing down prices, which in turn generates more default. Using
+this framework, we quantitatively assess a variety of questions related to mortgage design. How
+would consumption, default, home prices, and household welfare change if we were to alter the
+design of mortgages in the economy, particularly in a deep recession and housing bust like the one
+experienced during the Great Recession? In an economy that transits between booms, recessions,
+and crises, how well do different indexed mortgages perform? What is the most effective simple
+form of indexation?
+1
+
+Our main finding is that designs in which mortgage payments are higher in booms and lower
+in recessions do better than designs with fixed mortgage payments for risk and insurance reasons.
+Moreover, among such designs, the most effective ones front-load the payment reductions so that
+theyare concentratedduring recessionsratherthan spreadoutoverthe lifeofthe mortgage. Front-
+loading payment relief smooths consumption and limits default for homeowners who are liquidity
+constrained and stimulates new housing demand by constrained current renters. The reduction in
+default and increase in demand helps short-circuit a price-default spiral. Consequently, the benefit
+of different designs depends largely on how effectively they deliver immediate payment reductions
+to highly constrained households.
+Our model features overlapping generations of households subject to both idiosyncratic and
+aggregate shocks, making endogenous decisions over home purchases, borrowing, consumption,
+refinancing, and costly default. We consider different relationships between the interest rate and
+the exogenous aggregate state, reflecting alternative monetary policies. Competitive lenders set
+spreads for each mortgage to break even in equilibrium, so lenders charge higher interest rates
+when a mortgage design hurts their bottom line. We calibrate the lender stochastic discount factor
+(SDF) to options data so that lenders charge more for contracts that cost them more in crisis
+states. Equilibrium in the housing market implies that household decisions, mortgage spreads,
+and the interest rate rule influence the equilibrium home price process. Household expectations
+regarding equilibrium prices and mortgage rates feed back into household decisions, and we solve
+thisfixed-pointprobleminarichquantitativemodelusingcomputationalmethodsbasedonKrusell
+and Smith (1998).
+A key aspect of our analysis is that mortgage design affects household default decisions and
+hence home prices, which in equilibrium feeds back to household indebtedness. The quantitative
+implications of our model depend on accurately representing the link between home prices and
+default. Consequently, after calibrating our model to match standard moments, monetary policy
+since the 1980s, and the empirical distributions of mortgage debt and assets, we evaluate its ability
+to quantitatively capture the effect of payment reductions on default by simulating the Fuster and
+Willen (2017) quasi-experiment in our model. The model does a good job matching their findings
+quantitatively. Simulating quasi-experiments in our calibration procedure is an innovation that
+ensures that our model accurately captures the effects of changes in LTVs and interest rates as we
+alter mortgage design.
+Thecalibratedmodelprovidesalaboratorytoassessthebenefitsandcostsofdifferentmortgage
+designs, shedlightonthekeyeconomicchannelsthroughwhichtheywork, andprovidemagnitudes
+for how much different designs may stabilize prices, default, and consumption in a crisis.1 Our
+primary application is the impulse response to a housing crisis, although we also consider the
+unconditional performance of different mortgages. We begin by comparing an economy with all
+fixedratemortgages(FRMs)againstonewithalladjustableratemortgages(ARMs). WhileARMs
+1As with any structural exercise, we have made modeling choices that trade off tractability and realism. It is
+likelythatthemodelleavesoutsomeaspectsofreality,suchasnon-pecuniarydefaultspillovers,householdbehavior
+that can generate momentum in home prices, investor behavior that can generate realistic movements in the term
+premium, frictional conversion between the owner-occupied and renter-occupied stock, or refinancing inertia. Thus,
+whileourmodelfitsmanyimportantmomentsofthedataquitewell,itmissesonothers,andasaresultouranalysis
+should be seen as providing a sense of the magnitudes involved in different mortgage designs.
+2

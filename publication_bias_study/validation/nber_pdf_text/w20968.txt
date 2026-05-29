@@ -1,0 +1,137 @@
+NBER WORKING PAPER SERIES
+THE DYNAMICS OF FINANCIALLY CONSTRAINED ARBITRAGE
+Denis Gromb
+Dimitri Vayanos
+Working Paper 20968
+http://www.nber.org/papers/w20968
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+February 2015
+We thank Philippe Bacchetta, Bruno Biais, Patrick Bolton, Darrell Duffie, Vito Gala, Jennifer Huang,
+Henri Pages, Anna Pavlova, Matti Suominen, as well as seminar participants in Amsterdam, Bergen,
+Bordeaux, the Bank of Italy, la Banque de France, BI Oslo, Bocconi University, Boston University,
+CEMFI Madrid, Columbia, Copenhagen, Dartmouth College, Duke, Durham University, ESC Paris,
+ESC Toulouse, the HEC-INSEAD-PSE workshop, HEC Lausanne, Helsinki, the ICSTE-Nova seminar
+in Lisbon, INSEAD, Imperial College, Institut Henri Poincare, LSE, McGill, MIT, Naples, NYU,
+Paris School of Economics, University of Piraeus, Porto, Queen's University, Stanford, Toulouse,
+Universite Paris Dauphine, Science Po - Paris, the joint THEMA-ESSEC seminar, Vienna and Wharton
+for comments. Financial support from the Paul Woolley Centre at the LSE, and a grant from the Fondation
+Banque de France, are gratefully acknowledged. All errors are ours. The views expressed herein are
+those of the authors and do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2015 by Denis Gromb and Dimitri Vayanos. All rights reserved. Short sections of text, not to exceed
+two paragraphs, may be quoted without explicit permission provided that full credit, including © notice,
+is given to the source.
+
+The Dynamics of Financially Constrained Arbitrage
+Denis Gromb and Dimitri Vayanos
+NBER Working Paper No. 20968
+February 2015
+JEL No. D52,D53,G01,G11,G12,G14,G23
+ABSTRACT
+We develop a model of financially constrained arbitrage, and use it to study the dynamics of arbitrage
+capital, liquidity, and asset prices. Arbitrageurs exploit price discrepancies between assets traded in
+segmented markets, and in doing so provide liquidity to investors. A collateral constraint limits their
+positions as a function of capital. We show that the dynamics of arbitrage activity are self-correcting:
+following a shock that depletes arbitrage capital, profitability increases, and this allows capital to be
+gradually replenished. Spreads increase more and recover faster for more volatile trades, although
+arbitrageurs cut their positions in these trades the least. When arbitrage capital is more mobile across
+markets, liquidity in each market generally becomes less volatile, but the reverse may hold for aggregate
+liquidity because of mobility-induced contagion.
+Denis Gromb
+INSEAD
+Boulevard de Constance
+77305 Fontanebleau
+France
+denis.gromb@insead.edu
+Dimitri Vayanos
+Department of Finance, OLD 3.41
+London School of Economics
+Houghton Street
+London WC2A 2AE
+UNITED KINGDOM
+and CEPR
+and also NBER
+d.vayanos@lse.ac.uk
+
+1 Introduction
+The assumption of frictionless arbitrage is central to finance theory and all of its practical applica-
+tions. Itishardtoreconcile, however, withthelargebodyofevidenceonasset-market“anomalies,”
+especiallythoseconcerningthepricediscrepanciesbetweenassetswithalmostidenticalpayoffs. One
+approach to address the anomalies has been to abandon the assumption of frictionless arbitrage
+and study the constraints faced by real-world arbitrageurs, e.g., hedge funds or trading desks in
+investment banks. Arbitrageurs often have limited external capital, and there is growing evidence
+that this constrains their activity and ultimately affects market liquidity and asset prices. These
+effects arise both during crises and more tranquil times, and in a variety of markets ranging from
+individual stocks all the way to currencies.1
+In this paper we develop a model of financially constrained arbitrage, and use it to study
+the dynamics of arbitrage capital, liquidity, and asset prices. These dynamics involve a two-way
+feedback. On one hand, arbitrageurs’ capital affects their investment capacity and hence asset
+prices. On the other hand, because arbitrageurs trade in asset markets, asset prices determine
+their trading profits and losses, which in turn drive the evolution of arbitrage capital.
+We show that the dynamics of arbitrage activity are self-correcting. For example, following a
+shock that depletes arbitrage capital, arbitrage activity becomes more profitable, and this allows
+capital to be replenished and converge back towards its steady-state, pre-shock value. We also
+determine how the self-correcting pattern manifests itself in the cross-section of arbitrage trades.
+More volatile trades with higher margin requirements experience a larger increase in their spreads
+(i.e., price discrepancies relative to frictionless arbitrage) in response to the shock, and a faster
+recovery. Yet, arbitrageurs cut their positions in these trades the least. Trades with longer time to
+convergence also experience a larger increase in their spreads in response to the shock.
+We finally use our model to examine how the degree of mobility of arbitrage capital affects
+market stability. When capital is more mobile across markets, the liquidity that arbitrageurs
+provide to investors in each market generally responds less to shocks. At the same time, mobility
+generates contagion, as arbitrageurs cut their positions across multiple markets in response to a
+shock in one market. Because of contagion, the aggregate liquidity, averaged across markets, may
+respond more to shocks when arbitrage capital is more mobile.
+1For example, Comerton-Forde, Hendershott, Jones, Moulton, and Seasholes (2010) find that bid-ask spreads
+quotedbyspecialists intheNewYorkStockExchangewidenwhenspecialists experiencelosses. Hameed,Kang,and
+Viswanathan(2010)andNagel(2012)showthatthereturnstoaliquidity-providingstrategythatexploitsshort-term
+reversals are higher following drops in the stock market or increases in volatility, times during which specialists are
+more likely to be constrained. Coval and Stafford (2007) show that stocks sold by distressed mutual funds, which
+experienceextremeoutflows,performabnormallywellaftertheoutflowsoccur. JylhaandSuominen(2011)findthat
+outflowsfromhedgefundsthatperformthecarrytradepredictpoorperformanceofthattrade,withlowinterest-rate
+currencies appreciating and high-interest rate ones depreciating.
+1
+
+The specifics of our model are as follows. We assume a discrete-time, infinite-horizon economy,
+with a riskless asset and a number of “arbitrage opportunities” consisting of pairs of risky assets
+with identical payoffs. Each risky asset is traded in a segmented market by investors who can
+trade only that asset and the riskless asset. Investors receive endowment shocks that affect their
+valuation for the risky asset in their market. Because of these shocks, the prices of the two assets in
+a pair can differ. The assumption that the two assets in each pair have identical payoffs is meant to
+capture situations where assets have closely related payoffs but can trade at significantly different
+prices. Market segmentation could arise because of informational asymmetries or regulation.2
+An additional set of agents, arbitrageurs, seek to exploit the price discrepancies between the
+assets in each pair. In doing so, they intermediate trade across investors and provide liquidity to
+them. Arbitrageurs are “special” in that they can trade across segmented markets and thus have
+better opportunities than other investors. We term theprice discrepancies that they seek to exploit
+“arbitrage spreads” and use them as an inverse measure of liquidity: arbitrageurs provide perfect
+liquidity if spreads are zero.
+Arbitrageurs are constrained in their access to external capital. We derive their financial con-
+straint following the logic of market segmentation and assuming that they can walk away from
+their liabilities unless these are backed by collateral. Consider an arbitrageur wishing to buy an
+asset and short the other asset in its pair. The arbitrageur could borrow the cash required to buy
+the asset, but the loan must be backed by collateral. Posting the asset as collateral would leave
+the lender exposed to a decline in its value. The arbitrageur could post as additional collateral the
+short position in the other asset, which offsets declines in the value of the long position. Market
+segmentation, however, prevents investors other than arbitrageurs from dealing in multiple risky
+assets. Hence, the additional collateral must come from the arbitrageur’s holdings of the riskless
+asset. We assume that collateral must be sufficient to fully protect the lender against default. The
+collateral requirement limits the positions that arbitrageurs can establish as a function of their
+capital. Note that positions in assets with more volatile payoffs require more collateral so that
+lenders are protected against larger fluctuations in asset value.
+In the Appendix we derive the arbitrageurs’ financial constraint as an optimal contracting
+arrangement. We consider the full set of collateralized contracts that can be traded between
+arbitrageurs andinvestors in each segmented market. We showthat whenasset payoff distributions
+from one period to the next are binomial, contracts traded in collateral equilibrium (Geanakoplos
+2Examples of assets with closely related payoffs that can trade at significantly different prices include “Siamese-
+twin” stocks, which are claims to identical dividend streams but trade in different countries (e.g., Rosenthal and
+Young(1990) andDaboraandFroot(1999)),“on-the-run”and“off-the-run”bonds,whichhavesimilarcouponrates
+and times to maturity but were issued at different times (e.g., Amihud and Mendelson (1991), Warga (1992) and
+Krishnamurthy (2002)), bonds and credit-default swaps, the two legs of covered interest arbitrage strategies in the
+currencymarket,etc. InthecaseofSiamese-twinstocks,forexample,theinvestorsinourmodelcouldbeinterpreted
+as domestic-equity mutual funds,which havea regulatory mandateto invest only in domestic stocks.
+2

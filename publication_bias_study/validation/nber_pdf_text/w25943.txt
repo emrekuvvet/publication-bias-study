@@ -1,0 +1,148 @@
+NBER WORKING PAPER SERIES
+CONSUMER-LENDING DISCRIMINATION IN THE FINTECH ERA
+Robert Bartlett
+Adair Morse
+Richard Stanton
+Nancy Wallace
+Working Paper 25943
+http://www.nber.org/papers/w25943
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2019
+Financial support from the Fisher Center for Real Estate and Urban Economics, Haas School of
+Financial support from
+Business, University of California at Berkeley is gratefully acknowledged. For helpful comments
+and suggestions, we thank Manuel Adelino, Sanjiv Das, Andreas Fuster, Andres Liberman,
+Manju Puri, Raghu Rau, Amit Seru, Ansgar Walther, Justin Wolfers, and seminar
+participants at U.C. Berkeley, Cornell, the University of Michigan, USC, NYU Stern, U.T.
+Austin, Texas A&M, Michigan State University, Chicago-Booth, Johns Hopkins University,
+Consumer Finance Protection Bureau, the George Washington-Federal Reserve Board
+Seminar Series on Household Finance, the Spring 2018 NBER Corporate Finance meeting,
+the 2018 NBER Law & Economics Summer Institute, the 2018 Annual Conference on
+Empirical Legal Studies, the 2017 Boston JOIM Conference, the 2017 Annual Research
+Conference of the Center for International Securities and Derivatives Markets, the 2018
+NY Fed./NYU Stern Conference on Financial Intermediation, the 2018 American Law
+and Economics Association (ALEA) annual meeting, the 2018 Financial Intermediation
+Research Society (FIRS) annual meeting, the 2018 EFA meeting, the 2019 AEA meeting, the
+2019 NBER conference on “Big Data: Long-Term Implications for Financial Markets and
+Firms,” the 2019 Adam Smith Workshop in Corporate Finance, the 2019 FMA Wine Country
+Finance Conference, the Federal Reserve Board, and Freddie Mac.. The views expressed herein
+are those of the authors and do not necessarily reflect the views of the National Bureau of
+Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2019 by Robert Bartlett, Adair Morse, Richard Stanton, and Nancy Wallace. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+Consumer-Lending Discrimination in the FinTech Era
+Robert Bartlett, Adair Morse, Richard Stanton, and Nancy Wallace
+NBER Working Paper No. 25943
+June 2019
+JEL No. G21,G28,J15,K22,K23,R31
+ABSTRACT
+Discrimination in lending can occur either in face-to-face decisions or in algorithmic scoring. We
+provide a workable interpretation of the courts’ legitimate-business-necessity defense of
+statistical discrimination. We then estimate the extent of racial/ethnic discrimination in the largest
+consumer-lending market using an identification afforded by the pricing of mortgage credit risk
+by Fannie Mae and Freddie Mac. We find that lenders charge Latinx/African-American
+borrowers 7.9 and 3.6 basis points more for purchase and refinance mortgages respectively,
+costing them $765M in aggregate per year in extra interest. FinTech algorithms also discriminate,
+but 40% less than face-to-face lenders. These results are consistent with both FinTech and non-
+FinTech lenders extracting monopoly rents in weaker competitive environments or profiling
+borrowers on low-shopping behavior. Such strategic pricing is not illegal per se, but under the
+law, it cannot result in discrimination. The lower levels of price discrimination by algorithms
+suggests that removing face-to-face interactions can reduce discrimination. Further silver linings
+emerge in the FinTech era: (1) Discrimination is declining; algorithmic lending may have
+increased competition or encouraged more shopping with the ease of platform applications. (2)
+We find that 0.74-1.3 million minority applications were rejected between 2009 and 2015 due to
+discrimination; however, FinTechs do not discriminate in loan approval.
+Robert Bartlett Richard Stanton
+University of California at Berkeley Haas School of Business
+890 Simon Hall University of California st Berkeley
+Berkeley, CA 94720 545 Student Services Bldg #1900
+rbartlett@law.berkeley.edu Berkeley, CA 94720-1900
+stanton@haas.berkeley.edu
+Adair Morse
+University of California, Berkeley Nancy Wallace
+545 Student Services Bldg, #1900 Haas School of Business
+Berkeley, CA 94720 University of California at Berkeley
+and NBER 545 Student Services #1900
+morse@haas.berkeley.edu Berkeley, CA 94720-1900
+wallace@haas.berkeley.edu
+
+I. Introduction
+Algorithmic decision-making can reduce face-to-face discrimination in markets known to be prone
+to implicit and explicit biases. But it can also lead to inadvertent discrimination (Barocas & Selbst, 2016).
+The question of whether algorithmic decision-making promotes or inhibits impermissible discrimination is
+especially relevant in the context of consumer lending, given both the historical challenge of eliminating
+discrimination in this domain and the importance of consumer lending for the well-being of households.
+Household debt in the United States as of 2017 was $13 trillion; of that, minority households account for
+17.3%, or $2.25 trillion.1 The largest component is home loans, on which $1.65 trillion is owed by minority
+households. Every extra basis point of interest charged on a home loan due to discrimination costs
+minorities $165 million per year in extra payments. Estimating discrimination, however, is notoriously
+difficult due to omitted-variable challenges. In this paper, we test for the presence of discrimination and
+estimate its level in mortgages securitized by the Government Sponsored Enterprises (GSEs), Fannie Mae
+and Freddie Mac. Using GSE loans allows a novel identification strategy without the omitted variable
+concerns that have long challenged empirical studies of discrimination. The GSEs charge each loan a
+guarantee fee that depends only on the (observable) credit score and loan-to-value ratio (LTV). In return,
+lenders are guaranteed against credit risk. Thus, mortgage interest rate differences between loans within a
+given GSE grid cell of credit score and LTV cannot reflect differential credit risk, but must instead reflect
+strategic pricing decisions on the part of lenders. Strategic pricing is not illegal, but the law requires that
+pricing must not induce a disparate impact.2 Lenders cannot, even inadvertently, charge a higher strategic
+mark-up to protected groups. Using this novel identification strategy, we find that discrimination is 7.9
+basis points (bps) for purchase mortgages and 3.6 bps for refinance mortgages. Averaging across the
+distribution of these products in the U.S., lending discrimination currently costs African-American and
+Latinx borrowers $765 million in extra interest per year.
+Consumer lending in the United States is changing rapidly, with loan origination becoming almost
+exclusively algorithmic. A case in point is the Rocket Mortgage of the platform lender Quicken, which is
+the largest-volume mortgage product in the U.S. as of 2018. Algorithmic loan origination is not, however,
+just a feature of FinTech companies. We study the 2,098 largest mortgage lenders (inclusive of all the big
+banks) over the 2012-2018 period, finding that as of 2018, 45% of them offer complete online or app-based
+1 Percent-of-debt estimates are from the 2016 Survey of Consumer Finances. Aggregate debt statistics are from the
+Federal Reserve.
+2 A disparate impact occurs under U.S. anti-discrimination law when a decision maker's practices do not expressly
+discriminate on a protected characteristic (e.g., race or ethnicity), but nevertheless disadvantage one or more groups
+having a protected characteristic without a legitimate business justification. Under disparate impact theory, proof of
+discriminatory intent is not required to establish liability. As noted below, the U.S. Supreme Court has held that the
+disparate impact theory of liability extends to the Fair Housing Act, which (among other things) prohibits
+discrimination in home lending.
+1
+
+mortgage contracting. Value-weighted, that percentage is much higher. While these lenders continue to
+provide conventional, face-to-face loan applications, the trend is clearly toward automated underwriting.
+Nor is this simply a mortgage story; one only has to look to the emergence of personal-lending platforms,
+such as LightStream by SunTrust Bank and Marcus by Goldman Sachs, to see the broader transformation
+in consumer lending.
+With algorithmic credit scoring, the nature of discrimination changes from being primarily
+concerned with human biases – racism and in-group/out-group bias – to being primarily concerned with
+illegitimate applications of statistical discrimination. Even if agents performing statistical discrimination
+have no animus against minority groups, they can induce disparate impact by their use of Big Data variables.
+Whether these changes induce more or less discrimination was previously unknown. We find that FinTechs
+do indeed remove some face-to-face discrimination in loan pricing. In particular, relative to the pricing
+discrimination we find across all lenders, FinTechs lenders discriminate nearly 40% less on average across
+purchase and refinance mortgages. This reduction is encouraging with regard to the potential for algorithmic
+lending to reduce discriminatory lending; however, it also highlights the persistence of discriminatory loan
+pricing even in the FinTech era. In addition to the ability of FinTech lenders to diminish face-to-face bias
+in loan pricing, our findings also point to two silver linings for the role of FinTechs and algorithmic
+decision-making. First, we find that discrimination in loan pricing is declining for all lenders from 2009 to
+2015, alongside the advent of FinTech Lending. While we cannot prove causation, this finding is consistent
+with borrowers using online platforms to shop around with greater ease and speed, which should diminish
+the capacity for lenders to extract rents from minority borrowers. Second, in the loan accept/reject decision
+(as opposed to pricing), FinTech lenders reveal no evidence of discrimination, in contrast to our evidence
+of discrimination in rejection rates for traditional lenders.
+At the core of our paper is the importance – in our identification and in the legal setting – of
+statistical discrimination in the new era of algorithmic loan decision-making. Regulators and courts face
+heightened hurdles to identify which Big Data variables can give rise to a successful claim of illegal
+discrimination under U.S. fair-lending laws (see Inclusive Communities, 2015).3 For economists, the courts’
+struggle to untangle legitimate from illegitimate statistical discrimination is the same problem as handling
+omitted variables in estimating discrimination. Statistical discrimination arises as a solution to a signal
+extraction problem. The signal extraction setting in consumer lending emerges as follows. Economists can
+write down a macro-fundamental (life-cycle) model of default risk that applies to everyone.4 The problem
+3 The potential for illegitimate statistical discrimination toward protected classes of borrowers was a key aspect of
+Congressman Emanuel Cleaver’s 2017 investigation into FinTech lending.
+4 Behavioral models may correctly profile individuals on average, but some individuals would be incorrectly profiled,
+which could be deemed discrimination by disparate impact under the law.
+2

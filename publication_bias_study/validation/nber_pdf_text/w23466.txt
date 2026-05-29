@@ -1,0 +1,145 @@
+NBER WORKING PAPER SERIES
+DISABILITY BENEFITS, CONSUMPTION INSURANCE, AND HOUSEHOLD LABOR
+SUPPLY
+David Autor
+Andreas Ravndal Kostol
+Magne Mogstad
+Bradley Setzler
+Working Paper 23466
+http://www.nber.org/papers/w23466
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2017
+This research was supported by the U.S. Social Security Administration through grant #1 DRC12000002-03
+to the National Bureau of Economic Research as part of the SSA Disability Research Consortium.
+The findings and conclusions expressed are solely those of the authors and do not represent the views
+of SSA, any agency of the Federal Government, or the NBER. The project also received financial
+support from the Norwegian Research Council. We are grateful to Richard Blundell, Raj Chetty, Amy
+Finkelstein, Kai Liu, Nathan Hendren, Hamish Low, Luigi Pistaferri, Alessandra Voena, three anonymous
+referees, and the editor of this journal for valuable input and guidance, and to Knut Brofoss, Espen
+Vihle and Runar Narvland for their help in accessing the data and in understanding the institutional
+details. The views expressed herein are those of the authors and do not necessarily reflect the views
+of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2017 by David Autor, Andreas Ravndal Kostol, Magne Mogstad, and Bradley Setzler. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Disability Benefits, Consumption Insurance, and Household Labor Supply
+David Autor, Andreas Ravndal Kostol, Magne Mogstad, and Bradley Setzler
+NBER Working Paper No. 23466
+June 2017, Revised August 2018
+JEL No. H53,H55,I38,J22
+ABSTRACT
+There is no evaluation of the consequences of Disability Insurance (DI) receipt that captures the effects
+on households' net income and consumption expenditure, family labor supply, or benefits from other
+programs. Combining detailed register data from Norway with an instrumental variables approach
+based on random assignment to appellant judges, we comprehensively assess how DI receipt affects
+these understudied outcomes. To consider the welfare implications of the findings from this instrumental
+variables approach, we estimate a dynamic model of household behavior that translates employment,
+reapplication and savings decisions into revealed preferences for leisure and consumption. The model-based
+results suggest that on average, the willingness to pay for DI receipt is positive and sizable. Because
+spousal labor supply strongly buffers the household income and consumption effects of DI allowances,
+the estimated willingness to pay for DI receipt is smaller for married than single applicants.
+David Autor Magne Mogstad
+Department of Economics, E52-438 Department of Economics
+MIT University of Chicago
+77 Massachusetts Avenue 1126 East 59th Street
+Cambridge, MA 02139 Chicago, IL 60637
+and NBER and NBER
+dautor@mit.edu magne.mogstad@gmail.com
+Andreas Ravndal Kostol Bradley Setzler
+Norges Bank Research Department of Economics
+Bankplassen 2, Oslo University of Chicago
+and Statistics Norway 1126 East 59th Street
+andreas.kostol@norges-bank.no Chicago, IL 60637
+bradley.setzler@gmail.com
+
+1 Introduction
+Over the past 50 years, disability insurance (DI) rolls have risen dramatically in many OECD
+countries. In the U.S., SSDI benefits receipt has risen from less than 1 percent to 4.7 percent of
+the non-elderly adult population between the program’s inception in 1956 and the present (U.S.
+Social Security Administration, 2017). In many European countries, the increases are even more
+striking, from 1 percent to 7 percent in the U.K and from 2 percent to almost 10 percent in Norway.
+These increases have made DI one of the largest transfer programs in most OECD countries. In
+the U.S., for example, outlays for DI exceed those for food stamps, traditional cash welfare, or
+the Earned Income Tax Credit.1 For families without small children, DI is often the primary cash
+benefit available after unemployment benefits expire, and it has become an increasingly important
+component of the social safety net in numerous industrialized countries (OECD, 2010).
+TopotentiallycurtailDIprogramgrowth,severalcountrieshavesignificantlytighteneddisability
+screening criteria, and many others are considering similar policies.2 These enhanced gatekeeping
+policiescanreducethefiscalburdenofdisabilityinsurance, bothbyloweringtheDIcaseloadandby
+increasingtaxrevenueifrejectedapplicantsreturntowork. Atthesametime,stricterscreeningmay
+result in net welfare losses if individuals and families value public disability insurance at more than
+its fiscal cost.3 Assessing this tradeoff requires a comparison of the public costs and private benefits
+of DI awards for applicants at the margin of allowance versus denial, since it is their outcomes
+that would be changed by shifts in screening stringency. To implement this comparison, we need
+data on two economic quantities that are rarely measured: the economic value that individuals and
+families place on disability insurance; and the full cost of DI allowances to taxpayers, summing
+over DI transfer payments, benefit substitution to or from other transfer programs, and induced
+changes in tax receipts. Credibly estimating these quantities is typically hindered both by a lack of
+comprehensive linked data measuring these many outcomes, and by the difficulty of distinguishing
+the causal effects of DI receipts from the many unobserved factors that simultaneously determine
+disability status, earnings, tax payments and transfer receipts, and consumption.
+This paper addresses both the measurement and the identification challenge in the context
+of Norway’s DI system, enabling us to offer empirical evidence on the fiscal costs, income and
+consumption gains, and welfare consequences of DI receipt. Our work draws on two strengths of
+1In 2016 the U.S. paid out $143 billion to 10.6 million disabled workers and their families, with an additional $49
+billioninfederalSSIpaymentstoblindanddisabledworkers,andapproximately$107billiononMedicareexpenditures
+fordisabledworkers(OASDITrusteesReport,2017,TableIII.A.5;SSIAnnualReport,2017,TableIV.C1;2017,Table
+II.B1). In 2013, DI cash payments constituted 1.4 percent of GDP in the U.S. and 1.7 percent of GDP across the
+European OECD-countries (OECD, 2015).
+2Forexample,theU.S.tightenedthecriteriafornewdisabilityawardsinthelate1970sandintroducedanaggressive
+program of continuing disability reviews in 1980; however, Congress responded by halting the reviews and, in 1984,
+liberalizing the program’s screening criteria along several dimensions. Another example is the Netherlands: in 1994,
+the eligibility criteria were tightened and the growth in DI rolls reversed.
+3In the U.S., all private disability insurance is provided through employer-based group policies. These policies
+’wrap-around’ the public SSDI system, so that most of the wage insurance risk and all of the medical cost risk is
+ultimately borne by the public program (Autor et al. , 2014). There is not a strong standalone private market in
+disability insurance, likely because of adverse selection. In the Norwegian setting that we study, private disability
+insurance is rare.
+1
+
+the Norwegian environment. First, Norwegian register data allow us to characterize the household
+impacts and fiscal costs of disability receipt by linking employment, taxation, benefits receipt, and
+assets at the person and household level. Our measure of fiscal costs includes virtually all forms
+of government cash transfers and revenues from (direct) taxes, and accounts for changes in labor
+supply and substitution to other transfer programs. Our measures of household impacts of DI
+receipt include net government transfer payments from all sources, employment and earnings of DI
+applicants (both allowed and denied) and their spouses, as well as households’ total income and
+measures of their consumption expenditure. Second, we obtain plausibly exogenous variation in DI
+allowances by exploiting the random assignment of DI applicants to Norwegian judges who differ
+systematically in their leniency. As a measure of judge leniency, we use the average allowance rate
+in all other cases a judge has handled. This leniency measure is used as an instrumental variable for
+DIreceipt, asitishighlypredictiveofjudicialrulingsinincumbentcasesbutuncorrelatedwithcase
+characteristics. This instrumental variables approach recovers the causal effects of DI allowance on
+individuals at the margin of program entry.
+Ourfirstsetofanalyses,whichestimatethecausaleffectsofDIreceiptonearnings,totalincome,
+consumption expenditure, and fiscal costs, yields four main findings. First, granting DI benefits
+to applicants on the margin of program entry induces a fall in annual earnings of approximately
+$5,200, which is about 45 percent of the annual DI transfer benefit awarded. Second, DI allowances
+raise average household income and consumption expenditure by 16 and 18 percent, implying that
+DI receipt provides partial consumption smoothing across states of nature for a given individual.
+Third,theexternalcoststotaxpayersfromprovidingDIbenefits—stemmingfromtransferpayments
+and reduced payroll tax revenues—substantially exceed the net increases in household incomes
+accruing to DI beneficiaries. Fourth, the consequences of DI allowances differ substantially by
+marital status. Among single and unmarried applicants, DI awards have large direct impacts on
+household income and consumption expenditure—incrementing each by about 40 percent relative
+to baseline. Conversely, DI allowances do not significantly increase the household incomes or the
+consumption of married applicants on average; indeed, we can reject positive impacts of more than
+nine percent of baseline income. The reason is that spousal labor supply adjustments and benefit
+substitution are estimated to offset the effect of DI transfers on household incomes—though we
+stress that this does not imply that household welfare is unaffected by these transfers.
+These causal effects estimates provide key data points for a welfare analysis, but they do not
+by themselves tell us how much DI allowances affect household welfare, since this also depends on
+the preferences for leisure and consumption. To explore these welfare implications, we estimate a
+dynamic model of household behavior with heterogeneous, forward-looking individuals. The model
+translates employment, savings and reapplication decisions of applicants and their spouses into
+revealed preferences for leisure and consumption. Brought to the data, the model matches well the
+instrumental variables estimates of the impact of DI allowances, and moreover, provides plausible
+parameterestimatesforlaborsupplyelasticities. Weusetheestimatedmodeltocomputethewelfare
+benefitsofDIreceipt—bywhichwemeanthecashequivalentvalueofreceivingaDIallowance—and
+2

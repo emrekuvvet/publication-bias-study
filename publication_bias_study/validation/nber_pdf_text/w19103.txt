@@ -1,0 +1,119 @@
+NBER WORKING PAPER SERIES
+WALL STREET VS. MAIN STREET:
+AN EVALUATION OF PROBABILITIES
+Robin L. Lumsdaine
+Rogier J.D. Potter van Loon
+Working Paper 19103
+http://www.nber.org/papers/w19103
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2013
+The authors are grateful to the RAND Corporation for assistance with the American Life Panel and
+for supplying the sampling weights used in this analysis and to Yacine Aït-Sahlia, Ron Anderson,
+Hector Calvo-Pardo, Maik Dierkes, Amos Golan, Anthony Hall, Nikolaus Hautsch, Peter Hudomiet,
+Miles Kimball, Olivia Mitchell, Anders Rahbek, Matthew Shapiro, Neil Shephard, Timo Teräsvirta,
+Martijn van den Assem, Peter Wakker, and Bob Willis, as well as seminar participants at American
+University, the University of Exeter, the University of Michigan, the University of Portsmouth, the
+ZEW Conference on “The Role of Expectations in Financial Markets”, the 2012 Society for Financial
+Econometrics (SoFiE) annual meeting, and the 3rd Humboldt-Copenhagen Conference for comments
+on an earlier draft. All errors remain our own. Financial support from the Netherlands Organisation
+for Scientific Research (NWO) for the second author is gratefully acknowledged. The views expressed
+herein are those of the authors and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2013 by Robin L. Lumsdaine and Rogier J.D. Potter van Loon. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Wall Street vs. Main Street: An Evaluation of Probabilities
+Robin L. Lumsdaine and Rogier J.D. Potter van Loon
+NBER Working Paper No. 19103
+June 2013
+JEL No. C58,D84,G02,G13
+ABSTRACT
+This paper challenges recent conventional wisdom of a divide between Main Street (the average American
+consumer) and Wall Street (financial market participants). The views of survey respondents regarding
+the likelihood of stock index returns exceeding specific thresholds are compared to market views indicated
+by index options with strikes at analogous thresholds. The econometric specification explicitly addresses
+some important impediments to using elicited probabilities from survey data. We confirm that Main
+Street views track Wall Street views, although the association is not one-for one. We find a closer
+association for those demonstrating a better understanding of the laws of probability.
+Robin L. Lumsdaine
+Kogod School of Business
+American University
+4400 Massachusetts Avenue NW
+Washington, DC 20016
+and NBER
+robin.lumsdaine@american.edu
+Rogier J.D. Potter van Loon
+Erasmus School of Economics
+Erasmus University Rotterdam
+Burgemeester Oudlaan 50
+PO Box 1738, 3000 DR
+Rotterdam, The Netherlands
+pottervanloon@ese.eur.nl
+
+1. Introduction
+The phrase “Wall Street versus Main Street” became commonplace during the recent
+financial crisis as a shorthand means of describing opposing sides in a variety of contexts, from
+blame attribution to beneficiaries of government intervention to investor protection. In the
+aftermath of the crisis, this characterization has become synonymous with the divide between the
+“haves” and “have-nots”, manifested for example in the sentiment apparent in the Occupy Wall
+Street movement. It regularly appears in speeches of policymakers and politicians eager to
+address perceptions related to the faltering economy. In short, “Wall Street versus Main Street”
+distinguishes the views of financial insiders from those of the general population.
+Yet beyond the rhetoric, is there really a divide between what Wall Street and Main
+Street think? Those that would argue against a divide might appeal either to early theories of
+information flow to argue that financial market transactions are merely the aggregate result of
+individual investor decisions or to standard finance theories that indicate management decisions
+of publicly-traded firms are a direct result of the desire to maximize shareholder value and that,
+therefore, investment decisions are a reflection of the views of Main Street citizens. In addition,
+both feedback and herding models in behavioral finance would suggest that Main Street
+decisions are influenced by what happens on Wall Street (e.g., Shiller 2003).
+On the other side of the debate, those arguing that a divide does indeed exist might
+counter the above arguments by noting the low proportion of active investors in the Main Street
+population, citing evidence of low financial literacy rates (Lusardi and Mitchell, 2011), the fact
+that few Americans hold stocks outside of a retirement portfolio (Poterba and Samwick, 1995),
+and growing income inequality (Heathcote, Perri, and Violante, 2009). Even among the subset
+of the population that is active in financial markets, there is evidence that not all participants are
+informed (e.g., De Long, Shleifer, Summers, and Waldmann 1990) and that for a variety of
+reasons, returns of the two groups often differ (e.g., Barber and Odean 2002).
+This paper attempts to measure the magnitude of the Wall Street/Main Street divide. We
+find a link between beliefs about future stock market returns elicited from surveys of a
+representative sample of the U.S. population and market beliefs as calculated through option
+prices using the Black-Scholes model. We also explore whether this link depends upon
+1
+
+observable characteristics and find that evidence of greater probabilistic understanding is
+associated with a stronger Wall Street/Main Street link.
+The approach taken in this paper draws on literature from finance, behavioral economics,
+econometrics, and survey methodology, specifically the following areas: (1) the formation of
+equity return expectations, (2) the information content of option prices, (3) the information
+content of subjective expectations, and (4) the tendency of survey respondents to report focal
+points (clustering around rounded numbers) when asked probabilistic questions.
+Researchers using survey data find substantial heterogeneity across individuals with
+regards to their expectations about future equity returns (Brennan, Cao, Strong, and Xu, 2005;
+Dominitz and Manski, 2011; Hudomiet, Kézdi and Willis, 2011). Some of the interpersonal
+heterogeneity is attributable to differences in optimism among population subgroups: for
+example, women, African Americans and those in the lower education categories have less
+optimistic expectations relative to the overall population. This heterogeneity in expectations has
+in turn been used to explain heterogeneous equity investment decisions (Kézdi and Willis, 2003,
+2011).
+A separate literature gleans expectations of market participants from option price
+information, following the results from an early paper by Breeden and Litzenberger (1978)
+which shows that the price density of a state-contingent security can be derived from the prices
+of European options. A variety of functions for the price of an option are admissible in this
+context; the most often used one is the option pricing model described by Black and Scholes
+(1973) and Merton (1973) and we follow that convention in this paper.
+A number of researchers consider the inclusion of survey expectations in models of
+economic behavior [see Manski (2004) for a survey of this literature] and demonstrate that
+including probabilistic expectations can improve inference about economic behavior relative to
+models using only data on economic choices (revealed preference models). Yet others show
+that survey responses do not exactly align with true expectations – for example, due to large
+clusters of responses occurring at focal points of the response distribution (e.g., Dominitz and
+Manski, 1997; Hurd, McFadden, and Gan, 1998; Kleinjans and Van Soest, 2010) – and argue
+that adjustments to survey data to account for such aspects are necessary to improve inference
+2

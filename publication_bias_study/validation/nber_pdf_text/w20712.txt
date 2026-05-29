@@ -1,0 +1,130 @@
+NBER WORKING PAPER SERIES
+RETAIL FINANCIAL ADVICE:
+DOES ONE SIZE FIT ALL?
+Stephen Foerster
+Juhani T. Linnainmaa
+Brian T. Melzer
+Alessandro Previtero
+Working Paper 20712
+http://www.nber.org/papers/w20712
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+November 2014
+We thank Shlomo Benartzi, Antonio Bernardo, Chuck Grace, Tal Gross (discussant), Luigi Guiso,
+Michael Haliassos (discussant), Markku Kaustia (discussant), Roger Loh (discussant), Jonathan Parker,
+Jonathan Reuter (discussant), Antoinette Schoar (discussant), Barry Scholnick, and Dick Thaler for
+valuable comments. We are also grateful for feedback given by seminar and conference participants
+at Nanyang Technological University, Singapore Management University, National University of
+Singapore, University of Windsor, McMaster University, Rice University, Yale University, University
+of Washington, SUNY-Buffalo, Federal Reserve Bank of Cleveland, University of Chicago, University
+of Alberta, University of Southern California, University of California-San Diego, University of Colorado-Boulder,
+American Economic Association 2014 meetings, NBER Behavioral Economics Spring 2014 meetings,
+Rothschild Caesarea Center 11th Annual Conference, 2014 Helsinki Finance Summit, 2014 Napa
+Conference on Financial Markets Research, Oxford-Harvard-Sloan conference "Household Behavior
+in Risky Asset Markets: An International Perspective," and 2014 European Household Finance Conference.
+We are especially grateful to Univeris, Fundata, Ipsos-Reid, and four anonymous financial firms for
+donating data and giving generously of their time. Zhou Chen and Brian Held provided helpful research
+assistance. Stephen Foerster and Alessandro Previtero received financial support from Canadian financial
+firms for conducting this research. The views expressed herein are those of the authors and do not
+necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2014 by Stephen Foerster, Juhani T. Linnainmaa, Brian T. Melzer, and Alessandro Previtero. All
+rights reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+Retail Financial Advice: Does One Size Fit All?
+Stephen Foerster, Juhani T. Linnainmaa, Brian T. Melzer, and Alessandro Previtero
+NBER Working Paper No. 20712
+November 2014
+JEL No. D14,G11,G20
+ABSTRACT
+Using unique data on Canadian households, we assess the impact of financial advisors on their clients'
+portfolios. We find that advisors induce their clients to take more risk, thereby raising expected returns.
+On the other hand, we find limited evidence of customization: advisors direct clients into similar portfolios
+independent of their clients' risk preferences and stage in the life cycle. An advisor's own portfolio
+is a good predictor of the client's portfolio even after controlling for the client's characteristics. This
+one-size-fits-all advice does not come cheap. The average client pays more than 2.7% each year in
+fees and thus gives up all of the equity premium gained through increased risk-taking.
+Stephen Foerster Brian T. Melzer
+Ivey Business School Western University Kellogg School of Management
+1255 Western Road Northwestern University
+London, Ontario, Canada N6G 0N1 2001 Sheridan Road
+sfoerster@ivey.ca Evanston, IL 60208
+b-melzer@kellogg.northwestern.edu
+Juhani T. Linnainmaa
+Booth School of Business Alessandro Previtero
+University of Chicago Ivey Business School Western University
+5807 South Woodlawn Avenue 1255 Western Road
+Chicago, IL 60637 London Ontario, Canada N6G 0N1
+and NBER aprevitero@ivey.uwo.ca
+juhani.linnainmaa@chicagobooth.edu
+
+1 Introduction
+The lifecycle asset allocation problem is complex. Choosing how to allocate savings across risky
+assets requires, among other things, an understanding of risk preferences, investment horizon, and
+the joint dynamics of asset returns and labor income. To help solve this problem, many households
+turn to investment advisors. In the United States more than half of households owning mutual
+funds made purchases through an investment professional (Investment Company Institute 2013).
+Likewise, nearlyhalfofCanadianhouseholdsreportusingfinancialadvisors(TheInvestmentFunds
+InstituteofCanada2012), androughly80% ofthe$876billioninretailinvestmentassets inCanada
+reside in advisor-directed accounts (Canadian Securities Administrators 2012).
+Despite widespread useof financialadvisors, relatively little is known about how advisors shape
+their clients’ investment portfolios. Recent studies highlight underperformance and return chasing
+by advisor-directed investments and providesuggestive evidence that agency conflicts contribute to
+1
+underperformance. An opposing view is that financial advisors nevertheless add value by build-
+ing portfolios suited to each investor’s unique characteristics, an approach described as “interior
+decoration” by Bernstein (1992) and Campbell and Viceira (2002). In this paper, we use unique
+data on Canadian households to explore two dimensions through which advisors may add value:
+first, by inducingclients to take investment risk and, second, by tailoring investment risk to clients’
+particular circumstances as opposed to delivering one-size-fits-all portfolios.
+Our analysis begins by using a regulatory shock to the supply of Canadian financial advisors to
+measure advisors’ impact on risk-taking. Household survey data show a strong correlation between
+portfolio risk and use of an advisor in Canada—advised households allocate more of their portfolio
+to risky financial assets. However, these data also indicate substantial sample selection. Clients of
+advisors are more educated, wealthier, and earn higher salaries than their unadvised peers. Thus,
+the disparity in portfolio risk between advised and unadvised households likely provides a biased
+measure of advisors’ impact, one that is confounded by unobserved differences in, for example, risk
+tolerance.
+1Anumberofstudiesdocumentunderperformanceofadvisor-directedinvestments: brokeredmutualfundsunder-
+perform non-brokeredfunds (Bergstresser, Chalmers, and Tufano 2009; Christoffersen, Evans, and Musto 2013) and
+investors who pay for advice underperform lifecycle funds (Chalmers and Reuter 2013) and self-managed accounts
+(Hackethal, Haliassos, and Jappelli 2012). Brokers are also more likely to sell funds that earn them higher commis-
+sions (Christoffersen, Evans, and Musto 2013). Mullainathan, Noeth, and Schoar (2012) find in a field experiment
+that advisors encourage theirclients to chase past returns and purchaseactively managed mutual funds.
+2
+
+To resolve this selection problem, we study a 2001 regulatory change that imposed licensing,
+financial reporting and capital requirements on Canadian financial advisors operating outside of
+Quebec. Thischange providesashock to thesupplyoffinancialadvisors thatis plausiblyunrelated
+to demand for advice. Using a differences-in-differences model to compare affected households to
+those in Quebec, we find that the change reduced households’ likelihood of using an advisor by
+roughly 10%. Exploiting this variation within an instrumental variables model, we estimate that
+financialadvisorsincreasethemarginalhouseholds’riskyassetshareby30percentagepoints,which
+exceeds the estimate from a least squares regression that controls for household characteristics.
+This finding suggests that advisors facilitate substantially greater financial market participation
+and risk-taking, perhaps by reducing households’ uncertainty about future returns or by relieving
+households’ anxiety when taking financial risk (Gennaioli, Shleifer, and Vishny 2014).
+Next, we delve deeper into advisors’ impact on risk-taking by examining the portfolios held by
+advised households. Using data furnishedby four large Canadian financialinstitutions, we measure
+the extent to which advisors tailor their advice. The data include transaction-level records on over
+10,000financialadvisorsandtheseadvisors’800,000clients, alongwithdemographicinformationon
+bothinvestorsandadvisors. Manyoftheinvestorattributes—suchasrisktolerance,age,investment
+horizon, income, occupation, and financial knowledge—ought to be of first-order importance in
+determining the appropriate allocation to risky assets.
+What determines cross-sectional variation in investors’ exposure to risk? In neoclassical port-
+folio theory, differences in risk aversion account entirely for variation in risky shares (see Mossin
+(1968), Merton (1969), and Samuelson (1969)). In richer classes of models, many other factors also
+shape investors’ optimal risk exposures. For example, according to most models, old investors and
+investors facing greater labor income risk should invest less in risky assets (see, for example, Bodie,
+Merton, andSamuelson (1992)). Therecommendations implicit inlifecycle fundsalsoembodysuch
+advice. These funds allocate nearly the entire portfolio to equities for young investors and then
+reduce this exposure as investors near retirement.
+We test whether advisors adjust portfolios in response to such factors by studying variation in
+the proportion of equities in investors’ portfolios (“risky share”). We find that advisors modify
+portfolios based on client characteristics, with a particular emphasis on clients’ risk tolerance and
+point in the life cycle. As one would expect, more risk-tolerant clients hold riskier portfolios: the
+3

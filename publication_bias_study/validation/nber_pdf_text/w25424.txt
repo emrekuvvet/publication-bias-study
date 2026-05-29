@@ -1,0 +1,139 @@
+NBER WORKING PAPER SERIES
+CAPITAL REQUIREMENTS IN A QUANTITATIVE MODEL OF BANKING INDUSTRY
+DYNAMICS
+Dean Corbae
+Pablo D'Erasmo
+Working Paper 25424
+http://www.nber.org/papers/w25424
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+January 2019
+The authors wish to thank John Boyd, Gianni DeNicolo, Jean-Francois Houde, Victor Rios-Rull,
+and Skander Van Den Heuvel, as well as seminar participants at the Federal Reserve Board,
+European Central Bank, European Commission, and FDIC; Central Banks of Argentina, Canada,
+Chile, Columbia, Mexico, Netherlands, Norway, Portugal, Spain, Sweden, Turkey, and Uruguay;
+the Federal Reserve Banks of Atlanta, Chicago, Cleveland, Kansas City, Minneapolis, New York,
+and St. Louis; the Universities of British Columbia, UCLA, Carnegie Mellon/Pittsburgh, Chicago
+Booth, Colorado - Boulder, Cologne, Columbia, Cornell, Drexel, European University Institute,
+George Washington, Goethe, Indiana, London Business School, Maryland, McMaster, Michigan,
+Minnesota, NYU, Notre Dame, Ohio State, Penn, Penn State, Princeton, Queens, Rice, Rochester,
+Southern California, Tilburg, Toronto, Tsinghua; the Allied Social Science Association, CIREQ
+Macroeconomics Conference, Econometric Society, Sciences Po Macro Finance Conference, and
+Society for Economic Dynamics for helpful comments. The views expressed in this paper do not
+necessarily reflect those of the Federal Reserve Bank of Philadelphia, the Federal Reserve
+System, or the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2019 by Dean Corbae and Pablo D'Erasmo. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Capital Requirements in a Quantitative Model of Banking Industry Dynamics
+Dean Corbae and Pablo D'Erasmo
+NBER Working Paper No. 25424
+January 2019
+JEL No. E44,G21,L11
+ABSTRACT
+We develop a model of banking industry dynamics to study the quantitative impact of capital
+requirements on equilibrium bank risk taking, commercial bank failure, interest rates on loans,
+and market structure. We propose a market structure where big banks with market power interact
+with small, competitive fringe banks. Banks face idiosyncratic funding shocks in addition to
+aggregate shocks to the fraction of performing loans in their portfolio. A nontrivial bank size
+distribution arises out of endogenous entry and exit, as well as banks' buffer stock of net worth.
+We show the model predictions are consistent with untargeted business cycle properties, the bank
+lending channel, and empirical studies of the role of concentration on financial stability. We then
+conduct a series of counterfactuals (including countercyclical and size contingent (e.g. SIFI)
+capital requirements). We find that regulatory policies can have an important impact on market
+structure in the banking industry which, along with selection effects, can generate changes in
+allocative efficiency.
+Dean Corbae
+Department of Economics
+University of Wisconsin, Madison
+1180 Observatory Drive
+Madison, WI 53706
+and NBER
+corbae@ssc.wisc.edu
+Pablo D'Erasmo
+Federal Reserve Bank of Philadelphia
+Research Department
+Ten Independence Mall, Philadelphia PA 19106
+pabloderasmo@gmail.com
+
+1 Introduction
+The banking literature has focused on two main functions of bank capital. First, because
+of limited liability and deposit insurance, banks have an incentive to engage in risk shifting.
+Requiring banks to hold a minimum ratio of capital to assets constrains the banks’ ability to
+take risk. Second, bank capital acts like a buffer that may offset losses and save its charter
+value. In this paper, we develop a quantitative model of banking industry dynamics with
+imperfect competition and an endogenous size distribution of banks to answer the following
+question: How much does an increase in capital requirements affect failure rates, interest
+rates, and market shares of large and small banks?
+As Figure 1 makes clear, the number of commercial banks in the U.S. has fallen from over
+11,000 in 1984 to under 5000 in 2016 while the asset market share of the top 10 banks has
+grownfrom27.2%in1984to58.3%in2016. Risingmarketsharesofbigbanksmotivatesusto
+consideramodelofthebankingindustrythatallowsforimperfectcompetition. Furthermore,
+it allows us to understand how regulatory policy may affect market structure as well as
+consider how market structure influences risk taking behavior that regulators are attempting
+to mitigate.
+Figure 1: Number of Banks and Bank Concentration
+12000 70
+11000 63.75
+10000 57.5
+9000 51.25
+8000 45
+7000 38.75
+6000 32.5
+5000 26.25
+4000 20
+1983 1987 1991 1995 1999 2003 2007 2011 2015
+year
+Note: Number of Banks refers to the number of bank holding companies. Top 10 Asset share
+refers to the share of total assets in the hands of the top 10 banks in the asset distribution.
+1
+
+In an earlier paper (Corbae and D’Erasmo [23]), we endogenized market structure, but
+limited the asset side of the bank balance sheet to loans and the liabilities side to deposits
+and equity. While loans and deposits are clearly the largest components of each side of the
+balance sheet of U.S. banks, this simplification does not admit ways for banks to insure
+themselves at a cost through precautionary holdings of lower risk, highly liquid assets like
+cash and securities such as T-bills.
+In this paper, we still work with an endogenous market structure but extend the portfolio
+of bank assets in the above direction. Further we assume that banks are randomly matched
+with depositors and that these matches follow a Markov process that is independently dis-
+tributed across banks. Thus, we add fluctuations in deposits and other sources of funds
+(which we term “funding shocks”) to the model of the first paper.
+We assume banks have limited liability. At the end of the period, banks may choose
+to exit in the event of cash shortfalls if their charter value is not sufficiently valuable. If a
+bank’s charter value is sufficiently valuable, banks can use their stock of net securities as a
+buffer or issue seasoned equity. Thus, the extension allows us to consider banks undertaking
+precautionarysavingsinthefaceofidiosyncraticshocksasinahouseholdincomefluctuations
+problem, but with a strategic twist, since here, big banks have loan market power.
+We “test” the model by showing its predictions are qualitatively consistent with untar-
+geted data moments and empirical studies. First, in Subsection 6.2, we show the model’s
+businesscyclepredictionsarequalitativelyconsistentwithuntargeteddatacorrelations. Sec-
+ond, in Subsection 6.3 we show the model’s predictions for lending across banks of different
+sizesinresponsetoariseinthecostofexternalfundingarequalititativelyconsistentwiththe
+predictions from an important set of papers by Kashyap and Stein ([46],[47]). Kashyap and
+SteinstudiedwhethertheimpactofFedpolicyonlendingbehavioris stronger forbankswith
+less liquid balance sheets (where balance sheet strength is measured as the ratio of securities
+plus federal funds sold to total assets). The mechanism they test relies on the idea that (see
+[46] p. 410) “banks with large values of this ratio should be better able to buffer their lending
+activity against shocks in the availability of external finance, by drawing on their stock of
+liquid assets.” One of their measures of monetary policy is the federal funds rate. They find
+strong evidence of an effect for small banks (those in the bottom 95% of the distribution).
+In this section, we conduct an analogous exercise by running a similar regression on panel
+data generated by our model and find that the results are qualitatively consistent with the
+empirical evidence presented in Kashyap and Stein [46]. Third, in Subsection 6.4 we show
+the model’s predictions are qualitatively consistent with the large empirical literature on the
+competition-stability tradeoff along the lines of Beck, et. al. [11], Berger, et. al. [12], and
+Jiang, et. al. [44]. Our model generates endogenous changes in market structure that are
+correlated with cyclical changes in financial stability and intermediated output.
+A benefit of our structural framework is that we can conduct policy counterfactuals. In
+Subsection 7.1 we study a rise in level of capital requirements from 4% under Basel II to
+8.5% (corresponding to the required minimum risk weighted capital requirement of 6% plus
+a 2.5% capital conservation buffer) motivated by changes recommended by Basel III. FDIC
+Rules and Regulations (Part 325) establishes the criteria and standards to calculate capital
+requirements and adequacy (see DSC Risk Management Manual of Examination Policies,
+2

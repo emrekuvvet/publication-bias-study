@@ -1,0 +1,102 @@
+NBER WORKING PAPER SERIES
+DIAGNOSTIC EXPECTATIONS AND STOCK RETURNS
+Pedro Bordalo
+Nicola Gennaioli
+Rafael La Porta
+Andrei Shleifer
+Working Paper 23863
+http://www.nber.org/papers/w23863
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2017
+Gennaioli thanks the European Research Council and Shleifer thanks the Pershing Square
+Venture Fund for Research on the Foundations of Human Behavior for financial support of this
+research. We are grateful to seminar participants at Brown University and Sloan School, and
+especially to Josh Schwartzstein, Jesse Shapiro, Pietro Veronesi, and Yang You for helpful
+comments. We also thank V. V. Chari, who encouraged us to confront our model of diagnostic
+expectations with the Kalman filter. The views expressed herein are those of the authors and do
+not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2017 by Pedro Bordalo, Nicola Gennaioli, Rafael La Porta, and Andrei Shleifer. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+Diagnostic Expectations and Stock Returns
+Pedro Bordalo, Nicola Gennaioli, Rafael La Porta, and Andrei Shleifer
+NBER Working Paper No. 23863
+September 2017
+JEL No. D03,D84,G02,G12
+ABSTRACT
+We revisit La Porta’s (1996) finding that returns on stocks with the most optimistic analyst long
+term earnings growth forecasts are substantially lower than those for stocks with the most
+pessimistic forecasts. We document that this finding still holds, and present several further facts
+about the joint dynamics of fundamentals, expectations, and returns for these portfolios. We
+explain these facts using a new model of belief formation based on a portable formalization of the
+representativeness heuristic. In this model, analysts forecast future fundamentals from the history
+of earnings growth, but they over-react to news by exaggerating the probability of states that have
+become objectively more likely. Intuitively, fast earnings growth predicts future Googles but not
+as many as analysts believe. We test predictions that distinguish this mechanism from both
+Bayesian learning and adaptive expectations, and find supportive evidence. A calibration of the
+model offers a satisfactory account of the key patterns in fundamentals, expectations, and returns.
+Pedro Bordalo Rafael La Porta
+Saïd Business School Brown University
+University of Oxford 70 Waterman Street
+Park End Street Room 101
+Oxford, OX1 1HP Providence, RI 02912
+United Kingdom and NBER
+pedro.bordalo@sbs.ox.ac.uk rafael.laporta@brown.edu
+Nicola Gennaioli Andrei Shleifer
+Department of Finance Department of Economics
+Università Bocconi Harvard University
+Via Roentgen 1 Littauer Center M-9
+20136 Milan, Italy Cambridge, MA 02138
+nicola.gennaioli@unibocconi.it and NBER
+ashleifer@harvard.edu
+
+I. Introduction
+La Porta (1996) shows that expectations of stock market analysts about long-term earnings
+growth of the companies they cover have strong predictive power for these companies’ future
+stock returns. Companies whose earnings growth analysts are most optimistic about earn poor
+returns relative to companies whose earnings growth analysts are most pessimistic about.
+Figure 1 offers an update of this phenomenon. Stocks are sorted by analyst long-term
+earnings per share growth forecasts (LTG). The LLTG portfolio is the 10% of stocks with most
+pessimistic forecasts, the HLTG portfolio is the 10% of stocks with most optimistic forecasts. The
+figure reports geometric averages of one-year returns on equally weighted portfolios.
+Figure 1. Annual Returns for Portfolios Formed on LTG. In December of each year between 1981 and 2015, we form
+decile portfolios based on ranked analysts' expected growth in earnings per share and report the geometric average
+one-year return over the subsequent calendar year for equally-weighted portfolios with monthly rebalancing.
+Consistent with La Porta (1996), the LLTG portfolio earns an average return of 15% in the
+year after formation, while the HLTG portfolio earns only 3%.2 Adjusting for systematic risk
+2 The spread in Figure 1 is in line with, although smaller than, previous findings. LaPorta (1996) finds an average
+yearly spread of 20% but employed a shorter sample (1982 to 1991). Dechow and Sloan (1997) use a similar sample
+to La Porta (1996) and find a 15% spread. Appendix A shows that the spread also holds in sample subperiods.
+2
+
+deepens the puzzle: the HLTG portfolio has higher market beta than the LLTG portfolio, and
+performs much worse in market downturns.3 Over the past 35 years, betting against extreme
+analyst optimism has been on average a good idea. La Porta (1996) interprets this finding as
+evidence that analysts, as well as investors who follow them or think like them, are too optimistic
+about stocks with rapidly growing earnings, and too pessimistic about stocks with deteriorating
+earnings.
+In this paper we analyze the dynamics of expectation formation and offer a
+psychologically founded theory that jointly accounts for the behavior of fundamentals,
+expectations, and returns. We propose a new learning model in which beliefs are forward looking
+just as with rational expectations, but distorted by representativeness, which biases the
+interpretation of the news. Specifically, analysts update excessively in the direction of states of the
+world whose objective likelihood rises the most in light of the news. The model delivers over-
+reaction to news and extrapolation. It also makes sharp predictions that distinguish it from both
+Bayesian learning and mechanical adaptive expectations. We test, and confirm, several of these
+new predictions.
+After describing the data in Section II, in Section III we document three facts. First,
+HLTG stocks exhibit fast past earnings growth, which slows down going forward. Second,
+forecasts of future earnings growth of HLTG stocks are excessively optimistic, and are
+systematically revised downward later. Third, HLTG stocks exhibit good past returns but their
+average returns going forward are low. The opposite dynamics obtain for LLTG stocks, but in a
+much less extreme form, an asymmetry we do not account for in our model.
+3 We find 𝛽 =1.51, and 𝛽 =0.78 (Appendix A). The HLTG-LLTG spread holds within size buckets and it
+𝐻𝐿𝑇𝐺 𝐿𝐿𝑇𝐺
+is strongest for intermediate B/M levels.
+3

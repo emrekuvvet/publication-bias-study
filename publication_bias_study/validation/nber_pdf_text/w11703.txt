@@ -1,0 +1,123 @@
+NBER WORKING PAPER SERIES
+MACRO FACTORS IN BOND RISK PREMIA
+Sydney C. Ludvigson
+Serena Ng
+Working Paper 11703
+http://www.nber.org/papers/w11703
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2005
+Ludvigson acknowledges financial support from the Alfred P. Sloan Foundation and the CV Starr Center at
+NYU. We thank Greg Du¤ee and Monika Piazzesi for helpful comments. We are also grateful to Monika
+Piazzesi for help with the bond data, to Mark Watson for help with the macro data, and to Bernadino Palazzo
+for excellent research assistance. Any errors or omissions are the responsibility of the authors. The views
+expressed herein are those of the author(s) and do not necessarily reflect the views of the National Bureau
+of Economic Research.
+©2005 by Sydney C. Ludvigson and Serena Ng. All rights reserved. Short sections of text, not to exceed two
+paragraphs, may be quoted without explicit permission provided that full credit, including © notice, is given
+to the source.
+
+Macro Factors in Bond Risk Premia
+Sydney C. Ludvigson and Serena Ng
+NBER Working Paper No. 11703
+October 2005, Revised September 2006
+JEL No. G10, G12, E0, E4
+ABSTRACT
+Empirical evidence suggests that excess bond returns are forecastable by financial indicators such
+as forward spreads and yield spreads, a violation of the expectations hypothesis based on constant
+risk premia. But existing evidence does not tie the forecastable variation in excess bond returns to
+underlying macroeconomic fundamentals, as would be expected if the forecastability were
+attributable to time variation in risk premia. We use the methodology of dynamic factor analysis for
+large datasets to investigate possible empirical linkages between forecastable variation in excess
+bond returns and macroeconomic fundamentals. We find that several common factors estimated from
+a large dataset on U.S. economic activity have important forecasting power for future excess returns
+on U.S. government bonds. Following Cochrane and Piazzesi (2005), we also construct single
+predictor state variables by forming linear combinations of either five or six estimated common
+factors. The single state variables forecast excess bond returns at maturities from two to five years,
+and do so virtually as well as an unrestricted regression model that includes each common factor as
+a separate predictor variable. The linear combinations we form are driven by both "real" and
+"inflation" macro factors, in addition to financial factors, and contain important information about
+one year ahead excess bond returns that is not captured by forward spreads, yield spreads, or the
+principal components of the yield covariance matrix.
+Sydney C. Ludvigson Department of Economics
+Department of Economics University of Michigan
+New York University 317 Lorcha Hall
+269 Mercer Street Ann Arbor, MI 48109
+7th Floor serena.ng@umich.edu
+New York, NY 10003
+and NBER
+sydney.ludvigson@nyu.edu
+Serena Ng
+
+1 Introduction
+Recent empirical research in …nancial economics has uncovered signi…cant forecastable varia-
+tionintheexcessreturnsofU.S.governmentbonds,aviolationoftheexpectationshypothesis.
+Fama and Bliss (1987) report that n-year excess bond returns are forecastable by the spread
+between the n-year forward rate and the one-year yield. Campbell and Shiller (1991) …nd
+that excess bond returns are forecastable by Treasury yield spreads. Cochrane and Piazzesi
+(2005) …nd that a linear combination of …ve forward spreads explains between 30 and 35
+percent of the variation in next year’s excess returns on bonds with maturities ranging from
+two to …ve years. These …ndings imply that risk premia in bond returns and bond yields vary
+over time and are a quantitatively important source of ‡uctuations in the bond market.
+An unanswered question is whether such movements in bond market risk premia bear
+any relation to the macroeconomy. Are there important cyclical ‡uctuations in bond market
+premia and, if so, with what macroeconomic aggregates do these premia vary? Economic
+theories that rationalize time-varying risk premia almost always posit that such premia vary
+with macroeconomic variables. For example, Campbell and Cochrane (1999) posit that risk
+premia on equity vary with a slow-moving habit driven by shocks to aggregate consumption.
+Wachter (2006) adapts the Campbell-Cochrane habit model to examine the nominal term
+structure of interest rates, and shows that bond risk premia (as well as equity premia) should
+vary with the slow-moving consumption habit. Brandt and Wang (2003) argue that risk
+premia are driven by shocks to in‡ation, as well as shocks to aggregate consumption. Such
+theories imply that rational variation in bond risk premia should be evident from forecasting
+regressions of excess bond returns on macroeconomic fundamentals.
+Despite these theoretical insights, there is little direct evidence of a link between the
+macroeconomy and bond risk premia. The empirical evidence cited above, for example, …nds
+that excess bond returns are forecastable not by macroeconomic variables such as aggregate
+consumption or in‡ation, but rather by pure …nancial indicators such as forward spreads and
+yield spreads.
+There are several possible reasons why it may be di¢ cult to uncover a direct link between
+macroeconomic activity and bond market risk premia. First, some macroeconomic driving
+variables may be latent and impossible to summarize with a few observable series. The
+Campbell-Cochrane habit mayfall into this category. Second, macro variables are more likely
+than …nancial series to be imperfectly measured and less likely to correspond to the precise
+economicconceptsprovidedbytheoreticalmodels. Asoneexample, aggregateconsumptionis
+1
+
+oftenmeasuredasnondurablesandservicesexpenditure,butthismeasureomitsanimportant
+component of theoretical consumption, namely the service ‡ow from the stock of durables.
+Third, the models themselves are imperfect descriptions of reality and may restrict attention
+toasmallsetofvariablesthatfailtospantheinformationsetsof…nancialmarketparticipants.
+This paper considers one way around these di¢ culties using the methodology of dynamic
+factor analysis for large datasets. Recent research on dynamic factor analysis …nds that
+the information in a large number of economic time series can be e¤ectively summarized
+by a relatively small number of estimated factors, a¤ording the opportunity to exploit a
+much richer information base than what has been possible in prior empirical study of bond
+risk premia. In this methodology, “a large number”can mean hundreds or, perhaps, even
+more than one thousand economic time series. By summarizing the information from a large
+number of series in a few estimated factors, we eliminate the arbitrary reliance on a small
+number of imperfectly measured indicators to proxy for macroeconomic fundamentals, and
+make feasible the use of a vast set of economic variables that are more likely to span the
+unobservable information sets of …nancial market participants.
+We use dynamic factor analysis to revisit the question of whether there are important
+macro factors in bond risk premia. We begin with a comprehensive analysis of whether
+excess bond returns are predictable by macroeconomic fundamentals, and then move on to
+investigate whether risk premia in long-term bond yields (sometimes called term premia),
+vary with macroeconomic fundamentals.
+Our results indicate bond premia are indeed forecastable by macroeconomic fundamen-
+tals, and we …nd marked countercyclical variation in bond risk premia. To implement the
+dynamic factor analysis methodology, we estimate common factors from a monthly panel of
+132 measures of economic activity using the method of principal components. We …nd that
+several estimated common factors have important forecasting power for future excess returns
+on U.S. government bonds. Following Cochrane and Piazzesi (2005), we also construct single
+predictor state variables from these factors by forming linear combinations of the either …ve
+orsixestimatedcommonfactors(denotedF5 andF6 , respectively). We…ndthatsuchstate
+t t
+variables forecast excess bond returns at all maturities (two to …ve years), and do so virtually
+as well as a regression model that includes each common factor in the linear combination as
+a separate predictor variable.
+The magnitude of the forecastability we …nd associated with macroeconomic activity is
+economically signi…cant. The estimated factors have their strongest predictive power for two-
+year bonds, explaining 26 percent of the one year ahead variation in their excess returns.
+2

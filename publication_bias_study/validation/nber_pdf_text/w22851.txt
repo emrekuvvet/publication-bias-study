@@ -1,0 +1,117 @@
+NBER WORKING PAPER SERIES
+PREPAYMENT RISK AND EXPECTED MBS RETURNS
+Peter Diep
+Andrea L. Eisfeldt
+Scott Richardson
+Working Paper 22851
+http://www.nber.org/papers/w22851
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+November 2016, Revised March 2017
+We would like to thank Attakrit Asvanunt, Mikhail Chernov, Itamar Drechsler, Brett Dunn, Mark
+Garmaise, Ronen Israel, Arvind Krishnamurthy, Francis Longstaff, William Mann, Tobias
+Moskowitz, and Tyler Muir, as well as seminar participants at AQR, the Federal Reserve Bank of
+New York, and NYU Stern for comments and suggestions. All errors are ours. Eisfeldt has an
+ongoing consulting relationship with AQR. The views expressed herein are those of the authors
+and do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2016 by Peter Diep, Andrea L. Eisfeldt, and Scott Richardson. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Prepayment Risk and Expected MBS Returns
+Peter Diep, Andrea L. Eisfeldt, and Scott Richardson
+NBER Working Paper No. 22851
+November 2016, Revised March 2017
+JEL No. E02,G12,G2
+ABSTRACT
+We present a simple, linear asset pricing model of the cross section of Mortgage-Backed Security
+(MBS) returns in which MBS earn risk premia as compensation for their exposure to prepayment
+risk. We measure prepayment risk and estimate security risk loadings using real data on
+prepayment forecasts vs. realizations. Estimated loadings are monotonic in securities' coupons
+relative to the par coupon, as predicted by the model. Prepayment risks appear to be priced by
+specialized MBS investors. In particular, we find convincing evidence that prepayment risk prices
+change sign over time with the sign of a representative MBS investor's exposure to prepayment
+risk.
+Peter Diep Scott Richardson
+AQR AQR Capital Management
+2 Greenwich Plaza and London Business School
+Greenwich, CT 06830 srichardson@london.edu
+peter.diep@aqr.com
+Andrea L. Eisfeldt
+UCLA Anderson School of Management
+110 Westwood Plaza
+Suite C4.10
+Los Angeles, CA 90095
+and NBER
+andrea.eisfeldt@anderson.ucla.edu
+
+1 Introduction
+We develop a model of the time series and cross section of treasury-hedged returns
+to Mortgage-Backed Securities (MBS), and find robust empirical support for our
+model’s main implications. Our model is a simple and transparent linear asset pricing
+model. Its key feature is that prepayment risk which is not readily hedgeable using
+US treasuries is priced by specialized MBS investors, as in Gabaix, Krishnamurthy,
+and Vigneron (2007). These specialized investors require prepayment risk premia
+which vary over time and across securities depending on the share of MBS which is
+trading above par value. We find that a tradable strategy optimized according to our
+theory across securities and over time has a Sharpe ratio which is 2.7 times that of a
+passive, value-weighted MBS index.
+While prepayments due to interest rate movements of government securities can
+be hedged, the requirement of a hedging model leads to model risk. Moreover, it is
+even more challenging, if not impossible, to hedge against prepayment risk driven by
+shocks to spreads between government and mortgage rates, changing credit condi-
+tions, house price appreciation, and regulatory changes. As result, MBS which load
+on the unhedgeable component of prepayment risk can exhibit risk premia even if
+returns are effectively duration hedged to US treasuries. We show that this is indeed
+the case by measuring MBS securities’ loadings on prepayment risk shocks measured
+using actual forecast and realized prepayment data and showing that these risk load-
+ings are priced. However, we also show that the factor risk prices change sign over
+time. Such time varying risk premia have important implications for the time series
+and cross section variation in MBS average returns. Indeed, failing to account for
+time varying risk premia leads to estimates for expected returns which are misleading
+because positive expected returns are biased towards zero.
+We show that the composition of the market between discount and premium
+securities drives the sign of prepayment risk premia. This idea, first proposed by
+Gabaix et al. (2007), makes sense in the context of segmented markets and specialized
+MBS investors. Discount securities trade below face value and are prepaid at face
+value. Thus, for discount securities, or securities with prices below par, prepayment
+is value increasing. The opposite is true for premium securities, whose value declines
+1
+
+with early prepayment at a face value which is lower than their market value. As
+interest rates move, the moneyness of borrowers’ options to prepay, and the prices of
+outstanding securities relative to the par security, vary considerably. As a result, the
+composition of the MBS universe changes substantially over time, and the market
+moves between being mainly comprised by discount securities to primarily premium.
+Thus,prepaymentscanbevalueincreasingforthemarketoverallwhenthemajorityof
+MBS,weightedbytheirremainingprincipalbalance, aretradingatadiscounttotheir
+face value, and value decreasing when the market features more premium securities.
+We provide evidence that MBS markets are indeed segmented. In particular, when
+prepayment is wealth decreasing for a representative MBS investor who holds the
+MBS market, we find negative prepayment risk prices. On the other hand, when
+early prepayment increases the wealth of such an investor, we find a positive price of
+prepayment risk.
+We provide a simple, linear asset pricing model for the cross section of hedged
+MBS returns which features two prepayment risk factors, and prices of risk for these
+two factors which vary with market composition. The first risk factor is a level factor,
+which shifts prepayments across all coupon levels up or down. The second factor is a
+rate-sensitivity factor. This factor determines how sensitive borrowers are to prepay-
+ment options, conditional on their option moneyness. Although active MBS investors
+duration hedge, they cannot hedge shocks to the level of prepayments, or shocks to
+borrowers’ sensitivity to their rate incentive. These “level” and ”rate-sensitivity” fac-
+tors were termed “turnover” and “refi” risk by Levin and Davidson (2005). Chernov
+etal.(2015)greatlyextendthisideaand, usingastructuralestimation, deriveimplied
+time series for these two factors from their model and data on MBS prices.
+Our study makes several contributions. First, we provide the first comprehensive
+study explaining a long time series and broad cross section of MBS expected returns.
+We study the pattern of expected returns in this important fixed income market using
+a linear factor model which is straightforward to estimate and easy to interpret.
+Second, we are the first to show that risk premia are earned on MBS investments
+which load on prepayment risk in a study which uses actual prepayment data to
+measure innovations to prepayment risk factors. We find substantial evidence that
+non-interestratedrivenprepaymentshocksdriveMBSreturns,andthishasimportant
+2

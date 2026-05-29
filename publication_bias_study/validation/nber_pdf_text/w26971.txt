@@ -1,0 +1,130 @@
+NBER WORKING PAPER SERIES
+FIRM-LEVEL EXPOSURE TO EPIDEMIC DISEASES:
+COVID-19, SARS, AND H1N1
+Tarek Alexander Hassan
+Stephan Hollander
+Laurence van Lent
+Markus Schwedeler
+Ahmed Tahoun
+Working Paper 26971
+http://www.nber.org/papers/w26971
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+April 2020, Revised September 2022
+We thank participants at the 2021 American Economic Association Annual Meeting, the EAA
+Virtual Accounting Research Seminar, 2021 European Economic Association Congress, NBER
+SI 2020 Asset Pricing, INQUIRE, Virtual Law & Economics Workshop (University of Florida,
+University of Michigan, and University of Virginia), and Case Western Reserve. We thank Steve
+Davis, Ralph Koijen (discussant), Ken Kotz, and Tom Ferguson for helpful comments. Aakash
+Kalyani and Luke Melas-Kyriazi provided excellent research assistance. Tahoun sincerely
+appreciates support and funding from the Wheeler Institute for Business and Development.
+Tahoun and Van Lent sincerely appreciate the support from the Institute for New Economic
+Thinking (INET). Van Lent gratefully acknowledges funding from the Deutsche
+Forschungsgemeinschaft Project ID 403041268 - TRR 266. The dataset developed in this paper is
+available on www.firmlevelrisk.com. The views expressed herein are those of the authors and do
+not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Tarek Alexander Hassan, Stephan Hollander, Laurence van Lent, Markus Schwedeler,
+and Ahmed Tahoun. All rights reserved. Short sections of text, not to exceed two paragraphs,
+may be quoted without explicit permission provided that full credit, including © notice, is given
+to the source.
+
+Firm-Level Exposure to Epidemic Diseases: COVID-19, SARS, and H1N1
+Tarek Alexander Hassan, Stephan Hollander, Laurence van Lent, Markus Schwedeler, and
+Ahmed Tahoun
+NBER Working Paper No. 26971
+April 2020, Revised September 2022
+JEL No. E0,E6,F0,G12,I0
+ABSTRACT
+We construct text-based measures of the primary concerns listed firms associated with the spread
+of COVID-19 and other epidemic diseases. We identify which firms perceive to lose or gain from
+a given epidemic and textually decompose the epidemic's effect on the firm's demand and supply.
+We find that the effects of COVID-19 manifest as a simultaneous shock to demand and supply,
+with both shocks affecting firms' market valuations in equal measure on average. By contrast,
+demand-related impacts appear more important in accounting for the observed collapse in firm-
+level investment during the COVID-19 crisis.
+Tarek Alexander Hassan Markus Schwedeler
+Department of Economics Boston University
+Boston University 270 Bay State Road
+270 Bay State Road Boston, MA 02215
+Boston, MA 02215 mschwed@bu.edu
+and NBER
+thassan@bu.edu Ahmed Tahoun
+London Business School
+Stephan Hollander 26 Sussex plc, Regent's Park
+Tilburg University London NW1 4SA
+Warandelaan 2 United Kingdom
+5037 AB Tilburg atahoun@london.edu
+the Netherlands
+s.hollander@tilburguniversity.edu
+Laurence van Lent
+Frankfurt School of Finance and Management
+Adickesallee 32-34
+60322 Frankfurt am Main
+Germany
+l.vanlent@fs.de
+Data is available at www.firmlevelrisk.com
+
+“[D]o you want to touch on cancellations and just the whole hype around coronavirus?”
+— Colin V. Reed, Chairman and CEO, Ryman Hospitality Properties Inc., in the company’s
+Q4-2019 earnings call (February 25, 2020)
+When the World Health Organization declared the outbreak of the COVID-19 virus a
+pandemic on March 11, 2020, the disease had already wreaked havoc in large swathes of
+China and Northern Italy. What started as a new illness in a middling city in China had
+grown within a few months to a global public health crisis unseen for a century. Stock
+markets around the world crashed.1 Even though governments rushed in equal measure to
+stem the further spread of the virus, locking down entire regions and supporting a suddenly
+wobbling economy, it became clear that the shock would leave few untouched.
+While perhaps a singular event, the COVID-19 pandemic has underscored the need to
+quicklyunderstandhowfirmsareaffected by andrespond to large, aggregate, andunexpected
+events (“shocks”). However, those wishing to understand the ongoing or anticipated firm-
+level impact of a large shock face four fundamental challenges related to measurement: How
+to identify which firm is affected? How to quantify the intensity of a firm’s exposure to the
+shock? Howtodeterminethenatureofafirm’sshock(forexample, whethertheshockresults
+in a firm’s demand contraction, supply disruption, or financial difficulties)? And finally, how
+to do so in time to still be useful for decision making?
+A common approach to studying the firm-level impacts of large events is to examine
+earnings or related accounting data. However, accounting data are, by nature, backward-
+looking and reflect news only at considerable lags. Further, when considering earnings in
+isolation, it would be hard to disentangle the impact of COVID-19 from that of other shocks
+and to identify—let alone quantify—the specific channels through which COVID-19 disrupts
+firms. That is, although one may observe firms’ earnings being (negatively) impacted, it is
+much more difficult to determine whether, and if so by how much, this negative impact is
+due to COVID-19 impacting firms through their demand or supply side, or perhaps through
+1SeeBakeretal.(2020);GormsenandKoijen(2020);RamelliandWagner(2020);andDavisetal.(2021)
+for an early discussion of the stock market response to COVID-19.
+1
+
+government regulations taken in response to the outbreak.2 Event studies (Kothari and
+Warner, 2007), which look at stock price reactions to events, may identify winners and losers
+but, likewise, fall short of giving clues about the channels through which a shock impacts a
+given firm.
+At the same time, a detailed, firm-level understanding of a shock’s distinct channels
+is essential for formulating an effective policy response. For example, while well-targeted
+monetary and fiscal policies can compensate for shortfalls in demand, they may fall flat or
+even cause inflation in the face of a contraction in supply.3 This is, of course, also true
+across countries, sectors, or even firms. Indeed, whereas firms from a specific country or
+sector may predominantly experience a demand shortfall, others could suffer from supply-
+chain or financing difficulties. Thus, a better understanding of how a shock manifests at the
+firm level is essential for a more targeted response by monetary and fiscal authorities and
+for investors considering its consequences for their portfolios.
+In this paper, we introduce a toolbox of text-based measures that allow researchers to
+systematically characterize the ongoing and anticipated impacts of large, potentially un-
+precedented events in near real-time. Specifically, these measures allow us to identify per-
+ceived winners and losers, trace the channels through which the event impacts specific firms,
+and identify firm-level demand and supply shocks resulting from the event. Since we use
+transcripts of earnings conference calls as our data source, the measures can be applied to
+virtually all US publicly listed firms and the majority of large internationally-listed firms
+in over 80 countries, and in near real-time (as soon as firms hold their earnings calls). We
+demonstrate the usefulness of the toolbox by analyzing which firms are affected by and how
+firms respond to the outbreak of COVID-19 and other epidemic diseases.
+The keystone of our toolbox is the firm’s exposure to the shock, where ‘exposure’ is
+2Barrero et al. (2021) use data from a survey to underpin their conclusion that COVID-19 is a persistent
+reallocation shock, shifting employment growth to industries with a capacity for employees to work from
+home.
+3See, for example, the debate in the literature about whether the Great Recession was demand-driven or
+due to a drop in productivity (e.g., Mian et al., 2013; Kaplan et al., 2020).
+2

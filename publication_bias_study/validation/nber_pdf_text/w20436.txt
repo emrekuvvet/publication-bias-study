@@ -1,0 +1,144 @@
+NBER WORKING PAPER SERIES
+QUANTIFYING THE SOURCES OF FIRM HETEROGENEITY
+Colin Hottman
+Stephen J. Redding
+David E. Weinstein
+Working Paper 20436
+http://www.nber.org/papers/w20436
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+August 2014
+We are grateful to the editor, four referees, Andrew Bernard, Swati Dhingra, Cecilia Fieler, Gene Grossman,
+Oleg Itskhoki, Esteban Rossi-Hansberg, Bernard Salanié and conference and seminar participants
+at Columbia, ERWIT, Dartmouth, Harvard, LSE, NBER-ITI, Philadelphia-Fed, Princeton, UBC, UC
+Berkeley, UC Merced, UCLA and UCSD for helpful comments. Thanks to Ildiko Magyari, Scott Marchi
+and Dyanne Vaught for providing excellent research assistance. Redding thanks Princeton University
+for research support. Weinstein thanks Columbia University and the NSF (Award 1127493) for generous
+financial support. We also would like to thank GS1 for providing us with a concordance between the
+bar code data and firm identifiers. The views expressed in this paper are solely those of the authors
+and do not represent the views of the Board of Governors, other members of the Federal Reserve System,
+or the National Bureau of Economic Research. All results are calculated based on data from The Nielsen
+Company (US), LLC and provided by the Marketing Data Center at The University of Chicago Booth
+School of Business.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2014 by Colin Hottman, Stephen J. Redding, and David E. Weinstein. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission provided
+that full credit, including © notice, is given to the source.
+
+Quantifying the Sources of Firm Heterogeneity
+Colin Hottman, Stephen J. Redding, and David E. Weinstein
+NBER Working Paper No. 20436
+August 2014, Revised November 2015
+JEL No. D24,F12,F14
+ABSTRACT
+We develop and structurally estimate a model of heterogeneous multiproduct firms that can be used to
+decompose the firm-size distribution into the contributions of costs, “appeal” (quality or taste), markups,
+and product scope. Using Nielsen bar-code data on prices and sales, we find that variation in firm appeal
+and product scope explains at least four fifths of the variation in firm sales. We show that the imperfect
+substitutability of products within firms, and the fact that larger firms supply more products than smaller
+firms, implies that standard productivity measures are highly dependent on implicit demand system
+assumptions and probably dramatically understate the relative productivity of the largest firms. Although
+most firms are well approximated by the monopolistic competition benchmark of constant markups,
+we find that the largest firms that account for most of aggregate sales depart substantially from this
+benchmark, and exhibit both variable markups and substantial cannibalization effects.
+Colin Hottman David E. Weinstein
+Department of Economics Columbia University
+Columbia University Department of Economics
+420 W. 118th St. MC 3308 420 W. 118th Street
+New York, NY 10027 MC 3308
+cjh2164@columbia.edu New York, NY 10027
+and NBER
+Stephen J. Redding dew35@columbia.edu
+Department of Economics
+and Woodrow Wilson School
+Princeton University
+Fisher Hall
+Princeton, NJ 08544
+and NBER
+reddings@princeton.edu
+
+I. Introduction
+Whyaresomefirmslargerthanothers? Somecompanies,suchastheCocaColaCorporation,generatebillions
+ofdollarsofsalesanddominatethemarketsinwhichtheyoperate. Othercompaniesaccountforonlyasmall
+fraction of the sales of their larger competitors. What explains these vast differences in firm performance?
+Answering this question is important for quantifying equilibrium models of firm heterogeneity developed in
+the recent trade and macro literatures and for understanding the relationship between microeconomic firm
+performanceandmacroeconomicoutcomes.
+Recent research on firm heterogeneity in trade and macroeconomics (e.g., Melitz [2003]; Manova and
+Zhang [2012]; Feenstra [2014]) points to four components of firm heterogeneity: marginal cost, “appeal”
+(qualityortaste),markupsandproductscope(i.e.,thenumberofproductsproducedbyfirms).1 Wedevelopa
+structuralmodelofheterogeneousmultiproductfirmsthatcanbeusedtodecomposethefirm-sizedistribution
+intotherelativecontributionsofeachcomponent. Wefirstusethisframeworktostructurallyestimateelastic-
+ities of substitution across varieties between and within multiproduct firms. We next implement our model-
+based decomposition for the around 20,000 firms that supply goods with bar codes in the Nielsen HomeScan
+Database in a typical quarter. This decomposition uses the structure of the model to isolate different margins
+inthedatawithoutmakingassumptionsabouthowthosemarginsarerelatedtooneanother(asinthebusiness
+cycledecompositionofChari,KehoeandMcGratten2007inthemacroeconomicsliterature). Ourframework
+requires only price and expenditure data and hence is widely applicable. We separate out the contributions of
+cost and appeal using the exclusion restriction that cost only affects sales through price. In contrast, appeal
+affectssalesconditionalonprice.
+Our results point to demand differences (which could arise from quality or taste variation) as being the
+principal reason why some firms are successful in the marketplace and others are not. Depending on the
+specificationconsidered,wefindthat50-70percentofthevarianceinfirmsizecanbeattributedtodifferences
+in firm appeal, about 20-25 percent to differences in product scope, and less than 25 percent to cost. When
+weturntoexaminetime-seriesevidence,theresultsbecomeevenmorestark. Virtuallyallfirmgrowthcanbe
+attributed to firm appeal with most of the remainder due to product scope. These results suggest that most of
+what economists call differences in revenue productivity reflects differences in appeal (e.g., quality or taste)
+ratherthancost.
+Ourframeworkusesanestedconstantelasticityofsubstitution(CES)utilitysystemthatallowstheelasticity
+of substitution between varieties within a firm to differ from the elasticity of substitution between varieties
+suppliedbydifferentfirms. OurchoiceofthisCESdemandstructureisguidedbyitsprominence,tractability,
+andempiricalfeasibility. Acrossinternationaltrade,economicgeography,andmacroeconomics,thereislittle
+doubtthatthisframeworkisthepreferredapproachtomodelingproductvariety. Sinceourapproachneststhe
+standard CES-monopolistic competition model as a special case, we can compare our results with those that
+1Muchoftheexistingempiricalliteraturereferstoanyshifterofdemandconditionalonpriceas“quality,”asinShakedandSutton
+(1983);Berry(1994);Khandelwal(2010);BrodaandWeinstein(2010);HallakandSchott(2011);andFeenstraandRomalis(2014).
+We use the term “appeal” to avoid taking a stand as to whether the shift in demand arises from vertical quality differentiation or
+subjectivedifferencesinconsumertaste.Empirically,wefindthathigherappealproductsareonaveragemorecostlytoproduce,which
+isconsistentwithaqualityinterpretation.
+2
+
+would be obtained in a standard trade, macro or economic geography model. However, we generalize this
+standardmodeltoallowfirmstosupplymultipleproducts(apervasivefeatureofourdata)andtohavemarket
+power(sincethelargestfirmsinourdataarefarfrombeingmeasurezero).
+Incorporating these features into our structural model yields a number of additional insights. Our model
+makesclearaconceptualproblemintheestimationoffirmproductivitythatislikelytobiasexistingestimates.
+Mostproductivityestimatesrelyontheconceptofrealoutput,whichiscalculatedbydividingnominaloutput
+byapriceindex. However,theformulaforanyeconomicallymotivatedpriceindex,whichisthesameasaunit
+expenditurefunction, isdependentonimplicitassumptionsabouthowtheoutputoffirmsentersutility. Thus,
+one cannot move from nominal output to real output without imposing assumptions about the structure of the
+demandsystem.2 OurresultsshowtheoreticallyandempiricallythattheCESmeasureofamultiproductfirm’s
+price is highly sensitive to how differentiated its output is and how many products it supplies. The sensitivity
+of the CES price index to demand parameters, such as the elasticity of substitution and whether multiproduct
+firms exist, implies that estimates of real output are equally sensitive to these demand parameters. We show
+thatifdemandhasanestedCESstructure,conventionalmeasuresofrealoutputwillhaveadownwardbiasthat
+riseswithfirmsizewithanelasticityofaroundonethird. Inotherwords,realoutputvariationissubstantially
+greaterthannominaloutputvariation. Thisbiasalsoimpliesthattrueproductivitydifferencesaremuchlarger
+thanconventionallymeasuredones.
+Thebiasisdrivenbytwofeaturesofrealitythataretypicallyignoredinmostanalyses. First,mostanalyses
+treatproducersassingle-productfirmssotheycanavoidcomplicationsarisingfromthechallengesofmeasur-
+ing the real output of multiproduct firms. However, our results indicate that multiproduct firms are the norm.
+For example, we show that 69 percent of firms supply more than one bar code and these firms account for
+more than 99 percent of output in their sectors.3 Therefore truly single product firms account for a negligible
+shareofsalesinourdata. Second,weshowthatiftheoutputofmultiproductfirmsisdifferentiated,thecom-
+monassumptionthattotalfirmoutputissimplythesumoftheoutputofeachgoodunderstatesrealoutputfor
+multiproductfirms,andthedegreeofthisdownwardbiasrisesinthenumberofproductssupplied.
+Ourframeworkalsoprovidesanewmetricforquantifyingtheextenttowhichafirm’sproductsarediffer-
+entiated from those of its rivals. If a firm’s products are perfectly substitutable with each other but not with
+thoseofotherfirms,then100percentofanewproduct’ssaleswillcomefromthefirm’sexistingsales,which
+implies a cannibalization rate of one. However, if a firm’s market share is negligible (as it is for most firms)
+and its products are as differentiated from each other as they are from products supplied by other firms, none
+ofanewproduct’ssaleswillcomeattheexpenseofthefirm’sotherproducts,whichimpliesacannibalization
+rate of zero. We estimate that the cannibalization rate for the typical firm is about 50 percent, indicating that
+although products supplied by the same firm are more substitutable with each other than with those of other
+firms,itisnotcorrecttothinkofthemasperfectsubstitutes.
+2ThispointwasstressedbyAristotleinhisNicomacheanEthics(BookV,Section5): ”Demandholdsthingstogetherasasingle
+unit.... Intruthitisimpossiblethatthingsdifferingsomuchshouldbecomecommensurate,butwithreferencetodemandtheymay
+becomeso.”(seehttp://classics.mit.edu/Aristotle/nicomachaen.5.v.html)
+3Bycontrast, U.S.CensusofManufacturesdataindicatesthatproducersofmultiplefive-digitStandardIndustrialClassification
+(SIC)productsaccountfor37percentoffirmsand87percentofshipments(Bernard, ReddingandSchott[2010]). Thedifference
+comesfromdefiningsingleproductfirmsasone-industryfirmsasopposedtoone-bar-codefirms.
+3

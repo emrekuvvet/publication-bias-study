@@ -1,0 +1,119 @@
+NBER WORKING PAPER SERIES
+CYBERSECURITY RISK
+Chris Florackis
+Christodoulos Louca
+Roni Michaely
+Michael Weber
+Working Paper 28196
+http://www.nber.org/papers/w28196
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2020, Revised March 2022
+We would like to thank Itay Goldstein (the editor), two anonymous referees, Kenneth Ahern
+(discussant), Scott Baker (discussant), Matia Bevilacqua, Emanuele Borgonovo, Leisen Dietmar
+(discussant), Alexandros Kostakis, Gabriele Lattanzio, Andreas Milidonis, Michael Minnis,
+Dewan Muktadir-Al-Mukit, Jaideep Oberoi (discussant), Panagiotis Stamatopoulos, Morad
+Zekhini (discussant), Guofu Zhou and conference/seminar participants at the University of
+Durham, University of Surrey, the 19th Annual Meeting of the Hellenic Finance and Accounting
+Association, the SFS Cavalcade North America 2021, the 2021 NBER Summer Institute on Big
+Data and High-Performance Computing for Financial Economics, the 2021 European Meeting of
+the Financial Management Association, the 2021 Annual Meeting of the European Financial
+Management Association, the Global Virtual Seminar Series on Fintech (Cybersecurity Day)
+organised by Center for Financial Markets and Policy (CFMP) at Georgetown University and the
+2021 Annual Meeting of the American Finance Association. Weber gratefully acknowledges
+financial support from the University of Chicago Booth School of Business and the Fama
+Research Fund. Send correspondence to Michael Weber, Michael.Weber@chicagobooth.edu. The
+views expressed herein are those of the authors and do not necessarily reflect the views of the
+National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Chris Florackis, Christodoulos Louca, Roni Michaely, and Michael Weber. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+Cybersecurity Risk
+Chris Florackis, Christodoulos Louca, Roni Michaely, and Michael Weber
+NBER Working Paper No. 28196
+December 2020, Revised March 2022
+JEL No. G14,G31
+ABSTRACT
+Using textual analysis and comparing cybersecurity-risk disclosures of firms that were hacked to
+others that were not, we propose a novel firm-level measure of cybersecurity risk for all US-listed
+firms. We then examine whether cybersecurity risk is priced in the cross-section of stock returns.
+Portfolios of firms with high exposure to cybersecurity risk outperform other firms, on average,
+by up to 8.3%per year. At the same time, high-exposure firms perform poorly in periods of high
+cybersecurity risk. Reassuringly, the measure is higher in information-technology industries,
+correlates with characteristics linked to firms hit by cyberattacks, and predicts future
+cyberattacks.
+Chris Florackis Roni Michaely
+University of Liverpool University of Hong Kong
+Chatham Street, L69 7ZH School of Business and Economics
+Liverpool L69 7ZH Hong Kong
+United Kingdom China
+c.florackis@liverpool.ac.uk rm34@cornell.edu
+Christodoulos Louca Michael Weber
+Archiepiskopou Kyprianou 30 Booth School of Business
+Limassol 3036 University of Chicago
+Cyprus 5807 South Woodlawn Avenue
+christodoulos.louca@cut.ac.cy Chicago, IL 60637
+and NBER
+michael.weber@chicagobooth.edu
+
+Cybersecurity risk is the risk of financial loss, disruption, or damage to the reputation of a firm
+as a result of a failure in its information technology systems due to external attacks. Examples
+of cybersecurity risk include the risk of losing sensitive data, disruption in a firm’s network,
+systems, and services, and physical electronic damage. Firm executives and market participants
+in advanced economies currently consider cybersecurity risk one of the top global concerns
+(WEF The Global Risks Report 2020), which is not surprising given the rapid increase in major
+cyberattacks in recent years. Despite substantial investments in information security systems,
+most firms remain highly exposed to cybersecurity risk.1 In addition to being direct targets,
+many firms are indirectly affected or are collateral damage in a cyberattack. For example, the
+adverse effects of tactical cyber operations against SolarWinds, a major U.S. information
+technology firm, in 2020 went beyond the direct target and propagated to many of its client
+organizations, including several large U.S. federal agencies, in what was one of the largest and
+most sophisticated attacks ever. Considering the profound impact of cyberattacks on firms and
+economies around the world, it is important to have a deeper understanding of individual firms’
+exposure to cybersecurity risk, its quantification, and its effects on asset prices.
+In this study, we propose a novel firm-level measure of cybersecurity risk for all listed
+firms in the U.S. and examine whether exposure to cybersecurity risk is priced in the cross-
+section of stock returns. We find that portfolios of firms with high exposure to cybersecurity
+risk outperform other firms, on average, by up to 8.3% per year in terms of equal-weighted
+(7.9% value-weighted) returns. Our measure of cybersecurity risk is a robust return predictor,
+standard return predictors do not subsume it in Fama-MacBeth regressions, and firms in
+specific industries do not drive the return premium. A cybersecurity-mimicking portfolio
+1 Gartner, a global research and advisory firm, for example, estimated a worldwide spending on information
+security products of $124 billion in 2019, representing an increase of 8.8% relative to 2018. In 2020, Steve
+Morgan, Founder of Cybersecurity Ventures, predicted that cybercrime damages could grow by 15 percent per
+year, to reach US$10.5 trillion annually by 2025. See “Cybercrime To Cost The World $10.5 Trillion Annually
+By 2025” (Cyber Magazine, Nov. 13th, 2020).
+2
+
+performs poorly in times of heightened cybersecurity risk and investors’ concerns about data
+breaches, suggesting a risk-based explanation.
+Our measure builds on two ideas: First, firms that are actually attacked are more vulnerable
+to cyberattacks ex-ante, and express this heightened risk ex-ante in their risk disclosures; and
+second, firms that have similar levels of cybersecurity risk use similar words to describe their
+risk exposure and exposure management. To construct our measure, we use firms that were
+subject to cyberattacks as a training sample and then compare the wording and language in the
+relevant parts of the risk-disclosure section in annual reports of the attacked firms with those
+of all other firms. Specifically, over the period 2007-2018, we first extract the discussion on
+cybersecurity risk in the “Item 1A. Risk Factors” section from firms’ 10-K, which contains
+information about the most significant risk factors for each firm. Second, we identify a sample
+of firms that have been subject to a major cyberattack in any given year. These firms, which
+likely had a high prior exposure to cybersecurity risk, given the realization of a hack, serve as
+our training sample. Third, we estimate the similarity of each firm’s cybersecurity-risk
+disclosure with past cybersecurity-risk disclosures of firms in the training sample (i.e., from
+the one-year period prior to the firm’s filing date). The higher the measured similarity in
+cybersecurity-risk disclosure for our sample firms and firms in the training sample, the greater
+is the exposure to cybersecurity risk.2
+We validate our measure in several ways. First, firms that score high on the measure
+emphasize cybersecurity risk in their 10-K filings more than firms with low scores. For
+instance, firms with high measured exposure typically mention that the increasing
+sophistication of hackers makes defending against cybersecurity attacks difficult, despite
+investments in preventive systems. Firms with low measured exposure instead tend to
+2 Other studies that use document similarity to extract meaning from text collections include Hoberg and Phillips
+(2010; 2016), Brown and Tucker (2011), Hoberg and Maksimovic (2015), Lang and Stice-Lawrence (2015), and
+Lowry, Michaely, and Volkova (2020).
+3

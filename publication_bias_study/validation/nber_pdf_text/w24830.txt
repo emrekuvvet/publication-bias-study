@@ -1,0 +1,135 @@
+NBER WORKING PAPER SERIES
+FINANCIAL INCENTIVES AND EARNINGS OF DISABILITY INSURANCE RECIPIENTS:
+EVIDENCE FROM A NOTCH DESIGN
+Philippe Ruh
+Stefan Staubli
+Working Paper 24830
+http://www.nber.org/papers/w24830
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2018
+We thank David Autor, Janet Currie, Josef Falkinger, Johannes Kunz, Andrei Levchenko, Erzo
+Luttmer, Lucija Muehlenbachs, Tobias Renkin, Andrea Weber, Rudolf Winter-Ebmer, Josef
+Zweimüller, and seminar participants at HEC Montréal, the University of Calgary, the Vienna
+University of Economics and Business, the University of Zurich, CIRANO Montreal, and the
+2015 IZA/CEPR ESSLE for helpful comments. This research was supported by the Austrian
+National Science Research Network "Labor and Welfare State" of the Austrian FWF, the
+National Institute on Aging (R03AG045456), and the U.S. Social Security Administration
+through grant #1 DRC12000002-03 to the National Bureau of Economic Research as part of the
+SSA Disability Research Consortium. The findings and conclusions expressed are solely those of
+the authors and do not represent the views of SSA, any agency of the Federal Government, or the
+NBER. All remaining errors are our own. The views expressed herein are those of the authors and
+do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2018 by Philippe Ruh and Stefan Staubli. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Financial Incentives and Earnings of Disability Insurance Recipients: Evidence from a Notch
+Design
+Philippe Ruh and Stefan Staubli
+NBER Working Paper No. 24830
+July 2018
+JEL No. H53,H55,J14,J21
+ABSTRACT
+Most countries reduce Disability Insurance (DI) benefits for beneficiaries earning above a
+specified threshold. Such an earnings threshold generates a discontinuous increase in tax liability
+—a notch—and creates an incentive to keep earnings below the threshold. Exploiting such a
+notch in Austria, we provide transparent and credible identification of the effect of financial
+incentives on DI beneficiaries’ earnings. Using rich administrative data, we document large and
+sharp bunching at the earnings threshold. However, the elasticity driving these responses is small.
+Our estimate suggests that relaxing the earnings threshold reduces fiscal cost only if program
+entry is very inelastic.
+Philippe Ruh
+Department of Economics
+University of Zurich
+Schönberggasse 1
+8001 Zurich
+Switzerland
+philippe.ruh@econ.uzh.ch
+Stefan Staubli
+Department of Economics
+University of Calgary
+2500 University Drive NW
+Calgary, AB T2N 1N4
+CANADA
+and CEPR
+and also NBER
+sstaubli@ucalgary.ca
+
+1 Introduction
+Disability Insurance (DI) programs are among the largest social insurance programs. In OECD
+countries, total expenditures on disability benefits account for approximately 2.5 percent of GDP
+(OECD, 2010). In many DI programs, beneficiaries lose part or all of their benefits if earnings
+exceed a substantial gainful activity (SGA) threshold. This policy induces a discontinuous increase
+in the (implicit) tax liability—a notch—and creates an incentive for beneficiaries to keep their
+earnings just below the SGA threshold to retain benefits. If bunching at the SGA threshold is
+widespread, then policies that relax the notch could increase work effort among DI beneficiaries,
+potentially improving their economic well-being and their autonomy while reducing dependency
+on benefits.1 Yet, these policies could create unintended costs if they induce more individuals to
+seek disability benefits. Despite numerous anecdotes on the work disincentives induced by the
+SGA threshold, there is little empirical evidence on the impact of the SGA threshold, and financial
+incentives in general, on the labor supply of beneficiaries.2
+This paper helps to close this gap by investigating whether earnings thresholds induce DI reci-
+pientstoadjusttheirlaborsupply. Ourestimationstrategyexploitsquasi-experimentalvariationin
+the implicit tax on work in Austria’s DI program. Specifically, DI beneficiaries in Austria can earn
+up to an SGA threshold of e439 per month (around USD 500) without losing benefits. However,
+if monthly earnings exceed the SGA threshold by e1, then DI benefits are reduced by up to 50
+percent in that month. This notch creates a strong incentive for many DI beneficiaries to bunch
+on the low-earnings side of the SGA threshold. As shown by Saez (2010), the amount of bunching
+can be used to estimate an elasticity of earnings with respect to the net-of-tax rate. However,
+observed bunching might be attenuated if some individuals do not respond because of optimization
+frictions such as adjustment costs and inattention. The structural earnings elasticity, the elasticity
+absent frictions, is likely to be larger. Kleven and Waseem (2013) show that one advantage of a
+1Manycountriesareconsideringorhaverecentlyimplementedpolicyreformsdesignedtoincreaseworkincentives
+for DI recipients. For example, the U.S. is currently testing a benefit offset policy that reduces benefits by $1 for
+every $2 of earnings above the SGA threshold, rather than fully suspend benefits. Switzerland tested a conditional
+cashprogramthatofferedDIrecipientsacashpaymentiftheytakeuporexpandemploymentandreducedisability
+benefits(seeBu¨tleretal.,2015,foranevaluationoftheprogram). OtherrecentexamplesincludetheUnitedKingdom
+and Norway (see Kostol and Mogstad, 2014).
+2Forexample,thearticle“DisabilityInsurance: NotWorking”inthemagazinetheEconomist (issuefromJanuary
+24, 2015) provides anecdotal evidence for such behavior in the U.S. Social Security Disability Insurance. Empirical
+evidence is provided by Schimmel et al. (2011); Weathers and Hemmeter (2011); Campolieti and Riddell (2012);
+Kostol and Mogstad (2014) (discussed in detail below).
+1
+
+notch design, as opposed to a kink design, is the ability to estimate a structural elasticity because a
+notch creates a region of strictly dominated choices on the high-earnings side of the SGA threshold.
+In this range, beneficiaries can increase both total net income and leisure by moving to the SGA
+threshold. Thus, we can use the number of people who locate in the dominated region to recover
+the structural elasticity, because in a frictionless world this region should be empty.3
+Two features make the SGA threshold in Austria advantageous for studying how earnings
+respond to financial incentives. First, the increase in tax liability at the SGA threshold is salient
+and large in magnitude. The average DI beneficiary loses around 10 percent of his or her total
+after-taxincomeifearningsexceedtheSGAthresholdbye1. Havinglargevariationintaxliability
+allows us to identify behavioral responses even if they are small. Detecting behavioral responses
+would be more difficult in other contexts because earnings rules are typically more complex and
+therefore less salient.4 Second, bunching below the SGA threshold can be difficult to detect in
+administrative data, because earnings are measured at the annual level while the SGA threshold is
+specified at the monthly level. Hence, recipients who bunch at the SGA threshold only for some
+months of the year would not appear to bunch in annual data. In contrast, our administrative data
+from social security and tax registers allow us to measure earnings and DI benefits at the monthly
+level. Moreover, since sample sizes are large, we can graphically demonstrate bunching, providing
+transparent evidence of the behavioral response.
+A notch may also create behavioral responses along the extensive margin, i.e. the decision of
+whether to participate in the labor force. We identify the causal impact of the SGA threshold
+on the extensive margin decision by exploiting a policy change that relaxed earnings restrictions
+significantly. Since the change in law affected only a subsect of DI beneficiaries, we can estimate
+3Recentstudiesrelyingonnotchesinthebudgetsetexaminesuchdiversetopicsasearningsadjustmentstoincome
+and payroll taxes (Kleven and Waseem 2013; Tazhitdinova 2017), automaker responses to fuel economy regulations
+(SalleeandSlemrod2012;ItoandSallee2016),theimpactoftransfertaxesontherealestatemarket(Kopczukand
+Munroe, 2015; Best and Kleven, 2016), the effect of tax credits on retirement savings and income (Ramnath, 2013),
+thelaborsupplyeffectsofsocialsecurity(Brown,2013;ManoliandWeber,2016), andfirmresponsestostrictertax
+enforcement (Almunia and Lopez Rodriguez, 2017). See Kleven (2016) for a review of the bunching approach and
+the related literature. Our paper contributes to this literature by studying behavioral responses at a notch in the
+disability benefit schedule.
+4For example, beneficiaries in the public DI program in the U.S. can earn above the SGA for nine months (not
+necessarily consecutive) over any five-year period. After exhausting the nine-months period, beneficiaries enter the
+extended period of eligibility (EPE). If earnings are above the SGA threshold during the EPE, benefits are paid for
+three additional months, but are suspended in full thereafter during each month that beneficiaries earn above SGA.
+If earnings are above the SGA three years after entering the EPE, benefits are terminated. Abeler and Ja¨ger (2015)
+provide evidence that individuals underreact to complex tax rules relative to less complex ones.
+2

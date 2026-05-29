@@ -1,0 +1,144 @@
+NBER WORKING PAPER SERIES
+EXTERNAL EQUITY FINANCING SHOCKS, FINANCIAL FLOWS, AND ASSET
+PRICES
+Frederico Belo
+Xiaoji Lin
+Fan Yang
+Working Paper 20210
+http://www.nber.org/papers/w20210
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2014
+We thank Kenneth Ahern, Hengjie Ai, Hang Bai, Juliane Begeneau, Jonathan B. Cohn, Andrea Eisfeldt,
+Wayne Ferson, Murray Frank, John Graham, Gerard Hoberg, Jarrad Harford, Kewei Hou, Christian
+Julliard, Erik Loualiche (WFA discussant), Paulo Maio, Daniel Paravisini, Vincenzo Quadrini, Michael
+Roberts, Juliana Salomao, Amit Seru, Raj Singh, Ken Singleton, Rene Stulz, Andrea Tamoni, Sheridan
+Titman, Stijn Van Nieuwerburgh (Macro-Finance Society Workshop discussant), Neng Wang, Mike
+Weisbach, Jianfeng Yu, Harold Zhang, and Lu Zhang for their comments. We also thank seminar participants
+at the BI Norwegian Business School, Aalto University and Hanken School of Economics, Ohio State
+University, University of British Columbia, University of Minnesota, University of Southern California,
+University of Texas at Austin, University of Texas at Dallas, University of Toronto, China International
+Conference in Finance (2014), Macro-Finance Society Workshop (2014), SED (2014), and WFA (2014).
+We thank Jarrad Harford, Ryan Israelsen, and Vincenzo Quadrini, for providing us the data on firms’
+cash held abroad, collateral constraint shocks, and quality-adjusted investment prices, respectively.
+Fan Yang acknowledges the financial support from a GRF grant from Research Grants Council of
+Hong Kong (Project No.755612). All errors are our own. The views expressed herein are those of
+the authors and do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2014 by Frederico Belo, Xiaoji Lin, and Fan Yang. All rights reserved. Short sections of text, not
+to exceed two paragraphs, may be quoted without explicit permission provided that full credit, including
+© notice, is given to the source.
+
+External Equity Financing Shocks, Financial Flows, and Asset Prices
+Frederico Belo, Xiaoji Lin, and Fan Yang
+NBER Working Paper No. 20210
+June 2014, Revised December 2014
+JEL No. E23,E44,G12
+ABSTRACT
+The ability of corporations to raise external equity finance varies with macroeconomic conditions,
+suggesting that the cost of equity issuance is time-varying. Using cross sectional data on U.S. publicly
+traded firms, we construct an empirical proxy of an aggregate shock to the cost of equity issuance,
+which we interpret as a financial shock. We show that this shock captures systematic risk, and that
+exposure to this shock helps price the cross section of stock returns including book-to-market, investment,
+and size portfolios. We propose a dynamic investment-based model with stochastic equity issuance
+costs and a collateral constraint to interpret the empirical findings. Our central finding is that time
+variation in external equity financing costs is important for the model to quantitatively capture the
+joint dynamics of firms’ asset prices, real quantities, and financing flows. In the model, growth firms,
+high investment firms, and large firms, can substitute more easily debt financing for equity financing
+when it becomes more costly to raise external equity, hence these firms are less risky in equilibrium.
+The model also replicates the failure of the unconditional CAPM in pricing the cross section of stock
+returns.
+Frederico Belo Fan Yang
+Carlson School of Management The University of Hong Kong
+University of Minnesota Suite 908
+321 19th Avenue South K. K. Leung Building
+Minneapolis, MN 55455 Pokfulam Road, Hong Kong
+and NBER fanyang@hku.hk
+fbelo@umn.edu
+Xiaoji Lin
+Department of Finance
+Ohio State University
+2100 Neil Ave, Columbus, OH, 43210
+Tel: 614-292-4318
+Fax: 614-292-7062
+lin.1376@osu.edu
+
+1 Introduction
+The recent financial crisis in 2007-2008 is fresh evidence that shocks in the financial sector
+can be an important source of business cycle fluctuations, and that the impact of the financial
+shocks on the availability of firms’ external finance can be substantial. In this paper, we study
+the impact of an aggregate shock to the cost of firms’ external equity finance– a particular form
+of financial shocks– on asset prices, real quantities, and financing flows in the cross section of
+U.S. firms. We show both empirically as well as through the lens of an investment-based model
+with financial frictions, that time-variation in the availability of external equity funds has a
+significant impact on equilibrium risk premiums in the cross section.
+Building on Eisfeldt and Muir (2014), we use firm-level cross sectional data to construct
+an empirical proxy of the aggregate shock to the cost of equity issuance in the U.S. economy.
+Different from Eisfeldt and Muir (2014), however, we focus explicitly on the cost of issuing
+equity, not on the general cost of external (debt and equity) finance, a distinction we show to
+be empirically important for our results.1 Specifically, for each year, we compute the fraction of
+firms issuing equity in the cross section, and we then extract the time-series of the innovations
+in this fraction using a vector autoregressive (VAR) model that includes aggregate productivity
+as a state variable to control for the effect of time-varying growth opportunities on firms’ equity
+issuance decisions. We refer to the innovations in the VAR as an (equity) issuance cost shock
+(ICS). A positive realization of the ICS is associated with an increase in firms’ equity issuance
+beyond what aggregate market conditions, as captured by the level of aggregate productivity,
+would predict. As such, this positive shock reveals, at least partially, a low (marginal) cost of
+equity issuance, and vice versa. We also show that our simple procedure to extract issuance
+cost shocks with a VAR is robust to the inclusion of several other control variables known to
+explain equity issuance decisions by firms.
+Our empirical approach is consistent with the view that external equity is costly and that
+thesecostsvaryovertime, asin,forexample, Bolton,Chen, andWang(2013). TheICScaptures
+the systematic (aggregate) component driving the time-variation of the equity issuance costs.
+While we do not study the causes of the changes in external equity financing conditions, the
+source of its time variation could be due to the impact of changes in information asymmetries
+and agency frictions, changes in investors’ sentiment, time-varying aggregate liquidity, time-
+varying risk aversion of financial intermediaries, among other effects, on investors’ willingness
+to supply equity capital to firms. We review the related literature in Section 2.
+Empirically, we show that the ICS captures systematic risk in the economy. Controlling for
+1When we use a similar approach to extract debt (not equity) issuance cost shocks, we find that firms’
+differential exposure to these shocks do not appear to capture crosssectionalvariationin systematic risk in the
+cross section, which is the focus of our study.
+2
+
+the aggregate market factor, firms’ exposure to ICS helps explain cross-sectional variation in
+the average returns of portfolios sorted by book-to-market (value premium), investment rate
+(investment spread), and market equity (size spread). In addition, we document that investors
+require a higher risk premium for holding assets that are more positively exposed to the ICS,
+that is, assets that do poorly when it is more costly to issue equity (low ICS). Because value
+firms, low investment firms, and small firms have a relatively higher exposure (covariance) to
+ICS, these firms are riskier and thus, have higher returns in equilibrium. Augmenting the
+standard capital asset pricing model (CAPM) with ICS as an additional factor, we show that
+the two-factor model significantly outperforms the CAPM in pricing the cross section of stock
+returns of these portfolios.
+We propose a dynamic investment-based model with financial frictions to understand the
+economic mechanism driving the empirical findings. The model features a large cross section of
+firms that invest in physical capital, issue equity and debt or save using cash, to maximize
+the value of the firm for existing shareholders. Cross-sectional heterogeneity is driven by
+idiosyncratic productivity shocks. The key features of the model are: (i) debt issuance is
+limited by a (standard) collateral constraint; and (ii) equity issuance is costly and this cost is
+stochastic, varying over time due to an aggregate issuing cost shock. This equity issuance cost
+shock acts as an additional source of aggregate economic fluctuations (financial shocks) that
+is independent of aggregate productivity shocks, and affects investor’s marginal utility (with
+a positive price of risk), consistent with the empirical evidence reported here. We interpret a
+negative issuance cost shock as a disruption in the financial sector, with no initial disruptions
+in the nonfinancial sector, which is the sector of the economy that we model here.2 This
+disruption implies that fewer funds can be channeled from equity holders to firms. This leads
+to insufficient external financing available to firms, which in turn affects firms’ investment,
+dividends, and market value of equity.
+The cross sectional variation in expected stock returns arises endogenously in the model
+due to the interaction between firms’ productivity, investment, equity issuance cost shocks,
+and the collateral constraint. The economic mechanism emphasizes that the firms’ ability (or
+inability) to substitute between different marginal sources of external financing (equity and
+debt) during bad economic times is an important determinant of equilibrium risk premiums.
+Because growth firms, high investment firms, and large firms, can substitute more easily debt
+financing for equity financing when it becomes more costly to raise external equity, these firms
+are less risky in equilibrium.
+2Most of the existing literature in macroeconomics has focussed on the amplification mechanism generated
+by financial frictions (Bernanke and Gertler 1989, Kiyotaki and Moore 1997, Bernanke, Gertler, and Gilchrist
+1999). Inthosemodels,financialfrictionsserveto exacerbatethe negativeshocksfromthe nonfinancialsectors,
+but not to cause economic fluctuations.
+3

@@ -1,0 +1,126 @@
+NBER WORKING PAPER SERIES
+MEASURING THE EFFECTS OF FIRM UNCERTAINTY ON ECONOMIC ACTIVITY:
+NEW EVIDENCE FROM ONE MILLION DOCUMENTS
+Kyle Handley
+J. Frank Li
+Working Paper 27896
+http://www.nber.org/papers/w27896
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2020
+We have received helpful comments from Nick Bloom, Cheng Chen, Steve Davis, Doireann
+Fitzgerald, Davide Furceri, Tarek Hassan, E. Han Kim, Yao Lu, Indrajit Mitra, John Rogers,
+Simon Sheng, Jagadeesh Sivadasan, Steven Terry, and Toni Whited; our discussants Scott Baker,
+Erica X. N. Li and Xinyan Yan; and seminar participants at Michigan, RIETI (Japan), the
+Conference on Uncertainty and Economic Activity at Renmin University, NBER Summer
+Institute, Stanford SITE, Stanford Hoover, CAED, Econometric Society Summer Meeting,
+Tsinghua PBC, and CICF. This research was conducted while the authors were Special Sworn
+Status researchers at the Michigan Census Research Data Center. Any opinions and conclusions
+expressed herein are those of the authors and do not necessarily represent the views of the U.S.
+Census Bureau. All results have been reviewed to ensure that no confidential information is
+disclosed. We thank Clint Carter for assistance and timely disclosure review of all results. Rohit
+Singla at Michigan provided invaluable assistance with computing resources. The views
+expressed herein are those of the authors and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Kyle Handley and J. Frank Li. All rights reserved. Short sections of text, not to exceed
+two paragraphs, may be quoted without explicit permission provided that full credit, including ©
+notice, is given to the source.
+
+Measuring the Effects of Firm Uncertainty on Economic Activity: New Evidence from One
+Million Documents
+Kyle Handley and J. Frank Li
+NBER Working Paper No. 27896
+October 2020
+JEL No. D81,E22,E32
+ABSTRACT
+We construct a new measure of firm-level uncertainty from analyzing the text of mandatory
+reports filed with the U.S. Securities and Exchange Commission. Using firm and establishment
+level panel data on investment margins and employment dynamics, we find our uncertainty
+measure has large effects on investment even after controlling for industry and time-varying
+shocks. Periods of high firm uncertainty (1) reduce investment rates by 0.5% and attenuate the
+response to positive sales shocks by about half and (2) reduce employment growth rates by 1.4%
+and the response to positive sales shocks by 30%. Firms are less responsive to demand shocks at
+the firm level and across establishments within the firm. Consistent with “wait and see”
+dynamics, uncertainty affects new investment activity, e.g. plant births and acquisition, more than
+disinvestment margins.
+Kyle Handley
+Ross School of Business
+University of Michigan
+701 Tappan Street
+Ann Arbor, MI 48109
+and NBER
+handleyk@umich.edu
+J. Frank Li
+Stanford University
+210 Panama Street
+Stanford, CA 94305
+jfli@stanford.edu
+
+1 Introduction
+Uncertainty can be defined in theory to carefully and specifically encompass aggregate, industry,
+or firm-level shocks. But measuring uncertainty, especially at the firm-level, is difficult in practice,
+both for firms and the economists who study them. Our approach to quantifying firm uncertainty
+rests on a simple hypothesis: if firms say they are uncertain, then we can take their word for it —
+literally. To test this, we measure how frequently firms use variations of the word “uncertainty”
+in mandatory reports filed with the U.S. Securities and Exchange Commission (SEC). We sum-
+marize about one million documents from 1994-2016 and build a new panel database of firm-level,
+time-varying uncertainty measures. With these measures in hand, we then ask three important
+questions: (1) should we take firm declarations of “uncertainty” at face value; (2) how important
+are fluctuations in firm-level uncertainty for investment activities; and (3) does the firm-level varia-
+tion in uncertainty explain micro fluctuations independently of aggregate and industry uncertainty
+measures?
+A growing body of recent work investigates the effects of uncertainty on economic activity.
+The dynamics of uncertainty and investment have been theoretically understood for some time
+(cf. Bernanke, 1983; Dixit, 1989; Abel and Eberly, 1994). In the presence some form of partially
+irreversible costs, firms will delay projects and be less responsive to shocks when uncertainty about
+future business conditions is high. Some research links reduced investment to realized or forecasted
+stock return volatility using firm-level data (Leahy and Whited, 1996; Bloom et al., 2007). Re-
+sponses to uncertainty can extend beyond capital investments to affect hiring decisions when labor
+adjustment or search and matching costs are high (Bloom, 2009; Schaal, 2017). It can also affect
+aggregate export dynamics (Novy and Taylor, Forth.) or firm decisions to enter and invest in new
+export markets (Handley, 2014; Handley and Limão, 2017).
+Understanding and measuring uncertainty at the firm-level is important. Recent theory and
+evidence suggest that idiosyncratic shocks to particular firms play an important role in observed
+aggregate fluctuations (Gabaix, 2011), but evidence on uncertainty shocks is limited and mixed.
+Bachmann and Bayer (2013; 2014) suggest that small shocks to firm productivity are important to
+explaining pro-cyclical productivity dispersion using German firm-level data, but are not a driver
+ofmajorbusinesscycles. Incontrast, Bloometal. (2018)findevidencethatmicrouncertaintyrises
+1
+
+in recessions and that uncertainty shocks lead to reductions in GDP, productivity and reallocation
+in a heterogeneous firms DSGE model. To better understand these dynamics, we build firm-level
+measures of uncertainty from textual analysis of company reports that we can use to explore
+both firm and industry investment dynamics. Thus, we can explore firm-specific fluctuations in
+uncertainty in a long panel against performance outcomes that include investment, employment
+growth, andestablishmentdynamicsusingdatafrombothCOMPUSTATandtheU.S.Censusfirm
+and establishment microdata.
+Constructing quantitative measures of uncertainty, even at the aggregate level, is fraught with
+difficulty. This complication was recognized by Keynes (1937), who noted that firms must carry
+on with investment and employment decisions despite the difficulty in quantifying their uncertain
+knowledge of the future.1 More recently, Jurado et al. (2015) show that many common proxies for
+uncertainty may reflect a mixture of first moment shocks and other sources of variation unrelated
+to fundamental uncertainty. For example, aggregate proxies such as the CBOE Volatility Index
+(VIX) measure the volatility of the S&P 500 index implied by equity call options on its underlying
+components. But the prices of these options and their implied volatility can move substantially
+even if the underlying fundamentals of the business enterprise are unchanged. Nevertheless, these
+derived uncertainty proxies operate like uncertainty measures in some empirical work. Barrero et
+al. (2017) and Stein and Stone (2013) find that increases in implied volatility derived from equity
+options reduces hiring and investment. Unfortunately, traded equity options for large number of
+public firms simply don’t exist, including components of the S&P 500 Index.
+Othermeasuresatthefirmlevelarequalitativeandderivedfromsurveysoffirmsorprofessional
+forecasters. What these measures lack in quantitative precision is offset, at least partially, by the
+fact that they are sourced from managers, insiders, and professionals with a detailed knowledge
+of specific companies or industry sectors. For example, the Federal Reserve Board’s Greenbook
+and other proprietary professional forecasts contain significant narrative components. Sharpe et
+al. (2017) show the tonality of Fed Board forecasts has predictive power for GDP growth and
+1Writing about uncertainty over the prospect of war, copper prices, and product obsolescence, Keynes (1937)
+remarked: “About these matters there is no scientific basis on which to form any calculable probability whatever.
+We simply do not know. Nevertheless, the necessity for action and for decision compels us as practical men to do
+our best to overlook this awkward fact and to behave exactly as we should if we had behind us a good Benthamite
+calculation of a series of prospective advantages and disadvantages, each multiplied by its appropriate probability,
+waiting to be summed.” (p. 214)
+2

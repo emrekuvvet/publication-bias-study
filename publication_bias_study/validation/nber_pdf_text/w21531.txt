@@ -1,0 +1,131 @@
+NBER WORKING PAPER SERIES
+ASSESSING INCENTIVES FOR ADVERSE SELECTION IN HEALTH PLAN PAYMENT
+SYSTEMS
+Timothy J. Layton
+Randall P. Ellis
+Thomas G. McGuire
+Working Paper 21531
+http://www.nber.org/papers/w21531
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2015
+Research for this paper was supported by the National Institute of Mental Health (R01 MH094290)
+and the Laura and John Arnold Foundation. The views expressed here are the authors’ own and not
+necessarily those of the Foundation’s officers, directors or staff. In addition, Layton was supported
+by NIMH T32 019733. We are grateful to Konstantin Beck, David Cutler, Mike Geruso, Laura Hatfield,
+Lukas Kauer, Albert Ma, Joe Newhouse, Sherri Rose, Christian Schmid, Mark Shepard, Richard van
+Kleef, Wenjia Zhu, and participants at the BU-Harvard-MIT Seminar and the NBER Summer Institute
+for comments on a previous version. The views expressed herein are those of the authors and do not
+necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2015 by Timothy J. Layton, Randall P. Ellis, and Thomas G. McGuire. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission provided
+that full credit, including © notice, is given to the source.
+
+Assessing Incentives for Adverse Selection in Health Plan Payment Systems
+Timothy J. Layton, Randall P. Ellis, and Thomas G. McGuire
+NBER Working Paper No. 21531
+September 2015
+JEL No. I11,I13,I18
+ABSTRACT
+Health insurance markets face two forms of adverse selection problems. On the demand side, adverse
+selection leads to plan price distortions and inefficient sorting of consumers across health plans. On
+the supply side, adverse selection creates incentives for plans to inefficiently distort benefits to attract
+profitable enrollees. These problems can be addressed by features of health plan payment systems
+such as reinsurance, risk adjustment, and premium categories. In this paper, we develop Harberger-
+type measures of the efficiency consequences of price and benefit distortions under a given payment
+system. Our measures are valid, that is, based on explicit economic models of adverse selection. Our
+measures are complete, in that they are able to incorporate multiple features of plan payment systems.
+Finally, they are practical, in that they are based on the ex ante data available to regulators and researchers
+during the design phase of payment system development, prior to observing actual insurer and consumer
+behavior. After developing the measures, we illustrate their use by comparing the performance of the
+payment system planned for implementation in the ACA Marketplaces in 2017 to several policy alternatives.
+We show that, in protecting against both types of selection problems, a payment system that incorporates
+reinsurance and prospective risk adjustment out-performs the planned payment system which includes
+only concurrent risk adjustment.
+Timothy J. Layton Thomas G. McGuire
+Department of Health Care Policy Department of Health Care Policy
+Harvard Medical School Harvard Medical School
+180 Longwood Avenue 180 Longwood Avenue
+Boston, MA 02115 Boston, MA 02115
+layton@hcp.med.harvard.edu and NBER
+mcguire@hcp.med.harvard.edu
+Randall P. Ellis
+Department of Economics
+Boston University
+270 Bay State Road
+Boston, Mass 02215
+ellisrp@bu.edu
+
+1. Introduction
+Public policy in the U.S. relies on private individual health insurance markets to provide coverage to
+about one third of the elderly in Medicare and to all those eligible for the new Marketplaces
+(formerly called Exchanges) created by the Affordable Care Act (ACA). As is well-known,
+individual health insurance markets are vulnerable to adverse selection, the tendency of sicker,
+higher-cost consumers to choose more generous coverage.1 This natural pattern of demand causes
+two problems: 1) equilibrium premiums reflect selection as well as coverage differences, leading to
+price distortions that cause consumers to choose the “wrong” plans (Einav and Finkelstein, 2011),
+and 2) insurers distort the coverage of their health plans to make them less attractive to sicker
+enrollees (Glazer and McGuire, 2000). Economic analysis contends with these selection-related
+inefficiencies by ex ante study of the incentives embedded in insurance markets under alternative
+policy environments2 and by ex post evaluation of the performance of implemented policies based on
+actual consumer and insurer behavior.3
+This paper develops and implements a general methodology for assessing the ex ante
+selection-related incentives created by a health plan payment system. Our perspective is at the
+market design phase: with data on patterns of utilization representative of the population to be
+covered, we want to develop an approach to assessing how well a payment system – meaning the set
+of policies regulating both the premium structure and the plan payment scheme – will contend with
+selection problems. Ex ante analysis and simulations are the primary way regulators evaluate and
+decide on payment systems for the new Marketplaces, Medicare’s payment system for private health
+plans, and plan payment systems in the Netherlands, Switzerland, Israel and Germany.4 Studies in
+this literature focus almost entirely on just one component of health plan payment systems: the risk
+adjustment scheme, using statistical measures such as the R-squared of a regression of actual costs
+on the predicted costs output by the risk adjustment formula. Some papers in this literature also
+1 Table 9 in Cutler and Zeckhauser (2000) summarizes thirty studies documenting adverse selection in health
+insurance. For a more recent review emphasizing studies relevant to the state-level Marketplaces, see
+McGuire et al. (2014).
+2 An example we discuss later is the ex ante evaluation of the risk adjustment system used to pay plans in the
+new Marketplaces by federal contractors (Kautter et al., 2014).
+3 See Erickson and Starc (2012) for an early evaluation of insurance pricing in the precursor to national
+reform in Massachusetts, and Kowalski (2014) for an evaluation of selection inefficiencies in plan choice in
+state health care reforms. We discuss a number of these ex post evaluation studies below.
+4 See as examples, Kautter et al., (2014) on US Marketplaces; Pope, et al., (2011) on US Medicare; Shmueli, et
+al. (2010) on Israel; Beck, Trottman and Zweifel (2010) on Switzerland; Breyer, Heineck and Lorenz (2003)
+on Germany; Van Kleef, Van Vliet and Van de Ven (2013) on the Netherlands.
+1
+
+include “predictive ratios,” the ratio of predicted costs to actual costs for selected groups in the
+population, such as those with a chronic illness.5 Although widely used, neither an R-squared nor a
+predictive ratio has been shown to have a direct interpretation in terms of economic inefficiency.
+We derive alternative measures for ex ante evaluation of payment system performance,
+requiring three things from the measures we propose: First, they should be valid, i.e., the measures
+should follow from formal analysis of the economic behavior causing the selection problems the
+payment system is designed to correct and they should be based on the effects of a payment system
+on consumer welfare rather than just the size of the distortion created by the selection problem.
+Second, measures should be complete in the sense of accommodating all relevant features of payment
+systems used to pay health plans including multiple premium categories and reinsurance, not just the
+risk adjustment formula. Third, the measures should be practical, that is, readily computable from the
+large claims databases available at the design phase for ex ante evaluation of payment system
+alternatives. We do not require that the measures evaluate payment system performance using a
+standard metric such as the total dollars of welfare loss. Instead, we only require that the measures
+we develop allow for the comparison of payment systems according to their implications for social
+welfare, providing policymakers with a basis for determining which payment systems are “better”
+than others.
+While the standard measure used for ex ante analysis of payment system performance, the R-
+squared from a regression of costs on risk adjustor variables, is both practical (requirement 3) and
+allows for the comparison of payment system performance, it does not accommodate the complete
+set of payment system features (requirement 2), nor has it been shown to measure any parameter of
+economic importance (requirement 1). The same could be said of predictive ratios. Other more
+economically valid welfare metrics, such as the certainty equivalent measure used by Einav et al.
+(2010) and others, require estimates of key behavioral parameters among the population of interest,
+causing them to lack the practicality (or feasibility) of the more popular R-squared and predictive
+ratio metrics and to not be used in actual payment system design. In a nutshell, our paper intends to
+equip researchers and regulators with a methodology, or a “toolkit,” for evaluating payment system
+alternatives to replace the R-squared/predictive ratio analyses that have been conducted in this
+literature for more than 30 years.
+5 European researchers more commonly study over- and undercompensation – the difference between
+projected revenues and cost rather than their ratio. See Van Kleef et al. (2013).
+2

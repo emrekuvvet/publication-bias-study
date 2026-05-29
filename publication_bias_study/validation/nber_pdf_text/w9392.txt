@@ -1,0 +1,113 @@
+NBER WORKING PAPER SERIES
+MUTUAL FUND PERFORMANCE WITH
+LEARNING ACROSS FUNDS
+Christopher S. Jones
+Jay Shanken
+Working Paper 9392
+http://www.nber.org/papers/w9392
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2002
+We thank K. Baks, N. Jegadeesh, and seminar participants at Emory University for helpful comments and
+the BSI Gamma Foundation for financial support. The views expressed herein are those of the authors and
+not necessarily those of the National Bureau of Economic Research.
+© 2002 by Christopher S. Jones and Jay Shanken. All rights reserved. Short sections of text not to exceed
+two paragraphs, may be quoted without explicit permission provided that full credit including, © notice, is
+given to the source.
+
+Mutual Fund Performance with Learning Across Funds
+Christopher S. Jones and Jay Shanken
+NBER Working Paper No. 9392
+December 2002
+JEL No. G11, G12, G14
+ABSTRACT
+This paper is based on the premise that knowledge about the alphas of one set of funds will
+influence an investor’s beliefs about other funds. This will be true insofar as an investor’s
+expectation about the performance of a fund is partly a belief about the abilities of mutual fund
+managers as a group and, more generally, a belief about the degree to which financial markets are
+efficient. We develop a simple framework for incorporating this “prior dependence” and find that
+it can have a substantial impact on the cross-section of posterior beliefs about fund performance as
+well as asset allocation. Under independence, the maximum posterior mean alpha increases without
+bound as the number of funds increases and “extremely large” estimates are randomly observed.
+This is true even when fund managers have no skill. In contrast, with prior dependence, investors
+aggregate information across funds to form a general belief about the potential for abnormal
+performance. Each fund’s alpha estimate is shrunk toward the aggregate estimate, mitigating
+extreme views. An additional implication is that restricting the estimation to surviving funds, a
+common practice in this literature, imparts an upward bias to the average fund alpha.
+Christopher S. Jones Jay Shanken
+Marshall School of Business Goizueta Business School
+University of Southern California Emory University
+Hoffman Hall 701 1300 Clifton Road
+Los Angeles, CA 9089 Atlanta, GA 30322
+christopher.jones@marshall.usc.edu and NBER
+jay_shanken@bus.emory.edu
+
+Mutual Fund Performance with Learning Across Funds
+1. Introduction
+With trillions of dollars invested in actively managed equity mutual funds, it is of
+great importance to investors to determine the optimal asset allocation to funds. Many
+studies, starting with Jensen (1968), have concluded that fund managers are unable to
+“beat the market,” suggesting that investors might want to restrict their portfolios to
+passive index funds. Others have argued that, while the average manager may have no
+particular skill, ex ante variables like past performance and manager characteristics can
+be used to identify investment skill.1 It is well known among academics that the standard
+measure of fund performance, “alpha,” is typically not estimated with much precision. In
+this context, an investor’s prior beliefs about market efficiency and the possibility of
+superior investment performance can play an important role in the asset allocation
+decision.
+Recent papers by Baks, Metrick, and Wachter (2001) and Pastor and Stambaugh
+(2002) analyze these issues in a Bayesian statistical framework.2 The BMW paper
+focuses on the question of whether any investment in actively managed funds can be
+justified. They conclude that, even when investors are initially quite skeptical about the
+possibility of management skill, some active investment is appropriate. The PS paper
+evaluates the optimal portfolio of funds for an investor with given beliefs about
+investment skill as well as the ability of asset pricing models to correctly “price” passive
+investment assets.
+In this project, we build on these important studies by developing a richer
+representation of investor prior beliefs about management skill. While this might initially
+sound like a minor mechanical extension, we believe it is more fundamental than that.
+Although prior beliefs are by their nature subjective, it is important to ask whether the
+properties of a given prior or family of priors are indeed consistent in essential respects
+1 See Chevalier and Ellison (1999) and Carhart (1997), for instance.
+2 Perhaps the first important application of the Bayesian perspective in investment research was Merton’s
+(1980) estimation of the market expected return. Bayesian methods were first used in testing asset pricing
+relations in Shanken (1987). Kandel and Stambaugh (1996) examine aggregate return predictability in a
+Bayesian framework. Their paper has stimulated much recent research. See Shanken and Tamayo (2001)
+for additional references.
+3
+
+with the actual learning process of investors or researchers. At issue here is the manner
+in which fund returns data are processed in deriving conclusions about performance.
+Should the alpha estimates of other funds influence our belief about the likely
+performance of a given fund or not? Technical issues aside, that is the basic question
+addressed here.3
+As with any joint distribution, one can talk about the prior for one set of (true)
+fund alphas conditional on the alphas for other funds. Though BMW and PS model
+priors in different ways, a common feature is that the prior belief about a given fund’s
+alpha is taken to be independent of the prior for all other fund alphas. In conjunction
+with the assumption that fund residual returns are independent, this greatly simplifies the
+analyses. While such simplification is natural in papers breaking new ground, we would
+argue that it is important to consider dependence across funds in these priors.
+To develop some intuition about this issue, consider the following hypothetical
+scenario. Assume that a marginal prior distribution has been formulated for a typical
+fund. In the BMW model, this would include a prior probability that a random manager
+is skilled, as well as a standard deviation that relates to the possible range of alphas for a
+skilled manager. Now, suppose an investor is considering a particular fund and is given
+the (prior) information that the true alphas of all other funds in the market are identically
+zero, i.e., none of those fund managers is able to beat the market. Alternatively, the
+information might be that half of all funds have positive alphas in excess of 5% per
+annum. In this context, the prior independence assumption across funds implies that
+none of this information would affect the investor’s belief about the given fund’s alpha.
+More formally, the conditional prior for the fund, given other fund alphas, equals the
+marginal prior.
+It seems more plausible, to us, that a typical investor’s beliefs would be affected
+by such information about other funds. The underlying premise is that an investor, or a
+researcher, comes to the situation with a basic uncertainty about the possibility and extent
+of management skill in general. Such a belief would be tied to a perception about the
+degree to which financial markets are efficient. Information about the universe of funds
+3
+Readers who are interested in fund performance, but are uncomfortable with thinking in terms of prior
+distributions, may want to simply focus on our results for “diffuse” priors, which let the data completely
+dominate the analysis.
+4

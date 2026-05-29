@@ -1,0 +1,126 @@
+NBER WORKING PAPER SERIES
+ASSESSING THE QUALITY OF ILLEGAL COPIES AND
+ITS IMPACT ON REVENUES AND DISTRIBUTION
+Anthony Koschmann
+Yi Qian
+Working Paper 27649
+http://www.nber.org/papers/w27649
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+August 2020, Revised February 2025
+The authors would like to thank Fred Feinberg, Chris Forman, Shane Greenstein, Avi Goldfarb,
+Xixi Hu, Ginger Jin, Josh Lerner, Xiaolin Li, Julie Mortimer, Kevin Ryan, Marie Thursby, Hui Xie,
+Ying Xie, Zining Wang, Joel Waldfolgel, and Chuck Weinberg for helpful comments. Yi would
+like to acknowledge grant support from the Canadian SSHRC IG 435-2018-0519, and thank Bowen
+Zhang for excellent RA work. The views expressed herein are those of the authors and do not
+necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Anthony Koschmann and Yi Qian. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Assessing the Quality of Illegal Copies and its Impact on Revenues and Distribution
+Anthony Koschmann and Yi Qian
+NBER Working Paper No. 27649
+August 2020, Revised February 2025
+JEL No. K42, M21, M31, O3
+ABSTRACT
+Conventional wisdom holds that illegal copies cannibalize legitimate sales, even though previous
+research has found mixed effects, with illegal copies acting as both a substitute and a complement.
+The impact of the quality of illegal copies on the legal market remains unclear. Building on product
+uncertainty and production quality, we propose that higher quality copies benefit (hurt) sales when
+product uncertainty is higher (lower), during product launch (post-launch). Using motion picture
+and online piracy data, we estimate piracy quality by applying a latent item response theory (IRT)
+model based on keyword signals in the illegal copies. An interdependent system jointly estimates
+movie screens, revenues, downloads, and available illegal copies with piracy quality in both the
+launch and post-launch periods. We find that at launch, when less information is known about a
+movie, higher quality illegal copies demonstrate a positive sampling effect on revenues. In the
+post-launch period, however, higher quality illegal copies exhibit a negative substitution effect on
+revenues. The findings suggest producers can alleviate product uncertainty through higher quality
+samples at product launch while diluting piracy quality post-launch.
+Anthony Koschmann
+Eastern Michigan University
+121 Hill Hall
+College of Business
+Ypsilanti, MI 48178
+akoschma@emich.edu
+Yi Qian
+Sauder School of Business
+University of British Columbia
+2053 Main Mall
+Vancouver, BC V6T 1Z2
+and NBER
+yi.qian@sauder.ubc.ca
+
+1. Introduction
+Piracy, or illegal copies of information goods such as movies, music, and books, pose a considerable
+threat to content creators’ revenues. According to media trade group IBC, the cost of global online piracy
+as lost revenue would double from $26.7 billion in 2016 to an estimated $51.6 billion in 2022 (IBC,
+2017); for movie and television content creators, lost revenues from online piracy was estimated at 72%
+of real revenues ($37.0 billion) in 2016. Citing entertainment technology experts, the IBC report notes
+that digital rights management (DRM) and anti-piracy measures can only do so much to lower the quality
+of pirated copies, but providing a better legal consumer experience can reduce piracy losses. For example,
+a high-quality version of The Expendables 3 surfaced prior to the film’s launch; the film’s under-
+performance at the box office was attributed to this piracy quality (Spangler, 2014), even though some
+competing films had more illegal downloads yet saw higher revenues. Together, these indicate that piracy
+quality presents an important facet regarding the effects of piracy.
+Although piracy poses a threat to almost any information good, prior empirical research of piracy
+quality has encountered three key limitations. First, the quality of pirated copies has been assessed using
+subjective user ratings, such as the video and audio quality of pirated films (Ma et al., 2014). While useful
+in thinking about the effect of piracy quality, subjective interpretations encounter validity concerns.
+Second, even non-subjective measures, like the binary coding of a high-definition (HD) keyword (Lu et
+al., 2020; Ackermann et al. 2020) treats piracy quality as an either-or proposition. Albeit helpful in
+understanding the impact of piracy quality, illegal copies convey more information beyond just its source
+type (e.g., camcorder, film reel, or digital copy). Indeed, product quality – both legal and illegal – is
+composed of many attributes that send signals to consumers (e.g., Zeithaml, 1988). Third, missing from
+prior studies is the impact of consumer activity (i.e., downloads and uploads) of pirated copies in relation
+to piracy quality, particularly its effect on distribution (i.e., both legal and illegal supply).
+To address these gaps, we use objective measures to define piracy quality and its effect on supply
+and demand in both the legal and illegal markets using the context of motion pictures. Motion pictures are
+a focal area in marketing research (e.g., Dhar & Weinberg, 2016; Packard et al., 2016, McKenzie, 2023)
+for several reasons. First, the effects of piracy may be clearer in movies than in other information goods
+(Lu et al., 2020); few movies are seen by a consumer multiple times in theaters but illegally downloaded
+music or software may be consumed repeatedly at home. Second, while makers of durable products are
+also concerned about the quality of illegal copies, social or aspirational elements can stimulate illegal
+consumption (Wilcox et al., 2009) typically not seen in information goods. Third, data collection on
+illegal activity is difficult to observe; physical products require finding markets with physical
+2
+
+transactions. Piracy transactions, however, have some visibility online where users transact with less fear
+of being caught. Finally, movie piracy is an area that allows us to build on prior theories and findings.
+Although piracy quality is of interest to producers and presents a need for understanding, it faces
+similar measurement challenges as quality of legal goods. Piracy quality, like product quality, is an
+important product aspect that affects consumer choice, but quality is often treated subjectively as
+consumers perceive certain signals (Zeithaml, 1988). Indeed, piracy quality is rooted in “any valued
+attribute of a product” (Chellappa & Shivendu, 2005, p.402), even though attribute valuation lends itself
+to open interpretation arising from heterogeneous tastes. Building on prior piracy research and production
+quality, we propose that high-quality piracy provides information to consumers when product uncertainty
+is high, such as during new product launch. Piracy that is of higher quality should provide more
+information to consumers by more closely resembling the original good; this reduces uncertainty and
+stimulates sales, particularly among enthusiastic customers who seek out product information. Post-
+launch, however, more information is available (such as word of mouth) and product uncertainty is lower.
+The most willing consumers have likely purchased, leaving more consumers who are less interested and
+willing to pay, making high-quality piracy more substitutable for the original good.
+Since product quality can be treated in two ways, perceived and objective (Monroe & Krishnan,
+1985), and reflects the underlying product attributes, we model piracy quality using the visible piracy file
+keywords to assemble the various aspects of quality into a unidimensional index. We estimate this piracy
+quality using item response theory (IRT). IRT models estimate the relation of items on a latent spectrum,
+where piracy quality is estimated from the relative ideal points (mean values) of piracy keywords across
+illegal files. An advantage here over prior methods is the treatment of quality as a continuous measure by
+utilizing common, observable piracy attributes rather than one or two salient features; this creates a
+measure more concise and precise for the main estimations.
+The dataset consists of movies in wide release in the United States and Canada. Correspondingly,
+a daily panel tracks those movies’ search results and activity on Pirate Bay while the films are first-run in
+theaters. The data includes box office revenues, screen availability, piracy, advertising, and movie
+characteristics. Since most research studies on piracy do not account for illegal supply, we use seemingly
+unrelated regressions (SUR) to jointly estimate the effects of piracy quality on both the legal and illegal
+sides of the market, using copulas to account for endogeneity.
+We find that a 1% increase in the quality of the pirated copies, conditioned on piracy downloads
+(leechers, or downloads of the illegal file), corresponds on average to a 0.143% increase in revenues in
+the launch period. Upon market introduction, movies lack some information for consumers, so higher
+quality copies act more like a sampling mechanism. Post-launch, however, our findings show that a 1%
+increase in the quality of illegal copies, conditioning on a level of leechers, yields a -0.075% decrease in
+3

@@ -1,0 +1,121 @@
+NBER WORKING PAPER SERIES
+BROKERS AND ORDER FLOW LEAKAGE:
+EVIDENCE FROM FIRE SALES
+Andrea Barbon
+Marco Di Maggio
+Francesco Franzoni
+Augustin Landier
+Working Paper 24089
+http://www.nber.org/papers/w24089
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+November 2017
+We thank Malcolm Baker, John Campbell, Laurent Frésard, Slava Fos (discussant), Gary Gorton,
+Owen Lamont, Jongsub Lee (discussant), Andrew Lo, Toby Moskowitz, Erik Stafford, and
+seminar participants at the Becker Friedman Institute CITE conference on New Quantitative
+Models of Financial Markets, FINRA Market Structure conference, LAEF 2nd OTC Markets and
+Securities Workshop, and AQR for helpful comments. The views expressed herein are those of
+the authors and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+At least one co-author has disclosed a financial relationship of potential relevance for this
+research. Further information is available online at http://www.nber.org/papers/w24089.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2017 by Andrea Barbon, Marco Di Maggio, Francesco Franzoni, and Augustin Landier. All
+rights reserved. Short sections of text, not to exceed two paragraphs, may be quoted without
+explicit permission provided that full credit, including © notice, is given to the source.
+
+Brokers and Order Flow Leakage: Evidence from Fire Sales
+Andrea Barbon, Marco Di Maggio, Francesco Franzoni, and Augustin Landier
+NBER Working Paper No. 24089
+November 2017
+JEL No. G12,G14,G23,G33
+ABSTRACT
+Using trade-level data, we study whether brokers play a role in spreading order flow information.
+We focus on large portfolio liquidations, which result in temporary drops in stock prices, and
+identify the brokers that intermediate these trades. We show that these brokers’ best clients tend
+to predate on the liquidating funds: at the beginning of the fire sale, they sell their holdings in the
+liquidated stocks, to then cover their positions once asset prices start recovering. The predatory
+trades generate at least 50 basis points over ten days and cause the liquidation costs for the
+distressed fund to almost double. These results suggest a role of brokers in fostering predatory
+behavior and raise a red flag for regulators. Moreover, our findings highlight the trade-off
+between slow execution and potential information leakage in the decision of optimal trading
+speed.
+Andrea Barbon Francesco Franzoni
+Universita' Svizzera Italiana Swiss Finance Institute
+andrea.barbon@usi.ch Via G. Buffi 13
+6904, Lugano - Switzerland
+Marco Di Maggio and University of Lugano
+Harvard Business School francesco.franzoni@usi.ch
+Baker Library 265
+Soldiers Field Augustin Landier
+Boston, MA 02163 the Toulouse School of Economics
+and NBER 21 Allée de Brienne
+mdimaggio@hbs.edu 31000 Toulouse, FRANCE
+augustin.landier@tse-fr.eu
+
+1 Introduction
+Large institutional orders are typically split in smaller amounts over time to avoid market-impact
+(see Garleanu and Pedersen, 2013, Di Mascio et al., 2016). One concern when executing an order
+slowly over time is that other traders might anticipate the intent to trade the stock in the near future
+and take advantage by trading in the same direction to benefit from the future price impact.
+Predatory trading has strong theoretical support (Brunnermeier and Pedersen, 2005) and is borne
+out by anecdotal evidence. For example, during the unwinding of LTCM’s portfolio in 1998, the
+fund’s typical trading and lending counterparties, which were privy to its portfolio positions, also
+sold the same assets. Given that predatory trading can make the market more illiquid at times of
+crisis and amplify adverse shocks, some observers suggest that reducing the frequency of portfolio
+disclosure can be desirable (Brunnermeier and Pedersen, 2005). Accordingly, hedge funds support
+regulations that limit the granularity of their reporting (IAFE, 2001).
+One wonders, however, if restricting the diffusion of public information is a sufficient measure
+to prevent predatory behavior. In fact, the anecdotal evidence mentioned above suggests that
+market participants possess information about forced liquidations thanks to their close relationship
+with the liquidating managers. Among all actors in the market, brokers are in the privileged
+position of observing the daily trades of a fund. In the case of hedge funds, prime brokers operate
+also as lenders and risk managers, so that they are aware whether the fund is about to breach some
+risk limit and deleverage its portfolio. They can also observe the trading habits of their clients,
+such as whether they tend to cut trades in small orders over several days when executing a large
+order. In sum, brokers are in a privileged position to predict the future trades of their clients.
+Brokers may decide to spread the news that a client’s large trade is likely to extend over several
+days to other traders. They may have an incentive to do so in order to establish a reputation as a
+source of valuable information and attract new business. On the other hand, brokers may care about
+the long-term relationship with their clients. Hence, brokers may be reluctant to foster predatory
+trading against a client. Rather, according to this argument, they should invite other traders to
+provide liquidity and take the other side of the slow trade. It remains, therefore, an open empirical
+question whether brokers foster predatory trading or liquidity provision in case of slow trading by
+a client. The paper aims to address this question.
+1
+
+Forced liquidations of portfolio holdings offer an ideal setting to investigate these issues. Other
+traders, if made aware of the liquidation, can exploit these opportunities to sell the same assets in
+anticipation of the price drop and reverse the trade once the price has fallen. This opportunistic
+behavior makes liquidations more costly for the liquidating manager because it exacerbates the
+adverse price move. We decide to focus on large liquidations (which we label “fire sales” for
+convenience), and do not include large purchases in our analysis, because we aim to have a clean
+identification of liquidity-motivated trades. First, in our data, the majority of institutional investors
+are long-only (about 90%). Hence, it is somewhat less likely for a sale to be information motivated
+(as the manager would need to have the stock already in the portfolio) than for a buy transaction.
+Second, large cash inflows can be allocated slowly over time and are, therefore, less likely to
+impose a concentrated liquidity demand on the market than large outflows.
+Specifically, we exploit proprietary trade-level data and focus on asset managers that sell a
+significant fraction of their portfolio during a relatively short amount of time. We restrict attention
+to asset managers whose order flow is abnormally negative for at least five days in a row.
+Moreover, we focus on managers that liquidate multiple stocks (on average about 20 stocks) at a
+significantly faster pace than usual. We identify about four hundred of these events in the period
+between 1999 and 2014. Because we are only interested in fire sales due to purely liquidity
+motives, such as the need to meet large redemptions, we verify that the stock price movements
+resulting from this sale are only temporary and that the asset managers do not buy back those
+stocks. Price impact would have to display a permanent component, if sales were motivated by
+fundamental reasons. Interestingly, controlling for the portfolio weights, we show that managers
+are more likely to sell large, liquid, and low-volatility stocks, as well as past winners. This evidence
+can inform the theoretical debate on optimal liquidation policy (e.g. Scholes 2000, Brown, Carlin,
+and Lobo 2010).
+Our empirical strategy takes advantage of two key sources of variation. First, not all brokers
+employed by the liquidating fund are going to be aware that the fund is in distress. The liquidating
+fund has little incentive to disclose its intention to liquidate a large fraction of its portfolio; in fact,
+it is likely to use multiple brokers to minimize price impact and info leakage. Hence, only brokers
+that observe a large enough fraction of the liquidation are deemed aware. Second, we should not
+expect all traders to predate; in fact, brokers are likely to selectively disclose the order flow
+information to maximize their rents.
+2

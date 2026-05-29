@@ -1,0 +1,112 @@
+NBER WORKING PAPER SERIES
+DO PRICES REVEAL THE PRESENCE OF INFORMED TRADING?
+Pierre Collin-Dufresne
+Vyacheslav Fos
+Working Paper 18452
+http://www.nber.org/papers/w18452
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2012
+We thank Azi Ben-Rephael, Terry Hendershott, Gur Huberman,Wei Jiang, Norman Schuerhoff, and
+seminar participants at the University of Illinois at Urbana-Champaign, Copenhagen Business School,
+Tsinghua University, IDC Summer Conference, and, especially, Yakov Amihud and Larry Glosten
+for many helpful comments. We also thank Virginia Jiang, Xinran Li, Urvi Maru, Hana Na, Shan Qiao,
+Sofiya Teplitskaya, and Tong Tong for excellent research assistance. The views expressed herein are
+those of the authors and do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2012 by Pierre Collin-Dufresne and Vyacheslav Fos. All rights reserved. Short sections of text,
+not to exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Do prices reveal the presence of informed trading?
+Pierre Collin-Dufresne and Vyacheslav Fos
+NBER Working Paper No. 18452
+October 2012
+JEL No. G0,G00,G1,G10,G12,G14,G3,G34
+ABSTRACT
+Using a comprehensive sample of trades by Schedule 13D filers, who possess valuable private information
+when they accumulate stocks of targeted companies, this paper studies whether several liquidity measures
+reveal the presence of informed trading. The evidence suggests that when Schedule 13D filers trade
+aggressively, both high-frequency and low-frequency measures of stock liquidity indicate a higher
+stock liquidity. Importantly, measures that have been used as direct proxies for adverse selection, such
+the Kyle (1985) lambda, the Easley et al. (1996) pin measure, and the Amihud (2002) illiquidity measure,
+suggest that the adverse selection is lower when informed trading takes place. The evidence is consistent
+with informed traders being more aggressive when measured stock liquidity is high.
+Pierre Collin-Dufresne
+Graduate School of Business
+Columbia University
+Uris Hall 404
+3022 Braodway
+New York, NY 10027
+and NBER
+pc2415@columbia.edu
+Vyacheslav Fos
+College of Business
+University of Illinois at Urbana-Champaign
+340 Wohlers Hall
+1206 South Sixth Street
+Champaign, IL, 61820
+vfos@illinois.edu
+
+Introduction
+An extensive body of theory suggests that stock liquidity, as measured by the spread
+between the bid and ask quotes and by the price impact of trades, should be informative
+about the magnitude of asymmetric information between market participants (Copeland
+and Galai, 1983; Glosten and Milgrom, 1985; Kyle, 1985; Easley and O’Hara, 1987;
+Admati and Pfleiderer, 1988). For example, in his seminal contribution, Kyle (1985)
+shows how an insider hides his private information and optimally accumulates shares at
+a rate inversely proportional to his price impact,3 Kyle’s lambda, which measures the
+dollar change in price due to a dollar change in order flow. In the cross-section stocks
+with more informed trading relative to noise trading experience larger price impact.
+Specifically, Kyle’s lambda, which can be estimated from a regression of price change on
+order flow, is higher for stocks with more informed trading (relative to liquidity trading).
+Following that literature there have been many attempts to measure trading costs
+empirically, and to decompose such costs into different components such as a adverse
+selection, order processing cost, and inventory cost (e.g., early papers include Glosten,
+1987; Glosten and Harris, 1988; Stoll, 1989; Hasbrouck, 1991; Amihud, 2002). An
+extensive empirical literature relies on adverse selection measures assuming they capture
+information asymmetry (e.g., Barclay and Hendershott, 2004; Vega, 2006; Duarte et al.,
+2008; Bharath et al., 2009; Kelly and Ljungqvist, 2011).
+Do these empirical measures of stock liquidity actually capture information asym-
+metry?
+Most measures rely on some empirical estimate of price impact and its persistence to
+identify the amount of private information in trades. There is an obvious endogeneity
+issue with this approach. Ideally, one would want to separate informed from uninformed
+trades ex-ante, and test their impact on price changes. Unfortunately, since we generally
+3The insider’s optimal trading strategy is to trade as a linear function of the difference between his
+signal and the current price, at a rate inversely proportional to his price impact, and that increases as
+maturity approaches so that all the information eventually makes it into prices.
+2
+
+do not know the traders’ information sets, this is hard to do in practice. As a result,
+it is often assumed that some types of investors are informed. For example, Boulatov
+et al. (2009) use the institutional order flow as a proxy for informed trading.
+In this paper, we use a novel data set of trades by investors we can identify as having
+substantial private information, to study whether proposed liquidity measures reveal the
+presence of informed trading. Specifically, we exploit a disclosure requirement to identify
+trades that rely on valuable private information. Rule 13d-1(a) of the 1934 Securities
+Exchange Act requires investors to file with the SEC within 10 days of acquiring more
+than 5% of any class of securities of a publicly traded company if they have an interest
+in influencing the management of the company. In particular, Item 5(c) of Schedule 13D
+requires the filer to “... describe any transactions in the class of securities reported on
+that were effected during the past sixty days or since the most recent filing of Schedule
+13D, whichever is less.” Thus, Schedule 13D filings reveal the date and price at which
+all trades by the Schedule 13D filer were executed during the 60 days that precede the
+filing date.4
+We hand collect a comprehensive sample of trades from the Schedule 13D filings. We
+view this sample as an interesting laboratory to study the liquidity and the price impact
+of informed trades. First, an average Schedule 13D filing in our sample is characterized
+by a positive and significant market reaction upon announcement. For example, the
+cumulative return in excess of the market is about 6% in the (t-10,t+1) window around
+the filing date and about 3% in the (t-1,t+1) window around the filing date. Second, we
+calculate several measures of profits made by Schedule 13D filers and show that these
+profits are economically significant. For example, an average Schedule 13D filer gains
+$1.13 million on a $30 million stake in a $404 million market cap company. Third, we
+document performance of trading strategies that replicate trades of Schedule 13D filers.
+The evidence suggests that these strategies exhibit positive and significant alpha when
+4AsweexplaininSection2,oursampleincludesoriginalSchedule13Dfilingsonly,i.e.,amendments
+to previously submitted filings are excluded from the sample.
+3

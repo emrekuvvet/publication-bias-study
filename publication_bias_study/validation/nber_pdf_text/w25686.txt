@@ -1,0 +1,138 @@
+NBER WORKING PAPER SERIES
+STRESS TESTING NETWORKS:
+THE CASE OF CENTRAL COUNTERPARTIES
+Richard B. Berner
+Stephen G. Cecchetti
+Kermit L. Schoenholtz
+Working Paper 25686
+http://www.nber.org/papers/w25686
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+March 2019
+Berner is Executive in Residence and Adjunct Professor, NYU Stern School of Business, and former
+Director of the Office of Financial Research; Cecchetti is Rosen Family Chair in International Finance,
+Brandeis International Business School, Research Associate, National Bureau of Economic Research,
+and Research Fellow, Centre for Economic Policy Research; Schoenholtz is Henry Kaufman Professor
+of the History of Financial Institutions and Markets, NYU Stern School of Business, and Director
+of the Stern Center for Global Economy and Business. We would like to thank Robert Engle, Richard
+Haynes, Til Schuermann, and Bruce Tuckman for helpful discussions; and the NYU Stern Volatility
+Lab for providing firm-level SRISK data. The views expressed herein are those of the authors and
+do not necessarily reflect the views of the National Bureau of Economic Research.
+At least one co-author has disclosed a financial relationship of potential relevance for this research.
+Further information is available online at http://www.nber.org/papers/w25686.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2019 by Richard B. Berner, Stephen G. Cecchetti, and Kermit L. Schoenholtz. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission provided
+that full credit, including © notice, is given to the source.
+
+Stress Testing Networks: The Case of Central Counterparties
+Richard B. Berner, Stephen G. Cecchetti, and Kermit L. Schoenholtz
+NBER Working Paper No. 25686
+March 2019
+JEL No. G18,G23,G28,G32
+ABSTRACT
+Stress tests applied to individual institutions are an important tool for evaluating financial resilience.
+However, financial systems are typically complex, heterogeneous and rapidly changing, raising questions
+about the adequacy of conventional tests. In this paper, we interpret the current stress test practice
+from a network perspective, highlighting central counterparties (CCPs) as an example of a critical
+network hub. Networks that include CCPs involve deep and broad interconnections, making stress
+testing a challenging task. We analyze supplementing both private and supervisory CCP stress tests
+with a high-frequency indicator constructed from a market-based estimate of the conditional capital
+shortfall (SRISK) of the CCP’s clearing members. Applying our measure to two large CCPs, we analyze
+how they can transmit and amplify shocks across borders, conditional on the exhaustion of prefunded
+resources. Our results highlight how the network created by central clearing can act as an important
+transmission mechanism for shocks emanating from Europe.
+Richard B. Berner Kermit L. Schoenholtz
+NYU Stern School of Business NYU Stern School of Business
+44 West 4th St Department of Economics
+New York, NY 10021 44 West 4th Street
+rberner@stern.nyu.edu Suite 7-89
+New York, NY 10012
+Stephen G. Cecchetti kschoenh@stern.nyu.edu
+Brandeis University
+International Business School
+415 South Street
+Waltham MA 02453
+and NBER
+cecchetti@brandeis.edu
+
+Berner, Cecchetti & Schoenholtz Stress Testing Networks March 2019
+I. Introduction
+Complex and diverse links among financial market participants across financial activities and borders are
+a defining characteristic of the modern financial system. Indeed, they are what make it a system, rather
+than merely a collection of individual firms and markets. Connections can be direct, indirect, or both. For
+example, firms are directly connected through mutual counterparty exposures and indirectly connected
+to other firms who are counterparties of their counterparties. Similarly, firms have indirect linkages
+through holdings of correlated portfolios of assets and through common funding and resolution
+mechanisms.
+Interconnectedness creates both economic benefits and financial vulnerabilities. The process of financial
+intermediation can be simple, but to satisfy client needs, firms may innovate, creating new products, or
+connecting to specialized firms to obtain them. The rapid growth of securitization and derivatives
+markets before the crisis was a good example. The resulting elaborate division of labor among suppliers
+reduced the costs of intermediation and helped to diversify or share risks. Similarly, other services
+provide the processing required for completing financial transactions.
+The diversity created by interconnections can add to financial system resilience. As then-Fed Chair Janet
+Yellen noted in 2013, the more complete is the network of interconnections, the more resilient it may
+be: “The principle behind this result is familiar and basic to economics: Diversification reduces risk and
+improves stability.”
+However, interconnections can also act as channels for transmitting and amplifying shocks. Liquidity or
+credit shocks in one part of the financial system may spread to other parts, resulting in runs and fire
+sales. In addition to being more complex, interconnected systems or networks tend to be more opaque.
+The combination can blind market participants to the nature and extent of exposures and can trigger
+individually rational but collectively destabilizing behavior, amplifying the effects of an initial shock.
+More concentrated, highly interconnected systems with a few key players can be particularly vulnerable
+to shocks unless these institutions are highly resilient. Even where direct linkages are sparse, common
+exposures can generate herding, amplifying shocks.
+Two aspects of interconnectedness illustrate these benefits and costs. First, linkages in networks for
+payments, clearing, and settlement offer clear benefits for efficiency and risk management. Second,
+heterogeneous networks that operate across jurisdictions with different laws and regulatory
+frameworks can distort competition among market participants.
+Analyzing and monitoring interconnectedness, and the benefits and vulnerabilities it creates, requires a
+systemwide, granular approach. Researchers suggest two broad methodologies for addressing this
+challenge. One relies on estimation of models from market price data and perhaps some details on
+quantities. Such a non-network approach relies on the validity of the model and its applicability to stress
+events. Examples include the development of so-called cross-sectional measures like CoVaR, the default
+insurance premium (DIP), marginal expected shortfall, and SRISK. The other approach starts with
+mapping the network and then uses various graph-theoretic tools to assess the strength of transmission
+mechanisms through both direct and indirect exposures.1
+1 See Kara, Tian and Yellen (2015) for a taxonomy of these two approaches.
+1/29
+
+Berner, Cecchetti & Schoenholtz Stress Testing Networks March 2019
+Analysis of interconnectedness is critical for policy judgments. Equally important, researchers and
+policymakers need detailed, consistent, timely data on counterparty exposures (including derivatives
+transactions) to assess and monitor interconnectedness. Challenges remain in collecting granular data,
+in assuring the confidentiality and security of those data, and in developing methodologies to
+reconstruct the full network from partial information, when full data are unavailable. In addition,
+analysts necessarily customize network analysis to the special characteristics of each financial network,
+including its topology, the heterogeneity of its participants, and the speed with which it can become
+vulnerable.
+Central counterparties (CCPs) are arguably the most interconnected of all financial institutions. Indeed,
+they have a host of counterparties, some of which also are very large and interconnected, and some of
+which are highly leveraged. It is relatively straightforward to map these connections, making them a
+natural object for applying network analysis. CCPs also conduct an enormous volume of transactions and
+may provide critical services for which there are no short-run substitutes. Hence, the study of these
+financial market utilities is essential for assessing and securing financial stability: What makes CCPs a
+source of systemic vulnerability? How might we determine the potential for these network hubs to
+transmit and amplify shocks? How can we mitigate the vulnerability?
+Following this introduction, we start with a description of stress testing, including a discussion of why it
+is such a valuable tool for determining financial system resilience. We then move to a discussion of the
+topology of networks and the challenge of testing their fragility. Finally, we turn to CCPs, critical nodes in
+numerous, highly interconnected financial networks. After discussing the characteristics of CCPs, we
+suggest a metric for assessing the extent to which they would likely transmit and amplify shocks. Unlike
+most studies of CCP resilience that focus on the adequacy of pre-funded resources, we consider the
+impact on the financial system in the event that these resources run out.
+Our customized CCP network risk measure starts with SRISK—an estimate of the capital shortfall
+following a large decline in the global equity market—of a CCP’s clearing members (CMs). We analyze an
+index based on a weighted sum of each CM’s SRISK as a measure of the degree to which the CCP adds to
+the fragility of the system. Not surprisingly, that contribution depends on the level of capital in the
+system. Applying a version of this index each to the Chicago Mercantile Exchange (CME) and to the
+London Clearing House (LCH) allows us to draw two conclusions. First, we confirm that they would likely
+come under stress simultaneously, as many of the CMs of the CME and LCH are the same. Second, our
+results reveal that the U.S.-domiciled CME currently has substantial exposure to European banks. As a
+result, an important source of fragility in these well-defined networks emanates from the relatively low
+capitalization (relative to the likely losses following a significant global shock) of European banks.
+2/29

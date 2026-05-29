@@ -1,0 +1,97 @@
+NBER WORKING PAPER SERIES
+A TEST OF EFFICIENCY FOR ThE
+S&P 500 INDEX OPTION MARKET
+USING VARIANCE FORECASTS
+Jaesun Noh
+Robert F. Engle
+Alex Kane
+Working Paper No. 4520
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+November, 1993
+This paper is part of NBER's research program in Asset Pricing. Any opinions expressed are
+those of the authors and not those of the National Bureau of Economic Research.
+
+NBER Working Paper #4520
+November 1993
+A TEST OF EFFICIENCY FOR THE
+S&P 500 INDEX OPTION MARKET
+USING VARIANCE FORECASTS
+ABSTRACT
+To forecast future option prices, autoregressive models of implied volatility derived
+from observed option prices are commonly employed [see Day and Lewis (1990), and Harvey
+and Whaley (1992)]. In contrast, the ARCH model proposed by Engle (1982) models the
+dynamic behavior in volatility, forecasting future volatility using only the return series of an
+asset. We assess the performance of these two volatility prediction models from S&P 500
+index options market data over the period from September 1986 to December 1991 by
+employing two agents who trade straddles, each using one of the two different methods of
+forecast Straddle trading is employed since a straddle does not need to be hedged. Each
+agent prices options according to her chosen method of forecast, buying (selling) straddles
+when her forecast price for tomorrow is higher (lower) than today's market closing price, and
+at the end of each day the rates of return are computed. We find that the agent using the
+GARCH forecast method earns greater profit than the agent who uses the implied volatility
+regression (IVR) forecast model. In particular, the agent using the GARCH forecast method
+earns a profit in excess of a cost of $0.25 per straddle with the near-the-money straddle
+trading.
+Robert F. Engle Alex Kane
+Department of Economics Graduate School of International
+University of California, San Diego and Pacific Studies
+San Diego, CA 92093-0508 University of California, San Diego
+and NBER San Diego, CA 92093-0508
+Jaesun Noh
+Department of Economics
+University of California, San Diego
+San Diego, CA 92093-0508
+
+1 Introduction
+In efficient capital markets, when the volatility of the rate of return on an asset is
+constant over time, the asset's volatility is reflected in its option price. Schmalensee
+and Trippi (1978) and later many others have shown that call-option implied volatilities
+yield better forecasts of standard deviation than do simple estimates using the standard
+deviation estimated from past returns.
+Market volatility, however, can change dramatically when it is affected by stock mar-
+ket crashes or monetary policy. For example, the standard deviation of S&P 500 daily
+returns increased from about 1.2% to 9.4% in the ten days surrounding the stock market
+crash of October 1987. Changes in volatility of this magnitude may have large effects on
+the level of stock prices and thus the option prices. Under changing volatility, it is still
+possible to compute the expected implied volatility over the life of an efficiently priced
+option if unexpected changes in volatility over the life of the option are non-systematic
+(see Wiggins (1987) and Hull and White (1987)). However, such a circumstance is not
+guaranteed, particularly when the asset in question is a well-diversified portfolio, and.
+with time-varying volatilities, we cannot even take for granted that the option market
+is efficient with respect to any volatility forecast.
+The autoregressive conditional heteroskedasticity (ARCH) model proposed by Engle
+(1982) allows the conditional variance to change over time as a function of past errors.
+leaving the unconditional variance constant. Many authors, Bollerslev (1986), Coulson
+and Robins (1985), Engle and Lilien (1987), and Domowitz and Hakkio (1985), have
+successfully applied ARCH models to financial and macro-economic data to explain
+changing risk premiums and inflation volatilities. ARCH models capture the dynamic
+behavior of market volatility using specific volatility equations of the asset return se-
+1
+
+ries without presupposing any option pricing formula, or using observed option prices.
+Hence, option price estimates derived from ARCH models can be used to test whether
+observed market options are efficiently priced.
+The usual way to measure the performance of a volatility prediction model is to
+assess its ability to predict future volatilities. However, since volatility is unobservable,
+there is no natural metric for measuring the accuracy of any particular model. But
+realized rates of return allow us to test the efficacy of variance driven option prices and
+provide a test for market efficiency with respect to volatility forecasts.
+Engle, Hong, Kane and Noh (1993a) proposed a framework to assess profits from
+options trading for competing algorithms to forecast the volatility of an asset in a
+simulated market. They evaluated four separate volatility forecast models by comparing
+cumulative profits from options trading and found that profits earned by the GARCH
+forecast model dominate those earned by any of the other three alternatives. Engle,
+Kane and Noh (1993b) extended the analysis of one-day options trading to long-term
+options trading and assessed profits for the GARCH estimation using the S&P 500
+option data in European style options trading. Recently, Harvey and Whaley (1992)
+conducted an S&P 100 index option market efficiency analysis using an implied volatility
+measure, and found that the implied volatility method fails to make significantly positive
+profits after transaction costs. They used one pair of call and put near-the-money
+options each day and delta-hedged using an S&P 500 futures contract.
+In this paper, we test the efficiency of the S&P 500 index option market based on
+the performance of these two volatility prediction models. We use one type of straddle,
+which has maturity above 15 days and is nearest to the money, each day rather than
+trade different types of call and put options separately. There are two advantages of
+2

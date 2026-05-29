@@ -1,0 +1,120 @@
+NBER WORKING PAPER SERIES
+ONLINE SYNDICATES AND STARTUP INVESTMENT
+Christian Catalini
+Xiang Hui
+Working Paper 24777
+http://www.nber.org/papers/w24777
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2018, Revised January 2019
+We thank Avi Goldfarb, Kevin Laws, Meng Liu, Hong Luo, Ramana Nanda, Scott Stern and Jane
+Wu for helpful discussions and comments. The researchers acknowledge the support of the Junior
+Faculty Research Assistance Program at the MIT Sloan School of Management, and the MIT
+Initiative on the Digital Economy (http://ide.mit.edu/). The views expressed herein are those of
+the authors and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2018 by Christian Catalini and Xiang Hui. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Online Syndicates and Startup Investment
+Christian Catalini and Xiang Hui
+NBER Working Paper No. 24777
+June 2018, Revised January 2019
+JEL No. G24,L26,O31,O33
+ABSTRACT
+Early crowdfunding platforms were based on a premise of disintermediation from professional
+investors, and relied on the ‘wisdom of the crowd’ to screen high quality projects. This becomes
+problematic when equity is involved, as the degree of asymmetric information between
+entrepreneurs looking for funding and the crowd is higher than in reward-based crowdfunding.
+As a result, platforms later experimented with incentives for professional investors to curate deals
+for crowd. We study how the introduction of such incentives influenced the allocation of capital
+on the leading US platform, finding that the changes led to a sizable 33% increase in capital flows
+to new regions. Professional investors use their reputation to vouch for high potential startups that
+would otherwise be misclassified because of information asymmetry. This allows them to
+arbitrage opportunities across regions and shift capital flows to startups that are 37% more likely
+to generate above median returns. At the same time, this ‘democratization effect’ relies on the
+presence of intermediaries with professional networks that bridge these new regions to California.
+Using a large-scale field experiment with over 26,000 investors we further unpack the frictions to
+online investment, and show that social networks constitute a key barrier to additional
+democratization, since they influence how the crowd evaluates intermediaries in the first place.
+Christian Catalini
+MIT Sloan School of Management
+100 Main Street, E62-480
+Cambridge, MA 02142
+and NBER
+catalini@mit.edu
+Xiang Hui
+Washington University in St Louis
+and MIT
+hui@wustl.edu
+
+1 Introduction
+Early crowdfunding platforms (e.g. Kickstarter, Indiegogo) were based on a premise of complete
+disintermediation from professional investors: the crowd would directly fund projects based
+on the information shared online by the entrepreneurs, bypassing in the process traditional
+gatekeepers. This approach becomes problematic when equity is involved because of asymmetric
+information between entrepreneurs and investors. Moreover, it favors geographic regions that
+already attract a disproportionate share of capital offline, as online investors free ride on others
+and rely on highly visible (but imperfect) proxies for quality such as accumulated capital, formal
+education, affiliation with top accelerator programs, prominent advisors, etc. Online investors
+have also little incentive to perform costly due diligence because they invest small amounts and
+all receive the same investment terms. Traditional solutions to this problem used in other online
+markets are ineffective, as entrepreneurs may lack an established track record, and transactions
+are too rare, idiosyncratic and uncertain to support a robust reputation or feedback system.
+Whileplatformscouldinvestincurationandbecomethird-partycertifiers, thisapproachdoes
+not scale, as information about investment opportunities is dispersed across different domains of
+expertise and regions, and due diligence is labor-intensive and time-consuming. This has led to
+the emergence of an alternative market design approach which borrows ideas from the venture
+capital model: the creation of a market for curation. By allowing experienced, professional
+investors to screen startups and invite the crowd to participate in their deal flow in exchange
+for a share of future profits (the ‘carry’),1 platforms can avoid the unraveling of the market,
+and align incentives between the crowd, the startups and the experts. This model resembles
+the relationship between general and limited partners in a venture capital firm, with the crowd
+replacing limited partners as the source of funding. It also has the advantage of turning what
+would otherwise be a one-time relationship between online investors and startups into a repeated
+1Inreward-basedequitycrowdfunding(e.g. Kickstarter,Indiegogo),platformstypicallyearnafeeonthetotal
+amount successfully raised through the website, irrespective of long run outcomes. Such a model is particularly
+ineffective when equity is involved, as it does not incentivize platforms to surface and match only high quality
+deals, but encourages them to increase the total volume of transactions, irrespective of quality. The use of a
+carry to incentivize curation is borrowed from the venture capital model. In addition to carried interest, venture
+capital firms also charge management fees on the capital they invest on behalf of limited partners.
+1
+
+one between online investors and the intermediaries syndicating the deals. Intermediaries can
+then leverage their reputation – often established offline over multiple years of activity as angel
+investors–toarbitrageinvestmentopportunitiesandvouchforstartupsthathavehighpotential,
+but that would otherwise struggle to raise capital online.
+Thearrivaloftheseintermediaries, however, mayreinforcetheagglomerationofcapitalflows,
+as most angel investors are based in top entrepreneurial hubs such as California2 and primarily
+invest in their home region.
+The objective of this paper is to explore the trade-offs the introduction of intermediaries in
+equity crowdfunding markets entails, and identify some of the key frictions that prevent high
+quality entrepreneurs from accessing capital online. We start by developing a simple theoretical
+model to compare how investors and startups in top entrepreneurial hub regions versus non-
+hub regions are affected by intermediaries, and then use novel data on capital flows and deal
+performance from the leading US equity crowdfunding platform to test our predictions.
+When investment opportunities are directly posted online and the crowd makes its own
+investment decisions (as in reward-based crowdfunding), we find that non-hub regions severely
+underperform in terms of capital attracted relative to their share of startup activity. Consistent
+with information asymmetry being the culprit, this performance gap is substantially smaller for
+non-hub startups that have high, observable signals of quality.3
+The introduction of intermediaries (called syndicate leads on the platform) reverses this
+trend, increasing capital flows to non-hub regions by 33%. While our main specification relies
+on an event study around the months immediately preceding and following the launch of the
+new feature (which was not pre-announced and can be therefore considered a natural experiment
+on the existing crowd of investors), the result is robust to multiple empirical approaches and
+alternative definitions of the relevant control group.4
+2Inthepaper,hubsrefertogeographicregionswithahighconcentrationofstartupactivity. Empirically,inthe
+hightechsoftwaresectorwestudy,Californiaisthemainhubregion. Thenextregionbystartupandinvestment
+activity is New York, although this region is more similar in activity levels to the third one, Massachusetts, than
+to California. In the data, we adopt a conservative approach and only classify California as a hub. Adding New
+York (or even Massachusetts) to our definition of hub regions does not change our results.
+3We build measures of observable startup quality based on the startups’ profiles on the platform. See Section
+4 for more details.
+4Our main specification controls for investor heterogeneity by introducing investor fixed-effects and focusing
+2

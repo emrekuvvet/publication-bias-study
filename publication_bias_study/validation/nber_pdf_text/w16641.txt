@@ -1,0 +1,141 @@
+NBER WORKING PAPER SERIES
+THE EXTENSIVE MARGIN OF EXPORTING PRODUCTS:
+A FIRM-LEVEL ANALYSIS
+Costas Arkolakis
+Sharat Ganapati
+Marc-Andreas Muendler
+Working Paper 16641
+http://www.nber.org/papers/w16641
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2010
+We thank the editor Virgiliu Midrigan and two anonymous referees. We are grateful to Hiau Looi
+Kee and Marcelo Olarreaga for sharing augmented UNCTAD TRAINS data on non-tariff
+measures and detailed explanations. We benefitted from helpful comments and discussions by
+David Atkin, Andrew Bernard, Lorenzo Caliendo, Thomas Chaney, Arnaud Costinot, Don Davis,
+Gilles Duranton, Jon Eaton, Elhanan Helpman, Gordon Hanson, Sam Kortum, Giovanni Maggi,
+Kalina Manova, Marc Melitz, Peter Neary, Jim Rauch, Veronica Rappaport, Steve Redding, Kim
+Ruhl, Peter Schott, Daniel Trefler and Jon Vogel as well as several seminar and conference
+participants. Oana Hirakawa, Olga Timoshenko and Bingyu Zhang provided excellent research
+assistance. Muendler and Arkolakis acknowledge NSF support (SES-0550699 and SES-0921673)
+and support from the Yale University High Performance Computing Center with gratitude. An
+Online Supplement is available at econ.ucsd.edu/muendler/papers/abs/braxpmkt. The views
+expressed herein are those of the authors and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2010 by Costas Arkolakis, Sharat Ganapati, and Marc-Andreas Muendler. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission provided
+that full credit, including © notice, is given to the source.
+
+The Extensive Margin of Exporting Products: A Firm-level Analysis
+Costas Arkolakis, Sharat Ganapati, and Marc-Andreas Muendler
+NBER Working Paper No. 16641
+December 2010, Revised July 2020
+JEL No. F12,F14,L11
+ABSTRACT
+To quantify trade frictions, we examine multi-product exporters. We build a flexible general
+equilibrium model and estimate market entry costs using Brazilian firm-product-destination data
+under rich demand and market-access cost shocks. Our estimates show that additional products
+farther from a firm’s core competency come at higher production costs, but there are substantive
+economies of scope in market-access costs. Market-access costs differ across destinations, falling
+more rapidly in scope at nearby regions and at destinations with fewer non-tariff barriers. We
+evaluate a counterfactual scenario that harmonizes market-access costs across destinations and
+find global welfare gains similar to eliminating all current tariffs.
+Costas Arkolakis Marc-Andreas Muendler
+Department of Economics Department of Economics, 0508
+Yale University, 28 Hillhouse Avenue University of California, San Diego
+P.O. Box 208268 9500 Gilman Drive
+New Haven, CT 06520-8268 La Jolla, CA 92093-0508
+and NBER and NBER
+costas.arkolakis@yale.edu muendler@ucsd.edu
+Sharat Ganapati
+Georgetown University
+Edward B. Bunn, S.J. Intercultural Center
+37th and O Streets, NW
+Washington, DC 20057
+and CESifo
+sganapati@gmail.com
+A data appendix is available at http://www.nber.org/data-appendix/w16641
+
+Trade frictions shape the pattern of trade, the transmission of macroeconomic conditions,
+and their aggregate consequences in international trade and open-economy macroeconomics.
+Researchtendstocharacterizetradefrictionswithicebergtransportcostsandad-valoremtariffs,
+especiallywhenconsideringaggregatetradedata(e.g.Arkolakis,CostinotandRodr´ıguez-Clare
+2012). Drawing on firm and firm-destination data, researchers have recently opened up the
+black box of market access costs, which deter firms from export market entry (Das, Roberts
+andTybout2007,Moxnes2010,Eaton,KortumandKramarz2011,Allen2014,Chaney2014).
+This literature typically measures the importance of fixed or sunk costs beyond variable trade
+costs, focusing on firm entry into exporting and abstracting from policy. We use firm-product-
+destinationdatatouncovertheprecisenatureofthesemarketaccesscosts,focusingonboththe
+firms’exportmarketentryandtheirnewproductentry. Toproducemarket-accesscostestimates
+ofpolicyrelevance,wetiecostcomponentstonon-tariffpolicyinstruments.
+We build a framework of multi-product exporters that generalizes earlier models and offers
+a flexible setup to rigorously measure the relevance of market-access costs for exporter-product
+presence in foreign markets. We base our framework on novel regularities, using detailed in-
+formation on the entry and sales of Brazilian exporters and their individual products by foreign
+destination. We structurally estimate the framework and relate market access cost estimates to
+observed policy-driven non-tariff measures (NTMs) as well as geography and product-related
+barriers, which have proven elusive objects for rigorous quantification to date. NTMs are ar-
+guably as important for trade openness as are tariffs, they are prominent in trade negotiations,
+andtheyareinstrumentsintradeconflicts.1 Basedonourestimatesweevaluateacounterfactual
+scenariothatharmonizesmarket-accesscostsacrossexportdestinationstotheirobservedglobal
+minimaandfindwelfaregainssimilartoeliminatingallcurrenttariffs.
+OurframeworkextendsthemonopolisticcompetitionmodelofMelitz(2003)byembedding
+a multi-product setup into a conventional constant elasticity of substitution (CES) demand sys-
+tem. We model within-firm product heterogeneity with two key mechanisms. First, we assume
+1Niu et al. (2018, Table 6) estimate for a sample of 97 countries that in 1997 the ad-valorem equivalent of
+NTMsusedtoweaklyexceedimporttariffsinabout56percentofHS-6productlinesbutby2015NTMssurpassed
+tariffsin73percentofHS-6products. Forcomprehensivepolicyreportsonnon-tariffmeasuresseeOECD(2005),
+UNCTAD (2010), WTO (2012). Recent trade agreements between the EU and other countries, including CETA
+withCanadaortheEU-MercosurAssociationAgreement,prominentlyaddressnon-tariffbarrierssuchascustoms
+procedures, technical regulations, and standards. While the most recent trade accord between the United States,
+MexicoandCanada(USMCA)doesnotalterconventionalnon-tariffmeasures, itintroduceslaborstandardsasa
+noveltypeofNTM.ThethreepriorU.S.agreementsfrom2012withPanama,ColombiaandSouthKoreaplaced
+particularimportanceonthereductionofconventionalnon-tariffbarriers.Chinafrequentlyusesnon-tariffmeasures
+suchassafetyandenvironmentalstandards,atpresentforexampletorestrictagriculturalexportsfromCanadaand
+coalfromAustralia. WhiletariffsareaprominentinstrumentinrecentU.S.tradedisputes,theUnitedStatesisalso
+usingcrucialnon-tariffmeasuresinitsdisputeswithChina, suchastheso-calledEntityListthatimposesexport
+licensingrequirementsonspecificforeignbusinessesandpersons.
+1
+
+as in Eckel and Neary (2010, henceforth EN) that a firm faces declining efficiency in supply-
+ing additional products that are farther from its core competency. Second, we introduce local
+product appeal shocks, extending firm-destination heterogeneity as in Eaton, Kortum and Kra-
+marz (2011) to the product-destination level. Product appeal shocks allow us to nest a version
+of the Bernard, Redding and Schott (2011, henceforth BRS) model that attributes within-firm
+product heterogeneity to local demand shocks. In our framework, the firm faces two extensive
+margins and one intensive margin: it elects its presence at export destinations at one extensive
+margin,itchoosesitsexporterscope(thenumberofproducts)ineachdestinationatanotherex-
+tensivemargin,andsetsthepricesforeachindividualproductineachdestinationattheintensive
+margin.2
+Weconsiderthreetypesofcosts. First,thereareproduct-specificproductioncostsatthefirm
+level similar to EN (core competency). Second, there are variable trade costs (shipping costs in
+theformoficebergtradecostsandad-valoremtariffs),whichvarywithsalesbutdonotdepend
+ontheexporter’sscope. Bothproductioncostsandvariabletradecostsdetertradeatallmargins.
+Third, to capture the specificities of non-tariff barriers for market access, we consider a flexible
+schedule of fixed exporting costs by firm, product, and destination market, generalizing the
+firm-destination level exporting costs in Chaney (2008). This market-access cost schedule can
+vary by firm-product and accommodates the possible cases of economies and diseconomies of
+scope.3 The market-access cost schedule affects only the two extensive margins: a firm’s entry
+into a destination with the first product and its exporter scope there. The first exported item to
+a particular destination may face higher entry costs than a subsequent item. Examples of such
+barriersincludethefinancialcostandtimerequiredforbothpaperworkandbordercompliance,
+sanitaryandphytosanitaryaswellasothertechnicalregulationsthatcanaffectapprovalofafirst
+exportproductdifferentlyfromsubsequentproducts,andpriceorquantitycontrolmeasureswith
+differentialimportance.
+Toquantifythistheory,wedocumentindividualproductsalesandexporterscopeusingfirm-
+product-destination data from Brazil, a typical exporter country close to the median in exports
+per capita in 2000. We then characterize the nature of market-access costs at the microeco-
+nomic level, so we can subsequently conduct adequate aggregate simulations. We elicit three
+main facts. First, within firms and destinations, we look at sales by product. Wide-scope ex-
+portersselllargeamountsoftheirtop-sellingproducts. Moreover,theysellconsiderablysmaller
+2Ourproduct-levelapproachthusdiffersfromfirm-levelresearch,includingArkolakis(2010),inthatwegive
+substance to market-access costs and directly estimate these costs from product entry and product sales. The
+parametrizationofourestimationmodelfullyneststheArkolakis(2010)marketpenetrationcosts.
+3Seminal references on economies of scope are Panzar and Willig (1977) and (1981). Formally, there are
+economiesofscopeforsalesxandy oftwoproductsifthecostfunctionsatisfiesC(x+y) < C(x)+C(y),that
+isifthecostfunctionissubadditive.
+2

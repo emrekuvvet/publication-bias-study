@@ -1,0 +1,122 @@
+NBER WORKING PAPER SERIES
+LIQUIDITY, EFFICIENCY AND BANK BAILOUTS
+Gary Gorton
+Lixin Huang
+Working Paper 9158
+http://www.nber.org/papers/w9158
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2002
+We thank Franklin Allen, Jack Kareken, Richard Kihlstrom, and seminar participants at University of
+Minnesota and the Federal Reserve Bank of New York for comments and suggestions. The views expressed
+herein are those of the authors and not necessarily those of the National Bureau of Economic Research.
+© 2002 by Gary Gorton and Lixin Huang. All rights reserved. Short sections of text, not to exceed two
+paragraphs, may be quoted without explicit permission provided that full credit, including © notice, is given
+to the source.
+
+Liquidity, Efficiency and Bank Bailouts
+Gary Gorton and Lixin Huang
+NBER Working Paper No. 9158
+September 2002
+JEL No. G21, E58
+ABSTRACT
+Why do governments bailout banking systems in distress? We argue that the government can
+efficiently provide liquidity. We present a general equilibrium model in which not all assets can be used to
+purchase all other assets at every date. At some dates agents want to sell projects or securities. The only
+buyers are agents who have previously opportunistically invested in otherwise dominated assets because only
+these (“liquid”) assets can be used to purchase the projects or securities. The market price of the projects or
+securities sold depends on the supply of liquidity, which is determined in general equilibrium. The supply
+of liquidity is not perfectly elastic, so asset prices can deviate from “efficient market” prices, that is, the
+conditional expectation of the asset payoff. While private liquidity provision is socially beneficial since it
+allows valuable reallocations, it is also socially costly since liquidity suppliers could have made more efficient
+investments ex ante. As a result, there is a potential role for the government to supply liquidity by issuing
+government securities, backed by tax revenue. Government bailouts of banking systems are an example of
+such public liquidity provision.
+Gary Gorton Lixin Huang
+Department of Finance Department of Economics
+The Wharton School University of Pennsylvania
+University of Pennsylvania Philadelphia, PA 19104
+Philadelphia, PA 19104
+and NBER
+gorton@wharton.upenn.edu
+
+1
+I. Introduction
+In the early 1980s high interest rates caused many U.S. savings and loan institutions to
+become economically distressed.1 But, what was to become the thrift crisis in the late 1980s has,
+in large part, been attributed to the fact that insolvent institutions were allowed to remain open,
+mostly due to the depleted resources of the Federal Savings and Loan Insurance Corporation.
+Insolvent thrifts were not promptly closed and their assets sold to new investors. The policy of
+allowing insolvent institutions to remain open was labeled a policy of “forbearance” and Ed Kane
+deemed the insolvent thrifts “zombies”.2 Eventually, the Resolution Trust Corporation was
+established to liquidate the assets of insolvent thrifts.3 The bailout of the thrift industry ultimately
+cost $180 billion (3.2% of GDP); see Caprio and Klingebiel (1996).4
+Prolonged and expensive government bailouts of financial intermediaries following
+banking crises have recently proliferated around the world, and it is not only transitional and
+emerging economies that have had such experiences.5 As in the U.S. thrift crisis, the resolution
+of these crises typically involves the use of public money to subsidize the restructuring or
+disposal of impaired loans, a “bailout.” In a survey of 120 banks in 24 developed countries in the
+1980s and 1990s, Goodhart (1995) found that two out of three failed banks were bailed out.
+These bailouts are expensive. In a sample of 40 such episodes, Honohan and Klingebiel (2000)
+found that, on average, countries spend 12.8 percent of their GDP cleaning up their banking
+1 For example, the assets of operating GAAP-insolvent institutions in 1984 were $107.3 billion. The total
+assets of the 1,290 GAAP-insolvent institutions and nearly insolvent institutions were 45 percent of all
+assets of insured thrifts in 1984. See Brumbaugh (1988). On the thrift crisis generally see Barth (1991),
+Kane (1989), and White (1991).
+2 The term “zombie thrifts” became widely used and is now applied to similar banking situations. In a
+private communication, Ed Kane recalls having first used this term in a speech to the American Bar
+Association in 1986. It first appeared in published work in Kane (1987), a paper that was presented at the
+Western Economics Association in 1986.
+3 The 1989 Financial Institutions Recovery, Reform and Enforcement Act (FIRREA) substantially changed
+the regulatory structure of the thrift industry. The Resolution Trust Corporation (RTC) was part of the
+1989 law. The RTC was the government vehicle for selling the assets of closed thrifts.
+4 According to Barth and Bartholomew (1992), as of 1992: “More than 500 institutions were closed at an
+estimated present-value cost in excess of $50 billion. Still another 500 or more institutions were open but
+insolvent at the end of the decade. These remaining candidates for closure will cost an estimated $100
+billion or more…” (p. 37). Other estimates are considerably higher. For example, the Wall Street journal,
+April 6, 1990, cites a Congressional Budget Office and General Accounting Office projection of a cost of
+$300 to $350 billion. See Kane and Yu (1996) for market value estimates.
+5 Caprio and Klingebiel (1999) count 112 episodes of systemic banking crises in 93 countries since the late
+1970s. Since 1980, at least two-thirds of International Monetary Fund member countries have experienced
+problems with their banking systems (see Daniel (1997)). Also, see Lindgren, et. al., (1999).
+
+2
+systems. Claessens, Djankov, and Klingebiel (1999) set the costs at 15-50 percent of GNP. To
+emphasize, even developed economies other than the U.S. have faced large costs of bank bailouts.
+For example, Spain is estimated to have spent 16.8 percent of GNP on bailouts, Sweden. 6.4
+percent of GDP, Finland, 8 percent of GDP. See Caprio and Klingebiel (1996).
+In bank bailouts the government directly aids banks by buying equity, extending long-
+term loan guarantees to the banks, or buying bank loans at favorable prices. (Usually, non-
+performing loans are purchased by the government at face value (see Daniel (1997)).) Sometimes
+government bonds are exchanged for bad bank loans. Often a public centralized asset
+management company is set up that uses government funds to lend to troubled banks against
+specific loan collateral or that buys the loans from the banks. An early, and influential, example
+of such a vehicle was the Reconstruction Finance Corporation (RFC) that President Herbert
+Hoover initiated during the onset of the Great Depression in the U.S. (see Olson (1977)). The
+RFC is the (implicit or explicit) model for a large number of such vehicles in countries around the
+world, including the Resolution Trust Corporation, founded to use federal money to buy and then
+sell assets of insolvent U.S. savings and loans institutions (see Todd (1992)). As we discuss later,
+government bank restructuring agencies are now commonplace.6
+Why do government bailouts occur? Why does the government engage in forbearance,
+rather than simply closing insolvent banks and selling their assets to private investors
+immediately?7 Are government bailouts efficient? The basic idea developed in this paper is that
+it is costly for private agents to be prepared to purchase the assets of the banking system (or a
+large part of the banking system) because liquidity is socially costly. Simply put, the sheer
+volume of the assets that need to be sold can be too large for private agents to absorb quickly. The
+resources of private agents are “illiquid.” In order to make this point, we first must address the
+issue of “liquidity.” What is “liquidity” and where does it come from? And, how does “liquidity”
+relate to “market efficiency”? The first part of the paper addresses these questions. The second
+part of the paper demonstrates how these answers are useful in understanding government
+bailouts. We show how the government can create liquidity and improve welfare. We go on to
+6
+It is not only financial institutions that are bailed out. Nonfinancial firms are also sometimes bailed out.
+Nonfinancial firm bailout examples include firms that had outstanding commercial paper during the Penn
+Central crisis (see Calomiris (1994)), the Chrysler Corporation (see Iacoca and Novak (1986)), and the
+airlines industry following the terrorist attacks of September 11, 2001. In these cases, the government
+provided loan guarantees to a syndicate of banks and, in the case of Penn Central crises, provided liquidity
+through the Federal Reserve’s discount window lending. A related example is the case of the hedge fund
+Long Term Capital Management (LTCM), where the lenders in effect purchased the assets at the
+government’s instigation (see Lowenstein (2000)). LTCM is discussed further below.
+7 We do not address the issue of why banking systems come to be distressed. See Gorton and Winton
+(2002) for a survey of the literature on banking crises and banking panics.

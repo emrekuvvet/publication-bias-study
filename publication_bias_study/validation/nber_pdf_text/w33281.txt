@@ -1,0 +1,142 @@
+NBER WORKING PAPER SERIES
+DISSERTATION PATHS:
+ADVISORS AND STUDENTS IN THE ECONOMICS RESEARCH PRODUCTION FUNCTION
+Joshua Angrist
+Marc Diederichs
+Working Paper 33281
+http://www.nber.org/papers/w33281
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2024, Revised February 2025
+We thank our exceptionally committed and hard-working research assistants, Alison Fang, Merilin
+Martinson, Isabel Munoz, and Tianyuan (Margaret) Zheng for two years of painstaking work.
+Thanks also go to Glenn Ellison, Drew Fudenberg, and Tobias Salz for comments, to RFBerlin for
+research funding, to Reyn van Ewijk for letting us use his server, and to Liz Braunstein for
+invaluable help with digital EconLit. This essay is dedicated to the memory of Oberlin College
+Professor Hirschel Kasper, a pioneer in the study of economics education and undergraduate
+advisor to Josh Angrist. Kasper’s report on economics education was published as Kasper et al.
+(1991). The views expressed herein are those of the authors and do not necessarily reflect the views
+of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2024 by Joshua Angrist and Marc Diederichs. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Dissertation Paths: Advisors and Students in the Economics Research Production Function
+Joshua Angrist and Marc Diederichs
+NBER Working Paper No. 33281
+December 2024, Revised February 2025
+JEL No. A2, A20, A23, I21, I23
+ABSTRACT
+Elite economics PhD programs aim to train graduate students for a lifetime of academic research.
+This paper asks how advising affects graduate students’ post-PhD research productivity. Advising
+is highly concentrated: at the eight highly-selective schools in our study, a minority of advisors do
+most of the advising work. We quantify advisor attributes such as an advisor’s own research output
+and aspects of the advising relationship like coauthoring and research field affinity that might
+contribute to student research success. Students advised by research-active, prolific advisors tend to
+publish more, while coauthoring has no effect. Student-advisor research affinity also predicts
+student success. But a school-level aggregate production function provides much weaker evidence
+of causal effects, suggesting that successful advisors attract students likely to succeed–without
+necessarily boosting their students’ chances of success. Evidence for causal effects is strongest for
+a measure of advisors’ own research output. Aggregate student research output appears to scale
+linearly with graduate student enrollment, with no evidence of negative class-size effects. An
+analysis of gender differences in research output shows male and female graduate students to be
+equally productive in the first few years post-PhD, but female productivity peaks sooner than male
+productivity.
+Joshua Angrist
+Department of Economics, E52-436
+MIT
+77 Massachusetts Avenue
+Cambridge, MA 02139
+and NBER
+angrist@mit.edu
+Marc Diederichs
+ROCKWOOL Foundation Berlin
+Gormannstraße 22
+10119 Berlin
+Germany
+and University of Passau
+md@rfberlin.com
+A data appendix is available at http://www.nber.org/data-appendix/w33281
+
+1 Introduction
+The most selective doctoral programs in economics promise to teach their students to write
+and publish journal articles reporting on their research. Although many economics PhD
+students land in non-research positions in consulting, finance, or government, elite program
+curriculum is research-oriented. This can be seen in the programs’ lengthy reading lists,
+demanding research exercises such as second- and third-year papers, and the time students
+are expected to invest in their job market papers and thesis chapters. Stratospherically–and
+increasingly–selective economics PhD programs target bright and ambitious students who
+appear committed to and well-prepared for a career of academic economics research.1
+These scholarly aspirations notwithstanding, half of elite economics PhDs, graduates of
+Harvard, MIT, Stanford and the like, publish next to nothing in the 6 years following de-
+¨
+gree completion, while only 5-10% publish more than a paper or two (Conley and Onder,
+2014).2 Elite schools employ stellar faculty with lengthy, influential research careers. Sur-
+¨
+prisingly, the Conley and Onder (2014) data suggest that graduates of good-but-not elite
+programs(classifiedaccordingtowidely-usedrankings), likeCMU,RochesterandSanDiego,
+publish about as well as do graduates from Harvard, MIT, and Stanford. Why do so few
+highly-selected elite program graduates follow the path to research success taken by their
+extraordinarily successful advisors? What aspects of economics advisee training might be
+changed or enhanced so as to boost graduate student success and total research output?
+These questions motivate our study of the economics PhD education production function
+at elite universities. The principal production inputs in this function are the faculty who
+teach and advise graduate students, along with aspects of the advising relationship that
+faculty and students develop together. We aim to measure features of the advising rela-
+tionship and to link these features with students’ research success. Graduate education has
+many features; we focus here on those most obviously tied to research. Specifically, we look
+at advisors’ own research success and aspects of an advisor’s advising history such as the
+number of past advisees and the scholarship of former students. We also consider measures
+of research affinity such as whether an advisee’s doctoral thesis cites advisor work and the
+extent of coauthoring between advisors and their students. Notably, we ignore teaching and
+graduate classes. This reflects our view that students in the elite programs we study are
+exposed to broadly similar levels of coursework. Advising relationships, by contrast, are
+highly idiosyncratic even within programs.
+1The MIT Department of Economics, long a flagship for economics graduate education, admitted 38
+of 794 PhD applicants in 2014 and just 27 of 895 PhD applicants in 2024. MIT Economics’ current 3%
+acceptance rate is below that of even the most selective Ivy League colleges.
+2These statistics are for 1986-2000 PhD graduates of 30 top departments.
+1
+
+Our analysis starts with an ambitious data collection effort linking doctoral disserta-
+tions with advisor characteristics and measures of recent graduates’ research productiv-
+ity for cohorts of PhD students completing an economics degree since 1994. We focus on
+eight elite schools, some of which have multiple programs training economics research PhDs.
+These schools are, in alphabetical order, Berkeley, Chicago, Harvard, MIT, Northwestern,
+Princeton, Stanford, and Yale. Our linked sample contains roughly 8,000 graduates from
+economics departments and economics-adjacent programs like those in business and public
+policy schools granting economics-related PhDs. By the early 2000s, the graduates in our
+sample account for roughly 20% of research articles published in the 137 or so most cited
+journals indexed by the AEA’s bibliographic database Econlit (their advisors likewise ac-
+count for around 20%). The students of interest authored roughly half of articles published
+in top-6 economics journals in 2020.3
+Our investigation of the economics graduate education production function is related to
+earlier analyses of economics graduate education and to studies of research training in other
+fields. Waldinger (2010), for instance, shows that Nazi Germany’s expulsion of Jewish and
+politically unreliable mathematics faculty degraded PhD student success in affected depart-
+ments. Corsini, Pezzoni and Visentin (2022) examines the effect of advisor characteristics
+on STEM PhD student success, focusing on advisor gender as a causal factor. Gaule and
+Piacentini (2018) and Neumark and Gardecki (1998) investigate the importance of gender
+matching between advisors and graduate students in the sciences and economics, respec-
+tively. Following a broader analysis of student research output, we look briefly at gender
+effects and interactions in the PhD student research production function as well. Our gender
+analysis is related to Card et al. (2020); Iaria, Schwarz and Waldinger (2024), and Sarsons
+et al. (2021), among others.
+Also related, Hilmer and Hilmer (2009, 2011) attempt to distinguish the effects of advisor
+scholarship from program prestige effects in a sample of economics PhDs. Garc´ıa-Suaza,
+Otero and Winkelmann (2020) does something similar using recently-available data from the
+Repec economics research paper repository. Athey et al. (2007) examine effects of graduate
+school performance indicators like grades on job placement. Building on this work, our
+analysis examines the role of advisor networks and considers estimates with and without
+controlforschoolfixedeffects. NaturalsciencesPhDstudentsappeartobenefitfromadvising
+and mentoring by highly visible and productive superstar scholars (Li et al., 2019). At the
+same time, an analysis of life sciences students suggests PhD graduates are more successful
+3Journal lists come from Angrist et al. (2020), which identifies the journals most cited by the American
+Economic Review. Top-6journalsincludetheusualtop5plustheReview of Economics and Statistics. Fora
+sample graduating 1987-92, Collins, Cox and Stango (2000) likewise report a preponderance of top program
+graduates’ research publications in 36 highly-cited and top-5 economics journals.
+2

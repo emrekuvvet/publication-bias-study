@@ -1,0 +1,106 @@
+NBER WORKING PAPER SERIES
+LONG-TERM AND HETEROGENEOUS EFFECTS OF JOB-SEARCH ASSISTANCE
+Dayanand S. Manoli
+Marios Michaelides
+Ankur Patel
+Working Paper 24422
+http://www.nber.org/papers/w24422
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+March 2018, Revised May 2023
+This paper is derived from a project titled “The Effects of Employment and Earnings on Tax
+Filing and Tax Liability: Evidence on Short-term and Long-term Effects Using Administrative
+Tax Data.” This project is partly based on data collected by IMPAQ International, LLC (IMPAQ)
+as part of a study funded by the U.S. Department of Labor (DOL). This research was conducted
+while Ankur Patel was an employee at the U.S. Department of the Treasury. The views, findings,
+interpretations, errors, and conclusions expressed in this paper are entirely those of the authors
+and do not reflect or represent the views or the official positions of the U.S. Department of the
+Treasury, the Office of Tax Analysis, DOL, IMPAQ, the United States Internal Revenue Service,
+any other government agency, or the National Bureau of Economic Research. Any taxpayer data
+used in this research was kept in a secured Treasury or IRS data repository, and all results have
+been reviewed to ensure that no confidential information is disclosed. Day Manoli is grateful for
+funding from Arnold Ventures. We are grateful to numerous people for helpful comments and
+suggestions, including DOL and IMPAQ staff, and conference and seminar participants.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2018 by Dayanand S. Manoli, Marios Michaelides, and Ankur Patel. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Long-Term and Heterogeneous Effects of Job-Search Assistance
+Dayanand S. Manoli, Marios Michaelides, and Ankur Patel
+NBER Working Paper No. 24422
+March 2018, Revised May 2023
+JEL No. I38
+ABSTRACT
+This paper examines long-term and heterogenous treatment effects of an experimental job-search
+assistance program that operated in Nevada from July through December 2009. Over the eight-
+year follow-up period, the program increased participants’ employment and earnings, reduced
+short-term UI receipt, reduced loss of homeownership, and increased Federal tax filing and tax
+receipts. Related to heterogeneity, roughly 40 percent of the sample is estimated to have negative
+treatment effects on long-term employment which are corroborated by accompanying positive
+treatment effects on entry into disability insurance. Positive impacts on homeownership appear
+concentrated among individuals with positive employment treatment effects.
+Dayanand S. Manoli Ankur Patel
+McCourt School of Public Policy Department of the Treasury
+Georgetown University Ankur.Patel@treasury.gov
+37th St NW and 0 St. NW
+Old North #100
+Washington, DC 20057
+and NBER
+day.manoli@gmail.com
+Marios Michaelides
+University of Cyprus
+mariosm@ucy.ac.cy
+
+I. Introduction
+Unemployed workers who collect Unemployment Insurance (UI) benefits are typically
+required to actively search for work while collecting benefits. Over recent decades, policymakers
+in the United States and other developed countries have established job-search assistance programs
+to help UI beneficiaries connect to suitable jobs and undergo eligibility reviews to ensure that they
+are compliant with UI work search requirements (Meyer, 1995; Wandner, 2010; Kahn, 2010; Card
+et al., 2015; Michaelides and Mueser, 2021). While prior studies have provided experimental
+evidence on average short-term effects of these interventions (Meyer, 1995; Decker et al., 2000;
+Klepinger et al., 2002; Black et al., 2003, Michaelides and Mueser, 2018, 2021; Michaelides et
+al., 2021), identifying the long-term and potentially heterogeneous impacts of these programs is
+important for understanding how individuals search for jobs and how job-search assistance
+programs may affect their job-search behavior and individual well-being.
+In this paper, we examine the long-term and heterogeneous treatment effects of an
+experimental job-search assistance program that operated in the state of Nevada from July through
+December of 2009. The Nevada program required a random sample of UI beneficiaries to attend
+a one-on-one meeting with program staff at the early stages of their UI spells to undergo an
+eligibility review, in which they provided information about their job-search activities. These
+individuals were then offered job counseling during the same meeting, including a skills
+assessment, development of a work-search plan, resume development assistance, and direct
+referrals to jobs. To enforce requirements, the Nevada UI agency disqualified from collecting
+additional UI payments those who did not show up for the required meeting and those identified
+during the meeting as not conducting an active job search.
+The empirical analysis uses program data on the universe of unemployed workers who started
+Page 1
+
+collecting UI in Nevada from July through December 2009 (near the depth of the Great Recession),
+and were eligible for random assignment for participation in the program. These data are merged
+with administrative tax data from 2001 through 2017, allowing us to measure a wide range of
+outcomes for treatment and control individuals for up to eight years after program assignment.
+Third-party reported tax documents are used to measure individual salary employment and income,
+contractor income, and receipt of UI and social security disability benefits. Third-party reported
+mortgage interest statements are used to measure homeownership, while filed tax returns are used
+to measure spousal employment and tax-related outcomes, such as federal income tax return filing,
+tax payments, and after-tax income. In addition to estimating effects on these outcomes, we use
+machine learning techniques, specifically causal forests, to assess heterogeneous treatment effects
+to better understand underlying program mechanisms.
+The results indicate positive long-term average treatment effects on wage employment and
+earnings. The analysis confirms relatively large short-term increases in employment for the
+treatment group relative to the control group in 2010, the first year after program assignment
+(Michaelides and Mueser, 2018; 2021). Average employment treatment effects gradually declined
+over time but remained positive for the entire eight-year follow-up period, indicating persistent
+employment effects. Consistent with these results, the program led to positive effects on salary
+earnings through the entire eight-year follow-up. The program also had positive average treatment
+effects on secondary outcomes for participants and their families. The program reduced receipt of
+UI benefits in the first post-program year but did not affect receipt of UI in later periods or receipt
+of disability benefits. Thus, on average, short-term decreases in UI receipt were not offset by
+longer-term increases in UI receipt or disability insurance receipt among qualified individuals.
+Further analysis shows that treated individuals were less likely to move out of homeownership,
+Page 2

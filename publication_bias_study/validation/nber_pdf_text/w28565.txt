@@ -1,0 +1,139 @@
+NBER WORKING PAPER SERIES
+A WELFARE ANALYSIS OF COMPETITIVE INSURANCE MARKETS WITH VERTICAL
+DIFFERENTIATION AND ADVERSE SELECTION
+W.Bentley MacLeod
+Working Paper 28565
+http://www.nber.org/papers/w28565
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+March 2021
+This paper evolved from a set of comments on Geruso et al. (2019) for the NBER Health
+Conference, Lugano, Switzerland, June 2019. I would l like to thank Jon Skinner for inviting me
+to participate and to Janet Currie, Kate Ho, Tim Layton, Michael Geruso, Mark Shepard, Ashley
+Swanson and the Princeton IO/Health seminar for helpful comments and discussions. Thomas
+Braun, Utkarsh Kumar, Suneil Parimoo and Roman Rivera provided helpful research assistance
+on this project. There are no sources of external funding for this research. The views expressed
+herein are those of the author and do not necessarily reflect the views of the National Bureau of
+Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2021 by W. Bentley MacLeod. All rights reserved. Short sections of text, not to exceed two
+paragraphs, may be quoted without explicit permission provided that full credit, including ©
+notice, is given to the source.
+
+A Welfare Analysis of Competitive Insurance Markets with Vertical Differentiation and Adverse
+Selection
+W. Bentley MacLeod
+NBER Working Paper No. 28565
+March 2021
+JEL No. D01,D21,D41,I11,I13,L15
+ABSTRACT
+A feature of many insurance markets is that they combine vertical differentiation (all consumers
+prefer high to low-coverage policies) and adverse selection (high cost customers prefer high-
+coverage plans). Building on Novshek and Sonnenschein (1978) and Azevedo and Gottlieb
+(2017), this paper characterizes the competitive equilibria in a vertically differentiated market
+characterized by adverse selection. This provides a simple, dynamic model of the market, along
+with their welfare consequences over time in response to policy changes. The model makes
+predictions consistent with recent evidence on the ACA exchange in the US (Frean et al. (2017)).
+Moreover, it provides a complete characterization of the health insurance “death spiral”. The
+death spiral leads to an inefficient outcome, but does not lead to a complete breakdown of the
+market. Rather, it predicts a large number of plans, with coverage that falls with an individual’s
+willingness to pay. It is shown that introducing a minimum coverage standard combined with an
+insurance mandate cannot restore efficiency. The optimal system depends on both the valuation
+of public funds and the social value of insurance. Depending on these parameters, a number of
+different types of systems may be optimal, including a single payer system with mandatory
+participation for all, such as the Canadian system, a mixed private-public system, as one sees in
+many countries, or a pure, free market system.
+W. Bentley MacLeod
+Department of Economics
+Columbia University
+420 West 118th Street, MC 3308
+New York, NY 10027
+and NBER
+wbmacleod@wbmacleod.net
+A data appendix is available at http://www.nber.org/data-appendix/w28565
+
+1. Introduction
+Healthcare markets in the United States are one of the most complex and intensely studied mar-
+kets in economics. They are characterized by a number of market failures, particularly adverse
+selection and moral hazard, that in turn make it difficult to assess appropriate policy interventions.
+The recent literature has focused on how existing policy instruments can bring about marginal
+improvements in performance. This leaves open the question of what would an optimal market
+structure look like? This paper addresses this question using a stylized dynamic model of a com-
+petitive market with adverse selection. The dynamics not only provide a method to compute the
+equilibria, they also sign the comparative static effect of policy changes. Using this framework one
+can compare a variety of market structures, including a free-entry equilibrium that captures the
+well known “death spiral” (Cutler and Reber (1998)), a minimum coverage standard, a tax man-
+date, a public system, and a mixed market/public system. A feature of the welfare analysis is that
+the perceived costs of public funds is allowed to vary. Depending on one’s attitudes toward public
+expenditures, the optimal system varies between a pure single payer public supplier system and a
+mixed market/public system.
+Geruso and Layton (2017) observe that there are two distinct approaches to the study of markets
+with adverse selection, depending upon whether contracts are fixed or endogenous. The fixed
+contracts approach typically assumes that there are one or two choices available to consumers. The
+benefit of this approach is that it can easily be confronted with data. Einav et al. (2010) use the
+single contract case to study the welfare impact of inefficient price policies on welfare. Handel et al.
+(2015) use Handel (2013) to extend Einav et al. (2010) to the case of two contracts, with prices
+determined by the Riley (1979) equilibrium concept. They find that adverse selection may lead to
+fullunravelingofthemarket, asCutlerandReber(1998)foundfortheHarvardhealthplan. Geruso
+et al. (2019) also study a two contract model to estimate the differential effects of regulation on
+the extensive margin (decision to buy insurance) and the intensive margin (the choice between a
+high-coverage and low-coverage plan).
+The endogenous contracts approach builds upon the work of Akerlof (1970) and Rothschild and
+Stiglitz (1976). Their results are largely negative — in many cases adverse selection leads to the
+non-existenceofanequilibriumandmarketfailure. AzevedoandGottlieb(2017)showthatonemay
+solvethisproblemwithaperfectlycompetitivemodelwithfreeentryofproductsthatallowsforsome
+“behavioral types”. The competitive equilibrium is given by the limit of a behavioral equilibrium as
+the number of behavioral types approaches zero. They prove the existence of an equilibrium and
+show that they are able to calibrate their model to estimate the effect of an insurance mandate.
+However, they did not do an extensive welfare analysis of alternative market structures.1
+The next section outlines a welfare analysis of a two consumer type model with endogenous
+entry of products with different coverage levels. This illustrates how allowing product entry can
+ensure the existence of an equilibrium at which all types are served. The results of this section are
+later contrasted with the results with a continuum of consumer types to illustrate the role that the
+distribution of consumer characteristics plays in determining the appropriate policy intervention. A
+1Azevedo and Gottlieb (2017) suggest that this is a question for future research.
+2
+
+dynamic formulation of the equilibrium is introduced. This approach solves the existence problem
+because existence depends upon the solution to a differential equation, that are known to exist for a
+wide set of conditions.2 Empirically, such an approach also generates predictions on how the system
+adjusts in real time to shocks.
+Sections 2-5 use the revelation principle from mechanism design theory to build a dynamic com-
+petitive model with adverse selection (Myerson (1979)). A difficulty with the original Rothschild
+andStiglitz(1976)modelisthatitisnon-linear, makingitverydifficulttogeneralize. Inthispaper,
+a linear model with vertically differentiated produces is introduced, along the lines of Gabszewicz
+and Thisse (1979). This allows one focus upon the effects that adverse selection has on market
+equilibria, and also allows for a closed form solution to the model. Finally, it is shown, via the
+revelation principle, that one can move between price and quantity representations of the market
+allocation.
+Section 6 uses these ideas to illustrate the two-margin issue that has been explored in the health
+economics literature (Geruso et al. (2019)). Section 7 extends the model to allow for the free entry
+of products with different qualities. It is shown that an equilibrium exists that is characterized by
+a large number of different quality products, with low valuation consumers choosing low quality
+products. At this equilibrium all consumer types are served, but the outcome is Pareto inefficient.
+Sections 8 and 9 study interventions that might enhance efficiency. Section 8 looks at the effect
+of minimum quality standards and an insurance mandate (a penalty for not purchasing insurance),
+a widely used solution to the adverse selection problem. It is shown to be dominated by the free
+entry equilibria. Section 9 allows for government subsidies. The size of these subsidies depends
+upon the dead-weight cost of raising government revenue. When the costs of revenue collection are
+low, the optimal system is a pure public system. An unregulated free-entry system is optimal when
+the cost of government funds is very high.
+These solutions are derived based upon measured consumer surplus, and hence ignores negative
+externalities that arise from having low levels of health care for low income individuals. Section
+10 solves for the optimal subsidy levels when one incorporates this negative externality into the
+objective function. It is shown that with pure vertical differentiation, it is optimal to have a single
+high quality plan that is available to all consumers. The quality of the plan is a function of the cost
+of public funds, and the social value that is associated with the provision of health care to all. The
+final section discusses shortcomings and possible extensions of this model.
+2. A Two Type Example
+The main analysis in the paper assumes that there are a continuum of consumer types that leads
+to smooth, downward sloping demand curves, and is standard in this literature. The innovation is
+to allow for a continuum of quality levels. Before going to the full analysis, this section outlines
+the implications of a continuum of coverage levels in a simple, two consumer type framework. In
+addition to illustrating how the market works with free entry of products, it highlights the role that
+2See MacLeod (1985) for a discussion of how the introduction of dynamics and adjustment costs provide a method
+for equilibrium selection. On existence see Hirsch and Smale (1974).
+3

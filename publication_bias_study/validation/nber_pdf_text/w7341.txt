@@ -1,0 +1,90 @@
+NBER WORKING PAPER SERIES
+CAViaR: CONDITIONAL VALUE AT
+RISK BY QUANTILE REGRESSION
+Robert F. Engle
+Simone Manganelli
+Working Paper 7341
+http://www.nber.org/papers/w7341
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 1999
+The views expressed herein are those of the authors and not necessarily those of the National Bureau of
+Economic Research.
+© 1999 by Robert F. Engle and Simone Manganelli. All rights reserved. Short sections of text, not to exceed
+
+two paragraphs, may be quoted without explicit permission provided that full credit, including © notice, is given
+to the source.
+CAViaR: Conditional Value at Risk By Quantile Regression
+Robert F. Engle and Simone Manganelli
+NBER Working Paper No. 7341
+September 1999
+JEL No. C14
+ABSTRACT
+Value at Risk has become the standard measure of market risk employed by financial institutions
+for both internal and regulatory purposes. Despite its conceptual simplicity, its measurement is a very
+challenging statistical problem and none of the methodologies developed so far give satisfactory solutions.
+Interpreting Value at Risk as a quantile of future portfolio values conditional on current information, we
+propose a new approach to quantile estimation which does not require any of the extreme assumptions
+invoked by existing methodologies (such as normality or i.i.d. returns). The Conditional Value at Risk or
+CAViaR model moves the focus of attention from the distribution of returns directly to the behavior of the
+quantile. We postulate a variety of dynamic processes for updating the quantile and use regression quantile
+estimation to determine the parameters of the updating process. Tests of model adequacy utilize the
+criterion that each period the probability of exceeding the VaR must be independent of all the past
+information. We use a differential evolutionary genetic algorithm to optimize an objective function which is
+non-differentiable and hence cannot be optimized using traditional algorithms. Applications to simulated and
+real data provide empirical support to our methodology and illustrate the ability of these algorithms to adapt
+to new risk environments.
+Robert F. Engle Simone Manganelli
+Department of Economics Department of Economics
+University of California, San Diego University of California, San Diego
+San Diego, Ca. 92093 San Diego, Ca. 92093
+and NBER
+rengle@weber.ucsd.edu
+
+CAViaR: CONDITIONAL AUTOREGRESSIVE VALUE AT RISK BY
+REGRESSION QUANTILES
+Robert F. Engle and Simone Manganelli
+University of California, San Diego
+July 1999
+1. INTRODUCTION
+Recent financial disasters have emphasized the importance of effective risk
+management for financial institutions. The use of quantitative risk measures has become
+an essential management tool to be placed in parallel with the models of returns. These
+measures are used for investment decisions, supervisory decisions, risk capital allocation
+and external regulation. In the fast paced financial world, effective risk measures must be
+as responsive to news as are other forecasts and must be easy to grasp even in complex
+situations. Many financial institutions have switched from management based on accrual
+accounting (a practice according to which transactions are booked at historical costs plus
+or minus accruals) to management based on daily marking-to-market. This switch has
+caused an increase in the volatility of the apparent value of overall positions held by
+financial institutions, which now reflects the volatility of the underlying markets and the
+effectiveness of hedging strategies.
+Value at Risk (VaR) has become the standard measure of risk employed by
+financial institutions and their regulators. VaR is an estimate of how much a certain
+portfolio can lose within a given time period and at a given confidence level. More
+
+precisely VaR is defined so that the probability that a portfolio will lose more than its
+VaR over a particular time horizon is equal to 0, a prespecified number. The great
+popularity that this instrument has achieved among financial practitioners is essentially
+due to its conceptual simplicity: VaR reduces the (market) risk associated with any
+portfolio to just one dollar amountThe summary of many complex bad outcomes in a
+single number, naturally represents a compromise between the needs of different users.
+This compromise has received the blessing of a wide range of users and regulators.
+Despite its conceptual simplicity, the measurement of VaR is a very challenging
+statistical problem and none of the methodologies developed so far gives satisfactory
+solutions. Since VaR can be computed as the quantile of future portfolio returns,
+conditional on current information, and since the distribution of portfolio returns typically
+changes over time, the challenge is to find a suitable model for time varying order
+statistics.
+The problem is to forecast a value each period that will be exceeded with probability
+(1-0) by the current portfolio. That is, for {y, },find VaR1 such that
+(1) Pr[y <—VaR1 c,_11= 0,
+where Q11 denotes the information set at time t-1. Any reasonable model should solve
+the following three issues:
+1) provide a formula for calculating VaR1 as a function of variables known at time t-1
+and a set of parameters that need to be estimated;
+2) provide a procedure (namely, a loss function and a suitable optimization algorithm) to
+estimate the set of unknown parameters;
+3) provide a test to establish the quality of the estimate.
+2

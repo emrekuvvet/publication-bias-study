@@ -1,0 +1,133 @@
+NBER WORKING PAPER SERIES
+HOW RESILIENT IS MORTGAGE CREDIT SUPPLY?
+EVIDENCE FROM THE COVID-19 PANDEMIC
+Andreas Fuster
+Aurel Hizmo
+Lauren Lambie-Hanson
+James Vickery
+Paul S. Willen
+Working Paper 28843
+http://www.nber.org/papers/w28843
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2021, Revised December 2024
+We thank Omar Ahmad, Eric Hardy, Natalie Newton, Dick Oosthuizen, and Peter Psathas for
+outstanding research assistance, Greg Buchak, Will Diamond, Scott Frame, Tim McQuade, Paolina
+Medina, Jung Sakong, Philipp Schnabl, Felipe Severino, and numerous other colleagues for
+comments, as well as seminar and workshop participants at the Journal of Finance and Fama-Miller
+Center Conference on the Financial Consequences of COVID-19, University of Zurich, Louisiana
+State University, Philadelphia Fed, Penn State University, Mortgage Bankers Association, NBER
+Summer Institute, FRBSF/UCLA Housing Conference, GAO, Baruch, FDIC Consumer Research
+Symposium, Dartmouth (Tuck), the Dallas Fed, CFPB Research Conference, AFA meetings,
+University of Colorado, Temple Fischer-Shain conference, UEA meetings, Wisconsin Real Estate
+Research conference, Bank of Lithuania, Wharton, Temple University, FIRS, and the INFORMS
+meetings. Hizmo was an economist at the Federal Reserve Board while this research was
+conducted. Opinions expressed in this paper are those of the authors and do not represent the
+opinions of the Federal Reserve Banks of Boston or Philadelphia, the Federal Reserve System, or
+the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2021 by Andreas Fuster, Aurel Hizmo, Lauren Lambie-Hanson, James Vickery, and Paul S.
+Willen. All rights reserved. Short sections of text, not to exceed two paragraphs, may be quoted
+without explicit permission provided that full credit, including © notice, is given to the source.
+
+How Resilient Is Mortgage Credit Supply? Evidence from the COVID-19 Pandemic
+Andreas Fuster, Aurel Hizmo, Lauren Lambie-Hanson, James Vickery, and Paul S. Willen
+NBER Working Paper No. 28843
+May 2021, Revised December 2024
+JEL No. G21, G23, G28
+ABSTRACT
+We study the resilience of US mortgage credit supply during the COVID-19 pandemic—the most
+significant shock since the financial crisis—and draw out broader lessons about the functioning of
+this important market. While mortgage lending boomed in 2020-21, we find that a sharp increase in
+intermediation markups limited the passthrough of low rates to households. We link this increase in
+markups to capacity constraints amplified by pandemic-related operational and labor market
+frictions. We also present new evidence that capacity constraints in the mortgage market are
+national in scope and have not yet been significantly mitigated by recent technological change.
+Nonbank lenders, often thought to be fragile, gained market share from banks but remain reliant on
+securitization. We also find evidence that government credit guarantees support the flow of credit
+to risky borrowers but are not always sufficient, and that quantitative easing boosts supply
+particularly for the types of loans being purchased.
+Andreas Fuster James Vickery
+Swiss Finance Institute @ EPFL Federal Reserve Bank of Philadelphia
+Quartier UNIL-Dorigny james.vickery@phil.frb.org
+Extranef 216
+Lausanne CH-1015 Paul S. Willen
+Switzerland Federal Reserve Bank of Boston
+and CEPR Research Department
+andreas.fuster@gmail.com 600 Atlantic Avenue
+Boston, MA 02210-2204
+Aurel Hizmo and NBER
+Federal Reserve Board paul.willen@bos.frb.org
+20th and C St NW
+Washington, DC 20551
+aurel.hizmo@frb.gov
+Lauren Lambie-Hanson
+10 Independence Mall
+Federal Reserve Bank of Philadelphia, CFI
+Philadelphia, PA 19106
+Lauren.Lambie-Hanson@phil.frb.org
+
+I Introduction
+The pandemic years 2020 and 2021 were an extraordinary period for the US mortgage
+market. In both years, lenders underwrote over $4 trillion in new mortgages, far higher
+than in any other year except 2003.1 Rates on 30-year fixed-rate mortgages (FRMs) fell to
+historiclowsbelow3%foranextendedperiod. Atthesametime,however,thepandemic
+was of course also a large negative economic shock with effects on borrower default risk
+and financial markets more broadly, and virus-related restrictions complicated many ac-
+tivitiesincludinghousingtransactionsandtheoriginationofmortgages.
+We use this period to study the resilience of US mortgage credit supply, focusing on
+broader lessons for understanding the functioning of this critical market. One key goal
+is to shed light on the effects of well-documented structural changes in the mortgage
+marketsincethe2007-09globalfinancialcrisis(GFC),includingasecularshiftinlending
+to less-regulated nonbanks (Buchak et al., 2018; Kim et al., 2022), the diffusion of online
+lending (Buchak et al., 2018; Fuster et al., 2019) and changes in regulation and the role
+of government. These developments raise many questions: How resilient are the new
+nonbank lenders in periods of stress? Has new technology alleviated lender capacity
+constraints, making credit supply more elastic? How sensitive are mortgage risk premia
+to economic and financial shocks, and what role do government guarantees and other
+interventions(e.g.,quantitativeeasing,orQE)playinmitigatingtheseeffects?
+We start by documenting that, even though mortgage rates reached record lows in
+2020-21,thegapbetweenmortgageratesand10-yearTreasuryyieldsinfactreachedpeak
+levels not seen since the GFC—see Figure 1.2 However, the cause of this increase in the
+mortgage-Treasury spread was different from the GFC (and from the recent 2022-24 pe-
+1From 2008 through 2019, annual mortgage originations never exceeded $2.4 trillion, and they exceeded
+$2 trillion only three times. Lending volume was $3.7 trillion in 2003. Statistics are from Inside Mortgage
+Financeandcanbeseenonp. 8ofUrbanInstitute(2024).
+2The effective duration of a 30-year mortgage is much shorter than 30 years due to prepayment. Ten-year
+Treasuryyieldsarethereforewidelyusedasabenchmarkformortgagerates,eventhoughthisbenchmark
+isimperfect,forreasonsweexplainbelow.
+1
+
+riod when this spread also widened significantly): it is fully explained by a large rise
+in the “primary-secondary spread,” a measure of mortgage lenders’ markups.3 Another,
+conceptually sounder measure of markups, “gain-on-sale,” also increased sharply early
+inthepandemicandstayedelevatedthroughtolate2021.
+Intermediation markups typically rise during refinancing booms due to lender capac-
+ity constraints (Fuster et al., 2024). But this historical relationship accounts for less than
+half of the increase in 2020-21. In other words, the elasticity of mortgage supply was ab-
+normally low, despite the recent widespread adoption of online and digital technologies
+to streamline lending. We find evidence that operational and labor market frictions re-
+lated to the pandemic can account for heightened capacity constraints in 2020-21—e.g.,
+licensing of new loan officers was disrupted, contributing to high labor utilization and
+wages for existing workers. Perhaps surprisingly, we also find little evidence that fintech
+lenders expanded supply more elastically than other nonbanks, further indicating that
+technologyhasnotyet“solved”theproblemofcapacityconstraints.
+We also present novel evidence on the nature of capacity constraints in the mortgage
+market, concluding that these constraints today are effectively national in scope because
+the US mortgage market is highly integrated geographically. Specifically we show that
+mostmortgagesareoriginatedbylendersthatoperateinmanyregions,andthatlenders,
+and even individual loan officers, expanded to new markets in 2020-21 to offset local
+differencesindemand. Asaresult,thereislittleornocross-sectionalrelationshipbetween
+local demand shocks (or other local factors) and mortgage rates or origination timelines,
+eventhoughthesevariablesaretightlyconnectedinthetimeseries.
+We then consider other potential drivers of high intermediation markups in 2020-21.
+First,westudyindetailtheroleoffinancialconstraintsfacingnonbankslenders,agroup
+often considered to be financially fragile. Studying the first major shock since the rise
+of nonbanks in the 2010s, we in fact find that nonbanks expanded lending more elasti-
+3Weusetheterm“markup”throughoutasshorthandfor“grossmarkup”or“grossmargin”,meaninginour
+casethedifferencebetweenthemarginalrevenueofanintermediaryandthemarginaldirectcostoffunds
+lenttotheborrower(butwithoutaccountingforwages,overhead,etc.),asin,e.g.,Andersonetal.(2018).
+2

@@ -1,0 +1,150 @@
+NBER WORKING PAPER SERIES
+MONETARY POLICY AND ENDOGENOUS FINANCIAL CRISES
+Frederic Boissay
+Fabrice Collard
+Jordi Galí
+Cristina Manea
+Working Paper 29602
+http://www.nber.org/papers/w29602
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2021
+The views expressed in this paper are our own and should not be interpreted as reflecting the
+views of the Bank for International Settlements, the Deutsche Bundesbank, the Eurosystem, or
+the National Bureau of Economic Research. We thank F. Alvarez, G. Barlevy, C. Borio, F. De
+Fiore, P. Disyatat, M. Hoffmann, T. Holden, E. Mendoza, B. Mojon, C. Pflueger, L. Svensson, P.
+Rungcharoentkitkul, H. Uhlig, R. Wouters, E. Zakrakšek as well as seminar and conference
+participants at the NBER Summer Institute, EEA-ESEM 2021 Congress, Ridge Conference,
+Danmarks Nationalbank–Bundesbank– Norges Bank Conference, Deutsche Bundesbank,
+National Bank of Belgium, Bank for International Settlements, Universitat Pompeu Fabra, Trinity
+College, and European Central Bank for helpful discussions. Galí acknowledges financial support
+from the European Research Council under the European Union’s Horizon 2020 research and
+innovation program, Advanced Grant (882332–HEMPEF), from the Spanish Ministry of
+Economy and Competitiveness, through the Severo Ochoa Programme for Centres of Excellence
+in R&D (CEX2019–000915–S), and from the Generalitat de Catalunya, through CERCA and
+SGR Programme (2017–SGR-1393).
+At least one co-author has disclosed additional relationships of potential relevance for this
+research. Further information is available online at http://www.nber.org/papers/w29602.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2021 by Frederic Boissay, Fabrice Collard, Jordi Galí, and Cristina Manea. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Monetary Policy and Endogenous Financial Crises
+Frederic Boissay, Fabrice Collard, Jordi Galí, and Cristina Manea
+NBER Working Paper No. 29602
+December 2021
+JEL No. E32,E44,E52
+ABSTRACT
+We study whether a central bank should deviate from its objective of price stability to promote
+financial stability. We tackle this question within a textbook New Keynesian model augmented
+with capital accumulation and microfounded endogenous financial crises. We compare several
+interest rate rules, under which the central bank responds more or less forcefully to inflation and
+aggregate output. Our main findings are threefold. First, monetary policy affects the probability
+of a crisis both in the short run (through aggregate demand) and in the medium run (through
+savings and capital accumulation). Second, a central bank can both reduce the probability of a
+crisis and increase welfare by departing from strict inflation targeting and responding
+systematically to fluctuations in output. Third, financial crises may occur after a long period of
+unexpectedly loose monetary policy as the central bank abruptly reverses course.
+Frederic Boissay Jordi Galí
+Centralbahnplatz, 2 Centre de Recerca en Economia Internacional (CREI)
+CH-4002 Basel Ramon Trias Fargas 25
+Switzerland 08005 Barcelona
+frederic.boissay@bis.org SPAIN
+and NBER
+Fabrice Collard jgali@crei.cat
+Toulouse School of Economics
+fabrice.collard@gmail.com Cristina Manea
+Deutsche Bundesbank
+Taunusanlage 5
+Frankfurt am Main 60329
+Germany
+cristina.manea@bundesbank.de
+
+“While monetary policy may not be quite the right tool for the job, it
+has one important advantage relative to supervision and regulation
+—namely that it gets in all of the cracks.” (Stein (2013))
+1 Introduction
+The effect of monetary policy on financial stability is ambivalent. On the one hand, loose
+monetary policy can help stave off financial crises. In response to the Covid–19 shock, for
+example, central banks swiftly lowered interest rates and acted as a backstop to the financial
+sector. These moves likely prevented a financial collapse that would otherwise have exacerbated
+the damage to the economy. On the other hand, empirical evidence shows that, by keeping their
+policy rates too low for too long, central banks may entice the financial sector to search for yield
+and feed macro–financial imbalances.1 Loose monetary policy is thus sometimes regarded as one
+of the causes of the 2007–8 Great Financial Crisis (GFC). Taylor (2011), in particular, refers to
+the period 2003–2005 in the US as the “Great Deviation”, which he characterizes as one when
+monetary policy became less rule–based, less predictable, and excessively loose.
+This ambivalence prompts the question of the adequate monetary policy in an environment
+where credit markets are fragile and financial crises may have multiple causes.2 What are
+the channels through which monetary policy affects financial stability? Should central banks
+deviate from their objective of price stability to promote financial stability? To what extent may
+monetary policy itself brew financial vulnerabilities? We study these questions within a novel
+New Keynesian (NK) model, where crises may arise endogenously, after a protracted boom or in
+the face of adverse non–financial shocks. Further, to precisely identify the effects of monetary
+policy, we abstract from any other type of policy, such as tax or macroprudential policies.3
+Our model departs from the textbook —three–equation— NK model in four important
+ways. First, it features endogenous capital accumulation, so that the economy may deviate
+persistently from its steady state and feature protracted booms and macro–financial imbalances.
+Second, firms are subject to idiosyncratic productivity shocks, in addition to aggregate ones.
+This heterogeneity gives rise to capital reallocation between productive and unproductive firms
+via a credit market.4 Third, we introduce financial frictions that make this credit market fragile.
+1Empiricalevidenceonthepotentialadverseeffectsofloosemonetarypolicyonfinancialstabilitycanbefound
+in e.g., Maddaloni and Peydro´ (2011), Jim´enez, Ongena, Peydro´, and Saurina (2014).
+2The Federal Reserve and European Central Bank (ECB)’s recent strategy reviews both emphasize that the
+importance of financial stability considerations in the conduct of monetary policy has increased since the Great
+Financial Crisis (Goldberg, Klee, Prescott, and Wood (2020), ECB (2021), Schnabel (2021)).
+3In this paper, we consider financial stability risks emanating from the fragility of credit markets (“market
+runs”), as opposed to those emanating from the fragility of financial institutions (e.g. “bank runs”). In our
+case, macroprudential policies that apply to financial institutions are therefore less relevant. Another reason
+for abstracting from macroprudential policies is that they may not always offer full protection against financial
+stability risks, for example if they prompt regulatory arbitrage or the emergence of shadow banks.
+4One may interpret this credit market as a disintermediated corporate bond market or as an intermediated
+loan market, where banks would stand in–between buyers and sellers, the former taking bank loans to buy capital
+goods and the latter depositing the proceeds of the sales into the banks. Provided that banks are not themselves
+2
+
+One friction is that investors may not be able to seize the wealth of a defaulting borrower, thus
+allowing firms to borrow and abscond. This limited enforcement problem induces investors to
+constrain the amount of funds that each firm can borrow. Another friction is that idiosyncratic
+productivities are private information. Together, these frictions imply that the loan rate must
+be above a minimum threshold to entice the least productive firms to lend —rather than borrow.
+When the marginal return on capital is too low, not even high–productivity firms can afford
+paying the minimum loan rate and the credit market collapses. This is what we call a financial
+crisis. Most crises in our model break out toward the end of a protracted economic boom, when
+there is excess capital in the economy and the marginal productivity of capital is low. Crises are
+also characterized by capital misallocation and a severe recession. Finally, the fourth departure
+from the textbook model is that we solve our model globally, which allows us to capture the
+non–linearities embedded in the endogenous booms and busts of the credit market.
+We study whether monetary policy can tame such booms and busts and, more generally,
+whether a central bank should deviate from its objective of price stability to promote financial
+stability. In the process, we compare the performance of the economy under simple linear interest
+rate rules, non–linear rules, and discretion. Our main findings are threefold.
+First, monetary policy affects the probability of a crisis not only in the short run through its
+usual effects on output and inflation, but also in the medium run through its effects on capital
+accumulation. In particular, policies that systematically dampen output fluctuations tend to
+slow down the accumulation of savings. The lower saving rate stems excess capital accumulation
+and helps prevent financial crises. As these effects go through agents’ expectations, they require
+that the central bank commit itself to a policy rule, and only materialize themselves in the
+medium run.
+Second, a central bank can increase welfare by departing from strict inflation targeting
+(henceforth, SIT) and responding systematically to fluctuations in output. For example, we
+show that welfare may be higher under a Taylor–type rule, whereby the central bank responds
+to both inflation and output, than under SIT, even though the latter policy is optimal in the
+absence of financial frictions.
+Third, we study the effects of discretionary monetary policy interventions, i.e. deviations
+from the rule, on financial stability. We show that financial crises may occur after a long period
+of unexpected monetary easing and that, in those instances, they break out when the central
+bank reverses course and abruptly raises its policy rate.
+At last, we discuss the welfare gain of following more complex —but perhaps less realistic—
+monetary policy rules, whereby the central bank commits itself to doing whatever it takes
+whenever needed to forestall a crisis. We find that such policy significantly improves welfare
+but also increases the fragility of the financial sector, forcing the central bank to backstop the
+financial sector relatively often.
+subject to financial frictions, adding banks is inessential and will not change anything to our results. Abstracting
+from banks, though, makes clear that entity–based regulations or policies may not suffice to contend with credit
+markets’ intrinsic fragility (Stein (2013)).
+3

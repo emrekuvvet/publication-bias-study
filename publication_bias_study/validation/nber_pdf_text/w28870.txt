@@ -1,0 +1,120 @@
+NBER WORKING PAPER SERIES
+REALLOCATING LIQUIDITY TO RESOLVE A CRISIS:
+EVIDENCE FROM THE PANIC OF 1873
+Haelim Anderson
+Kinda Cheryl Hachem
+Simpson Zhang
+Working Paper 28870
+http://www.nber.org/papers/w28870
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2021, Revised March 2022
+We thank Ellis Tallman for many helpful conversations in the early stages of this work. We also
+thank Jason Allen, Allen Berger, Mark Carlson (discussant), David Martinez-Miera, Roberto
+Robatto, and participants at various seminars and conferences for comments. The views
+expressed in this paper are those of the authors and do not necessarily represent the views of the
+Office of the Comptroller of the Currency, the U.S. Department of the Treasury, the Federal
+Deposit Insurance Corporation, the National Bureau of Economic Research, or any federal
+agency and do not establish supervisory policy, requirements, or expectations. The authors are
+responsible for any errors.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2021 by Haelim Anderson, Kinda Cheryl Hachem, and Simpson Zhang. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Reallocating Liquidity to Resolve a Crisis: Evidence from the Panic of 1873
+Haelim Anderson, Kinda Cheryl Hachem, and Simpson Zhang
+NBER Working Paper No. 28870
+May 2021, Revised March 2022
+JEL No. D53,D62,E42,E50,G01,N21
+ABSTRACT
+We study financial stability with constraints on central bank intervention in a model with belief-
+driven bank runs. A pecuniary externality arises in the decentralized market for interbank loans
+and leads to excessively many bank failures. A forced reallocation of liquidity across banks
+improves social welfare and can be implemented through the issuance of clearinghouse loan
+certificates, such as those issued in New York City during the Panic of 1873. A new dataset
+constructed from archival records reveals that the New York Clearinghouse issued loan
+certificates to member banks in the way our model suggests would have helped resolve the panic.
+Haelim Anderson Simpson Zhang
+Center for Financial Research Office of the Comptroller of the
+Federal Deposit Insurance Corporation Currency (OCC) - Treasury
+550 17th St NW 400 7th St SW
+Washington, DC 20429 Washington, DC 20219
+handerson@fdic.gov Simpson.Zhang@occ.treas.gov
+Kinda Cheryl Hachem
+University of Virginia
+Darden School of Business
+100 Darden Boulevard
+Charlottesville, VA 22906
+and NBER
+hachemk@darden.virginia.edu
+
+1 Introduction
+While the advent of deposit insurance has dramatically reduced runs on banks in the traditional
+sector, shadow banks engaging in maturity transformation remain highly vulnerable. The preser-
+vation of the banking system during an aggregate liquidity crunch then requires either suspensions
+of convertibility or monetary injections by the central bank. Neither option is without problems.
+Suspensions can undermine investor confidence and cause market disruptions, making them a nu-
+clear option. The 2007-09 financial crisis, widely characterized as a run on the shadow banking
+system, was instead resolved with a massive expansion of the monetary base. However, weary
+of the implications for bailout expectations and bank risk-taking, lawmakers have since imposed
+restrictions on how central banks can respond to future financial crises.1
+This paper investigates the scope for mitigating bank failures without resorting to suspension
+or monetary injections. If such policies exist, they would make the restrictions on central banks
+credible and provide a powerful tool against bailout expectations. The setting for our analysis is
+the Panic of 1873. This was the first major financial crisis of the U.S. National Banking Era and
+its magnitude necessitated a strong response in order to contain the damage. Since the Federal
+Reserve did not yet exist, the banking system had to resolve financial crises without a central bank
+balance sheet that could expand as needed. The New York Clearinghouse (NYCH) took the lead
+in New York City, the center of the financial system.
+ThePanicof1873ledtothefirstlarge-scaleuseofanovelinstrumentdevisedbytheNYCH:the
+issuance of clearinghouse loan certificates to member banks.2 These certificates were collateralized
+notes that members of the clearinghouse could use instead of cash to settle payment obligations
+with each other, then driven principally by check clearing. Members paid in loan certificates were
+entitled to cash at a later date. The certificates did not increase the total amount of cash in the
+systemnordidtheycirculateasmoneyinthegeneralpublic. Instead,clearinghouseloancertificates
+1Regulations were passed after the financial crisis to restrict the scope of central bank lending. In the U.S., for
+example, the Dodd-Frank Act imposes restrictions on the Fed’s powers to lend to non-bank financial institutions.
+The Treasury Secretary must approve Fed loans to non-banks, and banks are limited from using discount window
+loanstochannelfundstonon-bankaffiliates. In2017, lawmakersattemptedtofurtherrestrictlendingto non-banks
+in the Financial CHOICE Act, though the act did not ultimately pass. The latest battle over the Fed’s emergency
+lending authority occurred in December 2020 during negotiations for the Consolidated Appropriations Act.
+2This was the first instance of loan certificates during the U.S. National Banking Era. Prior to the National
+Banking Acts of 1863 and 1864, loan certificates were used during the Panic of 1857 where they were introduced in
+the middle of the crisis, in contrast to the Panic of 1873 where they were introduced at its onset.
+2
+
+providedamechanismforreallocatingcashacrossbanksandtheiractivities. Ourpaperstudiesthis
+reallocation, its value-added relative to a decentralized market for interbank loans, and its role in
+resolving the Panic of 1873. The lessons transcend the historical episode as regulations mandating
+the central clearing of credit derivatives after the 2007-09 financial crisis have led to a revival of
+clearinghouses in modern financial systems.
+We start by constructing a new dataset from archival records of the NYCH to shed light on
+the usage of clearinghouse loan certificates during the Panic of 1873. These records include the
+daily clearing and settlement payments of all member banks through the NYCH, the amount of
+loan certificates applied for and received by banks, and the interest payments among banks. With
+this information, we characterize the magnitude of liquidity shortages and the amount of liquidity
+transfers across banks.
+We document that banks experiencing the most pressure on cash reserves (specie and legal
+tender) due to check settlement obligations received the most loan certificates from the NYCH.
+These banks were also experiencing much larger deposit outflows than non-recipient banks during
+the crisis, so, in the absence of loan certificates, they would not have had enough cash to honor
+both clearing obligations and deposit withdrawals without liquidating large amounts of assets,
+most likely call loans. The call loan market was a critical source of funding for stock-brokers, thus
+liquidations of call loans by banks in need of cash would have had potentially deleterious effects
+on stock prices. We also document that both recipient and non-recipient banks emerged from the
+Panic of 1873 with cash-to-deposit ratios that were similar to the ratios they had before the crisis
+began, despite experiencing differential deposit outflows during the panic. Liquidity thus appears
+to have been successfully redistributed across the members of the NYCH.
+The empirical findings raise an important theoretical question: were clearinghouse loan certifi-
+cates simply substituting for a decentralized interbank market, which by all accounts did not exist
+in New York in 1873, or do loan certificates improve outcomes over and above what such markets
+can achieve? We develop a model to answer this question and provide a basis for quantitative
+analysis and the exploration of policy counterfactuals.
+Banks in the model borrow short and lend long, subjecting themselves to runs by patient
+depositors (i.e., those who do not need to withdraw early but may choose to do so). As is common
+in bank-run models, the actions of patient depositors depend on their beliefs. The depositors in
+3

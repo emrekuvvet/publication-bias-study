@@ -1,0 +1,133 @@
+NBER WORKING PAPER SERIES
+GROSS CAPITAL FLOWS BY BANKS, CORPORATES AND SOVEREIGNS
+Stefan Avdjiev
+Bryan Hardy
+Sebnem Kalemli-Ozcan
+Luis Servén
+Working Paper 23116
+http://www.nber.org/papers/w23116
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+January 2017
+We thank Luis Catão, Eugenio Cerutti, Stijn Claessens, Branimir Gruic, Gian Maria Milesi-
+Ferretti, and Philip Wooldridge for useful comments and suggestions, Bat-el Berger for excellent
+assistance with the BIS IBS data, and Rosa Lim for excellent research assistance. We are grateful
+to seminar participants at the NBER Summer Institute 2017, CEPII, and the BIS. All errors are
+our own. This work was partly funded by the World Bank’s Knowledge for Change and Strategic
+Research programs. The views expressed here are ours only and do not necessarily reflect those
+of the institutions that the authors are affiliated with or the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2017 by Stefan Avdjiev, Bryan Hardy, Sebnem Kalemli-Ozcan, and Luis Servén. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission provided
+that full credit, including © notice, is given to the source.
+
+Gross Capital Flows by Banks, Corporates and Sovereigns
+Stefan Avdjiev, Bryan Hardy, Sebnem Kalemli-Ozcan, and Luis Servén
+NBER Working Paper No. 23116
+January 2017
+JEL No. F00,F2,F21,F3,F32,F41,F42
+ABSTRACT
+We construct a new quarterly data set of international capital flows broken down by sector:
+banks, corporates and sovereigns. Using our novel data set, we establish several key facts that
+demonstrate the importance of distinguishing in- and outflows by the domestic sectoral identity.
+We find that public sector flows may serve as a countervailing force to private sector flows,
+especially in emerging markets (EMs), as these flows respond differently not only to country-
+specific fundamentals but also to global shocks. The high inflow-outflow correlation observed in
+total capital flow data is driven by within-sector flows, especially those of AE banks. In general,
+inflows and outflows of AEs and inflows to EMs are primarily AE banks’ transactions, and, as a
+consequence, respond similarly to capital flow drivers. By contrast, EM outflows respond
+differently to global shocks and changes in fundamentals, leading to lower inflow-outflows
+correlations for EMs.
+Stefan Avdjiev Sebnem Kalemli-Ozcan
+Bank for International Settlements Department of Economics
+Centralbahnplatz 2 University of Maryland
+Basel 4002, Switzerland Tydings Hall 4118D
+stefan.avdjiev@bis.org College Park, MD 20742-7211
+and CEPR
+Bryan Hardy and also NBER
+Bank for International Settlements kalemli@econ.umd.edu
+Centralbahnplatz 2
+4051 Basel Luis Servén
+Switzerland The World Bank
+bryan.hardy@bis.org 1818 H St NW
+Washington DC 20433
+lserven@econ.lafaena.com.
+
+1 Introduction
+The history of financial crises has taught us that the vulnerability to external shocks can vary
+greatly depending on which economic sector(s) are on the receiving side of capital inflows.
+Sovereign debt proved to be the Achilles’ heel in the Latin American crises, while private
+sector debt financed by capital inflows was the key source of fragility in the Asian financial
+crises. Duringtheglobalfinancialcrisisof2008(GFC),intheUS,theculpritwasthedomestic
+household debt held by global banks. By contrast, in the European debt crisis of 2010-12,
+sovereigns’andbanks’externalborrowingtookthecenterstage.
+In spite of this anecdotal evidence, breakdowns of gross capital flows by sector have re-
+ceived little attention in the empirical literature due to lack of data for a large set of countries
+andalongtimeperiodatthebusinesscyclefrequency. Ourpaperfillsthisgapbyconstructing
+a new comprehensive dataset based on residency principle for gross capital inflows and out-
+flows at the quarterly frequency. We include a much larger set of countries than all the other
+publicly available datasets for quarterly capital flows, featuring a balanced panel of 85 coun-
+triesforinflowsand31countriesforoutflows,startingin1996anddecomposingbothinflows
+and outflows by the borrowing and lending domestic sector, (e.g. inflows into the corporate
+sector of a country, outflows from the banking sector of the country, etc.).1 We focus on debt
+flows, rather than equity, as debt flows constitute the lion share of aggregate capital flows
+duringtheperiodwestudy,aswedocument.
+Our approach is fundamentally different than standard decomposition of capital flows by
+instruments and asset classes, such as portfolio equity and debt flows or other investment
+flows. Corporates can borrow using all these instruments (equity, bonds and loans), whereas
+sovereigns most typically issue bonds. For our purposes, what matters is the identity of the
+borrower and the lender, rather than instruments through which the borrowing and lending
+is done. Our dataset on capital flows by sector provides new insights into the dynamic deter-
+minants of capital flows, sheds light on the ultimate risk bearing agents, and highlights stark
+differencesbetweenprivateandpublicborrowersanddomesticandforeignlendersbysector.
+Usingourdataset,wedocumentseveralimportantstylizedfacts. Wefindthatpublicsector
+1Asinthestandardresidencyprinciplebasedbalanceofpaymentsdata(BOPdata),inourdata,inflowsand
+outflowsareonnetbasis,whereinflowsrefertothe(changesin)positionsofnon-residentsandoutflowsreferto
+the(changesin)positionsofresidents. Thus,negativeinflowsmeanforeigninvestorsare”leaving”thecountry
+bydivestingandnegativeoutflowsmeandomesticresidentsarereducingtheirexternalassets.
+1
+
+flowsmayserveasacountervailingforcetoprivatesectorflows,especiallyinEMs. Thisisbe-
+cause,inEMs,publicsectorflowsarecountercylicalwhereasbankandcorporatesectorsflows
+are procyclical.2 In addition, EM public sector flows respond to global shocks in the opposite
+directiontoprivateflows.3 InAEs,publicsectorflowsareprocyclicalandtheydonotrespond
+to global shocks. Furthermore, we find that global shocks and country-specific GDP growth
+explain less of the variation in capital flows after the 2008 crisis, due to lower flows by AE
+banks and EM corporates. However, EM banks’ flows still correlate strongly with both global
+shocks and GDP after GFC.4 Lastly, we show that the correlation between capital inflows and
+outflowsisdrivenbywithinsectorflows,particularlythoseofAEbanks. Toestablishourstyl-
+ized facts about the drivers of flows, we run separate quarterly panel regressions of flows on
+countries’ownlaggedGDPgrowth(pullfactor)andglobalshocks/financialconditionsusing
+theVIXindex(pushfactor)withcountryfixedeffects,identifyingfromthewithinvariation.5
+In terms of capital outflows, flows from banks and corporates in AEs respond negatively
+to global shocks. In EMs, however, it is bank and public outflows that respond significantly.
+For domestic cycles, onlyAE banks’outflows areprocyclical. Outflows from EM investorsdo
+not systematically respond to the domestic cycle for any sector, with the possible exception of
+the public sector. This is an important result, since it implies that during a downturn/crisis
+in a given emerging market, domestic private agents do not bring their investment back (re-
+trench) to their own country. During stress periods, when foreigners flee from EMs, it is the
+sovereigns who may provide much needed risk sharing. However, during a downturn in ad-
+vanced economies, it is their banks that bring funds back to the country, helping to offset the
+shock.
+2Aguiar and Amador (2011), Gourinchas and Jeanne (2013), and Alfaro, Kalemli-O¨zcan, and Volosovych
+(2014) separate public and private flows at annual frequency and show that they move in opposite direction
+as a function of country-specific growth. They focus on net flows and show that a country may run a current
+accountsurplusduringepisodesofhighgrowth,butprivatesectormightbeborrowingonnetatthesametime.
+Focusingonassetclassonly,JuandWei(2010),whoshowthatFDIcanflowinonnetandreservescanflowout
+onnet.
+3Horn, Reinhart,andTrebesch (2020)showasimilarresult in200yearsofdata wherewhenprivateinflows
+leaveduringwars,naturaldisastersandfinancialcrises,officialflowstosovereignborrowerscomein.
+4This is consistent with Amiti, McGuire, and Weinstein (2018), who find that the common factor in interna-
+tional bank lending strongly diminished after the 2008 crisis, indicating that global push factors now have less
+influence. WeshowthatthisisduetodiminishedroleofAEbanksininternationalcapitalflows.
+5Severalpapersdocumentthatgrossflowsrespondsystematicallytochangesinglobalconditions. SeeForbes
+and Warnock (2012), Milesi-Ferretti and Tille (2011), Cerutti, Claessens, and Puy (2015), Broner, Didier, Erce,
+and Schmukler (2013), J. Caballero (2016), Obstfeld (2012), Cata˜o and Milesi-Ferretti (2014), Borio and Disyatat
+(2011), Lane (2013), Cerutti, Claessens, and Rose (2018), and Barrot and Serve´n (2018), Rey (2013), Nier, Sedik,
+andMondino(2014). Ourcontributiontothisliteratureisthatweshowthepatternsfoundbythisliteratureare
+drivenbyflowsinandoutofbanksandcorporates.
+2

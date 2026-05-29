@@ -1,0 +1,128 @@
+NBER WORKING PAPER SERIES
+MONEY MARKETS, COLLATERAL AND MONETARY POLICY
+Fiorella De Fiore
+Marie Hoerova
+Ciaran Rogers
+Harald Uhlig
+Working Paper 25319
+http://www.nber.org/papers/w25319
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+November 2018, Revised March 2024
+We would like to thank Saki Bigio, Stefano Corradin, Nicolas Crouzet, Matthias Kaldorf, Peter
+Karadi, Nobuhiro Kiyotaki, John Leahy, Enrique Mendoza, Giorgio Primiceri, Vìctor Rìos Rull,
+Pedro Teles, our discussants Juliane Begenau, Nicolas Caramp, Ikeda Daisuke, Luigi Paciello,
+Farzad Saidi, Saverio Simonelli and Ivan Werning, and seminar participants in numerous
+conferences and universities for useful comments and discussions. We are grateful to Johannes
+Pöschl, Luca Rossi, Maksim Bondarenko, Pablo Herrero Marco, and Catalina Cozariuc for
+research assistance. The previous version of the paper was circulated under the title “The
+Macroeconomic Impact of Money Market Disruptions.” The views expressed here are those of
+the authors and do not necessarily reflect those of the Bank for International Settlements, the
+Eurosystem, or the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2018 by Fiorella De Fiore, Marie Hoerova, Ciaran Rogers, and Harald Uhlig. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+Money Markets, Collateral and Monetary Policy
+Fiorella De Fiore, Marie Hoerova, Ciaran Rogers, and Harald Uhlig
+NBER Working Paper No. 25319
+November 2018, Revised March 2024
+JEL No. E44,E58
+ABSTRACT
+During the financial and sovereign debt crises, euro area interbank money markets underwent
+dramatic changes: the share of unsecured borrowing declined throughout the euro area, while
+private market haircuts on sovereign bonds and bank borrowing from the European Central Bank
+increased in the South. We construct a quantitative general equilibrium model to evaluate the
+macroeconomic impact of these developments and the associated policy response. Our model
+features heterogeneous banks and sovereign bonds, secured and unsecured money markets, and a
+central bank. We compare a benchmark policy—the central bank providing collateralized lending
+to banks at haircuts lower than the market—to an alternative policy that maintains a constant
+central bank balance sheet. We show that the fall in output, investment, and capital would have
+been twice as high under the alternative policy. More generally, the model allows the analysis of
+monetary policy tools beyond interest rate policies and quantitative easing.
+Fiorella De Fiore Ciaran Rogers
+Monetary and Economic Department Institute for International Economics Studies
+Bank for International Settlements Stockholm University
+Switzerland Stockholm, Stoc 11353
+and CEPR Sweden
+Fiorella.DeFiore@bis.org ciaran.rogers@iies.su.se
+Marie Hoerova Harald Uhlig
+European Central Bank Dept. of Economics
+Sonnemannstrasse 20 University of Chicago
+D-60314 Frankfurt am Main 1126 E 59th Street
+Europe Chicago, IL 60637
+marie.hoerova@ecb.int and CEPR
+and also NBER
+huhlig@uchicago.edu
+
+1 INTRODUCTION
+During the financial and sovereign debt crises, euro area interbank money markets underwent
+dramatic changes. Using a novel dataset surveying interbank money market activity, we em-
+phasize four main observations. First, the share of unsecured interbank borrowing declined
+overthisperiodthroughouttheeuroarea,withbankssubstitutingtowardsecuredtransactions.
+Second, with the onset of the sovereign debt crisis in 2010, market haircuts on Southern gov-
+ernment bonds increased substantially, while the European Central Bank (ECB) kept haircuts
+nearly unchanged throughout, creating a “haircut gap” between private market and ECB hair-
+cuts. Third, bank borrowing from the ECB increased eight-fold in Southern regions. Fourth,
+household deposits at banks remained stable.
+As our main contribution, we construct and analyze a quantitative general equilibrium
+model to understand these developments, the policies employed by the central bank, and their
+impact on the overall economy. Our model features heterogeneous banks and heterogeneous
+government bonds, interbank money markets for both secured and unsecured credit, and a
+central bank that can conduct open market operations and lend to banks against collateral.
+We use the model to clarify the role of different interbank market frictions and to quantify the
+impact of central bank responses compared to a counterfactual scenario of no intervention.
+In the model, there are two regions, the “North” and the “South,” each with its own gov-
+ernment bonds, but one common central bank. Each period in the model is subdivided into
+a morning and an afternoon. In the morning, banks choose their assets (loans, bonds, and
+money) and liabilities (central bank funding and deposits), subject to a leverage constraint as
+proposed by Gertler and Karadi (2011) and Gertler and Kiyotaki (2011). Banks are randomly
+selected to only hold Northern government bonds or Southern government bonds. Central
+bank funding must be backed by bond collateral and is subject to a haircut imposed by the
+central bank. Deposit funding is uncollateralized but exposes banks to idiosyncratic liquidity
+shocks in the afternoon, as formulated by Bianchi and Bigio (2022). These liquidity shocks
+can be managed by borrowing or lending in private interbank money markets. Banks face an
+exogenous probability of being “connected,” defined as the ability to borrow in the unsecured
+market in the afternoon. The remaining “unconnected” banks need to satisfy possible with-
+drawals either by holding sufficient reserves or by posting bonds as collateral in the secured
+market. Collateralizedborrowingissubjecttoahaircut, withhaircutsintheprivateafternoon
+1
+
+market being potentially different in the North than in the South and, in turn, different from
+morning haircuts set by the central bank.
+We argue that we need all key ingredients of the model to understand the observed devel-
+opments in the euro area money markets. We show how reduced versions without the morning
+leverageconstraintand/ortheafternoonliquiditymanagementconstraintwillfailatthattask.
+With all the key ingredients in place, frictions can arise in different places, making the analysis
+particularly challenging. Five inequality constraints on banks emerge as crucial: the “morn-
+ing” leverage constraint, a collateral constraint vis-a-vis the central bank, and three short-sale
+constraints. We show that one cannot a priori require any of these constraints to bind or to
+be slack. On the contrary, each of these may turn on or off, and each can be crucial for the
+macroeconomic outcomes as we traverse the parameter space and different monetary policies.
+We provide the calculus for the bank’s decision problem, weighing the various trade-offs. We
+illuminate the inner workings of the model using steady-state comparative statics while solv-
+ing the dynamic calibrated model numerically, using techniques in Dynare allowing for these
+constraints to become occasionally binding.
+In order to match the developments documented in Section 2, we impose the condition
+that the probability that a bank is connected gradually and permanently falls from 42% to
+around 10%, while the haircuts on Southern bonds rise temporarily from 3% to 25%.1 For
+the central bank, we compare the benchmark “collateralized credit operations” policy or CO
+policyofkeeping thecentralbankhaircutunchangedat3%to acounterfactualandalternative
+“constant balance-sheet policy” or CB policy, where the central bank haircut is 100%, ruling
+out bank-borrowing from the central bank.
+We demonstrate that the two policies do not differ much in terms of their impact on the
+economy in the case of the change in the share of secured lending but they induce significantly
+different responses from the rise in private market haircuts. In particular, the fall in output,
+investment, and capital would have been twice as high under the constant balance-sheet policy
+compared to the benchmark. There is a rich set of interactions, which we highlight and
+illuminate in our analysis.
+More generally, the analysis here shows that interbank money market frictions matter,
+and central bank policy tools beyond interest rate setting or quantitative easing can have
+1Agentscorrectlyforeseetheseexogenouschangesinprobabilitiesandhaircuts. Whileitwouldbeintriguing
+toprovidedeeperfoundationsandlinkthemto,say,sovereigndefaultrisks,doingsowouldexceedthescopeof
+the already rich analysis presented here.
+2

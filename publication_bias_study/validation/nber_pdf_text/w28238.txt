@@ -1,0 +1,108 @@
+NBER WORKING PAPER SERIES
+A PANEL REGRESSION APPROACH TO
+HOLDINGS-BASED FUND PERFORMANCE MEASURES
+Wayne E. Ferson
+Junbo L. Wang
+Working Paper 28238
+http://www.nber.org/papers/w28238
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2020
+This paper is developed from and supersedes Wang’s PhD thesis at the University of Southern
+California, entitled “Can weight-based measures distinguish between informed and uninformed
+fund managers.” We are grateful to Hank Bessembinder, Wayne Chang, Chris Jones, Min S.
+Kim, David Solomon, Scott Joslin, Yan Liu, Jinchi Lv, Lucian Taylor Russ Wermers, the editor
+Thierry Foucault and anonymous referees for comments. This paper has also benefitted from
+workshops at Boston College, Florida International University, the Universities of Georgetown,
+Hawaii, Laval, Massachusetts at Amherst, Southern California, South Carolina, Washington,
+York, the Rutgers Business School and from presentations at the 2016 Northern Finance
+Association meetings, the 2017 Research Affiliates Advisory Board, the 2017 Society for
+Financial Econometrics meetings, the 2017 NBER-NSF time-series conference, the 2017
+Southern Finance meetings the 2018 American Finance Association meetings and the 2018 Citrus
+Finance Conference. The views expressed herein are those of the authors and do not necessarily
+reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Wayne E. Ferson and Junbo L. Wang. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+A Panel Regression Approach to Holdings-based Fund Performance Measures
+Wayne E. Ferson and Junbo L. Wang
+NBER Working Paper No. 28238
+December 2020
+JEL No. G11
+ABSTRACT
+Portfolio performance measures using holdings data are panel regressions. The returns of a fund’s
+stocks are regressed on its lagged portfolio weights. Stock fixed effects isolate average
+performance from time-series predictive ability. Control variables condition fund performance on
+the characteristics of the stocks held. The long term performance of average holdings drives some
+of the classical measures, while predictive ability drives others. A “buy-and-hold drift,” where
+portfolio weights increase over time in the higher alpha stocks, affects performance measures.
+Investor flows respond to average performance net of the buy-and-hold drift.
+Wayne E. Ferson
+Department of Finance
+and Business Economics
+University of Southern California
+3670 Trousdale Parkway Suite 308
+Los Angeles, CA 90089-0804
+and NBER
+ferson@marshall.usc.edu
+Junbo L. Wang
+School of Business
+Louisiana State University
+Baton Rouge, Louisiana
+junbowang@lsu.edu
+A data appendix is available at http://www.nber.org/data-appendix/w28238
+
+2
+Introduction
+Estimates of holdings-based fund performance measures are viewed as predictive panel
+regressions. For each fund, the future excess returns of the stocks held are regressed on the lagged
+portfolio weights on the stocks. The panel regression coefficient for a fund measures its
+performance. An informed manager’s portfolio weights should predict the stock returns with a
+positive coefficient (Grinblatt and Titman, 1989a). Classical performance estimates implicitly use
+such panel regressions, and we show that being explicit about this provides several new insights.
+The returns and/or weights are benchmarked or demeaned in the classical measures and the special
+cases depend on how this is done. We study the portfolio change measure of Grinblatt and Titman
+(GT, 1993), the Characteristic Selectivity measure of Daniel, Grinblatt, Titman and Wermers
+(DGTW, 1997), the Conditional Weight Measure of Ferson and Khang (CWM, 2002) and the
+stochastic discount factor measure of Ferson and Mo (FM, 2016).
+Understanding these “classical” measures as special cases of a panel regression allows us to
+apply various approaches to clustering, fixed effects and control variables. This is important
+because funds may deviate substantially from common assumptions in panel regression models,
+such as iid model innovations. Control variables produce characteristics-based versions of
+conditional performance evaluation (Ferson and Schadt, 1996), but instead of conditioning on
+macroeconomic factors, the panel naturally asks if the performance of a fund is driven by the
+charactersitcs of the stocks it holds. This is a central question in studies like Carhart (1997),
+Wermers (2003), Zheng (1999), Sapp and Tiwari (2004), Sheng, Simutin and Zhang (2019) and
+Matalin-Saez (2020). We illustrate using the stocks’ dividend yields as the control, and find that it
+removes a finding that high-yield funds perform better.
+We examine the use of fixed effects in the panel regressions. Time fixed effects produce
+
+3
+measures of performance in excess of an equally-weighted portfolio, and a common intercept has
+the same effect. More interestingly, stock fixed effects decompose the performance measures into
+the dynamic, time-series information in funds’ portfolio weights and the average cross-sectional
+information. Time-series predictive ability (TSA) is defined as the average across stocks, of the
+covariances between the current portfolio weights and future stock returns. TSA reflects both
+factor timing and short-term security selection information. The Average Abnormal Return (AAR)
+is the fund abnormal return based on its average weights. The average weights are a proxy for the
+long term asset allocation policy (e.g., Brinson, Hood and Bebower (BHB, 1986) and Brinson,
+Singer and Beebower, 1991). Thus, the AAR is interpreted as a long-run measure of performance
+driven by fund policy or style. One of our insights is that the classical performance measures reflect
+both components of performance.
+A fund with larger AAR on average overweights the high and underweights the low alpha
+stocks. Many “quant” portfolios have this feature, focusing the investment policy on cross-
+sectional patterns in average abnormal returns such as size, book-to-market, momentum and
+“fundamental” security characteristics associated with alphas in the popular models. The AAR has
+received little attention in the literature. However, we find that the AAR is the largest component
+of the abnormal performance in some of the holdings-based measures (DGTW, FM). These
+measures pay more attention to funds’ long-term policy or style than to efforts to predict short term
+returns. For other measures (GT, CWM) the TSA is the dominant component, capturing mainly
+ability to predict returns in the short term. A panel regression view of the measures naturally
+isolates the TSA and AAR components.
+The panel approach reveals a lagged stochastic regressor bias, similar to that described by
+Stambaugh (1999) and Hjalmarsson (2008), when there are stock fixed effects. We evaluate

@@ -1,0 +1,107 @@
+NBER WORKING PAPER SERIES
+OPTIMAL TRADING STRATEGY AND
+SUPPLY/DEMAND DYNAMICS
+Anna Obizhaeva
+Jiang Wang
+Working Paper 11444
+http://www.nber.org/papers/w11444
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2005
+Obizhaeva is from MIT Sloan School of Management, tel: (617) 253-3919, email: obizhaeva@mit.edu, and
+Wang is from MIT Sloan School of Management, CCFR, and NBER, tel: (617) 253-2632, email:
+wangj@mit.edu. The authors thank participants at the NYSE seminar for helpful comments. The views
+expressed herein are those of the author(s) and do not necessarily reflect the views of the National Bureau
+of Economic Research.
+©2005 by Anna Obizhaeva and Jiang Wang. All rights reserved. Short sections of text, not to exceed two
+paragraphs, may be quoted without explicit permission provided that full credit, including © notice, is given
+to the source.
+
+Optimal Trading Strategy and Supply/Demand Dynamics
+Anna Obizhaeva and Jiang Wang
+NBER Working Paper No. 11444
+June 2005
+JEL No. G11, G12
+ABSTRACT
+The supply/demand of a security in the market is an intertemporal, not a static, object and its
+dynamics is crucial in determining market participants' trading behavior. Previous studies on the
+optimal trading strategy to execute a given order focuses mostly on the static properties of the
+supply/demand. In this paper, we show that the dynamics of the supply/demand is of critical
+importance to the optimal execution strategy, especially when trading times are endogenously
+chosen. Using a limit-order-book market, we develop a simple framework to model the dynamics
+of supply/demand and its impact on execution cost. We show that the optimal execution strategy
+involves both discrete and continuous trades, not only continuous trades as previous work suggested.
+The cost savings from the optimal strategy over the simple continuous strategy can be substantial.
+We also show that the predictions about the optimal trading behavior can have interesting
+implications on the observed behavior of intraday volume, volatility and prices.
+Anna Obizhaeva Jiang Wang
+MIT, Sloan School of Management MIT, E52-456
+E52-402 50 Memorial Drive
+50 Memorial Drive Cambridge, MA 02142-1347
+Cambridge, MA 02142 and NBER
+obizhaeva@mit.edu wangj@mit.edu
+
+Contents
+1 Introduction 1
+2 Statement of the Problem 3
+3 Limit Order Book and Supply/Demand Dynamics 4
+3.1 Limit Order Book (LOB) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+3.2 Limit Order Book Dynamics . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+3.3 Execution Cost . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+4 Conventional Models As A Special Case 9
+4.1 Conventional Setup . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+4.2 The Continuous-Time Limit . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+4.3 Temporary Price Impact . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+4.4 A Special Case of Our Framework . . . . . . . . . . . . . . . . . . . . . . . . 13
+5 Discrete-Time Solution 14
+6 Continuous-Time Solution 16
+7 Optimal Execution Strategy and Cost 18
+7.1 Properties of Optimal Execution Strategy . . . . . . . . . . . . . . . . . . . 18
+7.2 Minimum Execution Cost . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+7.3 Empirical Implications . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+8 Extensions 25
+8.1 Time Varying LOB Resiliency . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+8.2 Different Shapes for LOB . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+8.3 Risk Aversion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+9 Conclusion 27
+Appendix 29
+References 36
+
+1 Introduction
+It has long being documented that the supply/demand of a security in the market is not
+perfectlyelastic.1 Thelimitedelasticityofsupply/demandorliquiditycansignificantlyaffect
+how market participants trade, which in turn can affect the supply/demand itself and the
+prices. Thus,tounderstandhowmarketparticipantstradeisimportanttoourunderstanding
+of how the securities market functions and how security prices are determined. We can
+approach this problem by first looking at the optimal strategy to execute a given order, also
+referred to as the optimal execution problem. Many empirical studies have shown that this
+is a problem confronted by institutional investors who need to execute large orders and often
+break up trades in order to manage the trading cost.2
+Several authors have formulated the problem of optimal execution and provided solutions
+to the optimal execution strategy. For example, Bertsimas and Lo (1998) propose a static
+price impact function and solve for the optimal execution strategy to minimize the expected
+cost of executing a given order. Almgren and Chriss (2000) include risk considerations in
+a similar setting using a mean-variance objective function.3 The framework used in these
+work has two main features. First, the price impact of a trade is described by a static
+price impact function, which depends only on the size of the trade and does not reflect the
+intertemporal properties of the security’s supply/demand. For example, the price impact
+of two consecutive trades depends merely on their total size, not on their relative sizes and
+the time between. Second, this framework adopts a discrete-time setting so that the times
+to trade are fixed at certain intervals. A discrete-time setting is clearly undesirable for
+such a problem because the timing of trades is an important choice variable and should be
+determinedoptimally. Anaturalwaytoaddressthisissuewouldbetotakeacontinuous-time
+limit of the discrete-time formulation, but this leads to a degenerate situation in which the
+execution cost becomes strategy independent. By introducing an additional cost penalizing
+speedy trades, Huberman and Stanzl (2000) avoid this degeneracy in the continuous-time
+limit (see also Almgren (2003)). However, imposing such a cost restricts the execution
+strategy to continuous trades, which is in general sub-optimal.
+We show in this paper that the inability of the conventional models to find an optimal
+execution strategy in a general class of feasible strategies arises from the use of a static
+price-impact function to describe the execution cost. Such a price impact function fails to
+1See,forexample,Holthausen,LeftwitchandMayers(1987,1990),Shleifer(1986),Scholes(1972). Forthe
+more recent work, see also Greenwood (2004), Kaul, Mehrotra and Morck (2000), Wugler and Zhuravskaya
+(2002).
+2See, for example, Chan and Lakonishok (1993, 1995, 1997), Keim and Madhavan (1995, 1997).
+3See also, Almgren (2003), Dubil (2002), Subramanian and Jarrow (2001), among others.
+1

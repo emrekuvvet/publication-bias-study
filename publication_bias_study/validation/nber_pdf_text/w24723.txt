@@ -1,0 +1,86 @@
+NBER WORKING PAPER SERIES
+PSYCHOLOGY-BASED MODELS OF ASSET PRICES AND TRADING VOLUME
+Nicholas C. Barberis
+Working Paper 24723
+http://www.nber.org/papers/w24723
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2018
+This article has been informed by many discussions over the years with Robin Greenwood, Ming
+Huang, Lawrence Jin, Matthew Rabin, Andrei Shleifer, Richard Thaler, and Wei Xiong, as well
+as with my students and my colleagues in the fields of behavioral finance and behavioral
+economics. I am grateful to Douglas Bernheim, Stefano DellaVigna, and David Laibson for their
+comments on an early draft, and to Pedro Bordalo, Erik Eyster, Shane Frederick, Sam Hanson,
+Philipp Krueger, Alan Moreira, Tobias Moskowitz, Charles Nathanson, Cameron Peng, David
+Thesmar, and Baolian Wang for their help with questions that came up during the writing
+process. The views expressed herein are those of the author and do not necessarily reflect the
+views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2018 by Nicholas C. Barberis. All rights reserved. Short sections of text, not to exceed two
+paragraphs, may be quoted without explicit permission provided that full credit, including ©
+notice, is given to the source.
+
+Psychology-based Models of Asset Prices and Trading Volume
+Nicholas C. Barberis
+NBER Working Paper No. 24723
+June 2018
+JEL No. G11,G12,G40
+ABSTRACT
+Behavioral finance tries to make sense of financial data using models that are based on
+psychologically accurate assumptions about people's beliefs, preferences, and cognitive limits. I
+review behavioral finance approaches to understanding asset prices and trading volume, with
+particular emphasis on three types of models: extrapolation-based models, models of
+overconfident beliefs, and models of gain-loss utility inspired by prospect theory. The research to
+date shows that a few simple assumptions about investor psychology capture a wide range of
+facts about prices and volume and lead to concrete new predictions. I end by speculating about
+the form that a unified psychology-based model of investor behavior might take.
+Nicholas C. Barberis
+Yale School of Management
+135 Prospect Street
+P O Box 208200
+New Haven, CT 06520-8200
+and NBER
+nick.barberis@yale.edu
+
+Contents
+1 Introduction 4
+2 Empirical facts 6
+2.1 Aggregate asset classes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+2.2 The cross-section of average returns . . . . . . . . . . . . . . . . . . . . . . . 8
+2.3 Bubbles . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+3 Limits to arbitrage 12
+4 Beliefs: Extrapolation 16
+4.1 Return extrapolation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+4.2 Extrapolation of fundamentals . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+4.3 Sources of extrapolative beliefs . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+4.4 Experience effects . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 31
+4.5 Extrapolative beliefs: Summary . . . . . . . . . . . . . . . . . . . . . . . . . 33
+5 Beliefs: Overconfidence 34
+5.1 Disagreement with a short-sale constraint . . . . . . . . . . . . . . . . . . . . 37
+6 Other belief-based approaches 40
+6.1 Sticky beliefs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 40
+6.2 Models of under- and over-reaction . . . . . . . . . . . . . . . . . . . . . . . 42
+6.3 Beliefs about rare events . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 44
+6.4 Feelings and beliefs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 45
+6.5 Herding and social interaction . . . . . . . . . . . . . . . . . . . . . . . . . . 46
+6.6 Psychology-free approaches . . . . . . . . . . . . . . . . . . . . . . . . . . . . 48
+7 Preferences: Gain-loss utility and prospect theory 50
+7.1 The elements of prospect theory . . . . . . . . . . . . . . . . . . . . . . . . . 51
+7.2 Prospect theory and the cross-section: Static models . . . . . . . . . . . . . 56
+7.3 Prospect theory and the cross-section: Dynamic models . . . . . . . . . . . . 59
+2
+
+7.4 Prospect theory and the aggregate stock market . . . . . . . . . . . . . . . . 62
+7.5 Prospect theory applications: Summary . . . . . . . . . . . . . . . . . . . . . 66
+7.6 Other alternatives to Expected Utility . . . . . . . . . . . . . . . . . . . . . 67
+8 Preferences: Ambiguity aversion 69
+9 Bounded rationality 72
+9.1 Inattention . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 74
+9.2 Categorization . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 75
+10 Discussion and Conclusion 77
+11 Appendix 80
+12 References 81
+3

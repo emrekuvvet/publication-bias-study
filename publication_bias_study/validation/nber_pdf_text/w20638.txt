@@ -1,0 +1,124 @@
+NBER WORKING PAPER SERIES
+QUANTIFYING LIQUIDITY AND DEFAULT RISKS OF CORPORATE BONDS
+OVER THE BUSINESS CYCLE
+Hui Chen
+Rui Cui
+Zhiguo He
+Konstantin Milbradt
+Working Paper 20638
+http://www.nber.org/papers/w20638
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2014
+We thank Ron Anderson, Mark Carey, Pierre Collin-Dufresne, Thomas Dangl, Vyacheslav Fos, Joao
+Gomes, Lars Hansen, Jingzhi Huang, David Lando, Mads Stenbo Nielsen, Martin Schneider, and seminar
+participants at Chicago economic dynamics working group, ECB, Georgia Tech, Kellogg, Maryland,
+MIT Sloan, the NBER Summer Institute (Risk of Financial Institution, Capital Markets), Federal Reserve
+Board, AFA 2014, the USC Fixed Income Conference, University of Alberta, University of Calgary,
+Central European University, Wirtschaftsuniversitaet Wien, WFA, CICF, the Rothschild Caesarea
+Conference, and the Stanford Institute for Theoretical Economics Workshop for helpful comments.
+We acknowledge the financial supported from the Fama-Miller Center at Booth School of Business,
+University of Chicago. The views expressed herein are those of the authors and do not necessarily
+reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2014 by Hui Chen, Rui Cui, Zhiguo He, and Konstantin Milbradt. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Quantifying Liquidity and Default Risks of Corporate Bonds over the Business Cycle
+Hui Chen, Rui Cui, Zhiguo He, and Konstantin Milbradt
+NBER Working Paper No. 20638
+October 2014
+JEL No. G00,G1,G12,G20
+ABSTRACT
+We develop a structural credit risk model to examine how the interactions of liquidity and default
+risk affect corporate bond pricing. By explicitly modeling debt rollover and by endogenizing the holding
+costs via collateralized financing, our model generates rich links between liquidity risk and default
+risk. The introduction of macroeconomic risks helps the model capture realistic time variation in default
+risk premia and the default-liquidity spiral over the business cycle. Across different credit ratings,
+our calibrated model can simultaneously match the average default probabilities, credit spreads, and
+bond liquidity measures including Bond-CDS spreads and bid-ask spreads in the data. Through a structural
+decomposition, we show that the interactions between liquidity and default risk account for 25(cid:0)40%
+of the observed credit spreads and up to 55% of the credit spread changes over the business cycle.
+As an application, we use this framework to quantitatively evaluate the effects of liquidity-provision
+policies for the corporate bond market.
+Hui Chen Zhiguo He
+MIT Sloan School of Management University of Chicago
+100 Main Street, E62-637 Booth School of Business
+Cambridge, MA 02142 5807 S. Woodlawn Avenue
+and NBER Chicago, IL 60637
+huichen@mit.edu and NBER
+zhiguo.he@chicagobooth.edu
+Rui Cui
+University of Chicago Konstantin Milbradt
+ruicui1@gmail.com Kellogg School of Management
+Northwestern University
+2001 Sheridan Rd #401
+Evanston, IL 60208
+and NBER
+milbradt@northwestern.edu
+
+1. Introduction
+It is well known that a significant part of corporate bond pricing cannot be accounted
+for by default risk alone. For example, Longstaff, Mithal, and Neis (2005) estimate that
+“non-default components” account for about 50% of the spread between the yields of Aaa/Aa-
+rated corporate bonds and Treasuries and about 30% of the spread for Baa-rated bonds.
+Furthermore, Longstaff, Mithal, and Neis (2005) find that non-default components of credit
+spreads are strongly related to measures of bond liquidity, which is consistent with evidence of
+illiquidity in secondary corporate bond markets (e.g., Edwards, Harris, and Piwowar (2007),
+Bao, Pan, and Wang (2011)).
+Hitherto, the literature on structural credit risk modeling has almost exclusively focused
+on the “default component” of credit spreads. The “credit spread puzzle,” as defined by
+Huang and Huang (2012), refers to the finding that, after matching the observed default and
+recovery rates, traditional structural models produce credit spreads for investment grade
+bonds that are significantly lower than those in the data. By introducing macroeconomic
+risks into structural credit models, Chen, Collin-Dufresne, and Goldstein (2009), Bhamra,
+Kuehn, and Strebulaev (2010) and Chen (2010) are able to explain the default components
+of the credit spreads for investment-grade bonds.1 However, these models are silent on the
+sources of the non-default component of credit spreads and their potential impact on the
+default component of the spreads.
+In this paper, we build a tractable structural credit risk model that captures both the
+default and non-default components in corporate bond pricing by introducing secondary
+market search frictions (a la Duffie, Gˆarleanu, and Pedersen (2005)) into a model with
+aggregate macroeconomic fluctuations (e.g., Chen (2010)). Rather than simply piecing
+1Chen (2010) relies on estimates of Longstaff, Mithal, and Neis (2005) to obtain the default component of
+the credit spread for Baa rated bonds, while Bhamra, Kuehn, and Strebulaev (2010) focus on the difference
+between Baa and Aaa rated bonds. The difference of spreads between Baa and Aaa rated bonds presumably
+takes out the common liquidity component, which is a widely used practice in the literature. This treatment
+relies on the assumption that the liquidity components for bonds of different ratings are the same, which is at
+odds with existing literatures on the liquidity of corporate bonds, e.g., Edwards, Harris, and Piwowar (2007),
+Bao, Pan, and Wang (2011).
+1
+
+together the default and non-default components of credit spreads, our approach of jointly
+modeling default and liquidity risk over the business cycle is essential to understanding the
+interactions between the two components. Such interactions give rise to endogenous default
+as well as endogenous liquidity, which helps explain two general empirical patterns for the
+liquidity of corporate bonds: (1) corporate bonds with higher credit ratings tend to be more
+liquid; (2) corporate bonds are less liquid during economic downturns, especially for riskier
+bonds.2 These interactions can also significantly raise the level of credit spreads and make
+them more volatile over the business cycle.
+In our model, which builds on He and Milbradt (2014), investors face uninsurable
+idiosyncratic liquidity shocks, which drive up their costs for holding corporate bonds. Market
+illiquidity arises endogenously because to sell their bonds, investors have to search for dealers
+to intermediate transactions with other investors not yet hit by liquidity shocks, and in
+the meantime they incur costs for having to hold onto the bonds. The dealers set bid-ask
+spreads to capture part of the trading surplus. On the one hand, default risk crucially affects
+the trading surplus and thus the liquidity discount of corporate bonds. On the other hand,
+heavier liquidity discount makes it more costly for firms to roll over their maturing debt,
+hence raising the probability of default. Thus, a default-liquidity spiral arises: when secondary
+market liquidity deteriorates, equity holders are more likely to default, which in turn worsens
+secondary bond market liquidity even further, and so on so forth.
+Our model extends He and Milbradt (2014) in two important aspects. First, instead of
+assuming a constant exogenous holding cost due to liquidity shocks as in He and Milbradt
+(2014), we model holding costs based on the mechanism of collateralized financing. In this
+mechanism, investors hit by liquidity shocks raise cash either via cheaper collateralized financ-
+ing (with the bond as collateral, subject to some haircuts) or more expensive uncollateralized
+financing. A lower bond market price together with a larger haircut pushes investors toward
+more expensive uncollateralized financing, which translates to higher effective holding costs
+2See e.g., Edwards, Harris, and Piwowar (2007), Bao, Pan, and Wang (2011), Dick-Nielsen, Feldhu¨tter,
+and Lando (2012), and Friewald, Jankowitsch, and Subrahmanyam (2012).
+2

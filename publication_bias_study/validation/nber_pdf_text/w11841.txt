@@ -1,0 +1,98 @@
+NBER WORKING PAPER SERIES
+THE MYTH OF LONG-HORIZON PREDICTABILITY
+Jacob Boudoukh
+Matthew Richardson
+Robert Whitelaw
+Working Paper 11841
+http://www.nber.org/papers/w11841
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2005
+a Arison School of Business, IDC and NBER; b Stern School of Business, New York University and NBER.
+We would like to thank Jeff Wurgler, John Cochrane (the discussant), and seminar participants at Yale
+University, New York University and the NBER asset pricing program for helpful comments. Contact: Prof.
+M. Richardson, NYU, Stern School of Business, 44 W. 4th St., New York, NY 10012;
+mrichar0@stern.nyu.edu. The views expressed herein are those of the author(s) and do not necessarily reflect
+the views of the National Bureau of Economic Research.
+©2005 by Jacob Boudoukh, Matthew Richardson, and Robert Whitelaw. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+The Myth of Long-Horizon Predictability
+Jacob Boudoukh, Matthew Richardson, and Robert Whitelaw
+NBER Working Paper No. 11841
+December 2005
+JEL No. G12, G10, C32
+ABSTRACT
+The prevailing view in finance is that the evidence for long-horizon stock return predictability is
+significantly stronger than that for short horizons. We show that for persistent regressors, a
+characteristic of most of the predictive variables used in the literature, the estimators are almost
+perfectly correlated across horizons under the null hypothesis of no predictability. For example, for
+the persistence levels of dividend yields, the analytical correlation is 99% between the 1- and 2-year
+horizon estimators and 94% between the 1- and 5-year horizons, due to the combined effects of
+overlapping returns and the persistence of the predictive variable. Common sampling error across
+equations leads to ordinary least squares coefficient estimates and R2s that are roughly proportional
+to the horizon under the null hypothesis. This is the precise pattern found in the data. The asymptotic
+theory is corroborated, and the analysis extended by extensive simulation evidence. We perform joint
+tests across horizons for a variety of explanatory variables, and provide an alternative view of the
+existing evidence.
+Jacob Boudoukh Robert Whitelaw
+34 Burla St #19 NYU, Stern School of Business
+Tel Aviv 69364 44 W. 4th St.
+Israel New York, NY 10012
+and NBER and NBER
+jboudouk@idc.il rwhitela@stern.nyu.edu
+Matthew Richardson
+NYU, Stern School of Business
+44 W. 4th St.
+New York, NY 10012
+and NBER
+mrichar0@stern.nyu.edu
+
+I. Introduction
+Over the last two decades, the finance literature has produced growing evidence of stock return
+predictability, though not without substantive debate. The strongest evidence cited so far
+comes from long-horizon stock returns regressed on variables such as dividend yields, term
+structure slopes, and credit spreads, among others. A typical view is expressed in Campbell,
+Lo, and MacKinlay’s standard textbook for empirical financial economics, The Econometrics
+of Financial Markets (1997, p.268):
+At a horizon of one month, the regression results are rather unimpressive: The
+R2 statistics never exceed 2%, and the t-statistics exceed 2 only in the post-
+World War II subsample. The striking fact about the table is how much
+stronger the results become when one increases the horizon. At a two-year
+horizon the R2 statistic is 14% for the full sample … at a four-year horizon the
+R2 statistic is 26% for the full sample.
+However, there is an alternative interpretation of this evidence: Researchers should be
+equally impressed by the short- and long-horizon evidence for the simple reason that the
+regressions are almost perfectly correlated. For an autocorrelation of 0.953 for annual dividend
+yields, we show analytically that the 1-year and 2-year predictive estimators are 98.8%
+correlated under the null hypothesis of no predictability. For longer horizons, the correlations
+are even higher, reaching 99.6% between the 4- and 5-year horizon estimators. This degree of
+correlation manifests itself in multiple-horizon regressions in a particularly unfortunate way.
+1
+
+Since the sampling error that is almost surely present in small samples shows up in each
+regression, both the estimator and R2 are proportional to the horizon.
+This paper provides analytical expressions for the correlations across multiple-horizon
+estimators, and then shows, through simulations, that these expressions are relevant in small
+samples. The analytical expressions relate the correlations across these estimators to both the
+degree of overlap across the horizons and the level of persistence of the predictive variable.
+Our findings relate to an earlier literature looking at joint tests of the random walk hypothesis
+for stock prices using multiple-horizon variance ratios and autocorrelations, among other
+estimators (see, e.g., Richardson and Smith (1991, 1994) and Richardson (1993)). This earlier
+literature stresses accounting for the degree of overlap. The problem here is much more severe.
+In the univariate framework, the predictive variable—past stock returns—is approximately
+independently and identically distributed (IID). In this paper’s framework, the predictive
+variable, e.g., dividend yields, is highly persistent.
+Our simulations show that any sampling error in the data under the null hypothesis of no
+predictability appears in the same manner in every multiple-horizon regression when the
+predictive variable is highly persistent. Using box plots and tables describing the relation
+across the multiple horizon estimates and R2s, we show the exact pattern one should expect
+under the null hypothesis: The multiple-horizon estimates are monotonic in the horizon
+approximately two-thirds of the time, and the mean ratios of the 2- to 5-year estimators to the
+1-year estimator are 1.93, 2.80, 3.59, and 4.32, respectively. Consider the actual estimated
+coefficients for the regression of 1- to 5-year stock returns on dividend yields over the 1926–
+2004 sample period: 0.131, 0.257, 0.390, 0.461, and 0.521. These correspond to monotonically
+increasing estimates with corresponding ratios of 1.96, 2.98, 3.53, and 3.99. We show that
+2

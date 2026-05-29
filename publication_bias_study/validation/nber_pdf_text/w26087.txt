@@ -1,0 +1,134 @@
+NBER WORKING PAPER SERIES
+SEATE: SUBJECTIVE EX ANTE TREATMENT EFFECT OF HEALTH ON RETIREMENT
+Pamela Giustinelli
+Matthew D. Shapiro
+Working Paper 26087
+http://www.nber.org/papers/w26087
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2019
+This research uses data from the Vanguard Research Initiative (VRI) that was developed by a
+research team under a program project grant from the National Institute on Aging P01-
+AG026571. The Vanguard Group Inc. supported the data collection of the VRI. Vanguard’s
+and IPSOS SA
+Client Insight Group and IPSOS SA were responsible for implementing the VRI survey and
+provided substantial input into its design. John Ameriks, Andrew Caplin, and Matthew D.
+Shapiro are co-principal investigator of the VRI. The design of the VRI benefited from the
+collaboration and assistance of Joseph Briggs, Wandi Bruine de Bruin, Alycia Chin, Mi Luo,
+Minjoon Lee, Brooke Helppie McFall, Ann Rodgers, and Christopher Tonetti as part of the
+program project, from Annette Bonner (Vanguard), and Wendy O’Connell (IPSOS SA). This
+project uses Survey 4 of the VRI that was designed by Ameriks, Briggs, Caplin, Lee, Shapiro,
+and Tonetti. The conditional probability battery used in this paper, which was included in VRI
+Survey 4 and a module of the HRS 2016, was designed in collaboration with Michael Hurd, Peter
+Hudomiet, Gabor Kezdi, Susann Rohwedder, and Robert Willis. For documentation of the VRI,
+including a dynamic link to the survey instrument, see http://ebp-projects.isr.umich.edu/VRI/. For
+documentation of the HRS, see HRS 2016 experimental module 5 at https://hrs.isr.umich.edu/
+documentation/questionnaires. This research was supported by a grant from the U.S. Social
+Security Administration (SSA), funded as part of the Retirement Research Consortium (RRC).
+The findings and conclusions expressed are solely those of the author(s) and do not represent the
+views of SSA. We thank Feiya Shao, Ann Rodgers, and Dawn Zinsser for their assistance. We are
+grateful to Gábor Kézdi, Wilbert van der Klaauw, Eric French, and participants at seminars and
+conferences for very helpful comments and discussion. The views expressed herein are those of
+the authors and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2019 by Pamela Giustinelli and Matthew D. Shapiro. All rights reserved. Short sections of text,
+not to exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+SeaTE: Subjective ex ante Treatment Effect of Health on Retirement
+Pamela Giustinelli and Matthew D. Shapiro
+NBER Working Paper No. 26087
+July 2019
+JEL No. C21,C83,D84,J26
+ABSTRACT
+The Subjective ex ante Treatment Effect is the difference between the probabilities of an outcome
+conditional on a treatment. The SeaTE yields ex ante causal effects at the individual level. The
+paper gives an interpretation in two workhorse econometric frameworks: potential outcomes and
+dynamic programming. It finds large effect heterogeneity of health on work in two surveys of
+older workers, the VRI and the HRS. It shows how reduced-form estimates of health on work are
+biased when there is unobserved heterogeneity in taste for work. Using the VRI’s panel structure,
+it validates the elicited conditional probabilities of work given health.
+Pamela Giustinelli
+Department of Economics
+Bocconi University
+Milan, Italy
+pamela.giustinelli@gmail.com
+Matthew D. Shapiro
+Department of Economics
+University of Michigan
+611 Tappan St
+Ann Arbor, MI 48109-1220
+and NBER
+shapiro@umich.edu
+A data appendix is available at http://www.nber.org/data-appendix/w26087
+
+“I was thinking about my health, the way things are going in the economy, I don’t know if it’s
+going to really pick up [...] There might be a chance of me working and there might be a chance
+that there won’t be much work when I’m that age. If I’m in good health [...] Well, I have no
+retirement, so if I am working, it’s going to have to be later than 65 if my health is good where I
+can work.” (57 years old working man explaining his answer to a question asking the percent
+chance that he will be working past age 62.)
+I.Introduction
+How does a treatment, such as poor health, affect a behavior, such as retirement? In behavioral
+data, by which we mean realized outcomes or decisions of economic agents, the econometrician
+observes only the behavior conditional on the treatment, but not the counterfactual behavior absent
+the treatment. When there is unobserved heterogeneity across individuals, this inherent feature of
+behavioral data makes difficult inferences about causal effects. Rather than relying on behavioral
+data, the paper uses subjective expectations of a behavior or outcome conditional on values of the
+treatment to elicit ex ante treatment effects. This strategy allows each individual to be both
+treatment and control, thereby obviating the unobserved counterfactual problem and allowing for
+completely unrestricted heterogeneity across individuals. This approach yields an individual-level
+estimate of the treatment effect. Thus, this paper provides a strategy for quantifying person-specific
+treatment effects and for characterizing the distribution of causal effects across the population.
+We implement our approach by asking older workers participating in the Vanguard Research
+Initiative (VRI) to report the conditional probability on a 0-100 percent chance scale that they will
+be working to specified horizons under alternative scenarios about their future health. Using these
+data, we generate individual and aggregate level estimates of the Subjective ex ante Treatment
+Effect, or SeaTE, of health on retirement, given by the difference between respondents’
+probabilities of working in low versus high health.
+Using the panel structure of the VRI, we show that elicited conditional probabilities strongly
+predict realized work given realized health two-years ahead. Hence, behavioral outcomes support
+the validity of the conditional probabilities. Additionally, we elicit the same conditional probability
+measures in the Health and Retirement Study (HRS) to apply the approach to a population-
+representative sample.
+The Subjective ex ante Treatment Effect (SeaTE) of health on work is highly heterogeneous
+across individuals. SeaTE is zero (no effect of health on work) for almost 30 percent of working
+respondents aged 57 and higher at both 2- and 4-year horizons. A few respondents report positive
+SeaTE (more likely to work in low than in high health). The remaining 70 percent report having a
+
+strictly negative SeaTE, that is, a negative effect of health on work (median of -40 percentage
+points and standard deviation of 24 for the 2-year horizon; median of -30 and standard deviation
+of 25 for the 4-year horizon). Hence, for the median response, the ex ante effect of health on work
+is large.
+We begin in Section II by reviewing the main strands of literature to which our paper
+contributes. These include the longstanding empirical literature studying the causal effect of health
+on labor supply using behavioral data on health and work in regression analyses or structural
+models and the more recent literature eliciting probabilistic expectations in economic surveys to
+study economic decision-making under uncertainty and to estimate causal effects. Relative to the
+existing literature, our method shows enormous heterogeneity in the treatment effect of health on
+work. We also document that the individual-level treatment effect is correlated with baseline
+willingness to work.
+In Section III, we interpret SeaTE using two mainstream frameworks of econometric causality:
+the potential outcomes framework (POF) and dynamic programming (DP). Starting from the
+conditional working probabilities and employing standard econometric assumptions for dynamic
+discrete choice models, we further derive expressions for the values of continued work defined in
+the DP framework. Like the conditional working probabilities, these measures are health
+contingent and completely individual specific.
+In Section IV, we describe the VRI study and present descriptive results on the unconditional
+work probability, the unconditional health probability, the conditional probabilities of working in
+high and low health, and the SeaTE.
+In Section V, we present the measures of continued work we derived in Section III and we
+estimate a simple econometric model of health and retirement based on these measures. The model
+implies that moving from high to low health has a large, negative effect on the mean value of
+continued work, but the within-person correlation of this value across the two health states is
+substantial. We use a simulation of the simple structural model of labor supply to show that
+reduced-form results using realized health and work will be biased when there is heterogeneity in
+taste for work that is also correlated with health.
+We take two distinct approaches for validating the conditional probability approach. In the last
+part of Section V, we show that the conditional probability-based measures of VRI respondents
+match quite well realized work status, both unconditionally and conditional on realized health.
+2

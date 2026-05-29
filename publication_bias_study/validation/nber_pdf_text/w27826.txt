@@ -1,0 +1,130 @@
+NBER WORKING PAPER SERIES
+OPTIMAL FINANCIAL TRANSACTION TAXES
+Eduardo Dávila
+Working Paper 27826
+http://www.nber.org/papers/w27826
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2020
+I am very grateful to Philippe Aghion, Adrien Auclert, Robert Barro, Roland Bénabou, Markus
+Brunnermeier, Eric Budish, John Campbell, Raj Chetty, Peter Diamond, Emmanuel Farhi, Xavier
+Gabaix, Gita Gopinath, Robin Greenwood, Sam Hanson, Oliver Hart, Nathan Hendren, David
+Laibson, Sendhil Mullainathan, Adriano Rampini, Larry Samuelson, David Scharfstein, Florian
+Scheuer, Andrei Shleifer, Alp Simsek, Jeremy Stein, Adi Sunderam, Glen Weyl, Wei Xiong, and
+to seminar participants at many institutions and conferences. Johnny Xu provided outstanding
+research assistance. Financial support from Rafael del Pino Foundation is gratefully
+acknowledged. The views expressed herein are those of the author and do not necessarily reflect
+the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Eduardo Dávila. All rights reserved. Short sections of text, not to exceed two
+paragraphs, may be quoted without explicit permission provided that full credit, including ©
+notice, is given to the source.
+
+Optimal Financial Transaction Taxes
+Eduardo Dávila
+NBER Working Paper No. 27826
+September 2020
+JEL No. D61,G18,H21
+ABSTRACT
+This paper characterizes the optimal transaction tax in an equilibrium model of competitive
+financial markets. As long as investors hold heterogeneous beliefs that are not related to their
+fundamental trading motives and the planner calculates welfare using any single belief, a strictly
+positive tax is optimal, regardless of the magnitude of fundamental trading. Under some
+conditions, the optimal tax is independent of the belief used by the planner to calculate welfare.
+The optimal tax can be implemented by adjusting its value until observed total volume equals
+fundamental volume. Knowledge of i) the share of non-fundamental trading volume and ii) the
+semi-elasticity of trading volume to tax changes is sufficient to quantify the optimal tax. A
+calibration of the model consistent with empirically estimated volume semi-elasticities to tax
+changes and that features a 30% share of non-fundamental trading volume is associated with a
+37bps optimal tax.
+Eduardo Dávila
+Yale University
+Department of Economics
+28 Hillhouse Avenue, Room 304
+New Haven, CT 06520-8268
+and NBER
+eduardo.davila@yale.edu
+An online appendix is available at: http://www.nber.org/data-appendix/w27838
+
+1 Introduction
+Whether to tax financial transactions or not remains an important open question for public economics
+that periodically gains broad relevance after periods of economic turmoil. For instance, the collapse
+of the Bretton Woods system motivated James Tobin’s well-known 1972 speech — published as Tobin
+(1978) — endorsing a tax on international transactions. The 1987 crash encouraged Stiglitz (1989) and
+Summers and Summers (1989) to argue for implementing a transaction tax, while the 2008 financial
+crisis spurred further public debate on the issue, leading to a contested tax proposal by the European
+Commission. However, with the lack of formal normative studies of this topic, a financial transaction
+tax may still seem like “the perennial favorite answer in search of a question”, per Cochrane (2013).
+Inthispaper,Istudythewelfareimplicationsoftaxingfinancialtransactionsinanequilibriummodel
+in which financial markets play two distinct roles. On the one hand, financial markets allow investors to
+conduct fundamental trading. Fundamental trading allows the transfer of risks towards those investors
+more willing to bear them. It also allows for trading on liquidity or life-cycle considerations, as well
+as trading for market-making or limited arbitrage purposes. On the other hand, financial markets also
+allow investors to engage in betting or gambling, which I refer to as non-fundamental trading.
+I model non-fundamental trading by assuming that investors’ trades are partly motivated by
+differences in beliefs, while the planner calculates welfare using a single belief. The discrepancy between
+the planner’s belief and investors’ beliefs implies that corrective policies, which can involve taxes or
+subsidies depending on the primitives of the economy, are generically optimal. Three main results
+emerge from the optimal taxation exercise.
+First, the optimal transaction tax can be expressed as a function of investors’ beliefs and equilibrium
+portfoliosensitivitiestotaxchanges. Specifically,theoptimaltaxcorrespondstoone-halfofthedifference
+between a weighted average of buyers’ beliefs and a weighted average of sellers’ beliefs. Beliefs are the
+key determinant of the optimal tax because of the corrective nature of the policy. In general, optimal
+corrective policies are designed to correct marginal distortions, which in this case arise from investors’
+differences in beliefs.
+Second, a simple condition involving the cross-sectional covariance between investors’ beliefs and
+their status as net buyers or net sellers in the laissez-faire economy determines the sign of the optimal
+corrective policy. Importantly, when investors’ beliefs are not related to their fundamental motives for
+trading, this condition implies that the optimal policy is a strictly positive tax. Therefore, as long as the
+planner is aware of the existence of some belief-driven trades, under the assumption that these trades
+are not related to other fundamental trading motives, a positive transaction tax is optimal.1 Intuitively,
+the planner perceives that a reduction in trading, starting from the laissez-faire equilibrium, generates a
+first-orderwelfaregainforthoseinvestorswhoareoptimisticbuyersandpessimisticsellers.2 Whenthese
+1Although independence between trading motives is a plausible sufficient condition for an optimal positive tax, it is by
+no means necessary.
+2Optimistic (pessimistic) investors are those who believe that the expected asset payoff is high (low) relative to other
+investors.
+1
+
+are the majority of investors, their first-order welfare gains dominate the second-order welfare losses of
+those investors who share the planner’s belief and the first-order welfare losses of optimistic sellers and
+pessimistic buyers. When instead the economy is populated by many optimistic sellers and pessimistic
+buyers, the optimal corrective policy corresponds to a trading subsidy.
+Third, the optimal tax turns out to be independent of the belief used by the planner to calculate
+welfare under certain conditions. This surprising and appealing result relies on two assumptions: traded
+assets are in fixed supply and the planner does not seek to redistribute resources across investors.
+Intuitively, because welfare losses in this model arise from a distorted allocation of risk, only the
+dispersion in investors’ beliefs — but not its absolute level — determines aggregate welfare and the
+optimal tax. Consequently, the planner does not need to know more than the investors’ to determine
+the optimal tax.
+Because optimal tax characterizations are inherently local to the optimum, I study the convexity
+properties of the planner’s problem. The planner’s objective may fail to be quasi-concave, which implies
+that there may exist multiple locally optimal transaction tax rates. However, this phenomenon can only
+arise when the composition of marginal investors varies with the tax rate. I provide a natural sufficient
+conditionunderwhichtheplanner’sproblemiswell-behavedandhasauniqueoptimum. Wheninvestors
+exclusively trade for non-fundamental motives, the optimal policy is associated with an infinite tax that
+eliminates all trade. This result may help explain why some jurisdictions ban or heavily tax gambling
+activities.
+Given the significant challenges associated with directly measuring investors’ beliefs, I provide
+an implementation of the optimal tax policy that uses trading volume as an intermediate target.
+Under this implementation, a planner can simply adjust the tax rate until observed volume equals
+fundamentalvolume. Thisalternativeapproach, whichreliesonanoveldecompositionoftradingvolume
+into fundamental volume, non-fundamental volume, and the tax-induced volume reduction, shifts the
+planner’sinformationalrequirementsfrommeasuringinvestors’beliefstofindinganappropriateestimate
+of fundamental volume. Building on this volume decomposition, I also derive a simple and easily
+implementableapproximationfortheoptimaltaxthatreliesexclusivelyontwoobjectsofthelaissez-faire
+economy: the semi-elasticity of trading volume to tax changes and the share of non-fundamental trading
+volume.3 This approximation — valid when the optimal tax is close to zero — does not impose any
+restrictions on investors’ trading motives.
+Next, after parameterizing the distribution of fundamental and non-fundamental trading motives,
+I provide explicit comparative static results for the optimal tax with respect to primitives. Consistent
+with the main results, when fundamental and non-fundamental trading motives are jointly normally
+distributed and uncorrelated, the optimal tax is positive. Moreover, the optimal tax is increasing in
+3Givenexistingestimatesoftradingvolumeelasticitiestotaxchanges,thisapproximationimpliesanoptimaltaxofthe
+same order of magnitude of the share of non-fundamental trading volume, when expressed in basis points. That is, a 10%,
+20%, or 40% share of non-fundamental trading volume is associated (approximately) with an optimal tax of 10bps, 20bps,
+or 40bps.
+2

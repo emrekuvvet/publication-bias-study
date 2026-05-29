@@ -1,0 +1,132 @@
+NBER WORKING PAPER SERIES
+A GAME THEORETIC FOUNDATION OF COMPETITIVE EQUILIBRIA WITH
+ADVERSE SELECTION
+Nick Netzer
+Florian Scheuer
+Working Paper 18471
+http://www.nber.org/papers/w18471
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2012
+We are grateful to Daron Acemoglu, Carlos Alós-Ferrer, Abhijit Banerjee, Helmut Bester, Peter Diamond,
+Dennis Gaertner, Mike Golosov, Jon Gruber, Bard Harstad, Martin Hellwig, Wanda Mimra, Klaus
+Ritzberger, Casey Rothschild, Armin Schmutzler, Robert Shimer, Jean Tirole, Robert Townsend, Iván
+Werning, seminar participants at Berlin, Bonn, Kellogg, LSE, MIT, Princeton, UCL, UCLA, Vienna,
+Wharton, Wisconsin School of Business, Yale, Zurich, the 2009 North American Summer Meetings
+of the Econometric Society at BU and the 2010 ASSA Meetings in Atlanta for valuable suggestions.
+All errors are our own. The views expressed herein are those of the authors and do not necessarily
+reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2012 by Nick Netzer and Florian Scheuer. All rights reserved. Short sections of text, not to exceed
+two paragraphs, may be quoted without explicit permission provided that full credit, including © notice,
+is given to the source.
+
+A Game Theoretic Foundation of Competitive Equilibria with Adverse Selection
+Nick Netzer and Florian Scheuer
+NBER Working Paper No. 18471
+October 2012
+JEL No. C73,D02,D82,D86,G22,H1,L1
+ABSTRACT
+We construct a fully specified extensive form game that captures competitive markets with adverse
+selection. In particular, it allows firms to offer any finite set of contracts, so that cross-subsidization
+is not ruled out. Moreover, firms can withdraw from the market after initial contract offers have been
+observed. We show that a subgame perfect equilibrium always exists and that, in fact, when withdrawal
+is costless, the set of subgame perfect equilibrium outcomes may correspond to the entire set of feasible
+contracts. We then focus on robust equilibria that exist both when withdrawal costs are zero and when
+they are arbitrarily small but strictly positive. We show that the Miyazaki-Wilson contracts are the
+unique robust equilibrium outcome of our game. This outcome is always constrained efficient and
+involves cross-subsidization from low to high risk agents that is increasing in the share of low risks
+in the population under weak conditions on risk preferences.
+Nick Netzer
+Department of Economics
+University of Zurich
+Bluemlisalpstrasse 10
+8006 Zurich, Switzerland
+nick.netzer@econ.uzh.ch
+Florian Scheuer
+Department of Economics
+Stanford University
+579 Serra Mall
+Stanford, CA 94305
+and NBER
+scheuer@stanford.edu
+
+1 Introduction
+In the wake of the recent financial crisis, considerable attention has returned to the func-
+tioning of markets with adverse selection, in particular credit and insurance markets.
+Much of the discussion is rooted on the seminal contribution of Rothschild and Stiglitz
+(1976), which has spurred a large body of work on the nature of competitive equilibria
+inmarketswithadverseselection–andunfoldedanenormousinfluenceonthedevelop-
+mentoftheeconomicsofasymmetricinformationingeneral.
+However,threeshortcomingsoftheoriginalRothschild-Stiglitzapproachtotheprob-
+lem of competition under adverse selection have been pointed out: First, in their setting,
+an equilibrium as they define it may not exist. In this case, the model is unable to make
+predictions about the functioning of competitive markets with adverse selection. Sec-
+ond, they restrict each firm to offer a single contract only, ruling out cross-subsidization
+between different contracts by assumption. The resulting inefficiency results have been
+very influential in the normative literature on government interventions, but they are
+an immediate consequence of restricting the sets of contracts that firms can offer. Third,
+theirapproachisnota(non-cooperative)game-theoreticone. Ratherthanfullyspecifying
+a game and solving for its (subgame-perfect) Nash equilibria, they define an equilibrium
+directly based on properties of sets of contracts. This raises the question to what degree
+their results are specific to a particular equilibrium notion rather than properties of an
+economicenvironmentascapturedbyanextensiveformgame.
+This paper addresses all three of these issues. We construct a fully specified dynamic
+game of complete information that captures Rothschild and Stiglitz’s original setting. In
+particular, it allows firms to offer any finite number of different contracts. We show that
+a standard subgame-perfect equilibrium (SPE) always exists. There is in fact a multi-
+plicity of equilibria, but by invoking an appropriate robustness criterion, we obtain as
+unique equilibrium outcome the so-called Miyazaki-Wilson contracts. They may involve
+cross-subsidizationbetweencontractsandarealwaysParetooptimalsubjecttotheinfor-
+mationalandresourceconstraints.
+Manyauthorshaveaddressedvarioussubsetsofthethreeshortcomingsraisedabove.
+For instance, Wilson (1977) and Riley (1979) have observed that the non-existence prob-
+lem can be overcome by modifying the notion of equilibrium. Notably, defining equilib-
+riuminaforward-lookingway,wherefirmsanticipatethereactionofotherfirmstotheir
+contract offers, in form of withdrawal (Wilson 1977) or additional offers (Riley 1979), ei-
+ther sustains the Rothschild-Stiglitz equilibrium for all parameter values (Riley 1979) or
+givesrisetotheexistenceofapoolingequilibriumwhenevertheRothschild-Stiglitzequi-
+1
+
+librium does not exist (Wilson 1977). Similarly, Grossman (1979) allows for insurance
+rejections and shows that the Wilson (1977) pooling equilibrium can be sustained when
+agents anticipate that their insurance application may be declined if the insurer expects
+it to be unprofitable. However, these contributions do not include comprehensive game
+theoretic treatments. In addition, they stick to the assumption that each firm can offer
+onlyasinglecontract.1
+Miyazaki (1977), Engers and Fernandez (1987) and Fernandez and Rasmussen (1993)
+relax the latter restriction, but still define their own particular notion of equilibrium.
+Miyazaki (1977) considers Wilson’s (1977) anticipatory equilibrium concept and allows
+insurers to offer menus of contracts. He shows that an equilibrium always exists and is
+efficient in this setting, resulting in the so-called Miyazaki-Wilson outcome. Engers and
+Fernandez (1987) proceed analogously, using the reactive equilibrium concept of Riley
+(1979). They also suggest a game with an infinite number of moves and argue that the
+Miyazaki-Wilson contracts are the outcome of a Nash equilibrium in this game, but only
+amongmanyotherequilibriumoutcomes. FernandezandRasmussen(1993)alsopropose
+a framework that generates the Miyazaki-Wilson allocation, but remain within a specific
+contestablemonopolymodelandresorttoanon-standardequilibriumconcept.
+Hellwig (1987) was the first to pursue a standard game theoretic approach to ana-
+lyze (sequential) equilibria in the Rothschild-Stiglitz and some modified settings, but
+continued to restrict firms to offer no more than one contract each, ruling out cross-
+subsidization. Fewer papers simultaneously speak to the three shortcomings pointed
+out above, but they do so in frameworks that go well beyond the original market setup.
+Maskin and Tirole (1992) consider a very general principal-agent framework where con-
+tracts can be arbitrary mechanisms. They focus mostly on signaling settings but also
+provide a multiplicity result for the case of screening that is related to ours, even though
+less encompassing. Asheim and Nilssen (1996) allow for renegotiation between firms
+and customers after initial contract choice, imposing the constraint that firms may not
+discriminatebetweentheircustomers. TheyobtaintheMiyazki-Wilsoncontractsasequi-
+libriumoutcome. ThesecontractsarealsotheoutcomeinFaynzilberg(2006c),inamodel
+where firms can become insolvent, which introduces an externality between agents in
+a contract. In Picard (2011), a similar externality occurs because agents directly partici-
+1Several other authors have provided existence results for the Rothschild-Stiglitz equilibrium through
+furthermodelextensions. DasguptaandMaskin(1986)showthatequilibriumexistencecanbeguaranteed
+by considering mixed-strategy equilibria. Inderst and Wambach (2001) obtain equilibrium existence in
+a model with capacity constraints, Guerrieri, Shimer, and Wright (2010) show that search frictions can
+eliminatethenon-existenceproblem,andvonSiemensandKosfeld(2011)restoreexistencebyintroducing
+externalities between agents in labor markets with team production. None of these contributions obtain
+Miyazaki-Wilsonallocationsasequilibriumoutcome,sincecross-subsidizationisruledout.
+2

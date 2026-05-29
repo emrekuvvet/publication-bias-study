@@ -1,0 +1,122 @@
+NBER WORKING PAPER SERIES
+BANKRUPTCY SPILLOVERS
+Shai Bernstein
+Emanuele Colonnelli
+Xavier Giroud
+Benjamin Iverson
+Working Paper 23162
+http://www.nber.org/papers/w23162
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+February 2017
+We are grateful to Effi Benmelech, Jess Cornaggia, Song Ma, Enrico Moretti, Holger Mueller,
+Charles Nathanson, Josh Rauh, Amit Seru, as well as seminar participants at Stanford, NYU,
+Penn State University, University of Toronto, the 2017 Jackson Hole Finance Conference, and
+the Yale Junior Finance Faculty Conference for helpful comments and suggestions. Any opinions
+and conclusions expressed herein are those of the authors and do not necessarily represent the
+views of the U.S. Census Bureau or the National Bureau of Economic Research. All results have
+been reviewed to ensure that no confidential information is disclosed.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2017 by Shai Bernstein, Emanuele Colonnelli, Xavier Giroud, and Benjamin Iverson. All
+rights reserved. Short sections of text, not to exceed two paragraphs, may be quoted without
+explicit permission provided that full credit, including © notice, is given to the source.
+
+Bankruptcy Spillovers
+Shai Bernstein, Emanuele Colonnelli, Xavier Giroud, and Benjamin Iverson
+NBER Working Paper No. 23162
+February 2017
+JEL No. G33,R12
+ABSTRACT
+How do different bankruptcy approaches affect the local economy? Using U.S. Census microdata
+at the establishment level, we explore the spillover effects of reorganization and liquidation on
+geographically proximate firms. We exploit the random assignment of bankruptcy judges as a
+source of exogenous variation in the probability of liquidation. We find that within a five-year
+period, employment declines substantially in the immediate neighborhood of the liquidated
+establishments, relative to reorganized establishments. Most of the decline is due to lower growth
+of existing establishments and, to a lesser extent, reduced entry into the area. The spillover effects
+are highly localized and concentrate in the non-tradable and service sectors, particularly when the
+bankrupt firm operates in the same sector. These results suggest that liquidation leads to a
+reduction in consumer traffic to the local area and to a decline in knowledge spillovers between
+firms. The evidence is inconsistent with the notion that liquidation leads to creative destruction,
+as the removal of bankrupt businesses does not lead to increased entry nor the revitalization of the
+area.
+Shai Bernstein Xavier Giroud
+Stanford Graduate School of Business MIT Sloan School of Management
+655 Knight Way 100 Main Street, E62-639
+Stanford, CA 94305 Cambridge, MA 02142
+and NBER and NBER
+shaib@stanford.edu xgiroud@mit.edu
+Emanuele Colonnelli Benjamin Iverson
+Stanford University Northwestern University
+Department of Economics 2001 Sheridan Road
+579 Serra Mall Evanston, IL 60208
+Stanford, CA 94305 b-iverson@kellogg.northwestern.edu
+e.colonnelli@gmail.com
+
+I. Introduction
+Bankruptcy institutions play a significant role in resolving insolvency and financial distress in the
+economy. Since 1980, more than 1.8 million businesses have filed for bankruptcy in the U.S. Most
+of these cases are resolved through either reorganization (Chapter 11 under the U.S. Bankruptcy
+code), that attempts to rehabilitate the distressed firm, or liquidation (Chapter 7 under the U.S.
+Bankruptcy code), in which the firm ceases to exist and all assets are auctioned. Given their
+importance, bankruptcy institutions have spurred a large literature that mostly focused on how
+these two regimes affect the bankrupt firms and their claim holders.1 Yet, bankruptcy institutions
+may have far-reaching implications on other economically related firms that are not represented in
+courts. In this paper, we explore the spillover effects these two bankruptcy regimes, liquidation and
+reorganization, may impose on the local economy.
+In theory, the impact of liquidation—relative to reorganization—on the local economy is am-
+biguous. The agglomeration literature highlights the importance of complementarities that arise
+between geographically proximate firms (for recent surveys, see Duranton and Puga (2004); Glaeser
+and Gottlieb (2009); Moretti (2010)). If agglomeration matters—i.e., if spatial concentration of
+economic activity benefits firms within the agglomeration—liquidation might disrupt agglomera-
+tion economies and therefore hurt neighboring firms. In this case, reorganization may lead to a
+more desirable outcome, as firms are allowed to restructure, continue their operations, and preserve
+existing agglomeration linkages.
+On the other hand, liquidation could benefit the local economy. In particular, if inefficient
+companies are liquidated, their assets (such as buildings, capital, and labor) can be absorbed by
+the local economy and redeployed toward more productive uses, attracting new entrants to the
+area, enhancing synergies with neighboring firms, and contributing to the revitalization of the
+neighborhood. In other words, liquidation can initiate a “creative destruction” process in which
+inefficientassetsarereplacedbymoreefficientones.2 Ontheotherhand, reorganizationmaypermit
+1See, e.g., Baird (1986, 1993); Aghion et al. (1992); Hart (2000).
+2Creative destruction is the driving mechanism in the “cleansing theories” of recessions (e.g., Caballero and
+Hammour(1994,1996)),accordingtowhichtheprocessofliquidationandreallocationofproductionfactorsisamain
+function of recessions. As Schumpeter (1934) states it, “depressions are not simply evils, which we might attempt to
+suppress, but forms of something which has to be done, namely, adjustment to change” (p. 16).
+2
+
+the continuation of inefficient firms due to conflicts of interest and agency problems among claim
+holders (e.g., Bebchuk (1988); Gertner and Scharfstein (1991)). This may prevent the reallocation
+of assets to better uses, limiting potential synergies with local firms and the revitalization of the
+area.
+Ultimately, whether these two bankruptcy procedures create positive or negative spillovers is an
+empiricalquestion. However,estimatingthesespillovereffectsischallenging. First,manycompanies
+have multiple establishments, which makes it difficult to determine the relevant local area and
+identify all establishments that are potentially affected by the bankrupt firm. Second, the decision
+to liquidate versus reorganize is not random. The primary concern is that liquidation is likely more
+prevalent in declining areas. Hence, finding an association between liquidation and a subsequent
+decline in economic activity could be spurious, merely reflecting a negative trend at the local level.
+To overcome the first obstacle, we use detailed micro data at the establishment level from the
+U.S. Census Bureau. Specifically, we combine the Longitudinal Business Database (LBD) with
+bankruptcy filings from LexisNexis Law to obtain a comprehensive dataset of 91,000 establishments
+belonging to bankrupt firms. Using the geo-codes from the LBD, we determine the relevant local
+area for each bankrupt establishment and then study how bankruptcy affects other establishments
+at the same location.3
+To overcome the second obstacle—the endogeneity of the decision to liquidate versus reorga-
+nize—weemployaninstrumentalvariable(IV)approachthatexploitsthefactthatU.S.bankruptcy
+courts use a blind rotation system to assign cases to judges, effectively randomizing filers to judges
+within each court division. The assignment of bankruptcy judges is therefore orthogonal to the
+filer’s characteristics and, importantly, to the local economic conditions in the vicinity of the filer’s
+establishments. Judges differ in their propensity to force the liquidation of companies by pushing
+them to Chapter 7, as opposed to allowing them to reorganize in Chapter 11. The random allo-
+cation of filers to bankruptcy judges thus results in the assignment of similar companies to judges
+who differ in their propensity to treat the firms with different bankruptcy procedures. We exploit
+3Using Census data allows us to consider all industries. This is in sharp contrast to most of the literature on
+agglomerationthatexaminesthemanufacturingsectoronly. Manufacturingisfounddisproportionatelyinsmall-and
+medium-size cities, as well as the rural fringes of cities (Kolko (2000)). Hence, exploring the entire population of
+bankrupt firms allows us to explore relations across all industries and all geographies, including larger and denser
+cities.
+3

@@ -1,0 +1,103 @@
+NBER WORKING PAPER SERIES
+ESTIMATING GENERAL EQUILIBRIUM SPILLOVERS OF LARGE-SCALE SHOCKS
+Kilian Huber
+Working Paper 29908
+http://www.nber.org/papers/w29908
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+April 2022, Revised September 2022
+I am grateful to Holger Mueller, Tobias Berg, Steven J. Davis, Sarah Griebel, Peter Hull, Erik
+Hurst, Alan Manning, Steve Pischke, Andrés Sarto, Ludwig Straub, Daniel Streitz, Joseph Vavra,
+Emil Verner, Iván Werning, and Christian Wolf and numerous seminar audiences for helpful
+conversations and comments. The views expressed herein are those of the author and do not
+necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2022 by Kilian Huber. All rights reserved. Short sections of text, not to exceed two paragraphs,
+may be quoted without explicit permission provided that full credit, including © notice, is given
+to the source.
+
+Estimating General Equilibrium Spillovers of Large-Scale Shocks
+Kilian Huber
+NBER Working Paper No. 29908
+April 2022, Revised September 2022
+JEL No. C13,C2,D5,E0,E51,G0,G21,G30,L2,R11,R23,R51
+ABSTRACT
+Large-scale shocks directly affect some firms and households and indirectly affect others through
+general equilibrium spillovers. In this paper, I describe how researchers can directly estimate
+spillovers using quasi-experimental or experimental variation. I then argue that spillover
+estimates suffer from distinct sources of mechanical bias that standard empirical tools cannot
+resolve. These biases are particularly relevant in finance and macroeconomics, where multiple
+spillover channels and nonlinear effects are common. I offer guidance on how to detect and
+overcome mechanical biases. An application and several examples highlight that the suggested
+methods are broadly relevant and can inform policy and multiplier calculations.
+Kilian Huber
+Booth School of Business
+University of Chicago
+5807 S. Woodlawn Avenue
+Chicago, IL 60637
+and NBER
+kilianhuber@uchicago.edu
+
+Researchers in finance and macroeconomics are often interested in general equilibrium spillover
+effects: how shocks to some firms and households affect other parts of the economy. By quantify-
+ingspillovers,researcherscanevaluatewhichgeneralequilibriumchannelsneedtobeincludedin
+economicmodelsandtowhatextentempiricalestimatesbasedonmicrodataareinformativeabout
+other levels of aggregation.1 Spillovers are particularly important when researchers study large-
+scalefinancialandmacroeconomicshocksbecausemanyfirmsandhouseholdsaresimultaneously
+affectedandspilloversareoftenlarge.
+Tounderstandwhyspilloveranalysisishelpful,considertwoconcreteexamplesattheregional
+level. An empirical literature estimates how regional house price shocks affect regional employ-
+ment(MianandSufi2014;GiroudandMueller2017). Butaparameterrequiredtocalibratemacro-
+financemodelsisthedirecteffectofahousepricechangeonanindividualhousehold(Gurenetal.
+2020). To convert regional estimates into the direct effect, one needs to know the magnitude of
+regional spillovers after a housing shock. Another literature shows that firms with an unhealthy
+bank grow more slowly than other firms in the same region with a healthy bank (Bentolila et al.
+2018; Berg 2018). A regional policy maker may wonder how subsidizing the unhealthy bank will
+affecttheentireregionaleconomyandthereforewillneedtounderstandregionalspilloversaftera
+banking shock. In both cases, estimates of regional spillovers would allow one to convert existing
+estimatestoanotherlevelofaggregation,evenifdirectestimatesatthedesiredlevelofaggregation
+arenotreadilyavailable.
+Thetraditionalapproachtomeasuringspilloversinfinanceandmacroeconomicsistocalibrate
+a fully specified, general equilibrium model of the economy. Such models can flexibly quantify
+spillovers operating among firms and households in the same region, sector, country, or any other
+group. A weakness of the model-based approach is that results depend on hard-to-verify assump-
+tionsaboutwhichgeneralequilibriumchannelsexist. Inthispaper,Istudyanalternativeempirical
+approach: directestimationofspilloversusingquasi-experimentsorexperiments. Thisapproachis
+1I use the terms “general equilibrium spillover effects” and “spillovers” interchangeably. Both refer to the same
+concept: namely,theeffectsofshocksonprices,technology,andotherfeaturesofthegeneraleconomicenvironment.
+Theseeffectsoperatenotonlyatthecountrylevelbutalsoatlowerlevelsofaggregation,suchasregions,sectors,or
+networks. Theyimplythatshockspropagatebeyonddirectlyaffectedentities.
+1
+
+becoming increasingly popular in finance and macroeconomics. It allows researchers to quantify
+spilloversoperatingwithingroupsoffirmsandhouseholdsusingaregressionframework.
+This paper offers econometric guidance on how to implement direct estimation of spillovers. I
+describe the general approach and then point out two sources of mechanical bias that are likely to
+ariseinfinanceandmacroeconomics: theexistenceofmultipletypesofspilloverandmismeasured
+treatment status. I suggest practical methods to detect and overcome these biases. I illustrate the
+relevance of the proposed methods with an application to a real-world credit shock and describe
+further examples in which the methods would be germane. Finally, I argue that direct estimation
+ofspilloversallowsresearcherstocalculatetheimpactofpolicyandmultipliereffects.
+Themethodofspilloverestimation
+The paper begins with an empirical framework for the direct estimation of spillovers. For sim-
+plicity, I henceforth use “firms” to describe the unit of direct treatment, but the framework ap-
+plies equally when households or other entities are the directly treated units. A researcher studies
+whetherashocktoasubsetoffirms(the“treatment”)generatesspilloversontootherfirmsthatare
+in the same “group” as treated firms. Firms that belong to the same group are in some way con-
+nected, for example, because they are in the same region, production network, technology space,
+oranyothertypeofgrouping. Directestimationofspilloversrequiresidentificationofatreatment
+that is exogenous both across individuals and across groups. A group can even constitute an en-
+tire country, so that the estimated spillovers operate at the country level, as long as a researcher
+can identify exogenous variation in treatment at the country level and at least one lower level of
+aggregation(e.g.,regions,sectors,firms,orhouseholds).2
+Todirectlyestimatespillovers,theresearcherincludestheaveragetreatmentstatusofallother
+firms in the same group in the regression (the “leave-out mean”). For example, if the researcher is
+interested in regional spillovers, one regressor is the average treatment status of all other firms in
+2Recentworkhasattemptedtoidentifyexogenouscountry-levelvariationinfiscalandmonetarypolicyplusvaria-
+tionatalowerlevelofaggregation. Examplesincludevariationduetomonetarypolicyabroad(Jiménezetal.2012),
+large political upheavals (Fuchs-Schündeln 2008), or geopolitical developments (Conley et al. 2021). Such settings
+maybesuitableforaspilloveranalysisatthecountrylevel(seeSection7).
+2

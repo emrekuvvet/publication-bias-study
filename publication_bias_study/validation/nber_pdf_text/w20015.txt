@@ -1,0 +1,118 @@
+NBER WORKING PAPER SERIES
+HOLDUP BY JUNIOR CLAIMHOLDERS:
+EVIDENCE FROM THE MORTGAGE MARKET
+Sumit Agarwal
+Gene Amromin
+Itzhak Ben-David
+Souphala Chomsisengphet
+Yan Zhang
+Working Paper 20015
+http://www.nber.org/papers/w20015
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+March 2014, Revised November 2017
+Previously circulated as "Second Liens and the Holdup Problem in Mortgage Renegotiation." The
+authors would like to thank Fredrik Andersson, Gadi Barlevy, Ted Durant, Ronel Elul, Karen
+Furst, Dennis Glennon, Bruce Krueger, Mark Levonian, Amit Seru, and seminar participants at
+the OCC, FIRS, and AREUEA (Chicago) for helpful comments and suggestions. The views
+expressed herein are those of the authors and do not necessarily reflect the views of the National
+Bureau of Economic Research, the Federal Reserve System, the Federal Reserve Bank of
+Chicago, or the Office of the Comptroller of the Currency.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2014 by Sumit Agarwal, Gene Amromin, Itzhak Ben-David, Souphala Chomsisengphet, and
+Yan Zhang. All rights reserved. Short sections of text, not to exceed two paragraphs, may be
+quoted without explicit permission provided that full credit, including © notice, is given to the
+source.
+
+Holdup by Junior Claimholders: Evidence from the Mortgage Market
+Sumit Agarwal, Gene Amromin, Itzhak Ben-David, Souphala Chomsisengphet, and Yan Zhang
+NBER Working Paper No. 20015
+March 2014, Revised November 2017
+JEL No. G21
+ABSTRACT
+When borrowers are delinquent, senior debtholders prefer liquidation whereas junior debtholders
+prefer to maintain their option value by delaying resolution or modifying the loan. In the
+mortgage market, a conflict of interest (“holdup”) arises when servicers of securitized senior liens
+are also the owners of the junior liens on the same property. We show that holdup servicers are
+able to delay action on the first-lien mortgage. When they do act, servicers are more likely to
+choose resolutions that maintain their option value, favoring modification and soft foreclosures
+over outright foreclosures. Holdup behavior is more likely to result in borrower self-curing.
+Sumit Agarwal Souphala Chomsisengphet
+McDonough School of Business Economics Department
+Room 427 Office of the Comptroller of the Currency
+Georgetown University 400 7th Street SW
+3700 O Street NW Washington, DC 20219
+Washington, DC 20057 souphala.chomsisengphet@occ.treas.gov
+ushakri@yahoo.com
+Yan Zhang
+Gene Amromin Office of the Comptroller of the Currency
+Federal Reserve Bank of Chicago 250 E Street, SW
+230 South LaSalle Street Washington D.C. 20219
+Chicago, IL 60604-1413 Yan.Zhang@occ.treas.gov
+gamromin@frbchi.org
+Itzhak Ben-David
+Department of Finance
+Fisher College of Business
+The Ohio State University
+2100 Neil Avenue
+Columbus, OH 43210
+and NBER
+bendavid@fisher.osu.edu
+
+1 Introduction
+Conflicts between claimholders at times of borrower delinquency are an important problem
+in corporate finance. In its simplest form, senior debt holders enjoy the absolute priority rule and
+are typically quick to liquidate assets because their upside in renegotiating the debt is limited. By
+contrast, junior debt and equity holders are interested in restructuring obligations of a delinquent
+borrower because they can benefit from the option value embedded in borrower’s continued
+operations (Warner 1977, White 1983, Bolton and Scharfstein 1996, Ivashina, Iverson, and Smith
+2016, among others). The recent boom and bust of the housing market, with its wave of
+delinquencies, led to similar conflicts in the mortgage market. Many properties in recent years
+have been mortgaged by two loans, often held by two different institutions,1 allowing for different
+incentives for liquidation and renegotiations for the first- and second-lien holders.
+Addressing delinquent mortgages has been the key component in restoring the health of
+the U.S. housing market following the Global Financial Crisis. However, the crisis and its
+aftermath exposed substantial deficiencies in loss mitigation practices on the institutional,
+practical, and policy-making levels. Despite the importance of such conflicts of interest, few
+studies have attempted to provide direct empirical evidence of the existence and quantitative
+impact of servicer conflicts related to junior-lien ownership. Both policymakers and mortgage
+investors, therefore, would benefit from understanding the potential impact of servicer conflicts of
+interest on resolutions of delinquent loans. This information could be used in designing near-term
+policy initiatives as well as forward-looking servicing market reforms. For private investors,
+assessing these conflicts could help refine the contractual covenants that govern servicer
+relationships.
+1 The second-lien home equity market rose from less than $200 billion at the beginning of 2000 to a peak of well over
+$1 trillion in 2008 (Lee, Mayer, and Tracy 2012). Goodman et al. (2010) report that more than 50% of first-lien
+mortgages that have been securitized in the private-label market have at least one junior lien attached to them.
+2
+
+While in general first-lien holders have absolute priority over the decision whether to
+liquidate a delinquent mortgage, holdup problems may arise in the mortgage market in two main
+cases. The first situation occurs in some U.S. states that allow the older lien to have priority. In
+those states, refinancing the first lien loan makes it a more recent (younger) loan and thereby makes
+it dependent on the willingness of the junior lien loan (that becomes the older lien) to go along
+with the refinancing. Consequently, the junior lien (older) can hold up the decision of the more
+senior (newer lien). The effects of these laws are studied in Bond, Elul, Garyn, and Musto (2017).
+The second holdup scenario, which we study here, arises when the first lien is securitized
+but the owner of the second-lien loan services the first-lien mortgage on behalf of the investors.
+This ownership and servicing structure is prevalent in about half of our universe of securitized
+loans (see also evidence in Engel and McCoy 2011). Since mortgage servicer makes decisions for
+the first-lien holder, this structure gives substantial power to junior-lien holders (servicers) to
+decide how to mitigate losses on the senior loan (a variant of the classic “holdup problem”).2 Mayer
+et al. (2009a), Goodman (2011, 2017), Cordell et al. (2011), and Bond et al. (2017) have all raised
+questions about this potential conflict of interest. The issue has received considerable media
+coverage and has led to several legislative proposals aimed at disallowing servicing of first-lien
+mortgages by entities that own second liens secured by the same property, although none have
+been passed.3
+Our paper tests for the existence and effects of holdup in the loss resolution process. In
+broad terms, “holdup” is defined as any action that benefits a junior-lien holder at the expense of
+the more senior claimant. We evaluate the claim that servicers who own second-lien mortgages
+2 On one hand, the pooling and servicing agreement (PSA) requires the servicer to act for the benefit of the investors
+who own the first lien. On the other hand, some actions that are optimal from the first-lien owners’ perspective may
+be suboptimal to the servicer when that servicer is the owner of the second-lien loan.
+3 See, for example, Gretchen Morgenson, “In This Play, One Role is Enough,” New York Times, August 14, 2010, and
+Alex Ulam, “Why Second-lien Loans Remain a Worry,” American Banker, May 2, 2011.
+3

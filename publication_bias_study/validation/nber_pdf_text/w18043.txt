@@ -1,0 +1,102 @@
+NBER WORKING PAPER SERIES
+TRACKING VARIATION IN SYSTEMIC RISK AT US BANKS DURING 1974-2013
+Armen Hovakimian
+Edward J. Kane
+Luc Laeven
+Working Paper 18043
+http://www.nber.org/papers/w18043
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2012
+Previously circulated as "Variation in Systemic Risk at US Banks During 1974-2010." The authors
+thank Charlie Calomiris, Gerald O'Driscoll, Bob DeYoung, Douglas Evanoff, Greg Udell, seminar
+participants at the Federal Reserve Bank of Chicago, the Federal Reserve Bank of San Francisco, Bocconi
+University, and the Institute for New Economic Thinking for helpful comments on earlier drafts of
+this paper. The views expressed herein are those of the authors and do not necessarily reflect the views
+of the National Bureau of Economic Research, the ECB, the International Monetary Fund, its Executive
+Board, or its management.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2012 by Armen Hovakimian, Edward J. Kane, and Luc Laeven. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Tracking Variation in Systemic Risk at US Banks During 1974-2013
+Armen Hovakimian, Edward J. Kane, and Luc Laeven
+NBER Working Paper No. 18043
+May 2012, Revised August 2015
+JEL No. G01,G21,G28
+ABSTRACT
+This paper proposes a theoretically based and easy-to-implement way to measure the systemic risk
+of financial institutions using publicly available accounting and stock market data. The measure models
+the credit enhancement taxpayers provide to individual banks in the Merton tradition (1974) as a combination
+put option for the deep tail of bank losses and a knock-in stop-loss call on bank assets. This model
+expresses the value of taxpayer loss exposure from a string of defaults as the value of this combination
+option written on the portfolio of industry assets. The exercise price of the call is the face value of
+the debt of the entire sector. We conceive of an individual bank’s systemic risk as its contribution
+to the value of this sector-wide option on the financial safety net. To the extent that authorities are
+slow to see bank losses or reluctant to exercise the call, the government itself becomes a secondary
+source of systemic risk. We apply our model to quarterly data over the period 1974-2013. The model
+indicates that systemic risk reached unprecedented highs during the financial crisis years 2008-2009,
+and that bank size, leverage, and asset risk are key drivers of systemic risk.
+Armen Hovakimian Luc Laeven
+Department of Economics and Finance Research Department
+Baruch College Zicklin School of Business European Central Bank
+1 Bernard Baruch Way Frankfurt am Main
+New York, NY 10010 GERMANY
+Armen_Hovakimian@baruch.cuny.edu Luc.Laeven@ecb.europa.eu
+Edward J. Kane
+2325 E Calle Los Altos
+Tucson, AZ 85718
+a n d NBER
+edward.kane@bc.edu
+
+Each new financial crisis intensifies efforts by policymakers and academics to improve
+strategies and protocols for monitoring and resolving losses at large, complex, and politically
+influential financial institutions. Key problems include the need to develop timely measures such
+as CoVar (Adrian and Brunnermier, 2008) and SRISK (Brownlee and Engel, 2015) that link the
+risk exposures undertaken by individual institutions to the risk of a breakdown in the financial
+system as a whole. This risk of breakdown is known as systemic risk.
+We follow Engle, Jondeau, and Rockinger (2012) in defining an individual bank’s
+systemic risk as its propensity to be undercapitalized when the financial system as a whole is
+undercapitalized. This definition allows us to include in the risk-generation process the channels
+through which regulation and supervision might mitigate or amplify this risk. It is well known
+that the existence of a safety net incentivizes banks to increase their exposure to ruinous losses,
+to under-reserve for these loss exposures, and to conceal such losses when they occur (Kane,
+1989; Demirguc-Kunt and Huizinga, 2004; and Skinner, 2008). Profit-driven safety net abuse is
+deeply implicated in modern financial crises (Rochet, 2008). Even though policymakers
+recognize the depth of this incentive problem and seek to monitor the regulatory arbitrage it
+produces, profit-maximizing managers are driven to extract value from financial safety net
+support in hard-to-observe ways.
+When tail risks drive a large, complex, or politically influential bank into insolvency, the
+difficulty of exercising the government’s call can transform safety-net management into a nasty
+game of chicken whose outcome generates bailout expense for taxpayers.1 When deep or
+widespread insolvencies emerge, fiscal and monetary authorities typically shift losses to
+1 This is essentially what is known popularly as the “too big to fail” problem.
+2
+
+taxpayers because it is the path of administrative and political least resistance (Honohan and
+Klingebiel, 2003; Veronesi and Zingales, 2010; Laeven and Valencia, 2013).
+Regulators such as Timothy Geithner argue that it is in society’s best interest to minimize
+the possibility of contagious defaults. As long as sovereign and cross-country credit support
+remains credible, authorities can prevent widespread substantial spillovers of actual defaults
+from taking place. This has led officials around the world to block actual defaults by
+“systemically important” firms. They have done this by guaranteeing such a firm’s access to
+credit even when difficulties it encountered in rolling over its liabilities strongly suggested that it
+had become economically insolvent.
+The goal of this paper is to propose a measure of systemic risk that is based in theory and
+easy to implement using publicly available financial and stock market data. Our methods are
+rooted in academic literature for modeling credit risk pioneered by Merton (1974). Merton
+models stockholder equity as a put option that stockholders write on firm assets. Merton (1977,
+1978), Marcus and Shaked (1984), Ronn and Verma (1986), Duan, Moreau and Sealey (1992)
+and others have adapted this approach to express the value of US deposit insurance as if it were a
+one-year put option written by the Federal Deposit Insurance Corporation (FDIC). In this paper,
+we build on this tradition, but reinterpret the losses to which banking-sector activity exposes
+taxpayers through the safety net as an implicit contra-liability that transfers responsibility for
+covering the losses of insolvent banks to taxpayers.
+To fashion a role for forbearance, we interpret this contra-liability as the value of the
+combination of a put option written on the losses that can be generated by a portfolio of
+aggregate bank assets with a call on these same bank assets whose exercise price equals the face
+3

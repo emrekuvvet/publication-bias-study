@@ -1,0 +1,122 @@
+NBER WORKING PAPER SERIES
+BANK QUALITY, JUDICIAL EFFICIENCY AND BORROWER RUNS:
+LOAN REPAYMENT DELAYS IN ITALY
+Fabio Schiantarelli
+Massimiliano Stacchini
+Philip E. Strahan
+Working Paper 22034
+http://www.nber.org/papers/w22034
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+February 2016
+The views expressed in this paper are those of the authors alone and do not necessarily represent
+those of the institutions with which they are affiliated, nor of the National Bureau of Economic
+Research. We are grateful to Massimiliano Affinito, Giorgio Albareto, Alberto Alesina,
+Francesco Columba, Riccardo De Bonis, Emilia Bonaccorsi di Patti, Francesco Giavazzi,
+Francesco Manaresi, Alfonso Rosolia and seminar participants at the Bank of Italy, Bocconi
+University, Boston College, University of Chicago, Georgia Tech, the University of Illinois at
+Champaign-Urbana, Notre Dame, Nova School of Business, the Bank of Portugal, SAIF,
+Tsinghua University and the University of Western Ontario for helpful comments. We also thank
+Ana Lariau Bolentini and Danilo Liberati for the helpful research assistance.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2016 by Fabio Schiantarelli, Massimiliano Stacchini, and Philip E. Strahan. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Bank Quality, Judicial Efficiency and Borrower Runs: Loan Repayment Delays in Italy
+Fabio Schiantarelli, Massimiliano Stacchini, and Philip E. Strahan
+NBER Working Paper No. 22034
+February 2016, Revised August 2016
+JEL No. G02
+ABSTRACT
+Exposure to liquidity risk makes banks vulnerable to runs from both depositors and from
+wholesale, short-term investors. This paper shows empirically that banks are also vulnerable to
+run-like behavior from borrowers who delay their loan repayments (default). Firms in Italy
+defaulted more against banks with high levels of past losses. We control for borrower
+fundamentals with firm-quarter fixed effects; thus, identification comes from a firm's choice to
+default against one bank versus another, depending upon their health. This `selective' default
+increases where legal enforcement is weak. Poor enforcement thus can create a systematic loan
+risk by encouraging borrowers to default en masse once the continuation value of their bank
+relationships comes into doubt.
+Fabio Schiantarelli Philip E. Strahan
+Department of Economics Carroll School of Management
+Boston College 324B Fulton Hall
+140 Commonwealth Avenue Boston College
+Chestnut Hill, MA 02467 Chestnut Hill, MA 02467
+and IZA and NBER
+schianta@bc.edu philip.strahan@bc.edu
+Massimiliano Stacchini
+Bank of Italy
+via Nazionale 91, 00184
+Roma, Italy
+massimiliano.stacchini@bancaditalia.it
+
+Bank Quality, Judicial E(cid:30)ciency and Borrower Runs:
+Loan Repayment Delays in Italy
+Fabio Schiantarelli∗, Massimiliano Stacchini†, Philip E. Strahan‡
+August 2016
+Abstract
+Exposure to liquidity risk makes banks vulnerable to runs from both depositors
+and from wholesale, short-term investors. This paper shows empirically that banks are
+also vulnerable to run-like behavior from borrowers who delay their loan repayments
+(default). FirmsinItalydefaultedmoreagainstbankswithhighlevelsofpastlosses. We
+control for borrower fundamentals with (cid:28)rm-quarter (cid:28)xed e(cid:27)ects; thus, identi(cid:28)cation
+comes from a (cid:28)rm’s choice to default against one bank versus another, depending upon
+their health. This ‘selective’ default increases where legal enforcement is weak. Poor
+enforcement thus can create a systematic loan risk by encouraging borrowers to default
+en masse once the continuation value of their bank relationships comes into doubt.
+1 Introduction1
+Under the traditional view of Diamond and Dybvig [1983], provision of liquidity insurance to
+households and (cid:28)rms exposes banks to the risk of a destructive run: depositors may demand
+∗Boston College and IZA
+†Bank of Italy
+‡Boston College & NBER
+1
+The views expressed in this paper are those of the authors alone and do not necessarily represent those
+oftheinstitutionswithwhichtheyarea(cid:30)liated. WearegratefultoMassimilianoA(cid:30)nito,GiorgioAlbareto,
+Alberto Alesina, Francesco Columba, Riccardo De Bonis, Emilia Bonaccorsi di Patti, Francesco Giavazzi,
+Francesco Manaresi, Alfonso Rosolia and seminar participants at the Bank of Italy, Bocconi University,
+BostonCollege, UniversityofChicago, GeorgiaTech, theUniversityofIllinoisatChampaign-Urbana, Notre
+Dame, Nova School of Business, the Bank of Portugal, SAIF, Tsinghua University and the University of
+Western Ontario for helpful comments. We also thank Ana Lariau Bolentini and Danilo Liberati for the
+helpful research assistance.
+1
+
+cash solely because they expect others to do the same. In the aftermath of the (cid:28)nancial and
+sovereign debt crises, these old-style depositor runs have been the exception rather than the
+rule.2 But even in these modern crises, we have seen panic-motivated instances of drying up
+of wholesale, short-term debt markets, and increases in collateral demands in asset-backed
+commercial paper and repo markets.3 These episodes, often called ‘runs on the shadow
+banking system in the US’, create similar pressures on banks as traditional depositor runs,
+making it hard for them to fund new loans and raising the likelihood that (cid:28)re sales of old
+ones can cause insolvency. Similar liquidity pressures from the asset-side of banking emerged
+following the collapse of Lehman, as (cid:28)rms drew down credit lines at banks perceived to be
+more likely to restrict access to future liquidity.4
+Both the traditional literature as well as recent studies of (cid:28)nancial crises emphasize
+liquidity as the key risk that makes banks uniquely vulnerable. This framework rationalizes
+a host of government interventions such as deposit insurance schemes and lenders of last
+resort, as well as necessary but potentially distortive regulations on bank risk taking, capital
+structure and liquidity exposure (e.g. Basel I, II and III).
+In this paper, we show that banks face a second source of vulnerability, one stemming
+from borrowers rather than from demanders of liquidity. Using data from Italy leading up
+to and following the Euro crisis, we provide evidence that bank instability can stem from
+credit risk. The link between credit risk and bank stability is well known: history tells us
+that waves of bank failures are often traceable to borrower losses and declines in the value
+of loans.5 However, we highlight a new channel through which credit risk enhances bank
+fragility. We show that borrowers selectively default against banks already weakened by past
+bad loans; borrowers thus seem to default because they observe other borrowers doing so.
+2
+Exceptions include the withdrawals of deposits from Northern Rock at the beginning of the (cid:28)nancial
+crisis, and the more recent withdrawals of deposits from Greek banks during the negotiations with their
+creditors.
+3
+See Freixas, Laeven, and Peydro [2015] and Gorton and Metrick [2012].
+4
+See Ivashina and Scharfstein [2010], Cornett et al. [2011], and Ippolito et al. [2015].
+5
+The principles for appropriate management of credit risk are also a long-lasting topic of debate for
+regulators (e.g Basel I, II, III).
+2

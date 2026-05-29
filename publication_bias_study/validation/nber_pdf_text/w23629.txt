@@ -1,0 +1,154 @@
+NBER WORKING PAPER SERIES
+CONTAGION DURING THE INITIAL BANKING PANIC OF THE GREAT DEPRESSION
+Erik Heitfield
+Gary Richardson
+Shirley Wang
+Working Paper 23629
+http://www.nber.org/papers/w23629
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2017
+The paper does reflects the opinions of the authors and does not necessarily represent the views
+of the Board of Governors or the Federal Reserve System or the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2017 by Erik Heitfield, Gary Richardson, and Shirley Wang. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that
+full credit, including © notice, is given to the source.
+
+Contagion During the Initial Banking Panic of the Great Depression
+Erik Heitfield, Gary Richardson, and Shirley Wang
+NBER Working Paper No. 23629
+July 2017
+JEL No. C11,C23,C41,E02,N1,N12,N2,N22
+ABSTRACT
+The initial banking crisis of the Great Depression has been the subject of debate. Some scholars
+believe a contagious panic spread among financial institutions. Others argue that suspensions
+surged because fundamentals, such as losses on loans, drove banks out of business. This paper
+nests those hypotheses in a single econometric framework, a Bayesian hazard rate model with
+spatial and network effects. New data on correspondent networks and bank locations enables us
+to determine which hypothesis fits the data best. The best fitting models are ones incorporating
+network and geographic effects. The results are consistent with the description of events by
+depression-era bankers, regulators, and newspapers. Contagion - both interbank and spatial -
+propelled a panic which healthy banks survived but which forced illiquid and insolvent banks out
+of operations.
+Erik Heitfield Shirley Wang
+Risk Analysis Section Cornell University
+Division of Research and Statistics Graduate School of Business
+Federal Reserve Board of Governors scw79@cornell.edu
+20th Street and Constitution Avenue, NW
+Washington, DC 20551
+erik.a.heitfield@frb.gov
+Gary Richardson
+Department of Economics
+University of California, Irvine
+3155 Social Sciences Plaza
+Irvine, CA 92697-5100
+and NBER
+garyr@uci.edu
+
+Contagion During the Initial Banking Panic of the Great
+Depression: November and December, 1930
+Erik Heitfield, Gary Richardson, and Shirley Wang
+November 1, 2010
+Abstract
+The initial banking crisis of the Great Depression has been the subject of debate. Some
+scholars believe a contagious panic spread among financial institutions. Others argue that
+suspensions surged because fundamentals, such as losses on loans, drove banks out of business.
+This paper nests those hypotheses in a single econometric framework, a Bayesian hazard rate
+modelwithspatialandnetworkeffects. Newdataoncorrespondentnetworksandbanklocations
+enables us to determine which hypothesis fits the data best. The best fitting models are ones
+incorporting network and geographic effects. The results are consistent with the description of
+events by depression-era bankers, regulators, and newspapers. Contagion - both interbank and
+spatial-propelledapanicwhichhealthybankssurvivedbutwhichforcedilliquidandinsolvent
+banks out of operations.
+1 Introduction
+During financial crises, optimal policies depend upon the nature of events. If contagion transmits
+illiquidityfromoneinstitutiontothenext,theninjectingresourcesintothesystemcanyieldbenefits
+far in excess of costs (Bernanke (1983), Diamond and Dybvig (1983), Diamond and Rajan (2005),
+Diamond and Rajan (2006)). In contrast, if falling asset values force institutions into insolvency,
+pumpingfundsintothefinancialsystemmaysustainzombiebanksandamplifyproblems. Determin-
+ingwhethercontagionoccursis,therefore,akeyfordeterminingoptimalpoliciesandunderstanding
+historical events.
+Economists studying financial crises, however, disagree about the existence and nature of con-
+tagion, even for events that have been observed by experts and studied extensively, such as the
+financial crisis of 2008 and the banking turmoil of the Great Depression. The Depression’s initial
+crisis occurred during the fall of 1930, when the United States economy appeared to be recovering
+from a short, sharp contraction following the stock market crash. The initial crisis marked the
+point when macroeconomic time series, such as the money stock, price level, industrial production,
+and retail sales, began plunging toward the nadir reached two years later (Friedman and Schwartz
+(1963)).
+Conclusions concerning the banking crisis in the fall of 1930 fall into three schools of thought.
+One, the crisis occurred because the real economy contracted. Asset prices fell. Loan default rates
+rose. Insolvency forced banks out of business. Contagion played little or no role in event (Temin
+(1976), White (1984)). Two, the crisis occurred because depositors panicked, perhaps as an over-
+reaction to the failure of the Bank of United States, one of the largest commercial banks in New
+York. Heavy withdrawals forced banks into receivership. The Federal Reserve could have eased the
+crisis by acting as a lender of last resort (Friedman and Schwartz (1963), Richardson and Troost
+(2010)). Three, the crisis began with the failure of Caldwell and Company, the largest bank holding
+companyintheSouth,locatedinNashville,Tennessee,butwithsubsidiariesinseveralnearbystates.
+The crisis initially spread through interbank networks extending from the Caldwell conglomerate.
+Later, runs on banks radiated geographically from the vicinity of counterparty cascades (McFerrin
+(1939), Richardson (2007), Wicker (1980)).
+The debate remains unresolved for several reasons. Scholars lack data about paths of contagion,
+such as interbank relationships and proximity to panics, and data from the balance sheets of most
+1
+
+of the banks caught up in the crisis. Scholars have yet to employ methods that nest the various
+hypothesesinasingleempiricalframework,whichcanbeusedtoseewhichbestfitsthedata. Given
+current data and techniques, predictions of pertinent theories appear observationally equivalent,
+preventing scholars from distinguishing fact from fiction.
+Thisessayrelaxesthoseconstraints. Newdatadescribethebalancesheetsofbanksinstatesnear
+thecenterofthecrisis. Thedataindicatewhereeachbankoperatedandcorrespondentrelationships
+among banks (i.e. ongoing financial interactions facilitated by deposits of funds). Documents from
+the archives of the Federal Reserve describe what happened to each bank during the crisis (liquida-
+tion,temporarysuspension,runbydepositors,etcetera)andallotherchangesofstatus(e.g. merger,
+voluntary liquidation) that the banks experienced during the depression. A Bayesian hazard model
+of bank suspensions incorporating that information enables the estimation of network and spatial
+effects. Network effects illuminate contagion via interbank relationships. Spatial effects illuminate
+contagion when depositors panic in the vicinity of banks that failed. Data on bank balance sheets
+and the environments in which banks operated enables us to distinguish, as far as possible, between
+liquidity and asset shocks.
+Our econometric results indicate that contagion occurred during the initial banking crisis of the
+GreatDepression. Contagionflowedthroughinterbankchannels, butquicklybecamegeographic, as
+depositorspanickedinthevicinityofinstitutionsthatfailed. Theseshocks,onaverage,forcedweaker
+banks out of business, generating a correlation between outcomes and balance-sheet characteristics
+such as leverage, liquidity, and net worth. Contagion explains some, but not necessarily all, of the
+tight clustering of failures in time and space.
+Our results suggest that simple dichotomies that attribute bank failures primarily to either
+liquidity shocks or asset shocks are insufficiently nuanced to explain why banks failed, and why
+failures tended to be clustered in time and space. Banks that were less well capitalized and/or held
+lessliquidassetspriortothecrisisdidfailinlargernumbers,butsodidbanksthathadcounterparty
+relationships with or loacted near failed banks . Liquidity and asset shocks interacted. Panics force
+banks to convert assets to cash quickly and at some loss. Runs targeted banks that depositors
+believe have lost or anticipate will lose resources due to declining asset values. Depositors also act
+strategically,andwithdrewfundsfrominstitutionswhenitappearedthatotherdepositorsaredoing
+so. Statistical analysis rules out some, but not all, possible scenarios. In sum, statistical evidence
+indicatescontagionplayedaprominentroleduringtheinitialbankingpanicoftheGreatDepression,
+but given current capabilities, interpretation of the event still depends, in part, on the prior beliefs
+of researchers.
+2 Background
+2.1 Data Sources
+The data examined in this analysis come from several sources. Rand McNally Bankers’ Directory
+describesbankbalancesheets,correspondentrelationships,andcharacteristics. Observationsdrawn
+from the July issue provide a panel of annual observations on state and national banks at their
+spring calls. The United States censuses of agriculture, manufacturing, and population describe the
+characteristics of counties. This data can be downloaded from the Inter-university Consortium for
+PoliticalandSocialResearch(ICPSR)StudyNumber3. Dun’sReview,theFederalReserveBulletin,
+and Banking and Monetary Statistics provide time-series data on the aggregate economy.
+Documents from the archives of the Federal Reserve Board describe changes in bank status.
+Form St. 6386b from the Division of Bank Operations reports the incidence and cause of each bank
+suspension. The reports distinguish between temporary and permanent suspensions. A temporary
+suspension occurred when a bank closed its doors to depositors for at least one business day and
+laterresumedoperations. Permanentsuspensions, whichwerefertoasliquidations, werethesubset
+of suspensions in which banks ceased operations, surrendered charters, and repaid creditors under
+theauspicesof acourt-appointed receiver. FormSt. 6386a reportschanges inbank statusincluding
+voluntary liquidations and reopenings of suspended banks. Form St. 6386c reports consolidations
+of banks.1
+1TheserecordsresideinRecordGroup82,“CentralSubjectFileoftheFederalReserveBoardofGovernors,1913-
+1954,”NationalArchivesandRecordsAdministration,CollegePark,Maryland. Fordetaileddescriptionsofthisdata,
+seeRichardson(2006,2007a,2007b,and2008).
+2

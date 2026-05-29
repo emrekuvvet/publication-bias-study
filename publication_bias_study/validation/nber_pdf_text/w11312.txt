@@ -1,0 +1,134 @@
+NBER WORKING PAPER SERIES
+REAL-TIME PRICE DISCOVERY IN STOCK,
+BOND AND FOREIGN EXCHANGE MARKETS
+Torben G. Andersen
+Tim Bollerslev
+Francis X. Diebold
+Clara Vega
+Working Paper 11312
+http://www.nber.org/papers/w11312
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2005
+This work was supported by the National Science Foundation, the Guggenheim Foundation, and the BSI
+Gamma Foundation. For useful comments we thank seminar participants at the Bank for International
+Settlements, the 2003 BSI Gamma Conference, the 2004 Symposium of the European Central Bank / Center
+for Financial Studies Research Network, the October 2004 meeting of the NBER International Finance and
+Macroeconomics program, and the 2005 American Economic Association Annual Meeting, as well as Rui
+Albuquerque, Annika Alexius, Boragan Aruoba, Anirvan Banerji, Ben Bernanke, Robert Connolly, Jeffrey
+Frankel, Lingfeng Li, Richard Lyons, Marco Pagano, Paolo Pasquariello, and Neng Wang. The views
+expressed herein are those of the author(s) and do not necessarily reflect the views of the National Bureau
+of Economic Research.
+©2005 by Torben G. Andersen, Tim Bollerslev, Francis X. Diebold, and Clara Vega. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission provided
+that full credit, including © notice, is given to the source.
+
+Real-Time Price Discovery in Stock, Bond and Foreign Exchange Markets
+Torben G. Andersen, Tim Bollerslev, Francis X. Diebold, and Clara Vega
+NBER Working Paper No. 11312
+May 2005
+JEL No. F3, F4, G1, C5
+ABSTRACT
+We characterize the response of U.S., German and British stock, bond and foreign exchange markets
+to real-time U.S. macroeconomic news. Our analysis is based on a unique data set of high-frequency
+futures returns for each of the markets. We find that news surprises produce conditional mean jumps;
+hence high-frequency stock, bond and exchange rate dynamics are linked to fundamentals. The
+details of the linkages are particularly intriguing as regards equity markets. We show that equity
+markets react differently to the same news depending on the state of the U.S. economy, with bad
+news having a positive impact during expansions and the traditionally-expected negative impact
+during recessions. We rationalize this by temporal variation in the competing "cash flow" and
+"discount rate" effects for equity valuation. This finding also helps explain the apparent time-varying
+correlation between stock and bond returns, and the relatively small equity market news
+announcement effect when averaged across expansions and recessions. Hence, while our results
+confirm previous unconditional rankings suggesting that bond markets almost uniformly react most
+strongly to macroeconomic news, followed by foreign exchange and then equity markets, importantly
+when conditioning on the state of the economy the foreign exchange and equity markets appear
+equally responsive. Lastly, relying on the pronounced heteroskedasticity in the new high-frequency
+data, we also document important contemporaneous linkages across all markets and countries over-
+and-above the direct news announcement effects.
+Torben G. Andersen Francis X. Diebold
+Kellogg School of Management Department of Economics
+Northwestern University University of Pennsylvania
+2001 Sheridan Road 3718 Locust Walk
+Evanston, IL 60208 Philadelphia, PA 19104-6297
+and NBER and NBER
+t-andersen@kellogg.nwu.edu fdiebold@sas.upenn.edu
+Tim Bollerslev Clara Vega
+Department of Economics Department of Finance
+Duke University University of Rochester
+Box 90097 Rochester, NY 14627
+Durham, NC 27708-0097 vega@simon.rochester.edu
+and NBER
+boller@econ.duke.edu
+
+1. Introduction
+How do markets arrive at prices? There is perhaps no question more central to economics. This
+paper focuses on price formation in financial markets, where the question looms especially large: How, if
+at all, is news about macroeconomic fundamentals incorporated into stock prices, bond prices and foreign
+exchange rates?
+Unfortunately the process of price discovery in financial markets remains poorly understood.
+Traditional “efficient markets” thinking suggests that asset prices should completely and instantaneously
+reflect movements in underlying fundamentals. Conversely, several prominent authors have recently
+gone so far as to assert that asset prices and fundamentals may be largely and routinely disconnected.
+Experiences such as the late 1990s U.S. technology-driven market bubble would seem to support that
+view, yet simultaneously it seems clear that financial market participants pay a great deal of attention to
+data on underlying economic fundamentals. The notable difficulty of empirically mapping the links
+between economic fundamentals and asset prices is indeed striking.
+The central price-discovery question has many dimensions and nuances, including but not limited
+to the following. How quickly, and with what patterns, do adjustments to news occur? Does
+announcement timing matter? Are the magnitudes of effects similar for “good news” and “bad news,” or,
+for example, do markets react more vigorously to bad news than to good news? Quite apart from the
+direct effect of news on assets prices, what is its effect on financial market volatility? Do the effects of
+news on prices and volatility vary across assets and countries, and what are the links? Are there readily
+identifiable herd behavior and/or contagion effects? Do news effects vary over the business cycle?
+Just as the central question of price discovery has many dimensions and nuances, so too does a
+full answer. In this paper we progress by characterizing the simultaneous response of foreign exchange
+markets as well as the domestic and foreign stock and bond markets to real-time U.S. macroeconomic
+news. More precisely, we seek to better understand the links between asset prices and fundamentals by
+simultaneously combining: (1) high-quality and ultra-high frequency asset price data across markets and
+countries, which allows us to study price movements in (near) continuous time; (2) synchronized survey
+data on market participants’ expectations, which allow us to infer “surprises” or “innovations” when news
+is announced; and (3) advances in statistical modeling of volatility, which facilitate efficient inference.
+By so doing, we can probe the workings of the marketplace in new and powerful ways, focusing on
+episodes where the source of price movements is well identified, leading to a high signal-to-noise ratio.
+We proceed as follows. In Section 2 we provide background by situating our paper in the
+existing literature. In Section 3 we describe our data, and in Section 4 we present our new empirical
+-1-
+
+findings. We conclude in section 5. In the Appendix we sketch a stylized multi-country monetary model
+that provides a simple theoretical benchmark and useful guidance for interpreting our empirical results.
+2. Background and Related Literature
+Our work speaks to three related but distinct literatures. The first examines the links between
+asset prices and macroeconomic fundamentals as embodied in news announcement effects, the second
+examines the links among domestic asset markets, and the third examines the link among various
+domestic and foreign asset markets. We set the stage by discussing selected aspects of each.
+Asset Prices and Macroeconomic Announcement Effects
+The literature contains many empirical studies seeking to link the effects of macroeconomic
+announcements to movements in stock, bond and foreign exchange returns. While the first generation
+studies relied on daily, or even weekly or monthly data, the more recent literature has moved toward the
+use of more finely-sampled intraday data.1 Typically, however, each market is examined in isolation.
+Recent examples include Fleming and Remolona (1997, 1999), Balduzzi, Elton and Green (2001),
+Bollerslev, Cai and Song (2000), Green (2004), Hautsch and Hess (2002), Kuttner (2001), Li and Engle
+(1998) who study bond markets; Bernanke and Kuttner (2005) and Kuttner (2004), Bomfim (2003),
+Boyd, Jagannathan and Hu (2005), Goto and Valkanov (2002), and Flannery and Protopapadakis (2002)
+who study equity markets; and Andersen and Bollerslev (1998), Andersen, Bollerselev, Diebold and Vega
+(henceforth ABDV, 2003), Almeida, Goodhart and Payne (1998), Chaboud, Chernenko, Howorka, Iyer,
+Liu and Wright (2004), and Galati and Ho (2003) who study foreign exchange markets.2
+Most theories predict an unambiguous link between macroeconomic fundamentals and the bond
+market, with unexpected increases in real activity and inflation raising bond yields (lowering prices).
+1 The first generation of exchange rate “news” studies focused primarily on money supply announcements. For
+example, Engel and Frankel (1984), Cornell (1983), Frankel and Hardouvelis (1985) and Tandon and Urich (1987)
+all associate positive U.S. money surprises with appreciations of the dollar and increases in nominal interest rates.
+Also, Ito and Roley (1987) find that across a set of U.S. and Japanese macroeconomic announcements, U.S. money
+announcements have the greatest impact. For a fine survey of this literature, see Frankel and Rose (1995).
+Similarly, the first generation of bond market “news” studies was primarily concerned with money supply
+announcements; e.g., Grossman (1981), Urich and Wachtel (1981), and Roley and Walsh (1985). The first
+generation of equity market “news” studies, as exemplified by Schwert (1981), Pearce and Roley (1985),
+Hardouvelis (1987), and Cutler, Poterba and Summers (1989), also report that with the possible exception of money
+supply figures, macroeconomic news announcements generally do not affect stock prices.
+2 Two recent notable exceptions to this single market approach are Fair (2003) who examines the joint movements
+in stock, bond and foreign exchange markets around big market moves, typically associated with macroeconomic
+announcements, and Faust, Rogers, Wang and Wright (2003) who estimate the response of different maturity interest
+rates, exchange rates, and deviations from uncovered interest rate parity (UIP) to macroeconomic news.
+-2-

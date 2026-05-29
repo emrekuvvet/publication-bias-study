@@ -1,0 +1,147 @@
+NBER WORKING PAPER SERIES
+THE FRAGILITY OF MARKET RISK INSURANCE
+Ralph Koijen
+Motohiro Yogo
+Working Paper 24182
+http://www.nber.org/papers/w24182
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+January 2018, Revised March 2022
+A.M. Best Company, Morningstar, and the NAIC own the copyright to their respective data,
+which we use with permission under their license agreements with Princeton University. This
+paper is based upon work supported by the National Science Foundation grant 1727049 and the
+Julis-Rabinowitz Center for Public Policy and Finance. Koijen acknowledges financial support
+from the Center for Research in Security Prices at the University of Chicago. We thank Adam Xu
+and Zhen Ye for assistance on constructing data from Morningstar Annuity Intelligence. We
+thank Don Noh, Jihong Song, and Haiyue Yu for proofreading. For comments and discussions,
+we thank Naoki Aizawa, Mark Flannery, Victoria Ivashina, Arvind Krishnamurthy, Emanuel
+M¨onch, Borghan Narajabad, Theo Nijman, Anna Paulson, Richard Rosen, and Donghwa Shin.
+We also thank seminar participants at Banque de France; Boston University; Federal Reserve
+Bank of Minneapolis; Federal Reserve Board; Michigan State University; NYU; Ohio State
+University; Princeton University; Temple University; UC Berkeley; UCLA; University of
+Chicago; University of Cincinnati; University of Delaware; University of Maryland; University
+of Michigan; University of Nebraska; UNC; University of South Carolina; UT Austin; UVA;
+Derivatives and Volatility 2017: The State of the Art; the 2017 DNB/Riksbank Macroprudential
+Conference; the 2017 SITE Workshop on Financial Regulation; the 2017 NBER Conference on
+Financial Market Regulation; the 2017 ICPM-Netspar Discussion Forum; the 2017 IMF
+Conference on Monetary, Financial, and Prudential Policy Interactions in the Post-Crisis World;
+the 2017 NBER Insurance Meeting; and the 2018 Macroeconomics of Pensions and Retirement
+Financing Conference. This paper is based upon work supported by the National Science
+Foundation under grant 1727049 and the Julis-Rabinowitz Center for Public Policy and Finance.
+Koijen acknowledges financial support from the Center for Research in Security Prices at the
+University of Chicago and the Fama Research Fund at the University of Chicago Booth School of
+Business. The authors have no conflicts of interest to disclose as defined by the Journal of
+Finance’s disclosure policy. The views expressed herein are those of the authors and do
+not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2018 by Ralph Koijen and Motohiro Yogo. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+The Fragility of Market Risk Insurance
+Ralph Koijen and Motohiro Yogo
+NBER Working Paper No. 24182
+January 2018, Revised March 2022
+JEL No. G22,G32
+ABSTRACT
+Variable annuities, which package mutual funds with minimum return guarantees over long
+horizons, accounted for $1.5 trillion or 35% of U.S. life insurer liabilities in 2015. Sales
+decreased and fees increased during the global financial crisis, and insurers made guarantees less
+generous or stopped offering guarantees to reduce risk exposure. These effects persist in the low
+interest rate environment after the global financial crisis, and variable annuity insurers suffered
+large equity drawdowns during the COVID-19 crisis. We develop and estimate a model of
+insurance markets in which financial frictions and market power determine pricing, contract
+characteristics, and the degree of market completeness.
+Ralph Koijen
+University of Chicago
+Booth School of Business
+5807 S Woodlawn Ave
+Chicago, IL 60637
+and NBER
+Ralph.koijen@chicagobooth.edu
+Motohiro Yogo
+Department of Economics
+Princeton University
+Julis Romo Rabinowitz Building
+Princeton, NJ 08544
+and NBER
+myogo@princeton.edu
+
+The traditional role of life insurers is to insure idiosyncratic risk through products like life
+annuities, life insurance, and health insurance. With the secular decline of private defined
+benefit and government pension plans around the world, life insurers are increasingly taking
+ontheroleofinsuring marketriskthroughminimumreturnguarantees. IntheUnitedStates,
+life insurers sell retail financial products called variable annuities that package mutual funds
+with minimum return guarantees over long horizons. Variable annuities have grown to be the
+largest category of life insurer liabilities, larger than fixed annuities and life insurance, and
+accountedfor$1.5trillionor35%ofU.S.lifeinsurerliabilitiesin2015. Variableannuitiesalso
+represent an important share of the mutual fund sector because the underlying investments
+are mutual funds.
+Thelargesize ofthevariableannuity market reflects itsimportanceforhouseholdwelfare.
+In theory, minimum return guarantees could facilitate efficient risk sharing across heteroge-
+neous agents (Dumas (1989);Chan and Kogan(2002)) or overlapping generations (Allen and
+Gale (1997); Ball and Mankiw (2007)). Investors cannot easily replicate minimum return
+guarantees because traded options have shorter maturity and model uncertainty exposes in-
+vestors to basis risk in a dynamic hedging program. Therefore, insurers complete a missing
+market for long-maturity options by offering minimum return guarantees over long horizons.
+From the insurers’ perspective, minimum return guarantees are difficult to price and
+hedge because traded options have shorter maturities. Imperfect hedging leads to risk mis-
+match that stresses risk-based capital when the valuation of existing liabilities increases with
+a falling stock market, falling interest rates, or rising volatility. During the global financial
+crisis, many insurers including Aegon, Allianz, AXA, Delaware Life, John Hancock, and
+Voya suffered large increases in variable annuity reserves ranging from 27% to 125% of to-
+tal equity. In June 2009, Hartford was bailed out by the Troubled Asset Relief Program
+because of significant losses on their variable annuity business.1 Risk mismatch between
+general account assets and minimum return guarantees leads to negative duration and neg-
+ative convexity for the overall balance sheet, which pose a challenge for insurers in the low
+interest rate environment after the global financial crisis. Consequently, the stock returns
+of U.S. life insurers have significantly negative exposure to long-term bond returns after the
+global financial crisis (Hartley, Paulson, and Rosen (2017)).
+The COVID-19 crisis has again exposed the fragility of variable annuity insurers, which
+suffered among the lowest stock returns in the overall financial sector that includes banking.
+From January 2 to April 2, 2020, the equity drawdown, which is the maximum decrease
+1Other examples of risk mismatch due to minimum return guarantees include the financial distress of
+Japanese life insurers in the 1990s (Kashyap (2002)) and the failure of Equitable Life in 2000 (Roberts
+(2012)).
+2
+
+in the cumulative stock return, was −51% for a value-weighted portfolio of U.S. variable
+annuity insurers. AIG, Brighthouse Financial, and Lincoln National suffered the largest
+equity drawdowns, each exceeding −65%. The equity drawdown on variable annuity insurers
+was substantially larger than −34% for the S&P 500 index and −43% for the subset of
+financial sector stocks in the S&P 500 index. To put the pain of variable annuity insurers
+into perspective, the equity drawdown on the airline industry was −62%.
+Given their size and potential risk, variable annuities are essential to understanding the
+insurance sector more broadly. To this end, we construct a new and comprehensive panel
+data set on the variable annuity market at the contract level. The data contain quarterly
+sales, fees, and contract characteristics from 1999:1 (first quarter) to 2015:4 (fourth quarter).
+We combine these data with the insurers’ annual financial statements from 2005 to 2015,
+which contain information about the value of variable annuity liabilities and the share of
+these liabilities that are reinsured. The data provide a detailed account of how the variable
+annuity market has evolved over time as the changing valuation and risk exposure of existing
+liabilities affected the insurers’ financial strength.
+Quarterlysalesofvariableannuities grewrobustlyfrom$22billionin2005:1to$41billion
+in 2007:4 and then decreased to $27 billion in 2009:2. At the same time, the average annual
+fee on contracts with minimum return guarantees increased from 2.04% of account value
+in 2007:4 to 2.38% in 2009:2, suggesting an important role for a supply shock. After the
+globalfinancialcrisis, insurers madetheminimum returnguarantees less generousorstopped
+offering guarantees to reduce risk exposure. The share of contracts with minimum return
+guarantees decreased from 36% in 2007:4 to 20% in 2011:4. In the cross section of insurers,
+sales decreased more for insurers that suffered larger increases in the valuation of existing
+liabilities. These insurers moved their variable annuity reserves off balance sheet through
+reinsurance, consistent with the importance of a risk-based capital constraint (Koijen and
+Yogo (2016)).
+To interpret this evidence, we develop a model of insurance markets in which financial
+frictions and market power are important determinants of pricing, contract characteristics,
+and the degree of market completeness. Insurers compete in an oligopolistic market by
+choosing the fee and the rollup rate, where the latter is a key contract characteristic that
+is equivalent to the strike price of a put option. Required capital increases in the rollup
+rate because of a risk-based capital or an economic risk constraint. An adverse shock to
+the valuation of existing liabilities increases the shadow cost of capital and drives up the
+marginal cost of issuing contracts. The insurer reduces risk exposure by not only raising the
+fee but also by reducing the rollup rate. When the shadow cost of capital is sufficiently high,
+the insurer stops offering minimum return guarantees to avoid additional risk exposure.
+3

@@ -1,0 +1,120 @@
+NBER WORKING PAPER SERIES
+THE SHORTING PREMIUM AND ASSET PRICING ANOMALIES
+Itamar Drechsler
+Qingyi Freda Drechsler
+Working Paper 20282
+http://www.nber.org/papers/w20282
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2014
+We thank Malcolm Baker, Rabih Moussawi, Stijn Van Nieuwerburgh, Wenlan Qian, Alexi Savov,
+Robert Whitelaw, and seminar participants at Cubist Systematic Strategies for their comments. The
+views expressed herein are those of the authors and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2014 by Itamar Drechsler and Qingyi Freda Drechsler. All rights reserved. Short sections of text,
+not to exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+The Shorting Premium and Asset Pricing Anomalies
+Itamar Drechsler and Qingyi Freda Drechsler
+NBER Working Paper No. 20282
+July 2014
+JEL No. G1,G11,G12,G14,G23
+ABSTRACT
+Short-rebate fees are a strong predictor of the cross-section of stock returns, both gross and net of fees.
+We document a large "shorting premium": the cheap-minus-expensive-to-short (CME) portfolio of
+stocks has a monthly average gross return of 1.43%, a net return of 0.91%, and a 1.53% four-factor
+alpha. We show that short fees interact strongly with the returns to eight of the largest and most well-known
+cross-sectional anomalies. The anomalies effectively disappear within the 80% of stocks that have
+low short fees, but are greatly amplified among those with high fees. We propose a joint explanation
+for these findings: the shorting premium is compensation for the concentrated short risk borne by the
+small fraction of investors who do most shorting. Because it is on the short side, it raises prices rather
+than lowers them. We proxy for this short risk using the CME portfolio return and demonstrate that
+a Fama-French + CME factor model largely captures the anomaly returns among both high- and low-fee
+stocks.
+Itamar Drechsler
+Stern School of Business
+New York University
+44 West Fourth Street, 9-120
+New York, NY 10012
+and NBER
+itamar.drechsler@stern.nyu.edu
+Qingyi Freda Drechsler
+Wharton Research Data Services
+Wharton School
+University of Pennsylvania
+3819 Chestnut Street Suite 300A
+Philadelphia PA 19104
+qsong@wharton.upenn.edu
+
+1 Introduction
+Asset pricing theory has long recognized that if an asset cannot be sold short then it may
+become overpriced, because investors who think it is overvalued are prevented from selling
+it (Miller, 1977). However, in practice U.S. equities are not typically subject to short-sales
+prohibitions. Arbitrageurs can sell shares short by borrowing them in the stock loan market.
+The price for doing so is a fee, or rebate, paid by the borrower to the lender (henceforth
+the “shorting fee”). There are at least two reasons why the shorting fee should contain
+information about the returns on the stock. The first is straightforward: the fee represents a
+payment stream that the stock owner can earn by lending the stock. The second is indirect:
+the shorting fee embeds information about the underlying demand to short the stock, a
+potentially important determinant of the stock’s expected return.
+In this paper, we demonstrate that shorting fees are highly predictive of the cross-section
+of stock returns. Our analysis is presented in two parts. In the first part, we show that
+low short-fee stocks earn much higher returns than high short-fee stocks. This is true for
+returns measured both gross and net of shorting fees. Moreover, the difference in returns is
+not explained by exposures to conventional risk factors. We call this difference in average
+returns the “shorting premium”, because it represents the extra return earned by investors
+for shorting high short-fee stocks.
+In the second part of the paper we show that there is a strong interaction between
+shorting fees and the returns to eight well-known, large cross-sectional return anomalies.
+Specifically, we show that these anomalies effectively disappear or are dramatically weakened
+among low-fee stocks, which represent 80% of all stocks and a higher fraction still of total
+market capitalization. In contrast, the anomalies are highly amplified among high-fee stocks,
+generating long-short portfolio returns that are very large even by the standards of the
+anomaly literature. Our findings show that shorting fees are instrumental to understanding
+the structure of these anomalies’ returns.
+We propose an explanation of these findings in which shorting high-fee stocks earns a
+large return because the risk involved in this is concentrated among a narrow subgroup of
+investors, an assumption that appears to be met in practice. Consistent with the theory, we
+demonstrate that augmenting the conventional four-factor model with a shorting risk factor,
+a portfolio long low-fee stocks and short high-fee stocks, allows it to explain much of, and
+in many cases all of, the average returns to these anomalies among both low- and high-fee
+1
+
+stocks.
+We begin by examining the distribution of short fees across stocks and the stock charac-
+teristicsassociatedwithhighshort-fees. Previousstudiesutilizingshortingfeeshavetypically
+depended on datasets obtained from an individual participating institution in the stock loan
+market (D’Avolio (2002), Geczy, Musto and Reed (2002), Ofek, Richardson, and Whitelaw
+(2004), Cohen, Diether, and Malloy (2007)), and were consequently limited in terms of time
+series and cross-sectional coverage.1 We make use of a new database that aggregates data
+from a large number of participants in the stock loan market and covers over 95% of US eq-
+uities in the CRSP database. Moreover, compared to earlier studies our sample is quite long,
+spanning 2004-2012, which gives us enough power to study differences in expected returns.
+We sort stocks into deciles based on their shorting fee at the end of each month. For
+each of the top eight deciles the average shorting fee is below 32 bps per annum, indicating
+that 80% of stocks are quite cheap to short. The stocks in the ninth decile are moderately
+expensive to short (75 bps per annum on average), while those in the tenth decile are quite
+expensive to short, with an average fee of 568 per annum. The aggregate market capitaliza-
+tions of the expensive-to-short stocks are economically large: the average total market caps
+of the ninth and tenth deciles are roughly $1.1 trillion and $435 billion over the sample.
+We examine the average returns on these decile portfolios over the following month. The
+average returns are flat across the eight cheap-to-short deciles, but drop precipitously in the
+ninth and tenth deciles. The average return on the tenth decile is -0.68% per month! The
+average return on a portfolio long the stocks in the first decile and short the stocks in the
+tenth decile–the cheap-minus-expensive (CME) portfolio–is a whopping 1.43% per month,
+andhighlysignificant(t-stat4.99)despitetheshortsample. Thislargeaveragereturncannot
+be explained by differential exposures to the conventional four Fama-French factors, as the
+CME portfolio’s four-factor (FF4) alpha is 1.53% (t-stat 7.06). The return difference is
+even larger for the upper half of stocks in the decile ten portfolio (the “10b” portfolio): the
+cheap-minus-10b portfolio has a mean return of 2.14% per month and a 2.28% alpha.
+The difference in returns is not accounted for by the shorting fees themselves. We doc-
+ument that the difference in net returns, while clearly smaller, remains very large. The
+average net return on the decile 10 stocks is -0.16% per month, the average net return of the
+CME portfolio is a highly significant 0.91% per month, and the cheap-minus-10b portfolio’s
+1TheUSstockloanmarketisdecentralizedandover-the-counter,whichmakesdatacollectionachallenge.
+2

@@ -1,0 +1,143 @@
+NBER WORKING PAPER SERIES
+CORPORATE CONTROL AROUND THE WORLD
+Gur Aminadav
+Elias Papaioannou
+Working Paper 23010
+http://www.nber.org/papers/w23010
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2016
+We thank Julian Franks, Rafael La Porta, Florencio Lopez-de-Silanes, and Andrei Shleifer for
+useful suggestions and comments. All errors are our sole responsibility. The views expressed
+herein are those of the authors and do not necessarily reflect the views of the National Bureau of
+Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2016 by Gur Aminadav and Elias Papaioannou. All rights reserved. Short sections of text, not
+to exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Corporate Control around the World
+Gur Aminadav and Elias Papaioannou
+NBER Working Paper No. 23010
+December 2016
+JEL No. F30,G3,G34,G38,K11,K12,K31
+ABSTRACT
+We provide an autopsy of the patterns of corporate control and ownership concentration in a
+dataset covering more than 40,000 listed firms from 127 countries over 2004 2012. Employing a
+plethora of original and secondary sources, big data techniques, and applying the Shapley-Shubik
+algorithm to quantify shareholder’s voting power we trace ultimate controlling shareholders from
+the complex, pyramidal, and often obscure corporate structures. First, we show that there are
+large differences in the type of corporate control (widely held firms with and without significant
+equity blocks, firms controlled by families, governments, and other public-private firms) across
+and within continents. Corporate structures appear persistent as the recent global financial crisis
+did not affect them much. Second, we examine the role of legal traditions on corporate control.
+There are economically large differences on corporate structure across legal families, with the
+share of controlled (widely-held) firms being the highest (lowest) in French civil-law countries,
+followed by German and then Scandinavian civil law countries. State ownership and control by
+individual/families via complex corporate structures is pervasive in civil-law countries. And
+while equity blocks are commonplace across widely-held firms all around the world and across
+all legal families, the share of widely-held firms with large blocks is the highest in French civil-
+law countries. Moreover, ownership concentration is considerably higher in French civil-law (and
+to a lesser extent in German civil-law) countries as compared to common-law countries. These
+patterns apply to very large, big, medium-sized and small listed firms and are not driven by
+regional differences, the level of economic development, or industrial structure, suggesting that
+legal origin has sizable long-lasting consequences on corporate structure. Third, as legal origin
+may affect corporate control via multiple channels, we examine the role of some likely
+mechanisms. We find that shareholder protection rights against self-dealing activities of insiders
+correlate strongly with corporate control and ownership concentration. Legal formalism and
+creditor’s rights do not seem to play a role. Yet, the "reduced-form" link between legal origin and
+corporate control (and ownership concentration) is also driven by entry and labour market
+regulation.
+Gur Aminadav
+Regent's Park
+NW1 4SA, London
+United Kingdom
+gaminadav@london.edu
+Elias Papaioannou
+London Business School
+Regent's Park
+Sussex Place
+London NW1 4SA
+United Kingdom
+and NBER
+papaioannou.elias@gmail.com
+An online appendix is available at http://www.nber.org/data-appendix/w23010
+
+1 Introduction
+Understanding the driving forces and consequences of the various types of corporate control are core in-
+quiries of corporate finance (La Porta, Lopez-de-Silanes, and Shleifer, 1999; Tirole, 2010). While most
+theory distinguishes between widely—held corporations, where ownership is dispersed and no single share-
+holder dominates corporate decisions, and controlled firms where a dominant-influential shareholder or
+family exerts control (Shleifer and Vishny, 1997), the structures of corporate ownership and control are
+more complex (Laeven and Levine, 2008).1 Pyramids that allow shareholders to influence corporate deci-
+sions in excess of their cash-flow rights (Dyck and Zingales, 2004) and cross-holdings of equity in business
+groups, such as the keiretsu in Japan and the Korean chaebols, are pervasive. At the same time, corporate
+control is typically hidden behind holding companies incorporated in financial off-shore centers (Zucman,
+2015). A binary distinction between controlled and widely-held firms may be too coarse, as in many
+widely-held corporations some individuals/families or institutional investors hold equity blocks and may
+thus have considerable power (Edmans and Holderness, 2016). And often there are shareholders who form
+coalitions with smaller investors in an effort to exert corporate control (Bennedsen and Wolfenzon, 2000).
+Following the influential contribution of La Porta, Lopez-de-Silanes, and Shleifer (1999), a volumi-
+nous literature in corporate finance has tried to document the patterns of ownership concentration and
+control across countries or in a single country over time. The literature (discussed below) then searched for
+the main correlates of corporate ownership and examined the role of investor protection and legal quality
+(see La Porta et al. (2006)). However, there are many open issues.
+First, stands measurement. It is inherently hard to identify ultimate shareholders from the complex
+network of equity holdings and to assess their role in corporate affairs. For this reason previous research
+has either focused on a relatively small number of (typically large) firms and countries (e.g., La Porta et
+al. 1999; Claessens, Djankov, and Lang, 2000; Faccio and Lang, 2002), or has used larger firm samples in
+a single economy (e.g., Franks, Mayer, and Rossi, 2009, on British corporations) or a handful of countries
+(Franks, Mayer, Volpin, and Wagner, 2012).
+Second, is heterogeneity. The size distribution of firms is highly skewed; even when one examines
+typically large publicly traded firms, differences in size are enormous (see Gabaix (1999)). And theory and
+case-study evidence point out that corporate control patterns and their determinants may differ system-
+atically across very large, big, medium, and relatively small listed corporations (Holderness (2016a,b)).
+A third issue regards mechanisms. The literature is far from reaching a consensus on the role of
+investorprotectionrights,courts,productandlabourmarketregulationoncorporatecontrolandownership
+concentration. Isolating the role of each feature is challenging, as it is always hard quantifying these
+institutionalfeatures,thesampleofcountriesislimited,andbecauselegalaspectfeaturescorrelatestrongly
+with the regulation of product and labour markets (La Porta, Lopez-de-Silanes, and Shleifer (2006)).
+1Almeida and Wolfenzon (2006) and Burkart, Panunzi, and Shleifer (2003) are notable exceptions.
+0
+
+1.1 Results Preview
+In this paper we try to advance on these fronts. Our first contribution is to provide a comprehensive
+description of ownership patterns and corporate control for the widest-possible sample of countries and
+listed firms. Employing big data techniques, extensive manual checks, and relying on a plethora of data
+sources (e.g., regulatory filings, company reports, government publications, private data providers), we
+augment and correct Bureau van Dijk’s ORBIS’s database on corporate ownership in an effort to identify
+ultimate controlling shareholders fromthe complex and often esoteric structures of corporate holdings. We
+then apply a game-theoretic algorithm based on the Shapley-Shubik power index and identify ultimate
+controlling shareholders for more that 40000 listed firms from 127 countries both before and after the
+recent world financial crisis (2004 2012). Our corporate control identification algorithm improves over
+−
+previousworkswhohaveappliedadhoc votingrightscutoffstoclassifyfirmsascontrolled(andwidelyheld).
+The algorithm for example is especially useful for measuring control in firms where we observe multiple
+individuals/families and other entities (institutional investors, government) holding large equity blocks, a
+common phenomenon (Laeven and Levine, 2007). Using the newly-compiled database we provide a broad
+overviewofthepatternsofcorporatecontrolaroundtheworld. Wedistinguishbetweenthreetypesoffirms,
+widely-held corporations without any block shareholder, widely-held corporations (without a controlling
+shareholder)butwithoneor multipleblock equitystakes, andcontrolledfirmswitha dominantcontrolling
+shareholder. We also split controlled firms based on the type of dominant shareholder to state-controlled
+(national governments, municipalities and state agencies), family-controlled (where a single individual or
+family exert power), and controlled by other (listed or private) firms. There are large differences on
+corporate control around the world, both across and within continents. Corporate structure patterns
+appear persistent, as the 2007 2009 global financial crisis did not alter it much.
+−
+Second, given the literature’s emphasis we re-examine the "reduced-form" link between legal origin
+and corporate control. Given the large differences on firm size across countries and the potential of
+differential effects of the legal system on corporate control, we examine in detail heterogeneity, as there
+have been concerns on the robustness of previous works that used samples of large firms in a small number
+of countries. The cross-country analysis uncovers the following.
+1. There are economically large differences in corporate control across legal families, with the share
+of controlled firms being the highest in French civil-law countries, followed by German and then
+Scandinaviancivillawcountries. Theshareof controlledfirmsisthelowestincommonlawcountries.
+TheresultsaresimilarwhenwelookatownershipconcentrationthatisthehighestinFrenchcivil-law
+countries and the lowest in common-law countries.
+2. Equity blocks are commonplace across the world. While we observe blocks in the majority of widely-
+held corporations in both civil-law and common-law countries, the share of widely-held firms with
+large blocks is the highest in French civil-law countries.
+1

@@ -1,0 +1,138 @@
+NBER WORKING PAPER SERIES
+BANKS, LIQUIDITY MANAGEMENT AND MONETARY POLICY
+Javier Bianchi
+Saki Bigio
+Working Paper 20490
+http://www.nber.org/papers/w20490
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2014
+We thank the editor and several anonymous referees for helpful comments. We are also grateful
+to Cristina Arellano, Andy Atkeson, Harjoat Bhamra, Luigi Bocola, John Cochrane, Dean
+Corbae, Itamar Dreschler, Huberto Ennis, Xavier Freixas, Lars Hansen, Todd Keister, Nobu
+Kiyotaki, Arvind Krishnamurthy, Ricardo Lagos, Ellen McGrattan, Thomas Philippon, Chris
+Phelan, Tomek Piskorski, Erwan Quintin, Ricardo Reis, Chris Sims, Harald Uhlig, Venky
+Venkateswaran, Gianluca Violante, Pierre-Olivier Weill, Mike Woodford, Tao Zha, and
+participants at various seminars and conferences for many useful comments. Jorge Mondragon
+provided excellent research assistance. We are grateful for financial support by the Fondation
+Banque de France, and the Smith Richardson Foundation. Bianchi acknowledges the support of
+the National Science Foundation under Award 1324395. Bigio thanks the Federal Reserve Bank
+of San Francisco for its hospitality. The views expressed herein are those of the authors and not
+necessarily those of the Federal Reserve Bank of Minneapolis, the Federal Reserve System, or the
+National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2014 by Javier Bianchi and Saki Bigio. All rights reserved. Short sections of text, not to exceed
+two paragraphs, may be quoted without explicit permission provided that full credit, including © notice,
+is given to the source.
+
+Banks, Liquidity Management and Monetary Policy
+Javier Bianchi and Saki Bigio
+NBER Working Paper No. 20490
+September 2014, Revised July 2020
+JEL No. E0,E4,E51,E52,G01,G1,G11,G18,G20,G21
+ABSTRACT
+We develop a tractable model of banks' liquidity management and the credit channel of monetary
+policy. Banks finance loans by issuing demand deposits. Loans are illiquid, and transfers of
+deposits across banks must be settled with reserves in a frictional over the counter market. To
+mitigate the risk of large withdrawals of deposits, banks hold a precautionary buffer of reserves
+and government bonds. We show how monetary policy affects the banking system by altering the
+tradeoff between profiting from lending and incurring greater liquidity risk. We consider two
+applications of the theory, one involving the connection between the implementation of monetary
+policy and pass-through to loan rates, and another considering a quantitative decomposition
+behind the collapse in bank lending during the 2008 financial crisis. Our analysis underscores the
+importance of liquidity frictions and the functioning of interbank markets for the conduct of
+monetary policy.
+Javier Bianchi
+Federal Reserve Bank of Minneapolis
+90 Hennepin Avenue
+Minneapolis, MN 55401
+javieribianchi@gmail.com
+Saki Bigio
+Department of Economics
+University of California at Los Angeles
+8283 Bunche Hall
+Box 951477
+Los Angeles, CA 90095-1477
+and NBER
+sbigio@econ.ucla.edu
+
+1 Introduction
+The transmission and implementation of monetary policy operates through the banking system.
+In practice, central banks set a target for the interbank market rate and implement that target
+via open market operations and standing facilities. The ultimate goal is to affect the amount of
+credit and thus overall economic activity. It is therefore of paramount importance to understand
+how monetary policy affects the interbank market and, in turn, how the interbank market affects
+the real economy.
+The leading macroeconomic framework usedfor monetarypolicy analysis, theNew Keynesian
+model, abstracts from the implementation and transmission of monetary policy through the
+interbank market. In the New Monetarist framework, interactions between money and credit
+are explicit, but the interbank market and its impact on credit have received little attention.1
+Moreover, for the most part, the focus of analysis has been on a sole policy instrument, either
+a nominal interest rate or the growth in the monetary base. During the 2008 financial crisis,
+and more recently during the Covid-19 crisis, disruptions in interbank markets were met with a
+broad set of policy responses designed to inject liquidity into the financial system and mitigate
+contractions in credit. These events call for a model that can be used to analyze the effects of
+frictions in the interbank market and the transmission of monetary policy through the banking
+system.
+This paper provides a tractable general equilibrium model with a banking system that ar-
+ticulates a notion of the credit channel of monetary policy. At the heart of the theory lies a
+liquidity management problem that emerges from frictions in the interbank market. Liquidity
+management concerns the trade-off between holding high-yield illiquid loans and holding low-
+yield liquid assets. It is by influencing this trade-off that monetary policy affects the supply of
+credit and gives rise to a credit channel. In support of this transmission channel, we document
+a strong empirical relationship between measures of disturbances in the interbank market and
+liquidity premia. We put this framework to work in two quantitative applications that showcase
+the importance of examining the transmission of monetary policy through the banking system.
+In the theory, banks are competitive. Their portfolio is composed of deposits, loans, gov-
+ernment bonds, and reserves. When a bank grants a loan and simultaneously issues deposits,
+it gains intermediation profits. However, deposits circulate in an unpredictable way, and thus
+banks face deposit withdrawal shocks. When a deposit is transferred out of a bank, another
+bank absorbs that liability. As occurs in practice, that transfer is settled with reserves.2 If a
+1For a textbook treatment of the NK model, see Woodford (2004) or Gal´ı (2015). New Monetarist models are
+surveyed in Williamson and Wright (2010), and Lagos, Rocheteau, and Wright (2017).
+2TheFederalReserveWireNetwork(Fedwire)isthereal-timegrosssettlement(RTGS)fundstransfersystem
+thatelectronicallysettlesfundsbetweenanyoftheUnitedStatesbanksregisteredintheFederalReserveSystem,
+totalling approximately 10,000 banks. The amount of funds transferred daily is approximately USD 3.30 trillion.
+1
+
+deposit withdrawal is too large, the bank will end short of reserves. The bank can sell bonds
+in exchange for reserves, but this may not be enough. At that point, the bank must incur in
+expensive borrowing of reserves, either from the discount window at a penalty rate, or from the
+interbank market.The interbank market is over the counter (OTC). The probability of finding a
+counterpart in the interbank market depends on the scarcity of reserves: when few banks have
+reserve surpluses, the interbank market rate is high—and hence a shortage is expensive. Thus,
+the efficiency and tightness of the interbank market affect the degree of liquidity risk. By holding
+a large buffer of liquid assets composed of bonds and reserves, a bank reduces its exposure to
+liquidity risk, at the expense of intermediation profits. Tilting this trade-off, monetary policy
+affects the supply of bank credit by affecting liquidity premia.
+From a methodological standpoint, a contribution of the paper is to integrate an OTC inter-
+bank market into a dynamic general equilibrium model of the banking system. The interbank
+market here is modeled after Afonso and Lagos (2015), who study the Federal funds market in a
+repeated OTC setting and deliver predictions for the intraday volume of interbank market loans
+and the distribution of interbank rates. That model takes the distribution of reserve balances as
+a primitive. Here, the distribution of balances is endogenous, as it results from banks’ optimally
+chosen portfolios, which are in turn influenced by monetary policy. We furthermore show how to
+encode the effects of the liquidity frictions into a single object: a liquidity yield function. Despite
+the non-linear nature of the liquidity yield function, the bank’s problem features aggregation,
+and thus the economy features a representative bank. Being analytically tractable, this makes
+the analysis transparent and amenable to various applications, both theoretical and quantitative.
+The analysis of the transmission of monetary policy through the banking system reveals
+severalinsights. Incontrasttomodelsinwhichthedemandforreservesisexogenouslydetermined
+by reserve requirements, monetary policy here affects the risk-return trade-off between holding
+reserves and loans. The central bank alters this trade-off through open market operations, both
+conventional and unconventional, and by setting the rate of interest on reserves and discount
+window. Weshowthatalthoughthecompositionbetweenbondsandreservesisindeterminatefor
+an individual bank, the composition matters at the macro level. This result has two implications.
+First, it implies that the total holdings of liquid assets, and not only the holdings of reserves,
+is the correct measure of the precautionary liquidity demand. Second, a policy that swaps
+government bonds for reserves has aggregate effects by altering the interbank market tightness
+and the liquidity premium. Moreover, by absorbing illiquid assets into the central bank’s balance
+sheet, unconventional open market operations have even more potent effects. At the limit, when
+the interbank bank market shuts down entirely, only unconventional open market operations
+remain effective.
+A central insight of the paper is to show how the implementation of monetary policy matters
+for macroeconomic outcomes. We first study how the pass-through from the interest on reserves
+2

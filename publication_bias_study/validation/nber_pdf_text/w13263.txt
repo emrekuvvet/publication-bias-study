@@ -1,0 +1,94 @@
+NBER WORKING PAPER SERIES
+FERTILITY AND THE REAL EXCHANGE RATE
+Andrew K. Rose
+Saktiandi Supaat
+Working Paper 13263
+http://www.nber.org/papers/w13263
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2007
+We thank: Edward Robinson for encouragement, Lau Wei Ling for data assistance, Ralph Bryant,
+Pär Österholm and participants at a MAS workshop for comments. Rose thanks the Monetary Authority
+of Singapore and the National University of Singapore for hospitality during the course of this research.
+The views expressed below do not necessarily represent those of the Monetary Authority of Singapore
+or the National Bureau of Economic Research. A current version of this paper, key output, and the
+main STATA data set used in the paper are available at http://faculty.haas.berkeley.edu/arose.
+© 2007 by Andrew K. Rose and Saktiandi Supaat. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit, including
+© notice, is given to the source.
+
+Fertility and the Real Exchange Rate
+Andrew K. Rose and Saktiandi Supaat
+NBER Working Paper No. 13263
+July 2007
+JEL No. F32,J13
+ABSTRACT
+We use a quinquennial data set covering 87 countries between 1975 and 2005 to investigate the relationship
+between fertility and the real effective exchange rate. Theoretically a country experiencing a decline
+in its fertility rate can be expected to have higher savings, lower investment, a current account surplus,
+and accordingly a real depreciation. We test and confirm this hypothesis, controlling for a host of
+potential determinants such as PPP deviations and the Balassa-Samuelson effect. We find a statistically
+significant and robust link between fertility and the exchange rate. Our point-estimate is that a decline
+in the fertility rate of one child per woman is associated with a depreciation of approximately .15%
+in the real effective exchange rate.
+Andrew K. Rose
+Haas School of Business Administration
+University of California
+Berkeley, CA 94720-1900
+and NBER
+arose@haas.berkeley.edu
+Saktiandi Supaat
+Monetary Authority of Singapore
+10 Shenton Way
+Singapore 079117
+saktiandi@mas.gov.sg
+
+1. Introduction
+Massive demographic changes are in play across the world. UN data show that average
+world life expectancy rose from 59.9 years in 1975-1980 to 65.4 just twenty-five years later, an
+increase of 9.2%. Even more dramatically, the fertility rate (average births per woman) fell from
+3.92 to 2.65 during the same period of time, a larger change of some 48%. This paper is
+concerned with the consequences of such demographic issues for international finance. In
+particular, we ask “What effect does the fertility rate have on the real exchange rate?”
+The theoretical linkage between the fertility rate and the real exchange rate seems
+intuitive. Suppose the fertility rate declines for some exogenous reason (e.g., an improvement in
+female education or a decrease in the cost of contraception). Life-Cycle theory argues that child-
+rearing is associated with increased consumption and thus reduced savings (children tend to
+consume more than they produce); a drop in fertility can be expected to raise savings.
+Investment may also drop if there is a decline in the future equilibrium capital stock resulting
+from a smaller populace. If savings rise and investment falls, the current account improves and a
+real depreciation of the exchange rate is part of the equilibrium response to an exogenous decline
+in fertility. This much seems straightforward (though there is dispute; more on this below).
+However, as with so many theories concerning exchange rates, the real question is whether these
+theoretical implications are borne out empirically or remain blurred by a myriad of other factors.
+This paper is an exploratory data analysis of the linkage between fertility and the exchange rate.
+We gather a broad long panel of data that covers 87 countries between 1975 and 2005, a
+sample of great demographic change and cross-country heterogeneity. Unlike many theoretical
+predictions for exchange rates, ours seems borne out by the data. We find a strong link between
+the real effective exchange rate and the fertility rate. We use fixed-effects panel methods, and
+1
+
+account for a number of other reasons why exchange rates adjust, including deviations from
+Purchasing Power Parity, the Balassa-Samuelson effect, the effects of trade liberalization,
+government spending, net foreign assets, and so on. Yet we still find that a 1-point decline in the
+fertility rate is associated with a real effective depreciation of around .15%. This result seems
+sensible and plausible; it is also quite robust.
+In section 2 we provide a brief survey of the literature; this section can be skipped
+without loss. Our data set and methodology are presented in section 3, while section 4 contains
+our key results. Section 5 presents extensive sensitivity analysis, followed by a brief
+examination of other demographic phenomena. The paper closes with a brief conclusion.
+2. Quick Survey of the Literature
+Most research that studies the macroeconomic effects of demographic change is
+concerned with these phenomena at a national level. For instance, there is a lively debate
+concerning the implications of demographic shifts for stock and bond returns; see, e.g., Poterba
+(2004). Nevertheless, a strand of the literature has developed recently that is concerned with the
+implications of demographic changes for the global economy. Two recent references of value
+are FRB Kansas City (2004) and Reserve Bank of Australia (2006); see also the excellent survey
+by Bosworth et al (2004).
+It seems unnecessary to develop another theoretical model to link fertility to savings,
+investment, and the real exchange rate, since these interactions have been well explored in the
+literature. For instance, Higgins and Williamson (1996) use an overlapping generations model of
+growth to explore the impact of demographics on savings and the macroeconomy. Their model
+is entirely conventional except that instead of two it has three periods of life (youth, prime-age,
+2

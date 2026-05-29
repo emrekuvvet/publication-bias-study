@@ -1,0 +1,117 @@
+NBER WORKING PAPER SERIES
+AN ECONOMETRIC MODEL OF SERIAL
+CORRELATION AND ILLIQUIDITY IN
+HEDGE FUND RETURNS
+Mila Getmansky
+Andrew W. Lo
+Igor Makarov
+Working Paper 9571
+http://www.nber.org/papers/w9571
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+March 2003
+This research was supported by the MIT Laboratory for Financial Engineering. We thank Jacob Goldfield,
+Stephanie Hogue, Stephen Jupp, SP Kothari, Bob Merton, Myron Scholes, Bill Schwert, Svetlana Sussman,
+a referee, and seminar participants at Harvard, the MIT Finance Student Lunch Group, and the 2001 Fall Q
+Group Conference for many stimulating discussions and comments. The views expressed herein are those
+of the authors and not necessarily those of the National Bureau of Economic Research.
+©2003 by Mila Getmansky, Andrew W. Lo, and Igor Makarov. All rights reserved. Short sections of text
+not to exceed two paragraphs, may be quoted without explicit permission provided that full credit including
+©notice, is given to the source.
+
+An Econometric Model of Serial Correlation and Illiquidity in Hedge Fund Returns
+Mila Getmansky, Andrew W. Lo, and Igor Makarov
+NBER Working Paper No. 9571
+March 2003
+JEL No. E0, E5, E6, F0, F3, G1, G2, O2
+ABSTRACT
+The returns to hedge funds and other alternative investments are often highly serially correlated in
+sharp contrast to the returns of more traditional investment vehicles such as long-only equity
+portfolios and mutual funds. In this paper, we explore several sources of such serial correlation and
+show that the most likely explanation is illiquidity exposure, i.e., investments in securities that are
+not actively traded and for which market prices are not always readily available. For portfolios of
+illiquid securities, reported returns will tend to be smoother than true economic returns, which will
+understate volatility and increase risk-adjusted performance measures such as the Sharpe ratio. We
+propose an econometric model of illiquidity exposure and develop estimators for the smoothing
+profile as well as a smoothing-adjusted Sharpe ratio. For a sample of 908 hedge funds drawn from
+the TASS database, we show that our estimated smoothing coefficients vary considerably across
+hedge-fund style categories and may be a useful proxy for quantifying illiquidity exposure.
+Mila Getmansky Andrew W. Lo
+MIT, Sloan School of Management MIT, Sloan School of Management
+50 Memorial Drive 50 Memorial Drive
+Cambridge, MA 02142 E52-432
+mgetman@mit.edu Cambridge, MA 02142
+and NBER
+alo@mit.edu
+Igor Makarov
+MIT, Sloan School of Management
+50 Memorial Drive
+Cambridge, MA 02142
+imakarov@mit.edu
+
+Contents
+1 Introduction 1
+2 Literature Review 3
+3 Other Sources of Serial Correlation 5
+3.1 Time-Varying Expected Returns . . . . . . . . . . . . . . . . . . . . . . . . . 8
+3.2 Time-Varying Leverage . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+3.3 Incentive Fees with High-Water Marks . . . . . . . . . . . . . . . . . . . . . 14
+4 An Econometric Model of Smoothed Returns 17
+4.1 Implications For Performance Statistics . . . . . . . . . . . . . . . . . . . . . 21
+4.2 Examples of Smoothing Pro(cid:12)les . . . . . . . . . . . . . . . . . . . . . . . . . 24
+5 Estimation of Smoothing Pro(cid:12)les and Sharpe Ratios 28
+5.1 Maximum Likelihood Estimation . . . . . . . . . . . . . . . . . . . . . . . . 29
+5.2 Linear Regression Analysis . . . . . . . . . . . . . . . . . . . . . . . . . . . . 31
+5.3 Speci(cid:12)cation Checks . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 34
+5.4 Smoothing-Adjusted Sharpe Ratios . . . . . . . . . . . . . . . . . . . . . . . 36
+6 Empirical Analysis 40
+6.1 Summary Statistics . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 43
+6.2 Smoothing Pro(cid:12)le Estimates . . . . . . . . . . . . . . . . . . . . . . . . . . . 46
+6.3 Cross-Sectional Regressions . . . . . . . . . . . . . . . . . . . . . . . . . . . 55
+6.4 Illiquidity Vs. Smoothing . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 59
+6.5 Smoothing-Adjusted Sharpe Ratio Estimates . . . . . . . . . . . . . . . . . . 62
+7 Conclusions 65
+A Appendix 67
+A.1 Proof of Proposition 3 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 67
+A.2 Proof of Proposition 4 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 68
+A.3 Proof of Proposition 5 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 73
+A.4 TASS Fund Category De(cid:12)nitions . . . . . . . . . . . . . . . . . . . . . . . . 73
+A.5 Supplementary Empirical Results . . . . . . . . . . . . . . . . . . . . . . . . 74
+
+1 Introduction
+One of the fastest growing sectors of the (cid:12)nancial services industry is the hedge-fund or
+\alternative investments" sector. Long the province of foundations, family o(cid:14)ces, and high-
+net-worth investors, hedge funds are now attracting major institutional investors such as
+largestateandcorporatepension fundsanduniversity endowments, ande(cid:11)ortsareunderway
+to make hedge-fund investments available to individual investors through more traditional
+mutual-fund investment vehicles. One of the main reasons for such interest is the per-
+formance characteristics of hedge funds|often known as \high-octane investments", hedge
+funds typically yield double-digit returns to their investors and, in some cases, in a fashion
+that is uncorrelated with general market swings and with relatively low volatility. Most
+hedge funds accomplish this by maintaining both long and short positions in securities|
+hence the term \hedge" fund|which, in principle, gives investors an opportunity to pro(cid:12)t
+from both positive and negative information while, at the same time, providing some degree
+of \market neutrality" because of the simultaneous long and short positions.
+However, severalrecentempiricalstudieshavechallengedthesecharacterizationsofhedge-
+fund returns, arguing that the standard methods of assessing the risk and reward of hedge-
+fund investments may be misleading. For example, Asness, Krail and Liew (2001) show in
+some cases where hedge funds purport to be market neutral, i.e., funds with relatively small
+market betas, including both contemporaneous and lagged market returns as regressors and
+summing the coe(cid:14)cients yields signi(cid:12)cantly higher market exposure. Moreover, in deriving
+statistical estimators for Sharpe ratios of a sample of mutual and hedge funds, Lo (2002)
+shows that the correct method for computing annual Sharpe ratios based on monthly means
+and standard deviations can yield point estimates that di(cid:11)er from the naive Sharpe ratio
+estimator by as much as 70%.
+These empirical properties may have potentially signi(cid:12)cant implications for assessing the
+risks and expected returns of hedge-fund investments, and can be traced to a single common
+source: signi(cid:12)cant serial correlation in their returns.
+This may come as some surprise because serial correlation is often (though incorrectly)
+associated with market ine(cid:14)ciencies, implying a violation of the Random Walk Hypothe-
+sis and the presence of predictability in returns. This seems inconsistent with the popular
+belief that the hedge-fund industry attracts the best and the brightest fund managers in
+the (cid:12)nancial services sector. In particular, if a fund manager’s returns are predictable, the
+implication is that the manager’s investment policy is not optimal; if his returns next month
+can be reliably forecasted to be positive, he should increase his positions this month to take
+advantage of this forecast, and vice versa for the opposite forecast. By taking advantage of
+1

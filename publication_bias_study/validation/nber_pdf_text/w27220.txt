@@ -1,0 +1,108 @@
+NBER WORKING PAPER SERIES
+THE COST OF PRIVACY:
+WELFARE EFFECTS OF THE DISCLOSURE OF COVID-19 CASES
+David O. Argente
+Chang-Tai Hsieh
+Munseob Lee
+Working Paper 27220
+http://www.nber.org/papers/w27220
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2020
+We thank Fernando Alvarez, Jingting Fan, David Lagakos, Marc-Andreas Muendler, Valerie A.
+Ramey, and Nick Tsivanidis for helpful comments. We use proprietary data from SK Telecom
+and thank Geovision at SK Telecom and Brian Kim for their assistance with the data. The views
+expressed herein are those of the authors and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2020 by David O. Argente, Chang-Tai Hsieh, and Munseob Lee. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+The Cost of Privacy: Welfare Effects of the Disclosure of COVID-19 Cases
+David O. Argente, Chang-Tai Hsieh, and Munseob Lee
+NBER Working Paper No. 27220
+May 2020, Revised July 2020
+JEL No. E0,I0
+ABSTRACT
+South Korea publicly disclosed detailed location information of individuals that tested positive
+for COVID-19. We quantify the effect of public disclosure on the transmission of the virus and
+economic losses in Seoul. The change in commuting patterns due to public disclosure lowers the
+number of cases by 200 thousand and the number of deaths by 7.7 thousand in Seoul over two
+years. Compared to a city-wide lock-down that results in the same number of cases over two
+years as the disclosure scenario, the economic cost of such a lockdown is almost four times
+higher.
+David O. Argente Munseob Lee
+Pennsylvania State University University of California at San Diego
+Department of Economics 9500 Gilman Drive, #0519
+403 Kern Building La Jolla, CA 92093-0519
+University Park munseoblee@ucsd.edu
+State College, PA 16801
+dargente@psu.edu
+Chang-Tai Hsieh
+Booth School of Business
+University of Chicago
+5807 S Woodlawn Ave
+Chicago, IL 60637
+and NBER
+chsieh@chicagoBooth.edu
+A data appendix is available at http://www.nber.org/data-appendix/w27220
+
+1 Introduction
+On January 30, 2020, residents of Jungnang district in northeast Seoul received the following
+message on their cellphone about the second person in South Korea that tested positive for
+COVID: “Korean male, born 1987, living in Jungnang district. Confirmed on January 30,
+Hospitalized in Seoul Medical Center.” The text went on to disclose the whereabouts of the
+individual in the past few days:
+• January 24: Return trip from Wuhan without symptoms.
+• January 26: Merchandise store∗ at Seongdong by subway at 12 pm; massage spa∗ by
+subway in afternoon; two convenience stores∗ and two supermarkets∗.1
+• January 27: Restaurant∗ and two supermarkets∗ in afternoon.
+• January 28: Hair salon∗ in Seongbuk; supermarket∗ and restaurant∗ in Jungnang by
+bus; wedding shop in Gangnam by subway; home by subway.
+• January 29: Tested at hospital in Jungnang.
+Over the following weeks, as more people were tested for COVID, South Koreans received
+similar texts for every relevant patient that tested positive. This information was widely
+disseminated on websites and incorporated into mobile phone applications.
+This paper uses South Korea’s experience to show that public disclosure can be an im-
+portant tool to combat the spread of a virus. Since a testing regime is likely to only catch
+a fraction of infected individuals, disclosure of locations of people that have tested positive
+can help non-infected people avoid places where they are more likely to be in contact with
+infected people that have not yet been detected. For example, on March 30, local authorities
+in Seoul disclosed that a patient visited a coffee shop in Mapo district on March 28. Nobody
+visited the coffee shop on May 30.2 If the person who visited the coffee shop on March 28
+infected others in the vicinity, this behavior by the public can help reduce the probability
+that an infected person spreads the virus.
+Figure 1 shows that the response of the public to the disclosure of the visit by the infected
+person to the coffee shop in Mapo district may hold more generally. The figure uses daily
+data on commuting flows between neighborhoods in Seoul from South Korea’s largest mobile
+phone company.3 It shows the mean and the 95 percent confidence interval of the change
+in the number of commuters from other districts of Seoul, relative to the first week for
+February, in each of the 25 districts in Seoul during the weekdays. We highlight two facts.
+First, commuter inflows in the average district in Seoul decreased by about 10% in March
+1An asterisk ∗ indicates that the establishment’s name was disclosed.
+2“Seoul’s Radical Experiment in Digital Contact Tracing,” The New Yorker, April 17, 2020.
+3We describe the mobile phone data in Section 3.
+1
+
+and April and recovered by the end of May. Second, there is substantial heterogeneity across
+districts in the change in commuting inflows. At the peak of the pandemic in early March,
+inflows fell by more than 20% in some districts but by only 5% in other districts. In late
+May when inflows in the average district were back to “normal”, inflows into some districts
+appear to be permanently lower while in other districts, the reverse is true. We show that
+commuting inflows fell by more in districts with a large number of COVID patients lived or
+visited compared to districts with few COVID patients.
+Figure 1: Change in Weekday Inflows into Districts in Seoul
+Note: The figure shows the mean and the 95 percent confidence interval of the percent change in the inflow
+of people into each district of the city of Seoul, relative to the first week of February, calculated from SK
+Telecom’s mobile phone data.
+We then quantify the effect of the change in commuting flows in Seoul shown in Figure 1
+on the transmission of the virus. We use a SIR model where the virus spreads as susceptible
+people in a neighborhood commute and come into contact with infected people from other
+neighborhoods. We show that the change in commuting flows observed in mobile phone
+location data predicts the heterogeneous spread of the virus across neighborhoods in Seoul.
+We also project the effect of public disclosure on the transmission of the virus over the next
+2

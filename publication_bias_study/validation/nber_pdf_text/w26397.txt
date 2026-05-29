@@ -1,0 +1,122 @@
+NBER WORKING PAPER SERIES
+OPTIMAL POLICY FOR MACRO-FINANCIAL STABILITY
+Gianluca Benigno
+Huigang Chen
+Christopher Otrok
+Alessandro Rebucci
+Eric R. Young
+Working Paper 26397
+http://www.nber.org/papers/w26397
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2019
+This paper is a substantially revised version of Benigno, Chen, Otrok, Rebucci, and Young
+(2012). Earlier versions of this paper also circulated under the title "Optimal Policy with
+Occasionally Binding Credit Constraints" and "Optimal Stabilization Policy in a Model with
+Endogenous Sudden Stops". We thank numerous seminar and workshop participants and
+discussants, as well as Javier Bianchi, Anton Korinek, Enrique Mendoza, and Olivier Jeanne for
+comments and numerous discussions. The views expressed in this paper are exclusively those of
+the authors and not those of the institutions with which they are affiliated, nor do they necessarily
+reflect the views of the National Bureau of Economic Research. Young thanks the Bankard Fund
+for Political Economy for financial support at various stages of this project.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2019 by Gianluca Benigno, Huigang Chen, Christopher Otrok, Alessandro Rebucci, and Eric
+R. Young. All rights reserved. Short sections of text, not to exceed two paragraphs, may be
+quoted without explicit permission provided that full credit, including © notice, is given to the
+source.
+
+Optimal Policy for Macro-Financial Stability
+Gianluca Benigno, Huigang Chen, Christopher Otrok, Alessandro Rebucci, and Eric R. Young
+NBER Working Paper No. 26397
+October 2019
+JEL No. E61,F38,F41,G01,G18,H23
+ABSTRACT
+There is a new and now extensive literature analyzing government policies for financial stability
+based on models with endogenous borrowing constraints. These normative analyses often build
+upon the concept of constrained efficient allocation, where the social planner is constrained by
+the same borrowing limit that agents face. In this paper, we show that the same set of policy tools
+that implement the constrained efficient allocation can be used optimally by a Ramsey planner to
+replicate the unconstrained allocation, thus achieving higher welfare. We establish this in the
+context of a well-known model economy, but the result is relevant whenever the policy
+instrument that is assigned to the planner can affect the market price that determines the value of
+collateral in the borrowing constraint. The result implies that a robust normative analysis in this
+model class requires explicit computations of the Ramsey optimal policy problem.
+Gianluca Benigno Alessandro Rebucci
+London School of Economics Johns Hopkins Carey Business School
+Department of Economics 100 International Drive
+Houghton Street Baltimore, MD 21202
+London WC2A 2AE ENGLAND and NBER
+G.Benigno@lse.ac.uk arebucci@jhu.edu
+Huigang Chen Eric R. Young
+Uber Technologies Inc. University of Virginia
+huigang_chen@yahoo.com Department of Economics
+Charlottesville, VA 22904
+Christopher Otrok USA
+Department of Economics ey2d@virginia.edu
+University of Missouri
+Columbia, MO 65211
+and Federal Reserve Bank of St Louis
+otrokc@missouri.edu
+
+1 Introduction
+The recent global financial crisis has stimulated research on macroeconomic models with
+financialfrictions. Oneofthemostpopularapproachesbuildsupontheliteratureonsudden
+stops developed in the seminal work of Mendoza (2002, 2010), where financial frictions take
+the form of occasionally binding borrowing constraints. The virtue of this approach is
+its ability to distinguish between normal states of the economy (when the constraint is
+not binding) and crisis states (when the constraint binds). In particular, the amount of
+borrowing that agents are allowed to undertake depends on the value of the collateral that
+is determined endogenously by a key market price that enters into the borrowing constraint.
+For example, in Mendoza (2002), this key market price is the real exchange rate while in
+Mendoza (2010) the key market price is the price of physical capital. The presence of
+a market price in the collateral constraint creates a mechanism of financial amplification
+known as debt-deflation spiral or asset fire sale which is consistent with empirical features
+of sudden stop episodes. From a normative point of view, the presence of a relative market
+price in the borrowing constraint generates scope for policy intervention because agents
+do not take into account the effects that their choices have on the market price when the
+collateral constraint binds. This distortion is usually referred to as pecuniary externality
+and several papers have studied the inefficiency associated with it and the corresponding
+scope for policy intervention in open and closed economy settings.1
+This paper aims at strengthening the foundations of the normative analysis in this class
+of models. In many papers, the normative analysis builds upon the concept of constrained
+efficient allocation. The constrained efficient allocation is defined as a social planner prob-
+lem in which the planner faces the resource and technological constraints along with the
+borrowing limit. The analysis then proceeds by characterizing the constrained efficient al-
+location (SP from now on) relative to the competitive equilibrium (CE for brevity) and by
+1See for instance, among others, Lorenzoni (2008), Bianchi (2011), Benigno et al. (2013, 2016), Bianchi
+and Mendoza (2018), Korinek (2018), and Jeanne and Korinek (2018, 2019).
+2
+
+discussing how to implement it from a decentralized perspective. In this paper, we highlight
+a drawback of this approach. In particular, we show that, in a typical specification of the
+model economy, the same set of tools that implements the SP allocation from a decentral-
+ized perspective can also be used optimally by a Ramsey planner to replicate the allocation
+that would arise if the borrowing constraint were not present, i.e. the unconstrained allo-
+cation, thereby achieving a much higher level of welfare. This result shows that a standard
+Ramsey optimal policy approach is more robust than the SP approach typically used in the
+pecuniary externality literature because it attains all the welfare gains that are within reach
+of the policy instruments selected. The result highlights also the importance to motivate
+the choice of the instrument assigned to the Ramsey planner or used to implement the SP
+allocation from the outset of the analysis.
+In our analysis, we focus on a production version of the economy used in Bianchi (2011)
+and Korinek (2018), as in Mendoza (2002) and Benigno et al. (2013).2 This is a two-
+sector small open economy that produces traded and non-traded goods and in which agents
+have limited access to international capital market. From the perspective of the small open
+economy, foreign borrowing is denominated in units of the tradable good, but it is leveraged
+on income generated in both sectors. Thus, the relative price of non-tradeable good (which
+is typically interpreted as the real exchange rate in these models) affects the valuation of
+non-tradable income and hence the collateral value.
+We first show that, in this model economy, one particular tax scheme that implements
+the SP allocation relies on the use of a tax on tradable consumption and a tax on firm
+non-tradable revenues along with lump-sum transfers to firms and the household.3 We find
+that this tax scheme is used only when the constraint binds: since private agents cannot
+borrow the desired amount, movements in the relative price of non-tradable are inefficient,
+and resources are not allocated efficiently between the two sectors of the economy in this
+2The use of a production economy, differently from the endowment case, allows us to introduce a gap
+between the competitive and the social planner allocation when the constraint binds.
+3This tax scheme is neutral in the sense that is does not redistribute resources between households and
+firms.
+3

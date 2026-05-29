@@ -1,0 +1,101 @@
+NBER WORKING PAPER SERIES
+TRADING VOLUME: IMPLICATIONS OF AN INTERTEMPORAL CAPITAL ASSET
+PRICING MODEL
+Andrew W. Lo
+Jiang Wang
+Working Paper 8565
+http://www.nber.org/papers/w8565
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2001
+We thank Joon Chae, Ilan Guedj, Jannette Papastaikoudi, Antti Petajisto, and Jean-Paul Sursock for excellent
+research assistance, and Jonathan Lewellen for providing his industry classification scheme. We are grateful
+to seminar and conference participants at the Chinese University of Hong Kong, Georgetown University, the
+Shenzhen Stock Exchange, UCLA, University of Pennsylvania, the 8th World Congress of the Econometric
+Society, and the 2001 Lectures in Financial Economics in Beijing and Taipei for helpful comments and
+suggestions. Financial support from the MIT Laboratory for Financial Engineering and the National Science
+Foundation (Grant No. SBR{9709976) is gratefully acknowledged. The views expressed herein are those of
+the authors and not necessarily those of the National Bureau of Economic Research.
+© 2001 by Andrew W. Lo and Jiang Wang. All rights reserved. Short sections of text, not to exceed two
+paragraphs, may be quoted without explicit permission provided that full credit, including © notice, is given
+to the source.
+
+Trading Volume: Implications of An Intertemporal Capital Asset Pricing Model
+Andrew W. Lo and Jiang Wang
+NBER Working Paper No. 8565
+October 2001
+JEL No. G12, G11, G14
+ABSTRACT
+We derive an intertemporal capital asset pricing model with multiple assets and heterogeneous
+investors, and explore its implications for the behavior of trading volume and asset returns. Assets contain
+two types of risks: market risk and the risk of changing market conditions. We show that investors trade
+only in two portfolios: the market portfolio, and a hedging portfolio, which allows them to hedge the
+dynamic risk. This implies that trading volume of individual assets exhibit a two-factor structure, and
+their factor loadings depend on their weights in the hedging portfolio. This allows us to empirically
+identify the hedging portfolio using volume data. We then test the two properties of the hedging portfolio:
+its return provides the best predictor of future market returns and its return together with the return of the
+market portfolio are the two risk factors determining the cross-section of asset returns.
+Andrew W. Lo Jiang Wang
+Sloan School of Management MIT
+MIT E52-435
+50 Memorial Drive 50 Memorial Drive
+Cambridge, MA 02142-1347 Cambridge, MA 02142-1347
+and NBER and NBER
+alo@mit.edu wangj@mit.edu
+
+Contents
+1 Introduction 1
+2 The Model 2
+2.1 The Economy . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2.2 Discussion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+2.3 Equilibrium . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+3 The Behavior of Returns and Volume 8
+3.1 The Cross Section of Volume . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+3.2 Time Series Implications for the Hedging Portfolio . . . . . . . . . . . . . . . 10
+3.3 Cross-Sectional Implications for the Hedging Portfolio . . . . . . . . . . . . . 10
+4 An Empirical Implementation 13
+4.1 The Data . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+4.2 Construction of the Hedging Portfolio . . . . . . . . . . . . . . . . . . . . . . 14
+5 The Forecast Power of the Hedging Portfolio 19
+5.1 Hedging-Portfolio Returns . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+5.2 Optimal Forecasting Portfolios (OFPs) . . . . . . . . . . . . . . . . . . . . . 21
+5.3 Hedging Portfolio Return as A Predictor of Market Returns . . . . . . . . . 23
+6 The Hedging-Portfolio Return as a Risk Factor 24
+7 Conclusion 27
+Appendix 29
+A.1 Proof of Theorem 1 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29
+A.2 Proofs of Propositions 1–4 . . . . . . . . . . . . . . . . . . . . . . . . . . . . 30
+References 32
+
+1 Introduction
+Fundamental shocks to the economy drive both the supply and demand of financial assets
+and their prices. Thus, any asset-pricing model that attempts to establish a structural
+link between asset prices and underlying economic factors also establishes links between
+prices and quantities such as trading volume. In fact, asset-pricing models link the the
+joint behavior of prices and quantities with economic fundamentals such as the preferences
+of investors and the future payoffs of the assets. Therefore, the construction and empirical
+implementation of any asset-pricing model should involve both price and quantities as its key
+elements. Evenfromapurelyempiricalperspective, thejointbehaviorofpriceandquantities
+reveals more information about the relation between asset prices and economic factors than
+prices alone. Yet the asset-pricing literature has centered more on prices and much less on
+quantities. For example, empirical investigations of well-known asset-pricing models such as
+the Capital Asset Pricing Model (CAPM) and its intertemporal extensions (ICAPM) have
+focused exclusively on prices and returns, completely ignoring the information contained in
+quantities. In this paper, we hope to show that even if our main interest is in the behavior
+of prices, valuable information about price dynamics can be gleaned from trading volume.
+We begin by developing an intertemporal capital asset pricing model of multiple assets
+in the spirit of Merton’s ICAPM. We explicitly model investors’ asset demands and derive
+equilibrium asset prices and asset holdings. In our model, assets are exposed to two sources
+of risks: market risk and the risk of changes in market conditions.1 As a result, investors
+wish to hold two distinct portfolios of risky assets: the market portfolio and a hedging
+portfolio. The market portfolio allows them to adjust their exposure to market risk, and the
+hedging portfolio allows them hedge the risk of changes in market conditions. In equilibrium,
+investors trade in only these two portfolios, and expected asset returns are determined by
+their exposure to these two risks, i.e., a two-factor linear pricing model holds, where the two
+factors are the returns on the market portfolio and the hedging portfolio, respectively.
+We then explore the implications of this model on the joint behavior of volume and
+returns. Since investors hold only two portfolios—the market portfolio and the hedging
+1One example of changes in market conditions is changes in the investment opportunity set considered
+by Merton (1973).
+1

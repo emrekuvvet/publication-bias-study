@@ -1,0 +1,130 @@
+NBER WORKING PAPER SERIES
+DECENTRALIZED MINING IN CENTRALIZED POOLS
+Lin William Cong
+Zhiguo He
+Jiasun Li
+Working Paper 25592
+http://www.nber.org/papers/w25592
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+February 2019, Revised January 2019
+We thank Foteini Baldimtsi, Joseph Bonneau, Matthieu Bouvard, Bhagwan Chowdhry, Douglas
+Diamond, Hanna Halaburda, Wei Jiang, Evgeny Lyandres, Ye Li, Richard Lowery, Maureen
+O'Hara, George Panayotov, Fahad Saleh, Katrin Tinn, Liyan Yang, David Yermack, and Xin
+Panayotov, Fahad Wang for helpful discussions, as well as Tianshu Lyu, Zhenping Wang, Xiao Yin, and Xiao
+Zhang for excellent research assistance. We also thank seminar audiences at Ant Financial,
+Chicago Booth, CKGSB, Cleveland Fed, Columbia GSB, Cornell, CUNY Baruch, Duke, George
+Mason, HKU, University of Houston, University of Maryland, Michigan University, NYU,
+Tsinghua PBC, Princeton, Rice University, Stanford, UNC (Microeconomic Theory), Yale, as
+well as conference participants at Asian Development Bank Conference on FinTech, Becker
+Friedman Institute Conference on Cryptocurrencies and Blockchains, CEPR Gerzensee ESSFM
+Workshop, CIFFP, Credit and the Future of Banking Conference (Rigi Kaltbad), DataYes &
+ACM KDD China FinTech AI Workshop, Econometric Society NA Meeting, Georgia State
+FinTech Conference, Harvard CMSA Blockchain Conference, ISB Summer Conference,
+Midwest Finance Association Meeting, Northern Finance Association Meeting, SAIF Summer
+Institute, Simons Institute for the Theory of Computing at UC Berkeley, SFS Cavalcade Asia-
+Pacific, and 2nd Toronto FinTech Conference for helpful comments and discussions. This
+research was funded in part by the Ewing Marion Kauffman Foundation. The contents of this
+publication are solely the responsibility of the authors. We are equally grateful for funding from
+the Initiative on Global Markets, the Stigler Center, and the Center for Research in Security
+Prices at the University of Chicago, and from the Multidisciplinary Research (MDR) Initiative in
+Modeling, Simulation and Data Analytics at George Mason. The views expressed herein are those
+of the authors and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2019 by Lin William Cong, Zhiguo He, and Jiasun Li. All rights reserved. Short sections of
+text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Decentralized Mining in Centralized Pools
+Lin William Cong, Zhiguo He, and Jiasun Li
+NBER Working Paper No. 25592
+February 2019, Revised January 2019
+JEL No. D43,G2,G22,L13,L44
+ABSTRACT
+The rise of centralized mining pools for risk sharing does not necessarily undermine the
+decentralization required for permissionless blockchains: Each individual miner's cross-pool
+diversification and endogenous fees charged by pools generally sustain decentralization, because
+larger pools better internalize their externality on global hash rates, charge higher fees, attract
+disproportionately fewer miners, and thus grow more slowly. Instead, mining pools as a financial
+innovation escalate the arms race among competing miners and thus significantly increase the
+energy consumption of proof-of-work-based consensus mechanisms. Empirical evidence from
+Bitcoin mining supports our model predictions. The economic insights inform many other
+blockchain protocols as well as the industrial organization of mainstream sectors with similar
+characteristics but ambiguous prior findings.
+Lin William Cong Jiasun Li
+Cornell University George Mason University School of Business
+Ithaca, NY 14853 4400 University Drive, MSN 5F5
+will.cong@cornell.edu Fairfax, Virg 22030
+United States
+Zhiguo He jli29@gmu.edu
+University of Chicago
+Booth School of Business
+5807 S. Woodlawn Avenue
+Chicago, IL 60637
+and NBER
+zhiguo.he@chicagobooth.edu
+
+1 Introduction
+Digitaltransactionstraditionallyrelyoncentralrecord-keepers,whoaretrustedtobehave
+honestly and to be sophisticated enough to defend against cyber-vulnerabilities. Blockchains
+instead can decentralize record-keeping, with the best-known application being the P2P
+payment system Bitcoin (Nakamoto, 2008). The majority of (permissionless) blockchains
+thus far rely on various forms proof-of-work (PoW) protocols, often known as “mining,” in
+which independent computers (“miners”) dispersed all over the world spend resources and
+compete repeatedly for the right to record new blocks of transactions, and the winner in each
+round gets rewarded. Independent miners have incentives to honestly record transactions
+because rewards are valid only if their records are endorsed by subsequent miners.
+Compared to a centralized system, a blockchain has several advantages, including en-
+hanced robustness to cyber-attacks or mechanical glitches from the removal of any “single
+point of failure” (e.g., Equifax scandal, Economist, 2017). A blockchain is also presumably
+less vulnerable to misbehaviors or censorships, as it shifts the trust on the stewardship of
+a central book-keeper to the selfish economic incentives of a large number of competitive
+miners. However, these advantages rely on adequate decentralization of the system, which is
+thus far only a technological possibility rather than a guaranteed economic reality. Indeed,
+while Nakamoto (2008) envisions perfect competition among independent computer nodes
+dispersed across the world, many cryptocurrencies have over the years witnessed a rise of
+“pooled mining” wherein miners partner together and share mining rewards, as opposed to
+“solo mining” wherein individual miners bear all idiosyncratic risks. Furthermore, the bene-
+fits of PoW blockchains come at high costs: practitioners and academics alike recognize well
+how crypto-mining increasingly consumes energy and affects the climate and environment.1
+Bitcoin mining provides an illustration: Mining pools grew from constituting only 5% of
+globalhashrates(ameasureofcomputationpowerdevotedtomining)inJune2011toalmost
+100% since late 2015, as shown in Figure 1. The rise of mining pools also coincides with
+the explosive growth of global hash rates (plotted by the red line, in log scale). Meanwhile,
+some pools gained significant shares from time to time, with the best-known example being
+1AsofApril2018,aggregateelectricitydevotedtoBitcoinminingaloneexceeds60TWh,roughlythean-
+nual energy consumed by Switzerland (Lee, 2018). The cryptocurrency forum Digiconomist provides similar
+estimates, noting that mining a single block consumes enough energy to power more than 28 U.S. homes for
+a full day (https://digiconomist.net/bitcoin-energy-consumption). Mora, Rollins, Taladay, Kantar, Chock,
+Shimada, and Franklin (2018) project that if Bitcoin follows the adoption pattern of other technologies, it
+could push global warming above 2 degrees Celsius within three decades. See also Rogers (2017).
+1
+
+Figure 1: The evolution of size percentages of Bitcoin mining pools
+This graph plots (1) the growth of aggregate hash rates (right hand side vertical axis, in log scale) starting
+from June 2011 to Dec 2018; and (2) the size evolution of all Bitcoin mining pools (left hand side vertical
+axis) over this period, with pool size measured by each pool’s hash rates as a fraction of global hash rates.
+Different colors indicate different pools, and white spaces indicate solo mining. Over time, Bitcoin mining
+has been increasingly taken over by mining pools, but no pool ever seems to dominate the mining industry
+for long. The pool hash rates data come from Bitcoinity and BTC.com, with details given in Section 5.
+GHash.io that briefly reached over 51% of global hash rates in July 2014. Although such
+cases call into question whether a blockchain system can stay decentralized, none of the large
+pools emerged has snowballed into dominance for prolonged periods of time. Instead, Figure
+1 reveals that pool sizes seem to exhibit a mean-reverting tendency, suggesting concurrent
+economic forces suppressing over-centralization.
+Motivated by these observations, we study the centralization and decentralization forces
+in the evolution and industrial organization of mining pools, and relate them to the energy
+consumption of mining as well as classic economic theories. Specifically, we model miners’
+decision-making in acquiring and allocating hash rates into mining pools, together with the
+competition among pool managers who charge fees for providing risk-sharing services. We
+highlight two features of cryptocurrency mining that are key to understanding our results:
+(i) It is easy for profit-driven miners to participate in multiple mining pools, an interesting
+feature that contrasts with the traditional literature on labor and human capital in which
+each individual typically only holds one job; (ii) As will be explained shortly, the dynamic
+adjustment of mining difficulty required for ensuring a stable block production rate leads to
+an arms race, creating a negative externality in which each individual’s acquisition of hash
+2

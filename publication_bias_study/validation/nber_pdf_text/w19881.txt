@@ -1,0 +1,118 @@
+NBER WORKING PAPER SERIES
+COAL, SMOKE, AND DEATH:
+BITUMINOUS COAL AND AMERICAN HOME HEATING
+Alan Barreca
+Karen Clay
+Joel Tarr
+Working Paper 19881
+http://www.nber.org/papers/w19881
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+February 2014
+We thank Leila Abu-Orf, Paula Levin, and Katherine Rudolph for excellent research assistance. We
+are grateful to Antonio Bento, Olivier Deschenes, Stanley Engerman, Price Fishback, Gary Libecap,
+Paulina Oliva, Paul Rhode, Mel Stephens, and seminar participants at the AERE 2013 Meeting, ASSA
+2013 Cliometrics Session, Cornell University, DC Area Economic History Workshop, Economic History
+Association 2011 Meetings, Pittsburgh Economics Medley Conference, Stanford University, University
+of California, Santa Barbara, University of Maryland, Baltimore County, and University of Michigan,
+and Yale University for helpful comments. The infant birth data was digitized with financial support
+from NIA grant P30-AG012810 through the NBER. The views expressed herein are those of the authors
+and do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2014 by Alan Barreca, Karen Clay, and Joel Tarr. All rights reserved. Short sections of text, not
+to exceed two paragraphs, may be quoted without explicit permission provided that full credit, including
+© notice, is given to the source.
+
+Coal, Smoke, and Death: Bituminous Coal and American Home Heating
+Alan Barreca, Karen Clay, and Joel Tarr
+NBER Working Paper No. 19881
+February 2014
+JEL No. I18,N32,N52,Q53
+ABSTRACT
+Air pollution was severe in many urban areas of the United States in the first half of the twentieth
+century,(cid:3)in part due to the burning of bituminous coal for heat. We estimate the effects of this bituminous
+coal(cid:3)consumption on mortality rates in the U.S. during the mid 20th century. Coal consumption varied
+considerably(cid:3)during the 20th century due to coal-labor strikes, wartime oil and gas restrictions, and
+the expansion(cid:3)of gas pipelines, among other reasons. To mitigate the influence of confounding factors,
+we use a triple-differences(cid:3)identification strategy that relies on variation in coal consumption at the
+state-year-season level. It(cid:3)exploits the fact that coal consumption for heating was highest in the winter
+and uses within-state changes(cid:3)in mortality in non-winter months as an additional control group. Our
+estimates suggest that reductions(cid:3)in the use of bituminous coal for heating between 1945 and 1960
+decreased winter all-age mortality(cid:3)by 1.25 percent and winter infant mortality by 3.27 percent, saving
+1,923 all age lives per winter month(cid:3)and 310 infant lives per winter month. Our estimates are likely
+to be a lower bound, since they primarily(cid:3)capture short-run relationships between coal and mortality.
+Alan Barreca Joel Tarr
+Department of Economics Department of History
+Tulane University 5000 Forbes Avenue
+206 Tilton Hall Pittsburgh PA 15213
+New Orleans, LA 70118 jt03@andrew.cmu.edu
+and NBER
+abarreca@tulane.edu
+Karen Clay
+Heinz College
+Carnegie Mellon University
+5000 Forbes Avenue
+Pittsburgh, PA 15213
+and NBER
+kclay@andrew.cmu.edu
+
+1. Introduction
+Today, coal-related pollution is a serious concern in developing countries, especially
+China and India (Almond et al 2009, Cohen et al 2004). What has largely been forgotten is that
+until recently, coal-related pollution was also a significant public health problem in many
+developed countries, including Britain and the United States. Thousands died in London’s most
+famous fog in December 1952 (Clay and Troesken 2010). While no single American incident
+rivaled the London Fog, the United States experienced severe coal-related air pollution in most
+Midwestern and Eastern towns and cities in the 1930s and 1940s (Eisenbud 1978, Tarr 1996,
+Tarr and Clay 2012). Examining historical periods when developed countries, like the United
+States, had high levels of pollution can offer important insights into the pollution-health
+relationship in countries at earlier stages of economic development.
+This paper uses a triple-differences model to estimate the effects of bituminous coal
+consumption for home heating on infant and all-age mortality rates in the United States during
+the mid-twentieth century. We focus on the effects of bituminous coal for heating for three
+reasons.1 First, bituminous coal was widely used for heating and highly polluting compared to
+alternative fuels, including anthracite coal. In 1940, approximately 41 percent of United States
+households and 48 percent of urban households used bituminous coal for home heating.2 Second,
+bituminous coal used for heating was generally more harmful than bituminous coal that was used
+1 In line with the Minerals Yearbook, we use bituminous coal to refer to lignite, sub-bituminous, and bituminous
+coal. Data from the Coal Resources of the United States (1950) show that lignite and subbituminous coal were
+produced in small quantities in western states. As of January 1, 1950, of all coal produced in the United States to
+that point, 97 percent was bituminous, 2 percent was subbituminous, and 1 percent was lignite.
+2 1940 Census of Housing Table 60, p. 101 available at
+http://www2.census.gov/prod2/decennial/documents/36911485v2p1ch1.pdf. The census asked whether the
+household used coal for heating, but it did not ask whether the household used bituminous or anthracite coal. Fifty-
+five percent of households and 64 percent of urban households reported using coal for heating. Estimates in the mid
+1920s suggest suggested that 65 percent of anthracite was being used for heating. Department of Commerce (1929),
+p. 6. Taken together with data on consumption of bituminous and anthracite, this implies that 75 percent of coal
+consumed for heating was bituminous.
+2
+
+for other purposes. Residential bituminous coal users were primarily located in urban areas,
+burned bituminous coal at low temperatures thereby limiting the combustion of the coal, and had
+low chimneys, all of which increased population exposure to pollution.3 Conversely, firms that
+used bituminous coal in manufacturing and electricity generation tended to be located outside
+urban areas, burned the coal at high temperatures thereby facilitating combustion, and had higher
+smokestacks that allowed for dispersion of smoke across a much wider area. Third, there was
+significant variation in the opportunity cost of bituminous coal during this time period. For
+example, the sale and repurposing of war-related oil pipelines for natural gas after World War II
+led to a decline in the relative price of natural gas. The percentage of households that used
+bituminous coal for home heating fell from 41 percent in 1940 to 9 percent in 1960.
+The paper investigates the effects on both all-age mortality and infant mortality.
+Epidemiological evidence suggests that exposure to air pollution poses differential health risks
+across the age distribution. Infants are highly sensitive to current environmental conditions, and
+their outcomes almost certainly are related to recent exposure in the place in which they are
+observed. For infants, pollutants can cause premature delivery, low birth weight, respiratory
+disease, and cardiovascular disease.4 For adults, air-borne particulates and associated pollutants
+such as carbon monoxide can cause atherosclerosis, heart arrhythmias, and pneumonia.5
+There are several challenges to identifying the causal effects of burning bituminous coal
+for heating using simple cross-sectional or time-series correlations. States with greater access to
+bituminous coal may have different seasonal mortality patterns due to fixed differences in
+climate. (States with bituminous coal deposits tended to be colder.) Coal consumption for
+3 It is difficult to optimize the mix of air and coal in small stoves or boilers, and so combustion is rarely complete.
+This leads to greater emissions of particulates. EPA (1995) and WHO (2012).
+4 See Arceo-Gomez et al (2012), Curry and Walker (2011), Lockwood (2012), and Woodruff et al (2008).
+5 See Lockwood (2012), Pope et al (2004), and DelFino et al (2005).
+3

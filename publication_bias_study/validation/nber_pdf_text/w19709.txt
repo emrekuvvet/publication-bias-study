@@ -1,0 +1,139 @@
+NBER WORKING PAPER SERIES
+EFFICIENCY AND FORECLOSURE EFFECTS OF VERTICAL REBATES:
+EMPIRICAL EVIDENCE
+Christopher T. Conlon
+Julie Holland Mortimer
+Working Paper 19709
+http://www.nber.org/papers/w19709
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2013
+Previously circulated as "All-Units Discounts: Experimental Evidence from the Vending
+Industry" and "Efficiency and Foreclosure Effects of All-Units Discounts: Empirical Evidence."
+We thank Mark Stein, Bill Hannon, and the drivers at Mark Vend Company for implementing the
+experiment used in this paper, providing data, and generally educating us about the vending
+industry. We thank Susanto Basu, Michaela Draganska, Scott Hemphill, Wills Hickman, J. F.
+Houde, Sylvia Hristakeva, Robin Lee, Joe Quinn, Michael Riordan, Greg Shaffer, Mike
+Whinston, and seminar participants at Bates White, Boston College, Boston University, Harvard
+Business School, Harvard University (Economics Department), MIT, Pennsylvania State
+University, Rochester University, SUNY Stony Brook, Tufts University, Universitat Autonoma
+de Barcelona, Universitat Pompeu Fabra, University of Toronto, and Washington University in
+St. Louis, Yale University, and participants at the Quantitative Marketing and Economics
+conference and the Workshop on Conditional Pricing Practices (held jointly by the Department of
+Justice and the Federal Trade Commission), for helpful comments. Any remaining errors are our
+own. The views expressed herein are those of the authors and do not necessarily reflect the views
+of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2013 by Christopher T. Conlon and Julie Holland Mortimer. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that
+full credit, including © notice, is given to the source.
+
+Efficiency and Foreclosure Effects of Vertical Rebates: Empirical Evidence
+Christopher T. Conlon and Julie Holland Mortimer
+NBER Working Paper No. 19709
+December 2013, Revised August 2016
+JEL No. L0,L4,L42
+ABSTRACT
+Vertical rebates are prominently used across a wide range of industries. These con- tracts may
+induce greater retail effort, but may also prompt retailers to drop competing products. We study
+these offsetting efficiency and foreclosure effects empirically, using data from one retailer. Using
+a field experiment, we show how the rebate allocates the cost of effort between manufacturer and
+retailer. We estimate structural models of demand and retailer behavior to quantify the rebate's
+effect on assortment and retailer effort. We find that the rebate increases industry profitability and
+consumer utility, but fails to maximize social surplus and leads to upstream foreclosure.
+Christopher T. Conlon
+Department of Economics
+Columbia University
+420 W. 118th St.
+New York City, NY 10027
+cc3264@columbia.edu
+Julie Holland Mortimer
+Department of Economics
+Boston College
+140 Commonwealth Avenue
+Chestnut Hill, MA 02467
+and NBER
+julie.mortimer.2@bc.edu
+
+1
+Introduction
+Vertical arrangements between manufacturers and retailers have important implications for
+how markets function. These arrangements may align retailers’ incentives with those of man-
+ufacturers, and induce retailers to provide demand-enhancing effort. However, they may also
+result in exclusion of competitors, restricting competition and limiting product choice for
+consumers. Many types of vertical arrangements can induce these offsetting efficiency and
+foreclosure effects, including vertical integration, bundling, and rebates, among other con-
+tractual forms. Accordingly, these arrangements are a primary focus of antitrust authorities
+in many countries. Vertical rebates in particular are prominently used across a wide range
+of industries, including pharmaceuticals, hospital services, microprocessors, snack foods, and
+heavy industry, and have been the focus of several recent Supreme Court cases and antitrust
+settlements.1
+Althoughverticalrebatecontractsareimportantintheeconomyandhavethepotentialto
+induce both pro- and anti-competitive effects, understanding their economic impacts can be
+challenging. Tension between the potential for efficiency gains from mitigating downstream
+moral hazard on one hand, and exclusion of upstream rivals on the other hand, implies
+that the contracts must be studied empirically in order to gain insight into the relative
+importance of the two effects. Unfortunately, the existence and terms of these contracts
+are usually considered to be proprietary information by their participating firms, frustrating
+most efforts to study them empirically. An additional challenge for analyzing the effect of
+vertical contracts is the difficulty in measuring downstream effort, both for the upstream
+firm and the researcher.
+We address these challenges by examining a vertical rebate known as an All-Units Dis-
+count (AUD). The specific AUD we study is used by the dominant chocolate candy man-
+1Depending on the form of the vertical rebate, it may be referred to as a loyalty contract (if it uses a
+market-share requirement) or an all-units discount (if it is based on a retailer’s total purchases). The use
+of a vertical rebate contract was central to several recent antitrust cases involving Intel. In 2009, AMD vs.
+Intel wassettledfor$1.25billion, andthesameyeartheEuropeanCommissionleviedarecordfineofe1.06
+billion against the chipmaker. In a 2010 FTC vs. Intel settlement, Intel agreed to cease the practice of
+conditioning rebates on exclusivity or on sales of other manufacturer’s products. Similar issues were raised
+intheEuropeanCommission’s2001caseagainstMichelin, andLePage’s v. 3M.Inanotherrecentcase, Z.F.
+Meritor v. Eaton (2012), Eaton allegedly used rebates to obtain exclusivity in the downstream heavy-duty
+truck transmission market. The 3rd Circuit ruled that the contracts in question were a violation of the
+Sherman and Clayton Acts, as they were de facto (and partial) exclusive dealing contracts. In 2014, Eisai
+v. Sanofi-Aventis applied the Meritor reasoning to loyalty contracts between Sanofi and hospitals for the
+purchaseofablood-clottingdrug,rulinginfavorofthedrugmanufactureronthebasisofapredatorypricing
+standard. The DOJ and the FTC, in June 2014, held a joint workshop on Conditional Pricing Practices
+exploring the implications of this class of contracts for antitrust policy.
+1
+
+ufacturer in the United States: Mars, Inc.2 The AUD implemented by Mars consists of
+three main features: a retailer-specific per-unit discount, a retailer-specific quantity target
+or threshold, and a ‘facing’ requirement that the retailer carry at least six Mars products.
+Mars’ AUD stipulates that if a retailer meets the facing requirement and his total purchases
+exceed the quantity target, Mars pays the retailer an amount that is equal to the per-unit
+discount multiplied by the retailer’s total quantity purchased. We examine the effect of
+the rebate contract through the lens of a retail vending operator, Mark Vend Company,
+for whom we are able to collect extremely detailed information on sales, wholesale costs,
+and contractual terms. The retailer also agreed to run a large-scale field experiment on our
+behalf, which provides us with additional insight into how the AUD might influence the
+retailer’s decisions. To the best of our knowledge, no previous study has had the benefit of
+examining a vertical rebate contract using such rich data and exogenous variation.
+The insights that we gain from studying Mars’ rebate contract allow us to contribute to
+understanding principle-agent models in which downstream moral hazard plays an impor-
+tant role. Downstream moral hazard is an important feature of many vertically-separated
+markets, and is thought to drive a variety of vertical arrangements such as franchising and
+resale price maintenance (RPM).3 However, empirically measuring the effects of downstream
+moral hazard is difficult. Downstream effort may be impossible to measure directly, and ver-
+tical arrangements are endogenously determined, making it difficult to identify the effects of
+downstream moral hazard on upstream firms. Our ability to exogenously vary the result of
+downstream effort (in this case, retail product availability), combined with detailed data on
+wholesale prices, allows us to directly document the effects of downstream moral hazard on
+the revenues of upstream firms.
+InordertoanalyzetheeffectofMars’AUDcontract, wespecifyadiscrete-choicemodelof
+consumer demand and a model of retailer behavior, in which the retailer chooses two actions:
+a set of products to stock, and an effort level. We hold retail prices fixed throughout the
+analysis, consistent with the data and common practice in this industry.4 The number of
+units the retailer can stock for each product is constrained by the capacity of his vending
+2With revenues in excess of $50 billion, Mars is the third-largest privately-held company in the United
+States (after Cargill and Koch Industries).
+3See,amongothers,Shepard(1993)foranearlyempiricalstudyofprinciple-agentproblemsinthecontext
+ofgasolineretailing,andHubbard(1998)foranempiricalstudyofaconsumer-facingprinciple-agentproblem.
+4By holding retail prices fixed, we do not require an equilibrium model of downstream pricing responses
+to the AUD contract. In practice, we see almost no pricing variation over time or across products within a
+category(i.e.,allcandybarsarepricedthesameaseachother,andthispriceholdsthroughouttheperiodof
+analysis). Over a short-run horizon of about three to five years, the retailer has exclusive contractual rights
+to service a location, and these terms may also commit him to a pricing structure during that time.
+2

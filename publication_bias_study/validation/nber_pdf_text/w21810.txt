@@ -1,0 +1,155 @@
+NBER WORKING PAPER SERIES
+THE DYNAMICS OF ADJUSTABLE-RATE SUBPRIME MORTGAGE DEFAULT:
+A STRUCTURAL ESTIMATION
+Hanming Fang
+You Suk Kim
+Wenli Li
+Working Paper 21810
+http://www.nber.org/papers/w21810
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2015
+We thank Shane Sherlund and seminar/conference participants at the Econometric Society World Congress
+(2015), University of New South Wales and University of Technology Sydney for their comments.
+The views expressed are those of the authors and do not necessarily reflect those of the Board of Governors
+of the Federal Reserve, the Federal Reserve Bank of Philadelphia, the Federal Reserve System, or
+the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2015 by Hanming Fang, You Suk Kim, and Wenli Li. All rights reserved. Short sections of text,
+not to exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+The Dynamics of Adjustable-Rate Subprime Mortgage Default: A Structural Estimation
+Hanming Fang, You Suk Kim, and Wenli Li
+NBER Working Paper No. 21810
+December 2015
+JEL No. D12,D14,G2,G21,G33
+ABSTRACT
+We present a dynamic structural model of subprime adjustable-rate mortgage (ARM) borrowers making
+payment decisions taking into account possible consequences of different degrees of delinquency from
+their lenders. We empirically implement the model using unique data sets that contain information
+on borrowers' mortgage payment history, their broad balance sheets, and lender responses. Our investigation
+of the factors that drive borrowers' decisions reveals that subprime ARMs are not all alike. For loans
+originated in 2004 and 2005, the interest rate resets associated with ARMs, as well as the housing
+and labor market conditions were not as important in borrowers' delinquency decisions as in their decisions
+to pay off their loans. For loans originated in 2006, interest rate resets, housing price declines, and
+worsening labor market conditions all contributed importantly to their high delinquency rates. Counterfactual
+policy simulations reveal that even if the Libor rate could be lowered to zero by aggressive traditional
+monetary policies, it would have a limited effect on reducing the delinquency rates. We find that automatic
+modification mortgage designs under which the monthly payment or the principal balance of the loans
+are automatically reduced when housing prices decline can be effective in reducing both delinquency
+and foreclosure. Importantly, we find that automatic modification mortgages with a cushion, under
+which the monthly payment or principal balance reductions are triggered only when housing price
+declines exceed a certain percentage may result in a Pareto improvement in that borrowers and lenders
+are both made better off than under the baseline, with a lower delinquency and foreclosure rates. Our
+counterfactual analysis also suggests that limited commitment power on the part of the lenders to loan
+modification policies may be an important reason for the relatively small rate of modifications observed
+during the housing crisis.
+Hanming Fang Wenli Li
+Department of Economics Research Department
+University of Pennsylvania Federal Reserve Bank of Philadelphia
+3718 Locust Walk 10 N Independence Mall W,
+Philadelphia, PA 19104 Philadelphia, PA 19106
+and NBER wenli.li@phil.frb.org
+hanming.fang@econ.upenn.edu
+You Suk Kim
+Division of Research and Statistics
+Board of Governors of the Federal Reserve System
+20th & C Streets, NW,
+Washington, D.C. 20551
+you.kim@frb.gov
+
+1 Introduction
+The collapse of the subprime residential mortgage market played a crucial role in the recent
+housing crisis that subsequently led to the Great Recession.1 At the end of 2007, subprime mort-
+gages accounted for about 13 percent of all outstanding first-lien residential mortgages but over
+half of the foreclosures. The majority of the subprime mortgages, both by number and by value,
+were adjustable interest rates mortgages (ARMs); and these mortgages had a foreclosure rate of
+17 percent, much higher than the 5 percent foreclosure rate for the fixed-rate subprime mortgages
+(Frame, Lehnert, and Prescott 2008, Table 1). In response to these developments, many govern-
+mentpoliciesweredesignedandimplementedtochangethedefaultincentivesofthesubprimeARM
+borrowers.2 Few structural models, however, exist that can guide us in these efforts, and that can
+help us understand why most of the programs had limited success.3
+In this paper, we develop a dynamic structural model to study the incentives of the adjustable-
+rate subprime borrowers to default, and investigate how these incentives change under various
+policies. In our model, at each period, a borrower decides whether to pay the amount due (and
+be current) or not pay (and stay in various delinquent status), taking into account the lender’s
+responses such as mortgage modification, liquidation, or waiting (i.e., doing nothing). Relative to
+the existing structural models on mortgage defaults which we review below, our model has two key
+distinguishing features: first, in our model default is not the terminal and absorbing state as we
+allow borrowers to self cure their delinquency; second, we consider loan modification as one of the
+lenders’ loss mitigation practices while the existing models only allow for liquidation.
+We empirically implement our model using unique mortgage loan level data sets that contain
+not only detailed information on borrowers’ mortgage payment history and lenders’ responses, but
+also credit bureau information about borrowers’ broader balance sheet. We are thus one of the first
+to utilize borrowers’ credit bureau information to understand their mortgage payment decisions.4
+To track movements in the local housing and labor markets, we further merge our data with zip
+code level home price indices and county level unemployment rates.
+1There is no standard definition of subprime mortgage loans. Typically, they refer to loans made to borrowers
+with poor credit history (e.g., a FICO score below 620) and/or with ahigh leverage as measuredby either the debt-
+to-income ratio or the loan-to-value ratio. For the data used in this paper, subprime mortgages are defined as those
+in private-label mortgage-backed securities marketed as subprime, as in Mayer, Pence, and Sherlund (2009).
+2To name a few of such programs, the FHASecure program approved by Congress in September 2007; the Hope
+Now Alliance program (HOPENOW) created by then-Treasury Secretary Henry Paulson in October 2007; Hope for
+HomeownersrefinancingprogrampassedbyCongressinthespringof2008;MakingHomeAffordable(MHA)initiative
+inconjunctionwiththeHomeAffordableModificationProgram(HAMP)andtheHomeAffordableRefinanceProgram
+(HARP)launchedbytheObamaadministrationinMarch2009(HAMP).SeeGerardiandLi(2010)formoredetails.
+3Over the first two and a half years, HARP refinancing activity remained subdued relative to model-based
+extrapolations from historical experience. From its inception to the end of 2011, 1.1 million mortgages refi-
+nanced through HARP, compared to the initial announced goal of three to four million mortgages. In De-
+cember, HARP 2.0 was introduced and HARP refinance volume picked up, reaching 3.2 million by June 2014.
+http://www.fhfa.gov/AboutUS/Reports/Pages/Refinance-Report-February-2014.aspx. Similarly, HAMP was de-
+signedtohelpasmanyas4millionborrowersavoidforeclosurebytheendof2012. ByFebruary2010,oneyearinto
+the program, only 168,708 trial plans had been converted into permanent revisions. Through January 2012, a pop-
+ulationof621,000loanshadreceivedHAMPmodifications. Seehttp://www.treasury.gov/resource-center/economic-
+policy/Documents/HAMPPrincipalReductionResearchLong070912FINAL.pdf
+4Elul,Souleles,Chomsisengphet,Glennon,andHunt(2010)alsousecreditbureauinformationtostudymortgage
+default decisions in their empirical analysis.
+1
+
+Three main factors drive ARM borrowers’ mortgage payment decisions: home equity, income,
+and monthly mortgage payment; importantly, both the current levels of these factors and the ex-
+pectations of their future changes matter. Borrowers with negative home equity have little financial
+gains from continuing with their mortgage payments, especially when they do not expect house
+prices to recover and when costs associated with defaults and foreclosures are low. Changes in
+incomes and expenses, including changes in monthly mortgage payments due to interest rate re-
+sets for example, affect borrowers’ liquidity position. In principle, borrowers can refinance their
+mortgages to lower interest rates or sell their houses to improve their liquidity positions, but these
+options may not be available in the presence of declining house prices, increasing unemployment
+rates, and/or tightened lending standards. These constrained borrowers thus may find it optimal
+to default on their mortgages despite the possible consequences of foreclosure.
+To quantify the relative importance of these different drivers of default, we simulate our struc-
+turally estimated model under various counterfactual scenarios. Our simulation results suggest
+that the factors that drive the borrower delinquency and foreclosure differ substantially by loan
+origination year. For loans originated in 2004 and 2005, which preceded the severe downturn of the
+housingandlabormarkets,theinterestrateresetsassociatedwithARMsaswellasthehousingand
+labormarketconditionsdonotseemtobeasimportantfactorsforborrowers’delinquencybehavior
+as they are in determining whether the borrowers would pay off their loans (i.e., sell their houses
+or refinance). However, for loans that originated in 2006, interest rate reset, housing price declines,
+and worsening labor market conditions all contributed to their high delinquency rates with housing
+price declines being the most significant contributing factor.5 These results arise because for loans
+originated in 2004 and 2005, interest rates did not reset until 2006 or 2007 at which time house
+prices have just begun to decline. More importantly, since house prices continued to appreciate in
+2004, 2005, and part of 2006, these borrowers have accumulated some home equity by the time of
+their interest rates reset; in fact, in many places house price did not go all the way down to their
+2004 levels until 2008. Additionally, the labor market did not deteriorate significantly until 2008 or
+2009. In contrast, borrowers whose loans originated in 2006 had the perfect storm in 2008 or 2009
+when their interest rates reset, as house prices had depreciated substantially and unemployment
+rates had risen sharply.
+Counterfactual policy simulations reveal that even if the Libor rate could be lowered to zero by
+aggressive traditional monetary policies, it would have a limited effect on reducing the delinquency
+rates. We find that automatic modification mortgage designs under which the monthly payment
+or the principal balance of the loans are automatically reduced when housing prices decline can
+be effective in reducing both delinquency and foreclosure. Importantly, we find that automatic
+modification mortgages with a cushion, under which the monthly payment or principal balance
+reductions are triggered only when housing price declines exceed a certain percentage may result
+in a Pareto improvement in that borrowers and lenders are both made better off than under the
+5Our finding is consistent with those in the literature including Bhutta, Dokko, and Shan (2010), Foote, Gerardi,
+and Willen (2012), and Fuster and Willen (2015). Bhutta, Dokko, and Shan (2010) also find that 80 percent of the
+defaults in their sample (2006 loans originated in the crisis states) are the results of income shocks combined with
+negativehouseequity. Foote,Gerardi,andWillen(2012)findthatinterestrateresetraisedthedefaultratesof2006
+loans.
+2

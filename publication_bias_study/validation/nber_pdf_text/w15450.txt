@@ -1,0 +1,131 @@
+NBER WORKING PAPER SERIES
+RATIONAL ATTENTION ALLOCATION OVER THE BUSINESS CYCLE
+Marcin Kacperczyk
+Stijn Van Nieuwerburgh
+Laura Veldkamp
+Working Paper 15450
+http://www.nber.org/papers/w15450
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2009
+We thank John Campbell, Joseph Chen, Xavier Gabaix, Vincent Glode, Lars Hansen, Christian Hellwig,
+Ralph Koijen, Jeremy Stein, Matthijs van Dijk, Robert Whitelaw, as well as three anonymous referees,
+and participants in several seminars and conferences for valuable comments and suggestions. We thank
+Isaac Baley and Nic Kozeniauskas for outstanding research assistance. Finally, we thank the Q-group
+for their generous financial support. A previous version of this paper was entitled “Rational Attention
+Allocation over the Business Cycle”. The views expressed herein are those of the author(s) and do
+not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2009 by Marcin Kacperczyk, Stijn Van Nieuwerburgh, and Laura Veldkamp. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission provided
+that full credit, including © notice, is given to the source.
+
+Rational Attention Allocation Over the Business Cycle
+Marcin Kacperczyk, Stijn Van Nieuwerburgh, and Laura Veldkamp
+NBER Working Paper No. 15450
+October 2009, Revised October 2015
+JEL No. E3,G2
+ABSTRACT
+The question of whether and how mutual fund managers provide valuable services for their clients
+motivates one of the largest literatures in finance. One candidate explanation is that funds process
+information about future asset values and use that information to invest in high-valued assets. But
+formal theories are scarce because information choice models with many assets are difficult to solve
+as well as difficult to test. This paper tackles both problems by developing a new attention allocation
+model that uses the state of the business cycle to predict information choices, which in turn, predict
+observable patterns of portfolio investments and returns. The predictions about fund portfolios’ covariance
+with payoff shocks, cross-fund portfolio and return dispersion, and their excess returns are all supported
+by the data. These findings offer new evidence that some investment managers have skill and that
+attention is allocated rationally.
+Marcin Kacperczyk Laura Veldkamp
+Imperial College Business School Stern School of Business
+Tanaka Building New York University
+South Kensington Campus 44 W Fourth Street,Suite 7-77
+London SW7 2AZ New York, NY 10012
+United Kingdom and NBER
+m.kacperczyk@imperial.ac.uk lveldkam@stern.nyu.edu
+Stijn Van Nieuwerburgh
+Stern School of Business
+New York University
+44 W 4th Street, Suite 9-120
+New York, NY 10012
+and NBER
+svnieuwe@stern.nyu.edu
+A data appendix is available at:
+http://www.nber.org/data-appendix/w15450
+
+“What information consumes is rather obvious: It consumes the attention of its re-
+cipients. Hence a wealth of information creates a poverty of attention, and a need
+to allocate that attention efficiently among the overabundance of information sources
+that might consume it.” Simon (1971)
+The question of whether and how mutual fund managers provide valuable services for their
+clients motivates one of the largest literatures in empirical finance. A natural candidate
+explanation is that funds process information about future asset values and use that infor-
+mation to invest in high-valued assets. But few such theories have been written because
+information choice models with many assets are difficult to solve and difficult to test. This
+paper tackles both of these problems by developing a new model that uses an observable
+variable–the state of the business cycle–to predict information choices and that links those
+information choices to observable patterns in portfolio investments and returns.
+We use business cycle variation as our observable state because of recent empirical evi-
+dence suggesting that the way funds provide value changes over the cycle (Kosowski (2011),
+Glode (2011), Kacperczyk, Van Nieuwerburgh, and Veldkamp (2014)). We explore a fund
+manager’s choice of what information to process in different states of the business cycle. We
+find that fund managers optimally choose to process information about aggregate shocks in
+recessions and idiosyncratic shocks in booms. The resulting fund portfolios exhibit the same
+kind of “time-varying skill” as do those in the data.
+To understand how fund information strategies depend on the cycle, we build a new
+model. Existingmutualfundtheoriesexplainfundflowsandfees, butdonottellushowfunds
+add value.1 Existing models of information processing and portfolio choice either prohibit
+managers from choosing between aggregate or idiosyncratic information (Van Nieuwerburgh
+and Veldkamp 2010), or require that there are only two assets (Mondria 2010), rendering
+all shocks aggregate. Therefore, we develop a new methodology that can accommodate N
+assets and information choices with a more general asset payoff and signal structure.
+The model’s solution offers a rich set of predictions, which we test with mutual fund
+data. Just as importantly, the model is a building block. It can be extended to allow for
+asymmetric initial information across investors, multiple countries with home and foreign
+1Fortheoreticalmodelsoffeesandflows,assetpriceeffects,managerincentiveproblems,andotheraspects
+ofmutualfunds, seee.g.,MamayskyandSpiegel(2002),BerkandGreen(2004),KanielandKondor(2013),
+CuocoandKaniel(2011),Chien,Cole,andLustig(2011),Chapman,Evans,andXu(2010),andP´astorand
+Stambaugh (2012). A number of recent papers in the empirical mutual fund literature also find that some
+managershaveskill,e.g.,Kacperczyk,Sialm,andZheng(2005,2008),KacperczykandSeru(2007),Cremers
+and Petajisto (2009), Huang, Sialm, and Zhang (2011), Koijen (2014), Baker, Litov, Wachter, and Wurgler
+(2010).
+1
+
+funds, high and low-capacity funds, a choice over the quantity of information capacity, etc.
+The framework provides a new lens through which to analyze the empirical literature and to
+study which empirical patterns are consistent with optimal information-processing behavior.
+In the model, a fraction of investment managers have skill. These skilled managers can
+observeafixednumberofsignalsaboutassetpayoffsandchoosewhatfractionofthosesignals
+will contain aggregate versus stock-specific information. We think of aggregate signals as
+macroeconomic data that affect future cash flows of all firms, and of stock-specific signals as
+firm-level data that forecast the part of firms’ future cash flows that is independent of the
+aggregate shocks. Based on their signals, skilled managers form portfolios, choosing larger
+portfolio weights for assets that are more likely to have high returns. In the data, recessions
+are times when aggregate volatility rises and the price of risk surges. When we embed these
+two forces in our model, both govern attention allocation.
+The model generates six main predictions. It predicts how volatility and the price of
+risk each affect attention allocation, portfolio dispersion, and portfolio returns. The first
+pair of predictions tell us that attention should be reallocated over the business cycle. In
+recessions, more volatile aggregate shocks should draw more attention, because it is more
+valuable to pay attention to more uncertain outcomes. The elevated price of risk amplifies
+thisreallocation: Since aggregateshocks affect alargefractionoftheportfolio’svalue, paying
+attention to aggregate shocks resolves more portfolio risk than learning about stock-specific
+risks. When the price of risk is high, such risk-minimizing attention choices become more
+valuable. While the idea that it is more valuable to shift attention to more volatile shocks is
+straightforward, whether changes in the price of risk would amplify or counteract this effect
+is not obvious.
+The remaining predictions do not come from the reallocation of attention. Rather, they
+help to distinguish this theory from non-informational alternatives and support the idea that
+atleast someportfoliomanagersareengaginginvalue-maximizing behavior. Thesecondpair
+of results predict business cycle effects on cross-fund portfolio and profit dispersion. Since
+recessions are times when large aggregate shocks to asset payoffs create more comovement in
+assetpayoffs, passiveportfolioswouldhavereturnsthatalsocomovemoreinrecessions, which
+wouldimplylessdispersion. Incontrast, wheninvestment managerslearnaboutasset payoffs
+and manage their portfolios according to what they learn, fund returns comove less and
+dispersion increases in recessions. One reason is that when aggregate shocks become more
+volatile, managers who learn about aggregate shocks put less weight on their common prior
+beliefs, which have less predictive power, and more weight on their heterogeneous signals.
+2

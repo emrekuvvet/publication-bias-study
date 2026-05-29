@@ -1,0 +1,130 @@
+NBER WORKING PAPER SERIES
+PREDICTABLE FINANCIAL CRISES
+Robin Greenwood
+Samuel G. Hanson
+Andrei Shleifer
+Jakob Ahm Sørensen
+Working Paper 27396
+http://www.nber.org/papers/w27396
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2020
+Greenwood and Hanson gratefully acknowledge funding from the Division of Research at
+Harvard Business School. Sørensen gratefully acknowledges support from FRIC Center for
+Financial Frictions (grant no. DNRF102). We thank Matthew Baron, Xavier Gabaix, Jeremy
+Stein, Adi Sunderam, Emil Verner, and Wei Xiong as well as seminar participants at Harvard and
+Princeton for helpful comments, and Peggy Moreland for editorial assistance. We are grateful to
+Matthew Baron, Emil Verner, and Wei Xiong for generously sharing their data. The views
+expressed herein are those of the authors and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+At least one co-author has disclosed a financial relationship of potential relevance for this
+research. Further information is available online at http://www.nber.org/papers/w27396.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Robin Greenwood, Samuel G. Hanson, Andrei Shleifer, and Jakob Ahm Sørensen. All
+rights reserved. Short sections of text, not to exceed two paragraphs, may be quoted without
+explicit permission provided that full credit, including © notice, is given to the source.
+
+Predictable Financial Crises
+Robin Greenwood, Samuel G. Hanson, Andrei Shleifer, and Jakob Ahm Sørensen
+NBER Working Paper No. 27396
+June 2020
+JEL No. E44,E7,G01,G4
+ABSTRACT
+Using historical data on post-war financial crises around the world, we show that crises are
+substantially predictable. The combination of rapid credit and asset price growth over the prior
+three years, whether in the nonfinancial business or the household sector, is associated with about
+a 40% probability of entering a financial crisis within the next three years. This compares with a
+roughly 7% probability in normal times, when neither credit nor asset price growth has been
+elevated. Our evidence cuts against the view that financial crises are unpredictable “bolts from
+the sky” and points toward the Kindleberger-Minsky view that crises are the byproduct of
+predictable, boom-bust credit cycles. The predictability we document favors macro-financial
+policies that “lean against the wind” of credit market booms.
+Robin Greenwood Andrei Shleifer
+Harvard Business School Department of Economics
+Baker Library 267 Harvard University
+Soldiers Field Littauer Center M-9
+Boston, MA 02163 Cambridge, MA 02138
+and NBER and NBER
+rgreenwood@hbs.edu ashleifer@harvard.edu
+Samuel G. Hanson Jakob Ahm Sørensen
+Harvard Business School D4.17
+Baker Library 361 Solbjerg Plads 3
+Soldiers Field Frederiksberg 2000
+Boston, MA 02163 Denmark
+and NBER jso.fi@cbs.dk
+shanson@hbs.edu
+
+1. Introduction
+A central issue in the study of macroeconomic stability is the predictability of financial
+crises. An important line of thought holds that crises are largely unpredictable. For example,
+each of the three principal policymakers in the 2008 U.S. financial crisis, Hank Paulson, Tim
+Geithner, and Ben Bernanke, has taken this position at different times.1 Similarly, Gorton
+(2012, p.42) argues that “crises are sudden, unpredictable events.” This view is bolstered by
+theories that see crises as being due to sunspot equilibria (Cole and Kehoe 2000, Chari and
+Kehoe 2003), and by early evidence showing that, while crises are often preceded by weak
+economic fundamentals, the degree of predictability is low (Kaminsky and Reinhart 1999).
+An alternative view sees financial crises as substantially predictable byproducts of rapid
+expansions of credit accompanied by asset price booms (Minsky 1977, 1986 and Kindleberger
+1978). Borio and Lowe (2002) show that rapid credit growth and asset price growth predict
+banking crises in 34 countries between 1970 and 1999, spurring an extensive literature on so-
+called “early warning indicators.” More recently, Schularick and Taylor (2012) and others
+show that credit expansions, growth of risky credit as a share of the total, and narrow credit
+spreads, all predict financial fragility and deteriorating macroeconomic outcomes (Greenwood
+and Hanson 2013, Baron and Xiong 2017, Lopez-Salido, Stein, and Zakrajšek 2017, Mian,
+Sufi, and Verner 2019). Kirti (2020) and Richter, Schularick, and Wachtel (2020) document
+the characteristics that can help separate good and bad credit booms. Yet even with all this
+evidence, precise estimates of the probability of a financial crisis following credit and asset
+price booms remain unavailable. More importantly, it remains an open question how high the
+probability of a crisis should be permitted to climb before prompting early policy action.
+In this paper, we estimate the probability of financial crises as a function of past credit
+and asset price growth. Such an estimate has been made significantly easier by the development
+of historical chronologies of financial crises by Reinhart and Rogoff (2011), Jordà, Schularick,
+and Taylor (2017), and Baron, Verner, and Xiong (BVX 2020). Most recently, BVX use hand-
+collected historical data on bank stock returns to improve existing crisis chronologies, which
+to date have been based solely on narrative accounts. We use BVX’s chronology to construct
+1 According to former U.S. Secretary of the Treasury Tim Geithner, “Financial crises cannot be reliably anticipated
+or preempted” (see Geithner 2014). According to former U.S. Secretary of the Treasury Hank Paulson, “My strong
+belief is that these crises are unpredictable in terms of cause, timing, or the severity when they hit.” (See
+https://www.brookings.edu/wp-content/uploads/2018/09/es_20180912_financial_crisis_day2_transcript.pdf).
+According to Federal Reserve Chairman Ben Bernanke, “This crisis involved a 21st century electronic panic by
+institutions. It was an old-fashioned run in new clothes.” (See https://www8.gsb.columbia.edu/articles/chazen-
+global-insights/financial-system-will-survive-says-ben-bernanke.)
+1
+
+an indicator variable for the onset of a financial crises. We combine historical data on the
+growth of outstanding credit to nonfinancial businesses and households with data on the growth
+of equity and home prices, to estimate the future probability of a financial crisis in a panel of
+42 countries over 1950–2016.
+We present six findings. First, consistent with Schularick and Taylor (2012), crises can
+be predicted using past credit growth in simple linear forecasting regressions. We show that
+both nonfinancial business and household credit growth forecast the onset of a future crisis.
+However, the degree of predictability is modest, even at horizons of up to five years. Schularick
+and Taylor (2012) find that a one standard deviation rise in real 1-year credit growth leads to a
+2.8 percentage point increase in the probability of a crisis over the next five years. Repeating
+their analysis on our sample with BVX’s crisis chronology, we obtain virtually the same result.
+Second, we show that the degree of predictability rises substantially when we focus on
+large credit expansions that are accompanied by asset price booms. Specifically, when
+nonfinancial business credit growth is high and stock market valuations have risen sharply, or
+when household credit growth is high and home prices have risen sharply, the probability of a
+subsequent crisis is substantially elevated. The combination of rapid credit growth and asset
+price growth in the same sector is a natural signal of an outward shift in the supply of credit,
+which then sows the seeds of its own destruction (Borio and Drehmann 2009, Greenwood and
+Hanson 2013, Jorda, Schularick, and Taylor 2015, López-Salido, Stein, and Zakrajšek 2017,
+and Kirti 2020). Our results are robust to different classifications of financial crises such as
+those in Reinhart and Rogoff (2011) and Jordà, Schularick, and Taylor (2017). However, we
+do not use data on credit spreads in this paper, which would likely increase the predictability
+of crises, because the historical scarcity of these data would substantially reduce our sample.
+To demonstrate these results, we construct a simple indicator variable called the Red-
+zone, or the “R-zone” for short, that identifies periods of potential credit-market overheating.
+Specifically, we say that a country is in the “business R-zone” if nonfinancial business credit
+growth over the past three years is in the top quintile of the historical distribution, and stock
+market returns over the same window are in the top tercile. The probability of a crisis at a 1-
+year horizon is 13% if a country is in the business R-Zone, a substantial increase over the
+unconditional probability of 4%. The comparable 1-year probability is 14% if a country is in
+the household R-zone—i.e., if household credit growth and home price growth are jointly
+elevated. Crucially, the degree of predictability increases dramatically with horizon. The
+probability of experiencing a financial crisis within the next three years is 45% for countries
+2

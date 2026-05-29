@@ -1,0 +1,127 @@
+NBER WORKING PAPER SERIES
+THE AGGREGATE DEMAND FOR BANK CAPITAL
+Milton Harris
+Christian Opp
+Marcus Opp
+Working Paper 27858
+http://www.nber.org/papers/w27858
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2020
+We are grateful for feedback from our discussants Bengt Holmstrom, Guido Lorenzoni, Balint
+Horvath and Frederic Boissay, as well as comments by Juliane Begenau, Peter DeMarzo, Jason
+Donaldson, Arvind Krishnamurthy, and Ernst-Ludwig von Thadden. In addition, we thank
+participants at the NBER Summer Institute 2019 (Risks of Financial Institutions; Capital Markets
+and the Economy), the EFA 2019, the Chicago Booth Asset Pricing Conference, Bocconi BAFFI
+CAREFIN, European Central Bank, HKU, HKUST, University of Oregon, University of
+Mannheim, University of Rotterdam, NUS, and Tilburg University. The views expressed herein
+are those of the authors and do not necessarily reflect the views of the National Bureau of
+Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Milton Harris, Christian Opp, and Marcus Opp. All rights reserved. Short sections of
+text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+The Aggregate Demand for Bank Capital
+Milton Harris, Christian Opp, and Marcus Opp
+NBER Working Paper No. 27858
+September 2020
+JEL No. G12,G21,G23,G28
+ABSTRACT
+We propose a novel conceptual approach to transparently characterizing credit market outcomes
+in economies with multi-dimensional borrower heterogeneity. Based on characterizations of
+securities' implicit demand for bank equity capital, we obtain closed-form expressions for the
+composition of credit, including a sufficient statistic for the provision of bank loans, and a novel
+cross-sectional asset pricing relation for securities held by regulated levered institutions. Our
+framework sheds light on the compositional shifts in credit prior to the 07/08 financial crisis and
+the European debt crisis, and can provide guidance on the allocative effects of shocks affecting
+both banks and the cross-sectional distribution of borrowers.
+Milton Harris Marcus Opp
+Graduate School of Business Stockholm School of Economics
+University of Chicago Drottninggatan 98
+5807 South Woodlawn Avenue 111 60 Stockholm
+Chicago, IL 60637 Stockholm
+milt@chicagobooth.edu Sweden
+marcus.opp@hhs.se
+Christian Opp
+Simon Business School
+University of Rochester
+3-110N Carol Simon Hall
+Rochester, NY 14627
+and NBER
+opp@rochester.edu
+
+1. Introduction
+Recent empirical evidence highlights the diverse cross-sectional implications of shocks af-
+fecting bank capital. In particular, the empirical literature has documented how banks affect
+real activity not only by alleviating credit rationing but also by reaching for yield in risky
+asset classes.1 This rich evidence reveals that the allocative effects of various shocks affect-
+ing banks and the real economy depend on which types of lending to the cross-section of
+borrowers are affected. That is, compositional effects are of first-order importance, not just
+aggregatequantities.
+Yet understanding how the composition of credit is determined is generally complex,
+since firms in practice exhibit heterogeneity along multiple relevant dimensions and simul-
+taneously demand credit from heterogeneous banks. Correspondingly, each bank-borrower
+pair has effectively a separate demand and supply curve for credit, and this multitude of
+demand and supply curves are interdependent. For instance, one borrower experiencing a
+positive shock to her investment opportunities — a canonical credit demand shock — may
+implyanegativesupplyshockforanotherborrower,sincebanksmightreallocatefundstothe
+former borrower.2 Moreover, banks face regulatory constraints and deposit subsidies, which
+appear to be of first-order importance for their decisions (see, e.g., Jiang, Matvos, Piskorski,
+andSeru(2020)forrelatedevidence). Thesefrictionsintroducenon-linearitiesimplyingthat
+banksoptimallyaccountforthecorrelationstructureofinvestmentsintheirportfolio,inpar-
+ticularintailriskstates. Giventheassociatedcomplexityofequilibriumaggregation,existing
+theoretical frameworks feature only limited notions of borrower heterogeneity. Yet hetero-
+geneityiskeytounderstandingthecross-sectionaldispersioninfirms’creditelasticitieswith
+respecttofinancialandrealshocks.
+In this paper, we aim to bridge this gap by offering a novel approach to transparently
+characterizing the credit market equilibrium in economies with rich borrower heterogeneity.
+Our main conceptual contribution is to depart from the conventional focus on demand and
+supply curves for credit, and to instead determine loans’ implicit reservation prices for bank
+1For evidence consistent with a bank lending channel, see, e.g., Kashyap et al. (1993, 1994), Gertler and
+Gilchrist(1994),PeekandRosengren(2000),KhwajaandMian(2008),Jime´nezetal.(2012),Iyeretal.(2014),
+Chodorow-Reich (2014). For evidence on risk taking, see, e.g., Acharya et al. (2014), Jime´nez et al. (2014),
+Iannottaetal.(2018).
+2Theempiricalliteraturehasrecognizedthecomplexityassociatedwithseparatecreditdemandandsupply
+curvesforeachborrower-bankpair. Asaresult,theliteraturenowtypicallyreliesonidentificationapproaches
+thatusevariationwithinborrowers(see,e.g.,KhwajaandMian,2008),whichprovideslimitedinsightsonthe
+determinantsofcompositionalchangesattheaggregatelevel.
+1
+
+capital. This metric is essential for the composition of credit, since banks’ lending decisions
+are governed by the objective to maximize shareholder value, and because banks’ equity
+capital is a key scarce resource in the presence of financial frictions. We show that applying
+this approach delivers precise predictions for the pricing and the composition of credit, even
+inthepresenceofmulti-dimensionalborrowerheterogeneity.
+The presented framework can serve as a laboratory to examine the cross-sectional al-
+locative effects of policy interventions and shocks affecting the economy. It reveals how the
+borrowerrankingbasedonreservationpricesidentifiesthegroupofbanks’marginalborrow-
+ers, the set borrowers whose access to bank credit responds most elastically to small shocks.
+As a result, even focused policy interventions that exclusively increase the risk weights of
+(infra-marginal) high-risk borrowers may locally only cause credit rationing of (marginal)
+safeborrowers. Moregenerally,ourformulaforborrowers’reservationpricesprovidessharp
+predictionsfortheimplicationsoflargeshocksaffectingboththefinancialsectorandthereal
+economy. As example applications, we discuss how our framework can coherently integrate
+various stylized facts that have been linked to the 07/08 financial crisis and the European
+debt crisis. Moreover, we highlight potential unintended consequences on bank risk-taking
+of policies aiming to improve public market access for firms, such as the EU’s MIFID II
+initiative.
+An essential feature of our analysis is that asset prices are determined in equilibrium by
+marginalinvestorsthatendogenouslydifferacrossassets. Despitethiscomplexity,weobtain
+a unifying asset pricing relation for the cross-section of securities held by regulated levered
+institutions. This relation reveals how securities’ expected returns reflect premia that are not
+only increasing in assets’ implicit demand for scarce regulatory capital, but also decreasing
+in their contribution to levered institutions’ portfolio tail risk. As a result, risky securities
+withlowregulatory“riskweights”maycommandnegativepremia,consistentwithempirical
+evidence on inflated prices in asset classes typically held by levered financial institutions,
+including insurance companies.3 Counter to conventional wisdom, this asset pricing relation
+also unveils the logic for why certain borrowers’ cost of capital may decrease in response to
+system-wide increases of capital requirements and how borrower heterogeneity is essential
+for this result. Intuitively, relatively safe firms may face lower financing costs if increases
+incapitalrequirementsrenderthefundingofriskyborrowersunprofitableforbanks,thereby
+freeingupcapitalanddecreasingtheequilibriumscarcitypremiumofbankcapital.
+3See,e.g.,GreenwoodandHanson(2013).
+2

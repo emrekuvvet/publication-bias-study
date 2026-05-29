@@ -1,0 +1,134 @@
+NBER WORKING PAPER SERIES
+DYNAMIC SPATIAL GENERAL EQUILIBRIUM
+Benny Kleinman
+Ernest Liu
+Stephen J. Redding
+Working Paper 29101
+http://www.nber.org/papers/w29101
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2021, Revised December 2022
+We are grateful to Princeton University for research support. A previous version of this paper
+circulated under the title “Sufficient Statistics for Dynamic Spatial Economics.” A toolkit
+illustrating our spectral analysis for a model economy can be downloaded from the authors’
+webpages. We would like to thank the editor, three anonymous referees, Treb Allen, Lorenzo
+Caliendo, Fernando Parro, Michael Peters, Ricardo Reyes-Heroles, Daniel Xu, and conference
+and seminar participants at CEPR ERWIT, Cambridge, Columbia, CREI, Dallas, Dartmouth,
+EAGLS, Hong Kong, NBER Summer Institute, London School of Economics, Nottingham,
+Princeton, Stanford, Sussex, the Virtual Trade and Macro Seminar, Urban Economics
+Association, and Yale for helpful comments and suggestions. We would like to thank Youngjin
+Song for sharing data and Maximilian Schwarz and Nan Xiang for excellent research assistance.
+The usual disclaimer applies. The views expressed herein are those of the authors and do not
+necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2021 by Benny Kleinman, Ernest Liu, and Stephen J. Redding. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Dynamic Spatial General Equilibrium
+Benny Kleinman, Ernest Liu, and Stephen J. Redding
+NBER Working Paper No. 29101
+July 2021, Revised December 2022
+JEL No. F14,F15,R12
+ABSTRACT
+We incorporate forward-looking capital accumulation into a dynamic discrete choice model of
+migration. We characterize the steady-state equilibrium; generalize existing dynamic exact-hat
+algebra techniques to incorporate investment; and linearize the model to provide an analytical
+characterization of the economy’s transition path using spectral analysis. We show that capital
+and labor dynamics interact to shape the economy’s speed of adjustment towards steady-state.
+We implement our quantitative analysis using data on capital stocks, populations and bilateral
+trade and migration flows for U.S. states from 1965-2015. We show that this interaction between
+capital and labor dynamics plays a central role in explaining the observed decline in the rate of
+income convergence across U.S. states and the persistent and heterogeneous impact of local
+shocks.
+Benny Kleinman Stephen J. Redding
+Department of Economics Department of Economics &
+Julis Romo Rabinowitz Building School of Public and International Affairs
+Princeton, NJ 08544 Princeton University
+binyamin@princeton.edu Princeton, NJ 08544
+and CEPR
+Ernest Liu and also NBER
+Department of Economics reddings@princeton.edu
+Princeton University
+20 Washington Road
+Princeton, NJ 08540
+and NBER
+ernestliu@princeton.edu
+
+1 Introduction
+A central research question in economics is understanding the response of the spatial distribu-
+tionofeconomicactivitytofundamentalshocks,suchaschangesinproductivity. Ingeneral,this
+response can be gradual, because of migration frictions for mobile factors (labor), and the grad-
+ual accumulation of immobile factors (capital structures). However, a key challenge has been
+modeling forward-looking capital investments in economic geography models with population
+mobility. The reason is that investment and migration decisions in each location depend on one
+another, and on these decisions in all locations in all future time periods, which quickly results in
+aprohibitivelylargestatespaceforempirically-realisticnumbersoflocations.
+We make two main contributions. First, we develop a tractable framework for incorporating
+forward-lookinginvestmentintoadynamicdiscretechoicemigrationmodelthatovercomesthis
+challenge of a high-dimensional state space. We characterize the steady-state equilibrium and
+generalizeexistingdynamicexact-hatalgebratechniquestoincorporateinvestment. Second,we
+linearizethemodeltoobtainaclosed-formsolutionfortheeconomy’stransitionpath,intermsof
+animpactmatrixthatcapturestheinitialimpactofshocksandatransitionmatrixthatgovernsthe
+updatingofthestatevariables. Weshowthatthedynamicresponseoftheeconomytoanyshock
+to fundamentals can be characterized in terms of the spectral properties (the eigenvalues and
+eigenvectors)ofthistransitionmatrix. Weusethischaracterizationtoshowthattheinteraction
+betweencapitalaccumulationandmigrationdynamicsplaysacentralroleintheobserveddecline
+intherateofincomeconvergenceacrossU.S.statesandthepersistentandheterogeneousimpact
+ofshocks.
+To illustrate our approach as clearly as possible, we build on conventional specifications of
+trade, migration and capital accumulation, and make a number of simplifying assumptions in
+our baseline specification. We assume a single-sector Armington (1969) model of trade, with a
+constantelasticitygravityequationfortradeingoods. Weconsideraconstantelasticitydynamic
+discrete choice model of migration following Caliendo et al. (2019), which features a constant
+elasticity gravity equation for migration. We adapt a textbook macro specification of capital
+accumulation, in which agents choose consumption and investment to maximize intertemporal
+utilitysubjecttoanintertemporalbudgetconstraint. Ourmainsimplifyingassumptionistodraw
+a distinction between workers and landlords, as in Moll (2014). Workers make forward-looking
+migrationdecisions,butdonothaveaccesstoaninvestmenttechnology,andhencelive“handto
+mouth.” Landlordsaregeographicallyimmobile,buthaveaccesstoaninvestmenttechnologyin
+local capital, such as buildings and structures, and make forward-looking capital accumulation
+decisions. We show that this simplifying assumption allows us to incorporate forward-looking
+investmentwithoutintroducingaprohibitivelylargestatespace.
+1
+
+Our framework allows for many locations that can differ in productivity and amenities, and
+a rich geography of bilateral trade and migration costs. Nevertheless, we derive analytical con-
+ditions for the existence and uniqueness of the steady-state equilibrium. We show that these
+conditions depend only on structural parameters, such as agglomeration and dispersion forces,
+andareinvariantwithrespecttoinitialconditions. Giventheobservedvaluesoftheendogenous
+variables for an initial equilibrium somewhere along the transition path towards an unobserved
+steady-state, we show how to use dynamic exact-hat algebra techniques to solve for the econ-
+omy’stransitionpathforanysequenceoffuturechangesinfundamentals.
+We next linearize the model to obtain a closed-form solution for the economy’s transition
+path in terms of the impact and transition matrices. Both matrices depend solely on trade and
+migrationsharesthatareobservedinthedataandstructuralparametersofthemodel. Weusean
+eigendecompositionofthetransitionmatrixtoshowthatthedynamicresponseoftheeconomy’s
+statevariablestoanyempiricalshocktoproductivityandamenitiescanbeexpressedasalinear
+combination of its response to what we term eigen-shocks: a shock to fundamentals for which
+the initial impact on the capital and labor state variables corresponds to an eigenvector of the
+transition matrix. These eigen-shocks have three key properties. First, we can compute them
+fromtheobserveddata. Second,theeconomy’sspeedofconvergencetosteady-stateforaneigen-
+shock depends solely on the associated eigenvalue of the transition matrix, which allows us to
+provide an analytically sharp characterization of the determinants of the speed of convergence.
+Third,wecanrecovertheloadingsofanyempiricalshocktofundamentalsontheseeigen-shocks
+fromalinearprojectionoftheempiricalshocksontheeigen-shocks,whichallowsustouseour
+frameworktounderstandtheimpactofempiricalshocks.
+We apply our framework to the determinants of income convergence across U.S. states from
+1965-2015 and the persistent and heterogeneous impact of local shocks. Both issues are central
+questions across several fields of economics. We show that the decline in the rate of income
+convergence across U.S. states is largely driven by initial conditions rather than changes in the
+patternofshockstofundamentals. Weshowthatbothcapitalandlabordynamicsareimportant
+for capturing this decline in income convergence, highlighting the relevance of incorporating
+forward-looking investment into dynamic discrete choice models of migration. We relate both
+the initial gaps of the state variables from steady-state and the empirical shocks to productivity
+and amenities over our sample period to the entire spectrum of eigencomponents. We find slow
+and heterogeneous rates of convergence to steady-state, with an average half-life of around 20
+years and a maximum half-life of around 80 years. We find that the initial gaps of the labor
+and capital state variables from steady-state load more heavily on eigencomponents with slow
+convergencetosteady-state,whereasthechangesovertimeinproductivityandamenitiesimplied
+by the observed data load more heavily on eigencomponents with fast convergence to steady-
+2

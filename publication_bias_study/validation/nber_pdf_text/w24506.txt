@@ -1,0 +1,141 @@
+NBER WORKING PAPER SERIES
+SOVEREIGN CREDIT RISK AND EXCHANGE RATES:
+EVIDENCE FROM CDS QUANTO SPREADS
+Patrick Augustin
+Mikhail Chernov
+Dongho Song
+Working Paper 24506
+http://www.nber.org/papers/w24506
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+April 2018, Revised June 2018
+We thank Nelson Camanho, Peter Hoerdahl, Alexandre Jeanneret, Francis Longstaff, Guillaume
+Roussellet, Lukas Schmid, Jesse Schreger, Gustavo Schwenkler, and Andrea Vedolin for
+comments on earlier drafts and participants in the seminars and conferences sponsored by the
+2018 Financial Intermediation Research Conference, the 2018 SFS Cavalcade, the 15th IDC
+Herzliya Annual Conference in Financial Economics, the Bank of France, Duke-UNC 2018, HEC
+Paris, Hong Kong Monetary Authority, McGill, Penn State, the Swedish House of Finance,
+UCLA. Augustin acknowledges financial support from the Fonds de Recherche du Québec -
+Société et Culture grant 2016-NP-191430. The views expressed herein are those of the authors
+and do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2018 by Patrick Augustin, Mikhail Chernov, and Dongho Song. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Sovereign Credit Risk and Exchange Rates: Evidence from CDS Quanto Spreads
+Patrick Augustin, Mikhail Chernov, and Dongho Song
+NBER Working Paper No. 24506
+April 2018, Revised June 2018
+JEL No. C1,E43,E44,G12,G15
+ABSTRACT
+Sovereign CDS quanto spreads—the difference between CDS premiums denominated in U.S.
+dollars and a foreign currency—tell us how financial markets view the interaction between a
+country's likelihood of default and associated currency devaluations (the Twin Ds). A noarbitrage
+model applied to the term structure of quanto spreads can isolate the interaction between the Twin
+Ds and gauge the associated risk premiums. We study countries in the Eurozone because their
+quanto spreads pertain to the same exchange rate and monetary policy, allowing us to link cross-
+sectional variation in their term structures to cross-country differences in fiscal policies. The ratio
+of the risk-adjusted to the true default intensities is 2, on average. Conditional on the occurrence
+of default, the true and risk-adjusted 1-week probabilities of devaluation are 5% and 77%,
+respectively. The risk premium for the euro devaluation in case of default exceeds the regular
+currency premium by up to 0.3% per week.
+Patrick Augustin Dongho Song
+Desautels Faculty of Management Carey Business School
+McGill University 100 International Drive
+1001 Sherbrooke Street West, Room 552 Baltimore, MD 21202
+Montreal, Qc H3A 1G5 Canada dongho.song@jhu.edu
+patrick.augustin@mcgill.ca
+Mikhail Chernov
+Anderson School of Management
+University of California, Los Angeles
+110 Westwood Plaza, Suite C-417
+Los Angeles, CA 90095
+and NBER
+mikhail.chernov@anderson.ucla.edu
+
+1 Introduction
+The risk of sovereign default and exchange rate fluctuations are inextricably linked. The
+depreciation of a country’s currency is often a reflection of poor economic conditions. De-
+faulteventstendtobeassociatedwithcurrencydevaluations. Suchdevaluationsmayeither
+strategically support the competitiveness of the domestic economy, or penalize a country’s
+growth due to increased borrowing costs or reduced access to international capital markets.
+Despite the importance of studying the Twin Ds (default and devaluation), the subject has
+received relatively limited attention in the literature. In our view, one reason for this is
+that it is exceedingly difficult to measure the interaction between the two. Indeed, both
+types of events are rare, so few data are available for researchers to use. Disagreement
+over measurements are a clear manifestation of the problem. For example, Reinhart (2002)
+estimates the probability of devaluation conditional on default at 84%, while Na, Schmitt-
+Groh´e, Uribe, and Yue (2017) find it to be 48%. Another hard-to-measure dimension of
+the Twin Ds is whether default has an immediate or long-term impact on the exchange
+rate. Krugman (1979) argues that default leads to a change in the expected depreciation
+rate (change in exchange rate), while Na, Schmitt-Groh´e, Uribe, and Yue (2017) suggest a
+one-off drop in the exchange rate at default.
+Inthisstudy, wearethefirsttotakeadvantageofarecentdevelopmentinfinancialmarkets
+to offer an asset-pricing perspective on the measurement of the risk premia associated with
+the Twin Ds. Specifically, sovereign credit default swap (CDS) contracts are available in
+different currency denominations starting from August 2010. For example, contracts that
+protect against a credit event in Germany could be denominated in euros (EUR) or U.S.
+dollars (USD) (we use the terms default and credit event interchangeably). The difference
+between the two respective CDS premiums of the same maturity, also known as quanto
+CDS spread, reflects the market’s view about the interaction between the Twin Ds. Quanto
+spreads of different maturities are informative about the interaction over different horizons.
+Wefocusonquantospreadsinthe17Europeancountriesthatsharetheeuroasthecommon
+exchangerate. WefindtheassociatedCDSmarketsparticularlyinterestingfortworeasons.
+First, despite the common currency and monetary policy, the term structures of quanto
+spreadsaredifferent,suggestingintriguingimplicationsregardingthedifferentfiscalpolicies.
+Second, the contractual arrangements of the European contracts make observed quanto
+spreads transparent in terms of the implications for the Twin Ds. Specifically, in contrast
+to contracts for emerging markets (EM), payouts on Western European sovereign CDS of
+alldenominationsaretriggeredirrespectiveofwhetheradefaultisassociatedwithdomestic
+or foreign debt.
+We start by explaining the institutional arrangements behind sovereign CDS in different
+currencies. We then explain how quanto spreads are related to the interaction between the
+Twin Ds. Next, we develop a model that allows us to characterize the relation between
+default and devaluation probabilities.
+1
+
+Describing the joint behavior of 17 different term structures and an exchange rate is a
+daunting task. Therefore, we limit ourselves to a no-arbitrage affine term structure model
+that allows us to evaluate whether it is possible to reconcile all of this evidence within
+a tractable specification. Along the way, we encounter a typical problem in the analysis
+of credit-sensitive financial instruments: as the realization of credit events is rare, we can
+identify only the risk-adjusted distribution of these events based on asset prices. We exploit
+(i) the interaction between credit risk and currency risk, and (ii) the currency commonality
+to identify the true distribution of credit events. As a bonus, our approach allows us to
+identify the loss given default (LGD), which we assume to be constant and the same for all
+countries. While this assumption is an oversimplification, it nevertheless offers progress on
+a thorny empirical problem.
+The model we propose features the following critical components: a model of the U.S.
+reference interest rate curve, a model of credit risk, and a model of the spot/forward FX
+curve. We use overnight indexed swap (OIS) rates as a reference curve and construct a
+two-factor model to capture its dynamics.
+The starting point for our credit risk model is a credit event whose arrival is controlled by
+a doubly-stochastic Cox process, a popular modeling device in the literature. The default
+intensity in each country is controlled by two factors – global and regional – which are
+weighted differently for each country. We identify the global factor by setting the weights
+on Germany’s regional factors to zero. Given that our data are from countries in the
+Eurozone during the sovereign debt crisis, we derive an extension of our model to allow for
+the possibility of credit contagion: the occurrence of a credit event in one country affecting
+the probability of a credit event in another country.
+Lastbutnotleast, wemodelthebehaviorofthespotUSD/EURFXrateandtheassociated
+forward rates. We follow the literature on realistic modeling of the time series on FX rates.
+Weallowfortime-varyingexpectedchangesinthedepreciationrate,heteroscedasticregular
+shocks to the rates, and extreme events.
+We connect jumps in the FX rate to sovereign credit risk by requiring them to take place
+simultaneously with credit events. This modeling feature is our identifying assumption that
+helps us to establish the true distribution of credit events. To enhance the statistical relia-
+bility of our estimates, we follow Bai, Collin-Dufresne, Goldstein, and Helwege (2015) and
+complement our identification strategy by associating realized credit events with extreme
+movements in quanto spreads.
+We use joint data on the term structure of the quanto spreads of six countries, which
+represent the most liquid CDS contracts across the European core and periphery, some
+data on Greece prior to its credit event, the spot and forward FX rates, and a cross-section
+of credit events for the six countries. We estimate the model via the Bayesian Markov
+Chain Monte Carlo (MCMC) method. The model offers an accurate fit to the data. It also
+fits the quanto spreads of the remaining 10 Eurozone countries that were not used in the
+estimation.
+2

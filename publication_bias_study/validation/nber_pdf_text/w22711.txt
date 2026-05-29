@@ -1,0 +1,135 @@
+NBER WORKING PAPER SERIES
+BAD CREDIT, NO PROBLEM? CREDIT AND LABOR MARKET CONSEQUENCES
+OF BAD CREDIT REPORTS
+Will Dobbie
+Paul Goldsmith-Pinkham
+Neale Mahoney
+Jae Song
+Working Paper 22711
+http://www.nber.org/papers/w22711
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2016
+We are extremely grateful to Gerald Ray and David Foster at the Social Security Administration
+for their help and support. We also thank Orley Ashenfelter, Emily Breza, Hank Farber, Alex
+Mas, Jon Petkun, Isaac Sorkin, Eric Zwick, and numerous seminar participants for helpful
+comments and suggestions. Katherine DiLucido and Yin Wei Soon provided excellent research
+assistance. The views expressed are those of the authors and do not necessarily reflect those of
+the Federal Reserve Bank of New York, the Federal Reserve System, the Social Security
+Administration, or the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2016 by Will Dobbie, Paul Goldsmith-Pinkham, Neale Mahoney, and Jae Song. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+Bad Credit, No Problem? Credit and Labor Market Consequences of Bad Credit Reports
+Will Dobbie, Paul Goldsmith-Pinkham, Neale Mahoney, and Jae Song
+NBER Working Paper No. 22711
+October 2016
+JEL No. G28,J23,J38,J71,K31,K35
+ABSTRACT
+Credit reports are used in nearly all consumer lending decisions and, increasingly, in hiring
+decisions in the labor market, but the impact of a bad credit report is largely unknown. We study
+the effects of credit reports on financial and labor market outcomes using a difference-in-
+differences research design that compares changes in outcomes over time for Chapter 13 filers,
+whose personal bankruptcy flags are removed from credit reports after 7 years, to changes for
+Chapter 7 filers, whose personal bankruptcy flags are removed from credit reports after 10 years.
+Using credit bureau data, we show that the removal of a Chapter 13 bankruptcy flag leads to a
+large increase in credit scores, and an economically significant increase in credit card balances
+and mortgage borrowing. We study labor market effects using administrative tax records linked
+to personal bankruptcy records. In sharp contrast to the credit market effects, we estimate a
+precise zero effect of flag removal on employment and earnings outcomes. We conclude that
+credit reports are important for credit market outcomes, where they are the primary source of
+information used to screen applicants, but are of limited consequence for labor market outcomes,
+where employers rely on a much broader set of screening mechanisms.
+Will Dobbie Neale Mahoney
+Industrial Relations Section Booth School of Business
+Princeton University University of Chicago
+Firestone Library 5807 South Woodlawn Avenue
+Princeton, NJ 08544-2098 Chicago, IL 60637
+and NBER and NBER
+wdobbie@princeton.edu Neale.Mahoney@chicagobooth.edu
+Paul Goldsmith-Pinkham Jae Song
+Federal Reserve Bank of New York Social Security Administration
+33 Liberty St Office of Disability Adjudication
+New York, NY 10045 and Review
+paulgp@gmail.com 5107 Leesburg Pike, Suite 1400
+Falls Church, VA 22041
+jae.song@ssa.gov
+
+1 Introduction
+Theincreasingavailabilityandrichnessofcreditreportdataisoneofthemostsignificantchangesto
+consumerfinancialmarketsinthelast25years. IntheUnitedStates,creditreports—andtheassociated
+creditscores—areusedinnearlyallconsumerlendingdecisions,includingbothapprovalandpricing
+decisions for credit cards, private student loans, auto loans, and home mortgages. Credit reports
+are also widely used in non-lending decisions, such as rental decisions for apartments and hiring
+decisionsinthelabormarket.1
+Proponents of this trend argue that the increased use of credit reports is a key factor driving the
+expansion of lending to traditionally underserved segments of the population, including minority
+communities that have been historically shut out of formal credit markets (e.g., Staten, 2014). Crit-
+ics recognize the importance of credit report data in theory, but argue that these benefits should be
+weighed against individuals’ rights to privacy (Shorr, 1994) and the so-called right to be forgotten
+(Steinberg, 2014). And critics have been particularly concerned about the use of credit reports in hir-
+ing decisions in the labor market. In the years following the Great Recession, a series of prominent
+newsarticlesreportedonhowabadcreditreportcanbeamajorimpedimenttofindingajob.2 Talking
+totheNewYorkTimes,alawyerattheNationalConsumerLawCentercalledthescenario“abizarre,
+Kafkaesque experience ...Someone loses their job, so they can’t pay their bills—and now they can’t
+getajobbecausetheycouldn’tpaytheirbillsbecausetheylostajob? It’sthisCatch-22thatmakesno
+sense.” Thisdebateiscurrentlyplayingoutacrossthecountry,withtenstateshavingpassedlawsto
+restrictemployercreditcheckssince2007,andfederallegislatorsintroducingasimilarlawin2015.3 To
+date, however, there is little empirical evidence determining whether the anecdotal evidence linking
+creditreportstoemploymentrepresentsabroad-based,causalphenomenon.
+Thispaperestimatesthecausaleffectofanimprovedcreditreportonfinancialandlabormarket
+outcomes. Our research design uses the sharp removal of personal bankruptcy “flags” from credit
+reports at statutorily determined time horizons. Nearly all households that declare bankruptcy file
+1The Society of Human Resource Management (SHRM, 2010) reported that 60 percent of employers conducted back-
+groundchecksforsomeoftheircandidatesin2010, upfrom25percentofemployersin1998. SeeFRB(2007)andCFPB
+(2012)foradditionaldiscussionontheusesofcreditreports.
+2SeeNationalPublicRadio(2012)andNewYorkTimes(2013).TheApril10th,2016episodeoftheTVShow“LastWeek
+TonightwithJohnOliver”alsoreportedonthisissue.
+3The federal bill, “The Equal Employment for All Act” (H.R. 321), aimed to “amend the Fair Credit Reporting Act to
+prohibittheuseofconsumercreditchecksagainstprospectiveandcurrentemployeesforthepurposesofmakingadverse
+employment decisions.” The bill was introduced by Senator Elizabeth Warren in August, 2015. See Clifford and Shoag
+(2016)formoreonthesepolicies.
+1
+
+undereitherChapter13orChapter7oftheU.S.BankruptcyCode.4 UndertheFairCreditReporting
+Act (FCRA), credit bureaus are required to remove Chapter 7 bankruptcy flags ten years after filing.
+In contrast, credit bureaus traditionally remove Chapter 13 flags only seven years after filing, three
+yearsbeforetheChapter7flagisremoved.5
+We use this variation in a difference-in-differences research design that compares outcomes for
+Chapter 13 filers (the “treatment” group), who have their flags removed at seven years, to Chapter 7
+filers (the “control” group), who have their flags removed at ten years and are therefore unaffected
+at the seven-year time horizon. The identifying assumption for this difference-in-differences speci-
+fication is that, in the absence of the Chapter 13 bankruptcy flag removal, outcomes for treated and
+control individuals would have evolved in parallel. To provide support for this “parallel trends” as-
+sumption,weshowthatthepathofoutcomesfortreatedandcontrolindividualarevirtuallyidentical
+inthepre-flagremovalperiod.
+We measure the effects of flag removal using two large administrative datasets. We examine
+the effects on credit market outcomes—including credit scores and measures of both credit card and
+mortgageborrowing—usingadatasetgeneratedfromtheFederalReserveBankofNewYorkEquifax
+ConsumerCreditPanel(CCP).Equifaxisoneofthethreemaincreditbureaus,andtheirdataprovide
+us with panel information on nearly all credit products held by an individual over time. To exam-
+ine the effects on labor market outcomes, we use data from individual bankruptcy filings merged to
+administrativetaxrecordsattheSocialSecurityAdministration(SSA).Ourprimaryanalysissample,
+which focuses on prime-age adults with a bankruptcy flag removal between 2002 and 2011, covers
+roughly400,000individualsintheEquifaxsampleand4.7millionindividualsintheSSAsample.
+We begin our analysis by examining the “first stage” effect of the bankruptcy flag removal on
+credit scores. Since credit scores are used in the vast majority of lending decisions, improvements
+in credit scores directly translate into increased credit availability, lower interest rates, or both. We
+showthatbankruptcyflagremovalleadstoanimmediate10pointincreaseincreditscoresonapre-
+flag removal base of 596. The jump occurs precisely in the quarter of bankruptcy flag removal and
+4UnderChapter7,debtorsforfeitallnon-exemptassetsinexchangeforadischargeofeligibledebtsandprotectionfrom
+futurewagegarnishment. UnderChapter13,filersproposeathree-tofive-yearplantorepaypartoftheirunsecureddebt
+inexchangeforadischargeoftheremainingunsecureddebt,protectionfromfuturewagegarnishment,andprotectionof
+mostassets.Nearlyallunsecureddebtsareeligiblefordischargeunderbothchapters,includingcreditcarddebt,installment
+loans,medicaldebt,unpaidrentandutilitybills,tortjudgments,andbusinessdebt. SeeSection3foradditionaldetailsof
+thebankruptcysystemintheUnitedStates.
+5Under FCRA, Chapter 13 flags are not mandated to be removed earlier than Chapter 7 flags, but all three national
+creditbureausdosovoluntarily. AllthreecreditbureausstatethattheChapter13flagisremovedatsevenyearsintheir
+documentation,andwehaveconfirmedthisindependentlyusingtheEquifaxcreditreportdatadescribedbelow. Wehave
+alsoconfirmedthattheChapter7flagisremovedattenyears,asmandatedbytheFRCA,usingtheEquifaxdata.
+2

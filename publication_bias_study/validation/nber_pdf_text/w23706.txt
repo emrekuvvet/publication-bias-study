@@ -1,0 +1,134 @@
+NBER WORKING PAPER SERIES
+THE TIME-VARYING PRICE OF FINANCIAL INTERMEDIATION IN THE MORTGAGE
+MARKET
+Andreas Fuster
+Stephanie H. Lo
+Paul S. Willen
+Working Paper 23706
+http://www.nber.org/papers/w23706
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+August 2017
+We thank John Campbell, Andy Davidson, Fernando Ferreira, Paul Goldsmith-Pinkham, Sam
+Hanson, Sean Hundtofte, Dwight Jaffee, Michael Reher, Adi Sunderam, Stijn Van Nieuwerburgh,
+Alex Zevelev, and seminar audiences at Brandeis, the Homer Hoyt Institute, FRB St. Louis, FRB
+New York, the Board of Governors, the NBER Summer Institute, the NYC Real Estate
+conference at Baruch, and the Universities of Zurich and St. Gallen for helpful comments and
+suggestions. The views expressed in this paper are solely those of the authors and not necessarily
+those of the Federal Reserve Banks of Boston or New York, the Federal Reserve System, or the
+National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2017 by Andreas Fuster, Stephanie H. Lo, and Paul S. Willen. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+The Time-Varying Price of Financial Intermediation in the Mortgage Market
+Andreas Fuster, Stephanie H. Lo, and Paul S. Willen
+NBER Working Paper No. 23706
+August 2017
+JEL No. E44,E52,G21
+ABSTRACT
+The U.S. mortgage market links homeowners with savers all over the world. In this paper, we ask
+how much of the flow of money from savers to borrowers goes to the intermediaries that facilitate
+these transactions. Based on a new methodology and a new administrative dataset, we find that
+the price of intermediation, measured as a fraction of the loan amount at origination, is large—
+142 basis points on average over the 2008–2014 period. At daily frequencies, intermediaries pass
+on price changes in the secondary market to borrowers in the primary market almost completely.
+At monthly frequencies, the price of intermediation fluctuates significantly and is highly sensitive
+to volume, likely reflecting capacity constraints: a one standard deviation increase in applications
+for new mortgages leads to a 30–35 basis point increase in the price of intermediation.
+Additionally, over 2008–2014, the price of intermediation increased about 30 basis points per
+year, potentially reflecting higher mortgage servicing costs and an increased legal and regulatory
+burden. Taken together, the sensitivity to volume and the positive trend led to an implicit total
+cost to borrowers of about $135 billion over this period. Finally, increases in application volume
+associated with “quantitative easing” (QE) led to substantial increases in the price of
+intermediation, which attenuated the benefits of QE to borrowers.
+Andreas Fuster Paul S. Willen
+Federal Reserve Bank of New York Federal Reserve Bank of Boston
+Research Group Research Department
+33 Liberty St 600 Atlantic Avenue
+New York, NY 10045 Boston, MA 02210-2204
+andreas.fuster@ny.frb.org and NBER
+paul.willen@bos.frb.org
+Stephanie H. Lo
+Harvard University
+shlo@post.harvard.edu
+
+1 Introduction
+Mortgage lending is one of the main activities of the U.S. financial sector and a principal
+driver of its growth in recent decades (Greenwood and Scharfstein, 2013). For most U.S.
+mortgage transactions, intermediaries directly connect borrowers with capital market in-
+vestors through the market for mortgage-backed securities (MBS), rather than funding loans
+from deposits or other sources.1 One might expect that the price of this service should
+be fairly low and stable. Instead, we show that over the 2008–2014 period, the price of
+intermediation was high and volatile. We explore the drivers of this variation and study
+its implications for the pass-through of monetary policy, specifically the Federal Reserve’s
+large-scale asset purchase programs, colloquially known as “quantitative easing” (QE).
+Our first contribution is to develop a new methodology to measure the price of interme-
+diation in the mortgage market, which we define as the payment made to the intermediary
+for linking the borrower with the ultimate supplier of funds for the loan. This payment
+covers costs associated with originating, underwriting, and servicing the loan and also may
+include a component representing profits. A way to think about the role of the intermediary
+is as a dealer who buys a loan from the borrower (meaning the right to a stream of prin-
+cipal and interest payments), and sells it to investors in the form of an MBS. The price of
+intermediation is then the the intermediary’s dollar margin. The payment to the borrower
+includes not only the loan’s principal balance but also a “rebate,” an upfront payment made
+by the intermediary to the borrower.2 The rebate depends on the loan’s interest rate and
+for a given interest rate typically fluctuates on a daily basis.
+For our analysis, the two central inputs thus are the value of a mortgage in the secondary
+market and the rebate the intermediary pays to the borrower. Measuring the price of a loan
+in the MBS market is relatively straightforward. It is much more challenging to measure
+the rebates, since in general, the “rate sheets” on which the rebates are quoted are not
+publicly disclosed. A key innovation in our analysis is that we use a new administrative
+dataset that documents these rebates on a daily basis as a function of the interest rate and
+the characteristics of the borrower and the loan. The data come from Optimal Blue, an
+industry-leading provider of real-time data to loan officers.
+We use our new methodology for measuring the price of intermediation for several com-
+plementary analyses. First, we study the high-frequency (daily) pass-through of MBS price
+1Over our sample period (2008–2014), about 80 percent of new mortgage loans are securitized through
+the “agency” MBS market, where the government-backed agencies Fannie Mae, Freddie Mac, and Ginnie
+Mae insure the timely payment of principal and interest payments to investors.
+2Rebates are typically positive but can also be negative (i.e. the payment is from the borrower to the
+intermediary) in which case they are known as “discount points.”
+1
+
+changes to rebates over the 2008–2014 period, initially focusing on six major monetary pol-
+icy announcements (mostly QE-related) and then looking across all the days in our sample
+period. Next, we document how the price of intermediation evolved at a lower (monthly)
+frequency, explore the potential drivers of the variation, and study the implied costs to
+borrowers. Finally, we clarify the relationship between our price of intermediation and a
+commonly used measure that compares mortgage rates to yields in the MBS market.
+Ourmainfindingsareasfollows: Thepass-throughofMBSpricechangestotheconsumer
+mortgage market following QE announcements was generally large, though it varied with the
+level of demand for mortgages (measured by daily applications for new loans) at the time of
+the announcement. When demand was strong, such as around the expansion of “QE1” in
+March 2009, intermediaries passed on a smaller share of the secondary market price increases
+to borrowers. More generally, we find that at the daily frequency, rebates move very closely
+with prices in the MBS market. We estimate that, on average, a one dollar change in the
+MBS price leads to a 92 cent change in the rebate paid to the borrower. Pass-through, while
+high, is not symmetric: a one dollar decrease in the MBS price translates into a one dollar
+reduction in the rebate, but a one dollar increase only leads to an 80 cent rebate increase.
+Importantly, high levels of demand substantially aggravate this asymmetry in pass-through.
+Our findings of strong high-frequency pass-through are in stark contrast to other con-
+sumer credit markets. Ausubel (1991) showed that over 1983–1988, credit card interest rates
+did not respond at all to changes in banks’ cost of funds, and other work has confirmed this
+finding in more recent data (e.g., Calem, Gordy, and Mester, 2006). Evidence from interest
+rates on deposits paints a similar picture. For example, Driscoll and Judson (2013) show
+that depository institutions change interest rates on short-term certificates of deposit (CDs)
+roughly every six to seven weeks and that the coefficient on the fed funds rate in a regression
+of changes in CD rates is only 0.4 at weekly frequencies.3 In contrast, we find that in the
+mortgage market lenders change rates at least once a day and a comparable regression gener-
+ates a coefficient of 0.92. Thus, mortgage pricing appears much more tightly linked to capital
+markets than other consumer credit; this could be due to the particular market structure
+that features brokers and loan officers comparing offers across multiple intermediaries.
+Despite the strong daily pass-through, the price of intermediation is highly variable over
+time. In particular, it strongly increases with the volume of new mortgage applications: at
+a monthly frequency, a one standard deviation increase in application volume is associated
+with a 30–35 basis point increase in the price of intermediation (relative to an average of 142
+3See also Hannan and Berger (1991), Neumark and Sharpe (1992), Yankov (2014) and Drechsler, Savov,
+and Schnabl (2015) for related evidence on CDs/deposit rates. Mora (2014) documents similarly low pass-
+through in auto loan rates.
+2

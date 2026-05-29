@@ -1,0 +1,143 @@
+NBER WORKING PAPER SERIES
+NEWS DIFFUSION IN SOCIAL NETWORKS AND STOCK MARKET REACTIONS
+David Hirshleifer
+Lin Peng
+Qiguang Wang
+Working Paper 30860
+http://www.nber.org/papers/w30860
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+January 2023, Revised February 2024
+The paper was previously circulated under the title “Social Networks and Market Reactions to
+Earnings News.” We appreciate helpful comments and discussions from Linda Allen, Kenneth
+Ahern, Brad Barber, Tony Cookson, Ming Dong, Anastassia Fedyk (discussant), William
+Goetzmann, Jeremiah Green (discussant), Harrison Hong (discussant), Chong Huang, Paul Irvine,
+Mark Kamstra, Matthew Jackson, Danling Jiang, Christian Leuz, Dongmei Li (discussant), Roger
+Loh, Yueran Ma, Suraj Malladi, Asaf Manela (discussant), William Mullins (discussant), Lilian
+Ng, Joshua Pollet (discussant), Asani Sarkar, Zheng Sun, Jun Tu, Wei Wu (discussant), Wei
+Xiong, Lu Zheng, Dexin Zhou, Qifei Zhu, participants at BESC University of Queensland,
+Nanyang Technological University, the University of California, Irvine, Peking University, Texas
+A&M University, the University of Miami, the University of South Carolina, York University,
+the European Securities and Markets Authority, ESCP Business School, the Bank of England, the
+Financial Intermediation Research Society Meetings, the International Virtual Research Seminars
+on Finance, the NBER conference on Big Data and Securities Markets, the American Economic
+Association Annual Meetings, the American Finance Association Annual Meetings, the China
+International Conference in Finance, the Midwest Finance Association Meetings, the USC/
+Marshall Conference on Social and Behavioral Finance, the Conference on Network Science and
+Economics, the Future of Financial Information Conference, the Western Finance Association
+Conference, and the Hawaii Accounting Research Conference. We appreciate the recognition
+from the Driehaus Center for Behavioral Finance Research Prize and Peng thanks the Krell
+Research Fund and the Keynes Fund for generous support. The views expressed herein are those
+of the authors and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2023 by David Hirshleifer, Lin Peng, and Qiguang Wang. All rights reserved. Short sections of
+text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+News Diffusion in Social Networks and Stock Market Reactions
+David Hirshleifer, Lin Peng, and Qiguang Wang
+NBER Working Paper No. 30860
+January 2023, Revised February 2024
+JEL No. G11,G12,G14,G4,G41
+ABSTRACT
+We study how the social transmission of public news influences investors’ beliefs and securities
+markets. Using data on social networks, we find that earnings announcements from firms in
+higher-centrality counties generate stronger immediate price, volatility, and trading volume
+reactions. Post-announcement, such firms experience weaker price drift and faster volatility decay
+but higher and more persistent volume. These findings indicate that greater social connectedness
+promotes timely incorporation of news into prices, but also opinion divergence and excessive
+trading. We propose the social churning hypothesis, which is confirmed using granular data from
+StockTwits messages and household trading records.
+David Hirshleifer Qiguang Wang
+Marshall School of Business Hong Kong Baptist University
+University of Southern California Wing Lung Bank Building,
+3670 Trousdale Pkwy 34 Renfrew Road
+Los Angeles, CA 90089 Kowloon Tong
+and NBER Hong Kong
+hirshlei@marshall.usc.edu China
+qiguangw@hkbu.edu.hk
+Lin Peng
+Wasserman Department of
+Economics and Finance
+Baruch College
+City University of New York
+lin.peng@baruch.cuny.edu
+
+1 Introduction
+In classic models of information in asset markets, people learn from others only indirectly
+through observation of market prices or quantities. There is growing evidence that more
+direct forms of social interaction, such as conversation, also affect investment decisions (see
+the review of Kuchler and Stroebel 2021). Past models of social interactions in financial
+markets have identified both beneficial and deleterious effects on investor behavior. On the
+one hand, they can disseminate valuable information and lead to superior decisions and
+efficient prices. On the other hand, social interactions can also propagate incorrect beliefs
+and naïve investor attention, thereby reducing information efficiency.1
+We study here the social dissemination of attention to a crucial type of public news:
+corporate earnings announcements. Past research has shown that stock prices do not in-
+corporate this news promptly, leading to predictable abnormal returns over several months
+after the event date (e.g., Ball and Brown 1968, Bernard and Thomas 1989). The leading
+explanation for this delay is that not all investors are immediately attentive to earnings news
+(see, e.g., Bernard and Thomas 1989, Hirshleifer and Teoh 2003). When there are inatten-
+tive investors, attention to earnings news may spread through social networks. Accordingly,
+this paper explores how investor social transmission networks influence the speed of news
+diffusion, beliefs, trading behavior, and asset prices.
+Our approach is motivated by the findings of Banerjee et al. (2013, 2019) that informa-
+tion about microfinance or immunization spreads faster when signals are seeded at central
+nodes in a network. In the stock market context, there is extensive evidence that investors
+invest in local firms and are more attentive to news about such firms.2 This suggests that
+earnings news may first capture the attention of local investors and that this attention then
+disseminates through the network of investors via word-of-mouth.
+We therefore hypothesize that investor attention to earnings announcements made by
+firms located in counties with greater centrality in the social network of investors tends
+1Models in which social interactions potentially improve decision-making and efficiency include Ellison
+and Fudenberg (1995), Colla and Mele (2010), and Özsöylev and Walden (2011). However, other studies
+haveshownthatsocialinteractionscanalsoleadtothespreadofrumors,amplifybehaviorbiases(DeMarzo,
+Vayanos, and Zwiebel 2003, Hirshleifer 2020, Han, Hirshleifer, and Walden 2021), trigger information cas-
+cades (Bikhchandani, Hirshleifer, and Welch 1992, Banerjee 1992), and create free-riding incentives (Han
+and Yang 2013).
+2Onlocalbiasininvesting,trading,andinformationsearch,seeCovalandMoskowitz(1999),Ivkovićand
+Weisbenner(2005,2007),MassaandSimonov(2006),SeasholesandZhu(2010),Hongetal.(2014),andChi
+and Shanthikumar (2017).
+1
+
+to diffuse more quickly. This implies stronger immediate volume and return responses to
+earnings news and higher immediate return volatility. In other words, higher centrality
+opposes the usual sluggishness of market responses to earnings news. This implies less post-
+earnings announcement drift and a more precipitous post-event drop in return volatility.
+To test for such effects, we define a firm’s local investor base as the set of investors
+located in its headquarters county, and the firm’s centrality (CEN) as the centrality of
+its local investor base in the social network of its potential U.S. investors. We find that
+earnings announcements by firms based in high-centrality locations tend to generate stronger
+immediate stock price, volatility, and trading volume responses for the two-day window
+around the announcement, [0, 1]. Also consistent with earlier resolution of uncertainty,
+during the post-announcement period ([2, 61 ]), returns exhibit weaker drift and faster decay
+⇤
+of volatility.3 Notably, however, for such firms, volume remains high and persistent in the
+post-announcement period.
+More specifically, our proxy for network centrality is based upon the newly available
+Social Connectedness Index (SCI), which measures the connectedness between U.S. counties
+(Bailey et al. 2018b) using data from Facebook, a social network with about a quarter of a
+billion users in the United States and Canada.4 The centrality of a firm is measured as the
+centrality of its headquarters county in the matrix of SCIs between county pairs.
+Figure 1 presents a heat map showing one of the centrality measures - eigenvector cen-
+trality, across U.S. counties that serve as headquarters for publicly listed firms. The darker
+colors correspond to higher centrality deciles. The image illustrates marked geographical
+variations, demonstrating that the centrality can vary significantly between two adjacent
+counties. For instance, Cook County, IL, which encompasses the city of Chicago, ranks
+among the counties with the highest centrality. In stark contrast, some counties neighboring
+Cook, such as McHenry, IL, Berrien, MI, and Porter, IN, have significantly lower centrality,
+falling into the bottom 30th percentile. This variation implies that social network central-
+ity encompasses more than just state-level effects or factors related to geographic closeness.
+3The post-announcement window ([2, 61⇤]) refers to the period from two days after an announcement to
+five days before the next announcement.
+4Facebookbecameavailableafter2004andhad243millionactiveusersintheUnitedStatesandCanada
+asof2018. A2018surveyshowedthat68%ofU.S.adultsuseFacebook,thatroughlythree-quartersofthem
+visit the site daily, and that users span a wide range of demographic groups (except for those 65 and older)
+(Smith and Anderson 2018). Facebook social connectedness has been shown to be related to migration of
+people, borders of historic empires, international trade, and upward income mobility (Bailey et al. 2018b,
+2020, Chetty et al. 2022).
+2

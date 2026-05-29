@@ -1,0 +1,117 @@
+NBER WORKING PAPER SERIES
+EXPECTED RETURNS, YIELD SPREADS,
+AND ASSET PRICING TESTS
+Murillo Campello
+Long Chen
+Lu Zhang
+Working Paper 11323
+http://www.nber.org/papers/w11323
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2005
+We thank Mike Barclay, Dan Bernhardt, Lawrence Booth, Cam Harvey (the editor), Raymond Kan, Jason
+Karceski, Naveen Khana, Mark Schroder, Jay Shanken (the AFA discussant), Jerry Warner, Jason Wei, Jim
+Wiggins, Tong Yao, Guofu Zhou, seminar participants at University of Notre Dame and at the AFA meetings
+in 2005, and especially an anonymous referee for helpful comments and suggestions. The usual disclaimer
+applies. The views expressed herein are those of the author(s) and do not necessarily reflect the views of
+the National Bureau of Economic Research.
+©2005 by Murillo Campello, Long Chen, and Lu Zhang. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit, including ©
+notice, is given to the source.
+
+Expected Returns, Yield Spreads, and Asset Pricing Tests
+Murillo Campello, Long Chen, and Lu Zhang
+NBER Working Paper No. 11323
+May 2005
+JEL No. G12, E44
+ABSTRACT
+We use yield spreads to construct ex-ante returns on corporate securities, and then use the ex-ante
+returns in asset pricing assets. Differently from the standard approach, our tests do not use ex-post
+average returns as a proxy for expected returns. We find that the market beta plays a much more
+important role in the cross-section of expected returns than previously reported. The expected value
+premium is significantly positive and countercyclical. We find no evidence of ex-ante positive
+momentum profits.
+Murillo Campello
+Department of Finance
+University of Illinois at Urbana-Champaign
+340 Wohlers Hall, MC 706
+1206 South Sixth Street
+Champaign, IL 61820
+campbello@uiuc.edu
+Long Chen
+Department of Finance
+Michigan State University
+327 Eppley Center
+East Lansing, MI 48823
+chen@bus.msu.edu
+Lu Zhang
+Simon School
+University of Rochester
+Carol Simon Hall 3-160B
+Rochester, NY 14627
+and NBER
+zhanglu@simon.rochester.edu
+
+1 Introduction
+The standard asset pricing theory argues that investors should demand an ex-ante premium
+for acquiring risky securities (e.g., Sharpe (1964), Lintner (1965), and Merton (1973)). In
+practice, because the ex-ante risk premium is not readily observable, empirical asset pricing
+studies often use ex-post, average realized equity returns as a proxy for expected equity
+returns. This commonplace strategy is justi(cid:12)ed on grounds that for su(cid:14)ciently long horizons
+the average return will \catch up and match" the expected return on equity securities |
+ex-post average excess equity returns provide for an easy-to-implement, seemingly unbiased
+estimate of expected equity risk premium.
+Despite its popularity, the above strategy has potentially serious limitations.1 In partic-
+ular, the average realized return might not converge to the expected risk premium in (cid:12)nite
+samples.2 This, in e(cid:11)ect, conditions any inferences based on ex-post returns on the proper-
+ties of the particular data under examination. In his AFA presidential address, Elton (1999)
+observes that there are periods longer than ten years during which stock market realized
+returns are on average lower than the risk-free rate (1973 to 1984), and periods longer than
+50 years in which risky bonds on average underperform the risk-free rate (1927 to 1981).
+Based on this \counter-intuitive" evidence on risk and return, Elton proposes:
+\[D]eveloping better measures of expected return and alternative ways of testing
+asset pricing theories that do not require using realized returns have a much
+higher payo(cid:11) than any additional development of statistical tests that continue
+to rely on realized returns as a proxy for expected returns." (p.1200)
+As most (cid:12)ndings in the empirical asset pricing literature were established (and are revisited)
+with the use of realized returns, it is natural to ask whether extant inferences about risk{
+expected return trade-o(cid:11) hold under an alternative, direct measure of expected return.
+In this paper, we construct an ex-ante measure of risk premium based on data from
+bond yield spreads and investigate whether well-known equity factors, such as market, size,
+1Earlier studies have discussed in some detail the noisy nature of average realized returns in a number of
+di(cid:11)erent contexts (see, e.g., Blume and Friend (1973), Sharpe (1978), and Miller and Scholes (1982)).
+2Complexity in learning about asset pricing formation might also cause ex-post returns to deviate from
+their expectations (see Lewellen and Shanken (2002) and Brav and Heaton (2002)).
+
+book-to-market, and momentum, can explain the cross-sectional variation of expected (as
+opposed to average realized) stock returns. Our basic approach builds on the observation
+that debt and equity are (cid:12)nancial claims written on the same set of real assets and hence
+must share common risk factors. In particular, our analysis explores this insight to show
+how one can use corporate bond data to glean information about investors’ required equity
+risk premium. In what follows, we derive an analytical formula that links ex-ante equity risk
+premia and bond risk premia after adjusting bond yields for default risk, rating transition
+risk, and the tax spreads between the corporate and the Treasury bonds.
+Why use bond data? While relevant information regarding a (cid:12)rm’s systematic risk is
+incorporated both into its stocks and bonds, the latter reveal key insights about investors’
+return expectations. The (cid:12)rst thing to notice is that bond yields are calculated in the spirit
+of forward-looking internal rates of return. To wit, bond yield is the expected return if the
+bond does not default and the yield does not change in the subsequent period. Importantly,
+current bond prices impound the probability of future default, and yield spreads contain the
+expected risk premium for taking default risk. Controlling for default risk, (cid:12)rms with higher
+systematic risk will have higher yield spreads; a relationship that holds period by period,
+cross-sectionally. This contrasts sharply with what one can learn from equity securities,
+whose prices reveal little conditional information about expected cash (cid:13)ows and discount
+rates | one has to rely on a long time series to \back out" the expected return.3
+Secondly, notice that the time-variation of expected returns in the equity markets often
+works against the convergence of average realized returns to the expected return. Consider,
+for example, that investors require a higher equity risk premium from cyclical (cid:12)rms during
+economic downturns. To re(cid:13)ect this, those (cid:12)rms’ equity prices should fall and their discount
+rates rise during recessions. Cyclical (cid:12)rms’ equity values indeed fall during economic
+downturns, re(cid:13)ecting value losses in those (cid:12)rms’ underlying assets. However, by averaging
+ex-post a cyclical (cid:12)rm’s returns over the course of a recession, one might wrongfully conclude
+that the cyclical (cid:12)rm is less risky because of its lower \expected" return. Bond yield spreads,
+3As pointed out by Sharpe (1978), the CAPM only holds conditionally and expected return might have
+nothing to do with future realized returns. Risk premia recovered from bond yields, in contrast, will re(cid:13)ect
+conditional information.
+2

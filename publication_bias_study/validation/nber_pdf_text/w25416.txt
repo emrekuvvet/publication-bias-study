@@ -1,0 +1,139 @@
+NBER WORKING PAPER SERIES
+NEGATIVE NOMINAL INTEREST RATES AND THE BANK LENDING CHANNEL
+Gauti B. Eggertsson
+Ragnar E. Juelsrud
+Lawrence H. Summers
+Ella Getz Wold
+Working Paper 25416
+http://www.nber.org/papers/w25416
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+January 2019
+This working paper should not be reported as representing the views of Norges Bank. The views expressed
+are those of the authors. The views expressed are those of the authors and do not necessarily reflect
+those of Norges Bank or the National Bureau of Economic Research. This paper replaces an earlier
+draft titled Are Negative Nominal Interest Rates Expansionary? We are grateful to compricer.se and
+Christina Soderberg for providing bank level interest rate data. We are also grateful to participants
+at numerous seminars and conferences, as well as Martin Floden, Artashes Karapetyan, John Shea,
+Dominik Thaler, Pau Rabanal, Morten Spange and Michael Woodford for useful comments and discussions.
+We thank INET for financial support.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2019 by Gauti B. Eggertsson, Ragnar E. Juelsrud, Lawrence H. Summers, and Ella Getz Wold.
+All rights reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+Negative Nominal Interest Rates and the Bank Lending Channel
+Gauti B. Eggertsson, Ragnar E. Juelsrud, Lawrence H. Summers, and Ella Getz Wold
+NBER Working Paper No. 25416
+January 2019, Revised in September 2020
+JEL No. E3,E31,E4,E41,E42,E43,E44,E5,E51,E52,E58,E65
+ABSTRACT
+We investigate the bank lending channel of negative nominal policy rates from an empirical and
+theoretical perspective. We find that retail household deposit rates are subject to a lower bound
+(DLB). Empirically, once the DLB is met, the pass-through to lending rates and credit volumes is
+substantially lower and bank equity values decline in response to further policy rate cuts. We
+construct a banking sector model and use our estimate of the pass-through of negative policy rates
+to lending rates as an identified moment to parameterize the model and assess the impact of
+negative policy rates in general equilibrium. Using the theoretical framework, we derive a
+sufficient statistic for when negative policy rates are expansionary and when they are not.
+Gauti B. Eggertsson Lawrence H. Summers
+Department of Economics Harvard Kennedy School of Government
+Brown University 79 JFK Street
+64 Waterman Street Cambridge, MA 02138
+Providence, RI 02912 and NBER
+and NBER lhs@harvard.edu
+gauti_eggertsson@brown.edu
+Ella Getz Wold
+Ragnar E. Juelsrud Department of Economics
+Norges Bank Brown University
+Postboks 1179 Sentrum 64 Waterman Street
+0107 Oslo Providence, RI 02912
+Norway ella.getz.wold@gmail.com
+ragnar@juelsrud.no
+
+1 Introduction
+Between2012and2016,ahandfulofcentralbanksreducedtheirpolicyratesbelowzeroforthefirst
+timeinhistory. Whilerealinterestrateshavebeennegativeonseveraloccasions,nominalrateshavenot. The
+recentexperiencesuggeststhatnegativepolicyrateshavebecomepartofthecentralbanker’stoolbox,and
+callsintoquestiontherelevanceofthezerolowerbound(ZLB)asaconstraintonmonetarypolicy. However,
+thequestionofwhetherandwhennegativepolicyratesareaneffectivetoolformacroeconomicstabilization
+remainslargelyunresolved.
+Understandingtheimpactofnegativepolicyratesonthemacroeconomyisofurgentcurrentinterest.
+Policyrateshavebeendecliningsteadilysincetheearly1980s,resultinginworriesaboutsecularstagnation
+(seee.g. Summers2014,EggertssonandMehrotra2014andCaballeroandFarhi2017). KileyandRoberts
+(2017)estimatethattheZLBwillbind30-40percentofthetimegoingforward,andtherecentoutbreakof
+COVID-19hasagainbroughtinterestratesclosetozeroinseveraleconomies.1
+Inthispaperweinvestigatetheimpactofnegativepolicyratesonthemacroeconomythroughthebank
+lendingchannel,bothfromanempiricalandatheoreticalperspective. Weuseacombinationofaggregateand
+bankleveldatatoempiricallyexaminethepass-throughofnegativepolicyratestodepositandlendingrates,
+creditvolumesandbankequity,usingSwedenasacasestudy.2 Wethenconstructatheoreticalmodelwitha
+bankingsectorthatcanrationalizeourempiricalfindingsandparameterizeitusing,amongotherthings,our
+empiricalpass-throughestimateasanidentifiedmoment. Themodelallowsustoderiveasufficientstatistic-
+discussedbelow-forwhennegativepolicyratesareexpansionaryandwhentheyarenot. Weconcludeby
+providingestimatesforthequantitativeimpactofthebanklendingchannelofnegativepolicyratesonkey
+macroeconomicaggregatesinthecontextofSweden.
+In the empirical section we investigate the pass-through of negative policy rates to banks assets and
+liabilities. Westartbydocumentingvirtuallyfullpass-throughofnegativepolicyratestomoneymarketrates,
+thatis,interbanklendingrates. Thisisnotsurprising,astheinterbankrateiseffectivelyequivalenttothe
+policy rate (the "repo-rate") itself. The transmission of negative policy rates to other highly liquid assets
+suchasshort-termgovernmentbondsisalsostrong. Ahighdegreeofpass-throughtointerbankratescanbe
+expansionarybyloweringbankfundingandopportunitycosts. Yet,sinceinterbanklendingmeasureslending
+fromonebanktoanother,ratherthanlendingtothebanksectorasawhole,itsimpactonaggregatefunding
+costsislimited. Moreover,andashighlightedinourmodel,sincebanksinvestinliquidassetstoinsurance
+againstliquidityrisk,lowerreturnsontheseassetsdirectlyreducebankprofitability.
+Wedocumentacollapseinthepass-throughofthepolicyratetoretailhouseholddepositratesoncethe
+1Analternativetonegativeinterestratesisunconventionalmonetarypolicymeasures. Thereareseveralreasons,however,whyitis
+importanttoconsiderpolicymeasuresbeyondthesetools. SomeofthecreditpoliciesusedbythetheFederalReserve,theFDICand
+theTreasurywereseverelyconstrainedbyCongressfollowingthefinancialcrisis,asstressedbyBernankeetal.(2018). Moreover,
+thereremainslittle,ifany,consensusamongeconomistsonhoweffectivequantitativeeasingandforwardguidanceis. Plausible
+estimatesrangefromconsiderableeffectstonone(seee.g. Greenlawetal.(2018)forasomewhatskepticalreview,Swanson(2017)
+foramoreupbeatassessment,andGreenwoodetal.(2014)foradiscussionofdebtmanagementatthezerolowerbound).
+2TheSwedishcaseisusefultostudyforanumberofreasons,mostimportantlybecausewehaveaccesstohigh-frequentmicrodataon
+bank-levelmortgagerates. Inaddition,theSwedishcentralbank-theRiksbank-cutinterestratesfourtimesintonegativeterritory,
+providingrelativelyrichvariationinthedatawhichcanbeusedtoestimatethepass-throughofnegativeratesandhowitdependson
+thelowerboundonthedepositrate.
+2
+
+policyrateturnssufficientlynegative. Thisisinsharpcontrasttoregularcircumstances,inwhichthetwo
+movecloselytogether. Becausedepositsarethemainsourceofbankfinancing(approximately50%inour
+data),thetransmissionofpolicyratestobanksmarginalfundingcostsisimpairedoncethispointisreached.
+An important finding is that this collapse in pass-through does not need to happen at exactly zero. In our
+empiricalsetting,thedepositrateremainedresponsivetopolicyratecuts,albeitlessso,untilthepolicyrate
+reached-0.25percent.3
+We proceed by considering the pass-through of negative policy rates to lending rates. To do so, we
+conductaneventstudyarounddaysofpolicyratecutsusingdailybanklevelmortgagerates. Underregular
+circumstances,weshowthatthepass-throughofpolicyratecutsisaround80percentwithin30days. Once
+policyratesreachalevelatwhichdepositratesarenotlongerresponsivehowever,thepass-throughcollapses.
+Infact,takingaweightedaverageoverthedifferentmortgagecontractsofferedacrossallbanksinoursample,
+theaveragepass-throughtoaggregatemortgageratesbecomesslightlynegative,i.e. theempiricalevidence
+suggestsamodestincreaseinlendingratesoncethepolicyratefallssufficientlybelowzero.
+In addition to a collapse in the pass-through to lending rates, we also document an increase in the
+dispersionoflendingratesasthepolicyrateturnsnegative. Theriseindispersionislinkedtobanksfinancing
+structures. Bankswhichrelymoreheavilyondepositfinancingarelesslikelytoreducetheirlendingrates
+oncethedepositratehasstoppedresponding. Movingtobank-levellendingvolumes,weshowthatSwedish
+banks that rely more heavily on deposit financing also have lower credit growth once the deposit rate has
+reacheditslowerbound.
+Akeyquestioninthedebatesurroundingnegativeinterestratesiswhethertheyhavedetrimentaleffects
+onbanksnetworth. Weconcludetheempiricalsectionbyconductinganeventstudyusingequityvaluesfor
+publicly listed Swedish banks. In contrast to policy rate cuts in normal times, policy rate cuts in negative
+territoryarefoundtonegativelyimpactbankequityvalues.
+Motivatedbytheempiricalresults,weconstructabankmodelwhichrationalizestheempiricalfindings,
+andprovidesadditionaltheoreticalpredictionsforwhennegativepolicyratesareeffective. Themodelisalso
+usedtoproducequantitativepredictionsontheimpactofnegativeratesandtodiscusspolicyinterventions
+whichcanmakenegativeratesmoreeffectiveonceretaildepositratesreachesalowerbound.
+Negative nominal interest rates can arise in our model because banks and households are potentially
+willingtopayforstorageandliquidityservicesprovidedbyreservesanddeposits. Takingthisintoaccount,
+ourmodelderivesinplaceoftheconventionalzerolowerboundtwonewlowerbounds: alowerboundonthe
+policyrate(the"PLB")andalowerboundonthedepositratebankscanoffer(the"DLB"). Bothariseduethe
+thepresenceofpapercurrency,althoughevidenceonbankscashholdingssuggeststhatthePLBhasremained
+non-binding. UnlikethePLB,theavailableempiricalevidenceindicatestheDLBisclosetozeroforsmall
+depositorsandonlymodestlynegativeforlargerdepositors.
+Inourmodel,policyratecutsareperfectlytransmittedtodepositratesandlendingrateswhenthelower
+boundsarenon-binding,thusstimulatinglendingandaggregatedemand. OncetheDLBisreached,however,
+thetransmissionofpolicyratetothemainfinancingsourceofbanksbreaksdown–asinthedata. Inthis
+3Incountrieswherethespreadbetweendepositandpolicyratesarehigher,forinstanceinsomeEurozonecountries,depositrates
+couldfallbymore,andhencethepolicyratecangolower,beforedepositratesreachesaDLB.
+3

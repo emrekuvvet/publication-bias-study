@@ -1,0 +1,146 @@
+NBER WORKING PAPER SERIES
+FROM REVOLVING DOORS TO REGULATORY CAPTURE? EVIDENCE FROM PATENT
+EXAMINERS
+Haris Tabakovic
+Thomas G. Wollmann
+Working Paper 24638
+http://www.nber.org/papers/w24638
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2018, Revised July 2024
+This paper was previously called “Effects of regulatory capture: Evidence from patent
+examiners.” We thank Juan Alcacer, Marianne Bertrand, Eric Budish, Thom Covert, Janet
+Freilich, Kinda Hachem, Elisabeth Kempf, Josh Lerner, Ben Roin, Scott Stern, Chad Syverson,
+Dennis Yao, as well as seminar discussants and participants for helpful comments. We also thank
+Stu Graham, Alan Marco, Andrew Toole, and other members of the USPTO Office of Chief
+Economist for creating, documenting, and providing datasets that serve as the basis for much of
+this paper. Excellent research assistance was provided by Jordan Bell-Masterson, Kavya
+Garikipati, and Divya Vallabhaneni. The views expressed herein are those of the authors and do
+not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2018 by Haris Tabakovic and Thomas G. Wollmann. All rights reserved. Short sections of text,
+not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+From Revolving Doors to Regulatory Capture? Evidence from Patent Examiners
+Haris Tabakovic and Thomas G. Wollmann
+NBER Working Paper No. 24638
+May 2018, Revised July 2024
+JEL No. D72,K23,L51,O34
+ABSTRACT
+Many regulatory agency employees are hired by the firms they regulate, creating a "revolving
+door" between the public and private sectors. We study these transitions using detailed data from
+the US Patent and Trademark Office. We find that patent examiners grant significantly more
+patents to the firms that later hire them and that leniency extends to prospective employers.
+Effects are strongest in years when firms are actively hiring examiners (e.g., all else equal, our
+estimates are attenuated during recessions). Conditional on being granted, affected patents have
+broader scope, as measured by claims, and lower quality, as measured by forward citations.
+Haris Tabakovic
+The Brattle Group
+1 Beacon Street, Suite 2600
+Boston, MA 02108
+Haris.Tabakovic@brattle.com
+Thomas G. Wollmann
+Booth School of Business
+University of Chicago
+5807 South Woodlawn Avenue
+Chicago, IL 60637
+and NBER
+Thomas.Wollmann@chicagobooth.edu
+A data appendix is available at http://www.nber.org/data-appendix/w24638
+
+1 Introduction
+Many regulatory agency employees follow brief, public sector experience with more lucrative work at
+the firms they used to regulate. In several industries, the practice is so common that these agencies
+appeartohave"revolvingdoors."Thismaybeginwith—andpartlybemotivatedby—firms’desirestohire
+workerswithagencyexperience. Theconcern,however,isthatitleadstoaquidproquo: laxsupervisionis
+exchangedforfutureemployment. Whetherexplicitortacit,thisarrangementcanhavefirstorderwelfare
+consequencesstemmingfrompoliciesthatineffectivelyaddressmarketfailuresandincompletelyprotect
+publicinterests(Stigler,1971;Peltzman,1976;BreyerandStewart,1979).12 Despitethisconcern,thereis
+verylittleempiricalanalysisofpublic-to-privatesectortransitionsbyregulatoryagencyemployeesatthe
+decisionlevel.
+Oneagencythatbothregulatesasignificantshareofcommerceandemploysalargenumberofrevolving
+door workers is the United States Patent and Trademark Office ("USPTO"). When a patent application
+arrives at the agency, it is routed to a USPTO employee, called an examiner, working in Alexandria,
+Virginia.3 Theseexaminers decidewhetherornot tograntapatent, sotheir decisionsaffectinvestment
+(Budish, Roin, and Williams, 2015), the rate and direction of innovation (Moser, 2005; Williams, 2013;
+Moser,2013;GalassoandSchankerman,2015),laborincome(Kline,Petkova,Williams,andZidar,2016),
+entrepreneurial activity (Farre-Mensa, Hegde, and Ljungqvist, 2017), and ultimately economic growth
+(Jaffe and Lerner, 2004). Many examiners, though, leave the agency to join private sector law firms
+as patent practitioners—licensed specialists who represent others in the patenting process. Doing so
+providesincreasedpayandmobilitybutcreatesapotentialconflictofinterest,sincemanyexaminersevaluate
+applicationsoffirmsforwhomtheywouldliketowork.
+To study these transitions, we construct an original dataset that links patent grant decisions to the
+examinerswhomadethem,andthentiestheseexaminerstothefirmsthathiredthem. Foroveronemillion
+applications, we observe the name and address of the filing firm, the name and unique identifier of the
+examiner, the decisions he or she made, and the dates on which they were made. For applications that
+receivegrants,weobservethenumberofcitationsthatthepatentreceives,whichprovidesacommonly
+usedproxyofquality. Separately,weobserveperiodicsnapshotsofthefulllistoflicensedpractitioners,
+including their name and unique identifier, as well as the name and address of their employer. We also
+supplementthisdatawithbiographicalinformation. Atthedecisionlevel,ourdatalinkstheindividuals
+settingregulationandthefirmsaffectedbyregulationtotheindividualshiredbyregulatorsandthefirm
+thathirethoseindividuals. Toourknowledge,itisthefirstpapertomaketheseconnections.
+Weinvestigatewhetherrevolvingdoorexaminersbehavedifferentlytowardsfutureandprospective
+employers, whether these differences suggest regulatory capture, and whether they affect the quality
+of regulation. While the first question is a straightforward test of regulatory consistency, the second is
+challenging. Itrequiresustodistinguishactionswhoseintentistogainfavorwithanemployerfromactions
+thatreflectemployeepreferencesorreversecausality. Featuresofthesettingaidthisprocess. Forinstance,
+1SeealsoLevineandForrence(1990)andLaffontandTirole(1991)formorecomprehensivereviewsofearlierwork.
+2Itcouldalsoerodetrustingovernment. Thisconcernisparticularlytimelygivenpollsthatindicateonly19%ofthepublic
+believesthatthefederalgovernment"isrunforthebenefitofallthepeople."Bycomparison,in1964,whenPewfirstadministeredthe
+poll,theyobtaineda65%share.Likewise,aboutthree-quarters(76%)believeitis"runbyafewbiginterests,"whichcontrastswith
+the29%shareobtainedin1964(Pew,2015).
+3TheofficewasintheneighboringtownofArlingtonuntil2003.However,attheveryendofourpanel,theUSPTOwasinthe
+processofopeningsatelliteofficesinMichigan,Texas,California,andColorado.ThenewUSPTOofficesaccountedforanegligible
+shareofexaminersinthepanel(i.e.,<1%,ofexaminersinourdata.)TheUSPTOalsointroducedateleworkingoptionforexaminers
+attheendofourpanel.Thatparticularchangeaffectedonlyexperiencedexaminersanddoesnotimpactouranalysiswhichfocuses
+onlyonshort-tenurejunioremployees(i.e.,thosewhocyclethroughtherevolvingdoor.)
+2
+
+unlikepriorworkthatrelieduponacross-employeedifferencesorvariationalongotherdimensions,wecan
+exploitwithin-employeewithin-firmdifferences. Additionaltests,describedbelow,incorporateauxiliary
+data. Thethirdquestionisalsochallenging. Itrequiresustoruleoutexaminersmerelyappearingfavorable
+byselectinghighquality,easy-to-grantapplicationsfromthequeue,asthiswouldhavenorealeffecton
+intellectualproperty(IP)protection. TheallocationofapplicationstoexaminersattheUSPTO,however,
+isquasi-randomalongthedimensionsaboutwhichweareconcerned(Williams,2013;RighiandSimcoe,
+2017).4
+Webeginbyshowingthatrevolvingdoorexaminersgrant12.6-17.6%morepatentstofirmsthatlater
+hire them. This result is robust to varying the level of controls, such as examiner and firm fixed effects.
+Likewise, it is robust to limiting the sample to firms that hire at least one examiner, which reduces the
+numberofobservationsbyroughlytwo-thirds.
+Wethenaskwhetherrevolvingdoorexaminersextendthisleniencytoprospectiveemployers. Herewe
+relyontwopremises: first,thatexaminersfaceuncertaintyaboutwhichfirmswillhavefuturejobopenings
+and,second,thatconditionalonthetypeofwork,anemployer’slocationisthemostimportantattributeon
+whichworkersbasetheirchoices(BarberandRoehling,1993;Turban,Eyring,andCampion,1993;Powell
+andGoulet,1996). Thus,wetestwhetherrevolvingdoorexaminersgrantmorepatentstootherfirmsin
+closeproximitytotheonethathiredthem. Wefind,forexample,thatgrantratesare6.2-11%higherfor
+firms that are located in the same ZIP code as the firm that hired examiner and that are location-based
+estimatesarerobusttothetypesofspecificationchangesandsamplerestrictionsdescribedabove.
+Next,weconsidercomplementaryresearchdesigns. First,weplotthecoefficientsofinterest,byyear,
+against measures of private sector hiring intensity. If revolving door examiners exhibit leniency to gain
+favor—oratleastnotaggravate—prospectiveemployers,thenthemaineffectshouldloadonperiodswhen
+firmsareactivelyhiring. Wefindpreciselythisrelationship. Sincethelevelofeconomy-wideprivatesector
+hiringisplausiblyindependentofidiosyncraticexaminerpreferences,thisresultmitigatesendogeneity
+concerns.
+Second,wecollectdataonwhereeachexaminerwaseducatedpriortojoiningtheUSPTO.Weshowthat
+thelocationofarevolvingdoorexaminer’salmamaterpredictswhereheorshewillbehiredafterleaving
+theagency. Wethenshowthatrevolvingdoorexaminersgrantmorepatentstofirmslocatedneartheir
+almamater. Moreover,wefindthatthisresultdoesnotholdfor"non-revolvingdoor"examiners—onesthat
+continuetoworkfortheUSPTOthroughtheendofoursampleperiod. Sinceeducationalbackgroundsare
+"realized"priortoexaminationdecisions,thisresultmitigatesreversecausalityconcerns.
+Wealsostudypatentclaims. Fromthem,weconstructtwomeasuresthattheUSPTOsuggestscapture
+howmuchpatentscopeisreducedintheexaminationprocess,whichproxyforexaminertoughness. We
+findthateffectsontheintensivemarginofIPprotectionareconsistentwiththoseontheextensivemargin.
+Finally,westudypatentquality. Examinerleniencylowersthethresholdatwhichapplicationsresultin
+grants,sopatentsgrantedbyrevolvingdoorexaminerstotheirfutureandprospectiveemployersshould
+receive fewer citations. We find exactly this pattern in the data. For instance, we estimate that a patent
+grantedtoafirmthatsubsequentlyhireditsexaminerreceives21-27%fewercitationsonaverage.
+Whiletheseresultsareconsistentwithregulatorycapture,wecautionthattheydonot,ontheirown,
+suggest restricting where or when federal employees may work after they leave government. "Cooling
+off" periods, akin to ones faced by accountants and lobbyists, can adversely affect regulators. For one,
+prohibiting examiners from working in private sector roles for which they are best suited can dissuade
+4SeeFootnote7foradiscussionofassignmentthatisinformedbythecitedworks.
+3

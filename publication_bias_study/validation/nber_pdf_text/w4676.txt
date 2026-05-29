@@ -1,0 +1,108 @@
+NBER WORKING PAPER SERIES
+REVERSE ENGINEERING THE
+YIELD CURVE
+David K. Backus
+Stanley E. Zin
+Working Paper No. 4676
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+March 1994
+The authors thank Ned Elton, Stephen Figlewski, Silverio Foresi, James MacKinnon, Fallaw
+Sowell, and Chris Tebner for helpful comments and suggestions. Backus thanks the National
+Science Foundation for financial support. This paper is part of NBER's research program in
+Asset Pricing. Any opinions expressed are those of the authors and not those of the National
+Bureauof Economic Research.
+
+NBER Working Paper #4676
+March 1994
+REVERSE ENGINEERING ThE
+YIELD CURVE
+ABSTRACT
+Prices of riskfree bonds in any arbitrage-free environment are governed by a pricing
+kernel: given a kernel, we can compute prices of bonds of any maturity we like. We use
+observedpricesof multi-period bonds to estimate, in a log-linear theoretical setting, the pricing
+kernel that gave rise to them. The high-order dynamics of our estimated kernel help to explain
+why first-order, one-factor models of the term structure have had difficulty reconciling the shape
+of the yield curve with the persistence of the short rate. We use the estimated kernel to provide
+a new perspective on Hansen-Jagannathan bounds, the price of risk, and the pricing of bond
+options and futures.
+David K. Backus Stanley E. Zin
+Stern School of Business Graduate School of Industrial
+Management Education Center Administration
+New York University
+Carnegie-Mellon University
+New York, NY 10012-1126 Pittsburgh, PA 15213-3890
+and NBER and NBER
+
+1 Introduction
+A newcomer to the theory of bond pricing would be struck by the enormous
+variety of models used by academics and practitioners alike. Prominent ex-
+amples include Black, Derman, and Toy (1990), Brennan and Schwartz (1979),
+Cox, Ingersoll, and Ross (1985), Heath, Jarrow, and Morton (1992), Ho and Lee
+(1986), and Vasicek (1977), and one could easily add many others to the list.
+The common element linking these diverse theories is what Sargent (1987) terms
+the pricing kernel: the stochastic process governing prices of state-contingent
+claims. A theory of bond prices that does not admit pure arbitrage opportu-
+nities implies that a pricing kernel exists. Hence a theory of bond prices is
+essentially a choice of pricing kernel.
+Given a pricing kernel, we can compute prices of bonds and related assets.
+We describe and implement a procedure for doing the reverse: of using prices
+of riskfree government bonds to deduce the pricing kernel. We do this in a
+discrete-time log-linear theoretical framework that has been used by) among
+others, Campbell (1986), den Haan (1993), and Turnbull and Mime (1991), and
+is closely related to the one-factor Gaussian interest rate model of Jamshidian
+(1989) and Vasicek (1977). This framework does not encompass all of the mod-
+els in the literature, or even all of those listed above, but its simple structure
+makes the relation between bond yields and the pricing kernel relatively trans-
+parent. Given this structure, we can trace observed properties of bond prices
+to properties of the kernel. We show, for example, that the upward slope of
+the mean yield curve and the positive autocorrelation of interest rates provide
+information about the pricing kernel that bear on the pricing of related assets.
+Our estimated pricing kernel provides a useful perspective on both the gen-
+eral equilibrium foundations of asset pricing and the properties of interest-rate
+derivative assets. With respect to the foundations of asset pricing, the widely-
+documented discrepancies between representative agent theories and observed
+asset prices have been linked, most notably by Hansen and Jagannathan (1991),
+to variability of the pricing kernel. Like them, we find that the pricing kernel
+has substantially greater variability than theory based on a representative agent
+with power utility. We find, in addition, that most of this variability is short
+term. With respect to derivative assets, our estimated kernel provides some
+insight into their pricing. One example concerns bond options. In our theoret-
+ical framework, an increasing mean yield curve implies mean reversion in the
+kernel and the short rate. As a result, approaches to option pricing that do
+not incorporate mean reversion must compensate by positing a declining term
+
+structure of volatility. A second example concerns the relation between forward
+and futures prices. Although these prices need not bear any particular relation
+to each other in our framework, our estimated kernel implies that futures prices
+are less than forward prices, as they seem to be in the data. This property is a
+general consequence, in our framework, of kernels that imply a positively auto-
+correlated short rate, and holds even when the mean yield curve is decreasing.
+These examples illustrate, we think, the benefits of reducing the theory of bond
+pricing to its least common denominator, the pricing kernel.
+We develop these issues in the following pages, starting with a quick look at
+the salient properties of bond yields and forward rates.
+2 Properties of Bond Yields
+We review two features of yields and forward rates on US government bonds:
+the tendency for long rates to be higher than short rates, on average, and the
+high degree of persistence in yields and forward rates of all maturities. The
+data are monthly, and were constructed by McCulloch and Kwon (1993).
+To fix the notation, let b' denote the dollar price at date i of an n-period
+discount bond: the claim to one dollar in all states at date t + n. The dollar
+yield on a bond of maturity n, for n > 0, is
+yfl = —n1logb. (1)
+The yield on a one-period bond is simply the short rate: rg =
+—logb.
+Forward rates are implicit in the prices of n- and (n + 1)-period bonds:
+f =
+log(b/b1).
+(2)
+From definitions (1) and (2) we see that yields are averages of forward rates:
+yfl__lfJ_l
+(3)
+Thus we can express the maturity structure of riskfree bonds in three equivalent
+ways: with prices, yields, or forward rates.
+The most common method of representing the term structure is with yields,
+to which we turn now. The first feature of interest is the slope of the yield curve.
+2

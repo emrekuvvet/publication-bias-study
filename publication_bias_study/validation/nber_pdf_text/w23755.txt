@@ -1,0 +1,127 @@
+NBER WORKING PAPER SERIES
+THE COMPLEXITY OF BANK HOLDING COMPANIES:
+A TOPOLOGICAL APPROACH
+Mark D. Flood
+Dror Y. Kenett
+Robin L. Lumsdaine
+Jonathan K. Simon
+Working Paper 23755
+http://www.nber.org/papers/w23755
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+August 2017
+The authors thank Hashim Hamandi, Stathis Tompaidis, and participants in the 2017 Vienna -
+Copenhagen Conference on Financial Econometrics, the 2017 RiskLab / BoF / ESRB Conference
+on Systemic Risk Analytics in Helsinki, the 10th Annual Society for Financial Econometrics
+Conference in New York, and research seminars hosted by the Office of Financial Research, the
+University of Ljubljana, and the Center for Nonlinear Dynamics in Economics and Finance
+(CeNDEF) at the University of Amsterdam for helpful discussions and suggestions. Any
+remaining errors are the responsibility of the authors alone. View and opinions expressed are
+those of the authors and do not necessarily represent official positions or policy of the Office of
+Financial Research, the US Treasury, the Financial Industry Regulatory Authority, or the
+National Bureau of Economic Research.
+At least one co-author has disclosed a financial relationship of potential relevance for this
+research. Further information is available online at http://www.nber.org/papers/w23755.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2017 by Mark D. Flood, Dror Y. Kenett, Robin L. Lumsdaine, and Jonathan K. Simon. All
+rights reserved. Short sections of text, not to exceed two paragraphs, may be quoted without
+explicit permission provided that full credit, including © notice, is given to the source.
+
+The Complexity of Bank Holding Companies: A Topological Approach
+Mark D. Flood, Dror Y. Kenett, Robin L. Lumsdaine, and Jonathan K. Simon
+NBER Working Paper No. 23755
+August 2017
+JEL No. C02,C81,D85,G21,G28,G3,L22
+ABSTRACT
+Large bank holding companies (BHCs) are structured into intricate ownership hierarchies
+involving hundreds or even thousands of legal entities. Each subsidiary in these hierarchies has its
+own legal form, assets, liabilities, managerial goals, and supervisory authorities. In the event of
+BHC default or insolvency, regulators may need to resolve the BHC and its constituent entities.
+Each entity individually will require some mix of cash infusion, outside purchase, consolidation
+with other subsidiaries, legal guarantees, and outright dissolution. The subsidiaries are not
+resolved in isolation, of course, but in the context of resolving the consolidated BHC at the top of
+the hierarchy. The number, diversity, and distribution of subsidiaries within the hierarchy can
+therefore significantly ease or complicate the resolution process. We propose a set of related
+metrics intended to assess the complexity of the BHC ownership graph. These proposed metrics
+focus on the graph quotient relative to certain well identified partitions on the set of subsidiaries,
+such as charter type and regulatory jurisdiction. The intended measures are mathematically
+grounded, intuitively sensible, and easy to implement. We illustrate the process with a case study
+of one large U.S. BHC.
+Mark D. Flood Robin L. Lumsdaine
+Department of the Treasury Kogod School of Business
+Office of Financial Research American University
+290 Broadway 4400 Massachusetts Avenue NW
+New York, NY 10007 Washington, DC 20016
+Mark.Flood@ofr.treasury.gov and NBER
+robin.lumsdaine@american.edu
+Dror Y. Kenett
+Johns Hopkins University Jonathan K. Simon
+Zanvyl Krieger School of Arts and Sciences Department of Mathematics
+Advanced Academics Programs 14 MacLean Hall
+1717 Massachusetts Avenue, NY University of Iowa
+Washington, DC 20036 Iowa City, IA 52242
+dkenett1@jhu.edu jonathan-simon@uiowa.edu
+
+The Complexity of Bank Holding Companies
+1 Introduction
+In the wake of the Great Depression and the failure of more than 9,000 banks, the
+Banking Act of 1933 created the Federal Deposit Insurance Corporation (FDIC).1
+Sincethen, theFDIChasactedasreceiverforseveralthousandfailedbanks, including
+520 since 2008. As Figure 1 indicates, these failures tend to come in waves defined
+by broader episodes of financial instability.2 This means that resolution is not a
+routine activity that proceeds at a predictable pace, but more typically an urgent
+and extraordinary supervisory task undertaken in exigent circumstances.
+Figure 1: Number of failed U.S. banks, 1935–2016. Three (post-FDIC) failure waves:
+Great Depression (1935-43), Savings and Loan Crisis (1980-1994) and Global Finan-
+cial Crisis (2009-2015).
+Source: FDIC
+Historically, most of these failed banks were relatively small community banks
+whose resolution posed little risk to the financial system. Notably, all were consid-
+erably smaller and less complex than the most systemically important firms active
+today. Until the 2008 financial crisis, the largest bank failure in U.S. history was that
+of Continental Illinois National Bank and Trust Company. At the time of its failure
+in 1984, it was the seventh largest bank in the U.S., with approximately $40 billion
+in assets (approximately $96 billion in 2016 dollars).3 By comparison, Bank of New
+1See Flood (1992). The Banking Act of 1933 is also known as the Glass-Steagall Act.
+2Data in Figure 1 are from FDIC (2016b); the majority of Depression-era bank failures preceded
+start of the FDIC’s sample in 1934. For the more recent period, the FDIC (2016a) provides an
+up-to-date list of bank failures since 2000.
+3Haltom (2013) describes the failure of Continental Illinois.
+page2
+
+The Complexity of Bank Holding Companies
+York Mellon, the seventh largest bank in the U.S. today, has nearly $300 billion in
+consolidated assets and the largest bank, JPMorgan Chase, has over $2 trillion in
+consolidated assets. Rapid resolution of the largest institutions, if they should fail,
+is critical to ensure the provision of liquidity to counterparties that are relying on
+incoming payments from the failing firm and to avoid a cascade of events that can
+quickly snowball into a systemic panic.
+The danger of a disorderly resolution that snowballs into a crisis is a channel of
+systemic risk that is unlikely to correlate with other common measures of systemic
+risk,especiallythosethataremarket-based. Thisisbecausesuchaneventinvolvesthe
+intersection of two (ex ante) low-probability events: a large-firm failure and a fumbled
+resolution implementation. This does not imply, however, that resolution complexity
+cannot be measured, or that authorities cannot plan for orderly resolution.
+In the aftermath of these challenges, Title II of the Dodd-Frank Act of 2010
+expanded the FDIC’s receivership authority to large, complex financial companies,
+including bank holding companies (BHCs) with $50 billion or more in assets and non-
+banks whose failure regulators have determined could pose a threat to U.S. financial
+stability.4 In addition, to assist with orderly resolution should it become necessary, a
+regulated firm is now required to submit a plan for supervisory approval, known as a
+“living will,” describing how it should be resolved. As part of this requirement, the
+Board of Governors of the Federal Reserve System (BoG) and the FDIC (hereafter,
+BoG-FDIC) have issued a series of documents that provide guidance regarding the
+submission and assessment of firms’ resolution plans; see BoG-FDIC (2016).5 These
+4FDIC (2011) envisions a counterfactual case study of how the Lehman resolution might have
+proceeded under the new Dodd-Frank Authority. For insurance companies, resolution occurs under
+applicablestatelawandisconductedbythestateregulator;onlyinthecasethatthestateregulator
+doesnotactwithin60daysdoestheFDIChaveresolutionauthority. Forasummaryoftheexpanded
+receivership authority, see FDIC (2010).
+5Eight domestic bank holding companies participated in the initial wave of submissions. They
+were: Bank of America Corporation; Bank of New York Mellon Corporation, PLC; Citigroup, Inc.;
+Goldman Sachs Group, Inc.; JPMorgan Chase & Co.; Morgan Stanley; State Street Corporation;
+and Wells Fargo & Company.
+page3

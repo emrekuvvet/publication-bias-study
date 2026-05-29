@@ -1,0 +1,143 @@
+NBER WORKING PAPER SERIES
+DEBT-MATURITY MANAGEMENT WITH LIQUIDITY COSTS
+Saki Bigio
+Galo Nuño
+Juan Passadore
+Working Paper 25808
+http://www.nber.org/papers/w25808
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2019, Revised May 2021
+This paper supersedes “A Framework for Debt-Maturity Management”. The views expressed in
+this manuscript are those of the authors and do not necessarily represent the views of the Bank of
+Spain, the Eurosystem, or the National Bureau of Economic Research. We thank Elena Fernandez
+for excellent research assistance. The paper was influenced by conversations with Anmol
+Bhandari, Manuel Amador, Andy Atkeson, Adrien Auclert, David Andolfatto, Luigi Bocola, Jim
+Costain, Alessandro Dovis, Raquel Fernandez, Hugo Hopenhayn, Francesco Lippi, Matteo
+Maggiori, Rody Manuelli, Ken Miyahara, Nathan Nadramija, Dejanir Silva, Dominik Thaler,
+Aleh Tsyvinski, Pierre-Olivier Weill, Pierre Yared, Dimitri Vayanos, Anna Zabai and Bill Zame.
+We thank Davide Debortoli, Thomas Winberry, and Wilco Bolt for discussing this paper. We are
+specially thankful to Daragh Clancy, Aitor Erce and Kimi Jiang (ESM) and to Pablo de Ramón-
+Laca (Spanish Treasury) for providing us with the Spanish micro data, and to Jens Christensen
+for the estimates of the yield curve in Spain and France. We thank participants in multiple
+seminars and conferences for their comments.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2019 by Saki Bigio, Galo Nuño, and Juan Passadore. All rights reserved. Short sections of text,
+not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Debt-Maturity Management with Liquidity Costs
+Saki Bigio, Galo Nuño, and Juan Passadore
+NBER Working Paper No. 25808
+May 2019, Revised May 2021
+JEL No. F34,F41,G11
+ABSTRACT
+We characterize the optimal debt-maturity management problem in the presence of liquidity
+costs. A government issues an arbitrary number of finite-maturity bonds and faces income and
+interest-rate risk, which can tempt it to default. Optimal issuances are spread out across maturities
+and are given by the ratio of a value gap over a liquidity coefficient that measures the price
+impact. The value gap is the proportional difference between the bond prices obtained by
+discounting with the international interest rates and with the domestic discount factor. This
+characterization allows us to quantify the contribution of different economic forces—impatience,
+yield-curve riding, expenditure smoothing, self-insurance, credit risk, and default incentives—in
+shaping the optimal debt maturity distribution. In an application, we estimate the liquidity
+coefficients using Spanish debt auction data and exploit the framework to evaluate Spanish debt
+management practices.
+Saki Bigio Juan Passadore
+Department of Economics Einaudi Institute for Economics and Finance (EIEF)
+University of California at Los Angeles Via Sallustiana 62
+8283 Bunche Hall Rome, 00187
+Box 951477 Italy
+Los Angeles, CA 90095-1477 juan.passadore@eief.it
+and NBER
+sbigio@econ.ucla.edu
+Galo Nuño
+Banco de España
+Alcalá 48,
+28014 Madrid
+Spain
+galo.nuno@bde.es
+Appendices are available at http://www.nber.org/data-appendix/w25808
+
+1 Introduction
+Any government faces a large-stakes problem: to design a strategy for the quantity and maturity of its
+debt. Thispaperpresentsanewframeworktothinkaboutandevaluatethatdesign. Westudytheoptimal
+debt-maturity management problem of a government subject to income and interest-rate risk, risks that
+canleadtoadefault. Theframeworkmakestwoinnovations. First,itputsforthliquiditycostsasacentral
+consideration,thenotionthatthegreaterabondauctionis,thelowertheauctionprice.Second,wedevelop
+anapproachtocharacterizetheoptimaldebtprogramallowingforanarbitrarynumberoffinite-lifebonds.
+With this approach, we can analytically and quantitatively decompose the different economic forces that
+influenceanoptimaldebt-managementstrategy.
+Liquidity costs are a common concern to practitioners, but to a large extent, their role has been absent
+innormativeanalysis. Here, weembracetheviewthatliquiditycostsarecentraltothedebtmanagement
+problem. WebuildonDuffie,GarleanuandPedersen(2005)andfeatureagovernmentthatauctionsbonds
+to primary dealers who take time to resell bonds to their ultimate holders, investors. The greater the is-
+suance, the longer the resell time. As in Vayanos and Vila (2021), we feature bond markets segmented by
+maturityanddealerswhofacehighercapitalcoststhaninvestors. Asaresult,thetimetoredeploybondsis
+costlyandproducesamarkupbetweentheissuergovernment’sauctionpriceandsecondary-bondmarket
+prices.Sincethereselltimeincreaseswiththeauctionsize,theauctionpricefallswiththeauctionsize.The
+sensitivitiesofauctionpricestotheauctionedamountsatgivenmaturitiesareliquiditycoefficientsthatwe
+canmeasurewithauctiondata.
+Beforestudyingtheoptimaldebtmanagementproblem,weestimatetheliquiditycoefficientsinamedium-
+sized economy, Spain. Over the last 20 years, Spain has issued recurrently in only ten maturities. We
+estimatetheliquidity coefficientsateachofthosematuritieswithdatacoveringmorethan2000bondauc-
+tions. Dependingonthematurityweconsider,aoneppincreaseinmonthlyissuances(overannualGDP)
+isassociatedwithareductioninauctionpricesbetween8and56bps.
+Wethenstudytheoptimaldebtmanagementproblemofagovernmentthatinternalizesliquiditycosts. In
+the presence of liquidity costs, the number and types of bonds that the government can issue are not in-
+nocuous. For that reason, we allow the government to issue an arbitrary number of finite-life bonds, an
+exercisehithertonotcarriedout. Duetothecurseofdimensionality,qualitativeanalysisisoftenrelegated
+tohighlystylizedmodels,andquantitativemodelsonlyallowforasmallnumberofdecayingperpetuities
+(asinLelandandToft,1996).1 Inpractice,governmentssimultaneouslyissueinmanymaturities,andper-
+petuitiesareararity.Theapproachheremakesrestrictiveassumptionsonshocks,butallowsforananalytic
+characterizationandaquantitativeevaluationofoptimaldebtmanagementwitharealisticdebtstructure,
+thuscomplementingearlierwork.
+1This limitation is easily understood. If we want to construct a yearly model where the government only issues 30-year
+bonds,weneedatleast30statevariablesbecausea30-yearbondbecomesa29-yearbondthefollowingyear,a28-yearbondthe
+yearafter,andsoon.Bycontrast,abondthatmaturesby5-percenteveryyearisstillabondthatmaturesby5-percenttheyear
+afteritsissuance.
+1
+
+Ouranalysisuncoversageneralprinciple. Thegovernment’sproblemcanbestudiedasifmultipleartificial
+traderswereinchargeofissuingdebtofacorrespondingmaturity. Eachtradermustapplyasimplerule:
+issuanceatmaturityτ 1
+= ×valuegapatmaturityτ .
+GDP liquiditycoefficientatmaturityτ
+Thisrulefollowsfromaconditionthatequatesmarginalauctionrevenuestoaninternaldebtvaluation.The
+rule states that optimal issuances of a bond of maturity τ equal the ratio of a value gap over the liquidity
+coefficient of that maturity. The value gap is the proportional difference between the secondary-market
+price and a domestic valuation. With liquidity costs, the government’s discount rate does not equal the
+internationalshort-termrate. Thus,thedomesticvaluationisacounterfactualbondprice,computedusing
+the government’s discount rate instead of the short-term rate. A positive value gap indicates the desire
+to arbitrage the difference between market prices and domestic valuations by the artificial traders. The
+liquidity coefficient modulates the willingness to arbitrage in a given maturity. As a result of this limited
+arbitrage, it is optimal to issue in all maturities at all times, as commonly done by Treasuries. Since the
+domestic discount factor rate must be internally consistent at an optimum, a single equilibrium variable
+summarizesaproblemwithinfinitecontrolvariables.2
+The simple issuance rule holds, regardless of whether the government faces income or interest-rate risk,
+or has the option to default. These factors impact the bond valuations and prices through their effects on
+the interest rate and the domestic discount rates. This representation is convenient because it makes it
+possible to dissect the forces that shape the optimal debt-maturity profile through their impact on these
+rates. We characterize how these forces affect the level and weighted average maturity (WAM) of debt
+issuance through the elasticities of domestic valuations and bond prices with respect to the parameters
+associatedwitheachforce.
+To flesh out how different forces contribute to the optimal maturity choice, we study the government’s
+problem in steps. In the first step, we abstract from risk. In this case, the domestic rate only depends on
+the government’s impatience relative to international investors, which implies an analytic expression for
+the optimal steady-state debt profile. We show that, when liquidity costs are homogeneous, the govern-
+mentshouldissueinallmaturitiesatthesteadystate,butwithapatternthatincreaseswithmaturity.3 The
+government’s greater impatience compared to the market is key to deliver this result. Extending the ma-
+turitybyoneperioddelaystheprincipalbyoneperiod. Ifthegovernmentwereaspatientasinternational
+investors, this delay would not bring any benefit. However, since the government is more impatient, the
+delay brings it a benefit. Thus, the government always prefers to issue at long maturities but spreads out
+itsissuancestomitigateliquiditycosts. Weintroduceaproof,basedontheanalysisofelasticities,showing
+2Thedomesticdiscountrateisthesolutionofafixed-pointproblem: Aconjecturedexpenditurepathmapstoadomestic
+discountrate.Thisdiscountrategeneratesanissuancepathviatheoptimalrule.Ultimately,theissuancepathmustbeconsistent
+withtheexpenditurepath’sdebtservices. Theconjecturedexpenditurepathmustcoincidewiththeactualexpenditurepath
+obtainedapplyingtheissuanceruleattheoptimum.
+3Althoughissuancesincreasewithmaturity,theoutstandingdebtstockdecreaseswithmaturity,asinthedata.Thisdecreas-
+ingmaturityprofileisanartifactofbondshavingafinitelife.
+2

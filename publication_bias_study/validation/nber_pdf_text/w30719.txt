@@ -1,0 +1,122 @@
+NBER WORKING PAPER SERIES
+ADVERSE SELECTION AND NETWORK DESIGN UNDER REGULATED PLAN PRICES:
+EVIDENCE FROM MEDICAID
+Amanda R. Kreider
+Timothy J. Layton
+Mark Shepard
+Jacob Wallace
+Working Paper 30719
+http://www.nber.org/papers/w30719
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2022
+We are grateful to Amanda Starc, Joel Segel, Emilie Jackson, and participants at the Conference
+of the American Society of Health Economists and the National Tax Association conference for
+their helpful comments and suggestions. We gratefully acknowledge funding from the Laura and
+John Arnold Foundation, the Agency for Healthcare Research and Quality (K01-HS25786-01),
+the National Institute of Mental Health (T32-MH019733), and the National Institute on Aging
+(T32-AG000186, P01AG032952). The content is solely the responsibility of the authors and does
+not necessarily represent the official views of the National Institutes of Health or any other
+organization. The views expressed herein are those of the authors and do not necessarily reflect
+the views of the National Bureau of Economic Research.
+At least one co-author has disclosed additional relationships of potential relevance for this
+research. Further information is available online at http://www.nber.org/papers/w30719.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2022 by Amanda R. Kreider, Timothy J. Layton, Mark Shepard, and Jacob Wallace. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+Adverse Selection and Network Design Under Regulated Plan Prices: Evidence from Medicaid
+Amanda R. Kreider, Timothy J. Layton, Mark Shepard, and Jacob Wallace
+NBER Working Paper No. 30719
+December 2022
+JEL No. H51,I11,I13
+ABSTRACT
+Health plans for the poor increasingly limit access to specialty hospitals. We investigate the role
+of adverse selection in generating this equilibrium among private plans in Medicaid. Studying a
+network change, we find that covering a top cancer hospital causes severe adverse selection,
+increasing demand for a plan by 50% among enrollees with cancer versus no impact for others.
+Medicaid’s fixed insurer payments make offsetting this selection, and the contract distortions it
+induces, challenging, requiring either infeasibly high payment rates or near-perfect risk
+adjustment. By contrast, a small explicit bonus for covering the hospital is sufficient to make
+coverage profitable.
+Amanda R. Kreider Mark Shepard
+University of Pennsylvania Harvard Kennedy School
+Colonial Penn Center #308 Mailbox 114
+3641 Locust Walk 79 JFK Street
+Philadelphia, PA 19104 Cambridge, MA 02138
+akreid@wharton.upenn.edu and NBER
+mark_shepard@hks.harvard.edu
+Timothy J. Layton
+Harvard Medical School Jacob Wallace
+Department of Health Care Policy Yale School of Public Health
+180 Longwood Avenue Department of Health Policy and Management
+Boston, MA 02115 60 College Street
+and NBER New Haven, CT 06520
+layton@hcp.med.harvard.edu jacob.wallace@yale.edu
+
+1 Introduction
+Adverseselection,thetendencyofhigh-costconsumerstodemandmoregenerousinsurance,isa
+commonconcernininsurancemarkets. Itiswell-establishedthatselectioncan, anddoes, distort
+pricesandcauseconsumerstosortinefficientlybetweeninsuredanduninsuredstatesorbetween
+moreorlessgenerouscoverage(Einav,Finkelstein,andCullen2010;Handel,Hendel,andWhin-
+ston 2015). In the extreme, selection can completely unravel markets (Akerlof 1970; Hendren
+2013). However, selectioncanaffectmorethanpricesandmarketstability. Itcanalsoincentivize
+insurers to distort contracts to “cream-skim” low-risk consumers and avoid high-risk consumers
+(Rothschild and Stiglitz 1976; Veiga and Weyl 2016). While price distortions affect who enrolls
+ininsurance, contractdistortionscanreducethequalityofinsurancecontractsforallwhoenroll,
+including restricting access to the benefits most needed by the sickest consumers. Hence, such
+contractdistortionsmaybeafirst-orderconcernforconsumerwelfare.
+In this paper, we provide new evidence on the role of adverse selection in shaping the de-
+sign of hospital networks by health insurers. We study these incentives in Medicaid managed
+care, the largest individual health insurance market in the U.S., covering over 55 million people
+and accounting for over $300 billion in annual payments to private health plans (Kaiser Family
+Foundation 2022). Because Medicaid covers some of the nation’s most vulnerable populations,
+understandingtheincentivesthatshapeaccesstospecialtyhospitals—alongstandingconcernin
+thismarket(Marksetal.2022)—ispotentiallyimportantforunderstandingthedriversofwidely-
+documentedhealthandhealthcaredisparities. DespitetheimportanceofMedicaid, thereislittle
+workontheroleofselectioninthismarket.1
+TheMedicaidprogramrepresentsanovelandinterestingcontextinwhichtostudytheconse-
+quences of adverse selection, as Medicaid markets differ in two key ways from more oft-studied
+markets. First, Medicaid fully subsidizes premiums, so enrollees pay $0 for all plans. Second, in-
+surer payments in Medicaid are typically set administratively, not through competition (Layton,
+Ndikumana,andShepard2017). Pricecompetitionisacoreaspectofselectionmodelsgoingback
+toRothschildandStiglitz(1976),withcream-skimmingincentivesarisingfrominsurers’abilityto
+1.OnenotableexceptionisevidencefromTexasMedicaidthatselectionincentiveswidenedhealthdisparitiesunder
+Medicaidmanagedcare(Kuziemko,Meckel,andRossin-Slater2018).
+1
+
+enterwithlow-qualityandlow-priceplans. Whetherandtowhatextentcream-skimmingarisesin
+marketslikeMedicaid,withadministeredpricesandfully-subsidizedconsumerpremiums,isnot
+known. In simple models of vertical competition, 100% premium subsidies eliminate problems
+associated with selection, since consumers have no reason to choose lower-quality plans (e.g.,
+Cutler and Reber (1998); Einav, Finkelstein, and Cullen (2010)). However, insurers’ inability to
+adjustpricesinresponsetoselectionmaylimittheirabilitytoincreaseplangenerosity,potentially
+worseningselection-relatedcontractdistortions.
+Using data from New York’s Medicaid program, we present visually transparent evidence of
+adverseselectioninresponsetoahealthplan’scoverageofatopspecialtycancerhospital. In2005,
+a large, private Medicaid plan added this cancer hospital to its provider network, becoming the
+only private plan in Medicaid to cover the hospital. Consistent with adverse selection, demand
+among enrollees with cancer responded differentially to this change in coverage: the plan’s mar-
+ket share rose by 50% among enrollees with cancer, while remaining constant among non-cancer
+enrollees. One year after adding the cancer hospital, the plan reversed course and dropped the
+hospitalfromitsnetwork,leadingtoasymmetricoutflowofenrolleeswithcancer.
+Weexploreheterogeneityin,andpathwaysfor,thesedemandresponsestocoverageofthespe-
+cialty cancer hospital. We find that people with more severe and costly cancers (e.g., metastatic
+cancers) were more likely to shift to the plan. This exacerbates adverse selection and is consis-
+tentwithamodelwheredemandforspecialtyhospitalcoverageriseswithdiseaseseverity. Both
+the initial 2005 inflow and subsequent 2006 outflow of cancer enrollees were driven mainly by
+enrolleesswitchingplans,ratherthanshiftsinnewMedicaidenrolleechoices,indicatingthatde-
+mand for this hospital was strong enough to overcome the high levels of inertia in plan choice
+typically observed in this market (Geruso, Layton, and Wallace 2020). Finally, there was little
+change in use of the cancer hospital by the plan’s existing enrollees, suggesting that adverse se-
+lection, rather than a change in utilization among inframarginal enrollees, was the driving factor
+behindtheinsurer’sdecisiontosubsequentlydropthecancerhospitalfromitsnetwork.
+Whilethereisclearevidenceofadverseselection,theenrolleesdrivingthisselectionconstitute
+a small group. Only 2% of Medicaid enrollees in our setting have cancer. Hence, the prevalence
+of cancer among the plan’s enrollees only rose from 2.2% to 3.2% following its decision to cover
+thehospital,leadingtosmallchangesintheplan’saveragecost. Despitethis,theplanresponded
+2

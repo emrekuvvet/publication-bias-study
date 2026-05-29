@@ -1,0 +1,119 @@
+NBER WORKING PAPER SERIES
+HOW TO DISCOUNT CASHFLOWS
+WITH TIME-VARYING EXPECTED RETURNS
+Andrew Ang
+Jun Liu
+Working Paper 10042
+http://www.nber.org/papers/w10042
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2003
+The authors would like to thank Michael Brandt, Michael Brennan, Bob Dittmar, John Graham, Bruce
+Grundy, Ravi Jagannathan, and seminar participants at the Australian Graduate School of Management,
+Columbia University, the Board of Governors of the Federal Reserve and Melbourne Business School for
+comments. We thank Geert Bekaert and Zhenyu Wang for helpful suggestions and especially thank Yuhang
+Xing for constructing some of the data. We thank Rick Green (the editor) and we are grateful to an
+anonymous referee for helpful comments that greatly improved the paper. The authors acknowledge funding
+from an INQUIRE UK grant. This article represents the views of the authors and not of INQUIRE. The views
+expressed herein are those of the authors and not necessarily those of the National Bureau of Economic
+Research.
+©2003 by Andrew Ang and Jun Liu. All rights reserved. Short sections of text, not to exceed two paragraphs,
+may be quoted without explicit permission provided that full credit, including © notice, is given to the source.
+
+How to Discount Cashflows with Time-Varying Expected Returns
+Andrew Ang and Jun Liu
+NBER Working Paper No. 10042
+October 2003
+JEL No. E43, G12
+ABSTRACT
+While many studies document that the market risk premium is predictable and that betas are not
+constant, the dividend discount model ignores time-varying risk premiums and betas. We develop
+a model to consistently value cashflows with changing risk-free rates, predictable risk premiums and
+conditional betas in the context of a conditional CAPM. Practical valuation is accomplished with
+an analytic term structure of discount rates, with different discount rates applied to expected
+cashflows at different horizons. Using constant discount rates can produce large mis-valuations,
+which, in portfolio data, are mostly driven at short horizons by market risk premiums and at long
+horizons by time-variation in risk-free rates and factor loadings.
+Andrew Ang
+Columbia Business School
+3022 Broadway
+805 Uris
+New York, NY 10027
+and NBER
+aa610@columbia.edu
+Jun Liu
+Anderson Graduate School of Management
+UCLA
+110 Westwood Plaza
+Los Angeles, CA 90095
+jliu@anderson.ucla.edu
+
+Todetermineanappropriatediscountrateforvaluingcashflows,amanagerisconfrontedby
+threemajorproblems: themarketriskpremiummustbeestimated,anappropriaterisk-freerate
+must be chosen and the beta of the project or company must be determined. All three of these
+inputs into a standard CAPM are not constant. Furthermore, cashflows may co-vary with the
+risk premium, betas or other predictive state variables. A standard Dividend Discount Model
+(DDM)cannothandledynamicbetas,riskpremiumsorrisk-freeratesbecauseinthisvaluation
+method,futureexpectedcashflowsarevaluedatconstantdiscountrates.
+In this paper, we present an analytical methodology for valuing stochastic cashflows that
+are correlated with risk premiums, risk-free rates and time-varying betas. All these effects are
+important. First, the market risk premium is not constant. Fama and French (2002) argue that
+theriskpremiummovedtoaround2%attheturnofthecenturyfrom7-8%twentyyearsearlier.
+Jagannathan,McGrattenandScherbina(2001)alsoarguethatthemarketex-anteriskpremium
+is time-varying and fell during the late 1990’s. Furthermore, a large literature claims that a
+numberofpredictorvariables,includingdividendyields(CampbellandShiller(1988aandb)),
+risk-free rates (Fama and Schwert (1977)), term spreads (Campbell (1987)), default spreads
+(KeimandStambaugh(1986)),andconsumption-asset-labordeviations(LettauandLudvigson
+(2001)),haveforecastingpowerformarketexcessreturns.
+Second, the CAPM assumes that the riskless rate is the appropriate 1-period, or instanta-
+neous, riskless rate, which in practice is typically proxied by a 1-month or a 3-month T-bill
+return. However, it is highly unlikely that over the long horizons of many corporate capital
+budgeting problems that the riskless rate remains constant. Since the total expected return
+comprises both a risk-free rate and a risk premium, adjusted by a factor loading, time-varying
+risk-free rates imply that total expected returns also change through time. Note that even an
+investor who believes that the expected market excess return is constant, and a project’s beta is
+constant,stillfacesstochastictotalexpectedreturnsasshortratesmoveovertime.
+Finally, as companies grow, merge or invest in new projects, their risk profiles change. It
+is quite feasible that a company’s beta changes even in short intervals, and is very likely to
+change over 10 or 20 year horizons. There is substantial variation in factor loadings even for
+portfolios of stocks, for example industry portfolios (Fama and French (1997)) and portfolios
+sorted by size and book-to-market (Ferson and Harvey (1999)). The popularity of multifactor
+models for computing unconditional expected returns (for example, Fama and French (1993))
+may reflect time-varying betas and conditional market risk premiums in a conditional CAPM
+(seeJagannathanandWang(1996)).
+
+This paper presents, to our knowledge, the first analytic, tractable method of discounting
+cashflows that embeds the effects of changing market risk premiums, risk-free rates and time-
+varyingbetas. PreviouspracticeadjuststheDDMbyusingdifferentregimesofcashflowgrowth
+or expected returns (see Lee, Myers and Swaminathan (1999) for a recent example). These
+adjustments are not made in an overall framework and so are subject to Fama (1996)’s critique
+of ad-hoc adjustments to cashflows with changing expected returns. In contrast, our valuation
+isdoneinaninternallyconsistentframework.
+Ourvaluationframeworksignificantlyextendsthecurrentsetofanalyticpresentvaluemod-
+els developed in the affine class (see, among others, Ang and Liu (2001), Bakshi and Chen
+(2001) and Bekaert and Grenadier (2001)). If a security’s beta is constant and the market risk
+premium is time-varying, then the price of the security would fall into this affine framework.
+Similarly, the case of a time-varying beta and a constant market risk premium can also be
+handled by an affine model. However, unlike our set-up, the extant class of models cannot si-
+multaneously model time-variation in both beta and the market risk premium. This is because
+the expected return involves a product of two stochastic, predictable variables (beta multiplied
+bythemarketpremium).
+We derive our valuation formula under a very rich set of conditional expected returns. Our
+functional form for time-varying expected returns nests the specifications of the conditional
+CAPM developed by Harvey (1989), Ferson and Harvey (1991, 1993 and 1999), Cochrane
+(1996), Jagannathan and Wang (1996), among others. These studies use instrumental variables
+to model the time-variation of betas or market risk premiums. In our framework, short rates
+also vary through time. The set-up also incorporates correlation between stochastic cashflows,
+betasandriskpremiums.
+To adapt our valuation framework to current practice in capital budgeting, we compute
+a term structure of discount rates applied to random cashflows. Practical cashflow valuation
+separatestheproblemintotwosteps: first,estimatetheexpectedfuturecashflowsofaprojector
+security,andthentaketheirpresentvalue,usuallybyapplyingaconstantdiscountrate. Instead
+of applying a constant discount rate, we compute a series of discount rates, or spot expected
+returns, which can be applied to a series of expected cashflows. The model incorporates the
+effects of changing market risk premiums, risk-free rates and time-varying betas by specifying
+adifferentdiscountrateforeachdifferentmaturity.
+Brennan (1997) also considers the problem of discounting cashflows with time-varying ex-
+pected returns and proposes a term structure of discount rates. Our model significantly gen-
+2

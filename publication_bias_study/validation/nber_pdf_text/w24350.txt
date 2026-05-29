@@ -1,0 +1,120 @@
+NBER WORKING PAPER SERIES
+WAITING FOR THE PAYDAY? THE MARKET FOR STARTUPS AND THE TIMING
+OF ENTREPRENEURIAL EXIT
+Ashish Arora
+Andrea Fosfuri
+Thomas Roende
+Working Paper 24350
+http://www.nber.org/papers/w24350
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+February 2018
+We thank seminar participants at Fuqua School of Business, Copenhagen Business School,
+Carlos III University, Danish Technical University, University of Tübingen, University of
+Mannheim, University of Southern California, KAIST, and the 6th HEC Paris Workshop on
+Entrepreneurship, for comments and suggestions. An earlier draft was circulated with the title
+“Investment in absorptive capacity and the decision between going early and waiting in the
+market for technology”. The views expressed herein are those of the authors and do not
+necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2018 by Ashish Arora, Andrea Fosfuri, and Thomas Roende. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Waiting for the Payday? The Market for Startups and the Timing of Entrepreneurial Exit
+Ashish Arora, Andrea Fosfuri, and Thomas Roende
+NBER Working Paper No. 24350
+February 2018
+JEL No. L26,O34
+ABSTRACT
+Most technology startups are set up for exit through acquisition by large corporations. In
+choosing when to sell, startups face a tradeoff. Early acquisition reduces execution errors but later
+acquisition improves the likelihood of finding a better match since in the early market, there are
+fewer buyers because early acquisition requires costly absorptive capacity. Moreover, the buyer’s
+decision to invest in absorptive capacity is related to the startup’s decision about the timing of the
+exit sale. In this paper, we build a model to capture this complexity and the related tradeoffs. We
+find that the early market for startups is inefficiently thin if the timing of exit is a strategic choice,
+i.e. startups have to commit to whether to exit early or late. Too few startups are sold early, and
+too few buyers invest in absorptive capacity. Paradoxically, venture capital aggravates the
+inefficiency. However, if the timing of exit is a tactical choice, i.e. startups can choose to go late
+after observing the early offers, there are too many early acquisitions and too much investment in
+absorptive capacity by incumbents
+Ashish Arora Thomas Roende
+Fuqua School of Business Copenhagen Business School
+Duke University Department of Innovation and
+Box 90120 Organizational Economics
+Durham, NC 27708-0120 DK-2000 Frederiksberg, Denmark
+and NBER thr.ino@cbs.dk
+ashish.arora@duke.edu
+Andrea Fosfuri
+Bocconi University
+andrea.fosfuri@unibocconi.it
+
+1. Introduction
+Many inventions begin the journey to commercialization in startups. After a period of incubation and
+development, the invention can be passed on to an incumbent, typically by the incumbent buying the
+startup.1 When to sell a startups is an important decision for entrepreneurs and investors. There are natural
+inflection points in the lifecycles of startups when they can be acquired or can choose to persist and
+develop the technology closer to commercialization (Graebner and Eisenhardt, 2004; Allain et al. 2016).
+As venture capitalist, Bill Janeway from Warburg Pincus, writes2
+Given the much extended path to self-sustaining positive cash flow from operations, the
+responsible entrepreneur and VC are charged with asking themselves the same question at
+each step along the way:
+- The technology does “light up” — do we sell now?
+- We have three credible customers who will testify that they have bought our offering and
+will buy more — do we sell now?
+- We have access to another round of capital but it will be dilutive and Business Risk
+looms — do we sell now?
+It is not difficult to find other examples. Foursquare, a local search-and-discovery service mobile app
+based in New York City, was offered $100 million by both Yahoo and Facebook, one year after it
+launched in 2010, and both offers were turned down. Receptos, a San Diego-based biotechnology
+company, waited seven years after its foundation before accepting a multibillion offer from Calgene,
+which outbid AstraZeneca, Teva and Gilead. While both Foursquare and Receptos seem to have made the
+right decision in postponing their exit, the counterfactual is unclear. Failure rates among technology
+startups are extremely high.3 For instance, Maine and Thomas (2017) provide the example of an MIT
+startup, BIND, which raised several rounds of capital to apply its nano-particle drug delivery to new
+therapies. Despite going public via an IPO in 2013, in 2016, it was forced to file for bankruptcy following
+a failed clinical trial. BIND was acquired by Pfizer shortly thereafter for its intellectual property assets.
+1 The National Venture Capital Association reports that acquisitions accounted for 82% of the venture
+capital-backed exits in 2016 in the US (https://nvca.org/pressreleases/2017-nvca-yearbook-highlights-
+busy-year-venture-industry-nvca/). Cunningham (2017) shows that out of the 83 startups in the US
+medical device industry that exited, 71 were acquired. Mathisen and Rasmussen (2016) also identify
+acquisitions as the most frequent exit strategy in the case of successful Norwegian startups.
+2 William Janeway, Warburg Pincus. https://medium.com/the-wtf-economy/enterprise-software-death-
+and-transfiguration-99eb1d3fc4c0
+3 Startup failure rates are as high as 90% in some industries. Remarkably, the probabilities of success of
+biotech companies’ in stage III of drug development are lower than the those of large pharmaceutical
+firms in comparable conditions (Guedj and Scharfstein, 2004; Arora et al., 2009).
+1
+
+Arguably, BIND would have been better off being acquired at an earlier stage rather than investing in
+building an organization and clinical trials.
+Figure 1 shows the timing of startup sales across three different industries: bio-pharma, software and
+mobile devices.4 It plots the respective fractions of startups acquired before round A, before round B and
+after round B. It shows that there is heterogeneity within as well as across industries in the timing of
+startup sales, with a higher share of late acquisitions in bio-pharma. Insofar as development costs in
+biotech typically are higher than in software, financial constraints on startups are unlikely to be the main
+determinant of exit timing; other forces are likely to be at work.
+Figure 1: Timing of acquisitions of startups, 1990-2015, by sector.
+0.6
+0.5
+0.4
+0.3
+0.2
+0.1
+0
+Bio_Pharma Software Mobile
+Before Round A Before Round B After Round B
+Source: Authors’ calculation based on Crunchbase.
+In this paper, we build a model to understand the factors that explain the timing of startup sales, and to
+investigate the efficiency properties of the equilibrium between buyers and sellers. We focus on exit
+through acquisition by an incumbent, which is by far the most common exit route for successful startups.5
+The timing of the acquisition is important for understanding the division of innovative labor (Arora and
+4 Figure 1 is based on Crunchbase data for 1990-2015. We consider only startups which were acquired.
+Firms acquired before any institutional investment are classified as before Round A.
+5 Formally, we ignore IPOs. However, as discussed below, our analysis could be extended to allow for an
+IPO as a possible further stage if the startup is not acquired.
+2

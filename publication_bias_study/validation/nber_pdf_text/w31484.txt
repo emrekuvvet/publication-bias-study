@@ -1,0 +1,138 @@
+NBER WORKING PAPER SERIES
+AGGREGATE LENDING AND MODERN FINANCIAL INTERMEDIATION:
+WHY BANK BALANCE SHEET MODELS ARE MISCALIBRATED
+Greg Buchak
+Gregor Matvos
+Tomasz Piskorski
+Amit Seru
+Working Paper 31484
+http://www.nber.org/papers/w31484
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2023
+Nothing to disclose. The views expressed herein are those of the authors and do not necessarily
+reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2023 by Greg Buchak, Gregor Matvos, Tomasz Piskorski, and Amit Seru. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Aggregate Lending and Modern Financial Intermediation: Why Bank Balance Sheet Models
+are Miscalibrated
+Greg Buchak, Gregor Matvos, Tomasz Piskorski, and Amit Seru
+NBER Working Paper No. 31484
+July 2023
+JEL No. G01,G2,G50
+ABSTRACT
+Existing macroeconomic models focused on bank balance sheet lending are deficient because
+they do not account for the modern industrial organization of financial intermediation. Utilizing
+publicly available micro-level lending data, we investigate two increasingly significant margins
+of adjustment in credit markets: banks’ ability to sell loans and shadow bank activity. These
+adjustment margins are substantial and vary across time and regions with different incomes. We
+examine these margins in a parsimonious dynamic quantitative model featuring banks with
+balance sheet adjustment through loan sales and shadow banks. Using the calibrated model, we
+illustrate that these margins significantly dampen the immediate contraction following bank
+capital shock. Recovery is also faster, because profitable loan sales (e.g., securitization) allow
+banks to build capital faster and because shadow banks pick up lending slack. Failure to account
+for adjustment margins leads to significant errors when studying policies which rely on financial
+intermediation pass-through in the level of aggregate lending, its direction, and composition. Our
+model highlights the tension between bank balance sheet models and data. The model, which
+forces total lending to depend strongly on bank balance sheet health, must reconcile the weak
+correlation between bank capital and aggregate lending. These issues can be reconciled with now
+available data from bank balance sheets, overall bank lending, and aggregate lending, in
+conjunction with a model of modern financial intermediation.
+Greg Buchak Tomasz Piskorski
+Graduate School of Business Columbia Business School
+Stanford University 3022 Broadway
+655 Knight Way Uris Hall 810
+Stanford, CA 94305b New York, NY 10027
+buchak@stanford.edu and NBER
+tp2252@columbia.edu
+Gregor Matvos
+Kellogg School of Management Amit Seru
+Northwestern University Stanford Graduate School of Business
+2211 Campus Drive Stanford University
+Global Hub 4361 655 Knight Way
+Evanston IL, 60208 and NBER
+and NBER aseru@stanford.edu
+gregor.matvos@kellogg.northwestern.edu
+
+1. Introduction
+Macro-prudential, monetary, and fiscal policies, are frequently passed through the financial
+intermediation sector, or implemented directly through financial intermediaries (Kashyap and
+Stein 2000; Hanson, Kashyap and Stein 2011).2 The modern industrial organization of financial
+intermediation differs from the traditional view of bank balance sheet lending in two dimensions
+(Buchak et al. 2018 and 2022). Specifically, non-depository institutions, that is, shadow banks,
+now account for a substantial share of lending in many markets, and banks now sell a significant
+fraction of the loans they originate through securitization. We argue that accounting for the modern
+industrial organization of financial intermediation is essential in two respects.
+Firstly, using bank data to measure lending can lead to erroneous conclusions about the how
+lending responds to economic or policy shocks, and the extent to which they are amplified through
+financial intermediaries. We illustrate this point using micro-level lending data on the largest
+private credit market in the US. Secondly, failing to account for these features of financial
+intermediation in quantitative macro models can result in inaccurate calibrations of how shocks
+amplify through financial intermediaries. To study the economics of the problem we develop and
+calibrate a parsimonious dynamic quantitative model featuring banks with balance sheet
+adjustment and shadow banks.
+We begin our empirical analysis with the observation that regulators and academics commonly
+employ three different sources for measuring the extent of lending: the data on bank lending
+activity from bank balance sheets (e.g., the bank call reports), data on total bank loan origination,
+or aggregate lending data. We focus our analysis on the US residential mortgage market, the largest
+private credit market in the US, with more than $11 trillion of loans outstanding. The advantage
+of this market is that we observe almost all originated loans and know whether they were (i)
+originated by a bank or shadow bank, and (ii) whether a financial institution retained a loan on its
+balance sheet or sold it.3
+We define two empirical multipliers, the “loan sales multiplier” and the “shadow bank lending
+multiplier,” to capture the mapping between bank balance sheet lending, total bank lending, and
+total lending. These multipliers measure the significance of two key features of modern financial
+intermediation described above: the extent to which banks sell a significant portion of loans and
+2 For recent papers on pass-through of macro-prudential, monetary, fiscal policies, and other shocks through financial
+intermediaries see, He and Krishnamurthy (2013), Brunnermeier and Sannikov (2014), Agarwal et al. (2017), Di
+Maggio et al. (2017), Drechsler et al. (2017), Greenwood et al. (2017), Beraja et al. (2019), Xiao (2020), Cherry et al,
+(2020, 2021), Corbae and D’Erasmo (2021), Elenev et al. (2021), Hachem and Song (2021), Begenau and Landgvoit
+(2022), Bianchi and Bigio (2022), Buchak et al. (2022), Eichenbaum et al. (2022) and Wang et al. (2022).
+3 While we focus on mortgage market, banks now increasingly sell a significant share of their corporate loans, credit
+cards, auto loans, and personal loans and shadow banks now account for a substantial amount of intermediation in
+these markets as well (see Buchak et al. 2022 and Seru 2019).
+2
+
+the involvement of shadow banks in lending. We demonstrate that these multipliers are large and
+vary over time. For instance, banks on average sell more than half of the mortgages they originate,
+with this propensity fluctuating between a low of roughly 37% and a high of nearly 80% of annual
+bank lending. As a result, bank balance sheet lending data, which is frequently used by regulators
+to gauge lending conditions, accounts for less than half of the variation in aggregate lending of
+banks, both in terms of their level and growth rates. Even perfect bank data is insufficient to assess
+the evolution of aggregate lending activity: total bank lending accounts for only about 70% of
+variation over time in total lending. This is because shadow banks originate substantial share of
+loans, and their market share significantly varies over time, from a low of roughly 20% during the
+Great Recession and a high of 60% in 2021. In fact, the growth in bank balance sheet lending and
+aggregate lending can occasionally be negatively correlated, especially, as we argue below, in
+times when bank balance sheets are stressed.
+We document a significant correlation between regional income and the composition of financial
+intermediation, which has a significant impact on the magnitude of both the “loan sales multiplier”
+and the “shadow bank lending multiplier”. Both multipliers are smallest in highest income
+counties, which primarily rely on bank balance sheet lending. Conversely, in lower to mid-income
+regions, which may be of particular interest to regulators due to their typically higher share of risky
+lending, the multipliers are found to be largest. These results imply that the propagation of shocks
+in high and low-income areas differ, as these households are situated in markets with distinct
+industrial organizations of financial intermediation.
+Buchak et al. (2018, 2022) identify three underlying drivers that influence the two margins of
+substitution: bank balance sheet strength, the relative attractiveness of the loan sale market, and
+the regulatory burden on banks. First, banks switch away from traditional bank balance sheet
+lending and toward selling loans as their capitalization declines. The extent of that switching is
+determined in equilibrium. Second, the availability and relative attractiveness of the loan sale
+market affects both margins of substitution. Because shadow banks sell almost all loans they
+originate, the shadow bank lending margin is crucially affected by the conditions in the secondary-
+loan market.4 Finally, changes in the regulatory environment also play a role in determining the
+market share of shadow banks, with Buchak et al. (2018) finding that a substantial part of the
+increase in shadow bank market share after the Great Recession can be attributed to increased
+regulatory burden on banks. Our paper provides further evidence of the importance of bank balance
+sheet strength in shaping the aggregate loan sale multiplier.
+To understand whether modifying existing models to account for contemporary financial
+intermediation frictions is quantitively important, we develop a parsimonious dynamic quantitative
+4 There are other forces that can affect shadow bank sector like deposit outflows from traditional banking sector
+towards non-bank sector during times of higher interest rates (see Xiao 2020 and Dreschler et al. 2022).
+3

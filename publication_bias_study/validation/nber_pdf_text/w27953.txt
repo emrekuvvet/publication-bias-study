@@ -1,0 +1,104 @@
+NBER WORKING PAPER SERIES
+EXTERNALITIES AS ARBITRAGE
+Benjamin M. Hébert
+Working Paper 27953
+http://www.nber.org/papers/w27953
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2020, Revised August 2021
+This paper builds on the work of and is dedicated to the memory of Emmanuel Farhi. I would
+also like to thank Jonathan Berk, Eduardo Dávila, Sebastian Di Tella, Wenxin Du, Darrell Duffie,
+Gary Gorton, Denis Gromb, Valentin Haddad, Barney Hartman-Glaser, Piero Gottardi, Bob
+Hodrick, Jens Jackwerth, Anton Korinek, Arvind Krishnamurthy, Matteo Maggiori, Semyon
+Malamud, Ian Martin, Tyler Muir, Jesse Schreger, Amit Seru, Ludwig Straub, Jeremy Stein,
+Dimitri Vayanos, and seminar participants at the MIT Sloan Juniors Conference, Yale SOM,
+EPFL Lausanne, Stanford, UCLA, UC Irvine, Columbia Juniors Conference, Duke Macro
+Jamboree, Gerzensee ESSFM, Barcelona FIRS, LSE, Wharton, HSE Moscow, and the Virtual
+Finance Seminar for helpful comments, and in particular Hanno Lustig for many useful
+comments and Peter Kondor for a helpful discussion. I would like to thank Michael Catalano-
+Johnson of Susquehanna Investment Group for help with bounds on American option prices,
+Colin Eyre and Alex Reinstein of DRW for help understanding SPX and SPY options, and
+Jonathan Wallen and Christian Gonzalez-Rojas for outstanding research assistance. All remaining
+errors are my own. The views expressed herein are those of the author and do not necessarily
+reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Benjamin M. Hébert. All rights reserved. Short sections of text, not to exceed two
+paragraphs, may be quoted without explicit permission provided that full credit, including ©
+notice, is given to the source.
+
+Externalities as Arbitrage
+Benjamin M. Hébert
+NBER Working Paper No. 27953
+October 2020, Revised August 2021
+JEL No. E61,F31,G28
+ABSTRACT
+How can we assess whether macro-prudential regulations are having their intended effects? If
+these regulations are optimal, their marginal benefit of addressing externalities should equal their
+marginal cost of distorting risk-sharing. These risk-sharing distortions will manifest as trading
+opportunities that intermediaries are unable to exploit. Focusing in particular on arbitrage
+opportunities, I construct an “externality-mimicking portfolio” whose returns track the
+externalities that would rationalize existing regulations as optimal. I conduct a revealed-
+preference exercise using this portfolio and test whether the recovered externalities are sensible. I
+find that the signs of existing CIP violations are inconsistent with optimal policy.
+Benjamin M. Hébert
+Graduate School of Business
+Stanford University
+655 Knight Way
+Stanford, CA 94305
+and NBER
+bhebert@stanford.edu
+
+Followingthegreatfinancialcrisis(GFC),apparentarbitrageopportunitiesemerged
+in financial markets. These arbitrage opportunities, such as the gap between the
+federal funds rate and the interest on excess reserves (IOER) rate, or violations of
+covered interest rate parity (CIP), are notable in part because they have persisted
+foryearsafterthepeakofthefinancialcrisis. AuthorssuchasDuetal.(2018)have
+argued that macro-prudential regulations put in place after the GFC have enabled
+these arbitrages to exist and persist. If these apparent arbitrages opportunities are
+made possible by macro-prudential regulations, does that imply that there is some-
+thing wrong with the regulations? More generally, what can be learned from the
+patternsofarbitrageacrossassetsinducedbyregulation? Canweusethesepatterns
+toassesswhethermacro-prudentialregulationsarehavingtheirintendedeffects?
+Supposeweobservethepriceofanassetathatistradedbybothintermediaries
+andhouseholds,andthepriceofanotherasseta(cid:48)withidenticalpayoffsthatistraded
+byintermediariesonly. Ifthepricesofaanda(cid:48) arenotequal,anapparentarbitrage
+exists. Such an opportunity can exist in equilibrium if intermediaries are bound
+by a constraint that treats a and a(cid:48) differently (say, because it treats derivatives and
+cashassetsdifferently). Letusfurthersupposethatthisconstraintexistsbecauseof
+regulation–itisaleverageconstraint,capitalcontrol,orsomeotherkindofpolicy.
+Now imagine that a household approaches an intermediary and wishes to buy
+asseta. Theintermediarycontemplatessellingassetatothehouseholdandhedging
+by purchasing asset a(cid:48). If the price of a is higher than the price of a(cid:48), this arbitrage
+tradeisprofitable;theintermediarywouldexecutethetradeifunconstrained. From
+this we can infer, as outside observers, that regulation is constraining the extent to
+whichtheintermediarycanselltheassetatothehousehold. Thatis,theregulation
+1
+
+is keeping the risks associated with asset a within the intermediary sector instead
+ofallowingthoseriskstobetransferredtothehouseholdsector. Wecanthenadopt
+a macro-prudential viewpoint and ask whether or not it is desirable, from a social
+perspective,toshifttheholdingsofassetafromhouseholdstointermediaries.
+InthispaperIdevelopaformal,multi-assetversionoftheargumentabove. The
+procedureIdeveloptakestheformofarevealedpreferenceexercise. Iask: whatex-
+ternalitieswouldjustifythedistortionsinrisk-sharingIinferfromvariousarbitrage
+opportunities? Equivalently, what risks are pushed by regulation into the interme-
+diarysectorandwhatrisksarepushedbyregulationintothehouseholdsector? The
+keystepintheanalysisistheconstructionofwhatIcallthe“externality-mimicking
+portfolio.” This portfolio’s returns are an estimate of the externalities that would
+justify the observed patterns of arbitrage, or equivalently an estimate of the effect
+ofregulationonrisk-sharingbetweenhouseholdsandintermediaries.
+I construct this portfolio using CIP violations. In the context of CIP violations,
+the assets a and a(cid:48) are combinations of bond and exchange rate transactions. Em-
+pirically, the sign of the observed arbitrage, as documented by Du et al. (2018), is
+related to the direction of the carry trade– it is more expensive for the household
+to execute the carry trade than it is for the intermediary to replicate the carry trade
+using currency forwards. Consequently, I infer that the relevant regulatory con-
+straint(s) have the effect of keeping carry trade risk within the intermediary sector,
+instead of allowing intermediaries to transfer those risks to households. This result
+issurprisinggiventheriskynatureofthecarrytrade.
+The basic issue is that some CIP violations (e.g. AUD-USD and JPY-USD)
+have the wrong sign. That is, because JPY appreciates and AUD depreciates vs.
+2

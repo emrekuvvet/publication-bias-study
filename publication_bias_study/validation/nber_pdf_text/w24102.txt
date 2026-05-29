@@ -1,0 +1,111 @@
+NBER WORKING PAPER SERIES
+DOES THE STOCK MARKET MAKE FIRMS MORE PRODUCTIVE?
+Benjamin Bennett
+René Stulz
+Zexi Wang
+Working Paper 24102
+http://www.nber.org/papers/w24102
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2017
+Bennett is from the Fisher School of Business, The Ohio State University, Stulz is from the
+Fisher School of Business, NBER and ECGI, and Wang is from the Institute for Financial
+Management, University of Bern. We are grateful for comments to Kewei Hou, Xiaoji Lin and
+participants at a seminar at the Ohio State University. The views expressed herein are those of the
+authors and do not necessarily reflect the views of the National Bureau of Economic Research.
+At least one co-author has disclosed a financial relationship of potential relevance for this
+research. Further information is available online at http://www.nber.org/papers/w24102.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2017 by Benjamin Bennett, René Stulz, and Zexi Wang. All rights reserved. Short sections of
+text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Does the Stock Market Make Firms More Productive?
+Benjamin Bennett, René Stulz, and Zexi Wang
+NBER Working Paper No. 24102
+December 2017
+JEL No. D22,G14,G31
+ABSTRACT
+We test the hypothesis that greater stock price informativeness (SPI) leads to higher firm-level
+productivity (TFP). Management, directly or indirectly, learns more from more informative stock
+prices, so that more informative stock prices should make firms more productive. We find a
+positive relation between SPI and TFP. The relation is stronger for smaller, younger, riskier, less
+capital-intensive, and financially-constrained firms. Product market competition and better
+governance amplify the relation, while diversification weakens it. We address endogeneity
+concerns with fixed effects, instrumental variables, and the use of brokerage house research
+department closures and S&P 500 additions as plausibly exogenous events.
+Benjamin Bennett Zexi Wang
+The Ohio State University University of Bern
+Fisher College of Business Institute for Financial Management
+700 Fisher Hall Engehaldenstrasse 4
+Columbus, OH 43210 CH-3012 Bern Switzerland
+bennett.210@osu.edu zexi.wang@ifm.unibe.ch
+René Stulz
+The Ohio State University
+Fisher College of Business
+806A Fisher Hall
+Columbus, OH 43210-1144
+and NBER
+stulz@cob.osu.edu
+
+1. Introduction
+One important role of the stock market is to provide price discovery (e.g., Bond, Edmans, and
+Goldstein, 2012, Fama and Miller, 1972, Subrahmanyam and Titman, 1999, Dow and Gorton, 1997,
+and Dow and Rahi, 2003). Investors and managers learn from stock prices. It is well-established that
+the quality of price discovery varies across stocks and stock markets (see, for instance, Morck, Yeung,
+and Yu, 2013). In this paper, we use differences in the quality of price discovery across U.S. firms to
+investigate whether better price discovery makes firms more productive. We find that it does. In other
+words, firms are more productive when the market for their stock leads to better price discovery.
+Consider two firms. One firm’s stock moves exactly with the market, so no firm-specific
+information is incorporated in the price. The other firm’s stock price incorporates a large amount of
+firm-specific information. With the first stock, management learns nothing from price moves that it
+would not learn by looking at a market index. In the other case, the stock price has information about
+the firm that is separate from information about the market. Some of that information results from
+trading by investors (e.g., Grossman and Stiglitz, 1980, Glosten and Milgrom, 1985, and Kyle, 1985).
+The contention and evidence in the literature is that this information is valuable to management in
+guiding its actions. In the case of the first firm, a drop in the stock price is not informative about firm-
+specific developments; in the case of the second firm, it is.
+Once private information is in the stock price, it informs the actions of managers and investors. For
+example, corporate managers can learn from the information in stock prices for M&A decisions: if a
+firm’s stock price drops after an M&A announcement, the manager may cancel the M&A plan (Luo,
+2005), the acquirer may itself be taken over (Mitchell and Lehn, 1990), or the CEO may lose her job
+(Lehn and Zhao, 2006). In addition to management, directors and activists can take actions to force
+changes in how firms are managed and investors in general can take market-based corrective actions
+(Bond, Goldstein, and Prescott, 2010). Bond, Goldstein, and Edmans (2012) review the theoretical and
+empirical literature on the real effects of price discovery.
+The extent to which trading incorporates private information in stock prices is measured in the
+literature by a stock’s price informativeness (SPI). Throughout the paper, we highlight results using the
+1
+
+two measures of SPI that are most widely used in the literature, the probability of informed trading
+(PIN) and stock price nonsynchronicity (PSI), but we also establish that our results hold for other
+measures. PIN measures the probability of informed trading in a stock (Easley, Hvidkjaer, and O’Hara,
+2002). This measure has a micro-foundation as it is based on a structural market microstructure model.
+PSI measures firm-specific return variation. Initiated by Roll (1988), the logic of this measure is to filter
+out the market and industry related components from stock returns. As a firm’s idiosyncratic variation
+increases, the stock price reflects more private information (e.g., Morck, Yeung, and Yu, 2000, and
+Durnev, Morck, and Yeung, 2004).
+We use as our main measure of productivity Total Factor Productivity or TFP. TFP measures the
+overall effectiveness and efficiency with which capital and labor are used in the production process. To
+measure TFP, we have to estimate a production function with data available from Compustat. To do so,
+we follow Levinsohn and Petrin (2003) and Ackerberg, Caves, and Frazer (2015). We also use other
+measures of firm efficiency that are used in the corporate finance literature. We show that these
+measures are also positively related to SPI, so that our conclusions do not depend on the use of TFP.
+We find that the evidence supports our hypothesis that firms with better price discovery in the stock
+market are more productive. Such a result could be explained by factors that influence both price
+discovery and firm productivity. To make a causal interpretation of our results plausible, we address
+potential endogeneity concerns in multiple ways. First, we use instrumental variables for SPI. Second,
+we provide difference in differences estimations using exogenous shocks to SPI. Third, we use quasi-
+natural experiments of changes in price informativeness of stocks. The first experiment involves
+closures of analyst research departments and the second experiment uses additions to the S&P500 index.
+Fourth, we control for firm fixed effects to minimize the possibility that a firm-invariant omitted
+variable is affecting our results. Fifth, we use a moving average of SPI over the previous three years,
+which helps alleviate simultaneity and reverse causality concerns. Our results are robust to these
+approaches to address endogeneity concerns and hence provide strong support for the existence of a
+causal effect of SPI on TFP.
+One of our approaches to deal with endogeneity has important implications on its own. For a firm,
+being added to the S&P 500 is viewed as an exogenous event as firms cannot directly get themselves
+2

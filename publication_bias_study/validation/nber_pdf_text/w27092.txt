@@ -1,0 +1,122 @@
+NBER WORKING PAPER SERIES
+MEASURING THE PERCEIVED LIQUIDITY OF THE CORPORATE BOND MARKET
+Sergey Chernenko
+Adi Sunderam
+Working Paper 27092
+http://www.nber.org/papers/w27092
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2020
+The views expressed herein are those of the authors and do not necessarily reflect the views of the
+National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Sergey Chernenko and Adi Sunderam. All rights reserved. Short sections of text, not
+to exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Measuring the Perceived Liquidity of the Corporate Bond Market
+Sergey Chernenko and Adi Sunderam
+NBER Working Paper No. 27092
+May 2020
+JEL No. G12,G23
+ABSTRACT
+We propose a novel measure of bond market liquidity that does not depend on transaction data:
+the strength of the cross-sectional relationship between mutual fund cash holdings and fund flow
+volatility. Our measure captures how liquid funds perceive their portfolio holdings to be at a
+given point in time. The perceived liquidity of speculative grade and Rule 144A bonds is
+significantly lower than investment grade bonds in the cross section and deteriorated significantly
+following the 2008-9 financial crisis. Our measure can be applied in settings where either
+transaction data are not available or transactions are rare, including the markets for asset-backed
+securities, syndicated loans, and municipal bonds.
+Sergey Chernenko
+Krannert School of Management
+Purdue University
+403 W. State Street
+West Lafayette, IN 47907
+schernen@purdue.edu
+Adi Sunderam
+Harvard Business School
+Baker Library 359
+Soldiers Field
+Boston, MA 02163
+and NBER
+asunderam@hbs.edu
+
+1 Introduction
+The liquidity of corporate bond markets is crucial to their functioning. If investors are
+forced to sell bonds into an illiquid market, the price impact of these sales can be amplified
+through fire sales channels, threatening financial stability and real economic activity (e.g.,
+Shleifer and Vishny (1992), Coval and Stafford (2007), Ellul, Jotikasthira, and Lundblad
+(2011),andStein(2012)). Astheshareofcorporatebondsheldbyinvestorslikemutualfunds
+who may need to sell their holdings quickly has grown,1 so have concerns about liquidity and
+the potential for fire sales.2 These developments make it important to understand investors’
+perceptions of corporate bond market liquidity and to develop measures of market liquidity
+that are forward looking and capture the risk that liquidity suddenly evaporates.
+Theliteraturehasproposedmanymeasuresoftheliquidityofindividualcorporatebonds,
+includingRoll(1984), Amihud(2002), Chen, Lesmond, andWei(2007), Bao, Pan, andWang
+(2011), Jankowitsch, Nashikkar, and Subrahmanyam (2011), Corwin and Schultz (2012),
+Feldhu¨tter (2012), and Dick-Nielsen, Feldhu¨tter, and Lando (2012). These measures differ
+substantially in their construction and have various strengths and weaknesses. One key
+feature they share, however, is that they do not fully capture how liquid bond traders
+perceive the market to be. In particular, most existing measures rely on the characteristics
+of trades that actually took place. If investors choose not to trade bonds that they perceive
+to be relatively illiquid, existing measures will understate the true illiquidity of the overall
+market. Similarly, if investors care about the risk that liquidity will substantially deteriorate
+in (as yet unobserved) states of the world where they need to sell, these concerns will not be
+captured by the existing measures. Recent debate about the liquidity of the corporate bond
+market has centered exactly around these issues. Regulators who allege that liquidity has
+not declined point to the traditional measures of price impact among trades that occur. In
+contrast, market participants who allege that liquidity has declined point to changes in the
+set of trades that occur; for instance, declines in the trading volume of smaller bonds3.
+1 AccordingtotheFinancialAccountsoftheUnitedStates, alsoknownastheFlowofFunds, mutualfunds’
+share of domestic holdings of corporate bonds tripled from 9.2% in 2000 to 28.3% in 2019.
+2 In 2014, the Financial Stability Oversight Council issued a notice seeking public comments on
+the financial stability risks posed by the asset management industry. Comments are available at
+https://www.regulations.gov/docketBrowser?D=FSOC-2014-0001. In October 2016, the Securities and Ex-
+changeCommissionadoptednewrulestostrengthentheliquiditymanagementpracticesofopen-endmutual
+funds.
+3 See, for instance, “For Bond Investors, Bigger is Better”, Wall Street Journal (2012). Consistent with a
+decline in the liquidity of small bonds, the Barclays US Corporate index raised its liquidity constraint on
+bond size from $250m to $300m in 2017.
+2
+
+In this paper, we propose a novel measure of the perceived liquidity of corporate bond
+markets that does not depend on quote or transaction data. We take a revealed preference
+approach based on the cash holdings of open-end mutual funds. The idea is that mutual
+funds try to minimize the price impact of their trading, and they do so in part by holding
+cashbuffers. Cashbuffersallowfundstomeetredemptionrequestsfromtheirclientswithout
+trading immediately, instead trading over time in a way that minimizes price impact. Such
+buffers are particularly valuable when a fund holds relatively illiquid assets. To formalize
+this intuition, we write down a simple model showing that the optimal size of a fund’s cash
+buffer is related to two factors: the illiquidity of its portfolio securities and the volatility of
+its inflows and outflows. When a fund holds more illiquid bonds, it holds more cash because
+being forced to trade those bonds is costlier. Similarly, when a fund faces more volatile
+flows, it holds more cash because it faces a greater risk of having to liquidate its holdings
+in order to meet redemption requests. Thus, by examining the cross-sectional relationship
+between fund cash holdings and flow volatility, we can measure how illiquid funds perceive
+their portfolio holdings to be. Crucially, our measure is forward looking. It captures funds’
+perceptions of future liquidity and of the risk that liquidity deteriorates.
+We start by providing simulation evidence to establish the feasibility of our procedure.
+While our simple model is static to highlight the basic intuition, our simulations follow
+Connor and Leland (1995) and consider the dynamic problem of a fund that holds both cash
+and an illiquid asset while facing stochastic flows. In our simulations, we consider different
+fundsthatvaryintermsoftheilliquidityoftheilliquidassettheyhold. Wesimulateflowsand
+cash holdings assuming these funds follow the optimal policy in Connor and Leland (1995).
+We then regress simulated fund cash holdings on the estimated volatility of the fund’s flows,
+computed in sample using realized flows. The simulations show that in a realistic dynamic
+setting, our procedure does a good job of recovering the liquidity of the underlying bonds.
+We then implement our regression procedure in data on actively managed open-end
+corporate bond mutual funds from July 2009 to June 2016. In our benchmark specifications,
+weexpandthepaneltothesecurity-fund-timelevel. Thisservestwopurposes. First,itallows
+us to include security-time fixed effects. Thus, the regressions tell us how cash holdings vary
+with flow volatility, comparing two funds that hold the same security at the same time. This
+allows us control for funds’ endogenous selection of securities, something that is missing from
+our basic model and simulations, where flow volatility and illiquidity are independent. In
+particular, one might expect funds facing higher flow volatility to hold more liquid securities,
+thereby biasing towards zero the cross-sectional relationship between cash and flow volatility.
+Second, expanding the panel to the security-fund-time level allows us to interact the fund’s
+flow volatility with bond characteristics, so that we can measure how perceptions of liquidity
+3

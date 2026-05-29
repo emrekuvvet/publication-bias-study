@@ -1,0 +1,125 @@
+NBER WORKING PAPER SERIES
+HOUSES AS ATMS? MORTGAGE REFINANCING AND MACROECONOMIC
+UNCERTAINTY
+Hui Chen
+Michael Michaux
+Nikolai Roussanov
+Working Paper 19421
+http://www.nber.org/papers/w19421
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2013
+We gratefully acknowledge comments and suggestions by Andy Abel, Rui Albuquerque, Fernando
+Alvarez, Nick Bloom, Paco Buera, John Campbell, Chris Carroll, Dean Corbae, John Driscoll, Joao
+Gomes, Lars Hansen, Erik Hurst, Urban Jermann, Greg Kaplan, Ralph Koijen, Dirk Krueger, David
+Laibson, Francis Longstaff, Debbie Lucas, Hanno Lustig, Rajnish Mehra, Dimitris Papanikolaou,
+Jonathan(cid:3)Parker, Monika Piazzesi, Vincenzo Quadrini, Victor Rios-Rull, Tom Sargent, Martin
+Schneider,(cid:3)Antoinette(cid:3)Schoar, Amit Seru, Todd Sinai, Nick Souleles, Kjetil Storesletten, Harald
+Uhlig, Luis Viceira, Gianluca(cid:3)Violante, Jessica Wachter, Annette Vissing-Jorgensen, Pierre-Olivier
+Weill, Toni Whited, Randy Wright,(cid:3)Amir Yaron, and seminar participants at the AEA, ASU Sonoran
+Winter Finance conference, CFEA,(cid:3)Columbia, Econometric Society, Federal Reserve Board, Federal
+Reserve Bank of Philadelphia, FIRS,(cid:3)NBER Summer Institute, SED, SITE, 2012 Summer Real Estate
+Symposium, Tepper/LAEF Conference,(cid:3)UC Berkeley, USC, UCLA-USC Finance Day, UC San Diego,
+University of Hawaii, University of Virginia, and Wharton. Roussanov acknowledges support from
+the Rodney White Center for Financial Research and the Cynthia and Bennett Golub Endowed Faculty
+Scholarship at Wharton. The views expressed herein are those of the authors and do not necessarily
+reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2013 by Hui Chen, Michael Michaux, and Nikolai Roussanov. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Houses as ATMs? Mortgage Refinancing and Macroeconomic Uncertainty
+Hui Chen, Michael Michaux, and Nikolai Roussanov
+NBER Working Paper No. 19421
+September 2013
+JEL No. E21,E44,G21
+ABSTRACT
+We estimate a structural model of household liquidity management in the presence of long-term
+mortgages.(cid:3)Households face counter-cyclical idiosyncratic labor income uncertainty and borrowing
+constraints,(cid:3)which affect optimal choices of leverage, precautionary saving in liquid assets and
+illiquid home equity, debt repayment, mortgage refinancing, and default. Taking the observed
+historical path of house prices, aggregate income, and interest rates as given, the model quantitatively
+accounts for the run-up in household debt and consumption boom prior to the financial crisis, their
+subsequent collapse, and mild recovery following the Great Recession, especially among the most
+constrained households.
+Hui Chen (cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)Nikolai Roussanov
+MIT Sloan School of Management (cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)University of Pennsylvania
+100 Main Street, E62-637 (cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)Wharton School, Finance Department
+Cambridge, MA 02142 (cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)2400 Steinberg-Dietrich Hall
+and NBER (cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)3620 Locust Walk
+huichen@mit.edu (cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)Philadelphia, PA 19104-6367
+(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)and NBER
+Michael Michaux (cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)(cid:3)nroussan@wharton.upenn.edu
+Department of Finance and Business Economics
+Marshall School of Business,
+University of Southern California,
+3670 Trousdale Parkway, BRI-308,
+Los Angeles, CA 90089
+michaux@marshall.usc.edu
+
+1 Introduction
+We show that a rational model of home equity-based borrowing by liquidity-constrained
+households can quantitatively account for the empirical patterns in household leverage and
+consumption over the last decade. In the aggregate, taking the observed historical path of
+house prices, aggregate household income, and interest rates as exogenously given, our model
+reproduces both the dramatic run-up in the housing debt over the period 2000-2006, and
+the sharp contraction in consumption that followed. In the cross section, the interaction of
+idiosyncraticlaborincomeshockswithliquidityconstraints,absentanyexanteheterogeneity,
+generates wide dispersion in liquid assets, debt holdings, and the ability of households to
+refinance their mortgages. This dispersion implies diverging paths of consumption following
+the Great Recession for households with different boom-time leverage.
+Both the origins of the recent financial crisis and the severity of the Great Recession are
+often attributed to the increase in consumer indebtedness during the period of house price
+run-up in mid-2000s and the subsequent deterioration of household balance sheets with the
+sharp decline in house prices (e.g., Dynan (2012), Mian, Rao, and Sufi (2013)). There is
+less consensus on the structural forces driving both the borrowing boom and the consump-
+tion slump that followed. In particular, the expansion of household leverage and growth
+of consumer expenditures financed with extracted home equity over the period of house
+price boom as documented by Mian and Sufi (2010) is consistent with liquidity-constrained
+households taking advantage of relaxed housing collateral constraints. These facts are also
+qualitatively consistent with alternative explanations featuring self-control problems on the
+part of consumers (e.g., Laibson (1997)), irrationally optimistic expectations about future
+income and house prices, and/or moral hazard on the part of mortgage originators (e.g.,
+Keys, Mukherjee, Seru, and Vig (2010)).
+In order to provide a benchmark for evaluating the alternative explanations of the ob-
+served household behavior both prior to the recent financial crisis and during the Great
+Recession, we build a quantitative framework of the consumption, saving, and mortgage
+financing decisions of households who are subject to idiosyncratic labor income risk and
+liquidity constraints. Our analysis focuses on households’ optimal choices of leverage, pre-
+1
+
+cautionary savings in liquid assets and illiquid home equity, as well as the dynamic decisions
+in debt repayment, mortgage refinancing, cash-out, and default. The model captures the
+relevant frictions impacting the households’ ability to smooth consumption over time and
+across states of nature when borrowing collateralized with housing wealth is the main source
+of consumer credit. We estimate the structural parameters of the model by targeting the key
+moments of household consumption, asset and debt holdings, and the aggregate dynamics
+of mortgage refinancing and equity extraction in relation to macroeconomic conditions.
+Whilemuchoftheexistingliteraturetreatsmortgagerefinancingandhome-equity-backed
+borrowinginisolation, ouranalysisindicatesthatanintegratedapproachisimportantforun-
+derstanding both. Specifically, the decision to refinance trades off the benefits of refinancing,
+including lower interest rates and/or higher liquidity, against the substantial costs of origi-
+nating a new loan, both financial and non-pecuniary. Our model also incorporates two sets
+of realistic borrowing constraints, the loan-to-value (LTV) constraint and the loan-to-income
+(LTI) constraint, which require that the refinanced loan amount is not too large relative to
+current house value and household income, respectively. Another important feature of our
+model is the counter-cyclical volatility of idiosyncratic labor income growth, documented by
+Storesletten, Telmer, and Yaron (2004) (see also Meghir and Pistaferri (2004)). This prop-
+erty of the labor income process implies that a macroeconomic downturn not only can make
+more households become liquidity constrained, but also make households more concerned
+about the increased uncertainty of future income.
+Together, these ingredients generate a set of new predictions about household refinanc-
+ing and consumption decisions. First, because households do not have access to complete
+financial markets, the embedded options to default, prepay, or refinance the mortgage can
+no longer be analyzed in the standard option-pricing framework. In particular, interest rates
+are not the only consideration in refinancing. The ability to convert some of the home equity
+into liquid assets can make refinancing more attractive even when the costs of borrowing are
+higher than before, a puzzle for traditional models that consider lowering the interest rate
+as the only reason to refinance a fixed rate mortgage.1
+1Hurst and Stafford (2004) first pointed out this possibility and supported it with empirical evidence
+using household-level data from an earlier time period.
+2

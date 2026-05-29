@@ -1,0 +1,120 @@
+NBER WORKING PAPER SERIES
+IMPROVING RISK EQUALIZATION WITH CONSTRAINED REGRESSION
+Richard van Kleef
+Thomas McGuire
+Rene van Vliet
+Wynand van de Ven
+Working Paper 21570
+http://www.nber.org/papers/w21570
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2015
+We gratefully acknowledge the Dutch Ministry of Health, the Association of Health Insurers and Statistics
+Netherlands for providing the administrative and survey data (see section 3). McGuire is grateful to
+support from the National Institute of Mental Health (R01 MH094290) and the Laura and John Arnold
+Foundation. The views expressed here are not necessarily those of the Foundation’s officers, directors
+or staff. We also gratefully acknowledge the valuable comments on previous versions of this paper
+by Konstantin Beck, Frank Eijkenaar, Randall Ellis, Laura Hatfield, Timothy Layton, Erzo Luttmer,
+Joseph Newhouse, Sharon-Lise Normand, Sherri Rose, Erik Schut, Mark Shephard and Suzanne van
+Veen. In addition, we thank Andrew Hicks for creating the figures. The responsibility for the content
+of this article rests fully with the authors. The views expressed herein are those of the authors and
+do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2015 by Richard van Kleef, Thomas McGuire, Rene van Vliet, and Wynand van de Ven. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Improving Risk Equalization with Constrained Regression
+Richard van Kleef, Thomas McGuire, Rene van Vliet, and Wynand van de Ven
+NBER Working Paper No. 21570
+September 2015
+JEL No. I10,I11,I13,I18
+ABSTRACT
+Several countries rely on regulated health plan competition to combine affordability of health plans
+with incentives for cost containment and quality improvement. Typically, these policies include premium
+regulation supplemented with risk equalization to compensate health plans for predictable variation
+in medical spending. An extensive empirical literature shows, however, that even the state-of-the-art
+risk equalization models undercompensate some risk groups and overcompensate others, leaving systematic
+incentives for risk selection. A natural approach to reducing under or overcompensation for a group
+is to include membership in that group as an indicator in the risk equalization model. For several types
+of indicators, however, inclusion can be problematic or infeasible. This paper introduces and illustrates
+an alternative approach to reducing over or undercompensation in such cases: constraining the estimated
+coefficients of the risk equalization model so as to limit over or undercompensation. Our empirical
+illustration is based on administrative data on medical spending and risk characteristics of nearly all
+individuals with basic health insurance in the Netherlands. We evaluate empirically the benefits of
+constraints in terms of reduced under or overcompensation on indicators omitted from the Dutch risk
+equalization model and their costs in terms of increased under or overcompensation on indicators included
+in the model. Our findings imply that the benefits of introducing constraints can be worth the costs.
+Constrained regression adds a tool for developing risk equalization models that can improve the overall
+economic performance of health plan payment schemes.
+Richard van Kleef Rene van Vliet
+Erasus University Erasmus University
+PO Box 1738 PO Box 1738
+3000 DR Rotterdam 3000 DR Rotterdam
+The Netherlands The Netherlands
+vankleef@bmg.eur.nl r.vanvliet@bmg.eur.nl
+Thomas McGuire Wynand van de Ven
+Department of Health Care Policy Erasmus University
+Harvard Medical School PO Box 1738
+180 Longwood Avenue 3000 DR Rotterdam
+Boston, MA 02115 The Netherlands
+and NBER vandeven@bmg.eur.nl
+mcguire@hcp.med.harvard.edu
+
+1. Introduction
+Several countries have adopted elements of Alain Enthoven’s model of regulated health plan
+competition (Enthoven, 1993), which combines affordability of health plans with incentives for
+cost containment and quality improvement.1 A crucial element of Enthoven’s model is the
+adjustment of health plan payments to predictable variation in medical spending, also referred to
+as risk equalization (RE). In the absence of premium regulation, RE mitigates incentives for
+health plans to risk rate their premiums and thereby improves affordability of health plans for the
+sick. In the presence of premium regulation – as is common in practice – RE mitigates incentives
+for risk selection and thereby improves incentives for health plans to accept and serve the sick as
+well as the healthy (Newhouse, 1996).2
+Recent research has shown that even the state-of-the-art RE models – such as those used under
+the Affordable Care Act in the United States or those used under the Health Insurance Act in the
+Netherlands – systematically undercompensate groups of consumers in relatively poor health and
+overcompensate the complementary groups of consumers in relatively good health (Layton et al.
+2015; Van Kleef et al., 2013), exposing health plans and consumers to incentives for risk
+selection. Risk selection threatens the performance of (regulated) health plan markets since it
+may reduce 1) the quality of care (because plans may have a disincentive to meet the preferences
+of the sick), 2) the efficiency of care (because risk selection may be a more cost-effective strategy
+1 By ‘health plan competition’ we mean competition among health insurers who offer one or multiple
+health plans. A ‘health plan’ refers to a health insurance product. All consumers who have the same
+‘health plan’ have an identical contract with the same insurer concerning benefits coverage, cost-sharing,
+quality, services, etc. Since objectives and strategies of insurers can differ across health plans, this paper
+will speak of health plans instead of insurers as decision makers.
+2 Newhouse (1996) defines risk selection as actions by consumers and health plans to exploit unpriced risk
+heterogeneity and break pooling arrangements. Often the term selection is also used to refer to the
+outcome of these actions.
+1
+
+for plans to reduce medical spending than improving the efficiency of care), 3) the efficient
+sorting of consumers among plans (when market segmentation by risk elevates premiums for
+particular plans), and 4) the affordability of health plans to the sick (when the same market
+segmentation causes the sick to face higher premiums). To contend with these potential
+problems, researchers and policy makers work to improve the properties of health plan payment
+schemes.3 In general, three strategies can be applied to reduce incentives for risk selection in
+regulated health plan markets: improving RE, increasing risk sharing (e.g. via mandatory
+reinsurance or risk corridors) and relaxing premium-rate restrictions. This paper focusses on the
+first strategy.
+The conventional approach to improving RE adds new/better risk indicators to the RE model,
+thereby improving the fit at the individual level, as measured by an R-squared, and improving the
+fit at the group level, as measured by the degree of under or overcompensation for particular
+groups. If a group of interest (for example, persons with congestive heart failure) is included with
+a single yes/no indicator in an ordinary least squares (OLS) RE model, the properties of least
+squares ensure that the payment for this group will equal the average medical spending of this
+group.4 For some groups, however, it can be problematic to include an indicator of membership
+in the RE model. Clear examples are groups based on prior use of medical services: if indicators
+for these groups are included in the RE model, increased utilization in one year may increase plan
+payment in the following year, which reduces health plans’ incentives for efficiency. In this paper
+we study two concrete examples of such groups: users of ‘home care’ in the previous year and
+3 By ‘health plan payment scheme’ we mean the total set of payment features, which can include risk
+equalization, reinsurance, risk corridors and premiums among other features.
+4 The expected value of an OLS residual conditional on a dummy variable regressor is zero. The statistical
+residual from an OLS model is the individual-level over or underpayment in a RE model based on the
+regression coefficients.
+2

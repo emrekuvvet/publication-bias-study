@@ -1,0 +1,87 @@
+EXITING FROM QE
+Fumio Hayashi
+Junko Koeda
+WORKING PAPER 19938
+
+NBER WORKING PAPER SERIES
+EXITING FROM QE
+Fumio Hayashi
+Junko Koeda
+Working Paper 19938
+http://www.nber.org/papers/w19938
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+February 2014
+We are grateful to James Hamilton, Yuzo Honda, Tatsuyoshi Okimoto, Etsuro Shioji, George Tauchen,
+and particularly Toni Braun for useful comments and suggestions. The views expressed herein are
+those of the authors and do not necessarily reflect the views of the National Bureau of Economic Research.
+The first author acknowledges financial support from the Ministry of Education, Culture, Sports, Science
+and Technology of the Japanese government (MEXT Kakenhi Grant Number 25285097).
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2014 by Fumio Hayashi and Junko Koeda. All rights reserved. Short sections of text, not to exceed
+two paragraphs, may be quoted without explicit permission provided that full credit, including © notice,
+is given to the source.
+
+Exiting from QE
+Fumio Hayashi and Junko Koeda
+NBER Working Paper No. 19938
+February 2014
+JEL No. E52
+ABSTRACT
+We develop a regime-switching SVAR (structural vector autoregression) in which the monetary policy
+regime, chosen by the central bank responding to economic conditions, is endogenous and observable.
+There are two regimes, one of which is QE (quantitative easing). The model can incorporate the exit
+condition for terminating QE. We then apply the model to Japan, a country that has accumulated, by
+our count, 130 months of QE as of December 2012. Our impulse response and counter-factual analyses
+yield two findings about QE. First, an increase in reserves raises inflation and output. Second, terminating
+QE can be expansionary.
+Fumio Hayashi
+Hitotsubashi University
+Grad. School of International Corporate Strategy
+2-1-2 Hitotsubashi, Chiyoda-ku
+Tokyo 101-8439
+JAPAN
+and NBER
+fumio.hayashi@gmail.com
+Junko Koeda
+Graduate School of Economics
+7-3-1 Hongo, Bunkyo-ku
+University of Tokyo
+Tokyo 113-0033
+JAPAN
+jkoeda@e.u-tokyo.ac.jp
+An online appendix is available at:
+http://www.nber.org/data-appendix/w19938
+
+1 Introduction and Summary
+Sincetherecentglobalfinancialcrisis,centralbanksofmajormarketeconomieshaveadopted
+quantitativeeasing,orQE,whichistoallowreservesheldbydepositoryinstitutionsfarabovethe
+requiredlevelwhilekeepingthepolicyrateveryclosetozero. ThispaperusesanSVAR
+(structuralvectorautoregression)toevaluatemacroeconomiceffectsofQE.Reliablyestimating
+suchatime-seriesmodelisdifficultbecauseonlyseveralyearshavepassedsincethecrisis. We
+arethusledtoexamineJapan,acountrythathasalreadyaccumulatedahistoryof,byourcount,
+130monthsofQEasofDecember2012. Those130QEmonthscomeinthreeinstallments,
+whichallowsustoevaluatetheeffectofexitingfromQEaswell.
+OurSVARhastwomonetarypolicyregimes: thezero-rateregimeinwhichthepolicyrateis
+veryclosetozero,andthenormalregime. InSection2,wedocumentforJapanthatbank
+reservesaregreaterthanrequiredreserves(andoftenseveraltimesgreater)whenthepolicyrate
+isbelow0 . 05%(5basispoints)peryear. Wesaythatthezero-rateregimeisinplaceifandonly
+ifthepolicyrateisbelowthiscriticalrate. Therefore,theregimeisobservableand,sincereserves
+aresubstantiallyhigherthantherequiredlevelforallmonthsunderthezero-rateregimeindata,
+thezero-rateregimeandQEaresynonymous. Therearethreespellsofthezero-rate/QEregime:
+March1999-July2000,March2001-June2006,andDecember2008todate. (Theyare
+indicatedbytheshadesinthetime-seriesplotofthepolicyrateinFigure1.) Theyaccountforthe
+130months. AlsodocumentedinSection2isthatformostofthosemonthstheBOJ(Bankof
+Japan)madeastatedcommitmentofnotexitingfromthezero-rateregimeunlessinflationis
+aboveacertainthreshold. Thatis,theexitconditioninJapanisaboutinflation. OurSVARmodel
+incorporatesthisexitcondition.
+ThemodelisanaturalextensionofthestandardrecursiveSVARmodeldevelopedby
+Christiano,Eichenbaum,andEvans(1999).1 Therearefourvariables: inflation,output
+(measuredbytheoutputgap),thepolicyrate,andexcessreserves,inthatorder. Wedonot
+1 TheirSVARordersvariablesbyplacingnon-financialvariables(suchasinflationandoutput)first,fol-
+lowedbymonetarypolicyinstruments(suchasthepolicyrateandmeasuresofmoney),andfinancial
+variables(suchasstockpricesandlong-terminterestrates).
+2

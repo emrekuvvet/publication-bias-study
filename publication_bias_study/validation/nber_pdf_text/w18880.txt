@@ -1,0 +1,119 @@
+NBER WORKING PAPER SERIES
+UNEMLOYMENT AND UNOBSERVED CREDIT RISK IN THE FHA SINGLE FAMILY
+MORTGAGE INSURANCE FUND
+Joseph Gyourko
+Joseph Tracy
+Working Paper 18880
+http://www.nber.org/papers/w18880
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+March 2013
+These views represent those of the authors and not necessarily those of the Federal Reserve Bank of
+New York, the Federal Reserve System, or the National Bureau of Economic Research. John Grigsby
+provided excellent research assistance. We thank Andrew Haughwout and Wilbert van der Klaauw
+for their helpful comments. Gyourko thanks the Research Sponsor Program of the Zell/Lurie Real
+Estate Center at Wharton for financial support.
+At least one co-author has disclosed a financial relationship of potential relevance for this research.
+Further information is available online at http://www.nber.org/papers/w18880.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2013 by Joseph Gyourko and Joseph Tracy. All rights reserved. Short sections of text, not to exceed
+two paragraphs, may be quoted without explicit permission provided that full credit, including © notice,
+is given to the source.
+
+Unemloyment and Unobserved Credit Risk in the FHA Single Family Mortgage Insurance
+Fund
+Joseph Gyourko and Joseph Tracy
+NBER Working Paper No. 18880
+March 2013
+JEL No. G17,R48
+ABSTRACT
+Empirical models of mortgage default typically find that the influence of unemployment is negligible
+compared to other well known risk factors such as high borrower leverage or low borrower FICO scores.
+This is at odds with theory, which assigns a critical role to unemployment status in the decision to
+stop payment on a mortgage. We help reconcile this divergence by employing a novel empirical strategy
+involving simulated unemployment histories to measure the severity of attenuation bias in loan-level
+estimations of default risk due to a borrower becoming unemployed. Attenuation bias results because
+individual data on unemployment status is unobserved, requiring that a market-wide unemployment
+rate be used as a proxy. Attenuation is extreme, with our results suggesting that the use of an aggregate
+unemployment rate in lieu of actual borrower unemployment status results in default risk from a borrower
+becoming unemployed being underestimated by a factor of 100 or more. Correcting for this indicates
+unemployment is more powerful than other well-known factors such as extremely high leverage or
+extremely low FICO scores in predicting individual borrower default. Our simulated data indicate
+that adding the unemployment rate as a proxy for the missing borrower-specific unemployment indicator
+does not improve the accuracy of the estimated model over the specification without the proxy variable
+included.
+Joseph Gyourko
+University of Pennsylvania
+Wharton School of Business
+3620 Locust Walk
+1480 Steinberg-Dietrich Hall
+Philadelphia, PA 19104-6302
+and NBER
+gyourko@wharton.upenn.edu
+Joseph Tracy
+Executive Vice President
+Federal Reserve Bank of New York
+33 Liberty Street
+New York, NY 10045
+joseph.tracy@ny.frb.org
+
+I. Introduction
+The recent announcement of a negative estimated economic value of the Federal Housing
+Administration’s (FHA) single-family mortgage insurance portfolio, which measures the
+difference between expected fund revenues and costs, has increased interest in the financial
+viability of what is now over a $1 trillion guarantee program that amounts to about 7% of annual
+national output.1 Each of us in prior research has argued that unobserved credit risk in the FHA
+guarantee portfolio is high (Caplin, et. al. (2010, 2012); Gyourko (2011)), with FHA’s persistent
+overestimation of the value of each new book of insured loans indicating that over the past
+several years something systematic in terms of uncontrolled-for risk is being missed by program
+evaluators. In this paper, we focus on unemployment as a key uncontrolled for risk factor.
+From 2008 until the most recent annual evaluation, FHA’s outside actuarial reviewer
+made no attempt to control for unemployment, having discontinued use of a metropolitan area-
+wide unemployment rate in its default models. The explanation provided was that controlling for
+unemployment did not help in explaining default.2 This decision was at odds with theories of
+default, which hypothesize that unemployment risk plays a key role in any decision to stop
+paying on a mortgage.3 The most recent annual review of the FHA insurance program reversed
+this decision and included aggregate unemployment rates as controls in their underlying default
+(and prepayment) models. Consistent with other recent empirical evidence (e.g., Elul, et. al.
+1 The report, entitled Actuarial Review of the Federal Housing Administration Mutual Mortgage Insurance Fund
+Forward Loans for Fiscal Year 2012 (IFE (2012), indicated the fund had an economic value of -$13.478 billion. It
+can be accessed at http://portal.hud.gov/hudportal/HUD?src=/program_offices/housing/rmra/oe/rpts/actr/actrmenu.
+2 The actuarial review for 2008 specifically noted the following: “The unemployment rate variables did not perform
+well in any of the preliminary models that were estimated, and have not been included in the final model
+specifications. No consistent pattern was observed between mortgage claims and increases in local unemployment
+rates.”[IFE 2008, page A-13]
+3 As is discussed more fully in the literature review in the next section, the so-called ‘double trigger’ hypothesis
+suggests that it is a combination of an adverse income shock and the borrower being in negative equity that results in
+a default. See Gerardi, et. al. (2007), Foote, et. al. (2008), Foote, et. al. (2010), and the discussion in Section II for
+more on the double trigger hypothesis, as well as additional evidence on the correlation between unemployment and
+default.
+1
+
+(2010)), the 2012 actuarial review reports evidence of a positive correlation between an
+aggregate unemployment rate and the propensity of individual borrowers in the market to
+default.
+However, the estimated economic influence of unemployment rates on default is very
+small empirically compared to other known risk factors such as borrower credit quality as
+reflected in FICO scores and loan-to-value (LTV) ratios. One possible reason investigated in
+this paper is attenuation bias. This is a potentially serious problem because the default decision
+is observed at the micro-household level, but the unemployment status of the borrower is not.
+Hence, a market-level unemployment rate is used as a proxy for the unobserved unemployment
+status of the borrower in empirical models of individual default, and it well could be a very noisy
+proxy.4 For example, even in a market with a high unemployment rate of 10%, the vast majority
+of borrowers still are employed, and rises in that rate obviously do not mean that most borrowers
+lose their jobs and become income constrained.
+We bring new empirical analysis to bear on this issue, using results from a simulation
+exercise involving transitions into and out of unemployment, to help gauge the true impact of
+unemployment on default. The analysis strongly suggests that borrower unemployment status is
+very important in determining default behavior, with the likely impact at least as large as that
+found for other well known risk factors such as FICO score and loan-to-value ratio. Hence, we
+are able to account for the discrepancy between the prominent role that unemployment risk is
+accorded in conceptual models of default and the very limited impact estimated in recent
+empirical work.
+The plan of the paper is as follows. The next section begins by briefly reviewing the
+literature on the linkage between mortgage default and unemployment risk. This is followed
+4 This point was raised by Haughwout, et. al. (2010), page 17 footnote 22.
+2

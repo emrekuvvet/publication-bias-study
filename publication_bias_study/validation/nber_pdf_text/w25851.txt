@@ -1,0 +1,128 @@
+NBER WORKING PAPER SERIES
+CAN FINANCIAL PARTICIPANTS IMPROVE PRICE DISCOVERY AND EFFICIENCY IN
+MULTI-SETTLEMENT MARKETS WITH TRADING COSTS?
+Akshaya Jha
+Frank A. Wolak
+Working Paper 25851
+http://www.nber.org/papers/w25851
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2019
+We would like to thank Severin Borenstein, Jim Bushnell, Lucas Davis, Meredith Fowlie, Bill
+Hogan, Ali Hortacsu, Paul Joskow, Lynne Kiesling, Erin Mansur, Ignacia Mercadal, Steve Puller,
+Mar Reguant, Peter Reiss, and Ali Yurukoglu for helpful comments on previous drafts. We would
+also like to thank Andres Santos and Han Hong for helpful discussions of their hypothesis testing
+procedures. No external financial support was provided to Akshaya Jha or Frank A. Wolak to
+complete this research. The views expressed herein are those of the authors and do not
+necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2019 by Akshaya Jha and Frank A. Wolak. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Can Financial Participants Improve Price Discovery and Efficiency in Multi-Settlement Markets
+with Trading Costs?
+Akshaya Jha and Frank A. Wolak
+NBER Working Paper No. 25851
+May 2019
+JEL No. G13,G14,Q02,Q4
+ABSTRACT
+The introduction of purely financial participants into commodity markets is thought to yield
+forward prices that better reflect future spot prices, and ultimately, more efficient future
+production and consumption decisions. However, there are sizable transaction costs associated
+with trading in most commodity markets. This paper develops a statistical test of the null
+hypothesis that expected forward/spot price spreads cannot be arbitraged even after accounting
+for these transactions costs. We apply this test to hourly, location-specific day-ahead and real-
+time prices from California's wholesale electricity market. The implied trading cost required to
+reject the null hypothesis of no profitable arbitrage opportunities falls significantly after
+California allowed purely financial participation. Moreover, variable input costs per MWh of
+electricity produced fell by 3.6% in high demand hours after the introduction of purely financial
+participants. Combined, our evidence supports the hypothesis that the introduction of purely
+financial participants into the California wholesale electricity market decreased the average
+difference and the volatility of the difference between day-ahead and real-time prices, which
+ultimately lowered the total variable cost of serving demand
+Akshaya Jha
+Carnegie Mellon University
+Hamburg Hall Office 2218
+4800 Forbes Avenue
+Pittsburgh, PA 15232
+Website: http://www.akshayajha.com
+akshayaj@andrew.cmu.edu
+Frank A. Wolak
+Department of Economics
+Stanford University
+Stanford, CA 94305-6072
+and NBER
+wolak@zia.stanford.edu
+
+1 Introduction
+In multi-settlement markets, participants buy or sell delivery of a commodity at a pre-
+specified future date in a forward market with the opportunity to close out that position
+in a subsequent forward market or in the spot market. Each time the market for this
+commodity and delivery date combination clears, settlement occurs, meaning that pur-
+chases and sales of this product are made at a price that reflects the information available
+to market participants at that time. Many commodities have multiple forward market
+settlements before delivery ultimately takes place. For example, an airline might pur-
+chase jet fuel for delivery on a pre-specified date in the future. It could close out this
+position by selling it in any subsequent forward market before the delivery date or by
+taking delivery of the jet fuel and selling it in the spot market.
+Forward markets provide both producers and consumers of a product with future
+price certainty. This increased future spot price certainty can improve the efficiency of
+the spot market for a commodity. Specifically, forward prices that are accurate estimates
+of future spot prices provide valuable information to investors in productive capacity to
+supplythiscommodityorinvestorsinproductivecapacitythatconsumesthiscommodity.
+For example, a potential investor in an oil refinery can use forward prices for gasoline
+and oil to obtain a more accurate estimate of whether an investment in a facility that
+comes on line in two years and produces for 20 years would be profitable.
+Liquid forward markets for a commodity thus have the potential to improve both
+future spot price transparency and overall market efficiency. However, many commodity
+markets have a small number of physical participants. Consequently, purely financial
+market participants that neither produce nor consume the commodity, but simply take
+financial positions in forward markets, can increase market liquidity. This logic im-
+plies that allowing purely financial participants to trade in multi-settlement commodity
+markets has the potential to improve both future spot price transparency and real-time
+market performance.
+This paper uses the introduction of purely financial participants into California’s
+wholesale electricity market to examine the validity of this logic. Electricity markets
+are an ideal setting for this investigation. First, wholesale electricity markets are multi-
+settlement: exactly the same product—electrical energy delivered to a specific location at
+1
+
+a specific hour of the day—is bought and sold using the same market-clearing mechanism
+in both the day-ahead and real-time markets. Second, participants are required to post
+significant collateral with the market operator and pay non-trivial transaction costs in
+order to trade in these markets. This can limit the number of market participants and
+baseline level of liquidity in the forward market. Moreover, it is extremely costly to
+store electrical energy and the time lag between buying/selling electricity in the day-
+ahead market and subsequent sale/purchase in the real-time market is less than one day.
+Relative to other commodities, this greatly limits the extent to which day-ahead/real-
+time electricity price differences are due to either a hedging motive or inter-temporal
+discounting.
+Finally, the market efficiency benefits from a more liquid forward market for grain,
+gold, oil, jet fuel or other commodities are likely to be realized in a multi-year time frame.
+Incontrast,introducingpurelyfinancialparticipantsinmulti-settlement(day-ahead/real-
+time) electricity markets has the potential to quickly reduce the cost of serving real-time
+demand. This is because market/system operators are required to take the offers sub-
+mitted by generation unit owners and dispatch of hundreds of electricity generation units
+to meet real-time demand at thousands of locations in a transmission network. In doing
+this, system operators are faced with a multitude of different operating constraints such
+as transmission network capacity constraints as well as generation unit start-up, ramp-
+ing, and minimum runtime constraints. Computing the market-clearing configuration of
+generation unit output levels given the offers submitted by market participants requires
+solving an extremely complex mixed-integer programming problem. Allowing purely fi-
+nancial participants to supply or demand virtual energy in the day-ahead market could
+help system operators find better solutions to this optimization problem and thereby
+reduce the total cost of serving demand, particularly during high demand hours when
+transmission, generation unit-level, and other system operating constraints are likely to
+be most relevant.
+This paper has two parts. First, we develop a statistical test of arbitrage between
+forward and spot markets and apply this test to data from California’s wholesale elec-
+tricity market. The canonical principle of no arbitrage implies that the forward price of
+a commodity at time t for delivery at time t+k (Pf ) is equal to the expected value
+t,t+k
+of the spot price for the same commodity at time t+k (Ps ) conditional on the infor-
+t+k
+2

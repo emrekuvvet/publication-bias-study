@@ -1,0 +1,121 @@
+NBER WORKING PAPER SERIES
+THE PERVASIVE INFLUENCE OF IDEOLOGY AT THE FEDERAL CIRCUIT COURTS
+Alma Cohen
+Working Paper 31509
+http://www.nber.org/papers/w31509
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2023
+For valuable comments and discussions, I would like to thank Oren Bar-Gil, Lucian Bebchuk,
+Yochai Benkler, Jared Ellias, Thomas Beall Griffith, Kobi Kastiel, Shay Lavie, Richard Lazarus,
+Andrew Mergem, Martha Minow, Gerald Neuman, Kathy Spier, Roberto Tallarita, and workshop
+participants at Harvard Law School and the TAU Reason and Decision Forum. I am also grateful
+to Alon Bebchuk, Haggai Porat, Ariel Rava, and Tarik Samman for their excellent research
+assistance. The views expressed herein are those of the author and do not necessarily reflect the
+views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2023 by Alma Cohen. All rights reserved. Short sections of text, not to exceed two paragraphs,
+may be quoted without explicit permission provided that full credit, including © notice, is given
+to the source.
+
+The Pervasive Influence of Ideology at the Federal Circuit Courts
+Alma Cohen
+NBER Working Paper No. 31509
+July 2023
+JEL No. D72,J15,J16,K0
+ABSTRACT
+This paper seeks to contribute to the long-standing debate on the extent to which the ideology of
+federal circuit court judges, as proxied by the party of the president nominating them, can help to
+predict case outcomes. To this end, I combine and analyze a novel dataset containing about
+670,000 circuit court cases from 1985 to 2020. I show that the political affiliation of judges is
+associated with outcomes, and thus can help to predict them, throughout the vast universe of
+circuit court cases – and not only in the ideologically contested cases on which prior empirical
+research has focused.
+In particular, I find an association between political affiliation and outcomes in each of six
+categories of cases in which the two litigating parties could be perceived by judges to have
+unequal power. In each of these six case categories, which together add up to more than 550,000
+cases, the more Democratic judges a panel has, the higher the odds of the panel siding with the
+seemingly weaker party.
+Furthermore, I identify evidence of polarization over time in circuit court decisions. Consistent
+with such growing polarization, in the important subset of published cases, the identified patterns
+are more pronounced in the last two decades of the examined period than earlier.
+Going beyond the very large sample of cases with parties of seemingly of unequal power, I
+identify how political affiliation can help to predict outcomes in most of the cases outside this
+sample. In particular, I show that panels with more Democratic judges are less likely than panels
+with less Democratic judges to defer to the lower-court decision in civil cases between private
+parties that seem to be of equal power. Altogether, my analysis shows that political affiliation can
+help to predict outcomes in over 90% of circuit court cases.
+Overall, my results highlight the pervasiveness with which – and the array of ways through which
+–the political affiliation of judges can help to predict the outcome of circuit court cases.
+Alma Cohen
+Harvard Law School
+1525 Massachusetts Avenue
+Cambridge, MA 02138
+and NBER
+alcohen@law.harvard.edu
+
+I. Introduction
+Using a large sample of about 670,000 circuit court cases from the period 1985–2020, this
+paper investigates the extent to which the ideological inclinations of circuit court judges, as proxied
+by the party of the U.S. president nominating them, can help to predict the outcomes of circuit
+court cases. My analysis shows that political appointment can help to predict outcomes in a vastly
+larger universe of cases than has been suggested by prior research. Also, consistent with growing
+polarization, my analysis shows a strengthening of the identified patterns over time.
+There is a large empirical literature on circuit court decisions, and much of it has examined
+whether judges appointed by Democratic and Republican presidents (hereafter “Democratic
+judges” and “Republican judges,” respectively) systematically differ in their decisions.1 However,
+the literature has generally focused on documenting such differences in small sets of published
+cases on subjects that are ideologically contested or salient. For example, one early influential
+study documented “party effects” in a set of cases involving the First Amendment, civil rights,
+labor relations, and criminal appeals (Songer and Sue (1990)), and another influential early study
+(Revesz (1997)) documented such effects in a set of cases reviewing decisions by the
+Environmental Protection Agency. Similarly, the subsequent seminal works of Sunstein et al.
+(2004, 2006) identified sets of cases on “controversial issues” – such as abortion, affirmative
+action, capital punishment, and sex discrimination – and created a dataset of “ideological cases”
+that much subsequent literature used. Although much empirical work has been done in the
+intervening years, I am unaware of any prior study that identified pervasive party effects
+throughout the vast universe of all circuit court cases.
+Explaining the focus on the domains of ideologically contested cases, Sunstein et al. (2004)
+explained that “outside of such domains [Republican and Democratic judges] are far less likely to
+differ.” Indeed, Sunstein et al. reasoned that the absence of party effects that they found in several
+sets of ideologically controversial cases they studied emphasizes “the limited nature of these
+effects” and that the forces of “professional discipline and legal consensus” can preclude such
+1 See, e.g., Sunstein et al. (2004, 2006), Farhang and Wawro (2004), Cox and Miles (2008), Chew and
+Kelley (2009), Boyd et al. (2010), and Hall (2010)). For broad discussions of the subject and the literature,
+see Epstein, Landes, and Posner (2013) and Bonica and Sen (2021).
+1
+
+effects from showing up in many other areas. The authors remained agnostic on whether
+“ideological voting” might be present in “apparently non-ideological cases involving, for example,
+bankruptcy, torts, and civil procedure,” and viewed answering this question as an important
+challenge for future work.
+In this study, I seek to contribute to meeting this challenge. I show that systematic differences
+between Democratic and Republican judges can be found in a very broad universe of circuit court
+cases. Knowing the political composition of the circuit court panel can help to predict outcomes
+in the great majority of circuit court cases. Thus, notwithstanding the forces of “professional
+discipline and legal consensus,” how parties fare in cases decided by a circuit court depends
+significantly on the “luck of the draw” – the political composition of the panel randomly assigned
+to hear the case.
+Much of my study focuses on analyzing how political affiliation can help to predict outcomes
+in six categories of cases in which one of the parties has characteristics that could lead to its being
+perceived by judges to be weaker. These six categories of cases add up to more than half a million
+cases, or over 80% of circuit court cases. I hypothesize that Democratic judges and Republican
+judges systematically differ in their tendency to side with the seemingly weaker party. Consistent
+with this Pro-weak hypothesis, I find that panels with more Democratic judges are more likely to
+side with:
+(i) non-institutional private parties in civil litigation against institutional private parties;
+(ii) private parties in civil litigation against the U.S. government;
+(iii) convicted offenders in criminal appeals litigated with the U.S. government;
+(iv) immigrants in litigation against immigration agencies;
+(v) prisoners serving a sentence in litigation with the government and prisons; and
+(vi) petitioners in habeas corpus and other petitions against public officials for which the circuit
+courts have original jurisdiction.2
+2 To the best of my knowledge, prior research has not examined whether political affiliation can help to
+predict outcomes in five of my six categories of cases. With respect to the sixth category of criminal appeals,
+Sunstein et al. (2004, 2006) and Hall (2010), used a sample of about 1,000 such appeals to examine whether
+Democratic and Republican judges systematically differ in their decisions in such cases. Sunstein et al.
+(2004, 2006) report that they do not, but Hall (2010) suggested that they do.
+2

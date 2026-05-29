@@ -1,0 +1,140 @@
+NBER WORKING PAPER SERIES
+PROPERTY RIGHTS, REGULATORY CAPTURE, AND EXPLOITATION OF NATURAL
+RESOURCES
+Christopher Costello
+Corbett Grainger
+Working Paper 20859
+http://www.nber.org/papers/w20859
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+January 2015
+We are deeply grateful for helpful comments from Wolfram Schlenker, Jennifer Alix-Garcia, Gary
+Libecap, Robert Deacon, Scott Taylor, Larry Karp, Ray Hilborn, Mike Melnychuk, Steven Gaines,
+Bruno Nkuiya, John Lynham, Jeffrey Traczynski, and seminar participants at various institutions,
+including the NBER, University of Hawaii, University of Calgary, the World Congress of Environmental
+and Resource Economists, the Heartland Workshop at UIUC, and Institute Henri Poincare (Paris).
+The views expressed herein are those of the authors and do not necessarily reflect the views of the
+National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2015 by Christopher Costello and Corbett Grainger. All rights reserved. Short sections of text, not
+to exceed two paragraphs, may be quoted without explicit permission provided that full credit, including
+© notice, is given to the source.
+
+Property Rights, Regulatory Capture, and Exploitation of Natural Resources
+Christopher Costello and Corbett Grainger
+NBER Working Paper No. 20859
+January 2015
+JEL No. H23,H41,L2,Q2,Q22
+ABSTRACT
+We study how the strength of property rights to individual extractive firms affects a regulator’s choice
+over exploitation rates for a natural resource. The regulator is modeled as an intermediary between
+current and future resource harvesters, rather than between producers and consumers, as in the traditional
+regulatory capture paradigm. When incumbent resource users have weak property rights, they have
+an incentive to pressure the regulator to allow resource extraction at an inefficiently rapid rate. In contrast,
+when property rights are strong, this incentive is minimized or eliminated. We build a theoretical model
+in which different property right institutions can be compared for their incentives to exert influence
+on the regulator. The main theoretical prediction - that stronger individual property rights will lead
+the regulator to choose more economically efficient extraction paths - is tested empirically with a novel
+panel data set from global fisheries. Exploiting the variation in timing of catch share implementation
+in our panel data, we find that regulators are significantly more conservative in managing resources
+for which strong individual property rights have been assigned to firms; this is especially pronounced
+for resources that have been overexploited historically.
+Christopher Costello
+Bren School of Environmental
+Science & Management
+University of California, Santa Barbara
+Santa Barbara, CA 93106
+and NBER
+costello@bren.ucsb.edu
+Corbett Grainger
+Department of Agricultural and Applied Economics
+University of Wisconsin, Madison
+Madison, WI 53706
+http://www.aae.wisc.edu/cagrainger
+cagrainger@wisc.edu
+
+Property rights, regulatory capture, and exploitation of
+natural resources∗
+Christopher Costello† and Corbett Grainger‡
+January 9, 2015
+Abstract
+We study how the strength of property rights to individual extractive firms affects a
+regulator’s choice over exploitation rates for a natural resource. The regulator is mod-
+eled as an intermediary between current and future resource harvesters, rather than
+between producers and consumers, as in the traditional regulatory capture paradigm.
+When incumbent resource users have weak property rights, they have an incentive to
+pressuretheregulatortoallowresourceextractionataninefficientlyrapidrate. Incon-
+trast, when property rights are strong, this incentive is minimized or eliminated. We
+buildatheoreticalmodelinwhichdifferentpropertyrightinstitutionscanbecompared
+for their incentives to exert influence on the regulator. The main theoretical prediction
+- that stronger individual property rights will lead the regulator to choose more eco-
+nomically efficient extraction paths - is tested empirically with a novel panel data set
+from global fisheries. Exploiting the variation in timing of catch share implementation
+in our panel data, we find that regulators are significantly more conservative in manag-
+ing resources for which strong individual property rights have been assigned to firms;
+this is especially pronounced for resources that have been overexploited historically.
+1 Introduction
+Many natural resources are governed not by the well-studied extremes of open access or sole
+ownership, but instead by an intermediate case in which a regulator sets extraction caps
+and a limited number of firms are granted the rights to extract. We focus on two features
+of these systems: First, because the regulator herself sets the extraction rate, she may be
+∗We are deeply grateful for helpful comments from Wolfram Schlenker, Jennifer Alix-Garcia, Gary
+Libecap, Robert Deacon, Scott Taylor, Larry Karp, Ray Hilborn, Mike Melnychuk, Steven Gaines, Bruno
+Nkuiya, John Lynham, Jeffrey Traczynski, and seminar participants at various institutions, including the
+NBER, University of Hawaii, University of Calgary, the World Congress of Environmental and Resource
+Economists, the Heartland Workshop at UIUC, and Institute Henri Poincare (Paris).
+†Bren School, University of California Santa Barbara; National Bureau of Economic Research. Email:
+costello@bren.ucsb.edu
+‡Department of Ag. & Applied Economics, University of Wisconsin - Madison. Email: ca-
+grainger@wisc.edu
+1
+
+susceptible to the influence of the extraction sector, i.e. to regulatory capture. Second, the
+strength of property rights allocated to extractive firms may affect their preferred rates of
+extraction. We derive the equilibrium behavior of the regulator in this setting, and we show
+how extraction paths will depend on the strength of property rights granted to the harvest
+sector. We test our theoretical predictions with a novel data set of global fisheries, roughly
+half of which have implemented policies granting stronger individual property rights over the
+past several decades. Consistent with our theory, we find that stronger individual property
+rights lead the regulator to reduce aggregate rates of extraction. The resulting differences in
+extraction rates have both economic and ecological consequences.
+Property right institutions play a central role in shaping incentives and determining eco-
+nomic outcomes including investment, resource use and growth (e.g. Acemoglu and Johnson
+(2005), Grainger and Costello (2014), and North et al. (2009)). It is well-established that
+individual owners’ behaviors depend on the security of the underlying property rights. Weak
+property rights can lead to incentives for individual over-exploitation in fisheries (Costello
+andKaffine2008)andforests(Deacon1995; Deacon1999),12 andlandtenurehasbeenshown
+to affect land use decisions in several settings (Besley 1995; Alston et al. 2000). Despite
+this evidence, it may be impossible or undesirable to grant sole-ownership over an entire
+resource stock to a single firm. Large aquifers, highly migratory fish stocks, rights to water
+in rivers or streams, and atmospheric pollution are just a few examples of resources that are
+often managed by a regulator who sets an extraction cap affecting a limited set of firms with
+access rights. Despite the ubiquity of this arrangement, the literature on property rights and
+natural resources has focused on individual incentives and has largely ignored the role of the
+regulator in setting the overall extraction rules.3
+We address two fundamental questions about the effects of property rights institutions on
+a common pool resource: First, in a theoretical sense, under what conditions does the prop-
+erty right strength to individual firms alter incentives for the regulator setting the extraction
+policy? And second, is there empirical evidence that property right strength affects the ag-
+gregate exploitation chosen by the regulator? Recent work on the effects of rights based
+management on fishery outcomes (Costello et al. 2008; Grafton et al. 2000; Grainger and
+Costello 2014; Newell et al. 2005) has been criticized because for most natural resources, it is
+the regulator, not the individual firms, that determines exploitation rates. This critique calls
+into question the economist’s intuition about the role of property rights in efficient resource
+use. To our knowledge we are the first to examine the impact of individual property rights
+on the regulator’s choice of resource exploitation rates. We develop a general framework to
+determine how individual property rights affect the regulator’s extraction policy, and when
+that extraction policy coincides with the social optimum.
+FollowingKarpoff(1987)andothers, wetakeasgiventhattheextractiveindustrywillat-
+tempttoinfluencetheregulatorydecisionsintheirfavor. Mostoftheliteratureonregulatory
+capture focuses on natural monopolies or industries in which rights are well-defined and per-
+1See Liscow (2013) for a recent counterexample regarding the impact on deforestation.
+2A noteworthy nuance is introduced by Bohn and Deacon (2000), who delineate conditions under which
+extraction may be increased or decreased as a result of ownership risk.
+3While they do not model the influence of industry on a regulator’s chosen extraction rate, Homans
+and Wilen (1997) do examine a setting in which a regulator must respond to entry by firms, typically by
+shortening the allowable fishing season.
+2

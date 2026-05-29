@@ -1,0 +1,127 @@
+NBER WORKING PAPER SERIES
+THE ANATOMY OF THE TRANSMISSION OF MACROPRUDENTIAL POLICIES
+Viral V. Acharya
+Katharina Bergant
+Matteo Crosignani
+Tim Eisert
+Fergal J. McCann
+Working Paper 27292
+http://www.nber.org/papers/w27292
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2020
+We thank Sergey Chernenko, Stijn Claessens, Anthony DeFusco, Adam Guren, Tim Landvoigt,
+Philip Lane, Tomasz Piskorski, José-Luis Peydró, Andrea Polo, Andres Sarto, Roberto Savona, Tess
+Scharlemann, Sanjay Singh, and James Vickery for their comments. We also thank conference
+participants at the NBER Summer Institute (CF), WFA-CFAR Corporate Finance Conference (Olin),
+11th Annual Paul Woolley Centre Conference (LSE), AFA, EFA, Labor and Finance Group
+Conference (Chicago Booth), CEPR-Bank of Finland Monetary Policy and Reality Conference, UCLA-
+FRBSF Conference on Housing, Financial Markets, and Monetary Policy, Workshop on Housing and
+Household Finance (Oslo), RFS Banking Conference (Rome), BIS “Impact of Banking Regulation on
+Financial Markets” Conference, CREDIT Conference, Bocconi Carefin Conference, MFA, CSEF
+Banking Conference, 14th Meeting of German Economist Abroad, Fed “Day Ahead” Conference,
+and seminar participants at Fed Board, NY Fed, Boston Fed, UNSW, University of Melbourne,
+Michigan Ross, Central Bank of Ireland Financial Stability Reading Group, ECB, FDIC, TU Munich,
+IWH Halle, Johns Hopkins Carey, and Frankfurt School of Finance & Management. We thank
+Ronan Lyons for helping us access and interpret the house price data. The views expressed in this
+paper are solely the responsibility of the authors and should not be interpreted as reflecting the views
+the Central Bank of Ireland or the International Monetary Fund. All results have been reviewed to
+ensure no confidential information is disclosed. All errors are our own. The views expressed
+herein are those of the authors and do not necessarily reflect the views of the National Bureau of
+Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2020 by Viral V. Acharya, Katharina Bergant, Matteo Crosignani, Tim Eisert, and Fergal J. McCann.
+All rights reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+The Anatomy of the Transmission of Macroprudential Policies
+Viral V. Acharya, Katharina Bergant, Matteo Crosignani, Tim Eisert, and Fergal J. McCann
+NBER Working Paper No. 27292
+May 2020
+JEL No. E21,E44,E58,G21,R21
+ABSTRACT
+We analyze how regulatory constraints on household leverage—in the form of loan-to-income
+and loan-to-value limits—affect residential mortgage credit and house prices as well as other
+asset classes not directly targeted by the limits. Supervisory loan level data suggest that mortgage
+credit is reallocated from low-to high-income borrowers and from urban to rural counties. This
+reallocation weakens the feedback loop between credit and house prices and slows down house
+price growth in “hot” housing markets. Consistent with constrained lenders adjusting their
+portfolio choice, more-affected banks drive this reallocation and substitute their risk-taking into
+holdings of securities and corporate credit.
+Viral V. Acharya Tim Eisert
+Stern School of Business Erasmus University Rotterdam
+New York University Burg. Oudlaan 50 / PO Box 1738
+44 West 4th Street, Suite 9-65 3000 DR Rotterdam
+New York, NY 10012 The Netherlands
+and CEPR eisert@ese.eur.nl
+and also NBER
+vacharya@stern.nyu.edu Fergal J. McCann
+Central Bank of Ireland
+Katharina Bergant fergal.mccann@centralbank.ie
+International Monetary Fund
+Research Department
+kbergant@imf.org
+Matteo Crosignani
+University of Michigan
+Ross School of Business
+mcrosign@gmail.com
+
+1 Introduction
+Policymakers have recently proposed and implemented macroprudential policies aimed at
+limiting household leverage to slow down the feedback loop between credit and house prices.
+The academic literature|by showing that build-ups of household leverage have historically
+led to busts, lower output growth, and higher unemployment (Mian et al., 2017)|has high-
+lighted the importance of these policies, adopted by more than 60 countries since 1990.
+In this paper, we provide a comprehensive analysis of the most widely used type of
+macroprudential regulations, namely, policies that limit household leverage in the residential
+mortgage market. Combining county level house price data, loan level data on residential
+mortgages and credit to (cid:12)rms, as well as bank security level holdings, we study the introduc-
+tion in 2015 of loan-to-value (LTV) and loan-to-income (LTI) limits for residential mortgages
+issued by Irish banks.1 The policy was introduced in the aftermath of a dramatic boom-bust
+cycle that led to a (cid:12)nancial crisis that, in turn, forced the government to adopt a costly
+bailout (Acharya et al., 2014).2 The lending limits affect 43% of the typical mortgage origi-
+nation and are immediately effective after the announcement. The goal, in the words of at
+the time central bank governor Patrick Honahan, was to \prevent another psychological loop
+between credit and prices and credit" and \keep banks and borrowers safe."
+We document that whereas the lending limits affect a large share of the residential mort-
+gage market, mortgage issuance keeps growing after the policy introduction as the market
+\moves" to conform with the new limits. Our analysis of this reallocation provides three
+main (cid:12)ndings: (i) Mortgage credit is reallocated from low- to high-income borrowers and
+1Alam et al. (2019) collected data from 1990 to 2016 on macroprudential policies in 134 countries. LTV
+andLTIlimitshavebeenadoptedby60and42countries, respectively. LTVlimitsarethemostwidelyused
+tool in advanced economies. See Cerutti et al. (2017) for another cross-country database.
+2The household debt/GDP ratio increased from 55% to 101% from 2002 to 2007, followed by -10% GDP
+growth and a +8% unemployment rate change over the next three years.
+2
+
+from counties where borrowers are close to the lending limits (typically urban areas) to coun-
+ties where borrowers are more distant from the lending limits (typically rural areas); (ii)
+this reallocation is effective in slowing down house price growth, and in turn, the feedback
+loop between mortgage credit and house prices, in \hot" housing markets; and (iii) this
+reallocation is consistent with a bank portfolio choice channel as banks more affected by the
+limits drive the mortgage credit reallocation and increase their risk-taking in their holdings
+of securities and credit to (cid:12)rms, two asset classes not targeted by the policy.
+Next,wedescribetheseresultsindetail. First,weshowthat43%ofthemortgageissuance
+in the year before the policy would have been affected if the rules had been in place during
+this period. Nevertheless, the increase in \conforming" issuance offsets the collapse in the
+issuance of those mortgages that exceed the newly imposed limits, leaving aggregate issuance
+barelyaffected. However, noteverymortgageisaffectedinthesameway. Inthecross-section
+of counties, \hot" housing markets (typically urban counties) are closer to the limits than
+\cool" housing markets (typically rural counties). In the cross-section of borrowers, high-
+income borrowers are more distant from the limits than low-income borrowers. We show
+that, after the policy introduction, residential mortgage issuance moves from hot to cool
+housing markets and from low- to high-income borrowers. Following the methodology in
+Mian et al. (2019), we compare estimated coefficients with and without county-time (cid:12)xed
+effects, which absorb the general equilibrium forces at the county level. This comparison
+suggests that the policy weakened the sizable general equilibrium \loop between credit and
+prices and credit" at work before the policy introduction.
+Second, we show that the evolution of house prices is consistent with the observed geo-
+graphic credit reallocation. House price growth, around 14% year-on-year (YoY) and rapidly
+increasing at the time of the policy announcement, stabilized below 10% post-regulation.
+This evolution is driven by hot housing markets where house price growth, well above 20%
+YoY and rapidly increasing at the time of announcement, collapsed to around 4% post-
+regulation. As a result, the lending limits substantially reduced the geographical heterogene-
+3

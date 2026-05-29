@@ -1,0 +1,141 @@
+NBER WORKING PAPER SERIES
+TRADING COSTS AND INFORMATIONAL EFFICIENCY
+Eduardo Dávila
+Cecilia Parlatore
+Working Paper 25662
+http://www.nber.org/papers/w25662
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+March 2019
+We would like to thank comments from Fernando Álvarez, Snehal Banerjee, Gadi Barlevy,
+Bruno Biais, Philip Bond, Markus Brunnermeier, Eric Budish, James Dow, Emmanuel Farhi,
+Simon Gervais, Piero Gottardi, Joel Hasbrouck, Arvind Krishnamurthy, Stephen Morris, Thomas
+Philippon, Adriano Rampini, Tom Sargent, Alp Simsek, Laura Veldkamp, Venky
+Venkateswaran, Xavier Vives, Brian Weller, Wei Xiong, and Jeff Zwiebel, as well as our
+discussants Kerry Back, Bradyn Breon-Drish, Liyan Yang, and Haoxiang Zhu. We would also
+like to thank seminar participants at NYU, 2016 London FTG Summer Conference, SED, MIT,
+UCSB LAEF Conference, 2017 AFA, Duke, ASU-Sonoran Winter Conference, Princeton,
+Stanford, Macro-Finance Society, and FIRS. Yangjue Han, Luke Min, Josh Mohanty, and
+Ryungha Oh provided excellent research assistance. Financial support from the CGEB at NYU
+Stern is gratefully acknowledged. The views expressed herein are those of the authors and do not
+necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2019 by Eduardo Dávila and Cecilia Parlatore. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Trading Costs and Informational Efficiency
+Eduardo Dávila and Cecilia Parlatore
+NBER Working Paper No. 25662
+March 2019
+JEL No. D82,D83,G14
+ABSTRACT
+We study the effect of trading costs on information aggregation and acquisition in financial
+markets. For a given precision of investors' private information, an irrelevance result emerges
+when investors are ex-ante identical: price informativeness is independent of the level of trading
+costs. When investors are ex-ante heterogeneous, anything goes, and a change in trading costs can
+increase or decrease price informativeness, depending on the source of heterogeneity. Our results
+are valid under quadratic, linear, and fixed costs. Through a reduction in information acquisition,
+trading costs reduce price informativeness. We discuss how our results inform the policy debate
+on financial transaction taxes/Tobin taxes.
+Eduardo Dávila
+Stern School of Business
+New York University
+44 West 4th Street
+New York, NY 10012
+and NBER
+edavila@stern.nyu.edu
+Cecilia Parlatore
+Stern School of Business
+New York University
+44 West 4th Street
+New York, NY, 10012
+cparlato@stern.nyu.edu
+
+1 Introduction
+There are costs associated with trading in financial markets, and the magnitude of these costs varies
+over time and across space. For instance, technological advances have dramatically reduced the cost of
+trading in many financial markets over the last decades. On the flip side, taxes on financial transactions
+that would increase the cost of trading at the margin along the lines of Tobin’s proposal (Tobin,
+1978) are periodically the subject of heated debates and sometimes implemented in practice.1 Given
+that financial markets play an essential role in generating and aggregating dispersed information, it is
+natural to study whether changes in the level of trading costs make financial markets better or worse
+at aggregating information. It is also important to explore whether the ability to trade more or less
+cheaply encourages or discourages information acquisition in financial markets. In this paper, we seek
+to provide a systematic answer to these questions by formally studying the implications of trading costs
+for information aggregation and information acquisition in financial markets.
+In our model, investors trade for two reasons. First, investors trade on private information, after
+receivingaprivatesignalaboutassetpayoffs. Thesetradescontributetomakingpricesinformativeabout
+asset payoffs. Second, investors also trade on the realization of a privately known prior, which is random
+across the population of investors and uncertain in the aggregate. The combination of trading based on
+private information with a non-payoff related source of aggregate uncertainty makes prices only partially
+informative about asset payoffs. The fact that prices are partially informative about asset payoffs forces
+anyone interested in recovering the information aggregated by asset prices to solve a filtering problem.2
+A key determinant of this filtering problem is price informativeness, formally defined as the precision of
+the unbiased signal about asset payoffs revealed by asset prices. In this paper, we formally characterize
+how price informativeness, which captures how good asset prices are at aggregating information, varies
+with the level of trading costs.
+Twomainresultsemergefromourinitialanalysiswheninvestors’precisionchoicesarepredetermined
+and trading costs are quadratic. Our first main result is an irrelevance theorem that applies when
+investors are ex-ante homogeneous. We show that, for a given precision of investors’ private signals,
+price informativeness is independent of the level of trading costs. The logic behind our main result is
+elementary and intuitive. The effect of trading costs on how prices aggregate information is a function
+of how the relevant signal-to-noise ratio contained in asset prices is affected. For example, an increase in
+trading costs necessarily reduces the amount of information based trading, reducing the informational
+content of prices. However, this increase in trading costs also reduces the amount of non-payoff relevant
+trading (due to investors’ priors in our case), reducing the noise component of asset prices. When
+investors are ex-ante identical, the ratio of these two trading motives remains constant as trading costs
+change, leaving the aggregate signal-to-noise ratio unchanged, yielding the irrelevance result.3
+1SeeColliardandHoffmann(2017)andJinghanCai,JibaoHe,WenxiJiangandWeiXiong(2017),whoprovideevidence
+on the consequences of introducing transaction taxes during the recent experiences of France and China, respectively.
+2The exact nature of the non-payoff related source of aggregate uncertainty (“noise”) is not essential for our results. In
+theOnlineAppendix,wederiveourmainresultsinamodelinwhichwesubstituteinvestors’priorsforhedgingneedsthat
+areuncertainintheaggregateasthesecondsourceoftrading. Formultiplereasonsthatwehighlightthroughoutthetext,
+our leading formulation is the most workable.
+3Like other irrelevance results, e.g., Modigliani and Miller (1958), our irrelevance result is pedagogical in nature. Part
+2
+
+Our second main result is a characterization of how trading costs affect price informativeness when
+investorsareex-anteheterogeneous. Weshowthatanything-goesoutsideofthehomogeneitybenchmark,
+since the sign of the relation between changing trading costs and price informativeness is ambiguous. We
+identify the cross-sectional covariance of relative demand sensitivities to information and noise with the
+overall demand sensitivity to trading costs as the key endogenous object that determines how trading
+costsaffectpriceinformativeness. Anincreaseintradingcostsdecreases(increases)priceinformativeness
+when the investors who trade relatively more (less) aggressively on their private information also have
+an overall demand that is more sensitive to trading costs.
+While our characterization in term of endogenous objects is valid in general, we explicitly study
+how price informativeness reacts to changes in trading costs when investors differ along a single
+dimension. First, we show that when investors differ in the precision of the private signals about the
+fundamental, price informativeness decreases with trading costs. Intuitively, better informed investors
+aredisproportionatelymoreresponsivetoprivateinformationbutalsomoreresponsiveoveralltotrading
+costs, due to their overall lower perceived risk. Therefore, an increase in trading costs disproportionately
+reduces the informed trades, reducing price informativeness. Second, we show that when investors differ
+in the precision of their prior, price informativeness increases with trading costs. Intuitively, investors
+with tighter priors are more responsive to the realization of the non-payoff relevant component of prices
+and also more responsive overall to trading costs, due to their overall lower perceived risk. Therefore,
+an increase in trading costs disproportionately reduces the non-payoff relevant trades, increasing price
+informativeness. Finally, we show that trading costs do not modify price informativeness when investors
+are heterogeneous in their risk aversion. Intuitively, in our framework, the cross-sectional distribution of
+relative demand sensitivities to information and noise is not affected by investors’ risk aversion, leaving
+price informativeness unchanged.
+Folkwisdom oftenassociates hightrading costswith low price informativeness. Our two mainresults
+overturn this logic in two different ways. First, we show that under ex-ante homogeneity, changes in
+trading costs will not affect the ability of financial markets to aggregate information at all. Our result
+emphasizes that not only informed trades will be reduced when trading costs are higher, but that also
+tradesthatcontributetomakingthepricenoisywillbereducedtoo. Second, weshowthatheterogeneity
+among investors is necessary to make trading costs affect price informativeness. In particular, we show
+that it is possible to generate an ambiguous relation between the level of trading costs and price
+informativeness merely by considering one-dimensional heterogeneity. Our results highlight that the
+form in which investors are heterogeneous is also essential to understand the relation between trading
+costs and price informativeness.
+Next, we illustrate how trading costs affect price informativeness in the context of four different
+applications. These results play a dual role. First, the specific applications allow us to model several
+scenarios of practical relevance. We consider environments meant to capture institutional and retail
+investors, informed and uninformed investors, elastic noise traders, and classic noise traders. Second,
+we use the applications to illustrate how the relation between trading costs and informativeness is
+of our contribution lies on identifying the set of assumptions (investor homogeneity and exogenous information precision)
+that must be violated for trading costs to affect price informativeness.
+3

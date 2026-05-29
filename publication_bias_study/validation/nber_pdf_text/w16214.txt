@@ -1,0 +1,156 @@
+NBER WORKING PAPER SERIES
+WHY DON'T ISSUERS CHOOSE IPO AUCTIONS? THE COMPLEXITY OF INDIRECT
+MECHANISMS
+Ravi Jagannathan
+Andrei Jirnyi
+Ann Sherman
+Working Paper 16214
+http://www.nber.org/papers/w16214
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2010
+We thank Reena Aggarwal, Larry Ausubel, Robert Battalio, Lise Buyer, Harry DeAngelo, Ken French,
+Robert S. Hansen, Alexander Ljungqvist, Tim Loughran, Paul Milgrom, Ivan Png, Ed Prescott, Jay
+Ritter, Michael Sher, Sheridan Titman, and S. Viswanathan for useful comments; Rakesh Vohra for
+hepful discussions about auctions; Gjergji Cici, Huijing Fu, Jintana Kumeranakerd, Tim Lavelle, David
+Paredes, Mariya Todarova, and Andrew Y. C. Wong for research assistance; and M.J. van den Assem,
+Marc Goergen, Geeta Hemrajani, Richard Pettway, Jhinyoung Shin, John Wei and the many officials
+at various stock exchanges, regulatory agencies and research institutes for help in gathering the information
+used in this study (especially the Singapore Exchange, Istanbul Stock Exchange and Euronext). Some
+of the material in Table 2 circulated in an earlier working paper titled Global Trends in IPO Methods:
+Book Building vs. Auctions. Any inaccuracies or errors are, of course, entirely our own. The views
+expressed herein are those of the authors and do not necessarily reflect the views of the National Bureau
+of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2010 by Ravi Jagannathan, Andrei Jirnyi, and Ann Sherman. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Why Don't Issuers Choose IPO Auctions? The Complexity of Indirect Mechanisms
+Ravi Jagannathan, Andrei Jirnyi, and Ann Sherman
+NBER Working Paper No. 16214
+July 2010(cid:15)(cid:3)(cid:53)(cid:72)(cid:89)(cid:76)(cid:86)(cid:72)(cid:71)(cid:3)(cid:39)(cid:72)(cid:70)(cid:72)(cid:80)(cid:69)(cid:72)(cid:85)(cid:3)(cid:21)(cid:19)(cid:20)(cid:21)
+JEL No. D02,D44,G0,G12,G24,G3,H0,H10,H26,H29
+ABSTRACT
+In this paper we present a comprehensive comparison of IPO placement methods in over 50 countries.
+We find that out of the three primary methods, fixed price public offers, auctions, and book building,
+auctions are least popular with issuers. Since auctions allow for price discovery while avoiding the
+potential conflict of interest between issuer and underwriter, this is a surprising finding that is not adequately
+explained in the existing literature. We propose a new explanation: namely, that participating in auctions
+is substantially more difficult for investors compared to the other methods, and that this complexity
+can lead to investor behavior that is undesirable for the issuer. We suggest that this effect could be
+mitigated through a hybrid mechanism that resembles the one that is used in US treasury auctions.
+Ravi Jagannathan Ann Sherman
+Kellogg Graduate School of Management Department of Finance
+Northwestern University DePaul University
+2001 Sheridan Road 1 E. Jackson Blvd., Suite 6100
+Leverone/Anderson Complex Chicago, IL 60604
+Evanston, IL 60208-2001 ann.sherman@depaul.edu
+and NBER
+rjaganna@northwestern.edu
+Andrei Jirnyi
+Northwestern University
+2001 Sheridan Rd
+Finance Dept. Rm 401
+Evanston, IL 60208
+a-jirnyi@northwestern.edu
+
+Why Don’t Issuers Choose IPO Auctions?
+The Complexity of Indirect Mechanisms
+RaviJagannathana,b,AndreiJirnyia,AnnShermanc
+aNorthwesternUniversity
+bNationalBureauforEconomicResearch
+cDePaulUniversity
+Abstract
+InthispaperwepresentacomprehensivecomparisonofIPOplacementmethodsinover50countries. Wefindthat
+out of the three primary methods, fixed price public offers, auctions, and book building, auctions are least popular
+withissuers. Sinceauctionsallowforpricediscoverywhileavoidingthepotentialconflictofinterestbetweenissuer
+andunderwriter, thisisasurprisingfindingthatisnotadequatelyexplainedintheexistingliterature. Weproposea
+new explanation: namely, that participating in auctions is substantially more difficult for investors compared to the
+othermethods,andthatthiscomplexitycanleadtoinvestorbehaviorthatisundesirablefortheissuer.Wesuggestthat
+thiseffectcouldbemitigatedthroughahybridmechanismthatresemblestheonethatisusedinUStreasuryauctions.
+Keywords: InitialPublicOfferings,IPO,Auctions,Bookbuilding,MechanismDesign,IPOAuctions
+1. Introduction
+Bringing an initial public offering (IPO) to market requires a process that would determine who would be the
+initial investors1, how many shares each of them would obtain, and what price they would pay. The possibilities
+includebookbuilding,fixedpricepublicoffers,andauctions,aswellastheirvarioushybrids2.
+IntheUnitedStates,theprimarymethodisbookbuilding,whichgivestheunderwritersubstantialdiscretionover
+allocations. However, when agents are given discretion, there is always the potential for abuse, and the numerous
+scandalsfollowingtheinternetbubblesuggestthatsuchabuseshaveoccurredinpractice3.
+In comparison, sealed bid auctions are relatively more transparent, giving little discretion to the auction admin-
+istrator,andareconsequentlylesssubjecttomanipulationandabuse. Moreover,theauctionmethodisoldandwell
+established, andhasbeenparticularlysuccessfulforUSTreasurysecuritiesandothergovernmentdebtinstruments.
+Notsurprisingly,itisoftensuggestedthatauctionsareasuperiormethodofIPOplacement4.Nevertheless,tothisday
+(cid:73)We thank Reena Aggarwal, Larry Ausubel, Robert Battalio, Lise Buyer, Harry DeAngelo, Ken French, Robert S. Hansen, Alexander
+Ljungqvist, Tim Loughran, Paul Milgrom, Ivan Png, Ed Prescott, Jay Ritter, Michael Sher, Sheridan Titman, and S. Viswanathan for useful
+comments; RakeshVohraforhepfuldiscussionsaboutauctions; GjergjiCici,HuijingFu,JintanaKumeranakerd,TimLavelle,DavidParedes,
+MariyaTodarova,andAndrewY.C.Wongforresearchassistance;andM.J.vandenAssem,MarcGoergen,GeetaHemrajani,RichardPettway,
+JhinyoungShin, JohnWeiandthemanyofficialsatvariousstockexchanges, regulatoryagenciesandresearchinstitutesforhelpingathering
+theinformationusedinthisstudy(especiallytheSingaporeExchange,IstanbulStockExchangeandEuronext). SomeofthematerialinTable2
+circulatedinanearlierworkingpapertitledGlobalTrendsinIPOMethods:BookBuildingvs.Auctions.Anyinaccuraciesorerrorsare,ofcourse,
+entirelyourown.
+1Ritter(2013)arguesthattherearealternativesavailabletofirmsthatmaybemoreattractivethangoingpublic.
+2Wedescribeeachmethod,andtheprimarydifferencesbetweenthem,inmoredetailbelowin2.1
+3Ritter(Forthcoming)discussestheCLAScontroversies: CommissionsforIPOs,Laddering,AnalystconflictsofinterestandSpinning. See
+alsoLoughranandRitter(2004)fordiscussionofthescandalsandoveralltrendsinIPOunderwriting,andRitterandWelch(2002),Ljungqvist
+(2007),Wilhelm(2005)forreviewsoftheacademicIPOliterature.
+4Examplesinclude”IPOMarketComesBacktoLife”,byRachelEmmaSilverman. WallStreetJournal,NewYork,N.Y.:Nov11,2003. pg.
+D.1.”DutchauctionIPOschemegrabsinsiderinterest”,TheRedHerring(www.redherring.com),October30,2003.”BofIHoldingHasTextbook
+AuctionIPO”,15March2005,DowJonesNewsService.Infact,somehaveevenarguedthatU.S.issuersshouldbeforcedtouseauctions(seefor
+
+thevastmajorityofUSIPOshavefollowedthebookbuildingscheme,andbookbuildinghasbecomethedominant
+methodinternationally,aswewillshow.
+Inordertoexplainthisphenomenon,anumberofexplanationshavebeenproposedinthetheacademicliterature.
+Forexample,ShermanandTitman(2002)andSherman(2005)arguethatthegreatercontrolandflexibilityofthebook
+building method and the discretion that comes with it, under certain conditions, provide substantial benefits for the
+issuerswhoareinterestedinchoosingaparticularlevelofunderpricingtoinducethedesiredamountofinformation
+gathering and price discovery by potential investors5. However, given the great variety of IPOs, it seems plausible
+that such conditions would be less than universally prevalent – e.g. one may expect that information production
+considerations would be less important in cases when rewarding price discovery is particularly costly. Thus, the
+low popularity of auctions in the US is somewhat of a puzzle. Unfortunately, the rarity of the US IPO auctions
+makesthispuzzledifficulttoinvestigate. Inaddition,itisuncleariftheUSsituationisaresultofsomeuniquelocal
+circumstances,orisprevalentacrossmarkets.
+In this paper we provide a comparative review of international IPO practices, and the factors that influence the
+choiceoftheIPOmechanismfromthethreemostcommontypesofIPOs. InSection2weofferevidenceonoverall
+usagepatterns–firstlistingthemanycountriesthathavetriedandabandonedtheauctionmethod,andthenexamining
+IPOauctionoutcomesinmoredetail. Wefindthat,whenstandardauctionshavehadtocompetewithanothermethod
+– either with fixed price public offers or with book building – auctions have lost out. Of the 50 countries that we
+examine,morethanhalfhaveusedtheauctionmethodatsomepoint,yetIPOauctionsarestillinuseonlyintheUS,
+whereusagehasbeensporadicandrelativelyrare,andinVietnam,IndiaandIsrael,wherethereare(oruntilrecently
+havebeen)restrictionspreventingtheuseofbookbuilding.
+InSection3wearguethatissuers’preferencesforpricediscoveryarenotsufficienttoexplainthisapparentlack
+ofpopularityofauctions. Wealsopresentempiricalevidencesuggestingthatitisnotexplainedeitherbythelackof
+familiarity among investors, or by differences in underwriting fees. For example, auctions have initially been quite
+popularinmanycountries,andthefeesforfixedpricepublicoffersinmostofthemhavebeenthesameasthosefor
+auctions,leavinginvestmentbankswithnoincentivetofavoronemethodovertheotherbasedonfees.Inspiteofthat,
+whenissuershavebeenallowedtochoosebetweenfixedpricepublicoffersandauctions,theformermethodgenerally
+prevailed.Thefixedpricepublicoffermethodinturnlostmarketsharewhenitfacedcompetitionfrombookbuilding.
+Ourfindingsrefutetheviewthat,butfortheinvestmentbanks’marketpower,standardauctionswouldhavereplaced
+thebookbuildingmethodforbringingnewequityissuestothemarket.
+Our explanation for the popularity of the book building method relies on the observation that each underwriter
+of an IPO has a network of regular investors. Because of the long-term enduring nature of the underwriter-regular
+investorrelationship6, theunderwriterisabletoprovidethenecessaryincentivestoallinvestorsparticipatinginthe
+book building process to truthfully reveal their views regarding what theythink the issue is worth to them and how
+manysharestheyarewillingtobuyatvariouspossibleofferingprices. Thereforebookbuildingcanbethoughtofas
+beingclosertoa“direct”mechanism7thatrequireslittlesophisticationonthepartofparticipants.Incontrast,bidding
+in IPO auctions requires a high degree of sophistication on the part of all the participating investors. In addition to
+valuingthesharesbeingissued,eachbiddermustassesshowmanyotherbidderstherewillbe,howmuchinformation
+theyhave,andwhatbiddingstrategiestheywilluse,whileatthesametimeaccountingforthemistakesthoseother
+biddersmaybepotentiallymaking–andallthatmakesbiddinginanIPOauctionademandingtask8. Muchofthe
+theoretical literature ignores how investors actually make decisions. In particular, they ignore the heterogeneity in
+investors’ levels of sophistication and ability to analyze IPO firms’ prospects, and hence their ability to participate
+invariousmechanisms. Whenthisheterogeneityistakenintoaccount,itbecomesapparentthatstandardsealedbid
+uniform-priceauctionscanberiskyforbothinvestorsaswellasissuingfirms. WediscusstheseissuesinSection4.
+example,”TheValueofTrust,”EconomistStaff,TheEconomist,June07,2002.)TheU.S.SecuritiesandExchangeCommissionaskedforpublic
+commentsonwhetherissuersshouldbeforcedtouseauctions,sincefewhavesofarbeenwillingtousethemvoluntarily.Forcedactionusagehas
+beentriedin,forexample,Japan,Israel,andVietnam.
+5SeealsoBenvenisteandSpindt(1989)andBenvenisteandWilhelm(1990)
+6SeeSherman(2000)foradiscussionofhowlong-termrelationshipswithinvestorshelpstheunderwritertooffertheissueatahigherpriceon
+averagebyfavoringregularuninformedinvestorsinallocations.
+7Notethatouruseoftheterm“direct”isnonstandard
+8Nonequilibriumbidding,anditseffectssuchasapersistentwinner’scurse,hasreceivedhigh-profileattentioninrecentauctionsresearch,e.g.
+EysterandRabin(2005)andCrawfordandIriberri(2007)
+2

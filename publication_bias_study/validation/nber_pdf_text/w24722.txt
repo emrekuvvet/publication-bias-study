@@ -1,0 +1,108 @@
+NBER WORKING PAPER SERIES
+PORTFOLIO REBALANCING IN GENERAL EQUILIBRIUM
+Miles S. Kimball
+Matthew D. Shapiro
+Tyler Shumway
+Jing Zhang
+Working Paper 24722
+http://www.nber.org/papers/w24722
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2018
+We thank seminar participants at Columbia University, the Federal Reserve Bank of Minneapolis,
+Utah State University, the University of Windsor, the University of Southern California, the
+University of California at San Diego, the University of Michigan, the Bank of Japan, and the
+2012 Society for Economic Dynamics meeting for helpful comments. We are grateful for the
+financial support provided by National Institute on Aging grant 2-P01-AG026571. The views
+expressed here are those of the authors and do not necessarily represent those of the Federal
+Reserve Bank of Chicago, the Federal Reserve System, or its Board of Governors. The views
+expressed herein are those of the authors and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2018 by Miles S. Kimball, Matthew D. Shapiro, Tyler Shumway, and Jing Zhang. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+Portfolio Rebalancing in General Equilibrium
+Miles S. Kimball, Matthew D. Shapiro, Tyler Shumway, and Jing Zhang
+NBER Working Paper No. 24722
+June 2018
+JEL No. D53,E44,G11
+ABSTRACT
+This paper develops an overlapping generations model of optimal rebalancing where agents differ
+in age and risk tolerance. Equilibrium rebalancing is driven by a leverage effect that influences
+levered and unlevered agents in opposite directions, an aggregate risk tolerance effect that
+depends on the distribution of wealth, and an intertemporal hedging effect. After a negative
+macroeconomic shock, relatively risk tolerant investors sell risky assets while more risk averse
+investors buy them. Owing to interactions of leverage and changing wealth, however, all agents
+have higher exposure to aggregate risk after a negative macroeconomic shock and lower exposure
+after a positive shock.
+Miles S. Kimball Tyler Shumway
+Department of Economics Ross School of Business
+University of Colorado University of Michigan
+256 UCB 701 Tappan Street
+Boulder, CO 80309 Ann Arbor, MI 48109-1234
+and NBER shumway@umich.edu
+miles.kimball@colorado.edu
+Jing Zhang
+Matthew D. Shapiro Research Department
+Department of Economics Federal Reserve Bank of Chicago
+University of Michigan 230 S LaSalle Street
+611 Tappan St Chicago, IL 60604
+Ann Arbor, MI 48109-1220 Jing.Zhang@chi.frb.org
+and NBER
+shapiro@umich.edu
+
+1 Introduction
+Understanding how different people trade in response to large market movements, or how
+theyrebalancetheirportfolios, iscentralto financeand macroeconomics. Studying rebalanc-
+ing in a meaningful way requires a model that incorporates investor heterogeneity because,
+if all investors are identical, then all will hold the same portfolio and there will be no trade.
+We study optimal rebalancing behavior with a simple general equilibrium overlapping gen-
+erations model that features heterogeneity in both age and risk tolerance. The model is
+focused on asset allocation, with one risky asset in fixed supply and a risk-free asset in zero
+net supply. We find that both general equilibrium and lifecycle considerations have large
+effects on optimal rebalancing and thus should be inherent parts of asset allocation mod-
+els. Optimal rebalancing is fairly complex, with trading driven by leverage, aggregate risk
+tolerance, and intertemporal hedging effects.
+Understanding the effects that drive optimal rebalancing behavior is particularly impor-
+tant for two reasons. First, as more empirical work is done on the rebalancing behavior of
+individuals it is important to have a benchmark for equilibrium behavior in an economy in
+which investors behave optimally. While our model is quite simple, it helps to provide such
+a benchmark. Second, to meet the needs of investorswith different horizons and preferences,
+the mutual fund industry has created a number of products called “lifecycle” or “target-
+date” funds that are designed to serve as the whole portfolio for a large group of investors
+over their lifespans. To the extent that these funds follow simple linear rules of thumb for
+allocating assets across time, their allocations will be both suboptimal and generally infea-
+1
+
+sible if universally adhered to because simple rules ignore general equilibrium constraints.
+Our model helpsto illustratehow “universal target-date” funds can be structured. Universal
+target-date fundsfollowan optimalstrategy overtimeandarefeasibleingeneralequilibrium.
+Empirical work on observed rebalancing is still relativelyrare. Its primary finding is that
+most investors appear to display inertia in their asset allocations.1 To motivate our analysis
+along these lines, we plot nonparametric estimates of stock share as a function of age from
+three waves of the Survey of Consumer Finances around the recent financial crisis. The left
+panel of Figure 1 depicts stock shares in the 2004 and 2007 waves, between which stock
+prices rose about 30 percent. The right panel covers 2007 and 2010, between which prices
+fell about 28 percent. Both plots also give the “passive” share implied by market returns
+and initial shares. Average rebalancing by age is therefore given by the difference between
+the passive curve and the actual curve for the second wave in each plot.2
+Several interesting features are immediately apparent when looking at the plots. First,
+older investors have consistently higher stock shares in these data, which may be due to
+cohort effects such as those described in Malmendier and Nagel (2011). Second, there is
+substantial rebalancing in the data. While many individual investors may display inertia
+in their asset allocations, in aggregate investors do appear to react to market movements.
+Third, most age groups do not simply revert to their initial share. Rather, older investors,
+1Calvet, Campbell and Sodini (2009) use four years of Swedish data to show that households only par-
+tiallyrebalance their portfolios, or they only partially reverse the passive changes in their asset allocations.
+Brunnermeier and Nagel (2008) find similarresults using data from the Panel Study of Income Dynamics.
+2ThecurvesareestimatedwithsimplenonparametricregressionsusingEpanechnikovkernels. Thepassive
+curves are plottedassumingthe stock returns reported inthetext andtotalaveragenon-stockreturns of6%
+between 2004 and 2007 and 4% between 2007and 2010. To be included in the sample each individualmust
+report at least $10,000of financial wealth and some positivestock holding. There are 1389, 1260,and 1313
+observations in 2004, 2007 and 2010, respectively.
+2

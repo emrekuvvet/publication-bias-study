@@ -1,0 +1,127 @@
+NBER WORKING PAPER SERIES
+RECONCILING THE RETURN PREDICTABILITY EVIDENCE
+Martin Lettau
+Stijn Van Nieuwerburgh
+Working Paper 12109
+http://www.nber.org/papers/w12109
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+March 2006
+Lettau: Department of Finance, Stern School of Business, New York University, 44 W. 4th Street, New York,
+NY 10012; mlettau@stern.nyu.edu; Tel: (212) 998-0378; http://www.stern.nyu.edu/(cid:1)mlettau. Van
+Nieuwerburgh: Department of Finance, Stern School of Business, New York University, 44 W. 4th Street,
+New York, NY 10012; svnieuwe@stern.nyu.edu; Tel: (212) 998-0673; http://www.stern.nyu.edu/(cid:1)svnieuwe.
+We thank an anonymous referee, the editor, Yakov Amihud, John Campbell, Kenneth French, Sydney
+Ludvigson, Eli Ofek, Matthew Richardson, Ivo Welch, Robert Whitelaw and the seminar participants at NYU
+and McGill University for comments. The views expressed herein are those of the author(s) and do not
+necessarily reflect the views of the National Bureau of Economic Research.
+©2006 by Martin Lettau and Stijn Van Nieuwerburgh. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit, including ©
+notice, is given to the source.
+
+Reconciling the Return Predictability Evidence
+Martin Lettau and Stijn Van Nieuwerburgh
+NBER Working Paper No. 12109
+March 2006
+JEL No. G1, G12, G11, C53
+ABSTRACT
+Evidence of stock return predictability by financial ratios is still controversial, as documented by
+inconsistent results for in-sample and out-of-sample regressions and by substantial parameter
+instability. This paper shows that these seemingly incompatible results can be reconciled if the
+assumption of a fixed steady-state mean of the economy is relaxed. We find strong empirical
+evidence in support of shifts in the steady-state and propose simple methods to adjust financial ratios
+for such shifts. The forecasting relationship of adjusted price ratios and future returns is statistically
+significant and stable over time. We also show that shifts in the steady-state are responsible for the
+parameter instability and poor out-of-sample performance of unadjusted price ratios that are found
+in the data. Our conclusions hold for a variety of financial ratios and are robust to changes in the
+econometric technique used to estimate shifts in the steady-state.
+Martin Lettau
+Stern School of Business
+Department of Finance
+44. W. 4th St., Suite 9-190
+New York, NY 10012
+and NBER
+mlettau@stern.nyu.edu
+Stijn Van Nieuwerburgh
+Stern School of Business
+Department of Finance
+44. W. 4th St., Suite 9-190
+New York, NY 10012
+svnieuwe@stern.nyu.edu
+
+1 Introduction
+The question of whether stock returns are predictable has received an enormous amount of
+attention. This is not surprising because the existence of return predictability is not only
+of interest to practitioners but also has important implications for financial models of risk
+and return. One branch of the literature asserts that expected returns contain a time-varying
+component that implies predictability of future returns. Due to its persistence, the predictive
+component is stronger over longer horizons than over short horizons. Classic predictive variables
+are financial ratios, such as the dividend-price ratio, the earnings-price ratio, and the book-to-
+market ratio (Rozeff (1984), Fama and French (1988), Campbell and Shiller (1988), Cochrane
+(1991), Goetzman and Jorion (1993), Hodrick (1992), Lewellen (2004), and others), but other
+variables have also been found to be powerful predictors of long-horizon returns (e.g., Lettau
+and Ludvigson (2001), Lustig and Van Nieuwerburgh (2005a), Menzly, Santos, and Veronesi
+(2004), Piazzesi, Schneider, and Tuzel (2004)). Moreover, these studies conclude that growth
+rates of fundamentals, such as dividends or earnings, are much less forecastable than returns,
+suggesting that most of the variation of financial ratios is due to variations in expected returns.
+These conclusions are controversial because the forecasting relationship of financial ratios
+and future stock returns exhibits a number of disconcerting features. First, correct inference is
+problematic because financial ratios are extremely persistent; in fact, standard tests leave the
+possibility of unit roots open. Nelson and Kim (1993), Stambaugh (1999), Ang and Bekaert
+(2001), Ferson, Sarkissian, and Simin (2003), and Valkanov (2003) conclude that the statistical
+evidence of forecastability is weaker once tests are adjusted for high persistence. Second, finan-
+cial ratios have poor out-of-sample forecasting power, as shown in Bossaerts and Hillion (1999)
+and Goyal and Welch (2003, 2004), but see Campbell and Thompson (2005) for a different
+interpretations of the out-of-sample evidence. Third, and related to the poor out-of-sample evi-
+dence, the forecasting relationship of returns and financial ratios exhibits significant instability
+overtime. Forexample, inrolling30-yearregressionsofannuallogCRSPvalue-weightedreturns
+on lagged log dividend-price ratios, the ordinary least squares (OLS) regression coefficient varies
+between zero and 0.5 and the associated R2 ranges from close to zero to 30% depending on
+the subsample. Not surprisingly, the hypothesis of a constant regression coefficient is routinely
+rejected (Viceira (1996), Paye and Timmermann (2003)).
+In addition to concerns that return forecastability might be spurious, the benchmark model
+of time-varying expected returns faces additional challenges. The extreme persistence of price
+ratios implies that expected returns have to be extremely persistent as well. But if shocks to
+expectedreturnshaveahalf-lifeofmanyyearsorevendecades,asimpliedbythehighpersistence
+of financial ratios, they are unlikely to be linked to many plausible economic risk factors, such
+as those linked to business cycles. Instead, researchers have to identify slow-moving factors that
+2
+
+are primary determinants of equity risk. In addition, the extraordinary valuation ratios in the
+late 1990s represent a significant challenge for the benchmark model. Given the historical record
+of returns, fundamentals, and prices, it is exceedingly unlikely that persistent stationary shocks
+to expected returns are capable of explaining price multiples like those seen in 1999 or 2000.
+How can models with time-varying expected returns be reconciled with these serious chal-
+lenges? In this paper, we propose an explanation for the puzzling empirical patterns; namely,
+the possibility that changes in the steady-state mean of financial ratios are caused, for example,
+by changes of the steady-state growth rate of economic fundamentals and/or expected return of
+equity. Why might we expect the steady-state to change over time? Some possibilities include
+permanent technological innovations that change the long-term growth rate of the economy or
+improved risk sharing, changes in stock market participation, changes in the tax code, or lower
+macroeconomic volatility that decrease the long-term expected return of equity.
+Changes in the steady-state have dramatic effects on the relationship of returns and price
+ratios because they cause the mean of the price ratios to change permanently. In particular,
+predictability regressions are affected because price ratio regressors would be non-stationary.
+However, as we show below, deviations of the price ratios from their steady-state values are
+stationary. Thus, the appropriate return forecasting specifications do not include non-stationary
+price ratios themselves but only stationary deviations from steady-states. Our empirical results
+conclude that such “adjusted(cid:1) price ratios have favorable properties compared to unadjusted
+price ratios. For example, in the full sample forecasting relationships of returns with lagged
+adjusted price ratios are much more stable over time than with unadjusted price ratios. In real
+time, however, the changes in the steady-state are not only difficult to detect but also estimated
+with significant uncertainty, making the return forecastability hard to exploit. Out-of-sample
+tests performed in real time reflect this difficulty. While adjusted price ratios have superior out-
+of-sample forecasting power relative to their unadjusted counterparts, they do not outperform
+the simple random walk model.
+These results show that seemingly incompatible views of the forecasting relationship of stock
+returns and price ratios can be reconciled if the assumption of a fixed steady-state of price
+ratios is relaxed. In this sense, the branch of the literature that finds supportive evidence for
+return predictability and the branch that emphasizes the instability and poor out-of-sample
+forecastability are both correct. We find that returns are indeed forecastable, but low-frequency
+shifts in the mean of the price ratios cause the forecasting relationship to be unstable and
+reduce the out-of-sample forecasting power if financial ratios are not adjusted for the presence
+of permanent shifts in its mean.
+Several papers have explored the impact of structural breaks on return predictability. For
+example, Viceira (1996) and Paye and Timmermann (2003) reported evidence in favor of breaks
+3

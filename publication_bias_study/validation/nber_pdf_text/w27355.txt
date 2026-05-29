@@ -1,0 +1,127 @@
+NBER WORKING PAPER SERIES
+CORPORATE BOND LIQUIDITY DURING THE COVID-19 CRISIS
+Mahyar Kargar
+Benjamin Lester
+David Lindsay
+Shuo Liu
+Pierre-Olivier Weill
+Diego Zúñiga
+Working Paper 27355
+http://www.nber.org/papers/w27355
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2020, Revised May 2021
+We thank Darren Aiello, Roc Armenter, Mitchell Berlin, John Cochrane, Nathan Foley-Fisher,
+Itay Goldstein, Valentin Haddad, Ricardo Lagos, Alan Moreira, Borghan Narajabad, Avanidhar
+Subrahmanyam, Stéphane Verani, James Vickery, Jonathan Vogel, Bin Wei, Haoxiang Zhu, two
+anonymous referees, and, seminar participants at the Journal of Finance and the Fama-Miller
+Center virtual conference on the financial consequences of the COVID-19 pandemic, Atlanta
+Fed/GSU virtual conference on financial stability and the coronavirus pandemic, Search and
+Matching in Macro and Finance virtual workshop on liquidity in fixed income markets, Midwest
+Finance Association, University of Illinois, UCLA Anderson, and UCLA economics for
+comments and suggestions. Yiling Pan provided expert research assistance. The views expressed
+here do not necessarily reflect the views of the Federal Reserve Bank of Philadelphia, the Federal
+Reserve System, or the National Bureau of Economic Research. The first version of this paper
+was circulated on April 16th, 2020.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Mahyar Kargar, Benjamin Lester, David Lindsay, Shuo Liu, Pierre-Olivier Weill, and
+Diego Zúñiga. All rights reserved. Short sections of text, not to exceed two paragraphs, may be
+quoted without explicit permission provided that full credit, including © notice, is given to the
+source.
+
+Corporate Bond Liquidity During the COVID-19 Crisis
+Mahyar Kargar, Benjamin Lester, David Lindsay, Shuo Liu, Pierre-Olivier Weill, and Diego
+Zúñiga
+NBER Working Paper No. 27355
+June 2020, Revised May 2021
+JEL No. E5,E58,E65,G0,G01,G12,G21,G23
+ABSTRACT
+We study liquidity conditions in the corporate bond market during the COVID-19 pandemic. We
+document that the cost of trading immediately via risky-principal trades increased dramatically at
+the height of the sell-off, forcing customers to shift towards slower, agency trades. Exploiting
+eligibility requirements, we show that the Federal Reserve’s corporate credit facilities had a
+positive effect on market liquidity. A structural estimation reveals that customers’ willingness to
+pay for immediacy increased by about 200 bps per dollar of transaction, but quickly subsided
+after the Fed announced its interventions. Dealers’ marginal cost also increased substantially, but
+did not fully subside.
+Mahyar Kargar Shuo Liu
+Gies College of Business Department of Economics
+Department of Finance UCLA
+University of Illinois at Urbana-Champaign 8283 Bunche Hall
+435 Wohlers Hall Los Angeles, CA 90095
+1206 S. Sixth Street lsfly0926@ucla.edu
+Champaign, IL 61820
+kargar@illinois.edu Pierre-Olivier Weill
+Department of Economics University
+Benjamin Lester of California, Los Angeles Bunche
+Research Department Hall 8283
+Federal Reserve Bank of Philadelphia Los Angeles, CA 90095
+10 Independence Mall and NBER
+Philadelphia, PA 19106 poweill@econ.ucla.edu
+Benjamin.Lester@phil.frb.org
+Diego Zúñiga
+David Lindsay zung@g.ucla.edu
+Department of Economics
+UCLA
+8283 Bunche
+Los Angeles, CA 90095
+lindsayd@ucla.edu
+
+1 Introduction
+The COVID-19 pandemic induced an unprecedented shock to the global economy. As the im-
+plications of this shock began to crystalize in mid-March, 2020, financial markets plummeted
+and reports of illiquidity began to surface. One particularly important market that was “under
+significantstress”(BernankeandYellen,2020)wasthe$10trillioncorporatebondmarket,whicha
+March18reportfromBankofAmericadeemed“basicallybroken”(Idzelis,2020). Inresponse,the
+FederalReserveintroducedseveralfacilitiesdesignedtobolsterliquidityandreducethecostsand
+risksofintermediatingcorporatedebt,includingthePrimaryDealerCreditFacility(PDCF)andthe
+Primary and Secondary Market Corporate Credit Facilities (PMCCF and SMCCF, respectively).
+The latter two facilities represented a particularly bold intervention, in that they allowed the Fed,
+for the first time, to make outright purchases of investment-grade corporate bonds issued by US
+companies,alongwithexchange-tradedfunds(ETFs)thatinvestedinsimilarassets.
+The purpose of this paper is to study trading conditions in the US corporate bond market
+in response to the large economic shock induced by COVID-19, as well as the unprecedented
+interventionsthatfollowed. Giventheexogenousnatureofthepandemic,setagainstthebackdrop
+ofawell-capitalizedfinancialsector,thisepisodeoffersauniqueopportunitytoidentifythenature
+ofshocksthatprecipitateilliquidityinfinancialmarkets,theconsequencesformarketparticipants,
+andtheefficacyofvariouspolicyresponsesdesignedtorestoreliquidityintimesofdistress.
+A central feature of our analysis is the distinction between two types of transactions offered
+by dealers: “risky-principal” trades, in which a dealer offers a customer-seller immediacy by
+purchasing the asset directly and storing it on his balance sheet until finding a customer-buyer;
+and “agency” trades, in which the customer-seller retains the asset while waiting for a dealer to
+find a customer-buyer to take the other side of the trade. This distinction, which has been studied
+1
+
+recently using pre-pandemic data, is crucial in generating several new insights.1 We highlight
+three.
+First, distinguishing between risky-principal and agency trades provides a more complete as-
+sessmentofmarketliquiditybyaccountingforboththecostoftradingandthetimeittakestotrade.
+Indeed,weshowthatfocusingontransactioncostsalone—ignoringchangesinthecompositionof
+risky-principal and agency trades—understates the deterioration in liquidity after the COVID-19
+shock. Second, studying the cost and quantity of these distinct types of trades in concert with a
+structural model allows us to disentangle two widely cited (but not mutually exclusive) sources of
+illiquidity: a large, unexpected increase in customers’ demand for immediacy, sometimes called a
+“dash for cash”; and a decrease in dealers’ willingness to supply immediacy by absorbing assets
+onto their balance sheets, either because of rising costs or binding regulatory constraints. A key
+finding is that matching the data requires large shocks to both demand and supply at the onset of
+the crisis. Finally, studying the evolution of demand and supply factors against the timeline of
+the Fed’s interventions offers new insights into the efficacy of various policies. In particular, we
+show that the surge in customers’ demand for immediacy receded almost immediately, and fully,
+after the announcement of the Fed’s interventions, whereas the negative shock to dealers’ supply
+ofimmediacyrespondedmoregradually,andonlypartially.
+AfterprovidingsomebackgroundinformationinSection2,webeginouranalysisinSection3
+by documenting trading conditions in the corporate bond market in response to the panic of mid-
+MarchandtheFed’sinterventionsthatfollowed. UsingdatafromtheTradeReportingCompliance
+Engine(TRACE),wefirstconstructtimeseriestomeasurethecostsofrisky-principalandagency
+trades in the corporate bond market. We find that the cost of risky-principal trades increased
+significantly during the COVID-induced panic, reaching a peak of more than 250 basis points
+(bps), while the cost of agency trades increased much more modestly. As the premium paid for
+risky-principal trades increased, we show that customers substituted towards agency trades: the
+1Forrecentworkthatstudiesthedistinctionbetweenrisky-principalandagencytrades,seeSchultz(2017),Bao,
+O’Hara,andZhou(2018),ChoiandHuh(2018),Bessembinder,Jacobsen,Maxwell,andVenkataraman(2018),and
+Goldstein and Hotchkiss (2020). To the best of our knowledge, we are the first (and only) paper to employ this
+distinctiontostudyliquidityconditionsduringtheCOVID-19pandemic.
+2

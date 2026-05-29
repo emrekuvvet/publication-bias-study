@@ -1,0 +1,121 @@
+NBER WORKING PAPER SERIES
+CAUGHT ON TAPE: INSTITUTIONAL ORDER FLOW
+AND STOCK RETURNS
+John Y. Campbell
+Tarun Ramadorai
+Tuomo O. Vuolteenaho
+Working Paper 11439
+http://www.nber.org/papers/w11439
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2005
+We thank Peter Hawthorne, Jakub Jurek, Sung Seo, and especially Allie Schwartz for excellent research
+assistance; Boris Kovtunenko and Nathan Sosner for their assistance with the Spectrum dataset; Pablo Casas-
+Arce, Soren Hvidkjaer, Pete Kyle, David Myatt, Narayan Naik, Venkatesh Panchapagesan, Kevin Sheppard,
+Joshua White, Pradeep Yadav, and seminar participants at conferences for useful discussions. This material
+is based upon work supported by the National Science Foundation under Grant No. 0214061 to Campbell,
+and by Morgan Stanley and Co. under its Microstructure Research Program. John Campbell: Harvard
+University and NBER, email john_campbell@harvard.edu; Tarun Ramadorai: University of Oxford and
+CEPR, email tarun.ramadorai@sbs.ox.ac.uk; Tuomo Vuolteenaho: Arrowstreet Capital, LP, email
+tvuolteenaho@arrowstreetcapital.com. The views expressed herein are those of the author(s) and do not
+necessarily reflect the views of the National Bureau of Economic Research.
+©2005 by John Y. Campbell, Tarun Ramadorai, and Tuomo O. Vuolteenaho. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Caught On Tape: Institutional Order Flow and Stock Returns
+John Y. Campbell, Tarun Ramadorai, Tuomo O. Vuolteenaho
+NBER Working Paper No. 11439
+June 2005
+JEL No. G1
+ABSTRACT
+Many questions about institutional trading can only be answered if one can track high-frequency
+changes in institutional ownership. In the US, however, institutions are only required to report their
+ownership quarterly in 13-F filings. We infer daily institutional trading behavior from the "tape", the
+Transactions and Quotes database of the New York Stock Exchange, using both a naive approach
+and a sophisticated method that best matches quarterly 13-F data. Increases in our measures of
+institutional flows negatively predict returns, particularly when institutions are selling. We interpret
+this as evidence that 13-F institutions compensate more patient investors for the service of providing
+liquidity. We also find that both very large and very small trades signal institutional activity, while
+medium size trades signal activity by the rest of the market.
+John Y. Campbell
+Department of Economics
+Harvard University
+Littauer Center 213
+Cambridge, MA 02138
+and NBER
+john_campbell@harvard.edu
+Tarun Ramadorai
+Saïd Business School
+University of Oxford
+Park End Street
+Oxford OX1 1HP
+United Kingdom
+tarun.ramadorai@sbs.ox.ac.uk
+Tuomo O. Vuolteenaho
+Arrowstreet Capital, LP
+44 Brattle St., 5th floor
+Cambridge, MA 02138
+and NBER
+tvuolteenaho@arrowstreetcapital.com
+
+1. Introduction
+Thispapercombineshigh-frequencyinformationonequitytransactionsofdifferentsizeswith
+quarterly information on institutional equity holdings to infer daily movements in institu-
+tional equity ownership. Using these inferred daily changes in institutional ownership, or
+institutional ßows, we provide new evidence on the short-term covariances between institu-
+tional ßows and stock returns for a broad cross-section of stocks over the period 1995-2000.
+Institutional equity holdings have interested Þnance economists ever since the efficient
+markets hypothesis was Þrst formulated. One straightforward way to test the hypothesis is
+to inspect the portfolio returns of investors that are presumed to be sophisticated, such as
+mutual fund managers, to see if they earn more than a “fair” compensation for risk. Jensen
+(1968)pioneeredthisliterature,Þndinglittleevidencetosupportthepropositionthatmutual
+fund managers earn abnormal returns. Many subsequent studies have examined the returns
+of mutual funds (e.g. Hendricks, Patel, and Zeckhauser (1993) and Carhart (1997)) or the
+returns on the portfolios that they report quarterly (e.g. Daniel, Grinblatt, Titman, and
+Wermers (1997), Wermers (2000)).
+In recent years the literature on institutional holdings has moved in several new direc-
+tions. First, other institutions besides mutual funds have been included in the investigation.
+Lakonishok, Shleifer, and Vishny (1992) examined the behavior of pension funds, Nofsinger
+and Sias (1999) looked at institutional equity owners as deÞned by Standard and Poors, and
+many recent papers have looked at all institutions that are required to make quarterly 13-F
+Þlings to the Securities and Exchange Commission. Second, the literature has examined the
+characteristics of stocks that institutional investors hold and not just their subsequent re-
+turns. Gompers and Metrick (2001) and Bennett, Sias, and Starks (2003), for example, run
+cross-sectionalregressionsofinstitutionalownershipontocharacteristicsofindividualstocks,
+documentinginstitutionalpreferencesforlarge,liquidstocksandchangesinthosepreferences
+over time. Third, there has been increased interest in the changes in institutional positions,
+their ßows rather than their holdings. Quarterly institutional ßows appear to be correlated
+withlaggedquarterlystockreturns (Grinblatt, Titman, and Wermers (1995), Badrinath and
+2
+
+Wahal (2002), Cai and Zheng (2004)), contemporaneous quarterly stock returns (Bennett,
+Sias, and Starks (2003)), and future quarterly stock returns (Wermers (1999) and Chen,
+Jegadeesh, and Wermers (2000) for mutual funds, and Bennett, Sias, and Starks (2003) for
+a broader set of institutions). Nofsinger and Sias (1999) Þnd similar results at the annual
+frequency.
+The literature on institutional ßows is severely handicapped by the low frequency of the
+available data. While some countries, such as Finland (Grinblatt and Keloharju (2000a,b))
+and Korea (Choe, Kho, and Stulz (1999)), do record institutional ownership almost contin-
+uously, in the United States institutional positions are reported only quarterly. This makes
+it hard to say whether institutions are reacting to stock price movements or causing price
+movements, as there is no resolution on the intra-quarter covariances of institutional ßows
+and returns.
+There has been some recent progress on measuring these intra-quarter covariances. Sias,
+Starks, and Titman (2001) point out that monthly return data can be combined with quar-
+terly ownership data to make at least some inferences about monthly lead-lag relations
+between ßows and returns. Boyer and Zheng (2004) apply this methodology to equity own-
+ership data fromthe Flowof Funds accounts. The Sias-Starks-Titman approach ingeniously
+extracts additional information from quarterly data, but can only put bounds on monthly
+leads and lags, and has very little to say about lead-lag relations at higher frequencies than
+monthly.
+A number of other papers have used proprietary datasets to measure high-frequency
+institutionalbehavior. Froot, O’ConnellandSeasholes(2001), FrootandRamadorai(2001),
+and Froot and Teo (2004) employ custodial data from State Street corporation, and Þnd
+evidence of bidirectional positive Granger causality between weekly institutional ßows and
+returns on equity portfolios in a variety of countries. Lee and Radhakrishna (2000) study
+the TORQ data set, a sample of trades with complete identiÞcation of market participants.
+Jones and Lipson (2003) and Kaniel, Saar and Titman (2004) employ Audit Trail data from
+the NYSE. The latter paper focuses on the behaviour of individual investors’ trades, and
+3

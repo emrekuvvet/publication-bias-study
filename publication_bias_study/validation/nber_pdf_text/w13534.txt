@@ -1,0 +1,87 @@
+NBER WORKING PAPER SERIES
+ESTIMATING MARGINAL RETURNS TO HIGHER EDUCATION IN THE UK
+Robert Moffitt
+Working Paper 13534
+http://www.nber.org/papers/w13534
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2007
+The author would like to thank Marc Chan for research assistance and Lorraine Dearden for generous
+help in obtaining and using the data. Comments from Joshua Angrist, James Heckman, Guido Imbens,
+Matthew White, Tiemen Woutersen, and participants at workshops at several universities, research
+institutes, and conferences are appreciated, as well as comments from two anonymous referees, Thierry
+Magnac, and other participants at the "Conference on Econometric Evaluation of Public Policies: Methods
+and Applications," Paris, December, 2005 on an earlier closely related paper. The author also thanks
+Steffen Reinhold for correcting two errors in the Appendix. Research support from the National Institute
+of Child Health and Human Development is gratefully acknowledged. The views expressed herein
+are those of the author(s) and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+© 2007 by Robert Moffitt. All rights reserved. Short sections of text, not to exceed two paragraphs,
+may be quoted without explicit permission provided that full credit, including © notice, is given to
+the source.
+
+Estimating Marginal Returns to Higher Education in the UK
+Robert Moffitt
+NBER Working Paper No. 13534
+October 2007
+JEL No. C21,J24
+ABSTRACT
+A long-standing issue in the literature on education is whether marginal returns to education fall as
+education rises. If the population differs in its rate of return, a closely related question is whether marginal
+returns to higher education fall as a greater fraction of the population enrolls. This paper proposes
+a nonparametric method of estimating marginal treatment effects in heterogeneous populations, and
+applies it to this question, examining returns to higher education in the UK. The results indicate that
+marginal returns to higher education fall as the proportion of the population with higher education
+rises, consistent with the Becker Woytinsky Lecture hypothesis.
+Robert Moffitt
+Department of Economics
+Johns Hopkins University
+3400 North Charles Street
+Baltimore, MD 21218
+and NBER
+moffitt@jhu.edu
+
+The possible existence of individual heterogeneity in the effect of a treatment on
+outcomes in a population has been a focus of much work in the causal effects literature. In
+economics, heterogeneity in the effect of a binary endogenous regressor was introduced in the
+literature on switching regression models by Quandt (1972), Heckman (1978), and Lee (1979),
+while in the statistics literature the causal model of potential outcomes of Rubin (1974) also
+allows full heterogeneity in treatment effects. This heterogeneity was reformulated as a random
+coefficient by Heckman and Robb (1985) and by Björklund and Moffitt (1987). The latter paper
+also introduced the concept of the marginal treatment effect (termed the ‘marginal gain’) in the
+context of a multivariate-normal switching regression model and showed that the model was
+observationally equivalent to the Lee switching regression model. Imbens and Angrist (1994)
+showed that the treatment effect in a heterogeneous population across two points in the
+distribution, termed the Local Average Treatment Effect (LATE), could be nonparametrically
+estimated with instrumental variables (IV) and Angrist et al. (1996) elaborated and clarified this
+method. Heckman and Vytlacil (1999, 2005) have clarified the distinctions between the
+marginal treatment effect (MTE), the LATE, and other treatment effects of interest.
+In this paper, we build upon a remark by Heckman and Vytlacil (2005, p.691) that the
+treatment effects model with heterogeneous effects of a binary treatment implies that outcomes
+are simply a nonlinear function of participation probabilities. A model is set up in this paper
+which demonstrates that point in a slightly reformulated random coefficients model which makes
+minimal identifying assumptions for the identification of the nonlinearity. A simple series
+
+estimation method is proposed to nonparametrically estimate the shape of the outcome-
+participation-probability relationship, and hence marginal returns to treatment, which can be
+implemented with widely-available software packages.
+An empirical illustration is provided for the effect of a binary higher education indicator
+on earnings in the UK using the data from a study by Blundell et al. (2005). The literature on the
+effect of education on earnings has seen the largest number of discussions of heterogeneity in the
+return, a concept discussed in the Woytinsky Lecture of Becker (1975) and in Mincer (1974).
+Surveys of the empirical literature by Card (1999, 2001) have emphasized the impact of possible
+heterogeneity in the return on the interpretation of the estimates in that literature (see also Lang
+(1993)). The large majority of these estimates use only a binary instrument and hence only one
+piece of the marginal return function can be nonparametrically identified, whereas in this paper a
+wider portion of the return function is estimated because multiple, multi-valued instruments are
+used. Carneiro et al. (2003) and Aakvik et al. (2005) also obtained a wider range of estimates of
+the return function but partly because of parametric assumptions; however, Carneiro et al. (2006)
+used a wide range of instruments to nonparametrically estimate the full range of returns to
+education, similar to the exercise here. Oreopoulos (2006) examined heterogeneity in returns to
+education by comparing LATE estimates based on compulsory schooling laws between two
+countries which have different fractions of the population affected by the laws, which implicitly
+uses a three-valued instrument rather than a binary one.
+The next section lays out the model and estimation method, and the subsequent section
+provides the illustration. A summary appears at the end.
+2

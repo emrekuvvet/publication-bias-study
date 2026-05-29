@@ -1,0 +1,115 @@
+NBER WORKING PAPER SERIES
+MEASURING THE COST OF REGULATION:
+A TEXT-BASED APPROACH
+Charles W. Calomiris
+Harry Mamaysky
+Ruoke Yang
+Working Paper 26856
+http://www.nber.org/papers/w26856
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+March 2020
+We are grateful to the Data Science Institute at Columbia University for financial support, and S&P
+Global Market Intelligence for providing us with the data for this study. We thank Glenn Blomquist
+(discussant), and seminar participants at the American Enterprise Institute, Imperial College, Colorado
+State, Utah State, University of Texas, and the 2020 Southern Economic Association Conference for
+their comments. We thank Roya Arab Loodaricheh and Hongyu Wu for excellent research assistance.
+The views expressed here are the authors’ and do not necessarily reflect the views of the Securities
+and Exchange Commission. This paper was initially released prior to Ruoke Yang joining the Commission.
+The Securities and Exchange Commission disclaims responsibility for any private publication or statement
+of any SEC employee or Commissioner. This article expresses the authors’ views and does not necessarily
+reflect those of the Commission, the Commissioners, members of the staff, or the National Bureau
+of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2020 by Charles W. Calomiris, Harry Mamaysky, and Ruoke Yang. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Measuring the Cost of Regulation: A Text-Based Approach
+Charles W. Calomiris, Harry Mamaysky, and Ruoke Yang
+NBER Working Paper No. 26856
+March 2020, Revised July 2022
+JEL No. G18,G38,K2,L51
+ABSTRACT
+We derive a measure of firm-level regulatory exposure from the text of corporate earnings calls.
+We use this measure to study the effect of regulation on companies’ growth, leverage,
+profitability, and equity returns. Higher regulatory exposure results in slower sales and asset
+growth, lower leverage, reduced profitability, but higher post-call equity returns. These effects
+are mitigated for larger firms. Our findings suggest that both compliance risk and physical
+operational cost are consequences of increased regulation, but the magnitude of the effects of
+compliance risk are larger. The topical context of regulation is important for future firm-level
+outcomes.
+Charles W. Calomiris Ruoke Yang
+Columbia Business School Imperial College Business School
+Kravis 1101 5.09A, 53 Prince's Gate
+665 W 130th St. South Kensington Campus
+New York, NY 10027 United Kingdom
+and NBER ruoke.yang@imperial.ac.uk
+cc374@columbia.edu
+Harry Mamaysky
+Columbia Business School
+Kravis 1153
+665 W 130th St.
+New York, NY 10027
+hm2646@columbia.edu
+Data page is available at http://www.measuringregulation.com
+An internet appendix is available at http://www.nber.org/data-appendix/w26856
+
+I. INTRODUCTION
+Regulation is often justified by the gains to the public that come from outcomes such as
+cleaner water and air, safer travel, less dangerous products, and more honest advertising. The
+costs of regulation are borne by the firms that must comply with them. Costs can be roughly
+categorized into two sets: physical operational costs and compliance risks. In the former
+category are the direct costs related to regulation’s mandated changes (relative to what firms
+would otherwise do) in production, distribution, or sales practices. In the latter category are the
+indirect costs of bearing the uncertainties related to the way regulation is created and enforced.
+For example, since the 1970s, a broad trend in regulation has been for regulators to increasingly
+rely on “guidance” rather than formal rulemaking in setting regulatory standards (DeMuth 2016,
+Epstein 2016, Calomiris 2018), which observers believe has increased regulatory compliance
+risk. Guidance is attractive to regulators because the absence of formal rules gives them greater
+flexibility in implementing regulation, but of course, that same flexibility implies greater
+uncertainties for firms about how regulation will evolve and precisely what they will be held
+accountable for doing or not doing. Such uncertainty may in turn prevent firms from undertaking
+attractive investments due to the fear of an unforeseen regulatory response. We believe that our
+focus on understanding the impact of regulations as operating through one of these two channels
+–operational costs versus compliance risk – is novel to the literature.
+Although many observers often express the belief that regulation is costly to firms both
+through its operational burdens and its compliance risks, research has not made much progress in
+measuring these costs, or even demonstrating that, in general, regulations are costly to firms.1
+1 Regulation sometimes serves special interests, and in particular, regulated firms, so it is not obvious that
+discussions of regulation are indicative of costs to firms rather than benefits. For example, Benmelech and
+Moskowtiz (2010) show that usury laws benefitted incumbent, low-risk firms by making it harder for entrants to
+compete with them. See also Peltzman (1965, 1976), Stigler (1971) and Kroszner and Strahan (1999) on the private
+1
+
+For example, the Trump Administration claims that deregulation has been an important
+contributor to the acceleration of growth in the years since Trump’s 2016 election, but there is no
+hard evidence to quantify whether that is true, or if so, how much of that growth should be
+attributed to deregulation. Furthermore, it is unclear whether whatever gains have come from
+less regulation are a consequence of lower operational costs or of reduced compliance risks. The
+distinction is important because, to the extent compliance risk is costly, important implications
+for regulatory reform may follow – for example, the need to restore the importance of formal
+rulemaking in the regulatory process.
+Our goal in this paper is twofold. First, we address the regulation measurement issue by
+proposing a novel text-based measure derived from corporate earnings calls. We discuss this
+momentarily. Second, we investigate the channels via which regulatory exposure impacts
+corporate performance. Towards this end, we develop two hypotheses that serve to distinguish
+the empirical implications of regulatory exposure depending on whether it reflects increased
+compliance risk or increased physical operational costs. Both kinds of regulatory exposure
+discourage growth, but they have different implications for other variables. Hypothesis 1 states
+that increased compliance risk should be reflected not only in lower growth but also in higher
+future expected stock returns and lower leverage (defined as the ratio of debt to the market value
+of assets). Ceteris paribus, higher risk causes firms: to reduce investment, resulting in lower
+growth; to reduce leverage as the likelihood of distress makes the tax advantage of debt less
+attractive; and to compensate equity investors more for bearing more risk. Hypothesis 2 states
+interests served by regulation. It is also important to recognize in some contexts that the regulation of one firm may
+benefit a firm in a different industry. For example, as we discuss further below with respect to utilities regulation,
+firms that use energy may benefit from greater regulation of utilities. Furthermore, regulation can be beneficial to
+both society and regulated firms, for example, if it positively affects the demand for their products by creating a
+more credible commitment to greater product quality. In general, however, to the extent that regulation constrains
+firms’ actions rather than improves interfirm coordination, Le Chatelier’s principle should hold: adding a constraint
+to the firm should be a source of cost. Our results confirm that, as a rule, regulatory exposure is costly to firms.
+2

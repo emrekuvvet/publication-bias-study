@@ -1,0 +1,132 @@
+NBER WORKING PAPER SERIES
+LEVERAGE-INDUCED FIRE SALES AND STOCK MARKET CRASHES
+Jiangze Bian
+Zhiguo He
+Kelly Shue
+Hao Zhou
+Working Paper 25040
+http://www.nber.org/papers/w25040
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2018
+We are grateful to Li An, Markus Brunnermeier, Hui Chen, Will Cong, Zhi Da, Itamar Drechsler,
+Darrell Duffie, Larry Harris, John Heaton, Dong Lou, Guangchuan Li, Roger Loh, Gordon
+Phillips, Dimitris Papanikolaou, Nick Roussanov, Sheridan Titman, Heather Tookes, and Pietro
+Veronesi, Liyan Yang for helpful discussions and insightful comments. Xiao Zhang, and
+especially Yiran Fan, provided excellent research assistance. We are grateful to seminar
+participants at AQR, BFI Macro Financial Modeling Conference, China Financial Research
+Conference, China International Conference in Finance, University of Chicago, Imperial
+College London, LBS Academic Symposium, NBER Asset Pricing 2018 Chicago Meeting, NY
+Federal Reserve, 2018 Rising Stars Conference at Fordham, Rotterdam, SITE 2018 Financial
+Regulation, Tilburg, University of Minnesota, Wharton, and Yale SOM. Zhiguo He
+acknowledges financial support from the Center for Research in Security Price at the University
+of Chicago Booth School of Business. The views expressed herein are those of the authors and do
+not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2018 by Jiangze Bian, Zhiguo He, Kelly Shue, and Hao Zhou. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Leverage-Induced Fire Sales and Stock Market Crashes
+Jiangze Bian, Zhiguo He, Kelly Shue, and Hao Zhou
+NBER Working Paper No. 25040
+September 2018
+JEL No. G01,G11,G18,G23
+ABSTRACT
+We provide direct evidence of leverage-induced fire sales contributing to a market crash using
+account-level trading data for brokerage- and shadow-financed margin accounts during the
+Chinese stock market crash of 2015. Margin investors heavily sell their holdings when their
+account-level leverage edges toward their maximum leverage limits, controlling for stock-date
+and account fixed effects. Stocks that are disproportionately held by accounts close to leverage
+limits experience high selling pressure and abnormal price declines which subsequently reverse.
+Unregulated shadow-financed margin accounts, facilitated by FinTech lending platforms,
+contributed more to the crash despite their smaller asset holdings relative to regulated brokerage
+accounts.
+Jiangze Bian Kelly Shue
+University of International Business Yale School of Management
+and Economics 165 Whitney Avenue
+Beijing P.O. Box 208200
+China New Haven, CT 06520-8200
+jiangzebian@uibe.edu.cn and NBER
+kelly.shue@yale.edu
+Zhiguo He
+University of Chicago Booth Hao Zhou
+School of Business 5807 S. PBC School of Finance
+Woodlawn Avenue Chicago, Tsinghua University
+IL 60637 43 Chengfu Road, Haidian District
+and NBER Beijing, 100083, P. R. China
+zhiguo.he@chicagobooth.edu zhouh@pbcsf.tsinghua.edu.cn
+
+1 Introduction
+Excessive leverage and the subsequent leverage-induced (cid:28)re sales are considered to be major contri-
+buting factors to many past (cid:28)nancial crises. A prominent example is the US stock market crash of
+1929. At the time, leverage for stock market margin trading was unregulated. Margin credit, i.e.,
+debt that individual investors borrow to purchase stocks, rose from around 12% of NYSE market
+value in 1917 to around 20% in 1929 (Schwert, 1989). In October 1929, investors began facing mar-
+gin calls. As investors quickly sold assets to deleverage their positions, the Dow Jones Industrial
+Averageexperiencedarecordlossof13%inasingleday, laterknownas(cid:16)BlackMonday(cid:17) onOctober
+28, 1929.1 Other signi(cid:28)cant examples of deleveraging and market crashes include the US housing
+crisis which led to the 2007/08 global (cid:28)nancial crisis (see e.g., Mian et al. (2013)) and the Chinese
+stock market crash in the summer of 2015. The latter market crash will be the focus of this paper.
+As the worst economic disaster since the Great Depression, the 2007/08 global (cid:28)nancial crisis
+greatly revived the interest of academics and policy makers in understanding and measuring the
+costs and bene(cid:28)ts of (cid:28)nancial leverage. In terms of academic research, the theory has arguably
+advanced ahead of the empirics. For instance, in a general equilibrium framework, Brunnermeier
+and Pedersen (2009) and Geanakoplos (2010) carefully model a (cid:16)downward leverage spiral(cid:17) in which
+tightened leverage constraints trigger (cid:28)re sales, which then depress asset prices, leading to even
+tighterleverageconstraints. Thisgeneralequilibriumtheoryfeaturesadevastatingpositivefeedback
+loop that is able to match various pieces of anecdotal evidence, and is widely considered to be one
+of the leading mechanisms behind the meltdown of the (cid:28)nancial system during the 2007/08 crisis.
+Despite its widespread acceptance, there is little direct empirical evidence of leverage-induced (cid:28)re
+sales contributing to stock market crashes. Empirical tests of the theory are challenging because
+of the limited availability of detailed account-level data on leverage and trading activities. This
+paper contributes to the literature on leverage and (cid:28)nancial crashes by providing direct evidence of
+leverage-induced (cid:28)re sales.
+Weuseuniqueaccount-leveldatainChinathattrackhundredsofthousandsofmargininvestors’
+borrowing and trading activities. The Chinese stock market has become increasingly important in
+the global economy; for an informative reading, see Carpenter and Whitelaw (2017). With market
+value equal to approximately one-third that of the US market, it is now the second largest stock
+market in the world. Our data covers the Chinese stock market crash of 2015, an extraordinary
+1For a detailed description of the 1929 stock market crash, see Galbraith (2009).
+1
+
+period that is ideal for examining the asset pricing implications of leverage-induced (cid:28)re sales. The
+Chinese stock market experienced a dramatic run-up in the (cid:28)rst half of 2015, followed by an unpre-
+cedented crash in the middle of 2015 which wiped out about 30% of the market’s value by the end
+of July 2015.
+Individual retail investors are the dominant players in the Chinese stock market and were the
+main users of leveraged margin trading systems.2 Our data covers two types of margin accounts,
+brokerage-(cid:28)nanced and shadow-(cid:28)nanced margin accounts, for the three-month span of May to July,
+2015. Bothmargintradingsystemsgrewrapidlyinpopularityinearly2015. Thebrokerage-(cid:28)nanced
+margin system, which allows retail investors to obtain credit from their brokerage (cid:28)rm, is tightly
+regulated by the China Securities Regulatory Commission (CSRC). For instance, investors must be
+su(cid:30)ciently wealthy and experienced to qualify for brokerage (cid:28)nancing. Further, the CSRC imposes
+a market-wide maximum level of leverage(cid:21)the Pingcang Line(cid:21)beyond which the account is taken
+over by the lending broker, triggering forced asset sales.3
+Incontrast, theshadow-(cid:28)nancedmarginsystem, aidedbytheburgeoningFinTechindustry, falls
+inaregulatorygrayarea. Shadow-(cid:28)nancingwasnotinitiallyregulatedbytheCSRC,andlendersdo
+not require borrowers to have a minimum level of wealth or trading history to qualify for borrowing.
+There is no regulated Pingcang Line for shadow-(cid:28)nanced margin trades. Instead, the maximum
+leverage limits are individually negotiated between borrowers and shadow lenders. Not surprisingly,
+shadow accounts have signi(cid:28)cantly higher leverage than their brokerage counterparts.4
+On June 12, 2015, the CSRC released a set of draft rules that would tighten regulations on
+shadow-(cid:28)nanced margin trading in the future; a month-long stock market crash started on the next
+trading day, wiping out almost 40% of the market index. The shadow-(cid:28)nanced margin accounts
+data is particularly interesting for our study of the market crash, because it is widely believed that
+excessive leverage taken by unregulated shadow-(cid:28)nanced margin accounts and the subsequent (cid:28)re
+sales induced by the deleveraging process were the main driving forces behind the collapse of the
+Chinese stock market in the summer of 2015.5 From this perspective, one of our main contributions
+2Trading volume from retail traders covers 85% of the total volume, according to Shanghai Stock Exchange
+Annual Statistics 2015, http://www.sse.com.cn/aboutus/publication/yearly/documents/c/tjnj_2015.pdf. It is well
+known that retail traders play signi(cid:28)cant roles even in more developed (cid:28)nancial markets; see, e.g., Foucault et al.
+(2011).
+3The maximum leverage or Pingcang Line corresponds to the reciprocal of the maintenance margin in the US.
+(cid:16)Pingcang(cid:17) in Chinese means (cid:16)forced settlement(cid:17) by creditors.
+4This is con(cid:28)rmed in our sample. The equal-weighted average leverage (measured as assets/equity) is 6.6 for
+shadow accounts and only 1.4 for brokerage accounts.
+5Commonbeliefsregardingthecausesofthecrasharediscussed,forexample,inaFinancialTimesarticle,availa-
+ble at https://www.ft.com/content/6eadedf6-254d-11e5-bd83-71cb60e8f08c?mhq5j=e4. Another relevant reading in
+2

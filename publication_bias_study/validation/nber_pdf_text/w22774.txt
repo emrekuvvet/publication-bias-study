@@ -1,0 +1,134 @@
+NBER WORKING PAPER SERIES
+SECURITIES LENDING AS WHOLESALE FUNDING:
+EVIDENCE FROM THE U.S. LIFE INSURANCE INDUSTRY
+Nathan Foley-Fisher
+Borghan Narajabad
+Stephane Verani
+Working Paper 22774
+http://www.nber.org/papers/w22774
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2016
+All authors are in the Division of Research and Statistics of the Board of Governors of the
+Federal Reserve System. For providing valuable comments, we would like to thank, without
+implication, Tobias Adrian; Jack Bao; Celso Brunetti; Jon Danielsson; Stefan Gissler; Michael
+Gordy; Diana Hancock; Yesol Huh; Sebastian Infante; Victoria Ivashina; Anastasia Kartasheva;
+Frank Keane; Beth Kiser; Florian Nagler; Michael Palumbo; Pedro Saffi; Larry Schmidt; Enrique
+Schroth; Andreas Uthemann; and participants in the NBER 2016 Conference on Long-Term
+Asset Management, the Society for Economic Measurement 2016 Annual Meeting, the European
+Finance Association 2016 Annual Meeting, the European Economic Association 2016 Annual
+Meeting, as well as seminars at the Federal Reserve Banks of Cleveland and Philadelphia, LSE
+Systemic Risk Centre, Bank for International Settlements, Swiss National Bank, Graduate
+Institute Geneva, UC Santa Barbara and Federal Reserve Board. We are grateful to Della
+Cummings and Melissa O’Brien for exceptional research assistance. The views in this paper are
+solely the authors’ and should not be interpreted as reflecting the views of the Board of
+Governors of the Federal Reserve System, any other person associated with the Federal Reserve
+System, or the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2016 by Nathan Foley-Fisher, Borghan Narajabad, and Stephane Verani. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Securities Lending as Wholesale Funding: Evidence from the U.S. Life Insurance Industry
+Nathan Foley-Fisher, Borghan Narajabad, and Stephane Verani
+NBER Working Paper No. 22774
+October 2016
+JEL No. G11,G22,G23
+ABSTRACT
+The existing literature assumes that securities lenders primarily respond to demand from
+securities borrowers and reinvest their cash collateral in short-term markets. We offer compelling
+evidence for a supply channel, using new data matching U.S. life insurers' individual bond
+lending and reinvestment decisions to the universe of securities lending transactions. We show
+that an insurer's decision to lend a bond is positively correlated with liquidity transformation in its
+lending program, even after controlling for demand for that bond. We discuss how using
+securities lending cash collateral as a source of wholesale funding might impair securities markets
+in times of stress.
+Nathan Foley-Fisher Stephane Verani
+Federal Reserve Board Federal Reserve Board
+20th Street and Constitution Avenue 20th Street and Constitution Avenue
+NW Washington, DC 20551 NW Washington, DC 20551
+nathan.c.foley-fisher@frb.gov stephane.h.verani@frb.gov
+Borghan Narajabad
+Federal Reserve Board
+20th Street and Constitution Avenue
+NW Washington, DC 20551
+borghan.narajabad@frb.gov
+
+Introduction
+Securities lending is widely understood to play an important role in the functioning of securities
+markets. By agreeing to purchase an asset and return it at a later date, securities borrowers—
+typically dealers acting for themselves or on behalf of clients such as hedge funds—temporarily
+gain economic ownership of the asset in exchange for collateral, which is usually cash in the
+U.S. In addition to managing inventory, financial institutions borrow securities to facilitate
+short positions, to avoid delivery fails and to use the borrowed security as collateral in other
+transactions. In the absence of securities lending, a large volume of securities would be tied up
+in institutions that hold big asset portfolios—pension funds, mutual funds, and life insurance
+companies—for asset-liability management or regulatory reasons.
+In this paper, we study the securities lending market from the lenders’ perspective. To
+understand the decision processes that we analyze, it is helpful to consider the stylized map of
+shadow banking depicted in Figure 1. The cloud represents the general functioning of securities
+markets, illustrated with the example of hedge funds taking long and short positions. Securities
+market participants typically borrow both cash funding and securities using broker-dealers as
+intermediaries. Broker-dealers obtain cash from several sources, for example, money market
+mutual funds (MMFs) through short-term funding markets. Securities lenders decide whether
+to lend assets from their portfolio and whether to invest the cash collateral they receive back
+into short-term markets or into long-term markets.1 In the latter case, they may invest, for
+example, in relatively longer-term corporate bonds or asset-backed securities.
+The existing literature implicitly or explicitly assumes that securities lending is primarily
+driven by demand from borrowers and that lenders reinvest their cash collateral through short-
+termmarkets.2 SomeexamplesincludeDuffie,Gârleanu&Pedersen(2002),whostudytheeffect
+of search and bargaining in the securities lending market on pricing in the securities market,
+abstracting from the reinvestment decisions of securities lenders (Figure 2a). Brunnermeier &
+Pedersen (2009) and Gorton & Metrick (2012) consider securities market transactions funded
+throughmarginaccountsandbilateralrepurchaseagreements(repo),abstractingfromthesource
+of securities (Figure 2b). And Krishnamurthy, Nagel & Orlov (2014) focus on the cash provided
+to broker-dealers from MMFs and securities lenders through short-term funding markets, taking
+as given the lending and reinvestment decisions of securities lenders (Figure 2c).3
+1 Althoughagentlendersareofteninvolvedinthesecuritieslendingprocess,aswedescribeinSection1,their
+role is incidental to our analysis.
+2 Lenders may reinvest in short-term markets directly through tri-party repo or indirectly through MMFs.
+3 Inaddition,thesecuritieslendingmarkethasbeenstudiedempiricallytobetterunderstandtheconnections
+between the securities lending market and pricing in the securities market (including, for example, D’avolio
+(2002),Nashikkar&Pedersen(2007),Saffi&Sigurdsson(2011),Asquith,Au,Covert&Pathak(2013),Kaplan,
+Moskowitz&Sensoy(2013),andKolasinski,Reed&Ringgenberg(2013)),andhasbeenexploitedtostudyequity
+2
+
+We offer compelling evidence for an alternative, supply-driven, motive for securities lending.
+Thissupplychannelarisesbecausetheshort-termcashcollateralavailableinexchangeforlending
+securities represents a potential source of wholesale funding for lenders. By lending securities at
+relatively short duration to create and maintain a pool of cash collateral, lenders can finance a
+portfolio of longer-duration, higher-yielding assets. The liquidity and maturity transformations
+associated with this strategy allow lenders to increase the return on their asset portfolio. To
+be sure, our empirical analysis does not attempt to test the demand channel against the supply
+channel to establish the dominant motive for securities lending. Rather, our analysis seeks
+to provide the first empirical evidence for a supply channel that shapes the decision to lend
+securities conditional on the demand channel already established by the literature.
+To establish a supply channel in the market for securities lending, we analyze a new dataset
+that combines data on U.S. life insurers lending programs with the market for securities lending.
+Specifically, we match every U.S. life insurer’s bond portfolio, as well as their lending and
+reinvestment decisions, to the universe of securities lending transactions. We collect new annual
+regulatory data made available from 2011, which specify the bonds in an insurer’s portfolio
+that are on loan at the time of filing as well as the composition of the insurer’s cash collateral
+reinvestment portfolio. We combine this information with microdata on loan transactions from
+the most comprehensive source on the securities lending market, including the amount of each
+bond borrowed and the terms of the loans. By matching these data at the security level, we
+can assess how life insurers’ decisions to lend individual bonds are related to lending market
+conditions. To our knowledge, our study is the first to focus on the securities lending market for
+bonds, where life insurers play a major role.
+We use these data to investigate the relationship between the decision to lend securities and
+the degree of liquidity transformation in the cash collateral reinvestment portfolio. The main
+empirical challenge is to obtain variation in the decision to lend securities that is independent
+of demand factors. First, the demand for securities may vary with observable and unobservable
+time- and security-specific characteristics. Second, including equilibrium market variables as a
+controlfordemandmaynotbeappropriate. Theconcernisthat,whenspecifyingthefactorsthat
+determine the lending decision, omitting any variable that jointly determines the equilibrium
+market variables will likely invalidate all the coefficient estimates. We demonstrate the severity
+of the empirical challenge by showing that the cost of borrowing a bond is a function of the
+distribution of holdings in that bond. Intuitively, this new finding suggests that lenders of hard-
+to-find bonds can get a better deal on their transaction—as in Duffie (1996)—and the terms of
+votingpreferences(Aggarwal,Saffi&Sturgess(2015)). Thesestudiesdonotconsiderhowsecuritieslendersmay
+reinvest the cash collateral they receive from lending their securities.
+3

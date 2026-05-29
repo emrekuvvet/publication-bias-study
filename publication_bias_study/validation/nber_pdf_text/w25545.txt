@@ -1,0 +1,118 @@
+NBER WORKING PAPER SERIES
+THE HIDDEN COSTS OF SECURING INNOVATION:
+THE MANIFOLD IMPACTS OF COMPULSORY INVENTION SECRECY
+Daniel P. Gross
+Working Paper 25545
+http://www.nber.org/papers/w25545
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+February 2019, Revised April 2022
+I thank Ashish Arora, Pierre Azoulay, Wes Cohen, Alberto Galasso, Shane Greenstein, Deepak
+Hegde, Je Kuhn, Hong Luo, Fabian Waldinger, Martin Watzinger, numerous seminar and
+conference audiences, three very thoughtful referees, the Associate Editor, and Editor Toby Stuart
+for helpful comments. I am grateful to Alessandro Iaria, Carlo Schwarz, and Fabian Waldinger
+for sharing code and to Je Kuhn for discussing the mechanics of semantic analysis. I also thank
+Hayley Pallan, Greg Saldutte, and Senan Hogan-Hennessy for outstanding research assistance,
+and Harvard Business School and the NBER Innovation Policy grant (2016) for nancial support.
+The views expressed herein are those of the author and do not necessarily reflect the views of the
+National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2019 by Daniel P. Gross. All rights reserved. Short sections of text, not to exceed two
+paragraphs, may be quoted without explicit permission provided that full credit, including ©
+notice, is given to the source.
+
+The Hidden Costs of Securing Innovation: The Manifold Impacts of Compulsory Invention
+Secrecy
+Daniel P. Gross
+NBER Working Paper No. 25545
+February 2019, Revised April 2022
+JEL No. N42,N72,O31,O32,O34,O38
+ABSTRACT
+One of the U.S. Patent and Trademark Office’s (USPTO) most commanding powers is to compel
+inventions into secrecy, withholding patent rights and prohibiting disclosure, to prevent
+technology from leaking to foreign competitors. This paper studies the impacts of compulsory
+secrecy on firm invention and the wider innovation system. In World War II, USPTO issued
+secrecy orders to >11,000 patent applications, which it rescinded en masse at the end of the war.
+Compulsory secrecy caused implicated firms to shift their patenting away from treated classes,
+with effects persisting through at least 1960. It also restricted commercialization and impeded
+follow-on innovation. Yet it appears it was effective at keeping sensitive technology out of public
+view. The results provide insight into the effectiveness of compulsory secrecy as a regulatory
+strategy and into the roles, and impacts, of formal intellectual property in the innovation system.
+Daniel P. Gross
+Fuqua School of Business
+Duke University
+100 Fuqua Drive
+Durham, NC 27708
+and NBER
+daniel.gross@duke.edu
+
+Compulsory secrecy is one of the most imposing discretionary powers the U.S. Patent and Trade-
+mark Office (USPTO) and other patent offices have today. Since World War II, USPTO has had
+the legal authority to order firms and inventors to keep secret inventions in, and suspend examina-
+tion of, patent applications whose disclosure it deems may pose risks to national security—not only
+withholding intellectual property (IP) rights, but effectively impounding new invention. The pur-
+pose of the policy is to protect domestic invention from (mis)appropriation by foreign competitors.
+Compulsory secrecy is ordinarily invoked with careful discretion, but in a crisis the prospects for
+its use grow, and increasing pressures of foreign technological competition have prompted recent
+considerations of expanding its use to protect economic security.
+Little is known about how compulsory secrecy affects innovation. Broad invocation is not unprece-
+dented: in World War II, USPTO ordered over 11,000 patent applications into secrecy, covering
+inventions as diverse as radar, cryptography, and synthetic materials. The vast majority of these
+secrecyorderswererescindedwhenthewarended. Thescopeandscaleofthepolicy, anditsabrupt
+conclusion, present a rare opportunity to study the effects of compulsory secrecy on innovation and
+diffusion. Doing so can also offer insight on the value of patents and the ways in which holding up
+formal IP can interfere with ordinary inventive and commercial activity.
+In this paper, I study how this program affected individual firms and the wider innovation system.
+I show that firms which received secrecy orders at high rates during the war shifted their patenting
+away from technology areas in which they were affected, and some temporarily stopped patenting
+altogether. This was particularly true for firms which were not involved in the wartime research
+effort. The patents of these firms which were secret for long periods were also less likely to be cited
+by future patents, and a deeper dive suggests this is the result of a missing generation of follow-on
+invention. Evidence from a case study of one firm (Du Pont) suggests that secret inventions were
+temporarily precluded from being commercialized. Collectively, these results point to a number of
+potential costs of compulsory secrecy, distorting the direction of invention and undermining firm
+investments in innovation. Yet the policy appears to have worked as intended: new terms in titles
+of secret patents saw limited mention in patent text and the wider literature until after the war
+ended, such that these repercussions should be evaluated against the seeming effectiveness of the
+policy in keeping sensitive technological content out of public view.
+Tounderstandtheseresults,itisusefultotakeastepbackandconsidertherolespatentsplayinthe
+innovationecosystem,andhowcompulsorysecrecymightinterferewithitsregularfunctioning. The
+patent system is designed to provide incentives for innovation by granting a temporary monopoly
+1
+
+on invention, which is predicated on patents granting, in exchange for disclosure. Exclusivity with
+commercialopportunityallowfirmstoearnreturnsontheirresearchinvestment. Informationabout
+new invention, conveyed in patent publications or otherwise, can clarify competitive positions and
+delineate property rights, helps inventors build on prior art, and enables others to produce and sell
+the invention when IP rights expire. Compulsory secrecy in the United States directly defies these
+goals by holding up patent rights and forbidding disclosure.
+The results of this paper illustrate what can happen when these functions are suppressed. Firms
+caught in the crossfire might lose access to inventive inputs and opportunities to profit from their
+investment, and reduce or reallocate research and development (R&D) investments accordingly.
+Restrictionsondisclosureaffectfollow-oninnovation,whichcaninturnlimitcompetition(asecond,
+indirect channel through which incentives for innovation might be suppressed). Though World War
+II was an extraordinary time, unlike in Europe the domestic U.S. economy was still functioning.
+The evidence is thus suggestive of the impacts a similar intervention may have in other crises or
+even in regular times. It is not hard to imagine, for example, secrecy orders being used to protect
+COVID-19 vaccine development, as they once were in wartime.
+The evidence points to the private value of the rights to, and commercial opportunities for, inven-
+tionswhichsecrecyordersessentiallyimpounded. Withoutexclusivity, letalonecommercialization,
+the returns to R&D are often eradicated. In comparison to compulsory licensing, compulsory se-
+crecy can be even more costly to firms, as it can foreclose the possibility of market entry for as
+long as restrictions are in place—leaving firms in the interim with only internal applications as
+opportunities to profit from their invention. Firms might even choose to avoid applying for patent
+protection to preclude the risk of being compelled into secrecy. That said, the incidence is unlikely
+to be uniform. Incumbent firms and firms that already rely on secrecy may stand to benefit from
+compulsory secrecy if it protects them from competing innovation or harms rivals. Consistent with
+this possibility, I show that large firms were relatively less affected.
+This paper also speaks to the role of information in the functioning of the wider innovation system.
+Agrowingliteratureexplorestheroleofpatentsinthisdomain, includingthroughincreasingaccess
+to patent documents (Furman et al. 2021) and policy changes which accelerated patent publication
+(Hegde et al. 2019), and even uses modern invention secrecy to argue for patent disclosure (de
+Rassenfosse et al. 2020). Although these papers detect positive effects on local patenting, patent
+citations, and licensing, these results are in tension with skepticism from legal scholars (e.g., Roin
+2005,Fromer2009,Devlin2010), whopointoutthatmuchoftheinformationinpatentsisavailable
+2

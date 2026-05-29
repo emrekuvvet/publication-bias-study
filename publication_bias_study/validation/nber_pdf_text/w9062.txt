@@ -1,0 +1,131 @@
+NBER WORKING PAPER SERIES
+IDENTIFYING THE EFFICACY OF CENTRAL BANK INTERVENTIONS:
+THE AUSTRALIAN CASE
+Jonathan Kearns
+Roberto Rigobon
+Working Paper 9062
+http://www.nber.org/papers/w9062
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2002
+The authors would like to thank participants at the MIT macroeconomics lunch, and Mathew Boge of the
+Reserve Bank of Australia for providing the data. The first author thanks the Reserve Bank of Australia for
+funding. The views expressed herein are those of the authors and not necessarily those of the National
+Bureau of Economic Research or the Reserve Bank of Australia.
+© 2002 by Jonathan Kearns and Roberto Rigobon. All rights reserved. Short sections of text, not to exceed
+two paragraphs, may be quoted without explicit permission provided that full credit, including © notice, is
+given to the source.
+
+Identifying the Efficacy of Central Bank Interventions: The Australian Case
+Jonathan Kearns and Roberto Rigobon
+NBER Working Paper No. 9062
+July 2002
+JEL No. F30
+ABSTRACT
+The endogeneity of exchange rates and intervention has long plagued studies of the effectiveness
+of central banks actions in foreign exchange markets. Researchers have either excluded contemporaneous
+intervention, so that their explanators are predetermined, or obtained a small, and typically incorrectly
+signed, coefficient on contemporaneous intervention. Failing to account for the endogeneity, when central
+banks lean against the wind and trade strategically, will likely result in a large downward bias to the
+coefficient on contemporaneous intervention -- explaining the negative coefficient frequently obtained.
+We use an alternative identification assumption, a change in Reserve Bank of Australia
+intervention policy, that allows us to estimate, using simulated GMM, a model that includes the
+contemporaneous impact of intervention. There are three main results. Our point estimates suggest that
+central bank intervention has a economically significant contemporaneous effect. A $US100m purchase
+of the domestic currency will appreciate the exchange rate by 1.35 to 1.81 per cent. This estimate is
+remarkably similar to the calibration conducted by Dominguez and Frankel (1993), who themselves noted
+their estimate was larger than previous empirical findings. Secondly, the vast majority of the effect of an
+intervention on the exchange rate is found to occur during the day in which it is conducted, with only a
+smaller impact on subsequent days. Finally, we confirm findings that Australian central bank intervention
+policy can be characterized by leaning aginst the wind.
+Jonathan Kearns Roberto Rigobon
+MIT, E52-243d MIT, E52-434
+50 Memorial Drive 50 Memorial Drive
+Cambridge, MA 02142 Cambridge, MA 02142
+jkearns@mit.edu and NBER
+rigobon@mit.edu
+
+1 Introduction
+Since the introduction of floating exchange rates the use, and efficacy, of intervention in the foreign exchange
+markethasbeenacontroversialtopic. Mostcentralbankshaveattimesengagedinfrequentintervention,andat
+other timesfollowedamorelaissezfaire approach totheexchangerate.1 Nodoubt theobserved disparaterange
+of policies between central banks, and within individual central banks over time, can in part be attributed to
+the lack of accord on the effectiveness and consequences of central bank intervention. Two key questions remain
+unresolved: how effective is foreign exchange intervention, and, if it is effective, through which channel does it
+act?
+Acriticalbarriertoansweringthesequestionshasbeenovercomingtheendogeneityofchangesintheexchange
+rate and intervention. The central hypothesis is that intervention changes the exchange rate. But at the same
+time, the decision to intervene is not independent of the movements in the exchange rate. Moreover, even once
+a central bank has decided to intervene, the quantity of currency it buys or sells will typically depend on the
+response of the exchange rate to its trades.
+The literature has typically dealt with the simultaneous equations problem by assuming that the contempo-
+raneous decision of the central bank is independent of the current innovations to the exchange rate. This is a
+strongassumption. Forexample,itassumesthatthecentralbankdoesnotchangeitssellingor buyingbehavior
+by assessing the impact its actions have had on the exchange rate. On the other hand, there is strong evidence
+in stock markets that big players indeed act strategically when they are unwinding large positions. Therefore,
+why should we expect the same behavior is not optimal for a central bank?
+In this paper we use an alternative identification method to solve the problem of simultaneous equations.
+We use daily Reserve Bank of Australia (RBA) interventions data over the period 1986 to 1993, which contains
+a dramatic change in intervention policy that we use for identification. We show that the estimates we obtain
+have the correct sign and are significantly larger than those found with more standard methods. This is exactly
+the direction we would have expected if endogenous variables is an important source of the bias. Further, the
+vast majority of the effect of an intervention on the exchange rate is found to occur during the day in which it
+is conducted with a smaller impact on subsequent days. This explains why small effects are usually found when
+lag values are used in the typical OLS specifications. The major contribution of this paper is to provide some
+evidenceonthecontemporaneouseffectivenessofintervention. Although,ourmethodologydoesnotindicatethe
+channels through which intervention operates, it provides an improvement from previous estimates obtained in
+the literature.
+We concentrate our analysis on sterilized interventions, but we do not distinguish between secret and public
+interventions. While undoubtedly this is an important distinction, most and in particular the largest, interven-
+tionsarepublic. Certainly,futureresearchshouldreconsiderthisissue. Inthispaperthefocusofourattentionis
+the estimationproblem. Indeed, wethinkthatthesimultaneousequationsproblemisthe crucial aspect limiting
+our understanding of how effective policy is.
+The identification assumption we use is based on the fact that the RBA (in 1991) decided to change their
+policy regarding foreign exchange rate interventions. We interpret this shift in policy as exogenous, which is
+1Schwartz (2000)suggests thatintervention is a dying practice despite the continued use of active intervention by the ECB and
+Bank of Japan. However, the 18 central banks that responded to a survey reported in Neely (2001) believe it affects the exchange
+rate. Traders’survey responses in CheungandWong (2000)indicate they also believe intervention has aneffectonexchange rates.
+1
+
+an important ingredient in our solution to the problem. Other countries have also changed “exogenously” their
+policies,buttypicallycentralbanksendogenouslyrespondtotheconditionsinthemarket. Again,futureresearch
+should endogenize the policy decision and extend the present analysis to deal with more general framework.
+However, as is argued in the text below it is the case that the Australian central bank decision to change their
+method of intervention is unrelated to other macro events.
+Thepaper proceedsasfollows. Thereis abrief discussion, in Section II,of central bank intervention and the
+associated literature. A description of the data and discussion of RBA intervention follow this, in Section III.
+Section IV presents the estimation method used in this study. The results are presented in Section V, followed
+by conclusions.
+2 Review of the literature on Central bank intervention.
+Thissectionbrieflyreviewstheliteratureoncentralbankintervention,focussingonthesimultaneousrelationship
+between, and temporal behavior of, exchange rate returns and intervention. For more general and extensive
+reviews see Sarno and Taylor (2001), Dominguez and Frankel (1993b) and Edison (1993).(Sarno and Taylor,
+2001)(Edison, 1993)
+Empirical studies, and statementsby central banks, suggest that central banksintervene in foreign exchange
+markets to slow or correct excessive trends in the exchange rate, i.e. they “lean against the wind”, and to calm
+disorderly markets (for example Lewis (1995b) and Baillie and Osterberg (1997b)).2 The survey responses of
+central banks in Neely (2001) suggest that these factors continue to drive the decision to intervene. A recent
+studyforAustraliabyKimandSheen(2000)hassimilarconclusions. Importantly,whencentralbanksintervene
+theytradeinblocksthroughouttheday. AsNeely(2001)reports,theirsubsequenttradesareconditionalonthe
+response of the exchange rate to their earlier trades.
+Two main channels have been suggested through which sterilized intervention can affect the level of the
+exchange rate: the portfolio balance channel and the signalling channel. Intervention changes the exchange rate
+through the portfolio balance channel if government bonds are imperfect substitutes, and so the change in the
+reserve asset holdings of a central bank results in private investors revaluing their portfolios of domestic and
+foreign assets.3 Since interventions are small relative to the stock of outstanding bonds most authors, including
+Rogoff (1984), have expressed skepticism that intervention could have a large impact through the portfolio
+balance channel. Not surprisingly, many studies do not find evidence of this channel, and those that do, such as
+Dominguez and Frankel (1993b), Evans and Lyons (2001) and Ghosh (1992), suggest that it is weak.4
+Mussa (1981) suggested that if the central bank uses foreign exchange interventions to credibly indicate
+intendedchangesinmonetarypolicy,theresultingrevaluingoftheexchangeratecanbedescribedasthesignaling
+channel. The impact of intervention through the signaling channel has often been found to be substantially
+stronger than through the portfolio balance channel (for example Dominguez and Frankel (1993b)). For the
+signallingchanneltobeanongoingtransmissionmechanismcentralbanksshouldbeseentofollowinterventions
+2Otherreasonsoccasionallycitedbycentralbanksincludetotargetparticularexchangerates,ortosupportothercentralbanks.
+We do not explicitly consider the impact of intervention on conditional exchange rate volatility, see Rogers and Siklos (2001) for
+Australia ormore generally Dominguez (1998)and Bonser-Nealand Tanner(1996).
+3Theportfoliobalancechannelrequiresnotonlythatbondsareimperfectsubstitutes,butalsothefailureofRicardianequivalence.
+4DominguezandFrankel(1993c)andEvansandLyons(2001)bothassesstheportfoliobalancechannelforunsterilizedintervention
+and so provide upperbound estimatesfortheimpactofsterilizedintervention.
+2

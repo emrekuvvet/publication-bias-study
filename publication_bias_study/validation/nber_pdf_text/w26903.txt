@@ -1,0 +1,163 @@
+NBER WORKING PAPER SERIES
+WHICH BANKS ARE (OVER) LEVERED? INSIGHTS FROM SHADOW BANKS
+AND UNINSURED LEVERAGE
+Erica Jiang
+Gregor Matvos
+Tomasz Piskorski
+Amit Seru
+Working Paper 26903
+http://www.nber.org/papers/w26903
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+March 2020, Revised June 2024
+We thank Viral Acharya, Sumit Agarwal, Anat Admati, Jason Allen, Andy Atkeson, Jonathan
+Berk, Markus Brunnermeier, Robert Clark, John Cochrane, Dean Corbae, Peter DeMarzo, Andrea
+Eisfeldt, Kilian Huber, Sasha Indarte, Arvind Krishnamurthy, Stephan Luck, Stefan Nagel,
+Raghuram Rajan, Hyun Shin, Jeremy Stein, Amir Sufi, Adi Sunderam, Anjan Thakor, Emil
+Verner, Luigi Zingales and seminar and conference participants at Berkeley, Chicago, Columbia,
+Colorado, Dartmouth, ECB, Harvard Business School, Imperial College London, Kellogg School
+of Management, Michigan, Minnesota, Olin, Stanford, UCLA, USC, London Business School,
+University of Wisconsin, NBER Corporate Finance meeting, Stanford Institute of Theoretical
+Economics Financial Regulation, and Western Finance Association for helpful comments. We
+also thank Monica Clodius, Cache Ellsworth, and Yilan Zheng for outstanding research
+assistance. First Version: September 2019. This paper was previously titled “Banking without
+Deposits: Evidence from Shadow Bank Call Reports.” The views expressed herein are those of
+the authors and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Erica Jiang, Gregor Matvos, Tomasz Piskorski, and Amit Seru. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Which Banks are (Over) Levered? Insights from Shadow Banks and Uninsured Leverage
+Erica Jiang, Gregor Matvos, Tomasz Piskorski, and Amit Seru
+NBER Working Paper No. 26903
+March 2020, Revised June 2024
+JEL No. G2,L5
+ABSTRACT
+We examine why banks maintain such high financial leverage, with debt financing accounting for
+about 90% of banks’ assets. To answer this question, we use uniquely assembled data on capital
+structure decisions of shadow banks that on the asset side conduct very similar business to banks.
+The shadow bank data provides us with a window into “free market” financing choices of
+financial intermediaries that unlike banks are lightly regulated and do not have access to insured
+deposit funding. We demonstrate that shadow banks employ twice the amount of equity capital
+compared to equivalent banks, with the most significant disparity observed between smaller and
+mid-size banks. Uninsured leverage, defined as uninsured debt funding to assets, increases with
+size for both banks and shadow banks while cost of debt declines with size. We rationalize these
+facts within a calibrated quantitative equilibrium model of intermediation. Our analysis reveals
+that the primary driver of high leverage among smaller and mid-size banks is their access to
+insured deposit funding. In the absence of deposit insurance, these banks would maintain a
+capitalization level at least 25% higher in relative terms than observed in the data. Conversely,
+deposit insurance plays a comparatively minor role in influencing the financial leverage of the
+largest banks, where the predominant factor is their capacity to generate money-like deposits.
+These results suggest a significant scope for the increase of capitalization of smaller and mid-size
+banks to align their capital structures with their private market counterparts. The aggregate
+consequences of such increase would be limited, because of reallocation of lending activity from
+smaller to large banks and to shadow banks.
+Erica Jiang Tomasz Piskorski
+Marshall School of Business Columbia Business School
+University of Southern California 3022 Broadway
+Los Angeles, CA 90089 Uris Hall 810
+erica.jiang@marshall.usc.edu New York, NY 10027
+and NBER
+Gregor Matvos tp2252@columbia.edu
+Kellogg School of Management
+Northwestern University Amit Seru
+2211 Campus Drive Stanford Graduate School of Business
+Global Hub 4361 Stanford University
+Evanston IL, 60208 655 Knight Way
+and NBER and NBER
+gregor.matvos@kellogg.northwestern.edu aseru@stanford.edu
+
+1. Introduction
+The extensive overhaul of financial regulation in the U.S. and around the world was supposed to reduce the
+fragility of the banking system following the Great Financial Crisis. Less than 15 years later, the U.S. has
+experienced some of the largest bank failures in its history starting with the “run” Silicon Valley Bank and
+First Republic Bank, two large regional banks. The 2023 bank failures underscore the fundamental issue of
+banking vulnerability rooted in the high financial leverage employed by banks (Jiang et al. 2023). These
+failures have renewed interest in the regulation of banks’ capital structure—capital regulation—and more
+broadly the role of safety nets such as deposit insurance.
+The central idea of regulating bank leverage is that safety nets for debtholders cause banks to borrow
+excessively.1 Because deposits are short-term and only partially insured, this further contributes to bank
+fragility (see Davilla and Goldstein, 2023). On the other hand, if banks take on leverage to provide
+intermediation services, then restricting banks’ leverage likely results in fewer intermediary services. These
+services can be on the asset side, such as extending loans or other financial services to households or firms,
+and on the liability side though the creation of safe and liquid debt, or more broadly, through maturity and
+liquidity transformation.2 Under this regulatory view, capital requirements aim to undo the effect of safety
+nets on bank leverage but not extend beyond that level. They should thus broadly replicate the capital
+structure that banks would have chosen if they had no access to safety nets provided by deposit funding.3
+A notable feature of bank regulation is that it frequently imposes different capital requirements across the
+size distribution of banks. For example, the “Basel III endgame,” regulatory proposal would increase capital
+requirements on the largest U.S. banks rather than on the much more numerous small banks, which have
+been historically more likely to default. In other words, apart from recognizing the potential systematic
+significance of large banks, the regulation implicitly suggests that larger banks, when deciding on leverage,
+either rely more extensively on safety nets or offer reduced intermediation services for equivalent leverage,
+particularly at the margin.
+Motivated by this debate we investigate how much of banks’ high financial leverage and the cost of their
+debt financing across the size distribution is driven by their access to deposit funding and the associated
+safety nets. We proceed in three steps. First, we assemble data on capital structure decisions of shadow
+banks, which conduct bank-like activities on the asset side. These financial intermediaries offer a
+representation of how banks would be financed if they lacked access to insured deposits and were not bound
+by capital requirements—essentially if their lenders internalized default risk. Through a comparative
+analysis of the capital structure decisions and the cost of debt funding of shadow banks, we uncover five
+primary facts that shed light on this issue.
+In the second step, we provide a model of banks and shadow banks to quantify banks’ provision of services
+on the liability and asset side across the size distribution. Prior literature of intermediary sector uses bank
+data or very aggregate data on shadow banks capital structure to discipline models. Instead, we use
+disaggregated data on shadow bank capital structure decisions and interest rates to do so. Observing choices
+of intermediaries and the cost of their liabilities in the absence of access to insured deposits allows us to
+1 See for instance, Dwyer (1981), Pyle (1984), Admati et al. (2013), Admati and Hellwig (2014), Calomiris and
+Jaremski (2016), Egan et al. (2017), Corbae and D’Erasmo (2019), and Davilla and Goldstein (2023).
+2 See for instance, Diamond and Rajan (2001), DeAngelo and Stulz (2015), Gorton and Pennacchi (1990), Deng et al.
+(2017) and Davilla and Goldstein (2023).
+3 If bank default generated large externalities, then such capital structure would provide a lower bound on capital
+requirements.
+2
+
+directly identify key driving forces in the model while sidestepping other indirect approaches such as taking
+a stance on correlation structure of shocks impacting intermediaries used in existing structural models.
+Third, we use the calibrated model to ask how much leverage banks would choose if they were able to
+perform the same function on the asset and liability side, but its debtholders (depositors) would fully
+internalize default cost. This allows us to study the implications of insured deposit funding for aggregate
+provision of lending and money-like liabilities as well as distribution of these effects across the bank size.
+Data: We start by empirically comparing shadow banks to banks. These financial intermediaries provide
+banking services but cannot fund themselves with insured deposits and are not subject to capital
+requirements. We construct, for the first time, shadow bank “call reports” from 2011 onwards using
+Freedom of Information Act (FOIA) requests from state regulators. We observe detailed balance sheet
+information on the structure of liabilities and asset, as well as interest rates paid on shadow bank debt
+funding. We also match the balance sheet information to the individual loans (mortgages) originated by
+shadow banks providing detailed insight into asset side activities. We cover more than four hundred largest
+shadow banks, accounting for about 80% of shadow bank loans originated during this period and originating
+over quarter of all household debt in the U.S. over almost a decade.
+Shadow banks in our call reports are primarily in the mortgage origination business and sell most of the
+loans they originate. Our rich data allows us to find banks, which follow a very similar business model to
+shadow banks: they are primarily in the mortgage origination business and sell a similar share of their
+loans.4 At the individual loan level, these banks specialize in originating and selling conforming residential
+loans that need to satisfy a tight set of guidelines issued by the Government Sponsored Enterprises (GSEs)
+and lend to customers of very similar creditworthiness.5 In sum, this institutional feature allows us to
+achieve a tight comparisons between banks and shadow banks that follow a very similar business model,
+including the type of loans they originate. Even though we find an appropriate bank comparison group for
+shadow banks, our results barely change if we choose different comparison groups or use all banks as
+comparison. If anything, a better comparison group increases the differences between banks and shadow
+banks, suggesting that asset side differences between banks and shadow banks are not driving our results.
+Using this shadow bank data and bank call reports we document the following five facts.
+Fact 1: Shadow banks have substantially more equity capital—lower leverage—than banks (but
+substantially less than non-financial firms).
+The average equity to asset ratio for banks is approximately 11% and is even lower at 10.5% for banks most
+comparable to shadow banks. Shadow banks’ capitalization is more than twice as high at 25%, despite no
+capital requirement for shadow banks. These differences are very robust whether we adjust for differences
+in lending composition or assets, across bank control groups, and adjusting for risk weights. While shadow
+banks have substantially more capital than banks, their leverage is still substantially higher than that of non-
+financial firms, rejecting the idea that banks’ capital structure choices would resemble that of non-financial
+firms in the absence of deposits. For comparison, the median shadow bank equity capitalization matches
+well with that of banks in the pre-deposit-insurance era suggesting that the capitalization models we observe
+are not specific to the narrow business model of modern shadow banks (e.g., Admati and Hellwig 2013,
+Hanson et al. 2015, Aldunate et al. 2019, Blickle et al. 2019).
+4 See Buchak et al. (2018) for the similarity in customers of banks and shadow banks in the mortgage market. For
+increase in propensity of banks to sell loans, see Buchak et al. (2018 and 2023) and Irani et al. (2021).
+5 The average FICO credit score difference between banks’ and shadow banks’ GSE backed loans is 4 points on the
+scale ranging from 300 to 850 and the average difference in interest rate is two basis points.
+3

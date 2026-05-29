@@ -1,0 +1,127 @@
+NBER WORKING PAPER SERIES
+THE MARKET PRICE OF CREDIT RISK:
+AN EMPIRICAL ANALYSIS OF INTEREST RATE SWAP SPREADS
+Jun Liu
+Francis A. Longstaff
+Ravit E. Mandell
+Working Paper 8990
+http://www.nber.org/papers/w8990
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2002
+We are grateful for the many helpful comments and contributions of Don Chin, Qiang Dai, Robert Goldstein,
+Gary Gorton, Peter Hirsch, Antti Ilmanen, Deborah Lucas, Josh Mandell, Yoshihiro Mikami, Jun Pan,
+Monica Piazzesi, Walter Robinson, Pedro Santa-Clara, Janet Showers, Ken Singleton, Suresh Sundaresan,
+Abraham Thomas, Rossen Valkanov, Toshiki Yotsuzuka, and seminar participants at Barclays Global
+Investors, Citigroup, Greenwich Capital Markets, Invesco, Mizuho Financial Group, Simplex Asset
+Management, UCLA, the 2001 Western Finance Association meetings, the 2002 American Finance
+Association meetings, and the Risk Conferences on Credit Risk in London and New York. We are
+particularly grateful for the comments and suggestions of the editor William Schwert and an anonymous
+referee. All errors are our responsibility. The views expressed herein are those of the authors and not
+necessarily those of the National Bureau of Economic Research.
+© 2002 by Jun Liu, Francis A. Longstaff and Ravit E. Mandell. All rights reserved. Short sections of text,
+not to exceed two paragraphs, may be quoted without explicit permission provided that full credit, including
+© notice, is given to the source.
+
+The Market Price of Credit Risk: An Empirical Analysis of Interest Rate Swap Spreads
+Jun Liu, Francis A. Longstaff and Ravit E. Mandell
+NBER Working Paper No. 8990
+June 2002
+JEL No. E4
+ABSTRACT
+This paper studies the market price of credit risk incorporated into one of the most important
+credit spreads in the financial markets: interest rate swap spreads. Our approach consists of jointly
+modeling the swap and Treasury term structures using a general five-factor affine credit framework and
+estimating the parameters by maximum likelihood. We solve for the implied special financing rate for
+Treasury bonds and find that the liquidity component of on-the-run bond prices can be significant. We
+also find that credit premia in swap spreads are positive on average. These premia, however, vary
+significantly over time and were actually negative for much of the 1990s.
+Jun Liu Francis A. Longstaff Ravit E. Mandell
+UCLA UCLA Salomon Smith Barney
+Anderson School Anderson School
+110 Westwood Plaza, Box 951481
+Los Angeles, CA 90095-1481
+and NBER
+francis.longstaff@anderson.ucla.edu
+
+1. INTRODUCTION
+Oneofthemostfundamentalissuesinfinanceishowthemarketcompensatesinvestors
+for bearing credit risk. Events such the flight to quality that led to the hedge fund
+crisis of 1998 demonstrate that changes in the willingness to bear credit risk can have
+dramatic effects on the financial markets. Furthermore, these events indicate that
+variation in credit spreads may reflect both changes in perceived default risk and in
+the relative liquidity of bonds. Understanding the risk and return tradeoffs for these
+types of securities may become even more important in the future if the supply of U.S.
+Treasury securities available in the market decreases.
+Thispaperstudiesthemarketpriceofcreditriskincorporatedintowhatisrapidly
+becoming one of the most important credit spreads in the financial markets: interest
+rate swap spreads. Since swap spreads represent the difference between swap rates
+and Treasury bond yields, they reflect the difference in the default risk of the financial
+sector quoting Libor rates and the U.S. Treasury. In addition, swap spreads may
+include a significant liquidity component if the relevant Treasury bond trades special
+in the repo market. Thus, swap spreads represent an important data set for examining
+howbothdefaultandliquidityrisksinfluencesecurityreturns. Theimportanceofswap
+spreads derives from the dramatic recent growth in the notional amount of interest
+rate swaps outstanding relative to the size of the Treasury bond market. For example,
+the total amount of Treasury debt outstanding at the end of June 2001 was $5.7
+trillion. In contrast, the Bank for International Settlements (BIS) estimates that the
+total notional amount of interest rate swaps outstanding at the end of June 2001 was
+$57.2 trillion, representing ten times the amount of Treasury debt.
+Since swap spreads are fundamentally credit spreads, our approach consists of
+jointlymodelingtheinterestrateswapandTreasurytermstructuresusingthereduced-
+form credit framework of Duffie and Singleton (1997, 1999). To capture the rich dy-
+namics of the swap and Treasury curves, we use a five-factor affine term structure
+model which allows the swap spread to be correlated with the riskless rate. In ad-
+dition, our specification allows market prices of risk to vary over time to reflect the
+possibilitythatthewillingnessofinvestorstobearcreditandliquidityriskmaychange.
+We estimate the parameters of the model by maximum likelihood. The data for the
+study spans nearly the full history of the swap market. We show that both the swap
+and Treasury term structures are well described by the five-factor affine model.
+A number of interesting results emerge from this analysis. First, we solve for the
+short-term riskless rate implied by Treasury bond prices. We find that the implied
+riskless rate can differ substantially from the Treasury-bill rate and is often much
+higher. This is consistent with the widespread view on Wall Street that because of
+1
+
+the extreme liquidity of Treasury bills, their yields tend to underestimate the effective
+riskless rate. Since the implied short-term riskless rate could also be interpreted as
+special repo rate for the on-the-run Treasury bonds in the sample, we contrast them
+with repo rates for generic or general Treasury collateral.1 We find that these implied
+special repo rates are slightly less than the general repo rates on average, suggesting
+that the prices of the on-the-run Treasury bonds in the sample include premia for their
+liquidity or specialness relative to off-the-run Treasury securities. These specialness
+premia can be large in economic terms. For example, the specialness premium for the
+ten-year Treasury note can be as much as 0.57 percent of its notional amount. The
+estimated specialness premia match closely those implied by a sample of market term
+special repo rates provided to us.
+We then solve for the implied spread process. We find that this spread varies
+significantly over time, but is nearly zero for an extended period during the mid to
+latter 1990s. Interestingly, much of the variation in the implied credit spread is related
+to the difference between the general and implied special repo rates, suggesting that
+changes in the liquidity of Treasury bonds may be one of the major driving factors of
+swap spreads.
+Finally, weexaminetheimplicationsofthemodelforthemarketpricesofinterest-
+rate and credit-related risk. Consistent with previous research, we find that there are
+significant time-varying term premia embedded in Treasury bond prices. We also find
+that there are significant credit premia embedded in the swap curve. On average,
+these premia are positive, ranging from 0.1 basis points for a one-year horizon to 45
+basis points for a ten-year horizon. These credit premia also display substantial time
+variation. Surprisingly, we find evidence that credit premia were often negative during
+an extended period in the 1990s. These results suggest that there have been major
+changes over time in the expected returns from bearing the default and liquidity risk
+inherent in interest rate swaps.
+This paper complements and extends the recent paper by Duffie and Singleton
+(1997) who apply a reduced-form credit modeling approach to the swap curve and
+examine the properties of swap spreads. Our results support their finding that both
+default-risk and liquidity components are present in swap spreads. By modeling both
+the swap and Treasury curves simultaneously, however, we are also able to address
+the issue of how credit risk is priced in the market, which is the primary focus of
+this paper. Another related paper is He (2000) who independently uses a multi-factor
+affine term structure framework similar to ours in modeling swap spreads. While He
+does not estimate the parameters of his model, our empirical results provide support
+for both swap spread modeling frameworks. Grinblatt (2001) models the swap spread
+1In a recent paper, Duffie (1996) studies the causes and effects of special repo rates
+in the Treasury repo market. See also Sundaresan (1994), Jordan and Jordan (1997),
+Buraschi and Menini (2001), and Krishnamurthy (2001).
+2

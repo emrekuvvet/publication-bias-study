@@ -1,0 +1,117 @@
+NBER WORKING PAPER SERIES
+BID SHADING AND BIDDER SURPLUS IN THE U.S. TREASURY AUCTION SYSTEM
+Ali Hortaçsu
+Jakub Kastl
+Allen Zhang
+Working Paper 24024
+http://www.nber.org/papers/w24024
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+November 2017
+The views expressed in this paper are those of the authors and should not be interpreted as
+reflecting the views of the U.S. Department of the Treasury or the National Bureau of Economic
+Research. We thank Philip Haile, Kenneth Hendricks, Darrell Duffie, Paulo Somaini, Terry
+Belton and participants of the U.S. Treasury Roundtable, 2015 NBER IO Summer Meetings and
+2015 NBER Market Design Meeting for their valuable comments. Kastl is grateful for the
+financial support of the NSF (SES-1352305) and the Sloan Foundation, Hortaçsu the financial
+support of the NSF (SES-1124073, ICES-1216083, and SES-1426823). All remaining errors are
+ours.
+At least one co-author has disclosed a financial relationship of potential relevance for this
+research. Further information is available online at http://www.nber.org/papers/w24024.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2017 by Ali Hortaçsu, Jakub Kastl, and Allen Zhang. All rights reserved. Short sections of text,
+not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Bid Shading and Bidder Surplus in the U.S. Treasury Auction System
+Ali Hortaçsu, Jakub Kastl, and Allen Zhang
+NBER Working Paper No. 24024
+November 2017
+JEL No. G12,L1
+ABSTRACT
+We analyze bidding data from uniform price auctions of U.S. Treasury bills and notes between
+July 2009-October 2013. Primary dealers consistently bid higher yields compared to direct and
+indirect bidders. We estimate a structural model of bidding that takes into account informational
+asymmetries introduced by the bidding system employed by the U.S. Treasury. While primary
+dealers’ estimated willingness-to-pay is higher than direct and indirect bidders’, their ability to
+bid-shade is even higher, leading to higher yield/lower price bids. Total bidder surplus averaged
+to about 3 basis points across the sample period along with efficiency losses around 2 basis
+points.
+Ali Hortaçsu Allen Zhang
+Department of Economics Department of the Treasury
+University of Chicago xpzhang2001@gmail.com
+1126 East 59th Street
+Chicago, IL 60637
+and NBER
+hortacsu@uchicago.edu
+Jakub Kastl
+Department of Economics
+Princeton University
+Princeton, NJ 08544-1021
+and NBER
+jkastl@princeton.edu
+
+1 Introduction
+In 2013, the U.S. Treasury auctioned 7.9 trillion dollars of government debt to a global set of
+institutions and investors (TreasuryDirect.gov). The debt was issued in a variety of instruments,
+coveringbills(upto1yearmaturity),2-10yearnotes,30yearcouponbonds,andTreasuryInflation-
+Protected Securities (TIPS). The mandate of the U.S. Treasury is to achieve the lowest cost of
+financing over time, taking into account considerable uncertainty in the borrowing needs of the
+governmentanddemandforU.S.Treasuriesbyinvestors.1 Treasuryalsoseeksto“facilitateregular
+and predictable issuance” across a range of maturity classes. To this end, the Treasury adopted
+auctions as their preferred method of marketing short term securities in 1920 (Garbade 2008),
+and auctions became the preferred method of selling long-term securities in the 1970s (Garbade
+2004). The Treasury employed a discriminatory/pay-as-bid format until 1998, when, after some
+experimentationwithits2-and5-yearnoteauctionsin1992, theuniformpriceformatwasadopted
+as the method of sale (Malvey and Archibald 1998).
+A large theoretical literature, dating back to the classic work of Friedman (1960) and Vickrey
+(1961), studies the design of Treasury auctions. The design of the auction mechanism becomes
+an important question especially when individual bidders possess market power, as the exercise of
+market power leads to deviations from efficient allocations (Ausubel, Cramton, Pycia, Rostek and
+Weretka(2014)). ThecompetitivenessoftheTreasuryauctionprocessandthedesignoftheauction
+systemhascomeunderthespotlightanumberoftimes,includingthe1991SalomonBrothers“short
+squeeze” scandal (see e.g. Jegadeesh (1993)), and the discussions that led to Treasury’s switch to
+the uniform price auction mechanism in November 1998 (Malvey and Archibald 1998).
+While there is a large theoretical literature studying strategic bidder behavior, there has been
+very little empirical work on the U.S. Treasury auction system that studies the behavior of in-
+dividual bidders. This paper hopes to bridge this empirical gap by studying individual bid level
+data. Specifically, our aim is to adapt models of strategic behavior to the particular institutional
+setting of the U.S. Treasury auction market, and to develop quantitative benchmarks for assessing
+1PeterFisher,thenUnderSecretaryofTreasuryforDomesticFinance,inaspeechtitled“RemarksbeforetheBond
+Market Association Legal and Compliance Conference” on January 8, 2002, stated that “the overarching objective
+for the management of the Treasury’s marketable debt is to achieve the lowest borrowing cost, over time, for the
+federal government’s financing needs.”
+2
+
+the competitiveness and cost-effectiveness of this important marketplace.
+We start, in Section 2, by describing differences in bid patterns across the three different classes
+of bidders: primary dealers, direct bidders (financial institutions who are not primary dealers but
+submit bids directly into the auction), and indirect bidders (financial institutions who submit bids
+through primary dealers). As detailed in this section, we find that primary dealers systematically
+bid lower prices (higher yields). What can drive this systematic difference? It is possible that
+primarydealershavelowervaluationsfortheTreasurysecurities,andthislowervaluationtranslates
+into lower bids. However, it is also possible that primary dealers possess market power, and are
+able to exercise this market power by submitting (price) bids that are below their true valuations.
+We thus provide, in Section 3, a model-based decomposition of the observed bids into the bid-
+der’s true willingness-to-pay and a “bid shading”/market power component. Our theoretical model
+adapts the seminal “share auction” model of Wilson (1979), in which bidders submit demand
+schedules as their bids. This model captures the strategic complexity of the Treasury’s uniform
+price auction mechanism very well, and it is in many ways related to classic models of imperfect
+competition such as Cournot. In particular, consider a setting (depicted in Figure 1) where an
+oligopsonistic bidder with downward sloping demand for the security knows the residual supply
+function that she is facing, and is allowed to submit a single price-quantity point as her bid. Fol-
+lowing basic monopsony theory, this bidder will not select the competitive outcome (Pcomp,Qcomp),
+which is the intersection of her demand curve and the residual supply curve. Instead, she has the
+incentive to “shade” her bid, and pick a lower price-quantity point on the residual supply curve,
+such as (P∗,Q∗). This gives her higher surplus (the gray shaded area below her demand curve up
+to (P∗,Q∗)) than if she had bid the competitive price and quantity.
+The ability of this bidder to “shade” her bid depends on the elasticity of the residual supply
+curve she is facing. If this were a small bidder among many others, the residual supply she would
+be facing would essentially be flat, allowing for very little ability to bid-shade, as decreasing the
+quantity demanded would not result in any appreciable change in the market clearing price. The
+optimal bid then is to bid one’s true demand curve. Therefore, the key identifying variation in
+the data is the (expected) shape of the residual supply curves that a bidder may face around the
+3

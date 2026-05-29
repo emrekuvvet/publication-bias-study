@@ -1,0 +1,119 @@
+NBER WORKING PAPER SERIES
+THE MORTGAGE RATE CONUNDRUM
+Alejandro Justiniano
+Giorgio E. Primiceri
+Andrea Tambalotti
+Working Paper 23784
+http://www.nber.org/papers/w23784
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2017
+We thank, without implicating, Gene Amromin, Gadi Barlevy, Douglas Duncan, Francesco
+Ferrante, Andreas Fuster, Simon Gilchrist, Andrew Haughwout, Ethan Ilzetzki, Nels Lind, David
+Lucca, Carl Tannenbaum, Arlene Wong, as well as seminar and conference participants for
+comments and suggestions, and Aaron Kirkman for outstanding research assistance. The views
+expressed in this paper are those of the authors and do not necessarily represent those of the
+Federal Reserve Banks of Chicago, New York or the Federal Reserve System. Giorgio Primiceri
+is a consultant for the Federal Reserve Bank of Chicago and a research visitor at the European
+Central Bank. The views expressed herein are those of the authors and do not necessarily reflect
+the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2017 by Alejandro Justiniano, Giorgio E. Primiceri, and Andrea Tambalotti. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+The Mortgage Rate Conundrum
+Alejandro Justiniano, Giorgio E. Primiceri, and Andrea Tambalotti
+NBER Working Paper No. 23784
+September 2017
+JEL No. E32,E44,E52
+ABSTRACT
+We document the emergence of a disconnect between mortgage and Treasury interest rates in the
+summer of 2003. Following the end of the Federal Reserve expansionary cycle in June 2003,
+mortgage rates failed to rise according to their historical relationship with Treasury yields,
+leading to significantly and persistently easier mortgage credit conditions. We uncover this
+phenomenon by analyzing a large dataset with millions of loan-level observations, which allows
+us to control for the impact of varying loan, borrower and geographic characteristics. These
+detailed data also reveal that delinquency rates started to rise for loans originated after mid 2003,
+exactly when mortgage rates disconnected from Treasury yields and credit became relatively
+cheaper.
+Alejandro Justiniano Andrea Tambalotti
+Economic Research Department Federal Reserve Bank of New York
+Federal Reserve Bank of Chicago Research and Statistics Group
+230 S. LaSalle Street 33 Liberty Street, 3rd Floor
+Chicago, IL 60604 New York, NY 10045
+ajustiniano@frbchi.org a.tambalotti@gmail.com
+Giorgio E. Primiceri
+Department of Economics
+Northwestern University
+318 Andersen Hall
+2001 Sheridan Road
+Evanston, IL 60208-2600
+and NBER
+g-primiceri@northwestern.edu
+
+THE MORTGAGE RATE CONUNDRUM
+ALEJANDRO JUSTINIANO, GIORGIO E. PRIMICERI, AND ANDREA TAMBALOTTI
+Abstract. WedocumenttheemergenceofadisconnectbetweenmortgageandTreasury
+interest rates in the summer of 2003. Following the end of the Federal Reserve expan-
+sionary cycle in June 2003, mortgage rates failed to rise according to their historical
+relationship with Treasury yields, leading to significantly and persistently easier mort-
+gage credit conditions. We uncover this phenomenon by analyzing a large dataset with
+millions of loan-level observations, which allows us to control for the impact of varying
+loan,borrowerandgeographiccharacteristics. Thesedetaileddataalsorevealthatdelin-
+quency rates started to rise for loans originated after mid 2003, exactly when mortgage
+rates disconnected from Treasury yields and credit became relatively cheaper.
+Key words and phrases: Credit boom, housing boom, securitization, private label,
+subprime.
+1. introduction
+Mortgage interest rates fell significantly between 2000 and 2006, at the same time as
+mortgage debt and house prices were rising to unprecedented levels. Figure 1.1 plots the
+behavior of the 30-year conventional mortgage rate, the most widely used measure of the
+economy-wide cost of mortgage financing. This rate dropped from an average of around 8%
+during the 1990s expansion, and about 8.5% at its peak in 2000, to around 6.5% in 2006
+and 2007, at the apex of the credit boom, with rates as low as 5% in the middle of 2003.
+The mortgage rate depicted in figure 1.1 is a national average of interest rates on “first-
+lien prime conventional conforming home purchase mortgages with a loan-to-value of 80
+percent” from Freddie Mac’s Primary Mortgage Market Survey.1 But during the first half
+Date: First version: May 2016. This version: August 2017.
+We thank, without implicating, Gene Amromin, Gadi Barlevy, Douglas Duncan, Francesco Ferrante, An-
+dreas Fuster, Simon Gilchrist, Andrew Haughwout, Ethan Ilzetzki, Nels Lind, David Lucca, Carl Tannen-
+baum, Arlene Wong, as well as seminar and conference participants for comments and suggestions, and
+Aaron Kirkman for outstanding research assistance. The views expressed in this paper are those of the
+authors and do not necessarily represent those of the Federal Reserve Banks of Chicago, New York or the
+Federal Reserve System.
+1See http://www.freddiemac.com/pmms/abtpmms.htm.
+1
+
+THE MORTGAGE RATE CONUNDRUM 2
+10
+9
+8
+7
+6
+5
+4
+3
+tnecreP
+29-naJ 39-naJ 49-naJ 59-naJ 69-naJ 79-naJ 89-naJ 99-naJ 00-naJ 10-naJ 20-naJ 30-naJ 40-naJ 50-naJ 60-naJ 70-naJ 80-naJ 90-naJ 01-naJ 11-naJ 21-naJ 31-naJ 41-naJ 51-naJ 61-naJ
+Figure 1.1. 30-year conventional mortgage rate.
+of the 2000s, this average is likely to have become less representative of overall conditions
+in the U.S. mortgage market, due to the rapid diffusion over that period of non-conforming
+products, such as subprime, jumbo, and Alt-A mortgages with high loan-to-value (LTV)
+and other unconventional features. The spreading of non-conforming loans, in turn, was
+supported by the meteoric rise of the private-label securitization market. As shown in
+figure1.2, themarketshareofnon-agencymortgage-backedsecurities(MBS),whichmostly
+collected those non-conforming mortgages, increased from about 20% in the early 2000s to
+more than 50% in 2005 and 2006, before evaporating in 2008. This paper studies the extent
+towhichthistransformationinmortgagefinanceaffectedthecostofmortgagecreditduring
+the housing boom.
+Using detailed loan-level data, we compute a conditional spread of mortgage rates over
+four Treasury market factors that summarize the level, slope, curvature and volatility of
+the yield curve. This spread is “conditional” because it controls for a long list of observable
+individualborrowerandloancharacteristics,suchastheborrower’sFICOscore,theloan-to-
+valueratio,andthetypeofmortgagecontract,whichshouldallbereflectedinthemortgage
+rate. To the extent that those observable traits capture most of the well-documented
+changes in the mortgage industry in the early 2000s, this spread should provide a measure

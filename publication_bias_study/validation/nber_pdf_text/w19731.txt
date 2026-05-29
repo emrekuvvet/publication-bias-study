@@ -1,0 +1,132 @@
+NBER WORKING PAPER SERIES
+BID TAKERS OR MARKET MAKERS? THE EFFECT OF AUCTIONEERS ON AUCTION
+OUTCOMES
+Nicola Lacetera
+Bradley J. Larsen
+Devin G. Pope
+Justin R. Sydnor
+Working Paper 19731
+http://www.nber.org/papers/w19731
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2013
+We benefited from the comments of seminar participants at UC Berkeley, Boston University, Colgate,
+Cornell, MIT, Queen’s University, the University of Chicago, Toronto, Wisconsin-Madison, the Bank
+of Italy, and conference participants at the 2013 IZA Workshop on Behavioral Economics, the 2013
+European Behavioral Economics Meeting, the 2013 NBER Summer Institute, the 2013 Stanford Institute
+for Theoretical Economics, and the 2013 FTC Microeconomics Conference. Special thanks to Eric
+Budish and Tim Van Dam for helpful comments and suggestions; and to Barb Richards of the Canadian
+Auction College for allowing one of the authors to attend auctioneer college classes. The views expressed
+herein are those of the authors and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2013 by Nicola Lacetera, Bradley J. Larsen, Devin G. Pope, and Justin R. Sydnor. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission provided
+that full credit, including © notice, is given to the source.
+
+Bid Takers or Market Makers? The Effect of Auctioneers on Auction Outcomes
+Nicola Lacetera, Bradley J. Larsen, Devin G. Pope, and Justin R. Sydnor
+NBER Working Paper No. 19731
+December 2013
+JEL No. D03,D44,J24,L62,M5
+ABSTRACT
+A large body of research has explored the importance of auction design and information structure for
+auction outcomes. Much less work has considered the importance of the auction process. For example,
+in many auctions, auctioneers are present and can impact the process of the auction by varying starting
+prices, level of price adjustments, the speed of the auction, the way they interact with auction participants,
+or their characteristic chant that is intended to excite buyers. We explore the importance of auction
+process by testing whether auctioneers can have a systematic difference on auction outcomes. We
+analyze more than 850,000 wholesale used car auctions and find large and significant differences in
+outcomes (probability of sale, price, and auction speed) across auctioneers. The performance heterogeneities
+are stable across time and correlate with subjective evaluations of auctioneers provided by the auction
+house. Although the available data here do not allow us to conclusively isolate mechanisms, a range
+of evidence suggests a role for tactics that generate excitement among bidders. Overall, these findings
+illustrate the complexities of auction environments and how outcomes can be impacted by subtle changes
+in process.
+Nicola Lacetera Devin G. Pope
+University of Toronto Booth School of Business
+105 St. George Street University of Chicago
+Toronto, ON M5S 2E9 5807 South Woodlawn Avenue
+Canada Chicago, IL 60637
+and NBER and NBER
+nicola.lacetera@utoronto.ca devin.pope@chicagobooth.edu
+Bradley J. Larsen Justin R. Sydnor
+Stanford University University of Wisconsin - Madison
+579 Serra Mall 975 University Avenue
+Stanford, CA 94305 Madison, WI 53706
+bjlarsen@stanford.edu jsydnor@bus.wisc.edu
+
+1. Introduction
+Auctions are central features of many markets, including those for radio spectrums, used industrial
+machinery, livestock, used cars, antiques, government-owned property, procurement, debt instruments,
+charity, and real estate. It is therefore not surprising that economists have developed a large body of
+research on the functioning of auctions, including theoretical, experimental, and empirical studies. Much
+of this work has focused on exploring the effects of different auction structures, comparing common
+designs such as English, Dutch, first-price sealed-bid, and second-price auctions, and assessing their
+revenue generation and efficiency. The literature has paid particular attention to how the performance of
+different auction designs may depend on the underlying distributions of product valuations and the level
+of information available to market participants.1
+Although a large literature has explored the importance of auction structure to outcomes, the process
+of running an auction (conditional on the auction design) has received much less attention. As some
+auction theorists have noted (Klemperer, 2002; Milgrom, 2004), many auctions involve human
+participants who may be misinformed or boundedly rational in some way. In these settings, the details
+associated with how an auction is run may significantly influence outcomes.
+An example of how auction process may vary from one auction to another is the leeway that a live
+auctioneer has in choosing how to run an ascending-bid auction. Theoretical models of auctions largely
+abstract from the role of the auctioneer in the auction process. In particular, Milgrom and Weber (1982)
+modeled English auctions assuming that prices rise continuously from a low level and that all participants
+hold down a button and can be observed dropping out of the auction at some point when the price rises
+too high. Within that structure, there is no role for an auctioneer and the focus naturally becomes on the
+information structure (e.g., private signals) of the bidders in the auction. But as Milgrom and Weber
+themselves highlight, many real-world ascending-bid auctions involve human auctioneers who are
+typically experienced professionals. These auctioneers may influence the process of an auction by
+choosing opening bid amounts, changing the pace of price adjustment, and deciding when to stop the
+bidding. In addition, many auctioneers (especially in the U.S.) interact with bidders and call out bids in a
+fast-paced, rhythmic chant, attempting to create a sense of urgency and excitement among bidders.
+In this paper, we explore whether these real-world details of the auction process are important for
+understanding auction outcomes by studying whether auctioneers have a systematic impact on auction
+outcomes. Although the impact of single individuals on organizational outcomes has been explored in
+1 An overview of auction theory can be found in Bulow and Roberts (1989), Klemperer (2004), and Milgrom (2004).
+1
+
+other contexts (e.g. CEOs and bosses, judges, teachers, scientists, and political leaders),2 there has been
+no systematic empirical analysis of the impact of auctioneers on relevant outcomes.3 We investigate this
+question in the context of wholesale, used-car auctions. This market is well suited to studying the role of
+auctioneers for several reasons. First, these are large markets – more than 10 million used cars are traded
+in the U.S. at wholesale auctions each year (Manheim, 2011), totaling over $80 billion in sales (NAAA,
+2009). Second, because both buyers and sellers are professionals and because these cars are high-value
+goods, we expect all participants to have strong incentives. Third, as we will argue below, the institutional
+features and data available allow us to capture the causal impact of individual auctioneers on prices, the
+probability of sale, and other performance measures. Finally, the structure of these auctions is an
+ascending auction (English-style) with a live auctioneer and no pre-determined time limit. There is a large
+literature on English-style auctions that has to date made a great deal of traction while abstracting from
+the details of auction process. Authors, such as Cassady (1967) have argued, however, that this is the
+format in which the auctioneer has the most potential to influence the sale, and as such English auctions
+and the role of auctioneers would seem a good place to begin to more systematically study the importance
+of the details of how auctions are conducted.
+Our data include over 850,000 cars auctioned by 60 auctioneers between 2007 and 2013 at the largest
+location of a leading operator of used-car auctions in the U.S. The primary measure of auctioneer
+performance we analyze is each auctioneer’s conversion rate (the fraction of cars that end in a sale). The
+auction company and its auctioneers make it clear that the primary role of the auctioneer in this context is
+to maximize the probability of each car selling. We also study two secondary performance metrics:
+residual price (the difference between sales price and average market value) and speed of sale.
+An obvious threat to the identification of auctioneer heterogeneity is that cars are not randomly
+assigned to auctioneers. We discuss identification assumptions in detail below and argue that non-random
+selection can be accounted for by controlling for important features of the auction (auction day, seller of
+the car, car type, etc.). We also provide additional tests which include exploiting shift changes as a way to
+identify the causal impact of auctioneers on outcomes.
+We find significant dispersion in auctioneers’ fixed effects in each of the three performance measures.
+In our preferred specification, a one-standard deviation increase in auctioneer performance corresponds to
+2 See, for example, Abrams, Bertrand and Mullainathan (2013); Azoulay, Graff Zivin and Wang (2010); Bertrand and
+Schoar (2003); Chetty, Friedman, Hilger, and Saez (2010); Hanushek (2011); Jones and Olken (2005); Lazear, Shaw, and
+Stanton (2012); Malmendier and Tate (2009).
+3 To our knowledge, the only two studies examining auctioneers are Capizzani (2008), who presented experimental
+evidence regarding the presence of a live auctioneer whose only role was to choose the public-information structure, and
+Cassady (1967), who provided a detailed qualitative description of auctions and auctioneers. Note, moreover, that much of
+the literature uses the term “auctioneer” to refer to the auction house or platform (Hossain, Khali, and Shum, 2013), or, in
+some cases, the seller. In this paper we reserve the term auctioneer strictly for the person calling out bids at a live auction,
+and the term seller strictly for the owner of the car who brings it to the auction house.
+2

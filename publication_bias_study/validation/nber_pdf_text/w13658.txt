@@ -1,0 +1,136 @@
+NBER WORKING PAPER SERIES
+HOW SOVEREIGN IS SOVEREIGN CREDIT RISK?
+Francis A. Longstaff
+Jun Pan
+Lasse H. Pedersen
+Kenneth J. Singleton
+Working Paper 13658
+http://www.nber.org/papers/w13658
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2007
+We are grateful for valuable comments and suggestions received from Andrew Atkeson, Engelbert
+Dockner, Sebastian Edwards, Robert Engle, Don Morrison, Alex Reyfman, Walter Torous, and seminar
+participants at Barclays Global Investors, the Moody's and Copenhagen Business School Credit Conference,
+UCLA, and the University of Vienna. We are also grateful for the research assistance of Xiaolong
+Cheng, Priyank Gandhi, Brent Longstaff, and Scott Longstaff. All errors are our responsibility. The
+views expressed herein are those of the author(s) and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+© 2007 by Francis A. Longstaff, Jun Pan, Lasse H. Pedersen, and Kenneth J. Singleton. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+How Sovereign is Sovereign Credit Risk?
+Francis A. Longstaff, Jun Pan, Lasse H. Pedersen, and Kenneth J. Singleton
+NBER Working Paper No. 13658
+December 2007
+JEL No. G12,G15
+ABSTRACT
+We study the nature of sovereign credit risk using an extensive sample of CDS spreads for 26 developed
+and emerging-market countries. Sovereign credit spreads are surprisingly highly correlated, with just
+three principal components accounting for more than 50 percent of their variation. Sovereign credit
+spreads are generally more related to the U.S. stock and high-yield bond markets, global risk premia,
+and capital flows than they are to their own local economic measures. We find that the excess returns
+from investing in sovereign credit are largely compensation for bearing global risk, and that there is
+little or no country-specific credit risk premium. A significant amount of the variation in sovereign
+credit returns can be forecast using U.S. equity, volatility, and bond market risk premia.¸
+Francis A. Longstaff Lasse H. Pedersen
+UCLA Two Greenwich Plaza, 3rd Floor
+Anderson Graduate School of Management AQR
+110 Westwood Plaza, Box 951481 Greenwich CT 06830
+Los Angeles, CA 90095-1481 and NBER
+and NBER lpederse@stern.nyu.edu
+francis.longstaff@anderson.ucla.edu
+Kenneth J. Singleton
+Jun Pan Graduate School of Business
+MIT Sloan School of Management Stanford University
+50 Memorial Drive Stanford, CA 94305
+Rm E52-435 and NBER
+Cambridge, MA 02142 ken@future.stanford.edu
+and NBER
+junpan@mit.edu
+
+Sovereignty: Supreme power . . .
+Freedom from external control . . .
+Autonomy.
+— Miriam-Webster Dictionary.
+1. INTRODUCTION
+Is sovereign credit risk primarily an idiosyncratic or country-specific risk? Or is
+sovereigncredit moresystematic anddrivenprimarilyby regionaland globaleconomic
+forces external to the country?
+Thisissueisof key importancesince the natureof sovereigncredit riskdetermines
+the characteristics of returns in sovereign debt markets and directly affects the ability
+of investors, banks, and other financial institutions to diversify the risk of global debt
+portfolios. Portfolio theory implies that the correlation structure of sovereign credit
+risk shouldplay a central role in determiningglobalportfolio positionsand influencing
+the flow of capital across countries. Furthermore, the nature of a sovereign’s credit
+risk may affect both its ability to access global debt markets and the risk premium
+it must then pay to obtain capital. Also, this issue has fundamental implications for
+how the international lending community should deal with distressed debtor nations.
+Despite its importance, relatively little research on this topic has appeared in
+the literature. Previous theoretical work focuses primarily on the incentives faced by
+sovereign debtors to repay their debt. Examples include Eaton and Gersovitz (1981),
+Grossman and Van Huyck (1988), Bulow and Rogoff (1989a, b), Atkeson (1991),
+Dooley and Svenson (1994), Cole and Kehoe (1996, 2000), Dooley (2000), and many
+others. A number of empirical studies focus on the factors that determine individual
+sovereign credit spreads. These include Edwards (1984, 1986, 2002), Berg and Sachs
+(1988), Boehmer and Megginson (1990), Duffie, Pedersen, and Singleton (2003), and
+Zhang(2003). Otherimportantempiricalworkfocusesonthe investmentreturnsasso-
+ciatedwithBradybondsandemergingmarketdebt, suchasErb,Harvey,andViskanta
+(1996, 1997, 1999), and Dahiya (1997). Some recent research provides evidence that
+1
+sovereign credit spreads are related to common global factors. In particular, Pan and
+Singleton (2007) show that the credit spreads for Mexico, Turkey, and Korea share a
+strong commonrelation to U.S. stock market volatility as measuredby the VIX index.
+1
+Forexample, see KaminandvonKleist (1999), EichengreenandMody (2000), Geyer,
+Kossmeier, and Pichler (2004), Rozada and Yeyati (2005), and Remolona, Scatigna,
+and Wu (2007).
+1
+
+This result is important since it demonstrates how common dependence of this type
+could induce significant correlations among sovereign credit spreads.
+To shed light on the underlying nature of sovereign credit risk, we begin by
+examining the correlation structure of credit spreads for an extensive set of sovereigns
+and investigating the underlying sources of commonality. The data for the study
+consist of market quotations for sovereign credit default swap (CDS) contracts on the
+external debt of 26 developed and less-developed countries. Sovereign credit default
+swaps function as insurance contracts that allow investors to buy protection against
+2
+the event that a sovereign defaults on or restructures its debt. As such, sovereign
+CDS spreads directly reflect the market’s assessment of the sovereign’s credit risk.
+An important advantage of using sovereign CDS data is that it allows us to “factor
+out” the component of sovereign bond returns due to changes in interest rates and
+focus instead on the returns due exclusively to sovereign credit risk. Furthermore,the
+sovereignCDSmarketmayoftenbemoreliquidthanthecorrespondingsovereignbond
+3
+market, resulting in more accurate estimates of credit spreads. Also, CDS spreads
+are often implicitly spreads on bonds that are less encumbered by covenants and
+guarantees.
+A number of surprising results emerge from the analysis. First, most of the
+variation in sovereign credit spreads is due to common regional and global factors;
+idiosyncratic country-specific variation represents only a minority fraction of the total
+variation in sovereign credit spreads. In particular, a simple principal components
+analysis reveals that more than 30 percent of the variation in sovereign CDS spreads
+is explained by a single global factor that affects almost every country in the sample.
+Thisfirstfactor hasacorrelationof −70percentwithU.S.stock marketreturnsand66
+percent with changes in the VIX volatility index. Furthermore, more than 50 percent
+of the variationinsovereignCDSspreadsisexplainedbyjust threecommonfactors. A
+multivariate cluster analysis based on the correlation matrix also indicates that there
+is a strong regional or geographical structure to sovereign credit risk.
+Next, to explore the determinants of sovereign credit risk, we regress changes in
+CDS spreads on four categories of explanatory variables: local economic variables,
+global financial market variables, global risk premia measures, and net investment
+2
+Typically, sovereign financial distress results in a restructuring or rescheduling of
+debt. For convenience, we refer to this process simply as sovereign default throughout
+the paper.
+3
+While CDS spreadsgenerally approximatethe spreadsof the underlyingbonds, there
+areseveralreasonswhythe two neednot be identical. Forexample, there are cashflow
+differences between bonds and CDS contracts that can induce differences in spreads
+(see Duffie and Liu (2001), Duffie and Singleton (2003), and Longstaff, Mithal, and
+Neis (2005)). Also, there can be bond- or contract-specific liquidity effects that create
+time-varying differences or basis risk between CDS and sovereign bond spreads.
+2

@@ -1,0 +1,141 @@
+NBER WORKING PAPER SERIES
+FINANCIAL CENTRALITY AND LIQUIDITY PROVISION
+Arun G. Chandrasekhar
+Robert Townsend
+Juan Pablo Xandri
+Working Paper 24406
+http://www.nber.org/papers/w24406
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+March 2018
+We thank Ben Golub, Matthew Jackson, and Juan Passadore for helpful discussions as well as
+seminar participants at NYU, Princeton, SAET Faro, Minnesota, MIT, and various other seminars
+and conferences. Chandrasekhar is grateful for support from the National Science Foundation
+GFRP and Townsend is grateful for support from the NICHD. The views expressed herein are
+those of the authors and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2018 by Arun G. Chandrasekhar, Robert Townsend, and Juan Pablo Xandri. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+Financial Centrality and Liquidity Provision
+Arun G. Chandrasekhar, Robert Townsend, and Juan Pablo Xandri
+NBER Working Paper No. 24406
+March 2018
+JEL No. D14,E44,G01,L14,O16
+ABSTRACT
+We study an endowment economy in which agents face income risk, as if uncertain returns on a
+portfolio, and agents can only make transfers in states when they are actively participating in the
+market. Besides income risk, agents also have limited and stochastic market access, with a
+probability distribution governed by an underlying social network. While network connections
+may serve to dissipate shocks, they may also provide obstacles to the sharing of risk, as when
+participation frictions are generated through the network.
+We identify and quantify the value of key players in terms of whether they are likely to be able to
+smooth the resulting market participation risk and how valuable that smoothing would be when
+they are there. We define financial centrality in economic terms, given the model, as the ex ante
+marginal social value of injecting an infinitesimal amount of liquidity to the agent.
+We show that the most financially central agents are not only those who trade often – as in
+standard network models – but are more likely to trade when there are few traders, when income
+risk is high, when income shocks are positively correlated, when attitudes toward risk are more
+sensitive in the aggregate, when there are distressed institutions, and when there are tail risks. We
+extend our framework to allow for endogenous market participation. Observational evidence
+from village risk sharing network data is consistent with our model.
+Arun G. Chandrasekhar Juan Pablo Xandri
+Department of Economics Department of Economics
+Stanford University Princeton University
+579 Serra Mall Fisher Hall, Office 212
+Stanford, CA 94305 Princeton, NJ 08544
+and NBER jxandri@princeton.edu
+arungc@stanford.edu
+Robert Townsend
+Department of Economics, E52-538
+MIT
+77 Massachusetts Avenue
+Cambridge, MA 02139
+and NBER
+rtownsen@mit.edu
+
+FINANCIAL CENTRALITY AND LIQUIDITY PROVISION
+ARUN G. CHANDRASEKHAR‡, ROBERT M. TOWNSEND§, AND JUAN PABLO XANDRI?
+Abstract. Westudyanendowmenteconomyinwhichagentsfaceincomerisk,asifuncertain
+returns on a portfolio, and agents can only make transfers in states when they are actively
+participating in the market. Besides income risk, agents also have limited and stochastic
+marketaccess,withaprobabilitydistributiongovernedbyanunderlyingsocialnetwork. While
+network connections may serve to dissipate shocks, they may also provide obstacles to the
+sharing of risk, as when participation frictions are generated through the network.
+We identify and quantify the value of key players in terms of whether they are likely to
+be able to smooth the resulting market participation risk and how valuable that smoothing
+would be when they are there. We define financial centrality in economic terms, given the
+model,astheexantemarginalsocialvalueofinjectinganinfinitesimalamountofliquidityto
+the agent.
+We show that the most financially central agents are not only those who trade often -- as
+in standard network models -- but are more likely to trade when there are few traders, when
+income risk is high, when income shocks are positively correlated, when attitudes toward
+risk are more sensitive in the aggregate, when there are distressed institutions, and when
+there are tail risks. We extend our framework to allow for endogenous market participation.
+Observational evidence from village risk sharing network data is consistent with our model.
+JEL Classification Codes: D14, E44, G01, L14, O16
+Keywords: Financial networks, networks, market participation, liquidity injection
+1. Introduction
+Wefocusonameasureoffinancialcentralityandtheidentificationofkeyplayersinfinancial
+markets in environments in which disruptions to markets take the form of shocks to market
+participation.
+These shocks are consistent with the foundations of several types of models that are widely
+used to think about financial markets. The first class of models include search frictions with
+bilateral and stochastic matching as in Duffie et al. (2005), and, in particular, directed search
+modelsinwhichsubsetsofagentsgrouptogetherfacingatradeoffbetweenoffersandmatching
+Date: March 15, 2018.
+We thank Ben Golub, Matthew Jackson, and Juan Passadore for helpful discussions as well as seminar partic-
+ipants at NYU, Princeton, SAET Faro, Minnesota, MIT, and various other seminars and conferences. Chan-
+drasekhar is grateful for support from the National Science Foundation GFRP and Townsend is grateful for
+support from the NICHD.
+‡Stanford University. Email: arungc@stanford.edu.
+§Massachusetts Institute of Technology. Email: rtownsen@mit.edu.
+?Princeton University. Email: jxandri@princeton.edu.
+1
+
+FINANCIAL CENTRALITY AND LIQUIDITY PROVISION 2
+rates as in Armenter and Lester (2015). The second class of models include market partici-
+pation models used in finance and monetary economics, in particular, when the number and
+composition of traders who can deal with one another is stochastic as in Kiyotaki and Wright
+(1989), Trejos and Wright (1995), Freeman (1996) and Green and Zhou (2002), Santos and
+Woodford (1997). We focus especially on the resulting risk of thin markets, as this is a par-
+ticular concern to the traders individually and to overall social welfare. Putting this another
+way, we focus not only on liquidity shocks but also insurance against them. Broker dealers
+are such key traders in the private sector, as in Cocco et al. (2009) where relationships among
+dealers with less correlated shocks allows insurance against shortage of funds in the reserve
+maintenance period.
+Much of the financial network literature posits unanticipated shocks which can hit the bal-
+ancesheetofselectedtradersex-postandfocuseshowtheseadverseshocksmayspreadthrough
+the financial system via the network. Empirical studies on such networks include Upper and
+Worms (2004)Bech and Atalay (2010), Boss et al. (2004), Cohen-Cole et al. (2013), Craig and
+Von Peter (2014), Cont et al. (2013), Langfield et al. (2014), Jaramillo (2012), and others. The
+economic and/or network theory is developed in Allen and Gale (2000), Freixas et al. (2000)
+and Eisenberg and Noe (2001), and more recently in Gai and Kapadia (2010), Battiston et al.
+(2012), Acemoglu et al. (2015), and Elliott et al. (2014). See Allen and Babus (2009) and
+Summer (2013) for surveys.
+Many of the papers in this literature, motivated by the financial crisis, are concerned with
+how the pattern of connections and obligations across banks could induce contagion. In this
+sense interconnectedness is viewed as problematic and indeed financial systems are being reg-
+ulated accordingly, identifying institutions regarded as systematically important and imple-
+menting requirements that have the intent of limiting their size and/or limiting the exposure
+of the market to them, as in risk capital and liquidity ratios. But as Summer (2013) notes,
+many of the models of this literature miss the intuition provided by the standard risk sharing
+model. A shock to a highly interconnected system might be more easily dissipated because
+it can be absorbed by more parties (Acemoglu et al., 2010; Elliott et al., 2014). This idea
+was key in the original work of Allen and Gale (2000); when they allow a complete contract
+structure, they do not get contagion, as they note. Thus the actual network of exposures may
+be conducive to the sharing of idiosyncratic risk.
+On the other hand, depending on how it is modeled, the network structure may provide an
+obstacletorisk-sharingandleaveagentsexposed(Ambrusetal.,2010). Indeedinkeyexamples,
+we link the network structure to the way stochastic market participation shocks are generated.
+We can then distinguish across institutions or traders by their position in a network, and we
+show that financial centrality matters. However, our notion of ex-ante financial centrality,
+associated with a constrained Pareto outcome in the face of these market shocks, is different
+from the typical graph-theoretic definitions of network centrality and those implemented in
+the empirical literature. For us degree centrality, eigenvalue centrality, betweenness, closeness,
+and other measures of network centrality are potentially different from the correct measure of

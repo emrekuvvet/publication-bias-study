@@ -1,0 +1,126 @@
+NBER WORKING PAPER SERIES
+THE ECONOMICS OF BANK SUPERVISION
+Thomas M. Eisenbach
+David O. Lucca
+Robert M. Townsend
+Working Paper 22201
+http://www.nber.org/papers/w22201
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+April 2016
+For valuable comments, we thank Doug Diamond and Mark Flannery, as well as audience
+members at the New York Fed Conference on Supervising Large & Complex Financial
+Institutions. Emily Eisner provided excellent research assistance. Any errors are our own. The
+views expressed in this paper are solely the responsibility of the authors and should not be
+interpreted as reflecting the views of the Federal Reserve Bank of New York, anyone else
+associated with the Federal Reserve System, or the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2016 by Thomas M. Eisenbach, David O. Lucca, and Robert M. Townsend. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+The Economics of Bank Supervision
+Thomas M. Eisenbach, David O. Lucca, and Robert M. Townsend
+NBER Working Paper No. 22201
+April 2016
+JEL No. D82,G21,G28
+ABSTRACT
+We study bank supervision by combining a theoretical model distinguishing supervision from
+regulation and a novel dataset on work hours of Federal Reserve supervisors. We highlight the
+trade-offs between the benefits and costs of supervision and use the model to interpret the relation
+between supervisory efforts and bank characteristics observed in the data. More supervisory
+resources are spent on larger, more complex, and riskier banks. However, hours increase less than
+proportionally with bank size, suggesting the presence of technological scale economies in
+supervision. The data also show reallocation of supervisory hours at times of stress and in the
+post-2008 enhanced supervisory framework for large banks, providing evidence of constraints on
+supervisory resources. Finally, we show theoretically limits to assessing supervisory success
+based on ex-post outcomes, as well as benefits of ex-ante commitment policies.
+Thomas M. Eisenbach Robert M. Townsend
+Federal Reserve Bank of New York Department of Economics, E52-538
+33 Liberty St MIT
+New York, NY 10045 77 Massachusetts Avenue
+thomas.eisenbach@ny.frb.org Cambridge, MA 02139
+and NBER
+David O. Lucca rtownsen@mit.edu
+Federal Reserve Bank of New York
+33 Liberty Street
+New York, NY 10045
+david.lucca@ny.frb.org
+
+1 Introduction
+Muchpolicydebateinrecentyearshasfocusedonbanksupervisionandregulation.In
+order“[t]opromotethefinancialstabilityoftheUnitedStates,”the2010DoddFrankAct
+(DFA) introduced a number of provisions aimed in particular at the largest and most
+complexbankingorganizations.1 Whiletheacademicliteraturehaspaidincreasingat-
+tentiontobankregulation,workonbanksupervisionremainslimited,partlyreflecting
+theopacityofsupervisoryactivitiesthatstemsfromsupervisors’relianceonconfiden-
+tialinformation.Inthispaper,wefirstdevelopanabstractframeworkcharacterizedby
+incentive problems and asymmetric information between banks and banking authori-
+ties. Observability and verifiability of bank information and actions distinguish regu-
+latory from supervisory activities. Second, we use information from a unique dataset
+of hours spent by Federal Reserve bank examiners overseeing U.S. bank holding com-
+panies matched to banks’ characteristics. We use the data to illustrate details of the
+supervisoryprocessandinterpretkeyempiricalrelationsusingthetheoreticalmodel.
+Prudentialsupervisioniscloselyrelatedto,butdistinctfrom,regulationofbanking
+organizations.Regulationinvolvesthedevelopmentandpromulgationoftherulesun-
+der which banking organizations operate as well as their enforcement in the court of
+law.Thedistinguishingfeaturesofbanksupervisionare:(i)theassessmentofthesafety
+and soundness of banks through monitoring and exams, and (ii) the use of this infor-
+mationtorequestcorrectiveactionsfrombanksshouldtheirconditionsorpracticesbe
+deemedunsafeorunsound.
+Inourtheoreticalframework,theincentiveproblembetweenauthoritiesandbanks,
+which creates the need for regulation and supervision, is rooted in the bank’s limited
+liability.Banksonlyvaluepayoffsconditionalonbeingsolventwhilebankingauthori-
+ties value asset payoffs in all states of the world (micro-prudential objectives) and take
+intoaccountspillovers(macro-prudential,orfinancialstability,objectives).
+In differentiating between regulation and supervision, we assume that regulation
+is “coarse” and can only be contingent on verifiable information while supervision is
+“discretionary” and can be contingent on non-verifiable information. Regulation can
+therefore restrict banks’ activities ex-ante (for example, a ban on the trading of phys-
+1TheDFAcontainsalargenumberofregulatorychangesbothinthecontextoffinancialstabilityand
+consumerprotection.Intermsoffinancialstability,theDFAestablishedtheFinancialStabilityOversight
+Committee (FSOC) with the authority to designate systemically important institutions. The DFA also
+mandated the Federal Reserve Board and other federal banking regulatory authorities to issue tighter
+regulationsforthelargestinstitutionsrelatedtothelevelofregulatorycapital,proprietarytradingand
+stresstesting,amongothers.
+1
+
+ical commodities) and respond to asset payoffs ex-post (for example, the imposition
+of penalties after a breach of a capital requirement). Supervision can respond to in-
+terim signals about bank actions and influence asset payoffs before they are realized.
+Inpractice,agrayareacanexistbetweensupervisionandregulation,asexemplifiedby
+stresstestingandthefactthatsomesupervisoryactivitiesinvolvecompliancewithreg-
+ulations (see, for example Goldsmith-Pinkham, Hirtle, and Lucca, 2016). In its purest
+form,regulationiswrittenintolawandenforcedthroughcourts,andthereforerequires
+verifiability(Maskin,Laffont,andHildenbrand,1982).
+In our setting,a bank’s balance sheetand returns are verifiable.Regulation can im-
+pose capital requirements that increase loss absorption and provide skin in the game
+ex-ante as well as provide discipline in risk management by imposing costs ex-post
+should the requirements be breached. In contrast to regulation, supervision can col-
+lectinformationaboutbank’sactionsthroughcostlymonitoring,leadingtoaninterim
+signal,whichinthedataweproxywiththebank’ssupervisoryrating.Theinterimsig-
+nal is informative to banking authorities and allows improved outcomes compared to
+whenonlyregulationispresent.However,weassumethatthesignalsarenoisyandcan
+prove to be incorrect. After accounting for the informativeness of the signal, supervi-
+sion can respond to its realization and influence asset payoffs before they are realized.
+Inpracticethesesupervisoryinterventionsaretakenbycommunicatingtobanks“mat-
+tersrequiringattention”(MRAs)and“mattersrequiringimmediateattention”(MRIAs)
+as discussed in Eisenbach et al. (2015). Although the supervisory signal is informative
+on average, it can point to the wrong interim action on occasions, in which case the
+supervisoryinterventionwouldalsoproveincorrect.
+We assume that both supervisory monitoring and intervention are costly for the
+bankingauthority.Theoptimallychosensupervisorystrategythereforehastotradeoff
+benefitsandcostsofsupervision.Eventhoughmoresupervisionmayalwaysbebetter
+when only considering its benefits, optimal supervision will be limited overall with
+higher intensity warranted only if it results in higher marginal benefits than marginal
+costs.
+Given these trade-offs, our model predicts that intervention efforts are higher for
+riskier banks, which are those with a worse observed signal. Consistent with this pre-
+dictions, we find empirically that Fed supervisors’ efforts increase between 70 and 140
+percent for banking organizations where the confidential supervisory rating indicates
+moderatetoextremelevelsofconcerns(ratingof3,4or5).
+In light of the large size heterogeneity of U.S. banking organizations, we study in
+2

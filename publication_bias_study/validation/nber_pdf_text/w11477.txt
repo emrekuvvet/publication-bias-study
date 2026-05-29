@@ -1,0 +1,130 @@
+NBER WORKING PAPER SERIES
+THE EMPIRICAL RISK-RETURN RELATION:
+A FACTOR ANALYSIS APPROACH
+Syndey C. Ludvigson
+Serena Ng
+Working Paper 11477
+http://www.nber.org/papers/w11477
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2005
+Ludvigson: Department of Economics, New York University, 269 Mercer Street, 7th Floor, New York, NY
+10003; Email: sydney.ludvigson@nyu.edu; Tel: (212) 998-8927; Fax: (212) 995-4186;
+http://www.econ.nyu.edu/user/ludvigsons. Ng: Department of Economics, University of Michigan, 317
+Lorch Hall, Ann Arbor, MI 48109; Email: serena.ng@umich.edu; Tel: (734) 763-3496; Fax: (734) 764-2769.
+Ludvigson acknowledges financial support from the Alfred P. Sloan Foundation and the CV Starr Center at
+NYU. Ng acknowledges financial support from the National Science Foundation (SES-0345237). We thank
+Kenneth French for providing the portfolio data and Massimiliano Croce for excellent research assistance.
+Any erros or omissions are the responsibility of the authors. The views expressed herein are those of the
+author(s) and do not necessarily reflect the views of the National Bureau of Economic Research.
+©2005 by Syndey C. Ludvigson and Serena Ng. All rights reserved. Short sections of text, not to exceed two
+paragraphs, may be quoted without explicit permission provided that full credit, including © notice, is given
+to the source.
+
+The Empirical Risk-Return Relation: A Factor Analysis Approach
+Sydney C. Ludvigson and Serena Ng
+NBER Working Paper No. 11477
+July 2005
+JEL No. G12, G10
+ABSTRACT
+A key criticism of the existing empirical literature on the risk-return relation relates to the relatively
+small amount of conditioning information used to model the conditional mean and conditional
+volatility ox excess stock market returns. To the extent that financial market participants have
+information not reflected in the chosen conditioning variables, measures of conditional mean and
+conditional volatility - and ultimately the risk-return relation itself - will be misspecified and
+possibly highly misleading. We consider one remedy to these problems using the methodology of
+dynamic factor analysis for large datasets, whereby a large amount of economic information can b
+summarized by a few estimated factors. We find that three new factors, a “volatility”, “risk
+premium”, and “real” factor, contain important information about one-quarter ahead excess returns
+and volatility that is not contained on commonly used predictor variables. Moreover, the factor-
+augmented specifications we examine predict and unusual 16-20 percent of the one-quarter ahead
+variation in excess stock market returns, and exhibit remarkably stable and strongly statistically
+significant out-of-sample forecasting power. Finally, in contrast to several pre-existing studies that
+rely on a small number of conditioning variables, we find a positive conditional correlation between
+risk and return that is strongly statistically significant, whereas the unconditional correlation is
+weakly negative and statistically insignificant.
+Sydney C. Ludvigson Serena Ng
+Department of Economics Department of Economics
+New York University University of Michigan
+269 Mercer Street, 7th Floor 371 Lorch Hall
+New York, NY 10003 Ann Arbor, MI 48109
+and NBER serena.ng@umich.edu
+sydney.ludvigson@nyu.edu
+
+1 Introduction
+Financial economists have long been interested in the empirical relation between the condi-
+tional mean and conditional volatility of excess stock market returns, often referred to as the
+risk-return relation. The risk-return relation is an important ingredient in optimal portfolio
+choice, and is central to the development of theoretical models aimed at explaining observed
+patterns of stock market predictability and volatility. Among those theoretical models that
+have become standard-bearers in …nance, a positive risk-return relation is the benchmark
+prediction, so that times of predictably higher risk coincide with times of predictably higher
+excess returns, and vice versa. Unfortunately, the body of empirical evidence on the risk-
+return relation is mixed and inconclusive. Some evidence supports the theoretical prediction
+of a positive risk-return tradeo¤, but other evidence suggests a strong negative relation. Yet
+a third strand of the literature …nds that the relation is unstable and varies substantially
+through time. (We summarize the existing evidence below.)
+Several criticisms of the existing empirical literature relate to the relatively small amount
+of conditioning information used to model the conditional mean and conditional volatility of
+excess stock market returns. First, the conditional expectations underlying the conditional
+mean and conditional volatility are typically measured as projections onto predetermined
+conditioning variables; but, as Harvey (2001) points out, the decision of which predeter-
+mined conditioning variables to use in the econometric analysis can in‡uence the estimated
+risk-return relation. In practice, researchers are forced to choose among a few conditioning
+variables because conventional statistical analyses are quickly overwhelmed by degrees-of-
+freedom problems as the number rises. Such practical constraints introduce an element
+of arbitrariness into the econometric modeling of expectations and may lead to omitted-
+information estimation bias, since a small number of conditioning variables is unlikely to
+span the information sets of …nancial market participants. If investors have information
+not re‡ected in the chosen conditioning variables used to model market expectations, mea-
+sures of conditional mean and conditional volatility will be misspeci…ed and possibly highly
+misleading.1
+A second and related criticism of the existing empirical literature is that the estimated
+relation between the conditional mean and conditional volatility of excess returns often de-
+pendsontheparametricmodelofvolatility, e.g., GARCH,EGARCH,stochasticvolatility, or
+kernel density estimation (Harvey (2001)). Such procedures may impose potentially restric-
+tive parametric assumptions and they often su¤er from a curse-of-dimensionality problem
+that constrains their ability to entertain large datasets of conditioning information.
+1This point was made forcibly by Hansen and Richard (1987) in the context of estimating and testing
+dynamic asset pricing models.
+1
+
+Finally, therelianceonasmallnumberofconditioningvariablesexposesexistinganalyses
+to problems of temporal instability in the underlying forecasting relations being modeled.
+For example, it is commonplace to model market expectations of future stock returns using
+the …tted values from a forecasting regression of returns on to a measure of the market-
+wide dividend-price ratio. A di¢ culty with this approach is that the predictive power of
+the dividend-price ratio for excess stock market returns is unstable and exhibits statistical
+evidence of a structural break in the mid-1990s (Lettau, Ludvigson, and Wachter (2004)).
+Inthispaperweconsideroneremedytotheseproblemsusingthemethodologyofdynamic
+factor analysis for large datasets. Recent research on dynamic factor models …nds that the
+information in a large number of economic time series can be e¤ectively summarized by a
+relatively small number of estimated factors, a¤ording the opportunity to exploit a much
+richerinformationbasethanwhathasbeenpossibleinpriorempiricalstudyoftherisk-return
+relation. In this methodology, “a large number”can mean hundreds or, perhaps, even more
+than one thousand economic time series. By summarizing the information from a large
+number of series in a few estimated factors, we eliminate the arbitrary reliance on a small
+number of exogenous predictors to estimate the conditional mean and conditional volatility
+of stock returns, and make feasible the use of a vast set of economic variables that are more
+likelytospantheunobservableinformationsetsof…nancialmarketparticipants. Inthewords
+of Stock and Watson (2004), dynamic factor analysis permits us to turn dimensionality from
+a curse into a blessing.
+Dynamic factor analysis allows us to escape the limitations of existing empirical analyses
+discussed above, on several fronts. First, if a large amount of information can be e¤ectively
+summarized by a relatively few common factors, then a natural remedy to the omitted in-
+formation problem is to augment …tted conditional moments with estimated factors. We
+do so here by including estimated factors in the construction of …tted mean and volatility.
+Second, by combining dynamic factor analysis with a nonparametric approach to modeling
+volatility—an approach referred to hereafter as realized volatility—we avoid relying on po-
+tentially restrictive parametric structures while at the same time insuring that our measure
+of conditional volatility e¤ectively summarizes a large amount of information that may be
+important for predicting the variance of the stock market. Third, there is some evidence
+(discussed below) that dynamic factor analysis provides robustness against the temporal
+instability that often plagues low-dimensional forecasting regressions. Indeed, our applica-
+tion appears supportive of this evidence, since the factor-augmented predictive relations we
+employ are remarkably stable over time, despite the observed temporal instability of many
+commonly used predictor variables over the sample period we study.
+An important question of our study is the degree to which estimated common factors add
+informationabouttheconditionalmeanandconditionalvolatilityofstockreturnsthatisnot
+2

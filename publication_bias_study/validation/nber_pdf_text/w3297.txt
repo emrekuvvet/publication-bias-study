@@ -1,0 +1,124 @@
+NBER WORKING PAPER SERIES
+PREDICTABLE STOCK RETURNS: REALITY OR STATISTICAL ILLUSION?
+Charles R. Nelson
+Myung J. Kim
+Working Paper No. 3297
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+March 1990
+We are grateful to John Campbell for providing us with the data set assembled
+by him and Robert Shiller. Helpful comments from Andrew Lo, Pierre Perron,
+Richard Startz and participants in seminars at the Federal Reserve Board,
+Princeton University, and the University of Washington are acknowledged with
+thanks, but responsibility for errors is entirely that of the authors. This
+paper is part of NBER's research program in Financial Markets and Monetary
+Economics. Any opinions expressed are those of the authors and not those of
+the National Bureau of Economic Research.
+
+NBER Working Paper #3297
+March 1990
+PREDICTABLE STOCK RETURNS: REALITY OR STATISTICAL ILLUSION?
+ABSTRACT
+Recent research suggests that stock returns are predictable from
+fundamentals such as dividend yield, and that the degree of predictability
+rises with the length of the horizon over which return is measured. This paper
+investigates the magnitude of two sources of small ssmple bias in these
+reaults.
+First, it is a standard result in econometrics that regression on the
+lagged value of the dependent variable is biased in finite samples. Since a
+fundamental such as the price/dividend ratio is a statistical proxy for lagged
+price, predictive regressions are potentially subject to a corresponding small
+sample bias. This may create the illusion that one can buy low and sell high
+in the sample even if the relationship is useless for forecasting. Second,
+multiperiod returns are positively autocorrelated by construction, raising the
+possibility of spurious regression. Standard errors which are computed from
+the asymptotic formula may not be large enough in small samples.
+A set of Monte Carlo experiments are presented in which data are generated
+by a version of the present value model in which the discount rate is constant
+so returns are not in fact predictable. We show that a number of the
+characteristica of the historical results can be replicated simply by the
+combined effects of the two small sample biases.
+Charles R. Nelson Myung Jig Kim
+Dept. of Economics, DR-3D Dept. of Economics, Finance, &
+University of Washington Legal Studies
+Seattle, WA 98195 College of Commerce & Bus. Admin.
+University of Alabama
+Tuscaloosa, AL 35487-0224
+
+Introduction
+The proposition that stock returns are not predictable was until very
+recently regarded as one of the most (some would say the only) firmly
+established empirical results in economics. In his classic 1965 paper
+"The Behavior of Stock-Market Prices" Eugene Fama concluded that it had
+'presented strong and voluminous evidence in favor of the random walk
+hypothesis." Subsequent research over the next two decades only
+reinforced the evidence that neither past returns nor publicly available
+information were of any value in prediction. This large literature was
+widely interpreted as providing strong evidence that the capital markets
+are efficient in the sense of incorporating all available information in
+current prices. The extent to which the non-predictability result has been
+overturned in just the last few years in reflected in the opening
+statement in a recent paper by Fama and French (1988): "There is much
+evidence that stock returns are predictable." They cite estimates made by
+themselves and others that 25 to 40% of the variance in returns over
+periods of three to five years is predictable from past returns.
+Two sources of predictability have been identified in the recent
+literature: past returns themselves and "fundamentals" such as dividend
+yield and price-earnings ratios. Poterba and Summers (1988) and Fama
+and French (1988b) report negative autocorrelation in returns over long
+horizons. Apparently, moves in prices tend to be reversed over several
+years, a tendency referred to as mean reversion. Lo and MacKinlay (1988)
+have reported evidence of positive autocorrelation at lags measured in
+weeks, suggesting persistence in returns over shorter periods. In an
+earlier paper (see Kim, Nelson and Startz (1989)) we have questioned the
+strength of the evidence for mean reversion over long horizons by
+demonstrating its dependence on pre-1947 data and by showing that
+randomization methods suggest that estimated standard errors may have
+been too small
+The hypothesis that fundamentals should be useful in predicting
+stock returns follows from the seminal paper of Shiller (1981) which
+concluded that stock prices move too much to be justified by subsequent
+movement in dividends, If stock prices contain transient components
+unrelated to fundamentals but are anchored to fundamentals over the long
+term, then the fundamentals should contain information that is useful in
+predicting the future direction of prices. Indeed, Keim and Stambaugh
+(1986), Campbell and Shiller (1988), Fama and French (1988) and Cutler,
+Poterba, and Summers (1989) report that lagged ratios of dividends or
+
+earnings to price may explain more than 25% of the variation in stock
+returns measured over intervals of several years.
+A finding that stock returns are to some extent predictable would
+not of itself contradict the efficient markets hypothesis since expected
+returns may well vary over time in a predictable way. Whether the
+observed degree of predictability constitutes evidence against efficient
+markets is, however, a subject of continuing debate in the literature.
+Cecchetti, Lam and Mark (1990) show that mean reversion can be a
+property of equilibrium returns in an economy where investors are risk
+averse.
+The purpose of this paper is to consider the extent to which
+inferences about the predictability of stock returns might be influenced
+by small sample biases. One source of concern that we have comes from
+the use of multi-period overlapping stock returns data which introduces
+positive Serial correlation by construction. For example, if annual one-
+year returns are serially random then overlapping annual observations on
+ten-year returns will have a MA(9) structure with first order
+autocorrelation equal to 0.9 by construction. Granger and Newbold (1974)
+cautioned against interpreting a high R2 as evidence in itself of a
+relationship when the data are positively autocorrelated. Hansen and
+Hodrick (1980) and subsequent authors have recognized the need to correct
+regression standard errors in the case of overlapping observations. We
+are interested in investigating the adequacy of the correction in relevant
+sample sizes.
+Another potential small sample problem is closely related to the
+bias which occurs in regressions involving a lagged dependent variable. To
+motivate the possibility of such a bias, consider the regression of the log
+of price, denoted p, on its lagged value,
+= a+ b
+If price is a random walk with drift then the true coefficient of is
+one. It is a standard result in econometrics that least squares is biased in
+regression on a lagged dependent variable for finite samples, and in this
+case we know the sample slope coefficient b to be biased towards zero;
+see Fuller (1976) and Evans and Savin (1984). Subtracting lagged price
+from both sides of the equation we have
+2

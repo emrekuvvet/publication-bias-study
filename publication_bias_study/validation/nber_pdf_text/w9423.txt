@@ -1,0 +1,118 @@
+NBER WORKING PAPER SERIES
+LIMITED ARBITRAGE AND SHORT SALES
+RESTRICTIONS: EVIDENCE FROM
+THE OPTIONS MARKETS
+Eli Ofek
+Matthew Richardson
+Robert F. Whitelaw
+Working Paper 9423
+http://www.nber.org/papers/w9423
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2002
+We would like to thank Michael Brandt, Steve Figlewski, Francis Longstaff, Lasse Pedersen and Eduardo
+Schwartz for helpful suggestions and David Hait (Option Metrics) for providing the options data. We are
+especially grateful to comments from Owen Lamont, Jeff Wurgler, the anonymous referee and seminar
+participants at UBC, NYU, USC and the NBER. The views expressed herein are those of the authors and not
+necessarily those of the National Bureau of Economic Research.
+© 2002 by Eli Ofek, Matthew Richardson, and Robert F. Whitelaw. All rights reserved. Short sections of
+text not to exceed two paragraphs, may be quoted without explicit permission provided that full credit
+including, © notice, is given to the source.
+
+Limited Arbitrage and Short Sales Restrictions: Evidence from the Options Markets
+Eli Ofek, Matthew Richardson, and Robert F. Whitelaw
+NBER Working Paper No. 9423
+December 2002
+JEL No. G13, G14
+ABSTRACT
+In this paper, we investigate empirically the well-known put-call parity no-arbitrage relation
+in the presence of short sale restrictions. We use a new and comprehensive sample of options on
+individual stocks in combination with a measure of the cost and difficulty of short selling,
+specifically the spread between the rate a short-seller earns on the proceeds from the sale relative
+to the standard rate (the rebate rate spread). We find that violations of put-call parity are asymmetric
+in the direction of short sales constraints, their magnitudes are strongly related to the rebate rate
+spread, and they are maintained even in the presence of transactions costs both in the options and
+equity lending market. These violations appear to be related to both the maturity of the option and
+the level of valuations in the stock market, consistent with a behavioral finance theory that relies on
+over-optimistic investors in the stock market and segmentation between the stock and options
+markets. Moreover, the extent of violations of put-call parity and the rebate rate spread for
+individual stocks are significant predictors of future stock returns. For example, cumulative
+abnormal returns, net of borrowing costs, over a 2½-year sample period can exceed 65%.
+Eli Ofek Matthew Richardson
+NYU, Stern School of Business NYU, Stern School of Business
+44 W. 4th St. 44 W. 4th St.
+New York, NY 10012 New York, NY 10012
+and NBER
+mrichardson@stern.nyu.edu
+Robert F. Whitelaw
+NYU, Stern School of Business
+44 W. 4th St.
+New York, NY 10012
+and NBER
+rwhitela@stern.nyu.edu
+
+I. Introduction
+The concept of no arbitrage is at the core of our beliefs about finance theory. In
+particular, two assets with the same payoffs should have the same price. If this restriction
+is violated, then at least two conditions must be met. First, there must be some limits to
+arbitrage that prevent the convergence of these two prices (e.g., Shleifer (2000) and
+Barberis and Thaler (2002)). Second, there must exist a reason why these assets have
+diverging prices in the first place. The goal of our paper is to analyze the impact of these
+two conditions in an obvious no-arbitrage framework.
+There is perhaps no better example in finance than the case of redundant assets, for
+example, stocks and options on those stocks. One of the most commonly cited no-
+arbitrage relations using stocks and options is that of put-call parity. The put-call parity
+condition assumes that investors can short the underlying securities. If short sales are not
+allowed, then this no-arbitrage relation can breakdown. Of course, even without short
+sales, the condition does not necessarily fail. Suppose that the stock is priced too high on
+a relative basis. Then one could form a portfolio by buying a call, writing an equivalent
+put, and owning a bond; the return on this portfolio would exceed the return on the stock
+in all possible circumstances. This is a difficult phenomenon to explain in “rational”
+equilibrium asset pricing models.
+There is a considerable, and growing, literature that looks at the impact of short sales
+restrictions on the equity market. (See, for example, Lintner (1969), Miller (1977),
+Harrison and Kreps (1978), Jarrow (1981), Figlewski (1981), Chen, Hong and Stein
+(2000), D’Avolio (2001), Geczy, Musto and Reed (2001), Mitchell, Pulvino and Stafford
+(2001), Ofek and Richardson (2001), Jones and Lamont (2001), and Duffie, Garleanu and
+Pedersen (2002), among others.) However, there has been much less attention paid to
+understanding the direct links between short sales and the options market (Figlewski and
+Webb (1993), Danielson and Sorescu (2001) and Lamont and Thaler (2000) are notable
+exceptions). Of particular interest to this paper, Lamont and Thaler (2000) document
+severe violations of put-call parity for a small sample of three stocks that have gone
+through an equity carve-out and the parent sells for less than its ownership stake in the
+1
+
+carve-out. Lamont and Thaler (2000) view this evidence as consistent with high costs of
+shorting these stocks.
+This paper provides a comprehensive analysis of put-call parity in the context of short
+sales restrictions. We employ two novel databases from which we construct matched
+pairs of call and put options and stock prices across the universe of equities, as well as a
+direct measure of the shorting costs of each of these stocks, namely their rebate rate.1 We
+report several interesting results. First, consistent with the theory of limited arbitrage, we
+find that the violations of the put-call parity no-arbitrage restriction are asymmetric in the
+direction of short sales restrictions.2 These violations still persist even after incorporating
+shorting costs and/or extreme assumptions about transactions costs (i.e., all options
+transactions take place at ask and bid prices). For example, after shorting costs, 13.63%
+of stock prices still exceed the upper bound from the options market while only 4.36%
+are below the lower bound. Moreover, the mean difference between the option-implied
+stock price and the actual stock price for these violations is 2.71%.
+Second, under the assumption that the rebate rate maps one-to-one with the difficulty
+of shorting, we find a strong general relation between violations of no arbitrage and short
+sales restrictions. In particular, both the probability and magnitude of the violations can
+be linked directly to the magnitude of the rebate rate, or, in other words, the degree of
+specialness of the stock. In a regression context, a one standard deviation decrease in the
+rebate rate spread implies a 0.67% increase in the deviation between the prices in the
+stock and options markets. This result is robust to other measures such as liquidity in
+either the equity or options markets, stock and option characteristics and transactions
+costs.
+The above results suggest that the relative prices of similar assets (i.e., ones with
+identical payoffs) can deviate from each other when arbitrage is not possible. If we take
+the view that these deviations rule out our most standard asset pricing models, then what
+possible explanations exist? If markets are sufficiently incomplete, and there is diversity
+1 In particular, when an investor shorts a stock, he (i.e., the borrower) must place a cash deposit equal to the
+proceeds of the shorted stock. That deposit carries an interest rate referred to as the rebate rate.
+2 Related phenomena exist in other markets. For example, short-sellers of gold must pay a fee called the
+lease rate in order to borrow gold. This short-selling cost enters the no-arbitrage relation between forward
+and spot prices of gold as a convenience yield (see McDonald and Shimko (1998)). Longstaff (1995)
+2

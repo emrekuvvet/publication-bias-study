@@ -1,0 +1,125 @@
+NBER WORKING PAPER SERIES
+MEASURING BIAS IN CONSUMER LENDING
+Will Dobbie
+Andres Liberman
+Daniel Paravisini
+Vikram Pathania
+Working Paper 24953
+http://www.nber.org/papers/w24953
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+August 2018
+We are extremely grateful to the Lender for providing the data used in this analysis. We also
+thank Leah Boustan, Hank Farber, Alex Mas, Crystal Yang, and numerous seminar participants
+for helpful comments and suggestions. Emily Battaglia, Nicole Gandre, Jared Grogan, Bailey
+Palmer, and James Reeves provided excellent research assistance. All errors and omissions are
+ours alone. The views expressed herein are those of the authors and do not necessarily reflect the
+views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2018 by Will Dobbie, Andres Liberman, Daniel Paravisini, and Vikram Pathania. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+Measuring Bias in Consumer Lending
+Will Dobbie, Andres Liberman, Daniel Paravisini, and Vikram Pathania
+NBER Working Paper No. 24953
+August 2018
+JEL No. G41,J15,J16
+ABSTRACT
+This paper tests for bias in consumer lending decisions using administrative data from a high-cost
+lender in the United Kingdom. We motivate our analysis using a simple model of bias in lending,
+which predicts that profits should be identical for loan applicants from different groups at the
+margin if loan examiners are unbiased. We identify the profitability of marginal loan applicants
+by exploiting variation from the quasi-random assignment of loan examiners. We find significant
+bias against both immigrant and older loan applicants when using the firm's preferred measure of
+long-run profits. In contrast, there is no evidence of bias when using a short-run measure used to
+evaluate examiner performance, suggesting that the bias in our setting is due to the misalignment
+of firm and examiner incentives. We conclude by showing that a decision rule based on machine
+learning predictions of long-run profitability can simultaneously increase profits and eliminate
+bias.
+Will Dobbie Daniel Paravisini
+Industrial Relations Section Department of Finance
+Louis A. Simpson International Bldg. London School of Economics
+Princeton University Houghton Street
+Princeton, NJ 08544-2098 London WC2A 2AE
+and NBER d.paravisini@lse.ac.uk
+wdobbie@princeton.edu
+Vikram Pathania
+Andres Liberman Department of Economics
+New York University Stern School of Business University of Sussex Business School
+KMC 9-53 Jubilee 270, University of Sussex
+44 West Fourth Street Falmer, Brighton, BN1 9SL
+New York, NY United Kingdom
+10012 V.Pathania@sussex.ac.uk
+aliberma@stern.nyu.edu
+
+I. Introduction
+There are large disparities in the availability and cost of credit within many developed countries. In
+theUnitedStates, forexample, blackspayhigherinterestratesandaremorelikelytoberejectedfor
+a mortgage compared to observably similar whites, even after accounting for observable differences
+in credit history and earnings (e.g., Charles, and Hurst 2002, Bayer, Ferreira, and Ross 2017).
+There are also large disparities in credit usage and interest rates by ethnicity and gender within
+many European countries that cannot be explained by observable differences in creditworthiness
+(e.g., Alesina, Lotti, and Mistrulli 2013, Deku, Kara, and Molyneux 2016).
+These disparities have fueled concerns that lenders may be biased against minorities and women
+due to prejudice or inaccurate stereotyping, which, in turn, has provided a rationale for a range of
+policiesaimedatpreventingdiscriminatorylendingpracticessuchastheHomeMortgageDisclosure
+Act in the United States and portions of the Equality Act of 2010 in the United Kingdom. Yet, the
+observed disparities in credit availability and pricing could also be driven by omitted variable bias
+or statistical discrimination on the part of lenders. For example, lenders may use variables that are
+not observed by the econometrician that are correlated with both creditworthiness and ethnicity or
+gender when making lending decisions, such as an applicant’s expected future income, leading to
+omitted variable bias. Lenders may also be using observable group traits such as ethnicity orgender
+to form accurate beliefs about the unobservable characteristics of different applicants, commonly
+known as statistical discrimination (e.g., Phelps 1972, Arrow 1973).1
+To distinguish between bias and these alternative explanations, Becker (1957, 1993) proposed
+an “outcome test” that compares the success or failure of decisions across groups at the margin. In
+the context of consumer lending, the outcome test is based on the idea that long-run profits to the
+lender should be identical for marginal applicants from all groups if loan examiners are unbiased
+1In both the United States and the United Kingdom, it is illegal for lenders to discriminate against minorities
+or women, regardless of whether that discrimination is driven by bias or statistical discrimination. Lenders are,
+however, allowed to use a wide range of variables that may not be observed by the econometrician when making
+lendingdecisions,solongasthesevariableshavealegitimatebusinesspurposeanddonothaveadisparateimpacton
+aprotectedclass. Inpractice, however, statisticaldiscriminationandomittedvariablebiasmaybeindistinguishable
+from each other unless there is direct evidence that lenders used ethnicity or gender to make lending decisions. The
+policy implications of bias and statistical discrimination are also very different. For example, bias stemming from
+prejudice or inaccurate stereotyping may be best addressed by policies that increase competition or encourage the
+employment of minority or female loan examiners (e.g., Becker 1957). In contrast, statistical discrimination is likely
+bestaddressedthroughtheenforcementofexistinglawssuchastheEqualCreditOpportunityActortheFairHousing
+Act in the United States or the Equality Act in the United Kingdom.
+1
+
+and the disparities across groups are solely due to omitted variables and statistical discrimination.
+In contrast, marginal applicants from a targeted group (e.g., minorities) will yield higher profits
+to the lender than marginal applicants from the non-targeted group (e.g., non-minorities) if loan
+examiners are biased against the targeted group and these disparities cannot be fully explained by
+omitted variables and statistical discrimination.
+Estimating the profitability of marginal applicants and implementing the outcome test has been
+complicated by three important issues. First, researchers rarely observe long-run profits, and inter-
+mediate outcomes such as loan default may not provide an accurate measure of long-term profits
+(e.g., Han 2004, Agarwal et al. 2015). Second, characteristics observable to the lender but not
+the econometrician may be correlated with loan decisions, resulting in omitted variable bias when
+estimating the profitability of marginal applicants from each group. Finally, and most importantly,
+standard OLS estimates recover the profitability of the average applicant from each group, not the
+marginal applicant as required by the outcome test (e.g., Ayres 2002). As a result, comparisons
+based on OLS estimates will not recover the true level of bias in consumer lending decisions unless
+oneiswillingtoassumethatthereisanidenticaldistributionofpotentialprofitabilityacrossgroups.
+In this paper, we implement the Becker outcome test using detailed administrative data on loan
+outcomes from a high-cost lender in the United Kingdom (hereafter, “the Lender”). This setting
+offers an ideal laboratory to test for bias in consumer credit for at least three reasons. First, we
+observedetaileddataoncashflowstoandfromtheLenderthatallowustoconstructindividual-level
+measures of profitability. Second, the Lender’s loan examiners must make on-the-spot judgments
+withonlythestandardcreditinformationandlimitedinteractionwithloanapplicants, makingtheir
+decisions particularly prone to the kind of inaccurate stereotypes or categorical heuristics that can
+lead to bias. Finally, as in most credit markets, the Lender’s loan examiners are evaluated using
+a measure based on short-run default, not long-run profits, creating exactly the kind of agency
+problems that can unintentionally lead examiners to discriminate against groups where short- and
+long-run outcomes systematically diverge.
+We identify the differences in profitability at the margin required for the Becker outcome test
+using variation in the approval tendencies of quasi-randomly assigned loan examiners. The Lender
+usesablindrotationsystemtoassignfirst-timeloanapplicantstoexaminersofthesamenationality,
+effectively randomizing new applicants to examiners within each branch and nationality. Using the
+2

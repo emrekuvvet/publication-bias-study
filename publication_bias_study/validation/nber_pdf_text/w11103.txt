@@ -1,0 +1,107 @@
+NBER WORKING PAPER SERIES
+IMPLICATION OF ALTERNATIVE OPERATIONAL
+RISK MODELING TECHNIQUES
+Patrick de Fontnouvelle
+John Jordan
+Eric Rosengren
+Working Paper 11103
+http://www.nber.org/papers/w11103
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+February 2005
+This paper was prepared for the NBER Project on the Risks of Financial Institutions. It was substantially
+completed while John Jordan was with the Federal Reserve Bank of Boston. We thank our colleagues in the
+Federal Reserve System and in the Risk Management Group of the Basel Committee for the many fruitful
+interactions that have contributed to this work. However, the views expressed in this paper do not necessarily
+reflect their views, those of the Federal Reserve Bank of Boston, or those of the Federal Reserve System.
+Address for correspondence: Patrick de Fontnouvelle, Federal Reserve Bank of Boston, Mail Stop T-10, 600
+Atlantic Avenue, P.O. Box 2076, Boston, MA 02106-2076, tel: 617-973-3659, fax: 617-973-3219, email:
+patrick.defontnouvelle@bos.frb.org. The views expressed herein are those of the author(s) and do not
+necessarily reflect the views of the National Bureau of Economic Research.
+© 2005 by Patrick de Fontnouvelle, John Jordan, and Eric Rosengren. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Implications of Alternative Operational Risk Modeling Techniques
+Patrick de Fontnouvelle, John Jordan, and Eric Rosengren
+NBER Working Paper No. 11103
+February 2005
+JEL No. G2
+ABSTRACT
+Quantification of operational risk has received increased attention with the inclusion of an explicit
+capital charge for operational risk under the new Basle proposal. The proposal provides significant
+flexibility for banks to use internal models to estimate their operational risk, and the associated
+capital needed for unexpected losses. Most banks have used variants of value at risk models that
+estimate frequency, severity, and loss distributions. This paper examines the empirical regularities
+in operational loss data. Using loss data from six large internationally active banking institutions,
+we find that loss data by event types are quite similar across institutions. Furthermore, our results
+are consistent with economic capital numbers disclosed by some large banks, and also with the
+results of studies modeling losses using publicly available "external" loss data.
+Patrick de Fontnouvelle
+Federal Reserve Bank of Boston
+Supervision, Regulation, and Credit Department
+600 Atlantic Avenue
+Boston, MA 02106
+patrick.defontnouvelle@bos.frb.org
+John Jordan
+FitchRisk
+17 State Street
+New York, NY 10004
+john.jordan@fitchrisk.com
+Eric Rosengren
+Federal Reserve Bank of Boston
+Supervision, Regulation, and Credit Department
+600 Atlantic Avenue
+Boston, MA 02106
+eric.rosengren@bos.frb.org
+
+1. Introduction
+Large operational losses as a result of accounting scandals, insider fraud, and rogue
+trading, to name just a few, have received increasing attention from the press, the public, and
+from policymakers. The frequency of severe losses, with more than 100 instances of losses at
+financial institutions exceeding $100 million, has caused many financial institutions to try to
+explicitly model operational risk to determine their own economic capital. As financial
+institutions have begun to comprehensively collect loss data and use it to manage operational
+risk, bank regulators have increased their expectations for measuring and modeling operational
+risk. Under the current US rules proposal for implementing the Basle Accord, large
+internationally active banks will be expected to use internal models to estimate capital for
+unexpected operational losses. A criticism of this proposal has been that the tools for modeling
+operational risk are in their infancy, making estimating capital problematic.
+This paper uses data supplied by six large internationally active banks to determine if the
+regularities in the loss data will make consistent modeling of operational losses possible. We
+find that there are similarities in the results of models of operational loss across institutions, and
+that our results are consistent with publicly reported operational risk capital estimates produced
+by banks’ internal economic capital models.
+We begin the analysis by considering tail plots of each bank’s loss data by business line
+and event type. Three findings clearly emerge from this descriptive analysis. First, loss data for
+most business lines and event types may be well modeled by a Pareto-type distribution, as most
+of the tail plots are linear when viewed on a log-log scale. Second, the severity ranking of event
+types is consistent across institutions. Clients, Products and Business Practices is the highest
+severity event type, while External Fraud and Employment Practices are the lowest severity
+2
+
+event types. Third, the tail plots suggest that losses for certain business lines and event types are
+very heavy-tailed. This last finding highlights that while basic measurement approaches such as
+the tail plot are easy to implement and intuitively appealing, overly simplistic approaches may
+yield implausible estimates of economic capital. A main contribution of this paper is to show
+how quantitative modeling can result in more reasonable conclusions regarding tail thickness and
+economic capital.
+We next attempt to model the distribution of loss amounts using a “full-data” approach,
+whereby one fits all of the available loss data with a parametric severity distribution. We
+consider nine commonly-used distributions, four of which are light-tailed and five of which are
+heavy-tailed. We fit each of these distributions by business line and event type at each of the six
+institutions considered. The heavy-tailed distributions provide consistently good fits to the loss
+data, which confirms our findings based on visual inspection of the tail plots. The light-tailed
+distributions do not generally provide good fits. However, we find that some parameter
+estimates for the heavy-tailed distributions can have implausible implications for both tail
+thickness and economic capital.
+Extreme Value Theory (EVT) is an alternative to the full-data approach that is
+increasingly being explored by researchers, by financial institutions, and by their regulators.
+However, it is well-known that EVT techniques yield upward-biased tail estimates in small
+samples. Huisman, Koedijk, Kool and Palm (2001) have proposed a regression-based EVT
+technique that corrects for small-sample bias in the tail parameter estimate. Applying their
+technique (hereafter HKKP) to the six banks in our sample, we obtain estimates that are both
+reasonable and consistent with earlier estimates using purely external data (de Fontnouvelle et.
+al., 2003).
+3

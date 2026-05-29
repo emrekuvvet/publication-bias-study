@@ -1,0 +1,161 @@
+NBER WORKING PAPER SERIES
+THE IMPACT OF MONETARY POLICY ON ASSET PRICES
+Roberto Rigobon
+Brian Sack
+Working Paper 8794
+http://www.nber.org/papers/w8794
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+February 2002
+The authors would like to thank Andrew Ang, Antulio Bomfim, Darrel Cohen, William English, and seminar
+participants at the Federal Reserve Board and the American Economic Association meetings for useful
+comments. Comments are welcome to bsack@frb.gov or rigobon@mit.edu. The views expressed herein are
+those of the authors and not necessarily those of the National Bureau of Economic Research or the Board
+of Governors of the Federal Reserve System or members of its staff.
+© 2002 by Roberto Rigobon and Brian Sack. All rights reserved. Short sections of text, not to exceed two
+paragraphs, may be quoted without explicit permission provided that full credit, including © notice, is given
+to the source.
+
+The Impact of Monetary Policy on Asset Prices
+Roberto Rigobon and Brian Sack
+NBER Working Paper No. 8794
+February 2002
+JEL No. E44, E47, E52
+ABSTRACT
+Estimating the response of asset prices to changes in monetary policy is complicated by the
+endogeneity of policy decisions and the fact that both interest rates and asset prices react to numerous
+other variables. This paper develops a new estimator that is based on the heteroskedasticity that exists
+in high frequency data. We show that the response of asset prices to changes in monetary policy can be
+identified based on the increase in the variance of policy shocks that occurs on days of FOMC meetings
+and of the Chairman's semi-annual monetary policy testimony to Congress. The identification approach
+employed requires a much weaker set of assumptions than needed under the "event-study" approach that
+is typically used in this context. The results indicate that an increase in short-term interest rates results
+in a decline in stock prices and in an upward shift in the yield curve that becomes smaller at longer
+maturities. The findings also suggest that the event-study estimates contain biases that make the
+estimated effects on stock prices appear too small and those on Treasury yields too large.
+Roberto Rigobon Brian P. Sack
+Sloan School of Management Division of Monetary Affairs
+Massachusetts Institute of Technology Federal Reserve Board of Governors
+50 Memorial Drive, E52-447 20th and C Streets, Mail Stop 73
+Cambridge, MA 02142-1347 Washington, DC 20551
+and NBER bsack@frb.gov
+rigobon@mit.edu
+
+1
+T
+p
+t
+l
+p
+t
+m
+p
+t
+o
+t
+i
+i
+o
+r
+a
+d
+p
+i
+v
+t
+o
+p
+t
+C
+t
+I n t r o d u c t i o n
+h e r e i s a c o n s i d e r a b l e a m o u n t o f i n t e r e s t i n u n d e r s t a n d i n g t h e i n t e r a c t i o n s b e t w e e n a s s e t
+r i c e s a n d m o n e t a r y p o l i c y . I n p r e v i o u s r e s e a r c h ( R i g o b o n a n d S a c k ( 2 0 0 1 ) ) , w e h a v e f o u n d
+h a t s h o r t - t e r m i n t e r e s t r a t e s r e a c t s i g n i (cid:12) c a n t l y t o m o v e m e n t s i n b r o a d e q u i t y p r i c e i n d e x e s ,
+i k e l y r e (cid:13) e c t i n g t h e e x p e c t e d e n d o g e n o u s r e s p o n s e o f m o n e t a r y p o l i c y t o t h e i m p a c t o f s t o c k
+r i c e m o v e m e n t s o n a g g r e g a t e d e m a n d . T h i s p a p e r a t t e m p t s t o e s t i m a t e t h e o t h e r s i d e o f
+h e r e l a t i o n s h i p : h o w a s s e t p r i c e s r e a c t t o c h a n g e s i n m o n e t a r y p o l i c y .
+T h i s r e l a t i o n s h i p i s a n i m p o r t a n t t o p i c f o r s e v e r a l r e a s o n s . F r o m t h e p e r s p e c t i v e o f
+o n e t a r y p o l i c y m a k e r s , h a v i n g r e l i a b l e e s t i m a t e s o f t h e r e a c t i o n o f a s s e t p r i c e s t o t h e
+o l i c y i n s t r u m e n t i s a c r i t i c a l s t e p i n f o r m u l a t i n g e (cid:11) e c t i v e p o l i c y d e c i s i o n s . M u c h o f t h e
+r a n s m i s s i o n o f m o n e t a r y p o l i c y c o m e s t h r o u g h t h e i n (cid:13) u e n c e o f s h o r t - t e r m i n t e r e s t r a t e s
+n o t h e r a s s e t p r i c e s , a s i t i s t h e m o v e m e n t s i n t h e s e o t h e r a s s e t p r i c e s | i n c l u d i n g l o n g e r -
+e r m i n t e r e s t r a t e s a n d s t o c k p r i c e s | t h a t d e t e r m i n e p r i v a t e b o r r o w i n g c o s t s a n d c h a n g e s
+n w e a l t h , w h i c h i n t u r n i m p o r t a n t l y i n (cid:13) u e n c e r e a l e c o n o m i c a c t i v i t y .
+U n d e r s t a n d i n g t h e r e s p o n s e o f a s s e t p r i c e s t o c h a n g e s i n m o n e t a r y p o l i c y i s a l s o o f g r e a t
+m p o r t a n c e t o (cid:12) n a n c i a l m a r k e t p a r t i c i p a n t s . M o n e t a r y p o l i c y h a s a c o n s i d e r a b l e i n (cid:13) u e n c e
+n (cid:12) n a n c i a l m a r k e t s , a s e v i d e n c e d b y t h e e x t e n s i v e a t t e n t i o n t h a t t h e F e d e r a l R e s e r v e
+e c e i v e s i n t h e (cid:12) n a n c i a l p r e s s . T h u s , h a v i n g a c c u r a t e e s t i m a t e s o f t h e r e s p o n s i v e n e s s o f
+s s e t p r i c e s t o m o n e t a r y p o l i c y i s a n i m p o r t a n t c o m p o n e n t o f m a k i n g e (cid:11) e c t i v e i n v e s t m e n t
+e c i s i o n s a n d f o r m u l a t i n g a p p r o p r i a t e r i s k m a n a g e m e n t s t r a t e g i e s .
+S e v e r a l d i Æ c u l t i e s a r i s e i n e s t i m a t i n g t h e r e s p o n s i v e n e s s o f a s s e t p r i c e s t o m o n e t a r y
+o l i c y , t h o u g h . F i r s t , s h o r t - t e r m i n t e r e s t r a t e s a r e s i m u l t a n e o u s l y i n (cid:13) u e n c e d b y m o v e m e n t s
+n a s s e t p r i c e s , r e s u l t i n g i n a d i Æ c u l t e n d o g e n e i t y p r o b l e m . S e c o n d , a n u m b e r o f o t h e r
+a r i a b l e s , i n c l u d i n g n e w s a b o u t t h e e c o n o m i c o u t l o o k , l i k e l y h a v e a n i m p a c t o n b o t h s h o r t -
+e r m i n t e r e s t r a t e s a n d a s s e t p r i c e s . T h e s e t w o c o n s i d e r a t i o n s c o m p l i c a t e t h e i d e n t i (cid:12) c a t i o n
+f t h e r e s p o n s i v e n e s s o f a s s e t p r i c e s u n d e r p r e v i o u s l y u s e d m e t h o d s .
+T o a d d r e s s t h e s e i s s u e s , w e d e v e l o p a n e s t i m a t o r t h a t i d e n t i (cid:12) e s t h e r e s p o n s e o f a s s e t
+r i c e s b a s e d o n t h e h e t e r o s k e d a s t i c i t y o f m o n e t a r y p o l i c y s h o c k s . I n p a r t i c u l a r , w e a s s u m e
+h a t t h e v a r i a n c e o f m o n e t a r y p o l i c y s h o c k s i s h i g h e r o n d a y s o f F O M C m e e t i n g s a n d o f t h e
+h a i r m a n ’s s e m i - a n n u a l m o n e t a r y p o l i c y t e s t i m o n y t o C o n g r e s s , w h e n a l a r g e r p o r t i o n o f
+h e n e w s h i t t i n g m a r k e t s i s a b o u t m o n e t a r y p o l i c y . W e s h o w t h a t t h e s h i f t i n t h e v a r i a n c e
+1
+
+o
+t
+s
+I
+s
+e
+t
+c
+r
+t
+t
+t
+t
+u
+b
+n
+i
+a
+t
+p
+s
+2
+T
+p
+w
+r
+t
+f t h e p o l i c y s h o c k s o n t h o s e d a t e s i s s u Æ c i e n t t o m e a s u r e t h e r e s p o n s i v e n e s s o f a s s e t p r i c e s
+o m o n e t a r y p o l i c y .
+O u r a p p r o a c h a l l o w s u s t o i d e n t i f y t h e p a r a m e t e r o f i n t e r e s t u n d e r a w e a k e r s e t o f a s -
+u m p t i o n s t h a n r e q u i r e d u n d e r t h e a p p r o a c h t h a t o t h e r p a p e r s h a v e t a k e n i n t h i s c o n t e x t .
+n p a r t i c u l a r , o t h e r p a p e r s h a v e t y p i c a l l y e s t i m a t e d o r d i n a r y - l e a s t - s q u a r e s ( O L S ) r e g r e s -
+i o n s o n F O M C d a t e s , w h i c h h a s b e e n c a l l e d t h e \ e v e n t - s t u d y " m e t h o d . W e s h o w t h a t t h e
+v e n t - s t u d y a p p r o a c h i s a n e x t r e m e c a s e o f o u r h e t e r o s k e d a s t i c i t y - b a s e d e s t i m a t o r i n w h i c h
+h e s h i f t i n t h e v a r i a n c e o f t h e p o l i c y s h o c k i s l a r g e e n o u g h t o d o m i n a t e a l l o t h e r s h o c k s . I n
+o n t r a s t , t h e h e t e r o s k e d a s t i c i t y - b a s e d e s t i m a t o r t h a t w e d e v e l o p r e q u i r e s o n l y a s h i f t i n t h e
+e l a t i v e i m p o r t a n c e o f t h e p o l i c y s h o c k . T h u s , o u r e s t i m a t o r c a n b e u s e d t o t e s t w h e t h e r
+h e s t r o n g e r a s s u m p t i o n s u n d e r t h e e v e n t - s t u d y a p p r o a c h a r e v a l i d , a n d , c o r r e s p o n d i n g l y ,
+h e e x t e n t t o w h i c h t h e e v e n t - s t u d y e s t i m a t e s a r e b i a s e d .
+T h e p a p e r p r o c e e d s a s f o l l o w s . S e c t i o n 2 d i s c u s s e s t h e p r o b l e m s o f s i m u l t a n e o u s e q u a -
+i o n s a n d o m i t t e d v a r i a b l e s i n e s t i m a t i n g t h e r e s p o n s i v e n e s s o f a s s e t p r i c e s , d e m o n s t r a t i n g
+h a t s o m e b i a s m a y r e m a i n i n t h e c o e Æ c i e n t s e s t i m a t e d u n d e r t h e e v e n t - s t u d y a p p r o a c h
+n l e s s s o m e s t r o n g a s s u m p t i o n s a r e m e t . S e c t i o n 3 d e s c r i b e s o u r i d e n t i (cid:12) c a t i o n a p p r o a c h
+a s e d o n t h e h e t e r o s k e d a s t i c i t y o f m o n e t a r y p o l i c y s h o c k s a n d c o m p a r e s t h e a s s u m p t i o n s
+e e d e d t o t h o s e r e q u i r e d u n d e r t h e e v e n t - s t u d y a p p r o a c h . S e c t i o n 4 d e m o n s t r a t e s t h a t t h e
+d e n t i (cid:12) c a t i o n m e t h o d c a n b e i n t e r p r e t e d a n d i m p l e m e n t e d a s a s i m p l e i n s t r u m e n t a l v a r i -
+b l e s r e g r e s s i o n . R e s u l t s o n t h e r e s p o n s i v e n e s s o f s t o c k p r i c e s a n d l o n g e r - t e r m i n t e r e s t r a t e s
+o m o n e t a r y p o l i c y u s i n g b o t h t h e e v e n t - s t u d y a n d t h e h e t e r o s k e d a s t i c i t y p r o c e d u r e s a r e
+r e s e n t e d i n s e c t i o n 5 . S e c t i o n 6 c o n t a i n s a d i s c u s s i o n o f a l t e r n a t i v e d e (cid:12) n i t i o n s o f p o l i c y
+h o c k s , a n d s e c t i o n 7 c o n c l u d e s .
+E v e n t - S t u d y a n d t h e E s t i m a t i o n P r o b l e m
+h e t w o m a i n p r o b l e m s i n e s t i m a t i n g t h e i n t e r a c t i o n s b e t w e e n m o n e t a r y p o l i c y a n d a s s e t
+r i c e s a r e t h e e n d o g e n e i t y o f t h e v a r i a b l e s a n d t h e e x i s t e n c e o f o m i t t e d v a r i a b l e s . F i r s t ,
+h i l e a s s e t p r i c e s a r e i n (cid:13) u e n c e d b y t h e s h o r t - t e r m i n t e r e s t r a t e , t h e s h o r t - t e r m i n t e r e s t
+a t e i s s i m u l t a n e o u s l y a (cid:11) e c t e d b y a s s e t p r i c e s ( p r i m a r i l y t h r o u g h t h e i r i n (cid:13) u e n c e o n m o n e -
+a r y p o l i c y e x p e c t a t i o n s ) . S e c o n d , a n u m b e r o f o t h e r v a r i a b l e s l i k e l y i n (cid:13) u e n c e b o t h a s s e t
+2

@@ -1,0 +1,113 @@
+NBER WORKING PAPER SERIES
+WHO PROVIDES LIQUIDITY, AND WHEN?
+Sida Li
+Xin Wang
+Mao Ye
+Working Paper 25972
+http://www.nber.org/papers/w25972
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2019
+We thank Hengjie Ai, Shmuel Baruch, Malcolm Baker, Dan Bernhardt, Hank Bessembinder, Eric
+Budish, Tarun Chordia, Thierry Foucault, Katya Malinova, Maureen O’Hara, Monika Piazzesi,
+Veronika Pool, Neil Pearson, Barbara Rindi, Shri Santosh, Andriy Shkilko, Brian Weller, Chen
+Yao, Bart Yueshen, and Marius Zoican for helpful comments. We are also grateful for input from
+participants in conferences at the University of Rochester, UCLA, Texas A&M University, the
+University of Florida, and Washington University at St. Louis, as well as at the Carlson Junior
+Conference at the University of Minnesota, the NYU Stern Market Microstructure Conference,
+the 2nd SAFE Market Microstructure Conference, the Colorado Front Range Finance Seminar,
+the Bank of Canada-Laurier Market Structure conference, the Telfer Annual Conference on
+Accounting and Finance, the Wabash River Conference at Indiana University, and the Smokey
+Mountain Conference at the University of Tennessee for their helpful suggestions. This research
+is supported by National Science Foundation grant 1352936 (jointly with the Office of Financial
+Research at U.S. Department of the Treasury) and National Science Foundation grant 1838183.
+The views expressed herein are those of the authors and do not necessarily reflect the views of the
+National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2019 by Sida Li, Xin Wang, and Mao Ye. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Who Provides Liquidity, and When?
+Sida Li, Xin Wang, and Mao Ye
+NBER Working Paper No. 25972
+June 2019
+JEL No. G1,G12
+ABSTRACT
+We model competition for liquidity provision between high-frequency traders (HFTs) and slower
+execution algorithms designed to minimize transaction costs for buy-side institutions (B-Algos).
+Under continuous pricing, B-Algos dominate liquidity provision by using aggressive limit orders
+to stimulate HFTs’ market orders. Under discrete pricing, HFTs dominate liquidity provision if
+the bid–ask spread is binding at one tick. If the tick size is not binding, B-Algos choose between
+stimulating HFTs and providing liquidity to other non-HFTs. Flash crashes arise under certain
+parameter values. Transaction costs can be negatively correlated with the bid–ask spread when all
+traders can provide liquidity.
+Sida Li Mao Ye
+Department of Finance, University of Illinois, Urbana-Champaign
+Gies School of Business 343K Wohlers Hall
+University of Illinois, Urbana-Champaign 1206 South Sixth Street
+1206 South Sixth Street Champaign, IL 61820
+Champaign, IL 61820 and NBER
+sidali3@illinois.edu maoye@illinois.edu
+Xin Wang
+Nanyang Technological University
+S3-B1B-60
+50 Nanyang Ave
+Singapore 639798
+xin.wang@ntu.edu.sg
+A SSRN Link is available at https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2902984
+
+1. Introduction
+To minimize their transaction costs, buy-side institutions, such as mutual funds and pension funds,
+use computer algorithms extensively to execute their trades (Frazzini, Israel, and Moskowitz 2014;
+O’Hara 2015). These buy-side algorithmic traders (B-Algos) differ from high-frequency traders
+(HFTs) in two fundamental ways (Hasbrouck and Saar 2013; Jones 2013; O’Hara 2015). First, B-
+Algos may use limit orders to provide liquidity, but their goal is to minimize transaction costs
+rather than to profit from the bid–ask spread. Second, B-Algos are faster than humans but slower
+than HFTs (O’Hara 2015). Although buy-side institutions are major players in financial markets,
+their trading algorithms have no independent identity in existing models. From one point of view,
+financial markets include HFTs and everyone else, where the latter includes both sophisticated
+institutions and unsophisticated retail traders (see the survey by O’Hara [2015]). From the other
+point of view, algorithmic traders and HFTs are interchangeable (see the survey by Biais and
+Foucault [2014]). In this paper, we offer the first theoretical study of B-Algos by examining how
+they interact with HFTs and humans.
+In an environment populated by HFTs, B-Algos, and humans, who provides liquidity? Who
+demands liquidity, and when? Answering these questions is important because traditional liquidity
+providers, such as New York Stock Exchange (NYSE) specialists and NASDAQ dealers, almost
+disappear in modern electronic markets (Clark-Joseph, Ye, and Zi 2017). Everyone can provide
+liquidity, but no one is obligated to provide liquidity. We examine how this new environment of
+voluntary liquidity provision and demand reaches equilibrium.
+In our model, HFTs and two types of non-HFTs (B-Algos and humans) trade a security in
+a dynamic limit-order book (LOB). All traders are risk-neutral. A liquidity provider in the LOB
+submits limit orders (offers to buy or sell a stock at a specified price and quantity), and a liquidity
+2
+
+demander accepts a limit order using a market order. HFTs have no private value to trade, as they
+simply provide or demand liquidity to maximize their expected profits from trading. Non-HFTs
+arrive at the market following a Poisson process, bringing inelastic demand to buy or sell one unit
+of a security. Some of the non-HFTs are B-Algos, and they can choose between limit and market
+orders to minimize transaction costs; the remaining traders are humans, who use only market
+orders.
+Our model includes one security whose fundamental value is public information. However,
+liquidity providers are subject to sniping risks (Budish, Cramton, and Shim 2015; BCS hereafter),
+because they may fail to cancel stale quotes during value jumps. B-Algos are always sniped during
+1
+value jumps, and HFTs can reduce the probability of being sniped by , where 𝑁 is the number of
+𝑁
+equally fast HFTs. HFTs in our model, like those in BCS, quote a positive bid–ask spread because
+of the sniping risk. Surprisingly, we find that B-Algos always quote better prices than HFTs as
+long as the price in a given trade is continuous enough, even though B-Algos face greater exposure
+to sniping risks.
+Opportunity cost explains why B-Algos can afford more aggressive limit orders than HFTs.
+In our model, B-Algos have an inelastic need to trade. If they do not use limit orders to provide
+liquidity, they must use market orders and pay the bid–ask spread. Therefore, B-Algos incur a
+negative opportunity cost for providing liquidity, and they choose limit orders as long as their
+expected costs are lower in value than their market orders. HFTs, on the other hand, do not have
+to trade, and their speed advantage leads to a positive opportunity cost for providing liquidity. An
+HFT who posts a limit order surrenders the profit from sniping the share once it becomes stale.
+Interestingly, although higher speed reduces HFTs’ sniping costs, it increases their opportunity
+costs by the same amount. Adding the sniping and opportunity costs together, B-Algos incur lower
+3

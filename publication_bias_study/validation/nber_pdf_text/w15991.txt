@@ -1,0 +1,125 @@
+NBER WORKING PAPER SERIES
+TEXT-BASED NETWORK INDUSTRIES AND ENDOGENOUS PRODUCT DI˙FFERENTIATION
+Gerard Hoberg
+Gordon M. Phillips
+Working Paper 15991
+http://www.nber.org/papers/w15991
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2010
+This paper was previously circulated as "Dynamic Text-Based Industry Classifications and Endogenous
+Product Differentiation." We especially thank Dan Kovenock, Steve Martin, John Sutton and seminar
+participants at Aalto (Helsinki) School of Economics, HEC, IFN (Stockholm), Insead, ISTCE (Lisbon),
+London Business School, Notre Dame, Northwestern, Stanford, Stockholm School of Economics,
+University of Amsterdam, University of Southern California, University of Vienna and the Academy
+of Management meetings for helpful comments. All errors are the authors alone. The views expressed
+herein are those of the authors and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2010 by Gerard Hoberg and Gordon M. Phillips. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit, including
+© notice, is given to the source.
+
+Text-Based Network Industries and Endogenous Product Di˙fferentiation
+Gerard Hoberg and Gordon M. Phillips
+NBER Working Paper No. 15991
+May 2010, Revised February 2012
+JEL No. D21,D23,L12,L13,L16,L22,L23
+ABSTRACT
+We study how firms differ from their competitors using new time-varying measures of product differentiation
+based on text-based analysis of product descriptions from 50,673 firm 10-K statements filed yearly
+with the Securities and Exchange Commission. This year-by-year set of product differentiation measures
+allows us to generate a new set of industries and corresponding new measures of industry competition
+where firms can have their own distinct set of competitors. Our new sets of industry competitors better
+explain specific discussion of high competition by management, rivals identified by managers as peer
+firms and firm characteristics such as profitability and leverage than do existing classifications. We
+also find evidence that firm R&D and advertising are associated with subsequent differentiation from
+competitors, consistent with theories of endogenous product differentiation.
+Gerard Hoberg
+Robert H. Smith School of Business
+University of Maryland
+4423 Van Munching Hall
+College Park, MD 20742
+ghoberg@rhsmith.umd.edu
+Gordon M. Phillips
+Marshall School of Business
+University of Southern California
+Citigroup Center
+Los Angeles, CA 90089
+and NBER
+Gordon.Phillips@marshall.usc.edu
+
+Defining industry boundaries and industry competitiveness is central to the study
+of industrial organization. It is also central to broader disciplines in Economics and
+Finance, where the study of industries, or the need to control for industry, is perva-
+sive. Our paper is based on the premise that product similarity is core to classifying
+industries, and that empirical work can benefit from the ability to measure indus-
+try memberships and product differentiation in every year. Using new time-varying
+industry classifications, we find that firm R&D and advertising are associated with
+subsequentdifferentiationfromcompetitorsandincreasedprofitability. Theseresults
+are consistent with Sutton’s (1991) theory of endogenous product differentiation.
+Our starting point to form new industries is to gather business descriptions from
+50,673 firm annual 10-Ks filed with the Securities and Exchange Commission using
+web crawling algorithms. The vector representations of the text in each firm’s prod-
+uct description generate a Hotelling-like product location space for U.S. firms.1 We
+process the text in these product descriptions to calculate new industry classifica-
+tions based on the strong tendency of product market vocabulary to cluster among
+firms operating in the same markets. Because they are a function of 10-K business
+descriptions, our classifications are based on the products that firms supply to the
+market, rather than production processes (as is the case for some existing industry
+classification schemes).2
+These tools enable us to examine how industry structure changes over time, and
+how firms react to such changes within and around their product markets. A key
+advantage of our analysis is that firms must file a 10-K in each year, allowing us to
+build classifications that change over time. The framework also provides a continu-
+ous measure of product similarity between firms both within and across industries,
+allowing us to create general network representations of industry competition, with
+each firm having its own distinct set of competitors. Although numerous studies
+use industry classifications as control variables, only a few studies examine the clas-
+1Chamberlin (1933) and Hotelling (1929) famously show that product differentiation is funda-
+mentaltoprofitabilityandtheoriesofindustrialorganization,andalsothatproductmarketscanbe
+viewedashavingaspatialrepresentationthataccountsforproductdifferentiation. Empirically,the
+spatial characteristics of our measures can also be viewed as analogous to the patent technology-
+based space of Jaffe (1986), although Jaffe’s space is applicable for patent filing firms and is not
+generated using product description text.
+2See http://www.naics.com/info.htm.
+1
+
+sification schemes themselves and these do not consider the possibility of industry
+classifications that change materially over time.3
+We create new industry classification systems based on 10K product similarities
+using two methods: one historically motivated, and one that allows industry com-
+petition to be firm centric and change over time. The first, which we name “fixed
+industry classifications” (FIC), is analogous to SIC and NAICS industries.4 Here,
+firms are grouped together either over fixed periods of time and membership in an
+industry is required to be transitive. Thus this method requires that if firms B and C
+are in firm A’s industry, then firms B and C are also in the same industry. We assign
+firms to industries using clustering algorithms that maximize total within-industry
+similarity where similarity is based on word usage in 10-K product descriptions.
+Our second classification system is more general. In this classification, we allow
+firm competitors to change every year and we relax the membership transitivity re-
+quirements of FIC industries and view industries like flexible networks. We name
+these new generalized network industries “text-based network industry classifica-
+tions” (TNIC). In this classification system, each firm can have its own set of distinct
+competitors analogous to a social network, where each individual has a distinct set
+of friends, with friends of one individual not necessarily being friends of each other.
+To illustrate why transitivity is restrictive, suppose firms A and B both view firm
+C as a rival. If A and B have each have products with different distinct features or
+enhancements that C does not have, then A and B may not compete against each
+other as they may serve different product segments.
+Relative to existing industry classifications, these new text-based classifications
+offer economically large improvements in their ability to explain managerial discus-
+sion of high competition, the specific firms mentioned by managers as being com-
+3KahleandWalkling(1996)comparetheinformativenessofSICcodesobtainedfromtheCRSP
+and COMPUSTAT databases, and Fama and French (1997) create new industry classifications
+based on a new way of grouping existing four digit SIC codes. Krishnan and Press (2003) compare
+SIC codes to NAICS codes, and Bhojraj, Lee, and Oler (2003) also compare various fixed industry
+classifications. Although these studies are informative, and suggest that existing static classifica-
+tions can be used in better ways, they do not explore whether the core methodology underlying
+static classifications can be improved upon.
+4We make these industry classifications and corresponding firm memberships available to re-
+searchers via the internet.
+2

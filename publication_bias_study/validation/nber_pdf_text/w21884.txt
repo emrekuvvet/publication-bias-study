@@ -1,0 +1,126 @@
+NBER WORKING PAPER SERIES
+CABLES, SHARKS AND SERVERS:
+TECHNOLOGY AND THE GEOGRAPHY OF THE FOREIGN EXCHANGE MARKET
+Barry Eichengreen
+Romain Lafarguette
+Arnaud Mehl
+Working Paper 21884
+http://www.nber.org/papers/w21884
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+January 2016, Revised April 2021
+We are grateful to Mark Aguiar, Pol Antràs, Thorsten Beck, Geert Bekaert, Bruno Biais, Jérôme
+Busca, Estelle Cantillon, Giancarlo Corsetti, Alexander Duering, Torsten Ehlers, Benoît Geller,
+Jérôme Héricourt, Jean Imbs, Takatoshi Ito, Amit Khandelwal, Philip Lane, Istvan Mak, Guy-
+Charles Marhic, Philippe Martin, Martin Uribe, Frank Packer, Hashem Pesaran, Romain
+Rancière, Andrew Rose, Alan Taylor and Xavier Vives for comments and discussions, as well as
+to seminar participants at the ECB, Goethe University Frankfurt and USC Dornsife and to
+participants at the Clausen Center Conference on Global Economic Issues, Berkeley, and to the
+Cambridge-INET conference on the microstructure of the FX market for comments. We thank
+Ziqi Li for excellent research assistance. We are also grateful to Denis Pêtre and Philip
+Wooldridge for providing unpublished Bank for International Settlements data on offshore
+foreign exchange trading. The views expressed are those of the authors and do not necessarily
+reflect those of the ECB, the Eurosystem, the IMF, or the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2016 by Barry Eichengreen, Romain Lafarguette, and Arnaud Mehl. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Cables, Sharks and Servers: Technology and the Geography of the Foreign Exchange Market
+Barry Eichengreen, Romain Lafarguette, and Arnaud Mehl
+NBER Working Paper No. 21884
+January 2016, Revised April 2021
+JEL No. F30
+ABSTRACT
+We analyze the impact of technology on the production and trade in services, focusing on the
+location of foreign exchange transactions and the effect of submarine fiber-optic cable
+connections. Cable connections between local markets and major financial centers reduce the
+costs of trading currencies locally and increase the share of currency transactions taking place in
+the issuing country. But they also attenuate the effect of existing spatial frictions that prevent
+transactions from moving offshore to take advantage of agglomeration economies and thick-
+market advantages of major financial centers. In practice, this second effect dominates. Our
+estimates suggest that the advent of cable connections boosted the share in global turnover of
+London, the world’s largest trading venue, by as much as one-third.
+Barry Eichengreen Arnaud Mehl
+Department of Economics Sonnemannstrasse 20
+University of California, Berkeley 60314 Frankfurt am Main
+549 Evans Hall 3880 Europe
+Berkeley, CA 94720-3880 Arnaud.Mehl@ecb.int
+and NBER
+eichengr@econ.Berkeley.edu
+Romain Lafarguette
+International Monetary Fund
+700 19th St, NW
+Washington, D.C.
+U.S.A.
+Romain.Lafarguette@ecb.europa.eu
+
+I. INTRODUCTION
+High-speed, low-cost communication is one of the distinguishing features of the
+21st century world. What it implies for the geography of trade and production is unclear,
+however. It has been argued that ubiquitous communication encourages service-sector
+activities that benefit from agglomeration, spillovers and thick markets to concentrate
+in a handful of major centers and then for their products to be all but costlessly
+distributed to the rest of the world.1 But cheap, high-speed communications also allow
+activities not benefiting from agglomeration to be spread more widely across the global
+economy, without significant sacrifice of managerial control, in response to rising costs
+in particular locations.2 One can point to the City of London for finance and Silicon
+Valley for technology and innovation as examples of the former, and assembly
+operations and global value chains as instances of the latter.
+In this paper we investigate these questions in the specific case of the global
+foreign exchange market. We ask whether advances in information and
+communications technology, specifically the advent of submarine fiber optic cables, led
+to a greater geographical dispersion or concentration of foreign exchange trading
+worldwide.
+This is an appealing case for several reasons. First, the foreign exchange market
+is one of the largest financial markets in the world as measured by transactions, with an
+average daily turnover in the order of $6 trillion. Second, it is a market in financial
+services, as opposed to merchandise, which makes it relevant for thinking about the
+geographical distribution of activity in a post-industrial age. Third, the foreign
+exchange market has undergone a dramatic transformation since the late 1980s,
+reflecting the availability of cheap and efficient information and communications and
+the growth of electronic trading.
+Investments in technology can affect the geographical distribution of economic
+activity, but changes in the geographical distribution of economic activity also provide
+an incentive for investments in technology. Examples of sharp, discontinuous,
+exogenous changes in information and communication technology would help to pin
+1 For theoretical treatments see Krugman (2011) and Duranton and Puga (2004).
+2 As argued for example by Cairncross (1997).
+2
+
+down the causal effect, but technological progress tends to be continuous rather than
+discrete, endogenous rather than exogenous. Instances where it is possible to identify
+the diffusion of technology shocks over economic and geographical space are few and
+far between.
+In the case of the foreign exchange market, we have just such a source of
+exogenous change and spatial variability. This is the laying of submarine cables starting
+in the late 1980s. Since different submarine fiber-optic cables came into use at different
+points in time, both the cross-section and time series dimensions enable us to identify
+the effects of technology on the location of foreign exchange transactions.
+We regard the presence of a cable link between two countries as exogenous with
+respect to foreign exchange trading. Fiber-optic cables were laid for general
+telecommunication needs, not for purposes related to the foreign exchange market.
+They were laid by large telecommunication consortiums, not by financial institutions
+active in the foreign exchange market. Nonetheless, we also apply an instrumental
+variables strategy using the 3-dimension length of submarine fiber-optic cable routes.3
+We use these features of the natural environment to extract the exogenous component
+of whether and when countries were connected to the internet backbone.
+A priori, the net effect on the geography of foreign exchange transactions is
+unclear. The reduction in transactions costs associated with greater ease of placing buy
+and sell orders on the large electronic platforms that exist only in the major financial
+centers of London, New York and Tokyo may encourage transactions previously
+completed onshore to move offshore to Britain, the U.S. and Japan. But fiber-optic
+connections may also increase the attractiveness of transacting through a local sales
+desk, insofar as that sales desk now has access to more timely information and a broader
+set of quotes, given that it can now communicate more easily with the major financial
+centers.
+We find evidence of both effects in the data. On balance, however, we find that
+the advent of cable connections increased the share of foreign exchange transactions in
+3 This builds on work by Juhász and Steinwender (2018), who previously employed sea-floor topological
+irregularities arising from nature, such as domes, canyons and faults, as a source of variations that is
+exogenous to financial and economic activities.
+3

@@ -1,0 +1,126 @@
+NBER WORKING PAPER SERIES
+ESTIMATING THE INTERTEMPORAL RISK-RETURN
+TRADEOFF USING THE IMPLIED COST OF CAPITAL
+Lubos Pastor
+Meenakshi Sinha
+Bhaskaran Swaminthan
+Working Paper 11941
+http://www.nber.org/papers/w11941
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+January 2006
+Pastor is Professor of Finance at the Graduate School of Business at the University of Chicago,
+Faculty Research Fellow at the NBER, and Research Affiliate at the CEPR. Sinha is Research
+Associate at Cornerstone Research. Swaminathan is Director of Research at LSV Asset Management
+and Professor of Finance at the Johnson Graduate School of Management at Cornell University.
+Email: lubos.pastor@ChicagoGSB.edu, ms233@cornell.edu, bswamina@johnson.cornell.edu.
+Helpful comments were gratefully received from George Constantinides, Doug Diamond, Gene
+Fama, Toby Moskowitz, Rob Stambaugh, Pietro Veronesi, Robert Whitelaw, Franco Wong, and the
+audiences at the University of Chicago and at the 2005 meetings of the Western Finance Association.
+The views expressed herein are those of the author(s) and do not necessarily reflect the views of the
+National Bureau of Economic Research.
+©2006 by Lubos Pastor, Meenakshi Sinha, and Bhaskaran Swaminathan. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission provided
+that full credit, including © notice, is given to the source.
+
+Estimating the Intertemporal Risk-Return Tradeoff Using the Implied Cost of Capital
+Lubos Pastor, Meenakshi Sinha, and Bhaskaran Swaminathan
+NBER Working Paper No. 11941
+January 2006
+JEL No. G1
+ABSTRACT
+We reexamine the time-series relation between the conditional mean and variance of stock market
+returns. To proxy for the conditional mean return, we use the implied cost of capital, computed using
+analyst forecasts. The usefulness of this proxy is shown in simulations. In empirical analysis, we
+construct the time series of the implied cost of capital for the G-7 countries. We find strong support
+for a positive intertemporal mean-variance relation at both the country level and the world market
+level. Some of our evidence is consistent with international integration of the G-7 financial markets.
+Lubos Pastor
+Graduate School of Business
+University of Chicago
+5807 South Woodlawn Ave
+Chicago, IL 60637
+and NBER
+lubos.pastor@chicagogsb.edu
+Meenakshi Sinha
+Cornerstone Research
+msinha@cornerstone.com
+Bhaskaran Swaminathan
+Cornell University
+bswamina@johnson.cornell.edu
+
+1. Introduction
+Thetradeoff betweenriskand returnisacentralconceptinfinance. Financetheorygenerally
+predicts a positive risk-return relation, both across assets and over time. For example,
+the intertemporal capital asset pricing model of Merton (1973) predicts a positive time-
+series relation between the conditional mean and variance of market returns. However, the
+empirical evidence on the sign of the intertemporal risk-return relation is inconclusive.1
+To explain the mixed nature of the evidence, some researchers have shown that the
+intertemporal mean-variance relation need not be positive theoretically (e.g., Abel (1988),
+Backus and Gregory (1993), and Whitelaw (2000)). Others have argued that a positive
+mean-variance relation emerges when the empirical specification includes hedging demands
+(e.g., Scruggs (1998) and Guo and Whitelaw (2005)). Yet others argue that the relation
+is highly sensitive to the way conditional variance is measured (e.g., Harvey (2001), Wang
+(2004), and Ghysels, Santa-Clara, and Valkanov (2005)). For example, Ghysels et al. state
+that “the main difficulty in testing the ICAPM relation is that the conditional variance of
+the market is not observable,” and that “the conflicting findings of the above studies are
+mostly due to differences in the approach to modeling the conditional variance.”
+While estimating the conditional variance of market returns is clearly important, to us,
+estimatingtheconditionalmeanreturnseemsnolessimportant. Firstmomentsofreturnsare
+generally more difficult to estimate than second moments (Merton (1980)). The conditional
+mean return is sometimes estimated by projecting future returns onto a set of conditioning
+variables.2 The results produced by this approach tend to be sensitive to the choice of the
+conditioning variables (Harvey, 2001). Another popular estimate of the conditional mean
+return in this literature is the realized future return.3 Although realized returns provide
+unbiased estimates of expected returns, they are notoriously noisy. For example, Elton
+(1999) argues that “realized returns are a very poor measure of expectedreturns.” Lundblad
+(2005) shows that when realized returns proxy for expected returns, a very long sample is
+needed to detect a positive risk-return relation in simulations.
+1Some studies find a positive relation (e.g., Scruggs (1998), Ghysels, Santa-Clara, and Valkanov (2005),
+Lundblad (2005)), but others find a negative relation (e.g., Campbell (1987), Turner, Startz, and Nelson
+(1989),Glosten,Jagannathan,andRunkle(1993),Harvey(2001),Lettau andLudvigson(2003),Brandtand
+Kang(2004)),andyet others findeither nosignificantrelationormixedevidence (e.g.,French,Schwert, and
+Stambaugh (1987), Baillie and DeGennaro (1990), Nelson (1991), Campbell and Hentschel (1992), Chan,
+Karolyi,and Stulz (1992), Whitelaw (1994,2000)).
+2See, for example,Campbell (1987),Harvey (2001),Whitelaw(1994),andLettau and Ludvigson(2003).
+3See,forexample,French,Schwert,andStambaugh(1987),BaillieandDeGennaro(1990),Nelson(1991),
+Chan, Karolyi, and Stulz (1992), Glosten, Jagannathan, and Runkle (1993), De Santis and Imrohologlu
+(1997), Scruggs (1998), Ghysels, Santa-Clara, and Valkanov(2005), and Lundblad (2005).
+1
+
+This paper reexamines the conditional mean-variance relation using a different proxy for
+the conditional expected return: the implied cost of capital. The implied cost of capital for
+a given asset is the discount rate (or internal rate of return) that equates the asset’s market
+value to the present value of all expected future cash flows. One appealing feature of this
+proxy is that it does not rely on realized asset returns. Estimating expected return using
+the implied cost of capital is increasingly popular in the finance literature. For example,
+Friend, Westerfield, and Granito (1978), Kaplan and Ruback (1995), Gebhardt, Lee, and
+Swaminathan (2001), Brav, Lehavy, and Michaely (2003), and Lee, Ng, and Swaminathan
+(2003) compute the implied costs of capital for a cross section of firms. Claus and Thomas
+(2001) and Fama and French (2002) use similar approaches to estimate the expected return
+for the marketportfolio. To our knowledge, the impliedcost of capital has not yet been used
+to analyze the relation between the conditional mean and variance of stock returns.
+We begin by deriving some general analytical results about the implied cost of capital.
+We show that if dividend growth follows an AR(1) process, the implied cost of capital is a
+linear function of the dividend yield and dividend growth. If, in addition, the conditional
+expected return also follows an AR(1) process, then the implied cost of capital is perfectly
+correlated with the conditional expected return over time. Therefore, the implied cost of
+capital should be useful in capturing time variation in expected returns.
+We conduct simulations to analyze the usefulness of the implied cost of capital in esti-
+mating the intertemporal risk-return tradeoff. First, we design a simple framework in which
+the conditional mean and variance of stock returns are positively related. We simulate the
+time series of the conditional moments and compare the ability of various proxies for the
+conditional mean to detect the positive mean-variance relation. We show that the relation
+is much easier to detect using the implied cost of capital than using realized returns.
+Importantly, the implied cost of capital outperforms realized returns even in the absence
+of information about dividend growth. In that case, the implied cost of capital is perfectly
+correlated with the dividend-price ratio, so its changes are driven mostly by changes in the
+stock price: increases in the stock price are accompanied by declines in the implied cost
+of capital, and vice versa. Therefore, the ability of the implied cost of capital to detect a
+positive mean-variance relation in that case stems from the fact that price changes tend to
+be accompanied by variance changes in the opposite direction. As long as price changes are
+to some extent driven by changes in expected returns, the implied cost of capital should be
+positively related to the conditional variance. In line with this intuition, we find that the
+correlation betweenthe impliedcost of capital and the conditional variance is high especially
+2

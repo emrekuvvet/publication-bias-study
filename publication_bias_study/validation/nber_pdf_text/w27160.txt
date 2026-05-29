@@ -1,0 +1,122 @@
+NBER WORKING PAPER SERIES
+EARNINGS EXPECTATIONS IN THE COVID CRISIS
+Augustin Landier
+David Thesmar
+Working Paper 27160
+http://www.nber.org/papers/w27160
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2020
+We thank Hector Chan, Hui Chen, Hugues Langlois and Eben Lazarus, as well as seminar participants
+at MIT, for discussions & feedback. The views expressed herein are those of the authors and do not
+necessarily reflect the views of the National Bureau of Economic Research.
+At least one co-author has disclosed a financial relationship of potential relevance for this research.
+Further information is available online at http://www.nber.org/papers/w27160.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2020 by Augustin Landier and David Thesmar. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit, including
+© notice, is given to the source.
+
+Earnings Expectations in the COVID Crisis
+Augustin Landier and David Thesmar
+NBER Working Paper No. 27160
+May 2020
+JEL No. G01,G32,G4
+ABSTRACT
+We analyze firm-level analyst forecasts during the COVID crisis. First, we describe expectations
+dynamics about future corporate earnings. Downward revisions have been sharp, mostly focused
+on 2020, 2021 and 2022, but much less drastic than the lower bound estimated by Gormsen and
+Koijen (2020). Analyst forecasts do not exhibit evidence of over-reaction: As of mid-May,
+forecasts over 2020 earnings have progressively been reduced by 16%. Longer-run forecasts, as
+well as expected “Long-Term Growth” have reacted much less than short-run forecasts, and
+feature less disagreement. Second, we ask how much discount rate changes explain market
+dynamics, in an exercise similar to Shiller (1981). Given forecast revisions and price movements,
+we estimate an implicit discount rate going from 10% in mid-February, to 13% at the end of
+March, back down to their initial level in mid-May. We then decompose discount rate changes
+into three factors: changes in unlevered asset risk premium (0%), increased leverage (+1%) and
+interest rate reduction (-1%). Overall, analyst forecast revisions explain all of the decrease in
+equity values between January 2020 and mid May 2020, but they do not explain shorter term
+movements.
+Augustin Landier
+HEC Paris
+1 rue de la libération
+78351 Jouy en Josas Cedex
+France
+augustin.landier@tse-fr.eu
+David Thesmar
+MIT Sloan School of Management
+100 Main Street, E62-632
+Cambridge, MA 02142
+and NBER
+thesmar@mit.edu
+
+Earnings Expectations in the COVID Crisis∗
+Augustin Landier† David Thesmar‡
+This draft: May 13, 2020
+First draft: April 27, 2020
+Abstract
+We analyze firm-level analyst forecasts during the COVID crisis. First, we describe ex-
+pectations dynamics about future corporate earnings. Downward revisions have been sharp,
+mostlyfocusedon2020,2021and2022,butmuchlessdrasticthanthelowerboundestimated
+by Gormsen and Koijen (2020). Analyst forecasts do not exhibit evidence of over-reaction:
+Asofmid-May,forecastsover2020earningshaveprogressivelybeenreducedby16%. Longer-
+runforecasts,aswellasexpected“Long-TermGrowth”havereactedmuchlessthanshort-run
+forecasts, and feature less disagreement. Second, we ask how much discount rate changes
+explain market dynamics, in an exercise similar to Shiller (1981). Given forecast revisions
+and price movements, we estimate an implicit discount rate going from 10% in mid-February,
+to 13% at the end of March, back down to their initial level in mid-May. We then decompose
+discount rate changes into three factors: changes in unlevered asset risk premium (0%), in-
+creased leverage (+1%) and interest rate reduction (-1%). Overall, analyst forecast revisions
+explain all of the decrease in equity values between January 2020 and mid May 2020, but
+they do not explain shorter term movements.
+1 Introduction
+The stock-market market has fallen dramatically as a result of fears about the economic impact of
+COVID-19. Gormsen and Koijen (2020) use dividend strips to infer the shift in the term structure
+of expectations of future dividends. We propose instead to directly look at revisions of analyst
+forecasts using IBES. There are advantages and disadvantages to both methods: Using prices
+∗WethankHectorChan,HuiChen,HuguesLangloisandEbenLazarus,aswellasseminarparticipantsatMIT,
+for discussions & feedback.
+†HEC Paris
+‡MIT Sloan, NBER and CEPR
+1
+
+of dividend futures has the advantage of offering an analysis purely based on prices, which are
+more likely to reflect investors’ beliefs. However, it forces to focus on the aggregate and only
+provides a lower bound to changes in forecasts as shocks to risk-premia are not directly observed.
+Using analyst forecasts allows for a firm-level analysis and a direct measure of revisions in beliefs.
+However, to connect it to stock-prices, we need to assume that analyst forecasts are a reliable
+proxy for investors’ beliefs.
+Our work is part of a fast growing set of papers looking at how the stock-market has reacted to
+theCOVIDoutbreak. GormsenandKoijen(2020)provideslowerboundonthechangeinexpected
+aggregate S&P500 dividends. Ramelli and Wagner (2020) and Ding et al. (2020) study in detail
+how firm-level characteristics such as leverage, cash-holdings, supply-chain and industry affect
+the cross-section of returns. Alfaro et al. (2020) show how unanticipated changes in predicted
+infections forecast aggregate equity market returns. Albuquerque et al. (2020) find a positive
+correlation between ESG ratings and abnormal returns through the crisis.
+We address two main issues that speak to the finance literature. First we show how the term
+structure of earnings expectations has shifted over the course of March, April and May 2020.
+Downward revision has occurred smoothly, but was mostly focused on 2020-2022 – longer-term
+forecasts have remained quite stable. Analyst forecast dispersion has mostly increased for short-
+term horizons. The smooth reaction of short-term forecasts, and the rather muted response of
+long-term forecasts, paints a picture that is somewhat unusual when compared to the available
+literature on expectations and stock returns. This literature indeed shows that (1) short term
+EPS forecasts of analysts tend to underreact to news (Bouchaud et al. (2019), Ma et al. (2020))
+while (2) long-term growth expectations overreact (Bordalo et al. (2018)). The fact that long-term
+forecasts have reacted less (actually, not significantly so, beyond 2023) than short-term forecasts
+might reflect the intrinsic short-term nature of the shock.
+Second, using stock prices, we back out the implied change over time in the discount rate for
+each firm. If discount rates had not changed, by May 11, the decline in stock prices implied by
+forecast revisionsis very close to realized returns (we compute unweighted returns in this paper).
+We show that discount rate shocks are the main driver of the V-shaped evolution of stock-prices,
+but, by mid May 2020, revisions were such that valuations were consistent with a discount rate
+of about 10%, the same one as mid-February. This exercise is related to the large literature on
+discount rates movements that was initiated by Shiller (1981). The difference between his analysis
+and ours is twofold. First, we use forecasts of future cash-flows instead of ex post dividend realiza-
+tions or model-predicted growth. Second, we decompose the increase in discount rate into three
+terms: (1) interest rates, (2) unlevered asset risk premium and (3) the leverage effect (declining
+stock prices lead to an increase in expected equity returns). We find that the leverage effect is
+large: it contributes 2ppt to the increase in discount rate at the end of march, and 1ppt in mid
+2

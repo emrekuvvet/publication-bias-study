@@ -1,0 +1,120 @@
+NBER WORKING PAPER SERIES
+RISK PRICE DYNAMICS
+Jaroslav Borovi…ka
+Lars Peter Hansen
+Mark Hendricks
+José A. Scheinkman
+WORKING PAPER 15506
+http://www.nber.org/papers/w15506
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+November 2009
+This paper was originally presented as the Journal of Financial Econometrics Lecture at the June 2008
+SoFiE conference. We gratefully acknowledge support by the National Science Foundation under
+Award Numbers SES0519372 (Borovi…ka, Hansen and Hendricks) and SES0718407 (Scheinkman)
+The views expressed herein are those of the author(s) and do not necessarily reflect the views of the
+National Bureau of Economic Research.
+© 2009 by Jaroslav Borovi…ka, Lars Peter Hansen, Mark Hendricks, and José A. Scheinkman. All
+rights reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+Risk Price Dynamics
+Jaroslav Borovi…ka, Lars Peter Hansen, Mark Hendricks, and José A. Scheinkman
+NBER Working Paper No. 15506
+November 2009
+JEL No. C52,E44,G12
+ABSTRACT
+We present a novel approach to depicting asset pricing dynamics by characterizing shock exposures
+and prices for alternative investment horizons. We quantify the shock exposures in terms of elasticities
+that measure the impact of a current shock on future cash-flow growth. The elasticities are designed
+to accommodate nonlinearities in the stochastic evolution modeled as a Markov process. Stochastic
+growth in the underlying macroeconomy and stochastic discounting in the representation of asset
+values are central ingredients in our investigation. We provide elasticity calculations in a series of
+examples featuring consumption externalities, recursive utility, and jump risk.
+Jaroslav Borovi…ka Mark Hendricks
+Department of Economics Department of Economics
+The University of Chicago The University of Chicago
+1126 East 59th Street 1126 East 59th Street
+Chicago, IL 60637 Chicago, IL 60637
+borovicka@uchicago.edu hendricks@uchicago.edu
+Lars Peter Hansen José A. Scheinkman
+Department of Economics Department of Economics
+The University of Chicago Princeton University
+1126 East 59th Street Princeton, NJ 08544-1021
+Chicago, IL 60637 and NBER
+and NBER joses@princeton.edu
+l-hansen@uchicago.edu
+
+1 Introduction
+We propose a new way to characterize risk price dynamics. In the methods of mathematical
+finance, risk prices are encoded using the familiar risk neutral transformation and the in-
+stantaneous risk-free rate. In structural models of macroeconomic risk, they are encoded in
+the stochastic discount factor process used to represent prices at alternative payoff horizons.
+As an alternative, we depict asset pricing dynamics by extending two types of methods:
+local risk prices and impulse response functions. Local risk prices give the reward expressed
+in terms of expected returns for alternative local exposures to risk such as shocks to the
+macro-economy. Impulse response functions characterize how shocks today contribute to
+future values of a stochastic process such as macroeconomic growth or future cash flows.
+First we develop a related concept but tailored to the pricing of the exposure to macroeco-
+nomic risk, and then we extend the concept of a local risk price by asking how the reward to
+shock exposure changes as we alter the terminal or maturity date for the payoff. This leads
+us to construct shock-exposure and shock-price elasticities as functions of payoff horizons.
+Structural asset pricing models feature state dependence in risk premia as well as sensitivity
+to the payoff horizon. These risk premia depend on shock exposures and prices, and the
+elasticities we propose reflect both dependencies.
+We believe that uncertainty about macroeconomic growth has important welfare impli-
+cations and major consequences to market valuations of forward-looking assets. To explore
+these phenomena requires the simultaneous study of stochastic growth and discounting, in
+contrast to the extensive literature on fixed income securities and the term structure of in-
+terest rates that abstracts from growth. Previous work has sought to provide informative
+characterizations of risk premia for cash flows that grow stochastically over time and to
+extract the distinct contributions of risk exposure (the asset pricing counterpart to a quan-
+tity) and risk prices. See, for instance, Lettau and Wachter (2007), Hansen and Scheinkman
+(2009a,b) and Hansen (2009).
+While there have been quantitative and empirical successes through the use of ad hoc
+models of stochastic discount factors specified flexibly to enforce the absence of arbitrage,
+we continue to be interested in structural models that allow us to truly answer the question
+“howdoes risk or uncertainty get priced?” The promise of such models is that theywill allow
+researchers to assign values to the shocks identified in macroeconomic models and support
+welfare analyses that are linked to uncertainty. While reduced-form models continue to
+provide aconvenient shortcut for presenting empirical evidence, we aimto provide adynamic
+characterization ofrisk pricing thatwill support structuralinvestigations that stretch models
+beyond the support of the existing data.
+The methods we develop are applicable to models with small shocks, increments to Brow-
+2
+
+nianmotions, aswellaslargeshocks, jumpswithPoissonarrivals. Weillustrateourapproach
+with a series of examples. For lognormal models we derive shock exposure elasticities which
+coincide with impulse response functions familiar from the VAR literature. In more com-
+plicated models, our methodology allows us to characterize nonlinearities in the dynamics
+of asset prices. We contrast the habit formation models of Campbell and Cochrane (1999)
+and Santos and Veronesi (2008), and we document important differences in the risk price
+elasticities across investment horizons. We also derive elasticities for a model with recursive
+utility in the spirit of Hansen et al. (2008), and for a model with jump risk where the state
+variable evolves as a finite state Markov chain.
+2 Markov pricing with Brownian information struc-
+tures
+We follow the construction in Hansen and Scheinkman (2009a,b) and Hansen (2009). Con-
+sider a Markov diffusion that solves:
+dX = μ(X )dt+σ(X )dW .
+t t t t
+where W is a multivariate standard Brownian motion. In this model nonlinearity is captured
+by the specification of μ and σ. While the state variable X may well be stationary, we will
+use it as a building block for processes that grow or decay over time.
+2.1 Growth and discounting
+In econometric practice we often build models for the logarithms of processes. An example
+of such a model is (cid:2) (cid:2)
+t t
+A = β(X )du+ α(X )·dW .
+t u u u
+0 0
+We call the resulting process, denoted by A, an additive functional because it depends
+entirely on the underlying Markov process and it is constructed by integrating over the time
+scale. Nonlinearity may be present in the specification of β and α.
+While it is convenient to take logarithms when building time series models, to represent
+values and prices it is necessary to study levels instead of logarithms. Thus to represent
+growth or decay, we use the exponential of an additive functional, M = exp(A ). We will
+t t
+refer to M as a multiplicative functional parameterized by (β,α). Ito’s Lemma guarantees
+3

@@ -1,0 +1,130 @@
+NBER WORKING PAPER SERIES
+THE SURROGATE INDEX:
+COMBINING SHORT-TERM PROXIES TO ESTIMATE
+LONG-TERM TREATMENT EFFECTS MORE RAPIDLY AND PRECISELY
+Susan Athey
+Raj Chetty
+Guido W. Imbens
+Hyunseung Kang
+Working Paper 26463
+http://www.nber.org/papers/w26463
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+November 2019, Revised August 2024
+We are grateful for discussions with James Dailey, Lawrence Katz, David Ritzwoller, Dylan Small,
+Scott Stern, and Liang Xu and for comments from numerous seminar participants. We thank Kevin
+Chen, Yechan Park, Emanuel Schertz and James Stratton for outstanding research assistance. We
+are particularly grateful to Kevin Chen and David Ritzwoller for pointing out a mistake in the
+previous version of this paper. This research was funded through National Science Foundation
+Grant DMS-1502437, the Chan-Zuckerberg Initiative, the Bill & Melinda Gates Foundation, the
+Overdeck Foundation, ONR grants N00014-17-1-2131 and N00014-19-1-2468 and the Sloan
+Foundation. The views expressed herein are those of the authors and do not necessarily reflect the
+views of the National Bureau of Economic Research.
+At least one co-author has disclosed additional relationships of potential relevance for this research.
+Further information is available online at http://www.nber.org/papers/w26463
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2019 by Susan Athey, Raj Chetty, Guido W. Imbens, and Hyunseung Kang. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+The Surrogate Index: Combining Short-Term Proxies to Estimate Long-Term Treatment Effects
+More Rapidly and Precisely
+Susan Athey, Raj Chetty, Guido W. Imbens, and Hyunseung Kang
+NBER Working Paper No. 26463
+November 2019, Revised August 2024
+JEL No. C01, J0
+ABSTRACT
+A common challenge in estimating the impact of interventions (e.g., job training programs,
+educational programs) is that many outcomes of interest (e.g., lifetime earnings or other labor
+market outcomes) are observed with a long delay. In biomedical settings this is often addressed by
+using short-term outcomes as so-called “surrogates” for the outcome of interest, e.g., tumor size as
+a surrogate for mortality in cancer studies. We build on this literature by combining multiple,
+possibly qualitatively distinct, short-term outcomes (e.g., short-run earnings and employment
+indicators) systematically into a “surrogate index.” Under the Prentice surrogacy assumption,
+which requires that the primary outcome is independent of the treatment conditional on the
+surrogates, we show that the average treatment effect on the surrogate index equals the treatment
+effect on the long-term outcome. We also relate the surrogacy assumption to a set of structural,
+causal assumptions. We then characterize the bias that arises from violations of each of the key
+assumptions, and we provide simple methods to validate these assumptions using additional
+observed outcomes. We apply our method to analyze the long-term impacts of a multi-site job
+training experiment in California. Rather than waiting a full nine years to directly observe the long-
+term impact, we show that it is possible to use short-term (the first six quarters) outcomes as
+surrogates. One could have estimated the program’s long-term impacts on mean employment rates
+using the employment rates observed in the first six quarters, with a 35% reduction in standard
+errors.
+Susan Athey Guido W. Imbens
+Graduate School of Business Graduate School of Business
+Stanford University Stanford University
+655 Knight Way 655 Knight Way
+Stanford, CA 94305 Stanford, CA 94305
+and NBER and NBER
+athey@stanford.edu Imbens@stanford.edu
+Raj Chetty Hyunseung Kang
+Department of Economics Department of Statistics
+Harvard University University of Wisconsin-Madison
+Littauer 321 1300 University Avenue
+Cambridge, MA 02138 Madison, WI 53706
+and NBER hyunseung@stat.wisc.edu
+chetty79@gmail.com
+Replication Code is available at https://opportunityinsights.org/data/
+
+1 Introduction
+A fundamental challenge for evaluating interventions is that the primary outcomes of interest
+are often hard to measure. For example, researchers are often interested in the effect of the
+policy on some long-term outcome but do not observe that in their study. Instead, they observe
+a number of short-term outcomes that are all related to this primary outcome of interest.
+Onesettingwherethistypeofproblemarisesinvolvesaneducationalpolicymakerevaluating
+a policy that would change class size. The ultimate goal may be to improve long-term labor
+market outcomes for the students. However, the decision regarding the class size policy needs
+to be made at a time when only short-term outcomes such as test scores or other educational
+achievement measures are available. Another setting involves policy makers considering labor
+market interventions such as job search assistance or human capital acquisition programs, where
+they may be primarily interested in the long-term labor market attachment of the participants,
+but in the short run they may only have access to outcomes such as employment records or
+earnings over a short period of time. In randomized experiments for medical interventions, the
+ultimate outcome of interest is often survival or quality-adjusted years of life. Survival rates
+may be high in the short run, and so typically such trials are evaluated in terms of surrogate
+measures, such as including tumor size or other measures of the progression of the disease, which
+can be measured earlier. In all of these types of setting, to make a timely decision, the policy
+makerneedstoassesstheprogramsbasedonshort-termoutcomes. Thesechallengesalsoarisein
+businesssettings. Inthecontextofexperimentationindigitaltechnologycompanies,adiscussion
+of the most important challenges ranks as the top concern that “While most experiments in the
+industry run for 2 weeks or less, we are really interested in detecting the long-term effect of
+a change. How do long-term effects differ from short-term outcomes? How can we accurately
+measure those long- term factors without having to wait a long time in every case?” (Gupta
+et al. (2019), p. 21).
+In these and many other examples, the researcher is faced with making recommendations
+regarding the future implementation of the intervention on the basis of measurements of its
+[1]
+
+effect on a variety of sometimes disparate and possibly conflicting outcome measures. A key
+question is how to balance these different outcomes when making an overall assessment. In prac-
+tice, researchers often deemphasize short-term outcomes for which they do not find statistically
+significant effects, instead making perhaps somewhat ad hoc qualitative assessments regarding
+the relative importance of the remaining short-term outcomes.
+In this paper we lay out a framework for analyzing these issues. We consider the scenario in
+which researchers do not measure the primary outcome in the context of data containing infor-
+mation on the intervention. Instead, we assume that the researcher has a second, observational,
+dataset where the researcher observes the surrogates and the primary outcome but does not
+observe the treatment. In both samples the researcher may also observe variables not affected
+by the treatment, such as pre-treatment characteristics of the participants.
+We make four main contributions. First, we articulate three key assumptions under which
+the average effect of the treatment on the primary outcome is identified from the combination of
+the experimental and observational samples: (i) a standard assumption that the assignment in
+the experimental sample is Unconfounded; (ii) a Surrogacy assumption which requires that the
+causal path from the treatment to the primary outcome goes through the surrogates (Prentice,
+1989; Day and Duffy, 1996; Begg and Leung, 2000; Frangakis and Rubin, 2002); and (iii)
+a Comparability or external validity assumption, which requires that the observational and
+experimental samples are comparable in the sense that the outcome distributions conditional
+on surrogates and pre-treatment variables are identical.
+Under these three assumptions, the average effect of the treatment on the primary outcome
+can be estimated as the average effect of the treatment on an aggregate of the surrogates,
+which we label the surrogate index. This index combines the individual surrogates through
+their predicted value of the primary outcome. For example, when studying the impact of class
+size, the primary outcome might be high school graduation, while the two surrogates might be
+mathematics and reading scores. For the special case of linear models, the proposal boils down
+to multiplying the causal effects of the intervention on the two scores (which can be estimated
+[2]

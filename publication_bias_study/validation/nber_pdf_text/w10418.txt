@@ -1,0 +1,129 @@
+NBER WORKING PAPER SERIES
+CORPORATE YIELD SPREADS: DEFAULT RISK OR LIQUIDITY?
+NEW EVIDENCE FROM THE CREDIT-DEFAULT SWAP MARKET
+Francis Longstaff
+Sanjay Mithal
+Eric Neis
+Working Paper 10418
+http://www.nber.org/papers/w10418
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+April 2004
+We are grateful for valuable comments and assistance from Dennis Adler, Warren Bailey, Sanjiv Das, Darrell
+Duffie, Joseph Langsam, Jun Liu, Jun Pan, Eduardo Schwartz, Jure Skarabot, Soetojo Tanudjaja, and Ryoichi
+Yamabe, and from seminar participants at the University of California at Riverside, the London School of
+Business, the University of Southern California, and the University of Texas at Austin. We are particularly
+grateful for the comments of the Editor Robert Stambaugh and an anonymous referee. All errors are our
+responsibility. The views expressed herein are those of the author(s) and not necessarily those of the National
+Bureau of Economic Research.
+©2004 by Francis Longstaff, Sanjay Mithal, and Eric Neis. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit, including ©
+notice, is given to the source.
+
+Corporate Yield Spreads: Default Risk or Liquidity? New Evidence from the Credit-Default
+Swap Market
+Francis Longstaff, Sanjay Mithal, and Eric Neis
+NBER Working Paper No. 10418
+April 2004
+JEL No. G1
+ABSTRACT
+We use the information in credit-default swaps to obtain direct measures of the size of the default
+and nondefault components in corporate spreads. We find that the majority of the corporate spread
+is due to default risk. This result holds for all rating categories and is robust to the definition of the
+riskless curve. We also find that the nondefault component is time varying and strongly related to
+measures of bond-specific illiquidity as well as to macroeconomic measures of bond-market
+liquidity.
+Francis A. Longstaff
+UCLA
+Anderson Graduate School of Management
+110 Westwood Plaza, Box 951481
+Los Angeles, CA 90095-1481
+and NBER
+francis.longstaff@anderson.ucla.edu
+Sanjay Mithal
+Deutsche Bank
+Eric Neis
+Anderson Graduate School of Management
+UCLA
+
+1. INTRODUCTION
+How do financial markets value corporate debt? What portion of corporate yield
+spreads is directly attributable to default risk? How much of the spread stems from
+other factors such as liquidity and taxes? These issues are of fundamental impor-
+tance from an investment perspective since corporate debt outstanding in the U.S.
+now approaches $5 trillion, making it one of the largest asset classes in the financial
+markets. These issues are also of key importance from a corporate finance perspective
+because the presence of nondefault components in corporate spreads could directly
+affect capital structure decisions as well as the timing of debt and equity issues.
+Anumberofpapershavestudiedthe determinantsofcorporateyieldspreads. Im-
+portant examplesincludeJones, Mason, andRosenfeld(1984), LongstaffandSchwartz
+(1995a), Duffie and Singleton (1997), Duffee (1999), Elton, Gruber, Agrawal, and
+Mann (2001), Collin-Dufresne, Goldstein, and Martin (2001), Delianedis and Geske
+(2001), Liu, Longstaff, and Mandell (2002), Eom, Helwege, and Huang (2003), Huang
+and Huang (2003), Collin-Dufresne, Goldstein, and Helwege (2003), and many others.
+Previously, however, researchers have been limited by having only bond data available
+to them in their efforts to identify the components of corporate spreads.
+In the past several years, however, credit derivatives have begun trading actively
+in financial markets. By their nature, these innovative contracts provide researchers
+with a near-ideal way of directly measuring the size of the default component in
+corporate spreads. Credit derivatives are rapidly becoming one of the most successful
+financial innovations of the past decade. The British Bankers’ Association estimates
+that from a total notional amount of $180 billion in 1997, the credit-derivatives market
+grew more than tenfold to $2.0 trillion by the end of 2002. Furthermore, the British
+Bankers’ Association forecasts that the total notional amount of credit derivatives will
+reach $4.8 trillion by the end of 2004.
+This paper uses the information in credit-default swap premia to provide direct
+measures of the size of the default and nondefault components in corporate yield
+spreads. Credit-default swaps are the most common type of credit derivative. In
+a credit-default swap, the party buying protection pays the seller a fixed premium
+each period until either default occurs or the swap contract matures. In return, if the
+underlying firm defaults on its debt, the protection seller is obligated to buy back from
+the buyer the defaulted bond at its par value. Thus, a credit-default swap is similar to
+an insurance contract compensating the buyer for losses arising from a default. A key
+aspect of our study is the use of an extensive data set on credit-default swap premia
+and corporate bond prices provided to us by the Global Credit Derivatives desk at
+Citigroup. This proprietary data set includes weekly market quotations for a broad
+1
+
+cross section of firms actively traded in the credit-derivatives market.
+In measuring the size of the default component, we use two approaches. First,
+we use the credit-default swap premium directly as a measure of the default com-
+ponent in corporate spreads. As shown by Duffie and Liu (2001), however, this
+widely-used model-independent approach can be biased. Accordingly, we also use
+a reduced-form-model approach to measure the size of the default component. Specif-
+ically, we develop closed-form expressions for corporate bond prices and credit-default
+swap premia within the familiar Duffie and Singleton (1997, 1999) framework. In
+this reduced-form model, corporate cash flows are discounted at an adjusted rate that
+includes a liquidity or convenience-yield process. This feature allows the model to cap-
+ture any liquidity or other nondefault-related components in corporate bond prices.
+For each firm in the sample, we fit the model jointly to credit-default swap premia
+and a cross section of corporate bond prices with maturities straddling the five-year
+horizon of the credit-default swaps in the sample. Once estimated, the default com-
+ponent is given directly from the closed-form expression for corporate bond prices.
+We illustrate these approaches with a detailed case study of Enron. The analysis is
+then extended to include all firms in the sample. To insure that the results are robust
+to alternative specifications of the riskless rate, we report results using the Treasury,
+Refcorp, and swap curves to calculate corporate spreads.
+We find that the default component accounts for the majority of the corporate
+spread across all credit ratings. In particular, calculating spreads relative to the Trea-
+sury curve, the default component represents 51 percent of the spread for AAA/AA-
+rated bonds, 56 percent for A-rated bonds, 71 percent for BBB-rated bonds, and 83
+percent for BB-rated bonds. The percentages are even higher when the other curves
+are used to calculate spreads.
+These results contrast with those in Jones, Mason, and Rosenfeld (1984), Elton,
+Gruber, Agrawal, and Mann (2001), Delianedis and Geske (2001), Huang and Huang
+(2003), and others who report that default risk accounts for only a small percentage of
+the spread for investment-grade bonds. However, Elton, Gruber, Agrawal, and Mann
+find that spreads include an important risk premium in addition to compensation for
+the expected default loss. Since the credit-default swap premium measures the risk-
+neutraldefaultcomponent(expecteddefaultlosspluscredit-riskpremium), ourresults
+may in fact be consistent with theirs. Furthermore, Delianedis and Geske and Huang
+and Huang show that under some parameterizations, results paralleling ours can be
+obtained from a structural model. Doing so, however, requires either larger jump
+sizes or credit-risk premia than in typical calibrations.1 Finally, Eom, Helwege, and
+Huang (2003) show that some structural models can actually overestimate corporate
+1However, recent work by Liu, Longstaff, and Mandell (2002), Pan (2002), and Collin-
+Dufresne, Goldstein, and Helwege (2003) suggests that the market price of jump-
+related risks such as default is surprisingly large in some markets.
+2

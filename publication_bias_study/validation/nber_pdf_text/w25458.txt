@@ -1,0 +1,152 @@
+NBER WORKING PAPER SERIES
+ON THE DIRECT AND INDIRECT REAL EFFECTS OF CREDIT SUPPLY SHOCKS
+Laura Alfaro
+Manuel García-Santana
+Enrique Moral-Benito
+Working Paper 25458
+http://www.nber.org/papers/w25458
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+January 2019
+We thank David Weinstein and Mary Amiti for kindly providing their codes and for comments
+and suggestions, Stéphane Bonhomme, Gabriel Chodorow-Reich, Sergio Correia, Julian Di
+Giovanni, Marco Di Maggio, Joseph G. Haubrich, Terry O'Malley, Victoria Ivashina, David
+Martinez-Miera, Friederike Niepmann, Jose Luis Peydro, Andrew Powell, Sergio Vicente, and
+participants in the First CEMFI - Banco de Espana Workshop, the MIT-Sloan seminar, the
+Federal Reserve Board seminar, the University of Barcelona seminar, the IADB seminar, the
+Kennedy School-LEP brown bag seminar, the UC3M seminar, the University of Groningen
+seminar, the Workshop on Financial Intermediation and Risk at the Barcelona GSE Summer
+Forum, the 1st Annual Workshop of the ESCB Research Cluster in Athens, the XX Workshop in
+International Economics and Finance in Buenos Aires, the III Winter Macroeconomics Workshop
+in Bellaterra, the Chicago Financial Institutions Conference, the Society for Economic Dynamics
+in Mexico, CEBRA-Frankfurt, and the 26th Finance Forum in Santander. An earlier version of
+this paper circulated under the title "Credit Supply Shocks, Network Effects and the Real
+Economy". The views expressed herein are those of the authors and do not necessarily reflect the
+views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2019 by Laura Alfaro, Manuel García-Santana, and Enrique Moral-Benito. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+On the Direct and Indirect Real Effects of Credit Supply Shocks
+Laura Alfaro, Manuel García-Santana, and Enrique Moral-Benito
+NBER Working Paper No. 25458
+January 2019
+JEL No. E44,G21,L25
+ABSTRACT
+We consider the real effects of bank lending shocks and how they permeate the economy through
+buyer-supplier linkages. We combine administrative data on all firms in Spain with a matched
+bank-firm-loan dataset on the universe of corporate loans for 2003-2013 to identify bank-specific
+shocks for each year using methods from the matched employer-employee literature. We
+construct firm-specific exogenous credit supply shocks and estimate their direct and indirect
+effects on real activity using firm-specific measures of upstream and downstream exposure.
+Credit supply shocks have sizable direct and downstream propagation effects on investment and
+output throughout the period, especially during the 2008-2009 global financial crisis. In terms of
+mechanisms, trade credit extended by suppliers and price adjustments play a role in accounting
+for downstream propagation of financial shocks.
+Laura Alfaro Enrique Moral-Benito
+Harvard Business School Bank of Spain
+Morgan Hall 263 Calle de Alcalá, 48,
+Soldiers Field 28014 Madrid, Spain
+Boston, MA 02163 enrique.moral@gmail.com
+and NBER
+lalfaro@hbs.edu
+Manuel García-Santana
+Universitat Pompeu Fabra
+Departament d'Economia i Empresa
+Ramon Trias-Fargas 25-27
+Barcelona, 08005
+and CEPR
+manuel.santana@upf.edu
+
+1 Introduction
+In this paper we examine the real effects of the bank lending channel and how bank-lending shocks
+permeate the economy through buyer-seller interactions. Propagation through the production chain
+may substantially amplify the aggregate impact of bank lending shocks on real activity. We show
+that bank credit supply shocks do affect, and indeed permeate the real economy through input and
+output relations.
+The Spanish economy witnessed an unprecedented boom-bust cycle over the 2003-2013 period,
+both in terms of real activity and credit. The correlation between the growth rate of credit to
+non-financial corporations and GDP throughout those different periods is 0.88, which points to
+strong feedback effects between both variables.1 Interestingly, a simple look at the cross section of
+industriesinSpainshowsthatemploymentandrealoutputfellthemostduringthecrisisinindustries
+located downstream in the Spanish production network (see Figure 1). This implies that industries
+more dependent on suppliers were hit relatively more by the global financial crisis. Downstream
+propagation of the global financial shock rationalizes this negative association.
+Figure 1: Downstreamness vs employment and output growth by industry
+beta = −0.48
+tstat = −2.24
+htworg
+tnemyolpmE
+4.
+2.
+0
+2.−
+4.−
+6.−
+beta = -0.72
+tstat = -2.37
+.3 .4 .5 .6 .7 .8
+Downstreamness
+htworg
+tuptuO
+5.
+0
+5.-
+1-
+.3 .4 .5 .6 .7 .8
+Downstreamness
+Notes. Output/Employment growth refers to the change in real value added/employment by industry over the 2006-
+2010period. Downstreamnessreferstothedownstreampositionofeachindustryintheproductionchain. Inparticular,
+it is computed as the ratio of aggregate final direct use of industry’s output to aggregate use of industry’s output
+as an input. Some examples of high downstream industries are Human Health Services (0.75) and Travel Agency,
+Tour Operator (0.68). Some examples of low downstream industries are Electricity Services (0.38), Warehousing and
+Support Services for Transportation (0.39), and Basic Metals (0.44). See discussion in Alfaro, Antr´as, Chor, and
+Conconi (Forthcoming).
+We analyze the direct and indirect effects of credit supply shocks on Spanish firms’ employment,
+1See Section 2 for details on this correlation and Figure 3.
+1
+
+output, and investment over the 2003-2013 period. The exercise of quantifying the consequences of
+financialshocksonrealvariablesandbuyer-supplier(input-output)relationsisverydemanding. Firm
+firm-level data linking credit information to outcome variables (employment, investment, output,
+etc.) is required as well as a plausibly exogenous source of variation in credit growth.2 To address
+thischallenge, weidentifybank-year-specificcreditsupplyshocksthroughdifferencesincreditgrowth
+betweenbankslendingtothesamefirmasinAmitiandWeinstein(2018).3 Importantly, weillustrate
+that the estimated shocks remain very similar when also accounting for bank-firm specific factors as
+shown by Amiti and Weinstein (2018).
+We validate our bank-supply-shocks in several ways. First, we divide the sample into healthy
+and weak banks ones, as in Bentolila, Jansen, and Jimenez (2018).4 We find that weak banks
+experienced stronger supply shocks until 2006 and weaker afterwards. We interpret this evolution as
+clear evidence favoring the plausibility of our estimated bank supply shocks. Second, if our identified
+bank-specific credit shocks capture meaningful supply factors, a bank that experiences a greater
+shock should grant more loans to a given firm, conditional on the firm applying for a loan. Using
+loan application information, available in the credit registry dataset, we show this to be the case.
+To estimate the real effects of banks’ credit supply shocks and their propagation through input-
+output linkages, we combine the Spanish Input-Output structure and firm-specific measures of down-
+stream and upstream exposure. Based on di Giovanni, Levchenko, and Mejean (2018), we measure
+whether firms are indirectly affected by the fact that industries in which their suppliers operate are
+hit by the shocks (downstream effects). Similarly, we also measure whether firms that sell goods
+to industries whose firms are hit by the shocks are indirectly affected (upstream effects). Crucially,
+our dataset, which combines administrative data for all firms in Spain with matched bank-firm-loan
+information on the universe of corporate loans (Spanish Credit Registry, CIR), replicates to a nearly
+complete picture the Spanish economy.
+We find both the direct effects and propagation effects on real variables to be sizable. Our es-
+2An important concern in the literature has been identifying plausible exogenous shocks to disentangle the bank
+lending-channel (or bank-specific shock) from the firm borrowing-channel (i.e., a firm’s ability, or lack thereof, to
+borrow from alternative sources). Firms may be able to undo a particular negative bank supply shock by resorting
+to another bank or other sources of funds. Kashyap, Stein, and Wilcox (1993) and Adrian, Colla, and Shin (2012)
+find that firms are able to substitute to other forms of credit in the presence of loan supply shocks. Klein, Peek, and
+Rosengren (2002) stress the difficulties of substituting loans from one bank with loans from another. Midrigan and
+Xu(2014)emphasizetheroleofself-financing; seeKhwajaandMian(2008), andJimenez, Mian, Peydro, andSaurina
+(2014) for further discussion.
+3To be more concrete, we use matched employer-employee techniques that enable us to recover multiple time-
+varyingfirmandbankfixedeffects (seeAbowd, Kramarz, andMargolis(1999)). Thisapproachovercomeslimitations
+faced by previous work that restricted analysis to smaller samples of firms or particular bank-specific supply shocks,
+such as the 2007 liquidity drought in interbank markets.
+4Bentolila,Jansen,andJimenez(2018)defineweakbanksasthosethatwerebailedoutbytheSpanishgovernment
+as part of the restructuring process during the financial crisis.
+2

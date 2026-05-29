@@ -1,0 +1,127 @@
+NBER WORKING PAPER SERIES
+HOW ABUNDANT ARE RESERVES?
+EVIDENCE FROM THE WHOLESALE PAYMENT SYSTEM
+Gara Afonso
+Darrell Duffie
+Lorenzo Rigon
+Hyun Song Shin
+Working Paper 30736
+http://www.nber.org/papers/w30736
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2022
+This paper presents preliminary findings and is being distributed to economists and other
+interested readers solely to stimulate discussion and elicit comments. The views expressed in this
+paper are those of the author(s) and do not necessarily reflect the position of the Federal Reserve
+Bank of New York, the Federal Reserve System, the Bank for International Settlements, or the
+National Bureau of Economic Research. Any errors or omissions are the responsibility of the
+author(s).
+At least one co-author has disclosed additional relationships of potential relevance for this
+research. Further information is available online at http://www.nber.org/papers/w30736.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2022 by Gara Afonso, Darrell Duffie, Lorenzo Rigon, and Hyun Song Shin. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+How Abundant Are Reserves? Evidence from the Wholesale Payment System
+Gara Afonso, Darrell Duffie, Lorenzo Rigon, and Hyun Song Shin
+NBER Working Paper No. 30736
+December 2022
+JEL No. E42,E44,E52,E58,G22
+ABSTRACT
+Before the era of large central bank balance sheets, banks relied on incoming payments to fund
+outgoing payments in order to conserve scarce liquidity. Even in the era of large central bank
+balance sheets, rather than funding payments with abundant reserve balances, we show that
+outgoing payments remain highly sensitive to incoming payments. By providing a window on
+liquidity constraints revealed by payment behavior, our results shed light on thresholds for the
+adequacy of reserve balances. Our findings are timely, given the ongoing shrinking of central
+bank balance sheets around the world in response to inflation.
+Gara Afonso Lorenzo Rigon
+Federal Reserve Bank of NY Stanford Department of Economics
+33 Liberty Street 579 Jane Stanford Way
+New York, NY 10045 Stanford, CA 94305
+Gara.Afonso@ny.frb.org U.S.
+lrigon@stanford.edu
+Darrell Duffie
+Graduate School of Business Hyun Song Shin
+Stanford University Bank for International Settlements
+Stanford, CA 94305-7298 Centralbahnplatz 2
+and NBER ˘4051 Basel
+duffie@stanford.edu Switzerland
+Hyunsong.shin@bis.org
+
+1 Introduction
+Asmajorcentralbanksrespondtoheightenedinflationbyremovingpolicyaccommodation,
+includingthroughlargereductionsoftheirbalancesheets,acriticalissueistheadequacyof
+reserves for the smooth functioning of money markets and the financial system as a whole.
+We approach this issue from the perspective of the payment system. Before the era
+of large central bank balance sheets, banks relied to a large extent on incoming payments
+to fund outgoing payments. This was forced by the small aggregate quantity of reserve
+balances supplied by central banks. Because outgoing payments deplete a bank’s reserve
+balances,banksreliedheavilyonincomingpaymentstofundoutgoingpayments,conserving
+scarce liquidity. The sensitivity of outgoing payments to incoming payments has served as
+a window on the shadow price of liquidity.
+In the era of large central bank balance sheets, it has been conventional wisdom that
+the reliance of banks on their incoming payments to make outgoing payments would no
+longer apply because banks hold abundant reserves at their central banks. However, we
+findthat,evenintheeraof“ample”reserves,theamountofpaymentsthatabankmakesin
+a given minute depends significantly on the amount of payments that it has received over
+preceding minutes, indicating a high degree of dependence between incoming payments
+and outgoing payments. In the terminology of game theory, this is evidence of “strategic
+complementarity,” in that payments are increasing in the payments made by others.
+Theclosecouplingofinterbankpaymentsthatwefindsuggeststhatbanksactasthough
+theirintradayreservebalancesareascarceresource,evenwhentotalreservebalancesinthe
+USbankingsystemarewellover$1trillion,farinexcessofaggregatereservebalancesbefore
+the Global Financial Crisis (GFC) of 2008-2009. This in turn suggests that there is still
+a potential for strategic cash hoarding when reserve balances get sufficiently low. Indeed,
+this happened in mid-September 2019 and mid-March 2020, when large banks suddenly
+negotiated very high interest rates for providing overnight liquidity in the Treasury repo
+market.
+In this paper, we study the coupling of interbank payments in the Fedwire Funds
+Service(Fedwire)system–theprimarylarge-valuepaymentsystemoperatedbytheFederal
+Reserve– as a lens into the key question of the adequacy of reserve balances in the era of
+large central bank balance sheets. In 2020, the Fedwire Service handled a daily payment
+value of over $3.3 trillion dollars, meaning that payments on the scale of annual US GDP
+weremaderoughlyevery7days. Inspiteofthescaleandspeedofpaymentsthatgothrough
+1
+Electronic copy available at: https://ssrn.com/abstract=4282909
+
+large-value payment systems, the principles underpinning account-based payment systems
+haveremainedlargelyunchangedforcenturies. Apaymentismadebydebitingtheaccount
+of the payer and crediting the account of the receiver. In the case of a wholesale payment
+systemsuchasFedwire,thesystem’sparticipantsholdbalancesattheFederalReserve,but
+the ledger operations are common among most bank-railed payment systems. The sender
+of a payment must have sufficient deposit balances to initiate a payment. Failing that, the
+payer must first borrow the needed amount (and then receive the loaned funds) or must
+wait until other incoming payments replenish its deposit balance sufficiently to send the
+payment.
+Before the GFC, banks in most jurisdictions maintained small reserve balances at the
+centralbankcomparedtotheiroutgoingpaymentvolumes. Theyreliedheavilyonincoming
+payments to accumulate sufficient balances to make outgoing payments. The reliance on
+incoming payments implied a high velocity of payments and a high degree of strategic
+complementarity among system participants, whereby the willingness to make payments
+promptly was greater when other system participants did so. Strategic complementarity
+gives rise to potential gridlock scenarios whenever a cautious stance by banks that wait for
+sufficientincomingpaymentsbeforemakingoutgoingpaymentsslowsdownthesystemasa
+whole. McAndrewsandPotter(2002)studiedthegridlockthatfollowedthe9/11attacksin
+2001. Afonso and Shin (2011) and Yang (2022) provide models calibrated for the Fedwire
+systemtostudytheimpactofliquidityhoardingonthefunctioningofthepaymentsystem.
+In order to avoid potential gridlocks, the Federal Reserve provides daylight overdrafts,
+intraday loans to banks that they can use to make outgoing payments in the expectation
+that positions would be positive before the end of the day.1
+DiscussionofstrategicpaymenttimingcomplementariesfadedfromviewaftertheGFC,
+with the large expansion of reserve balances at the central bank in many jurisdictions
+caused by central bank asset purchase programs. The conventional wisdom has been that
+large reserve balances maintained by banks reduced or eliminated the reliance on incoming
+payments to make outgoing payments.
+This conventional wisdom turns out to be false. In an empirical investigation of the
+Fedwire system in the United States, we find that strategic complementarity of payments
+is alive and well. A 1-percent increment received in incoming payments by a bank in a 15-
+minute window predicts an additional 0.4 percent of outgoing payments in the subsequent
+1Further modeling of strategic payment timing games is provided by Bech (2008), Bech and Garratt
+(2003), and Nellen (2019).
+2
+Electronic copy available at: https://ssrn.com/abstract=4282909

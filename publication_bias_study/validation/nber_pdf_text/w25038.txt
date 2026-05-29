@@ -1,0 +1,132 @@
+NBER WORKING PAPER SERIES
+AN ANATOMY OF U.S. FIRMS SEEKING TRADEMARK REGISTRATION
+Emin M. Dinlersoz
+Nathan Goldschlag
+Amanda Myers
+Nikolas Zolas
+Working Paper 25038
+http://www.nber.org/papers/w25038
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2018
+Any opinions and conclusions expressed herein are those of the authors and do not necessarily
+represent the views of the U.S. Census Bureau and the U.S. Patent and Trademark Office. All
+results have been reviewed to ensure that no confidential data are disclosed. The authors would
+like to thank Carol Corrado, Jonathan Haskel, Daniel Sichel, and Javier Miranda — the
+organizers of the 2017 CRIW Conference on Measuring and Accounting for Innovation in the
+21st Century, conference participants, and especially the discussant, Mark Roberts, for helpful
+comments and suggestions. Veronika Penciakova provided expert research assistance. The views
+expressed herein are those of the authors and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2018 by Emin M. Dinlersoz, Nathan Goldschlag, Amanda Myers, and Nikolas Zolas. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+An Anatomy of U.S. Firms Seeking Trademark Registration
+Emin M. Dinlersoz, Nathan Goldschlag, Amanda Myers, and Nikolas Zolas
+NBER Working Paper No. 25038
+September 2018
+JEL No. D22,L10,L21,L25,M30,O34
+ABSTRACT
+This paper reports on the construction of a new dataset that combines data on trademark
+applications and registrations from the U.S. Patent and Trademark Office with data on firms from
+the U.S. Census Bureau. The resulting dataset allows tracking of various activity related to
+trademark use and protection over the life-cycle of firms, such as the first application for a
+trademark registration, the first use of a trademark, and the renewal, assignment, and cancellation
+of trademark registrations. Facts about firm-level trademark activity are documented, including
+the incidence and timing of trademark registration filings over the firm life-cycle and the
+connection between firm characteristics and trademark applications. We also explore the relation
+of trademark application filing to firm employment and revenue growth, and to firm innovative
+activity as measured by R&D and patents.
+Emin M. Dinlersoz Amanda Myers
+Center for Economic Studies U.S. Patent and Trademark Office
+U.S. Census Bureau 600 Dulany Street
+4600 Silver Hill Road Alexandria, VA 22314
+Washington, DC 20233 USA
+emin.m.dinlersoz@census.gov amanda.myers@uspto.gov
+Nathan Goldschlag Nikolas Zolas
+U.S. Census Bureau Center for Economic Studies
+Nathan.Goldschlag@census.gov U.S. Census Bureau
+4600 Silver Hill Road
+Washington, DC 20233
+nikolas.j.zolas@census.gov
+
+1 Introduction
+Attracting consumers and retaining them as loyal customers is critical for a firm’s survival and
+growth. Among the many ways of building and protecting a loyal customer base, trademarks
+are unique. By protecting a firm’s intangible assets, trademarks can reduce consumer search
+and switching costs, lower the expense of introducing and marketing new products, and generate
+brand awareness and loyalty. While trademarks generally facilitate establishing and enhancing
+goodwill, they may not always be directly linked to a particular attribute of the firm. Good-
+will can be generated through investment in consistent quality, exceptional customer service, a
+distinctive portfolio of products, or a unique service or innovation that makes a firm stand out.
+The fact that not all firms file to register trademarks, despite the relatively low cost of doing so,
+suggests that certain firms stand to benefit more from trademark registration than others.1
+Theory contends that firms use trademarks to appropriate the returns from investments in
+goodwill. Firmsarethereforemorelikelytoselectintotrademarkregistrationwhenthereturnsto
+reputation, product quality, and scale and scope expansion are high.2 Likewise, when innovative
+activity complements goodwill, by enhancing product or service quality and inducing customer
+loyalty, firms have more motivation to protect accumulated and anticipated goodwill with a
+trademark registration. The benefits derived from using a trademark can, in turn, affect firm
+performanceandproductivity. Whenfirmssuccessfullyleveragetrademarkstodifferentiategoods
+or services and insulate themselves from copying and competition by registering trademarks,
+they can achieve faster growth. At the same time, the price elasticity of demand for firms with
+trademarks can be lower, leading to higher markups. Maintaining higher markups, in turn,
+may intensify firms’ advertising and marketing activities or foster further investment in quality
+enhancementandprocessorproductinnovation. Consequently,protectionoftrademarksthrough
+registration can have long-term consequences for a firm’s competitive position in the market as
+well as the industry concentration.
+While theory suggests trademarks can play a critical role in firm dynamics and innovation,
+empirical research regarding which firms in the United States use trademarks and the benefits
+they thereby derive is relatively sparse, especially when compared to other intellectual property
+such as patenting. The small but growing body of empirical literature on trademarks relies
+1One rationale for why not all firms file to register trademarks is provided by Landes and Posner (1988)
+pp.271-272: If trademarks signal consistent quality, quality may be costly to maintain, and can be verified by
+consumers after purchase. Hence, only the firms that can afford to provide such consistent quality will tend to
+seek trademark registration.
+2See,e.g.,LandesandPosner(1987,1988)andEconomides(1988)fortheoreticalargumentsontheconnection
+between trademarks and consumer behavior. For recent models of firm dynamics under costly and gradual
+customer acquisition, see Dinlersoz and Yorukoglu (2012) and Gourio and Rudanko (2014).
+1
+
+primarily on application and registration data from other countries, particularly the United
+Kingdom, Australia, and France. Such firm-level studies generally find trademark filing and/or
+registration to be correlated with product differentiation, marketing, and innovation, though
+resultsvarybyindustry. Thepriorliteraturealsofindsapositiverelationshipbetweentrademark
+registration and firm market value, productivity, and survival, indicating that the private value
+of trademarks to firm is positive, though there is yet no clear conclusion regarding their social
+value. Still, most firm-level research to date relies on datasets of large, publicly-traded firms,
+which casts doubt on the applicability of results to the population of firms that seek trademark
+registration.
+Onemajorobstacletoempirical analysisof trademarkusebyfirmsintheUnitedStatesisthe
+lack of comprehensive data on firm-level trademark activity. Recently, however, there has been
+substantial progress on this front. The United States Patent and Trademark Office (USPTO)
+has made available trademark data that covers nearly 7 million trademark applications for the
+period 1870-2015. The USPTOTrademarkCase Files Dataset (TCFD) is a remarkable synthesis
+of various trademark activity by firms.3 It contains detailed information on applications for
+trademark registration, as well as the commercial use, renewal, assignment, and cancellation of
+registeredtrademarks. ItidentifiesthedatesanapplicationisfiledwiththeUSPTOandproceeds
+to registration, and in what product categories or classes of goods and services are covered by a
+registration. However, theTCFDhaslittletocontributeregardingthecharacteristicsofthefirms
+that seek trademark registration and when exactly in their life-cycle they do so. It is, therefore,
+not possible to uncover how trademark filing is related to firm characteristics and dynamics with
+the TCFD alone.
+This paper reports on the construction of a new dataset that combines the TCFD with firm-
+level micro data at the U.S. Census Bureau. The dataset fills a void in the literature by linking
+trademark activity with firm characteristics, performance, and dynamics in the United States.
+It provides information on the incidence and timing of trademark filing and registration over
+the life-cycle of a firm and, thus, opens several research possibilities. The trademark-firm linked
+data can be used to explore not only what kind of firms seek to register trademarks, but also
+when they do so, and how trademark filing is related to firm dynamics, such as entry, survival,
+employment and revenue growth, and R&D and patenting intensity. This paper provides a first
+lookattheconnectionbetweentrademarkfilingandbroader measuresof firmoutcomesbasedon
+the constructed data. An objective of this initial analysis is to explore some of the selection and
+treatment effects associated with seeking federal trademark registration in terms of firm growth
+and innovation.
+3See Graham, Hancock, Marco and Myers (2016) for details on the construction and features of the USPTO
+Trademark Case Files Dataset.
+2

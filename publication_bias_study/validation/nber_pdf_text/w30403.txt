@@ -1,0 +1,120 @@
+NBER WORKING PAPER SERIES
+INVESTING IN LENDING TECHNOLOGY:
+IT SPENDING IN BANKING
+Zhiguo He
+Sheila Jiang
+Douglas Xu
+Xiao Yin
+Working Paper 30403
+http://www.nber.org/papers/w30403
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+August 2022, Revised October 2023
+For helpful comments, we thank Doug Diamond, Francesco D’Acunto (discussant), Isil Erel
+(discussant), Mark Flannery, Yueran Ma, Jun Pan (discussant), Nitzan Tzur-Ilan (discussant),
+João Granja, Nicola Pierri, Manju Puri, and Raghu Rajan. We are thankful for valuable comments
+from seminar and conference participants at the Richmond Fed, University of Connecticut,
+University of Florida, University of Chicago, City University of New York, 5th IMF Annual
+Macro-Financial Conference, EFA, SFS Calvacade, and the 22nd Annual Conference in Digital
+Economics, and AFA 2023 in New Orleans. Zhiguo He acknowledges financial support from the
+John E. Jeuck Endowment at the University of Chicago Booth School of Business. All errors are
+our own. The views expressed herein are those of the authors and do not necessarily reflect the
+views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2022 by Zhiguo He, Sheila Jiang, Douglas Xu, and Xiao Yin. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Investing in Lending Technology: IT Spending in Banking
+Zhiguo He, Sheila Jiang, Douglas Xu, and Xiao Yin
+NBER Working Paper No. 30403
+August 2022, Revised October 2023
+JEL No. G21,G51,O12,O32
+ABSTRACT
+Banks’ lending technology hinges on their handling of soft and hard information in dealing with
+different types of credit demand. Through assembling a novel dataset on banks’ investment in
+information technologies (IT), this paper provides concrete empirical evidence on how banks
+adapt their lending technologies. We find investment in communication IT is associated with
+improving banks’ ability to produce and transmit soft information, while investment in software
+IT helps enhance banks’ hard information processing capacity. We exploit policies that affect
+geographic regions differentially to show causally that banks respond to an increased demand for
+small business credit (mortgage refinance) by increasing their spending on communication
+(software) IT spending. We also find that the entry of fintech induces commercial banks to
+increase their investment in IT—more so in the software IT category.
+Zhiguo He Douglas Xu
+University of Chicago University of Florida
+Booth School of Business Warrington College of Business
+5807 S. Woodlawn Avenue 1454 Union Rd
+Chicago, IL 60637 Stuzin Hall 315
+and NBER Gainesville, FL 32611
+zhiguo.he@chicagobooth.edu douglas.xu@warrington.ufl.edu
+Sheila Jiang Xiao Yin
+Department of Finance and Real Estate University College London
+Warrington College of Business 30 Gordon St, London
+University of Florida Drayton House
+P.O. Box 117168 London WC1H 0AX
+Gainesville, FL 32611 United Kingdom
+Sheila.Jiang@warrington.ufl.edu xiao.yin@ucl.ac.uk
+
+1 Introduction
+Commercial banks have long relied on cutting-edge technology to deliver innovative prod-
+ucts such as ATMs and online banking, streamline loan making processes, and improve back-
+office efficiency. According to a 2012 Mckinsey Report, across the globe commercial banks
+spendabout4.7%to9.4%oftheiroperatingincomeoninformationtechnology(IT);forcom-
+parison, insurance companies and airlines only spend 3.3 percent and 2.6 percent of their
+income on IT, respectively. Recently, the impact of information technology on the banking
+sector and on financial stability has been a headline topic in policy discussions (Banna and
+Alam, 2021; Pierri and Timmer, 2020).
+Althoughthefinancialservicesindustry—especiallythebankingindustry—isincreasingly
+becoming a tech-like industry, the academic literature lags behind in understanding the
+economics of IT spending in banking. Which banks, large or small, have invested more in
+IT? Do banks adapt their information technologies in response to different credit demand
+shocks? How do traditional banks react to the entry of fintech in recent years? We take
+the first step toward understanding the key empirical patterns on these issues, and further
+explore the mechanism that underlies the connection between these expenditures and the
+core functioning of banking.
+To place our research in the literature, think about the information transmission between
+aloanofficerandaborrower, orbetweenlayersofloanofficerswithinabankorganization. As
+highlightedbyStein(2002), alesshierarchicalstructurewithinabankfacilitatestheeffective
+transmission of “soft” information. At the same time, fast-developing technologies in recent
+decades provide more options for the banking sector to cope with such problems.1 So, can
+information technologies reduce frictions in communicating soft information and potentially
+improve banks’ credit approval decisions? Likewise, with the explosive development of big
+data analytics which combine “hard” information such as credit scores with other alternative
+1For instance, First Citizens National Bank implemented its employee intranet to strengthen internal
+communications in February 2019. For details, see this article.
+2
+
+data, have traditional banks started adopting these technologies?
+Our study relies on a comprehensive dataset, the Harte Hanks Market Intelligence Com-
+puterIntelligenceTechnologydatabase,whichhasbeenusedintheliteratureontheeconomic
+implications of technology in non-financial sectors (e.g., Bloom et al., 2014; Forman et al.,
+2012). This dataset, which aligns well with the regulatory Y-9C dataset in measuring total
+IT spending, provides detailed branch-level information on specific spending categories. We
+focus on two major categories in banks’ IT spending:2 software and communication. Soft-
+ware IT products mainly aim to improve information processing accuracy and speed through
+automation, specialized programming and AI technologies, etc. Communication IT products
+facilitate smoother exchanges of information within bank branching networks, across banks,
+and with borrowers.
+In Section 3 we start by documenting that IT expenditure in the U.S. banking sector has
+been growing rapidly over the last decade. Growth in IT spending varies by bank size: large
+banks’ IT spending increased steadily, while there was almost no growth in IT spending for
+the smallest banks. Another noticeable distinction between large and small banks is that
+the latter, who presumably engage in more small business lending, consistently allocate a
+higher share of their IT budget towards communication technology than the former. As we
+will elaborate, this pattern points to the role communication IT plays in conducting small
+business lending.
+We then examine the relationship between banks’ IT spending and their lending activi-
+ties. Among the three main categories of loan types in Call Reports, the share in commercial
+and industrial (C&I) loans is positively associated with the lenders’ communication spend-
+ing, but uncorrelated with their software spending. In contrast, the share of personal loans
+is positively associated with the lenders’ software spending, but not with communication
+2Section 2.2 explains in detail the four major categories of IT expenditure in the Harte Hanks data
+set—hardware, software, communication, services—in the context of the banking industry. Representative
+examplesofsoftwareincludedesktopapplications(e.g.,MicrosoftOffice),informationmanagementsoftware,
+and risk and payment management software. Examples of communication technology include radio and TV
+transmitters, private branch exchanges, video conferencing, etc.
+3

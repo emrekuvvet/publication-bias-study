@@ -1,0 +1,138 @@
+NBER WORKING PAPER SERIES
+STOCK PRICE CRASHES:
+ROLE OF SLOW-MOVING CAPITAL
+Mila Getmansky
+Ravi Jagannathan
+Loriana Pelizzon
+Ernst Schaumburg
+Darya Yuferova
+Working Paper 24098
+http://www.nber.org/papers/w24098
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2017, Revised February 2021
+Previously circulated as "Stock Price Crashes: Role of Capital Constrained Traders." We thank
+the Centre for Analytical Finance at the Indian School of Business and the National Stock
+Exchange of India for data. We thank Viral Acharya, Lawrence Glosten, Merrel Hora, Dermot
+Murphy, Nirmal Mohanty, Todd Pulvino, Ramabhadran Thirumalai, Ravi Varanasi, Vish
+Viswanathan, Pradeep Yadav, Brian Weller, Roberto Renò, and Aleksey Kolokolov for helpful
+comments. Isacco Baggio, Yakshup Chopra, Nuri Ersahin, Naveen Reddy Gondhi, Caitlin
+Gorback, Mrinal Mishra, and Roberto Panzica provided valuable research assistance. Special
+thanks to Rudresh Kunde and Tomasz Wisniewski for data support. Loriana Pelizzon gratefully
+acknowledges the research support from the Research Center SAFE, funded by the State of
+Hessen initiative for research LOEWE and Project 329107530 funded by the Deutsche
+Forschungsgemeinschaft (DFG, German Research Foundation). Mila Getmansky Sherman
+acknowledges research support from National Science Foundation, Award #1940223 and
+#1733942. All errors are our own. The views expressed in the paper are those of the authors and
+do not represent the views of AQR Capital Management LLC or the National Bureau of
+Economic Research.
+At least one co-author has disclosed additional relationships of potential relevance for this
+research. Further information is available online at http://www.nber.org/papers/w24098.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2017 by Mila Getmansky, Ravi Jagannathan, Loriana Pelizzon, Ernst Schaumburg, and Darya
+Yuferova. All rights reserved. Short sections of text, not to exceed two paragraphs, may be
+quoted without explicit permission provided that full credit, including © notice, is given to the
+source.
+
+Stock Price Crashes: Role of Slow-Moving Capital
+Mila Getmansky, Ravi Jagannathan, Loriana Pelizzon, Ernst Schaumburg, and Darya Yuferova
+NBER Working Paper No. 24098
+December 2017, Revised February 2021
+JEL No. G00,G1,G12,G14,G18,G2
+ABSTRACT
+We study the role mutual funds play in the recovery from fast intraday crashes based on data from
+the National Stock Exchange of India for a single large stock. During normal times, trading activity
+and liquidity provision by mutual funds is negligible compared to other traders at around 4% of overall
+activity. Nevertheless, for the two intraday marketwide crashes in our sample, price recovery took
+place only after mutual funds moved in. Market stability may require the presence of well-capitalized
+standby liquidity providers for recovery from fast crashes.
+Mila Getmansky Ernst Schaumburg
+Isenberg School of Management AQR Capital Management LLC
+Room 308C Greenwich Plaza
+University of Massachusetts Greenwich, CT 06830
+121 Presidents Drive, Amherst, MA 01003 ernst.schaumburg@gmail.com
+msherman@isenberg.umass.edu
+Darya Yuferova
+Ravi Jagannathan Norwegian School of Economics (NHH)
+Kellogg Graduate School of Management Helleveien 30
+Northwestern University 5045 Bergen
+2211 Campus Drive Norway
+Evanston, IL 60208 darya.yuferova@nhh.no
+and NBER
+rjaganna@kellogg.northwestern.edu
+Loriana Pelizzon
+SAFE/Goethe University Frankfurt
+House of Finance
+Grüneburgplatz 1
+60323 Frankfurt am Main
+Germany
+pelizzon@safe.uni-frankfurt.de
+
+A liquid and stable stock market plays a critical role in the economy. It channels savings
+into long-term illiquid investments while at the same time providing liquidity to investors,
+thereby promoting economic growth (see Levine (2005)). The “Flash Crash” of May 6, 2010,
+focused exchanges’ and regulators’ attention on the need to better understand liquidity
+provision in the financial markets. In this paper, we focus on a particular role financial
+institutions play in the liquidity provision during intraday crashes and recoveries.
+We show that when the demand for liquidity is unusually large leading to intraday fast
+crashes, mutual funds (MFs) acting as standby liquidity providers are able to step in to
+provide liquidity, thereby helping price recovery. By looking at micro-level data we are able
+to provide high-frequency evidence of MFs acting as liquidity providers during fast intraday
+crashes. MFs have a natural advantage in making a market for stocks they hold when
+the rewards are adequate (i.e., when price concessions are large enough). They move in
+only after prices have dropped sufficiently, highlighting the slow-moving feature of standby
+market-making capital.1
+We use a unique database of orders and transactions data for the period April – June
+2006 for one of the largest firms in the NIFTY and SENSEX indices traded on the National
+Stock Exchange of India (NSE).2 Based on the number of trades, the NSE was the third-
+largest stock exchange after NYSE and NASDAQ in the world as of April 2006.3 The NSE is
+organized as a limit order book market similarly to NYSE and NASDAQ, which has become
+the dominant market design.4 Even though we use data for three months in 2006 for just
+one large stock from the NSE, we believe that our main conclusions carry over to the current
+1Another potential reason for the slow-moving nature of MFs’ intermediation capital could be that a
+sharp drop in a stock’s price draws MFs’ attention, after which MFs have to evaluate whether this drop is
+due to lack of liquidity or adverse information. And this evaluation may take time, slowing the deployment
+of market-making capital.
+2NSE became the largest stock exchange in India in terms of volume traded, overtaking the Bombay
+Stock Exchange (BSE) at the end of 1995.
+3AccordingtotheWorldFederationofExchanges, thelargestexchangeintheworldbasedonnumberof
+transaction was NASDAQ with more than 100,000 transactions per day, followed by the NYSE with around
+91,000 transactions per day and the NSE with around 57,000 transactions per day as of April 2006.
+4NASDAQ is a hybrid market, i.e., dealer market with a limit order book.
+1
+
+U.S. stock market and several other markets around the world, given the size of the NSE
+market and the similarities of the market structures between NSE and the stock markets
+worldwide.5 We would like to be upfront about limitation of our data since we conduct our
+analyses on one stock. Even though it is one of the largest and representative stocks on the
+NSE, we would like to acknowledge this limitation and potential heterogeneity that exists
+among stocks. However, we believe that our emphasis on liquidity provision by different
+types of traders especially during fast intraday crashes should not be biased by the choice of
+a particular stock from the benchmark stock market index.6
+Despite the above-mentioned limitation, our data have the following advantages. First,
+the data have a unique identifier for each broker-trader combination, which allows us to
+calculate the evolution of individual traders’ inventory over time. Second, the data have the
+legal classification (Mutual Fund (MF), Foreign Institutional Investor (FII), and so on) for
+each trader in addition to the unique individual trader identity. Therefore, we are able to
+identify the types of legal entities who are standby liquidity providers. Some legal entities
+are natural liquidity providers and demanders: MFs can tolerate deviations from their de-
+sired holdings if prices become attractive; FIIs have a global view on the market, and thus
+their behavior might be affected by the shocks originated outside the Indian market. We
+concentrate our analysis on MFs and FIIs as these are the two largest well-known groups of
+institutional investors worldwide.
+We show that during normal periods (i.e., not during intraday crashes), FIIs and MFs
+are of minor importance both in terms of their trading activity and liquidity provision as
+5Weacknowledgethatnoovernightshort-sellingisallowedinequitymarketsinIndiaasopposedtoU.S.
+However, giventhatwefocusonintradaycrashesandrecoveries, anyrestrictionsthatapplyovernightareof
+a minor concern in such context. Besides that overnight short-selling restriction could be overcome through
+single-stock futures (single stock-futures market is quite large in India as compared to U.S.). We also note
+that high-frequency traders and day traders (short-term traders) tend to end their day flat, hence they are
+unlikely to be influenced by any overnight restrictions. We show in the Internet Appendix that the trading
+behavior of short-term traders during intraday crashes was similar to that of high-frequency traders during
+the Flash Crash of May 6, 2010 in the U.S. market.
+6WeprovideanexternalvaliditycheckbycomparingouranonymousstocktotheotherstocksinNIFTY50
+and to stocks in S&P500 in Section I.
+2

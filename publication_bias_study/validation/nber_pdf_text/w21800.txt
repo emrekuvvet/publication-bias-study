@@ -1,0 +1,117 @@
+NBER WORKING PAPER SERIES
+SPECIALIZATION IN BANK LENDING:
+EVIDENCE FROM EXPORTING FIRMS
+Daniel Paravisini
+Veronica Rappoport
+Philipp Schnabl
+Working Paper 21800
+http://www.nber.org/papers/w21800
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2015
+We thank Luana Zaccaria for outstanding research assistance. We thank Luis Garicano, Asim Khwaja,
+Nicola Gennaioli, Rebecca Zarutskie, Johan Hombert, Gregor Matvos, and participants at Bank de
+France, Cambridge University, CEMFI, ERWIT, Financial Intermediation Research Society Conference,
+LBS Finance Symposium, LSE, NBER CF, NY Fed, Paris Trade Group, ICD Annual Conference
+in Financial Economics, SED, Stanford University, Stanford University GSB, University of British
+Columbia Sauder School of Business, UC Berkeley, UC Berkeley HAAS School of Business, UC
+San Diego, University of Zurich seminars, workshops, and conferences for useful comments. All errors
+are our own. The views expressed herein are those of the authors and do not necessarily reflect the
+views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2015 by Daniel Paravisini, Veronica Rappoport, and Philipp Schnabl. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission provided
+that full credit, including © notice, is given to the source.
+
+Specialization in Bank Lending: Evidence from Exporting Firms
+Daniel Paravisini, Veronica Rappoport, and Philipp Schnabl
+NBER Working Paper No. 21800
+December 2015, Revised January 2020
+JEL No. F14,G21
+ABSTRACT
+We develop an empirical approach for identifying specialization in bank lending using granular data
+on borrower activities. We illustrate the approach by characterizing bank specialization by export market,
+combining bank, loan, and export data for all firms in Peru. We find that all banks specialize in at
+least one export market, that firms take the pattern of bank specialization into account when selecting
+their lending banks, and that credit supply shocks disproportionately affect a firm’s exports to markets
+where the lender specializes in. Thus, bank specialization makes credit difficult to substitute, which
+has consequences for competition in credit markets and the transmission of credit shocks to the real
+economy.
+Daniel Paravisini Philipp Schnabl
+Department of Finance Stern School of Business
+London School of Economics New York University
+Houghton Street 44 West Fourth Street
+London WC2A 2AE New York, NY 10012
+d.paravisini@lse.ac.uk and NBER
+schnabl@stern.nyu.edu
+Veronica Rappoport
+London School of Economics
+and Social Science
+Houghton St.
+London WC2A 2AE
+United Kingdom
+v.e.rappoport@lse.ac.uk
+
+1 Introduction
+A central function of banks is to monitor and screen borrowers. Banks invest in collect-
+ingborrower-specificinformation,oftenproprietaryinnature,andevaluatenewprojects
+through repeated interactions with the same borrower. Over time, banks form relation-
+shipswithborrowersthatconstituteanimportantsourceofabank’scomparativeadvan-
+tage. Ontheonehand,suchrelationshiplendinggivebanksanex-anteincentivetoinvest
+ininformationcollectiononnewborrowers. Ontheotherhand,itcreatesanex-postinfor-
+mation monopoly that limits competition across banks and enables rent extraction. This
+trade-off is at the center of much theoretical and empirical work on financial intermedia-
+tionandconsideredaprimaryreasonwhybanksexistinthefirstplace.1
+In this paper, we explore a complementary, but theoretically distinct, source of com-
+parative advantage of banks. We ask whether banks specialize by lending to firms in
+specific markets. We distinguish between bank specialization due to “market-specific”
+information, such as expertise in evaluating projects in a specific market or in a specific
+activity, and “firm-specific” information, such as the information gathered from relation-
+ship lending. Importantly, we analyze whether there is a distinct role for market-specific
+bank specialization independent of firm-specific information collected through relation-
+shiplending.
+To provide compelling evidence of market-specific bank specialization, one needs to
+addressseveralchallenges. Thefirstisderivingatheoreticallysoundmeasureofmarket-
+specific bank specialization that can be taken to the data. The second is to empirically
+identify the consequences of market-specific bank specialization separately from other
+bank characteristics that could affect lending directly. The third is to distinguish clearly
+between the impact of market-specific specialization and firm-specific information gath-
+eredthroughrelationshiplending.
+1FortheimportanceofrelationshiplendinginfinancialintermediationseeBernanke,1983;James,1987;
+Hoshietal.,1990;PetersenandRajan,1994;PetersenandRajan,1995;BergerandUdell,1995;Degryseand
+Ongena,2005;ChavaandPurnanandam,2011;Boltonetal.,2013;forsurveys,seeBoot,2000andOngena
+andSmith,2000.
+1
+
+Ouranalysisaddressesthesechallengesusinganewdatasetthatcombinesbank,loan,
+and export data on all firms in Peru. We start by constructing a new measure of market-
+specific bank specialization based on cross-country variation in firms’ export activities.
+Wedefineabanktobespecializedinacountryifitsportfolioshareoflendingtoexporters
+tothecountryisaright-tailoutlierinthedistributionofportfoliosharesoflendingbyall
+banks. We show that this measure emerges naturally from a model in which firms op-
+erate across different markets (e.g., exports to multiple geographical markets), and each
+firm demands credit from banks that are differentiated in providing intermediation ser-
+vices across markets (e.g., banks have an advantage in funding exports to specific coun-
+tries). This approach captures market-specific bank specialization (e.g., better screening
+andmonitoringoflocalrisk,morevalue-addedlocalservicesattachedtocreditissuances,
+etc.) thatisindependentoffirm-specificinformation.
+Usingournewmeasureofbankspecialization,weshowthatallbanksarespecialized
+in at least one export market. We further find that market-specific bank specialization is
+highly persistent. A bank that is specialized in a market today has a 50% probability of
+beingspecializedinthesamemarketintenyears. Thesefindingsindicatethatbankshave
+market-specificexpertiseandknowledgeregardingspecificexportmarkets.
+We examine how firms’ choice of lender is related to market-specific bank specializa-
+tion. A direct implication of market-specific bank specialization is that firms will dispro-
+portionatelyfundexportstoaspecificcountrywithcreditfromabankspecializedinthat
+country. We develop a revealed preference approach that directly tests this implication.
+We exploit the disaggregated nature of the data to control for firm demand shocks (firm-
+timefixed-effects)andbankcreditsupplyshocks(bank-timefixed-effects)thatmayaffect
+lending for other reasons. Using our revealed preference approach, we find that when
+firmsexpandexportstoacountry,theyincreaseborrowingby79%morefrombanksthat
+are specialized in the destination country relative to non-specialized banks, suggesting
+thatfirmsvaluemarket-specificbankspecialization.
+Wefurtheranalyzehowmarket-specificbankspecializationaffectstheimpactofcredit
+2

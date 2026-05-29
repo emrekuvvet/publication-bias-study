@@ -1,0 +1,143 @@
+NBER WORKING PAPER SERIES
+OPTIMAL BANK REGULATION IN THE PRESENCE OF CREDIT AND RUN-RISK
+Anil K. Kashyap
+Dimitrios P. Tsomocos
+Alexandros P. Vardoulakis
+Working Paper 26689
+http://www.nber.org/papers/w26689
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+January 2020, Revised February 2023
+This paper supersedes “How does macroprudential regulation change bank credit supply?" NBER
+Working Paper No. 20165. We are grateful to Gadi Barlevy, Saki Bigio, Dong Beom Choi, Dean
+Corbae, John Geanakoplos, Emmanuel Farhi, Todd Keister, Stephen Morris, Enrico Perotti, Jean-
+Charles Rochet, Hyun Shin, Frank Smets, Adi Sunderam, Sergio Vicente, Randy Wright, and
+especially Harald Uhlig. We also thank the seminar participants at numerous institutions and
+conferences. Kashyap has received research support from the Initiative on Global Markets at the
+University of Chicago Booth School of Business, the Houblon Norman George Fellowship Fund,
+a grant from the Alfred P. Sloan Foundation to the Macro Financial Modeling (MFM) project at
+the University of Chicago and the National Science Foundation for a grant administered by the
+National Bureau of Economic Research. Kashyap’s disclosures of his outside compensated
+activities are available on his web page. All errors herein are ours. The views expressed in this
+paper are those of the authors and do not necessarily represent those of Federal Reserve Board of
+Governors, anyone in the Federal Reserve System, any of the institutions with which we are
+affiliated, or the National Bureau of Economic Research.
+At least one co-author has disclosed additional relationships of potential relevance for this
+research. Further information is available online at http://www.nber.org/papers/w26689
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Anil K. Kashyap, Dimitrios P. Tsomocos, and Alexandros P. Vardoulakis. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+Optimal Bank Regulation In the Presence of Credit and Run-Risk
+Anil K. Kashyap, Dimitrios P. Tsomocos, and Alexandros P. Vardoulakis
+NBER Working Paper No. 26689
+January 2020, Revised February 2023
+JEL No. E44,G01,G21,G28
+ABSTRACT
+We modify the Diamond and Dybvig (1983) model so that, besides offering liquidity services to
+depositors, banks also raise equity funding, make loans that are risky, and can invest in safe,
+liquid assets. The bank and its borrowers are subject to limited liability. When profitable, banks
+monitor borrowers to ensure that they repay loans. Depositors may choose to run based on
+conjectures about the available resources for people withdrawing early and beliefs about banks’
+monitoring. We model the run decision by solving a novel global game. We find that banks opt
+for a more deposit-intensive capital structure than a social planner would choose. The privately
+chosen asset portfolio can be more or less lending-intensive, while the level of lending can also
+be higher or lower depending on a planner’s preferences between liquidity provision and credit
+extension. To correct these three distortions, a package of three regulations is warranted.
+Anil K. Kashyap Alexandros P. Vardoulakis
+Booth School of Business Board of Governors of the Federal Reserve System
+University of Chicago Constitution Ave NW &, 20th St NW, Wash 20551
+5807 S. Woodlawn Avenue alexandros.vardoulakis@frb.gov
+Chicago, IL 60637
+and NBER
+anil.kashyap@chicagobooth.edu
+Dimitrios P. Tsomocos
+Said Business School and St. Edmund Hall
+University of Oxford
+Dimitrios.Tsomocos@sbs.ox.ac.uk
+
+1 Introduction
+Itiswellunderstoodthatfinancialintermediaries, hereafterbanks, provideusefulservicesthrough
+both the lending that they undertake and the deposits that they offer. Banks use both sides of their
+balance sheet to perform these services, which exposes them to credit risk and funding (run) risk.
+Theefficiencyoftheresultingallocations,fromasocialpointofview,dependsjointlyontheoverall
+levelof lendingandthe mixof bankassetsand liabilities. Yet, most banking modelstend tofocus
+on only one service or type of risk, often neglecting how bank fragility endogenously affects the
+structureofbankbalancesheetsandviceversa. Weproposeanewmodelwherebankscreateeco-
+nomicsurplusforbothborrowersanddepositorsbutchooseabalancesheetthatresultsinexcessive
+run-risk and an inefficient level of lending. We use the model to study alternative regulations that
+havebeenproposedsincetheGlobalFinancialCrisisandderivetheoptimalregulatorymix.
+WestartwiththesetupdevelopedbyDiamondandDybvig(1983),henceforthDD,thatexplains
+howabankcanprovideliquidityservicestodepositors(savers)withuncertainconsumption/funding
+needs. WemodifyDDsothatthebankalsoraisesequity,makesloansthatarerisky,andcaninvest
+in safe, liquid assets. We also assume that banks and borrowers are subject to limited liability so
+that each of them has incentives to take risks that they do not fully bear the costs of. We suppose,
+similarinspirittoDiamond(1984), thatbanksmonitortheloanstoguaranteethattheyarerepaid.
+Monitoringiscostlyand, hence, mustbeprofitableforbanksto doso. Evenifsaverswereableto
+monitor borrowers as efficiently as the bank, delegating this function to banks is optimal, because
+banks can combine monitoring and deposit-granting, which is itself valuable. However, because
+the loans are risky and have an uncertain liquidation value, depositors may opt to run on the bank
+depending on the conjectured ability of the bank to serve early withdrawals and the bank’s incen-
+tives to continue monitoring borrowers. Finally, the bank is managed by a banker who maximizes
+the profits accruing to her rather than worrying about the utility of depositors or borrowers. The
+banker internalizes how her choices affect run-risk, deposit supply, and loan demand. Depositors
+and borrowers rationally expect the equilibrium level of run-risk when making these decisions but
+areatomisticanddonotinternalizetheirmarginalimpactonthebank’sportfolioandrun-risk.
+Wecharacterizetherundecisionbyintroducinganewspecificationofthetypeofglobalgame
+developedbyGoldsteinandPauzner(2005)toanalyzeDDstylemodels. Inoursetup,depositorsget
+signalsaboutthe(liquidation)valueofloansthatarecalledearlytohelppaydepositors. Depositors
+useathresholdruleindecidingtorun,suchthat,iftheirsignalabouttheliquidationvalueisbelow
+thethreshold,theydecidetowithdraweveniftheydonotneedtoconsumeimmediately. Conversely,
+ifthesignalisabovethethreshold,onlydepositorswithurgentconsumptionneedswithdraw,while
+therestkeeptheirdepositsinthebank. Thethresholddependsonthedepositcontract,thebalance
+sheet,andtheprofitabilityofthebank,becausethedepositcontractspecifiesthereturnfromwaiting
+instead of withdrawing early, the balance sheet determines the capacity of the bank to serve early
+withdrawals,andtheprofitabilityofthebankgovernsitsincentivestomonitorborrowers.
+Theprooftoestablishtheuniquenessofthethresholdisnovelandmaybeofindependentinter-
+estforotherapplicationsofglobalgames. AsinGoldsteinandPauzner(2005),therearenoglobal
+2
+
+strategic complementarities for depositors, but in our setup, the property of state monotonicity is
+also absent. This property relates to whether the incentive to take an action is monotonic with re-
+specttotheunderlyingfundamentals(state)oftheeconomy–andistypicallyrequiredincanonical
+global games (see Morris and Shin, 2003). In our model, state monotonicity would obtain if the
+relative incentive to run becomes stronger as the liquidation value of loans becomes smaller. If
+the bank has liquid resources to serve all depositors queuing to withdraw, then state monotonicity
+holds. Butitfailstoholdoncethebankrunsoutofliquidresourcesand,thus,onlyapercentageof
+withdrawalscanbemet. Intuitively,onceliquidassetsareexhausted,thepayofffromwithdrawing
+ishigher whentheliquidationvalueofthebank’sassetsishigher,becausetheprobabilityofbeing
+ataluckyspotinthequeueishigher. Hence,statemonotonicityisabsent.
+We employ a new argument to prove uniqueness, which does not require state monotonicity
+everywhere but only at threshold points. This property is easily satisfied in our framework and we
+provideintuitionaboutgeneralizingittootherenvironmentswheresuchperversestatemonotonicity
+obtains. Hence,theproofweproposecouldbeadaptedtootherapplicationsinwhichimprovements
+infundamentalsreducetheincentivestoactinsomeregionsandincreasetheminothers.
+The modifications to DD that we propose are all necessary to assess the differences between
+theprivateandsocialoptima. First,micro-foundingtheprobabilityofaruniscrucialtounderstand
+thedeterminantsofrun-risk. Inpartialequilibrium,oneexpectsthatraisingcapitalrequirementsor
+liquidityrequirementswillreducetheprobabilityofarun. Weshowthisistrueinourmodel. But,
+in general equilibrium, agents will adjust their behavior in response to regulation, and their new
+choiceswillfeedbacktoalterrun-riskviaequilibriuminterestrates.
+Second,itisimportanttoexplicitlymodeltheoptimizationbehaviorofbankers,depositors,and
+borrowersinordertounderstandhowrun-riskaffectstheirchoicesandwelfare. Insteadofassuming
+adhocwelfarecriteria,suchastheminimizationofrun-risk,wemodeltheeffectofthechoiceson
+agents’ utilities. This allows us to compare privately and socially optimal choices. In general they
+differ,thoughwealsodescribeaspecialcasewheretheprivateequilibriumisconstrainedefficient.
+Third,introducingcostlymonitoringhighlightstheimportanceofthebank’sprofitabilityforits
+stability(overandabovetherelativeliquidityofitsassetsandtherunabilityofitsliabilities). Mon-
+itoring is unobservable and costly, so it only occurs if the banker finds it ex post profitable. Policy
+interventions that crush bank profits can backfire if the banker loses the incentive to monitor. In
+thiscase,depositorscanopttorunbecausetheyrealizebankcreditriskhasendogenouslyincreased
+because of the lack of monitoring. Hence, we highlight a novel connection between moral hazard
+andrun-risk,whichisimportantforstudyingregulationsthatcompressbankingprofits.1
+Fourth, by modeling the utility impact of agents’ choices, it becomes clear that borrowers and
+depositors care about the amount of lending and the level of deposits that are available. Thus, the
+overallsizeofthebankingsectormattersbeyondjustthecompositionofassetsandliabilities. The
+Modigliani-Miller theorem is violated in various ways in our model, but allowing for endogenous
+1Thispossibilitymaybeofindependentinteresttoresearchersasithighlightsthatrunscanoccurevenforfinancial
+institutionsthatareveryliquid,iftheylacktheincentivestomonitor.
+3

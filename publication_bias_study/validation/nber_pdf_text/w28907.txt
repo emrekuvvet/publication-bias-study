@@ -1,0 +1,110 @@
+NBER WORKING PAPER SERIES
+CENTRAL BANK POLICY AND THE CONCENTRATION OF RISK:
+EMPIRICAL ESTIMATES
+Nuno Coimbra
+Daisoon Kim
+Hélène Rey
+Working Paper 28907
+http://www.nber.org/papers/w28907
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2021, Revised September 2021
+We are very grateful for the comments of the Editor, an anonymous referee, our discussant Nina
+Boyarchenko and of the participants in the 2021 Carnegie-Rochester-NYU Public Policy
+Conference. Rey thanks the ERC for financial support (ERC Advanced Grant 695722). The views
+expressed in this paper are those of the authors and do not necessarily represent those of the
+Banque de France, the ESCB, or the French Macroprudential Authority. The views expressed
+herein are those of the authors and do not necessarily reflect the views of the National Bureau of
+Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2021 by Nuno Coimbra, Daisoon Kim, and Hélène Rey. All rights reserved. Short sections of
+text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Central Bank Policy and the Concentration of Risk: Empirical Estimates
+Nuno Coimbra, Daisoon Kim, and Hélène Rey
+NBER Working Paper No. 28907
+June 2021, Revised September 2021
+JEL No. E0,E5,F3,G01
+ABSTRACT
+Before the 2008 crisis, the cross-sectional skewness of banks’ leverage went up and macro risk
+concentrated in the balance sheets of large banks. Using a model of profit-maximizing banks with
+heterogeneous Value-at-Risk constraints, we extract the distribution of banks’ risk-taking
+parameters from balance sheet data. The time series of these estimates allow us to understand
+systemic risk and its concentration in the banking sector over time. Counterfactual exercises show
+that (1) monetary policymakers confront the trade-off between stimulating the economy and
+financial stability, and (2) macroprudential policies can be effective tools to increase financial
+stability.
+Nuno Coimbra Hélène Rey
+Banque de France London Business School
+39, Rue Croix des Petits Champs Regents Park
+75001 Paris London NW1 4SA
+France United Kingdom
+nuno.coimbra@banque-france.fr and CEPR
+and also NBER
+Daisoon Kim hrey@london.edu
+Nelson Hall 4114, Box 8110
+Poole College of Management
+North Carolina State University
+Raleigh, NC 27695
+dkim29@ncsu.edu
+
+1. Introduction
+Financial crises are a recurring phenomenon in economic history. Their consequences
+on growth and investment can be severe and protracted, as the Great Financial Crisis of
+2008 so clearly illustrated. Eichengreen and Portes (1987) write that “much as the study
+of disease is one of the most effective ways to learn about human biology, the study of
+financial crises provides one of the most revealing perspectives on the functioning of monetary
+economies.” There is now substantial evidence showing that credit expansions can end in
+crashes materializing in banking crises and recessions, (e.g., Borio and Lowe, 2002; Mian
+and Sufi, 2009; Schularick and Taylor, 2012; Fouliard, Howell and Rey, 2020). However, the
+mechanism and characteristics of credit expansions as well as their root causes remain largely
+elusive. Making progress on those fronts is key for policymakers in charge of macroprudential
+policies.
+This paper starts with three important facts. First, there is substantial heterogeneity in
+risk-taking across financial intermediaries, particularly during credit booms, and some large
+actors are particularly reckless. Leverage increases on average in the financial system during
+booms, but some banks gain market share rapidly. Wilmarth (2014) for the US before 2008,
+Englund (2016) for Sweden before 1992, Santos (2017) and Hellwig (2018) for Spain and
+Germany respectively before 2008 all show in their case studies on crises that a subset of
+large actors took excessive amounts of macro risk before the crash. For example, Deutsche
+Bank leveraged up to quadruple the size of its balance sheet from about e0.5 trillion in early
+1990s to about e2 trillion in 2008 as a return of equity (RoE) of 25% was regularly targeted
+by the bank CEO. Second, as explained in Adrian and Shin (2010); Adrian and Boyarchenko
+(2012); Stulz (2016), banks and other financial institutions make extensive use of value-at-risk
+(VaR) measures to manage their risk. Firms estimate the probability of making losses that
+could put them in financial distress or default. A certain amount of losses that is exceeded
+with a probability p over one month gives the VaR over one month at the probability level p.
+1
+
+The use of VaR is ubiquitous in the financial sector. Third, there is great variation across
+financial intermediaries regarding how VaR is calculated and how internal risk models of
+banks are evaluated. A prima facie example of that variation is the exercise performed by
+the Basel Committee on Banking Supervision, who undertook a review of the consistency of
+risk weights used by a sample of banks (Basel Committee on Banking Supervision, 2013).
+Those risk weights, for a given portfolio, depend on the internal risk models of the different
+institutions. When given a diversified test portfolio, the surveyed banks, who knew they were
+answering their regulators, produced a wide range of results in terms of modeled VaR and
+gave answers ranging from 13 million to 33 million euros in terms of capital requirement with
+a median of about 18 million. These differences in VaR modeling may be reflecting corporate
+culture (risk appetite of the boards as discussed by Stulz, 2016) or different interactions
+between banks and their national supervisors, some being much more prescriptive than others.
+The tightness of VaR constraints varies substantially across institutions.
+In this paper, we zoom on this heterogeneity in risk-taking by analyzing the evolution of
+the cross-sectional composition of the balance sheets of financial intermediaries. We estimate
+the distribution of their VaR constraint parameters and show how they change over time as
+macroeconomic conditions and regulations fluctuate. We show that the time variation and
+the shape of the estimated distributions of the VaR parameters are excellent predictors of
+bank performance and carry important information on systemic risk. Importantly, it is crucial
+to consider the heterogeneity across different financial intermediaries as the larger share of
+time variation in our measure comes from the cross-section. Simply looking at changes in
+aggregate leverage in the system would therefore miss an essential part of the story. As an
+aside, our measure outperforms those based on asset prices when predicting aggregate risk. In
+line with this, our systemic risk indicator is related to Baron and Xiong (2017) who link bank
+credit expansion to negative predicted excess returns of the bank equity index in the next
+three years, but we estimate structural parameters at the bank level rather than outcome
+variables at the country level.
+2

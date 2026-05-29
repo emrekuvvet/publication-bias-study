@@ -1,0 +1,6857 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AFA</title>
+<meta http-equiv="refresh" content="1200">
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="bootstrap3/css/bootstrap.css">
+<!-- Optional theme -->
+<link rel="stylesheet" type="text/css" href="bootstrap3/css/bootstrap-theme.css">
+<link rel="stylesheet" type="text/css" href="phpcss/jquery.fileupload.css">
+<link rel="stylesheet" type="text/css" href="phpcss/jquery.fileupload-ui.css">
+<link rel="stylesheet" type="text/css" href="colorbox/colorbox.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="phpcss/projectafa.css">
+<script type="text/javascript" src="jquery/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="jquery/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="jquery/jquery.storageapi.min.js"></script>
+<script type="text/javascript" src="jquery/pStrength.jquery.js"></script>
+<script type="text/javascript" src="jquery/pGenerator.jquery.js"></script>
+<script type="text/javascript" src="bootstrap3/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="phpjs/typeahead.bundle.min.js"></script>
+<script type="text/javascript" src="jqueryfileupload/load-image.all.min.js"></script>
+<script type="text/javascript" src="jqueryfileupload/jqueryfileupload.min.js"></script>
+<script type="text/javascript" src="colorbox/jquery.colorbox-min.js"></script>
+<script type="text/javascript" src="phpjs/mobile-detect.min.js"></script>
+<script type="text/javascript" src="phpjs/moment.min.js"></script>
+<link href="calendar/calendar.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="calendar/calendar.min.js"></script>
+<script type="text/javascript" src="calendar/calendar-setup.js"></script>
+<script type="text/javascript" src="phpjs/ewcalendar.js"></script>
+<script type="text/javascript">
+var EW_LANGUAGE_ID = "en";
+var EW_DATE_SEPARATOR = "/"; // Date separator
+var EW_TIME_SEPARATOR = ":"; // Time separator
+var EW_DATE_FORMAT = "mm/dd/yyyy"; // Default date format
+var EW_DATE_FORMAT_ID = "6"; // Default date format ID
+var EW_DECIMAL_POINT = ".";
+var EW_THOUSANDS_SEP = ",";
+var EW_MIN_PASSWORD_STRENGTH = 40;
+var EW_GENERATE_PASSWORD_LENGTH = 16;
+var EW_GENERATE_PASSWORD_UPPERCASE = true;
+var EW_GENERATE_PASSWORD_LOWERCASE = true;
+var EW_GENERATE_PASSWORD_NUMBER = true;
+var EW_GENERATE_PASSWORD_SPECIALCHARS = false;
+var EW_SESSION_TIMEOUT = 0; // Session timeout time (seconds)
+var EW_SESSION_TIMEOUT_COUNTDOWN = 60; // Count down time to session timeout (seconds)
+var EW_SESSION_KEEP_ALIVE_INTERVAL = 0; // Keep alive interval (seconds)
+var EW_RELATIVE_PATH = ""; // Relative path
+var EW_SESSION_URL = EW_RELATIVE_PATH + "ewsession13.php"; // Session URL
+var EW_IS_LOGGEDIN = false; // Is logged in
+var EW_IS_SYS_ADMIN = false; // Is sys admin
+var EW_CURRENT_USER_NAME = ""; // Current user name
+var EW_IS_AUTOLOGIN = false; // Is logged in with option "Auto login until I logout explicitly"
+var EW_TIMEOUT_URL = EW_RELATIVE_PATH + "logout.php"; // Timeout URL
+var EW_LOOKUP_FILE_NAME = "ewlookup13.php"; // Lookup file name
+var EW_LOOKUP_FILTER_VALUE_SEPARATOR = ","; // Lookup filter value separator
+var EW_MODAL_LOOKUP_FILE_NAME = "ewmodallookup13.php"; // Modal lookup file name
+var EW_AUTO_SUGGEST_MAX_ENTRIES = 80; // Auto-Suggest max entries
+var EW_DISABLE_BUTTON_ON_SUBMIT = true;
+var EW_IMAGE_FOLDER = "phpimages/"; // Image folder
+var EW_UPLOAD_URL = "ewupload13.php"; // Upload URL
+var EW_UPLOAD_THUMBNAIL_WIDTH = 200; // Upload thumbnail width
+var EW_UPLOAD_THUMBNAIL_HEIGHT = 0; // Upload thumbnail height
+var EW_MULTIPLE_UPLOAD_SEPARATOR = ","; // Upload multiple separator
+var EW_USE_COLORBOX = true;
+var EW_USE_JAVASCRIPT_MESSAGE = false;
+var EW_MOBILE_DETECT = new MobileDetect(window.navigator.userAgent);
+var EW_IS_MOBILE = EW_MOBILE_DETECT.mobile() ? true : false;
+var EW_PROJECT_STYLESHEET_FILENAME = "phpcss/projectafa.css"; // Project style sheet
+var EW_PDF_STYLESHEET_FILENAME = ""; // Pdf style sheet
+var EW_TOKEN = "";
+var EW_CSS_FLIP = false;
+var EW_CONFIRM_CANCEL = true;
+var EW_SEARCH_FILTER_OPTION = "Client";
+</script>
+<script type="text/javascript" src="phpjs/jsrender.min.js"></script>
+<script type="text/javascript" src="phpjs/ewp13.js"></script>
+<script type="text/javascript">
+var ewVar = [];
+var ewLanguage = new ew_Language({"cancelbtn":"Cancel","clickrecaptcha":"Please select the checkbox that says \"I'm not a robot\"","closebtn":"Close","confirmbtn":"Confirm","confirmcancel":"Do you want to cancel?","lightboxtitle":" ","lightboxcurrent":"image {current} of {total}","lightboxprevious":"previous","lightboxnext":"next","lightboxclose":"close","lightboxxhrerror":"This content failed to load.","lightboximgerror":"This image failed to load.","countselected":"%s selected","currentpassword":"Current password: ","deleteconfirmmsg":"Are you sure you want to delete?","deletefilterconfirm":"Delete filter %s?","enterfiltername":"Enter filter name","enternewpassword":"Please enter new password","enteroldpassword":"Please enter old password","enterpassword":"Please enter password","enterpwd":"Please enter password","enterusername":"Please enter your email address","entervalidatecode":"Validation failed","entersenderemail":"Please enter sender email","enterpropersenderemail":"Exceed maximum sender email count or email address incorrect","enterrecipientemail":"Please enter recipient email","enterproperrecipientemail":"Exceed maximum recipient email count or email address incorrect","enterproperccemail":"Exceed maximum cc email count or email address incorrect","enterproperbccemail":"Exceed maximum bcc email count or email address incorrect","entersubject":"Please enter subject","enteruid":"Please enter user ID","entervalidemail":"Please enter valid Email Address","exporttoemailtext":"Email","filtername":"Filter name","overwritebtn":"Overwrite","incorrectemail":"Incorrect email","incorrectfield":"Incorrect field","incorrectfloat":"Incorrect floating point number","incorrectguid":"Incorrect GUID","incorrectinteger":"Incorrect integer","incorrectphone":"Incorrect phone number","incorrectregexp":"Regular expression not matched","incorrectrange":"Number must be between %1 and %2","incorrectssn":"Incorrect social security number","incorrectzip":"Incorrect ZIP code","insertfailed":"Insert failed","invalidrecord":"Invalid Record! Key is null","loading":"Loading...","maxfilesize":"Max. file size (%s bytes) exceeded.","messageok":"OK","mismatchpassword":"Mismatch Password","next":"Next","noaddrecord":"No records to be added","nofieldselected":"No field selected for update","norecord":"No records found","norecordselected":"No records selected","of":"of","page":"Page","passwordstrength":"Strength: %p","passwordtoosimple":"Your password is too simple","pleaseselect":"","pleasewait":"Please wait...","prev":"Prev","quicksearchauto":"Auto","quicksearchautoshort":"","quicksearchall":"All keywords","quicksearchallshort":"All","quicksearchany":"Any keywords","quicksearchanyshort":"Any","quicksearchexact":"Exact match","quicksearchexactshort":"Exact","record":"Records","recordsperpage":"Page size","reloadbtn":"Reload","search":"Search","selectbtn":"Select","sendemailsuccess":"Email sent successfully","sessionwillexpire":"Your session will expire in %s seconds. Click OK to continue your session.","sessionexpired":"Your session has expired.","updatebtn":"Update","uploading":"Uploading...","uploadstart":"Start","uploadcancel":"Cancel","uploaddelete":"Delete","uploadoverwrite":"Overwrite old file?","uploaderrmsgmaxfilesize":"File is too big","uploaderrmsgminfilesize":"File is too small","uploaderrmsgacceptfiletypes":"File type not allowed","uploaderrmsgmaxnumberoffiles":"Maximum number of files exceeded","uploaderrmsgmaxfilelength":"Total length of file names exceeds field length","useradministrator":"Administrator","useranonymous":"Anonymous","userdefault":"Default","userleveladministratorname":"User level name for user level -1 must be 'Administrator'","userlevelanonymousname":"User level name for user level -2 must be 'Anonymous'","userlevelidinteger":"User Level ID must be integer","userleveldefaultname":"User level name for user level 0 must be 'Default'","userlevelidincorrect":"User defined User Level ID must be larger than 0","userlevelnameincorrect":"User defined User Level name cannot be 'Administrator' or 'Default'","valuenotexist":"Value does not exist","wrongfiletype":"File type is not allowed."});</script>
+<script type="text/javascript" src="tinymce/tinymce.min.js"></script>
+<script type="text/javascript" src="phpjs/eweditor.js"></script>
+<script type="text/javascript" src="phpjs/userfn13.js"></script>
+<script type="text/javascript">
+
+// Write your client script here, no need to add script tags. 
+checkIfInFrame();    
+</script>
+<meta name="generator" content="PHPMaker v2017.0.7">
+</head>
+<body>
+<div class="ewLayout">
+	<!-- header (begin) --><!-- ** Note: Only licensed users are allowed to change the logo ** -->
+	<div id="ewHeaderRow" class="ewHeaderRow" style="border:0px;padding-top:7px;"><a href="https://afajof.org" title="American Finance Association"><img src="phpimages/AFALOGO.JPG"></a></div>
+
+    <!--== Google Fonts ==-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,400i,500,600,700%7CPlayfair+Display:400,400i" rel="stylesheet">
+		
+    <!--=== All Plugins CSS ===-->
+    <link href="./assets/css/plugins.css" rel="stylesheet">
+    <!--=== All Vendor CSS ===-->
+    <link href="./assets/css/vendor.css?0913.1100" rel="stylesheet">
+    <!--=== Main Style CSS ===-->
+    <link href="./assets/css/style.css?0614.1450" rel="stylesheet">
+		
+		<!-- Combo with Search  -->
+		<link href="./assets/css/bootstrap-combobox.css" rel="stylesheet">
+    <!-- Modernizer JS -->
+    <script src="./assets/js/modernizr.min.js"></script>
+
+
+    <!--[if lt IE 9]>
+<script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+	<!-- header (end) -->
+	<!-- content (begin) -->
+	<div id="ewContentTable" class="ewContentTable">
+		<div id="ewContentRow">
+			
+			<div id="ewContentColumn" class="ewContentColumn">
+				<!-- right column (begin) -->				
+<table class="ewStdTable"><tr><td><div class="ewMessageDialog"></div></td></tr></table>
+    <!--== Scroll to top ==-->
+    <a href="javascript:void(0)" class="scroll-top"><i class="fa fa-angle-up"></i></a>
+
+    <!--== Start PreLoader Wrap ==-->
+    <div class="preloader-area-wrap">
+        <div class="spinner d-flex justify-content-center align-items-center h-100">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    <!--== End PreLoader Wrap ==-->
+    
+    <div class="row" style="padding-top: 30px;">
+          <div class="col-sm-12">
+			<div>
+				<h2 style="text-align:center">AFA 2024 - San Antonio</h2>
+ 			</div>
+ 		</div>
+ 	</div>		
+ <!--== Start Page Content Wrapper ==-->
+ 
+<!--== Start Page Content Wrapper ==-->
+<div class="page-wrapper">
+
+  <div class="mt-56 mb-60">
+    <div class="container">
+      <div class="row"
+	    
+      >
+          <div class="col-12">
+          		
+<div>
+
+<!-- start sample mockup content -->
+    <div class="row"><h2 style="margin-bottom:10px;">Special Sessions &amp; Events</h2></div>
+<!--     
+    <div class="row">
+    <div class="col-sm-12">
+		  <div class="single-portfolio-wrap" style="margin-top:10px;">
+		    <div class="single-blog-post-wrap layout--2 layout-blog-page" style="margin-top:10px;">
+		      <div class="blog-post-details" style="margin-top:5px;">
+		        <h5>
+					<a href="conference-session.php?e=2&amp;se=1">Event 1 title</a>
+		        </h5>		
+		       </div>
+		        <div class="post-meta">
+		          <p><i class="fa fa-calendar"></i> Thursday, Jan 04, 2024</p>
+		          <p><i class="fa fa-clock-o"></i> 4:00 pm - 7:00 pm CST</p>
+		          <p><i class="fa fa-map-marker"></i> 3rd Floor</p>
+		          <p>INVITATION ONLY: This panel is for students who have a poster in the AFA PhD Student Poster Session.</p>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+    </div>
+
+    <div class="row">
+    <div class="col-sm-12">
+		  <div class="single-portfolio-wrap" style="margin-top:10px;">
+		    <div class="single-blog-post-wrap layout--2 layout-blog-page" style="margin-top:10px;">
+		      <div class="blog-post-details" style="margin-top:5px;">
+		        <h5>
+					<a href="conference-session.php?e=2&amp;se=1">Event 2 title</a>
+		        </h5>		
+		       </div>
+		        <div class="post-meta">
+		          <p><i class="fa fa-calendar"></i> Thursday, Jan 04, 2024</p>
+		          <p><i class="fa fa-clock-o"></i> 4:00 pm - 7:00 pm CST</p>
+		          <p><i class="fa fa-map-marker"></i> 3rd Floor</p>
+		          <p>INVITATION ONLY: This panel is for students who have a poster in the AFA PhD Student Poster Session.</p>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+    </div>
+ -->    
+		<div class="row">
+    <div class="col-sm-12">
+		  <div class="single-portfolio-wrap" style="margin-top:10px;">
+		    <div class="single-blog-post-wrap layout--2 layout-blog-page" style="margin-top:10px;">
+		      <div class="blog-post-details" style="margin-top:5px;">
+		      <h5>
+		      		
+					 Panel Session and Reception for students on the AFA Poster Session					        	
+									
+		        </h5>
+		        
+		        <div class="post-meta">
+		          <p><i class="fa fa-calendar"></i> Thursday, Jan 04, 2024</p>
+		          <p><i class="fa fa-clock-o"></i> 4:00 pm - 7:00 pm CST</p>
+		          <p><i class="fa fa-map-marker"></i> Grand Ballroom Salon D</p>
+			  				
+					
+				 		          
+		          <p>INVITATION ONLY: This panel is for students who have a poster in the AFA PhD Student Poster Session.</p>		          
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+    
+		<div class="row">
+    <div class="col-sm-12">
+		  <div class="single-portfolio-wrap" style="margin-top:10px;">
+		    <div class="single-blog-post-wrap layout--2 layout-blog-page" style="margin-top:10px;">
+		      <div class="blog-post-details" style="margin-top:5px;">
+		      <h5>
+		      		
+					 AFA Panel - Climate Risks					        	
+									
+		        </h5>
+		        
+		        <div class="post-meta">
+		          <p><i class="fa fa-calendar"></i> Friday, Jan 05, 2024</p>
+		          <p><i class="fa fa-clock-o"></i> 2:30 pm - 4:30 pm CST</p>
+		          <p><i class="fa fa-map-marker"></i> Grand Ballroom Salon E</p>
+			  				
+					
+				 		          
+		          <p>CHAIR: Monika Piazzesi (Stanford University) PANELISTS: Harrison Hong (Columbia University); Luke Taylor (University of Pennsylvania); Frances C. Moore (University of California-Davis); Diego Kaenzig (Northwestern University)</p>		          
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+    
+		<div class="row">
+    <div class="col-sm-12">
+		  <div class="single-portfolio-wrap" style="margin-top:10px;">
+		    <div class="single-blog-post-wrap layout--2 layout-blog-page" style="margin-top:10px;">
+		      <div class="blog-post-details" style="margin-top:5px;">
+		      <h5>
+		      		
+					 AFA Board of Directors Meeting					        	
+									
+		        </h5>
+		        
+		        <div class="post-meta">
+		          <p><i class="fa fa-calendar"></i> Friday, Jan 05, 2024</p>
+		          <p><i class="fa fa-clock-o"></i> 5:00 pm - 6:30 pm CST</p>
+		          <p><i class="fa fa-map-marker"></i> Conference Room 1 & 2</p>
+			  				
+					
+				 		          
+		          <p>INVITATION ONLY</p>		          
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+    
+		<div class="row">
+    <div class="col-sm-12">
+		  <div class="single-portfolio-wrap" style="margin-top:10px;">
+		    <div class="single-blog-post-wrap layout--2 layout-blog-page" style="margin-top:10px;">
+		      <div class="blog-post-details" style="margin-top:5px;">
+		      <h5>
+		      		
+					 AFFECT Committee Reception - Data & Drinks					        	
+									
+		        </h5>
+		        
+		        <div class="post-meta">
+		          <p><i class="fa fa-calendar"></i> Friday, Jan 05, 2024</p>
+		          <p><i class="fa fa-clock-o"></i> 6:30 pm - 8:00 pm CST</p>
+		          <p><i class="fa fa-map-marker"></i> Grand Ballroom Salon D</p>
+			  				
+					
+				 		          
+		          <p>OPEN TO ALL</p>		          
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+    
+		<div class="row">
+    <div class="col-sm-12">
+		  <div class="single-portfolio-wrap" style="margin-top:10px;">
+		    <div class="single-blog-post-wrap layout--2 layout-blog-page" style="margin-top:10px;">
+		      <div class="blog-post-details" style="margin-top:5px;">
+		      <h5>
+		      		
+					 CORD Breakfast					        	
+									
+		        </h5>
+		        
+		        <div class="post-meta">
+		          <p><i class="fa fa-calendar"></i> Saturday, Jan 06, 2024</p>
+		          <p><i class="fa fa-clock-o"></i> 7:00 am - 8:10 am CST</p>
+		          <p><i class="fa fa-map-marker"></i> Conference Room 1 & 2</p>
+			  				
+					
+				 		          
+		          <p>OPEN TO ALL</p>		          
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+    
+		<div class="row">
+    <div class="col-sm-12">
+		  <div class="single-portfolio-wrap" style="margin-top:10px;">
+		    <div class="single-blog-post-wrap layout--2 layout-blog-page" style="margin-top:10px;">
+		      <div class="blog-post-details" style="margin-top:5px;">
+		      <h5>
+		      		
+					 AFA Panel - The Functioning of the Economy with High Interest Rates					        	
+									
+		        </h5>
+		        
+		        <div class="post-meta">
+		          <p><i class="fa fa-calendar"></i> Saturday, Jan 06, 2024</p>
+		          <p><i class="fa fa-clock-o"></i> 8:00 am - 10:00 am CST</p>
+		          <p><i class="fa fa-map-marker"></i> Grand Ballroom Salon E</p>
+			  				
+					
+				 		          
+		          <p>CHAIR: Nikolai Roussanov (University of Pennsylvania) PANELISTS:  Emi Nakamura (University of California-Berkeley); Janice Eberly (Northwestern University); Simon Gilchrist (New York University)</p>		          
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+    
+		<div class="row">
+    <div class="col-sm-12">
+		  <div class="single-portfolio-wrap" style="margin-top:10px;">
+		    <div class="single-blog-post-wrap layout--2 layout-blog-page" style="margin-top:10px;">
+		      <div class="blog-post-details" style="margin-top:5px;">
+		      <h5>
+		      		
+					 AFA Panel - AI and the Future of Finance					        	
+									
+		        </h5>
+		        
+		        <div class="post-meta">
+		          <p><i class="fa fa-calendar"></i> Saturday, Jan 06, 2024</p>
+		          <p><i class="fa fa-clock-o"></i> 10:15 am - 12:15 pm CST</p>
+		          <p><i class="fa fa-map-marker"></i> Grand Ballroom Salon E</p>
+			  				
+					
+				 		          
+		          <p>CHAIR: Steven Kaplan (University of Chicago) PANELISTS: Lauren Cohen (Harvard University); Andrea Eisfeldt (University of California-Los Angeles); Tania Babina (Columbia University); Tobias Moskowitz (Yale University); Dimitris Papanikolaou (Northwestern University)</p>		          
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+    
+		<div class="row">
+    <div class="col-sm-12">
+		  <div class="single-portfolio-wrap" style="margin-top:10px;">
+		    <div class="single-blog-post-wrap layout--2 layout-blog-page" style="margin-top:10px;">
+		      <div class="blog-post-details" style="margin-top:5px;">
+		      <h5>
+		      		
+					 AFFECT Committee Meeting					        	
+									
+		        </h5>
+		        
+		        <div class="post-meta">
+		          <p><i class="fa fa-calendar"></i> Saturday, Jan 06, 2024</p>
+		          <p><i class="fa fa-clock-o"></i> 12:30 pm - 2:30 pm CST</p>
+		          <p><i class="fa fa-map-marker"></i> Conference Room 4</p>
+			  				
+					
+				 		          
+		          <p>INVITATION ONLY</p>		          
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+    
+		<div class="row">
+    <div class="col-sm-12">
+		  <div class="single-portfolio-wrap" style="margin-top:10px;">
+		    <div class="single-blog-post-wrap layout--2 layout-blog-page" style="margin-top:10px;">
+		      <div class="blog-post-details" style="margin-top:5px;">
+		      <h5>
+		      		
+					 AFA Lecture - Subjective Expectations and Decisions					        	
+									
+		        </h5>
+		        
+		        <div class="post-meta">
+		          <p><i class="fa fa-calendar"></i> Saturday, Jan 06, 2024</p>
+		          <p><i class="fa fa-clock-o"></i> 2:30 pm - 4:30 pm CST</p>
+		          <p><i class="fa fa-map-marker"></i> Grand Ballroom Salon E</p>
+			  				
+					
+				 		          
+		          <p>SPEAKER:  Yuriy Gorodnichenko, University of California-Berkeley</p>		          
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+    
+		<div class="row">
+    <div class="col-sm-12">
+		  <div class="single-portfolio-wrap" style="margin-top:10px;">
+		    <div class="single-blog-post-wrap layout--2 layout-blog-page" style="margin-top:10px;">
+		      <div class="blog-post-details" style="margin-top:5px;">
+		      <h5>
+		      		
+					 AFA Business Meeting & Presidential Address					        	
+									
+		        </h5>
+		        
+		        <div class="post-meta">
+		          <p><i class="fa fa-calendar"></i> Saturday, Jan 06, 2024</p>
+		          <p><i class="fa fa-clock-o"></i> 5:30 pm - 7:00 pm CST</p>
+		          <p><i class="fa fa-map-marker"></i> Grand Ballroom Salon E</p>
+			  				
+					
+				 		          
+		          <p>OPEN TO ALL</p>		          
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+    
+		<div class="row">
+    <div class="col-sm-12">
+		  <div class="single-portfolio-wrap" style="margin-top:10px;">
+		    <div class="single-blog-post-wrap layout--2 layout-blog-page" style="margin-top:10px;">
+		      <div class="blog-post-details" style="margin-top:5px;">
+		      <h5>
+		      		
+					 AFA Nominating Committee Meeting					        	
+									
+		        </h5>
+		        
+		        <div class="post-meta">
+		          <p><i class="fa fa-calendar"></i> Sunday, Jan 07, 2024</p>
+		          <p><i class="fa fa-clock-o"></i> 8:00 am - 10:00 am CST</p>
+		          <p><i class="fa fa-map-marker"></i> Conference Room 6</p>
+			  				
+					
+				 		          
+		          <p>INVITATION ONLY</p>		          
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+    
+    
+    
+<div class="row"><h2 style="margin-top:25px; margin-bottom:10px;">PhD Poster Session</h2></div>
+			<div class="row">
+			<div class="col-12" style="background:#6b2f1d;margin-bottom:10px;margin-top:20px;">
+			<h4 style="margin-top:5px; margin-bottom:5px; color:#fff;">Friday, Jan 05 &nbsp;|&nbsp; 8:00 am - 8:30 pm CST</h4>
+			</div>
+			</div>
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		AFA PhD Student Poster Session				
+				
+		</h5>
+					<h6>Location: 3rd Floor Lobby</h6>
+				<h6>Session Chair: </h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=56728">
+Arbitrageur Factors</a>
+</h6>
+<p>		
+		
+				<strong>Jiaqi Zhang</strong> (Boston College)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=60928">
+Bailouts, Bail-ins, and Banking Industry Dynamics</a>
+</h6>
+<p>		
+		
+				<strong>April Meehl</strong> (University of Wisconsin-Madison)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=58240">
+Does the Disclosure of Consumer Complaints Reduce Racial Disparities in the Mortgage Lending Market</a>
+</h6>
+<p>		
+		
+				<strong>Xiang Li</strong> (Boston College)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=61292">
+Belief Polarization, Unconscious Bias, and Financial Markets</a>
+</h6>
+<p>		
+		
+				<strong>Nan Ma</strong> (McGill University)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=64680">
+Beta X Forecast Dispersion</a>
+</h6>
+<p>		
+		
+				<strong>Hwagyun Kim</strong> (Texas A&M University)	<br>		
+				<strong>John Leonardy</strong> (Texas A&M University)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=57708">
+The Better Angels of  our Nature?</a>
+</h6>
+<p>		
+		
+				<strong>Johan Karlsen</strong> (Norwegian School of Economics)	<br>		
+				<strong>Katja Kisseleva</strong> (Frankfurt School of Finance and Management gGmbH)	<br>		
+				<strong>Aksel Mjos</strong> (Norwegian School of Economics)	<br>		
+				<strong>David Robinson</strong> (Duke University)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=65212">
+Beyond Peers: Cross-Industry Competition Communities and Strategic Financing</a>
+</h6>
+<p>		
+		
+				<strong>Zepeng Wang</strong> (University of Lausanne and Swiss Finance Institute)	<br>		
+				<strong>Norman Schuerhoff</strong> (University of Lausanne)	<br>		
+				<strong>Boris Nikolov</strong> (University of Lausanne and Swiss Finance Institute)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=65996">
+Learning from machines: can CEO vocal cues help to predict future firm performance?</a>
+</h6>
+<p>		
+		
+				<strong>Zihao Liu</strong> (Tilburg University)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=60536">
+Cash flow duration, financial constraints, and the stock market sensitivity to monetary policy</a>
+</h6>
+<p>		
+		
+				<strong>Eric Offner</strong> (University of Hamburg)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=58632">
+CLOs' trading of brown loans when climate change draws attention</a>
+</h6>
+<p>		
+		
+				<strong>Kathrin Hackenberg</strong> (Catholic University of Eichstaett)	<br>		
+				<strong>Viktoria Klaus</strong> (Karlsruhe Institute of Technology)	<br>		
+				<strong>Sven Klingler</strong> (BI Norwegian Business School)	<br>		
+				<strong>Talina Sondershaus</strong> (Lund University)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=63084">
+The Collateral Value of Real Estate and Global Production Networks</a>
+</h6>
+<p>		
+		
+				<strong>Xiao Zhao</strong> (Hong Kong University of Science and Technology)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=65072">
+Commitment in Debt Financing: The Role of Coordination Problem</a>
+</h6>
+<p>		
+		
+				<strong>Yongseok Kim</strong> (Indiana University)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=55412">
+Connections over Competence: The Impact of Political Ties on Sell-Side Research Quality</a>
+</h6>
+<p>		
+		
+				<strong>Kaizhao Guo</strong> (University of Glasgow)	<br>		
+				<strong>Yanghua Shi</strong> (University of Mannheim)	<br>		
+				<strong>Jingshu Wen</strong> (University of Oxford)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=57232">
+The Consequences of Index Investing on Managerial Incentives</a>
+</h6>
+<p>		
+		
+				<strong>George Nurisso</strong> (University of Washington-Seattle)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=57260">
+Corporate ESG Profiles and Consumption</a>
+</h6>
+<p>		
+		
+				<strong>Sumit Agarwal</strong> (National University of Singapore)	<br>		
+				<strong>Quanlin Gu</strong> (Central University of Finance and Economics)	<br>		
+				<strong>Jia He</strong> (Nankai University)	<br>		
+				<strong>Qi Zhang</strong> (Nankai University)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=64820">
+The Cost of Capital and the Innovative Efficiency of Public Firms</a>
+</h6>
+<p>		
+		
+				<strong>Oleg Gredil</strong> (Tulane University)	<br>		
+				<strong>Ryan Peters</strong> (Tulane University)	<br>		
+				<strong>Sheri Tice</strong> (Tulane University)	<br>		
+				<strong>Vinh Tran</strong> (Tulane University)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=60704">
+Market Concentration, Labor Quality, and Efficiency: Evidence from Barriers in the Real Estate Industry</a>
+</h6>
+<p>		
+		
+				<strong>Jeanna Kenney</strong> (University of Pennsylvania)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=55524">
+COVID-19 Pandemic, Hate Crimes, and Analyst Forecast Quality</a>
+</h6>
+<p>		
+		
+				<strong>Qinzheng Xu</strong> (Tulane University)	<br>		
+				<strong>Yankuo Qiao</strong> (Hood College)	<br>		
+				<strong>Tengfei Zhang</strong> (Rutgers University, Camden)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=64596">
+Ahead of the Breach: Anticipatory Approaches to Mitigating Ex-post Costs of Cyber Breaches</a>
+</h6>
+<p>		
+		
+				<strong>Ndackyssa Oyima-Antseleve</strong> (University of Texas-Dallas)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=64988">
+Decoding Anomalies through Alpha Dynamics</a>
+</h6>
+<p>		
+		
+				<strong>Shuhao Ren</strong> (Arizona State University)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=59584">
+Decoding Corporate Green Bonds: What Issuers Do With the Money and Their Real Impact</a>
+</h6>
+<p>		
+		
+				<strong>Yufeng Mao</strong> (University of Washington)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=58772">
+Delay Your Rivals: Vertical Integration in Securitization and Lending Competition</a>
+</h6>
+<p>		
+		
+				<strong>Brandon Zborowski</strong> (Northwestern University)	<br>		
+				<strong>Jose Diego Salas</strong> (Northwestern University)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=60564">
+Derivative-Market Leverage and Risk Premia Implications</a>
+</h6>
+<p>		
+		
+				<strong>Ke Tang</strong> (Tsinghua University)	<br>		
+				<strong>Jing Zhao</strong> (Tsinghua University)	<br>		
+				<strong>Hao Zhou</strong> (Tsinghua University)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=61740">
+Pricing Disaster Risk in Corporate Bonds</a>
+</h6>
+<p>		
+		
+				<strong>Mingye Yin</strong> (Ohio State University)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=66080">
+The Interplay of âEâ and âGâ in ESG</a>
+</h6>
+<p>		
+		
+				<strong>Jiahang Zhang</strong> (University of Hong Kong)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=62972">
+Do acquirers pay less for unlisted targets? Evidence from OTC markets</a>
+</h6>
+<p>		
+		
+				<strong>Markus Lithell</strong> (Dartmouth College)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=61152">
+Do Hedge Funds Exploit Material Nonpublic Information? Evidence from Corporate Bankruptcies</a>
+</h6>
+<p>		
+		
+				<strong>Yan Yang</strong> (Queen's University)	<br>		
+				<strong>Wei Wang</strong> (Queens University)	<br>		
+				<strong>Jingyu Zhang</strong> (Queen's University)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=54712">
+Do Local Branches Shape Bank Mortgage Lending Decisions?</a>
+</h6>
+<p>		
+		
+				<strong>Janet Gao</strong> (Georgetown University)	<br>		
+				<strong>Yufeng Wu</strong> (Ohio State University)	<br>		
+				<strong>Wang Zhang</strong> (University of Illinois)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=59752">
+Does Partisanship Affect Mutual Fund Firm-level Information Processing? Evidence from Textual Analysis on Earnings Calls</a>
+</h6>
+<p>		
+		
+				<strong>Wanyi Wang</strong> (University of California-Irvine)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=65044">
+Does Short-term Non-fundamental Mispricing Affect the Economy?</a>
+</h6>
+<p>		
+		
+				<strong>Jixing Li</strong> (University of Utah)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=63924">
+Does the Market Mis-Value Non-Executive Employee Diversity?</a>
+</h6>
+<p>		
+		
+				<strong>Shiyi Zhang</strong> (University of Miami)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=60116">
+Does Trading Volume Mitigate or Amplify  Mispricing?</a>
+</h6>
+<p>		
+		
+				<strong>Xinrui Duan</strong> (Singapore Management University)	<br>		
+				<strong>Li Guo</strong> (Fudan University)	<br>		
+				<strong>Jun Tu</strong> (Singapore Management University)	<br>		
+				<strong>Luying Wang</strong> (Singapore Management University)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=55300">
+Earnings Announcements: Ex-ante Risk Premia</a>
+</h6>
+<p>		
+		
+				<strong>Hong Liu</strong> (Washington University in St. Louis)	<br>		
+				<strong>Yingdong Mao</strong> (University of Texas-Dallas)	<br>		
+				<strong>Xiaoxiao Tang</strong> (University of Texas-Dallas)	<br>		
+				<strong>Guofu Zhou</strong> (Washington University in St. Louis)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=65828">
+The Edge of Banks is Still Sharp: Evidence from Market Segmentation in the Conforming Loan Market</a>
+</h6>
+<p>		
+		
+				<strong>Weitong Han</strong> (University of Illinois)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=61488">
+The Effect of CEO Climate Awareness On Corporate Emissions</a>
+</h6>
+<p>		
+		
+				<strong>Yuyang Zhang</strong> (University of Melbourne)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=61068">
+The Effect of Regulation on Inventor Mobility and Productivity</a>
+</h6>
+<p>		
+		
+				<strong>Torin McFarland</strong> (Drexel University)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=61796">
+Social Interactions and Managerial Attention to Climate Change Exposure</a>
+</h6>
+<p>		
+		
+				<strong>Woong Bae Kim</strong> (Purdue University)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=60284">
+Entrepreneurs of circumstance: labour market distress and entrepreneurship</a>
+</h6>
+<p>		
+		
+				<strong>Himal Gautam</strong> (BI Norwegian Business School)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=56336">
+An ETF-based measure of stock price fragility</a>
+</h6>
+<p>		
+		
+				<strong>Renato Alfredo Lazo Paz</strong> (University of Ottawa)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=56672">
+Firm-level political risk and intellectual capital investment: Does managerial ability matter?</a>
+</h6>
+<p>		
+		
+				<strong>Nhan Huynh</strong> (Macquarie University)	<br>		
+				<strong>Nga Le</strong> (Monash University)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=56084">
+Flow Hedging and Mutual Fund Performance</a>
+</h6>
+<p>		
+		
+				<strong>Du Nguyen</strong> (University of Missouri)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=54628">
+Foreign Institutional Ownership and Corporate Carbon Emissions</a>
+</h6>
+<p>		
+		
+				<strong>Jie Cao</strong> (Hong Kong Polytechnic University)	<br>		
+				<strong>Xintong Zhan</strong> (Fudan University)	<br>		
+				<strong>Weiming Zhang</strong> (IE Business School)	<br>		
+				<strong>Yaojia Zhang</strong> (Chinese University of Hong Kong)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=59360">
+Fractional homeownership and its impact on life cycle portfolio choice</a>
+</h6>
+<p>		
+		
+				<strong>Marlene Koch</strong> (University of Konstanz)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=54824">
+Friend or Foe? Disentangling a Network of Unregulated and Non-Intermediated Informal Lending</a>
+</h6>
+<p>		
+		
+				<strong>Filipe Correia</strong> (University of Georgia)	<br>		
+				<strong>Antonio Martins</strong> (CatÃ³lica Lisbon School of Business & Economics)	<br>		
+				<strong>Anthony Waikel</strong> (University of Georgia)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=56588">
+Global Business Networks</a>
+</h6>
+<p>		
+		
+				<strong>Christian Breitung</strong> (Technical University of Munich)	<br>		
+				<strong>Sebastian Mueller</strong> (Technical University of Munich)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=64344">
+The Green Innovation Premium</a>
+</h6>
+<p>		
+		
+				<strong>Markus Leippold</strong> (University of Zurich)	<br>		
+				<strong>Tingyu Yu</strong> (University of Zurich)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=55188">
+House Price Expectations and Consumer Spending</a>
+</h6>
+<p>		
+		
+				<strong>Benjamin Appianin</strong> (City University of Hong Kong)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=55356">
+Household Wealth and Local Labor Markets: Which Asset Classes Matter?</a>
+</h6>
+<p>		
+		
+				<strong>Paul RintamÃ¤ki</strong> (Aalto University)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=62636">
+How Dark Trading Harms Financial Markets?</a>
+</h6>
+<p>		
+		
+				<strong>Edward Halim</strong> (Nanyang Technological University)	<br>		
+				<strong>Yohanes Riyanto</strong> (Nanyang Technological University)	<br>		
+				<strong>Nilanjan Roy</strong> (City University of Hong Kong)	<br>		
+				<strong>Yan Wang</strong> (Nanyang Technological University)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=55748">
+How Do Corporate Liquidity and Repurchase Policies  Respond to Unionization at Major Customer Firms?</a>
+</h6>
+<p>		
+		
+				<strong>Ngoc Le</strong> (University of Alabama)	<br>		
+				<strong>Anup Agrawal</strong> (University of Alabama)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=63364">
+How does PE Buyout Affect Firmsâ Pension Plan</a>
+</h6>
+<p>		
+		
+				<strong>Wensong Zhong</strong> (University of Oregon)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=58548">
+Inflation and the Relative Price Premium</a>
+</h6>
+<p>		
+		
+				<strong>Yun Joo An</strong> (Indiana University)	<br>		
+				<strong>Fotis Grigoris</strong> (Indiana University)	<br>		
+				<strong>Christian Heyerdahl-Larsen</strong> (Indiana University)	<br>		
+				<strong>Preetesh Kantak</strong> (Indiana University)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=59724">
+The Value of Corporate Social Responsibility: Evidence from an Inflation-Driven Crisis of Trust</a>
+</h6>
+<p>		
+		
+				<strong>Ana Alexandra Velez MÃ£o de Ferro</strong> (University of Zurich)	<br>		
+				<strong>Stefano Ramelli</strong> (University of St. Gallen)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=65912">
+Internal Carbon Markets and Carbon Emissions</a>
+</h6>
+<p>		
+		
+				<strong>Santanu Kundu</strong> (University of Mannheim)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=60648">
+Internalizing Environmental Externalities: The Role of Geographic Common Ownership</a>
+</h6>
+<p>		
+		
+				<strong>Qiaozhi Ye</strong> (National University of Singapore)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=62580">
+Interpretable Characteristics-based Factors:  A Machine Learning Approach</a>
+</h6>
+<p>		
+		
+				<strong>Yuxiao Jiao</strong> (Tsinghua University)	<br>		
+				<strong>Guofu Zhou</strong> (Washington University in St. Louis)	<br>		
+				<strong>Yingzi Zhu</strong> (Tsinghua University)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=55076">
+Is intangibles talk informative about future returns? Evidence from 10-K filings</a>
+</h6>
+<p>		
+		
+				<strong>Amir Hosseini</strong> (University of Calgary)	<br>		
+				<strong>Alexander David</strong> (University of Calgary)	<br>		
+				<strong>Anup Srivastava</strong> (University of Calgary)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=55160">
+Is Sustainable Finance a Dangerous Placebo?</a>
+</h6>
+<p>		
+		
+				<strong>Florian Heeb</strong> (Massachusetts Institute of Technology)	<br>		
+				<strong>Julian Koelbel</strong> (University of St. Gallen)	<br>		
+				<strong>Stefano Ramelli</strong> (University of St. Gallen)	<br>		
+				<strong>Anna Vasileva</strong> (University of Zurich)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=60956">
+Comovement and the Joint Cross-section of Stock and Corporate Bond Returns</a>
+</h6>
+<p>		
+		
+				<strong>Yueting Wang</strong> (King's College London)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=59696">
+Kinship Tightness and Financial Development</a>
+</h6>
+<p>		
+		
+				<strong>Mao Li</strong> (University of Edinburgh)	<br>		
+				<strong>Wenxuan Hou</strong> (University of Edinburgh)	<br>		
+				<strong>Woon Sau Leung</strong> (University of Edinburgh)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=63476">
+Limit orders and price discovery: Evidence from agricultural futures markets</a>
+</h6>
+<p>		
+		
+				<strong>Ruchuan Ma</strong> (University of Illinois)	<br>		
+				<strong>Teresa Serra</strong> (University of Illinois)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=60900">
+Litigation Risk and Corporate ES Misconduct</a>
+</h6>
+<p>		
+		
+				<strong>Yue Li</strong> (University of California-Irvine)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=64512">
+Bank Credit and Firm Default Risk: an implicit contract perspective</a>
+</h6>
+<p>		
+		
+				<strong>Francesco Beraldi</strong> (Yale University)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=60060">
+Long Rates, Life Insurers, and Credit Spreads</a>
+</h6>
+<p>		
+		
+				<strong>Ziang Li</strong> (Princeton University)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=55552">
+Managing Regulatory Pressure: Bank Regulation and its Impact on Corporate Bond Intermediation</a>
+</h6>
+<p>		
+		
+				<strong>Martin Waibel</strong> (Stockholm School of Economics / Swedish House of Finance)	<br>		
+				<strong>Andreas Rapp</strong> (Federal Reserve Board)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=57540">
+The Market for Sharing Interest Rate Risk</a>
+</h6>
+<p>		
+		
+				<strong>Umang Khetan</strong> (University of Iowa)	<br>		
+				<strong>Jian Li</strong> (Columbia University)	<br>		
+				<strong>Ioana Neamtu</strong> (Bank of England)	<br>		
+				<strong>Ishita Sen</strong> (Harvard University)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=62132">
+Soothing Investors: The Impact of Manager Communication on Mutual Fund Flows</a>
+</h6>
+<p>		
+		
+				<strong>Ahmed Guecioueur</strong> (INSEAD)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=55804">
+Motivated Extrapolative Beliefs</a>
+</h6>
+<p>		
+		
+				<strong>Siyuan Yang</strong> (Tsinghua University)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=64400">
+Negative Sentiment and Aggregate Retail Trading: Evidence from Mass Shootings</a>
+</h6>
+<p>		
+		
+				<strong>Tianchen Zhao</strong> (University of Maryland)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=56168">
+Neighbouring Assets</a>
+</h6>
+<p>		
+		
+				<strong>Sina Seyfi</strong> (Aalto-Yliopiston (Aalto University))		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=63392">
+Now You See It, Now You Donât: Financial Constraints, Minimum Wage Policies, and Employment</a>
+</h6>
+<p>		
+		
+				<strong>Alona Bilokha</strong> (Fordham University)	<br>		
+				<strong>Iftekhar Hasan</strong> (Fordham University)	<br>		
+				<strong>Stefano Manfredonia</strong> (Fordham University)	<br>		
+				<strong>Ronald Masulis</strong> (University of New South Wales)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=59836">
+Outside employment opportunities and tournament incentives</a>
+</h6>
+<p>		
+		
+				<strong>Yue Feng</strong> (University of Manchester)	<br>		
+				<strong>Amedeo De Cesari</strong> (University of Manchester)	<br>		
+				<strong>Konstantinos Stathopoulos</strong> (University of Manchester)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=61600">
+Personal Experience Effects across Markets: Evidence from NFT and Cryptocurrency Investing</a>
+</h6>
+<p>		
+		
+				<strong>Chuyi Sun</strong> (University of North Carolina-Chapel Hill)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=59472">
+The Political Origin of Credit Cycle</a>
+</h6>
+<p>		
+		
+				<strong>Zhou Ren</strong> (Vienna Graduate School of Finance)	<br>		
+				<strong>Lixing Wang</strong> (University of Bonn)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=63560">
+The Power of Reserve Tiering: Financial Institution Heterogeneity and Monetary Policy Pass-through</a>
+</h6>
+<p>		
+		
+				<strong>Wentong Chen</strong> (Cornell University)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=57736">
+A Preferred-Habitat Model with a Corporate Sector</a>
+</h6>
+<p>		
+		
+				<strong>Filippo Cavaleri</strong> (University of Chicago)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=57960">
+Private Activity Bonds as Investment Subsidy: Evidence from the 1986 Cap on Bond Volumes</a>
+</h6>
+<p>		
+		
+				<strong>Lisa Knauer</strong> (Technical University of Munich)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=62356">
+Property Rights, Labor Supply, and Firm Capital Structure</a>
+</h6>
+<p>		
+		
+				<strong>Yi Chen</strong> (Macquarie University)	<br>		
+				<strong>Qing (Clara) Zhou</strong> (Macquarie University)	<br>		
+				<strong>Di Bu</strong> (Macquarie University)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=64148">
+Role of underwriters in the green bond market</a>
+</h6>
+<p>		
+		
+				<strong>Natalia Boreyko</strong> (University of Michigan)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=65632">
+Small Banks and the Recovery Advantage in Commercial Real Estate</a>
+</h6>
+<p>		
+		
+				<strong>Jose Ernesto Aldana Vizcaino</strong> (University of North Carolina-Chapel Hill)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=57120">
+Reference Price Updating in the Housing Market</a>
+</h6>
+<p>		
+		
+				<strong>Shengwei Guo</strong> (University of Wisconsin-Madison)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=57904">
+Regulatory Model Secrecy and Bank Reporting Discretion</a>
+</h6>
+<p>		
+		
+				<strong>Shuo Zhao</strong> (Tilburg University (CentER))		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=57484">
+Reinvesting Dividends</a>
+</h6>
+<p>		
+		
+				<strong>Jan MÃ¼ller-Dethard</strong> (University of Mannheim)	<br>		
+				<strong>Niklas Reinhardt</strong> (Kiel University)	<br>		
+				<strong>Martin Weber</strong> (University of Mannheim)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=65576">
+Some Bonuses are Bigger than Others? Benchmark-beating Pressure and The Gender Pay Gap</a>
+</h6>
+<p>		
+		
+				<strong>Lucas Lee</strong> (Yale University)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=54572">
+Spatial Extrapolation in The Housing Market</a>
+</h6>
+<p>		
+		
+				<strong>Gen Li</strong> (University of British Columbia)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=62384">
+Spouses in The Same Boat: Labor Income Risk and Intra-household Risk Sharing</a>
+</h6>
+<p>		
+		
+				<strong>Singsen Lam</strong> (Chinese University of Hong Kong)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=58968">
+Startup Catering to Venture Capitalists</a>
+</h6>
+<p>		
+		
+				<strong>Xiyue Li</strong> (University of British Columbia)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=56420">
+Strategic Bargaining and Portfolio Choice in Intermediated Markets</a>
+</h6>
+<p>		
+		
+				<strong>Jessica Li</strong> (University of Chicago)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=64316">
+Talk or Walk the Talk? The Real Impact of ESG Investing</a>
+</h6>
+<p>		
+		
+				<strong>Huiyao Chen</strong> (University of Pennsylvania)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=56560">
+Textual Changes in 10-Ks and Stock Price Crash Risk: Evidence from Neural Network Embeddings</a>
+</h6>
+<p>		
+		
+				<strong>Yahya Yilmaz</strong> (WWU MÃ¼nster)	<br>		
+				<strong>Doron Reichmann</strong> (Ruhr-UniversitÃ¤t Bochum)	<br>		
+				<strong>Milan Reichmann</strong> (DWS)		</p>
+	
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=64120">
+To the Moon or Bust: Do Retail Investors Profit From Social Media-Induced Trading?</a>
+</h6>
+<p>		
+		
+				<strong>Botir Kobilov</strong> (Harvard University)	<br>		
+				<strong>Liran Eliner</strong> (Harvard University)		</p>
+	
+	</div>
+	
+	</div>
+
+<div class="row"><h2 style="margin-top:25px; margin-bottom:10px;">Paper Sessions</h2></div>
+<!-- end sample mockup content -->  
+
+			<div class="row">
+			<div class="col-12" style="background:#6b2f1d;margin-bottom:10px;margin-top:20px;">
+			<h4 style="margin-top:5px; margin-bottom:5px; color:#fff;">Friday, Jan 05 &nbsp;|&nbsp; 8:00 am - 10:00 am CST</h4>
+			</div>
+			</div>
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Financial Intermediation: Bank Funding and Risk Management				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Friday, Jan 05			<br><i class="fa fa-clock-o"></i> 8:00 am - 10:00 am CST		</div>
+					<h6>Location: Grand Ballroom Salon D</h6>
+				<h6>Session Chair: Juliane Begenau (Stanford University)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=35000">
+Local Recessions: Evidence from Bank Liquidity Squeezes</a>
+</h6>
+<p>
+		
+				<strong>Rajkamal Iyer</strong> (Imperial College London)	<br>		
+				<strong>Shohini Kundu</strong> (University of California-Los Angeles)	<br>		
+				<strong>Nikos Paltalidis</strong> (Durham University)		</p>
+	
+			
+			<p>Discussant: Dominik Supera (Columbia University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=12964">
+Intermediary Market Power and Capital Constraints</a>
+</h6>
+<p>
+		
+				<strong>Jason Allen</strong> (Bank of Canada)	<br>		
+				<strong>Milena Wittwer</strong> (Boston College)		</p>
+	
+			
+			<p>Discussant: Rustam Jamilov (University of Oxford)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=46536">
+Similar Investors</a>
+</h6>
+<p>
+		
+				<strong>Co-Pierre Georg</strong> (EDHEC Business School)	<br>		
+				<strong>Diane Pierret</strong> (University of Luxembourg)	<br>		
+				<strong>Sascha Steffen</strong> (Frankfurt School of Finance and Management gGmbH)		</p>
+	
+			
+			<p>Discussant: Yao Zeng (University of Pennsylvania)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Household Finance				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Friday, Jan 05			<br><i class="fa fa-clock-o"></i> 8:00 am - 10:00 am CST		</div>
+					<h6>Location: Grand Ballroom Salon G</h6>
+				<h6>Session Chair: Francisco Gomes (London Business School)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=6244">
+Salient Attributes and Household Demand for Security Designs</a>
+</h6>
+<p>
+		
+				<strong>Petra Vokata</strong> (Ohio State University)		</p>
+	
+			
+			<p>Discussant: Mark Egan (Harvard University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=38584">
+Mortgage Lock-In, Mobility, and Labor Reallocation</a>
+</h6>
+<p>
+		
+				<strong>Julia Fonseca</strong> (University of Illinois)	<br>		
+				<strong>Lu Liu</strong> (University of Pennsylvania)		</p>
+	
+			
+			<p>Discussant: Julie Marx (Copenhagen Business School)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=47096">
+Choosing Pension Fund Investment Consultants</a>
+</h6>
+<p>
+		
+				<strong>Aleksandar Andonov</strong> (University of Amsterdam)	<br>		
+				<strong>Matteo Bonetti</strong> (De Nederlandsche Bank)	<br>		
+				<strong>Irina Stefanescu</strong> (Federal Reserve Board)		</p>
+	
+			
+			<p>Discussant: Alessandro Previtero (Indiana University)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Asset Pricing: Derivatives				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Friday, Jan 05			<br><i class="fa fa-clock-o"></i> 8:00 am - 10:00 am CST		</div>
+					<h6>Location: Grand Ballroom Salon B</h6>
+				<h6>Session Chair: Jefferson Duarte</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=12068">
+Derivative Spreads: Evidence from SPX Options</a>
+</h6>
+<p>
+		
+				<strong>Jie Cao</strong> (Hong Kong Polytechnic University)	<br>		
+				<strong>Kris Jacobs</strong> (University of Houston)	<br>		
+				<strong>Sai Ke</strong> (University of Mississippi)		</p>
+	
+			
+			<p>Discussant: Dmitriy Muravyev (Michigan State University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=7700">
+Market Risk Premium Expectation: Combining Option Theory with Traditional Predictors</a>
+</h6>
+<p>
+		
+				<strong>Hong Liu</strong> (Washington University in St. Louis)	<br>		
+				<strong>Yueliang Lu</strong> (Clemson University)	<br>		
+				<strong>Weike Xu</strong> (Clemson University)	<br>		
+				<strong>Guofu Zhou</strong> (Washington University in St. Louis)		</p>
+	
+			
+			<p>Discussant: Kerry Back (Rice University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=44100">
+The Risk and Return of Equity and Credit Index Options</a>
+</h6>
+<p>
+		
+				<strong>Hitesh Doshi</strong> (University of Houston)	<br>		
+				<strong>Jan Ericsson</strong> (McGill University)	<br>		
+				<strong>Mathieu Fournier</strong> (University of New South Wales)	<br>		
+				<strong>Sang Byung Seo</strong> (University of Wisconsin-Madison)		</p>
+	
+			
+			<p>Discussant: Anders Trolle (Copenhagen Business School)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=41580">
+Exploring the Variance Risk Premium Across Assets</a>
+</h6>
+<p>
+		
+				<strong>Steven Heston</strong> (University of Maryland)	<br>		
+				<strong>Karamfil Todorov</strong> (Bank for International Settlements)		</p>
+	
+			
+			<p>Discussant: Kris Jacobs (University of Houston)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Asset Pricing: Market Mispricing and Limits to Arbitrage				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Friday, Jan 05			<br><i class="fa fa-clock-o"></i> 8:00 am - 10:00 am CST		</div>
+					<h6>Location: Grand Ballroom Salon A</h6>
+				<h6>Session Chair: Christian Opp (University of Rochester)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=24584">
+Risk and Segmentation in Covered-Interest Parity Arbitrage</a>
+</h6>
+<p>
+		
+				<strong>Tobias Moskowitz</strong> (Yale University)	<br>		
+				<strong>Chase Ross</strong> (Federal Reserve Board)	<br>		
+				<strong>Sharon Ross</strong> (Office of Financial Research (OFR))	<br>		
+				<strong>Kaushik Vasudevan</strong> (Purdue University)		</p>
+	
+			
+			<p>Discussant: William Diamond (University of Pennsylvania)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=9100">
+Pension Fund Flows, Exchange Rates, and Covered Interest Rate Parity</a>
+</h6>
+<p>
+		
+				<strong>Felipe Aldunate</strong> (Pontificia Universidad Catolica de Chile)	<br>		
+				<strong>Zhi Da</strong> (University of Notre Dame)	<br>		
+				<strong>Borja Larrain</strong> (Pontificia Universidad Catolica de Chile)	<br>		
+				<strong>Clemens Sialm</strong> (University of Texas-Austin)		</p>
+	
+			
+			<p>Discussant: Amy Huber (University of Pennsylvania)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=26824">
+Why is Asset Demand Inelastic?</a>
+</h6>
+<p>
+		
+				<strong>Carter Davis</strong> (Indiana University)	<br>		
+				<strong>Mahyar Kargar</strong> (University of Illinois)	<br>		
+				<strong>Jiacui Li</strong> (University of Utah)		</p>
+	
+			
+			<p>Discussant: Daniel Neuhann (University of Texas)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Special Topics: Digital Currencies				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Friday, Jan 05			<br><i class="fa fa-clock-o"></i> 8:00 am - 10:00 am CST		</div>
+					<h6>Location: Grand Ballroom Salon I</h6>
+				<h6>Session Chair: Andreea Minca (Cornell University)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=5152">
+The Digital Economy, Privacy, and CBDC</a>
+</h6>
+<p>
+		
+				<strong>Peter Hoffmann</strong> (European Central Bank)	<br>		
+				<strong>Toni Ahnert</strong> (European Central Bank)	<br>		
+				<strong>Cyril Monnet</strong> (University of Bern)		</p>
+	
+			
+			<p>Discussant: Andreea Minca (Cornell University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=4144">
+The Demand for Programmable Payments</a>
+</h6>
+<p>
+		
+				<strong>Charles Kahn</strong> (University of Illinois)	<br>		
+				<strong>Maarten van Oordt</strong> (Vrije Universiteit Amsterdam)		</p>
+	
+			
+			<p>Discussant: Paolo Guasoni (Dublin City University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=41636">
+CBDC and Banks: Threat or Opportunity?</a>
+</h6>
+<p>
+		
+				<strong>Martina Fraschini</strong> (University of Luxembourg)	<br>		
+				<strong>Luciano Somoza</strong> (ESSEC Business School)	<br>		
+				<strong>Tammaro Terracciano</strong> (IESE Business School)		</p>
+	
+			
+			<p>Discussant: Philip Dybvig (Washington University in St. Louis)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Corporate Finance: Compensation and Agency				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Friday, Jan 05			<br><i class="fa fa-clock-o"></i> 8:00 am - 10:00 am CST		</div>
+					<h6>Location: Grand Ballroom Salon C</h6>
+				<h6>Session Chair: Gustavo Manso (University of California-Berkeley)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=50988">
+Process Intangibles and Agency Frictions</a>
+</h6>
+<p>
+		
+				<strong>Hui Chen</strong> (Massachusetts Institute of Technology)	<br>		
+				<strong>Ali Kakhbod</strong> (University of California-Berkeley)	<br>		
+				<strong>Maziar Kazemi</strong> (Arizona State University)	<br>		
+				<strong>Hao Xing</strong> (Boston University)		</p>
+	
+			
+			<p>Discussant: Nicolas Crouzet (Northwestern University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=30184">
+Competition and Executive Compensation: Evidence from Pharmaceutical Breakthrough Designations</a>
+</h6>
+<p>
+		
+				<strong>Jon Garfinkel</strong> (University of Iowa)	<br>		
+				<strong>Mosab Hammoudeh</strong> (University of New Orleans)	<br>		
+				<strong>Steve Irlbeck</strong> (University of New Hampshire)	<br>		
+				<strong>Erik Lie</strong> (University of Iowa)		</p>
+	
+			
+			<p>Discussant: Moqi Groen-Xu (London School of Economics)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=8876">
+Firms with Benefits? Nonwage Compensation and Implications for Firms and Labor Markets</a>
+</h6>
+<p>
+		
+				<strong>Paige Ouimet</strong> (University of North Carolina-Chapel Hill)	<br>		
+				<strong>Geoffrey Tate</strong> (University of Maryland)		</p>
+	
+			
+			<p>Discussant: Jessica Jeffers (HEC - Paris)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=52220">
+ESG-linked Pay Around the World âTrends, Determinants, and Outcomes</a>
+</h6>
+<p>
+		
+				<strong>Sonali Hazarika</strong> (CUNY-Baruch College)	<br>		
+				<strong>Aditya Kashikar</strong> (University of Massachusetts-Boston)	<br>		
+				<strong>Lin Peng</strong> (CUNY-Baruch College)	<br>		
+				<strong>Ailsa Roell</strong> (Columbia University)	<br>		
+				<strong>Yao Shen</strong> (CUNY-Baruch College)		</p>
+	
+			
+			<p>Discussant: Alex Edmans (London Business School)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Sustainability and Finance				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Friday, Jan 05			<br><i class="fa fa-clock-o"></i> 8:00 am - 10:00 am CST		</div>
+					<h6>Location: Grand Ballroom Salon K & L</h6>
+				<h6>Session Chair: Malcolm P Baker (Harvard University)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=7084">
+Carbon Emissions and Shareholder Value: Causal Evidence from the U.S. Power Utilities</a>
+</h6>
+<p>
+		
+				<strong>Mayank Kumar</strong> (University of Michigan)	<br>		
+				<strong>Amiyatosh Purnanandam</strong> (University of Michigan)		</p>
+	
+			
+			<p>Discussant: Samuel Hartzmark (Boston College)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=10752">
+Are All ESG Funds Created Equal? Only Some Funds Are Committed</a>
+</h6>
+<p>
+		
+				<strong>Michelle Lowry</strong> (Drexel University)	<br>		
+				<strong>Pingle Wang</strong> (University of Texas-Dallas)	<br>		
+				<strong>Kelsey Wei</strong> (University of Texas-Dallas)		</p>
+	
+			
+			<p>Discussant: Jules Van Binsbergen (University of Pennsylvania)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=25956">
+Green Mandates in Two Sided Markets</a>
+</h6>
+<p>
+		
+				<strong>Briana Chang</strong> (University of Wisconsin-Madison)	<br>		
+				<strong>Harrison Hong</strong> (Columbia University)		</p>
+	
+			
+			<p>Discussant: Deeksha Gupta (Johns Hopkins University)</p>
+	</div>
+	
+			</div>
+		
+			<div class="row">
+			<div class="col-12" style="background:#6b2f1d;margin-bottom:10px;margin-top:20px;">
+			<h4 style="margin-top:5px; margin-bottom:5px; color:#fff;">Friday, Jan 05 &nbsp;|&nbsp; 10:15 am - 12:15 pm CST</h4>
+			</div>
+			</div>
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Asset Pricing: ETFs				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Friday, Jan 05			<br><i class="fa fa-clock-o"></i> 10:15 am - 12:15 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon B</h6>
+				<h6>Session Chair: Yiming Ma (Columbia University)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=6916">
+Portfolio Trading in Corporate Bond Markets</a>
+</h6>
+<p>
+		
+				<strong>Jeff Meli</strong> (Barclays)	<br>		
+				<strong>Zornitsa Todorova</strong> (Barclays)		</p>
+	
+			
+			<p>Discussant: Ananth Madhaven (BlackRock)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=12656">
+Limits to Diversification: Passive Investing and Market Risk</a>
+</h6>
+<p>
+		
+				<strong>Lily Fang</strong> (INSEAD)	<br>		
+				<strong>Hao Jiang</strong> (Michigan State University)	<br>		
+				<strong>Zheng Sun</strong> (University of California-Irvine)	<br>		
+				<strong>Lu Zheng</strong> (University of California-Irvine)	<br>		
+				<strong>Ximing Yin</strong> (Hunan University)		</p>
+	
+			
+			<p>Discussant: Itzhak Ben-David (Ohio State University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=54376">
+Passive Investors in Primary Bond Markets</a>
+</h6>
+<p>
+		
+				<strong>Caitlin Dannhauser</strong> (Villanova University)	<br>		
+				<strong>Michele Dathan</strong> (Federal Reserve Board)		</p>
+	
+			
+			<p>Discussant: Jens Dick-nielsen (Copenhagen Business School)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=54684">
+Passive Investing and the Rise of Mega-Firms</a>
+</h6>
+<p>
+		
+				<strong>Hao Jiang</strong> (Michigan State University)	<br>		
+				<strong>Dimitrios Vayanos</strong> (London School of Economics)	<br>		
+				<strong>Lu Zheng</strong> (University of California-Irvine)		</p>
+	
+			
+			<p>Discussant: Jian Li (Columbia University)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Risk Management				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Friday, Jan 05			<br><i class="fa fa-clock-o"></i> 10:15 am - 12:15 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon K & L</h6>
+				<h6>Session Chair: Kairong Xiao (Columbia University)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=54152">
+Limited Hedging and Gambling for Resurrection by U.S. Banks During the 2022 Monetary Tightening?</a>
+</h6>
+<p>
+		
+				<strong>Erica Xuewei Jiang</strong> (University of Southern California)	<br>		
+				<strong>Gregor Matvos</strong> (Northwestern University)	<br>		
+				<strong>Tomasz Piskorski</strong> (Columbia University)	<br>		
+				<strong>Amit Seru</strong> (Stanford University)		</p>
+	
+			
+			<p>Discussant: Andres Sarto (New York University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=54124">
+Banking on Uninsured Deposits</a>
+</h6>
+<p>
+		
+				<strong>Itamar Drechsler</strong> (University of Pennsylvania)	<br>		
+				<strong>Alexi Savov</strong> (New York University)	<br>		
+				<strong>Philipp Schnabl</strong> (New York University)	<br>		
+				<strong>Olivier Wang</strong> (New York University)		</p>
+	
+			
+			<p>Discussant: Yufeng Wu (Ohio State University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=19320">
+Hedging, Contract Enforceability and Competition</a>
+</h6>
+<p>
+		
+				<strong>Erasmo Giambona</strong> (Syracuse University)	<br>		
+				<strong>Anil Kumar</strong> (Aarhus University)	<br>		
+				<strong>Gordon Phillips</strong> (Dartmouth College)		</p>
+	
+			
+			<p>Discussant: Chotibhak Jotikasthira (Southern Methodist University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=50876">
+What's Wrong with Annuity Markets?</a>
+</h6>
+<p>
+		
+				<strong>Stephane Verani</strong> (Federal Reserve Board)	<br>		
+				<strong>Pei-Cheng Yu</strong> (University of New South Wales)		</p>
+	
+			
+			<p>Discussant: Ishita Sen (Harvard University)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Market Frictions and Market Power				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Friday, Jan 05			<br><i class="fa fa-clock-o"></i> 10:15 am - 12:15 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon I</h6>
+				<h6>Session Chair: Carole Comerton-Forde (University of Melbourne)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=13580">
+The Retail Execution Quality Landscape</a>
+</h6>
+<p>
+		
+				<strong>Anne Dyhrberg</strong> (Wilfrid Laurier University)	<br>		
+				<strong>Andriy Shkilko</strong> (Wilfrid Laurier University)	<br>		
+				<strong>Ingrid Werner</strong> (Ohio State University)		</p>
+	
+			
+			<p>Discussant: Thomas Ernst (University of Maryland)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=13524">
+Competing for Dark Trades</a>
+</h6>
+<p>
+		
+				<strong>Paul Irvine</strong> (Texas Christian University)	<br>		
+				<strong>Egle Karmaziene</strong> (Vrije Universiteit Amsterdam)		</p>
+	
+			
+			<p>Discussant: Sabrina Buti (Paris Dauphine University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=51744">
+Market Power in the Securities Lending Market</a>
+</h6>
+<p>
+		
+				<strong>Shuaiyu Chen</strong> (Purdue University)	<br>		
+				<strong>Ron Kaniel</strong> (University of Rochester)	<br>		
+				<strong>Christian Opp</strong> (University of Rochester)		</p>
+	
+			
+			<p>Discussant: Matthew Ringgenberg (University of Utah)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=46340">
+When A Market Is Not Legally Defined As A Market: Evidence From Two Types of Dark Trading</a>
+</h6>
+<p>
+		
+				<strong>Yunus Topbas</strong> (Peking University)	<br>		
+				<strong>Mao Ye</strong> (Cornell University)		</p>
+	
+			
+			<p>Discussant: Amber Anand (Syracuse University)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Homophily and Finance				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Friday, Jan 05			<br><i class="fa fa-clock-o"></i> 10:15 am - 12:15 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon D</h6>
+				<h6>Session Chair: Tracy Wang (University of Minnesota)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=23464">
+Group Identity and Agency Frictions: Evidence Using Big Data</a>
+</h6>
+<p>
+		
+				<strong>Jitendra Aswani</strong> (Harvard University)		</p>
+	
+			
+			<p>Discussant: Yihui Pan (University of Utah)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=31500">
+Similarity Breeds Trust: Political Homophily and CEO-Board Communication</a>
+</h6>
+<p>
+		
+				<strong>Sudipto Dasgupta</strong> (Chinese University of Hong Kong)	<br>		
+				<strong>Ran Guo</strong> (Stockholm University)	<br>		
+				<strong>Xiao Ren</strong> (Chinese University of Hong Kong-Shenzhen)	<br>		
+				<strong>Tao Shu</strong> (Chinese University of Hong Kong-Shenzhen)		</p>
+	
+			
+			<p>Discussant: Elena Pikulina (University of British Columbia)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=36568">
+Decomposing Partisan Bias: Evidence from Entrepreneur-Politicians</a>
+</h6>
+<p>
+		
+				<strong>Deniz Okat</strong> (Hong Kong University of Science and Technology)	<br>		
+				<strong>Mikael Paaso</strong> (Erasmus University Rotterdam)		</p>
+	
+			
+			<p>Discussant: Jiajie Xu (University of Iowa)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Taxes, Regulation, and Politics				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Friday, Jan 05			<br><i class="fa fa-clock-o"></i> 10:15 am - 12:15 pm CST		</div>
+					<h6>Location: Conference Room 8</h6>
+				<h6>Session Chair: Kose John (New York University)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=24388">
+Connections over Competence: The Impact of Political Ties on Sell-Side Research Quality</a>
+</h6>
+<p>
+		
+				<strong>Kaizhao Guo</strong> (University of Glasgow)	<br>		
+				<strong>Yanghua Shi</strong> (University of Mannheim)	<br>		
+				<strong>Jingshu Wen</strong> (University of Oxford)		</p>
+	
+			
+			<p>Discussant: Tianyue Ruan (National University of Singapore)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=40656">
+Closing the Revolving Door</a>
+</h6>
+<p>
+		
+				<strong>Joseph Kalmenovitz</strong> (University of Rochester)	<br>		
+				<strong>Siddharth Vij</strong> (University of Georgia)	<br>		
+				<strong>Kairong Xiao</strong> (Columbia University)		</p>
+	
+			
+			<p>Discussant: Florian Heider (Research Center SAFE - Goethe University Frankfurt)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=39312">
+Corporate Taxes and Retail Prices</a>
+</h6>
+<p>
+		
+				<strong>Scott Baker</strong> (Northwestern University)	<br>		
+				<strong>Stephen (Teng) Sun</strong> (City University of Hong Kong)	<br>		
+				<strong>Constantine Yannelis</strong> (University of Chicago)		</p>
+	
+			
+			<p>Discussant: S Ravid (Yeshiva University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=23380">
+Regulatory Policy Enforcement and Corporate Performance</a>
+</h6>
+<p>
+		
+				<strong>Jon Garfinkel</strong> (University of Iowa)	<br>		
+				<strong>Dain Donelson</strong> (University of Iowa)	<br>		
+				<strong>Sepehr Roudini</strong> (University of Iowa)		</p>
+	
+			
+			<p>Discussant: Michelle Lowry (Drexel University)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Financial Intermediation: General				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Friday, Jan 05			<br><i class="fa fa-clock-o"></i> 10:15 am - 12:15 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon C</h6>
+				<h6>Session Chair: Valentin Haddad (University of California-Los Angeles)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=53424">
+Is Asset Demand Elasticity Set at the Household or Intermediary Level?</a>
+</h6>
+<p>
+		
+				<strong>Ehsan Azarmsa</strong> (University of Chicago)	<br>		
+				<strong>Carter Davis</strong> (Indiana University)		</p>
+	
+			
+			<p>Discussant: Paul Huebner (University of California-Los Angeles)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=40348">
+Fragility in Bond Mutual Funds:  The Role of Investor Base</a>
+</h6>
+<p>
+		
+				<strong>Nolwenn Allaire</strong> (European Central Bank)	<br>		
+				<strong>Johannes Breckenfelder</strong> (European Central Bank)	<br>		
+				<strong>Marie Hoerova</strong> (European Central Bank)		</p>
+	
+			
+			<p>Discussant: Yao Zeng (University of Pennsylvania)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=15260">
+âGlossy Green â Banks: The Disconnect Between Environmental Disclosures and Lending Activities</a>
+</h6>
+<p>
+		
+				<strong>Mariassunta Giannetti</strong> (Stockholm School of Economics)	<br>		
+				<strong>Martina Jasova</strong> (Barnard College)	<br>		
+				<strong>Maria Loumioti</strong> (University of Texas)	<br>		
+				<strong>Caterina Mendicino</strong> (European Central Bank)		</p>
+	
+			
+			<p>Discussant: Shohini Kundu (University of California-Los Angeles)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Macro Finance				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Friday, Jan 05			<br><i class="fa fa-clock-o"></i> 10:15 am - 12:15 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon G</h6>
+				<h6>Session Chair: Andrea Eisfeldt (University of California-Los Angeles)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=28420">
+Time-Varying Risk Premia, Labor Market Dynamics, and Income Risk</a>
+</h6>
+<p>
+		
+				<strong>Maarten Meeuwis</strong> (Washington University in St. Louis)	<br>		
+				<strong>Dimitris Papanikolaou</strong> (Northwestern University)	<br>		
+				<strong>Lawrence Schmidt</strong> (Massachusetts Institute of Technology)	<br>		
+				<strong>Jonathan Rothbaum</strong> (U.S. Census Bureau)		</p>
+	
+			
+			<p>Discussant: Daniel Greenwald (New York University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=40628">
+Monetary Policy and Financial Stability</a>
+</h6>
+<p>
+		
+				<strong>Joao Gomes</strong> (University of Pennsylvania)	<br>		
+				<strong>Sergey Sarkisyan</strong> (University of Pennsylvania)		</p>
+	
+			
+			<p>Discussant: Tyler Muir (University of California-Los Angeles)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=42056">
+Long-Term Bond Supply, Term Premium, and the Duration of Corporate Investment</a>
+</h6>
+<p>
+		
+				<strong>Antoine Hubert de Fraisse</strong> (HEC - Paris)		</p>
+	
+			
+			<p>Discussant: Lukas Schmid</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=53396">
+Asset Pricing with Optimal Under-Diversification</a>
+</h6>
+<p>
+		
+				<strong>Vadim Elenev</strong> (Johns Hopkins University)	<br>		
+				<strong>Tim Landvoigt</strong> (University of Pennsylvania)		</p>
+	
+			
+			<p>Discussant: Mindy Zhang (University of Texas-Austin)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Asset Pricing: Behavioral				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Friday, Jan 05			<br><i class="fa fa-clock-o"></i> 10:15 am - 12:15 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon A</h6>
+				<h6>Session Chair: Marianne Andries (University of Southern California)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=22372">
+Investor Memory and Biased Beliefs: Evidence from the Field</a>
+</h6>
+<p>
+		
+				<strong>Zhengyang Jiang</strong> (Northwestern University)	<br>		
+				<strong>Hongqi Liu</strong> (Chinese University of Hong Kong-Shenzhen)	<br>		
+				<strong>Cameron Peng</strong> (London School of Economics and Political Science)	<br>		
+				<strong>Hongjun Yan</strong> (DePaul University)		</p>
+	
+			
+			<p>Discussant: Peter Maxted (University of California-Berkeley)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=23912">
+The Cryptocurrency Participation Puzzle</a>
+</h6>
+<p>
+		
+				<strong>Ran Duchin</strong> (Boston College)	<br>		
+				<strong>David Solomon</strong> (Boston College)	<br>		
+				<strong>Jun Tu</strong> (Singapore Management University)	<br>		
+				<strong>Xi Wang</strong> (Peking University)		</p>
+	
+			
+			<p>Discussant: Amin Shams (Ohio State University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=54348">
+Consumption out of Fictitious Capital Gains and Selective Inattention</a>
+</h6>
+<p>
+		
+				<strong>Benjamin Loos</strong> (University of New South Wales)	<br>		
+				<strong>Steffen Meyer</strong> (University of Southern Denmark, Danish Finance Institute)	<br>		
+				<strong>Michaela Pagel</strong> (Washington University in St. Louis)		</p>
+	
+			
+			<p>Discussant: Alberto Rossi (Georgetown University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=46424">
+The Cross-section of Subjective Expectations: Understanding Prices and Anomalies</a>
+</h6>
+<p>
+		
+				<strong>Ricardo De la O</strong> (University of Southern California)	<br>		
+				<strong>Xiao Han</strong> (City University of London)	<br>		
+				<strong>Sean Myers</strong> (University of Pennsylvania)		</p>
+	
+			
+			<p>Discussant: Cameron Peng (London School of Economics and Political Science)</p>
+	</div>
+	
+			</div>
+		
+			<div class="row">
+			<div class="col-12" style="background:#6b2f1d;margin-bottom:10px;margin-top:20px;">
+			<h4 style="margin-top:5px; margin-bottom:5px; color:#fff;">Friday, Jan 05 &nbsp;|&nbsp; 2:30 pm - 4:30 pm CST</h4>
+			</div>
+			</div>
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		FinTech and the Industrial Organization of the Financial Sector				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Friday, Jan 05			<br><i class="fa fa-clock-o"></i> 2:30 pm - 4:30 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon I</h6>
+				<h6>Session Chair: Nadya Malenko (Boston College)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=39256">
+Customer Data Access and Fintech Entry: Early Evidence from Open Banking</a>
+</h6>
+<p>
+		
+				<strong>Tania Babina</strong> (Columbia University)	<br>		
+				<strong>Gregory Buchak</strong> (Stanford University)	<br>		
+				<strong>Will Gornall</strong> (University of British Columbia)		</p>
+	
+			
+			<p>Discussant: Paul Beaumont (McGill University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=27440">
+Market Concentration in Fintech</a>
+</h6>
+<p>
+		
+				<strong>Kuan Liu</strong> (University of Arkansas)	<br>		
+				<strong>Dean Corbae</strong> (University of Wisconsin-Madison)	<br>		
+				<strong>Pablo D'Erasmo</strong> (Federal Reserve Bank of Philadelphia)		</p>
+	
+			
+			<p>Discussant: Erica Xuewei Jiang (University of Southern California)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=13636">
+Borrowing from a Bigtech Platform</a>
+</h6>
+<p>
+		
+				<strong>Stefano Pegoraro</strong> (University of Notre Dame)	<br>		
+				<strong>Jian Li</strong> (Columbia University)		</p>
+	
+			
+			<p>Discussant: Deeksha Gupta (Johns Hopkins University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=39648">
+Cashless Payment and Financial Inclusion</a>
+</h6>
+<p>
+		
+				<strong>Shumiao Ouyang</strong> (Princeton University)		</p>
+	
+			
+			<p>Discussant: Emily Williams (Harvard University)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Finance and Climate Transition				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Friday, Jan 05			<br><i class="fa fa-clock-o"></i> 2:30 pm - 4:30 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon G</h6>
+				<h6>Session Chair: Marcin Kacperczyk (Imperial College London)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=27552">
+Large Firms, Common Ownership, and Incentives to Decarbonize and Innovate</a>
+</h6>
+<p>
+		
+				<strong>Viral Acharya</strong> (New York University)	<br>		
+				<strong>Robert Engle</strong> (New York University)	<br>		
+				<strong>Olivier Wang</strong> (New York University)		</p>
+	
+			
+			<p>Discussant: Mariano Croce (Bocconi University and IGIER and BaffiCarefin)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=39676">
+Does Climate Change Adaptation Matter? Evidence from the City on the Water</a>
+</h6>
+<p>
+		
+				<strong>Matteo Benetton</strong> (University of California-Berkeley)	<br>		
+				<strong>Simone Emiliozzi</strong> (Bank of Italy)	<br>		
+				<strong>Elisa Guglielminetti</strong> (Bank of Italy)	<br>		
+				<strong>Michele Loberto</strong> (Bank of Italy)	<br>		
+				<strong>Alessandro Mistretta</strong> (Bank of Italy)		</p>
+	
+			
+			<p>Discussant: Jawad Addoum (Cornell University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=43540">
+Decarbonizing Institutional Investor Portfolios: Helping to Green the Planet or Just Greening Your Portfolio?</a>
+</h6>
+<p>
+		
+				<strong>Vaska Atta-Darkua</strong> (University of Virginia)	<br>		
+				<strong>Simon Glossner</strong> (Federal Reserve Board)	<br>		
+				<strong>Philipp Krueger</strong> (Swiss Finance Institute - University of Geneva)	<br>		
+				<strong>Pedro Matos</strong> (University of Virginia)		</p>
+	
+			
+			<p>Discussant: Jules Van Binsbergen (University of Pennsylvania)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=18060">
+Financing the Adoption of Clean Technology</a>
+</h6>
+<p>
+		
+				<strong>Andrea Lanteri</strong> (Duke University)	<br>		
+				<strong>Adriano Rampini</strong> (Duke University)		</p>
+	
+			
+			<p>Discussant: Ulrich Hege (Toulouse School of Economics)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Asset Pricing: Preferences and Expectations				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Friday, Jan 05			<br><i class="fa fa-clock-o"></i> 2:30 pm - 4:30 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon A</h6>
+				<h6>Session Chair: Hengjie Ai (University of Wisconsin-Madison)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=8820">
+Production-based Stochastic Discount Factors</a>
+</h6>
+<p>
+		
+				<strong>Frederico Belo</strong> (INSEAD)	<br>		
+				<strong>Xinwei Li</strong> (INSEAD)		</p>
+	
+			
+			<p>Discussant: Lukas Schmid</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=24360">
+Asset Pricing and Risk Sharing Implications of Alternative Pension Plan Systems</a>
+</h6>
+<p>
+		
+				<strong>Nuno Coimbra</strong> (Bank of France)	<br>		
+				<strong>Francisco Gomes</strong> (London Business School)	<br>		
+				<strong>Alex Michaelides</strong> (Imperial College London)	<br>		
+				<strong>Jialu Shen</strong> (University of Missouri)		</p>
+	
+			
+			<p>Discussant: Daniel Greenwald (New York University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=17892">
+Identifying Preference for Early Resolution from Asset Prices</a>
+</h6>
+<p>
+		
+				<strong>Hengjie Ai</strong> (University of Wisconsin-Madison)	<br>		
+				<strong>Ravi Bansal</strong> (Duke University)	<br>		
+				<strong>Hongye Guo</strong> (University of Hong Kong)	<br>		
+				<strong>Amir Yaron</strong> (University of Pennsylvania)		</p>
+	
+			
+			<p>Discussant: Nina Boyarchenko (Federal Reserve Bank of New York)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=13944">
+Are Subjective Expectations Formed as in Rational Expectations Models of Active Management?</a>
+</h6>
+<p>
+		
+				<strong>Magnus Dahlquist</strong> (Stockholm School of Economics)	<br>		
+				<strong>Markus Ibert</strong> (Copenhagen Business School)	<br>		
+				<strong>Felix Wilke</strong> (NOVA University Lisbon)		</p>
+	
+			
+			<p>Discussant: Andrea Rossi (University of Arizona)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Corporate Finance: Labor Finance				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Friday, Jan 05			<br><i class="fa fa-clock-o"></i> 2:30 pm - 4:30 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon D</h6>
+				<h6>Session Chair: Elena Simintzi (University of North Carolina-Chapel Hill)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=9436">
+What Drives Finance Professors' Wages?</a>
+</h6>
+<p>
+		
+				<strong>Claire Celerier</strong> (University of Toronto)	<br>		
+				<strong>Boris Vallee</strong> (Harvard University)	<br>		
+				<strong>Alexey Vasilenko</strong> (University of Toronto)		</p>
+	
+			
+			<p>Discussant: Vincent Glode (University of Pennsylvania)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=15848">
+Pay, Productivity and Management</a>
+</h6>
+<p>
+		
+				<strong>Melanie Wallskog</strong> (Duke University)	<br>		
+				<strong>Nicholas Bloom</strong> (Stanford University)	<br>		
+				<strong>Scott Ohlmacher</strong> (Federal Reserve Board)	<br>		
+				<strong>Cristina Tello-Trillo</strong>		</p>
+	
+			
+			<p>Discussant: Alex Edmans (London Business School)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=26152">
+Too Many Managers: The Strategic Use of Titles to Avoid Overtime Payments</a>
+</h6>
+<p>
+		
+				<strong>Lauren Cohen</strong> (Harvard University)	<br>		
+				<strong>Umit Gurun</strong> (University of Texas-Dallas)	<br>		
+				<strong>N. Bugra Ozel</strong> (University of Texas-Dallas)		</p>
+	
+			
+			<p>Discussant: Bryan Seegmiller (Northwestern University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=27356">
+How Do Health Insurance Costs Affect Firm Labor Composition and Technology Investment?</a>
+</h6>
+<p>
+		
+				<strong>Janet Gao</strong> (Georgetown University)	<br>		
+				<strong>Shan Ge</strong> (New York University)	<br>		
+				<strong>Lawrence Schmidt</strong> (Massachusetts Institute of Technology)	<br>		
+				<strong>Cristina Tello-Trillo</strong>		</p>
+	
+			
+			<p>Discussant: Selale Tuzel (University of Southern California)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Corporate Finance: Corporate Disclosure				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Friday, Jan 05			<br><i class="fa fa-clock-o"></i> 2:30 pm - 4:30 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon B</h6>
+				<h6>Session Chair: Anne Beyer (Stanford University)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=46284">
+Moral Hazard and the Corporate Information Environment</a>
+</h6>
+<p>
+		
+				<strong>Dan Luo</strong> (University of Chicago)		</p>
+	
+			
+			<p>Discussant: Stefan Huber (Rice University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=8064">
+The Impact of Securities Regulation on New Keynesian Firms</a>
+</h6>
+<p>
+		
+				<strong>Erica X. N. Li</strong> (Cheung Kong Graduate School of Business)	<br>		
+				<strong>Pengfei Wang</strong> (Peking University)	<br>		
+				<strong>Jin Xie</strong> (Peking University)	<br>		
+				<strong>Ji Zhang</strong> (PBC School of Finance, Tsinghua University)		</p>
+	
+			
+			<p>Discussant: John Kepler (Stanford University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=28896">
+Competition Management in Corporate Filings</a>
+</h6>
+<p>
+		
+				<strong>Assaf Eisdorfer</strong> (University of Connecticut)	<br>		
+				<strong>Gideon Ozik</strong> (EDHEC Business School)	<br>		
+				<strong>Ronnie Sadka</strong> (Boston College)		</p>
+	
+			
+			<p>Discussant: Felipe Cabezon (Virginia Tech)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Corporate Finance: Innovation and Adaptation				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Friday, Jan 05			<br><i class="fa fa-clock-o"></i> 2:30 pm - 4:30 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon C</h6>
+				<h6>Session Chair: Emmanuel Yimfor (Columbia University)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=11844">
+Great Recession Babies: How Are Startups Shaped by Macro Conditions at Birth?</a>
+</h6>
+<p>
+		
+				<strong>Daniel Bias</strong> (Vanderbilt University)	<br>		
+				<strong>Alexander Ljungqvist</strong> (Stockholm School of Economics)		</p>
+	
+			
+			<p>Discussant: Isaac Hacamo (Indiana University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=24752">
+Human Capital Reallocation and Agglomeration of Innovation: Evidence from Technological Breakthroughs</a>
+</h6>
+<p>
+		
+				<strong>Jing Xue</strong> (Georgia State University)		</p>
+	
+			
+			<p>Discussant: Sabrina Howell (New York University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=43904">
+Labor Mobility, Human Capital Investment, and Technological Change</a>
+</h6>
+<p>
+		
+				<strong>Song Ma</strong> (Yale University)	<br>		
+				<strong>Wenyu Wang</strong> (Indiana University)	<br>		
+				<strong>Yufeng Wu</strong> (Ohio State University)		</p>
+	
+			
+			<p>Discussant: Xuelin Li (Columbia University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=20384">
+Excess Commitment in R&D</a>
+</h6>
+<p>
+		
+				<strong>Marius Guenzel</strong> (University of Pennsylvania)	<br>		
+				<strong>Tong Liu</strong> (Massachusetts Institute of Technology)		</p>
+	
+			
+			<p>Discussant: Alice Bonaime (University of Arizona)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Information in Credit Markets				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Friday, Jan 05			<br><i class="fa fa-clock-o"></i> 2:30 pm - 4:30 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon K & L</h6>
+				<h6>Session Chair: Boaz Abramson (Columbia University)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=50400">
+Relationship Banking and Credit Scores: Evidence from a Natural Experiment</a>
+</h6>
+<p>
+		
+				<strong>Maya Shaton</strong> (Ben-Gurion University)	<br>		
+				<strong>Tali Bank</strong> (Bank of Israel)	<br>		
+				<strong>Nimrod Segev</strong> (Bank of Israel)		</p>
+	
+			
+			<p>Discussant: Jillian Grennan (University of California-Berkeley)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=42784">
+Data and Welfare in Credit Markets</a>
+</h6>
+<p>
+		
+				<strong>Mark Jansen</strong> (University of Utah)	<br>		
+				<strong>Fabian Nagel</strong> (University of Chicago)	<br>		
+				<strong>Constantine Yannelis</strong> (University of Chicago)	<br>		
+				<strong>Anthony lee Zhang</strong> (University of Chicago)		</p>
+	
+			
+			<p>Discussant: Lulu Wang (Northwestern University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=43988">
+FinTech Lending with LowTech Pricing</a>
+</h6>
+<p>
+		
+				<strong>Mark Johnson</strong> (Brigham Young University)	<br>		
+				<strong>Itzhak Ben-David</strong> (Ohio State University)	<br>		
+				<strong>Jason Lee</strong>	<br>		
+				<strong>Vincent Yao</strong> (Georgia State University)		</p>
+	
+			
+			<p>Discussant: Tianyue Ruan (National University of Singapore)</p>
+	</div>
+	
+			</div>
+		
+			<div class="row">
+			<div class="col-12" style="background:#6b2f1d;margin-bottom:10px;margin-top:20px;">
+			<h4 style="margin-top:5px; margin-bottom:5px; color:#fff;">Saturday, Jan 06 &nbsp;|&nbsp; 8:00 am - 10:00 am CST</h4>
+			</div>
+			</div>
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Special Topics: Finance, Development, and Growth				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Saturday, Jan 06			<br><i class="fa fa-clock-o"></i> 8:00 am - 10:00 am CST		</div>
+					<h6>Location: Grand Ballroom Salon J</h6>
+				<h6>Session Chair: Dimitris Papanikolaou (Northwestern University)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=23996">
+The Real Costs of Washing Away Corruption:  Evidence from Brazilâs Lava Jato Investigation</a>
+</h6>
+<p>
+		
+				<strong>Claudio Ferraz</strong> (University of British Columbia)	<br>		
+				<strong>Luiz Moura</strong> (Brazilian School of Public and Business Administration (EBAPE), GetÃºlio Vargas Foundation)	<br>		
+				<strong>Lars Norden</strong> (Fundacao Getulio Vargas (FGV))	<br>		
+				<strong>Ricardo Schechtman</strong> (Banco Central do Brazil)		</p>
+	
+			
+			<p>Discussant: Jacopo Ponticelli (Northwestern University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=30828">
+Unleashing Mass Entrepreneurship: Firm-Level Evidence on the Impact of Chinaâs Registered Capital Reform</a>
+</h6>
+<p>
+		
+				<strong>Wei Cui</strong> (University of British Columbia)	<br>		
+				<strong>Mengying Wei</strong> (University of International Business and Economics)		</p>
+	
+			
+			<p>Discussant: Kim Cramer (London School of Economics)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=6384">
+Can Cashless Payments Spur Economic Growth</a>
+</h6>
+<p>
+		
+				<strong>Amiyatosh Purnanandam</strong> (University of Michigan)	<br>		
+				<strong>Tamanna singh Dubey</strong> (University of Michigan)		</p>
+	
+			
+			<p>Discussant: Apoorv Gupta (Dartmouth College)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=54488">
+Financial Remittances and Gender Inequality</a>
+</h6>
+<p>
+		
+				<strong>Dimitrios Minos</strong> (King's College London)	<br>		
+				<strong>Evgenia Passari</strong> (Paris Dauphine University)		</p>
+	
+			
+			<p>Discussant: Janis Skrastins (Washington University in St. Louis)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Predictability in a Characteristic-Rich World				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Saturday, Jan 06			<br><i class="fa fa-clock-o"></i> 8:00 am - 10:00 am CST		</div>
+					<h6>Location: Grand Ballroom Salon I</h6>
+				<h6>Session Chair: Michael Weber (University of Chicago)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=32508">
+Timing the Factor Zoo</a>
+</h6>
+<p>
+		
+				<strong>Andreas Neuhierl</strong> (Washington University in St. Louis)	<br>		
+				<strong>Otto Randl</strong> (Vienna University of Economics and Business Administration)	<br>		
+				<strong>Christoph Reschenhofer</strong> (Vienna University of Economics and Business Administration)	<br>		
+				<strong>Josef Zechner</strong> (Wirtschaftsuniversitat Wien)		</p>
+	
+			
+			<p>Discussant: Fahiz Baba Yara (Indiana University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=50512">
+Anomaly Predictability with the Mean-Variance Portfolio</a>
+</h6>
+<p>
+		
+				<strong>Alessandro Melone</strong> (Ohio State University)	<br>		
+				<strong>Carlo Ambrogio Favero</strong> (Bocconi University)	<br>		
+				<strong>Andrea G Tamoni</strong> (Rutgers University)		</p>
+	
+			
+			<p>Discussant: Valentin Haddad (University of California-Los Angeles)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=47908">
+Sources of Return Predictability</a>
+</h6>
+<p>
+		
+				<strong>Beata Gafka</strong> (University of Western Ontario)	<br>		
+				<strong>Pavel Savor</strong> (DePaul University)	<br>		
+				<strong>Mungo Wilson</strong> (University of Oxford)		</p>
+	
+			
+			<p>Discussant: Andreas Neuhierl (Washington University in St. Louis)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=5684">
+The Performance of Characteristic-Sorted Portfolios: Evaluating the Past and Predicting the Future</a>
+</h6>
+<p>
+		
+				<strong>Aydogan Alti</strong> (University of Texas-Austin)	<br>		
+				<strong>Travis Johnson</strong> (University of Texas-Austin)	<br>		
+				<strong>Sheridan Titman</strong> (University of Texas-Austin)		</p>
+	
+			
+			<p>Discussant: Shrihari Santosh (University of Maryland)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Asset Pricing: Safe Asset and Government Debt				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Saturday, Jan 06			<br><i class="fa fa-clock-o"></i> 8:00 am - 10:00 am CST		</div>
+					<h6>Location: Grand Ballroom Salon A</h6>
+				<h6>Session Chair: William Diamond (University of Pennsylvania)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=27860">
+When do Treasuries Earn the Convenience Yield? --- A Hedging Perspective</a>
+</h6>
+<p>
+		
+				<strong>Viral Acharya</strong> (New York University)	<br>		
+				<strong>Toomas Laarits</strong> (New York University)		</p>
+	
+			
+			<p>Discussant: Aditya Sunderam (Harvard University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=54208">
+Central Bankâs Balance Sheet and Treasury Markets Disruptions</a>
+</h6>
+<p>
+		
+				<strong>Adrien d'Avernas</strong> (Stockholm School of Economics)	<br>		
+				<strong>Quentin Vandeweyer</strong> (University of Chicago)	<br>		
+				<strong>Damon Petersen</strong> (University of Chicago)		</p>
+	
+			
+			<p>Discussant: Yiming Ma (Columbia University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=45444">
+The Imperfect Intermediation of Money-Like Assets</a>
+</h6>
+<p>
+		
+				<strong>Jeremy Stein</strong> (Harvard University)	<br>		
+				<strong>Jonathan Wallen</strong> (Harvard University)		</p>
+	
+			
+			<p>Discussant: Viral Acharya (New York University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=54180">
+The Zero-Beta Rate</a>
+</h6>
+<p>
+		
+				<strong>Sebastian Di Tella</strong> (Stanford University)	<br>		
+				<strong>Benjamin Hebert</strong> (Stanford University)	<br>		
+				<strong>Pablo Kurlat</strong> (University of Southern California)	<br>		
+				<strong>Qitong Wang</strong> (University of Southern California)		</p>
+	
+			
+			<p>Discussant: Tyler Muir (Yale University)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Financial Intermediation: Bank Competition				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Saturday, Jan 06			<br><i class="fa fa-clock-o"></i> 8:00 am - 10:00 am CST		</div>
+					<h6>Location: Grand Ballroom Salon D</h6>
+				<h6>Session Chair: Isil Erel (Ohio State University)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=23408">
+Instant Payment Systems and Competition for Deposits</a>
+</h6>
+<p>
+		
+				<strong>Sergey Sarkisyan</strong> (University of Pennsylvania)		</p>
+	
+			
+			<p>Discussant: Juliane Begenau (Stanford University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=48104">
+Will Central Bank Digital Currency Disintermediate Banks?</a>
+</h6>
+<p>
+		
+				<strong>Toni Whited</strong> (University of Michigan)	<br>		
+				<strong>Yufeng Wu</strong> (Ohio State University)	<br>		
+				<strong>Kairong Xiao</strong> (Columbia University)		</p>
+	
+			
+			<p>Discussant: Erica Xuewei Jiang (University of Southern California)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=49140">
+Nonbank Market Power in Leveraged Lending</a>
+</h6>
+<p>
+		
+				<strong>Franz Hinzen</strong> (Dartmouth College)		</p>
+	
+			
+			<p>Discussant: Sergey Chernenko (Purdue University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=52164">
+The Rise of Nonbanks and the Quality of Financial Services: Evidence from Consumer Complaints</a>
+</h6>
+<p>
+		
+				<strong>Ahmet Degerli</strong> (Federal Reserve Board)	<br>		
+				<strong>Jing Wang</strong> (University of Missouri)		</p>
+	
+			
+			<p>Discussant: Manasa Gopal (Georgia Institute of Technology)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Corporate Finance: Contracts and Incentives				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Saturday, Jan 06			<br><i class="fa fa-clock-o"></i> 8:00 am - 10:00 am CST		</div>
+					<h6>Location: Grand Ballroom Salon C</h6>
+				<h6>Session Chair: Adriano Rampini (Duke University)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=12040">
+The Optimality of Debt</a>
+</h6>
+<p>
+		
+				<strong>Pierre Chaigneau</strong> (Queen's University)	<br>		
+				<strong>Alex Edmans</strong> (London Business School)	<br>		
+				<strong>Daniel Gottlieb</strong>		</p>
+	
+			
+			<p>Discussant: Ernst Von thadden (University of Mannheim)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=16856">
+Household Debt Overhang and Human Capital Investment</a>
+</h6>
+<p>
+		
+				<strong>Gustavo Manso</strong> (University of California-Berkeley)	<br>		
+				<strong>Alejandro Rivera</strong> (University of Texas-Dallas)	<br>		
+				<strong>Hui Wang</strong> (Bentley University)	<br>		
+				<strong>Han Xia</strong> (University of Texas-Dallas)		</p>
+	
+			
+			<p>Discussant: Constantine Yannelis (University of Chicago)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=37436">
+Monitoring with Small Stakes: Evidence from Leveraged Loans</a>
+</h6>
+<p>
+		
+				<strong>Sheila Jiang</strong> (University of Florida)	<br>		
+				<strong>Shohini Kundu</strong> (University of California-Los Angeles)	<br>		
+				<strong>Douglas Xu</strong> (University of Florida)		</p>
+	
+			
+			<p>Discussant: Bo Becker (Stockholm School of Economics)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Asset Pricing: ESG and Sustainable Finance				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Saturday, Jan 06			<br><i class="fa fa-clock-o"></i> 8:00 am - 10:00 am CST		</div>
+					<h6>Location: Grand Ballroom Salon K & L</h6>
+				<h6>Session Chair: Anna Pavlova (London Business School)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=46816">
+Understanding the Global Equity Greenium</a>
+</h6>
+<p>
+		
+				<strong>Andrew Karolyi</strong> (Cornell University)	<br>		
+				<strong>Ying Wu</strong> (Stevens Institute of Technology)	<br>		
+				<strong>William Xiong</strong> (Cornell University)		</p>
+	
+			
+			<p>Discussant: Laura Starks (University of Texas-Austin)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=7364">
+Unpacking the Demand for Sustainable Equity Investing</a>
+</h6>
+<p>
+		
+				<strong>Sangmin Oh</strong> (University of Chicago)	<br>		
+				<strong>Don Noh</strong> (Princeton University)	<br>		
+				<strong>Jihong Song</strong> (Princeton University)		</p>
+	
+			
+			<p>Discussant: Philippe van der Beck (Swiss Federal Institute of Technology Lausanne)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=22260">
+Future of Emissions</a>
+</h6>
+<p>
+		
+				<strong>Jules Van Binsbergen</strong> (University of Pennsylvania)	<br>		
+				<strong>Andreas BrÃ¸gger</strong> (RSM, Erasmus University)		</p>
+	
+			
+			<p>Discussant: Jian Li (Columbia University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=44996">
+Do Investors Care About Biodiversity?</a>
+</h6>
+<p>
+		
+				<strong>Alexandre Garel</strong> (Audencia Business School)	<br>		
+				<strong>Arthur Romec</strong> (Toulouse Business School)	<br>		
+				<strong>Zacharias Sautner</strong> (University of Zurich)	<br>		
+				<strong>Alexander Wagner</strong> (University of Zurich)		</p>
+	
+			
+			<p>Discussant: Julian Koelbel (University of St. Gallen)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Corporate Finance:  New Valuation Factors				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Saturday, Jan 06			<br><i class="fa fa-clock-o"></i> 8:00 am - 10:00 am CST		</div>
+					<h6>Location: Grand Ballroom Salon B</h6>
+				<h6>Session Chair: Wei Jiang (Emory University)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=50148">
+Tracing Out International Data Flow: the Value of Data and Privacy</a>
+</h6>
+<p>
+		
+				<strong>Junjun Quan</strong> (Columbia University)		</p>
+	
+			
+			<p>Discussant: Anastassia Fedyk (University of California-Berkeley)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=46928">
+How Financial Markets Create Superstars</a>
+</h6>
+<p>
+		
+				<strong>Spyros Terovitis</strong> (University of Amsterdam)	<br>		
+				<strong>Vladimir Vladimirov</strong> (University of Amsterdam)		</p>
+	
+			
+			<p>Discussant: Doron Levit (University of Washington)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=37408">
+Politicization of the Supreme Court and Firm Value: Evidence from Ruth Bader Ginsburgâs Death</a>
+</h6>
+<p>
+		
+				<strong>Tor-erik Bakke</strong> (University of Illinois-Chicago)	<br>		
+				<strong>Hamed Mahmudi</strong> (University of Delaware)	<br>		
+				<strong>Aazam Virani</strong> (University of Arizona)	<br>		
+				<strong>Song Zhang</strong> (University of Delaware)		</p>
+	
+			
+			<p>Discussant: Elisabeth Kempf (Harvard University)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Financial Intermediation: Banking - General				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Saturday, Jan 06			<br><i class="fa fa-clock-o"></i> 8:00 am - 10:00 am CST		</div>
+					<h6>Location: Grand Ballroom Salon M</h6>
+				<h6>Session Chair: Filippo De Marco (Bocconi University)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=39284">
+Bank Private Information in CDS Markets</a>
+</h6>
+<p>
+		
+				<strong>Andrada Bilan</strong> (Swiss National Bank)	<br>		
+				<strong>Steven Ongena</strong> (University of Zurich)	<br>		
+				<strong>Cosimo Pancaro</strong> (European Central Bank)		</p>
+	
+			
+			<p>Discussant: Sascha Steffen (Frankfurt School of Finance and Management gGmbH)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=44296">
+Why Does the Yield Curve Predict GDP Growth? The Role of Banks</a>
+</h6>
+<p>
+		
+				<strong>Camelia Minoiu</strong>	<br>		
+				<strong>Andres Schneider</strong> (Federal Reserve Board)	<br>		
+				<strong>Min Wei</strong> (Federal Reserve Board)		</p>
+	
+			
+			<p>Discussant: Diane Pierret (University of Luxembourg)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=49056">
+The Network Structure of Money Multiplier</a>
+</h6>
+<p>
+		
+				<strong>Ye Li</strong> (University of Washington)	<br>		
+				<strong>Yi Li</strong> (Federal Reserve Board)	<br>		
+				<strong>Huijun Sun</strong> (Columbia University)		</p>
+	
+			
+			<p>Discussant: Ana Babus (Washington University in St. Louis)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=11088">
+Leverage Regulations and Treasury Market Participation: Evidence from Credit Line Drawdowns</a>
+</h6>
+<p>
+		
+				<strong>Giovanni Favara</strong> (Federal Reserve Board)	<br>		
+				<strong>Sebastian Infante</strong> (Federal Reserve Board)	<br>		
+				<strong>Marcelo Rezende</strong> (Federal Reserve Board)		</p>
+	
+			
+			<p>Discussant: Filippo De Marco (Bocconi University)</p>
+	</div>
+	
+			</div>
+		
+			<div class="row">
+			<div class="col-12" style="background:#6b2f1d;margin-bottom:10px;margin-top:20px;">
+			<h4 style="margin-top:5px; margin-bottom:5px; color:#fff;">Saturday, Jan 06 &nbsp;|&nbsp; 10:15 am - 12:15 pm CST</h4>
+			</div>
+			</div>
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Origins of Risk Factors and Anomalies				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Saturday, Jan 06			<br><i class="fa fa-clock-o"></i> 10:15 am - 12:15 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon K & L</h6>
+				<h6>Session Chair: Svetlana Bryzgalova (London Business School)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=49000">
+Anomalies Never Disappeared: The Case of Stubborn Retail Trading</a>
+</h6>
+<p>
+		
+				<strong>Xi Dong</strong> (CUNY-Baruch College)	<br>		
+				<strong>Cathy Yuqing Yang</strong> (CUNY-Baruch College)		</p>
+	
+			
+			<p>Discussant: Michaela Pagel (Washington University in St. Louis)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=17808">
+Wisdom of the Institutional Crowd: Implications for Anomaly Returns</a>
+</h6>
+<p>
+		
+				<strong>AJ Yuan Chen</strong> (University of Southern California)	<br>		
+				<strong>Gerard Hoberg</strong> (University of Southern California)	<br>		
+				<strong>Miao Zhang</strong> (University of Southern California)		</p>
+	
+			
+			<p>Discussant: Marina Niessner (University of Pennsylvania)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=37548">
+Fundamental Anomalies</a>
+</h6>
+<p>
+		
+				<strong>Erica X.N, Li</strong> (Cheung Kong Graduate School of Business)	<br>		
+				<strong>Guoliang Ma</strong> (Iowa State University)	<br>		
+				<strong>Shujing Wang</strong> (Tongji University)	<br>		
+				<strong>Cindy Yu</strong> (Iowa State University)		</p>
+	
+			
+			<p>Discussant: Yao Deng (University of Connecticut)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=8400">
+Peer-Reviewed Theory does not help Predict the Cross-Section of Stock Returns</a>
+</h6>
+<p>
+		
+				<strong>Andrew Chen</strong> (Federal Reserve Board)	<br>		
+				<strong>Alejandro Lopez-Lira</strong> (University of Florida)	<br>		
+				<strong>Tom Zimmermann</strong> (University of Cologne)		</p>
+	
+			
+			<p>Discussant: Theis Jensen (Yale University)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Financial Intermediation: Monetary Policy Transmission				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Saturday, Jan 06			<br><i class="fa fa-clock-o"></i> 10:15 am - 12:15 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon D</h6>
+				<h6>Session Chair: Moritz Lenel (Princeton University)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=19376">
+Heterogeneous Intermediaries and Bond Characteristics in the Transmission of Monetary Policy</a>
+</h6>
+<p>
+		
+				<strong>Federic Holm-Hadulla</strong> (European Central Bank)	<br>		
+				<strong>Matteo Leombroni</strong> (Stanford University)		</p>
+	
+			
+			<p>Discussant: Lira Mota (Massachusetts Institute of Technology)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=7672">
+Stop Believing in Reserves</a>
+</h6>
+<p>
+		
+				<strong>Sriya Anbil</strong> (Federal Reserve Board)	<br>		
+				<strong>Alyssa Anderson</strong> (Federal Reserve Board)	<br>		
+				<strong>Ethan Cohen</strong> (Federal Reserve Board)	<br>		
+				<strong>Romina Ruprecht</strong> (Federal Reserve Board)		</p>
+	
+			
+			<p>Discussant: Yiming Ma (Columbia University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=24808">
+Lending by Servicing: Monetary Policy Transmission through Shadow Banks</a>
+</h6>
+<p>
+		
+				<strong>Isha Agarwal</strong> (University of British Columbia)	<br>		
+				<strong>Malin Hu</strong> (Vanderbilt University)	<br>		
+				<strong>Raluca Roman</strong> (Federal Reserve Bank of Philadelphia)	<br>		
+				<strong>Keling Zheng</strong> (University of British Columbia)		</p>
+	
+			
+			<p>Discussant: Michael Reher (University of California-San Diego)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Is Sustainable Investing Sustainable?				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Saturday, Jan 06			<br><i class="fa fa-clock-o"></i> 10:15 am - 12:15 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon M</h6>
+				<h6>Session Chair: Samuel Hartzmark (Boston College)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=12516">
+The CO2 Question: Technical Progress and the Climate Crisis</a>
+</h6>
+<p>
+		
+				<strong>Patrick Bolton</strong> (Columbia University)	<br>		
+				<strong>Marcin Kacperczyk</strong> (Imperial College London)	<br>		
+				<strong>Moritz Wiedemann</strong> (Imperial College London)		</p>
+	
+			
+			<p>Discussant: Lauren Cohen (Harvard University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=12908">
+Sustainability or Greenwashing:  Evidence from the Asset Market for Industrial Pollution</a>
+</h6>
+<p>
+		
+				<strong>Ran Duchin</strong> (Boston College)	<br>		
+				<strong>Janet Gao</strong> (Georgetown University)	<br>		
+				<strong>Qiping Xu</strong> (University of Illinois)		</p>
+	
+			
+			<p>Discussant: Elisabeth Kempf (Harvard University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=20356">
+Why Do Investors Pay Higher Fees for Sustainable Investments? An Experiment in Five European Countries</a>
+</h6>
+<p>
+		
+				<strong>Daniel Engler</strong> (University of Kassel)	<br>		
+				<strong>Gunnar Gutsche</strong> (University of Kassel)	<br>		
+				<strong>Paul Smeets</strong> (University of Amsterdam)		</p>
+	
+			
+			<p>Discussant: Parinitha Sastry (Columbia University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=54320">
+Four Facts about ESG Beliefs and Investor Portfolios</a>
+</h6>
+<p>
+		
+				<strong>Stefano Giglio</strong> (Yale University)	<br>		
+				<strong>Matteo Maggiori</strong> (Harvard University)	<br>		
+				<strong>Johannes Stroebel</strong> (New York University)	<br>		
+				<strong>Zhenhao Tan</strong> (Yale University)	<br>		
+				<strong>Stephen Utkus</strong> (Vanguard Center for Investor Research)	<br>		
+				<strong>Xiao Xu</strong> (Vanguard Group)		</p>
+	
+			
+			<p>Discussant: Luke Taylor (University of Pennsylvania)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Mutual Fund Flows				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Saturday, Jan 06			<br><i class="fa fa-clock-o"></i> 10:15 am - 12:15 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon I</h6>
+				<h6>Session Chair: Clemens Sialm (University of Texas-Austin)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=20496">
+Financial Product Incentives to Differentiate: Evidence from Mutual Funds</a>
+</h6>
+<p>
+		
+				<strong>Maxime Bonelli</strong> (London Business School)	<br>		
+				<strong>Anastasia Buyalskaya</strong> (HEC - Paris)	<br>		
+				<strong>Tianhao Yao</strong> (HEC - Paris)		</p>
+	
+			
+			<p>Discussant: Simona Abis (Columbia University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=42476">
+Institutional Synergies and the Fragility of Loan Funds</a>
+</h6>
+<p>
+		
+				<strong>Mustafa Emin</strong> (Tulane University)	<br>		
+				<strong>Christopher James</strong> (University of Florida)	<br>		
+				<strong>Tao Li</strong> (University of Florida)	<br>		
+				<strong>Jing Lu</strong> (University of Florida)		</p>
+	
+			
+			<p>Discussant: Victoria Ivashina (Harvard University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=17640">
+âBuy the Rumor, Sell the Newsâ: Liquidity Provision by Bond Funds Following Corporate News Events</a>
+</h6>
+<p>
+		
+				<strong>Alan Huang</strong> (University of Waterloo)	<br>		
+				<strong>Russell Wermers</strong> (University of Maryland)	<br>		
+				<strong>Jinming Xue</strong> (Southern Methodist University)		</p>
+	
+			
+			<p>Discussant: Jennie Bai (Georgetown University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=22512">
+Stock Demand and Price Impact of 401(k) Plans</a>
+</h6>
+<p>
+		
+				<strong>Riccardo Sabbatucci</strong> (Stockholm School of Economics)	<br>		
+				<strong>Andrea G Tamoni</strong> (Rutgers University)	<br>		
+				<strong>Song Xiao</strong> (London School of Economics and Political Science)		</p>
+	
+			
+			<p>Discussant: Lukas Schmid</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Corporate Finance: Capital Structure and Payout Policy				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Saturday, Jan 06			<br><i class="fa fa-clock-o"></i> 10:15 am - 12:15 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon B</h6>
+				<h6>Session Chair: Efraim Benmelech (Northwestern University)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=40012">
+Modeling Managers As EPS Maximizers</a>
+</h6>
+<p>
+		
+				<strong>Itzhak Ben-David</strong> (Ohio State University)	<br>		
+				<strong>Alexander Chinco</strong> (CUNY-Baruch College)		</p>
+	
+			
+			<p>Discussant: Yaron Levi (University of Southern California)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=49980">
+Before the Storm: Firm Policies and Varying Recession Risk</a>
+</h6>
+<p>
+		
+				<strong>Ali Kakhbod</strong> (University of California-Berkeley)	<br>		
+				<strong>Tarik Umar</strong> (Rice University)	<br>		
+				<strong>Dmitry Livdan</strong> (University of California-Berkeley)	<br>		
+				<strong>Max Reppen</strong> (Boston University)		</p>
+	
+			
+			<p>Discussant: Juliana Salomao (University of Minnesota)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=32172">
+Debt Maturity and Commitment</a>
+</h6>
+<p>
+		
+				<strong>Andrea Gamba</strong> (University of Warwick)	<br>		
+				<strong>Alessio Saretto</strong> (Federal Reserve Bank of Dallas)		</p>
+	
+			
+			<p>Discussant: Yunzhi Hu (University of North Carolina-Chapel Hill)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Asset Pricing: Household Finance				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Saturday, Jan 06			<br><i class="fa fa-clock-o"></i> 10:15 am - 12:15 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon A</h6>
+				<h6>Session Chair: Laurent Calvet (SKEMA Business School)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=16744">
+A Simple Mapping from MPCs to MPXs</a>
+</h6>
+<p>
+		
+				<strong>David Laibson</strong> (Harvard University)	<br>		
+				<strong>Peter Maxted</strong> (University of California-Berkeley)	<br>		
+				<strong>Benjamin Moll</strong> (London School of Economics)		</p>
+	
+			
+			<p>Discussant: Stijn Van nieuwerburgh (Columbia University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=14756">
+Hedging Permanent Income Shocks</a>
+</h6>
+<p>
+		
+				<strong>Raffaele Corvino</strong> (University of Torino)	<br>		
+				<strong>Fabio-cesare Bagliano</strong> (University of Turin)	<br>		
+				<strong>Carolina Fugazza</strong> (University of Turin)	<br>		
+				<strong>Giovanna Nicodano</strong> (University of Turin and Collegio Carlo Alberto)		</p>
+	
+			
+			<p>Discussant: Luis Viceira (Harvard University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=8568">
+House Price Expectations and Consumer Spending.</a>
+</h6>
+<p>
+		
+				<strong>Benjamin Appianin</strong> (City University of Hong Kong)		</p>
+	
+			
+			<p>Discussant: Tobin Hanspal (Vienna University of Economics and Business Administration)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=40684">
+Individual Investorsâ Housing Income and Interest Rates Fluctuations</a>
+</h6>
+<p>
+		
+				<strong>Antonio Gargano</strong> (University of Houston)	<br>		
+				<strong>Marco Giacoletti</strong> (University of Southern California)		</p>
+	
+			
+			<p>Discussant: Laurent Bach (ESSEC Business School, Paris)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Corporate Finance: Mergers and Acquisitions				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Saturday, Jan 06			<br><i class="fa fa-clock-o"></i> 10:15 am - 12:15 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon C</h6>
+				<h6>Session Chair: Zhe Wang (Pennsylvania State University)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=25228">
+The Incentives of SPAC Sponsors</a>
+</h6>
+<p>
+		
+				<strong>Felix Feng</strong> (University of Washington)	<br>		
+				<strong>Thomas Nohel</strong> (Loyola University Chicago)	<br>		
+				<strong>Xuan Tian</strong> (Tsinghua University)	<br>		
+				<strong>Wenyu Wang</strong> (Indiana University)	<br>		
+				<strong>Yufeng Wu</strong> (Ohio State University)		</p>
+	
+			
+			<p>Discussant: Barney Hartman-glaser (University of California-Los Angeles)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=36876">
+Negotiation, auction, or negotiauction?! Evidence from the field</a>
+</h6>
+<p>
+		
+				<strong>Tingting Liu</strong> (Iowa State University)	<br>		
+				<strong>Micah Officer</strong> (Loyola Marymount University)	<br>		
+				<strong>Danni Tu</strong> (Southern Illinois University Carbondale)		</p>
+	
+			
+			<p>Discussant: Leonce Bargeron</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=40740">
+Specialized Investments and Firmsâ Boundaries: Evidence from Textual Analysis of Patents</a>
+</h6>
+<p>
+		
+				<strong>Jan Bena</strong> (University of British Columbia)	<br>		
+				<strong>Isil Erel</strong> (Ohio State University)	<br>		
+				<strong>Daisy Wang</strong> (Ohio State University)	<br>		
+				<strong>Michael Weisbach</strong> (Ohio State University)		</p>
+	
+			
+			<p>Discussant: Stefan Lewellen (Pennsylvania State University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=42756">
+Identifying the Real Effects of the M&A Market on Target Firms</a>
+</h6>
+<p>
+		
+				<strong>Elizabeth Berger</strong> (University of Houston)	<br>		
+				<strong>David De Angelis</strong> (University of Houston)	<br>		
+				<strong>Gustavo Grullon</strong> (Rice University)		</p>
+	
+			
+			<p>Discussant: Kai Li (University of British Columbia)</p>
+	</div>
+	
+			</div>
+		
+			<div class="row">
+			<div class="col-12" style="background:#6b2f1d;margin-bottom:10px;margin-top:20px;">
+			<h4 style="margin-top:5px; margin-bottom:5px; color:#fff;">Saturday, Jan 06 &nbsp;|&nbsp; 2:30 pm - 4:30 pm CST</h4>
+			</div>
+			</div>
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Asset Pricing: Machine Learning				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Saturday, Jan 06			<br><i class="fa fa-clock-o"></i> 2:30 pm - 4:30 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon A</h6>
+				<h6>Session Chair: Serhiy Kozak (University of Maryland)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=22036">
+Asset-Pricing Factors with Economic Targets</a>
+</h6>
+<p>
+		
+				<strong>Svetlana Bryzgalova</strong> (London Business School)	<br>		
+				<strong>Victor Demiguel</strong> (London Business School)	<br>		
+				<strong>Sicong Li</strong> (London Business School)	<br>		
+				<strong>Markus Pelger</strong> (Stanford University)		</p>
+	
+			
+			<p>Discussant: Andreas Neuhierl (Washington University in St. Louis)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=28840">
+Forecasting and Managing Correlation Risks</a>
+</h6>
+<p>
+		
+				<strong>Tim Bollerslev</strong> (Duke University)	<br>		
+				<strong>Sophia Zhengzi Li</strong> (Rutgers University)	<br>		
+				<strong>Yushan Tang</strong> (Rutgers University)		</p>
+	
+			
+			<p>Discussant: Nicola Fusari (Johns Hopkins University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=32368">
+Machine Learning and the Implementable Efficient Frontier</a>
+</h6>
+<p>
+		
+				<strong>Theis Jensen</strong> (Yale University)	<br>		
+				<strong>Bryan Kelly</strong> (Yale University)	<br>		
+				<strong>Lasse Pedersen</strong> (Copenhagen Business School)	<br>		
+				<strong>Semyon Malamud</strong> (Swiss Federal Institute of Technology Lausanne)		</p>
+	
+			
+			<p>Discussant: Andrew Chen (Federal Reserve Board)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=37996">
+Maximizing the Sharpe Ratio: A Genetic Programming Approach</a>
+</h6>
+<p>
+		
+				<strong>Yang Liu</strong> (Hunan University)	<br>		
+				<strong>Guofu Zhou</strong> (Washington University in St. Louis)	<br>		
+				<strong>Yingzi Zhu</strong> (Tsinghua University)		</p>
+	
+			
+			<p>Discussant: Serhiy Kozak (University of Maryland)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Corporate Finance: Bankruptcy and Distress				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Saturday, Jan 06			<br><i class="fa fa-clock-o"></i> 2:30 pm - 4:30 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon C</h6>
+				<h6>Session Chair: Dalida Kadyrzhanova (Federal Reserve Board)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=14084">
+The Cost of Intermediary Market Power for Distressed Borrowers</a>
+</h6>
+<p>
+		
+				<strong>Winston Dou</strong> (University of Pennsylvania)	<br>		
+				<strong>Wei Wang</strong> (Queens University)	<br>		
+				<strong>Wenyu Wang</strong> (Indiana University)		</p>
+	
+			
+			<p>Discussant: Arthur Taburet (Duke University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=18340">
+Resolving Financial Distress Where Property Rights are not Clearly Defined: The Case of China</a>
+</h6>
+<p>
+		
+				<strong>Julian Franks</strong> (London Business School)	<br>		
+				<strong>Meng Miao</strong> (Renmin University of China)	<br>		
+				<strong>Oren Sussman</strong> (University of Oxford)		</p>
+	
+			
+			<p>Discussant: Jacopo Ponticelli (Northwestern University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=42000">
+After the Storm: Direct and Spillover Benefits from Disaster Loans to Small Businesses</a>
+</h6>
+<p>
+		
+				<strong>Sabrina Howell</strong> (New York University)	<br>		
+				<strong>Benjamin Collier</strong> (Temple University)	<br>		
+				<strong>Lea Rendell</strong> (University of Maryland)		</p>
+	
+			
+			<p>Discussant: Raymond Kluender (Harvard University)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Asset Pricing: Portfolio Choice and Asset Allocation				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Saturday, Jan 06			<br><i class="fa fa-clock-o"></i> 2:30 pm - 4:30 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon B</h6>
+				<h6>Session Chair: Nikolai Roussanov (University of Pennsylvania)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=4340">
+Model Ambiguity versus Model Misspecification in Dynamic Portfolio Choice and Asset Pricing</a>
+</h6>
+<p>
+		
+				<strong>Anne Balter</strong> (Tilburg University)	<br>		
+				<strong>Pascal Maenhout</strong> (INSEAD)	<br>		
+				<strong>Hao Xing</strong> (Boston University)		</p>
+	
+			
+			<p>Discussant: Philipp Illeditsch (Texas A&M University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=4508">
+Asset Demand of U.S. Households</a>
+</h6>
+<p>
+		
+				<strong>Xavier Gabaix</strong> (Harvard University)	<br>		
+				<strong>Ralph Koijen</strong> (University of Chicago)	<br>		
+				<strong>Federico Mainardi</strong> (University of Chicago)	<br>		
+				<strong>Sangmin Oh</strong> (University of Chicago)	<br>		
+				<strong>Motohiro Yogo</strong> (Princeton University)		</p>
+	
+			
+			<p>Discussant: Valentin Haddad (University of California-Los Angeles)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=34720">
+Financial Windfalls, Portfolio Allocations, and Risk Preferences</a>
+</h6>
+<p>
+		
+				<strong>Joseph Briggs</strong> (Federal Reserve Board)	<br>		
+				<strong>David Cesarini</strong> (New York University)	<br>		
+				<strong>Sean Lee</strong> (Harvard University)	<br>		
+				<strong>Erik Lindqvist</strong> (Stockholm University)	<br>		
+				<strong>Robert Ostling</strong> (Stockholm School of Economics)		</p>
+	
+			
+			<p>Discussant: Sylvain Catherine (University of Pennsylvania)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=53956">
+Wealth Dynamics and Financial Market Power</a>
+</h6>
+<p>
+		
+				<strong>Michael Sockin</strong> (University of Texas-Austin)	<br>		
+				<strong>Daniel Neuhann</strong> (University of Texas)		</p>
+	
+			
+			<p>Discussant: Matthieu Gomez (Columbia University)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Corporate Finance: Behavioral				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Saturday, Jan 06			<br><i class="fa fa-clock-o"></i> 2:30 pm - 4:30 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon D</h6>
+				<h6>Session Chair: Lin Peng (CUNY-Baruch College)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=35224">
+A Theory of Fair CEO Pay</a>
+</h6>
+<p>
+		
+				<strong>Pierre Chaigneau</strong> (Queen's University)	<br>		
+				<strong>Alex Edmans</strong> (London Business School)	<br>		
+				<strong>Daniel Gottlieb</strong>		</p>
+	
+			
+			<p>Discussant: Ron Kaniel (University of Rochester)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=9296">
+Does Greater Public Scrutiny Hurt a Firmâs Performance?</a>
+</h6>
+<p>
+		
+				<strong>Benjamin Bennett</strong> (Tulane University)	<br>		
+				<strong>Rene Stulz</strong> (Ohio State University)	<br>		
+				<strong>Zexi Wang</strong> (Lancaster University)		</p>
+	
+			
+			<p>Discussant: Zhi Da (University of Notre Dame)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=18732">
+The Real Effects of Sentiment and Uncertainty</a>
+</h6>
+<p>
+		
+				<strong>Justin Birru</strong> (Ohio State University)	<br>		
+				<strong>Trevor Young</strong> (Tulane University)		</p>
+	
+			
+			<p>Discussant: R. david Mclean (Georgetown University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=30576">
+The Impact of Beliefs on Credit Markets: Evidence from Rating Agencies</a>
+</h6>
+<p>
+		
+				<strong>Chen Wang</strong> (University of Notre Dame)	<br>		
+				<strong>Gregory Weitzner</strong> (McGill University)		</p>
+	
+			
+			<p>Discussant: Marco Giacoletti</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Financial Intermediation and Crises				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Saturday, Jan 06			<br><i class="fa fa-clock-o"></i> 2:30 pm - 4:30 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon M</h6>
+				<h6>Session Chair: Carola Frydman (Northwestern University)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=27496">
+Going for Broke: Underwriter Reputation and the Performance of Mortgage-Backed Securities</a>
+</h6>
+<p>
+		
+				<strong>Abe De Jong</strong> (Monash University)	<br>		
+				<strong>Tim Kooijmans</strong> (RMIT University)	<br>		
+				<strong>Peter Koudijs</strong> (Erasmus University)		</p>
+	
+			
+			<p>Discussant: Chenzi Xu (Stanford University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=41300">
+Nonbank Fragility in Credit Markets: Evidence from a Two-Layer Asset Demand System</a>
+</h6>
+<p>
+		
+				<strong>Olivier Darmouni</strong> (Columbia University)	<br>		
+				<strong>Kerry Siani</strong> (Massachusetts Institute of Technology)	<br>		
+				<strong>Kairong Xiao</strong> (Columbia University)		</p>
+	
+			
+			<p>Discussant: Tyler Muir (University of California-Los Angeles)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=54404">
+Monetary Tightening and U.S. Bank Fragility in 2023: Mark-to-Market Losses and Uninsured Depositor Runs?</a>
+</h6>
+<p>
+		
+				<strong>Erica Xuewei Jiang</strong> (University of Southern California)	<br>		
+				<strong>Gregor Matvos</strong> (Northwestern University)	<br>		
+				<strong>Tomasz Piskorski</strong> (Columbia University)	<br>		
+				<strong>Amit Seru</strong> (Stanford University)		</p>
+	
+			
+			<p>Discussant: Itay Goldstein (University of Pennsylvania)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Special Topics: Finance and Race				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Saturday, Jan 06			<br><i class="fa fa-clock-o"></i> 2:30 pm - 4:30 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon K & L</h6>
+				<h6>Session Chair: Rohan Williamson (Georgetown University)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=25564">
+Explaining Racial Disparities in Personal Bankruptcy Outcomes</a>
+</h6>
+<p>
+		
+				<strong>Bronson Argyle</strong> (Brigham Young University)	<br>		
+				<strong>Sasha Indarte</strong> (University of Pennsylvania)	<br>		
+				<strong>Benjamin Iverson</strong> (Brigham Young University)	<br>		
+				<strong>Christopher Palmer</strong> (Massachusetts Institute of Technology)		</p>
+	
+			
+			<p>Discussant: Erik Mayer (University of Wisconsin-Madison)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=31780">
+Racial Integration and Active Investing</a>
+</h6>
+<p>
+		
+				<strong>Victor chen</strong> (University of Manitoba)	<br>		
+				<strong>Gady Jacoby</strong>	<br>		
+				<strong>Hao Jiang</strong> (Michigan State University)	<br>		
+				<strong>Chi Liao</strong> (University of Manitoba)	<br>		
+				<strong>Lei Lu</strong> (University of Manitoba)		</p>
+	
+			
+			<p>Discussant: Leonard Kostovetsky (CUNY-Baruch College)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=43064">
+Who Do You Vote For? Same-Race Voting Preferences in Director Elections</a>
+</h6>
+<p>
+		
+				<strong>Johan Sulaeman</strong> (National University of Singapore)	<br>		
+				<strong>Qiaozhi Ye</strong> (National University of Singapore)		</p>
+	
+			
+			<p>Discussant: Laura Field (University of Delaware)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=51548">
+Racial Segmentation in the US Housing Market</a>
+</h6>
+<p>
+		
+				<strong>Brian Higgins</strong> (Harvard University)		</p>
+	
+			
+			<p>Discussant: Troup Howard (University of Utah)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Raising Funds for Private Firms				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Saturday, Jan 06			<br><i class="fa fa-clock-o"></i> 2:30 pm - 4:30 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon I</h6>
+				<h6>Session Chair: Carola Schenone (University of Virginia)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=46704">
+Irreplaceable Venture Capitalists</a>
+</h6>
+<p>
+		
+				<strong>Michael Ewens</strong> (Columbia University)	<br>		
+				<strong>Denis Sosyura</strong> (Arizona State University)		</p>
+	
+			
+			<p>Discussant: Sabrina Howell (New York University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=16268">
+Private Equity and Debt Contract Enforcement: Evidence from Covenant Violations</a>
+</h6>
+<p>
+		
+				<strong>Sharjil Haque</strong> (Federal Reserve Board)	<br>		
+				<strong>Anya Kleymenova</strong> (Federal Reserve Board)		</p>
+	
+			
+			<p>Discussant: Ivan Ivanov (Federal Reserve Bank of Chicago)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=53284">
+A Model of Informed Intermediation in the Market for Going Public</a>
+</h6>
+<p>
+		
+				<strong>Aydogan Alti</strong> (University of Texas-Austin)	<br>		
+				<strong>Jonathan Cohn</strong> (University of Texas-Austin)		</p>
+	
+			
+			<p>Discussant: Christopher Yung</p>
+	</div>
+	
+			</div>
+		
+			<div class="row">
+			<div class="col-12" style="background:#6b2f1d;margin-bottom:10px;margin-top:20px;">
+			<h4 style="margin-top:5px; margin-bottom:5px; color:#fff;">Sunday, Jan 07 &nbsp;|&nbsp; 8:00 am - 10:00 am CST</h4>
+			</div>
+			</div>
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Asset Pricing: International Finance				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Sunday, Jan 07			<br><i class="fa fa-clock-o"></i> 8:00 am - 10:00 am CST		</div>
+					<h6>Location: Grand Ballroom Salon B</h6>
+				<h6>Session Chair: Juliana Salomao (University of Minnesota)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=9464">
+Dollar Asset Holding and Hedging Around the Globe</a>
+</h6>
+<p>
+		
+				<strong>Amy Huber</strong> (University of Pennsylvania)	<br>		
+				<strong>Wenxin Du</strong> (University of Chicago)		</p>
+	
+			
+			<p>Discussant: Tony Zhang (Federal Reserve Board)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=19460">
+Can Time Varying Currency Risk Hedging Explain Exchange Rates?</a>
+</h6>
+<p>
+		
+				<strong>Leonie Braeuer</strong> (Swiss Finance Institute - University of Geneva)	<br>		
+				<strong>Harald Hau</strong> (Geneva Finance Research Institute)		</p>
+	
+			
+			<p>Discussant: Falk Braeuning (Federal Reserve Bank of Boston)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=36008">
+Understanding the Strength of the Dollar</a>
+</h6>
+<p>
+		
+				<strong>Zhengyang Jiang</strong> (Northwestern University)	<br>		
+				<strong>Robert Richmond</strong> (New York University)	<br>		
+				<strong>Tony Zhang</strong> (Federal Reserve Board)		</p>
+	
+			
+			<p>Discussant: Antonio Coppola (Stanford University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=47320">
+What do Financial Markets say About the Exchange Rate?</a>
+</h6>
+<p>
+		
+				<strong>Mikhail Chernov</strong> (University of California-Los Angeles)	<br>		
+				<strong>Valentin Haddad</strong> (University of California-Los Angeles)	<br>		
+				<strong>Oleg Itskhoki</strong> (University of California-Los Angeles)		</p>
+	
+			
+			<p>Discussant: Moritz Lenel (Princeton University)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Corporate Bond Markets				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Sunday, Jan 07			<br><i class="fa fa-clock-o"></i> 8:00 am - 10:00 am CST		</div>
+					<h6>Location: Grand Ballroom Salon D</h6>
+				<h6>Session Chair: Carolin Pflueger (University of Chicago)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=14308">
+Passive Demand and Active Supply: Evidence from Maturity-mandated Corporate Bond Funds</a>
+</h6>
+<p>
+		
+				<strong>Lorenzo Bretscher</strong> (University of Lausanne and Swiss Finance Institute)	<br>		
+				<strong>Lukas Schmid</strong>	<br>		
+				<strong>Tiange Ye</strong> (University of Southern California)		</p>
+	
+			
+			<p>Discussant: Yoshio Nozawa (University of Toronto)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=14532">
+Do Insurers Listen to Earnings Conference Calls? Evidence from the Corporate Bond Market</a>
+</h6>
+<p>
+		
+				<strong>Jie Cao</strong> (Hong Kong Polytechnic University)	<br>		
+				<strong>Gang Li</strong> (Chinese University of Hong Kong)	<br>		
+				<strong>Russell Wermers</strong> (University of Maryland)	<br>		
+				<strong>Xintong Zhan</strong> (Fudan University)	<br>		
+				<strong>Zhou Linyu</strong> (Hong Kong Polytechnic University)		</p>
+	
+			
+			<p>Discussant: Aditya Chaudhry (University of Chicago)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=48972">
+Corporate Bond Elasticities: Substitutes Matter</a>
+</h6>
+<p>
+		
+				<strong>Manav Chaudhary</strong> (University of Chicago)	<br>		
+				<strong>Zhiyu Fu</strong> (University of Chicago)	<br>		
+				<strong>Jian Li</strong> (Columbia University)		</p>
+	
+			
+			<p>Discussant: Vivian Yue (Emory University)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Investment with Changing and Uncertain Incentives				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Sunday, Jan 07			<br><i class="fa fa-clock-o"></i> 8:00 am - 10:00 am CST		</div>
+					<h6>Location: Grand Ballroom Salon K & L</h6>
+				<h6>Session Chair: Janice Eberly (Northwestern University)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=41048">
+Investment when New Capital is Hard to Find</a>
+</h6>
+<p>
+		
+				<strong>Olivier Darmouni</strong> (Columbia University)	<br>		
+				<strong>Andrew Sutherland</strong> (Massachusetts Institute of Technology)		</p>
+	
+			
+			<p>Discussant: Andrea Eisfeldt (University of California-Los Angeles)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=28644">
+Business Expectations and Uncertainty in Developing and Emerging Economies</a>
+</h6>
+<p>
+		
+				<strong>Edgar Avalos</strong> (World Bank)	<br>		
+				<strong>Jose Maria Barrero</strong> (Instituto TecnolÃ³gico AutÃ³nomo de MÃ©xico (ITAM))	<br>		
+				<strong>Elwyn Davies</strong> (World Bank)	<br>		
+				<strong>Leonardo Iacovone</strong> (World Bank)	<br>		
+				<strong>Jesica Torres</strong> (World Bank)		</p>
+	
+			
+			<p>Discussant: Ruediger Bachmann (University of Notre Dame)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=40264">
+What Gets Measured Gets Managed: Investment and the Cost of Capital</a>
+</h6>
+<p>
+		
+				<strong>Zhiguo He</strong> (Stanford University)	<br>		
+				<strong>Guanmin Liao</strong> (Renmin University of China)	<br>		
+				<strong>Baolian Wang</strong> (University of Florida)		</p>
+	
+			
+			<p>Discussant: Xian Jiang (University of California-Davis)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=18284">
+Strategic Investment under Uncertainty with First- and Second-mover Advantages</a>
+</h6>
+<p>
+		
+				<strong>Min Dai</strong> (Hong Kong Polytechnic University)	<br>		
+				<strong>Zhaoli Jiang</strong> (Hong Kong Polytechnic University)	<br>		
+				<strong>Neng Wang</strong> (Columbia University)		</p>
+	
+			
+			<p>Discussant: Barney Hartman-glaser (University of California-Los Angeles)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Asset Pricing: Belief Formation and Market Efficiency				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Sunday, Jan 07			<br><i class="fa fa-clock-o"></i> 8:00 am - 10:00 am CST		</div>
+					<h6>Location: Grand Ballroom Salon A</h6>
+				<h6>Session Chair: Lars Lochstoer (University of California-Los Angeles)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=47124">
+Which Expectation?</a>
+</h6>
+<p>
+		
+				<strong>Juhani Linnainmaa</strong> (Dartmouth College)	<br>		
+				<strong>Yingguang Zhang</strong> (Peking University)	<br>		
+				<strong>Guofu Zhou</strong> (Washington University in St. Louis)		</p>
+	
+			
+			<p>Discussant: Ricardo De la O (University of Southern California)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=16688">
+Extrapolating Long-Term Cash Flow Expectations from Returns</a>
+</h6>
+<p>
+		
+				<strong>Lawrence Jin</strong> (Cornell University)	<br>		
+				<strong>Jiacui Li</strong> (University of Utah)		</p>
+	
+			
+			<p>Discussant: Christopher Polk (London School of Economics)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=19992">
+The Subjective Risk and Return Expectations of Institutional Investors</a>
+</h6>
+<p>
+		
+				<strong>Spencer Couts</strong> (University of Southern California)	<br>		
+				<strong>Andrei Goncalves</strong> (Ohio State University)	<br>		
+				<strong>Johnathan Loudis</strong> (University of Notre Dame)		</p>
+	
+			
+			<p>Discussant: Markus Ibert (Copenhagen Business School)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=18508">
+Conservative Holdings, Aggressive Trades: Ambiguity, Learning, and Equilibrium Flows</a>
+</h6>
+<p>
+		
+				<strong>Thomas Dangl</strong> (Technische Universitaet Wien)	<br>		
+				<strong>Lorenzo Garlappi</strong> (University of British Columbia)	<br>		
+				<strong>Alex Weissensteiner</strong> (Free University of Bolzano-Bozen)		</p>
+	
+			
+			<p>Discussant: Hengjie Ai (University of Wisconsin-Madison)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Financial Regulation				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Sunday, Jan 07			<br><i class="fa fa-clock-o"></i> 8:00 am - 10:00 am CST		</div>
+					<h6>Location: Grand Ballroom Salon I</h6>
+				<h6>Session Chair: Vikrant Vig (London Business School)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=41748">
+Regulatory Leakage Among Financial Advisors: Evidence From FINRA Regulation of "Bad" Brokers</a>
+</h6>
+<p>
+		
+				<strong>Colleen Honigsberg</strong> (Stanford University)	<br>		
+				<strong>Edwin Hu</strong> (New York University)	<br>		
+				<strong>Robert Jackson</strong> (New York University)		</p>
+	
+			
+			<p>Discussant: Stefan Lewellen (Pennsylvania State University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=46844">
+Measuring Regulatory Complexity</a>
+</h6>
+<p>
+		
+				<strong>Jean-edouard Colliard</strong> (HEC - Paris)	<br>		
+				<strong>Co-Pierre Georg</strong> (EDHEC Business School)		</p>
+	
+			
+			<p>Discussant: Shikhar Singla (London Business School)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=17724">
+Pricing of Climate Risk Insurance: Regulation and Cross-Subsidies</a>
+</h6>
+<p>
+		
+				<strong>Ishita Sen</strong> (Harvard University)	<br>		
+				<strong>Sangmin Oh</strong> (University of Chicago)	<br>		
+				<strong>Ana-maria Tenekedjieva</strong> (Federal Reserve Board)		</p>
+	
+			
+			<p>Discussant: Janis Skrastins (Washington University in St. Louis)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Asset Pricing: Volatility, Tail Risk				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Sunday, Jan 07			<br><i class="fa fa-clock-o"></i> 8:00 am - 10:00 am CST		</div>
+					<h6>Location: Grand Ballroom Salon C</h6>
+				<h6>Session Chair: Nina Boyarchenko (Federal Reserve Bank of New York)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=31640">
+Realized Illiquidity</a>
+</h6>
+<p>
+		
+				<strong>Demetrio Lacava</strong> (Luiss Guido Carli University)	<br>		
+				<strong>Angelo Ranaldo</strong> (University of St. Gallen)	<br>		
+				<strong>Paolo Santucci de Magistris</strong> (Luiss Guido Carli University)		</p>
+	
+			
+			<p>Discussant: Or Shachar (Federal Reserve Bank of New York)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=45696">
+Tail Risk and Asset Prices in the Short-Term</a>
+</h6>
+<p>
+		
+				<strong>Caio Almeida</strong> (Princeton University)	<br>		
+				<strong>Gustavo Freire</strong> (Erasmus School of Economics)	<br>		
+				<strong>Rene Garcia</strong> (University of Montreal)	<br>		
+				<strong>Rodrigo Hizmeri</strong> (University of Liverpool)		</p>
+	
+			
+			<p>Discussant: Nicola Fusari (Johns Hopkins University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=50176">
+The "Hairy" Premium</a>
+</h6>
+<p>
+		
+				<strong>Ljubica Georgievska</strong> (University of California-Los Angeles)	<br>		
+				<strong>Anthony Saunders</strong> (New York University)	<br>		
+				<strong>Zhaneta Tancheva</strong> (BI Norwegian Business School)	<br>		
+				<strong>Pasquale Della corte</strong> (London University)		</p>
+	
+			
+			<p>Discussant: Leonardo Elias (Federal Reserve Bank of New York)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		ESG, Regulation, and Markets				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Sunday, Jan 07			<br><i class="fa fa-clock-o"></i> 8:00 am - 10:00 am CST		</div>
+					<h6>Location: Grand Ballroom Salon G</h6>
+				<h6>Session Chair: Doron Levit (University of Washington)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=19096">
+Sustainable Finance Under Regulation</a>
+</h6>
+<p>
+		
+				<strong>Alexandr Kopytov</strong> (University of Hong Kong)	<br>		
+				<strong>Shiyang Huang</strong>		</p>
+	
+			
+			<p>Discussant: Ansgar Walther (University of Warwick)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=41608">
+Why Divest? The Political and Informational Roles of Institutions in Asset Stranding</a>
+</h6>
+<p>
+		
+				<strong>Murray Carlson</strong> (University of British Columbia)	<br>		
+				<strong>Adlai Fisher</strong> (University of British Columbia)	<br>		
+				<strong>Ali Lazrak</strong> (University of British Columbia)		</p>
+	
+			
+			<p>Discussant: Paul Voss (HEC - Paris)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=16548">
+Reducing Carbon Using Regulatory and Financial Market Tools</a>
+</h6>
+<p>
+		
+				<strong>Federica Zeni</strong> (World Bank)	<br>		
+				<strong>Adelina Barbalau</strong> (University of Alberta)	<br>		
+				<strong>Franklin Allen</strong> (University of Pennsylvania)		</p>
+	
+			
+			<p>Discussant: Lin Shen (INSEAD)</p>
+	</div>
+	
+			</div>
+		
+			<div class="row">
+			<div class="col-12" style="background:#6b2f1d;margin-bottom:10px;margin-top:20px;">
+			<h4 style="margin-top:5px; margin-bottom:5px; color:#fff;">Sunday, Jan 07 &nbsp;|&nbsp; 10:15 am - 12:15 pm CST</h4>
+			</div>
+			</div>
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Special Topics: Finance and Gender				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Sunday, Jan 07			<br><i class="fa fa-clock-o"></i> 10:15 am - 12:15 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon K & L</h6>
+				<h6>Session Chair: Victoria Ivashina (Harvard University)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=28924">
+Diversity, Equity, and Inclusion</a>
+</h6>
+<p>
+		
+				<strong>Alex Edmans</strong> (London Business School)	<br>		
+				<strong>Caroline Flammer</strong> (Columbia University)	<br>		
+				<strong>Simon Glossner</strong> (Federal Reserve Board)		</p>
+	
+			
+			<p>Discussant: Steven Kaplan (University of Chicago)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=13244">
+Gender, Competition, and Performance: International Evidence</a>
+</h6>
+<p>
+		
+				<strong>Kai Li</strong> (University of British Columbia)	<br>		
+				<strong>Rachel Peng</strong> (University of Dayton)	<br>		
+				<strong>Rui Shen</strong> (Chinese University of Hong Kong-Shenzhen)	<br>		
+				<strong>Gabriel Wong</strong> (Cardiff University)		</p>
+	
+			
+			<p>Discussant: Paola Sapienza (Northwestern University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=18928">
+The Importance of Signaling for Women's Careers</a>
+</h6>
+<p>
+		
+				<strong>Alexandra Niessen-ruenzi</strong> (University of Mannheim)	<br>		
+				<strong>Leah Zimmerer</strong> (University of Mannheim)		</p>
+	
+			
+			<p>Discussant: Lucy White (Boston University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=25088">
+Inventor Gender and Patent Undercitation: Evidence from Causal Text Estimation</a>
+</h6>
+<p>
+		
+				<strong>Yael Hochberg</strong> (Rice University)	<br>		
+				<strong>Ali Kakhbod</strong> (University of California-Berkeley)	<br>		
+				<strong>Peiyao Li</strong> (University of California-Berkeley)	<br>		
+				<strong>Kunal Sachdeva</strong> (Rice University)		</p>
+	
+			
+			<p>Discussant: Victor Lyonnet (Ohio State University)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Corporate Finance: CEOs				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Sunday, Jan 07			<br><i class="fa fa-clock-o"></i> 10:15 am - 12:15 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon C</h6>
+				<h6>Session Chair: Katharina Lewellen (Dartmouth College)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=35924">
+CEO Relative Age and Corporate Risk-Taking</a>
+</h6>
+<p>
+		
+				<strong>Junru Guo</strong> (Nankai University)	<br>		
+				<strong>Jia He</strong> (Nankai University)	<br>		
+				<strong>Sibo Liu</strong>	<br>		
+				<strong>Yonglin Wang</strong>		</p>
+	
+			
+			<p>Discussant: Marius Guenzel (University of Pennsylvania)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=42028">
+Do CEOs Benefit from Employee Pay Raises? Evidence from a Federal Minimum Wage Law</a>
+</h6>
+<p>
+		
+				<strong>Ekaterina Potemkina</strong> (Indiana University)		</p>
+	
+			
+			<p>Discussant: Ilona Babenko (Arizona State University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=34104">
+Is ESG a Managerial Style?</a>
+</h6>
+<p>
+		
+				<strong>Tianyu Cai</strong> (Shanghai International Studies University)	<br>		
+				<strong>Leo Liu</strong> (University of Technology Sydney)	<br>		
+				<strong>Jason Zein</strong> (University of New South Wales)	<br>		
+				<strong>Hao Zhang</strong> (University of New South Wales)		</p>
+	
+			
+			<p>Discussant: Michelle Lowry (Drexel University)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Housing Finance				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Sunday, Jan 07			<br><i class="fa fa-clock-o"></i> 10:15 am - 12:15 pm CST		</div>
+					<h6>Location: Conference Room 20</h6>
+				<h6>Session Chair: Christopher Palmer (Massachusetts Institute of Technology)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=49840">
+The Opioid Epidemic and Consumer Finance: Quo Vadis?</a>
+</h6>
+<p>
+		
+				<strong>Sumit Agarwal</strong> (National University of Singapore)	<br>		
+				<strong>Nonna Sorokina</strong> (Federal Reserve Bank of Philadelphia)	<br>		
+				<strong>Raluca Roman</strong> (Federal Reserve Bank of Philadelphia)	<br>		
+				<strong>Wenli Li</strong> (Federal Reserve Bank of Philadelphia)		</p>
+	
+			
+			<p>Discussant: John Hund (University of Georgia)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=54236">
+Mortgages, Monetary Policy, and the Great Inflation of 2021â?</a>
+</h6>
+<p>
+		
+				<strong>Aaron Hedlund</strong> (Purdue University)	<br>		
+				<strong>Kieran Larkin</strong> (Institute for International Economic Studies)	<br>		
+				<strong>Kurt Mitman</strong> (Journal of European Economic Association)	<br>		
+				<strong>Serdar Ozkan</strong> (Federal Reserve Bank of St. Louis)		</p>
+	
+			
+			<p>Discussant: Leming Lin (University of Pittsburgh)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=15876">
+The Cross-Section of Housing Returns</a>
+</h6>
+<p>
+		
+				<strong>Jonathan Halket</strong> (Texas A&M University)	<br>		
+				<strong>Lara Loewenstein</strong> (Federal Reserve Bank of Cleveland)	<br>		
+				<strong>Paul Willen</strong> (Federal Reserve Bank of Boston)		</p>
+	
+			
+			<p>Discussant: Daniel Greenwald (New York University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=42224">
+Housing Wealth and Overpayment: When Money Moves In</a>
+</h6>
+<p>
+		
+				<strong>Darren Aiello</strong> (Brigham Young University)	<br>		
+				<strong>Jason Kotter</strong> (Brigham Young University)	<br>		
+				<strong>Gregor Schubert</strong> (University of California-Los Angeles)		</p>
+	
+			
+			<p>Discussant: Lu Liu (University of Pennsylvania)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Regulation, Private Equity, and Entrepreneurship				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Sunday, Jan 07			<br><i class="fa fa-clock-o"></i> 10:15 am - 12:15 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon I</h6>
+				<h6>Session Chair: Ayako Yasuda (University of California-Davis)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=49336">
+Limited Partners versus Unlimited Machines</a>
+</h6>
+<p>
+		
+				<strong>Reiner Braun</strong> (Technical University of Munich)	<br>		
+				<strong>Borja Fernandez Tamayo</strong> (SKEMA Business School)	<br>		
+				<strong>Florencio Lopez De silanes</strong> (SKEMA Business School)	<br>		
+				<strong>Ludovic Phalippou</strong> (University of Oxford)	<br>		
+				<strong>Natalia Sigrist</strong>		</p>
+	
+			
+			<p>Discussant: Lea Stern (University of Washington)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=19544">
+Keeping Up with the Blackstones: Institutional Investors and Gentrification</a>
+</h6>
+<p>
+		
+				<strong>Neroli Austin</strong> (University of Michigan)		</p>
+	
+			
+			<p>Discussant: Cameron LaPoint (Yale University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=37352">
+Return-based Crowdfunding and Entrepreneurship</a>
+</h6>
+<p>
+		
+				<strong>Hedieh Rashidi Ranjbar</strong> (University of Melbourne)		</p>
+	
+			
+			<p>Discussant: Jacelly Cespedes (University of Minnesota)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=35308">
+Secondary Stock Exchanges and Growth of High-Tech Entrepreneurs</a>
+</h6>
+<p>
+		
+				<strong>Huasheng Gao</strong> (Fudan University)	<br>		
+				<strong>Po-Hsuan Hsu</strong> (National Tsing Hua University)	<br>		
+				<strong>Yuxi Wang</strong> (Shanghai Jiao Tong University)		</p>
+	
+			
+			<p>Discussant: Joan Farre-Mensa (University of Illinois-Chicago)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Industrial Organization and Finance				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Sunday, Jan 07			<br><i class="fa fa-clock-o"></i> 10:15 am - 12:15 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon D</h6>
+				<h6>Session Chair: Mark Egan (Harvard University)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=54292">
+Bank Competition Amid Digital Disruption: Implications for Financial Inclusion</a>
+</h6>
+<p>
+		
+				<strong>Erica Xuewei Jiang</strong> (University of Southern California)	<br>		
+				<strong>Yang Yu</strong> (Singapore Management University)	<br>		
+				<strong>Jinyuan Zhang</strong> (University of California-Los Angeles)		</p>
+	
+			
+			<p>Discussant: Kairong Xiao (Columbia University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=5096">
+Financial Shocks, Productivity, and Prices</a>
+</h6>
+<p>
+		
+				<strong>Simone Lenzu</strong> (New York University)		</p>
+	
+			
+			<p>Discussant: Ryan Kim (Johns Hopkins University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=53088">
+A Tale of Two Networks: Common Ownership and Product Market Rivalry</a>
+</h6>
+<p>
+		
+				<strong>Florian Ederer</strong> (Yale University)	<br>		
+				<strong>Bruno Pellegrino</strong> (University of Maryland)		</p>
+	
+			
+			<p>Discussant: Alexander MacKay (Harvard University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=54264">
+The Role of Intermediaries in Selection Markets: Evidence from Mortgage Lending</a>
+</h6>
+<p>
+		
+				<strong>Jason Allen</strong> (Bank of Canada)	<br>		
+				<strong>Robert Clark</strong> (Queen's University)	<br>		
+				<strong>Jean-Francois Houde</strong> (University of Wisconsin-Madison)	<br>		
+				<strong>Shaoteng Li</strong> (Jinan University)	<br>		
+				<strong>Anna Trubnikova</strong> (Cornerstone Research)		</p>
+	
+			
+			<p>Discussant: Matteo Benetton (University of California-Berkeley)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Asset Pricing: Credit Risk				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Sunday, Jan 07			<br><i class="fa fa-clock-o"></i> 10:15 am - 12:15 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon A</h6>
+				<h6>Session Chair: Jennie Bai (Georgetown University)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=27748">
+Interdealer Price Dispersion</a>
+</h6>
+<p>
+		
+				<strong>Andrea Eisfeldt</strong> (University of California-Los Angeles)	<br>		
+				<strong>Bernard Herskovic</strong> (University of California-Los Angeles)	<br>		
+				<strong>Shuo Liu</strong> (Tsinghua University)		</p>
+	
+			
+			<p>Discussant: Jian Li (Columbia University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=43400">
+The Financial Premium</a>
+</h6>
+<p>
+		
+				<strong>Jens Dick-nielsen</strong> (Copenhagen Business School)	<br>		
+				<strong>Peter Feldhutter</strong> (Copenhagen Business School)	<br>		
+				<strong>David Lando</strong> (Copenhagen Business School)		</p>
+	
+			
+			<p>Discussant: Alex Zhou (Southern Methodist University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=44604">
+Voter-induced Municipal Credit Risk</a>
+</h6>
+<p>
+		
+				<strong>Brent Ambrose</strong> (Pennsylvania State University)	<br>		
+				<strong>Matt Gustafson</strong> (Pennsylvania State University)	<br>		
+				<strong>Maxence Valentin</strong> (Cornell University)	<br>		
+				<strong>Zihan Ye</strong> (University of Tennessee-Knoxville)		</p>
+	
+			
+			<p>Discussant: Sudheer Chava (Georgia Institute of Technology)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Special Topics: Social Influence and Networks				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Sunday, Jan 07			<br><i class="fa fa-clock-o"></i> 10:15 am - 12:15 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon E</h6>
+				<h6>Session Chair: Harrison Hong (Columbia University)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=6468">
+Social Connections and Bank Deposit Funding</a>
+</h6>
+<p>
+		
+				<strong>Sean Flynn</strong> (Cornell University)	<br>		
+				<strong>Jing Wang</strong> (University of Missouri)		</p>
+	
+			
+			<p>Discussant: Jeffrey Kubik (Syracuse University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=21588">
+Tweeting in the Dark: Corporate Communication and Information Diffusion</a>
+</h6>
+<p>
+		
+				<strong>Isabella Wolfskeil</strong> (Federal Reserve Board)		</p>
+	
+			
+			<p>Discussant: Lin Peng (CUNY-Baruch College)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=32760">
+The Role of Employees as Information Intermediaries: Evidence from Their Professional Connections</a>
+</h6>
+<p>
+		
+				<strong>DuckKi Cho</strong> (The University of Sydney)	<br>		
+				<strong>Lyungmae Choi</strong> (City University of Hong Kong)	<br>		
+				<strong>Stephen Hillegeist</strong> (Arizona State University)		</p>
+	
+			
+			<p>Discussant: Edward Shore (Columbia University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=19908">
+Information Processing: The Role of Expertise within Peer Effects</a>
+</h6>
+<p>
+		
+				<strong>Lukas Mertes</strong> (University of Mannheim)	<br>		
+				<strong>Martin Weber</strong> (University of Mannheim)		</p>
+	
+			
+			<p>Discussant: Anders Anderson (Swedish House of Finance)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Asset Pricing: Cross-section of Returns (Conditional)				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Sunday, Jan 07			<br><i class="fa fa-clock-o"></i> 10:15 am - 12:15 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon B</h6>
+				<h6>Session Chair: Markus Pelger (Stanford University)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=14840">
+Complexity in Factor Pricing Models</a>
+</h6>
+<p>
+		
+				<strong>Antoine Didisheim</strong> (University of Lausanne and Swiss Finance Institute)	<br>		
+				<strong>Shikun Ke</strong> (Yale University)	<br>		
+				<strong>Bryan Kelly</strong> (Yale University)	<br>		
+				<strong>Semyon Malamud</strong> (Swiss Federal Institute of Technology Lausanne)		</p>
+	
+			
+			<p>Discussant: Andreas Neuhierl (Washington University in St. Louis)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=17696">
+The Factor Multiverse: The Role of Interest Rates in Factor Return Measurement and Discovery</a>
+</h6>
+<p>
+		
+				<strong>Jules Van Binsbergen</strong> (University of Pennsylvania)	<br>		
+				<strong>Liang Ma</strong> (San Diego State University)	<br>		
+				<strong>Michael Schwert</strong> (AQR Capital Management)		</p>
+	
+			
+			<p>Discussant: Dino Palazzo (Federal Reserve Board)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=33348">
+Dissecting Anomalies in Conditional Asset Pricing</a>
+</h6>
+<p>
+		
+				<strong>Valentina Raponi</strong> (IESE Business School)	<br>		
+				<strong>Paolo Zaffaroni</strong> (Imperial College London)		</p>
+	
+			
+			<p>Discussant: Nikolay Gospodinov (Federal Reserve Bank of Atlanta)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=47292">
+Equity Factors and Firms' Perceived Cost of Capital</a>
+</h6>
+<p>
+		
+				<strong>Niels Gormsen</strong> (University of Chicago)	<br>		
+				<strong>Kilian Huber</strong> (University of Chicago)		</p>
+	
+			
+			<p>Discussant: Chen Xue (University of Cincinnati)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Mutual Funds and Hedge Funds				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Sunday, Jan 07			<br><i class="fa fa-clock-o"></i> 10:15 am - 12:15 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon G</h6>
+				<h6>Session Chair: Ralph Koijen (University of Chicago)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=20300">
+Revealed Beliefs about Responsible Investing: Evidence from Mutual Fund Managers</a>
+</h6>
+<p>
+		
+				<strong>Vitaly Orlov</strong> (University of St. Gallen)	<br>		
+				<strong>Stefano Ramelli</strong> (University of St. Gallen)	<br>		
+				<strong>Alexander Wagner</strong> (University of Zurich)		</p>
+	
+			
+			<p>Discussant: Henri Servaes (London Business School)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=15680">
+Race, Discrimination, and Hedge Funds</a>
+</h6>
+<p>
+		
+				<strong>Yan Lu</strong> (University of Central Florida)	<br>		
+				<strong>Narayan Naik</strong> (London Business School)	<br>		
+				<strong>Melvyn Teo</strong> (Singapore Management University)		</p>
+	
+			
+			<p>Discussant: Emmanuel Yimfor</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=30380">
+The Unintended Consequences of Investing for the Long Run: Evidence from Target Date Funds</a>
+</h6>
+<p>
+		
+				<strong>Massimo Massa</strong> (INSEAD)	<br>		
+				<strong>Rabih Moussawi</strong> (Villanova University)	<br>		
+				<strong>Andrei Simonov</strong> (Michigan State University)		</p>
+	
+			
+			<p>Discussant: Clemens Sialm (University of Texas-Austin)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=52500">
+Passive bond fund is an oxymoron: On the outperformance of active bond funds</a>
+</h6>
+<p>
+		
+				<strong>Jaewon Choi</strong> (University of Illinois)	<br>		
+				<strong>Martijn Cremers</strong> (University of Notre Dame)	<br>		
+				<strong>Timothy Riley</strong> (University of Arkansas)		</p>
+	
+			
+			<p>Discussant: Dong Lou (London School of Economics)</p>
+	</div>
+	
+			</div>
+		
+			<div class="row">
+			<div class="col-12" style="background:#6b2f1d;margin-bottom:10px;margin-top:20px;">
+			<h4 style="margin-top:5px; margin-bottom:5px; color:#fff;">Sunday, Jan 07 &nbsp;|&nbsp; 1:00 pm - 3:00 pm CST</h4>
+			</div>
+			</div>
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Corporate Finance: Corporate Governance (Shareholder Monitoring/Voting)				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Sunday, Jan 07			<br><i class="fa fa-clock-o"></i> 1:00 pm - 3:00 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon D</h6>
+				<h6>Session Chair: Elisabeth Kempf (Harvard University)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=11032">
+Voting Choice</a>
+</h6>
+<p>
+		
+				<strong>Andrey Malenko</strong> (Boston College)	<br>		
+				<strong>Nadya Malenko</strong> (Boston College)		</p>
+	
+			
+			<p>Discussant: Magdalena Rola-Janicka (Imperial College London)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=14196">
+Propagation of Climate Disasters through Ownership Networks</a>
+</h6>
+<p>
+		
+				<strong>Matt Gustafson</strong> (Pennsylvania State University)	<br>		
+				<strong>Ai He</strong> (University of South Carolina-Columbia)	<br>		
+				<strong>Ugur Lel</strong> (University of Georgia)	<br>		
+				<strong>Zhongling Qin</strong> (Auburn University)		</p>
+	
+			
+			<p>Discussant: Oliver Spalt (University of Mannheim)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=46508">
+The Changing Landscape of Corporate Governance Disclosure: Impact on Shareholder Voting</a>
+</h6>
+<p>
+		
+				<strong>David Becher</strong> (Drexel University)	<br>		
+				<strong>Michelle Lowry</strong> (Drexel University)	<br>		
+				<strong>Jared Wilson</strong> (Indiana University)		</p>
+	
+			
+			<p>Discussant: Samuel Hartzmark (Boston College)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Asset Pricing: Market Risk Factors				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Sunday, Jan 07			<br><i class="fa fa-clock-o"></i> 1:00 pm - 3:00 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon C</h6>
+				<h6>Session Chair: Jules Van Binsbergen (University of Pennsylvania)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=20160">
+Idiosyncratic Financial Risk and a Reevaluation of the Market Risk-Return Tradeoff</a>
+</h6>
+<p>
+		
+				<strong>Sungje Byun</strong> (Federal Reserve Bank of Dallas)	<br>		
+				<strong>Johnathan Loudis</strong> (University of Notre Dame)	<br>		
+				<strong>Lawrence Schmidt</strong> (Massachusetts Institute of Technology)		</p>
+	
+			
+			<p>Discussant: Nancy Xu (Boston College)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=24612">
+Volatility and the Pricing Kernel</a>
+</h6>
+<p>
+		
+				<strong>David Schreindorfer</strong> (Arizona State University)	<br>		
+				<strong>Tobias Sichert</strong> (Stockholm School of Economics / Swedish House of Finance)		</p>
+	
+			
+			<p>Discussant: Sean Myers (University of Pennsylvania)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=27608">
+Asset Pricing with Daily Shopper Spending</a>
+</h6>
+<p>
+		
+				<strong>Kuntara Pukthuanthong</strong> (University of Missouri)	<br>		
+				<strong>Jialu Shen</strong> (University of Missouri)	<br>		
+				<strong>Ruixiang Wang</strong> (Clark University)		</p>
+	
+			
+			<p>Discussant: Ravi Jagannathan (Northwestern University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=46984">
+What Drives Anomaly Decay?</a>
+</h6>
+<p>
+		
+				<strong>Jonathan Brogaard</strong> (University of Utah)	<br>		
+				<strong>Huong Nguyen</strong> (University of Danang)	<br>		
+				<strong>Talis Putnins</strong> (University of Technology Sydney)	<br>		
+				<strong>Yuchen Zhang</strong> (University of Utah)		</p>
+	
+			
+			<p>Discussant: Julien Penasse (University of Luxembourg)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Financing Cycles and Financial Flexibility				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Sunday, Jan 07			<br><i class="fa fa-clock-o"></i> 1:00 pm - 3:00 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon I</h6>
+				<h6>Session Chair: Kai Li (University of British Columbia)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=17332">
+Asset Life, Leverage, and Debt Maturity Matching</a>
+</h6>
+<p>
+		
+				<strong>Thomas Geelen</strong> (Copenhagen Business School)	<br>		
+				<strong>Jakub Hajda</strong> (HEC - MontrÃ©al)	<br>		
+				<strong>Erwan Morellec</strong> (Swiss Federal Institute of Technology Lausanne)	<br>		
+				<strong>Adam Winegar</strong> (BI Norwegian Business School)		</p>
+	
+			
+			<p>Discussant: Harjoat Bhamra (Imperial College London)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=13972">
+Cash Holding, Rollover Risk and M&A</a>
+</h6>
+<p>
+		
+				<strong>Zhiyao Chen</strong> (Lingnan University)	<br>		
+				<strong>Dirk Hackbarth</strong> (Boston University)	<br>		
+				<strong>Jarrad Harford</strong> (University of Washington)	<br>		
+				<strong>Yuxin Luo</strong> (Boston University)		</p>
+	
+			
+			<p>Discussant: Zhiguo He (Stanford University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=28280">
+Balance Sheet Financial Flexibility</a>
+</h6>
+<p>
+		
+				<strong>Sudipto Dasgupta</strong> (Chinese University of Hong Kong)	<br>		
+				<strong>Erica X.N, Li</strong> (Cheung Kong Graduate School of Business)	<br>		
+				<strong>Siyuan Wu</strong> (Chinese University of Hong Kong)		</p>
+	
+			
+			<p>Discussant: Ran Duchin</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=45556">
+Supply Network Fragility, Inventory Investment, and Corporate Liquidity</a>
+</h6>
+<p>
+		
+				<strong>Leandro R. Sanz</strong> (Ohio State University)		</p>
+	
+			
+			<p>Discussant: Janet Gao (Georgetown University)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Asset Pricing: Cryptoassets				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Sunday, Jan 07			<br><i class="fa fa-clock-o"></i> 1:00 pm - 3:00 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon A</h6>
+				<h6>Session Chair: Catherine Casamatta (Toulouse School of Economics)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=46788">
+The End of the Crypto-Diversification Myth</a>
+</h6>
+<p>
+		
+				<strong>Antoine Didisheim</strong> (University of Lausanne and Swiss Finance Institute)	<br>		
+				<strong>Luciano Somoza</strong> (ESSEC Business School)	<br>		
+				<strong>Martina Fraschini</strong> (University of Luxembourg)		</p>
+	
+			
+			<p>Discussant: Julia Reynolds (Securities and Exchange Commission)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=43204">
+The Need for Fees at a DEX: How Increases in Fees Can Increase DEX Trading Volume</a>
+</h6>
+<p>
+		
+				<strong>Joel Hasbrouck</strong> (New York University)	<br>		
+				<strong>Thomas Rivera</strong> (McGill University)	<br>		
+				<strong>Fahad Saleh</strong> (Wake Forest University)		</p>
+	
+			
+			<p>Discussant: Marius Zoican (University of Toronto)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=53732">
+Trust in DeFi: An Empirical Study of the Decentralized Exchange</a>
+</h6>
+<p>
+		
+				<strong>Jianlei Han</strong> (Macquarie University)	<br>		
+				<strong>Shiyang Huang</strong>	<br>		
+				<strong>Zhuo Zhong</strong> (University of Melbourne)		</p>
+	
+			
+			<p>Discussant: Olga Klein (University of Warwick)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=36652">
+Price Discovery on Decentralized Exchanges</a>
+</h6>
+<p>
+		
+				<strong>Agostino Capponi</strong> (Columbia University)	<br>		
+				<strong>Ruizhe Jia</strong> (Columbia University)	<br>		
+				<strong>Shihao Yu</strong> (Columbia University)		</p>
+	
+			
+			<p>Discussant: Chen Yao (Chinese University of Hong Kong)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Financial Intermediation: Bank Lending				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Sunday, Jan 07			<br><i class="fa fa-clock-o"></i> 1:00 pm - 3:00 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon G</h6>
+				<h6>Session Chair: Shan Ge (New York University)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=40516">
+The Secular Decline in Interest Rates and the Rise of Shadow Banks</a>
+</h6>
+<p>
+		
+				<strong>Andres Sarto</strong> (New York University)	<br>		
+				<strong>Olivier Wang</strong> (New York University)		</p>
+	
+			
+			<p>Discussant: Erica Xuewei Jiang (University of Southern California)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=4984">
+The Financial Transmission of a Climate Shock: El Nino and US Banks</a>
+</h6>
+<p>
+		
+				<strong>Filippo De Marco</strong> (Bocconi University)	<br>		
+				<strong>Nicola Limodio</strong> (Bocconi University)		</p>
+	
+			
+			<p>Discussant: Shan Ge (New York University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=8596">
+Trade Shocks Through Banking Lending Channel</a>
+</h6>
+<p>
+		
+				<strong>Hengguo Da</strong> (Southwestern University of Finance and Economics)		</p>
+	
+			
+			<p>Discussant: Abhishek Bhardwaj (Tulane University)</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Asset Pricing: Inflation and Monetary Policy				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Sunday, Jan 07			<br><i class="fa fa-clock-o"></i> 1:00 pm - 3:00 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon B</h6>
+				<h6>Session Chair: Emil Verner (Massachusetts Institute of Technology)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=25900">
+Monetary Policy without Moving Interest Rates: The Fed Non-Yield Shock</a>
+</h6>
+<p>
+		
+				<strong>Christoph Boehm</strong> (University of Texas-Austin)	<br>		
+				<strong>Niklas Kroner</strong> (Federal Reserve Board)		</p>
+	
+			
+			<p>Discussant: Moritz Lenel (Princeton University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=20524">
+Stagflationary Stock Returns and the Role of Market Power</a>
+</h6>
+<p>
+		
+				<strong>Ben Knox</strong> (Federal Reserve Board)	<br>		
+				<strong>Yannick Timmer</strong> (Federal Reserve Board)		</p>
+	
+			
+			<p>Discussant: Francesco D'Acunto (Georgetown University)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=25872">
+Let the Market Speak: Using Interest Rates to Identify the Fed Information Effect</a>
+</h6>
+<p>
+		
+				<strong>Linyan Zhu</strong> (London School of Economics and Political Science)		</p>
+	
+			
+			<p>Discussant: Samuel Hanson</p>
+	</div>
+	
+			</div>
+		
+			<hr style="margin-bottom: 2rem; border-top: 4px solid #6b2f1d;">
+		
+		<div class="row">
+
+		<div class="col-lg-12">
+		<h5>Session: 
+			
+		Trading in Financial Markets				
+				
+		</h5>
+		<div class="post-meta">
+			<i class="fa fa-calendar"></i> Sunday, Jan 07			<br><i class="fa fa-clock-o"></i> 1:00 pm - 3:00 pm CST		</div>
+					<h6>Location: Grand Ballroom Salon E</h6>
+				<h6>Session Chair: Eduardo Davila (Yale University)</h6>
+		<hr>
+		</div>
+			
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=18452">
+Disclosing and Cooling-Off: An Analysis of Insider Trading Rules</a>
+</h6>
+<p>
+		
+				<strong>Jun Deng</strong> (University of International Business and Economics)	<br>		
+				<strong>Huifeng Pan</strong> (University of International Business and Economics)	<br>		
+				<strong>Hongjun Yan</strong> (DePaul University)	<br>		
+				<strong>Liyan Yang</strong> (University of Toronto)		</p>
+	
+			
+			<p>Discussant: Yao Zeng (University of Pennsylvania)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=16660">
+Sequential Search for Corporate Bonds</a>
+</h6>
+<p>
+		
+				<strong>Sebastien Plante</strong> (University of Wisconsin-Madison)	<br>		
+				<strong>Mahyar Kargar</strong> (University of Illinois)	<br>		
+				<strong>Pierre-olivier Weill</strong> (University of California-Los Angeles)	<br>		
+				<strong>Benjamin Lester</strong> (Federal Reserve Bank of Philadelphia)		</p>
+	
+			
+			<p>Discussant: Dmitry Livdan (University of California-Berkeley)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=46956">
+Strategic Arbitrage in Segmented Markets</a>
+</h6>
+<p>
+		
+				<strong>Svetlana Bryzgalova</strong> (London Business School)	<br>		
+				<strong>Anna Pavlova</strong> (London Business School)	<br>		
+				<strong>Taisiya Sikorskaya</strong> (London Business School)		</p>
+	
+			
+			<p>Discussant: Thomas Ernst (University of Maryland)</p>
+	</div>
+	
+				
+			<div class="col-lg-12">
+<h6>
+<a href="viewp.php?n=49392">
+C.H.I.L.E.</a>
+</h6>
+<p>
+		
+				<strong>Efstathios Avdis</strong> (University of Alberta)	<br>		
+				<strong>Sergey Glebkin</strong> (INSEAD)		</p>
+	
+			
+			<p>Discussant: Michael Sockin (University of Texas-Austin)</p>
+	</div>
+	
+			</div>
+		
+<!--
+<hr style="margin-bottom: 3rem; margin-bottom: 3rem; border-top: 4px solid #000000;">
+<div class="row">
+	<div class="col-xl-2 col-lg-1 col-md-12"></div>
+	<div class="col-xl-8 col-lg-10 col-md-12"">
+		<h5>From our sponsors:</h5>
+            
+	</div>
+</div> 
+-->
+</div>
+
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--== End Page Content Wrapper ==-->
+ <!--== End Page Content Wrapper ==-->
+
+   
+    <!--== Start Off Canvas Area Wrapper ==-->
+    <aside class="off-canvas-responsive-menu">
+        <!-- Off Canvas Overlay -->
+        <div class="off-canvas-overlay"></div>
+
+        <!-- Start Off Canvas Content Area -->
+        <div class="off-canvas-content-wrap">
+            <div class="off-canvas-content">
+
+            </div>
+            <!-- Off Canvas Close Icon -->
+            <button class="btn-close trio-tooltip" data-tippy-content="Close" data-tippy-placement="right"><i class="fa fa-close"></i>
+            </button>
+        </div>
+        <!-- End Off Canvas Content Area -->
+    </aside>
+    <!--== End Off Canvas Area Wrapper ==--> 
+
+ 
+    <!--=======================Javascript============================-->
+    <!--=== All Vendor Js ===-->
+    <script src="./assets/js/vendor.js"></script>
+    <!--=== All Plugins Js ===-->
+    <script src="./assets/js/plugins.js"></script>
+    <!--=== Active Js ===-->
+    <script src="./assets/js/active.js"></script>
+		
+		<!--=== hide show Js ===-->
+
+    		
+				<!-- right column (end) -->
+							</div>
+		</div>
+	</div>
+	<!-- content (end) -->
+	<!-- footer (begin) --><!-- ** Note: Only licensed users are allowed to remove or change the following copyright statement. ** -->
+	<div id="ewFooterRow" class="ewFooterRow">	
+		<div class="ewFooterText">&copy; AFA. All rights reserved.</div>
+		<!-- Place other links, for example, disclaimer, here -->		
+	</div>
+	<!-- footer (end) -->	
+</div>
+<!-- modal dialog -->
+<div id="ewModalDialog" class="modal" role="dialog" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h4 class="modal-title"></h4></div><div class="modal-body"></div><div class="modal-footer"></div></div></div></div>
+<!-- add option dialog -->
+<div id="ewAddOptDialog" class="modal" role="dialog" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h4 class="modal-title"></h4></div><div class="modal-body"></div><div class="modal-footer"><button type="button" class="btn btn-primary ewButton">Add</button><button type="button" class="btn btn-default ewButton" data-dismiss="modal">Cancel</button></div></div></div></div>
+<!-- message box -->
+<div id="ewMsgBox" class="modal" role="dialog" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-body"></div><div class="modal-footer"><button type="button" class="btn btn-primary ewButton" data-dismiss="modal">OK</button></div></div></div></div>
+<!-- prompt -->
+<div id="ewPrompt" class="modal" role="dialog" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-body"></div><div class="modal-footer"><button type="button" class="btn btn-primary ewButton">OK</button><button type="button" class="btn btn-default ewButton" data-dismiss="modal">Cancel</button></div></div></div></div>
+<!-- session timer -->
+<div id="ewTimer" class="modal" role="dialog" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-body"></div><div class="modal-footer"><button type="button" class="btn btn-primary ewButton" data-dismiss="modal">OK</button></div></div></div></div>
+<!-- tooltip -->
+<div id="ewTooltip"></div>
+<script type="text/javascript">
+jQuery.get("phpjs/userevt13.js");
+</script>
+<script type="text/javascript">
+
+// Write your global startup script here
+// document.write("page loaded");
+
+var oChangePwdMenu = $('ul#RootMenu li:last').prev();
+if(oChangePwdMenu.text() == "Change My Password")
+	moveUp(oChangePwdMenu);
+</script>
+</body>
+</html>

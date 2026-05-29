@@ -1,0 +1,108 @@
+NBER WORKING PAPER SERIES
+LABOR MARKET CONCENTRATION
+José Azar
+Ioana Marinescu
+Marshall I. Steinbaum
+Working Paper 24147
+http://www.nber.org/papers/w24147
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2017, Revised February 2019
+José Azar gratefully acknowledges the financial support of Secretaria d’Universitats I Recerca del
+Departament d’Empresa I Coneixement de la Generalitat de Catalunya. Ref.2016 BP00358.
+Marshall Steinbaum gratefully acknowledges the financial support of the Ewing Marion
+Kauffman Foundation. We thank Jonathan Baker, Einer Elhauge, Hiba Hafiz, Larry Katz, Alan
+Krueger and Michael Ransom for helpful comments. The views expressed herein are those of the
+authors and do not necessarily reflect the views of the National Bureau of Economic Research.
+At least one co-author has disclosed a financial relationship of potential relevance for this
+research. Further information is available online at http://www.nber.org/papers/w24147.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2017 by José Azar, Ioana Marinescu, and Marshall I. Steinbaum. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Labor Market Concentration
+José Azar, Ioana Marinescu, and Marshall I. Steinbaum
+NBER Working Paper No. 24147
+December 2017, Revised February 2019
+JEL No. J2,J3,L1,L4
+ABSTRACT
+A product market is concentrated when a few firms dominate the market. Similarly, a labor
+market is concentrated when a few firms dominate hiring in the market. Using data from the
+leading employment website CareerBuilder.com, we calculate labor market concentration for
+over 8,000 geographic-occupational labor markets in the US. Based on the DOJ-FTC horizontal
+merger guidelines, the average market is highly concentrated. Using a panel IV regression, we
+show that going from the 25th percentile to the 75th percentile in concentration is associated with
+a 17% decline in posted wages, suggesting that concentration increases labor market power.
+José Azar Marshall I. Steinbaum
+IESE Business School, Universidad de Navarra Roosevelt Institute,
+Avinguda Perason 21 1789 Lanier Pl, NW Apt 1
+08034 Barcelona, Spain Washington, DC 20009
+jazar@iese.edu msteinbaum@gmail.com
+Ioana Marinescu
+University of Pennsylvania
+School of Social Policy & Practice
+3701 Locust Walk
+Philadelphia PA, 19104-6214
+and NBER
+ioma@upenn.edu
+
+1 Introduction
+Thereisgrowingconcernaboutincreasingmarketconcentrationanditspotentialeffectson
+theeconomy,includingincreasesinmarkups(DeLoeckerandEeckhout,2017)andthedecline
+in the labor share (Autor et al., 2017; Barkai, 2016). Concerns about a lack of competition in
+the labor market have also reached the policy debate (CEA, 2016). While interest in monop-
+sony has grown in recent years (Ashenfelter, Farber and Ransom, 2010; Manning, 2011), firms’
+abilitytopayworkerslessthantheirmarginalproductivityisnotgenerallytakenintoaccount
+in antitrust practice. Antitrust enforcement is mainly concerned with consumer welfare, and
+hence the impacts of a lack of competition on product prices, not wages. Antitrust enforcers
+have historically paid little attention to labor market power, despite the labor economics liter-
+ature finding that firms can have substantial market power in the labor market (Staiger, Spetz
+andPhibbs,2010;Falch,2010;RansomandSims,2010;Matsudaira,2013). Thisempiricalwork
+has generally focused on particular labor markets. Therefore it is not clear how widespread
+labormarketpowertrulyis,andhowmuchitaffectswages.
+In this paper, we approach this question by directly quantifying the level of labor mar-
+ket concentration across a wide range of occupations and for almost every commuting zone
+in the US. In a nutshell, we find that labor market concentration in the average market is
+high, and higher concentration is associated with significantly lower posted wages. Given
+high concentration, mergers have the potential to significantly increase labor market power.
+This type of analysis could be used by antitrust agencies to assess whether mergers can create
+anti-competitiveeffectsinlabormarkets.
+WemeasurelabormarketconcentrationusingtraditionalmeasuressuchastheHerfindahl-
+HirschmanIndex(HHI),whichhavetheadvantagethattheycanbecomparedwiththethresh-
+oldsintheantitrustagencies’horizontalmergerguidelines(FTC/DOJ,2010). Thesamethresh-
+olds apply to seller and buyer power, as the horizontal merger guidelines state that “To evalu-
+ate whether a merger is likely to enhance market power on the buying side of the market, the
+1
+
+Agencies employ essentially the framework described above for evaluating whether a merger
+is likely to enhance market power on the selling side of the market.” The buying side of the
+marketreferstoinputsmarkets,includingthelabormarket. Therefore,amergercanbesaidto
+enhancemarketpowerifitresultsinahighlevelofconcentrationinspecificlabormarkets.
+Tocalculatemarketsharesingeographicandoccupationallabormarkets,weusedatafrom
+CareerBuilder.com,thelargestonlinejobboardintheUnitedStates,matchingmillionsofwork-
+ers and firms. We calculate vacancy shares and HHIs of market concentration for over 8,000
+labor markets, defined by a combination of occupation at the SOC-6 level and commuting
+zone. The occupations we cover include the most frequent occupations among CareerBuilder
+vacancies, plus the top occupations in manufacturing and construction. We show that, on av-
+erage, labor markets are highly concentrated: the average HHI is 3,157, which is above the
+2,500 threshold for high concentration according to the Department of Justice / Federal Trade
+Commission horizontal merger guidelines. Concentration varies by occupation and city, with
+largercitiesbeinglessconcentrated.
+Wedocumentanegativecorrelationbetweenlabormarketconcentrationandaverageposted
+wages in that market. We then run both OLS and instrumental variables (IV) regressions of
+posted wages on concentration at the market level (HHI), using quarterly panel data ranging
+from 2010 to 2013. Our instrument for the IV specification is the inverse number of posting
+employersinothergeographicmarketsforthesameoccupationinagivenquarter. Thisinstru-
+ment uses variation in market concentration that is driven by national-level changes in occu-
+pational hiring over time, and not by potentially endogenous changes in occupational hiring
+withinaparticularlocalmarket.
+The OLS and IV results are qualitatively similar, but quantitatively the instrumented esti-
+mates are much larger. In the baseline IV specification, the elasticity of the real wage with re-
+spect to the HHI is -0.127, while in the baseline OLS specification the elasticity is -0.038. Going
+from the 25th to the 75th level of concentration decreases posted wages by 17% in the baseline
+IVspecification, andby5%in thebaselineOLSspecifications. Theinstrumentwe usemaynot
+2

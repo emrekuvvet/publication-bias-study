@@ -1,0 +1,109 @@
+NBER WORKING PAPER SERIES
+EXECUTION RISK
+Robert Engle
+Robert Ferstenberg
+Working Paper 12165
+http://www.nber.org/papers/w12165
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+April 2006
+The authors are indebted to Lasse Pedersen and participants in the Morgan Stanley Market Microstructure
+conference, Goldman Sachs Asset Management, Rotman School at University of Toronto and NYU QFE
+Seminar for helpful comments. This paper is the private opinion of the authors and does not necessarily
+reflect policy or research of Morgan Stanley. The views expressed herein are those of the author(s) and do
+not necessarily reflect the views of the National Bureau of Economic Research.
+©2006 by Robert Engle and Robert Ferstenberg. All rights reserved. Short sections of text, not to exceed
+two paragraphs, may be quoted without explicit permission provided that full credit, including © notice,
+is given to the source.
+
+Execution Risk
+Robert Engle and Robert Ferstenberg
+NBER Working Paper No. 12165
+April 2006
+JEL No. G2
+ABSTRACT
+Transaction costs in trading involve both risk and return. The return is associated with the cost of
+immediate execution and the risk is a result of price movements during a more gradual trading. The
+paper shows that the trade-off between risk and return in optimal execution should reflect the same
+risk preferences as in ordinary investment. The paper develops models of the joint optimization of
+positions and trades, and shows conditions under which optimal execution does not depend upon the
+other holdings in the portfolio. Optimal execution however may involve trades in assets other than
+those listed in the order; these can hedge the trading risks. The implications of the model for trading
+with reversals and continuations are developed. The model implies a natural measure of liquidity
+risk.
+Robert Engle
+Department of Finance, Stern School of Business
+New York University, Salomon Center
+44 West 4th Street, Suite 9-160
+New York, NY 10012-1126
+and NBER
+rengle@stern.nyu.edu
+Robert Ferstenberg
+Morgan Stanley
+1585 Broadway
+New York, NY 10036
+Robert.Ferstenberg@morganstanley.com
+
+The trade-off between risk and return is the central feature of both academic and
+practitioner finance. Financial managers must decide which risks to take and how much
+to take. This involves measuring the risks and modeling the relation between risk and
+return. This setting is the classic framework for optimal portfolio construction pioneered
+by Markowitz(1952) and now incorporated in all textbooks.
+Although much attention has been paid to the cost of trading, little has been
+devoted to the risks of trading. Analysis has typically focused on the costs of executing
+a single trade or, in some cases, a sequence of trades. In a series of papers, Almgren and
+Chriss(1999)(2000) and Almgren(2003) and Grinold and Kahn (1999), and most recently
+Obizhaeva and Wang(2005) developed models to focus on the risk of as well the mean
+cost of execution.
+What is this risk? There are many ways to execute a trade and these have
+different outcomes. For example, a small buy order submitted as a market order will
+most likely execute at the asking price. If it is submitted as a limit order at a lower price
+the execution will be uncertain. If it does not execute and is converted to a market order
+at a later time or to another limit order the ultimate price at which the order is executed
+will be a random variable. This random variable can be thought of as having both a mean
+and a confidence interval. In a mean variance framework, often we consider the mean to
+be the expected cost while the variance is the measure of the risk of this transaction.
+More generally for large trades, the customer can either execute these
+immediately by sending them to a block desk or other intermediary who will take on the
+risk, or executing a sequence of smaller trades. These might be planned and executed by
+a floor broker, by an in-house trader, an institutional trader, or by an algorithmic trading
+system. The ultimate execution will be a random variable primarily because some
+portions of the trade will be executed after prices have moved. The delay in trading
+introduces price risk due to price movements beyond that which can be anticipated as a
+natural response to the trade itself. Different trading strategies will have different
+probability distributions of the costs and thus customers will need to choose the trading
+strategy that is optimal for them.
+- 2 -
+
+This paper addresses the relation between the risk return trade-off that is well
+understood for investment and the risk return trade-off that arises in execution. For
+example, would it be sensible to trade in a risk neutral fashion when a portfolio is
+managed very conservatively? Will execution risk on different names and at different
+times, average out to zero? Should the transaction strategy depend on what else is in the
+portfolio? Should execution risks be hedged?
+In this paper we will integrate the portfolio decision and the execution decision
+into a single problem to show how to optimize these choices jointly. In this way we will
+answer the four questions posed above and many others.
+The paper initially introduces the theoretical optimization problems in section II
+and synthesizes them into one problem in section III. Section IV discusses the
+implications of trading strategy on the Sharpe Ratio. A specific assumption is made on
+price dynamics in Section V leading to specific solutions for the optimal trades. This
+section also shows the role of non-traded assets. Section VI introduces more
+sophisticated dynamics allowing reversals. Section VII uses this apparatus to discuss
+measures of liquidity risk and section VIII concludes.
+II. TWO PROBLEMS
+A. Portfolio Optimization
+The classic portfolio problem in its simplest form seeks portfolios with minimum
+variances that attain at least a specific expected return. If y is the portfolio value, the
+problem is simply stated as:
+min V(y) (1)
+s.t.E(y)‡m
+0
+In this expression, the mechanism for creating the portfolio is not explicitly indicated, nor
+is the time period specified. Let us suppose that the portfolio is evaluated over the period
+(0,T) and that we define the dollar returns on each period t=0,1,…,T. The dollar return
+on the full period is the sum of the dollar returns on the individual periods. Furthermore,
+the variance of the sum is the sum of the variances of the individual periods, at least if
+there is no autocorrelation in returns. The problem can then be formulated as
+- 3 -

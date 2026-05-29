@@ -1,0 +1,135 @@
+NBER WORKING PAPER SERIES
+DEPOSIT FRANCHISE RUNS
+Itamar Drechsler
+Alexi Savov
+Philipp Schnabl
+Olivier Wang
+Working Paper 31138
+http://www.nber.org/papers/w31138
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+April 2023, revised September 2024
+This paper previously circulated as 'Banking on Uninsured Deposits.' We thank Viral Acharya,
+Xavier Gabaix, Sam Hanson, Pablo Kurlat, Martin Oehmke, Thomas Philippon, Matt Richardson,
+Anjan Thakor, Andrei Shleifer, Alp Simsek, Sorin Sorescu, Jeremy Stein, René Stulz, Bruce
+Tuckman, Lucy White, Yufeng Wu and seminar participants at the AFA, Bundesbank Research
+Conference, Central Bank of Iceland Economic Conference, Columbia University, Banco de
+Portugal Conference on Monetary Economics, BIS, BIS-CEPR-SCG-SFI Conference on
+Financial Intermediation, CUNY, ECB, FDIC, Federal Reserve Bank of Cleveland/OFR
+Financial Stability Conference, Federal Reserve Board, Federal Reserve Stress Testing Research
+Conference, Frankfurt School of Finance, IMF, Martin Gruber Five Star conference, NYU, OCC,
+OFR, Peking University, Rochester University, Santiago Finance Workshop, Stanford University,
+Temple University, UC Berkeley, UCLA, and WUSTL for helpful comments. We gratefully
+acknowledge research funding from the NBER Market Frictions and Financial Risks Initiative.
+The views expressed herein are those of the authors and do not necessarily reflect the views of the
+National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2023 by Itamar Drechsler, Alexi Savov, Philipp Schnabl, and Olivier Wang. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+Deposit Franchise Runs
+Itamar Drechsler, Alexi Savov, Philipp Schnabl, and Olivier Wang
+NBER Working Paper No. 31138
+April 2023, revised September 2024
+JEL No. E52,G12,G21
+ABSTRACT
+We model a new type of bank run, a deposit franchise run. Banks pay below-market rates on
+deposits, which makes the deposit franchise a valuable asset. For a bank to keep this value,
+deposits must stay in the bank; if they leave, their value is lost to the bank. This makes the deposit
+franchise a runnable asset. Unlike Diamond-Dybvig runs, deposit franchise runs can occur even if
+the bank’s loans are fully liquid. Since the deposit franchise value increases with interest rates, a
+run is more harmful, and hence more likely, when rates are high. To avoid runs, banks can
+shorten the duration of their assets, but this can make them insolvent if interest rates fall.
+Avoiding both runs and insolvency requires additional capital in proportion to the value of the
+uninsured portion of the deposit franchise. We use our model to estimate deposit franchise values
+and show how to identify vulnerable banks in the context of the 2023 Regional Bank Crisis.
+Itamar Drechsler Philipp Schnabl
+Wharton School Stern School of Business
+University of Pennsylvania New York University
+3620 Locust Walk 44 West Fourth Street
+Philadelphia, PA 19104 New York, NY 10012
+and NBER and NBER
+idrechsl@wharton.upenn.edu schnabl@stern.nyu.edu
+Alexi Savov Olivier Wang
+Stern School of Business New York University
+New York University Kaufman Management Center 44 West Fourth Street
+44 West Fourth Street, Suite 9-80 New York, NY 10012
+New York, NY 10012 olivier.wang@nyu.edu
+and NBER
+asavov@stern.nyu.edu
+
+1 Introduction
+IntheyearleadinguptoMarch2023,theFederalReserveraisedshort-terminterestrates
+by nearly 5%. Long-term rates rose by 2.5%. The sharp increase had a big impact on
+the value of bank assets. Banks held $17 trillion of long-term loans and securities with
+an average duration of about four years. The implied loss on these assets was thus 4×
+0.025×$17 = $1.7 trillion. Bank equity stood at $2.2 trillion, hence these losses had the
+potentialtowipeoutmostofthecapitalofthebankingsector.
+Strikingly, bank investors were unconcerned. The value of bank stocks, shown in
+Figure 1, held up well and tracked the overall stock market throughout 2022 and early
+2023. Bank profits, as captured by their net interest margins, also held up and even rose
+slightly despite the large maturity mismatch. Evidently, banks had another source of
+profitssupportingtheirvalue.
+That source of profits was deposits. Deposits are special, as reflected in their rates,
+whicharelowandinsensitivetomarketrates. This“lowbeta”makesdepositsmuchmore
+profitable for banks when interest rates rise. Historically, deposit betas have been about
+0.4. As a result, when the Fed raised rates banks went from earning 0% to a (1−0.4)×
+0.05 = 3% spread on deposits. Deposits stood at $17 trillion, so deposit profits rose by
+$510billionperyear. Atthisrate,itwouldtakebanksjustoverthreeyearstorecouptheir
+assetlosseswithhigherdepositprofits.
+Theoffsettingimpactofinterestratesonbankassetsanddepositsisnotacoincidence.
+Priorworkshowsthatbanksuselong-termassetstohedgetheirdepositfranchise(Drech-
+sler et al., 2021). This explains the stability of bank stocks in the face of interest rate hikes
+seeninFigure1. YetthefigurealsoshowsthatsomethingbrokeinMarch2023whenSili-
+conValleyBank(SVB)failed. Bankstocksdroppedby20%andstayeddown. Thedeposit
+franchisehedgeturnedouttobefragile. Whywasitfragile?
+In this paper, we argue that the deposit franchise is a runnable asset, and that this
+createsfragilitywheninterestratesrise. Whenratesrise,thevalueofabank’sassetsfalls
+whilethevalueofitsdepositfranchiserises. Forthedepositfranchisetoremainvaluable,
+however, deposits must stay in the bank. If they run, the bank loses the future profits it
+would have earned on them, and the deposit franchise is destroyed. The bank’s asset
+losses, on the other hand, remain. The loss of the deposit franchise can therefore make
+the bank insolvent. This justifies the run in the first place. Unlike in traditional bank
+run models (Diamond and Dybvig, 1983), a run equilibrium arises even if loans are fully
+liquid. Therunisonthedepositfranchiseitself. Wecallitadepositfranchiserun.
+Weprovideamodelofdepositfranchiserunsandanalyzetheconditionsunderwhich
+theyoccur. Arepresentativebankissuesdepositsandinvestsinloansandsecuritieswith
+1
+
+SVB failure
+120 6
+100 5
+80 4
+60 3
+40 2
+20 1
+0 0
+Sep 21 Dec 21 Mar 22 Jun 22 Sep 22 Dec 22 Mar 23 Jun 23 Sep 23
+Bank stock index S&P 500 Fed funds rate (right)
+Figure1: ThefigureplotstheNASDAQBankStockIndex(BANK)inred,theS&P500indexinbluedash,
+and Fed funds rate in black dash-dot (right scale). The bank index and S&P 500 are indexed to 100 in
+September,2021. TheverticallinemarksthefailureofSiliconValleyBank.
+a given duration. These assets are fully liquid; there are no fire sales or liquidation costs.
+The bank has deposit market power, which allows it to pay a deposit rate that is low
+and insensitive to the market interest rate, i.e. its deposit beta is less than one. The bank
+thus earns a deposit spread that increases with the market rate. This makes its deposit
+franchise valuable. The deposit franchise does not come for free: the bank must pay an
+operating cost to maintain it. The deposit franchise therefore resembles an interest rate
+swap in which the bank pays fixed (the operating cost) and receives floating (the deposit
+spread). Likeaswap,thedepositfranchisehasnegativeduration,atleastpartlyhedging
+thepositivedurationofthebank’sloansandsecurities.
+Unlike a swap, the deposit franchise is an intangible asset. Depositors are not con-
+tractually obligated to pay the bank its deposit spread. They can withdraw at any time,
+leavingthebankwithfewerprofits. Thislowersthevalueofthebank’sdepositfranchise,
+and by extension its total value. The lower bank value gives the remaining depositors
+an incentive to run. Specifically, we assume that a fraction of depositors are uninsured.
+Uninsured depositors take the bank’s solvency into account in deciding to stay or run. If
+they stay, the deposit franchise is valuable and the bank is solvent, which justifies their
+decision to stay. But if they run, the uninsured portion of the deposit franchise is de-
+stroyed. If the loss exceeds the value of the bank’s equity, the bank becomes insolvent.
+Thisjustifiesthedecisiontorun. Arunequilibriumthusemergeswithoutloanilliquidity.
+2

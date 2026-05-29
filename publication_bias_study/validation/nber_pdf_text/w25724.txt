@@ -1,0 +1,126 @@
+NBER WORKING PAPER SERIES
+THE DEMOCRACY EFFECT:
+A WEIGHTS-BASED IDENTIFICATION STRATEGY
+Pedro Dal Bó
+Andrew Foster
+Kenju Kamei
+Working Paper 25724
+http://www.nber.org/papers/w25724
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+April 2019
+We thank Alessandra Casella, Ray Duch, Adam McCloskey, Debraj Ray and seminar participants
+at Bocconi, Columbia, LSE and Zurich for useful comments. We thank Catalina Ravizza for
+excellent research assistance and Sven Fischer for his help in z-Tree programming. We thank
+John Hey for his hospitality when the authors conducted experiments at the University of York.
+The views expressed herein are those of the authors and do not necessarily reflect the views of the
+National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2019 by Pedro Dal Bó, Andrew Foster, and Kenju Kamei. All rights reserved. Short sections of
+text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+The Democracy Effect: a Weights-Based Identification Strategy
+Pedro Dal Bó, Andrew Foster, and Kenju Kamei
+NBER Working Paper No. 25724
+April 2019
+JEL No. C9,D02,D7
+ABSTRACT
+Dal Bó, Foster and Putterman (2010) show experimentally that the effect of a policy may be
+greater when it is democratically selected than when it is exogenously imposed. In this paper we
+propose a new and simpler identification strategy to measure this democracy effect. We derive
+the distribution of the statistic of the democracy effect, and apply the new strategy to the data
+from Dal Bó, Foster and Putterman (2010) and data from a new real-effort experiment in which
+subjects’ payoffs do not depend on the effort of others. The new identification strategy is based
+on calculating the average behavior under democracy by weighting the behavior of each type of
+voter by its prevalence in the whole population (and not conditional on the vote outcome). We
+show that use of these weights eliminates selection effects under certain conditions. Application
+of this method to the data in Dal Bó, Foster and Putterman (2010) confirms the presence of the
+democracy effect in that experiment, but no such effect is found for the real-effort experiment.
+Pedro Dal Bó Kenju Kamei
+Department of Economics Durham University Business School
+Brown University Mill Hill Lane, Room 176
+64 Waterman Street DH1 3LB, Durham
+Providence, RI 02912 United Kingdom
+and NBER kenju.kamei@durham.ac.uk
+pdalbo@brown.edu
+Andrew Foster
+Department of Economics and Community Health
+Brown University
+64 Waterman Street
+Providence, RI 02912
+and NBER
+afoster@brown.edu
+
+I. Introduction
+Previous research has suggested that democratic institutions may affect the
+response to policies. For example, in experimental settings, Tyran and Feld (2006), Ertan,
+Page, and Putterman (2010), Sutter, Haigner, and Kocher (2010), and Markussen,
+Putterman and Tyran (2014) among others find that punishments and rewards have
+greater impact on contributions to a public good when they are allowed democratically.2
+However, as pointed out by Dal Bó, Foster and Putterman (2010), it is difficult to
+interpret this difference in behavior as a clear evidence that democratic institutions affect
+behavior directly. The reason is that democracy allows for selection into policies. For
+example, the availability of punishments after a public good game may have a greater
+effect when that availability was chosen democratically than when it is chosen randomly
+simply because subjects who are predisposed to employ punishments may be more likely
+to vote for such punishments if given the opportunity.
+Dal Bó, Foster and Putterman (2010) provided two identification strategies to get
+around the selection problem and showed that democratic choice, net of selection,
+increases the effect on cooperation of a fine on unilateral defection in a prisoners’
+dilemma game. Their identification strategies were based on having all subjects vote and
+then randomly overriding votes in some groups. Having information on votes of all
+subjects allowed them to compare behavior controlling for each person’s vote (therefore
+controlling for selection) and show that there is a significant direct effect of democracy
+when the fine is in place.
+A shortcoming of their identification strategy is that one must know how subjects
+voted even when their votes are overridden. Outside of the laboratory one may not be
+able to override votes. The researcher may, for example, only have access to vote data
+from democratic groups or societies, not from otherwise comparable groups in which
+2 More generally, other papers have compared behavior between democratically chosen environments and
+those imposed both in the lab and in the field. See, for example, Frey (1998), Bardhan (2000), Potters,
+Sefton and Vesterlund (2005), Olken (2010), Baldassarri and Grossman (2011), Hamman, Weber and
+Woon (2011), Corazzini et al (2014), Markussen, Reuben and Tyran (2014), Mellizo, Carpenter and
+Matthews (2014), and Engl, Riedl and Weber (2018). Note that not all of these papers focus on the
+democracy effect that we study. Democracy can also affect behavior through the implementation of
+different policies and allowing for sorting into policies. Here we study the direct effect of democracy (for
+simplicity the “democracy effect”) which consists of the impact of democracy on behavior after controlling
+for the chosen policies and sorting.
+2
+
+rules are imposed exogenously. Moreover, within the laboratory it may be that the
+process of voting and having one’s vote overridden has a different effect than just having
+the rule imposed without having previously voted.3 It thus would be useful to be able to
+test for a direct democracy effect even without information on how each subject in a non-
+democratic group or society would have voted.
+In this paper we devise a method that does just that. Our alternative identification
+strategy consists of comparing behavior under non-democracy with behavior under
+democracy but weighting the behavior of voters according to their proportions in the
+population and not conditional on the election outcome. The basic insight is that the
+source of the selectivity bias is that “yes” voters are overrepresented, relative to the
+population, in groups that choose a particular policy. Similarly, “no” voters are
+overrepresented in groups that reject the policy. If voting decisions are independent
+across members of a society, a “yes” voter in a majority “yes” group is comparable to a
+“yes” voter in a majority “no” group. Thus reweighting the behaviors under each policy
+according to the proportion of yes and no voters in the population will yield an unbiased
+estimate of the effects of the policy controlling for democratic selection.
+We then apply this method to two different settings. First, we employ the data
+from Dal Bó, Foster and Putterman (2010), which considered a policy that transformed a
+prisoners’ dilemma game into a coordination game. Consistent with the results presented
+by Dal Bó, Foster and Putterman (2010) we find a significant democracy effect using the
+new methodology. The second experiment consisted of choosing a payment scheme for a
+task. The task involves adding sets of five randomly generated two-digit numbers. In the
+first part of the experiment subjects were paid a fixed amount regardless of the number of
+correct answers. In the second part, subjects could be paid as in the first part or by a piece
+rate (their payment was determined by their own performance only, independent of the
+performance of the other subjects). The payment formula was chosen by the computer for
+some groups, but for other groups the formula was chosen by simple majority. The
+question is whether the effect of introducing piece rate payments on performance is larger
+3 These may be the reasons why, despite the wide recognition of the importance of measuring the direct
+effect of democracy, the identification strategy proposed in Dal Bó, Foster and Putterman (2010) has only
+been used in a couple of experiments (e.g. Kamei 2016, Chen 2015, Marcin, Robalo and Tausch 2016, and
+Schories 2017).
+3

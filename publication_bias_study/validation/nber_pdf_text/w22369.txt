@@ -1,0 +1,137 @@
+NBER WORKING PAPER SERIES
+BUNCHING AT THE KINK:
+IMPLICATIONS FOR SPENDING RESPONSES TO HEALTH INSURANCE CONTRACTS
+Liran Einav
+Amy Finkelstein
+Paul Schrimpf
+Working Paper 22369
+http://www.nber.org/papers/w22369
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2016
+Einav and Finkelstein gratefully acknowledge support from the NIA (R01 AG032449). We thank
+John Friedman, Henrik Kleven, and Wojciech Kopczuk for helpful comments. The views
+expressed herein are those of the authors and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+At least one co-author has disclosed a financial relationship of potential relevance for this
+research. Further information is available online at http://www.nber.org/papers/w22369.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2016 by Liran Einav, Amy Finkelstein, and Paul Schrimpf. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that
+full credit, including © notice, is given to the source.
+
+Bunching at The Kink: Implications for Spending Responses to Health Insurance Contracts
+Liran Einav, Amy Finkelstein, and Paul Schrimpf
+NBER Working Paper No. 22369
+June 2016
+JEL No. D12,G22
+ABSTRACT
+A large literature in empirical public finance relies on “bunching” to identify a behavioral
+response to non-linear incentives and to translate this response into an economic object to be used
+counterfactually. We conduct this type of analysis in the context of prescription drug insurance
+for the elderly in Medicare Part D, where a kink in the individual’s budget set generates
+substantial bunching in annual drug expenditure around the famous “donut hole.” We show that
+different alternative economic models can match the basic bunching pattern, but have very
+different quantitative implications for the counterfactual spending response to alternative
+insurance contracts. These findings illustrate the importance of modeling choices in mapping a
+compelling reduced form pattern into an economic object of interest.
+Liran Einav Paul Schrimpf
+Stanford University Vancouver School of Economics
+Department of Economics University of British Columbia
+579 Serra Mall 997 - 1873 East Mall
+Stanford, CA 94305-6072 Vancouver, BC V6T1Z1
+and NBER schrimpf@mail.ubc.ca
+leinav@stanford.edu
+Amy Finkelstein
+Department of Economics, E52-442
+MIT
+77 Massachusetts Avenue
+Cambridge, MA 02139
+and NBER
+afink@mit.edu
+
+1 Introduction
+Over the last decade, there has been an increased reliance in public economics on evidence that
+is based on observed “bunching”around kink points in budget sets; Kleven (2016) provides an
+overview of this growing literature. The key underlying idea is simple and tractable: if rational
+individuals face a non-linear budget set with considerable kinks, they should bunch around the
+kinks, andtheextentofbunchingshouldbeinformativeaboutrelevantelasticities(orlackthereof).
+The existence of bunching or excess mass around kink points of a budget set can thus provide
+compelling, visual evidence against the null hypothesis of no behavioral response of individual to
+the incentives; likewise, the lack of such bunching suggests the opposite.
+Many of the applications of this idea have been in the context of the behavioral response to
+non-linear income tax schedules (Saez 2010; Chetty et al. 2011; Chetty, Friedman, and Saez 2013a;
+Kleven and Waseem 2013; Bastani and Selin 2014; Kleven et al. 2014). But similar ideas have been
+widely applied in other settings that generate non-linear budget sets, including pensions (Manoli
+and Weber, forthcoming), electricity (Ito 2014), fuel economy policy (Sallee and Slemrod 2012),
+mortgages (Best et al. 2015), cell phones (Grubb 2015; Grubb and Osborne 2015), broadband
+(Nevo, Turner, and Williams 2016), taxes on home sales (Kopczuk and Monroe 2015; Best and
+Kleven 2016), healthcare procurement (Bajari et al. 2013), and –the subject of this current paper
+–health insurance contracts (Abaluck, Gruber, and Swanson 2015; Dalton, Gowrisankaran, and
+Town 2015; Einav, Finkelstein, and Schrimpf 2015).
+A likely key factor behind this recent popularity of bunching estimates is the seminal contri-
+bution of Saez (2010), which illustrates how one may convert an observed bunching pattern to an
+economic object of interest: a “structural”behavioral elasticity parameter. Using data on individ-
+uals’annual earning, which bunch around concave kinks in the income tax schedule, Saez used a
+stylized, static, frictionless model of labor supply to provide a simple, transparent, and easy-to-
+implement mapping from the observed bunching to an estimate of the elasticity of labor supply
+(or earning) with respect to the marginal tax rate. This allows one to take the compelling visual
+evidence of bunching and move beyond merely rejecting the null of non-behavioral response to esti-
+mating a quantitative economic object of interest that can be used to predict behavioral responses
+to counterfactual scenarios. Not surprisingly, this compelling and tractable idea has been quite
+in‡uential, and has been frequently used to translate various bunching estimates into “structural”
+elasticities (Chetty et al. 2011; Kleven et al. 2011; Kleven and Waseem 2013; Bastani and Selin
+2014).
+TheSaez(2010)approachisveryappealing. Itistransparentandeasytoimplement. Ofcourse,
+the simplicity comes at the cost of potentially abstracting from a host of real-world features that
+may be important in a particular context. An alternative to this approach would be to develop a
+more complete model of a given context, which includes dynamics, uncertainty, and other relevant
+frictions. Manoli and Weber (forthcoming) provide such a model in the context of labor supply,
+and our earlier work (Einav, Finkelstein, and Schrimpf 2015) provides another example in the
+context of demand for prescription drugs. As the Saez approach is so much simpler and easier to
+1
+
+implement, it seems useful to ask how well of an approximation to the main object of interest, a
+simpler, Saez-style approach can provide. Naturally, the reasonableness of the approximation will
+depend on the speci…c context.
+This is precisely the goal of the current paper, where we explore this question in the context of
+demand for prescription drugs under Medicare Part D, the public prescription drug insurance pro-
+gram for elderly and disabled individuals in the United States. Our substantive question concerns
+the spending (or “moral hazard”) e¤ects of alternative insurance contracts. This is a topic that has
+attracted considerable attention both for health insurance contracts in general, and more recently
+in our speci…c Part D context.
+We begin in Section 2 by describing the setting and the data. An important feature of Medicare
+PartDcoverageisthedonutholeinthebasicbene…tdesign, whichgeneratesalarge, discontinuous
+increase in the marginal price. Consequently, individuals’annual drug expenditures bunch around
+this kink, making it a natural context to explore the implication of di¤erent bunching estimates.
+In Section 3 we present and estimate two di¤erent models of prescription drug purchasing
+behavior. The …rst is our adaptation of the static, frictionless Saez (2010) model to the Medicare
+Part D context; we refer to it hereafter as a Saez-style model and the resultant elasticities as
+Saez-based elasticities. The second is the dynamic model we developed in our earlier work (Einav,
+Finkelstein, and Schrimpf 2015); we refer to it hereafter as the dynamic model and the resultant
+elasticities as the dynamics-based elasticities. Both models match the basic bunching pattern;
+however, the implied elasticity from the dynamic model is an order of magnitude greater than the
+Saez-based elasticity estimate. This is the key result of the paper.
+There are multiple di¤erences between the two, non-nested settings. The Saez-style framework
+assumes continuous spending decisions (i.e. no lumpiness in drug purchases), perfect foresight
+of future health shocks (i.e. no uncertainty), and no discounting of the future. None of these
+assumptions are made in the dynamic model. It is interesting to explore which features of the
+model are most important for the di¤erences in implied elasticities, which is the focus of Section 4.
+There we develop two modi…cations of the dynamic model, which bring it closer to the Saez-style
+framework. Wethenre-estimateeachoftheseversionsofthemodelusingthesamedata. Ourmain
+…ndingisthatastatic, perfectforesightversionofthefulldynamicmodel–whichcomesquiteclose
+totheSaez-stylemodelexceptthatitallowsforlumpinessinspendingdecisions–resultsinimplied
+elasticities that are about half way between the Saez-based estimates and the dynamics-based ones.
+Interestingly, once we allow for lumpiness, allowing for uncertainty essentially allows us to recover
+the magnitude of the elasticity implied by the full dynamic model; as it turns out, allowing for
+discounting is not quantitatively important.
+We emphasize that the results we present in this paper should be viewed as illustrative. They
+are speci…c to our particular (Medicare Part D) context, as well as to the modeling choices we
+have made. Nonetheless, they highlight what we believe to be an important and broader point:
+in-sample bunching patterns may be rationalized by a host of modeling assumptions, and these
+assumptions can, at least in some contexts, have very di¤erent quantitative implications for the
+out-of-sample objects of interest. Kleven (2016) emphasizes a similar point in his review article;
+2

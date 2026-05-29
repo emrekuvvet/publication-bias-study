@@ -1,0 +1,137 @@
+NBER WORKING PAPER SERIES
+CROSS-BORDER PRUDENTIAL POLICY SPILLOVERS:
+HOW MUCH? HOW IMPORTANT?
+EVIDENCE FROM THE
+INTERNATIONAL BANKING RESEARCH NETWORK
+Claudia M. Buch
+Linda Goldberg
+Working Paper 22874
+http://www.nber.org/papers/w22874
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2016
+The authors thank participants of the International Banking Research Network, in particular
+Matthieu Bussiere, Jana Ohls, and Dennis Reinhardt, for many thoughtful exchanges and
+contributions. Special thanks go to the teams that prepared the prudential instruments database
+(Eugenio Cerutti, Ricardo Correa, Elisabetta Fiorentino, and Esther Segalla) in collaboration with
+the International Monetary Fund and to all country teams providing the input for the meta-
+analysis. Simone Auer, Stijn Claessens, Ricardo Correa, Ralph De Haas, John Driscoll, Martial
+Dupaigne, Peter Egger, Alexander Guembel, Galina Hale, Robert Hills, Christian Hellwig,
+Augustin Landier, Ouarda Merrouche, Camelia Minoiu, Gianmarco Ottaviano, Alexander Popov,
+Rhiannon Sowerbutts, and Phil Strahan provided valuable comments on an earlier draft of this
+paper. Excellent research assistance was provided by Jacob Conway and Guzel Valitova. The
+views expressed in this paper are solely those of the authors and should not be interpreted as
+reflecting the view of the Federal Reserve Bank of New York, the Federal Reserve System, the
+Deutsche Bundesbank, or the National Bureau of Economic Research. All errors are our own.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2016 by Claudia M. Buch and Linda Goldberg. All rights reserved. Short sections of text, not
+to exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Cross-Border Prudential Policy Spillovers: How Much? How Important? Evidence from the
+International Banking Research Network
+Claudia M. Buch and Linda Goldberg
+NBER Working Paper No. 22874
+December 2016
+JEL No. F34,G01,G21
+ABSTRACT
+The development of macroprudential policy tools has been one of the most significant changes in
+banking regulation in recent years. In this multi-study initiative of the International Banking
+Research Network, researchers from fifteen central banks and two international organizations use
+micro-banking data in conjunction with a novel dataset of prudential instruments to study
+international spillovers of prudential policy changes and their effects on bank lending growth.
+The collective analysis has three main findings. First, the effects of prudential instruments
+sometimes spill over borders through bank lending. Second, international spillovers vary across
+prudential instruments and are heterogeneous across banks. Bank-specific factors like balance
+sheet conditions and business models drive the amplitude and direction of spillovers to lending
+growth rates. Third, the effects of international spillovers of prudential policy on loan growth
+rates have not been large on average. However, our results tend to underestimate the full effect by
+focusing on adjustment along the intensive margin and by analyzing a period in which relatively
+few countries implemented country-specific macroprudential policies.
+Claudia M. Buch
+Deutsche Bundesbank
+Wilhelm-Epstein-Strasse 14
+D-60431 Frankfurt am Main
+Germany
+claudia.buch@bundesbank.de
+Linda Goldberg
+Federal Reserve Bank-New York
+33 Liberty Street
+New York, NY 10045
+and NBER
+linda.goldberg@ny.frb.org
+
+1. Introduction
+The development of macroprudential policy tools is one of the most significant policy changes in
+the past decade. Macroprudential policies aim at mitigating systemic risks in financial markets.
+Macroprudential tools are often explicitly applied to banks and are mostly implemented at the
+national level. Examples of such tools are bank capital requirements, counterparty
+concentration limits, interbank exposure limits, loan-to-value ratios, and reserve requirements.
+The desired targets might be bank lending growth, the resilience of banks to shocks, or asset
+markets that are deemed to be frothy or mispriced.
+The effectiveness of these tools is a key consideration. Analysis of early experiences with
+macroprudential instruments shows that some tools can reduce banks’ asset growth within
+countries (Claessens, Ghosh, and Mihet 2014). However, effectiveness may be weakened when
+risky or excessive lending moves outside of the regulatory perimeter to non-covered entities or
+activities (Bengui and Bianchi 2014; Aiyar, Calomiris, and Wieladek 2014; Reinhardt and
+Sowerbutts 2015) or to other geographic regions (Houston, Lin, and Ma 2012).
+The international financial openness of countries and the global nature of financial
+institutions present added challenges (Obstfeld 2014).1 International spillovers through banks
+matter for instrument effectiveness within a country’s borders and are relevant for the broader
+issues of policy frameworks, externalities, reciprocity, and welfare. Yet, there is little systematic
+evidence that establishes whether spillovers are common, important, and support or hinder the
+attainment of policy goals. The gap in knowledge is particularly acute when it comes to evidence
+drawn from and relevant for a broad range of countries. Providing this evidence on prudential
+policy effects and international spillovers is the subject of this multi-study initiative of the
+International Banking Research Network (IBRN).2 15 country teams examine domestic effects
+and international spillovers of prudential instruments using detailed confidential micro-banking
+data. In addition, researchers from the Bank for International Settlements (BIS) and from the
+European Central Bank (ECB) provide cross-country perspectives. The analyses focus on
+evidence for international policy spillovers through multiple channels: Inward transmission
+1 For a more detailed discussion of macroprudential toolkits, see Arregui et al. (2013), Claessens, Ghosh, and
+Mihet (2014), or Ostry et al. (2011).
+2 The IBRN was founded in 2012 to analyze issues pertinent to internationally active banks. The current list of
+participating central banks and institutions is available at http://www.newyorkfed.org/IBRN/index.html. Most
+central bank teams have access to confidential bank-level data on domestic and cross-border banking activities.
+In a previous project, the IBRN analyzed the transmission of liquidity risk domestically and internationally
+through the activities of global banks, with a meta-analysis (Buch and Goldberg 2015) and eleven country
+studies published in the IMF Economic Review (November 2015).
+1
+
+addresses how foreign regulations affect the domestic activities of domestic banks or foreign
+affiliates (bank branches or subsidiaries) located in the host country; Outward transmission to
+foreign economies addresses the effects of foreign policies on the foreign activities of a
+reporting country’s global banks. All country teams implement the same baseline regression
+models for analyzing inward or outward transmission. In addition, country teams address issues
+specific to their banking markets or banks’ business models. In some cases, teams differentiate
+adjustment of lending by their global banks’ branches (which are subject to the capital
+requirements of their parents) versus subsidiaries (which are, in addition, subject to regulations
+in the host country).
+This paper provides an overview of the full initiative, including its methodological and
+database contributions, and it presents a meta-analysis that generates key cross-country
+results. By design, the empirical studies we summarize are very homogenous because all teams
+used the same baseline regression model. Hence, publication biases that can affect meta-
+analyses that draw on only published research are not an issue here. Also, largely due to data
+availability, previous studies of international spillovers are more restricted as they consider
+fewer or less precisely dated policy instruments or countries, or as they cannot account for
+differences across banks or channels of policy transmission internationally.3
+The IBRN has worked toward closing several gaps that have limited prior analyses. The IBRN
+provides cross-country evidence on regulatory spillovers using the same methodological
+framework and consistent data – both bank-specific and in terms of prudential instruments –
+across countries. As researchers apply a common research methodology, the IBRN’s broadly
+relevant insights go well beyond the single-country case studies. In order to identify effects of
+prudential policies, the project uses micro-data, and it exploits variation in prudential
+instruments across countries, bank balance sheet characteristics, and the location of foreign
+affiliates. Micro-data help in solving the identification problem which beleaguers impact
+assessment studies based on aggregate data. Identification using heterogeneity and in the
+international context is greatly aided by the degree of granularity of the data involved. To
+facilitate results which are comparable across countries, the IBRN and International Monetary
+Fund (IMF) developed a new database that contains more precise measures of prudential
+regulation than were available to prior researchers. Described in Cerutti, Correa, Fiorentino, and
+Segalla (2015), the quarterly database spans 64 countries and the period from 2000 to 2014.
+3 Most available studies cover the domestic consequences of domestic prudential policies. Examples include
+Bruno and Shin (2014), IMF (2011), Jiménez et al (2012) and Vandenbussche et al. (2015).
+2

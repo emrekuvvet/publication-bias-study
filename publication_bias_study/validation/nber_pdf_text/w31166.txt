@@ -1,0 +1,120 @@
+NBER WORKING PAPER SERIES
+DO BANKS HEDGE USING INTEREST RATE SWAPS?
+Lihong McPhail
+Philipp Schnabl
+Bruce Tuckman
+Working Paper 31166
+http://www.nber.org/papers/w31166
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+April 2023, Revised June 2024
+We thank Chalinee (Bam) Charoenwong, Itamar Drechsler, Andreas Fuster, Anna Kovner, Scott
+Mixon, Tomasz Piskorski (discussant), Alexi Savov, Amit Seru (discussant), Andrew
+Teodorescu, James Vickery, and seminar participants at the 2024 American Economic
+Association Meeting, IMF 6th Annual Macro-Financial Research Conference, Qatar Center for
+Global Banking and Finance Annual Conference, Interest Rate Variability and the Financial
+Sector Workshop, the Treasury Department’s Financial System Risk seminar, and the Federal
+Reserve Board’s Financial Stability seminar for helpful comments. This research presented was
+produced in each author’s official capacity as an economist or consultant with the CFTC. The
+Office of the Chief Economist (OCE) has approved the paper for release to the public. OCE
+economists produce original research on a broad range of topics relevant to the CFTC’s mandate
+to regulate commodity future markets, commodity options markets, and the expanded mandate to
+regulate the swap markets pursuant to the Dodd-Frank Act. The analyses and conclusions
+expressed in this paper are those of the author(s) and do not reflect the views of other
+Commission staff, the Office of the Chief Economist, the Commission, or the National Bureau of
+Economic Research. The paper is considered a government work product and may not be
+individually copyrighted.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2023 by Lihong McPhail, Philipp Schnabl, and Bruce Tuckman. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Do Banks Hedge Using Interest Rate Swaps?
+Lihong McPhail, Philipp Schnabl, and Bruce Tuckman
+NBER Working Paper No. 31166
+April 2023, Revised June 2024
+JEL No. G21,G32
+ABSTRACT
+We analyze whether banks use interest rate swaps to hedge the interest rate risk of their assets,
+primarily loans and securities. By examining regulatory data on individual swap positions from
+the largest 250 U.S. banks, we find that banks hold large swap positions with an average notional
+value of $434 billion. However, after accounting for offsetting swap positions, the average bank
+exhibits almost no net interest rate risk from swaps: a 100-basis-point increase in rates reduces
+the value of its swaps by only 0.1% of bank equity. The variation in swap positions across banks
+indicates that banks use swaps to hedge interest rate risk, thereby facilitating risk transfer within
+the banking sector. Additionally, we find that swap dealer banks primarily hold swap positions
+for market making, while non-dealer banks use swaps to meet borrower demand for fixed-rate
+loans. Despite the substantial notional amounts, our findings suggest that swap positions are not
+economically significant in hedging the overall interest rate risk of bank assets. Instead, banks
+primarily rely on their deposit franchise to hedge interest rate risk.
+Lihong McPhail Bruce Tuckman
+Commodity Futures Trading Commission New York University
+1155 21st Street, NW 44 West 4th St
+Washington, DC 20581 New York, NY 10012
+lmcphail@cftc.gov btuckman@stern.nyu.edu
+Philipp Schnabl
+Stern School of Business
+New York University
+44 West Fourth Street
+New York, NY 10012
+and NBER
+schnabl@stern.nyu.edu
+
+I. Introduction
+Banks are in the business of borrowing short and lending long, which exposes them to
+interest rate risk. In particular, on the lending side, the values of fixed-rate loans and
+investments in fixed-rate securities decline when market interest rates rise.
+Recently, market interest rates increased from January 2022 to March 2023 as central
+banksaroundtheworldtightenedmonetarypolicytocombatinflation. IntheUnitedStates,
+the Federal Reserve Bank increased the market short-term rate, i.e., the Fed Funds rate,
+from close to 0% in early January 2022 to more than 5% in March 2023. As a result, the
+long-term interest rate, i.e., 10-year Treasury rate, increased by about 2.5%. These large
+increases in market interest rates significantly lowered the value of bank loans and securi-
+ties. Drechsler et al. (2023) estimate that the U.S. banking sector lost around $700 billion
+on security investments and a total of $1.5 trillion on both securities and loans.
+These large losses raise the question of how banks manage their interest rate risk. Inter-
+estrateswaps(“swaps”’)areacommonlyusedfinancialinstrumentforthispurpose. Swaps
+involve exchanging fixed interest rate payments for floating rate payments, thus allowing
+banks to transfer interest rate risk within the banking sector or across to other sectors. Al-
+mostalllargeU.S.banksuseswaps,andthetotalnotionalvalueofswappositionsamounts
+to six times the total assets of the banking sector.
+In this paper, we ask whether banks use swaps to hedge the interest rate risk of their
+assets. Banks can use swaps to hedge the interest rate risk of individual assets, a portfolio
+of loans or securities, or their entire balance sheet. The aggregate banking sector may also
+use swaps to move interest rate risk to non-bank financial institutions such as insurance
+companies, pension funds, or sovereign wealth funds. At the same time, banks may use
+swaps to increase their exposure to interest rate risk, possibly because they engage in risk
+takingorriskshifting. Banksmaypreferswapsoverfixed-rateassetsfortakingoninterest
+1
+
+rate risk because swaps have embedded leverage, may require less regulatory capital, and
+may be harder for outsiders to evaluate.
+The main challenge in answering our research question is that banks’ exposure to swaps
+is notoriously hard to measure. A proper evaluation of whether swaps hedge bank assets
+requires highly granular data on swap positions including swap-specific information on no-
+tional amount, maturity, interest rate, and the direction of the swap. In practice, how-
+ever, publicly available data on swaps is mostly limited to bank-level data on total notional
+amounts and market values. This information is insufficient to provide a proper evaluation
+of the interest rate risk embedded in swaps.
+We address this challenge by using regulatory (non-public) data on bank swap positions
+collected from the Commodity Futures Trading Commission (CFTC). Our analysis focuses
+on the positions of the largest 250 U.S. commercial banks, which amount to more than 8
+million swap contracts and constitute nearly all swap positions of the U.S. banking sector.
+In this way, our data allow us to measure and evaluate the interest rate exposure at the
+swap-level, at the bank-level, and at the aggregate banking sector level. To the best of our
+knowledge, this is the first paper examining the interest rate risk of bank swap positions
+using such detailed data.
+Weevaluatebankexposuretoswappositionsusingtwocommonmetrics. Thefirstmetric
+isthenotionalamount,whichmeasuresthetotaldollaramountthatisreferencedinaswap.
+For example, the notional amount of a fixed-for-floating interest rate swap is the dollar
+amount used to calculate the interest rate payments required by the contract. Notional
+amounts are straightforward to compute and commonly reported, although they cannot be
+interpreted as measuring the interest rate exposure of swap positions.
+ThesecondmetricistheDV01(thedollarvalueofan’01),whichisthechangeinthevalue
+ofaswappositionduetoaone-basis-pointchangeininterestrates. TheDV01ofaswapcan
+only be computed using detailed information on swap positions including information on
+notional value, maturity, swap rate, and direction of the swap. Banks use DV01 as the
+2

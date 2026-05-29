@@ -1,0 +1,132 @@
+NBER WORKING PAPER SERIES
+SHADOW BANKING AND THE FOUR PILLARS OF
+TRADITIONAL FINANCIAL INTERMEDIATION
+Emmanuel Farhi
+Jean Tirole
+Working Paper 23930
+http://www.nber.org/papers/w23930
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2017, Revised February 2020
+The authors are grateful to Aimé Bierdel, Mathias Dewatripont, Veronica Guerrieri, Frédéric
+Malherbe, Paul-Henri Moisson, John Moore, Francisco Nadal de Simone, Guillermo Ordonez,
+Guillaume Plantin, Jeremy Stein, Joseph Stiglitz, John Vickers, four referees, and participants at
+the Shanghai Frontiers of Macroeconomics conference, LACEA-LAMES Buenos Aires
+conference, 2019 ASSA meetings, Bocconi, Central Banks of England, France, Luxembourg and
+Uruguay, Harvard, NY Fed, and ULB for helpful comments. This project has received funding
+from the European Research Council (ERC) under the European Union’s Horizon 2020 research
+and innovation programme (grant agreement n°669217 - ERC MARKLIM). The views expressed
+herein are those of the authors and do not necessarily reflect the views of the National Bureau of
+Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2017 by Emmanuel Farhi and Jean Tirole. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Shadow Banking and the Four Pillars of Traditional Financial Intermediation
+Emmanuel Farhi and Jean Tirole
+NBER Working Paper No. 23930
+October 2017, Revised February 2020
+JEL No. E0,G0
+ABSTRACT
+Traditional banking is built on four pillars: SME lending, insured deposit taking, access to lender
+of last resort, and prudential supervision. This paper unveils the logic of the quadrilogy by
+showing that it emerges naturally as an equilibrium outcome in a game between banks and the
+government. A key insight is that regulation and public insurance services (LOLR, deposit
+insurance) are complementary. The model also shows how prudential regulation must adjust to
+the emergence of shadow banking, and rationalizes structural remedies to counter financial
+contagion: ring-fencing between regulated and shadow banking and the sharing of liquidity in
+centralized platforms.
+Emmanuel Farhi
+Harvard University
+Department of Economics
+Littauer Center
+Cambridge, MA 02138
+and NBER
+emmanuel.farhi@gmail.com
+Jean Tirole
+Toulouse School of Economics
+1 Esplanade de l'Universite
+31080 Toulouse Cedex 6
+FRANCE
+jean.tirole@tse-fr.eu
+
+1 Introduction
+Traditional banking is built on four pillars: the commercial or retail bank is prudentially
+supervised and in exchange gets access to lender of last resort and to deposit insurance.
+Itcatersto“specialdepositors”,whowantaliquidandsafevehiclefortheirsavings,and
+to “special borrowers”, the small and medium enterprises that need close oversight to
+secure financing. These two activities are the “core functions”, the successful delivery
+of which governments attach great social value to. Other investors and borrowers have
+accessandresorttofinancialmarkets. Otherfinancialinstitutionstraditionallyhavebeen
+leftunregulatedandcouldnotclaimaccesstodepositinsuranceandpublicliquidity.
+Thisinstitutionalframeworkisnotamatterofcourse. Theaccesstothe“publicinsur-
+ance services”- the discount window and other liquidity facilities on the one hand and
+cheap deposits on the other - could be priced and offered to the financial system as a
+whole. Besides, this conventional definition of retail banking is called into question by
+recent developments. Many shadow financial institutions (money market mutual funds
+and investment banks) gained access to public liquidity facilities during the 2008 crisis.
+Another challenge to the conventional wisdom is the observation that in recent years
+shadow banks have gained much market share in retail banks’ classical territories, the
+core functions. This seems in the West to be due to a migration of activities in reaction
+to tighter prudential standards. But they also have grown in importance in India and
+other emerging markets. Shadow banks in China lend to small and medium enterprises
+and cater to retail depositors through wealth management funds. Should we reconsider
+the conventional SME lending/insured deposit taking/regulation/lender of last resort
+quadrilogy?
+To start answering this question, we unveil the logic of the conventional wisdom.
+While our work is normative, we build on the usual hazards facing financial systems:
+over-leverage and bailouts, threat of migration to shadow banking, cross exposures be-
+tween retail and shadow banking sectors. These modeling ingredients are there for good
+reason. Moral hazard in the form of over-leverage (or more broadly risk taking), com-
+bined with the possibility of bailouts, creates an externality of unregulated banking on
+public finances. This externality may vindicate costly supervision. Cross-exposures (mo-
+tivatedbyimperfectriskcorrelationandmutualinsuranceonourmodel)raisethepossi-
+bilityoffinancialcontagion,whichallowsustoinvestigatethedesirabilityofring-fencing
+andofcentralcounterpartyclearinghouses(CCPs). Mechanismdesigncallsforoptimally
+devisinginstitutionsthatbestmitigatethecombinedhazards.
+This paper’s central insight is that there are basic complementarities between regu-
+2
+
+lation and the other components of the quadrilogy. Through its monopoly privilege on
+taxation -i.e. its access to future earnings-, the government has a special ability to cre-
+ate liquidity and therefore to insure banks and/or individuals when private markets are
+unable or unwilling to do so. However, deposit insurance (DI) and lender of last resort
+(LOLR)servicesarecostlyfortheofficials(politicalopprobrium)orforsociety(astheyre-
+quirethegovernmenttoraisefundseveninfinancialstraits). Bankingsupervisionlowers
+thecostoftheseputoptionsontaxpayermoneytotheextentthatitmonitorsleverage(in
+ourmodel)ormoregenerallyreducesbankingmoralhazard. SMElendingmagnifiesthe
+benefit of regulation, as the fear of industrial disruption may trigger ex-ante-unwanted
+bankingbailouts.1
+Overall,thebroadnormativepictureisoneinwhichcorebankingclients-smalldepos-
+itors and SMEs-, who are most affected by a banking failure and therefore are politically
+sensitive, are served by a regulated entity and benefit (directly for depositors and indi-
+rectlyforSMEs)fromextendedinsurancefromthegovernment. Theattractivepricingof
+this insurance in turn incentivizes banks to remain in the regulated sector instead of mi-
+gratingtotheshadowbankingsector. ThispicturechimeswiththeUKlegislation,which
+iscastintermsofthecontinuityofprovisionof“coreservices”–tohouseholdsandSMEs
+thatlacknon-bankalternatives.
+Our model, described in Section 2, has two dates. At date 0, the representative bank
+chooses its leverage, freely so if in the shadow banking sector and in a constrained way
+if part of the regulated sector. At date 1, the bank receives a random revenue (which
+in practice reflects fee earnings, asset values or the availability of cheap deposits), and
+honors (or not) its unsecured debt obligations. It then invests if it can: The bank, which
+has a specific expertise in lending to the industry (to the SMEs) may be illiquid/unable
+to finance it at date 1, and furthermore such an event is more likely if the bank is highly
+levered. Furthermore, if the bank has issued insured deposits at date 0, the government
+hastomakegoodonthesedepositswhenthebankcannotpaythedepositors.
+Animportantdistinctionhereisbetweenbailoutsandinsurance.2 Bailoutsarisewhen
+thegovernmentwouldliketocommitnottorescuethebankoritsdepositors,butcannot
+refrain from doing so ex post when the bank is illiquid. By contrast, “public insurance
+1ThekeyfeatureofbankloanstoSMEsisthatthegovernmentattachessocialvaluetothem. Inpractice
+SMElendingfigureprominentlyaspartofabank’s“corefunctions”. Themodelappliesmorebroadlyto
+systemicallyimportantfunctionssuchaspaymentsystems,marketmaking,etc.
+2LOLR is often described as following Bagehot’s dictum: To avert panics, central banks should lend
+earlyandfreely(i.e. withoutlimit), tosolventfirms, againstgoodcollateral, andat“highrates”. Inprac-
+tice, itisverydifficulttodistinguishilliquidityfrominsolvency, andLOLRendsupsubsidizingfinancial
+institutions. WefocusonthisdimensionandmodelLOLRasacommitmentatdate0tobailoutbanksat
+date1.
+3

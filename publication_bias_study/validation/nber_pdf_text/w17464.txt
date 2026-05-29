@@ -1,0 +1,129 @@
+NBER WORKING PAPER SERIES
+POLITICAL UNCERTAINTY AND RISK PREMIA
+Lubos Pastor
+Pietro Veronesi
+Working Paper 17464
+http://www.nber.org/papers/w17464
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2011
+We are grateful for comments from Jules van Binsbergen, Nick Bloom, Mike Chernov, Brad DeLong,
+Art Durnev, Francisco Gomes, Peter Kondor, Francesco Trebbi, Mungo Wilson, the conference participants
+at the 2012 Fall NBER AP meeting, 2012 Western Finance Association meetings, 2012 European
+Finance As- sociation meetings, 2012 Utah Winter Finance Conference, 2012 Duke/UNC Asset Pricing
+Conference, 2012 Jackson Hole Conference, 2012 Asset Pricing Retreat at Cass Business School,
+2012 CNMV Conference on Securities Markets (Madrid), 2012 University of Chicago conference
+on Policy Uncertainty and Its Economic Implications, and the workshop participants at Berkeley, Bocconi,
+Boston University, Cambridge, Chicago, Chicago Fed, EIEF Rome, Emory, Fed Board of Governors,
+INSEAD, Iowa, LBS, LSE, Lugano, Maryland, Michigan, MIT, New York Fed, NYU, Oxford, Penn
+State, Pompeu Fabra, Toronto, Wisconsin, and WU Vienna. We are also grateful to Diogo Palhares
+for excellent research assistance and to Bryan Kelly for data assistance. This research was funded
+in part by the Fama-Miller Center for Research in Finance at the University of Chicago Booth School
+of Business. The views expressed herein are those of the authors and do not necessarily reflect the
+views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2011 by Lubos Pastor and Pietro Veronesi. All rights reserved. Short sections of text, not to exceed
+two paragraphs, may be quoted without explicit permission provided that full credit, including © notice,
+is given to the source.
+
+Political Uncertainty and Risk Premia
+Lubos Pastor and Pietro Veronesi
+NBER Working Paper No. 17464
+September 2011, Revised April 2013
+JEL No. G01,G12,G18
+ABSTRACT
+We develop a general equilibrium model of government policy choice in which stock prices respond
+to political news. The model implies that political uncertainty commands a risk premium whose magnitude
+is larger in weaker economic conditions. Political uncertainty reduces the value of the implicit put
+protection that the government provides to the market. It also makes stocks more volatile and more
+correlated, especially when the economy is weak. We find empirical evidence consistent with these
+predictions.
+Lubos Pastor
+University of Chicago
+Booth School of Business
+5807 South Woodlawn Ave
+Chicago, IL 60637
+and NBER
+lubos.pastor@chicagobooth.edu
+Pietro Veronesi
+University of Chicago
+Booth School of Business
+5807 South Woodlawn Avenue
+Chicago, IL 60637
+and NBER
+pietro.veronesi@chicagobooth.edu
+
+1. Introduction
+Politicalnewshas beendominatingfinancialmarketsrecently. Dayafterday,asset prices
+seem to react to news about what governments around the world have done or might do. As
+anexample,considertheongoing sovereigndebtcrisisinEurope. WhenEuropean politicians
+announcedadealcuttingGreece’sdebtinhalfonOctober27,2011, theS&P500indexsoared
+by 3.4%, while French and German stocks gained more than 5%, presumably in response
+to the increased likelihood of the preservation of the eurozone. Early in the following week,
+stocks gave back all of those gains when Greece’s prime minister announced his intention
+to hold a referendum on the deal. When other Greek politicians voiced their opposition
+to that initiative, stocks rose sharply again. It seems stunning that the pronouncements of
+politicians from a country whose GDP is smaller than that of Michigan can instantly create
+or destroy hundreds of billions of dollars of market value around the world.
+Regrettably, our ability to interpret the impact of political news on financial markets is
+constrained by the lack of theoretical guidance. Models in which asset prices respond to
+political news are notably absent from mainstream finance theory. We try to fill this gap,
+and we use our model to study the asset pricing implications of political uncertainty.
+Political uncertainty has become prominent not only in Europe but also in the United
+States. For example, the ratings firm Standard & Poor’s cited political uncertainty among
+the chief reasons behind its unprecedented downgrade of the U.S. Treasury debt in August
+2011.1 Evenpriorto thepoliticalbrinkmanshipoverthestatutorydebtceilinginthesummer
+of 2011, much uncertainty surrounded the U.S. government policy changes during and after
+the financial crisis of 2007-2008, such as the various bailout schemes, the Wall Street reform,
+and the health care reform. Yet, despite the apparent relevance of political uncertainty for
+global financial markets, we know little about its effects on asset prices.
+How does uncertainty about future government actions affect market prices? On the one
+hand, this uncertainty could have a positive effect if the government responds properly to
+unanticipated shocks. For example, we generally do not insist on knowing in advance how
+exactly a doctor will perform a complex surgery; should unforeseeable circumstances arise,
+it is useful for a qualified surgeon to have the freedom to depart from the initial plan. In
+the same spirit, governments often intervene in times of trouble, which might lead investors
+to believe that governments provide put protection on asset prices (e.g., the “Greenspan
+1The “debate this year has highlighted a degree of uncertainty over the political policymaking process
+which we think is incompatible with the AAA rating,” said David Beers, managing director of sovereign
+credit ratings at Standard & Poor’s, on a conference call with reporters on August 6, 2011.
+1
+
+put”). On the other hand, political uncertainty could have a negative effect because it is not
+fully diversifiable. Non-diversifiable risk generally depresses asset prices by raising discount
+rates.2 Both of these effects arise endogenously in our theoretical model.
+We analyze the effects of political uncertainty on stock prices in the context of a general
+equilibriummodel. Inour model,firmprofitabilityfollowsastochasticprocess whose meanis
+affected by the prevailing government policy. The policy’s impact on the mean is uncertain.
+Both the government and the investors (firm owners) learn about this impact in a Bayesian
+fashion by observing realized profitability. At a given point in time, the government makes
+a policy decision—it decides whether to change its policy and if so, which of potential new
+policies to adopt. The potential new policies are viewed as heterogeneous a priori—agents
+expect different policiesto havedifferent impacts, with different degrees of prior uncertainty.
+If a policy change occurs, the agents’ beliefs are reset: the posterior beliefs about the old
+policy’s impact are replaced by the prior beliefs about the new policy’s impact.
+When making its policy decision, the government is motivated by both economic and
+non-economic objectives: it maximizes the investors’ welfare, as a social planner would,
+but it also takes into account the political costs (or benefits) associated with adopting any
+given policy. These costs are uncertain, as a result of which investors cannot fully anticipate
+which policy the government is going to choose. Uncertainty about political costs is the
+source of political uncertainty in the model. We interpret political uncertainty broadly as
+uncertainty about the government’s future actions. Agents learn about political costs by
+observing political signals that we interpret as outcomes of various political events.
+Solving for the optimal government policy choice, we find that a policy is more likely to
+be adopted if its political cost is lower and if its impact on profitability is perceived to be
+higher or less uncertain. As a result of this decision rule, a policy change is more likely in
+weakereconomicconditions,inwhichthecurrentpolicyistypicallyperceivedas harmful. By
+replacing poorly-performing policies in bad times, the government effectively provides put
+protection to the market. The value of this protection is reduced, though, by the ensuing
+uncertainty about which of the potential new policies will replace the outgoing policy.
+We explore the asset pricing implications of our model. We show that stock prices are
+driven by three types of shocks, which we call capital shocks, impact shocks, and political
+shocks. The first two types of shocks are drivenby shocks to aggregate capital. These shocks
+2For example, some commentators argue that the risk premia in the eurozone have been inflated due to
+politicaluncertainty. According to Harald Uhlig,“The risk premium in the markets amounts to a premium
+on the uncertainty of what Merkel and Sarkozy will do.” (Bloomberg Businessweek, July 28, 2011).
+2

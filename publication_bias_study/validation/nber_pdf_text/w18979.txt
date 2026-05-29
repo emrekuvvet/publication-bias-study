@@ -1,0 +1,135 @@
+NBER WORKING PAPER SERIES
+WOMEN'S EMANCIPATION THROUGH EDUCATION:
+A MACROECONOMIC ANALYSIS
+Fatih Guvenen
+Michelle Rendall
+Working Paper 18979
+http://www.nber.org/papers/w18979
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+April 2013
+For helpful discussions and comments, we thank seminar participants at European University Institute,
+Goethe University Frankfurt, Toulouse School of Economics, Universite Catholique de Louvain, University
+of Zurich, NBER's Aggregate Implications of Microeconomic Consumption Behavior in Cambridge,
+and the SED conference. For financial support, Guvenen thanks the National Science Foundation (Grant
+No 0814030) and Rendall thanks the European Research Council (ERC Advanced Grant IPCDP-229883).
+The usual disclaimer applies. The views expressed herein are those of the authors and do not necessarily
+reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2013 by Fatih Guvenen and Michelle Rendall. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit, including
+© notice, is given to the source.
+
+Women's Emancipation Through Education: A Macroeconomic Analysis
+Fatih Guvenen and Michelle Rendall
+NBER Working Paper No. 18979
+April 2013
+JEL No. D13,E24,J12
+ABSTRACT
+In this paper, we study the role of education as insurance against a bad marriage. Historically, due
+to disparities in earning power and education across genders, married women often found themselves
+in an economically vulnerable position, and had to suffer one of two fates in a bad marriage: either
+they get divorced (assuming it is available) and struggle as low-income single mothers, or they remain
+trapped in the marriage. In both cases, education can provide a route to emancipation for women. To
+investigate this idea, we build and estimate an equilibrium search model with education, marriage/
+divorce/remarriage, and household labor supply decisions. A key feature of the model is that women
+bear a larger share of the divorce burden, mainly because they are more closely tied to their children
+relative to men. Our focus on education is motivated by the fact that divorce laws typically allow spouses
+to keep the future returns from their human capital upon divorce (unlike their physical assets), making
+education a good insurance against divorce risk. However, as women further their education, the earnings
+gap between spouses shrinks, leading to more unstable marriages and, in turn, further increasing demand
+for education. The framework generates powerful amplification mechanisms, which lead to a large
+rise in divorce rates and a decline in marriage rates (similar to those observed in the US data) from
+relatively modest exogenous driving forces. Further, in the model, women overtake men in college
+attainment during the 1990s, a feature of the data that has proved challenging to explain. Our counterfactual
+experiments indicate that the divorce law reform of the 1970s played an important role in all of these
+trends, explaining more than one-quarter of college attainment rate of women post-1970s and one-half
+of the rise in labor supply for married women.
+Fatih Guvenen
+Department of Economics
+University of Minnesota
+4-151 Hanson Hall
+1925 Fourth Street South
+Minneapolis, MN, 55455
+and NBER
+guvenen@umn.edu
+Michelle Rendall
+University of Zurich
+Muehlebachstr. 86
+8008 Zurich
+Switzerland
+michelle.rendall@econ.uzh.ch
+
+1 Introduction
+In this paper, we study the role of education as insurance against a bad marriage.
+Historically, disparities in earning power and education across genders have contributed to
+creating a vulnerable economic position for married women. Women in bad marriages are
+faced with suffering one of two fates: either they get divorced (assuming it is available) and
+struggle as low-income single mothers, or they remain trapped in the marriage. To establish
+these ideas, the following two examples are instructive.
+First, writer Ilka Perez recounts her own experience as an uneducated divorced mother:
+Stress and struggle came with independence. When my daughter was young, I worked
+two jobs and still did not have enough money. Every month, I paid my rent extremely
+late. I had to go to food pantries or to my mother’s house for food.... I shed so many
+tears that I tried my best not to let my children see. I just kept telling myself, “I will
+do well by my children by first doing well by me.” 1
+The second excerpt describes being trapped in a bad marriage as an uneducated woman:
+Fraidy was 19 when her family arranged for her to marry a man who turned out to
+be violent. But with no education and no job, and a family that refused to help her,
+she felt stuck. Still stuck at age 27, Fraidy defied her husband and relatives to become
+the first person in her family to go to college. She graduated from Rutgers University
+at age 32 as valedictorian.... Fraidy went on to a career as an investigator at Kroll,
+the world’s largest investigations firm, and then at a private firm in New York. At the
+same time, Fraidy managed to get divorced, win full custody of her children and get
+a final restraining order against her ex-husband. 2
+Examples similar to these are abundant and are familiar to all. In both of these cases
+described above, education can provide a route to emancipation for women. The goal of
+this paper is to quantify this insurance demand for education and to better understand its
+interaction with some dramatic changes in the socio-economic status of American women
+since the 1950s:
+I. Changes in marriage/divorce rates: The marriage rate fell by almost half between
+1950 and 2000, and the divorce rate doubled during the same time (Figure 1).
+1Ilka Perez, “What’s Worse Than Being a Single Mother?” Motherlode: Adventures in Parenting, New
+York Times, May 22, 2012.
+2Biographical sketch of Fraidy Reiss, founder/executive director of Unchained at Last, accessed
+April 8, 2013, http:www.unchainedatlast.org/.
+2
+
+II. Reversal of the college-gender gap: The fraction of women with a college degree rose
+substantially: during the 1950s, for every college-educated woman, there were about
+two college-educated men; today, the college-gender gap is reversed, with more women
+than men graduating from college (Figure 2).
+III. Changes in female labor force participation: Married women started joining the labor
+market in droves, causing the average hours worked by this group to increase fourfold
+since 1950, an increase that far exceeds the change in any other demographic group.
+This paper builds an overlapping generations search model—with marriage/divorce/remar-
+riage, education, and household labor supply decisions—in which these three sets of trends
+are intimately related to each other. The main focus of the paper is on two types of
+asymmetries between men and women—gender-specific wage paths and, more importantly,
+different shares of divorce burden borne by each spouse—and on how these asymmetries
+are amplified by the equilibrium interactions to generate powerful socio-economic changes.
+The story we investigate is a simple and, we believe, plausible one. Our point of de-
+parture is that, when it comes to caring for children, women shoulder a larger share of the
+burden relative to men. Therefore, any disturbance in a mother’s life that makes it harder
+for her to care for her children is extremely costly (in utility terms), which makes her de-
+mand insurance against such disturbances, such as divorce (more so than men). In this
+context, education provides a valuable insurance for at least two reasons. First, without
+the higher wages associated with higher education, a divorced mother would have to rely
+on her ex-husband and face added uncertainty about whether her ex-husband would take
+care of their children (via alimony or child support).3 Second, divorce laws typically allow
+spouses to keep the full future returns from their human wealth upon divorce unlike their
+physical assets (see, e.g., Bahr (1983)), making education a good insurance against divorce
+risk. Put differently, educated women, being better able to survive divorce, are less likely
+to be trapped in a bad marriage.
+In the model, marital bliss (i.e., love in marriage) fluctuates over time, which causes
+each spouse to reevaluate individual marital options. Upon divorce, an individual faces
+two types of cost. One, any subsequent household formed by a divorced individual has a
+lower economies of scale parameter (i.e., is less efficient), due to the difficulties of running
+separate households and, upon remarriage, dealing with a stepparent and stepchildren.
+3In 1986, only 42% of individuals who were eligible for alimony (overwhelmingly women) were able to
+receiveitonaregularbasis;31%neverreceivedit,andtherestreceivedonlyoccasionally. (Source: General
+Social Survey 1986, available at NORC at University of Chicago, http://www3.norc.org/GSS+Website/.)
+3

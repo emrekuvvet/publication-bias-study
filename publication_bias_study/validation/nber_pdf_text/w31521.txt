@@ -1,0 +1,136 @@
+NBER WORKING PAPER SERIES
+RESEARCH AND/OR DEVELOPMENT?
+FINANCIAL FRICTIONS AND INNOVATION INVESTMENT
+Filippo Mezzanotti
+Timothy Simcoe
+Working Paper 31521
+http://www.nber.org/papers/w31521
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+We thank Frank Limehouse, Lanwei Yang and Shahin Davoudpour for their help and advices
+working with the Census data. We thank Davin Wang and Anoushka Nalwa for the excellent
+research assistance. We also thank the seminar participants at Rice University, Erasmus
+Rotterdam, Hong Kong University, Simon Business School (University of Rochester), Kellogg
+School of Management and Yeshiva University, FGV (Sao Paolo), and the conference
+participants at NBER Productivity (2023), CICF (2023), FIRS (2023), MFA (2023), Booth
+Empirical Finance Conference (2023), HEC Paris (2022) for the useful comments. In particular,
+we want to thank for their feedbacks Ramin Baghai (discussant), Bo Bian (discussant), Sharon
+Belenzon (discussant), Max Maksimovic (discussant), Jamie Brown, Yael Hochberg, Johan
+Hombert, Sabrina Howell, Kilian Huber, David Matsa, Christian Opp, Dimitris Papanikolaou, K.
+Ramesh, Kunal Sachdeva, Paola Sapienza, Tarik Umar, Jonathan Wallen, Pavel Zryumov. Any
+views expressed are those of the authors and not those of the U.S. Census Bureau. The Census
+Bureau’s Disclosure Review Board and Disclosure Avoidance Officers have reviewed this
+information product for unauthorized disclosure of confidential information and have approved
+the disclosure avoidance practices applied to this release. This research was performed at a
+Federal Statistical Research Data Center under FSRDC Project Number 1874. (CBDRB-FY22-
+P1874-R9607, CBDRB-FY23-P1874-R10456). The views expressed herein are those of the
+authors and do not necessarily reflect the views of the National Bureau of Economic Research.
+At least one co-author has disclosed additional relationships of potential relevance for this
+research. Further information is available online at http://www.nber.org/papers/w31521
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2023 by Filippo Mezzanotti and Timothy Simcoe. All rights reserved. Short sections of text,
+not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Research and/or Development? Financial Frictions and Innovation Investment
+Filippo Mezzanotti and Timothy Simcoe
+NBER Working Paper No. 31521
+August 2023
+JEL No. G30,L20,O31,O32
+ABSTRACT
+Abstract U.S. firms have reduced their investment in scientific research (“R”) compared to
+product development (“D”), raising questions about the returns to each type of investment, and
+about the reasons for this shift. We use Census data that disaggregates “R” from “D” to study
+how US firms adjust their innovation investments in response to an external increase in funding
+cost. Companies with greater demand for refinancing during the 2008 financial crisis made larger
+cuts to R&D investment. This reduction in R&D is achieved almost entirely by reducing
+investments in basic and applied research. Development remains essentially unchanged. Although
+patenting is more strongly correlated with development than research investments, the impact of
+the crisis appears in citation-weighted patent output after 3 to 5 years. Finally, we show that if
+other firms patenting similar technologies are exposed to the crisis, then a focal firm's
+Development investment declines. We consider several mechanisms that could explain these
+results, and without ruling out every alternative, conclude that the overall pattern is consistent
+with an important role for technological competition in R&D financing decisions.
+Filippo Mezzanotti
+Kellogg School of Management
+4389 Global Hub
+2211 Campus Drive
+Evanston, IL 60201
+filippo.mezzanotti@kellogg.northwestern.edu
+Timothy Simcoe
+Boston University
+Questrom School of Business
+595 Commonwealth Avenue
+Boston, MA 02215
+and NBER
+tsimcoe@bu.edu
+
+1 Introduction
+The National Science Foundation (NSF) estimates that businesses were responsible
+for 75% of total U.S. domestic investment in Research and Development (R&D) in 2019.1
+While this share has grown in recent years, several scholars have voiced concerns about
+thecompositionofprivateR&D(Aroraetal.,2018,Akcigitetal.,2021). Inparticular,there
+isevidencethat￿rmshavereducedtheirinvestmentinscienti￿cresearchrelativetolater
+stages of the technology commercialization process. In simple terms, U.S. ￿rms seem be
+todoingless“R”foreachdollarof“D.”
+To date, most of the evidence that ￿rms are shifting the composition of their
+R&D investments comes from either aggregate statistics or studies that use corporate
+publishing activity as a proxy for the output of basic research investments. While those
+two approaches can yield many insights, it remains di￿cult to study factors that shift
+the ￿rm-level composition of R&D investments without observing them directly. In this
+study, we use Census data from two surveys that dis-aggregate basic research, applied
+research, and development expenditures to examine how a change in the cost of capital
+impactseachcomponentofa￿rm’sR&Dportfolioforalargesetofpubliccompanies.
+Our empirical context is the 2008 ￿nancial crisis. The research design is partially
+borrowed from earlier studies (e.g., Almeida et al., 2009; Benmelech et al., 2019; Costello,
+2020;GranjaandMoreira,2022;Kalemli-Özcanetal.,2022)thatexploitvariationin￿rms’
+re￿nancing needs during a ￿nancial crisis to construct a measure of short-run ￿nancial
+constraint. In particular, our main treatment variable measures a ￿rm’s pre-determined
+amountoflong-termdebtcomingduein2008relativetoitscashholdings. Thebasicidea
+is that companies forced to access ￿nancial markets in 2008 found their funding options
+tobescarceandexpensive(Santos,2011),andarethereforemorelikelytoreduceinternal
+spendinginordertominimizere￿nancingneeds.
+Our baseline estimates show that a one standard deviation increase in re￿nancing
+needs leads to an 8% decline in domestic R&D performed by a ￿rm. This drop in R&D
+investment is explained almost entirely by a reduction in basic and applied research, as
+opposedtodevelopment. Furthermore,approximatelytwo-thirdsofthereductioninR&D
+can be attributed to R&D-speci￿c labor costs. Using panel data, we show that exposure
+1Theamountspentwasestimatedat$498billion.Seehttps://ncses.nsf.gov/pubs/nsf22330.
+1
+
+to the 2008 crisis is not correlated with pre-existing trends in R&D investment, and that
+￿rms exposed to the shock did not simply postpone their investment to the following
+year. Indeed,￿rmsthatexperiencedmore￿nancialconstraintin2008exhibitedarelative
+declineincitation-weightedcumulativepatentcountsoverthenextthreeto￿veyears.
+After establishing that ￿rms cut research more than development in response to
+￿nancialpressures,andthatthesecutsledtoreductionsininnovationoutput,weconsider
+why development investments are “stickier.” The set of potential explanations includes
+di￿erences in investment duration, risk, competitive pressure, and adjustment costs.
+Although each of these mechanisms may play some role in explaining our ￿ndings,
+technologicalcompetitionisespeciallyconsistentwiththefullsetofresults. Inparticular,
+we show that whereas research investment is sensitive to a ￿rm’s own re￿nancing
+needs, development investment declines when other technologically similar ￿rms are
+exposed to an increase in the cost of re￿nancing. We interpret this ￿nding as evidence
+that development investments are in￿uenced by strategic interactions (e.g., Benoit, 1984;
+Bolton and Scharfstein, 1990; Fudenberg and Tirole, 1986), and speci￿cally a desire to
+keepupwithrivals(HarrisandVickers,1987). Altogether,our￿ndingsshowthatperiods
+of crisis can alter the innovation trajectory of an economy by reducing overall R&D
+investment,andalsobychangingthetypesofprojectsthatget￿nanced.
+Studying the relationship between ￿nancial constraints and R&D investments is
+important for several reasons. First, R&D investments are a key input to the knowledge
+production function. However, because research outputs are mostly intangible (Eisfeldt
+and Papanikolaou 2014), this activity is generally harder to ￿nance externally, and there
+is still much uncertainty about the overall elasticity of R&D to the costs of ￿nance (Hall
+and Lerner, 2010; Kerr and Nanda, 2015).2 Second, previous studies have suggested
+that the allocation of resources between research and development can impact a ￿rm’s
+growth dynamics and shape the overall pattern of innovation (e.g. Akcigit et al. 2021;
+Griliches 1988; Link et al. 1981; Mans￿eld 1980, 1981). There are very few other papers,
+however, that examine how the composition of R&D investment responds to changing
+market conditions. And third, despite the large array of studies on the impact of the
+2008 ￿nancial crisis on the real economy (e.g. Campello et al., 2010; Cingano et al., 2016;
+2Forinstance,afewstudiesexaminedtheimpactoftheGreatDepressiononinnovation(Babinaetal.,
+2023;NandaandNicholas,2014),buttheycouldonlylookatpatentingoutcomes,giventhelackofdata.
+2

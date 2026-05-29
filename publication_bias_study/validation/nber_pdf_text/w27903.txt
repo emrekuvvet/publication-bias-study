@@ -1,0 +1,145 @@
+NBER WORKING PAPER SERIES
+EMERGING MARKETS SOVEREIGN CDS SPREADS DURING COVID-19: ECONOMICS
+VERSUS EPIDEMIOLOGY NEWS
+Timo Daehler
+Joshua Aizenman
+Yothin Jinjarak
+Working Paper 27903
+http://www.nber.org/papers/w27903
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2020, Revised March 2021
+Insightful comments by anonymous referees and the editor are gratefully acknowledged. We
+gratefully acknowledge the financial support by the Dockson Chair and the Center of
+International Studies at USC. The views expressed herein are those of the authors and do not
+necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Timo Daehler, Joshua Aizenman, and Yothin Jinjarak. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Emerging Markets Sovereign CDS Spreads During COVID-19: Economics versus Epidemiology
+News
+Timo Daehler, Joshua Aizenman, and Yothin Jinjarak
+NBER Working Paper No. 27903
+October 2020, Revised March 2021
+JEL No. F34,F36,F41,H12,H51
+ABSTRACT
+Can bad news about COVID-19 induce negative expectations on sovereign credit risks? We
+investigate the factors driving credit default swap (CDS) spreads of emerging market sovereigns
+around the outbreak of COVID-19. Using 2014-2019 data, we estimate a two-factor model of
+global and regional risks and then extrapolate the model-implied spreads for the period July
+2019–June 2020. Intriguingly, the model initially predicts the realized spreads well but loses
+predictive accuracy during the COVID-19 pandemic. Fiscal space and oil-revenue dependence
+primarily drive the differences between the realized and predicted sovereign spreads. Our
+augmented-factor model indicates that the cumulative COVID-19 mortality rate growth is
+positively associated with the CDS spreads. The evidence suggests that the epidemiological
+deterioration can lower confidence in the sovereign credit markets due to the prospects of
+prolonged lockdowns and a slower GDP growth recovery. Our results also hold for a single
+regression of daily spread changes during 2014-2020.
+Timo Daehler Yothin Jinjarak
+University of Southern California School of Economics and Finance
+3518 Trousdale Pkwy. Victoria University of Wellington
+Los Angeles, CA 90089 PO Box 600
+daehler@usc.edu 23 Lambton Quay, Wellington
+New Zealand
+Joshua Aizenman yothin.jinjarak@vuw.ac.nz
+Economics and SIR
+University of Southern California
+University Park
+Los Angeles, CA 90089-0043 and
+NBER
+aizenman@usc.edu
+The code and data are available at https://github.com/timodaehler/COVID19-DOMINANCE/
+
+1 Introduction
+Many emerging market economies (EM) depend on commodity revenues, or on
+manufacturing exports, whilst they have relatively limited policy space to buffer
+fluctuations in these markets. Frequently their populations are comparatively exposed to
+economic fluctuations as social safety nets and public health systems are limited in size.
+Additionally, emerging market governments’ access to international capital markets is
+fragile, limiting fiscal space and the capacity to react to external shocks. Against this
+backdrop, many observers were wondering how emerging markets would deal with the
+global outbreak of COVID-19, an unprecedented shock affecting both sides of the fiscal
+equation simultaneously: On the revenue side, the global slump in demand caused a fall
+in oil prices which would diminish oil exporter revenues both directly and indirectly.
+Equally, a fall of domestic economic activity lowered household incomes and consumer
+confidence, further reducing tax revenues. On the expenditure side, debt became more
+costly as a global spike in investors’ risk aversion induced capital outflows from
+emerging markets, an increase in their sovereign credit default swap (CDS) spreads
+and a depreciation of their currencies (see Figure 1 and Figure 2). The increase in risk
+aversion, in turn, can be attributed both to economic challenges in investors’ home
+countries and in emerging markets alike. More importantly still, the pandemic forced
+governments to engage in unparalleled deficit spending to support strained public health
+systems and households severed from their income sources due to lockdowns (see
+Figure 3).
+The economic challenges caused by the pandemic and the simultaneous oil price
+collapse are not the first shock that emerging markets face. Indeed, there have been six
+previous oil price collapses since 1970. Additionally, in recent decades, the increased
+flow of cross-border investment and trade in a more and more deeply intertwined global
+economy has been subject to repeated interruption. For example, in 2015, there was a
+relatively contained crisis in China when the Chinese stock market tumbled, the Yuan
+slid, and a lot of foreign investment quickly left the country. A year before that, dropping
+prices of oil and other commodities sent a shock wave through several emerging
+markets. Furthermore, a general slowdown in emerging market growth began in 2013
+with the Federal Reserve’s (Fed) taper tantrum. Taken together, these examples
+indicate that not all crises in emerging markets are the same. Some are more country-
+specific while others seem to be driven by some common global factor, affecting
+emerging markets at large. Thus, with COVID-19 as a global pandemic and an external
+demand shock, two research questions reveal themselves: Are sovereign CDS spreads
+determined by a time-varying combination of global and country-specific factors and if
+the later factors play a role, which ones? Particularly COVID-19 raises a corollary
+question about country-specific determinants of sovereign CDS spreads: is the
+epidemiological situation in a country significant for CDS spread determination once the
+economic repercussions of lockdowns and foreign demand slump as well as stimulus
+responses are taken into account?
+To address the first question, we adopt a two-stage econometric approach, using a
+panel of thirty investible emerging markets. In the first stage, we estimate a
+global/regional factor model for changes in sovereign CDS spreads before the outbreak
+2
+
+of COVID-19. Specifically, we estimate and train the model over the period January
+2014 through June 2019. In the second stage, we use the estimated coefficients to
+extrapolate model-implied changes in CDS spreads for the period July 2019 through
+June 2020.
+This approach is appealing for several reasons: On the one hand, it allows us to
+compare the model’s out-of-sample properties during normal and pandemic times. On
+the other hand, this approach facilitates the statistical derivation of the “COVID-19
+residual,” which is the difference between actual CDS changes and model implied
+changes for the pandemic period. Additionally, the residuals can then be used to
+answer the question which exact country-specific factors were the biggest drivers of
+CDS adjustment during COVID-19. Specifically, we explain the residuals through a
+variety of country-specific factors from three different realms: epidemiological,
+economic, and policy factors.
+To address the second question, we leverage the panel and introduce all control
+variables (global/regional and country-specific epidemiological, economic and policy
+factors) simultaneously to test the significance of the epidemiological variables.
+Our paper makes two distinct contributions. First, we engage in the discussion of the
+relative importance and time-varying nature of global/regional and country-specific
+factors in the determination of emerging markets sovereign risk pricing, particularly
+during a global pandemic. Second, our analysis contributes to an understanding of the
+economic effects of lockdowns on government finances by identifying if and which
+country-specific factors drive spreads during a global pandemic. Disentangling the
+effects of economic contagion and of domestic economic conditions and policy
+responses on sovereign CDS spreads promises to hold valuable implications for policy
+makers weighing the economic trade-offs of different containment strategies.
+Our main findings can be summarized as follows:
+First, the global/regional factor model traces the realized sovereign CDS spreads well
+for the out-of-sample period before the pandemic. This observation suggests that
+emerging market CDS spreads are driven largely by global/regional factors in risk-on
+environments.
+Second, the relationship between actual CDS spread changes and changes predicted
+by the global/regional factor model breaks down during the pandemic. This suggests
+that CDS spread determinants are of time-varying nature and that investors weigh
+country-specific factors more heavily in their decision-making process in risk-off
+environments.
+Third, actual CDS spread changes experience the biggest deviations from model-
+implied values in March 2020, suggesting that uncertainties around the ramifications of
+COVID-19 vary across time and were highest at the peak of the first wave.
+Fourth, residuals at peak COVID-19 were primarily driven by traditional country-specific
+factors of sovereign solvency such as fiscal space and oil income dependence rather
+than epidemiological factors. This suggests, maybe surprisingly, that the severity of the
+3

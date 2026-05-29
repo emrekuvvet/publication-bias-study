@@ -1,0 +1,144 @@
+NBER WORKING PAPER SERIES
+PATENT PUBLICATION AND INNOVATION
+Deepak Hegde
+Kyle F. Herkenhoff
+Chenqi Zhu
+Working Paper 29770
+http://www.nber.org/papers/w29770
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+February 2022
+We are grateful to Luis Cabral, Wesley Cohen, Alberto Galasso, Nancy Gallini, Bernhard
+Ganglmair, Daniel Gross, Bronwyn Hall, Dietmar Harhoff, Joachim Henkel, Sabrina Howell,
+Zorina Khan, Hong Luo, Petra Moser, Alan Marco, Gaétan de Rassenfosse, Bhaven Sampat,
+Rosemarie Ziedonis, and seminar participants at Stanford, University of California, Berkeley,
+Northwestern University, University of Colorado, Boulder, and New York University. This
+research was supported by National Bureau of Economics Research, Innovation Policy Grant.
+Hegde acknowledges the support of the United States Patent and Trademark Office's Thomas
+Alva Edison Visiting Scholars program. All errors are our own. The views expressed in this paper
+are those of the authors and do not necessarily reflect the position of the Federal Reserve Bank of
+Minneapolis, the Federal Reserve System, or the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2022 by Deepak Hegde, Kyle F. Herkenhoff, and Chenqi Zhu. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Patent Publication and Innovation
+Deepak Hegde, Kyle F. Herkenhoff, and Chenqi Zhu
+NBER Working Paper No. 29770
+February 2022
+JEL No. D23,E02,G24,L26,O34
+ABSTRACT
+How does the publication of patents affect innovation? We answer this question by exploiting a
+large-scale natural experiment—the passage of the American Inventor's Protection Act of 1999
+(AIPA)—that accelerated the public disclosure of most U.S. patents by two years. We obtain
+causal estimates by comparing U.S. patents subject to the law change with “twin” European
+patents which were not. After AIPA's enactment, U.S. patents receive more and faster follow-on
+citations, indicating an increase in technology diffusion. Technological overlap increases between
+distant but related patents and decreases between highly similar patents, and patent applications
+are less likely to be abandoned post-AIPA, suggesting a reduction in duplicative R&D. Firms
+exposed to one standard deviation longer patent grant delays increased their R\&D investment by
+4% after AIPA. These findings are consistent with our theoretical framework in which AIPA
+provisions news shocks about related technologies to follow-on inventors and thus alters their
+innovation decisions.
+Deepak Hegde Chenqi Zhu
+Stern School of Business University of California at Irvine
+New York University 4293 Pereira Dr
+40 West Street Irvine, CA 92697
+Suite 722 chenqiz1@uci.edu
+New York, NY 10012
+dhegde@stern.nyu.edu
+Kyle F. Herkenhoff
+University of Minnesota
+Department of Economics
+4-101 Hanson Hall
+1925 Fourth Street South
+Minneapolis, MN 55455
+and IZA
+and also NBER
+kfh@umn.edu
+An online appendix is available at: http://www.nber.org/data-appendix/w29770
+
+1 Introduction
+“When a patent is granted and the information contained in it is circulated to the gen-
+eral public and those especially skilled in the trade, such additions to the general store
+of knowledge are of such importance to the public weal that the Federal Government
+is willing to pay the high price of 17 years of exclusive use for its disclosure, which
+disclosure, it is assumed, will stimulate ideas and the eventual development of further
+significant advances in the art.” – U.S. Supreme Court, Kewanee Oil Co. v. Bicron
+Corp. (1974; No. 73-187)
+Patent publications divulge inventors’ proprietary knowledge to the world. For example, Thomas
+Edison’s light bulb patent (USPTO patent # 223,898–see Figure 1) revealed methods of creating
+incandescent filaments and paved the way for subsequent innovations in electric lighting by others.
+The U.S. patent office has published over ten million such inventions, as part of a grand bargain
+that exchanges invention disclosure for inventors’ temporary monopoly rights.1 As emphasized
+by the U.S. Supreme Court, the publication requirement seeks to inform the work of follow-on
+inventors and reduce duplicative research and development (R&D). Thus, the patent system’s
+net effect on technological progress depends on the completeness and rate at which patents are
+disclosed to the public (Scotchmer and Green (1990) and Fromer (2009)). Yet, and despite the fact
+that technological progress is central to endogenous growth models (e.g., Romer (1990), Lucas Jr
+and Moll (2014), Luttmer (2014), and Perla and Tonetti (2014)), little is known about the effects
+of patent publication on technology diffusion.2
+In this study, we provide causal evidence that patent publication facilitates knowledge diffu-
+sion, reducestechnologyduplication, informsfollow-oninventors’patentingdecisions, andpossibly
+increases R&D. Thus, our study advances what little we know about the effects of patent publi-
+cation (Graham and Hegde (2015), Hegde and Luo (2018), Lu¨ck, Balsmeier, Seliger, and Fleming
+(2020), Furman, Nagler, and Watzinger (2021)).3 The few studies on this topic offer contradictory
+conclusions: survey-based research suggests that inventors consider patents an important source
+of relevant technical knowledge (Ouellette (2017)) and information on rivals’ R&D activities (Co-
+hen, Goto, Nagata, Nelson, and Walsh (2002)); however, some legal scholars argue that “patent
+disclosures play an insignificant role in promoting R&D spillovers” (Roin (2005), p. 2027).
+1ThedisclosurerequirementforpatentabilityintheU.S.states: “the[patent]specificationshallcontainawritten
+description of the invention . . . in such full, clear, concise and exact terms as to enable any person skilled in the
+art . . . to make and use the same.”(35 U.S.C. § 112).
+2Efforts in other fields have sought to identify the effects of peer-to-peer entrepreneur knowledge flows (e.g.
+Brooks, Donovan, and Johnson (2018) and Brooks, Donovan, and Johnson (2020)) and coworker knowledge flows
+(e.g. Herkenhoff, Lise, Menzio, and Phillips (2018), Jarosch, Oberfield, and Rossi-Hansberg (2021), Nix (2020),
+Gregory (2020)), often finding sizeable effects of knowledge diffusion on real output, productivity, and other aggre-
+gates.
+3In contrast, over 100 published and working papers examine the effect of the monopoly rights awarded by
+patents (see Hall, Helmers, Rogers, and Sena (2014) and Williams (2017) for surveys of the relevant literature).
+2
+
+We measure the effects of patent publication by leveraging the enactment of the American
+Inventor’s Protection Act of 1999 (P.L.106-113; henceforth, “AIPA”) as a natural experiment.
+AIPA harmonized U.S. patent laws with those of the rest of the world by requiring applications
+filed on or after November 29, 2000, to be published 18 months from the filing date. Before AIPA,
+inventors were allowed to keep the existence of their U.S. patent applications secret until the
+patent was granted, which, in 2000, averaged about 3.5 years. Thus, AIPA reduced the period of
+secrecy for U.S. patent applications by about two years, on average, allowing us to measure the
+effects of patent publication on knowledge diffusion and follow-on innovation.
+To guide our empirical analysis, we develop a theoretic framework in which AIPA provisions
+news shocks to inventors about recent technologies, and we derive a set of testable assumptions
+and implications. Our main assumption is that under AIPA, the technological know-how embed-
+ded in patents enters the stock of public knowledge faster than during the pre-AIPA regime. In
+this new information environment inventors see related inventions in the patent system earlier
+prior to filing their own patents. First, we show that inventors’ search effort for prior knowledge,
+proxied by patent citations, increases. Better information about competing inventions reduces du-
+plicate patent applications, which, in turn, reduces abandonments and similarity between closely
+related inventions. Under AIPA, inventors also draw more on recently disclosed patents and take
+smaller inventive steps, raising technology similarity among related, but not substitute, applica-
+tions. Overall patent activity and innovation under AIPA may increase, decrease, or stay the
+same, depending on the net effect of the two countervailing forces of (i) lower invention costs due
+to superior information on the one hand, and (ii) free-riding by follow-on inventors on the other.
+We provide tests of our theory using a Difference-in-Difference (DID) regression design, which
+we refer to as the “twin” study design. We build a sample of 316,563 patent applications filed at
+the USPTO between 1998 and 2003, each of which has an equivalent patent filed at the European
+Patent Office (EPO).4 The U.S. patents form our treatment group, while their EP “twins” form
+our control group. The EPO required 18-month disclosure of applications well before AIPA’s
+enactment—since its establishment in 1977—and we show that the European twins of U.S. patents
+were not plausibly affected by AIPA’s enactment.
+This “twin” study design allows us to control for unobserved characteristics of each patent
+family (comprising the U.S. patent and its EP twin) and to account for quality-based selection
+into patenting or early disclosure using family-fixed effects. Thus, we isolate AIPA’s causal effects
+by analyzing differences in the diffusion patterns of identical twin patents, one filed in the U.S.
+and the other in Europe, before and after AIPA. This design identifies the effect of the USPTO’s
+18-month patent disclosure alone since the EPO disclosed the European twins of U.S. patents at
+18 months both before and after AIPA (twin applications are published nearly simultaneously
+after AIPA—18 months from the filing date of the earliest twin, called the “priority date”). By
+4WerefertopatentsfiledattheUSPTOasU.S.patentsandpatentsfiledattheEPOasEuropeanpatents(EP
+patents) throughout the paper, regardless of the applicants’ country of origin.
+3

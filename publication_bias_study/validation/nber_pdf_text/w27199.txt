@@ -1,0 +1,119 @@
+NBER WORKING PAPER SERIES
+FOREIGN EXCHANGE ORDER FLOW AS A RISK FACTOR
+Craig Burnside
+Mario Cerrato
+Zhekai Zhang
+Working Paper 27199
+http://www.nber.org/papers/w27199
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2020, Revised Febrary 2022
+We thank Vania Stavrakeva and participants at the Imperial College 2019 Annual Conference in
+International Finance for helpful comments and suggestions. The views expressed herein are
+those of the authors and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Craig Burnside, Mario Cerrato, and Zhekai Zhang. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that
+full credit, including © notice, is given to the source.
+
+Foreign Exchange Order Flow as a Risk Factor
+Craig Burnside, Mario Cerrato, and Zhekai Zhang
+NBER Working Paper No. 27199
+May 2020, Revised Febrary 2022
+JEL No. F31,G15
+ABSTRACT
+This paper proposes a set of novel pricing factors for currency returns that are motivated by
+microstructure models. In so doing, we bring two strands of the exchange rate literature, namely
+market-microstructure and risk-based models, closer together. Our novel factors use order flow
+data to provide direct measures of buying and selling pressure related to carry trading and
+momentum strategies. We find that they appear to be good proxies for currency crash risk.
+Additionally, we show that the association between our order-flow factors and currency returns
+differs according to the customer segment of the foreign exchange market. In particular, it
+appears that financial customers are risk takers in the market, while non-financial customers serve
+as liquidity providers.
+Craig Burnside Zhekai Zhang
+Department of Economics Institute of Economics and Finance
+Duke University Nanjing Audit University
+213 Social Sciences Building Nanjing 210000
+Durham, NC 27708-0097 China
+and NBER zhangzhekai@nau.edu.cn
+craig.burnside@duke.edu
+Mario Cerrato
+Adam Smith Business School
+Gilbert Scott Building
+Glasgow G12 8QQ
+United Kingdom
+Mario.Cerrato@glasgow.ac.uk
+
+1 Introduction
+Two strands of the exchange rate literature offer explanations of anomalies in foreign ex-
+change markets that are at odds with one another. One strand, which we refer to as the
+stochastic discount factor (SDF) approach, uses frictionless common-information environ-
+ments to explain the behavior of exchange rates. In this framework, whether the underlying
+model is a reduced-form model or a structural representative agent model, the returns to
+various currency-based investment strategies are interpreted as compensation for risk.1 The
+other strand uses a market microstructure framework in which agents have heterogeneous
+information. In these models, customer order flow is a key determinant of bilateral exchange
+rate changes and, therefore, currency excess returns.2 In this paper we explore whether the
+empirical facts are, in fact, consistent with both the reduced-form SDF approach and the
+market microstructure approach. We argue that, in fact, empirical evidence that might nor-
+mally be interpreted as favorable to the SDF approach is also compatible with the order-flow
+driven view of the world, and vice-versa.
+To give an example, a commonly studied anomaly in foreign exchange markets is the
+profitability of the carry trade, which is a zero-cost short-term investment strategy in which
+an investor borrows funds in low interest rate currencies and lends equivalent amounts in
+high interest rate currencies. According to the uncovered interest-rate parity (UIP) con-
+dition, this investment strategy should have zero expected returns, both conditionally and
+unconditionally. However, it is well-established that carry trades have been profitable in
+historical data, and this is considered to be a puzzle akin to the equity premium puzzle in
+stock markets.3
+According to the SDF approach, any asset that bears a positive mean excess return is
+risky, in the sense that the returns to the asset are systematically correlated with some mea-
+sureofrisk. Accordingtothisview, carrytradesareprofitablebecauseholdinglongpositions
+in high interest rate currencies financed by short positions in low interest rate currencies is
+risky. Finding measures of risk that are systematically correlated with carry trade returns
+has, however, not been easy. Lustig and Verdelhan (2007) argue that a consumption-based
+1A non-exhaustive list includes Lustig and Verdelhan (2006), Lustig and Verdelhan (2007), Verdelhan
+(2010), Colacito and Croce (2011), Lustig and Verdelhan (2012), Lustig et al. (2014).
+2See,amongothers,EvansandLyons(2002),Cerratoetal.(2011),Evans(2011),EvansandRime(2012),
+Cerrato et al. (2015), Breedon et al. (2016), and Menkhoff et al. (2016).
+3See, for example, Fama (1984a), Engel (1996), Burnside (2012), Burnside (2014), and Engel (2016).
+1
+
+model can price the cross-section of currency returns as well as explain the returns to the
+carry trade. Burnside (2011) argues that consumption-based risk factors are, however, un-
+related to currency returns and that their results are explained by the properties of weakly
+identified estimators. Burnside et al. (2011), Menkhoff et al. (2012a) and Burnside (2012)
+have argued that standard measures of risk used to price stock returns do not appear to be
+successful in pricing currency returns. Lustig et al. (2011) show that their carry-trade port-
+folio, HMLFX, is useful in pricing the cross-section of interest-rate-sorted currency portfolio
+returns, but they do not explain the carry-trade portfolio, itself, with some other underlying
+factor. Menkhoff et al. (2012a) price the cross-section of currency returns with a global
+currency volatility factor. They find that high interest rate currencies have a tendency to
+depreciate when volatility in currency markets increases, while low interest rate currencies
+provide a hedge. But their factor is only weakly linked to a particular economic theory.
+In this paper, we let the microstructure literature guide the construction of a model
+that explains carry trade returns using the SDF approach. In this literature, the emphasis
+is on how dispersed information is aggregated within the market and translated into price
+changes.4 The simplest models are linear and relate exchange rate changes to news about
+fundamentals that are common knowledge and changes that are driven by net order flow in
+the foreign exchange market. For a particular currency, net order flow is the value of buy
+orders, net of sell orders, faced by foreign exchange dealers. Order flow, itself, is driven by
+the common and dispersed information received within the customer market (i.e. the agents
+in the market other than dealers). The literature emphasizes the importance of the market’s
+structure, with dealers interacting directly with customers but also with each other through
+an inter-dealer market. This is usually captured, in models, by having sequential market
+stageswherecustomersarrivefirst, andtheinter-dealermarketclearslater. Whatthemodels
+show is that, in market equilibrium, the change in the spot rate of a currency’s value over
+some interval is related linearly to the order flow that dealers face over that interval, and
+this is the basis on which these models have been evaluated empirically.
+We use order-flow data to construct risk factors that are designed to capture notions of
+currency crash risk. In particular, we measure buying and selling pressure in the foreign
+exchange market that is relevant to particular currency investment strategies, with the em-
+phasis being on the carry trade. Our main risk factor, which we refer to as a carry-trade
+4See Evans (2011) for a comprehensive review.
+2

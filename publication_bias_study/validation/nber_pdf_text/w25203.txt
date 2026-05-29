@@ -1,0 +1,120 @@
+NBER WORKING PAPER SERIES
+WHAT ARE THE CONSEQUENCES OF GLOBAL BANKING FOR THE INTERNATIONAL
+TRANSMISSION OF SHOCKS? A QUANTITATIVE ANALYSIS
+José L. Fillat
+Stefania Garetto
+Arthur V. Smith
+Working Paper 25203
+http://www.nber.org/papers/w25203
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2018
+We are grateful to Andrew Bernard, Nicola Cetorelli, Jean-Edouard Colliard, Enrique Martinez-
+Garcia, Linda Goldberg, Victoria Ivashina, Andrei Levchenko, Friederike Niepmann, Joe Peek,
+Katheryn Russ, Jeremy Stein, and seminar participants at many institutions for helpful comments.
+We also thank Martin Goetz for invaluable input at the initial stages of this project. Andrew
+Barton, Kovid Puria, and Marco Sammon provided excellent research assistance. The views
+expressed in this paper are those of the authors and do not necessarily reflect the views of the
+Federal Reserve Bank of Boston, the Federal Reserve System, or the National Bureau of
+Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2018 by José L. Fillat, Stefania Garetto, and Arthur V. Smith. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+What are the Consequences of Global Banking for the International Transmission of Shocks?
+A Quantitative Analysis
+José L. Fillat, Stefania Garetto, and Arthur V. Smith
+NBER Working Paper No. 25203
+October 2018
+JEL No. F12,F23,F36,G21
+ABSTRACT
+The global financial crisis of 2008 was followed by a wave of regulatory reforms that affected
+large banks, especially those with a global presence. These reforms were reactive to the crisis.In
+this paper we propose a structural model of global banking that can be used proactively to
+perform counterfactual analysis on the effects of alternative regulatory policies. The structure of
+the model mimics the US regulatory framework and highlights the rganizational choices that
+banks face when entering a foreign market: branching versus subsidiarization. When calibrated to
+match moments from a sample of European banks, the model is able to replicate the response of
+the US banking sector to the European sovereign debt crisis. Our counterfactual analysis suggests
+that pervasive subsidiarization, higher capital requirements, or ad hoc monetary policy
+interventions would have mitigated the effects of the crisis on US lending.
+José L. Fillat Arthur V. Smith
+Federal Reserve Bank of Boston Department of Economics
+Research Department Boston University
+Boston, MA 02210 270 Bay State Road
+jose.fillat@bos.frb.org Boston MA 02215
+avsmith@bu.edu
+Stefania Garetto
+Department of Economics
+Boston University
+270 Bay State Road
+Boston, MA 02215
+and NBER
+garettos@bu.edu
+A data appendix is available at http://www.nber.org/data-appendix/w25203
+
+What are the consequences of global banking for the international
+transmission of shocks? A quantitative analysis∗
+Jos´e L. Fillat† Stefania Garetto‡ Arthur V. Smith§
+Federal Reserve Bank of Boston Boston U., CEPR, and NBER Boston U.
+October 19, 2018
+Abstract
+The globalfinancialcrisisof2008wasfollowedbya waveofregulatoryreformsthataffected
+large banks, especially those with a global presence. These reforms were reactive to the crisis.
+In this paper we propose a structural model of global banking that can be used proactively to
+perform counterfactual analysis on the effects of alternative regulatory policies. The structure
+ofthemodelmimicstheUSregulatoryframeworkandhighlightstheorganizationalchoicesthat
+banks face when enteringa foreignmarket: branchingversussubsidiarization. When calibrated
+tomatchmomentsfromasampleofEuropeanbanks,themodelisabletoreplicatetheresponse
+of the US banking sector to the European sovereign debt crisis. Our counterfactual analysis
+suggeststhatpervasivesubsidiarization,highercapitalrequirements,oradhocmonetarypolicy
+interventions would have mitigated the effects of the crisis on US lending.
+Keywords: global banks, banking regulation, shock transmission.
+JEL Classification: F12, F23, F36, G21
+∗We are grateful to Andrew Bernard, Nicola Cetorelli, Jean-Edouard Colliard, Enrique Martinez-Garc´ıa, Linda
+Goldberg, Victoria Ivashina, Andrei Levchenko, Friederike Niepmann, Joe Peek, Katheryn Russ, Jeremy Stein, and
+seminar participants at many institutions for helpful comments. We also thank Martin G¨otz for invaluable input
+at the initial stages of this project. Andrew Barton, Kovid Puria, and Marco Sammon provided excellent research
+assistance.
+†Federal Reserve Bank of Boston, 600 Atlantic Avenue,Boston MA 02210. E-mail: Jose.Fillat@bos.frb.org. The
+views expressed in this paper are those of the authors and do not necessarily reflect those of the Federal Reserve
+Bank of Boston or Federal ReserveSystem.
+‡DepartmentofEconomics,BostonUniversity,270BayStateRoad,Boston,MA02215. E-mail: garettos@bu.edu.
+§DepartmentofEconomics,BostonUniversity,270BayStateRoad,Boston,MA02215. E-mail: avsmith@bu.edu.
+
+1 Introduction
+The 2008 global financial crisis and—more recently—the European sovereign debt crisis have
+spurred debates among academics and policymakers about the regulation of large, systemically
+important banks. Most of the institutions under scrutiny are multinational banks, with operations
+in multiple countries, raising concerns about contagion and shock transmission. Arguably, regula-
+tory reformsshouldbenotonly reactive tocrises, butalsodesigned ex-ante to reducethelikelihood
+and limit the severity of such crises.
+In this paper, we inform the design of multinational banking regulation by developing a quanti-
+tative structural model of global banking, and by using it to evaluate the effects of counterfactual
+policies. We focus our analysis on global banks because they are often the largest players in the
+countries where they operate: as noted by Goldberg (2009), the sheer size of foreign banking insti-
+tutions and their involvement with the real economy makes them important vehicles for the global
+transmission of shocks. For example, the Japanese banking crisis in the early 1990s had a substan-
+tial effect on credit supply in the United States, as many US branches and subsidiaries of Japanese
+banks closed down following the shock in their home country. The European sovereign debt crisis
+also had rippling effects in the US credit markets, mostly due to the fragility of foreign branches’
+funding, as our empirical analysis shows below. Several empirical studies have explored the role of
+multinational banks in the transmission of shocks across countries.1 Our paper contributes to this
+literature in two ways. First, while prior contributions have overlooked the importance of a bank’s
+mode of operations, our model provides a microfoundation for the bank’s decision of whether and
+how to enter a foreign market—through branches or subsidiaries. We find that this differentiation
+is of first-order importance to understanding the effects of financial crises. Second, while most of
+the existing work has been conducted using reduced-form analysis, our quantitative model enables
+us to study the consequences of potential regulatory changes via counterfactual analysis.
+The model we develop is designed to describe the institutional details of the banking industry
+and to be consistent with a number of stylized facts from US bank-level data. For this reason,
+our analysis focuses on the two most prominent forms of foreign banking institutions in the United
+States: branches and subsidiaries. Current US bank regulations treat foreign-owned branches and
+subsidiaries differently, so the activities that a branch and a subsidiary are allowed to undertake
+differ: for example, while subsidiaries are separately capitalized, branches do not raise independent
+1See most notably Cetorelli and Goldberg (2011,2012a,b).
+1

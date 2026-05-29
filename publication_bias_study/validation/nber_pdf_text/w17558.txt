@@ -1,0 +1,126 @@
+NBER WORKING PAPER SERIES
+A TRANSPARENCY STANDARD FOR DERIVATIVES
+Viral V. Acharya
+Working Paper 17558
+http://www.nber.org/papers/w17558
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+November 2011
+This note is partly based on the chapter “Regulating OTC Derivatives” co-authored with Or Shachar
+and Marti G Subrahmanyam, in the book “Regulating Wall Street: The Dodd-Frank Act and the New
+Architecture of Global Finance”, NYU Stern and John Wiley & Sons, November 2010. The author
+is grateful to Melissa Johnston and John Yan for research assistance and comments from Or Shachar
+and participants at the NBER conference “Measuring Systemic Risk Initiative” (October 2010). The
+views expressed herein are those of the author and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2011 by Viral V. Acharya. All rights reserved. Short sections of text, not to exceed two paragraphs,
+may be quoted without explicit permission provided that full credit, including © notice, is given to
+the source.
+
+A Transparency Standard for Derivatives
+Viral V. Acharya
+NBER Working Paper No. 17558
+November 2011
+JEL No. G01,G13,G18,G28
+ABSTRACT
+Derivatives exposures across large financial institutions often contribute to – if not necessarily create
+– systemic risk. Current reporting standards for derivatives exposures are nevertheless inadequate
+for assessing these systemic risk contributions. In this paper, I explain how a transparency standard,
+in contrast to the current standard, would facilitate such risk analysis. I also demonstrate that such
+a standard is implementable by providing examples of existing disclosures from large dealer firms
+in their quarterly filings. These disclosures often contain useful firm-level data on derivatives, but
+due to a lack of standardization, they cannot be aggregated to assess the risk to the system. I highlight
+the important contribution that reporting the “margin coverage ratio” (MCR), namely the ratio of a
+derivatives dealer’s cash (or liquidity, more broadly) to its contingent collateral or margin calls in
+case of a significant downgrade of its credit quality, could make toward assessing systemic risk contributions.
+Viral V. Acharya
+Stern School of Business
+New York University
+44 West 4th Street, Suite 9-84
+New York, NY 10012
+and NBER
+vacharya@stern.nyu.edu
+
+A Transparency Standard for Derivatives
+- Viral V Acharya, New York University Stern School of Business2
+August 2011
+Derivatives exposures across large financial institutions often contribute to – if
+not necessarily create – systemic risk. During a crisis, lack of adequate understanding of
+such exposures often compromises regulatory ability to unwind an institution, inducing
+large-scale backstops and counterparty bailouts. It is often claimed – in spite of the
+massive assistance that was provided in this crisis to deal with derivatives exposures –
+that derivative contracts are well collateralized so that counterparty risk on derivatives
+exposures is not a significant issue. Documenting evidence that supports or refutes this
+claim beyond reasonable doubt is currently infeasible due to the poor quality – and lack
+of standardization – of derivatives disclosures by financial firms. Nevertheless, all
+available evidence points against the claim that counterparty risk in derivative exposures
+is always well collateralized.
+In many important cases that contributed to the crisis, most notably but not
+exclusively the case of A.I.G. Financial Products, collateralization was weak.3 Some
+reports also suggest that the problem is probably of non-trivial magnitudes and that going
+forward derivatives exposures are likely to remain a potentially important contributor to
+systemic risk. For instance, using information from the 10-Q quarterly statements, the
+IMF reports estimate that the five key institutions that are active in the OTC derivatives
+market – Goldman Sachs, Citigroup, JP Morgan, Bank of America, and Morgan Stanley
+– were jointly carrying almost $500 billion in OTC derivative payables exposure as of
+3Q09.4 The report also estimates that five largest European banks – Deutsche Bank,
+Barclays, UBS, Royal Bank of Scotland (RBS) and Credit Suisse – had about $600-$700
+billion in under-collateralized risk (measured by residual derivative payables) as of
+December 2008. This residual exposure arises for two reasons, as per the IMF report.
+First, sovereigns, as well as AAA-rated insurers, corporations, large banks and
+multilateral institutions “do not post adequate collateral since they are viewed by large
+complex financial institutions as privileged and (apparently) safe clients.” Second,
+dealers have agreed in their bilateral contracts not to mandate adequate collateral for
+2 This note is partly based on the chapter “Regulating OTC Derivatives” co-authored with Or Shachar and
+Marti G Subrahmanyam, in the book “Regulating Wall Street: The Dodd-Frank Act and the New
+Architecture of Global Finance”, NYU Stern and John Wiley & Sons, November 2010. The author is
+grateful to Melissa Johnston and John Yan for research assistance and comments from Or Shachar and
+participants at the NBER conference “Measuring Systemic Risk Initiative” (October 2010).
+3 For example, The Financial Crisis Inquiry Report, released in January 2011, reports: “In the housing
+boom, CDS were sold by firms that failed to put up any reserves or initial collateral or to hedge their
+exposure. In the run-up to the crisis, AIG, the largest U.S. insurance company, would accumulate a one-
+half trillion dollar position in credit risk through the OTC market without being required to post one
+dollar’s worth of initial collateral or making any other provision for loss. AIG was not alone….”
+4 Manmohan Singh, 2010, “Collateral, Netting and Systemic Risk in the OTC Derivatives Market”, IMF
+Working Paper 10/99.
+
+dealer-to-dealer positions whereby credit-worthy dealers often post no collateral to each
+other for these contracts.
+These reports raise several pertinent questions:
+ What is the true potential exposure on derivatives dealings of large institutions?
+ How much of this exposure is collateralized?
+ Is collateral posted adequate under some conservative requirements of maximum
+counterparty risk in case of system-wide stress when besides the emergence of
+counterparty risk, positions become illiquid, hard to replace and may have to be
+unwound at short notice?
+ Are derivatives being deployed in under-collateralized manner to undertake
+significant maturity transformation and taking on attendant liquidity risks?5
+This note addresses these questions by examining the theoretical justification for a
+transparency standard for derivatives positions. To demonstrate that such a standard is
+implementable, the note shows examples of existing disclosures from large dealer firms
+in their quarterly filings. These disclosures often contain useful firm-level data on
+derivatives, but due to a lack of standardization, these are not aggregation-friendly for
+assessing the risk to the system. The note highlights the important role for tracking of a
+“margin coverage ratio” (MCR), namely the ratio of a derivatives dealer’s cash (or
+liquidity, more broadly) to its contingent collateral or margin calls in case of a significant
+downgrade of its credit quality. Finally, the note discusses the implications of such a
+possible standard for the Office of Financial Research (OFR) to be set up under the
+Treasury as per the Dodd-Frank Act in the United States.
+Case for regulatory and market disclosure of standardized derivatives reports
+It is useful to understand theoretically the market failure in the provision of
+information in derivatives markets. Acharya and Engle (2009) and Acharya and Bisin
+(2010) formalize this idea under the notion of a “counterparty risk externality”.6
+To illustrate the idea, suppose that counterparty A agrees to pay B. Then, A turns
+around and sells a similar contract to C. The addition to A’s position from the contract
+with C dilutes the payoff on its contract with B in case that A turns out ex-post to not
+5 In terms of “risk topography”, derivatives can be considered the mechanism to build contingent exposures
+– across states of nature and over time – which when not adequately collateralized or capitalized lead to
+liquidity risk. Thus, derivatives facilitate complex forms of “liquidity mismatch”, discussed in greater
+detail elsewhere by Markus Brunnermeier, Gary Gorton and Arvind Krishnamurthy.
+6 Acharya, Viral V and Robert Engle, 2009, “Derivatives trades should all be transparent,” Wall Street
+Journal, 15 May 2009, and Acharya, Viral V and Alberto Bisin, 2010, “Counterparty risk externality:
+Centralized versus over-the-counter markets,” working paper, NYU-Stern.

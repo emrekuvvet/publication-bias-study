@@ -1,0 +1,103 @@
+NBER WORKING PAPER SERIES
+BIG DATA IN FINANCE
+Itay Goldstein
+Chester S. Spatt
+Mao Ye
+Working Paper 28615
+http://www.nber.org/papers/w28615
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+March 2021
+Ye acknowledges support from National Science Foundation grant 1838183 and the Extreme
+Science and Engineering Discovery Environment (XSEDE). The views expressed herein are
+those of the authors and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2021 by Itay Goldstein, Chester S. Spatt, and Mao Ye. All rights reserved. Short sections of
+text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Big Data in Finance
+Itay Goldstein, Chester S. Spatt, and Mao Ye
+NBER Working Paper No. 28615
+March 2021
+JEL No. G12,G14,G3
+ABSTRACT
+Big data is revolutionizing the finance industry and has the potential to significantly shape future
+research in finance. This special issue contains articles following the 2019 NBER/ RFS
+conference on big data. In this Introduction to the special issue, we define the “Big Data”
+phenomenon as a combination of three features: large size, high dimension, and complex
+structure. Using the articles in the special issue, we discuss how new research builds on these
+features to push the frontier on fundamental questions across areas in finance – including
+corporate finance, market microstructure, and asset pricing. Finally, we offer some thoughts for
+future research directions.
+Itay Goldstein Mao Ye
+The Wharton School Department of Finance,
+University of Pennsylvania Gies School of Business
+3620 Locust Walk University of Illinois, Urbana-Champaign
+Philadelphia, PA 19104 343K Wohlers Hall
+and NBER 1206 South Sixth Street
+itayg@wharton.upenn.edu Champaign, IL 61820
+and NBER
+Chester S. Spatt maoye@illinois.edu
+Tepper School of Business
+Carnegie Mellon University
+5000 Forbes Avenue
+Pittsburgh, PA 15213-3890
+and NBER
+cspatt@andrew.cmu.edu
+
+1. The “Big Data” Revolution
+The Digital Age has created mountains of data that continue to grow exponentially. The
+International Data Corporation estimates that the world generates more data every two days than
+all of humanity generated from the dawn of time to the year 2003. This “big data” revolution is
+reshaping the financial industry, as the Wall Street Journal writes: “Today, the ultimate Wall Street
+status symbol is a trading floor comprising Carnegie Mellon Ph.D.s, not Wharton M.B.A.s.”2 This
+industry transition has already started to affect the way we teach students. Along with the drop in
+the number of Master of Business Administration (MBA) programs, as well as the decline in
+applications and enrollment in MBA programs, 3 we see a surge of new programs such as Master
+of Business Analytics (also MBA).
+The impact of big data on academic research in finance is also starting to reveal itself, but
+with it many questions emerge. The classical definition of big data as three Vs (volume, velocity,
+and variety) has a strong relation to engineering and computer science, but it does not fully reflect
+the opportunities and challenges that big data pose to research and practice in finance. What do
+big data in finance actually mean? How can financial economists benefit from the big data
+revolution? Do big data open new research topics for financial economists or allow us to answer
+traditional questions in novel and more revealing ways? Is this really a revolution for finance
+research or just a continuation of a gradual change? After all, large datasets always have been a
+feature of research in finance.
+In October 2018, the National Science Foundation (NSF) provided a joint grant to the
+National Bureau of Economic Research (NBER) and the National Center for Supercomputing
+2 https://www.wsj.com/articles/the-quants-meet-the-new-kings-of-wall-street-1495389163 (Rogow, G., “Meet the
+New Kings of Wall Street,” Wall Street Journal, May 21, 2017).
+3 https://www.wsj.com/articles/elite-m-b-a-programs-report-steep-drop-in-applications-11571130001 (Cutter, C.,
+“Elite MBA Programs Report Steep Drop in Applications,” Wall Street Journal, October 15, 2019).
+1
+
+Application (NCSA) at the University of Illinois at Urbana-Champaign that aims to explore
+answers to these questions. Part of the grant is dedicated to education and outreach and supports a
+series of NBER conferences to explore the future of big data research in finance. The summer
+conferences, organized by Toni Whited and Mao Ye, focus on tutorial sessions on big data
+techniques and presentations of early ideas on big data. The winter conferences, organized by Itay
+Goldstein, Chester Spatt, and Mao Ye, focus on completed papers using big data and related
+methodologies.
+This special issue of the Review of Financial Studies (RFS) on big data in finance includes
+four papers from the first NBER/RFS Winter Conference on Big Data held on March 8, 2019, and
+two other papers that are closely related to this theme. The RFS has the tradition of encouraging
+scholars to pursue risky projects that have the potential to push the frontiers of research in finance.
+The series of NBER/RFS Big Data Conferences and this special issue reflect the RFS’s efforts to
+encourage the use of big data in finance studies and provide a natural complement to the RFS
+FinTech initiative that was featured in a special issue in May 2019 (see Goldstein, Jiang, and
+Karolyi (2019) for an introduction).
+In this article, we try to define what the title “Big Data” includes in the context of finance
+research. We then review the six articles included in the special issue, how they are related to each
+other and to the general theme. Finally, we provide some thoughts for future research directions.
+2. What is Big Data in Finance Research?
+It is fairly clear that a definition of big data in finance research should be different from
+ones that are used in engineering and statistics. Researchers in these disciplines focus on providing
+facilities and tools to capture, curate, manage, and process data. Financial economists, on the other
+hand, focus on applying these tools to address interesting economic questions. While it is risky to
+2

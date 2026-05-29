@@ -1,0 +1,142 @@
+NBER WORKING PAPER SERIES
+RELATIVE PRICE DISPERSION:
+EVIDENCE AND THEORY
+Greg Kaplan
+Guido Menzio
+Leena Rudanko
+Nicholas Trachter
+Working Paper 21931
+http://www.nber.org/papers/w21931
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+January 2016
+We are grateful to Bob Hall for comments on some of our previous work that inspired the current project.
+We are grateful to Jim Albrecht, George Alessandria, Fernando Alvarez, Ken Burdett, Jeff Campbell,
+Glenn Ellison, Sarah Ellison, Doireann Fitzgerald, Gaetano Gaballo, Matthew Gentzkow, Jose Moraga-Gonzales,
+Erik Hurst, Nir Jaimovich, Boyan Jovanovic, Stephan Seiler, Rob Shimer, Randy Wright for useful
+comments. We are grateful to our audiences at the NBER Summer Institute (IO and Price Dynamics
+groups), Minnesota Macro Workshop, Canadian Macro Study Group, Philadelphia Search and Matching
+Workshop, Econometric Society, Chicago FRB/St.Louis FRB Workshop on Money, Banking, Payments
+and Finance, SED Annual Meeting, Bank of France Price Setting and Inflation Conference, EIEF Junior
+Conference in Macroeconomics, University of Pennsylvania (Wharton), University of Wisconsin at
+Madison, FRB Minneapolis, George Washington University, Universidad Torcuato di Tella, Universidad
+San Andres, UVA/Richmond FRB Research Jamboree. We thank the Kilts Center for Marketing and
+the Nielsen Company for sharing their data. The views expressed herein are those of the authors and
+not necessarily those of the Federal Reserve Bank of Philadelphia, Federal Reserve Bank of Richmond,
+the Federal Reserve System, or the National Bureau of Economic Research.
+At least one co-author has disclosed a financial relationship of potential relevance for this research.
+Further information is available online at http://www.nber.org/papers/w21931.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2016 by Greg Kaplan, Guido Menzio, Leena Rudanko, and Nicholas Trachter. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission provided
+that full credit, including © notice, is given to the source.
+
+Relative Price Dispersion: Evidence and Theory
+Greg Kaplan, Guido Menzio, Leena Rudanko, and Nicholas Trachter
+NBER Working Paper No. 21931
+January 2016
+JEL No. D40,D83,E31,L11
+ABSTRACT
+We use a large dataset on retail pricing to document that a sizeable portion of the cross-sectional variation
+in the price at which the same good trades in the same period and in the same market is due to the
+fact that stores that are, on average, equally expensive set persistently different prices for the same
+good. We refer to this phenomenon as relative price dispersion. We argue that relative price dispersion
+stems from sellers' attempts to discriminate between high-valuation buyers who need to make all of
+their purchases in the same store, and low-valuation buyers who are willing to purchase different items
+from different stores. We calibrate our theory and show that it is not only consistent with the extent
+and sources of dispersion in the price that different sellers charge for the same good, but also with
+the extent and sources of dispersion in the prices that different households pay for the same basket
+of goods, as well as with the relationship between prices paid and the number of stores visited by different
+households.
+Greg Kaplan Leena Rudanko
+Department of Economics Research Department
+Princeton University Federal Reserve Bank of Philadelphia
+Fisher Hall Ten Independence Mall
+Princeton, NJ 08544 Philadelphia, PA 19106
+and NBER leena.rudanko@gmail.com
+gkaplan@princeton.edu
+Nicholas Trachter
+Guido Menzio Federal Reserve Bank of Richmond
+Department of Economics 701 E Byrd Street
+University of Pennsylvania Richmond, VA 23219
+467 McNeil Building Nicholas.Trachter@rich.frb.org
+3718 Locust Walk
+Philadelphia, PA 19104
+and NBER
+gmenzio@econ.upenn.edu
+
+1 Introduction
+Using a large dataset on retail pricing, we document that a significant fraction of the cross-
+sectional variation in the price at which the same good is sold in the same period of time and
+in the same market is due to the fact that retailers that are, on average, equally expensive set
+persistently different prices for that particular good. We refer to this phenomenon as relative
+price dispersion. We propose a theory of relative price dispersion in an equilibrium model of
+the retail market, where buyers and sellers, respectively, demand and supply multiple goods.
+We argue that relative price dispersion stems from the sellers’ incentive to discriminate
+between high-valuation buyers who need to make all of their purchases in the same store,
+and low-valuation buyers who are willing to purchase different items from different stores.
+We calibrate our theory of relative price dispersion and we show that it captures well the
+differences between the extent and cause of variation in the price at which the same good
+is sold by different sellers, and the extent and cause of variation in the prices that different
+households pay for the same basket of goods.
+In the first part of the paper, we measure the extent and sources of dispersion in the
+price at which the same good is sold in the same week and in the same geographical area
+by different retailers. We carry out the analysis using the Kilts-Nielsen Retail Scanner
+Dataset (KNRS), which provides weekly price and quantity information for 1.5 million goods
+(defined by their Unique Product Code) at around 40,000 stores in over 2,500 counties across
+205 Designated Market Areas (which are geographical areas of roughly the same size as
+Metropolitan Statistical Areas).
+Using the KNRS, we compute the average price of a particular good in a given week
+and in a given geographical area. We normalize the price of the good at each different
+store by expressing it as a percentage deviation from the average price in the relevant week
+and market. We break down the normalized price of the good at each different store into
+a store component—defined as the average of the normalized price of all the goods sold
+by the store in the week—and a store-good component—defined residually as the difference
+between the price of the good at the store and the average price of the store. We then
+compute the variance of the price of the good at different stores, and we break down this
+variance into a store component and a store-good component. We find that, on average, the
+standard deviation of prices for the same good in the same week and market is 15.3%, and
+the variance is 2.34%. We also find that only 15% of the variance is due to the variance in
+the store component—i.e. due to the fact that the same good is sold at stores that have
+a different average price—while 85% is due to the variance of the store-good component—
+2
+
+i.e. due to the fact that the same good is sold at different prices at stores that are equally
+expensive on average.
+We then use the time dimension in KNRS to identify the persistent component and the
+transitory component of the price of a particular good at a particular store. To this aim, we
+follow an approach that is commonly used in the literature on labor economics to analyze
+wage inequality (see, e.g, Gottschalk and Moffitt 1994 and Blundell and Preston 1998) but
+that had never been applied before to study price dispersion. Specifically, we estimate a
+statistical model for prices, in which both the store and the store-good component of prices
+are given by the sum of a fixed effect, an AR process and an MA process. When estimated,
+the statistical model fits the auto-covariances of prices very well. The estimated model
+implies that almost all of the cross-sectional variance of the store component of prices stems
+from persistent differences in average store prices. Also, the estimated model implies that
+roughly 1/3 of the variance of the cross-sectional variance of the store-good component of
+prices stems from persistent differences in the price of the good at equally expensive stores,
+whileroughly2/3ofthevariancestemsfromtransitorydifferences. Overall, asizablefraction
+of the variation in the price of the same good across different stores in the same week and in
+the same market is due to the fact that, equally expensive stores, charge persistently different
+prices for the same good. We refer to the persistent differences in the price of a particular
+good relative to the average price of the store as relative price dispersion.
+The literature offers compelling theories of short-term differences in the price of the same
+good across equally expensive stores. For instance, according to the theory of intertemporal
+price discrimination (see, e.g., Conlisk, Gerstner and Sobel 1984, Sobel 1984, Menzio and
+Trachter 2015a), sellers find it optimal to occasionally lower the price of a particular good in
+order to discriminate between low-valuation customers who are willing to do their shopping
+at any time during the month, and high-valuation customers who need to make their pur-
+chases on a specific day of the month. As different sellers implement these occasional price
+reductions at different times, the equilibrium may feature short-term differences in the price
+of the same good across equally expensive stores. According to the inventory management
+theory (see, e.g., Aguirregabiria 1999), a seller finds it optimal to increases the price of a
+good as the inventory of the good falls, and it finds it optimal to lower the price when the
+inventory of the good is replenished. As different sellers have different inventory cycles, the
+equilibrium may feature short-term differences in the price of the same good across equally
+expensive stores. In contrast, the literature does not offer much theoretical guidance in the
+way of understanding relative price dispersion, i.e. long-term differences in the price of the
+same good across equally expensive stores.
+3

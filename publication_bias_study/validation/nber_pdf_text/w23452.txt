@@ -1,0 +1,133 @@
+NBER WORKING PAPER SERIES
+AN EQUILIBRIUM MODEL OF HOUSING AND MORTGAGE MARKETS WITH
+STATE-CONTINGENT LENDING CONTRACTS
+Tomasz Piskorski
+Alexei Tchistyi
+Working Paper 23452
+http://www.nber.org/papers/w23452
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2017
+First Draft: April 2016. Piskorski acknowledges financial support from the National Science
+Foundation(cid:3)and the Paul Milstein Center for Real Estate at Columbia Business School. The views
+expressed herein(cid:3)are those of the authors and do not necessarily reflect the views of the National
+Bureau of Economic(cid:3)Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official(cid:3)NBER publications.
+© 2017 by Tomasz Piskorski and Alexei Tchistyi. All rights reserved. Short sections of text, not
+to(cid:3)exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including(cid:3)© notice, is given to the source.
+
+An Equilibrium Model of Housing and Mortgage Markets with State-Contingent Lending
+Contracts
+Tomasz Piskorski and Alexei Tchistyi
+NBER Working Paper No. 23452
+May 2017
+JEL No. D1,D5,E44,G01,G21,G28
+ABSTRACT
+We develop a tractable general equilibrium framework of housing and mortgage markets with
+aggregate(cid:3)and idiosyncratic risks, costly liquidity and strategic defaults, empirically relevant
+informational asymmetries,(cid:3)and endogenous mortgage design. We show that adverse selection
+plays an important role in shaping(cid:3) the form of an equilibrium contract. If borrowers'
+homeownership values are known, aggregate wages(cid:3)and house prices determine the optimal state-
+contingent mortgage payments, which efficiently reduces(cid:3)the costs of liquidity default. However,
+when lenders are uncertain about homeownership values, the(cid:3)equilibrium contract only depends
+on house prices and takes the form of a home equity insurance mortgage(cid:3)(HEIM) that eliminates
+the strategic default option and insures the borrower's equity position. Interestingly,(cid:3)we show that
+widespread adoption of such loans has ambiguous effects on the homeownership rate(cid:3) and
+household welfare. In economies in which recessions are expected to be severe, the HEIM
+equilibrium(cid:3)Pareto dominates the equilibrium with fixed-rate mortgages. However, if economic
+downturns are(cid:3)not severe, HEIMs can lower the homeownership rate and make some marginal
+home buyers worse-off.(cid:3)We also note that adjustable-rate mortgages (ARMs) may share some
+benefits with HEIMs, which(cid:3)may help justify a high concentration of ARMs among riskier
+borrowers. Finally, we find that unrestricted(cid:3)competition between lenders may lead to a non-
+existence of equilibrium. This suggests that government-sponsored(cid:3) enterprises may stabilize
+mortgage markets by subsidizing certain mortgage contracts.
+Tomasz Piskorski
+Columbia Business School
+3022 Broadway
+Uris Hall 810
+New York, NY 10027
+and NBER
+tp2252@columbia.edu
+Alexei Tchistyi
+College of Business
+University of Illinois
+340 Wohlers Hall
+Champaign, 6182 IL
+tchistyi@illinois.edu
+
+1 Introduction
+Residential mortgage contracts are of first-order importance for households, financial insti-
+tutions, and for the broader economy. The Great Depression of 1929-1939 showed that forms
+of mortgage lending are extremely important to how the economy responds to shocks. At that
+time, mortgage contracts were predominantly short-term loans. The inability to roll them over
+was a major contributor to the collapse of the financial and housing markets. In response to the
+lessons learned from the Great Depression, federal regulators developed long-term fully amortizing
+fixed rate mortgage contracts, also known as FRMs, which have become the most popular form of
+mortgage lending in the United States.1
+The recent Great Recession associated with millions of costly foreclosures has led to a revival
+of the debate regarding the appropriate structure of residential lending contracts. A key lesson
+from the Great Recession is that the rigidity of mortgage contract terms coupled with a variety of
+frictions preventing effective renegotiation or refinancing of loans of vulnerable borrowers may have
+exacerbated the foreclosure crisis and the severity of the economic downturn (e.g., Piskorski et al.
+2010; Agarwal et al. 2012, 2015; Keys et al. 2013; Mayer et al. 2014; Scharfstein and Sunderam
+2016).2 At the core of this debate are a variety of proposals concerning the redesign of mortgage
+contracts so that they allow for more efficient sharing of aggregate risk between borrowers and
+lenders to lower the incidence of costly foreclosures and the severity of future housing downturns
+(e.g., Shiller 2008; Caplin et al. 2008; Piskorski and Tchistyi 2011; Campbell 2013; Keys et al.
+2013; Mian and Sufi 2014; Eberly and Krishnamurty 2014).
+Despite the fundamental importance of this question, there is little theoretical analysis inves-
+tigating the effects of a widespread adoption of state-contingent lending contracts in a general
+equilibrium setting with aggregate uncertainty. The life-cycle models of mortgage contract choice
+(e.g., Campbell and Cocco 2003, 2015) and mortgage design studies of state-contingent contracts
+employing dynamic contracting tools (e.g., Piskorski and Tchistyi 2010, 2011) commonly adopt a
+partial equilibrium perspective that takes some key variables such as house prices as given. How-
+1See Green and Wachter (2005) for more discussion of the historical evolution of mortgage contracts in the U.S.
+2Thesefrictionsincludebarrierstoloanrenegotiationduetosecuritization(Piskorskietal. 2010),lenders’concerns
+regarding borrowers’ strategic behavior that can limit ex-post loan work-outs (Mayer et al. 2014), and the limited
+organizational ability of servicers to provide debt relief to a large number of borrowers in a crisis (Agarwal et al.
+2012). In addition, borrowers with FRMs left with little housing equity can be ineligible for loan refinancing, and
+limited competition in the refinancing market may adversely affect the effectiveness of polices aimed at facilitating
+loan refinancing activity during economic downturns (Agarwal et al. 2015; Scharfstein and Sunderam 2016).
+2
+
+ever, developments in the mortgage lending market, due to its large size, can have pronounced
+effects on house prices, construction, home ownership rates, and the allocation of credit in the
+economy feeding back into mortgage market outcomes.
+To study such effects, we develop a tractable general equilibrium framework of housing and
+mortgage markets in a setting with aggregate and idiosyncratic risks, costly liquidity and strate-
+gic defaults, empirically relevant informational asymmetries, endogenous housing supply and home
+prices, and endogenous mortgage design.3 In this respect, our work is complementary with recent
+quantitative dynamic equilibrium models of housing markets with heterogenous agents and ag-
+gregate risk (e.g., Favilukis, Ludvingson, Van Nieuwerburgh 2016; Kaplan, Mitman, and Violante
+2016) and contemporaneous research that studies the role of mortgage contracts in such settings
+(e.g., Greenwald, Landvoigt, and Van Nieuwerburgh 2017; Guren, Krishnamurty, and McQuade
+2017).4 Such models can provide many valuable insights including the quantitative assessment of
+various effects. However, their complex settings usually require the use of numerical methods to
+analyze equilibria. This makes it hard to derive results analytically and to study the impact of
+factorssuchasinformationalasymmetriesandcompetitionamonglendersonendogenousmortgage
+design and other equilibrium outcomes.5 In this regard, our objective is to develop a framework
+that is rich enough to capture the complex interplay of various factors in a market equilibrium
+while still being tractable enough to develop key qualitative insights transparently including a set
+of closed form solutions. We hope that this framework could be used in future research on housing
+and mortgage markets.
+In our setting the economy is subject to aggregate productivity shocks that determine the
+capital returns and aggregate wages. Households need financing from owners of capital to buy
+homes. We incorporate two sources of informational asymmetries between borrowers and lenders
+that were documented to be quantitatively important by empirical literature.6 First, we assume
+3Our paper is related to a large literature on financing models with informational asymmetries (e.g., Stiglitz and
+Weiss1981; Diamond 1984; Bolton and Scharfstein 1990; DeMarzo and Sannikov2006; DeMarzo and Fishman 2007,
+Biaisetal. 2007;Farhi,Golosov,andTsyvinski2009)andtotheliteraturestudingtheroleofcollateral,leverage,and
+defaultinvariousequilibriumsettings(e.g.,KiyotakiandMoore1997;Dubeyetal. 2005;RampiniandViswanathan
+2010; Makarov and Plantin 2013; Brunnermeier and Sannikov 2014; He and Milbradt 2014; Bolton et al. 2016).
+4In this regard, our paper is also related to Kung (2015) who explores a number of counterfactuals related to
+credit availability and mortgage contract forms in a quantitative equilibrium model of the housing market.
+5In dynamic quantitative equilibrium models with aggregate uncertainty and individual heterogeneity the fully
+rationalequilibriumisusuallynotcomputableasalargenumberofagentstypicallyfaceaninfinitedimensionalstate
+space (e.g., see Favilukis et al. 2016).
+6The empirical literature has documented that informational asymmetries are a pervasive feature of the housing
+finance market. For recent evidence see, among others, Keys et al. (2010), Jiang et al. (2014), Garmaise (2015),
+3

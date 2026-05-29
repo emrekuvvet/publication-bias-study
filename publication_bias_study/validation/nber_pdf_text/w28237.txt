@@ -1,0 +1,128 @@
+NBER WORKING PAPER SERIES
+CENTRAL BANK DIGITAL CURRENCY:
+WHEN PRICE AND BANK STABILITY COLLIDE
+Linda Schilling
+Jesús Fernández-Villaverde
+Harald Uhlig
+Working Paper 28237
+http://www.nber.org/papers/w28237
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2020
+The contribution of Linda Schilling has been prepared under the Lamfalussy fellowship program
+sponsored by the ECB and was originally named “Central bank digital currency and the
+reorganization of the banking system.” We thank Agnese Leonello and an anonymous ECB
+referee for very insightful comments. The views expressed in this paper are those of the authors
+and do not necessarily reflect the views of the ECB. The views expressed herein are those of the
+authors and do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Linda Schilling, Jesús Fernández-Villaverde, and Harald Uhlig. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Central Bank Digital Currency: When Price and Bank Stability Collide
+Linda Schilling, Jesús Fernández-Villaverde, and Harald Uhlig
+NBER Working Paper No. 28237
+December 2020
+JEL No. E58,G21
+ABSTRACT
+A central bank digital currency, or CBDC, may provide an attractive alternative to traditional
+demand deposits held in private banks. When offering CBDC accounts, the central bank needs to
+confront classic issues of banking: conducting maturity transformation while providing liquidity
+to private customers who suffer “spending” shocks. We analyze these issues in a nominal version
+of a Diamond and Dybvig (1983) model, with an additional and exogenous price stability
+objective for the central bank. While the central bank can always deliver on its nominal
+obligations, runs can nonetheless occur, manifesting themselves either as excessive real asset
+liquidation or as a failure to maintain price stability. We demonstrate an impossibility result that
+we call the CBDC trilemma: of the three goals of efficiency, financial stability (i.e., absence of
+runs), and price stability, the central bank can achieve at most two.
+Linda Schilling Harald Uhlig
+Ecole Polytechnique CREST Dept. of Economics
+5 Avenue le Chatelier University of Chicago
+Palaiseau, Fran 91120 1126 E 59th Street
+France Chicago, IL 60637
+and CEPR and CEPR
+lin.schilling@gmail.com and also NBER
+huhlig@uchicago.edu
+Jesús Fernández-Villaverde
+Department of Economics
+University of Pennsylvania
+The Ronald O. Perelman Center
+for Political Science and Economics
+133 South 36th Street Suite 150
+Philadelphia, PA 19104
+and CEPR
+and also NBER
+jesusfv@econ.upenn.edu
+
+1 Introduction
+Many central banks and policymaking institutions, such as the Bank of Canada, the Bank
+of England, the Bank for International Settlements, the ECB, the IMF, the People’s Bank
+of China, the Sveriges Riksbank, and the G30, are openly debating the introduction of
+a central bank digital currency, or CBDC (Barrdear and Kumhof, 2016; Bech and Garratt,
+2017;Chapmanetal.,2017; Lagarde,2018; Ingves,2018; Kahnetal.,2019; Davoodalhosseini
+et al., 2020; Auer and Böhme, 2020; Auer et al., 2020; Group of 30, 2020).
+The introduction and adoption of CBDCs have the potential to be a watershed for the
+monetary and financial systems of advanced economies. Since at least the classic formulation
+of Bagehot (1873), central banks have viewed their primary tasks as maintaining stable
+prices and ensuring financial stability through their role as lenders of last resort. With a
+CBDC, two additional and significant aspects come into play. First, a CBDC may become
+an attractive alternative to traditional demand deposits in private banks for all households
+and firms. Second, and as a result, the central bank may be transformed into a financial
+intermediary that needs to confront classic issues of banking such as maturity transformation
+and the exposure to a demand for liquidity induced by “spending” shocks (runs) of its private
+customers.1
+Inthispaper, weseektomodeltheinterplayofthesenewandtraditionalrolestoevaluate
+the advantages and drawbacks of introducing a CBDC concerning the subsequent reorga-
+nization of the banking system and its consequences for monetary policy, allocations, and
+welfare. To do so, we build on the classical model by Diamond and Dybvig (1983), which
+emphasizes a bank’s role in maturity transformation: banks pool resources and finance long-
+term projects with demand deposits that can be withdrawn at a short time horizon to meet
+liquidity shocks. By offering risk-sharing, banks enable allocations that are not attainable
+under autarky. Yet, the optimal amount of risk-sharing requires banks to be prone to runs.
+Can maturity transformation still occur at the socially optimal level with a CBDC? Can a
+central bank do better and, for instance, avoid runs? Do new trade-offs arise?
+1While both deposit-making and lending to the public by a central bank can be accomplished without a
+CBDC (as has often happened in the past; see Fernández-Villaverde et al., 2020, for historical examples),
+theoperationallogisticswithoutdigitalmeansaretoocumbersomeinalarge, moderneconomytorepresent
+a likely policy option. Also, from the perspective of our paper, it is mainly irrelevant whether the deposits
+and loans in the CBDC are run directly by the central bank or by financial institutions that implement the
+directives of the central bank.
+1
+
+We depart from the original formulation of the Diamond and Dybvig model in a crucial
+aspect. While Diamond and Dybvig (1983) consider intermediation with private banks, a
+CBDCimpliescentralbankintermediation. Thisdifferenceisconsequentialbecauseacentral
+bank can control the price level. For example, a central bank can issue additional units of a
+CBDC to cover losses in its loan portfolio, implicitly diffusing the costs of the credit losses
+among all holders of the currency. To allow for this feedback mechanism between the loan
+portfolio and the price level, we modify the basic Diamond and Dybvig (1983) model by
+imposing the condition that all contracts are nominal. We assume that real goods can only
+be traded against money, implicitly setting a form of a cash-in-advance constraint in the
+tradition of Svensson (1985) and Lucas and Stokey (1987), but suited to the digital world.
+In fact, a cash-in-advance constraint is more relevant in a CBDC world because other means
+of payment, such as the transfer of private deposits, might have disappeared.
+In our model, classic bank runs may still occur due to a rationing problem, when liqui-
+dating illiquid real assets at a given price level. But since the central bank controls the price
+level and contracts are nominal, it can avoid rationing if it prefers. By issuing more currency,
+the monetary authority can always deliver on its obligation. But a simple “quantity theory
+of money intuition” implies that avoiding excess liquidation of real assets by issuing more
+currency implies sacrificing inflation targeting. Thus, our model illustrates how runs on a
+central bank can manifest themselves in two ways: either as a classic run, caused by the
+rationing of real assets, or as a run on the price level.
+This dual nature of bank runs is part of a more general phenomenon. Imagine that the
+central bank has three goals: efficiency, financial stability (i.e., absence of runs), and price
+stability. We demonstrate an impossibility result that we call the CBDC trilemma: of its
+three goals, the central bank can achieve at most two; see Figure 1. As the first part of
+the trilemma, we prove that the central bank can always implement the socially optimal
+allocation in dominant strategies while deterring runs by credibly threatening high inflation
+whenevernominalspendingisexcessive. Thisthreatisimplementedbylimitingtherealasset
+liquidation in the case of a run, thereby rendering spending by patient agents suboptimal
+ex-post. Since depositors are rational, the central bank’s inflation threat deters runs ex-ante
+such that high inflation only occurs off the equilibrium path. This result contrasts with the
+Diamond and Dybvig model, where banks do not have the option of changing the aggregate
+price level in response to a run. Therefore, there, runs can occur as equilibrium phenomena,
+2

@@ -1,0 +1,120 @@
+NBER WORKING PAPER SERIES
+SOVEREIGN RISK AND BANK LENDING:
+EVIDENCE FROM 1999 TURKISH EARTHQUAKE
+Yusuf Soner Baskaya
+Bryan Hardy
+Ṣebnem Kalemli-Özcan
+Vivian Yue
+Working Paper 22335
+http://www.nber.org/papers/w22335
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2016, Revised March 2023
+This paper previously circulated under the title, "Are Government Bonds Bad for Banks?
+Evidence from a Rare Fiscal Shock". We thank Daron Acemoglu, Mark Aguiar, Koray Alper,
+Cristina Arellano, Erdem Basci, Javier Bianchi, V.V. Chari, Stijn Claessens, Giancarlo Corsetti,
+Raquel Fernandez, Jose Louis De-Peydro, Linda Goldberg, Anne Krueger, Alberto Martin, Atif
+Mian, Pablo Ottonello, Radek Paluszynski, Richard Portes, Ken Rogoff, Larry Wall, and the
+participants at various conferences for their comments. The views expressed in this paper do not
+necessarily represent those of the institutions that the authors are affiliated with, nor of the
+National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2016 by Yusuf Soner Baskaya, Bryan Hardy, Ṣebnem Kalemli-Özcan, and Vivian Yue. All
+rights reserved. Short sections of text, not to exceed two paragraphs, may be quoted without
+explicit permission provided that full credit, including © notice, is given to the source.
+
+Sovereign Risk and Bank Lending: Evidence from 1999 Turkish Earthquake
+Yusuf Soner Baskaya, Bryan Hardy, Ṣebnem Kalemli-Özcan, and Vivian Yue
+NBER Working Paper No. 22335
+June 2016, Revised March 2023
+JEL No. E0,F0,G0,G01,G21
+ABSTRACT
+We use an exogenous fiscal shock to identify the transmission of government risk to bank lending
+due to banks holding government bonds. We illustrate with a theoretical model that for banks
+with higher exposure to government bonds, a higher sovereign default risk implies lower bank net
+worth and less lending. Our empirical estimates confirm the model’s predictions. The exogenous
+change in sovereign default risk of Turkish government debt as a result of the 1999 earthquake
+impacts banks whose balance sheets were exposed more to government bonds. The resulting
+lower bank net worth translates into lower credit supply. We rule out alternative explanations.
+Our estimates suggest this channel can explain half of the decline in bank lending following the
+earthquake. This underlines the importance of the bank balance-sheet channel in transmitting a
+higher sovereign default risk to reduced real economic activity.
+Yusuf Soner Baskaya Ṣebnem Kalemli-Özcan
+University of Glasgow Department of Economics
+soner.baskaya@gmail.com University of Maryland
+Tydings Hall 4118D
+Bryan Hardy College Park, MD 20742-7211
+Bank for International Settlements and CEPR
+Centralbahnplatz 2 and also NBER
+4051 Basel kalemli@econ.umd.edu
+Switzerland
+bryan.hardy@bis.org Vivian Yue
+Economics Department Emory
+University
+602 Fishburne Drive
+Atlanta, GA 30322
+and NBER
+vivianyue1@gmail.com
+
+I Introduction
+Financial institutions play a pivotal role in supplying credit both to real sector and sovereign
+governments. Lending to their own sovereigns increases the exposure of domestic financial
+institutions tosovereign risk.1 An increasein sovereignrisk constitutes a directbalance sheet
+shock to the banks that hold sovereign debt (Gennaioli, Martin, and Rossi (2014), Bocola
+(2016), Arellano, Bai, and Bocola (2020), Morelli, Ottonello, and Perez (2022)). The decline
+in asset value reduces bank net worth, which can then constrain bank borrowing and lending.
+Higher sovereign risk can also affect banks’ financial performance by reducing the collateral
+value of the sovereign bonds and thereby banks’ ability to secure funding. These concerns
+played out most notably in the 2012 Eurozone crisis. However, the surge in government
+borrowing across both advanced and emerging markets, spurred by the Covid-19 crisis, has
+brought them back to the fore (Hardy and Zhu (2023)).
+Nevertheless, quantifying the effect of sovereign risk on bank balance sheets and credit
+provision is a challenging task. In particular, it is difficult to identify a causal relationship
+between sovereign risk and banking sector distress from bank-sovereign doom loop episodes,
+underlined by the well-known facts of the coincidence of sovereign crises and banking crises
+(Reinhart and Rogoff (2009)). First, sovereign risk can increase endogenously due to weak
+banks. In the presence of financial crises, banks under financial stress face insolvency risk,
+which can result in the need for a government bailout. As governments recapitalize banks to
+backstopthefinancialsystem,functioningasalenderoflastresort, thebailoutsincreasetheir
+fiscal burden and so can increase sovereign risk (Acharya, Drechsler, and Schnabl (2014)).
+Second, bank balance sheet shocks are mostly anticipated and unfold simultaneously with
+the sovereign debt crisis. For example, banks can actively manage their balance sheets by
+buying/selling government bonds in response to changes in sovereign risk. Furthermore, the
+value of the existing government bonds may not change on the bank balance sheet even
+when sovereign ratings go down, if banks are recording all assets at book value (e.g. held-
+1Sovereign governments mostly borrow from domestic residents (Reinhart and Rogoff (2009), Tomz and
+Wright (2013), Aguiar and Amador (2014), and Fang, Hardy, and Lewis (2022)).
+2
+
+to-maturity securities in the banking book). In this case, the shock to bank balance sheets
+may not be observed in the data. A bank will change its behavior in terms of private sector
+lending given the lower market value of bonds, but the change in the value of the bonds may
+not be observed on the balance sheet. In this case, one can erroneously attribute the change
+in bank lending to other factors and/or conclude that there is no effect of increased sovereign
+risk on lending through bank balance sheets. Third, if distress in the banking sector and/or
+increased sovereign risk lead to a recession and increased uncertainty, the demand for credit
+by non-financial private sector will go down. Therefore, in the absence of an exogenous
+shift in credit supply conditions while keeping demand constant, the variations in the credit
+provision can simply reflect the recessionary environment potentially affecting loan demand
+rather than a deterioration in bank balance sheets affecting credit supply. Last but not
+least, lack of appropriate micro data and therefore reliance on macro data can complicate
+disentangling factors affecting loan demand from loan supply.
+We solve this identification problem by focusing on a unique natural experiment and
+detailed bank-level data. We first provide an analytical framework to identify the bank
+balance sheet channel. In particular, based on Morelli et al. (2022), we provide a simple
+model where banks face different changes in their funding constraint based on their differ-
+ent holdings of government bonds: as the economy experiences an unexpected increase in
+sovereign risk, the net worth of banks holding government debt is impacted, constraining
+their lending. We specify the alternative competing channels through which the spillover
+of an exogenous shock may impact the bank lending (e.g. demand, risky firms, financial
+repression). The model thus guides the subsequent empirical analysis to disentangle these
+channels. Second, we utilize the 1999 Marmara Earthquake as an unanticipated exogenous
+fiscal shock that elevated Turkey’s sovereign risk. The unanticipated nature of the shock
+makes it impossible for banks to accumulate or run down government debt in expectation of
+sovereign risk. Hence, this helps us to rule out moral hazard and/or risk shifting scenarios
+due to sovereign default expectations. Third, we use an administrative portfolio data for the
+universe of banks in Turkey between 1997–2002 to analyse how banks’ exposure to sovereign
+3

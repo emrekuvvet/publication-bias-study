@@ -1,0 +1,150 @@
+NBER WORKING PAPER SERIES
+TURBULENCE, FIRM DECENTRALIZATION AND GROWTH IN BAD TIMES
+Philippe Aghion
+Nicholas Bloom
+Brian Lucking
+Raffaella Sadun
+John Van Reenen
+Working Paper 23354
+http://www.nber.org/papers/w23354
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+April 2017, Revised October 2017
+We would like to thank Ufuk Akcigit, Laura Alfaro, Richard Blundell, Erik Brynjolfsson, Gabriel
+Chodorow-Reich, Bob Gibbons, Rebecca Henderson, Bengt Holmstrom, Caroline Hoxby, Guy
+Laroque, Eddie Lazear, Kristina McElheran, Antoinette Schoar, David Thesmar, Jean Tirole and
+participants in seminars in the AEA, UC Berkeley, Columbia, Harvard, MIT, Northwestern,
+Stanford and Toronto for helpful discussions. The Economic and Social Research Centre,
+European Research Council, Kauffman Foundation, National Science Foundation and Sloan
+Foundation have all provided generous funding. Any opinions and conclusions expressed herein
+are those of the authors and do not necessarily represent the views of the U.S. Census Bureau or
+the National Bureau of Economic Research. All results have been reviewed to ensure that no
+confidential information is disclosed.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2017 by Philippe Aghion, Nicholas Bloom, Brian Lucking, Raffaella Sadun, and John Van
+Reenen. All rights reserved. Short sections of text, not to exceed two paragraphs, may be quoted
+without explicit permission provided that full credit, including © notice, is given to the source.
+
+Turbulence, Firm Decentralization and Growth in Bad Times
+Philippe Aghion, Nicholas Bloom, Brian Lucking, Raffaella Sadun, and John Van Reenen
+NBER Working Paper No. 23354
+April 2017, Revised October 2017
+JEL No. E0
+ABSTRACT
+What is the optimal form of firm organization during “bad times”? We present a model of
+delegation within the firm to show that the effect is ambiguous. The greater turbulence following
+macro shocks may benefit decentralized firms because the value of local information increases
+(the “localist” view). On the other hand, the need to make tough decisions may favor centralized
+firms (the “centralist” view). Using two large micro datasets on firm decentralization from ten
+OECD countries and US administrative data, we find that firms that delegated more power from
+the Central Headquarters to local plant managers prior to the Great Recession out-performed their
+centralized counterparts in sectors that were hardest hit by the subsequent crisis. Using direct
+measures of turbulence based on product churn and stock market volatility, we show that the
+localist mechanism dominates. This conclusion is robust to alternative explanations such as
+managerial fears of bankruptcy and changing coordination costs. Although delegation is better
+suited to some environments than others, countries with more decentralized firms (like the US)
+weathered the 2008-09 Great Recession better: these organizational differences account for about
+15% of international differences in post-crisis GDP growth.
+Philippe Aghion Raffaella Sadun
+College de France Harvard Business School
+3 Rue D'Ulm Morgan Hall 233
+75005 Paris Soldiers Field
+FRANCE Boston, MA 02163
+paghion@fas.harvard.edu and NBER
+rsadun@hbs.edu
+Nicholas Bloom
+Stanford University John Van Reenen
+Department of Economics Department of Economics, E62-518
+579 Serra Mall MIT
+Stanford, CA 94305-6072 77 Massachusetts Avenue
+and NBER Cambridge, MA 02139
+nbloom@stanford.edu and NBER
+vanreene@mit.edu
+Brian Lucking
+Department of Economics
+Stanford University
+Stanford, CA 94305
+blucking@stanford.edu
+
+Turbulence, Firm Decentralization and Growth in Bad Times
+Philippe Aghion∗, Nicholas Bloom†, Brian Lucking‡, Ra(cid:27)aella Sadun(cid:159)and John Van Reenen¶
+October 25, 2017
+Abstract
+Whatistheoptimalformof(cid:28)rmorganizationduring(cid:16)badtimes(cid:17)? Wepresentamodelofdelegation
+withinthe(cid:28)rmtoshowthatthee(cid:27)ectisambiguous. Thegreaterturbulencefollowingmacroshocksmay
+bene(cid:28)t decentralized (cid:28)rms because the value of local information increases (the (cid:16)localist(cid:17) view). On the
+other hand, the need to make tough decisions may favor centralized (cid:28)rms (the (cid:16)centralist(cid:17) view). Using
+twolargemicrodatasetson(cid:28)rmdecentralizationfromtenOECDcountriesandUSadministrativedata,
+we(cid:28)ndthat(cid:28)rmsthatdelegatedmorepowerfromtheCentralHeadquarterstolocalplantmanagersprior
+totheGreatRecessionout-performedtheircentralizedcounterpartsinsectorsthatwerehardesthitbythe
+subsequentcrisis. Usingdirectmeasuresofturbulencebasedonproductchurnandstockmarketvolatility,
+weshowthatthelocalistmechanismdominates. Thisconclusionisrobusttoalternativeexplanationssuch
+asmanagerialfearsofbankruptcyandchangingcoordinationcosts. Althoughdelegationisbettersuited
+to some environments than others, countries with more decentralized (cid:28)rms (like the US) weathered the
+2008-09 Great Recession better: these organizational di(cid:27)erences account for about 15% of international
+di(cid:27)erences in post-crisis GDP growth.
+JEL No. O31, O32, O33, F23
+Keywords: decentralization, growth, turbulence, Great Recession
+Acknowledgments: We would like to thank Ufuk Akcigit, Laura Alfaro, Richard Blundell, Erik
+Brynjolfsson, Gabriel Chodorow-Reich, Bob Gibbons, Rebecca Henderson, Bengt Holmstrom, Caroline
+Hoxby,GuyLaroque,EddieLazear,KristinaMcElheran,AntoinetteSchoar,DavidThesmar,JeanTirole
+andparticipantsinseminarsintheAEA,UCBerkeley,Columbia,Harvard,MIT,Northwestern,Stanford
+and Toronto for helpful discussions. The Economic and Social Research Centre, European Research
+Council, Kau(cid:27)man Foundation, National Science Foundation and Sloan Foundation have all provided
+generous funding.
+Disclaimer: Any opinions and conclusions expressed herein are those of the authors and do not
+necessarilyrepresenttheviewsoftheU.S.CensusBureau. Allresultshavebeenreviewedtoensurethat
+no con(cid:28)dential information is disclosed.
+∗CollegedeFrance,LSEandCentreforEconomicPerformance,
+†StanfordUniversity,CentreforEconomicPerformance,NBERandCEPR
+‡StanfordUniversity.
+(cid:159)HarvardUniversity,CentreforEconomicPerformance,NBERandCEPR
+¶MIT,CentreforEconomicPerformance,NBERandCEPR
+1
+
+1 Introduction
+What makes (cid:28)rms more resilient to large negative macro shocks? A recent literature has focused on (cid:28)rms’
+technological, (cid:28)nancial and governance structures as possible factors a(cid:27)ecting their ability to cope with
+1
+sudden changes in external conditions , but much less is known about the role of (cid:28)rm organization. This
+paper focuses on how a speci(cid:28)c organizational aspect of a (cid:28)rm: the extent to which decision-making is
+decentralized down from headquarters to plant managers, a(cid:27)ects performance during an economic crisis.
+This has particular relevance following the Great Recession of 2009-08, which generated a debate over
+how best to organize for (cid:16)recovery and survival(cid:17). One common argument is that centralized (cid:28)rms were best
+equippedtosurvivetherecessionbecauseoftheimportanceofcostcuttingwhich,duetocon(cid:29)ictinginterests
+withinthe(cid:28)rm,isbestdirectedfromcorporateheadquarters(the(cid:16)centralist(cid:17) view). Analternative(cid:16)localist(cid:17)
+viewisthatrecessionsareperiodsofrapidchange,andbeingdecentralizedprovides(cid:28)rmswiththenecessary
+2
+(cid:29)exibility to respond to turbulent business conditions.
+To investigate these issues, we created two new panel datasets with explicit measures of decentralization
+measured prior to the Great Recession. One dataset, the World Management Survey (WMS) has (cid:28)rm
+level data across ten OECD countries (France, Germany, Greece, Italy, Japan, Poland, Portugal Sweden,
+the UK and US). The other dataset, the Management and Organizational Practices Survey (MOPS), is an
+3
+establishment level dataset covering U.S. manufacturing plants. which we constructed in partnership with
+the Census Bureau. We combine these datasets with (cid:28)rm and plant performance data before and after the
+2009-08 crisis.
+In order to guide the empirical analysis, we develop a model of (cid:28)rm decision-making building on the
+Aghion and Tirole (1997) approach. The model illustrates two countervailing e(cid:27)ects of decentralization on
+(cid:28)rm performance during a crisis. On the one hand, a crisis is more likely to reduce the level of congruence
+between the CEO and the plant manager(cid:21)for example, tough decisions on closing down projects and laying
+o(cid:27) sta(cid:27) will be resisted by local managers. At the same time, however, a crisis can also increase turbu-
+lence/uncertainty, thus making local information more valuable. In this case, a crisis would actually make
+decentralizationmoreattractive,sinceitenables(cid:28)rmstobetterunderstandandadapttotheturbulentbusi-
+nessenvironment. Thisresultisakintothoseemergingfromawideclassofmodelswherehigherturbulence
+and uncertainty increase the value of local knowledge and the bene(cid:28)ts of decentralization. The net e(cid:27)ect of
+1Forexample,seeAghion,Askenazy,Berman,Cette,andEymard(2012)ontechnology;Chodorow-Reich(2014)on(cid:28)nancial
+structureandAlfaroandChen(2012)orD’Aurizio,OlivieroandRomano(2015)ongovernance.
+2Support for these starkly di(cid:27)erent views can be found, for example, in reports by the Economist Intelligence Unit. In
+the depths of the Great Recession in June 2009 they wrote in favor of centralization during the crisis: (cid:16)Firms should be
+centralizingtheirdecision-makingprocesses. [...] Inarecessioninvestmentsandotherdecisionsarescrutinizedmorecarefully
+by senior management and a greater emphasis is placed on projects that provide bene(cid:28)ts across the enterprise rather than
+individual units.(cid:17) Yet three months later in August the same publication supported decentralization: (cid:16)Companies have to
+deal with dramatically more uncertainty, complexity and ambiguity in the current recession. Success does not come from
+centralization. True (cid:29)exibility arises when those who are closest to customers are empowered to respond to constant shifts in
+demand,preferencesandattitudes.(cid:17)
+3Weusetheterms(cid:16)establishment(cid:17) and(cid:16)plant(cid:17) interchangeablythroughout.
+2

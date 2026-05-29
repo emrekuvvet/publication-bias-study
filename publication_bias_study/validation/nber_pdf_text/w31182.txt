@@ -1,0 +1,145 @@
+NBER WORKING PAPER SERIES
+MINIMUM WAGES AND POVERTY:
+NEW EVIDENCE FROM DYNAMIC DIFFERENCE-IN-DIFFERENCES ESTIMATES
+Richard V. Burkhauser
+Drew McNichols
+Joseph J. Sabia
+Working Paper 31182
+http://www.nber.org/papers/w31182
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+April 2023
+Richard Burkhauser is a Senior Research Fellow in the Civitas Institute at the University of Texas
+—Austin and acknowledges its research support for this project. Dr. Sabia acknowledges research
+support from the Center for Health Economics & Policy Studies (CHEPS), which has received
+grants from the Troesh Family Foundation and the Charles Koch Foundation. We thank Kyutaro
+Matsuzawa for outstanding research assistance as well as Sama Aziz for helpful editorial
+assistance. We also thank seminar participants at the 2021 Southern Economic Association
+meetings, the 2022 Association of Public Policy Analysis and Management, the 2022 European
+Society of Population Economics, and Chapman University for helpful comments and
+suggestions on a previous draft of this paper. This research was conducted while Dr. McNichols
+was a Postdoctoral Fellow at the Center for Health Economics and Policy Studies (CHEPS) prior
+to his employment at Amazon. The views expressed herein are those of the authors and do not
+necessarily reflect the views of the National Bureau of Economic Research.
+At least one co-author has disclosed additional relationships of potential relevance for this
+research. Further information is available online at http://www.nber.org/papers/w31182
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2023 by Richard V. Burkhauser, Drew McNichols, and Joseph J. Sabia. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Minimum Wages and Poverty: New Evidence from Dynamic Difference-in-Differences Estimates
+Richard V. Burkhauser, Drew McNichols, and Joseph J. Sabia
+NBER Working Paper No. 31182
+April 2023
+JEL No. J23,J38
+ABSTRACT
+Advocates of minimum wage increases have long touted their potential to reduce poverty. This
+study assesses this claim. Using data spanning nearly four decades from the March Current
+Population Survey, and a dynamic difference-in-differences approach, we find that a 10 percent
+increase in the minimum wage is associated with a (statistically insignificant) 0.17 percent
+increase in the probability of longer-run poverty among all persons. With 95% confidence, we can
+rule out long-run poverty elasticities with respect to the minimum wage of less than -0.129, which
+includes central poverty elasticities reported by Dube (2019). Prior evidence suggesting large
+poverty-reducing effects of the minimum wage are (i) highly sensitive to researcher’s choice of
+macroeconomic controls, and (ii) driven by specifications that limit counterfactuals to
+geographically proximate states (“close controls”), which poorly match treatment states’ pre-
+treatment poverty trends. Moreover, an examination of the post-Great Recession era — which
+saw frequent, large increases in state minimum wages — failed to uncover poverty-reducing
+effects of the minimum wage across a wide set of specifications. Finally, we find that less than 10
+percent of workers who would be affected by a newly proposed $15 federal minimum wage live in
+poor families.
+Richard V. Burkhauser Joseph J. Sabia
+Cornell University San Diego State University
+Department of Policy Analysis & Management Department of Economics
+Ithaca, NY 14853-4401 Center for Health Economics
+and AEI and IZA & Policy Studies
+and also NBER 5500 Campanile Drive
+rvb1@cornell.edu San Diego, CA 92182
+and IZA & ESSPRI
+Drew McNichols jsabia@sdsu.edu
+16656 Marine View Dr SW
+Burien, WA 98166
+United States
+drewmcnichols@gmail.com
+
+1. Introduction
+During the 85 years since the U.S. Supreme Court ruled that state minimum wage laws were
+constitutional (West Coast Hotel Co. v. Parrish, 300 U.S. 379, 1937), prominent advocates of minimum
+wage increases — from Presidents Franklin D. Roosevelt through Joseph R. Biden — have
+consistently touted their potential to reduce poverty. 1 Indeed, poverty reduction has been a central
+argument in support of the Living Wage Now Act and the Raise the Wage Act, each of which would
+more than double the Federal minimum wage from $7.25 to $15 per hour (House Bill 325; Senate
+Bill S.53).2
+There are several channels through which minimum wage increases could reduce poverty. If
+minimum wage increases raise hourly wages paid to poor workers — without causing substantial
+adverse labor demand effects (Card and Krueger 1995; Cengiz et al. 2019)) — such hikes could raise
+family incomes and lift poor workers out of poverty (Bernstein and Sherholz 2014; Dube 2019).3 In
+addition, if low-skilled labor markets are monopsonistic or characterized by search-related frictions
+(Card and Krueger 1995; Manning 2003), minimum wage increases could, in theory, increase
+employment and raise incomes among the working poor. Moreover, if minimum wage hikes boost
+spending among low-skilled workers, who typically have a high marginal propensity to consume,
+minimum wage hikes could stimulate aggregate demand and generate longer-run economic growth
+that lifts some poor workers out of poverty (Congressional Budget Office 2021).
+1 In West Coast Hotel Co. v. Parrish (300 U.S. 379 (1937)), the U.S. Supreme Court upheld the first state minimum wage
+law, stating that states could regulate wages to “reduce the evils of the ‘sweating system’, the exploiting of workers at
+wages so low as to be insufficient to meet the bare cost of living.“ With respect to U.S. Presidents and leading Senators,
+such rhetoric began with Franklin Roosevelt’s advocacy for the Fair Labor Standards Act and continuing through
+President Biden’s support for the Raise the Wage Act. To take a handful of examples, President John F. Kennedy stated,
+“The fiscal burden of an inadequate minimum wage law lies upon the community…We can no longer tolerate growing
+patches of poverty and injustice in America” (1961); President Lyndon B. Johnson stated, “The new minimum
+wage…will bring workers and their families a little bit above the poverty line, $3,000 a year. It will help them carry on.
+It will help them to not worry about three meals a day. It will enable them to help themselves develop skills so that they
+can someday earn more” (1966), Senator Edward Kennedy stated, “The minimum wage was, as it should be, a living
+wage, for working men and women . . .who are attempting to provide for their families, feed and clothe their children,
+heat their homes, [and] pay their mortgages” (1989); President Bill Clinton stated, “I’ve studied the arguments and the
+evidence for and against a minimum wage increase…But the most important thing is, you can’t make a living on $4.25
+an hour." (1996); President Barack Obama stated, “In the richest nation on earth, nobody who works full-time should
+have to live in poverty” (2014); and finally, President Joseph R. Biden, in 2020, stated, “No one should work 40 hours a
+week and live below the poverty wage. And if you’re making less than $15 an hour, you’re living below the poverty
+wage.”
+2 The Living Wage Now Act, reintroduced by Congressman Steve Cohen (D-TN) in January 2023, would raise the Federal
+minimum wage immediately, while the Raise the Wage Act of 2021 would phase in a Federal minimum wage hike over five
+years as well as eliminate the “tip credit” and several other coverage other exemptions.
+3 Some have further argued that by reducing poverty, an unintended public budget-related benefit of minimum wage
+increases may be a reduction in low-skilled workers’ dependence on means-tested public assistance programs such as the
+Supplemental Nutrition Assistance Program (West and Reich 2015).
+1
+
+On the other hand, if low-skilled labor markets are competitive, minimum wage increases
+could reduce employment and work hours among low-skilled workers (Stigler, 1946, Clemens and
+Wither 2019; Clemens and Strain 2021; Neumark and Shirley 2021). If these employment losses are
+felt by some poor and near-poor workers, family incomes could fall, thereby plunging some low-
+skilled workers into (deeper) poverty (Neumark and Wascher 2002; Burkhauser and Sabia 2007;
+Sabia and Burkhauser 2010). Additionally, if minimum wage hikes impact output prices, particularly
+for products that poor individuals are more likely to purchase, then the effects of minimum wage
+hikes may be quite regressive (MaCurdy 2015).
+Therefore, the net impact of minimum wage increases on poverty largely depends on (1)
+wage, employment, and hours elasticities with respect to the minimum wage, (2) the distribution of
+earnings gains and losses for poor and near poor workers, and (3) spillover effects of the minimum
+wage on output prices and spending-induced longer-run economic growth.4
+Despite significant disagreement among labor economists over the employment effects of
+U.S. minimum wage increases (Neumark and Shirley 2021; Cengiz et al. 2019; Clemens and Wither
+2019; Neumark, Salas, and Wascher 2014; Dube et al. 2010), there had largely been a consensus
+among labor economists that minimum wage increases did little to reduce poverty (Sabia and
+Burkhauser 2010; Burkhauser and Sabia 2007; Neumark and Wascher 2002; Card and Krueger
+1995). This consensus was owed to low rates of minimum wage labor supplied by individuals living
+in poor families (Card and Krueger 1995), and the diminished association between an individual
+earning a low wage and living in a poor family (Stigler 1946; Burkhauser and Sabia 2007).5
+However, the consensus among labor economists that the minimum wage serves as an
+ineffective anti-poverty tool has been broken. A highly influential study by Dube (2019) finds that
+minimum wage increases enacted in the 1980s, 1990s, and 2000s were associated with statistically
+significant and economically substantial declines in poverty. Using data from the March 1984-2013
+Current Population Surveys (corresponding to calendar years 1983-2012) and a variety of difference-
+in-differences approaches, Dube (2019) estimates contemporaneous poverty elasticities with respect
+to the minimum wage of -0.2 to -0.5 for non-elderly individuals (those ages 0-to-64) as well as
+longer-run (three years or more) elasticities as large as -0.9 for racial/ethnic minorities. The largest
+4 In addition, poverty could be indirectly impacted by the effects of minimum wages on the prices of goods in the
+market basket that determines the poverty threshold or on economic growth (CBO 2021).
+5 Moreover, Neumark and Wascher (2002) further argued that while increases in wages of some poor workers would lift
+them (and their family members) out of poverty, adverse employment and hours effects among other near-poor workers
+would reduce their income, plunging them (and their family members) into poverty.
+2

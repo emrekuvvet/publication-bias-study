@@ -1,0 +1,134 @@
+NBER WORKING PAPER SERIES
+THE DYNAMICS OF DISAGREEMENT
+Kent Daniel
+Alexander Klos
+Simon Rottke
+Working Paper 25346
+http://www.nber.org/papers/w25346
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2018, Revised August 2022
+We thank Nick Barberis, John Campbell, Jie Cao, Tolga Caskurlu, Alex Chinco, Lauren Cohen,
+Robin Greenwood, Alexander Hillert, David Hirshleifer, Heiko Jacobs, Ravi Jagannathan,
+Lawrence Jin, Urooj Khan, Sven Klingler, Dong Lou, Stefan Nagel, Andreas Neuhierl, Florian
+Peters, Mitchell Petersen, Jeff Pontiff, Adam Reed, Tano Santos, Andrei Shleifer, Valeri
+Sokolovski, Avanidhar Subrahmanyam, Sheridan Titman, Luis Viceira, Tuomo Vuolteenaho, Ed
+van Wesep, Greg Weitzner, Wei Xiong, and two anonymous referees for helpful comments, as
+well as Zahi Ben-David, Sam Hanson, and Byoung Hwang for helpful insights about the short-
+interest data. We appreciate the feedback from seminar and conference participants at the Miami
+Behavioral Finance Conference, NBER Spring Meeting, American Finance Association,
+European Finance Association, Cavalcade Asia-Pacific, Oxford Man Quantitative Finance
+Seminar, Paris December Finance Meeting, German Finance Association, Amsterdam, Brandeis,
+Columbia, Copenhagen, Hannover, HEC Montréal, HU Berlin, Kiel, Lausanne, LBS, LSE,
+Maryland, Münster, Notre Dame, Oxford, Rochester, Stockholm, UCLA,Washington, WashU,
+AQR, Arrowstreet, Barclays, Institutional Assets, Martingale Asset Management, and the Society
+of Quantitative Analysts.Financial support from the German Research Foundation (grant
+KL2365/3-1) is gratefully acknowledged. All remaining errors are our own. The paper subsumes
+our older work circulated under the titles “Overconfidence, Information Diffusion, and
+Mispricing Persistence,” “Overpriced Winners,” and “Betting Against Winners.” The views
+expressed herein are those of the authors and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+At least one co-author has disclosed additional relationships of potential relevance for this research.
+Further information is available online at http://www.nber.org/papers/w25346.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2018 by Kent Daniel, Alexander Klos, and Simon Rottke. All rights reserved. Short sections of
+text, not to exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+The Dynamics of Disagreement
+Kent Daniel, Alexander Klos, and Simon Rottke
+NBER Working Paper No. 25346
+December 2018, Revised August 2022
+JEL No. G0,G12,G4
+ABSTRACT
+We infer how the estimates of firm value by “optimists” and “pessimists” evolve in response to
+information shocks by examining returns and disagreement measures for portfolios of short-sale
+constrained stocks which have experienced large gains or large losses. Our analysis suggests the
+presence of two groups, one of which overreacts to new information and remains biased over
+about five years, and a second group which underreacts and whose expectations are unbiased
+after about one year. Our results have implications for the belief dynamics that underly the
+momentum and long-term reversal effect.
+Kent Daniel Simon Rottke
+Graduate School of Business University of Amsterdam
+Columbia University Finance Group
+3022 Broadway, Uris Hall 101 Plantage Muidergracht 12
+New York, NY 10027 1018 TV Amsterdam
+and NBER Netherlands
+kd2371@columbia.edu simon.rottke@uva.nl
+Alexander Klos
+QBER - Institute for Quantitative Business and Eco
+Heinrich-Hecht-Platz 9
+24118 Kiel, Germany
+alexander.klos@qber.uni-kiel.de
+A data appendix is available at http://www.nber.org/data-appendix/w25346
+
+In the last several decades, financial economists have begun to carefully examine the
+consequences of disagreement or differences of opinion. In part, this attention has been
+motivated by the large trading volumes in securities markets, which are difficult to explain
+without large levels of and changes in disagreement (see, e.g., Hong and Stein, 2007). In this
+paper, we measure how the distribution of beliefs about security values evolves over time in
+response to information shocks. That is, we examine the dynamics of disagreement.
+When opinions differ regarding the value of a security, and investors can costlessly short-
+sell that security, the security price will reveal only the weighted mean of the distribution of
+beliefs, and nothing about the dispersion of agents’ beliefs. However, if a security becomes
+hard to borrow, then the price will reflect only the beliefs of the most optimistic agents
+(Miller, 1977). Moreover, as we show here, using the cost of borrowing we can learn about
+the dispersion of beliefs.
+For example, consider a constant absolute risk aversion (CARA)-normal framework with
+˜
+a single security that will pay an uncertain liquidating dividend D in one period. For
+simplicity, assume the risk-free rate is zero and that risk aversion is small (so that we can
+ignorerisk-premia). Mostimportantly, assumeonlyafixednumberofsharesareavailablefor
+lending,andanyshareslentandsoldcannotberehypothecated. Ifafrictionlessmarketexists
+for lending these shares, the cost of borrowing will be the cost that matches this (inelastic)
+supply with demand from pessimists who wish to borrow the shares for the purpose of short
+selling.
+In this setting, if there is no disagreement the price will equal the expected liquidating
+dividend (P = E[D ˜ ]) and the short interest and the marginal lending fee will both be zero.
+However, what if there is disagreement? First, assume there are two masses of investors A
+and B of equal measure and with equal risk aversion who disagree about the expected payoff.
+Specifically, assume E [D ˜ ] = $30 and E [D ˜ ] = $20, where E [·] denotes the expectation of
+A B i
+an investor of type i. If the number of shares available for borrowing is large, the security
+price will be the average of E [D ˜ ] and E [D ˜ ]: $25. Note also that if a “wisdom of crowds”
+A B
+1
+
+effect is at work, meaning that the average across agents’ expectations is “rational” (i.e., that
+E [D ˜ ] = 0.5·E [D ˜ ]+0.5·E [D ˜ ] = $25), then the expectation of the security price-change
+R A B
+over the period will be zero (since P = E [D ˜ ]).
+R
+However, according to Miller’s (1977) intuition, when the number of shares available for
+borrowing is small the price will reflect primarily the views of the most optimistic agents. In
+this example, as the number of shares available for borrowing approaches zero, the security
+price will approach E [D ˜ ] = $30. Also, the borrow cost will approach the difference in the
+A
+agents’ valuations (E [D ˜ ] − E [D ˜ ] = $10): the pessimistic agents in B will be willing to
+A B
+pay up to $10 to short a share they view as being overvalued by $10. Here, the rational
+expectation of the security price-change will be -$5, so the optimistic agents in A earn a per-
+share expected payoff of -$5. However, the pessimistic agents (in B) who short the security
+also earn an expected payoff per share of -$5; they benefit from the $5/share expected
+price decline but are required to pay the $10/share borrow cost. Thus, an observer can
+unambiguously infer the beliefs of both the optimists and pessimists from the price and the
+borrowing cost of the constrained stock.1
+The objective of this paper is to extend this intuition to a multi-period setting and bring
+it to the data. Specifically, we examine the returns to portfolios of securities which have
+experienced either a large positive or a large negative price shock, presumably as a result
+of the arrival of new information about the security’s future payoffs. Moreover, motivated
+by the above toy model, we examine the returns of these portfolios both when the securities
+in the portfolios are unconstrained, i.e., when they can be borrowed at low cost, and when
+borrowing is costly. Consistent with the above example, this allows us to make inferences
+about how the distribution of beliefs of market participants evolves over time in response to
+these shocks.
+1Inmorecomplicatedsettings,thelinksbetweenoptimists’beliefsandpricesaswellaspessimists’beliefs
+and lending fees are not as direct as in our simple two-type example. Risk-aversion, indirect short selling
+costs (other than lending fees), and dynamics complicate matters. However, the claim that prices of heavily
+constrainedstocksaresetbyoptimistsisfairlygeneral. Similarly,higherborrowingfeeswillproxyforhigher
+belief dispersion even in more general settings with a continuous distribution of beliefs. In such a setting,
+the borrow cost will reflect the difference in beliefs between the marginal buyer and the marginal seller.
+2

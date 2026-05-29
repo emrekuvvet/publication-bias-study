@@ -1,0 +1,129 @@
+NBER WORKING PAPER SERIES
+WHAT CAN MEASURED BELIEFS TELL US ABOUT MONETARY NON-NEUTRALITY?
+Hassan Afrouzi
+Joel P. Flynn
+Choongryul Yang
+Working Paper 32541
+http://www.nber.org/papers/w32541
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2024, Revised January 2026
+This paper was formerly circulated under the title: “Selection in Information Acquisition and
+Monetary Non- Neutrality.” We are grateful to Olivier Coibion and Yuriy Gorodnichenko for their
+invaluable feedback and for sharing data. We also thank Fernando Alvarez (discussant), Saroj
+Bhattarai, Mark Dean, Mishel Ghassibe (discussant), Zhen Huo (discussant), Chen Lian, Davide
+Melcangi (discussant), Giuseppe Moscarini, George Nikolakoudis, Karthik Sastry, Luminita
+Stevens (discussant), and Michael Woodford as well as seminar participants at Columbia
+University, University of Notre Dame, LMU Munich, Princeton University, University of Texas at
+Austin, the Federal Reserve Banks of Atlanta, Cleveland, Richmond, San Francisco, and St. Louis,
+the Federal Reserve Board, Keio University, University of Tokyo, Kyoto University, the Bank of
+Japan, the Salento Macro Meetings, the 12th Banco de Portugal Conference on Monetary
+Economics, the 3rdWorkshop on Firm Heterogeneity and Macroeconomics, the 2024 Stanford
+Institute for Theoretical Economics Conference, and the NBER Monetary Economics conference
+for thoughtful comments and suggestions. We thank the Center for Advancement of Data and
+Research in Economics at the Federal Reserve Bank of Kansas City for providing computational
+resources that contributed to the results reported in this paper. The views expressed herein are those
+of the authors and do not reflect the views of the Federal Reserve Board, any person associated with
+the Federal Reserve System, or the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2024 by Hassan Afrouzi, Joel P. Flynn, and Choongryul Yang. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+What Can Measured Beliefs Tell Us About Monetary Non-Neutrality?
+Hassan Afrouzi, Joel P. Flynn, and Choongryul Yang
+NBER Working Paper No. 32541
+June 2024, Revised January 2026
+JEL No. E31, E32, E71
+ABSTRACT
+This paper studies how to use microeconomic data on beliefs and prices to identify the relative
+contributions of pricing and information frictions to monetary non-neutrality. In a canonical
+general equilibrium model with both pricing frictions and information acquisition, we analytically
+characterize how these frictions contribute to non-neutrality. Exploiting this characterization, we
+show that data on the cross-sectional distributions of uncertainty and pricing durations are
+necessary and sufficient to identify non-neutrality. Implementing our approach in survey data, we
+find that: (i) information and pricing frictions are approximately equally important, and (ii)
+assuming exogenous information would overstate non-neutrality by 60%.
+Hassan Afrouzi Choongryul Yang
+Columbia University Federal Reserve Board of Governors
+Department of Economics cryang1224@gmail.com
+and NBER
+ha2475@columbia.edu
+Joel P. Flynn
+Yale University
+Department of Economics
+and NBER
+joel.flynn@yale.edu
+
+1 Introduction
+Therearetwoclassicalhypothesesforwhychangesinmonetarypolicyhaveeffectsonrealaggregate
+outcomes. Thefirstisthatfirmsaresubjecttopricingfrictions: eveniftheywouldliketochange
+theirprice,theyeithercannotdoso(asintime-dependentpricingframeworks,seee.g.,Taylor,1979,
+Calvo,1983)ortheywouldhavetopayacosttodoso(asinstate-dependentpricingframeworks,
+seee.g.,SheshinskiandWeiss,1977). Thesecondisthatfirmsaresubjecttoinformationfrictions:
+firmsmaybeperfectlyabletoadjusttheirprices,buttheymaynotknowtheexpost correctprice
+tocharge(Lucas,1972,Woodford,2003). Understandingtherelativecontributionsofpricingand
+information frictions to monetary non-neutrality is critical in light of the Lucas (1976) critique:
+if we do not know why money is non-neutral, then we cannot know how changes in economic
+circumstancesortheconductandcommunicationofmonetarypolicywillaffectnon-neutrality.
+Inthecontextofthepricingfrictionshypothesis,empiricalworkdocumentsthatfirms’prices
+indeedappeartochangeonlyinfrequently(seee.g.,BilsandKlenow,2004,NakamuraandSteinsson,
+2008),consistentwiththenotionthatfirmsaresubjecttopricingfrictions.However,thisobservation
+alonedoesnotsufficeforthepresenceofsubstantialmonetarynon-neutrality(CaplinandSpulber,
+1987,GolosovandLucas,2007). Forthisreason,aseminalbodyofworkstudieshowtodiscipline
+theextentofmonetarynon-neutralityusingsuchmicroeconomicdataonfirms’pricingdecisions.
+Fortime-dependentmodels,CarvalhoandSchwartzman(2015)showthatitsufficestomeasure
+theaveragedurationofpricingspellsacrossfirms. Forstate-dependentmodels,Alvarez,LeBihan,
+and Lippi (2016) show that the cross-sectional distribution of price changes—in particular, the
+frequencyofpricechangesandtheirkurtosis—pindowntheextentofmonetarynon-neutrality.
+To study the information frictions hypothesis, a burgeoning literature has used surveys to
+understandimperfectionsinfirms’expectations(seeCandia,Coibion,andGorodnichenko,2023,
+forareview). Thissurveyevidencedemonstratesthattheaveragefirmholdshighlyinaccurateand
+diffusebeliefsaboutitseconomicenvironmentandthatthereissubstantialheterogeneityinthese
+beliefsacrossfirms. However, whilethesefactsareinterestingontheirown, howthesesurveys
+connecttoandinformtheresultantextentofmonetarynon-neutralityremainslargelyambiguous
+inbothqualitativeandquantitativeterms.
+In this paper, we analyze how to use microeconomic data on firms’ pricing decisions and
+beliefstoassesstherelativeimportanceofpricingfrictionsandinformationfrictionsingenerating
+monetarynon-neutrality. Todothis,wedevelopatheoreticalframeworkinwhichfirmsaresubject
+topricingfrictionsandinformationfrictions. Inthissetting, we: (i)characterizefirms’optimal
+1
+
+informationacquisitionbehavior,(ii)explicitlyaggregatethisbehaviortoderiveaformulaforthe
+realeffectsofamonetaryshockthatcharacterizestherolesofpricingandinformationfrictions
+in generating monetary non-neutrality, and (iii) show how to measure the components of this
+formula using microeconomic data on firms’ pricing behavior and beliefs. Using survey data
+onfirms’expectationsfromNewZealand(Coibion,Gorodnichenko,andKumar,2018),wefind
+thatinformationfrictionsandpricingfrictionsareapproximatelyequallyimportantingenerating
+monetarynon-neutrality. Moreover,modelswithexogenousinformationwouldoverstatetherole
+ofinformationfrictionsbyafactoroftwo.
+Model.Westudyacanonicalgeneralequilibriummonetaryeconomyinwhichthemicrofounda-
+tionsforhouseholdsandmonetarypolicyfollowthoseofGolosovandLucas(2007):arepresentative
+householdhaslogarithmicpreferencesoverrealmoneybalances,linearlabordisutility,andcon-
+stantrelativeriskaversionpreferencesovertheconsumptionofaconstantelasticityofsubstitution
+aggregateoftheoutputsofacontinuumofmonopolisticallycompetitivefirms. Inthemodel,these
+firmsfacegeometricBrownianproductivityshocksandaresubjecttobothpricingandinformation
+frictions. Forourmaintheoreticalanalysis,firmsfacearbitrarytime-dependentpricingfrictions,
+nestingboththeCalvo(1983)andtheTaylor(1979)models. Welaterextendthemodeltofeature
+state-dependentpricingfrictionsintheformofrandommenucosts(followingAlvarez,Lippi,and
+Oskolkov,2022),strategiccomplementaritiesinpricing(followingAlvarez,Lippi,andSouganidis,
+2023), and richer information structures. In this otherwise standard model, we allow firms to
+acquireanydynamicinformationstructureabouttheirmarginal costs. Firmsfaceinformation
+frictionsintheformofacostthatisproportionaltotheflowoftheinformationacquired,whichisa
+canonicalwayofmodelinginformationcosts(seeMac´kowiak,Mateˇjka,andWiederholt,2023).
+TheoreticalResults.Webeginouranalysisbytheoreticallycharacterizingfirms’optimalinforma-
+tionacquisitionandpricingdecisions. Weshowthatthistakesasimpleform: acquireinformation
+onlywhenchangingpricesandacquireexactlyenoughinformationtoresetposterioruncertainty
+∗
+about the optimal price to some state-independent level,U . Intuitively, while being better in-
+formedreducesthecostsofachievinganygivenlevelofuncertaintyinthefutureasyouneedto
+acquirelessinformation, itdoesnotaffectthemarginalcost ofreduceduncertainty. Moreover,
+weshowthat: theoptimallevelofuncertaintyisdecreasinginthefirm’sdemandelasticity(asthis
+increases the losses from setting the wrong price); increasing in the volatility of marginal costs
+(asthisreducesthevalueofinformationacquiredtodayforfuturedecisions);andambiguously
+affectedbypricestickiness(asthisbothincreasesthevalueofinformationforthispricingspelland
+decreasesthevalueofinformationforallfuturepricingspells).
+2

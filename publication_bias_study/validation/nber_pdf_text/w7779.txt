@@ -1,0 +1,112 @@
+NBER WORKING PAPER SERIES
+EVALUATING AND INVESTING IN EQUITY MUTUAL FUNDS
+Lubos Pastor
+Robert F. Stambaugh
+Working Paper 7779
+http://www.nber.org/papers/w7779
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July2000
+Research support from the Center for Research in Security Prices and Dimensional Fund Advisors is
+gratefully acknowledged (Pastor). We are grateful to Andrew Metrick, Toby Moskowitz, and seminar
+participants at the Federal Reserve Bank of New York, Northwestern University, Ohio State University,
+University of Chicago, University of Peimsylvania, and Vanderbilt University for helpful comments. The
+views expressed herein are those of the authors and not necessarily those of the National Bureau of Economic
+Research.
+2000 by Lubos Pastor and Robert F. Stambaugh. All rights reserved. Short sections of text, not to exceed
+two paragraphs, may be quoted without explicit permission provided that full credit, including notice, is
+given to the source.
+
+Evaluating and Investing in Equity Mutual Funds
+Lubos Pastor and Robert F. Stambaugh
+NBER Working Paper No. 7779
+July2000
+JELNo. Gil, G12, Cli
+ABSTRACT
+Our framework for evaluating and investing in mutual fttnds combines observed returns on
+funds and passive assets with prior beliefs that distinguish pricing-model inaccuracy from managerial
+skill. A fund's "alpha" is defined using passive benchmarks. We show that returns on non-
+benchmark passive assets help estimate that alpha more precisely for most funds. The resulting
+estimates generally vary less than standard estimates across alternative benchmark specifications.
+Optimal portfolios constructed from a large universe of equity fttnds can include actively managed
+funds even when managerial skill is precluded. The fund universe offers no close substitutes for the
+Fama-French and momentum benchmarks.
+Lubos Pastor Robert F. Stambaugh
+Graduate School of Business Finance Department
+University of Chicago The Wharton School
+Chicago, IL 60637 University of Pennsylvania
+lubos.pastor@gsb.uchicago.edu Philadelphia, PA 19104-6367
+and NBER
+stambaughwharton.upenn.edu
+
+1. Introduction
+Evaluating mutual fund performance combines data and judgment. The data typically con-
+sist of returns on the funds and one or more benchmarks, and the judgment typically involves
+specifying the benchmarks and their role in defining performance. Investing in mutual funds
+also combines data and judgment. Rather than accept the standard performance measures
+at face value, investors can allow their decisions to reflect doubts about either the adequacy
+of the benchmarks or the stock-picking ability of fund managers.
+In this study, we develop and implement a framework in which views about the ade-
+quacy of the benchmarks—their ability to price other passive assets—can be incorporated
+formally into both performance evaluation and the investment decision. The framework also
+allows separate beliefs about potential managerial skill to enter the investment decision. To
+accomplish these tasks, we introduce passive "non-benchmark" assets that are not used in
+previous approaches. These assets provide information that can be used to estimate a fund's
+performance more precisely. They also allow beliefs that distinguish benchmark inadequacy
+from managerial skill, and they help account for common variation in returns across funds
+that is not captured by the benchmarks.
+A mutual fund's performance is often measured by alpha, the intercept in a regression of
+the fund's return on one or more passive benchmark returns.' The choice of benchmarks is
+often guided by a pricing model, as in Jensen's (1969) pioneering use of the Capital Asset
+Pricing Model (CAPM) of Sharpe (1964) and Lintner (1965) to investigate mutual fund
+alphas relative to a single market-index benchmark. Other studies, beginning with Lehmann
+and Modest (1987), examine fund alphas with respect to a set of multiple benchmarks viewed
+as the relevant factors for pricing in a multifactor model, such as the Arbitrage Pricing Theory
+of Ross (1976).
+Alpha is typically computed by ordinary-least-squares (OLS) estimation of the regression
+=A
++ /3ArB,t + €A,t, (1)
+where rA,1 is the fund's return in month t, is a k x 1 vector containing the benchmark
+returns, and 0A denotes the fund's alpha. This standard approach ignores information about
+alpha provided by returns on other non-benchmark passive assets. Even though such assets
+play no role in the definitionofalpha in (1), they can play a useful role in its estimation.
+'Throughout our discussion, "returns" are rates of return in excess of a riskiess interest rate, or they are
+payoffs on zero-investment spread positions.
+1
+
+To take one example, asswne that the benchmark assets do indeed price other passive
+assets. Consider the regression of a non-benchmark return onthe benchmark returns,
+= a + I3rB,,+ en,,, (2)
+where the correlation between and E is positive. If the benchmarks price other passive
+assets, then c, =0. Now suppose that over the same sample period used to obtain the OLS
+estimate of aA, the OLS estimate of a is less than its true value of zero. Given this outcome
+and the positive correlation between A,L and e, the OLS estimate of aA is expected to be
+less than its true value as well, and this information can be used in estimating aA.
+Pricing models often motivate the choice of benchmarks, but non-benchmark assets can
+provide additional information about a mutual fund's alpha even with no assumption about
+the benchmarks' pricing ability. The explosive growth of the mutual fund industry in recent
+years presents investors with many funds that have relatively short histories. Consider a
+fund whose available return history is shorter than the histories of and rB,t. Suppose
+that the OLS estimate of a computed for the sample period of the fund's available history
+is less than the OLS estimate of c computed for a longer sample period. Since the latter
+estimate is more precise, the first estimate is more likely to be less than the true (unknown)
+value of a. Given the positive correlation between EA, and e, the same can be said of the
+OLS estimate of aA relative to its true value, and this information can be used in estimating
+cEA. The additional information comes not through a pricing model, as in the first example,
+but through the longer histories of the passive asset returns.
+In the two examples described above, c is assumed to be either zero or completely
+unknown. One may well prefer an intermediate version in which the benchmarks are believed
+to be relevant for pricing other passive assets, but not without error. In such a case, which we
+handle in a Bayesian framework, non-benchmark assets can play a role that combines aspects
+of both examples. Additional information about cEA is provided by the extent to which the
+short-history estimate of a differs from zero as well as from its long-history estimate.
+Our study does not recommend a particular set of benchmarks for defining alpha. Recent
+academic studies compute mutual fund alphas with respect to a single market benchmark
+(e.g., Malkiel (1995)) as well as sets of multiple benchmarks (e.g., Carhart (1997) and Elton,
+Gruber, and Blake (1996)). We compute alphas in both single-benchmark and multiple-
+benchmark settings. Alphas defined with respect to a single market benchmark may be of
+interest whether or not one believes in the CAPM. We offer just two of many examples of
+their use in practice: Morningstar, the leading provider of mutual fund information, reports
+alphas computed with respect to one of several broad market indexes; Capital Resource
+2

@@ -1,0 +1,126 @@
+NBER WORKING PAPER SERIES
+SOPHISTICATED INVESTORS AND MARKET EFFICIENCY:
+EVIDENCE FROM A NATURAL EXPERIMENT
+Yong Chen
+Bryan Kelly
+Wei Wu
+Working Paper 24552
+http://www.nber.org/papers/w24552
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+April 2018
+We thank Vikas Agarwal, George Aragon, Robert Battalio, Utpal Bhattacharya, Marie Brière,
+Charles Cao, Alan Crane, Kevin Crotty, Daniel Ferreira, Mila Getmansky, Menna El Hefnawy,
+Jennifer Huang, Shiyang Huang, Harrison Hong, Liang Jin, Shane Johnson, Hagen Kim, Tse-
+Chun Lin, Andrew Lo, Veronika Pool, Sorin Sorescu, Sheridan Titman, Charles Trzcinka, Tarik
+Umar, Kumar Venkataraman, Ivo Welch, Russ Wermers, Hongjun Yan, Liyan Yang, Mao Ye,
+Fernando Zapatero, Hong Zhang, Ben Zhang, Bart Zhou, Frank Zhou, as well as the participants
+at the 2018 AFA Conference, 2018 MFA Conference, 2017 Helsinki Finance Summit, 2017
+Summer Institute of Finance, the 1st SAFE Market Microstructure Conference, the 25th Finance
+Forum, and 2017 Manchester Hedge Fund Conference for helpful discussions and comments.
+We thank Wenting Dai, Lexi Kang, Yutong Li, James Nordlund, Eric Shim, and Yuan Xue for
+excellent research assistance. We are grateful to Alon Brav for sharing the data on hedge fund
+activism. AQR Capital Management is a global investment management firm, which may or may
+not apply similar investment techniques or methods of analysis as described herein. The views
+expressed here are those of the authors and not necessarily those of AQR or the National Bureau
+of Economic Research.
+At least one co-author has disclosed a financial relationship of potential relevance for this
+research. Further information is available online at http://www.nber.org/papers/w24552.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2018 by Yong Chen, Bryan Kelly, and Wei Wu. All rights reserved. Short sections of text, not
+to exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Sophisticated Investors and Market Efficiency: Evidence from a Natural Experiment
+Yong Chen, Bryan Kelly, and Wei Wu
+NBER Working Paper No. 24552
+April 2018
+JEL No. G12,G14
+ABSTRACT
+We study how sophisticated investors, when faced with changes in information environment,
+adjust their information acquisition and trading behavior, and how these changes in turn affect
+market efficiency. We find that, after exogenous reductions of analyst coverage due to closures of
+brokerage firms, hedge funds scale up information acquisition. They trade more aggressively and
+earn higher abnormal returns on the affected stocks. Moreover, the participation of hedge fund
+significantly mitigates the impairment of market efficiency caused by coverage reductions. Our
+results show a substitution effect between sophisticated investors and public information
+providers in facilitating market efficiency in a causal framework.
+Yong Chen Wei Wu
+Department of Finance Department of Finance
+Mays Business School Mays Business School
+360 Wehner Building (4218) 360 Wehner Building (4218)
+Texas A&M University Texas A&M University
+College Station, TX 77843-4218 College Station, TX 77843-4218
+ychen@mays.tamu.edu wuwei001@tamu.edu
+Bryan Kelly
+Yale School of Management
+165 Whitney Ave.
+New Haven, CT 06511
+and NBER
+bryan.kelly@yale.edu
+
+Information plays a key role for the efficiency of security markets and the real economy
+(e.g., Hayek, 1945; Fama, 1965). The information environment is continuously evolving
+at both the market and firm levels. For example, Regulation Fair Disclosure and the
+Dodd-Frank Act in the U.S. and the MiFID II in Europe have had wide-ranging impacts
+on how information is transmitted in the marketplace. In addition, substantial variation
+exists across firms regarding how and what information is disseminated into the market.
+Over the past four decades, institutional investors have become the dominant player in
+the U.S. financial markets (e.g., French, 2008). Hedge funds, in particular, represent the
+(arguably) most sophisticated investors (e.g., Brunnermeier and Nagel, 2004) and they
+add value to the financial system in a number of ways (e.g., Brown, Kacperczyk,
+Ljungqvist, Lynch, Pedersen, and Richardson, 2009). Motivated by these observations,
+we attempt to address the following questions: How do sophisticated investors alter their
+behavior in response to changes of information environment? And how do their actions
+in turn affect market efficiency?
+Understanding sophisticated investors’ reactions to changes of information
+environment is important for at least three reasons. First, it speaks directly to how
+sophisticated investors trade and profit from information advantage (e.g., Grossman and
+Stiglitz, 1980). Second, it sheds light on the way markets incorporate information that is
+not accessible to all participants (e.g., Fama, 1970). Third, it helps us better understand
+the interactions between different types of information processors (e.g., sell-side analysts
+and hedge funds) in financial markets.
+The impacts of changes of information environment on sophisticated investor
+behavior are theoretically ambiguous. On one hand, sophisticated investors will have a
+greater comparative advantage when information available to other market participants
+becomes noisier. Thus, faced with a more opaque information environment, sophisticated
+investors may have greater incentives to acquire information and trade in security
+markets. On the other hand, if sophisticated investors are concerned about adverse
+selection in trading, they may trade less actively when the information environment
+becomes murky. Thus, how changes of information environment affect sophisticated
+investors is ultimately an empirical question.
+1
+
+It is, however, a challenging task to empirically investigate the above relation.
+There is a reverse causality problem as the activities of sophisticated investors can change
+firms’ information environment. For example, institutional investors may demand that
+firms change their disclosure policies. Moreover, there is likely to be an omitted variable
+problem. For example, when there are important corporate events, such as mergers and
+acquisitions, the coverage decisions of sell-side analysts and the trading activities of
+sophisticated investors can change simultaneously.
+To overcome these endogeneity challenges, we exploit a natural experiment: the
+exogenous reductions of sell-side analysts due to closures and mergers of brokerage firms
+(Hong and Kacperczyk, 2010; Kelly and Ljungqvist, 2012). As documented in Kelly and
+Ljungqvist (2012), such closures and mergers are driven by adverse regulatory changes
+and unfavorable business conditions in the equity research industry, instead of the
+prospects of the affected stocks.1 Thus, closure and merger-related coverage reductions
+provide credible exogenous shocks to firms’ information environment. We study how
+hedge funds, as a proxy for sophisticated investors, respond to the coverage reductions by
+adjusting their information acquisition and trading activities. We also examine the
+changes in hedge funds’ profitability on the affected stocks and the impacts of their
+activities on market efficiency.
+We assemble our sample by merging several datasets covering brokerage closures,
+hedge fund stock holdings, EDGAR Internet search traffic, analyst coverage, earnings
+conference call transcripts, as well as stock prices and characteristics. Our hedge fund
+holdings data are obtained from quarterly 13F filings in which hedge fund companies are
+identified by manually matching 13F institutions’ names with a list of hedge fund
+1 Similar changes to the equity research industry are taking place in Europe currently. The Markets in
+Financial Instruments Directive (MiFID II) regulation, effective in the European Union (EU) on January 3,
+2018, bans the usage of soft dollar commissions and requires institutional investors to pay banks and
+brokers directly for research. This policy will affect the equity research industry, leading to changes in
+information environment. For details of MiFID II, see the website of the European Securities and Markets
+Authority (ESMA) https://www.esma.europa.eu/policy-rules/mifid-ii-and-mifir.
+2

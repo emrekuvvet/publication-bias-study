@@ -1,0 +1,142 @@
+NBER WORKING PAPER SERIES
+VOLATILITY AND INFORMATIVENESS
+Eduardo Dávila
+Cecilia Parlatore
+Working Paper 25433
+http://www.nber.org/papers/w25433
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+January 2019
+We would like to thank Fernando Álvarez, Yakov Amihud, Marios Angeletos, Dirk Bergemann,
+Bruno Biais, John Campbell, Jennifer Carpenter, Olivier Darmouni, Ian Dew-Becker, Maryam
+Farboodi, Xavier Gabaix, Itay Goldstein, Piero Gottardi, Joel Hasbrouck, Zhiguo He, Ralph
+Koijen, Hanno Lustig, Stephen Morris, Thomas Philippon, Tano Santos, Alexi Savov, Alp
+Simsek, Aleh Tsyvinski, Felipe Varas, Laura Veldkamp, Xavier Vives, Brian Weller, Wei Xiong,
+Liyan Yang, and Haoxiang Zhu for helpful comments and discussions. We would also like to
+thank seminar participants at NYU Stern, Yale Finance Junior Conference, Columbia Finance
+Junior Conference, MIT Sloan, Harvard, Northwestern Kellogg, and the NBER Asset Pricing
+Meeting. Luke Min and Josh Mohanty provided exceptional research assistance. The views
+expressed herein are those of the authors and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2019 by Eduardo Dávila and Cecilia Parlatore. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Volatility and Informativeness
+Eduardo Dávila and Cecilia Parlatore
+NBER Working Paper No. 25433
+January 2019
+JEL No. D82,D83,G14
+ABSTRACT
+We explore the equilibrium relation between price volatility and price informativeness in
+financial markets, with the ultimate goal of characterizing the type of inferences that can be
+drawn about price informativeness by observing price volatility. We identify two different
+channels (noise reduction and equilibrium learning) through which changes in price
+informativeness are associated with changes in price volatility. We show that when
+informativeness is sufficiently high (low) volatility and informativeness positively (negatively)
+comove in equilibrium for any change in primitives. In the context of our leading application, we
+provide conditions on primitives that guarantee that volatility and informativeness always
+comove positively or negatively. We use data on U.S. stocks between 1963 and 2017 to recover
+stock-specific primitives and find that most stocks lie in the region of the parameter space in
+which informativeness and volatility comove negatively.
+Eduardo Dávila
+Stern School of Business
+New York University
+44 West 4th Street
+New York, NY 10012
+and NBER
+edavila@stern.nyu.edu
+Cecilia Parlatore
+Stern School of Business
+New York University
+44 West 4th Street
+New York, NY, 10012
+cparlato@stern.nyu.edu
+
+1 Introduction
+There is a long tradition in economics, commonly traced back to Hayek (1945), which emphasizes
+the role of financial markets aggregating dispersed information. Under this view, prices not only
+convey scarcity but they also reveal the dispersed information held by investors about the underlying
+fundamentals of the economy. Within this paradigm, a key object of interest is the level of
+price informativeness. Price informativeness, formally defined as the precision of the signal about
+fundamentals revealed by asset prices, is a natural measure of the ability of financial markets to
+aggregate information. Unfortunately, price informativeness is a complex equilibrium object that is
+hard to measure directly, in particular at high frequencies. An alternative equilibrium object that
+is easily computable and that is the subject of continuous scrutiny is price volatility. In this paper,
+we explore the relation between both variables, with the ultimate goal of characterizing the type of
+1
+inferences that can be drawn about price informativeness by observing price volatility.
+By relating both variables, our results allow us to determine the conditions under which observed
+fluctuations on asset prices can be interpreted as a reflection of informative asset markets or vice
+versa. Because price volatility and price informativeness are jointly determined in equilibrium, this
+paperadoptsasomewhatunconventionalmethodologicalapproach. Itinitiallyexplorestheequilibrium
+relation between both endogenous variables as the first step to subsequently shed light on conventional
+comparative static exercises conducted within fully specified models.
+Our first main result shows that the equilibrium relation between price informativeness and price
+volatility in financial markets for the class of models with linear asset demands and additive noise –
+which we refer to as the fundamental relation – is uniquely characterized by i) the variance of the
+innovation to the fundamental and ii) the signal-to-price demand sensitivity, which corresponds to
+the ratio of investors’ demand sensitivities to private information and to asset prices. Exploiting this
+relation, we identify two different channels through which changes in price informativeness that leave
+2
+the fundamental relation otherwise unchanged are associated with changes in price volatility. We
+refer to the first channel as the noise reduction channel. Through this channel, an increase in price
+informativeness is directly associated with a reduction in price volatility, since less noise is incorporated
+intotheprice. Werefertothesecondchannelastheequilibriumlearning channel. Throughthischannel,
+which is inactive when investors do not learn from asset prices, an increase in price informativeness
+changes investors’ behavior by varying their equilibrium signal-to-price (demand) sensitivities. In
+principle, the sign of the equilibrium learning channel can be positive or negative.
+To further characterize the behavior of signal-to-price sensitivities, we specialize our analysis to
+a general CARA-Gaussian environment. The additional structure allows us to show that the signal-
+1Therelevantdefinitionofpricevolatilityforouranalysiscorrespondstotheconditionalidiosyncraticvolatilityofasset
+prices given past public information, as it will become clear in Section 2.
+2Sincepriceinformativenessisanendogenousobject,consideringchangesinpriceinformativenessthatdonototherwise
+affectthefundamentalrelationisonlypossibleforasubsetofallthemodelparameters. Thistypeofchangesisnonetheless
+useful for definitional purposes. We eventually consider changes in parameters that at the same time change price
+informativeness and shift the fundamental relation.
+2
+
+to-price sensitivity is strictly increasing in the level of price informativeness, implying that the noise
+reduction channel and the equilibrium learning channel operate in opposite directions. Intuitively, an
+increase in price informativeness tilts investors’ demands toward putting more weight on the price as a
+signalaboutthefundamental, increasingthesensitivityofpricestoaggregateshocksand, consequently,
+price volatility. The additional structure also allows us to express the fundamental relation between
+price informativeness and price volatility exclusively as a function of a subset of primitives. The
+only primitives that explicitly enter into the fundamental relation are i) the prior volatility of the
+fundamental, ii) the precision of investors’ private signals about the fundamental, and iii) the ratio of
+precisions of the signal contained in the price for an investor relative to an external observer.
+Oursecondmainresultshowsthat,underasimpleandplausibleparameterrestrictionthatlimitsthe
+precision of the signal conveyed by the equilibrium price to be less than two times more informative for
+aninvestorrelativetoanexternalobserver, thefundamentalrelationbetweenpriceinformativenessand
+price volatility has a positive (negative) slope whenever price informativeness is sufficiently high (low).
+This result implies that any change in the subset of parameters that do not enter the fundamental
+relation directly must induce a positive comovement between price informativeness and volatility
+when prices are sufficiently informative and a negative comovement when price informativeness is
+sufficiently low. This result also implies that any change in the subset of parameters that at the
+same time shifts the fundamental relation upwards and increases price informativeness must also
+induce a positive comovement between equilibrium price informativeness and volatility when prices are
+sufficiently informative. Alternatively, we show that a change in the subset of parameters that shifts
+the fundamental relation upwards and increases price informativeness induces a negative comovement
+between informativeness volatility when prices are barely informative. When interpreted through the
+lensofourtwo-channeldecomposition,whenpricesaresufficientlyinformative,theequilibriumlearning
+channel becomes overwhelmingly important and dominates the noise reduction channel. Alternatively,
+when prices are sufficiently uninformative, the noise reduction channel dominates.
+While the results derived in the general case provide interesting insights into the nature of the
+relation between price volatility and informativeness, understanding the exact comovement between
+both variables for any set of parameters and their independent behavior requires the study of fully
+specified models. Therefore, we specialize our results to three applications that allow us to interpret
+conventional comparative statics through the lens of the fundamental relation. First, we study a model
+inwhichheterogeneityininvestors’priorsprovidesthesourceofaggregatenoiseintheeconomy. Second,
+we study a model in which the breakdown of the Law of Large Numbers caused by the interaction of
+a finite number of strategic investors is the source of aggregate noise. Finally, we study a model in
+which uncertainty about the aggregate level of hedging needs is the source of aggregate noise. These
+applicationsillustratethedifferentvaluesthattheratioofprecisionsofthesignalcontainedintheprice
+for an investor relative to an external observer can take. For instance, in the first application, investors’
+private trading motives are not useful to forecast the level of aggregate noise, which implies that price
+informativeness is identical for investors in the model relative to an external observer. In the case of
+strategic traders, price informativeness is higher for an external observer relative to investors in the
+3

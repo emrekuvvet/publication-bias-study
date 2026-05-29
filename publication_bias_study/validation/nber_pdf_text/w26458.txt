@@ -1,0 +1,124 @@
+NBER WORKING PAPER SERIES
+WHY DO FIRMS BORROW DIRECTLY FROM NONBANKS?
+Sergey Chernenko
+Isil Erel
+Robert Prilmeier
+Working Paper 26458
+http://www.nber.org/papers/w26458
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+November 2019, Revised August 2020
+We thank especially Rene Stulz for his valuable suggestions and also Gus De Franco, Daniel
+Green, Rustom Irani, Ivan Ivanov, Jessica Jeffers, Candace Jens, Elena Loutskina, Ben
+McCartney, Don Morgan, Philipp Schnabl, Jeremy Stein, Amir Sufi, Adi Sunderam, Mike
+Weisbach, and seminar participants at 2019 AFA Meetings and Cavalcade, 2018 EFA Meetings,
+2018 FDIC-JFSR Banking Research Conference, Boston College, Federal Reserve Bank of
+Cleveland, HEC Paris, Koc University, NBER Corporate Finance Meeting, Peking University
+GSM, Tsinghua PBCSF, Tulane University, and UMass Amherst for helpful comments. This
+research has been funded in part by the National Center for the Middle Market. Emily
+Braverman, Daniel Brennan, Alex Denman-Still, Yifeng Gu, Farrah Kharche, Yimeng Li,
+Kateryna Parke, Bianca Pelletti, Mutian Rui, and Shiyao Zhang provided excellent research
+assistance. An older version of this paper was distributed with the title “Nonbank Lending.”
+Internet Appendix is available at
+https://www.dropbox.com/s/jxy8iuzsy1fmxn5/NonbankLendingInternetAppendix.docx?dl=0.
+The views expressed herein are those of the authors and do not necessarily reflect the views of the
+National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2019 by Sergey Chernenko, Isil Erel, and Robert Prilmeier. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that
+full credit, including © notice, is given to the source.
+
+Why Do Firms Borrow Directly from Nonbanks?
+Sergey Chernenko, Isil Erel, and Robert Prilmeier
+NBER Working Paper No. 26458
+November 2019
+JEL No. G21,G23,G30,G32
+ABSTRACT
+Analyzing hand-collected credit agreements data for a random sample of middle-market firms
+during 2010-2015, we find that a third of all loans is extended directly by nonbank financial
+intermediaries. Nonbanks lend to less profitable and more levered firms that undergo larger
+changes in size around loan origination. The probability of borrowing from a nonbank jumps by
+34% as EBITDA falls below zero, an effect that is largely due to bank regulation. Controlling for
+firm and loan characteristics, nonbank loans carry 190 basis points higher interest rates,
+suggesting that access to funding, rather than prices, is why firms borrow from nonbanks.
+Sergey Chernenko Robert Prilmeier
+Krannert School of Management Tulane University
+Purdue University A.B. Freeman School of Business
+403 W. State Street 7 McAlister Drive
+West Lafayette, IN 47907 New Orleans, LA 70118
+schernen@purdue.edu rprilmei@tulane.edu
+Isil Erel
+Fisher College of Business
+Ohio State University
+2100 Neil Avenue
+Columbus, OH 43210
+and NBER
+erel@fisher.osu.edu
+A data appendix is available at http://www.nber.org/data-appendix/w26458
+
+1. Introduction
+Direct commercial and industrial (C&I) lending by nonbank financial intermediaries has
+grown dramatically over the last ten years, generating popular press headlines such as “Who Needs
+a Bank? Why Direct Lending is Surging”1 and “Bank Said No? Hedge Funds Fill a Void in
+Lending”2. According to Preqin, over the 2009-2017 period, assets under management of direct
+lending funds quadrupled from $39 to $181 billion.3 The growth in nonbank lending has generated
+significant interest among industry participants, regulators, and academics in understanding the
+causes of this growth as well as the costs and benefits of nonbank lending. Nevertheless, we still
+know little about why firms borrow directly from nonbank lenders. Do nonbanks provide funding
+to firms in market segments less served by banks? Are nonbanks able to offer more favorable
+terms? Answers to these questions are important in light of the literature arguing that bank loans
+have various advantages for borrowers due to banks’ expertise in screening and monitoring
+informationally-opaque borrowers (e.g., Diamond 1984 and Fama 1985), as well as their efficiency
+in dealing with borrowers in distress (Berlin and Loyes 1988 and Chemmanur and Fulghieri 1994).
+In this paper, we examine a novel hand-collected data set of loans to middle-market firms
+during the period of 2010-2015 to provide some of the first systematic evidence on firms’ decision
+to borrow directly from nonbanks. Defined as firms with sales between $10 million and $1 billion,
+middle-market firms make up the middle 50% of firm revenues in Compustat and account for
+about one third of all U.S. jobs and of private sector GDP.4 Being subject to significant information
+and moral hazard problems, these firms generally lack access to public debt markets (Faulkender
+and Petersen 2005) and rely on privately placed debt with lenders who engage in significant
+screening and monitoring (Diamond 1991a). At the same time, because they are listed on a stock
+exchange, these firms are required to disclose their financial statements and credit agreements,
+which we use in hand collecting the data.
+1https://www.washingtonpost.com/business/why-direct-lending-is-a-booming-part-of-private-
+debt/2019/12/18/db88e0ae-21cc-11ea-b034-de7dc2b5199b_story.html
+2 https://dealbook.nytimes.com/2011/06/08/bank-said-no-hedge-funds-fill-a-void-in-lending/
+3 https://docs.preqin.com/newsletters/pd/Preqin-Private-Debt-Spotlight-August-2018.pdf
+4http://www.middlemarketcenter.org/Media/Documents/NCMM_InfoSheet_2017_web_updated.pdf
+2
+
+We start by documenting the prevalence of direct nonbank lending, cases where a nonbank
+financial intermediary, referred to as a nonbank for brevity, negotiates directly with a borrower
+rather than participating in a syndicate led by a commercial bank. Such nonbank lending is
+widespread: about one third of all loans in our data were extended by nonbanks. These lenders
+represent a variety of financial intermediaries including finance companies (FCOs), private
+equity/venture capital (PE/VC) firms, hedge funds, bank-affiliated finance companies (bank
+FCOs), investment banks, insurance companies, business development companies (BDCs), and
+investment managers. Strikingly, we find that even for publicly-traded firms, standard databases
+such as DealScan cover only about half of the bank and almost none of the direct nonbank loans.
+We then ask who borrows from nonbanks and why. Compared to bank borrowers, nonbank
+borrowers are less profitable, have higher leverage, higher stock return volatility, lower stock
+returns prior to loan origination and experience larger changes in their book assets (either positive
+or negative) around loan origination. Having negative EBITDA is a particularly important
+determinant of borrowing from a nonbank. Concentrating on firms with EBITDA between -$5 and
++$5 million, firms with small negative EBITDA are 34% more likely to borrow from a nonbank
+than are firms with small positive EBITDA. We argue that this result is likely driven by bank
+regulation that makes it costly for banks to lend to negative EBITDA firms, as the Comptroller of
+the Currency (OCC) Handbook classifies loans to unprofitable firms as “substandard” and these
+substandard loans may result in larger loan loss allowances and lower CAMELS ratings.5 One
+exception to the emphasis on profitability and cash flow coverage are asset-based loans, for which
+the primary source of repayment is liquidation of accounts receivables and inventory. Consistent
+with the distinction drawn by regulators, we also find that the effect of negative EBITDA on the
+decision to borrow from a nonbank lender is concentrated among cash-flow loans.
+To provide more direct evidence on the effects of bank regulation, we take advantage of
+the variation in leniency across bank regulators documented by Agarwal et al (2014). They show
+that federal regulators (e.g., the OCC) are significantly stricter in their examinations and assign
+5 CAMELS are a rating system used by bank supervisors to evaluate banks on their capital adequacy, asset quality,
+management, earnings, liquidity, and sensitivity. The OCC Handbook can be accessed at
+https://www.occ.treas.gov/publications-and-resources/publications/comptrollers-handbook/index-comptrollers-
+handbook.html. The FDIC examination manual can be accessed at
+https://www.fdic.gov/regulations/safety/manual/manual_examinations_full.pdf
+3

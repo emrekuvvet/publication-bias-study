@@ -1,0 +1,134 @@
+NBER WORKING PAPER SERIES
+CREATING CONTROVERSY IN PROXY VOTING ADVICE
+Andrey Malenko
+Nadya Malenko
+Chester S. Spatt
+Working Paper 29036
+http://www.nber.org/papers/w29036
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2021, Revised May 2022
+We are grateful to Sugato Bhattacharyya, Philip Bond, Briana Chang, Amiyatosh Purnanandam,
+Uday Rajan, Alexander Wagner, Lucy White, Yan Xiong, Yishu Zeng, conference participants at
+the 2021 Conference on Markets and Economies with Information Frictions, Midwest Economic
+Theory Conference, 13th Florida State University SunTrust Beach Conference, Finance Theory
+Group meeting, and seminar participants at Aarhus University, Carnegie Mellon University,
+Georgetown University, Georgia State University, London Business School, Queen Mary
+University of London, Rice University, Rutgers Business School, University of Illinois Urbana-
+Champaign, University of Michigan, University of Mississippi, University of Rochester,
+University of Utah, University of Warwick, Vienna Graduate School of Finance, and Finance
+Theory Webinar for helpful comments, and to Filipp Prokopev for research assistance. The views
+expressed herein are those of the authors and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2021 by Andrey Malenko, Nadya Malenko, and Chester S. Spatt. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Creating Controversy in Proxy Voting Advice
+Andrey Malenko, Nadya Malenko, and Chester S. Spatt
+NBER Working Paper No. 29036
+July 2021, Revised May 2022
+JEL No. D72,D82,D83,G34,K22
+ABSTRACT
+We analyze the design of recommendations (available to all shareholders) and research reports
+(available only to subscribers) by a proxy advisor, who maximizes profits from selling
+information to shareholders. We show that the advisor benefits from biasing its recommendations
+against the a priori more likely alternative, thereby “creating controversy” for the vote. In
+contrast, it serves the advisor’s interest to produce precise and unbiased research reports. Our
+results help reinterpret empirical patterns of shareholders’ voting behavior, suggesting that proxy
+advisors’ recommendations may not be a suitable benchmark for evaluating shareholders’ votes.
+Our model also rationalizes the one-size-fits-all approach in recommendations.
+Andrey Malenko Chester S. Spatt
+University of Michigan Tepper School of Business
+Stephen M. Ross School of Business Carnegie Mellon University
+701 Tappan Street, R5412 4765 Forbes Avenue
+Ann Arbor, MI 48109-1234 Pittsburgh, PA 15213-3890
+amalenko@umich.edu and NBER
+cspatt@andrew.cmu.edu
+Nadya Malenko
+University of Michigan
+Stephen M. Ross School of Business
+701 Tappan Street, R5322
+Ann Arbor, MI 48109
+nmalenko@umich.edu
+An online appendix is available at
+https://www.nadyamalenko.com/Malenko,Malenko,Spatt_OnlineAppendix.pdf
+
+1 Introduction
+Proxy advisory …rms have emerged as major players in corporate governance. They make
+recommendationsonhowtocastvotesandprovideresearchreportsforsubscribingshareholders
+that contain the rationales for recommendations, including information on various aspects of
+…rms’governance practices. The clients of the largest proxy advisor, Institutional Shareholder
+Services (ISS), include about 1,500 institutional investors, which cast more than 12 million
+ballots in 45,000 shareholder meetings around the world.1 While proxy advisors’research
+reports are only available to their subscribers, their recommendations are frequently made
+public, either by the media or by the party supported by the proxy advisor –the company
+or the activist investor.2 Through both these public recommendations and private research
+reports, proxy advisors have a substantial impact on voting outcomes (e.g., Alexander et al.,
+2010; Iliev and Lowry, 2015; Malenko and Shen, 2016).
+Given the strong in‡uence of proxy advisors, the quality and information content of their
+reports and recommendations have become an important topic of discussion among market
+participants and policymakers. For example, over 2018–2020, the SEC adopted a number of
+regulatorychangestoensure“thatinvestorswhouseproxyvotingadvicereceivemoretranspar-
+ent, accurate, and complete information on which to make their voting decisions.”3 Do proxy
+advisors have incentives to produce unbiased and informative research and recommendations?
+In particular, as the SEC’s concept release on the U.S. proxy system questioned, “Does the
+lack of a direct pecuniary interest in the e¤ects of their recommendations on shareholder value
+a¤ect how they formulate recommendations,”“what criteria and processes do proxy advisory
+…rms use,”and are their “proxy research reports ... materially accurate and complete”?4
+1Source: ISS website. The second largest proxy advisor, Glass Lewis, has more than 1,300 clients, who
+collectively manage more than $40 trillion in assets (source: Glass Lewis website).
+2Forexample, itiscommonforanactivistrunningaproxy…ghttoannounceproxyadvisors’supportforits
+directorsthroughthecampaignwebsiteorpressreleasedistributionservices,andformanagementtoannounce
+proxyadvisors’supportforitsproposals. Forexamplesofthemediapublicizingtherecommendations,see“ISS
+recommends investors support Goldman Sachs on executive pay”(Reuters, April 14, 2022), “ISS says Wells
+Fargo pay reforms insu¢ cient to justify support”(Reuters, April 13, 2022), and “Proxy adviser ISS backs all
+Exxon Mobil director candidates”(Reuters, May 10, 2022), which says “In a report sent by a representative
+late Monday ISS also recommended votes “for”the company’s executive pay, but backed several shareholder
+resolutions focused on climate concerns.”For an example of announcements by management, see the press
+release of Osisko “Leading Independent Proxy Advisory Firms Recommend Osisko Shareholders Vote for all
+Proposed Items at the Upcoming Annual Meeting”(April 28, 2022).
+3See,e.g.,https://www.sec.gov/rules/interp/2019/34-86721.pdfandhttps://www.sec.gov/rules/…nal/2020/34-
+89372.pdf. In June 2021, the SEC suspended the enforcement of these new regulations, given concern that
+they might potentially impair the independence and quality of the proxy voting advice.
+4See p. 125 in https://www.sec.gov/rules/concept/2010/34-62495.pdf.
+1
+
+Motivated by these questions, this paper solves the information design problem of a proxy
+advisor who aims to maximize its pro…ts from information sale to voters. Our main result is
+that even if all shareholders are unbiased and aligned at maximizing the value of their shares,
+the pro…t-maximizing proxy advisor often has incentives to produce public recommendations
+that are biased against the a priori more likely alternative. At the same time, the advisor has
+incentives to produce informative and unbiased research reports for its subscribers.
+In our model, shareholders vote on a proposal whose value depends on the unknown state.
+The proxy advisor, who observes the state, faces an information design problem, modeled as
+Bayesian persuasion (Kamenica and Gentzkow, 2011; Rayo and Segal, 2010). Speci…cally, it
+designs two signals about the state: one, which we refer to as the “research report,”is available
+only to its subscribers, and the other, which we refer to as the “voting recommendation,”is
+publicly observed by all shareholders. One potential way to interpret the design of recommen-
+dations are the proxy voting guidelines, which proxy advisors revise each year and announce
+publicly. Importantly, as we discuss in the paper, the chosen information design policies are
+time-consistent: because the advisor maximizes its ex-ante pro…t from information sales, it
+has no ex-post incentive to deviate from the design of either the report or recommendations.
+In addition to designing the two signals, the advisor sets a fee for subscribing to its research
+report. Each shareholder then decides whether to pay the fee and get the report or whether to
+only observe the public recommendation. The state is then realized, the proxy advisor’s report
+and recommendation are produced, and shareholders cast their votes based on the information
+they receive. The proposal is approved if it receives a majority of the votes.
+The fact that the proxy advisor maximizes its pro…t from information sales highlights a
+fundamental con‡ict of interest. If, instead, the advisor were maximizing the value for the
+downstream entities (asset managers and operating companies), then its public recommenda-
+tions would perfectly reveal all the advisor’s information—but then no investors would need
+to purchase the reports and the advisor would earn zero revenue. This raises the question of
+which design of recommendations and reports maximizes the fees that can be obtained from
+the subscribers. There is no obvious answer to this problem. For example, it may be natural
+to expect that the advisor will produce totally uninformative public recommendations, so as
+not to dilute the value of the private reports, and only give informative signals for a fee. Or, to
+the extent that public recommendations reveal some information, it may be natural to expect
+that they will be unbiased since all shareholders are aligned at maximizing …rm value.
+Nevertheless, we show that the proxy advisor’s pro…t from information sale is maximized
+2

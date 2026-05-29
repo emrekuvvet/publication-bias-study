@@ -1,0 +1,116 @@
+NBER WORKING PAPER SERIES
+SHAPING LIQUIDITY:
+ON THE CAUSAL EFFECTS OF VOLUNTARY DISCLOSURE
+Karthik Balakrishnan
+Mary B. Billings
+Bryan T. Kelly
+Alexander Ljungqvist
+Working Paper 18984
+http://www.nber.org/papers/w18984
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+April 2013
+We thank Yakov Amihud, Douglas Diamond, Joseph Gerakos, Lawrence Glosten (our Five Star discussant),
+Charles Jones (our WFA discussant), Christian Leuz (our Utah discussant), Amir Sufi, Margarita Tsoutsoura,
+Ro Verrecchia, and various seminar audiences for helpful suggestions. We are grateful to Ruslan Goyenko
+for sharing his code to generate the effective tick measure from Goyenko et al. (2009) and to Stephen
+Brown for sharing his PIN data. Balakrishnan gratefully acknowledges funding from the Dean’s Research
+Fund at Wharton. Ljungqvist gratefully acknowledges the generous hospitality of the European Central
+Bank while working on this project. The views expressed in this paper do not necessarily reflect those
+of the ECB, the Eurosystem, or the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2013 by Karthik Balakrishnan, Mary B. Billings, Bryan T. Kelly, and Alexander Ljungqvist. All
+rights reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+Shaping Liquidity: On the Causal Effects of Voluntary Disclosure
+Karthik Balakrishnan, Mary B. Billings, Bryan T. Kelly, and Alexander Ljungqvist
+NBER Working Paper No. 18984
+April 2013
+JEL No. G12,G24,M41
+ABSTRACT
+Can managers influence the liquidity of their firms’ shares? We use plausibly exogenous variation
+in the supply of public information to show that firms seek to actively shape their information environments
+by voluntarily disclosing more information than is mandated by market regulations and that such efforts
+have a sizeable and beneficial effect on liquidity. Firms respond to an exogenous loss of public information
+by providing more timely and informative earnings guidance. Responses appear motivated by a desire
+to reduce information asymmetries between retail and institutional investors. Liquidity improves as
+a result of voluntary disclosure and in turn increases firm value. This suggests that managers can causally
+influence their cost of capital via voluntary disclosure.
+Karthik Balakrishnan Bryan T. Kelly
+The Wharton School of the University of Pennsy l v a n ia University of Chicago
+1318 Steinberg Hall-Dietrich Hall Booth School of Business
+3620 Locust Walk 5807 S. Woodlawn Avenue
+Philadelphia, PA 19104-6365 Chicago, IL 60637
+kbalakri@wharton.upenn.edu and NBER
+bryan.kelly@chicagobooth.edu
+Mary B. Billings
+New York University Alexander Ljungqvist
+Stern School of Business Stern School of Business
+44 West Fourth Street, Suite 10-94 New York University
+New York, NY 10012 44 West Fourth Street, #9-160
+mbilling@stern.nyu.edu New York, NY 10012
+and NBER
+aljungqv@stern.nyu.edu
+
+Improved liquidity raises a firm’s market value by lowering its discount rate (see Amihud and
+Mendelson (1986, 1989), Brennan and Subrahmanyam (1996), and Amihud (2002)). While
+liquidity is often viewed as resulting from market makers’ and investors’ actions in an
+exogenously specified information environment, we examine if corporate managers can actively
+influence the liquidity of their firms’ shares. An important channel through which they might do
+so is voluntary disclosure. Theoretical models such as Diamond (1985) and Diamond and
+Verrecchia (1991) show that managers may commit to disclose more information than is mandated
+by market regulations in order to reduce information asymmetry among their investors. Consistent
+with this, recent survey evidence suggests that managers provide voluntary disclosure to “reduce
+the information risk that investors assign to our stock” (Graham, Harvey, and Rajgopal (2005)).
+Whether managers can indeed affect their information environments, and thereby
+their liquidity and cost of capital, remains an open question. The main empirical challenge is
+that voluntary disclosure is voluntary: managers choose to disclose more information for reasons
+that could well affect liquidity directly. For example, evidence indicates that firms disclose more
+when earnings are easier to predict (Chen, Matsumoto, and Rajgopal (2011)); but lower earnings
+uncertainty would reduce information asymmetry, and so increase liquidity, independently
+of disclosure. Thus, showing that disclosure affects liquidity causally, and by how much, has
+proved challenging. Healy and Palepu (2001) highlight this endogeneity problem in their survey,
+noting that “disclosure changes are unlikely to be random events” and concluding that “it is
+difficult to draw strong conclusions about the direction of causality.”
+We use plausibly exogenous variation in the supply of public information to show that firms
+seek to shape their information environments through voluntary disclosure and that such efforts
+improve their liquidity. The former result confirms the central assumption made in theoretical
+models of disclosure. The latter result contributes to our understanding of liquidity in financial
+markets, by showing that managers can actively influence the liquidity of their shares and,
+1
+
+ultimately, firm value.
+Our tests exploit a natural experiment first explored in Kelly and Ljungqvist (2012, henceforth
+KL). In 2000-2008, 43 brokers closed their research operations as a result of adverse changes in
+the economics of sell-side research. The closures led to over 4,000 coverage terminations for U.S.
+firms.1 KL demonstrate that the closures are unrelated to individual firms’ future prospects and so
+are plausibly exogenous at the level of the affected stocks. They then show that when a stock loses
+(some) analyst coverage in the wake of a closure, information asymmetry among investors
+increases, the firm’s share price falls by 1.12% to 2.61%, and retail investors sell the stock. These
+patterns are most pronounced when the firm loses coverage by an analyst serving retail investors.
+We use this experiment not only to investigate how managers respond to exogenous shocks to
+their information environments but also to establish the causal effects of their responses. To do so,
+we identify firms in KL’s sample with a history of providing voluntary disclosure in the form of
+guidance regarding their quarterly EPS numbers, the most prominent performance measure that a
+firm supplies to investors.2 We then match each ‘treated’ firm to an observably similar ‘control’
+firm that did not experience an exogenous coverage shock at the same time and estimate
+difference-in-difference tests and treatment regressions.
+After replicating KL’s finding that coverage shocks have a first-order adverse effect on
+liquidity (as measured by Amihud’s (2002) illiquidity measure, AIM), we investigate the dynamics
+of liquidity. Extending KL’s analysis, we show that the contemporaneous liquidity hit partially
+reverses one quarter later. To establish whether this reversal is the result of an increase in
+voluntary disclosure, we need to rule out other channels through which liquidity might recover.
+1 A small subset of 564 of these stocks simultaneously lost a market-maker. As we will show, our results are not
+driven by changes in market-making. An even smaller subset of 63 stocks also lost an underwriting relationship.
+2 Alternative measures of disclosure are the external AIMR ratings of disclosure policy (Lang and Lundholm (1993,
+1996), Botosan and Plumlee (2002)); the frequency of 8-K filings (Leuz and Schrand (2009)); or the length of 10-K
+filings (Leuz and Schrand (2009)). These measures would likely have lower power in our setting because it is unclear
+how much immediate discretion managers have over their financial statements. We focus on earnings guidance
+because it allows us to examine a discretionary disclosure action that is immediately available to managers (assuming
+that their firm has a guiding history) and that is both observable to the econometrician and easily measurable. This, in
+turn, enables us to identify the causal effects of voluntary disclosure on liquidity.
+2

@@ -1,0 +1,135 @@
+NBER WORKING PAPER SERIES
+THE EFFECTS OF MONETARY POLICY ON STOCK MARKET BUBBLES:
+SOME EVIDENCE
+Jordi Gali
+Luca Gambetti
+Working Paper 19981
+http://www.nber.org/papers/w19981
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+March 2014
+We have benefited from comments by Andrea Ferrero, Mark Gertler, Refet Gürkeynak, Lucrezia Rieichlin,
+and seminar and conference participants at UB, CEMFI, NYU, the Barcelona GSE Summer Forum,
+the Time Series Econometric Workshop (U. Zaragoza), the Norges Bank Conference on "The Role
+of Monetary Policy Revisited", the NBER Conference on "Lessons for the Financial Crisis from Monetary
+Policy" and the OFCE Workshop on Empirical Monetary Economics. Galí acknowledges the European
+Research Council for financial support under the European Union's Seventh Framework Programme
+(FP7/2007-2013, ERC Grant agreement nº 339656). Gambetti gratefully acknowledges the financial
+support of the Spanish Ministry of Economy and Competitiveness through grant ECO2012-32392
+and the Barcelona GSE Research Network. The views expressed herein are those of the authors and
+do not necessarily reflect the views of the National Bureau of Economic Research.
+At least one co-author has disclosed a financial relationship of potential relevance for this research.
+Further information is available online at http://www.nber.org/papers/w19981.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2014 by Jordi Gali and Luca Gambetti. All rights reserved. Short sections of text, not to exceed
+two paragraphs, may be quoted without explicit permission provided that full credit, including © notice,
+is given to the source.
+
+The Effects of Monetary Policy on Stock Market Bubbles: Some Evidence
+Jordi Gali and Luca Gambetti
+NBER Working Paper No. 19981
+March 2014
+JEL No. E52,G12
+ABSTRACT
+We estimate the response of stock prices to exogenous monetary policy shocks using a vector-
+autoregressive(cid:3)model with time-varying parameters. Our evidence points to protracted episodes in
+which, after a short-run(cid:3)decline, stock prices increase persistently in response to an exogenous
+tightening of monetary policy.(cid:3)That response is clearly at odds with the "conventional" view on the
+effects of monetary policy on(cid:3)bubbles, as well as with the predictions of bubbleless models. We
+also argue that it is unlikely that(cid:3)such evidence be accounted for by an endogenous response of the
+equity premium to the monetary(cid:3)policy shocks.
+Jordi Gali
+Centre de Recerca en Economia Internacional (CREI)
+Ramon Trias Fargas 25
+08005 Barcelona
+SPAIN
+and NBER
+jgali@crei.cat
+Luca Gambetti
+Departament d'Economia
+Universitat Autònoma de Barcelona
+08193 Bellaterra (Barcelona) Spain
+luca.gambetti@uab.cat
+
+The economic and …nancial crisis of 2008-2009 has been associated in many countries
+with a rapid decline in housing prices, following a protracted real estate boom. This has
+generated a renewed interest in the link between monetary policy and asset price bubbles,
+and revived the long standing debate on whether and how monetary policy should respond
+to perceived deviations of asset prices from fundamentals.1
+The consensus view before the crisis was that central banks should focus on stabilizing
+in‡ation and the output gap, and ignore ‡uctuations in asset prices, even if the latter are
+perceived to be driven by bubbles.2 The recent crisis has challenged that consensus and has
+strengthened the viewpoint that central banks should pay attention and eventually respond
+to developments in asset markets. Supporters of this view argue that monetary authorities
+should "lean against the wind," i.e. raise the interest rate to counteract any bubble-driven
+episode of asset price in‡ation, even at the cost of temporarily deviating from their in‡ation
+or output gap targets. Any losses associated with these deviations, it is argued, would be
+more than o¤set by the avoidance of the consequences of a future burst of the bubble.3
+A central tenet of the case for "leaning against the wind" monetary policies is the
+presumption that an increase in interest rates will reduce the size of an asset price bubble.
+While that presumption may have become part of the received wisdom, no empirical or
+theoretical support seems to have been provided by its advocates.
+In recent work (Galí (2014)), one of us has challenged, on theoretical grounds, the link
+betweeninterestratesandassetpricebubblesunderlyingtheconventionalview. Thereason
+isthat,atleastinthecaseofrational assetpricebubbles,thebubblecomponentmustgrow,
+in equilibrium, at the rate of interest. If that is the case, an interest rate increase may end
+up enhancing the size of the bubble. Furthermore, and as discussed below, the theory of
+rational bubbles implies that the e¤ects of monetary policy on observed asset prices should
+depend on the relative size of the bubble component. More speci…cally, an increase in the
+interest rate should have a negative impact on the price of an asset in periods where the
+bubble component is small compared to the fundamental. The reason is that an interest
+rate increase always reduces the ”fundamental”price of the asset, an e¤ect that should be
+dominant in "normal" times, when the bubble component is small or non existent. But
+if the relative size of the bubble is large, an interest rate hike may end up increasing the
+1Throughout the paper we use the term "monetary policy" in the narrow sense of "interest rate policy."
+Thus we exclude from that de…nition policies involving macroprudential instruments which are sometimes
+controlled by central banks and which may also be used to stabilize asset prices.
+2See, e.g. Bernanke and Gertler (1999, 2000) and Kohn (2006). Two arguments have been often pointed
+to in support of that view: (i) asset price bubbles are di¢ cult to detect and measure, and (ii) interest rates
+are "too blunt" an instrument to prick a bubble, and their use with that purpose may have unintended
+collateral damages.
+3See,e.g.,Borio and Lowe(2002)and Cecchettietal. (2000)foran early defenseof"leaning againstthe
+wind" policies.
+1
+
+observed asset price over time, due to its positive e¤ect on the bubble more than o¤setting
+the negative impact on the fundamental component.
+In the present paper we provide evidence on the dynamic response of stock prices to
+monetary policy shocks, and try to use that evidence to infer the nature of the impact of
+interest rate changes on the (possible) bubble component of stock prices..Our main goal
+is to assess the empirical merits of the "conventional" view. Under the latter, the size of
+the bubble component of stock prices should decline in response to an exogenous increase
+in interest rates. Since the fundamental component is expected to go down in response to
+the same policy intervention, any evidence pointing to a positive response of observed stock
+prices (i.e. of the sum of the fundamental and bubble components) to an exogenous interest
+rate hike would call into question the conventional view regarding the e¤ects of monetary
+policy on stock price bubbles.
+Our starting point is an estimated vector-autoregression (VAR) on quarterly US data
+for GDP, the GDP de‡ator, a commodity price index, dividends, the federal funds rate, and
+a stock price index (S&P500). Our identi…cation of monetary policy shocks is based on the
+approach of Christiano Eichenbaum and Evans (2005; henceforth, CEE), though our focus
+here is on the dynamic response of stock prices to an exogenous hike in the interest rate.
+Also, and in contrast with CEE, we allow for time-variation in the VAR coe¢ cients, which
+results in estimates of time-varying impulse responses of stock prices to policy shocks.4 In
+addition to the usual motivations for doing this (e.g. , structural change), we point to a
+new one which is speci…c to the issue at hand: to the extent that changes in interest rates
+have a di¤erent impact on the fundamental and bubble components, the overall e¤ect on
+the observed stock price may change over time as the relative size of the bubble changes.
+Under our baseline speci…cation, which assumes no contemporaneous response of mone-
+tary policy to asset prices, the evidence points to protracted episodes in which stock prices
+increase persistently in response to an exogenous tightening of monetary policy. That re-
+sponse is clearly at odds with the "conventional" view on the e¤ects of monetary policy on
+bubbles, as well as with the predictions of bubbleless models.
+We assess a variety of alternative explanations for our …ndings. Thus, we argue that
+it is unlikely that such evidence be accounted for by an endogenous response of the equity
+premium to the monetary policy shocks.
+When we allow for an endogenous contemporaneous response of interest rates to stock
+prices, and calibrate the relevant coe¢ cient in the monetary policy rule according to the
+…ndings in Rigobon and Sack (2003), our …ndings change dramatically: stock prices decline
+substantially in response to a tightening of monetary policy, more so than our estimated
+4See, e.g. Primiceri (2005) and Gali and Gambetti (2009) for some macro applications of the TVC-VAR
+methodology.
+2

@@ -1,0 +1,124 @@
+NBER WORKING PAPER SERIES
+FLIGHT TO QUALITY AND COLLECTIVE RISK MANAGEMENT
+Ricardo J. Caballero
+Arvind Krishnamurthy
+Working Paper 12136
+http://www.nber.org/papers/w12136
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+March 2006
+Respectively: MIT and NBER; Northwestern University. E-mails: caball@mit.edu,
+a-krishnamurthy@northwestern.edu. We are grateful to Marios Angeletos, Olivier Blanchard, Phil Bond,
+Jon Faust, Xavier Gabaix, Jordi Gali, Michael Golosov, William Hawkins, Burton Hollifield, Bengt
+Holmstrom, Dimitri Vayanos, Ivan Werning and seminar participants at Columbia, DePaul, Imperial College,
+LBS, Northwestern, MIT, Wharton, NY Fed Liquidity Conference, NBER MIDM Conference, UBC Summer
+Conference, Bank of England, and the Central Bank of Chile for their comments. David Lucca and Alp
+Simsek provided excellent research assistance. Caballero thanks the NSF for financial support. This paper
+covers the same substantive issues as (and hence replaces) “Financial System Risk and Flight to Quality,”
+NBER WP # 11996 (2005) with a simpler but more abstract model. The views expressed herein are those
+of the author(s) and do not necessarily reflect the views of the National Bureau of Economic Research.
+©2006 by Ricardo J. Caballero and Arvind Krishnamurthy. All rights reserved. Short sections of text, not
+to exceed two paragraphs, may be quoted without explicit permission provided that full credit, including ©
+notice, is given to the source.
+
+Flight to Quality and Collective Risk Management
+Ricardo J. Caballero and Arvind Krishnamurthy
+NBER Working Paper No. 12136
+March 2006
+JEL No. E30, E44, E5, F34, G1, G22, G28
+ABSTRACT
+We present a model of flight to quality episodes that emphasizes systemic risk and the Knightian
+uncertainty surrounding these episodes. Agents make risk management decisions with incomplete
+knowledge. They understand their own shocks, but are uncertain of how correlated their shocks are
+with systemwide shocks. Aversion to this uncertainty leads them to question whether their private
+risk management decisions are robust to aggregate events, generating conservatism and excessive
+demand for safety. We show that agents’ actions lock-up the capital of the financial system in a
+manner that is wasteful in the aggregate and can trigger and amplify a financial accelerator. The
+scenario that the collective of conservative agents are guarding against is impossible, and known to
+be so even given agents’ incomplete knowledge. A lender of last resort, even if less knowledgeable
+than private agents about individual shocks, does not suffer from this collective bias and finds that
+pledging intervention in extreme events is valuable. The benefit of such intervention exceeds its
+direct value because it unlocks private capital markets.
+Ricardo J. Caballero
+MIT Department of Economics
+Room E52-252a
+Cambridge, MA 02142-1347
+and NBER
+caball@mit.edu
+Arvind Krishnamurthy
+Kellogg Graduate School of Management
+Northwestern University
+2001 Sheridan Road
+Evanston, IL 60208
+a-krishnamurthy@northwestern.edu
+
+1 Introduction
+“... Policypractitionersoperatingunderarisk-managementparadigmmay,attimes,beledto
+undertake actions intended to provide insurance against especially adverse outcomes...... When
+confronted with uncertainty, especially Knightian uncertainty, human beings invariably attempt
+to disengage from medium to long-term commitments in favor of safety and liquidity.... The
+immediateresponseonthepartofthecentralbanktosuchfinancialimplosionsmustbetoinject
+large quantities of liquidity...” Alan Greenspan (2004).
+Flight to quality episodes are an important source of financial and macroeconomic instability. Modern
+examples of these episodes in the US include the Penn Central default of 1970; the stock market crash of
+1987;theeventsoftheFallof1998beginningwiththeRussiandefaultandendingwiththebailoutofLTCM;
+as well as the events that followed the attacks of 9/11. Behind each of these episodes lies the specter of a
+meltdown that may lead to a prolonged slowdown as in Japan during the 1990s, or even a catastrophe like
+the Great Depression.1 In each of them, as hinted by Greenspan, the Fed intervened early and stood ready
+to intervene “as much as needed” to prevent a meltdown.
+Two questions immediately arise when considering these examples and Greenspan’s comments on flight
+to quality episodes. First, how can events that appear small relative to US private wealth create so much
+havoc? Second, how can interventions by the Fed, that also appear small relative to US wealth, be effective
+in preventing a meltdown? In this paper we develop a model to address these questions. In short, our
+answers are that during flight to quality episodes private capital becomes locked up, and much of the power
+of intervention derives from its ability to unlock this capital.
+Ourmodelbuildsontwoobservationsaboutflighttoqualityevents. First,atabasicleveltheseepisodes
+are about an increase in perceived “risk.” However, the risk does not circumscribe a purely fundamental
+shock, and instead centers around the nerve center of the economy, the financial system. For example, the
+Russian default in the summer of 1998 eliminated a small fraction of the trillions of dollars of US wealth.
+Although small, the default created circumstances that severely strained the financial sector. As prices of
+illiquid assets fell, losses grew in commercial banks, investment banks, and hedge funds, leading investors
+to question the safety of the financial sector. Investors withdrew risk-capital from the affected markets and
+institutions and moved into short-term and liquid assets. Bottlenecks in the movement of capital emerged
+as sophisticated parts of the financial system were compromised while other sectors of the economy were
+relatively unaffected. The primary risk during this episode was financial system risk.
+1See Table 1 (part A) in Barro (2005) for a comprehensive list of extreme events in developed economies during the 20th
+century.
+2
+
+Second,the“risk”intheseepisodesisofanextremenature. Mostepisodesaretriggeredbyanunexpected
+event that causes agents to re-evaluate their models of the world. In the Fall of 1998, the comovement of
+Russian government bond spreads, Brazilian spreads, and U.S. Treasury bond spreads was a surprise to
+even sophisticated market participants. These high correlations rendered standard risk management models
+obsolete, leaving financial market participants searching for new models. Agents responded by making
+decisions using “worst-case” scenarios and “stress-testing” models, in a manner suggestive of Knightian
+uncertainty. Indeed, the extreme disengagement from risky activities that Greenspan highlights suggests
+that agents respond to more than just risk.
+Our model focuses on agents’ perceptions regarding the ability of financial intermediaries to deliver on
+theirfinancialcontracts. Agentscontractwithfinancialintermediariestocoverliquidityshocksthatmayarise
+intheirmarkets. Theseriskmanagementdecisionsaremadewithincompleteknowledge. Agentsunderstand
+their own shocks, but are uncertain about the probability model describing shocks in markets different from
+theirs and treat this uncertainty as Knightian. If financial intermediaries have limited resources, agents
+grow concerned that shocks may arise in other markets that will deplete the resources of intermediaries and
+compromisetheirabilitytodeliverontheirfinancialcontracts. Suchriskinessriseseitherthroughanincrease
+in Knightian uncertainty or a fall in intermediaries’ assets. Thus our model combines the financial system
+risk as well as the Knightian uncertainty that underlies flight to quality episodes.
+The model captures two important aspects of flight to quality episodes. First, the increase in perceived
+riskiness generates conservatism and demand for safety. Second, we show that Knightian agents respond to
+their uncertainty regarding other markets by requiring financial intermediaries to lock-up some capital to
+devotetotheirownmarkets’shocks,regardlessofwhathappensinothermarkets. Byforcingintermediaries
+to dedicate capital to cover their own shocks, agents ensure that their shocks are covered regardless of who
+else receives shocks. However, once locked-up, intermediaries’ capital is not free to move across markets in
+response to shocks, resulting in bottlenecks and market segmentation.
+The capital bottlenecks have macroeconomic consequences, and lend support to Greenspan’s call for
+central bank action during flight to quality. While each Knightian agent covers himself against an extreme
+shock, collectively these actions prevent intermediaries from moving capital across markets to expediently
+offset shocks as they arrive. We show that this inflexibility leaves the economy overexposed to (moderate)
+aggregate shocks that are manageable by the private sector in the absence of flight to quality. Moreover,
+the scenario that the collective of conservative agents are guarding against is impossible, and known to be
+so even given agents’ incomplete knowledge. Collectively, agents make poor risk management decisions that
+lead to avoidable losses.
+In this context, a lender of last resort, even if less informed than private agents about each agent’s
+own market, can unlock private capital and stabilize the economy during moderate shocks. It does so
+3

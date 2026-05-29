@@ -1,0 +1,135 @@
+NBER WORKING PAPER SERIES
+SIZE DISCOVERY
+Darrell Duffie
+Haoxiang Zhu
+Working Paper 21696
+http://www.nber.org/papers/w21696
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+November 2015
+For helpful discussions and comments, we thank Bruno Biais, Pierre Collin-Dufresne, Songzi Du,
+Michael Fleming, Benjamin Junge, Eiichiro Kazumori, Pete Kyle, Emmanuel Moench, Sophie
+Moinas, Giang Nguyen, Romans Pancs, Adriano Rampini, Mark Ready, Anders Trolle, Dimitri
+Vayanos, and Robert Wilson, as well as participants at the American Economics Association
+annual meeting, University of Bonn, University of Geneva, INSEAD, University of Zurich, Swiss
+National Bank, HEC Paris, Federal Reserve Board, CFTC, University of Lugano, European
+University Institute, Toulouse School of Economics, Wilfred Laurier University, EIEF (Banca
+d'Italia), the Deutsche Bundesbank, AQR, Yale School of Management, Rice University, Georgia
+State University, CKGSB (Beijing), Imperial College, London Business School, PaulWoolley
+Conference, and SEC.We are especially grateful for research assistance by Jun Yan of the
+Stanford Statistics Department and Hyungjune Kang of the MIT Sloan School of Management.
+The views expressed herein are those of the authors and do not necessarily reflect the views of the
+National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2015 by Darrell Duffie and Haoxiang Zhu. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Size Discovery
+Darrell Duffie and Haoxiang Zhu
+NBER Working Paper No. 21696
+November 2015
+JEL No. D47,D82,G14
+ABSTRACT
+Size-discovery trade mechanisms allow large quantities of an asset to be exchanged at a price that
+does not respond to price pressure. Primary examples include “workup” in Treasury markets,
+“matching sessions” in corporate bond and CDS markets, and block-trading “dark pools” in
+equity markets. By freezing the execution price and giving up on market-clearing, size-discovery
+mechanisms overcome concerns by large investors over their price impacts. Price-discovery
+mechanisms clear the market, but cause investors to internalize their price impacts, inducing
+costly delays in the reduction of position imbalances. We show how augmenting a price-
+discovery mechanism with a size-discovery mechanism improves allocative efficiency.
+Darrell Duffie
+Graduate School of Business
+Stanford University
+Stanford, CA 94305-7298
+and NBER
+duffie@stanford.edu
+Haoxiang Zhu
+MIT Sloan School of Management
+100 Main Street, E62-623
+Cambridge, MA 02142
+and NBER
+zhuh@mit.edu
+
+1 Introduction
+This paper characterizes equilibrium behavior in size-discovery mechanisms, by which
+large transactions can be quickly arranged at fixed prices. We show that size discovery
+can significantly improve allocative efficiency in markets with imperfect competition and
+private information over latent supply or demand imbalances.
+The issue of market liquidity has received intense attention in the last few years. The
+Securities and Exchange Commission (2010) and the U.S. Department of the Treasury
+(2016) raise important questions and concerns about the liquidity and design of markets
+for U.S. equities and Treasuries. The “Flash Crash” on May 6, 2010 in U.S. equity and
+futuresmarketsandthe“FlashRally”onOctober15, 2014inU.S.Treasurymarketswere
+wake-up calls that even deep liquid markets may experience extreme price movements
+without obvious fundamental news (Joint CFTC-SEC Advisory Committee, 2011; Joint
+Staff Report, 2015). There are widespread concerns that dealers are less willing or likely
+toabsorblargetradeflowsontotheirbalancesheets(Adrian, Fleming, Shachar, andVogt,
+2015).
+An important aspect of market liquidity is the ability to quickly buy or sell large
+quantities of an asset with a small price impact. By definition, price impact is primarily a
+concern of large strategic investors—such as mutual funds, pension funds, and insurance
+companies—and not of small or “price-taking” investors. Price impact is a particular con-
+cernofmajorfinancialintermediariessuchasbroker-dealers, whooftenabsorbsubstantial
+inventory positions in primary issuance markets or from their client investors, and then
+seek to offload these positions in inter-dealer markets. Duffie (2010) surveys widespread
+evidence of substantial price impact around large purchases and sales, even in settings
+with relatively symmetric and transparent information.
+To mitigate price impact, investors often split large orders into many smaller pieces
+and execute them slowly over time. Order splitting is done by computer algorithms in
+electronic markets and manually in voice markets. As we explain shortly, such piecemeal
+execution is inefficient from an allocative perspective, given the associated costly delay
+in reducing undesired positions. Investors could alternatively pass a large position to a
+dealer at a price concession, but this strategy has become more costly in recent years, as
+bank-affiliated dealers are subject to tighter capital and liquidity regulation.
+We show that size discovery is an effective way to mitigate the allocative inefficiency
+causedbystrategicavoidanceofpriceimpact. Sizediscoveryisthereforeavaluablesource
+of block liquidity that can complement order-splitting execution strategies and market-
+makingservicesbymajordealers. Examplesofsize-discoverymechanismsusedinpractice
+include:
+• Workup, a trading protocol by which buyers and sellers successively increase, or
+1
+
+“work up,” the quantities of an asset that are exchanged at a fixed price. Each
+participant in a workup has the option to drop out at any time. In the market for
+U.S. Treasuries, Fleming and Nguyen (2015) find that workup accounts for 43% to
+56%oftotaltradingvolumeonthelargestU.S.Treasuriestradeplatform,BrokerTec,
+on a typical day.
+• “Matching sessions,” a variant of workup found in markets for corporate bonds
+and credit default swaps (CDS). For the most actively traded CDS product, Collin-
+Dufresne, Junge, and Trolle (2016) find that matching sessions or workup account
+for 38% of trade volume on GFI, a major swap execution facility.
+• Block-crossing“darkpools,”suchasLiquidnetandPOSIT,whicharepredominantly
+used in equity markets. In a typical “midpoint” dark pool, buyers and sellers match
+ordersatthemidpointofthebestbidpriceandbestofferpriceshownontransparent
+exchanges. Dark pools account for about 15% of trading volume in the U.S. equity
+markets (Zhu, 2014). Certain dark pools offer limited price discovery. Others do not
+use price discovery at all.
+Despite some institutional differences discussed in Section 2, these various forms of
+size discovery share the key feature of crossing orders at fixed prices, thus without price
+impact. Although aware of the trade price, market participants conducting size discovery
+areuncertainofhowmuchoftheassettheywillbeabletotradeatthatprice, whichisnot
+sensitive to their demands. One side of the market is eventually rationed, being willing to
+trade more at the given price. Thus, a size-discovery mechanism cannot clear the market,
+and is therefore inefficient on its own. Size discovery stands in sharp contrast to “price
+discovery” trading mechanisms, which find the market-clearing price that matches supply
+and demand. Nevertheless, precisely by giving up on market clearing, a size-discovery
+mechanism reduces investors’ strategic incentives to dampen their immediate demands.
+We show, as a consequence, that a market design combining size discovery and price
+discovery offers substantial efficiency improvement over a market that relies only on price
+discovery.
+Our modeling approach and the intuition for our results can be roughly summarized
+as follows. An asset pays a liquidating dividend at a random future time. Before this
+time, double auctions for the asset are held among n strategic traders at evenly spaced
+time intervals of some length ∆. Thus, the auctions are held at times 0, ∆, 2∆, and so
+on. Before the first of these auctions, the inventory of the asset held by each trader has an
+undesired component, positive or negative, that is not observable to other traders. Each
+trader suffers a continuing cost that is increasing in his undesired inventory imbalance.
+In each of the successive double auctions, traders submit demand schedules. The market
+operator aggregates these demand schedules and calculates the market-clearing price, at
+which total demand and supply are matched.
+2

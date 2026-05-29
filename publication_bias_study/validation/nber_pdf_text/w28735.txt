@@ -1,0 +1,135 @@
+NBER WORKING PAPER SERIES
+WHAT’S MISSING IN ENVIRONMENTAL (SELF-)MONITORING:
+EVIDENCE FROM STRATEGIC SHUTDOWNS OF POLLUTION MONITORS
+Yingfei Mu
+Edward A. Rubin
+Eric Zou
+Working Paper 28735
+http://www.nber.org/papers/w28735
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+April 2021, Revised May 2022
+We thank Michael Anderson, Trudy Ann Cameron, Jonathan M.V. Davis, Eric Edwards, Dave
+Evans, Mary Evans (thanks to the Adopt-a-Paper program), Meredith Fowlie, Cynthia Giles,
+Corbett Grainger, Andreas Hagemann, Alex Hollingsworth, Nicolai Kuminoff, Shanjun Li,
+Julian Reif, Michelle M. Rubin, Ivan Rudik, Jay Shimshack, William Wheeler, Jianwei Xing,
+officials at the U.S. Environmental Protection Agency, and seminar participants at Arizona State
+University, ASSA Annual Meeting, CU Environmental & Resource Economics Workshop, Jinan
+University, Online Summer Workshop in Environment, Energy, and Transportation Economics,
+Society for Benefit-Cost Analysis Annual Meeting, Symposium on Natural Resources
+Governance for Young Scholars, and University of California Davis for helpful comments. All
+errors are our own. The views expressed herein are those of the authors and do not necessarily
+reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2021 by Yingfei Mu, Edward A. Rubin, and Eric Zou. All rights reserved. Short sections of
+text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+What’s Missing in Environmental (Self-)Monitoring: Evidence from Strategic Shutdowns
+of Pollution Monitors
+Yingfei Mu, Edward A. Rubin, and Eric Zou
+NBER Working Paper No. 28735
+April 2021, Revised May 2022
+JEL No. C12,H77,Q53
+ABSTRACT
+Regulators often rely on regulated entities to self-monitor compliance, potentially creating
+strategic incentives for endogenous monitoring. This paper builds a framework to detect whether
+local governments skip air pollution monitoring when they expect air quality to deteriorate. The
+core of our method tests whether the timing of monitor shutdowns coincides with the counties’ air
+quality alerts – public advisories based on local governments’ own pollution forecasts. Applying
+the method to a monitor in Jersey City, NJ, suspected of a deliberate shutdown during the 2013
+“Bridgegate” traffic jam, we find a 33%reduction of this monitor’s sampling rate on pollution-
+alert days. Building on large-scale inference tools, we then apply the method to test more than
+1,300 monitors across the U.S., finding 14 metro areas with clusters of monitors showing similar
+strategic behavior. We assess geometric imputation and remote-sensing technologies as potential
+solutions to deter future strategic monitoring.
+Yingfei Mu Eric Zou
+Department of Economics Department of Economics
+University of Oregon University of Oregon
+1415 Kincaid Street 1415 Kincaid Street
+Eugene, OR 97405 Eugene, OR 97403
+yingfeim@uoregon.edu and NBER
+ericzou@uoregon.edu
+Edward A. Rubin
+Department of Economics
+University of Oregon
+1415 Kincaid Street
+Eugene, OR 97405
+edwardr@uoregon.edu
+
+1. Introduction
+When regulators face substantial monitoring requirements, they commonly ask regulated entities
+to monitor their own compliance. Police officers are charged with turning on/off body cameras that verify
+their maintenance of ethical behavior; hospital staff transcribe operation events to catalog surgeons’
+regulatory compliance; countries self-monitor greenhouse gas emissions to demonstrate adherence to
+climate commitments. This system of self-monitoring is particularly common within environmental
+regulation, where local entities – such as state governments and individual firms – assume the roles of both
+the subject of regulation and the recorder of pollution data that demonstrate compliance. Can federal
+regulators rely on the regulated to provide complete, representative self-monitoring data? We study this
+question in the context of U.S. air quality regulation, where state and local governments monitor air
+pollution to demonstrate compliance with federally set air quality standards. We show that state agencies’
+leeway to decide when (not) to monitor, combined with the ability to anticipate pollution events in the near
+future, results in strategic timing in monitoring activities at some locations. We begin with a motivating
+anecdote, followed by an econometric analysis of the general prevalence of strategic monitoring.
+On September 9th, 2013, two of three lanes to the George Washington Bridge closed for five days
+at the toll plaza connecting Fort Lee, New Jersey and Manhattan, New York for what was initially said to
+be a traffic study. The event was later found to be a deliberate act of political retribution.1 Coincidentally,
+at the time of the Bridgegate-induced traffic jams, a nearby fine particulate matter (PM ) air pollution
+2.5
+monitor on the rooftop of the Jersey City Firehouse stopped collecting data. The monitor, placed by the
+state government to continuously monitor compliance with federal Clean Air Act mandates, was later found
+to have been inoperative for 13 days (September 6th–18th), the longest inactive period recorded in the decade
+since its installation. While an investigation by the U.S. Environmental Protection Agency (EPA) blamed
+“equipment malfunction,”2 the timing of the incident has raised concerns that the monitor was intentionally
+disabled so that it would not record the spike in air pollution caused by the Bridgegate traffic jam.
+This incident raises a general question of whether local officials are able to deliberately halt
+pollution monitoring when they anticipate the monitor will record elevated pollution levels. First, state
+governments have the incentive to “game.” While the federal EPA sets the national air quality standards
+(NAAQS), states and local governments self-monitor compliance with these standards. When state
+governments’ own monitoring indicates a lack of compliance, they bear the regulatory penalties including
+1 See Wikipedia, The Free Encyclopedia, s.v. “Fort Lee lane closure scandal,” (accessed November 13, 2020),
+https://en.wikipedia.org/wiki/Fort_Lee_lane_closure_scandal
+2 Enck, Judith. Regional Administrator of the U.S. Environmental Protection Agency Region 2. Letter to Jeff Ruch,
+Executive Director of the Public Employees for Environmental Responsibility. February 28, 2014.
+2
+
+elevated requirements of expensive emission-reduction investments. Second, state governments have the
+discretion to game. While the federal EPA encourages states to stick to their monitoring schedules as
+strictly as possible, states have significant leeway, with every monitor typically allowed to miss up to 25%
+of its scheduled data during each quarter. Third, state governments have the ability to game. In many states,
+the same agencies that carry out monitoring also run advanced air quality forecasting – providing these
+agencies with the best data and forecasts of air quality in the near future. Despite these concurrent factors,
+the current system is not set up to detect strategic monitoring. Missing days are ignored by the federal
+regulators, implicitly assuming that pollution levels on monitored days are equal to pollution levels on
+unmonitored days. This tolerance for gaps in compliance monitoring data may induce strategic timing in
+state and local agencies’ self-monitoring activity.
+We propose an econometric framework that assesses whether air pollution monitors strategically
+shut down to avoid sampling on high-pollution days – specifically focused on identifying individual
+monitors whose pattern of shutdowns suggests gaming. Our framework has three components. The first
+component infers the government’s expectation of high-pollution events through locally issued air quality
+alerts. These public advisories calling for citizens to reduce outdoor activities and vehicle use are often
+issued when forecasts predict that air pollution will exceed the Clean Air Act standards. We use an event
+study to assess whether a monitor’s sampling rate falls when pollution alerts are in place. As a motivating
+example, our analysis begins with the sampling patterns from the PM monitor at the Jersey City Firehouse
+2.5
+(JCF). Our analysis focuses on the JCF monitor’s data capture rate: the share of scheduled monitoring days
+in which the monitor produces readings. Analyzing 21 alerts sent by Jersey City from 2007 to 2014, we
+show that the data capture rate of the JCF monitor drops significantly during pollution alert weeks (declining
+by 10 percentage points from a mean of 88%) and especially during the alert day itself (declining by 28
+percentage points). Though we do not directly address the reasons for the failure of the JCF air pollution
+monitor during the Bridgegate incident, our analysis indicates that the JCF monitor’s sampling pattern over
+the seven-year period is consistent with strategic shutdowns during times of high pollution.
+The second component of our framework incorporates simultaneous inference. We repeat the
+Jersey City Firehouse monitoring exercise to analyze 1,359 monitors that are set up to continuously sample
+air quality compliance for six different pollutants (PM , PM , O , NO , SO , and CO) throughout the
+2.5 10 3 2 2
+contiguous United States. These monitors are located in 167 counties with similar pollution alert programs.
+Importantly, our task is not to estimate the response of the average monitor, but instead to pinpoint which
+monitors are gaming the regulatory design by excluding days likely to have high pollution levels. This
+inference problem poses two challenges, which we address with large-scale inference tools (Efron, 2012).
+First, for each individual monitor, the event-study test for strategic shutdowns likely uses a small sample
+due to the limited number of alerts and/or short time series for the monitor. Consequently, traditional
+3

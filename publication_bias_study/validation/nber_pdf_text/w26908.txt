@@ -1,0 +1,133 @@
+NBER WORKING PAPER SERIES
+BANKING CRISES WITHOUT PANICS
+Matthew Baron
+Emil Verner
+Wei Xiong
+Working Paper 26908
+http://www.nber.org/papers/w26908
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+March 2020
+The authors would like to thank Daniel Dieckelmann, Md Azharul Islam, and Jamil Rahman for
+their extraordinary research assistance. Isha Agarwal, Isaac Green, William Shao, Sylvia Lu,
+The authors would like to
+Felipe Silva, Bryan Tam, Yevhenii Usenko, and the librarians at the Harvard Business
+School Historical Collections also provided valuable assistance. The authors would also like
+to thank Jason Donaldson, Sam Hanson, Mikael Juselius, Arvind Krishnamurthy, Randy
+Kroszner, Solomos Solomou, Moritz Schularick, Andrei Shleifer, Eugene White, and seminar
+participants at the Bank for International Settlements, Boston Fed, Boston University,
+Cambridge University, Columbia University, Cornell University, Danmarks Nationalbank,
+EDHEC, Erasmus University Rotterdam, Federal Reserve Board, Georgetown University,
+Harvard University, Imperial College London, London Business School, MIT, OCC, Oxford
+University, Richmond Fed, Rutgers University, University of Bonn, University of British
+Columbia, University of Maryland, University of Rochester, University of Toronto, Yale
+University, Chicago Booth financial crises conference, fall 2018 NBER Corporate Finance
+meeting, Becker-Friedman Institute junior finance/macro conference, 2018 AEA meeting, 2019
+AFA meeting, Kentucky Finance Conference, Columbia SIPA / BPI financial regulation
+conference, and the New York Fed/NYU Conference of Financial Intermediation for their
+comments and feedback. We thank Mika Vaihekoski and Frans Buelens for sharing data. A
+previous version of this paper was circulated with the title “Salient Crises, Quiet Crises.” The
+views expressed herein are those of the authors and do not necessarily reflect the views of the
+National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Matthew Baron, Emil Verner, and Wei Xiong. All rights reserved. Short sections of
+text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Banking Crises without Panics
+Matthew Baron, Emil Verner, and Wei Xiong
+NBER Working Paper No. 26908
+March 2020
+JEL No. G01,G21
+ABSTRACT
+We examine historical banking crises through the lens of bank equity declines, which cover a
+broad sample of episodes of banking distress both with and without banking panics. To do this,
+we construct a new dataset on bank equity returns and narrative information on banking panics
+for 46 countries over the period 1870-2016. We find that even in the absence of panics, large
+bank equity declines are associated with substantial credit contractions and output gaps. While
+panics can be an important amplification mechanism, our results indicate that panics are not
+necessary for banking crises to have severe economic consequences. Furthermore, panics tend to
+be preceded by large bank equity declines, suggesting that panics are the result, rather than the
+cause, of earlier bank losses. We also use bank equity returns to uncover a number of forgotten
+historical banking crises and to create a banking crisis chronology that distinguishes between
+bank equity losses and panics.
+Matthew Baron Wei Xiong
+Johnson Graduate School of Management Princeton University
+Cornell University Department of Economics
+401J Sage Hall Bendheim Center for Finance
+Ithaca, NY 14853-6201 Princeton, NJ 08450
+baron@cornell.edu and NBER
+wxiong@princeton.edu
+Emil Verner
+MIT Sloan School of Management
+100 Main Street, E62-635
+Cambridge, MA 02142-1347
+everner@mit.edu
+
+The severe economic distress faced by the world economy following the 2008 financial
+crisis has renewed interest in understanding the causes and consequences of banking crises.
+Academics and policy makers often emphasize panics among bank creditors as a key driver of
+banking crises. For example, Friedman and Schwartz (1963) argue that depositor panics played a
+central role in the severity of the Great Depression, and Bernanke (2018) attributes the unusual
+severity of the Great Recession primarily to the panics in funding and securitization markets after
+the collapse of Lehman Brothers. As highlighted by the classic theory of Diamond and Dybvig
+(1983), using short-term debt to finance long-term illiquid investments exposes even solvent banks
+to self-fulfilling panics. As a reflection of the influence of the panic-based view of banking crises,
+some have gone as far as essentially defining banking crises as banking panics (Schwartz 1987,
+Gorton 2014).
+However, there remains a debate about whether panics are so essential to banking crises.
+Another strand of research on banking crises argues that policy makers should be concerned
+primarily by bank capital crunches driven by asset losses, rather than panics per se (e.g., Calomiris
+and Mason 2003, Greenlaw et al. 2008, Admati and Hellwig 2014). This alternative view is
+motivated by an extensive literature that emphasizes bank equity as a key state variable that
+determines banks’ capacity to intermediate funds from savers to firms and households, e.g.,
+Holmstrom and Tirole (1997) and Gertler and Kiyotaki (2010). As large declines in bank equity
+tend to impair banks’ intermediation capacity, an important question is whether large bank losses
+even without panics can also translate into severe recessions. If so, large bank equity losses should
+be viewed as the central feature of banking crises.
+We address this debate by asking—are panics necessary for banking crises to have severe
+economic consequences? Our conceptual definition of a banking crisis is an episode in which the
+banking sector’s ability to intermediate funds is severely impaired. By panics, we mean episodes
+of severe and sudden withdrawals of funding by bank creditors from a significant part of the
+banking system. If the answer to this question is no, then a bank capital crunch caused by large
+loan losses or other impairment of the banking sector can lead to a sharp contraction in credit
+supply that depresses macroeconomic output, even without a panic.
+We use bank equity returns to systemically examine this question, as large bank equity
+declines capture a sample of episodes in which banks suffer large losses from the viewpoint of
+1
+
+equity investors, and thus likely capture times of bank distress. Since equity holders are the first
+to suffer losses from the occurrence of a banking crisis that damages banks’ intermediation
+capacity, we assume that conceptually a large bank equity decline is necessary for a banking crisis.
+Large bank equity declines offer several advantages as measures of aggregate banking sector
+distress relative to existing approaches to identifying historical banking crises (e.g., Reinhart and
+Rogoff 2009, Laeven and Valencia 2013). First, large declines in bank equity cover a broad sample
+of episodes of banking distress both with and without panics, as episodes without panics may be
+otherwise hard to detect due to the “quiet” nature of some such episodes of bank distress. Second,
+in contrast to the information insensitivity of credit-market instruments prior to panics, bank equity
+returns tend to be gradual and cumulative and thus may capture early signs of banking crises for
+real-time policy making. Third, the broad availability of bank equity returns across many countries
+going far back in time makes bank equity returns particularly appealing for studies of historical
+crises.
+We construct a new historical dataset of bank equity index returns for 46 advanced and
+emerging economies going back to 1870, built in large part from hand-collected individual bank
+stock price and dividend data from historical newspapers. We control for broader stock market
+conditions by also constructing new indexes for nonfinancial stocks over the same sample. Our
+dataset thus provides nearly 2,500 country-years of information on bank equities, nonfinancial
+equities, and macroeconomic variables. We also collect new information on the occurrence of
+events such as banking panics and widespread bank failures, backed by several hundred pages of
+narrative documentation.
+As many other factors beyond banking crises may also cause large fluctuations in bank
+equity returns, one cannot take for granted the empirical performance of bank equity declines in
+identifying crises and predicting subsequent economic outcomes. We first confirm that bank equity
+declines contain useful information about banking sector distress and the economy by testing at
+the country level whether bank equity index returns have predictive content for future
+macroeconomic dynamics, beyond the information contained in nonfinancial equities. We find that
+bank equity declines predict large and persistent declines in future real GDP and bank credit to the
+private sector. For example, a decline in bank equity of at least 30% predicts 3.4% lower real GDP
+and 5.7 percentage points lower bank credit-to-GDP after three years. The relation between bank
+equity returns and future output and credit growth is highly nonlinear: declines in bank equity
+2

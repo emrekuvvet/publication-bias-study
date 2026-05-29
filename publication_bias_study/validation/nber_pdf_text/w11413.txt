@@ -1,0 +1,119 @@
+NBER WORKING PAPER SERIES
+LIQUIDITY AND EXPECTED RETURNS:
+LESSONS FROM EMERGING MARKETS
+Geert Bekaert
+Campbell R. Harvey
+Christian Lundblad
+Working Paper 11413
+http://www.nber.org/papers/w11413
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2005
+We thank Dixon Lin and Sam Henkel for providing helpful research assistance. This paper has benefitted
+from discussions with and comments from Laurie Hodrick, Chuck Trzcinka, Costas Constantinou, Marco
+Pagano, Mark Seasholes, Darius Miller, Maureen O’Hara, and participants at the 2003 European Finance
+Association Meetings, 2004 UCLS CIBER Doctoral Internationalization Consortium in Finance, and the 2005
+Darden Emerging Marker Finance Conference. Send correspondences to: Campbell R. Harvey, Fuqua School
+of Business, Duke University, Durham, NC 27708. Phone: +1 919.660.7768. E-mail: cam.harvey@duke.edu.
+The views expressed herein are those of the author(s) and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+©2005 by Geert Bekaert, Campbell R. Harvey, and Christian Lundblad. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Liquidity and Expected Returns: Lessons from Emerging Markets
+Geert Bekaert, Campbell R. Harvey, Christian Lundblad
+NBER Working Paper No. 11413
+June 2005
+JEL No. G12, G14, G15, F30, F36, F02
+ABSTRACT
+Given the cross-sectional and temporal variation in their liquidity, emerging equity markets provide
+an ideal setting to examine the impact of liquidity on expected returns. Our main liquidity measure
+is a transformation of the proportion of zero daily firm returns, averaged over the month. We find
+that our liquidity measures significantly predict future returns, whereas alternative measures such
+as turnover do not. Consistent with liquidity being a priced factor, unexpected liquidity shocks are
+positively correlated with contemporaneous return shocks and negatively correlated with shocks to
+the dividend yield. We consider a simple asset pricing model with liquidity and the market portfolio
+as risk factors and transaction costs that are proportional to liquidity. The model differentiates
+between integrated and segmented countries and periods. Our results suggest that local market
+liquidity is an important driver of expected returns in emerging markets, and that the liberalization
+process has not eliminated its impact.
+Geert Bekaert Christian Lundblad
+Graduate School of Business Department of Finance
+Columbia University Kelley School of Business
+3022 Broadway, 802 Uris Hall Indiana University
+New York, NY 10027 1309 E. Tenth Street
+and NBER Bloomington, IN 47405
+gb241@columbia.edu clundbla@indiana.edu
+Campbell R. Harvey
+Fuqua School of Business
+Duke University
+Durham, NC 27708-0120
+and NBER
+cam.harvey@duke.edu
+
+1 Introduction
+It is generally acknowledged that liquidity is important for asset pricing. Illiquid assets and
+assets with high transaction costs trade at low prices relative to their expected cash (cid:13)ows,
+that is, average liquidity is priced, see, for example, Amihud and Mendelson (1986), Bren-
+nan and Subrahmanyam (1996), Datar, Naik and Radcli(cid:11)e (1998), and Chordia, Roll and
+Anshuman (2001). Liquidity also predicts future returns and liquidity shocks are positively
+correlated with return shocks (see Chordia, Roll and Subrahmanyam (2002), Jones (2002),
+and Amihud (2002)). Furthermore, if liquidity varies systematically (see Chordia, Roll, and
+Subrahmanyam (2000) and Huberman and Halka (1993)), securities with returns positively
+correlated with market liquidity should have high expected returns (see Pastor and Stam-
+baugh (2002) and Sadka (2005) for recent empirical work). Acharya and Pedersen (2002)
+develop a stylized model that leads to three di(cid:11)erent risk premia associated with changes in
+liquidity and (cid:12)nd these risk premia to be highly signi(cid:12)cant in U.S. data.1
+Surprisingly, the growing body of research on liquidity primarily focuses on the United
+States, arguably the most liquid market in the world. In contrast, our research focuses on
+markets where liquidity e(cid:11)ects may be particularly strong, namely emerging markets. In
+a 1992 survey by Chuhan, poor liquidity was mentioned as one of the main reasons that
+prevented foreign institutional investors from investing in emerging markets. If the liquidity
+premium is an important feature of these data, the focus on emerging markets should yield
+particularly powerful tests and useful independent evidence.
+Inaddition, manyemergingmarkets underwent astructuralbreakduringoursamplethat
+likely a(cid:11)ected liquidity, namely equity market liberalization.2 These liberalizations give for-
+eign investors the opportunity to invest in domestic equity securities and domestic investors
+1There is a vast theoretical literature on liquidity which starts with Kyle (1985), Glosten and Milgrom
+(1985), Easley and O’Hara (1987) and Admati and P(cid:13)eiderer (1988). Models linking liquidity to expected
+returns and other variates include Amihud and Mendelson (1986), Constantinides (1986), Grossman and
+Miller (1988), Heaton and Lucas (1996), Vayanos(1998), Lo, Mamaysky and Wang (2001), Holmstrom and
+Tirole (2002), Eisfeldt (2002), Huang (2003), and O’Hara (2003).
+2
+Bekaert, Harvey, and Lumsdaine (2001) show that many macroeconomic and (cid:12)nancial time-series show
+evidence of a break around such liberalizations.
+1
+
+the right to transact in foreign equity securities. This provides an additional veri(cid:12)cation of
+the importance of liquidity for expected returns, since, all else equal (including the price of
+liquidity risk), the importance of liquidity for expected returns should decline post liberal-
+ization. This is important, since when focusing on the U.S. alone, the (cid:12)nding of expected
+return variation due to liquidity can always be ascribed to an omitted variable correlated
+withaliquidity proxy. Afterall, thereareapriorireasons tosuspect relatively smallliquidity
+e(cid:11)ects in theU.S. The U.S.market is vastinthe number oftradedsecurities andithas avery
+diversi(cid:12)ed ownership structure, combining long-horizon investors (less subject to liquidity
+risk) with short-term investors. Hence, we may observe clientele e(cid:11)ects in portfolio choice
+that mitigate the pricing of liquidity. Such diversity in securities and ownership is lacking
+in emerging markets, potentially strengthening liquidity e(cid:11)ects. Moreover, as an important
+side-bene(cid:12)t, we can test whether improved liquidity contributes to the decline in the cost of
+capital post-liberalization that is documented by, for example, Bekaert and Harvey (2000).
+There are some serious obstacles to our analysis. First, the data in emerging markets are
+of relatively poor quality, and detailed transaction data (bid-ask spreads, for example) are
+not widely available. For example, Domowitz, Glen, and Madhavan (2001) explore trading
+costsandliquidity inaninternationalcontextformanycountries, buttheyareforcedtofocus
+on trade level data, provided by Elkins/McSherry Inc., over a two year period. Similarly,
+Jain (2002) explores the relation between equity market trading design and liquidity across
+various countries, but uses a hand collected time-series of bid-ask spreads spanning only
+several months. Second, from the perspective of traditional asset pricing empirics, we have
+relatively short time-series samples making pure time-series country-by-country tests less
+useful, especially given the volatility of emerging market returns.
+To overcome the (cid:12)rst problem, we use liquidity measures that rely on the incidence of
+observed zero daily returns in these markets. Lesmond, Ogden and Trzcinka (1999) argue
+that if the value of an information signal is insu(cid:14)cient to outweigh the costs associated
+with transacting, then market participants will elect not to trade, resulting in an observed
+zero return. The advantage of this measure is that it requires only a time-series of daily
+equity returns. Given the paucity of time-series data on preferred measures such as bid-
+ask spreads or bona-(cid:12)de order (cid:13)ow (following Kyle (1985)), this measure is an attractive
+2

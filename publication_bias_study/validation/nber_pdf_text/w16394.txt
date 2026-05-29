@@ -1,0 +1,124 @@
+NBER WORKING PAPER SERIES
+LIQUIDITY RISK OF CORPORATE BOND RETURNS:
+A CONDITIONAL APPROACH
+Viral V. Acharya
+Yakov Amihud
+Sreedhar T. Bharath
+Working Paper 16394
+http://www.nber.org/papers/w16394
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2010
+Revised August 2014
+Published in the Journal of Financial Economics 110(2), 2013, pp. 358-386. We thank an anonymous
+referee for useful comments. We thank Jason Sturgess and Yili Zhang for diligent research assistance.
+We are grateful to Banque de France grant for this study, and to Ruslan Goyenko for sharing with
+us his illiquidity series for the US treasuries. We are grateful for comments from Mark Seasholes and
+seminar participants at Moody’s KMV Annual Credit Risk conference (2007) hosted at NYU Stern,
+IRC risk management conference in Florence (2008), Arizona State University, Hong Kong University
+of Science and Technology, McGill, Tel Aviv University, University of Notre Dame, Barclays Global
+Investors (London), Southern Methodist University, Nanyang Technological University of Singapore,
+Penn State University, University of Houston, University of Texas at Dallas, University of Virginia
+(Darden), and University of Toronto (Rotman). This paper won the 2012 Crowell Memorial Prize
+(second place). All errors remain our own. The views expressed herein are those of the authors and
+do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2010 by Viral V. Acharya, Yakov Amihud, and Sreedhar T. Bharath. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission provided
+that full credit, including © notice, is given to the source.
+
+Liquidity Risk of Corporate Bond Returns: A Conditional Approach
+Viral V. Acharya, Yakov Amihud, and Sreedhar T. Bharath
+NBER Working Paper No. 16394
+September 2010, Revised August 2014
+JEL No. G12,G13,G32,G33
+ABSTRACT
+We study the exposure of the US corporate bond returns to liquidity shocks of stocks and Treasury
+bonds over the period 1973 - 2007 in a regime - switching model. In one regime, liquidity shocks have
+mostly insignificant effects on bond prices, whereas in another regime, a rise in illiquidity produces
+significant but conflicting effects: Prices of investment-grade bonds rise while prices of speculative-grade
+(junk) bonds fall substantially (relative to the market). Relating the probability of these regimes to
+macroeconomic conditions we find that the second regime can be predicted by economic conditions
+that are characterized as “stress.” These effects, which are robust to controlling for other systematic
+risks (term and default), suggest the existence of time-varying liquidity risk of corporate bond returns
+conditional on episodes of flight to liquidity. Our model can predict the out-of-sample bond returns
+for the stress years 2008 - 2009. We find a similar pattern for stocks classified by high or low book-to-
+market ratio, where again, liquidity shocks play a special role in periods characterized by adverse
+economic conditions.
+Viral V. Acharya Sreedhar T. Bharath
+Stern School of Business Department of Finance
+New York University University of Michigan
+44 West 4th Street, Suite 9-84 Room D7606 ER
+New York, NY 10012 701 Tappan Street
+and CEPR Ann Arbor, MI 48109-1234
+and also NBER sbharath@asu.edu
+vacharya@stern.nyu.edu
+Yakov Amihud
+New York University
+Stern School of Business
+44 West Fourth Street, Suite 9-190
+New York, NY 10012
+yamihud@stern.nyu.edu
+
+1. Introduction
+Thispapershowsthatthepricingofliquidityriskinthebondmarketisconditional onthe
+state of the economy, with liquidity risk becoming more important in times of financial and
+economic distress. Using a regime-switching model, we find a significant (absolute) increase
+in the exposure (“beta”) of corporate bond returns to liquidity shocks in stocks and Treasury
+bonds, after controlling for term and default risks. We provide an econometric time-series
+model that predicts the likelihood of regime in which liquidity matters more for asset pricing,
+show that the likelihood is greater in times of macroeconomic and financial distress, and use
+the prediction to generate a conditional forecast of bond returns. We further find that stocks
+with high book-to-market ratio, which reflects persistent distressed performance and lower
+liquidity, also exhibit an increase in their (absolute) liquidity betas in times of economic
+distress.
+Liquidityshocksaffectrealizedreturnsbecauseexpectedliquidityaffectsexpectedreturns
+(AmihudandMendelson,1986,1991). Giventhepersistenceofilliquidity,apositiveilliquidity
+shock raises future expected illiquidity and expected return which in turn lowers prices. This
+usually generates a negative liquidity beta.1 These relations between illiquidity shocks and
+returns have been documented for stocks by Amihud (2002), Pastor and Stambaugh (2003),
+Acharya and Pedersen (2005), and Sadka (2006), and for corporate bonds by de Jong and
+Driessen (2007), and Lin, Wang, and Wu (2011). This paper contributes to these studies by
+showing that the impact of liquidity shocks on asset prices is conditional, being significantly
+stronger in adverse economic times.
+The relation between liquidity shocks and adverse economic and financial episodes has
+been noted by Acharya and Pedersen (2005).2 In times of adverse economic and financial
+conditions, the greater demand for liquidity and the rise in its value reduces asset prices
+1This holds under reasonable assumptions on the asset cashflows; see a formal model in Acharya and
+Pedersen (2005).
+2Over the period 1963 to 1999, Acharya and Pedersen (2005) identify these shocks to be 5/1970 (Penn
+Central commercial paper crisis), 11/1973 (oil crisis), 10/1987 (stock market crash), 8/1990 (Iraqi invasion
+of Kuwait), 4 - 12/1997 (Asian crisis), and 6 - 10/1998 (Russian default, LTCM crisis).
+1
+
+by more than usual, and this applies particularly for the less liquid assets. Yet, these
+episodes may be coupled by a flight to liquidity, by which securities with higher liquidity
+become relatively more valuable. Then, unexpected rise in illiquidity may raise, rather
+than depress, the prices of assets that provide greater liquidity in adverse economic times
+relative to the prices of less liquid assets. This is indeed what we find for investment-grade
+(IG) corporate bonds, which are known to be more liquid than speculative (junk) bonds.
+Analogously, we also find that in times of economic distress, the effect of adverse liquidity
+shocks is positive (relative to the market) for stocks with low book-to-market ratio, which
+have stronger sustained profitability and higher liquidity, whereas the effect is negative for
+stocks with high book-to-market ratio.
+Formally, we estimate a regression model of bond returns on four pricing factors—term
+spread returns, default spread returns (or the bond market excess returns), and liquidity
+shocksonstocksandTreasurybonds. Westudytheassociationbetweenchangesincorporate
+bond price shocks and changes in the illiquidity of stocks and Treasury bonds. We show
+that this response varies over time, switching between two regimes which we characterize as
+“normal”and“stress.”EmployingHamilton’s(1989)methodology,wefirstidentifystatistically
+the two regimes between which there are variations in the liquidity betas as well as the betas
+of the term risk and default risk. We then show that these two regimes can be predicted by
+macroeconomic and financial variables. The regime which we call “stress” is associated with
+adverse macroeconomic conditions such as recessed economic activity and adverse financial
+market conditions such as negative stock market returns, heightened volatility, and shrinking
+balance-sheets of financial intermediaries.
+Employing our economic prediction model of being in the normal or in the stress regime,
+we provide an out-of-sample forecast of corporate bond returns for the years 2008 - 2009.
+In regressions of monthly realized returns on predicted returns that are conditional on the
+pricing factors, R2 is 76% and 77% for junk and IG bonds, respectively, and the coefficients
+indicate unbiased prediction: the slope coefficients are close to one and the intercepts are
+2

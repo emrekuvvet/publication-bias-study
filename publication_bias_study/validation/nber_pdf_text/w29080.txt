@@ -1,0 +1,116 @@
+NBER WORKING PAPER SERIES
+CONSUMER RESPONSES TO FIRMS’ VOLUNTARY DISCLOSURE OF INFORMATION:
+EVIDENCE FROM CALORIE LABELING BY STARBUCKS
+Rosemary Avery
+John Cawley
+Julia Eddelbuettel
+Matthew D. Eisenberg
+Charlie Mann
+Alan D. Mathios
+Working Paper 29080
+http://www.nber.org/papers/w29080
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2021
+The views expressed herein are those of the authors and do not necessarily reflect the views of the
+National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2021 by Rosemary Avery, John Cawley, Julia Eddelbuettel, Matthew D. Eisenberg, Charlie
+Mann, and Alan D. Mathios. All rights reserved. Short sections of text, not to exceed two
+paragraphs, may be quoted without explicit permission provided that full credit, including ©
+notice, is given to the source.
+
+Consumer Responses to Firms’ Voluntary Disclosure of Information: Evidence from Calorie
+Labeling by Starbucks
+Rosemary Avery, John Cawley, Julia Eddelbuettel, Matthew D. Eisenberg, Charlie Mann,
+and Alan D. Mathios
+NBER Working Paper No. 29080
+July 2021
+JEL No. D22,D8,I12,L2,L83
+ABSTRACT
+This paper estimates the impact on consumer behavior of a firm’s voluntary disclosure of
+information. Specifically, we study the impact of Starbucks’ disclosure of calorie information on
+its menu boards in June 2013. Using data on over 250,000 consumers’ visits to specific restaurant
+chains, we estimate difference-in-difference models that compare the change in the probability
+that consumers recently visited Starbucks to the change in the probability that they recently
+visited a similar chain that did not voluntarily disclose: Dunkin Donuts. Estimates from
+difference-in-differences models indicate that we cannot reject the null hypothesis that Starbucks’
+disclosure of calorie information had no impact on the probability that consumers patronized
+Starbucks in the past month. However, we find evidence of a transitory negative impact on the
+probability of visits the first year after disclosure, and evidence that disclosure reduced the
+probability of visits by men. These results are useful for understanding how consumers respond to
+the voluntary disclosure of information, a decision faced by many firms.
+Rosemary Avery Matthew D. Eisenberg
+2232 MVR Hall, Dept of PAM Johns Hopkins University
+Cornell University Bloomberg School of Public Health
+Ithaca NY 14850 eisenberg@jhu.edu
+rja7@cornell.edu
+Charlie Mann
+John Cawley Cornell University
+2312 MVR Hall College of Human Ecology
+Department of Policy Analysis Martha Van Rensselaer Hall
+and Management Ithaca, NY 14853
+and Department of Economics ccm235@cornell.edu
+Cornell University
+Ithaca, NY 14853 Alan D. Mathios
+and NBER MVR Hall
+JHC38@cornell.edu Cornell University
+Ithaca NY 14853
+Julia Eddelbuettel adm5@cornell.edu
+2232 MVR Hall
+Cornell University
+Ithaca, NY 14853
+jce66@cornell.edu
+
+Introduction
+Economists have long studied how the disclosure of information affects consumer
+choices (e.g., Stigler, 1961; Arrow, 1963; Pauly, 1968; Akerlof, 1970; Spence, 1973). There is
+particular interest in how consumers respond to new information concerning health (e.g.,
+Cawley, Susskind, and Willage, 2020; Kim et al., 2019; Bedard and Kuhn, 2015; Handel and
+Kolstad, 2015; Prina and Royer, 2014; Kolstad, 2013; Bollinger et al., 2011; Dupas, 2011;
+Wisdom et al., 2010; Pope, 2009; Jin and Leslie, 2009; Variyam, 2008; Dranove et al., 2003;
+Mathios, 2000).
+One area of particular interest is how consumers respond when restaurants disclose
+calorie and other nutrition information. This is due in part to the tripling in the prevalence of
+obesity in the U.S., from 13.4% in 1960-62 to 42.4% in 2017-18 (Fryar, Carroll, and Ogden,
+2016; Hales et al., 2020). There are many proposed explanations for the rise in obesity (Cawley,
+2015), and one possible contributor is increased consumption of restaurant food. The percentage
+of calories that Americans consume as food away from home has nearly doubled, from 17.8% in
+1977-78 to 33.7% in 2013-14 (Guthrie et al., 2018). This is relevant because consumers tend to
+substantially underestimate the calorie content of restaurant food (see, e.g., Cawley, Willage, and
+Susskind, 2021; Block et al., 2013; Backstrand et al, 1997) and thus may end up consuming more
+than they would if they had perfect information. To address this information gap, organizations
+including the American Heart Association (2009) and the Institute of Medicine (2005, 2012)
+have recommended listing calorie counts on restaurant menus.
+Between 2008 and 2018, calorie labels on restaurant menus in the U.S. went from
+virtually nonexistent to ubiquitous, due to three factors. First, certain cities and counties passed
+laws requiring chain restaurants in their jurisdiction to disclose calorie information; this occurred
+2
+
+in, e.g., New York City (2008), King County, Washington, which includes Seattle (2009), and
+Philadelphia (2010); see Courtemanche et al. (2020). Second, some restaurant chains decided to
+voluntarily post calorie labels, including: Panera (2010); Yum Brands (2011), which includes
+Pizza Hut, KFC, and Taco Bell; McDonalds (2012); Chik-fil-A (2013); and Starbucks (2013).
+Third, a national menu label law that was included in the Affordable Care Act took effect on
+May 7, 2018. After that date, all chain restaurants (20 or more locations operating under the
+same name) in the U.S. were required to post calorie counts on their menus and/or menu boards.
+In this paper, we study the consequences of voluntary disclosure of information by a firm.
+In such a case, the disclosing firm continues to compete with local rivals which have not
+disclosed, which makes it a notably different situation than a firm disclosing in response to a
+legal requirement that also applies to its competitors. For a firm to voluntarily disclose, it would
+have to perceive that disclosure is in its interest. Firms selling high-quality goods might choose
+to disclose because they expect that it would lead to higher sales. Under certain conditions such
+as costless disclosure, complete unraveling may occur, in which the firms with the highest-
+quality goods disclose their information, putting pressure on firms with the next-best quality
+goods to also disclose, lest consumers assume that they have the worst-quality goods, until all
+firms have disclosed except those of the very lowest quality (Viscusi, 1978; Grossman and Hart,
+1980; Grossman, 1981). In practice, however, unraveling tends to be incomplete, meaning that a
+substantial fraction of firms, which are selling goods of varying quality, do not voluntarily
+disclose (Jin et al., 2021; Bederson et al., 2018; Luca and Smith, 2015; Mathios, 2000).
+A firm might choose to voluntarily disclose because it lowers their costs; e.g. a restaurant
+chain facing some local disclosure laws might decide to disclose everywhere so it can use a
+single set of menus and menu boards nationwide. In the case of menus labels, firms knew from
+3

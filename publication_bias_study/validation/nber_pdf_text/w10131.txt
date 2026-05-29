@@ -1,0 +1,119 @@
+NBER WORKING PAPER SERIES
+THE PRICE IS (ALMOST) RIGHT
+Randolph B. Cohen
+Christopher Polk
+Tuomo Vuolteenaho
+Working Paper 10131
+http://www.nber.org/papers/w10131
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2003
+An earlier draft of this paper was circulated under the title “Does Risk or Mispricing Explain the Cross-
+section of Stock Prices?” Some of the ideas in this paper were first presented as Section V of the paper titled
+“The Value Spread” at the NBER 2000 Summer Institute. We would like to thank Ken French for providing
+us with some of the data used in this study. We are grateful to Gregor Andrade, John Campbell, John
+Cochrane, Josh Coval, Kent Daniel (discussant), Eugene Fama, Wayne Ferson (discussant), Kenneth French,
+John Heaton, Matti Keloharju, Owen Lamont, Rafael LaPorta, Andre Perold, Antti Petäjistö, Vesa Puttonen,
+William Schwert, Jay Shanken, Andrei Shleifer, Jeremy Stein, and Sheridan Titman (discussant) for their
+comments and suggestions. We would also like to thank seminar participants at the American Finance
+Association 2003 meeting, Chicago Quantitative Alliance Spring 2002 meeting, European Finance
+Association 2002 meeting, Harvard University Economics Department, Helsinki School of Economics and
+Business Administration, Kellogg School of Management (Northwestern), NBER Asset Pricing Program
+Meeting, Simon School (Rochester), Stanford Graduate School of Business, Texas Finance Festival, and Tuck
+School (Dartmouth). The views expressed herein are those of the authors and not necessarily those of the
+National Bureau of Economic Research.
+©2003 by Randolph B. Cohen, Christopher Polk, and Tuomo Vuolteenaho. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+The Price Is (Almost) Right
+Randolph B. Cohen, Christopher Polk, and Tuomo Vuolteenaho
+NBER Working Paper No. 10131
+December 2003
+JEL No. G120, G140
+ABSTRACT
+Most previous research tests market efficiency and asset pricing models using average abnormal
+trading profits on dynamic trading strategies, and typically rejects the joint hypothesis. In contrast,
+we measure the ability of a simple risk model and the efficient-market hypothesis to explain the
+level of stock prices. First, we find that cash-flow betas (measured by regressing firms' earnings on
+the market's earnings) explain the prices of value and growth stocks well, with a plausible premium.
+Second, we use a present-value model to decompose the cross-sectional variance of firms' price-to-
+book ratios into two components due to risk-adjusted fundamental value and mispricing. When we
+allow the discount rates to vary with cash-flow betas, the variance share of mispricing is negligible.
+Randolph B. Cohen
+Harvard Business School
+Boston, MA 02163
+rcohen@hbs.edu
+Christopher Polk
+Kellogg School of Management
+Northwestern University
+Evanston, IL 60208
+c-polk@kellogg.northwestern.edu
+Tuomo Vuolteenaho
+Harvard University
+Department of Economics
+Littauer Center 312
+1875 Cambridge Street
+Cambridge, MA 02138-3001
+and NBER
+t_vuolteenaho@harvard.edu
+
+Most previous research uses average abnormal trading profits on dynamic trading strategies to test
+market efficiency and asset pricing models. The joint hypothesis of the capital asset pricing model (CAPM)
+and market efficiency is typically rejected by these tests. The economic significance of these rejections is
+usually evaluated based on Sharpe ratios (average return over return standard deviation) of zero-investment
+strategies that do not expose the investor to systematic risks. The discovery of economically high Sharpe
+ratios has lead many to reject the CAPM and efficient-market hypothesis (EMH) as a good approximate
+description of the stock market.1
+We argue that asset pricing models and market efficiency should be evaluated by their ability to
+explain stock-price levels, not by their ability to explain the average returns on frequently-rebalanced
+dynamic trading strategies. The price-level criterion is superior to the Sharpe-ratio criterion for the
+following reasons. First, although available Sharpe ratios are clearly the main object of interest to a
+professional money manager, the level of price is more relevant to most other economic decision makers.
+For example, a corporate manager making a large long-term investment decision cannot engage in a dynamic
+trading strategy of investing or divesting a small fraction every month, depending on stock-market
+conditions. Thus, if the price is approximately “right,” the impact of the stock market to his/her investment
+decisions is also likely to be consistent with market efficiency, and the high available Sharpe ratios only an
+interesting side show.
+Second, tests of market efficiency that are based on trading profits typically use high-frequency return
+covariances or betas to adjust for risk. Although such a practice is consistent with jointly testing a sharp null
+1 Fama (1970, 1991) surveys the empirical literature on testing market efficiency. Daniel, Hirshleifer, and
+Subrahmanyam (1998) survey the recent evidence on trading strategies that would have produced abnormal profits and
+high Sharpe ratios. Hansen and Jagannathan (1991) show that in a frictionless rational-expectations model, available
+Sharpe ratios are related to the variability of marginal utility. MacKinlay (1995) argues that the Sharpe ratios of some
+trading strategies, if taken at face value, are too large to be explained by a rational multifactor model. Shleifer (2000, p.
+8) characterizes the impact of this evidence on the views of finance academicians: “We have learned a lot, and what we
+think now is quite a bit different from what we thought we knew in 1978. Among the many changes of views, the
+increased skepticism about market efficiency stands out.”
+
+hypothesis of an asset pricing model and market efficiency, it is less appropriate for measuring the impact of
+mispricing on average returns or prices. If markets are even slightly inefficient, mispricing may contaminate
+not only average returns but also measures of risk, as argued by Brainard, Shapiro, and Shoven (1991). The
+price-level tests we advocate connect stock prices to covariances or betas of cash flows. Regressing prices
+on cash-flow betas is a cleaner way to measure a model’s explanatory power than regressing average returns
+on return betas, because the cash-flow betas are less affected by mispricing.
+We test empirically the ability of the CAPM and EMH to explain the stock-price levels of low-price-
+to-book “value” stocks and high-price-to-book “growth” stocks. Our empirical tests concentrate on price-to-
+book-sorted portfolios for the following reasons. First, the average returns generated by value-minus-growth
+strategies (that buy value and short growth stocks) cannot be explained by CAPM betas measured from high-
+frequency returns (Rosenberg, Reid, and Lanstein, 1985; Fama and French, 1992; and others). Furthermore,
+the pricing errors are highly economically significant when the Sharpe-ratio criterion is used as the metric of
+economic significance (MacKinlay, 1995). Second, Fama and French (1995) and Cohen, Polk, and
+Vuolteenaho (2002) show that a firm’s price-to-book ratio is a persistent variable that forecasts the returns
+on the firm’s stock far in the future and that the return predictability related to price-to-book ratios has a
+large price-level effect. Thus, price-to-book-sorted portfolios have the potential of being significantly
+mispriced by the price-level criterion as well.
+Our empirical results suggest that mispricing relative to the CAPM is not an important factor in
+determining the prices of value and growth stocks. Cash-flow betas (measured by regressing a firm’s
+profitability on the market’s profitability) essentially explain the prices of and long-horizon returns on price-
+to-book-sorted portfolios, with a premium that is high but not implausible (8-12 percent per annum).
+Furthermore, the premium on cash-flow beta remains high when we include beta-sorted or size-sorted
+portfolios in the set of test assets, suggesting that the cash-flow beta is not merely proxying for the price-to-
+book characteristic.
+In addition to traditional regressions of prices and long-horizon average returns on betas, we specify a
+stochastic-discount-factor present-value model that links firms’ current price-to-book ratios to expected
+future cash flows and to covariances of future cash flows with the stochastic discount factor. If we restrict
+discount rates to be constant across firms, our present-value model allocates more than 25 percent of the
+cross-sectional price-to-book variance to mispricing. However, if we allow the discount rates to vary as
+2

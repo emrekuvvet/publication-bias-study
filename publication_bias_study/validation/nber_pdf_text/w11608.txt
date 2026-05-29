@@ -1,0 +1,105 @@
+NBER WORKING PAPER SERIES
+ESTIMATING BANK TRADING RISK:
+A FACTOR MODEL APPROACH
+James O’Brien
+Jeremy Berkowitz
+Working Paper 11608
+http://www.nber.org/papers/w11608
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2005
+Prepared for the NBER Conference on the Risks of Financial Institutions. We are grateful for the substantial
+help of Mathew Chesnes in developing programs and compiling data bases and to Anthony Cho for valuable
+research assistance. For helpful suggestions, we would like to thank Andy Lo, Sean Campbell, Paul Kupiec
+(our discussant), Ken Abbott (our discussant), Peter Christoffersen, Mark Flannery, Bill English, Egon
+Zakrajsek, Alexandre Baptista, Andrew Karolyi and the editors, Mark Carey and Rene Stulz. The views
+expressed are solely those of the authors. The views expressed herein are those of the author(s) and do not
+necessarily reflect the views of the National Bureau of Economic Research.
+©2005 by James O’Brien and Jeremy Berkowitz. All rights reserved. Short sections of text, not to exceed
+two paragraphs, may be quoted without explicit permission provided that full credit, including © notice, is
+given to the source.
+
+Estimating Bank Trading Risk: A Factor Model Approach
+James O’Brien and Jeremy Berkowitz
+NBER Working Paper No. 11608
+September 2005
+JEL No. G21
+ABSTRACT
+Risk in bank trading portfolios and its management are potentially important to the banks’ soundness
+and to the functioning of securities and derivatives markets. In this paper, proprietary daily trading
+revenues of 6 large dealer banks are used to study the bank dealers’ market risks using a market
+factor model approach. Dealers’ exposures to exchange rate, interest rate, equity, and credit market
+factors are estimated. A factor model framework for variable exposures is presented and two
+modeling approaches are used: a random coefficient model and rolling factor regressions. The results
+indicate small average market exposures with significant but relatively moderate variation in
+exposures over time. Except for interest rates, there is heterogeneity in market exposures across the
+dealers. For interest rates, the dealers have small average long exposures and exposures vary
+inversely with the level of rates. Implications for aggregate bank dealer risk and market stability
+issues are discussed.
+James O’Brien
+Division of Research and Statistics
+Board of Governors of the Federal Reserve
+System
+Washington, DC 20551
+jmobrien@frb.org
+Jeremy Berkowitz
+Department of Finance
+University of Houston
+334 Melcher Hall
+Houston, TX 77204-6021
+jberkowitz@uh.edu
+
+Estimating Bank Trading Risk: A Factor Model Approach
+1. Introduction
+Bank dealers play a central role in securities and derivatives markets and are active
+traders in their own right. Their trading risks and risk management are important to the
+banks’ soundness and the functioning of securities and derivatives markets. In this paper, we
+use proprietary daily trading revenues of 6 large bank dealers to study their market risks
+using a market factor model approach. We estimate the bank dealers’ exposures to exchange
+rate, interest rate, equity, and credit market factors.
+Traditionally, the safety and soundness of the banking system has been the principal
+focus of interest in bank dealer risk. Important for this purpose is the level of market risk
+taken by bank dealers and commonality in their risk exposures. In recent literature, the focus
+has been extended to the effects of bank dealer and other trading institutions’ risk
+management policies on market stability. In using risk measures based on market volatility
+and in particular Value-at-Risk (VaR), it has been argued that institutions’ demands for risky
+assets will move together, which will lead to exaggerated price movements and market
+instability. When market volatility is low, institutions will increase demands to hold risky
+assets, putting upward pressure on prices and, when market volatility becomes high,
+institutions will attempt to reduce their positions in risky assets, putting downward pressure
+on prices. This behavior is said to have exaggerated market instability in the late summer
+and fall of 1998 following the Russian ruble devaluation and debt moratorium and the near
+failure of LTCM.1
+1 For dynamic analyses of market effects of a VaR constraint, see Basak and Shapiro (2001), Danielsson, Shin,
+and Zigrand (2002), Persaud (2002), and Morris and Shin (1999). For different analyses of the risk-taking
+incentives and portfolio choice effects of a VaR constraint, see Basak and Shapiro (2001), Cuoco and Liu
+(2003), and Alexander and Baptista (2004).
+2
+
+Despite the strong interest, there has been little study of bank dealer risks and risk
+management and there appears to be little formal evidence on the size, variation, or
+commonality in dealer risks. In significant measure, this owes to limited public information
+on dealer positions and income which limits the study of dealer risks and risk management.
+Individual banks report on trading positions and revenues only quarterly and reporting is
+limited to securities and derivatives in broad market categories. While there is weekly
+reporting, it includes security positions and transactions but only limited information on
+derivatives and data is reported only for aggregated primary (bank and non-bank) dealers.2
+Bank VaRs, which forecast the maximum loss on the trading portfolio with a given
+confidence, provide a direct measure of market risk. However VaRs do not reveal the
+dealers’ underlying market exposures or their size. Berkowitz and O’Brien (2002) also found
+the risk forecast performance of the daily VaRs for the banks examined in this study to be
+weak. Further, there was no common pattern in the correlation of VaRs across the banks.
+Here we apply a factor model to the daily trading revenues of 6 large bank dealers to
+estimate their market risk exposures. Factor models have long been used to study portfolio
+and firm market risks (e.g., Chen, Roll and Ross (1986), Flannery and James (1984)). Closer
+to our objectives is their application to mutual fund and hedge fund returns to characterize
+the market risks in the funds’ portfolios (e.g., Sharpe (1992), Fung and Hsieh (1997)).
+With daily trading revenues, we can study the effects of daily market price moves on
+the banks’ trading portfolios. Also, the sample sizes are large, about 1200 daily observations
+per bank. However, the trading revenue data is subject to significant limitations as well.
+2 Jorion (2005) analyzes bank dealer trading risks and VaRs and implications for systemic market risk using
+quarterly reported trading revenues and VaR-based market risk capital requirements. Adrian and Fleming
+(2005) provide a description of data collected and reported for primary securities dealers and present some
+evidence on dealer risk-taking based on dealer financing data.
+3

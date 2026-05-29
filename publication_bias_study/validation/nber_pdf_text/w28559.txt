@@ -1,0 +1,122 @@
+NBER WORKING PAPER SERIES
+WHY DID BANK STOCKS CRASH DURING COVID-19?
+Viral V. Acharya
+Robert F. Engle III
+Maximilian Jager
+Sascha Steffen
+Working Paper 28559
+http://www.nber.org/papers/w28559
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+March 2021, Revised September 2023
+We thank Jennie Bai, Tobias Berg, Allen Berger, Christa Bouwman, Gabriel Chodorow-Reich,
+Olivier Darmouni, Darrell Duffie, Ruediger Fahlenbrach, Anna Kovner, Kevin Raghet, Rafael
+Repullo, Phil Strahan, Daniel Streitz, René Stulz, Anjan Thakor, Josef Zechner and participants at
+the 2020 Federal Reserve Stress Testing Conference and seminar participants at the Annual
+Columbia SIPA/BPI Bank Regulation Research Conference, Banco de Portugal, Bank of
+England, SFS Cavalcade 2022, CAF, EFA 2021, Federal Reserve Bank of Cleveland, NYU Stern
+Finance, RIDGE Workshop on Financial Stability, University of Southern Denmark, University
+of Durham, Villanova Webinars in Financial Intermediation, the Volatility and Risk Institute,
+World Bank, WU Vienna, for comments and suggestions and Sophie-Dorothee Rothermund and
+Christian Schmidt for excellent research assistance. Robert Engle would like to thank NSF
+2018923, Norges Bank project “Financial Approach to Climate Risk” and Interamerican
+Development Bank Contract #C- RG-T3555-P001 for research support to the Volatility and Risk
+Institute of NYU Stern. The views expressed herein are those of the authors and do not
+necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2021 by Viral V. Acharya, Robert F. Engle III, Maximilian Jager, and Sascha Steffen. All
+rights reserved. Short sections of text, not to exceed two paragraphs, may be quoted without
+explicit permission provided that full credit, including © notice, is given to the source.
+
+Why Did Bank Stocks Crash During COVID-19?
+Viral V. Acharya, Robert F. Engle III, Maximilian Jager, and Sascha Steffen
+NBER Working Paper No. 28559
+March 2021, Revised September 2023
+JEL No. G01,G21
+ABSTRACT
+A two-sided "credit-line channel" – relating to drawdowns and repayments – explains the severe
+drop and partial subsequent recovery in bank stock prices during the COVID-19 pandemic. Banks
+with greater exposure to undrawn credit lines saw larger stock price declines but performed better
+before the pandemic and after the policy interventions. Despite deposit inflows, high drawdowns
+led to reduced bank lending, suggestive of capital encumbrance upon drawdowns. Repayments of
+credit lines unencumbered capital which explains the stock price recovery starting Q2 2020. Bank
+provision of credit lines resembles writing deep out-of-the-money put options on aggregate risk,
+and we propose how to incorporate this feature into bank capital stress tests.
+Viral V. Acharya Maximilian Jager
+Stern School of Business Frankfurt School of Finance & Management
+New York University Adickesallee 32-34
+44 West 4th Street, Suite 9-65 60322 Frankfurt am Main
+New York, NY 10012 Germany
+and CEPR m.jager@fs.de
+and also NBER
+vacharya@stern.nyu.edu Sascha Steffen
+Frankfurt School of Finance & Management
+Robert F. Engle III Adickesallee 32-34
+Department of Finance, Stern School of Business 60322 Frankfurt
+New York University, Salomon Center Germany
+44 West 4th Street, Suite 9-160 s.steffen@fs.de
+New York, NY 10012-1126
+and NBER
+rengle@stern.nyu.edu
+
+1. Introduction
+Since the global financial crisis (GFC) of 2008--09, banks have greatly expanded their liquidity
+provision through credit lines to the United States (U.S.) non-financial sector. Panel A of Figure
+1 shows that bank credit lines for the U.S. publicly listed firms increased from 0.7% of GDP in
+2009 to 5.7% of GDP in 2019 leading to a substantial build-up of drawdown risk on bank
+balance-sheets. This risk materialized in March 2020 amid the outbreak of the COVID-19
+pandemic and subsequent government-imposed lockdowns. Firms’ cash flows dropped, in
+some cases by as much as 100%, while operating and financial leverage remained sticky,
+causing bond markets to freeze. As a consequence, U.S. firms with pre-arranged credit lines
+from banks drew down their undrawn facilities with a far greater intensity than in past
+recessions (Panel B of Figure 1), specifically the prospective fallen angels or BBB-rated and
+junk-rated firms (Panel C of Figure 1).
+[Figure 1 about here]
+Recent data show that firms benefited from having such access to pre-arranged credit lines
+during the pandemic when capital market funding froze (e.g., Acharya and Steffen, 2020a;
+Chodorow-Reich et al., 2022; Greenwald et al., 2023).1 On the flip side, however, banks faced
+unprecedented aggregate risk in the form of a correlated demand for credit-line drawdowns; an
+important but not well-appreciated consequence is that banks’ share prices crashed and
+persistently underperformed those of non-financial firms as well as non-bank financial firms
+(Panel D of Figure 1).
+In this paper, we investigate causes and consequences of this crash of bank stocks during
+the COVID-19 pandemic and highlight a central role played by banks’ credit-line business.
+1 Within three weeks, public firms drew down more than USD 300bn, with drawdowns particularly concentrated
+among riskier BBB-rated and non-investment-grade firms. For instance, Ford Motor Company drew down its
+credit lines in March 2020, withdrawing USD 15.4bn. With USD 20bn in cash, credit lines significantly impacted
+its liquidity. Originally, Ford paid 15bps for undrawn credits and 125bps for drawn credits. However, after a
+downgrade to non-investment grade, these fees increased substantially by 67% and 40% respectively. Li et al.
+(2020) show – using FDIC’s Call Report data which includes drawdowns by private firms – that total drawdowns
+amounted to more than USD 500bn.
+1
+
+Specifically, we ask what are the possible transmission channels through which the drawdowns
+affected bank stock returns and ultimately banks’ intermediation functions for the real
+economy? What was the role of credit line repayments for the recovery of bank stock prices in
+the second quarter of 2020 following the stark decline in 2020Q1? Which aspects of these
+channels during the COVID-19 episode are different compared to prior stress episodes such as
+the GFC? Lastly, we ask how bank regulation can incorporate the relevant channels of
+transmission from bank credit lines to financial fragility to safeguard against the attendant risks
+in future?
+At the core of our analysis is a new and comprehensive measure of the balance-sheet
+liquidity risk of banks defined as undrawn commitments plus wholesale finance minus cash or
+cash equivalents (all relative to assets). Our null hypothesis is that investors price liquidity risk
+according to their expectations regarding the possible credit line drawdowns during crises.
+However, these expectations might naturally deviate from realized drawdowns in times of
+stress. At the beginning of the COVID-19 pandemic, capital markets froze increasing rollover
+risk for all, but particularly for riskier, firms. Firms responded by drawing down credit lines
+with significantly higher intensity and magnitude compared to the global financial crisis (GFC)
+2007-2008. For example, the average drawdown rate in Q1 2020 was 37% and in Q4 2008 29%.
+The cross-section of stock-price declines of banks as a function of their ex-ante exposure to
+drawdown risk (during COVID) can therefore be intrepreted as reflecting the difference
+between expected and realized drawdown risks.
+Consistent with this hypothesis, we find that our measure of the liquidity risk of banks
+helps understand the decline of bank stock prices, especially during the first phase of the
+pandemic from January 1, 2020 until March 3, 2020, i.e., before decisive monetary and fiscal
+support measures were introduced.2 A one-standard-deviation increase in liquidity risk
+2 See in particular Kovner and Martin (2020) on the range of special facilities set up by the Federal Reserve (Fed)
+to provide liquidity to a range of fixed-income markets.
+2

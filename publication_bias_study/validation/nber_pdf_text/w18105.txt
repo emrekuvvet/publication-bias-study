@@ -1,0 +1,113 @@
+NBER WORKING PAPER SERIES
+BANKRUPTCY AS IMPLICIT HEALTH INSURANCE
+Neale Mahoney
+Working Paper 18105
+http://www.nber.org/papers/w18105
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2012
+I thank my advisers Liran Einav, Caroline Hoxby, and Jonathan Levin for their guidance and support.
+I am grateful to Didem Bernard and Ray Kuntz at AHRQ for help with the restricted access MEPS
+data, Richard Hynes for sharing data on asset exemptions, and Amanda Kowalski for sharing data
+on insurance market regulations. I thank Martin Anderson, Marika Cabral, Amy Finkelstein, Paul Goldsmith-Pinkham,
+Tal Gross, Kathy Swartz, Alessandra Voena, Gui Woolston, and numerous seminar participants for
+their comments. Financial support from a Kapnick Fellowship, Ric Weiland Fellowship, and Shultz
+Fellowship is gratefully acknowledged. All errors are my own. The views expressed herein are those
+of the author and do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2012 by Neale Mahoney. All rights reserved. Short sections of text, not to exceed two paragraphs,
+may be quoted without explicit permission provided that full credit, including © notice, is given to
+the source.
+
+Bankruptcy as Implicit Health Insurance
+Neale Mahoney
+NBER Working Paper No. 18105
+May 2012
+JEL No. H51,I13,K35
+ABSTRACT
+This paper examines the implicit health insurance households receive from the ability to declare bankruptcy.
+Exploiting cross-state and within-state variation in asset exemption law, I show that uninsured households
+with greater seizable assets make higher out-of-pocket medical payments, conditional on the amount
+of care received. In turn, I find that households with greater wealth-at-risk are more likely to hold health
+insurance. The implicit insurance from bankruptcy distorts the insurance coverage decision. Using
+a microsimulation model, I calculate that the optimal Pigovian penalties are similar on average to the
+penalties under the Affordable Care Act (ACA).
+Neale Mahoney
+RWJF Scholar in Health Policy Research
+1730 Cambridge Street, S410
+Cambridge, MA 02138
+and NBER
+neale.mahoney@gmail.com
+
+1 Introduction
+A large literature evaluates the effects of government policy on health insurance coverage.1 The
+question of why so many U.S. households are uninsured is less well understood.2 To better un-
+derstand the insurance coverage decision, this paper examines a mechanism that has received
+little attention but may be important to households on the margin of insurance choice: implicit
+insurancefromtheabilitytodeclarebankruptcy.
+Theimplicitinsurancefrombankruptcyarisesfromtheconfluenceofthreefactors. First,due
+tofederallaw,hospitalsarerequiredtoprovideemergencytreatmentoncredit—andinmostcases
+providenonemergencycarewithoutanupfrontpaymentaswell. Second,underChapter7ofthe
+U.S.bankruptcycode,householdscandischargemedicaldebt,givingupassetsaboveexemption
+limits in return.3 Third, because of the deadweight cost of the bankruptcy process, households
+andcreditorshavehaveincentivestoreachnegotiatedagreementsthatavoidformalbankruptcy
+filings.
+Bankruptcy,asaresult,provideshouseholdswithaformofhigh-deductiblehealthinsurance.
+Households are exposed to the financial risk from medical shocks up to the level of assets that
+can be seized in bankruptcy and insured against financial risk above this level. This implicit
+insurance affects the demand for health insurance. For households with lower levels of seizable
+assets, bankruptcy insurance may crowd out conventional coverage. Health insurance is wealth
+insurance,toacertaindegree,andislessvaluabletothosewithfewerassets.
+The main objective of this paper is to assess the quantitative importance of this mechanism.
+Hospitals have complex objective functions that may only place partial weight on profits. They
+may choose to provide charity care even when unconstrained by the threat point of bankruptcy.
+Householdsmayviewbankruptcyinsuranceasanincompletesourceofcoverage,bettersuitedto
+acutehealthshocksthanongoingchronicconditions. Theymayworryaboutothercosts—suchas
+reducedaccesstothecreditmarkets—fromusingthismechanism.
+1SeeGruberandSimon(2008)forareviewofthetake-upandcrowd-outeffectsofpublicinsuranceexpansions.See
+Gruber(2005)forareviewoftheimpactoftaxsubsidiesontheemployerprovisionofinsurance. SeeLiuandChollet
+(2006)forareviewoftheeffectsoftaxpolicyoninsurancetake-upinthenongroupmarket.
+2InareviewoftheliteratureGruber(2008)concludes,“Thereareavarietyofhypothesesforwhysomanyindivid-
+ualsareuninsured,butnoclearsensethatthissetofexplanationscanaccountforthe47millionindividuals.”
+3The Bankruptcy Abuse Prevention and Consumer Protection Act (BAPCPA) of 2005 was implemented after the
+periodIanalyze. ItpreventshouseholdswithmorethanthestatemedianincomefromfilingunderChapter7inmost
+circumstances.Thehouseholdsmostaffectedbythereformareunlikelytobeonthemarginofinsurancechoice.
+1
+
+Iassesstheeconomicsignificanceoftheimplicitinsurancefrombankruptcywithtwosetsof
+empirical analysis. First, I examine how out-of-pocket costs paid by the uninsured are affected
+by the assets these households would give up in bankruptcy. Second, I examine how insurance
+coverageisaffectedbyahousehold’sseizableassets.
+Anumberofunobservedfactorsmakeidentifyingtheimpactofbankruptcyanempiricalchal-
+lenge. I address these issues by isolating cross-state and within-state variation in the state-level
+asset exemption laws that specify the type and level of assets that can be seized in bankruptcy.
+These laws vary considerably. Kansas, for example, allows households to exempt an unlimited
+amountofhomeequityandupto$40,000invehicleequity. NeighboringNebraskaallowshouse-
+holdstokeepnomorethan$12,500inhomeequityortakea$5,000wildcardexemptionthatcan
+beusedforanytypeofasset.
+I create simulated instrumental variables (Currie and Gruber, 1996) to isolate different types
+of variation in these laws. I construct a cross-state instrument by calculating the mean level of
+seizableassetsforaconstant,nationallyrepresentativesampleofhouseholdsasthoughtheylived
+ineachstate. ThisprovideswhatCurrieandGruber(1996)calla“convenientparameterization”of
+thegenerosityofeachstate’sassetexemptionlaws,purgedofvariationduetothecharacteristics
+ofeachstate’sactualresidents.
+I construct a within-state simulated instrument by partitioning the constant, nationally rep-
+resentative sample into demographic groups based on plausibly exogenous household charac-
+teristics.4 The mean level of seizable assets for each demographic group in each state captures
+within-state heterogeneity in how asset exemption laws interact with cross-group variation in
+wealth.5 WhenIincludecontrolsfordemographicgroupsandstatefixedeffects, thisinstrument
+isolates within-state variation in asset exemption law, addressing concerns that the results might
+be driven by unobserved state-level factors. My preferred instrument combines both the cross-
+stateandwithin-statevariationinwhatItermapooledsimulatedinstrument.
+Using these sources of variation and cost data from the Medical Expenditure Panel Survey
+4Thesegroupsaredefinedbythefullinteractionofagegroup,race,familystructure,andeducationlevel.
+5Amongstateswiththesameaveragelevelofassetexemptiongenerosity,stateswithrelativelylargervehicleand
+wildcardexemptions(andrelativelysmallerhomesteadexemptions)aremoregeneroustodemographicgroupswith
+alargershareofwealthintheseassets(andalowershareofhomeequity). Inparticular,theslopeoftherelationship
+betweenwealthandseizableassetsissteeperinstateswithrelativelymoregenerousvehicleandwildcardexemptions
+(andrelativelysmallerhomesteadexemptions)aslow-wealthdemographicgroupshavealargeshareofassetsinthese
+categories.
+2

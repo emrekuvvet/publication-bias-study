@@ -1,0 +1,134 @@
+NBER WORKING PAPER SERIES
+EVIDENCE FOR RELATIONAL CONTRACTS IN SOVEREIGN BANK LENDING
+Peter Benczur
+Cosmin L. Ilut
+Working Paper 20391
+http://www.nber.org/papers/w20391
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+August 2014
+We thank Cristina Arellano, Francesco Bianchi, Craig Burnside, Larry Christiano, Jonathan Eaton,
+Refet Gurkaynak, Sebnem Kalemli-Ozcan, Gabor Kezdi, Narayana Kocherlakota, Sergio Rebelo, Adam
+Szeidl, Balazs Szentes, Mark Wright and participants at the AEA Annual Meeting, ESWC, SED Meeting,
+ESSIM, NBER Summer Institute and at seminars at Duke University, National Bank of Hungary (MNB),
+Northwestern University, UNC Chapel Hill for helpful comments and suggestions. Part of the work
+was done while Ilut was a visiting scholar at and Benczur was affiliated with the National Bank of
+Hungary (MNB). The views expressed herein are those of the authors and do not necessarily reflect
+the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2014 by Peter Benczur and Cosmin L. Ilut. All rights reserved. Short sections of text, not to exceed
+two paragraphs, may be quoted without explicit permission provided that full credit, including © notice,
+is given to the source.
+
+Evidence for Relational Contracts in Sovereign Bank Lending
+Peter Benczur and Cosmin L. Ilut
+NBER Working Paper No. 20391
+August 2014
+JEL No. C73,D86,F34,G12,G14,G15
+ABSTRACT
+This paper presents direct evidence for relational contracts in sovereign bank lending. Unlike the existing
+empirical literature, its instrumental variables method allows for distinguishing a direct influence of
+past repayment problems on current spreads (a "punishment" effect in prices) from an indirect effect
+through higher expected future default probabilities ("loss of reputation"). Such a punishment provides
+positive surplus to lenders after a default and decreases the borrower's present discounted value of
+the net benefits of future borrowing, which create dynamic incentives. Using data on bank loans to
+developing countries between 1973-1981 and constructing continuous variables for credit history,
+we find evidence that most of the influence of past repayment problems is through the direct, punishment
+channel.
+Peter Benczur
+European Commission, Joint Research Centre (JRC)
+Institute for the Protection and Security
+of the Citizen (IPSC)
+Financial and Economic Analysis Unit, Ispra
+Via Enrico Fermi 2749, 21027 Ispra (VA) Italy
+and Central European University
+and Institute of Economics, CERS HAS
+benczurp@ceu.hu
+Cosmin L. Ilut
+Department of Economics
+Duke University
+223 Social Sciences Building
+Box 90097
+Durham, NC 27708
+and NBER
+cosmin.ilut@duke.edu
+
+1 Introduction
+A central issue in limited contract enforceability is that if the identity of a defaulting party
+is forgotten, then it can reenter the market with a fresh start. The acts of countries and
+major banks, however, are remembered, thus they cannot simply walk away after breaking
+their commitments. This implies that one can view sovereign bank lending as a long-term
+relationship (a relational contract) between borrowers and lenders. In such contracts, parties
+honor their obligations in order to influence the terms of future interactions. This means
+that a default or any other form of misbehavior leads to a positive surplus to lenders and a
+drop in the present discounted value of the net benefits of future borrowing for the borrower.
+Usual punishments are an increase in borrowing costs or a capital market exclusion.
+There is indeed evidence that a default leads to an increase in spreads (Ozler (1993),
+Eichengreen and Mody (1999), Reinhart et al. (2003), Cruces and Trebesch (2013)). This
+literature, however, has been unable to identify the precise mechanism of this effect. In
+particular, it cannot tell apart a retaliation argument from a signaling alternative: in the
+latter, a default reveals some adverse information about the expectation of the debtor’s
+future output (for example, the type of the debtor), which hurts its future outcomes (Eaton
+(1996), Sandleris (2008)).
+Underpuresignaling,1 countriestrytoavoiddefaultinordernottorevealtheirtype. But
+oncethereisanupdateoftheirtype, theygetloansthatare“actuariallyfair”, conditionalon
+available publicinformationabout theirfuture nonrepayment. Pastdefaults by thesovereign
+should only matter to the extent that they influence investors’ expectations of future default
+(and recovery rates). Notice that this mechanism only requires that the country still needs
+financial markets after a default, but it does not have to involve a long-run relationship.
+Under punishment, extra costs are added to future prices, giving positive surpluses to
+lenders even conditional on updated information. This creates dynamic incentives even in
+the absence of hidden types. To maintain such surpluses, the existence of repeated borrower-
+lender interactions is essential.2 This is what we label as “relational contracts”.
+We present empirical evidence that a sovereign default is followed by such positive lender
+surpluses. Such evidence has immediate consequences for understanding and modeling
+sovereign risk, as it points to the presence of dynamic incentives as a repayment mechanism.3
+1Samuelson (2006) labels such a scenario as “reputation”. The sovereign risk literature, on the other
+hand, oftenreferstotheretaliatorycontractsasembodyinga“reputationpunishment.”Toavoidconfusion,
+we will refer to our two channels as “punishment” and “signaling”.
+2This is clear in the case of a simple retaliation mechanism. We argue later that even a default-driven
+increase in risk-aversion requires some form of lender-borrower lock-in.
+3For example, Alfaro and Kanczuk (2005) find that pure signaling is quantitatively insufficient to make
+sovereign debt sustainable. Our mechanism would increase repayment incentives.
+1
+
+It is also relevant for the broad context of repeated games, relational contracts and
+reputations. In both cases, there is very little direct evidence on dynamic incentives
+themselves – the sovereign risk literature, for example, usually calibrates its models to match
+various aggregate outcomes, or the timing and frequency of default.
+The purpose of our paper is to contribute to the empirical sovereign risk literature in
+two major respects. First, and most importantly, our methodology is able to distinguish
+betweenanydirecteffectofabadrepaymenthistoryonthespread, andtheindirectonegoing
+through increased default probability. Second, we deploy different econometric techniques
+and variables in order to control for country fixed effects, an important problem that has
+not been thoroughly dealt with in most of the previous research.
+ThedataonsovereignbankloanspreadsisfromtheWorldBank’spublication“Borrowing
+in International Capital Markets” for the period 1973-1981, on 36 developing countries. This
+period was the heyday of syndicated bank lending to sovereigns. While most of the variables
+utilized in the paper are those suggested by the literature, we create continuous measures
+of past and future default, which are based on arrears data from the World Bank’s Global
+Development Finance. These variables are compatible with country fixed effects.
+Our estimation strategy is a structural-form asset pricing regression. The starting point
+is that the spread is determined by expected default risk and credit history. We also add the
+BAA rated US corporate bond spread to capture the risk aversion of lenders. As default risk
+is an unobserved variable, we replace the expectation term with its realization and merge the
+prediction error into the regression residual. This creates an identification problem, as the
+realization is correlated with the prediction error. Assuming that expectations are rational,
+we can use any variable (debtor characteristics) available at the time of pricing as a valid
+instrument. Identification is thus based on the following intuition: with the exception of
+credit history (punishment as a dynamic incentive) and the BAA spread (risk aversion),
+all fundamentals affect the spread only through their impact on the probability of default.
+Notice that the reduced-form regression of such a framework simply regresses the spread on
+various debtor characteristics.
+In the reduced-form estimation, we find that recent default history has a significant
+positive influence on the spread, but the inclusion of country fixed effects is necessary.
+Country effects substantially weaken the effect of distant default history. The conclusion
+of our benchmark structural-form specification is that future default risk, an overall risk-
+aversion measure (the BAA-rated US corporate bond spread) and recent default history can
+robustly and meaningfully describe the spread.
+In the structural form, the coefficient estimate for default risk is around 0.41. This
+means that if we increase our default risk measure by one standard deviation, the implied
+2

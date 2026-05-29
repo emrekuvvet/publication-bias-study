@@ -1,0 +1,159 @@
+NBER WORKING PAPER SERIES
+MONETARY VERSUS MACROPRUDENTIAL POLICIES:
+CAUSAL IMPACTS OF INTEREST RATES AND CREDIT CONTROLS
+IN THE ERA OF THE UK RADCLIFFE REPORT
+David Aikman
+Oliver Bush
+Alan M. Taylor
+Working Paper 22380
+http://www.nber.org/papers/w22380
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2016, revised August 2024
+The views expressed in this paper are those of the authors and not necessarily those of the Bank
+of England or the National Bureau of Economic Research. The authors wish to thank – without
+implicating – Thilo Albers, Saleem Bahaj, Michael Bordo, Forrest Capie, Matthieu Chavaz,
+James Cloyne, Angus Foulis, Julia Giese, Charles Goodhart, Robert Hetzel, Ethan Ilzetzki, Òscar
+Jordà, George Kapetanios, Norbert Metiu, Paul Mizen, Duncan Needham, Edward Nelson, José-
+Luis Peydró, Jonathan Pinder, Ricardo Reis, Gary Richardson, Albrecht Ritschl, Joan Rosés,
+Peter Scott, Lord Skidelsky, Peter Sinclair, Ryland Thomas, Matthew Waldron, Eugene White,
+and Garry Young for helpful conversations, and Jiayi Cheng, Jiawei Fan, Casey Murphy,
+Consgor Osvay, Henrik Pedersen, Jenny Spyridi, and Yizhong Zhang for their excellent research
+assistance, and the archivists at the Bank of England, Barclays Bank, HSBC, the Royal Bank of
+Scotland and the National Archives. We have benefited from comments of participants at
+presentations at UC Davis, UC Berkeley, the NBER Summer Institute, the Cliometric Society
+Annual Conference, the American Economic Association Annual Meetings, the European
+Economic Association Annual Congress, the Royal Economic Society Annual Conference, the
+Federal Reserve conference on economic and financial history, the Oxford-Indiana
+Macroeconomic Policy Conference, the 6th EurHiStock Workshop, the CEPR Financial Markets
+Symposium, the MNB-CEPR-ESRB Macroeconomic Policy Research Workshop, the Central
+Bank of Ireland Economic History Workshop, the INET Young Scholars’ Initiative economic
+history conference, the London School of Economics, the University of Cambridge, the
+University of Oxford, the University of Bonn, the University of Reading, Rutgers University,
+Warwick University, the Bank for International Settlements and the Bank of England.
+At least one co-author has disclosed additional relationships of potential relevance for this
+research. Further information is available online at http://www.nber.org/papers/w22380
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2016 by David Aikman, Oliver Bush, and Alan M. Taylor. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that
+full credit, including © notice, is given to the source.
+
+Monetary Versus Macroprudential Policies: Causal Impacts of Interest Rates and Credit Controls
+in the Era of the UK Radcliffe Report
+David Aikman, Oliver Bush, and Alan M. Taylor
+NBER Working Paper No. 22380
+June 2016, revised August 2024
+JEL No. E50,G18,N14
+ABSTRACT
+We have a world of conjoined monetary and macroprudential policies. But can they function
+smoothly and with what effects? The evidence is quite limited, especially for advanced
+economies. We adopt a historical laboratory. From the 1950s to the 1980s, the UK used credit
+policy tools alongside conventional interest rate policy. These tools are similar to today’s
+macroprudential policies. We document these tools and craft a new dataset to estimate their
+effects using modern high-frequency identification with a novel empirical strategy, Factor-
+Augmented Local Projection. Monetary policy acted mainly on inflation but credit policy acted
+primarily to modulate bank lending.
+David Aikman Alan M. Taylor
+King's College London Columbia University
+david.aikman@kcl.ac.uk 1313 International Affairs
+420 West 118th Street
+Oliver Bush New York, NY 10027
+oliver.bush@bankofengland.co.uk and CEPR
+and also NBER
+amt2314@columbia.edu
+
+Changes in the complex of interest rates ...should not be precluded, ...and should, as a rule, be
+regarded as secondary to the technique of rationing the volume ...of credit ....
+1
+— John Maynard Keynes
+But, when all has been said on the possibility of monetary action and of its likely efficacy, our
+conclusion is that monetary measures cannot alone be relied upon to keep in nice balance an
+economy subject to major strains from both without and within. Monetary measures can help,
+but that is all.
+2
+— The Radcliffe Report
+1 ntroduction acropru in the ear iew irror
+. I : M R -V M
+The Global Financial Crisis and its disappointing aftermath were widely viewed as a case of
+macroeconomic policy failure from which lessons must be learned. Yet, more than a decade
+on, agreement on the precise failures and, thus, the necessary lessons, has been elusive in
+many areas, especially regarding financial regulation and central banking. According to
+2009 2011
+some prominent commentators (Bernanke ; Tucker ) the lack of a clear mandate
+for macroprudential policy was a key shortcoming and many of the regulatory reforms
+since have aimed to address this. Encouragingly, there has a substantial increase in the
+use of macroprudential policy tools over the past decade in both advanced economies and
+2019
+emerging market economies alike (see, e.g., Alam et al. ).
+Despite this, the role of macroprudential policy remains fraught, with doubts about
+whether these tools should exist, if they work, and how they should be designed and
+used. For example, there remains no real consensus on whether credit booms are best
+3
+addressed via tighter monetary policy or via macroprudential policies. And while most
+advancedeconomiesnowhavespecificinstitutionalarrangementstocoordinateordischarge
+4
+macroprudential policies, and one prominent committee – the UK’s Financial Policy
+Committee – is now a little over ten years old, some large countries including the United
+States, Australia and Japan have yet to deploy these tools at all.
+1 Keynes(1978),page397.
+2 CommitteeontheWorkingoftheMonetarySystem(1959),page183.
+3
+Facingaheatingupoftheirhousingmarketslastdecade,SwedenandNorwaytookquitedifferentpolicy
+actions. Sweden’s Riksbank tried to battle this development using monetary policy tools only, raising the
+policyrate,andtippingtheeconomyintodeflation,ashadbeenpredictedbythedissidentDeputyGovernor
+LarsSvensson,whosubsequentlyresigned. Acrosstheborder,theNorgesBankimplementedsomecyclical
+macroprudential policies to crimp credit expansion and moderate mortgage and house price booms and
+managedtoavoidanout-turnlikethatinSweden.
+4 EdgeandLiang(2019)findthat47countrieshavesetupsuchFinancialStabilityCommittees.
+1
+
+It seems likely to us that the lack of reliable empirical evidence on the impact of macro-
+prudential policies is hindering their take-up. While the greater use of macroprudential
+5
+tools over the past decade has spawned a large body of empirical research, there remains
+a lack of longer-run empirical evidence, especially in advanced economies.
+New evidence and methods This paper seeks a new analytical approach by bringing a
+novel and unique array of empirical evidence to the table based on past UK experience
+over a relatively long period. To that end, we turn to the last great era of central bank
+experimentation with instruments similar to those now being used for macroprudential
+1950 1980
+policy: the postwar decades from the s to the early s when many types of new
+credit controls were put in play.
+1950 1960
+In these years – particularly the s and s – economic discourse and policymaking
+in the UK were dominated by Keynes’ legacy. The Radcliffe Report is the most famous
+example of Keynes’ followers’ scepticism of using policy rates for macroeconomic control
+and it endorsed other instruments, notably credit controls, instead. In our examination
+of this period, which we dub the “Radcliffe era”, we construct by hand new quantitative
+indicators over many decades on the application of such policies in the UK, including credit
+ceilings, hire-purchase controls, special deposits, and the so-called “Corset”. We follow
+1973 1973
+Hodgman ( ) and Miller ( ) in referring to instruments such as these as “credit
+controls” and use the term “credit policy” to describe these policies taken as a whole.
+To evaluate the impacts of these policies, and to compare them with the impacts of the
+standard monetary policy tool of Bank Rate, we develop a new empirical approach, one
+that we refer to as Factor-Augmented Local Projection (FALP). Our approach uses the local
+2005
+projection (LP) method (Jorda` ) with shocks identified using high-frequency financial
+2015
+marketsurprisestostudymacroresponsesinthespiritofGertlerandKaradi( ). Wejoin
+this with the factor augmentation approach that has been employed in the VAR literature
+2005
+(Bernanke, Boivin and Eliasz ) as a means to control for other information correlated
+with future macroeconomic developments, for more robust estimation in small samples. For
+robustness we also estimate LPs using an alternative and weaker identification assumption
+via the now widely-used heteroskedasticity-based estimation which takes into account the
+difference in signal and noise on (treatment) days with a policy action and (control) days
+2003 2004 2018
+without (Rigobon ; Rigobon and Sack ; Nakamura and Steinsson ; Ka¨nzig
+2021
+). We also subject our results to a range of robustness tests, most of which give us little
+reason to doubt our main results.
+5 Araujoetal.(2020)summariselessonsfromtheliterature,usingameta-analysisof58distinctempirical
+studies. Lookingacrossthesestudies, theyfindthatmacroprudentialpolicieshavestatisticallysignificant
+effects on credit, albeit with considerable heterogeneity across instruments, and weaker effects on house
+prices. Moreover,theyfindtheseeffectsarestrongerinemergingmarketeconomies.
+2

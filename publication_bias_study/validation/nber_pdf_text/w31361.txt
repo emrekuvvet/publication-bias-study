@@ -1,0 +1,142 @@
+NBER WORKING PAPER SERIES
+FATAL ERRORS: THE MORTALITY VALUE OF ACCURATE WEATHER FORECASTS
+Jeffrey G. Shrader
+Laura Bakkensen
+Derek Lemoine
+Working Paper 31361
+http://www.nber.org/papers/w31361
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2023
+Any views expressed are those of the authors and not those of the U.S. Census Bureau. The
+Census Bureau's Disclosure Review Board and Disclosure Avoidance Officers have reviewed this
+information product for unauthorized disclosure of confidential information and have approved
+the disclosure avoidance practices applied to this release. This research was performed at a
+Federal Statistical Research Data Center under FSRDC Project Number 2112. (CBDRB-FY22-
+P2112-R9939) We thank Michael Best, Matthew Gibson, Michael Greenstone, Matthew Neidell,
+and Wolfram Schlenker as well as seminar participants at the NBER Environment and Energy
+Economics Spring Meeting, ASSA Annual Meeting, and several university seminars for helpful
+comments and suggestions. Special thanks to Anouch Missirian for providing code and guidance
+on dealing with wind data. Gabriel Gonzalez Sutil provided excellent research assistance. The
+views expressed herein are those of the authors and do not necessarily reflect the views of the
+National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2023 by Jeffrey G. Shrader, Laura Bakkensen, and Derek Lemoine. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Fatal Errors: The Mortality Value of Accurate Weather Forecasts
+Jeffrey G. Shrader, Laura Bakkensen, and Derek Lemoine
+NBER Working Paper No. 31361
+June 2023
+JEL No. D83,I12,Q51
+ABSTRACT
+We provide the first revealed preference estimates of the benefits of routine weather forecasts.
+The benefits come from how people use advance information to reduce mortality from heat and
+cold. Theoretically, more accurate forecasts reduce mortality if and only if mortality risk is
+convex in forecast errors. We test for such convexity using data on the universe of mortality
+events and weather forecasts for a twelve-year period in the U.S. Results show that erroneously
+mild forecasts increase mortality whereas erroneously extreme forecasts do not reduce mortality.
+Making forecasts 50% more accurate would save 2,200 lives per year. The public would be
+willing to pay $112 billion to make forecasts 50% more accurate over the remainder of the
+century, of which $22 billion reflects how forecasts facilitate adaptation to climate change.
+Jeffrey G. Shrader Derek Lemoine
+Columbia University Department of Economics
+420 W 118th St. University of Arizona
+New York, NY 10027 McClelland Hall 401EE
+jgs2103@columbia.edu Tucson, AZ 85721
+and CEPR
+Laura Bakkensen and also NBER
+University of Arizona dlemoine@email.arizona.edu
+School of Government & Public Policy
+315 Social Science
+P.O. Box 210027
+Tucson, AZ 85721-0027
+laurabakkensen@arizona.edu
+A data appendix is available at http://www.nber.org/data-appendix/w31361
+
+1 Introduction
+Routine weather forecasts are the product of a sophisticated scientific and policy effort
+requiring global cooperation (Benjamin et al., 2018). Data from around the world are con-
+tinuously gathered and processed to produce forecasts that are disseminated to the public
+multiple times per day, largely for free. Despite their ubiquity and the effort that goes into
+their creation, surprisingly little is known about their value to the public. Understanding
+this value is important for at least two reasons. First, weather forecasts are a far-reaching
+information intervention that is particularly well-suited to offering empirical insights into
+how individuals use information.1 Yet economists have only rarely used forecasts to study
+informational questions (e.g., Roll, 1984). Second, forecasts are a costly but potentially
+important policy tool. Globally, public funding for forecasting agencies exceeds $15 billion
+per year (Rogers and Tsirkunov, 2013),2 and decisions about future investments in forecasts
+require information about the value of making forecasts more accurate.3 Economists have
+studied the value of weather warnings (e.g., Craft, 1998) but have not valued improvements
+in weather forecasts.
+We combine new theory and comprehensive data to provide the first revealed preference
+evidence of behavioral responses to forecasts and the value of improved forecasts. In par-
+ticular, we examine how much more accurate forecasts help people avoid mortality from
+temperature. We do so by formally demonstrating that whether more accurate forecasts
+reduce mortality depends on the relationship between mortality risk and forecast errors. If
+mortalityriskisconvexinforecasterrors, thenimprovementsinforecastaccuracywillreduce
+expected mortality. The convexity of mortality risk depends on how agents’ chosen actions
+depend on whether they receive one forecast or another. Namely, risk is convex if actions are
+“appropriate” in the sense of seeking to suit the weather rather than being “protective” in
+the sense of monotonically reducing mortality as more action is taken. Because either model
+of adaptation is plausible, it is an empirical question whether or not more accurate forecasts
+reduce mortality.
+1Economists have long been interested in the role of information in decision-making, with particular
+growth in experimental evaluations of information interventions. Many experimental information inter-
+ventions find effects on subjective beliefs but not actions, a difference that may reflect small sample sizes
+(Haaland et al., 2023). We take advantage of the ubiquity of forecasts to measure how people respond to
+information in a higher-powered environment.
+2Each year, the U.S. National Weather Service has a budget of around $1 billion, collects around 76
+billion weather observations, and issues around 1.5 million forecasts (NOAA, 2021).
+3This point as been emphasized by both national and international observers (Chapman, 1992, WMO
+etal.,2015). Weatherforecastshavesteadilyimprovedsince1980(Baueretal.,2015). Manyexpectforecast
+skill to continue increasing in the near future as weather forecasting groups improve observational networks,
+data assimilation, modeling, and computing power (Toth and Buizza, 2019, Zhang et al., 2019). Many have
+emphasized the need for good estimates of the economic value of forecast improvements (e.g., Freebairn and
+Zillman, 2002, Pielke and Carbone, 2002, National Research Council, 2010, Katz and Lazo, 2011).
+2
+
+Toestimatetheeffectofweatherforecastsonmortality, wecombinetheuniverseofdeaths
+reported by the Centers for Disease Control and Prevention (CDC) with daily weather and
+forecasts issued by the National Weather Service (NWS). We study the continental U.S. from
+2005 through 2017 and focus on day-ahead forecasts of temperature. A large literature
+across economics, epidemiology, and other fields has shown that extreme temperatures are
+a major source of mortality,4 the NWS says that one goal when issuing forecasts is to
+minimize loss of life,5 and households say these short-run temperature forecasts are among
+themostimportantforecastproductstothem(StratusConsultingInc.,2002). Ourregression
+framework accounts for potential location-specific and time-varying confounders as well as
+for the potential direct effects of temperature and other aspects of weather on mortality.
+Across the full sample, we find that mortality risk is indeed convex in forecast errors.
+Reducing the standard deviation of forecast errors by 50% would save 2,200 lives per year.
+We find that mortality risk is especially convex in forecast errors on days with extreme heat.
+This convexity indicates that either adaptation is particularly responsive to forecasts during
+periods of extreme heat or adaptation is especially consequential for mortality in extreme
+heat. Climate change will make such days more common over the coming century. As a
+result, climate change increases the mortality benefit of improved forecasts to 2,400 lives
+saved annually by 2100. Short-run weather forecasts thereby facilitate adaptation to climate
+change.
+Wealsoformallyshowhowtoestimateagents’exantewillingnesstopayformoreaccurate
+forecasts, accounting for their costs of acting on forecasts. Related literature arrives at net
+valueforclimate-inducedmortalitybyusingcross-sectionalvariationinclimateandmortality
+risk to empirically identify marginal benefits of adaptation, then using first-order conditions
+to equate those marginal benefits of adaptation to marginal costs of adaptation, and finally
+summing these adaptation costs with mortality benefits estimated from panel variation in
+weather (Carleton et al., 2022). Instead, we formally derive the change in an agent’s value
+function from more accurate forecasts and we measure that change from panel variation in
+forecasts and weather, without relying on cross-sectional variation for identification.6 We
+find that the net value of making forecasts 50% more accurate is $2.1 billion per year, or
+roughly 10% of the monetized mortality benefit. Climate change increases that value to $2.9
+4See, for instance, Anderson and Bell (2009), Deschˆenes and Moretti (2009), Gasparrini et al. (2015),
+Barreca et al. (2016), Carleton et al. (2022).
+5This goal is part of the NWS mission statement: “Provide weather, water and climate data, forecasts,
+warnings,andimpact-baseddecisionsupportservicesfortheprotectionoflifeandpropertyandenhancement
+of the national economy.”
+6Anestablishedliteraturetheoreticallyanalyzesthevalueofchangesinmortalityrisk(e.g.,Bergeretal.,
+1987, Shogren and Crocker, 1991), which corresponds to valuing changes in temperature in our setting. One
+canviewCarletonetal.(2022)asimplementingequation(17)inBergeretal.(1987). Wedifferinanalyzing
+and estimating the value of changes in uncertainty about a mortality risk.
+3

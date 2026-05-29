@@ -1,0 +1,117 @@
+NBER WORKING PAPER SERIES
+HOW MUCH DOES COVID-19 INCREASE WITH MOBILITY? EVIDENCE FROM
+NEW YORK AND FOUR OTHER U.S. CITIES
+Edward L. Glaeser
+Caitlin Gorback
+Stephen J. Redding
+Working Paper 27519
+http://www.nber.org/papers/w27519
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2020, Revised October 2020
+We thank Sam Patterson and Andrei Freund for excellent research assistance. Any errors,
+opinions and omissions are our own. The U.S. Department of Transportation supported this
+project through an inter-agency agreement with the National Science Foundation (grant
+1559013). The views expressed herein are those of the authors and do not necessarily reflect the
+views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Edward L. Glaeser, Caitlin Gorback, and Stephen J. Redding. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+How Much does COVID-19 Increase with Mobility? Evidence from New York and Four Other
+U.S. Cities
+Edward L. Glaeser, Caitlin Gorback, and Stephen J. Redding
+NBER Working Paper No. 27519
+July 2020, Revised October 2020
+JEL No. H12,I12,J17,R41
+ABSTRACT
+How effective are restrictions on mobility in limiting COVID-19 spread? Using zip code data
+across five U.S. cities, we estimate that total cases per capita decrease by 20% for every ten
+percentage point fall in mobility. Addressing endogeneity concerns, we instrument for travel by
+residential teleworkable and essential shares and find a 27% decline in cases per capita. Using
+panel data for NYC with week and zip code fixed effects, we estimate a decline of 17%. We find
+substantial spatial and temporal heterogeneity; east coast cities have stronger effects, with the
+largest for NYC in the pandemic’s early stages.
+Edward L. Glaeser Stephen J. Redding
+Department of Economics Department of Economics &
+315A Littauer Center School of Public and International Affairs
+Harvard University Princeton University
+Cambridge, MA 02138 Princeton, NJ 08544
+and NBER and CEPR
+eglaeser@harvard.edu and also NBER
+reddings@princeton.edu
+Caitlin Gorback
+National Bureau of Economic Research
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+gorback@nber.org
+
+1 Introduction
+A central challenge in evaluating lock-downs and other restrictions on mobility in response to
+COVID-19isestimatingtheireffectivenessinlimitingthedisease’sspread. Thisestimationis
+challenging for several reasons. Mobility restrictions are introduced as a response to disease
+outbreaks, individuals make mobility decisions based on the threat of infection, and the
+relationship between transmission and mobility depends on the composition of susceptible,
+infected and recovered agents.
+To address these challenges, we combine weekly data on COVID-19 cases by zip code
+in New York City (NYC) and cross-sectional data for four other U.S. cities, information
+on mobility from SafeGraph cellular phone data and subway turnstile data for NYC, and
+exogenous variation in mobility from the ability to work remotely and designation as an
+essential worker in state shutdown orders. We interpret “mobility” broadly, in the sense
+of workers leaving home, or passing through a subway turnstile, which exposes them to
+contact while travelling and at their destination.1 In our preferred instrumental variables
+specification, we estimate that a ten percentage point decrease in mobility leads to a 30% fall
+in COVID-19 cases per capita. We find substantial heterogeneity across both space and over
+time, with stronger effects for NYC, Boston and Philadelphia than for Atlanta and Chicago,
+and the largest estimated coefficients for NYC in the early stages of the pandemic.
+The hypothesis that movement spreads COVID-19 inspired the stay-at-home orders
+adopted across the world in 2020. While any contagious disease can be propagated through
+human interaction, the actual link between mobility and contagion is mediated by the nature
+of the disease and traveler behavior. The social benefits of regulations limiting mobility de-
+pend on the empirical magnitude of the link between mobility and disease. The link between
+mobility and contagion could be minimal if infections occurred mostly through intimate con-
+tact, as with sexually transmitted infections, or large if transit hubs enabled super-spreading
+events.
+We focus on the relationship between the logarithm of the COVID-19 cases per capita,
+ln(Cases ), and the decline in mobility, %∆Trips , relative to February 2020 or the same
+i i
+1For the SafeGraph data, “mobility” is the number of trips outside of one’s residential zip code. For the
+MTA data, “mobility” is the number of turnstile entries in each zip code.
+1
+
+date one year earlier.2 We cannot determine if the disease spread through travel itself or
+through interactions at a final destination. We lack individual-specific COVID-19 tests, and
+consequently measure the number of cases by zip code.
+One potential concern is that neighborhood specific COVID-19 rate may not capture the
+true prevalence of the disease, because of differences in testing rates. To address this, we
+control for demographic variables that might predict testing rates, and for zip code fixed
+effects in our panel specifications. Although levels of testing in the United States were low
+throughout our time period, another concern is that testing could mechanically increase
+mobility, as people travel to get tested. We address this concern using our instrumental
+variables for mobility. As an additional specification check, we also replicate our cross-
+sectional case results with COVID-19 death rates in NYC. Unfortunately, the NYC zip
+code death data begins the week of May 18-24, 2020, and so cannot be used in our panel
+specifications.
+Our primary mobility data source is the SafeGraph cellphone location data, which is
+available at the census blockgroup level nationwide. We aggregate travel data to the zip
+code to conform with our COVID-19 case data. For NYC, we supplement this data with
+public transit turnstile data provided by the Metropolitan Transit Authority (MTA). For
+panel analysis, we aggregate the daily case and turnstile data to the week level so that
+it is compatible with the weekly Safegraph data. As the impact of mobility on infection
+could change both with the level of infection in the population of travelers and the level of
+precaution, we test whether that impact changes over time in NYC. We split our sample
+into an early period that ends on April 26 and a later period, to test whether the impact of
+mobility on contagion was higher when cases were increasing or after the wave of infection
+peaked.
+Figure 1 shows two maps of NYC that illustrate our core findings. The upper map shows
+the change in cell phone-measured mobility. The lower map shows the total COVID-19 cases
+per capita as of June 1, 2020. In the parts of NYC where mobility fell, case rates have been
+low. In the areas of New York where mobility remained higher, COVID-19 cases per capita
+2The relationship is governed by a quasi-elasticity, β, which is in log points. A 1 percentage point increase
+in %∆Trips implies a (100×β)% increase in cases per capita.
+i
+2

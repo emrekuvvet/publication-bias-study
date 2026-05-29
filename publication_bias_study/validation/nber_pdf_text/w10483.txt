@@ -1,0 +1,121 @@
+NBER WORKING PAPER SERIES
+A COMPREHENSIVE LOOK AT THE EMPIRICAL PERFORMANCE
+OF EQUITY PREMIUM PREDICTION
+Amit Goval
+Ivo Welch
+Working Paper 10483
+http://www.nber.org/papers/w10483
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2004
+Thanks to Malcolm Baker, Ray Ball, Francis Diebold, Owen Lamont, Sydney Ludvigson, Jeff Wurgler, and
+Yihong Xia for comments; and Todd Clark for providing us with some critical McCraken values. The views
+expressed herein are those of the author(s) and not necessarily those of the National Bureau of Economic
+Research.
+©2004 by Amit Goval and Ivo Welch. All rights reserved. Short sections of text, not to exceed two
+paragraphs, may be quoted without explicit permission provided that full credit, including © notice, is given
+to the source.
+
+A Comprehensive Look at the Empirical Performance of Equity Premium Prediction
+Amit Goval and Ivo Welch
+NBER Working Paper No. 10483
+May 2004
+JEL No. G12, G14
+ABSTRACT
+Given the historically high equity premium, is it now a good time to invest in the stock market?
+Economists have suggested a whole range of variables that investors could or should use to predict:
+dividend price ratios, dividend yields, earnings-price ratios, dividend payout ratios, net issuing
+ratios, book-market ratios, interest rates (in various guises), and consumption-based macroeconomic
+ratios (cay). The typical paper reports that the variable predicted well in an *in-sample* regression,
+implying forecasting ability.
+Our paper explores the *out-of-sample* performance of these variables, and finds that not a single
+one would have helped a real-world investor outpredicting the then-prevailing historical equity
+premium mean. Most would have outright hurt. Therefore, we find that, for all practical purposes,
+the equity premium has not been predictable, and any belief about whether the stock market is now
+too high or too low has to be based on theoretical prior, not on the empirically variables we have
+explored.
+Amit Goval
+Goizueta Business School
+Emory University
+Ivo Welch
+Yale University
+School of Management
+46 Hillhouse Ave.
+New Haven, CT 06520-8200
+and NBER
+ivo.welch@yale.edu
+
+1 Introduction
+Attempts to predict stock market returns or the equity premium have a long tradition
+in finance. For example, as early as 1920, Dow (1920) explored the role of dividend
+ratios. Nowadays, a typical specification regresses an independent lagged predictor on
+the stock market rate of return or, as we shall do, on the equity premium,
+Rm(t)−Rf(t) = γ + γ ·[x(t−1)]+(cid:15)(t) . (1)
+0 1
+γ isinterpretedasameasureofhowsignificantx isinpredictingtheequitypremium.
+1
+The most prominent x variables explored in the literature are
+The dividend-price ratio and the dividend yield: Ball(1978),Rozeff(1984),Shiller(1984),
+Campbell (1987), Campbell and Shiller (1988), Campbell and Shiller (1989), Fama
+and French (1988a), Hodrick (1992), Campbell and Viceira (2002), Campbell and
+Yogo (2003), Lewellen (2004), and Menzly, Santos, and Veronesi (2004). Cochrane
+(1997) surveys the dividend ratio prediction literature.
+The earnings price ratio and dividend-earnings (payout) ratio: Lamont (1998).
+The interest and inflation rates: Theshortterminterestrate: Campbell(1987)andHo-
+drick (1992). The term spread and the default spread: Avramov (2002), Campbell
+(1987), Fama and French (1989), and Keim and Stambaugh (1986). The inflation
+rate: Campbell and Vuolteenaho (2003), Fama (1981), Fama and Schwert (1977),
+and Lintner (1975). Some papers explore multiple interest rate related variables,
+as well as dividend related variables (e.g., Ang and Bekaert (2003)).
+The book-to-market ratio: Kothari and Shanken (1997) and Pontiff and Schall (1998).
+The consumption, wealth, and income ratio: Lettau and Ludvigson (2001).
+The aggregate net issuing activity: Baker and Wurgler (2000).
+In turn, a large theoretical and normative literature has developed that stipulates
+how investors should allocate their wealth as a function of state variables—and promi-
+nently the just-mentioned variables.
+1
+
+Our own paper is intentionally simple: as in Goyal and Welch (2003), we posit that
+a real-world investor would not have had access to any ex-post information, either to
+construct variables or to the entire-sample gamma regression coefficients. An investor
+would have had to estimate the prediction equation only with data available strictly
+before or at the prediction point, and then make an out-of-sample prediction. There-
+fore,insteadofrunningonesinglein-sampleregressionandcomparingthefittedtothe
+actual value (or, equivalently, compute the R2 or F-statistic), we must run rolling fore-
+castingregressionsandcomparetheperformanceoftheregressionpredictionsagainst
+the equivalent predictions from simply projecting the then-prevailing historical equity
+premium mean. Unlike Goyal and Welch (2003), our current paper expands the set of
+variables and horizons to be comprehensive. We are interested in how well any of the
+popular variables, which were proposed in existing literature as important in-sample
+predictors of the equity premium, hold up out-of-sample.1
+Ourpapernotonlytriesoutdifferenttimehorizonsandforecastingperiods,butalso
+diagnoseswhenthesevariableswereofhelp,usingagraphicaldiagnosticfirstproposed
+in Goyal and Welch (2003). We are also interested in the contradictory results in the
+literature: differentpapershaveidentifieddifferentmethods/variablestobeimportant.
+Our paper shows that many of the differences can be traced back to choices of sample
+period and data frequency: these are not innocuous, but often the primary driver for
+the significance of in-sample results.
+Altogether, we find our evidence sobering: we could not identify a single variable
+that would have been of solid and robust use to a real-world investor (who did not
+have access to ex-post information). Our diagnostic shows that any presumed equity
+premium forecasting ability was a mirage. Even before the often-considered anoma-
+lous 1990s, many of these variables had little if any statistical forecasting power. It is
+alsousuallynotamatterofarguingoverwhetherwecomputedcorrectstatisticalstan-
+dard errors. Instead, most variables are just worse than the prevailing historical equity
+premium average as a predictor, and some even economically significantly so.
+1GoyalandWelch(2003)wasnotthefirstpapertoexploreout-of-sampleprediction. Therearethree
+earlier/contemporaneous attempts we are aware of: First, Fama and French (1988a) interpreted out-
+of-sample performance to be a success, primarily due to a fortunate sample period. Second, Pesaran
+andTimmerman(1995)exploremodelselectioningreatdetail,exploringdividend-yield,earnings-price
+ratios, interest rates, and money in 29 = 512 model variations. Their data series is monthly, from
+1954–1992. Theyconcludethatinvestorscouldhavesucceeded,especiallyinthevolatileperiodsofthe
+1970s. Theydonotentertainthehistoricalequitypremiummeanasanullhypothesis. Third,likeGoyal
+and Welch (2003), Bossaerts and Hillion (1999) interpreted out-of-sample performance to be a failure.
+However,BossaertsandHillion(1999)reliedmoreonalargecross-section(14countries)thanonalong
+out-of-sampletimeperiod(1990–1995).
+Goyal and Welch (2003) was also not first to critique predictive regressions. In particular, the use
+of dividend ratios has been critiqued in many other papers (see, e.g., Goetzmann and Jorion (1993)
+andAngandBekaert(2003); apologiestoeveryonewhosepaperweomittocitehere—theliteratureis
+voluminous).
+2

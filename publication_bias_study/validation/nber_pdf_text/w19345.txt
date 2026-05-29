@@ -1,0 +1,130 @@
+NBER WORKING PAPER SERIES
+PAYMENT SIZE, NEGATIVE EQUITY, AND MORTGAGE DEFAULT
+Andreas Fuster
+Paul S. Willen
+Working Paper 19345
+http://www.nber.org/papers/w19345
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+August 2013
+ˆWe are grateful to Ronel Elul, Andy Haughwout, Andrew Leventis, Brian Melzer, Anthony Murphy,
+Joe Tracy, and seminar audiences at MIT Sloan, Freddie Mac, FRB Philadelphia, FRB New York,
+the NBER Summer Institute, and the AREUEA National Conference for helpful comments and discussions.
+The views expressed in this paper are solely those of the authors and not necessarily those of the Federal
+Reserve Banks of Boston or New York, or the Federal Reserve System. The views expressed herein
+are those of the authors and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2013 by Andreas Fuster and Paul S. Willen. All rights reserved. Short sections of text, not to exceed
+two paragraphs, may be quoted without explicit permission provided that full credit, including © notice,
+is given to the source.
+
+Payment Size, Negative Equity, and Mortgage Default
+Andreas Fuster and Paul S. Willen
+NBER Working Paper No. 19345
+August 2013
+JEL No. E43,G21
+ABSTRACT
+Surprisingly little is known about the importance of mortgage payment size for default, as efforts to
+measure the treatment effect of rate increases or loan modifications are confounded by borrower selection.
+We study a sample of hybrid adjustable-rate mortgages that have experienced large rate reductions
+over the past years and are largely immune to these selection concerns. We show that interest rate
+reductions dramatically affect repayment behavior, even for borrowers who are significantly underwater
+on their mortgages. Our estimates imply that cutting a borrower’s payment in half reduces his hazard
+of becoming delinquent by about 55 percent, an effect approximately equivalent to lowering the borrower’s
+combined loan-to-value ratio from 145 to 95 (holding the payment fixed). These findings shed light
+on the driving forces behind default behavior and have important implications for public policy.
+Andreas Fuster
+Federal Reserve Bank of New York
+Research Group
+33 Liberty St
+New York, NY 10045
+andreas.fuster@ny.frb.org
+Paul S. Willen
+Federal Reserve Bank of Boston
+600 Atlantic Avenue
+Boston, MA 02210-2204
+and NBER
+willen968@gmail.com
+
+1 Introduction
+Measuringtherelativeimportanceofpaymentsizeandnegativeequityisacentralquestionin
+theanalysis ofthemortgagedefault decision. Ongoingpolicydebates have pittedproponents
+of principal reductions who argue that only the latter matters against opponents who argue
+that monthly payment reductions aresufficient to prevent most defaults.1 Early inthe recent
+crisis, the dominant view was that the increase in foreclosures was almost entirely the result
+of rising monthly payments (for example, Bair 2007 and Eakes 2007). However, others such
+as Foote, Gerardi, and Willen (2012) have argued that payment increases of adjustable-rate
+loans were not a major driving factor behind the crisis, based on the fact that the number
+of defaults does not seem to react much even to large payment increases.
+In this paper, we contribute to this debate by exploiting the resets of Alt-A hybrid
+adjustable-rate mortgages (ARMs) over the period 2008–2011. Hybrid ARMs have fixed
+payments for 3, 5, 7, or 10 years andthen adjust annually or semiannually until themortgage
+matures, meaning that the borrower’s required monthly payment can adjust substantially
+at a particular moment in the life of the mortgage.2 What makes our sample unique is
+that, because of the changed macroeconomic environment, required payments on most of
+these loans fell at the reset, often dramatically (see Panel A of Figure 1). This gives us an
+advantage over previous work, because, as we explain in Section 2, the prepayment option
+makes it impossible to use payment increases to measure the effects of payment changes on
+mortgage defaults.
+We compare the performance of mortgages before and after payment reductions to the
+performance of otherwise similar mortgagesthat did not receive a contemporaneous payment
+reduction, becausetheyhadadifferentfixedpaymentperiod. Ouranalysisalsousesvariation
+in the size of payment reductions coming from different origination dates across loans. We
+find that payment reductions have very large effects. Panel B of Figure 1 plots the hazard of
+becoming 60-days delinquent for three types of loans as a function of the number of months
+since the origination of the loan. It shows the hazard for ARMs that reset in month 61 (5-
+year or “5/1” ARMs3) dropping from 1.7 percent in month 58 (three months prior to reset)
+1A recent Wall Street Journal article illustrates the debate: “Economists are split. ‘There’s no question
+that in many cases, [principal forgiveness] is the only way to assure people will stay in the house,’ says
+Kenneth Rosen of the University of California, Berkeley. Others say what really matters to borrowers is an
+affordable monthly payment. ‘If people have a huge debt burden but the mortgage is not the problem, why
+are we reducing the mortgage?’ asks Thomas Lawler, an independent housing economist in Leesburg, Va.”
+(“How Forgiveness Fits in Housing-Fix Toolkit,” p. A2, July 30, 2012)
+2We restrict our sample to “interest-only” (IO) loans that do not amortize principal over the first ten
+years of their life. As discussed later, the IO feature was very common among Alt-A hybrid ARMs.
+3WefollowindustryconventioninreferringtoloansthatresetafterX yearsas“X/1”withthe1referring
+to the annual frequency of subsequent adjustments, generating a slight abuse of terminology as a majority
+1
+
+to 0.5 percent by month 64 (after the reset). Payments for these borrowers had fallen on
+average by more than 3 percentage points, or 50 percent. The ARMs that reset after 7 or 10
+years (“7/1+”) and thus had not yet reset in our observation period display no similar drop
+around month 61. Until month 60, shortly prior to the reset, the hazard of the 7/1+ loans
+was lower than that of the 5/1s, but after the reset the default hazard comes in dramatically
+lower for the 5/1s.
+While this figure is strongly suggestive, it obviously does not provide conclusive evidence
+on the strength of the effects of payment reductions. In the remainder of this paper, we use
+statistical techniques to show that the payment reductions indeed caused the changes in the
+default hazards. In particular, we control for the possibility that changes in macroeconomic
+conditions may differentially affect different loan types, and explore various alternative spec-
+ifications to ensure that our effects are not driven by pre-reset trends or omitted variables.
+We robustly find a large effect of payment reductions.
+To quantify the size of the effect, we focus on comparing the effects of an interest rate
+reduction with that of reducing a borrower’s negative equity position (while holding the
+payment size constant). Our estimates indicate that a 2-percentage point reduction in the
+interest rate charged to a borrower has effects on the default hazard approximately equiv-
+alent, for instance, to reducing the borrower’s combined loan-to-value ratio (CLTV) from
+135 to 105.4 A reduction of 4 percentage points or more, which indeed applied to about
+20 percent of 5/1s in our sample, has approximately the same predicted effect on the delin-
+quency hazard as a reduction in the CLTV from 155 to 80. As an alternative way to quantify
+the effect, our estimates imply that an interest rate decrease of 3 percentage points for a
+group of “typical” 5/1s at age 61 months (close to the mean reduction such loans actually
+experienced) with a CLTV between 130 and 140 reduces the number of delinquencies for
+these loans over the year after the reset by about 9 percentage points, or more than half.5
+This illustrates the broader and important finding that our estimated effects are similar if
+we look at only a subset of borrowers in our sample who are severely underwater. As we
+show, this is consistent with basic finance theory and goes against the intuition held by some
+commentators that once a borrower’s mortgage is sufficiently far underwater, it is always
+optimal for him to default.
+An interesting question is at what point in time the effects of a predictable interest rate
+of the ARMs in our sample actually adjust every 6 months.
+4A major advantage of the dataset we use overmost of the previous literature is that for a large fraction
+of loans, we have updated information on the current CLTV, including all liens on a property.
+5Suchcounterfactualsaccountforthefactthatpaymentreductionsalsoreducethehazardofprepayment,
+as shown in PanelC of Figure 1. For underwater loans, the prepaymenthazardis verylow, so reductions in
+the default hazard translate almost directly into reductions in the number of defaults.
+2

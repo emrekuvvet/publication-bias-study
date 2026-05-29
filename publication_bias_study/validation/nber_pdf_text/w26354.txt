@@ -1,0 +1,126 @@
+NBER WORKING PAPER SERIES
+CREDIT SMOOTHING
+Sean Hundtofte
+Arna Olafsson
+Michaela Pagel
+Working Paper 26354
+http://www.nber.org/papers/w26354
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2019
+We thank Andreas Fuster, Michael Haliassos, Ori Heffetz, Constantine Yannelis, Scott Nelson,
+Kyle Herkenhoff, Botond Koszegi, Thomasz Piskorski, Jesse Schreger, Michael Weber, and
+conference and seminar participants at the NY Fed, Toulouse School of Economics (finance),
+University of Mannheim (finance), Nottingham University (economics), University of St. Gallen
+(finance), AEA, the 2018 European Household Finance Conference, CFPB Research Conference,
+EEA Annual Symposium, Colorado Finance Summit in Vail, and the Workshop on New
+Consumption Data at Copenhagen University, WFA, and the Consumer Finance: Micro and
+Macro Approaches Conference for valuable comments and advice. We also thank David Laibson,
+Peter Maxted, Andrea Repetto, and Jeremy Tobacman for sharing the solution code of their life-
+cycle model in Laibson et al. (2017). This project has benefitted from funding from the Carlsberg
+Foundation. We are indebted to Meniga and their data analysts for providing and helping with the
+data. We also thank Fedra De Angelis Effrem and Andrea Marogg for outstanding research
+assistance. The views expressed herein are those of the authors and do not necessarily reflect the
+views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2019 by Sean Hundtofte, Arna Olafsson, and Michaela Pagel. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Credit Smoothing
+Sean Hundtofte, Arna Olafsson, and Michaela Pagel
+NBER Working Paper No. 26354
+October 2019
+JEL No. D14,D90,G51
+ABSTRACT
+Standard economic theory says that unsecured, high-interest, short-term debt — such as
+borrowing via credit cards and bank overdraft facilities — helps individuals smooth consumption
+in the event of transitory income shocks. This paper shows that — on average — individuals do
+not use such borrowing to smooth consumption when they experience a typical transitory income
+shock of unemployment. Instead, individuals smooth their credit card debt and overdrafts by
+adjusting consumption. We first use detailed longitudinal information on debit and credit card
+transactions, account balances, and credit lines from a financial aggregator in Iceland to
+document that unemployment does not induce a borrowing response at the individual level. We
+then replicate this finding in a representative sample of U.S. credit card holders, instrumenting
+local changes in employment using a Bartik (1991)-style instrument. The absence of a borrowing
+response occurs even when credit supply is ample and liquidity constraints, captured by credit
+limits, do not bind. Standard economic models predict a strictly countercyclical demand for
+credit; in contrast, the demand for credit appears to be procyclical which may deepen business
+cycle fluctuations.
+Sean Hundtofte Michaela Pagel
+Better.com and NYU Stern Columbia Business School
+shundtofte@better.com 3022 Broadway
+Uris Hall
+Arna Olafsson New York, NY 10027
+Copenhagen Business School and NBER
+Department of Finance mpagel@columbia.edu
+Solbjerg Plads 3
+2000 Frederiksberg
+Denmark
+ao.fi@cbs.dk
+
+1 Introduction
+How does unsecured, high-interest, short-term borrowing respond to income shocks?
+Standard consumption models make a clear-cut prediction: if such credit is ever used,
+1
+thenitisusedtosmoothconsumptionintheeventofadversetransitoryincomeshocks.
+However,empiricalevidenceforastrongborrowingresponsetotransitoryincomeshocks
+hasremainedscarce. Thiscanpartlybeexplainedbyalackofdatacontainingaccurate,
+high-frequency information on both individual credit use and income. Furthermore,
+disentangling the e(cid:27)ects of the demand and supply of credit (adverse income shocks
+may increase demand but decrease supply) and transitory from permanent income
+shocks (the former should entice a borrowing response while the latter should not) is
+di(cid:30)cult.
+In this paper, we investigate and quantify how credit card and overdraft borrowing
+respondstoaquintessentialtransitoryincomeshockduetounemployment. We(cid:28)rstuse
+monthly data from a personal (cid:28)nance platform in Iceland (a (cid:16)(cid:28)nancial account aggrega-
+tor(cid:17)), containing comprehensive transaction-level information on individual spending,
+income, account balances, and credit limits, to investigate how consumer debt changes
+upon temporary job loss. The longitudinal nature of our data allows us to include
+individual (cid:28)xed e(cid:27)ects in our estimations and thereby control for selection on all time-
+invariant (un)observed characteristics.
+Using the (cid:28)nancial aggregator data, we (cid:28)nd that, over the average spell of unem-
+ployment, individuals reduce their spending, but do not increase their consumer debt
+holdings substantially, even if they borrow regularly and have su(cid:30)cient liquidity. More
+speci(cid:28)cally, we do not (cid:28)nd an increase in the likelihood to have an overdrawn checking
+account, in the number of overdrawn accounts, or in the overdraft amount as measured
+1
+Unsecured debt or non-collateralized debt refers to loans that are not tied to any asset. In the
+U.S. and Iceland as well as other developed countries, unsecured debt consists primarily of credit card
+loans and overdrafts from current accounts.
+1
+
+by interest payments. The data covers the period 2011 to 2017, a time of economic
+expansioninIcelandoverwhichunemploymentwaslowandgenerallyshort-lasting. Un-
+employment in such circumstances is a quintessential kind of transitory income shock,
+which we con(cid:28)rm in the data by showing that income of individuals is not permanently
+a(cid:27)ected by job loss. These (cid:28)ndings thus suggest that large transitory income shocks
+are not a major driver of the substantial consumer debt holdings we observe (the base-
+line probability of holding an overdraft is approximately 50%, i.e., individuals in our
+sample borrow half the time). This (cid:28)nding is inconsistent with a view of unsecured
+high-interest borrowing as an important tool for smoothing consumption in the event
+of adverse transitory income shocks.
+We then turn to the U.S. using household credit data from the Federal Reserve
+Bank of New York and the Equifax Consumer Credit Panel (CCP) that covers the
+universe of credit card accounts nationwide from 2000 to the present. In this data set,
+we con(cid:28)rm and replicate our (cid:28)ndings using the (cid:28)nancial aggregator data from Iceland.
+Constructing county-quarter measures of credit outcomes and employing a Bartik-style
+shift-share instrument as a plausibly exogenous source of variation in county-level em-
+ployment, we estimate the responses of credit card account balances, limits, inquiries,
+2
+utilization, and delinquencies. We replicate our (cid:28)ndings in that we do not (cid:28)nd large
+or statistically signi(cid:28)cant changes in borrowing in response to unemployment shocks.
+More speci(cid:28)cally, individuals in counties with adverse unemployment shocks neither
+appear to increase their overall outstanding balances (even among those with a slack
+in their credit utilization ratios), nor do they appear to increase their inquiries for new
+credit relative to counties with less adverse unemployment shocks.
+This paper’s analysis using U.S. data faces two challenges: (cid:28)rst, in the credit report
+2
+Theestimationandinterpretationofcausale(cid:27)ectsusingaBartik-styleinstrumenttoisolateshocks
+to labor demand has been employed by a number of authors. An incomplete list of papers includes
+Blanchardetal.(1992);Gouldetal.(2002);Aizer(2010);Nguyenetal.(2015);Chodorow-Reichetal.
+(2012); Maestas et al. (2016); Keys et al. (2017).
+2

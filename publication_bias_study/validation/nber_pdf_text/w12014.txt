@@ -1,0 +1,99 @@
+NBER WORKING PAPER SERIES
+OPTIMAL MARKET TIMING
+Erica X. N. Li
+Dmitry Livdan
+Lu Zhang
+Working Paper 12014
+http://www.nber.org/papers/w12014
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+January 2006
+We thank Lubos Pastor, Leonid Kogan, and seminar participants at MIT for helpful discussions. The
+Matlab and C++ programs used for the scientific computation in this paper are available from the authors
+upon request. All remaining errors are our own. The views expressed herein are those of the author(s) and
+do not necessarily reflect the views of the National Bureau of Economic Research.
+©2006 by Erica X. N. Li, Dmitry Livdan and Lu Zhang. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit, including ©
+notice, is given to the source.
+
+Optimal Market Timing
+Erica X. N. Li, Dmitry Livdan and Lu Zhang
+NBER Working Paper No. 12014
+January 2006
+JEL No. E13, E22, E32, E44, G12, G14, G24, G31, G32, G35
+ABSTRACT
+We use a fully-specified neoclassical model augmented with costly external equity as a laboratory
+to study the relations between stock returns and equity financing decisions. Simulations show that
+the model can simultaneously and in many cases quantitatively reproduce: procyclical equity
+issuance; the negative relation between aggregate equity share and future stock market returns; long-
+term underperformance following equity issuance and the positive relation of its magnitude with the
+volume of issuance; the mean-reverting behavior in the operating performance of issuing firms; and
+the positive long-term stock price drift of firms distributing cash and its positive relation with book-
+to-market. We conclude that systematic mispricing seems unnecessary to generate the return-related
+evidence often interpreted as behavioral underreaction to market timing.
+Erica X. N. Li
+Simon School of Business
+University of Rochester
+lix1@simon.rochester.edu
+Dmitry Livdan
+Mays Business School
+Texas A&M University
+dlivdan@mays.tamu.edu
+Lu Zhang
+William E. Simon Graduate School of
+Business Administration
+University of Rochester
+Rochester, NY 14627
+and NBER
+zhanglu@simon.rochester.edu
+
+1 Introduction
+We study the dynamic, quantitative relations between stock returns and equity (cid:12)nancing
+decisions using a fully-speci(cid:12)ed neoclassical model augmented with costly external equity.
+The issue is important. Recent literature in empirical corporate (cid:12)nance has uncovered
+an array of evidence often interpreted as substantiating a window-of-opportunity theory of
+(cid:12)nancingdecisions inresponse tosystematic mispricing inequity markets. In particular, Rit-
+ter(2003)arguesthatmanagerscancreatevalueforexistingshareholdersbytiming(cid:12)nancing
+decisionstotakeadvantageoftime-varyingrelativecostsofdebtandequitycausedbymarket
+ine(cid:14)ciencies. Managers can issue equity when their stock prices arehighand turntointernal
+funds ordebt when stock prices are low. As supporting evidence, Ritter cites many empirical
+studies that document long-run abnormal returns following corporate (cid:12)nancing events.
+Using simulations, we demonstrate that our neoclassical model can reproduce simultane-
+ously, and in many cases quantitatively, many stylized facts often interpreted as behavioral
+market timing. These facts include: (i) the amount and frequency of equity issuance are pro-
+cyclical (e.g., Choe, Masulis, and Nanda (1993)); (ii) the new equity share in total amount of
+new equity and debt (cid:12)nancing is a signi(cid:12)cantly negative predictor of aggregate stock market
+returns (e.g., Baker and Wurgler (2000)); (iii) (cid:12)rms conducting seasoned equity o(cid:11)erings
+underperform nonissuing (cid:12)rms with similar size and book-to-market in the long run, and the
+magnitude of this underperformance increases with the volume of issuance (e.g., Loughran
+and Ritter (1995), and Spiess and A(cid:15)ect-Graves (1995)); (iv) the operating performance of
+issuing (cid:12)rms exhibits substantial improvements prior to the equity o(cid:11)erings, but then deteri-
+orates, and issuing (cid:12)rms are also disproportionately high-investing, high-growth (cid:12)rms (e.g.,
+Loughran and Ritter (1997)); (v) there exists a positive long-term stock price drift for (cid:12)rms
+
+distributing cash back to shareholders, and the magnitude of the drift is stronger among
+value (cid:12)rms (e.g., Lakonishok and Vermaelen (1990), Ikenberry, Lakonishok, and Vermaelen
+(1995), and Michaely, Thaler, and Womack (1995)); and (cid:12)nally (vi) capital investment is
+negatively associated with future stock returns in the cross section, and the magnitude of
+this association is stronger among (cid:12)rms with higher cash (cid:13)ows (e.g., Titman, Wei, and Xie
+(2004), Anderson and Garcia-Feijo(cid:19)o (2005), Polk and Sapienza (2005), and Xing (2005)).
+We deliberately do not include any behavioral bias in our model, in which (cid:12)rms choose
+investment and (cid:12)nancing decisions optimally in response to aggregate and (cid:12)rm-speci(cid:12)c
+productivity shocks. Firm-speci(cid:12)c shocks a(cid:11)ect corporate decisions through operating cash
+(cid:13)ows. And aggregate shocks a(cid:11)ect corporate decisions through both operating cash (cid:13)ows
+and an exogenously-speci(cid:12)ed stochastic discount factor that admits a countercyclical price of
+risk, as in Berk, Green, and Naik (1999). Our simulations suggest that systematic mispricing
+seems unnecessary to generate the evidence often interpreted as behavioral underreaction to
+market timing, or more generally, the window-of-opportunity theory of (cid:12)nancing decisions.
+However, investorsentiment, forexample, asmodeledbyBarberis,Huang,andSantos(2001),
+can potentially a(cid:11)ect the countercyclical price of risk exogenously speci(cid:12)ed in our model.
+We therefore do not suggest that the timing-related evidence is fully rational, but we do
+argue that investor sentiment seems unnecessary.
+The intuition driving our results is simple. Controlling for expected productivity, the
+investment-to-asset ratio correlates negatively with expected returns: all else equal, (cid:12)rms
+withlowercostsofcapitalinvestmore. Andthebalance-sheetconstraintequatingthesources
+of funds with the uses of funds implies that equity issuing (cid:12)rms are disproportionally high
+investment-to-asset (cid:12)rms and cash-distributing (cid:12)rms are disproportionally low investment-
+to-asset (cid:12)rms. The negative investment-return relation then implies that equity issuance
+2

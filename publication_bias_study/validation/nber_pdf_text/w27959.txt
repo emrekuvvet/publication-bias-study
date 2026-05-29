@@ -1,0 +1,131 @@
+NBER WORKING PAPER SERIES
+LIQUIDITY AND VOLATILITY
+Itamar Drechsler
+Alan Moreira
+Alexi Savov
+Working Paper 27959
+http://www.nber.org/papers/w27959
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2020
+We thank Markus Brunnermeier, Pete Kyle, Mathieu Fournier, Yunzhi Hu, David Schreindorfer,
+Daniel Schmidt, Mark Westerfield, and Zhaogang Song for discussions; Kent Daniel, Greg
+Duffie, Ron Kaniel, Bryan Kelly, Maureen O’Hara, and Christian Opp for their comments; as
+well as participants at NBER Asset Pricing, Cornell, CBOE Derivatives Conference, European
+Finance Association, Insead Finance Conference, American Finance Association, University of
+Texas at Austin, Washington University at St. Louis, Toulouse School of Economics, Duke-UNC
+Asset Pricing Conference, JHU-Carey Finance Conference, University of Rochester, Temple
+University, Norges Bank, Federal Reserve Board, Securities and Exchange Commission, UC
+Davis, and Wharton for their comments. We thank Liz Casano for excellent research assistance.
+An earlier draft circulated under the title “Liquidity Creation as Volatility Risk”. The views
+expressed herein are those of the authors and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Itamar Drechsler, Alan Moreira, and Alexi Savov. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that
+full credit, including © notice, is given to the source.
+
+Liquidity and Volatility
+Itamar Drechsler, Alan Moreira, and Alexi Savov
+NBER Working Paper No. 27959
+October 2020
+JEL No. E44,G12,G23
+ABSTRACT
+Liquidity provision is a bet against private information: if private information turns out to be
+higher than expected, liquidity providers lose. Since information generates volatility, and
+volatility co-moves across assets, liquidity providers have a negative exposure to aggregate
+volatility shocks. As aggregate volatility shocks carry a very large premium in option markets,
+this negative exposure can explain why liquidity provision earns high average returns. We show
+this by incorporating uncertainty about the amount of private information into an otherwise
+standard model. We test the model in the cross section of short-term reversals, which mimic the
+portfolios of liquidity providers. As predicted by the model, reversals have large negative betas to
+aggregate volatility shocks. These betas explain their average returns with the same risk price as
+in option markets, and their predictability by VIX in the time series. Volatility risk thus explains
+the liquidity premium among stocks and why it increases in volatile times. Our results provide a
+novel view of the risks and returns to liquidity provision.
+Itamar Drechsler Alexi Savov
+Wharton School Stern School of Business
+University of Pennsylvania New York University
+3620 Locust Walk 44 West Fourth Street, Suite 9-80
+Philadelphia, PA 19104 New York, NY 10012
+and NBER and NBER
+idrechsl@wharton.upenn.edu asavov@stern.nyu.edu
+Alan Moreira
+Simon Graduate School of Business
+University of Rochester
+Box 270100
+Rochester, NY 14627
+alan.moreira@simon.rochester.edu
+Presentation slides is available at
+http://pages.stern.nyu.edu/~asavov/alexisavov/Alexi_Savov_files/DMS_Slides.pdf
+
+Liquidityprovision—intermediationthatlowersthecostofbuyingandsellingassets–
+is a central function of the financial system. In this paper, we show theoretically and
+empirically that liquidity providers bear a negative exposure to market volatility. Since
+market volatility carries a large negative price of risk in option markets (Carr and Wu,
+2008),thenegativeexposureofliquidityprovidersexplainswhyliquidityprovisionearns
+a substantial premium (Krishnamurthy and Vissing-Jorgensen, 2015), why this premium
+increases with volatility (Nagel, 2012), and why liquidity contracts during crises (Brun-
+nermeier, 2009). By integrating liquidity and volatility, our results provide a new per-
+spectiveontherisksandreturnstoliquidityprovision.
+Why do liquidity providers have a negative exposure to market volatility? The basic
+problem liquidity providers face is adverse selection by investors with private informa-
+tion. Instandardmodels(e.g.Kyle,1985),thequantityofprivateinformationinthemar-
+ketisconstantandknowntoliquidityproviders. Itthereforeposesnorisktothem. While
+thisisasimpleassumption,itisclearlyunrealistic. Volatility,theobservedend-productof
+the flow of information, is highly time-varying, both at the level of individual assets and
+for the market as a whole. Moreover, the volatilities of individual assets covary strongly
+with each other and with market volatility. This suggests that flows of information, both
+publicandprivate,varysubstantiallyovertimeandinasynchronousmanner.
+To capture this co-movement, we extend the model of Kyle (1985) by making the
+amounts of market and private information uncertain and positively correlated. Because
+of this correlation, market volatility informs liquidity providers about the amount of pri-
+vate information they face. In particular, an increase in market volatility leads them to
+estimateagreateramountofprivateinformation.
+AsinKyle(1985),liquidityproviders’estimateofprivateinformationdetermineshow
+muchtheyadjustpricesinthedirectionofthenetorderflowtheyreceive. Iftheirestimate
+is too low, they adjust prices too little, and because of adverse selection trade too much
+with informed investors. They then accumulate long positions at prices that are too high
+andshortpositionsatpricesthataretoolow.
+Now consider what happens when there is a positive shock to market volatility. The
+shock increases liquidity providers’ estimate of private information. Liquidity providers
+learnthattheyhadnotadjustedpricesenoughandlikelytradedtoomuchwithinformed
+investors. Prices immediately come to reflect this. Liquidity providers see their long
+1
+
+positionsfallandtheirshortpositionsrise,takinglossesacrosstheportfolio. Theopposite
+happenswhenanegativeshockhits: liquidityproviders’estimateofprivateinformation
+declines,theirlongsriseandtheirshortsfall. Insum,liquidityprovidershaveanegative
+exposuretomarketvolatility.
+In existing models of liquidity provision, which focus on inventory risk (e.g., Stoll,
+1978; Grossman and Miller, 1988), a liquidity provider’s risk is idiosyncratic. To explain
+the liquidity premium these models assume that some friction prevents the liquidity
+provider from diversifying this risk away. While this may apply in some cases, partic-
+ularly for small and thinly-traded assets, it is unlikely to explain the liquidity premium
+amonglargeandheavily-tradedassets.
+Inourmodelliquidityprovidersfaceasystematicrisk(fluctuationsinmarketvolatil-
+ity)thatcannotbediversifiedaway. Wethusneedtospecifyhowthisriskispricedbythe
+economy’s stochastic discount factor. Consistent with the strong evidence from option
+prices,weassumethatmarketvolatilitycarriesalargenegativepriceofrisk. Thisimplies
+that liquidity providers earn a positive premium for the negative volatility risk exposure
+theybear. Thepremiumsforliquidityandvolatilityarethusoneandthesame.
+To test the model, we need to proxy for liquidity providers’ portfolios, which are not
+directly observed. As in Nagel (2012), the model shows that they are mimicked by short-
+term reversals (e.g., Lehmann, 1990), a trading strategy that buys assets whose price has
+fallen and shorts assets whose price has risen. The reason for this is that a large price
+change reflects a large net order flow, requiring the liquidity provider to take a large
+position. Wethususereversalstoproxyforthereturnstoliquidityprovision.
+We build reversal portfolios using daily U.S. stock returns from 2001 to 2020 (i.e., the
+periodsince“decimalization,”whenliquidityprovisionbecamecompetitive;seeBessem-
+binder, 2003). Each day we sort stocks into quintiles by market cap and deciles by the
+day’s return, normalized by its rolling standard deviation as implied by our model. Also
+as implied by our model, we weight the portfolios by dollar volume to proxy for the size
+of liquidity providers’ holdings. This gives us fifty portfolios sorted by size and return.
+Wefurtherconstructlong-shortreversalstrategieswithineachsizequintilebybuyingthe
+low-returndecilesandshortingthehigh-returndeciles: Lo–Hi,2–9,3–8,4–7,and5–6. The
+outermost-decile strategies carry the strongest reversal signal and therefore capture the
+mostintensiveliquidityprovision. Thisallowsustotestourmodelinthecrosssection.
+2

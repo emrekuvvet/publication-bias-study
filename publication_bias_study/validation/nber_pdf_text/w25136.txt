@@ -1,0 +1,155 @@
+NBER WORKING PAPER SERIES
+CONNECTING TO POWER:
+POLITICAL CONNECTIONS, INNOVATION, AND FIRM DYNAMICS
+Ufuk Akcigit
+Salomé Baslandze
+Francesca Lotti
+Working Paper 25136
+http://www.nber.org/papers/w25136
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2018
+We thank Marco Chiurato, Salvatore Di Novo, and Marta Prato for excellent research assistance and
+our discussants Stefania Albanesi, Serdar Dinc, Stuart Graham, and Matteo Maggiori, for very constructive
+comments. We thank seminar and conference participants at the University of Chicago, MIT, Harvard,
+Penn State, NYU, ASSA Meetings, Richmond Fed, Georgetown University, Institute for Fiscal Studies,
+Harvard Business School, World Bank, Brandeis University, Tufts University, University College
+London, University of Maryland, EIEF, Bank of Italy, SKEMA Business School, CEPR Symposium,
+Philadelphia Fed, College de France, Banque de France, Turkish Central Bank, IESE, St. Louis Fed,
+University of Toronto Rotman, New York Fed, Atlanta Fed, INSEAD, University of Zurich, Munich
+Summer Institute, SED Mexico, INPS, NBER Entrepreneurship meeting, NBER Political Economy
+meeting, NBER Productivity lunch meeting for very helpful feedback and discussions. For providing
+invaluable support with the data access, we thank the research division of the Social Security Institute
+of Italy (INPS), especially Massimo Antichi, Mariella Cozzolino, Edoardo Di Porto, and Paolo Naticchioni.
+The views expressed by the authors do not necessarily reflect those of the Bank of Italy, INPS, the
+Federal Reserve System, or the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2018 by Ufuk Akcigit, Salomé Baslandze, and Francesca Lotti. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Connecting to Power: Political Connections, Innovation, and Firm Dynamics
+Ufuk Akcigit, Salomé Baslandze, and Francesca Lotti
+NBER Working Paper No. 25136
+October 2018, Revised April 2020
+JEL No. D70,O3,O4
+ABSTRACT
+How do political connections affect firm dynamics, innovation, and creative destruction? To answer
+this question, we build a firm dynamics model, where we allow firms to invest in innovation and/or
+political connection to advance their productivity and to overcome certain market frictions. Our model
+generates a number of theoretical testable predictions and highlights a new interaction between static
+gains and dynamic losses from rent-seeking in aggregate productivity. We test the predictions of our
+model using a brand-new dataset on Italian firms and their workers, spanning the period from 1993
+to 2014, where we merge: (i) firm-level balance sheet data; (ii) social security data on the universe
+of workers; (iii) patent data from the European Patent Office; (iv) the national registry of local politicians;
+and (v) detailed data on local elections in Italy. We find that firm-level political connections are widespread,
+especially among large firms, and that industries with a larger share of politically connected firms
+feature worse firm dynamics. We identify a leadership paradox: when compared to their competitors,
+market leaders are much more likely to be politically connected, but much less likely to innovate. In
+addition, political connections relate to a higher rate of survival, as well as growth in employment
+and revenue, but not in productivity – a result that we also confirm using a regression discontinuity
+design.
+Ufuk Akcigit Francesca Lotti
+Department of Economics Structural Economic Analysis Department
+University of Chicago Bank of Italy
+1126 East 59th Street via Nazionale 91, 00184 Rome (IT)
+Saieh Hall, Office 403 francesca.lotti@bancaditalia.it
+Chicago, IL 60637
+and NBER
+uakcigit@uchicago.edu
+Salomé Baslandze
+Einaudi Institue for Economics and Finance (EIEF)
+Via Sallustiana 62
+Rome 00187
+Italy
+salome.baslandze@eief.it
+
+onnecting to ower olitical onnections nnovation and irm ynamics
+C P : P C , I , F D
+“There are public officials who, instead of serving the interests of the community, put them-
+selves at the service of private individuals. It’s a devastating situation: those firms that have
+political and administrative support, thanks to the “good” friend, manage to obtain illicit
+benefits, while honest companies look astonished at what happens."
+Carmelo Zuccaro, Chief Prosecutor of Catania1
+La Sicilia, May 3rd, 2018
+1 Introduction
+In May 2018, Mr. Carmelo Zuccaro, the chief prosecutor of the Sicilian port city of Catania, uttered
+the above quote during his press conference on the “Black Job” operation against the misconduct
+of local politicians. This quote succinctly demonstrates how some firms can secure preferential
+treatment in the market, thanks in no small part to their connections to local politicians. How
+widespreadare suchconnectionsto localpoliticians, and howdo theyaffectfirm dynamics, market
+competition, innovation, and the overall productivity process in the economy? This paper studies
+these questions, both theoretically and empirically.
+Agrowingbodyofliteraturearguesthatfactorreallocationfromlessproductivetomoreproduc-
+tive firms is an important source of productivity growth (e.g., Bartelsman and Doms, 2000; Foster
+et al., 2001, 2006). Similarly, innovation-based endogenous growth models (e.g., Grossman and
+Helpman,1991;AghionandHowitt,1992)assertthattheprocessofcreativedestruction,wherebyun-
+productive incumbents are replaced by innovative new entrants, is the key ingredient for economic
+growth. These models assume that it is sufficient for an entrepreneur to innovate the most superior
+product or production technology to seamlessly replace an incumbent firm, and thus become the
+new market leader. However, many examples, such as the one in the opening paragraph, illustrate
+that there might be more to it than that. Political connections can help some firms dominate a
+market, even if they do not necessarily introduce a more superior product or process.
+Our analysis begins with a theoretical investigation of how political connections could influence
+an economy’s business dynamism, new firm creation, factor reallocation, and innovation. To orga-
+nize our thoughts, we build an illustrative Schumpeterian creative destruction model where firms
+face regulatory burdens.2 As in Restuccia and Rogerson (2008); Hsieh and Klenow (2009); Garicano
+et al. (2016), we model these regulatory burdens as wedges in the production process of a firm that
+may be alleviated by connecting with politicians, but those connections are costly. The static prob-
+lem implies a threshold rule of firm size, above which firms find it profitable to incur the cost of
+connectionstolowertheburdenofregulations–hencelargerfirms(marketleaders)aremorelikely
+to be politically connected. We also discover that firms that become connected enjoy temporarily
+higher employment and sales growth but have lower labor productivity growth. However, in a dy-
+namic perspective, industries that have politically connected incumbents face lower entry by new
+firms. Intuitively, new firms need to compete with incumbents not only in productivity, but they
+also need to overcome the regulatory or bureaucratic burden, to which the connected incumbent is
+1https://www.lasicilia.it/news/cronaca/157854/il-procuratore-zuccaro-ci-sono-funzionari-pubblici-al-servizio-di-privati.html
+2Foranextensiveevidenceonhighregulatory/bureaucraticburdenandpoliticalconnectionsinItaly,seeSection4.2.
+1
+
+onnecting to ower olitical onnections nnovation and irm ynamics
+C P : P C , I , F D
+already immune. An additional amplification comes from the fact that incumbents anticipate this
+dynamic effect and strategically choose to become politically connected to preempt competition.
+Themodelhighlightstheimportantcontrastingfacetsoffirm-levelconnectionsfortheaggregate
+economy. Statically, connections may be beneficial in overcoming certain market frictions; however,
+they may also bring dynamic losses, since the incumbents’ connections give them an unfair ad-
+vantage over other market participants. In this way, while political connections might be desirable
+for static considerations, they distort competition and firm dynamics, resulting in markets that are
+dominated by older and larger firms with low innovation and productivity growth. This interplay
+is at the heart of both our empirical and theoretical constructs.
+Thesecondpartofthepaperisdevotedtothestudyofthesetheoreticalideasusingabrand-new
+micro-level confidential data, focusing on Italian firms and politicians from 1993 to 2014. There are
+three main reasons for this. First, as hinted by our opening story, there is ample anecdotal evidence
+for the link between political power and the corporate sector in Italy. Perhaps the largest manifesta-
+tion of this presumption is the historical episode of Mani Pulite (“Clean Hands”) – an investigation
+intoahugepoliticalscandal,whicheventuallyuncoveredadensenetworkofcorruptionandbribery
+throughout Italy in the early 1990s.
+Second, to rigorously study all the channels through which political connections affect firm
+dynamics,weneedaverydetailed,large-scalemicrodatasetonfirmsandtheirpoliticalconnections.
+To this end, we construct a new dataset for the Italian economy, spanning the entire period of 1993-
+2014, wherein we merge: (i) firm-level balance sheet data; (ii) social security data on the universe
+of workers; (iii) patent data from the European Patent Office; (iv) the national registry of local
+politicians; and (v) detailed data on local elections in Italy. We define a firm as being politically
+connected at time t if the firm employs at least one local politician at time t. The nature of this data
+allows us to exploit rich heterogeneity in the type of connection – based on the level or rank of a
+position, or the party affiliation of a politician employed. Our unique, five-way data match allows
+us to examine at the micro level how firms change their competition strategy as they gain market
+power, or what firm-level outcomes are associated with (or implied by) political connections. In
+addition, we study how factor reallocation among incumbents and new firms is affected by the
+presence of political connections.
+Third, the Italian economy has been performing poorly, particularly in terms of productivity
+growth, since the 1990s (see, for instance, Bugamelli and Lotti, 2018). While many reasons could
+be at play for low and stalling aggregate productivity, we try to shed some light on the aggregate
+implications of firm-level political connections through their effect on firm dynamics, innovation
+incentives, and competition.
+The focus on local politicians – at the municipal, provincial, and regional level – is also a dis-
+tinctive feature of our analysis relative to most of the empirical literature that looks at high-profile
+connections. Indeed, local-level connections are much more pervasive and usually harder to iden-
+tify. In addition, local politicians hold extensive power: among other duties, they have authority
+over and responsibility for the provision of local public goods and services; administrative author-
+ity over the issuing of various permits and licenses; and are responsible for the majority of the
+2

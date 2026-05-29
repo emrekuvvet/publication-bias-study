@@ -1,0 +1,149 @@
+NBER WORKING PAPER SERIES
+UNEVEN GROWTH: AUTOMATION'S IMPACT ON INCOME
+AND WEALTH INEQUALITY
+Benjamin Moll
+Lukasz Rachel
+Pascual Restrepo
+Working Paper 28440
+http://www.nber.org/papers/w28440
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+February 2021
+We thank Daron Acemoglu, Fabrizio Perri, Matt Rognlie, Richard Rogerson, Stefanie
+Stantcheva, Ivan Werning and seminar participants at various institutions for useful comments
+and Gabriel Zucman for kindly providing some tabulations from the dataset constructed by
+Piketty, Saez and Zucman (2018). We also thank Benny Kleinman, Nils Lehr and Max Vogler for
+outstanding research assistance. The views presented here are solely those of the authors and do
+not represent the views of the Bank of England or its policy committees. The views expressed
+herein are those of the authors and do not necessarily reflect the views of the National Bureau of
+Economic Research. Moll received funding for this project from the Leverhulme Trust and the
+European Union's Horizon 2020 research and innovation programme under grant number No.
+GA: 865227.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2021 by Benjamin Moll, Lukasz Rachel, and Pascual Restrepo. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Uneven Growth: Automation's Impact on Income and Wealth Inequality
+Benjamin Moll, Lukasz Rachel, and Pascual Restrepo
+NBER Working Paper No. 28440
+February 2021
+JEL No. E21,E22,E24,E25,J31
+ABSTRACT
+The benefits of new technologies accrue not only to high-skilled labor but also to owners of
+capital in the form of higher capital incomes. This increases inequality. To make this argument,
+we develop a tractable theory that links technology to the personal income and wealth
+distributions – and not just that of wages – and use it to study the distributional effects of
+automation. We isolate a new theoretical mechanism: automation increases inequality via returns
+to wealth. The flip side of such return movements is that automation is more likely to lead to
+stagnant wages and therefore stagnant incomes at the bottom of the distribution. We use a multi-
+asset model extension to confront differing empirical trends in returns to productive and safe
+assets and show that the relevant return measures have increased over time. Automation accounts
+for part of the observed trends in income and wealth inequality and macroeconomic aggregates.
+Benjamin Moll Pascual Restrepo
+London School of Economics Department of Economics
+Houghton Street Boston University
+London WC2A 2AE 270 Bay State Road
+United Kingdom Boston, MA 02215
+b.moll@lse.ac.uk and NBER
+pascual@bu.edu
+Lukasz Rachel
+Bank of England
+Threadneedle Street
+London, EC2R 8AH
+United Kingdom
+lukasz.rachel@bankofengland.co.uk
+An online appendix is available at: http://www.nber.org/data-appendix/w28440
+
+Introduction
+Over the past forty years, economic growth in many advanced economies has been unevenly
+distributed. In the United States, while the aggregate economy has grown at roughly two
+percent per year, income percentiles corresponding to the lower half of the distribution have
+stagnated. At the same time, incomes at the 95th percentile have roughly doubled and top
+1 percent incomes have roughly tripled.1
+One potential driver of these trends that is often cited by pundits and policy makers
+alike is technical change, and in particular the automation of tasks performed by labor. A
+large literature in macro and labor economics has studied how technology and automation
+affect the distribution of labor incomes.2 But not all income is labor income and capital is
+an important income source, particularly at the top of the distribution where incomes have
+increased the most. Existing theories therefore paint an incomplete picture of technology’s
+implications for overall income inequality. This shortcoming is particularly acute when
+it comes to automation, technical change that substitutes labor with capital, and which
+therefore increases the importance of capital in the economy.
+Wearguethatthebenefitsofnewtechnologies—andinparticularautomationtechnologies—
+accruenotonlytohigh-skilledlaborbutalsotoownersofcapitalintheformofhighercapital
+incomes. Thisincreasesinequality. Tomakethisargument,wedevelopatractableframework
+that allows us to study the impact of technology on factor prices and the personal income
+and wealth distributions—and not just that of wages—and use it to study the distributional
+effects of automation.
+Our framework provides a complete characterization of how technology and, more gen-
+erally, changes in the economy’s production and market structure affect the personal distri-
+bution of income, wages, and capital ownership, as well as macroeconomic aggregates.3 We
+achieve this by assuming that households differ in their skills and household wealth accumu-
+lation is subject to random dissipation shocks which leave them with zero assets and only
+their labor income, thereby capturing the hazards of accumulating and maintaining a for-
+tune. Dissipation shocks allow us to deviate in a tractable fashion from models that admit
+a representative household (like variants of the neoclassical growth model) and introduce
+two key features relative to such models that are crucial for understanding how automation
+affects inequality and aggregates.4 First, our theory generates well-defined and tractable
+steady-state distributions for wealth and income. Second, the long-run supply of capital
+1See for example Census Bureau (2015) and Piketty, Saez and Zucman (2018).
+2See for example Katz and Murphy (1992), Krusell et al. (2000) and Autor, Katz and Kearney (2006)
+3Importantly, ours is a theory of the personal income distribution and not just of the factor income
+distribution. The latter type of theory – for example “two class models” with capitalists and workers –
+cannot speak to a number of empirical regularities in developed countries, for example that individuals at
+the top of the labor income distribution typically also earn substantial capital incomes (and vice versa).
+4Ournotionof“modelsthatadmitarepresentativehousehold”allowsforskillheterogeneityandincludes
+models that assume there are different skill types but these are all members of the same representative
+household, and models where Gorman aggregation holds (see Theorem 5.2 in Acemoglu, 2009).
+1
+
+is less than perfectly elastic and therefore determines the long-run effect of technology on
+returns to wealth (prices) and the amount of capital used in production (quantities).
+The framework underscores two key and novel channels through which technology affects
+income inequality and contributes to the pattern of uneven growth described above. First,
+automation increases wealth and capital income inequality by raising returns to wealth.
+Second, relative to theories in which returns are unaffected, automation is more likely to lead
+to stagnant wages and, therefore, stagnant incomes at the bottom of the income distribution.
+The key to understanding both results is that the long-run capital supply in our model is
+upward-sloping. Automation increases the demand for capital relative to labor and, because
+supply is upward-sloping, this demand shift permanently increases returns to wealth. The
+first part, that automation directly increases wealth and income inequality, then follows
+because some households receive a higher return on their assets and grow their fortunes
+more rapidly. The second part—that wages are more likely to stagnate—follows because
+some of the productivity gains from automation do not accrue to workers but rather to
+owners of capital in the form of a higher return to their wealth. Neither of these mechanisms
+would be operational in textbook representative household models, in which the long-run
+capital supply is perfectly elastic and therefore returns are unaffected by technology.
+We first illustrate these mechanisms using a simple baseline model and later extend this
+model in a number of directions. In the baseline model, capital is the only asset in the
+economy and all households earn the same return on their wealth. We obtain two main
+analytical results that illuminate how automation affects inequality.
+First, the steady-state return exceeds the discount rate by a premium p×σ×α , where
+net
+p is the arrival rate of dissipation shocks, σ is the inverse of the intertemporal elasticity
+of substitution, and α is the net capital share – an object that rises with automation.
+net
+Therefore, in contrast to textbook representative household models in which this return
+equals the (fixed) discount rate, the return in our model increases with automation.
+Second, the steady-state wealth accumulation process of individual households generates
+an exact Pareto distribution for both effective wealth (the sum of financial and human
+wealth) and income conditional on wages.5 In equilibrium, tail inequality – as measured
+by the inverse of the Pareto shape parameter – simply equals the net capital share α ,
+net
+meaning that both top income and wealth inequality increase with automation.6 Intuitively,
+the gap between the return to wealth and the discount rate determines the speed at which
+individual households accumulate wealth in the absence of a dissipation shock, which in
+turn determines the thickness of the wealth distribution. In equilibrium, this gap equals the
+premiump×σ×α andthereforethenetcapitalshareα showsupinthetailindexofthese
+net net
+distributions. This result illustrates in a transparent fashion the new mechanism emphasized
+above that automation contributes to income inequality by permanently increasing returns
+5Because of dissipation shocks, there is churn at the individual level even though aggregate capital is
+constant in steady state: households accumulate wealth over time but lose it with some probability.
+6We also show that the scale parameter of these Pareto distributions is determined by wages which is
+another channel through which automation affects income and wealth inequality.
+2

@@ -1,0 +1,123 @@
+NBER WORKING PAPER SERIES
+INSTITUTIONAL INVESTORS AND STOCK MARKET VOLATILITY
+Xavier Gabaix
+Parameswaran Gopikrishnan
+Vasiliki Plerou
+H. Eugene Stanley
+Working Paper 11722
+http://www.nber.org/papers/w11722
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2005
+The views expressed herein are those of the author(s) and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+©2005 by Xavier Gabaix, Parameswaran Gopikrishnan, Vasiliki Plerou, and H. Eugene Stanley. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Institutional Investors and Stock Market Volatility
+Xavier Gabaix, Parameswaran Gopikrishnan, Vasiliki Plerou, and H. Eugene Stanley
+NBER Working Paper No. 11722
+October 2005
+JEL No. G1, G12
+ABSTRACT
+We present a theory of excess stock market volatility, in which market movements are due to trades
+by very large institutional investors in relatively illiquid markets. Such trades generate significant
+spikes in returns and volume, even in the absence of important news about fundamentals. We derive
+the optimal trading behavior of these investors, which allows us to provide a unified explanation for
+apparently disconnected empirical regularities in returns, trading volume and investor size.
+Xavier Gabaix
+Department of Economics
+Massachusetts Institute of Technology
+50 Memorial Drive, E52-274B
+Cambridge, MA 02142
+and NBER
+xgabaix@mit.edu
+Parameswaran Gopikrishnan
+gopi@bu.edu
+Vasiliki Plerou
+plerou@bu.edu
+H. Eugene Stanley
+Department of Physics
+Boston University
+590 Commonwealth Avenue
+Boston, MA 02215
+hes@bu.edu
+
+INSTITUTIONAL INVESTORS AND STOCK MARKET
+VOLATILITY
+∗
+Xavier Gabaix
+Parameswaran Gopikrishnan
+Vasiliki Plerou
+H. Eugene Stanley
+October 2, 2005
+Abstract
+Wepresentatheoryofexcessstockmarketvolatility,inwhichmarketmovementsaredueto
+trades by very large institutional investors in relatively illiquid markets. Such trades generate
+significant spikes in returns and volume, even in the absence of important news about funda-
+mentals. Wederivetheoptimaltradingbehavioroftheseinvestors,whichallowsustoprovidea
+unifiedexplanationforapparentlydisconnectedempiricalregularitiesinreturns,tradingvolume
+and investor size.
+I. Introduction
+Ever since Shiller [1981], economists have sought to understand the origins of volatility in stock
+market prices, which appears to exceed the predictions of simple models with rational expectations
+Wethankoureditorandrefereesforveryhelpfulcomments. WealsothankTobiasAdrian,NicholasBar-
+∗
+beris,OlivierBlanchard,Jean-PhilippeBouchaud,JohnCampbell,VictorChernozhukov,EmanuelDerman,
+Peter Diamond, Alex Edmans, Edward Glaeser, Joel Hasbrouck, David Hirshleifer, Harrison Hong, Soeren
+Hvidjkaer, Ivana Komunjer, David Laibson, Augustin Landier, Ananth Madhavan, Andrew Metrick, Lasse
+Pedersen, Thomas Philippon, Marc Potters, Jon Reuter, Bryan Routledge, Gideon Saar, Andrei Shleifer,
+Didier Sornette, Dimitri Vayanos, Jessica Wachter, Jiang Wang, Jeffrey Wurgler, and seminar participants
+atUniversityofCalifornia,Berkeley,DépartementetLaboratoired’EconomieThéoriqueetAppliquée,Duke
+University, Harvard University, John Hopkins University, Kellogg School of Management, Massachusetts In-
+stitute of Technology, National Bureau of Economic Research, New York University, Princeton University,
+Stanford University, Wharton School of Business, the Econophysics conferences in Indonesiaand Japan, the
+Western Finance Association and Econometric Society meetings. We thank Fernando Duarte, Tal Fishman,
+and David Kang for their research assistance. Gopikrishnan’s contribution was part of his Ph.D. thesis. We
+thank Morgan Stanley, the National Science Foundation and the Russell Sage Foundation for support.
+1
+
+and constant discounting.1 Even after the fact, it is hard to explain changes in the stock market
+using only observable news [Cutler, Poterba and Summers 1989; Fair 2002; Roll 1988].
+Wepresentamodelinwhichvolatilityiscausedbythetradesoflargeinstitutions. Institutional
+investors appear to be important for the low-frequency movements of equity prices, as shown by
+Gompers and Metrick [2001]. Understanding better the behavior of institutional investors also
+sheds light on many issues, such as momentum and positive feedback trading [Chae and Lewellen
+2004; Cohen, Gompers and Vuolteenaho 2002; Choe, Khoand Stulz 1999; Hvidkjaer 2005], bubbles
+[Brunnermeier and Nagel 2004], liquidity provision [Campbell, Ramadorai and Vuolteenaho 2005],
+and the importance of indexing [Goetzman and Massa 2003]. We further this research by analyzing
+how trading by individual large investors may create price movements that are hard to explain by
+fundamental news.
+In our theory, spikes in trading volume and returns are created by a combination of news and
+the trades by large investors. Suppose news or proprietary analysis induces a large investor to
+trade a particular stock. Since his desired trading volume is then a significant proportion of daily
+turnover, he will moderate his actual trading volume to avoid paying too much in price impact.2
+The optimal volume will nonetheless remain large enough to induce a significant price change.
+Traditional measures, such as variances and correlations, are of limited use in analyzing spikes
+in market activity. Many empirical moments are infinite; moreover, their theoretical analysis is
+typically untractable.3 Instead, a natural object of analysis turns out to be the tail exponent of the
+distribution, for which some convenient analytical techniques apply. Furthermore, there is much
+empirical evidenceon the tails of the distributions, whichappear to bewell approximatedby power
+laws. For example, the distribution of returns r over daily or weekly horizons decays according to
+P(r > x) x ζr where ζ is the tail or Pareto exponent.4 This accumulated evidence on tail
+− r
+| | ∼
+behavior is useful to guide and constrain any theory of the impact of large investors. Specifically,
+our theory unifies the following stylized facts.
+(i) the power law distribution of returns, with exponent ζ 3;
+r
+'
+(ii) the power law distribution of trading volume, with exponent ζ 1.5;
+q
+'
+(iii) the power law distribution of price impact;
+(iv) the power law distribution of the size of large investors, with exponent ζ 1.
+S
+'
+1See also Campbell and Shiller [1988], French and Roll [1986], LeRoy and Porter [1981].
+2See Section II.C.
+3The variance of volume and the kurtosis of returns are infinite. Section II provides more details.
+4Appendix 1 reviews the relevant techniques.
+2

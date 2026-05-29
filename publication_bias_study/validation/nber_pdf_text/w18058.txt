@@ -1,0 +1,128 @@
+NBER WORKING PAPER SERIES
+NONLINEAR ADVENTURES AT THE ZERO LOWER BOUND
+Jesús Fernández-Villaverde
+Grey Gordon
+Pablo A. Guerrón-Quintana
+Juan Rubio-Ramírez
+Working Paper 18058
+http://www.nber.org/papers/w18058
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2012
+ˆWe thank Michael Woodford for useful comments. We also thank Larry Christiano for explaining to
+us several aspects about his work on the topic. Keith Kuester provided valuable comments on earlier
+drafts. Beyond the usual disclaimer, we must note that any views expressed herein are those of the
+authors and not necessarily those of the Federal Reserve Bank of Atlanta, the Federal Reserve Bank
+of Philadelphia, the Federal Reserve System, or the National Bureau of Economic Research. Finally,
+we also thank the NSF for financial support.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2012 by Jesús Fernández-Villaverde, Grey Gordon, Pablo A. Guerrón-Quintana, and Juan Rubio-
+Ramírez. All rights reserved. Short sections of text, not to exceed two paragraphs, may be quoted
+without explicit permission provided that full credit, including © notice, is given to the source.
+
+Nonlinear Adventures at the Zero Lower Bound
+Jesús Fernández-Villaverde, Grey Gordon, Pablo A. Guerrón-Quintana, and Juan Rubio-Ramírez
+NBER Working Paper No. 18058
+May 2012
+JEL No. E30,E50,E60
+ABSTRACT
+Motivated by the recent experience of the U.S. and the Eurozone, we describe the quantitative properties
+of a New Keynesian model with a zero lower bound (ZLB) on nominal interest rates, explicitly accounting
+for the nonlinearities that the bound brings. Besides showing how such a model can be efficiently computed,
+we find that the behavior of the economy is substantially affected by the presence of the ZLB. In particular,
+we document 1) the unconditional and conditional probabilities of hitting the ZLB; 2) the unconditional
+and conditional probabilty distributions of the duration of a spell at the ZLB; 3) the responses of output
+to government expenditure shocks at the ZLB, 4) the distribution of shocks that send the economy
+to the ZLB; and 5) the distribution of shocks that keep the economy at the ZLB.
+Jesús Fernández-Villaverde Pablo A. Guerrón-Quintana
+University of Pennsylvania Federal Reserve Bank of Philadelphia
+160 McNeil Building pablo.guerron@phil.frb.org
+3718 Locust Walk
+Philadelphia, PA 19104 Juan Rubio-Ramírez
+and NBER Duke University
+jesusfv@econ.upenn.edu P.O. Box 90097
+Durham, NC 27708
+Grey Gordon juan.rubio-ramirez@duke.edu
+University of Pennsylvania
+160 McNeil Building
+3718 Locust Walk
+Philadelphia, PA 19104
+greygordon@gmail.com
+
+1. Introduction
+How does the economy behave when it faces the zero lower bound (ZLB) on the nominal
+interest rate? To answer this basic question in macroeconomics, we build a New Keynesian
+model with the ZLB and solve it nonlinearly using a projection method and rational expec-
+tations. Besides showing how the model can be e¢ ciently computed, this paper documents
+1) the unconditional and conditional probabilities of hitting the ZLB; 2) the unconditional
+and conditional probability distributions of the duration of a spell at the ZLB; 3) the dis-
+tributions of shocks that send the economy to the ZLB and the ones that keep it there; 4)
+the responses of output to government expenditure shocks at the ZLB; and 5) the impulse
+response functions of the economy at and away from the ZLB.
+Our investigation is motivated by the recent U.S. and Eurozone experience of (nearly)
+zero short-term nominal interest rates after 2008. This experience has rekindled the interest
+in understanding the theoretical and quantitative e¤ects of the ZLB in dynamic stochastic
+general equilibrium (DSGE) models. These e¤ects are consequential for the conduct of policy
+as illustrated, for instance, by Eggertsson and Woodford (2003)—for monetary policy—and
+Christiano, Eichenbaum, and Rebelo (2011)—for …scal policy.
+However, the quantitative analysis of the ZLB is complicated by the essential nonlinearity
+that it generates. Along the equilibrium path of the model, the nominal interest rate is a
+function of the states of the economy and government policy. Since, in the typical model, the
+nominal interest rate will be zero for some states of the economy and government policies but
+notforothers,thefunctionthatdeterminesinterestratesmustbenonlinear. Thisnonlinearity
+is an obstacle both for traditional linearizations techniques and for the increasingly popular
+higher-order perturbations. These methods, by construction, cannot handle the ZLB in a
+model with rational expectations.
+The literature has tried to get around this problem using di¤erent approaches. We high-
+light three of the most in‡uential. Eggertsson and Woodford (2003) log-linearize the equi-
+librium relations except for the ZLB constraint, which is retained in its exact form. They
+then solve the corresponding system of linear expectational di¤erence equations with the lin-
+ear inequality constraint. To obtain numerical results, Eggertsson and Woodford assume a
+2-state Markov chain with an absorbing state for an exogenous disturbance that drives the
+dynamicsofthemodel.1 Christiano, Eichenbaum, andRebelo(2011)linearizethetwomodels
+they use: a simple model without capital and a model with capital. In the …rst model, they
+assume that there is a 2-state Markov chain with an absorbing state for the discount factor.
+1EggertssonandWoodfordalsoderiveanalyticalresults,suchanoptimalmonetarypolicy,formoregeneral
+disturbance processes.
+3
+
+The economy starts with a high discount factor that sends the nominal interest rate to zero
+and, in every period, there is a probability that the discount factor will move to its long run
+value and never change again. In the model with capital, the path for the discount factor
+(and hence, for the economy, conditional on some …scal policy) is deterministic. Braun and
+Körber (2010) employ a variant of extended shooting, which solves the model forward for an
+exogenously …xed number of periods (after which the economy reverts to the steady state)
+given some initial conditions and assuming that in these periods, shocks are set to zero.
+Although a big step toward understanding the ZLB, the existing solutions have made sim-
+plifying assumptions that may have unexpected implications. First, linearizing equilibrium
+conditions such as the Euler equations may hide some nonlinear interactions between the
+ZLB and the policy functions of the agents. Second, linear approximations provide a poor
+description of the economy during deep recessions such as the 2007-2009 one. Hence, our
+approach is a step forward to analyze the role of policy during contractions a icted by the
+ZLB. Third, dynamics driven by exogenous variables that follow 2-state Markov chains with
+absorbing states or have deterministic paths imply the durations of spells at the ZLB have
+very simple expectations and variances. When we solve the model nonlinearly, however, these
+expectations and variances change substantially over time. This is key because the shape of
+the distribution of future events and the uncertainty it implies have material consequences
+for quantities important to policy analysis such as the size of the …scal multiplier.
+Weaddressthesenonlinearinteractionsandthetime-varyingdistributionsoffutureevents
+by computing a fully nonlinear New Keynesian model with a ZLB and rational expectations.
+We incorporate monetary and …scal policy and a set of shocks that push the model into the
+ZLB. In that way, the agents in the model have the right expectations about the probability
+of hitting the ZLB. To solve the model, we approximate the equilibrium functions of con-
+sumption, in‡ation, and one auxiliary variable that controls the pricing decision of …rms as
+a nonlinear function of the states. More concretely, we employ Chebyshev polynomials as a
+basis for the projection of these endogenous variables on the states of the model. Since we are
+working in a high-dimensional space, the coe¢ cients are solved for with the Smolyak colloca-
+tionmethodlaidoutinKrueger, Kubler, andMalin(2011).Thismethodsigni…cantlyreduces
+the burden of the curse of dimensionality. However, to maintain tractability and provide eas-
+ier insight, we will specify a relatively simple model with only …ve state variables. Once we
+have the nonlinear functions for consumption, in‡ation, and the one auxiliary variable, we
+exploit the rest of the equilibrium conditions of the model to solve for all other variables
+of interest. In particular, we …nd the nominal interest rate from the exact Taylor rule with
+a ZLB with its kink at zero holding exactly. This feature of our solution method is crucial
+because it allows us tocircumvent the di¢ cultyindirectlyapproximatinganon-di¤erentiable
+4

@@ -1,0 +1,130 @@
+NBER WORKING PAPER SERIES
+CAPITAL FLOW MANAGEMENT MEASURES:
+WHAT ARE THEY GOOD FOR?
+Kristin Forbes
+Marcel Fratzscher
+Roland Straub
+Working Paper 20860
+http://www.nber.org/papers/w20860
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+January 2015
+Thanks to Anusha Chari, Kathryn Dominguez, Jeffrey Frankel, Marcio Garcia, Rex Ghosh, Graciela
+Kaminsky, Michael Klein, Maurice Obstfeld, Jonathan Ostry, Vincent Reinhart, Hélène Rey, Andy
+Rose, Klaus Schmidt-Hebbel, Silvia Sgheri, and James Yetman for extremely helpful suggestions
+and conversations. Further thanks for comments from other participants in conferences and seminars
+hosted by the Bank of Canada, Bank of Korea, Bank of Latvia, Banco de Mexico, Central Bank of
+Turkey, European Central Bank, International Monetary Fund, NBER, and New Zealand Central Bank
+and Treasury. Thanks to Bogdan Bogdanovic and Daniel Happ for excellent research assistance. The
+views expressed in this paper are those of the authors and do not necessarily reflect those of the ECB,
+the Eurosystem, any institutions with which the authors are affiliated, or the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2015 by Kristin Forbes, Marcel Fratzscher, and Roland Straub. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Capital Flow Management Measures: What Are They Good For?
+Kristin Forbes, Marcel Fratzscher, and Roland Straub
+NBER Working Paper No. 20860
+January 2015
+JEL No. F3,F4,F5,G0,G1
+ABSTRACT
+Are capital controls and macroprudential measures related to international exposures successful in
+achieving their objectives? Assessing their effectiveness is complicated by selection bias; countries
+which change their capital-flow management measures (CFMs) often share specific characteristics
+and are responding to changes in variables that the CFMs are intended to influence. This paper addresses
+these challenges by using a propensity-score matching methodology. We also create a new database
+with detailed information on weekly changes in controls on capital inflows, capital outflows, and macroprudential
+measures related to international transactions from 2009 to 2011 for 60 countries. Results show that
+these macroprudential measures can significantly reduce some measures of financial fragility. Most
+CFMs do not significantly affect other key targets, however, such as exchange rates, capital flows,
+interest-rate differentials, inflation, equity indices, and different volatilities. One exception is that removing
+controls on capital outflows may reduce real exchange rate appreciation. Therefore, certain CFMs
+can be effective in accomplishing specific goals—but most popular measures are not “good for” accomplishing
+their stated aims
+Kristin Forbes Roland Straub
+MIT Sloan School of Management European Central Bank
+100 Main Street, E62-416 Roland.Straub@ecb.int
+Cambridge, MA 02142
+and NBER
+kjforbes@mit.edu
+Marcel Fratzscher
+DIW Berlin
+GERMANY
+mfratzscher@diw.de
+
+1. Introduction
+Over the last few years, economists and policymakers have become more supportive of “capital-flow
+management” measures (CFMs) to address the negative effects of large and volatile capital flows. This
+support has been bolstered by a series of IMF papers developing scenarios in which different CFMs
+should be “part of a policy toolkit”, as well as a series of theoretical papers modeling how CFMs can
+increase social welfare.1 A number of countries have followed these recommendations and over 40
+countries have adjusted their CFMs at least once from just 2009 through 2011. The stated purpose of
+these recent changes in CFMs includes: limiting exchange rate appreciation, reducing portfolio inflows,
+providing greater monetary policy independence, reducing inflation, reducing volatility, and/or reducing
+specific measures of financial fragility (such as bank leverage, credit growth, asset bubbles, foreign-
+currency exposure, or short-term liabilities). But can CFMs accomplish any of these goals? If the answer
+is affirmative, CFMs could help stabilize economies experiencing substantial capital flow volatility driven
+by external factors (see Bluedorn et al., 2013).
+CFMs refer to two types of measures: (1) capital controls or any types of restrictions on cross-border
+financial activity that discriminate based on residency; and (2) macroprudential measures which do not
+discriminate based on residency, but relate to cross-border or foreign-currency exposure and lending. This
+definition does not include prudential regulations targeting individual institutions or macroprudential
+regulations unrelated to cross-border exposure.2 Most papers have found little or mixed evidence that
+capital controls affect exchange rates, the volume of capital flows, monetary policy independence, and
+other macroeconomic variables, but stronger evidence that they can significantly affect the composition of
+capital flows and specific measures of financial vulnerability.3 The IMF writes that: “Because capital
+controls have been used many times in the past, evidence on their effects is more abundant but still
+surprisingly inconclusive.” (Blanchard et al., 2013, pg. 20) Empirical evidence on the effectiveness of
+macroprudential measures is even more limited, partially due to their infrequent use before 2009. The
+IMF admits that: “Empirical evidence on the effectiveness of these measures is scant….” (Blanchard et
+al., 2013, pg. 17)
+1 Key IMF papers are: IMF (2011a, 2011b, 2012) and Ostry et al. (2010, 2011). Key theoretical papers are: Korinek
+(2010, 2011), Jeanne and Korinek (2010), Costinot, Lorenzoni, and Werning (2011), and Jeanne (2012, 2013).
+2 See IMF (2012, page 40) for the “institutional” definition of CFMs. For example, this measure includes restrictions
+on exposure to mortgage debt denominated in foreign currency but does not include restrictions on exposure to
+mortgage debt based on loan-to-value or debt-to-income ratios.
+3 For recent surveys of this literature that show limited effects of capital controls, see Forbes (2007a), Cline (2010),
+Magud, Reinhart, and Rogoff (2011), Klein (2012), and IMF (2013). For more recent evidence that controls and
+macroprudential measures may improve a country’s liability structure and increase its resilience to crises, see Ostry
+et al. (2012), Ostry et al. (2010), and IMF (2013). For mixed evidence from just Brazil’s recent use of capital
+controls, see Forbes et al. (2012), Chamon and Garcia (2013), and Jinjarak et al. (2013).
+1
+
+This inconclusive series of results is not surprising given major challenges in assessing the impact of
+capital controls and macroprudential measures: data limitations and selection bias (related to both time-
+invariant country characteristics as well as time-varying values of outcome variables and other policy
+choices). Selection bias can occur because countries which adjust their CFMs tend to have different
+characteristics than other countries. For example, estimates in this paper show that countries with stronger
+institutions are significantly more likely to remove controls on capital outflows and increase
+macroprudential measures. A time-varying form of this bias can also occur because governments tend to
+adjust their CFMs in response to changes in key variables which the CFMs are intended to influence. For
+example, estimates in this paper show that countries are more likely to increase controls on capital
+inflows and reduce controls on outflows after a currency appreciation. This paper addresses these
+econometric challenges by using a propensity-score matching methodology. This methodology is fairly
+new to the macro and international economics literatures, but has been used for years in medical and labor
+economics.4 This methodology has a number of advantages over standard estimation techniques for the
+analysis in this paper, including its ability to avoid strong assumptions about functional form while
+addressing non-random sample selection by putting more weight on similar countries.
+In order to analyze the impact of capital controls and macroprudential measures using propensity-score
+matching, it is necessary to construct a new database with information on CFMs at a higher frequency and
+for a larger sample of countries than previously existed. More detailed information is needed for this
+methodology in order to construct accurate control groups, as well as to capture all changes in capital
+controls and macroprudential measures. (In contrast, most other datasets only capture initial changes in
+CFMs, but not subsequent adjustments of similar measures.) Therefore, we compile detailed information
+on increases and decreases in controls on capital inflows, controls on capital outflows, and
+macroprudential measures at a weekly frequency for 60 countries from 2009 through 2011. We also
+divide our database into: measures aimed at stemming capital inflows/appreciation/credit growth or
+outflows/depreciation/credit contractions; capital controls affecting equities, bonds, or FDI;
+macroprudential measures targeting banks or foreign exchange; and CFMs that were “major” in the sense
+they received substantial attention by investors.
+4 See Rosenbaum and Rubin (1985) for background on this methodology and Angrist and Pischke (2008) for an
+excellent discussion and examples from the labor literature. Persson (2001) is the earliest application of this
+approach to macroeconomic, time series data. Differences between propensity-score matching and more traditional
+regression analysis, as well as recent examples in which propensity-score matching is starting to be used to address a
+international and macroeconomic topics, are discussed in Section 3.1 and Appendix C.
+2

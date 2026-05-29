@@ -1,0 +1,130 @@
+NBER WORKING PAPER SERIES
+COMPETING FOR ORDER FLOW IN OTC MARKETS
+Benjamin Lester
+Guillaume Rocheteau
+Pierre-Olivier Weill
+Working Paper 20608
+http://www.nber.org/papers/w20608
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2014
+Pierre Mabille and Semih Uslu provided expert research assistance. We’d like to thank the participants
+of the JMCB-SNB-Uni Bern 2013 Conference on Financial Frictions and Julien Hugonnier for comments
+that greatly improved the paper. The views expressed in this paper do not necessarily reflect those
+of the Federal Reserve Bank of Philadelphia, the Federal Reserve System, or the National Bureau of
+Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2014 by Benjamin Lester, Guillaume Rocheteau, and Pierre-Olivier Weill. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission provided
+that full credit, including © notice, is given to the source.
+
+Competing for Order Flow in OTC Markets
+Benjamin Lester, Guillaume Rocheteau, and Pierre-Olivier Weill
+NBER Working Paper No. 20608
+October 2014
+JEL No. D53,D83,G1,G12
+ABSTRACT
+We develop a model of a two-sided asset market in which trades are intermediated by dealers and
+are bilateral. Dealers compete to attract order flow by posting the terms at which they execute trades—
+which can include prices, quantities, and execution speed—and investors direct their orders toward
+dealers that offer the most attractive terms. We characterize the equilibrium in a general setting, and
+illustrate how the model can account for several important trading patterns in over-the-counter markets
+which do not emerge from existing models. We then study two special cases which allow us to highlight
+the differences between these existing models, which assume investors engage in random search for
+dealers and then use ex post bargaining to determine prices, and our model, which utilizes the concept
+of competitive search in which dealers post terms of trade. Finally, we calibrate our model, illustrate
+that it generates reasonable quantitative outcomes, and use it to study how trading frictions affect the
+per-unit trading costs that investors pay in equilibrium.
+Benjamin Lester Pierre-Olivier Weill
+Research Department Department of Economics
+Federal Reserve Bank of Philadelphia University of California, Los Angeles
+10 Independence Mall Bunche Hall 8283
+Philadelphia, PA 19106 Los Angeles, CA 90095
+Benjamin.Lester@phil.frb.org and NBER
+poweill@econ.ucla.edu
+Guillaume Rocheteau
+Department of Economics
+University of California at Irvine
+3151 Social Science Plaza
+Irvine, California 9269
+grochete@uci.edu
+
+1 Introduction
+Many assets are traded in over-the-counter (OTC) markets, including government, municipal, and
+corporate bonds, asset-backed securities, various types of derivatives, and currencies, to name a
+few. These markets have not only been growing in size, but also in economic importance: for
+example, the market for repurchase agreements has become crucial for the provision of liquidity,
+while the markets for credit default swaps and foreign exchange swaps have become essential for
+insuring firms and financial intermediaries against various types of shocks. Most often, trade in
+thesemarketsisintermediatedbydealerswhomaintainatwo-sidedmarket,simultaneouslybuying
+andsellingsecuritiesonbehalfofindividualinvestors.
+A recent literature, building off of the framework in Duffie, Gaˆrleanu, and Pedersen (2005,
+henceforth DGP), has developed theoretical models that capture important features of intermedi-
+ated OTC markets, and has used these models to gain a better understanding of the factors that
+determine bid and ask prices, allocations, the speed of trade, and overall trading volume. These
+models formalize intermediated OTC markets as highly decentralized trading venues in which in-
+vestors contact dealers at a constant (exogenously specified) rate, at which time they are able to
+tradeatapricedeterminedbyexpostbargaining.
+While this formalization has generated a number of insights, it is at odds with two important
+features of real world OTC markets. First, dealers often post and commit to bid and ask prices,
+which are readily available to investors.1 Second, these prices appear to play an important role
+in determining the speed at which different investors trade. More specifically, empirical evidence
+suggests that investors face a clear trade-off between the terms of trade that they are quoted and
+the speed at which their trade will be executed: as Boehmer (2005) writes, “high execution costs
+are systematically associated with fast execution speed, and low costs are associated with slow
+execution speed. This relationship holds both across markets and across order sizes.”2 Hence,
+even though empirical evidence suggests that search frictions are an important element of OTC
+markets,itremainsachallengetoformalizethesefrictionsinawaythat(i)incorporatestheroleof
+1As Duffie (2012, pg. 4) writes, “In some dealer-based OTC markets, especially those with active brokers, a
+selection of recently quoted or negotiated prices is revealed to a wide range of market participants. (...) In OTC
+marketsforU.S.corporateandmunicipalbonds,regulatorshavemandatedpost-tradepricetransparencythroughthe
+publication of an almost complete record of transactions shortly after they occur. (...) In OTC derivatives markets,
+such as the market for credit default swaps, clients of dealers can request ‘dealer runs,’ which are essentially lists
+of dealers’ prospective bid and offer prices on a menu of potential trades. Dealers risk a loss of reputation if they
+frequentlydeclinetheopportunitytotradeneartheseindicativepriceswhencontactedsoonafterprovidingquotesfor
+adealerrun.”
+2Similarly,Battalio,Hatch,andJennings(2003)findthatordersobtainbettertradepricesontheNYSEbutfaster
+executionsatTrimarkSecurities, aNasdaqdealer. Boehmer, Jennings, andLi(2007)establishthatbrokers’routing
+decisionstakeintoaccountthedisclosureofqualityexecutionacrosstradingcenters: marketswithlowtradingcosts
+andfastfillswereabletoattractmoreorders.
+2
+
+pricesindirectingorderflow;and(ii)generatestheobservedrelationshipsbetweenthepricesthat
+dealerspost,thetypesofinvestorswhochoosethoseprices,andthespeedatwhichtheseinvestors
+trade. Inthispaper,weconstructandanalyzeamodelofOTCmarketstoaccomplishthesegoals.
+Our framework adopts many of the basic building blocks from the literature that has evolved
+from DGP, and specifically the generalization by Lagos and Rocheteau (2009, henceforth LR):
+investors with endogenously determined asset positions periodically receive idiosyncratic shocks
+that affect their private valuations, at which time they attempt to re-balance their portfolios by
+tradingwithdealersinafrictionalmarket. Themajorpointofdepartureisthewaywemodelthese
+frictions: incontrasttotheexistingliterature,weassumethatdealerspostcontractsthatarereadily
+observabletoallinvestors,butsearchfrictionsremainbecauseeachdealerislimitedinhiscapacity
+toprocessmultipleordersatonce. Thisequilibriumconceptisbasedonthemodelof“competitive
+search,” first introduced by Moen (1997) in the context of the labor market, but here generalized
+to a two-sided market where dealers have an active role in executing the trades of both buyers and
+sellersonafrictionlessinter-dealermarket.
+To be more precise, we assume that there is a large mass of competitive dealers posting con-
+tractsthatspecifyaquantitythattheywillbuyorsellontheinter-dealermarket,alongwithafeefor
+doingso(or,equivalently,abid-askspread). Investors,whoareheterogeneouswithrespecttoboth
+their asset positions and their private valuations for the asset, observe these contracts and direct
+their order flow to the contract of their choosing. However, dealers are capacity constrained—
+they cannot execute orders instantaneously, but rather orders are processed slowly, at a rate that is
+decreasingintheratioofordersperdealerforthisparticularcontract.
+This formulation of asset market frictions offers several advantages. First, the process of price
+formation in the model more closely resembles the protocol in many OTC markets: dealers post
+prices,andinvestorssendorderstothesedealerswiththeexpectationthattheirorderswillbefilled
+at the posted price. Second, the model is able to account for several empirical findings that do not
+emergefromexistingmodels;forexample,investorsfacethetrade-offbetweenthebid-askspread
+and execution speed discussed above and, for some specifications, these bid-ask spreads decrease
+with the size of the trade, which is consistent with evidence from certain OTC markets. Third,
+themodelgeneratesnewnormativeimplicationsaswell;forexample,inasimpleextensionofthe
+benchmark model, we show that welfare is unambiguously increasing in the fraction of investors
+whocanobservepostedcontractsanddirecttheirsearch,thushighlightingamarginthroughwhich
+transparency in financial markets can improve allocations. Finally, the competitive search setting
+offers a number of technical advantages, too: it avoids several inefficiencies that arise from the
+Nash bargaining protocol, such as the well-known hold-up problem (see, e.g., Hosios (1990)); it
+can easily accommodate the introduction of private information (see, e.g., Guerrieri et al. (2010));
+3

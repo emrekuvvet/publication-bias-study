@@ -1,0 +1,139 @@
+NBER WORKING PAPER SERIES
+NOISE IN EXPECTATIONS:
+EVIDENCE FROM ANALYST FORECASTS
+Tim de Silva
+David Thesmar
+Working Paper 28963
+http://www.nber.org/papers/w28963
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2021
+We thank Alberto Abadie, Sam Anderson, Anne Beyer, Harin de Silva, Eric Ghysels, Allen Hu,
+Eben Lazarus, Charles Lee, Eric So, Frank Schilbach, Dmitry Taubinsky, and seminar and
+conference participants. An earlier version of this paper were circulated with the title “The Term
+Structure of Subjective Expectations: Evidence and Theory from Analysts Forecasts”. The views
+expressed herein are those of the authors and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2021 by Tim de Silva and David Thesmar. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Noise in Expectations: Evidence from Analyst Forecasts
+Tim de Silva and David Thesmar
+NBER Working Paper No. 28963
+June 2021
+JEL No. D84,D9,D91
+ABSTRACT
+This paper quantifies the amount of noise and bias in analysts’ forecast of corporate earnings at
+various horizons. We first show analyst forecasts outperform statistical forecasts at short-
+horizons, but underperform at longer horizons. We next decompose the relative accuracy of these
+forecasts into three components:(i) noise, (ii) bias and (iii) analysts’ information advantage over
+statistical forecasts. We find the information advantage is constant across forecasting horizons,
+while both noise and bias are increase linearly. We then show most existing models lack a
+mechanism to account for these facts. To generate such a mechanism, we consider a
+parsimonious variant of the model of Patton and Timmermann (2010) with a noisy cognitive
+default and show it quantitatively fits the data. The intuition underlying this model is that
+forecasters rely on their biased and noisy defaults more at longer horizons, as rational forecasts
+are less accurate. This model also quantitatively matches two non-targeted empirical
+relationships: (i) analyst disagreement increases with horizon and (ii) noise is an increasing
+function of volatility.
+Tim de Silva
+MIT Sloan School of Management
+tdesilva@mit.edu
+David Thesmar
+MIT Sloan School of Management
+100 Main Street, E62-632
+Cambridge, MA 02142
+and NBER
+thesmar@mit.edu
+A data appendix is available at http://www.nber.org/data-appendix/w28963
+
+It is well-known that human judgment is noisy, meaning two individuals with the same
+information may make meaningfully di↵erent predictions or decisions. In a recent book,
+Kahneman, Sibony, and Sunstein (2021) discuss many areas in which noise is prevalent,
+including medicine, finance, hiring, and the justice system. In this paper, we study noise
+in equity analysts’ corporate earnings forecasts. We begin by quantifying it, distinctly from
+forecasting bias (the focus of most existing literature), and analyzing its term structure. We
+next explore ways to adjust for forecasting noise, and finally propose a model of its origin
+that is quantitatively consistent with the evidence we document.
+Our approach to quantifying noise relies on a simple decomposition. Denote F y as the
+it t 1
+forecast of y formed by forecaster i at date t and I as her information set. Additionally,
+t 1 it +
+denote X as the information set of an econometrician. We can rewrite the forecaster’s
+t +
+forecast as:
+F y E y X E y I E y X B I ⌘ ,
+it t 1 t 1 t t 1 it t 1 t it it
+subjectivef+orecast economet+ricforecast forecas+ter’sprivateinfo+rmation bias noise
+= ( ￿ ) + ( ￿ )− ( ￿ )+ ( )+
+￿￿￿￿￿￿￿￿￿￿￿￿￿ ￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿ ￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿ ￿￿￿￿￿￿￿￿￿￿￿￿￿ ￿
+wherebydefinitionB I E F y y I andthus⌘ F y E F y I . Thebias
+it it t 1 t 1 it it it t 1 it t 1 it
+term in this equation is the predictable deviation from rational expectations, conditional on
++ + + +
+( )= ( − ￿ ) = − ( ￿ )
+available information. Noise comes on top of the bias, private information, and the rational
+component – it is outside of the information set by definition. Now consider the econome-
+trician’s forecast using X , and further assume that X I . Under mild assumptions, the
+t t it
+econometric MSE writes:
+⊂
+MSE MSEm E E y I E y X 2 EB I 2 var ⌘ , (1)
+t 1 it t 1 t it it
+subjectiveMSE econometricMSE forecaste+r’sinformationad+vantage bias noise
+= − ( ( ￿ )− ( ￿ )) + ( ) + ( )
+￿ ￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿ ￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿ ￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿ ￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿￿
+where MSEm E y E y X 2 is the econometric MSE (i.e. the rational MSE given
+t 1 t 1 t
+X ). According to (1), the di↵erence in MSE between subjective forecasters and the econo-
+t + +
+= ( − ( ￿ ))
+metrician can be decomposed into three components: noise, bias, and the forecasters’ infor-
+mational advantage (as in Satop¨aa¨, Salikhov, Tetlock, and Mellers 2020).
+This paper uses the above decomposition, along with some additional assumptions, to
+quantify the noise and bias in equity analysts forecasts of corporate earnings. Analyst fore-
+cast data are an interesting in several respects: equity analysts are skilled and incentivized
+forecasters, and forecast data are available for a large panel of firms at various horizons.
+Beyond analyst forecasts, our approach is simple and applicable to any dataset on subjective
+forecasts. A key di↵erence from existing literature is our approach does not make strong
+1
+
+restrictions on the data-generating process.
+First, inordertoperformthedecompositiondescribedabovetoestimateexpectationnoise,
+weneedtocomparesubjectiveandeconometricexpectations. Toformeconometricforecasts,
+we explore a variety of well-known supervised machine learning estimators (e.g. Lasso,
+Ridge, and tree-based methods). We find these estimators clearly dominate simpler OLS
+approaches, consistent with existing evidence (e.g. Ball and Ghysels 2018; van Binsbergen,
+Han, and Lopez-Lira 2020; Cao, Jiang, Wang, and Yang 2021). At the one-year horizon,
+econometric forecasts are less precise than subjective ones, but this dramatically reverses at
+longer horizons.
+We then quantify the three components that determine the di↵erence in accuracy between
+analystandeconometricforecasts: (i)informationadvantage; (ii)bias; (iii)noise. Incontrast
+to most of the extant literature, we place no restriction on the data generating process. Our
+approach does rely on one key assumption on the belief formation process: forecasters are
+unbiased with respect to their private information. Under this assumption, we show that
+estimating the three components of the decomposition in (1) is simple.
+Applying our estimation strategy, we find that noise in subjective expectations is large.
+Quantitatively, we estimate the amount of noise in analyst expectations is about 60% of
+the magnitude of the bias (i.e. the predictable component of analyst forecast errors), which
+is especially large given we work with consensus forecasts. At the one-year horizon, we
+find forecaster bias and noise are small compared to the analyst information advantage
+– this is why short-horizon subjective expectations dominate econometric forecasts. At
+longer forecasting horizons (two and three-years), information advantage does not decay,
+but forecaster bias and noise increase dramatically. Quantitatively, bias is more than twice
+as large as the information advantage at the three-year horizon and noise is 1.5 times bigger.
+Insum, forecasterbiasandnoisebothsharplyincreasewithhorizon, whilethetermstructure
+of information advantage is flat.
+Given noise and bias deteriorate the quality of subjective forecasts (as the (1) makes
+clear), our findings suggest two ways of improving the predictive power of forecasts. The
+first approach consists of an optimal combination of statistical and subjective forecasts. We
+implement such an combination using the same supervised learning approaches as above
+and find penalized-linear methods are slightly dominated by tree-based methods. At short
+horizons, the improvement from using this optimal combined forecast relative to subjective
+forecasts is small – a meak 10% reduction of MSE – which is expected given these forecasts
+2

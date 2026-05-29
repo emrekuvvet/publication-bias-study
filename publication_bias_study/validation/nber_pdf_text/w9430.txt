@@ -1,0 +1,109 @@
+NBER WORKING PAPER SERIES
+OPTIMAL POLICY WITH PARTIAL INFORMATION
+IN A FORWARD-LOOKING MODEL:
+CERTAINTY-EQUIVALENCE REDUX
+Lars E. O. Svensson
+Michael Woodford
+Working Paper 9430
+http://www.nber.org/papers/w9430
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+January 2003
+We thank Kosuke Aoki and Ernst Schaumburg for comments on an earlier draft. The views expressed herein
+are those of the authors and not necessarily those of the National Bureau of Economic Research.
+© 2003 by Lars E. O. Svensson and Michael Woodford. All rights reserved. Short sections of text not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit including, ©
+notice, is given to the source.
+
+Optimal Policy with Partial Information in a Forward-Looking Model:
+Certainty-Equivalence Redux
+Lars E. O. Svensson and Michael Woodford
+NBER Working Paper No. 9430
+January 2003
+JEL No. E37, E47, E52, E58
+ABSTRACT
+This paper proves a certainty equivalence result for optimal policy under commitment with
+symmetric partial information about the state of the economy in a model with forward-looking
+variables. This result is used in our previous paper, "Indicator Variables for Optimal Policy," which
+synthesizes what is known about the case of symmetric partial information, and derives useful
+general formulas for computation of the optimal policy response coefficients and efficient estimates
+of the state of the economy in the context of a fairly general forward-looking rational-expectations
+model. In particular, our proof takes into account that, under commitment, the policymaker can
+affect the future evolution of the observable variables, and thereby potentially affect the future
+information available.
+Lars E.O. Svensson Michael Woodford
+Department of Economics Department of Economics
+106 Fisher Hall 111 Fisher Hall
+Princeton University Princeton University
+Princeton, NJ 08544-1021 Princeton, NJ 08544-1021
+and NBER and NBER
+svensson@princeton.edu woodford@princeton.edu
+
+1 Introduction
+Monetary policy is inevitably conducted under considerable uncertainty about the state of the
+economy and the nature of recent disturbances. Analyses of optimal policy that take no account
+of this are therefore of doubtful practical utility. However, in the case of purely backward-
+looking models of the kind exclusively used by central banks prior to the 1990s, powerful general
+principles for efficient estimation of the state of the economy and for determining the optimal
+usetomakeofsuchestimateshavebeenwell-understoodsinceatleastthe1970s. Inthecaseofa
+lineareconomicmodel, aquadraticlossfunctionforthepolicymaker, uncertaintyonlyaboutthe
+stateoftheeconomy(thatis,thecurrentvaluesofspecificadditivetermsintheeconomicmodel),
+andGaussiandisturbances, aprincipleofcertaintyequivalence applies: theoptimalpolicyisthe
+sameasifthestateoftheeconomywerefullyobservable, exceptthatonerespondstoanefficient
+estimate of the state of the economy rather than to its actual value. Moreover, a separation
+principle applies, according to which the determination of the optimal response coefficients to
+be applied to one’s estimate of the state of the economy (the optimization problem) and the
+estimation of the current state of the economy (the estimation or signal-extraction problem)
+can be treated as separate problems. The optimal response coefficients are independent of the
+specification of the central bank’s incomplete information; and the optimal weights to place
+on alternative indicators in estimating the state of the economy are independent of the central
+bank’s objective function.1
+However, the presence of forward-looking variables in the system to be controlled — a com-
+mon feature of modern macroeconomic models, including the econometric models now used by
+manycentralbanks—complicatesmattersinanumberofrespects. Forexample,optimalpolicy
+under commitment ceases in general to coincide with the outcome of discretionary optimization,
+as demonstrated for the general linear model with quadratic objectives in Backus and Driffill [1]
+and Currie and Levine [3]. Optimal policy under commitment (even in the deterministic case) is
+no longer a function solely of the vector of predetermined variables that suffices to characterize
+the set of possible future paths for the economy from a given date onward; thus one cannot
+expect that in the case of partial information optimal policy can depend solely on the optimal
+estimate of such a vector of predetermined variables.
+Moreover,inthepresenceofpartialinformation,estimationofthecurrentstateofthesystem
+is no longer so simple. For currently observable variables will generally depend not only on the
+1 Important early treatments include Chow [2], Kalchbrenner and Tinsley [4], and Leroy and Waud [5].
+1
+
+current vector of predetermined variables and random observation error with known properties,
+but also upon forward-looking variables, the values of which will depend on the private sector’s
+expectations about future policy. This makes it far from obvious that a separation principle
+should apply, even in a linear-quadratic Gaussian framework. Because the relation between the
+unobserved state of the economy and the observable variables depends on expected policy, one
+may not be able to solve the optimal filtering problem independently of the solution for the
+optimal policy response to the estimated state of the economy.
+Nonetheless, analogs of the classical control-theoretic results have been obtained for certain
+special kinds of forward-looking models with partial information. With regard to the estima-
+tion problem, Pearlman, Currie and Levine [8] have shown in a linear (non-optimizing) model
+with forward-looking variables and partial information that the state of the economy can still
+be estimated using a Kalman filter, although the solution is much more complex than in the
+purely backward-looking case. Pearlman [7] has used this solution in an optimizing model to
+demonstrate that certainty equivalence applies under both discretion and commitment in the
+presence of forward-looking variables and symmetric partial information, that is, in the case
+that both the central bank and the private sector have access to the same partial information.
+In the case of commitment, “certainty equivalence” means that the optimal instrument settings
+are the same linear function of the current estimate of the predetermined variables describing
+the state of the economy and specific Lagrange multipliers (related to the value that alterna-
+tive expectations would have had in the previous period’s policy problem) as in the case of the
+corresponding optimal policy problem under certainty.
+Our previous paper [9] synthesizes what is known about the case of symmetric partial in-
+formation, and derives useful general formulas for computation of the optimal policy response
+coefficients and efficient estimates of the state of the economy in the context of a fairly general
+forward-looking (rational-expectations) model. We find that not only does certainty equivalence
+continue to characterize optimal policy, but that a separation of the problems of optimal policy
+and optimal estimation of the current state of the economy continues to be possible, in that the
+coefficients of the optimal Kalman filter are again independent of the central bank’s objective
+function.
+The proof of certainty equivalence under commitment was not included in [9], in order to
+save space. The present paper provides this proof. The proof is for a more general model than
+in Pearlman [7] and more intuitive. In particular, our proof explicitly takes into account that,
+2

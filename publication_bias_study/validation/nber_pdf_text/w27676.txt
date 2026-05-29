@@ -1,0 +1,128 @@
+NBER WORKING PAPER SERIES
+STRUCTURING MORTGAGES FOR MACROECONOMIC STABILITY
+John Y. Campbell
+Nuno Clara
+João F. Cocco
+Working Paper 27676
+http://www.nber.org/papers/w27676
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+August 2020
+We thank Nick Roussanov, Amit Seru, Joel Shapiro, Alexei Tchistyi and participants at the AFA
+meetings (Atlanta), Tenth Macro Finance Society Workshop (Boston College), the Second
+London Financial Intermediation Workshop (Bank of England), NBER Summer Institute (Capital
+Markets and the Economy, Real Estate), and at the European Central Bank seminar series for
+comments. The views expressed herein are those of the authors and do not necessarily reflect the
+views of the National Bureau of Economic Research.
+At least one co-author has disclosed a financial relationship of potential relevance for this research.
+Further information is available online at http://www.nber.org/papers/w27676.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2020 by John Y. Campbell, Nuno Clara, and João F. Cocco. All rights reserved. Short sections of
+text, not to exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Structuring Mortgages for Macroeconomic Stability
+John Y. Campbell, Nuno Clara, and João F. Cocco
+NBER Working Paper No. 27676
+August 2020
+JEL No. E32,E52,G21
+ABSTRACT
+We study mortgage design features aimed at stabilizing the macroeconomy. We model
+overlapping generations of mortgage borrowers and an infinitely lived risk-averse representative
+mortgage lender. Mortgages are priced using an equilibrium pricing kernel derived from the
+lender's endogenous consumption. We consider an adjustable-rate mortgage (ARM) with an
+option that during recessions allows borrowers to pay only interest on their loan and extend its
+maturity. We find that this maturity extension option stabilizes consumption growth over the
+business cycle, shifts defaults to expansions, and is welfare enhancing. The cyclical properties of
+the maturity extension ARM are attractive to a risk-averse lender so the mortgage can be
+provided at a relatively low cost.
+John Y. Campbell João F. Cocco
+Morton L. and Carole S. London Business School
+Olshan Professor of Economics Regent's Park
+Department of Economics London
+Harvard University NW1 4SA, UK
+Littauer Center 213 jcocco@london.edu
+Cambridge, MA 02138
+and NBER
+john_campbell@harvard.edu
+Nuno Clara
+London Business School
+Regent's Park
+London
+NW1 4SA, UK
+nunoclara@london.edu
+An online appendix is available at http://www.nber.org/data-appendix/w27676
+
+1 Introduction
+Events in the last decade have shown that adjustable-rate mortgages (ARMs) have advan-
+tages over fixed-rate mortgages (FRMs) in stabilizing the economy, at least when the central
+bank has monetary independence and can lower the short-term interest rate in a recession
+(Eberly and Krishnamurthy (2014)). A lower short rate provides automatic budget relief for
+ARM borrowers and helps to support their spending while reducing the incidence of mortgage
+default. A lower short rate can also provide some relief to FRM borrowers, but this requires
+both a decline in the long-term mortgage rate and refinancing, which may be constrained by
+declining house prices and tightening credit standards. Barriers to FRM refinancing in the
+aftermath of the Great Recession were an important concern of US policymakers and moti-
+vated the introduction of the Home Affordable Refinance Program (HARP) (Di Maggio et al.
+(2017)).
+We argue that the stabilizing properties of plain-vanilla ARMs can be enhanced by adding
+an interest-only option that applies only during recessions, and that allows borrowers to
+extend loan maturity. This option is included in the contract ex-ante and is available to all
+borrowers.1 During a recession, any borrower who decides to take advantage of the option
+pays only loan interest, with principal loan repayments restarting after the recession ends, and
+with loan maturity extended. This proposal provides additional budget relief to distressed
+borrowers.
+We use a quantitative model to evaluate our proposal and to compare it with other mort-
+gage designs considered in the recent literature (Eberly and Krishnamurthy (2014), Guren
+et al. (2020)). Our model has several important features. First, the demand for mortgage
+loans comes from households who use them to purchase houses or to refinance existing mort-
+gages. Borrowers can default on their mortgages and do so if their income and house prices
+fall substantially. Household income is subject to both economy-wide and individual specific
+shocks, as in Guvenen et al. (2014). Recessions are characterized by lower expected income
+growth, a higher probability of a large decline in income, and a higher probability of a decline
+in house prices. Therefore, the fundamental drivers of mortgage risk increase in recessions,
+and mortgages originated in recessions are riskier than those originated in expansions.
+1The inclusion of the option in the original contract avoids barriers to ex-post renegotiation of the sort
+documented by Piskorski et al. (2010) and Adelino et al. (2013). Piskorski and Seru (2018) emphasize
+the tradeoff between the flexibility of ex-post mortgage modification and the barriers that can inhibit its
+implementation.
+1
+
+Second, loans are provided by an infinite-horizon risk-averse representative lender that
+chooses consumption to maximize expected utility, subject to a borrowing constraint. In
+addition to the cash flows from the mortgages, the lender receives a risky income stream. We
+use the equilibrium consumption choices of the lender to derive the stochastic discount factor
+that we use to price the mortgages. The lender’s income process is parameterized so that our
+modelgeneratesreasonableassetpricingmoments, includinghigherSharperatiosinrecessions
+than in expansions. This, combined with the fact that mortgages originated in recessions are
+riskier, leads to increases in loan premia for loans originated in bad times, similar to those
+in the data. Since the choices of borrowers and the cash flows from the mortgages depend on
+loan premia, and the consumption choices of the representative lender depend on mortgage
+cash flows, the equilibrium solution of our model requires that we solve for a fixed point in
+the borrowers’ and lender’s problems.
+There is evidence that credit standards are looser in expansions than in recessions (for
+example Keys et al. (2010) and Corbae and Quintin (2015)). With this evidence in mind, a
+third feature of our model is that mortgage lending criteria are tighter in bad times. Specifi-
+cally, the maximum loan-to-value ratio declines during recessions, which constrains borrowers’
+ability to refinance during bad times.
+It is equally important for our model to capture what happens in the years prior to a
+recession. During the boom years of the mid-2000s, high levels of mortgage cash-out refinanc-
+ing increased household leverage at the onset of the financial crisis (Khandani et al. (2013),
+Chen et al. (2020)). A fourth feature of our model is that it allows cash-out refinancing. In
+each period households can prepay their existing loan and take out a new loan with a higher
+principal value, subject to current loan-to-value constraints. These debt market dynamics
+affect the benefits to borrowers of an option to extend loan maturity, the impact that the
+option has on lender cash flows, and mortgage rates.
+Finally, our model abstracts from inflation dynamics. To economize on state variables,
+we consider a real economy in which either all mortgages are inflation-indexed, or the price
+level is constant. While this is an obvious limitation of our analysis, we believe our results
+are empirically relevant given the limited variability in realized and expected inflation over
+the last 15 years.
+Our model delivers the following results about an interest-only option added to a standard
+adjustable-rate mortgage. Not all borrowers exercise the option. Some borrowers keep on
+making loan principal repayments during bad times, motivated by precautionary motives and
+a desire to deleverage. However, because some borrowers do exercise the option, it leads to a
+2

@@ -1,0 +1,109 @@
+NBER WORKING PAPER SERIES
+EXPECTATIONS HYPOTHESES TESTS
+Geert Bekaert
+Robert J. Hodrick
+Working Paper 7609
+http://www.nber.org/papers/w7609
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+March 2000
+We are grateful to David Ng and Paul Sengmueller of Columbia University and especially Joe Chen of
+Stanford University for research assistance. Geert Bekaert gratefully acknowledges financial support from
+the National Science Foundation. The views expressed herein are those of the authors and are not necessarily
+those of the National Bureau of Economic Research.
+© 2000 by Geert Bekaert and Robert J. Hodrick. All rights reserved. Short sections of text, not to exceed
+two paragraphs, may be quoted without explicit permission provided that full credit, including © notice, is
+given to the source.
+
+Expectations Hypotheses Tests
+Geert Bekaert and Robert J. Hodrick
+NBER Working Paper No. 7609
+March 2000
+JEL No. E4, F3, C5
+ABSTRACT
+We investigate the Expectations Hypotheses of the term structure of interest rates and of the
+foreign exchange market using vector autoregressive methods for the U.S. dollar, Deutsche mark,
+and British pound interest rates and exchange rates. In addition to standard Wald tests, we formulate
+Lagrange Multiplier and Distance Metric tests which require estimation under the non-linear
+constraints of the null hypotheses. Estimation under the null is achieved by iterating on approximate
+solutions that require only matrix inversions. We use a bias-corrected, constrained vector
+autoregression as a data generating process and construct extensive Monte Carlo simulations of the
+various test statistics under the null hypotheses. Wald tests suffer from severe size distortions and
+use of the asymptotic critical values results in gross over-rejection of the null. The Lagrange
+Multiplier tests slightly under-reject the null, and the Distance Metric tests over-reject. Use of the
+small sample distributions of the different tests leads to a common interpretation of the validity of
+the Expectations Hypotheses. The evidence against the Expectations Hypotheses for these interest
+rates and exchange rates is much less strong than under asymptotic inference.
+Geert Bekaert Robert J. Hodrick
+Columbia Business School Columbia Business School
+3022 Broadway 3022 Broadway
+New York, NY 10027 New York, NY 10027
+NBER and Stanford University NBER
+gb241@columbia.edu rh169@columbia.edu
+
+According to the Expectations Hypothesis, information in current interest rates provides the
+conditional expectation of future asset prices. The Expectations Hypothesis of the term structure
+of interest rates (EH-TS) states that the current term spread between a long-term interest rate
+and a short-term interest rate is the expected value of a weighted average of the expected future
+changes in the short-term interest rate. This theory, popularized in the writings of Fisher (1930),
+Keynes (1930), and Hicks (1953), continues to be a way that many economists think about the
+determination of long-term interest rates. The Expectations Hypothesis in the foreign exchange
+market (EH-FX) states that the interest-rate differential between two currencies is the conditional
+expected value of the rate of depreciation of the high interest-rate currency relative to the low
+interest-rate currency. Again, Fisher (1930) and Keynes (1930) discussed this hypothesis. Because
+of covered interest arbitrage, the interest differential equals the forward premium, which is the
+percentage difference between the forward exchange rate and the spot rate. Hence, the EH-FX
+is equivalent to the Unbiasedness Hypothesis, which is the proposition that the logarithm of the
+forward exchange rate is an unbiased predictor of the logarithm of the future spot rate. Many
+economists also currently view the EH-FX as the way that forward exchange rates are determined.
+These Expectations Hypotheses (EHs) continue to have adherents because most modern asset
+pricing theories imply either that expected future interest rates and exchange rates are related to
+current interest rates directly through the EHs or with the addition to the EHs of risk premiums.
+If these risk premiums are constant, the EHs can be said to hold because the temporal variation
+in expected future asset prices drives the variability in current interest rates. If the risk premiums
+are variable, the EHs will not hold, but the literature has had surprisingly little success generating
+risk premiums that explain the empirical evidence.
+Empirical tests of the EHs are too numerous to enumerate. For the EH-FX, the statistical
+evidence surveyed by Hodrick (1987), Bekaert and Hodrick (1993), and Engel (1996) strongly
+rejects the hypothesis. In particular, high interest rate currencies do not depreciate as much as is
+predicted by the theory. For the EH-TS, the evidence is more mixed. The EH-TS is often strongly
+rejectedwithU.S.dollar(USD)interestrates, butforthecurrenciesofanumberofothercountries,
+standard tests often fail to reject.2
+2Campbell and Shiller (1991) and Bekaert, Hodrick, and Marshall (1997) examine the USD evidence. For other
+currencies see Hardouvelis (1994), Gerlach and Smets (1997), Dahlquist and Jonsson (1995), and Bekaert, Hodrick,
+and Marshall (1999).
+3
+
+There are three mainpotential reasons forthe rejectionofthe EHs. First, the EHsare basedon
+theassumptionofrationalexpectationsandunlimitedarbitrage. Itmaybethatirrationalinvestors
+make systematic forecast errors, and the ability of rational investors to profit from this situation
+is limited by their risk aversion. Second, the presence of time-varying risk premiums means that
+standard tests of the EHs omit the variables capturing the risk premium. If these variables are
+correlated with interest rates, the estimated coefficients would be pulled away from those implied
+bytheEHs. Third,theteststhemselvesmayleadtofalserejectionsbecauseoftheirpoorproperties
+in finite samples, which can be caused by highly persistent variables, peso problems, or learning.3
+Recently, Bekaert, Hodrick and Marshall (1997, 1999) and Valkanov (1998) have analyzed the poor
+finite sample behavior of EH-TS tests, and Baillie and Bollerslev (1998), Maynard and Phillips
+(1998), and Roll and Yan (1998) have argued that poor small-sample behavior may explain the
+results of EH-FX tests. These papers note that if standard tests are poorly behaved in small
+samples, inference based on standard asymptotic distribution theory is distorted, and alternative
+methods of inference are necessary.
+In this paper, we re-consider the EHs in a vector autoregressive (VAR) framework. Apart from
+standardWaldtests, we alsoinvestigate Lagrange Multiplier(LM)andDistance Metric(DM)tests
+that require imposition of the null hypothesis in the estimation. Because the restrictions of the
+EH-TS are highly non-linear, estimating under these restrictions is generally a non-trivial exercise.
+We develop an easy-to-implement procedure that extends the suggested estimator of Newey and
+McFadden (1994) and that works quite well. Once we have estimated the VAR subject to the
+constraints of the EHs, we can use this system as a data generating mechanism to investigate the
+small-sample properties of the various tests. We find that the Wald test, the test predominantly
+used in the literature, has by far the worst small-sample properties. Conducting inference with
+Wald tests would therefore often be very mis-leading, since the sizes of the tests are quite poor.
+The DM tests also overreject, but less strongly than the Wald tests. The LM tests, on the other
+hand, are slightly conservative. Overall, the LM tests perform the best. When reconsidering the
+evidence on the EHs for the USD, the Deutsche mark (DEM), and the British pound (GBP), we
+find that inference with the small-sample distributions considerably weakens the case against the
+EHs.
+3An early reference to the small-sample problem is Mankiw and Shapiro (1986). Evans (1996) surveys the peso-
+problem literature, and Lewis (1989) is an early example of the role of learning.
+4

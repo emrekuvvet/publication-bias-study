@@ -1,0 +1,130 @@
+NBER WORKING PAPER SERIES
+AIRPORTS AND URBAN GROWTH:
+EVIDENCE FROM A QUASI-NATURAL POLICY EXPERIMENT
+Bruce A. Blonigen
+Anca D. Cristea
+Working Paper 18278
+http://www.nber.org/papers/w18278
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+August 2012
+We thank James Harrigan, David Hummels, Jason Lindo, Alex Vrtiska, Glen Waddell and Wes Wilson
+for helpful discussions, and Mitchell Johnson for excellent research assistance. Any remaining errors
+are our own. The views expressed herein are those of the authors and do not necessarily reflect the
+views of the National Bureau of Economic Research.¸˛
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2012 by Bruce A. Blonigen and Anca D. Cristea. All rights reserved. Short sections of text, not
+to exceed two paragraphs, may be quoted without explicit permission provided that full credit, including
+© notice, is given to the source.
+
+Airports and Urban Growth: Evidence from a Quasi-Natural Policy Experiment
+Bruce A. Blonigen and Anca D. Cristea
+NBER Working Paper No. 18278
+August 2012
+JEL No. O18,R11,R4
+ABSTRACT
+While significant work has been done to examine the determinants of regional development, there
+is little evidence on the contribution of air services toward this outcome. This paper exploits the unexpected
+market changes induced by the 1978 Airline Deregulation Act to bring new evidence on the link between
+airline traffic and local economic growth. Using data for almost 300 Metropolitan Statistical Areas
+(MSAs) over a two decade time period centered around the policy change, we exploit time variation
+in long-run growth rates to identify the effects of airline traffic on population, income and employment
+growth. Our results suggest that air service has a significant positive effect on regional growth, with
+the magnitude of the effects differing by MSA size and industrial specialization.
+Bruce A. Blonigen
+Department of Economics
+1285 University of Oregon
+Eugene, OR 97403-1285
+and NBER
+bruceb@uoregon.edu
+Anca D. Cristea
+Department of Economics
+1285 University of Oregon
+Eugene, OR 97403-1285
+cristea@uoregon.edu
+
+1 Introduction
+Almost since the invention of the airplane, policymakers at all levels of government have
+spent considerable resources to promote air services for their constituents. Currently in
+the United States, local airports and communities are quite active in providing subsidies
+and pledging future travel tickets in order to deter airlines from terminating strategic
+routes (e.g., Portland1), or from downgrading a city from its hub status (e.g., Cleve-
+land2), or to encourage airlines to add new routes for their region (e.g., Tampa3). A
+2009 survey by Airports Council International North America found that of the 52 re-
+sponding airports, 33 had incentive agreements involving domestic air service, and 23
+airports had incentive agreements for international air service.4
+The universal justification for these government policies is the stated belief that
+air transport is crucial for regional economic growth. In support of this belief, there is
+certainly anecdotal evidence suggesting that air transport improves business operations
+byprovidingquickaccesstoinputsupplies,stimulatesinnovativeactivitiesbyfacilitating
+face-to-face meetings, and represents an essential input for certain industries.5 On the
+other hand, it is not clear how much economic activity significantly relies on air service,
+nor the extent to which other modes of transportation and communication can easily
+substitute for air services. In the end, a positive correlation between air services and
+economic growth may make policymakers erroneously believe that there is a causal
+1See “Port’s gamble on Delta pays off” from 06/11/2010 on www.oregonlive.com.
+2See “Pittsburgh could foreshadow future of Cleveland Hopkins International Airport” from
+11/22/2009 on www.cleveland.com
+3See “Intense competition boosts airport incentives to airlines” at:
+http://www.tampabay.com/news/business/airlines/intense-competition-boosts-airport-incentives-to-
+airlines/1042035
+4McAllister, Brad, ”Regaining stability,” Airport Business Magazine, september 15, 2011 at:
+http://www.airportbusiness.com/print/Airport-Business-Magazine/Regaining-stability/137314
+5Several channels could explain the productivity effect of air transport. First, air travel facilitates
+face-to-facecommunication,whichisessentialforinnovation,technologydiffusion,andforcoordination
+and efficient allocation of resources (see, among others, Gaspar and Glaeser, 1998; Autretsch and
+Feldman, 1996; Hovhannisyan and Keller, 2011). Second, the availability of air transport reduces
+transactioncosts,increasingtheopennessofaregiontotrade(Poole,2010;Cristea,2011). Thisinturn
+fosters labor and industrial specialization at micro level, as well as product diversification at regional
+level, leading to increased aggregate productivity (Glaeser, Kallal, Scheinkman and Schleifer, 1992;
+Feenstra and Kee, 2006). Finally, air traffic could raise regional productivity via agglomeration effects
+andtheassociatedpositiveexternalities(see,amongothers,RosenthalandStrange,2004). Thelocation
+decision of exporters and multinational firm headquarters is influenced by the quality of air services
+(Lovely, Rosenthal, and Sharma, 2005; Bel and Fageda, 2008). At the same time, both types of firms
+are shown to exert positive spillovers on local businesses, further affecting productivity (Blomstrom
+and Kokko, 1998; Arnold, Javorcik and Mattoo, 2011). Our intention in this study is to identify
+an aggregate net effect of air traffic on urban development, working in part through either of these
+productivity effects.
+2
+
+relationship that they can affect, when other factors out of their control may be driving
+the positive correlation.
+Estimating the economic benefits of infrastructure projects in general, and of air
+transport in particular, is difficult because there is a strong interdependence between
+infrastructure investments and regional development. Communities that benefit from
+more rapid economic growth tend to also invest more in infrastructure, and in turn
+the stock of infrastructure further stimulates regional development. Thus, disentangling
+the causal effect of transportation on economic growth from the natural tendency of
+infrastructure to increase with the growth of a region is not easy.
+Perhaps due to the difficulty of identification, there are only a couple prior studies
+examining the effect of air transport on regional growth. Brueckner (2003) estimates the
+effect of airline traffic on employment using cross-sectional data at the Metropolitan Sta-
+tistical Area (MSA) level and finds that a 10 percent increase in passenger enplanements
+leads to approximately 1 percent increase in MSA employment, with service sectors re-
+sponsible for most of the effect. Brueckner uses hub status of an airport, as well as the
+MSAs centrality within the U.S. and proximity to the nearest large metropolitan area, to
+instrument for the endogeneity of the level of air transport services. However, hub status
+may be endogenous with current and expected growth of an MSA, while geographic fac-
+tors may affect general economic growth of a region just as much as air service.6 Green
+(2007) exploits time series rather than cross-sectional data variation to estimate the ef-
+fect of air transport infrastructure on regional growth. Using information on 83 MSAs,
+he regresses passenger air traffic levels in 1990 on subsequent decennial population and
+employment growth, and finds that a 10 percent increase in boardings per capita gener-
+ate a 3.9 percent higher population growth and 2.8 percent higher employment growth
+for the period 1990-2000. However, economic outcomes such as population, employment,
+and even air service are persistent processes. This too makes identification difficult in
+the absence of any major exogenous and long-lasting shock to the airline service.
+To overcome these challenges in identifying the relationship between air services
+and regional economic growth, we employ a quasi-natural experiment that stems from
+the dramatic changes in the aviation network following the U.S. Deregulation Act of
+1978. This policy change marked the switch of the U.S. aviation industry from tight
+government regulation to free market. Importantly, it saw the swift dissolution of a
+regulatory environment that implicitly subsidized (and hence oversupplied) air service
+6Thereisasignificanteconomicgeographyliteratureshowinghowspatiallocationinfluencesregional
+development and income growth via market access or market potential effects. Among others, see for
+example Redding and Venables (2004) for a cross-country analysis, or Hanson (2005) and Head and
+Mayer (2006) for a regional analysis.
+3

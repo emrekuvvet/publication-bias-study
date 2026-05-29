@@ -1,0 +1,134 @@
+NBER WORKING PAPER SERIES
+THE EFFECTS OF MANDATORY TRANSPARENCY IN FINANCIAL MARKET DESIGN:
+EVIDENCE FROM THE CORPORATE BOND MARKET
+Paul Asquith
+Thom Covert
+Parag Pathak
+Working Paper 19417
+http://www.nber.org/papers/w19417
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2013, Revised April 2019
+We are grateful to Hank Bessembinder, Edith Hotchkiss, Leonid Kogan, Deborah Lucas, Jun Pan,
+and Alp Simsek for discussions, and Ola Persson and FINRA for conversations about the data.
+We also thank Jane Choi, Abhishek Dev, Daniel Green, Joseph Shayani, Josh Weiss, and Ahmad
+Zia Wahdat for their research assistance. The views expressed herein are those of the authors and
+do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2013 by Paul Asquith, Thom Covert, and Parag Pathak. All rights reserved. Short sections of
+text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+The Effects of Mandatory Transparency in Financial Market Design: Evidence from the Corporate
+Bond Market
+Paul Asquith, Thom Covert, and Parag Pathak
+NBER Working Paper No. 19417
+September 2013, Revised April 2019
+JEL No. D47,G14,G18,L51
+ABSTRACT
+In July 2002, FINRA began mandatory dissemination of price and volume information for
+corporate bond trades. This paper, using recently released data, measures transparency’s effect on
+trading activity and costs for the entire corporate bond market. Even though trading costs decrease
+significantly across all types of bonds, trading activity does not increase and, by one measure,
+decreases. Transparency affects high-yield bonds differently than investment grade bonds. High-
+yield bonds have the largest decrease in trading activity, 71.1%, and in trading costs, 22.9%. High-
+yield bonds also disproportionately contribute to the estimated reduction in total trading costs of
+$600 million a year.
+Paul Asquith Parag Pathak
+MIT Sloan School of Management Department of Economics, E52-426
+100 Main Street, E62-660 MIT
+Cambridge, MA 02142 50 Memorial Drive
+and NBER Cambridge, MA 02142
+pasquith@mit.edu and NBER
+ppathak@mit.edu
+Thom Covert
+Booth School of Business
+University of Chicago
+5807 South Woodlawn Avenue
+Chicago, IL 60637
+and NBER
+thomas.covert@chicagobooth.edu
+An online appendix is available at http://www.nber.org/data-appendix/w19417
+
+I. Introduction
+Many financial markets have recently become subject to new regulations requiring
+transparency. This paper studies how transparency affects trading in the US corporate bond market. In
+July 2002, FINRA began requiring the timely public dissemination of post-trade price and volume
+information for the $4.4 trillion-a-year U.S. corporate bond market through TRACE (FINRA’s Trade
+Reporting and Compliance Engine). Dissemination took place in Phases over two-and-a-half years.
+Actively traded, investment grade bonds became transparent before thinly traded, high-yield bonds.
+TRACE has become the template for increased transparency in other over-the-counter financial
+markets.3 The increase in information due to TRACE was so significant that it has been likened to the
+early 20th century introduction of stock market tickers for equities and electronic screens for Treasuries
+(Vames 2003).
+When market participants have timely information about transaction prices and quantities, it
+may lower search costs and alter bargaining between customers and dealers. Several models suggest
+that post-trade transparency reduces trading costs and improve market performance. In Duffie,
+Garleanu, and Pedersen (2005)’s search-and-matching model, bid-ask spreads decrease when investors
+have greater bargaining power. In models with information differences, a reduction in information
+asymmetries also reduces transaction costs (e.g., Glosten and Milgrom 1985). FINRA’s (then NASD)
+stated rationale for TRACE emphasized that more information would level the playing field between
+institutional and retail market participants. TRACE proponents anticipated that everyone, including
+dealers, would benefit from increased market participation. For instance, SEC commissioner Arthur
+Levitt (1999) remarked, “This participation means more trading, more market liquidity, and perhaps
+even new business for bond dealers.”
+In this paper, we use previously unreleased data to examine the effects of TRACE on trading
+activity and costs over all four Phases of its introduction. The new data includes anonymized dealer
+identifiers. These identifiers allow us to directly measure trading costs by measuring the cost of round-
+trip trades for all bonds. The data also include transaction information on bond trades that were
+collected by TRACE, but not publicly disseminated. The non-disseminated trades allow us to exploit
+TRACE’s four distinct Phases to estimate difference-in-differences models of TRACE’s effect. This
+provides complete coverage across all segments of the bond market for the first time. In addition, our
+research design, which exploits the introduction of TRACE in Phases, isolates the effect of transparency
+from other elements of market design since bonds continued to be traded over-the-counter in a dealer
+market afterwards.
+3 Title VII of the Dodd-Frank Wall Street Reform and Consumer Protection Act (Dodd-Frank) (2010) required that
+swaps (including credit default swaps, interest rate swaps, collateralized debt obligations, and other derivatives)
+adopt TRACE-like post-trade transparency beginning in 2011. In addition, FINRA has expanded TRACE to several
+other asset classes, including Agency-Backed Securities, Asset-Backed Securities, and 144a bonds. TRACE was
+expanded in March 2010 to include Agency-Backed Securities and in May 2011 to include Asset-Backed Securities.
+FINRA started publicly disseminating 144A transactions on June 30, 2014. European MiFID II/R regulations mimic
+TRACE for European corporate bonds and were implemented starting January 3, 2018.
+1
+
+Bonds differ substantially between the Phases as does trading activity and trading costs. For
+example, bonds in the last Phase (3B) are far more likely to be lower rated high yield bonds than bonds
+in the first two Phases (1 and 2), which are all investment grade. In addition, bonds in Phase 3B trade
+less frequently than bonds in Phases 1, 2, and 3A. At the same time, Phase 3B bonds have the largest
+average trade size and the highest trading-cost per round-trip trade.
+These differences in bonds across Phases allow us to show that TRACE has significantly different
+effects on the investment-grade and high-yield segments of the bond market. Using a difference-in-
+differences methodology, we find that TRACE results in an 11.7% reduction in the number of trades
+overall. 4 This result is driven by Phase 3B bonds. TRACE significantly reduces the number of Phase 3B
+trades by 71.1% from the mean number of trades prior to dissemination.5 These findings are robust
+across variations of our difference-in-differences research design.
+TRACE does not significantly change trading volume for any Phase, however. Even though the
+number of trades for Phase 3B bonds decrease, TRACE increases the average trade size for Phase 3B
+bonds significantly increases by 4.3% or $50,101. Moreover, the reduction in the number of trades in
+Phase 3B is driven by trades less than 100,000. These are exactly the small retail trades that proponents
+of TRACE predicted would increase the most, yet the data show that they decrease the most.
+There is no effect on trading volume even though TRACE reduces round-trip trading costs
+significantly in each Phase. A round-trip trade is one where a given quantity of a bond is bought and sold
+by the same dealer within a certain amount of time. There is a reduction in round-trip trading costs,
+both by trade and by bond traded for each Phase. TRACE reduces round-trip trading costs across all
+Phases by 18.5% per round-trip trade and 4.9% per round-trip bond traded. The effects on trading costs
+are largest, at 22.9% per round-trip trade and 10.9% per round-trip bond traded, for Phase 3B bonds.
+These significant effects are present even though Phase 3B occurs more than two-and-a-half years
+following the introduction of transparency in segment of the bond market.
+We also investigate differences between dealer and customer trading. We divide round-trip
+trades between those with a customer on both ends and a dealer in between (“CDC”), which we refer to
+as customer round trips, and those with no customers (“DDD”), which we refer to as dealer round trips.
+The customer trading cost per round-trip trade is larger than for dealers at $2,562 for CDCs versus
+$1,035 for DDDs. This fact is consistent with dealers having market power or more information than
+customers. TRACE has the largest negative effect on customer round-trip trades, and reduces the
+dealer cost advantage, but it does not eliminate it. There is a significant reduction in trading cost per
+round-trip trade of $454 for CDCs and a $225 for DDDs. On a percentage basis, however, these effects
+are similar, showing that TRACE does not level the playing field between customers and dealers.
+4 Since there is no systematic data on corporate bond trading prior to TRACE’s introduction, we cannot use our
+research design to study Phase 1. Following Bessembinder, et. al. (2005), we use data from the National
+Association of Insurance Commissioners together with our difference-in-differences research design to measure
+Phase 1 effects on trading activity and costs. Appendix A details these results.
+2

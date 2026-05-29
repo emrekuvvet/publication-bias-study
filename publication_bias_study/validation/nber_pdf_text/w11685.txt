@@ -1,0 +1,123 @@
+NBER WORKING PAPER SERIES
+THE RISK-ADJUSTED COST OF FINANCIAL DISTRESS
+Heitor Almeida
+Thomas Philippon
+Working Paper 11685
+http://www.nber.org/papers/w11685
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2005
+We wish to thank Viral Acharya, Ed Altman, Yakov Amihud, Long Chen, Pierre Collin-Dufresne, Joost
+Driessen, Marty Gruber, Jing-Zhi Huang, Augustin Landier, Francis Longstaff, Matt Richardson, Pascal
+Maenhout, Anthony Saunders, Ken Singleton, and seminar participants at MIT, USC, New York University,
+HEC, and Rutgers University for valuable comments and suggestions. We also thank Ed Altman for
+providing data on default rates of high yield bonds, and Joost Driessen for providing data on risk neutral
+default probabilities. The usual disclaimer applies. The views expressed herein are those of the author(s) and
+do not necessarily reflect the views of the National Bureau of Economic Research.
+©2005 by Heitor Almeida and Thomas Philippon. All rights reserved. Short sections of text, not to exceed
+two paragraphs, may be quoted without explicit permission provided that full credit, including © notice, is
+given to the source.
+
+The Risk-Adjusted Cost of Financial Distress
+Heitor Almeida and Thomas Philippon
+NBER Working Paper No. 11685
+October 2005
+JEL No. G31
+ABSTRACT
+In this paper we argue that risk-adjustment matters for the valuation of financial distress costs, since
+financial distress is more likely to happen in bad times. Systematic distress risk implies that the risk-
+adjusted probability of financial distress is larger than the historical probability. Alternatively, the
+correct valuation of distress costs should use a discount rate that is lower than the risk free rate. We
+derive a formula for the valuation of distress costs, and propose two strategies to implement it. The
+first strategy uses corporate bond spreads to derive risk-adjusted probabilities of financial distress.
+The second strategy estimates the risk adjustment directly from historical data on distress
+probabilities, using several established asset pricing models. In both cases, we find that exposure to
+systematic risk increases the NPV of financial distress costs. In addition, the magnitude of the risk-
+adjustment can be very large, suggesting that a valuation of distress costs that ignores systematic risk
+significantly underestimates their true present value. Finally, we show that marginal distress costs
+computed using our new formula can be large enough to balance the marginal tax benefits of debt
+derived by Graham (2000), and we conclude that systematic distress risk can help explain why firms
+appear rather conservative in their use of debt.
+Heitor Almeida
+NYU Stern School of Business
+Department of Finance
+44 West 4th Street, Room 9-85
+New York, NY 10012
+and NBER
+halmeida@stern.nyu.edu
+Thomas Philippon
+NYU Stern School of Business
+Department of Finance
+44 West 4th Street, Suite 9-190
+New York, NY 10012-1126
+tphilipp@stern.nyu.edu
+
+1 Introduction
+There is a large literature that argues that financial distress can have both direct and
+indirect costs (Warner, 1977, Altman, 1984, Weiss, 1990, Ofek, 1993, Asquith, Gertner and
+Scharfstein, 1994, Opler and Titman, 1994, Sharpe, 1994, Gilson, 1997, and Andrade and
+Kaplan, 1998). However, there is much debate as to whether such costs are high enough to
+matter much for corporate valuation practices and capital structure decisions. Direct costs
+of distress, such as those entailed by litigation fees, are relatively small.1 Indirect costs,
+such as loss of market share (Opler and Titman, 1994) and inefficient asset sales (Shleifer
+and Vishny, 1992), are believed to be more important, but they are also much harder to
+quantify. Andrade and Kaplan (1998), for example, estimate losses of the order of 10% to
+23% of firm value at the time of distress for a sample of highly leveraged firms. However,
+they also argue that part of these costs might actually not be genuine financial distress
+costs, but rather consequences of the economic shocks that drove the firms into distress.
+They suggest that, from an ex-ante perspective, distress costs are probably small, specially
+in comparison to the potential tax benefits of debt.2 In contrast, Opler and Titman (1994)
+argue that distress costs can be large for certain types of firms, such as those that engage
+in substantial R&D activities.3
+While the previous literature has analyzed in detail the nature of distress costs, and has
+attempted to estimate the loss in value upon distress, it has devoted much less attention to
+the proper capitalization of financial distress costs. For example, Molina (2005) calculates
+the ex-ante cost of distress as the historical probability of default multiplied by Andrade
+and Kaplan’s (1998) estimates of the loss in firm value given default. This calculation
+ignores the capitalization and discounting of distress costs. Other papers do incorporate
+1Warner(1977) and Weiss (1990), forexample, estimatecostsoftheorderof3%-5% offirm valueat the
+time of distress.
+2Altman (1984) finds similar cost estimates of 11% to 17% of firm value on average, three years prior to
+bankruptcy. However,itisnotclearthatallsuchcostscanbeattributedtogenuinefinancialdistress(Opler
+and Titman, 1994, and Andrade and Kaplan, 1998).
+3Notalltheliteratureagreeswiththepropositionthatdistressonlyhascosts. Wruck(1990)arguesthat
+the organizational restructuring that accompanies distress might have benefits, and Ofek (1993) suggests
+that leverage might force firms to respond more quickly to poor performance. In addition, Eberhardt,
+Altman and Aggarwal (1997) find that firms appear to do unexpectedly well post-bankruptcy.
+1
+
+some form of discounting. The usual approach in the literature is to assume risk-neutrality,
+and discount the product of historical probabilities and losses in value given default by a
+risk-free rate (e.g., Altman (1984)).4
+In this paper we develop a methodology to value financial distress costs. Like the
+existing literature, we take as given the estimates of losses in value given distress provided
+by Andrade and Kaplan (1998) and Altman (1984). We suggest a simple way to capitalize
+these losses into a NPV formula for (ex-ante) distress costs, which takes into account time
+variation in marginal probabilities of financial distress, and the shape of the term structure
+of interest rates.5 Most importantly, we argue that the common practice of using both
+historical probabilities of distress and risk free rates to value distress costs is wrong.
+The problem with the traditional approach is that the incidence of financial distress is
+correlated with macroeconomic shocks such as major recessions,6 generating a systematic
+component to distress risk. In fact, the asset pricing literature on credit yield spreads
+has provided substantial evidence for a systematic component in corporate default risk.
+It is well-known that the spread between corporate and government bonds is too high
+to be explained only by expected default.7 The literature also presents direct evidence
+for a default risk premium implicit in corporate bond spreads (Elton, Gruber, Agrawal
+and Mann, 2001, Huang and Huang, 2003, Longstaff, Mittal, and Neis, 2004, Driessen,
+2005, Chen, Collin-Dufresne, and Goldstein, 2005).8 This systematic component of default
+risk raises the possibility that investors might care more about default (and thus financial
+distress) than what is implied by risk-free discounting. In particular, this insight suggests
+that in order to value distress costs correctly, either the discount rate or the probability of
+distress must be adjusted for risk. If historical probabilities are used to compute expected
+4Recent models of dynamic capital structure that incorporate distress costs also assume risk-neutrality,
+and thus implicitly discount the costs of financial distress by the risk free rate (e.g., Titman and Tsyplakov
+(2004), and Hennessy and Whited (2005)).
+5Thereisevidencethatmarginaldefaultprobabilitiesincreaseovertimeforfirmsratedinvestment-grade,
+but show the opposite pattern for firms whose debt is rated junk (Duffie and Singleton, 2003).
+6SeeDenisandDenis(1995)forsomeevidencethattheincidenceofdistressisrelatedtomacroeconomic
+conditions.
+7Jones, Mason and Rosenfeld (1984) provide some early evidence on this.
+8SeealsoCollin-Dufresne,Goldstein and Martin (2001), whoexaminethedeterminantsofmovementsin
+credit spreads.
+2

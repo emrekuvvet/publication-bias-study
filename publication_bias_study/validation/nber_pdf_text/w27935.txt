@@ -1,0 +1,147 @@
+NBER WORKING PAPER SERIES
+A Q-THEORY OF BANKS
+Juliane Begenau
+Saki Bigio
+Jeremy Majerovitz
+Matias Vieyra
+Working Paper 27935
+http://www.nber.org/papers/w27935
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2020, revised April 2024
+We would like to thank Youngmin Kim, Adam Su, and Mengbo Zhang for excellent research
+assistance. We are grateful to our discussants Dean Corbae, Miguel Faria-e-Castro, Elena
+Loutskina, Thorsten Koeppl, David Martinez-Miera and Adrián Pardo. We thank Andrew
+Atkeson, Haelim Anderson, Patrick Bolton, Pablo D’Erasmo, Andrea Eisfeldt, Francesco
+Ferrante, Mark Gertler, Kinda Hachem, Valentin Haddad, Benjamin Hebert, Arvind
+Krishnamurthy, Anton Korinek, Hanno Lustig, Ken Miyahara, Gaston Navarro, Andrea
+Prestipino, Jose-Victor Rios-Rull, Pari Sastry, Jesse Schreger, Jeremy Stein, Robert Townsend,
+and Pierre-Olivier Weill for their many useful comments. We thank the conference and seminar
+participants of the Barcelona GSE 2021, UofT Finance Conference 2021, MFM Winter 2019
+Meeting, Columbia 2020 Junior Finance Conference, Banco de Mexico, Philadelphia Fed,
+Federal Reserve Board, UCSD, UCSC, Michigan Ross, Northwestern University (Economics and
+Finance), University of Virginia, and Wharton (Macro). Previous versions of the paper circulated
+under the title “Data Lessons on Bank Behavior” and “Banks Adjust Slowly”. These are our
+views and not necessarily those of the Bank of Canada, the Federal Reserve Bank of San
+Francisco, or the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Juliane Begenau, Saki Bigio, Jeremy Majerovitz, and Matias Vieyra. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+A Q-Theory of Banks
+Juliane Begenau, Saki Bigio, Jeremy Majerovitz, and Matias Vieyra
+NBER Working Paper No. 27935
+October 2020, revised April 2024
+JEL No. G21,G32,G33
+ABSTRACT
+We introduce a dynamic bank theory featuring delayed loss recognition and a regulatory capital
+constraint, aiming to match the bank leverage dynamics captured by Tobin’s Q. We start from
+four facts: (1) book and market equity values diverge, especially during crises; (2) Tobin’s Q
+predicts future bank profitability;(3) neither book nor market leverage constraints are strictly
+binding for most banks; and (4) bank leverage and Tobin’s Q are mean reverting but highly
+persistent. We demonstrate that delayed loss accounting rules interact with bank capital
+requirements, introducing a tradeoff between loan growth and financial fragility. Our welfare
+analysis implies that accounting rules and capital regulation should optimally be set jointly. This
+paper emphasizes the need to reconcile regulatory dependence on book values with the market’s
+emphasis on fundamental values to enhance understanding of banking dynamics and improve
+regulatory design.
+Juliane Begenau Jeremy Majerovitz
+Graduate School of Business 4400 Lindell Boulevard, 18 A
+Stanford University Saint Louis, Miss 63108
+655 Knight Way United States
+Stanford, CA 94305 jeremy.majerovitz@gmail.com
+and NBER
+begenau@stanford.edu Matias Vieyra
+Bank of Canada
+Saki Bigio 234 Wellington St. W
+Department of Economics Ottawa, ON K1A 0G9
+University of California at Los Angeles Canada
+8283 Bunche Hall mvieyra@bankofcanada.ca
+Box 951477
+Los Angeles, CA 90095-1477
+and NBER
+sbigio@econ.ucla.edu
+
+1 Introduction
+This paper introduces a banking model that emphasizes the slow recognition of losses in
+accounting books. Delayed accounting of losses induces a distinction between the funda-
+mental value of equity, which fully incorporates information on losses, and the book value of
+equity, which does not. This distinction is crucial because bank regulation relies on account-
+ing frameworks while financial vulnerabilities are influenced by fundamental values. Our
+model underscores the need to consider the limited information in accounting books, both
+to correctly capture bank behavior and to guide regulatory design.
+Our theory is motivated by four stylized facts about banks’ leverage and about their ratio
+of market-to-book equity, which we henceforth call Tobin’s Q1:
+1. Time series of Tobin’s Q: The banking sector’s Tobin’s Q fluctuates substantially
+over time. Market capitalization of banks fell substantially during the 2007/2008 fi-
+nancial crisis, while book equity was stable.
+2. Informational content of Tobin’s Q:Marketequitycapturesinformationthatbook
+equity does not. Tobin’s Q predicts bank profits over a two-year horizon and banks’
+distance to default in the cross-section.
+3. Cross-section of book and market leverage: Banks hold a capital buffer above
+the regulatory minimum. Even during the financial crisis, only a small fraction of
+banks violated their regulatory constraints, and most were well-capitalized according
+to book measures. In contrast, the dispersion of market leverage (assets over market
+equity) increased substantially during the financial crisis, and many banks temporarily
+had very high levels of market leverage.
+4. Dynamic response of leverage and Tobin’s Q: After a net-worth shock, Tobin’s
+Q and market leverage respond on impact and mean-revert slowly. By contrast, book
+equity does not react on impact but incorporates the shock to net worth gradually.
+Fact 1 is that aggregate book equity and market-value equity differ, especially during crises,
+leading to stark differences in book and market leverage. These measures typically comove
+in models,2 but not in the data.3 However, models must take a stance on whether book or
+market leverage is constrained, leading to different implications depending on which leverage
+measure is used to draw inferences.
+1Werefertothemarket-to-bookequity ratioasTobin’sQ,asopposedtothemarket-to-bookassets ratio.
+2Papersthatstudytheassetpricingimplicationsofintermediarynetworth(e.g.,HeandKrishnamurthy,
+2013;BrunnermeierandSannikov,2014)usemarketequityasastatevariable,whereaspapersthatfocuson
+the effects of regulation use book measures of equity (e.g., Adrian and Boyarchenko, 2013; Begenau, 2020;
+Adrian and Shin, 2013; Corbae and D’Erasmo, 2021; Begenau and Landvoigt, 2022).
+3See the debate between Adrian, Etula and Muir (2014) and He, Kelly and Manela (2017).
+1
+
+Fact 2 implies that market values contain more information about losses, a feature con-
+sistent with many findings in the accounting literature but not with models where book and
+market measures contain the same information.4
+Fact 3 regards the cross-sectional dispersion of market and book leverage. Book measures
+of leverage suggest that banks are almost always well capitalized. Even during the financial
+crisis, only a small fraction of banks had regulatory capital ratios below the minimum, and
+the vast majority of banks held a substantial buffer of capital beyond the minimum. In
+contrast, market-based measures of leverage suggest that leverage rose dramatically during
+the crisis and that the distribution of leverage also fanned out. As a result, many banks
+were well capitalized on the books despite significant erosions in their market valuations.5
+Fact 4 summarizes the dynamics of market and book leverage after net-worth losses. We
+identify net-worth losses in a panel of US banks by exploiting cross-sectional variation in
+bank stock excess returns, using a factor model that partials out variation driven by changes
+in risk premia.6 We construct time series of bank-level proxies of net-worth shocks from
+return shocks and estimate the impulse responses of bank variables to those shocks. Fact
+4 is that banks adjust very slowly after these shocks.7 In response to a negative net-worth
+shock that mechanically increases market leverage, banks reduce their market leverage by
+slowly reducing their liabilities. Book equity does not respond on impact and declines slowly.
+In conjunction, these four facts inform the essential elements of our Q-theory, which
+is based on a delayed loss accounting mechanism. Our model features a cross-section of
+risk-neutral banks. Banks fund risky loans with deposits and internal equity. Banks can
+increase the return on equity by taking on more leverage, capturing frictions that prevent
+deposits from being properly priced. A regulatory limit and a market-based limit constrain
+bank leverage. If either limit is exceeded, banks are dissolved and receive a fixed liquidation
+value. To avoid liquidations, banks optimally maintain a capital buffer.
+The key element of our Q-theory is that book equity values differ from fundamental, and
+hence market, equity value, predominantly because book equity takes time to recognize past
+loan losses whereas fundamental values contain real-time information on loan losses. Our
+delayedlossaccountingmechanismallowsustodecomposeTobin’sQintotheratioofmarket
+equity to fundamental equity and little q, the ratio of fundamental equity to accounting value
+equity. When banks face a loan default, their accounting books can momentarily hide the
+loss. Therefore, while banks hold a capital buffer above the regulatory limit according to
+their accounting values, their fundamental leverage may exceed the regulatory limit. Banks
+4Laux and Leuz (2010) explain how banks have flexibility in accounting for losses.
+5An example is Silicon Valley Bank (SVB), whose equity had been wiped out in market value terms by
+2022 Q3 while the bank continued to satisfy capital standards until it was liquidated in March 2023.
+6It is challenging to identify net-worth shocks because accounting measures do not convey the full extent
+of losses. Unfortunately, while market values capture more information, they are also affected by variation
+in aggregate risk premia. Hence, we cannot directly exploit variation in market valuations.
+7This fact is consistent with the literature on slow-moving capital (Duffie, 2010).
+2

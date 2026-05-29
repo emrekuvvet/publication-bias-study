@@ -1,0 +1,105 @@
+NBER WORKING PAPER SERIES
+PSEUDO MARKET TIMING AND PREDICTIVE REGRESSIONS
+Malcolm P. Baker
+Ryan Taliaferro
+Jeffrey Wurgler
+Working Paper 10823
+http://www.nber.org/papers/w10823
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2004
+We thank Yakov Amihud, John Campbell, Owen Lamont, Alex Ljungqvist, Tim Loughran, Jay Ritter, Andrei
+Shleifer, Jeremy Stein, Jim Stock, Sam Thompson, and Tuomo Vuolteenaho for helpful comments, and Owen
+Lamont, Inmoo Lee, and Nejat Seyhun for data. Baker gratefully acknowledges financial support from the
+Division of Research of the Harvard Business School. The views expressed herein are those of the author(s)
+and not necessarily those of the National Bureau of Economic Research.
+©2004 by Malcolm P. Baker, Ryan Taliaferro, and Jeffrey Wurgler. All rights reserved. Short sections of
+text, not to exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Pseudo Market Timing and Predictive Regressions
+Malcolm P. Baker, Ryan Taliaferro, and Jeffrey Wurgler
+NBER Working Paper No. 10823
+October 2004
+JEL No. G12, G14, G32, C15
+ABSTRACT
+A number of studies claim that aggregate managerial decision variables, such as aggregate equity
+issuance, have power to predict stock or bond market returns. Recent research argues that these
+results may be driven by an aggregate time-series version of Schultz's (2003) pseudo market timing
+bias. We use standard simulation techniques to estimate the size of the aggregate pseudo market
+timing bias for a variety of predictive regressions based on managerial decision variables. We find
+that the bias can explain only about one percent of the predictive power of the equity share in new
+issues, and that it is also much too small to overturn prior inferences about the predictive power of
+corporate investment plans, insider trading, dividend initiations, or the maturity of corporate debt
+issues.
+Malcolm Baker
+Harvard Business School
+Morgan Hall 361
+Boston, MA 02163
+and NBER
+mbaker@hbs.edu
+Ryan Taliaferro
+Harvard Business School
+Morgan Hall
+Boston, MA
+rtaliaferro@hbs.edu
+Jeffrey Wurgler
+Stern School of Business, Suite 9-190
+New York University
+44 West 4th Street
+New York, NY 10012
+and NBER
+jwurgler@stern.nyu.edu
+
+I. Introduction
+Market timing is the tendency of firms to issue equity before low equity market returns.
+In contrast, pseudo market timing, as recently defined by Schultz (2003), is the tendency of firms
+to issue equity following high returns. In small samples, pseudo market timing can give the
+appearance of genuine timing. Consider an extreme example of pure pseudo market timing with
+only two returns. If the first return is high, equity issues rise; if the first return is low, equity
+issues fall. The first return can be mechanically explained ex post: Relatively low equity issues
+precede a high first return and relatively high equity issues precede a low first return. Even
+though the returns are random, equity issues “predict” returns in sample more often than not.
+In a provocative article, Butler, Grullon, and Weston (2004a) argue that an aggregate
+version of the pseudo market timing bias explains why the variable in Baker and Wurgler (2000),
+the equity share in new equity and debt issues, predicts stock market returns in sample. While
+Butler et al. focus their critique on a particular link between financing patterns and stock returns,
+their general argument—that the pseudo market timing bias extends to time-series predictive
+regressions—is of considerably broader interest, because virtually every aggregate managerial
+decision variable that has been used in predictive regressions, not just equity issuance, is
+correlated with returns in the direction that induces a bias.
+Consider the following examples. Seyhun (1992, 1998) and Lakonishok and Lee (2001)
+find that high aggregate insider buying appears to predict high stock market returns. However,
+aggregate insider buying increases as stock prices fall, raising the possibility that their result is
+driven by the bias. Baker, Greenwood, and Wurgler (2003) find that a high ratio of long-term
+debt issuance to total debt issuance appears to predict lower excess bond returns. However, as
+Butler et al. (2004b) observe, long-term debt issues are relatively more common as interest rates
+1
+
+fall (and excess bond returns rise), again raising the potential for bias. Lamont (2000) finds that
+corporate investment plans forecast lower stock market returns, but planned investment increases
+with stock prices. And, finally, Baker and Wurgler (2004) find that the aggregate rate of dividend
+initiation is inversely related to the future returns on dividend payers over nonpayers. But again,
+the initiation rate increases with the relative returns on payers. Thus, in each of these papers, in
+addition to those involving equity issuance, the bias is a potentially serious concern. The size of
+the bias needs to be empirically pinned down before any of the above results can be accepted, or
+rejected, with confidence.1
+In this paper, we empirically estimate the aggregate pseudo market timing bias that
+affects predictive regressions based on managerial decision variables. We start by observing that
+none of this is a fundamentally new question in asset pricing or time series econometrics. While
+Butler et al. (2004a) do not make the connection, aggregate pseudo market timing is simply a
+new name for the small-sample bias studied by Stambaugh (1986, 1999), Mankiw and Shapiro
+(1986), Nelson and Kim (1993), Elliott and Stock (1994), Kothari and Shanken (1997),
+Campbell and Yogo (2003), Amihud and Hurvich (2004), Lewellen (2004), Polk, Thompson,
+and Vuolteenaho (2004) and others. These studies focus on valuation ratios, like dividend yield
+or market-to-book, which exhibit an extreme and mechanical form of pseudo market timing—for
+example, when the market crashes, the dividend yield automatically rises. Our predictors are
+different, but the bias is the same, and it can be estimated using the same standard methods.
+1 It is important to note that the aggregate pseudo market timing bias discussed in this paper, and in Butler et al.
+(2004a,b), is a purely time-series phenomenon. It is not the bias emphasized by Schultz (2003), who discusses the
+potential for bias in “event time” studies of abnormal IPO returns. There, the problem arises when the number of
+firms going public increases following high abnormal returns on previous IPOs. For studies of that conceptually
+distinct type of bias, see Schultz (2003, 2004), Ang, Gu, and Hochberg (2004), Dahlquist and de Jong (2004), and
+Viswanathan and Wei (2004). For a general discussion, see Ritter (2003).
+2

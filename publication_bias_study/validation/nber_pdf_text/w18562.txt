@@ -1,0 +1,122 @@
+NBER WORKING PAPER SERIES
+USING NEURAL DATA TO TEST A THEORY OF INVESTOR BEHAVIOR:
+AN APPLICATION TO REALIZATION UTILITY
+Cary Frydman
+Nicholas Barberis
+Colin Camerer
+Peter Bossaerts
+Antonio Rangel
+Working Paper 18562
+http://www.nber.org/papers/w18562
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+November 2012
+We are grateful for comments from participants at Indiana University, Notre Dame University, Stanford
+University, the University of California at Berkeley, the University of Southern California, the University
+of Texas at Austin, Washington University, the Fall 2010 NBER Behavioral Finance meeting, the
+2010 Society for Neuroeconomics meeting, the 2010 Miami Finance Conference, the 2011 BEAM
+Conference, the 2011 WFA conference, and the 2012 NBER-Oxford Saïd-CFS-EIEF Conference on
+Household Finance. The authors gratefully acknowledge financial support from the National Science
+Foundation (Camerer, Frydman, Rangel), the Betty and Gordon Moore Foundation (Camerer, Rangel),
+and the Lipper Foundation (Rangel). The views expressed herein are those of the authors and do not
+necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2012 by Cary Frydman, Nicholas Barberis, Colin Camerer, Peter Bossaerts, and Antonio Rangel.
+All rights reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+Using Neural Data to Test a Theory of Investor Behavior: An Application to Realization Utility
+Cary Frydman, Nicholas Barberis, Colin Camerer, Peter Bossaerts, and Antonio Rangel
+NBER Working Paper No. 18562
+November 2012
+JEL No. G02,G11
+ABSTRACT
+We use measures of neural activity provided by functional magnetic resonance imaging (fMRI) to
+test the "realization utility" theory of investor behavior, which posits that people derive utility directly
+from the act of realizing gains and losses. Subjects traded stocks in an experimental market while we
+measured their brain activity. We find that all subjects exhibit a strong disposition effect in their trading,
+even though it is suboptimal. Consistent with the realization utility explanation for this behavior, we
+find that activity in the ventromedial prefrontal cortex, an area known to encode the value of options
+during choices, correlates with the capital gains of potential trades; that the neural measures of realization
+utility correlate across subjects with their individual tendency to exhibit a disposition effect; and that
+activity in the ventral striatum, an area known to encode information about changes in the present
+value of experienced utility, exhibits a positive response when subjects realize capital gains. These
+results provide support for the realization utility model and, more generally, demonstrate how neural
+data can be helpful in testing models of investor behavior.
+Cary Frydman Peter Bossaerts
+University of Southern California Department of Economics
+Marshall School of Business California Institute of Technology
+3670 Trousdale Parkway, BRI 204G Pasadena, CA 91125
+Los Angeles, CA 90089 pbs@rioja.caltech.edu
+cfrydman@marshall.usc.edu
+Antonio Rangel
+Nicholas Barberis Department of Economics
+Yale School of Management California Institute of Technology
+135 Prospect Street Pasadena, CA 91125
+P O Box 208200 rangel@hss.caltech.edu
+New Haven, CT 06520-8200
+and NBER
+nick.barberis@yale.edu
+Colin Camerer
+Department of Economics
+California Institute of Technology
+Pasadena, CA 91125
+camerer@hss.caltech.edu
+
+Over the past twenty years, economists have accumulated a large amount of evidence on how
+individual investors manage their financial portfolios over time. Some of this evidence is
+puzzling, in the sense that it is hard to reconcile with the simplest models of rational trading
+(Barberis and Thaler (2003); Campbell (2006)). Theorists have responded to this challenge by
+constructing new models of investor behavior. Empiricists, in turn, have started testing these
+newly-developed models.
+Most of the empirical work that tests theories of investor behavior uses field data (Barber
+and Odean (2000); Barber and Odean (2001); Choi et al. (2009); Grinblatt and Keloharju (2009)).
+A smaller set of studies uses data from laboratory experiments. The advantage of experimental
+data is that it gives researchers a large degree of control over the trading and information
+environment, which can make it easier to tease theories apart (Plott and Sunder (1988); Camerer
+and Weigelt (1991); Camerer and Weigelt (1993); Weber and Camerer (1998); Bossaerts and
+Plott (2004); Bossaerts et al. (2007)).1
+In this paper, we show how another kind of data, namely measures of neural activity
+taken using functional magnetic resonance imaging (fMRI) while subjects trade in an
+experimental stock market, can also be very useful in testing theories of investor behavior. In
+particular, we use neural data to test the validity of the “realization utility” theory of trading, a
+theory that has been used to address several facts about investor trading behavior, including the
+so-called disposition effect.
+The disposition effect is the robust empirical fact that individual investors have a greater
+propensity to sell stocks trading at a gain relative to purchase price, rather than stocks trading at a
+loss2. This fact has attracted considerable attention because it has proven challenging to explain
+1 While economic behavior in the laboratory may not be subject to all of the forces that apply in real
+financial markets, the predictions of any economic theory should be just as applicable inside the lab as
+outside it, especially because of the advantages of experimental control. As a result, experiments provide an
+ideal setting in which to try to falsify theories of economic behavior.
+2 See for example, Shefrin and Statman (1985); Odean (1998); Genesove and Mayer (2001); Grinblatt and
+Keloharju (2001); Feng and Seasholes (2005); Frazzini (2006); Jin and Scherbina (2011).
+2
+
+using simple rational models of trading behavior. This impasse has motivated the development of
+multiple competing alternative theories, both rational and behavioral (Shefrin and Statman
+(1985); Odean (1998); Barberis and Xiong (2009); Kaustia (2010)). The realization utility model
+(Shefrin and Statman (1985); Barberis and Xiong (2012)) is based on the assumption that, in
+addition to deriving utility from consumption, investors also derive utility directly from realizing
+gains and losses on the sale of risky assets that they own. For example, if an investor realizes a
+gain (e.g., by buying a stock at $20 and selling it at $40), he receives a positive burst of utility
+proportional to the capital gain. In contrast, if he realizes a loss (e.g., by buying a stock at $20 and
+selling it at $10), he receives a negative burst of utility proportional to the size of the realized
+loss. The presence of realization utility is important because, in combination with a sufficiently
+high time discount rate, it leads investors to exhibit a disposition effect (Barberis and Xiong
+(2012)).
+Testing for the validity of a theory such as realization utility is difficult because it, and
+other theories of investor trading, often make similar predictions about behavior (see Weber and
+Camerer (1998) for an exception). Furthermore, it is extremely difficult, using data on behavior
+alone, to carry out direct tests of the computations driving behavior (e.g., tests of whether
+potentially realizable capital gains rather than net expected values are tracked when selling). On
+the other hand, a combination of neural measurement and careful experimental design allows for
+direct tests of the extent to which the computations made by the brain at the time of decision-
+making are consistent with the mechanisms posited by different models.
+In this paper, we describe the results of an fMRI experiment designed to test the
+hypothesis that subjects experience realization utility while trading in an experimental stock
+market, and that this is associated with trading patterns consistent with the disposition effect. The
+3

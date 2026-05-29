@@ -1,0 +1,116 @@
+NBER WORKING PAPER SERIES
+COCO ISSUANCE AND BANK FRAGILITY
+Stefan Avdjiev
+Bilyana Bogdanova
+Patrick Bolton
+Wei Jiang
+Anastasia Kartasheva
+Working Paper 23999
+http://www.nber.org/papers/w23999
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+November 2017
+The study has benefited from discussions by Felipe Cortes, Mark Flannery, Florian Heider,
+George Pennacchi, Klaus Schaeck, Theo Vermaelen, and comments from Ruth Doubleday,
+Louise Eggett, Ingo Fender, Ulf Lewrick, Noel Reynolds, and Kostas Tsatsaronis, as well as
+seminar participants at the American Economic Association, Bank for International Settlements,
+Deutsche Bundesbank, the Committee on the Global Financial System workshop on contingent
+capital instruments, Conference on Financial Regulation at the University of Chicago, De
+Nederlandsche Bank, European Finance Association, European Winter Finance Conference,
+Imperial College of London, NBER Risks of Financial Institutions, Research Task Force of the
+Basel Committee on Banking Supervision, Western Finance Association, University of Geneva,
+and University of St. Gallen. We thank Minchen Zheng (Columbia) for excellent research
+assistance. The views expressed in the paper are those of the authors and do not necessarily
+represent the views of the Bank for International Settlements or the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2017 by Stefan Avdjiev, Bilyana Bogdanova, Patrick Bolton, Wei Jiang, and Anastasia
+Kartasheva. All rights reserved. Short sections of text, not to exceed two paragraphs, may be
+quoted without explicit permission provided that full credit, including © notice, is given to the
+source.
+
+CoCo Issuance and Bank Fragility
+Stefan Avdjiev, Bilyana Bogdanova, Patrick Bolton, Wei Jiang, and Anastasia Kartasheva
+NBER Working Paper No. 23999
+November 2017
+JEL No. G01,G21,G28,G32
+ABSTRACT
+The promise of contingent convertible capital securities (CoCos) as a “bail-in” solution has been
+the subject of considerable theoretical analysis and debate, but little is known about their effects
+in practice. In this paper, we undertake the first comprehensive empirical analysis of bank CoCo
+issues, a market segment that comprises over 730 instruments totaling $521 billion. Four main
+findings emerge: 1) The propensity to issue a CoCo is higher for larger and better-capitalized
+banks; 2) CoCo issues result in statistically significant declines in issuers’ CDS spreads,
+indicating that they generate risk-reduction benefits and lower costs of debt. This is especially
+true for CoCos that: i) convert into equity, ii) have mechanical triggers, iii) are classified as
+Additional Tier 1 instruments; 3) CoCos with only discretionary triggers do not have a significant
+impact on CDS spreads; 4) CoCo issues have no statistically significant impact on stock prices,
+except for principal write-down CoCos with a high trigger level, which have a positive effect.
+Stefan Avdjiev Wei Jiang
+Bank for International Settlements Graduate School of Business
+Centralbahnplatz 2 Columbia University
+Basel 4002, Switzerland 3022 Broadway, Uris Hall 803
+stefan.avdjiev@bis.org New York, NY 10027
+and NBER
+Bilyana Bogdanova wj2006@columbia.edu
+Bank for International Settlements
+Centralbahnplatz 2 Anastasia Kartasheva
+4002 Basel Bank for International Settlements
+Switzerland Centralbahnplatz 2
+bilyana.bogdanova@bis.org 4002 Basel
+Switzerland
+Patrick Bolton Anastasia.Kartasheva@bis.org
+Columbia Business School
+804 Uris Hall
+New York, NY 10027
+and NBER
+pb2208@columbia.edu
+
+1 Introduction
+If there is one term that epitomizes the infamy of the Global Financial Crisis of 2007-09 it
+is “too big to fail”. Even when they sought to impose …nancial discipline on banks that had
+assumed excessive levels of leverage, …nancial regulators were more often than not forced to
+acceptbailoutsastheonlypossiblestabilizinginterventionbecausethealternativeofputting
+thefailedbanksthroughsomeformofresolutionandimposinglossesondepositorsandother
+bank creditors was seen to be too dangerous in the middle of the crisis. It is not surprising,
+therefore, that a major priority of regulators following the crisis, on top of signi…cantly
+tightened bank capital and liquidity regulations, was to create new instruments to facilitate
+the write-down of the debt of distressed institutions. In short, the priority became to make
+sure that, in the event of another crisis, bail-ins would be a credible alternative to bailouts.
+One way of bringing about a swift and seamless bail-in is through the conversion of
+contingent convertible capital securities (CoCos) previously issued by the bank. The auto-
+matic loss absorption by CoCos when a pre-speci…ed trigger has been breached was the main
+appeal of these securities according to the early proponents, in particular, Flannery (2005,
+2016); Raviv (2004); Du¢ e (2009); McDonald (2013); Co¤ee (2011); Pennacchi, Vermaelen
+and Wol¤ (2014); and the Squam Lake Working Group (2010). These advocates of CoCos
+disagreed on the design of CoCos, in particular on whether the trigger should be a stock
+price ‡oor or a minimum equity-capital ratio, and their proposals were criticized by other
+commentators, most notably Admati, DeMarzo, Hellwig and P‡eiderer (2013) and Sundare-
+san and Wang (2015), who argued that CoCos were excessively complex and their conversion
+2
+
+could have destabilizing e¤ects.
+In the immediate aftermath of the Global Financial Crisis, these debates among acad-
+emics were mirrored by di¤erences in opinions and preferences among national bank reg-
+ulators. Nevertheless, the introduction of the Basel III framework, which allows banks to
+meet part of their regulatory capital requirements with CoCo instruments, created strong
+incentives for banks to seriously explore the possibilities for issuing CoCos. Furthermore,
+the inclusion of speci…c contingent capital elements in the Basel III framework brought some
+homogeneity in CoCo design across jurisdictions. As the number of jurisdictions implement-
+ing Basel III grew, banks responded by raising a substantial amount of capital in the form
+of CoCo issues. Between January 2009 and December 2015, banks around the world issued
+a total of $521 billion in CoCos through 731 di¤erent issues.
+The market for bank CoCos is now large enough to undertake a systematic empirical
+analysis of bank CoCo issuance. We do this by assembling the …rst comprehensive data set
+of all CoCo issues by banks between 2009 and 2015. Beyond providing an overview of the
+main characteristics of CoCos and their issuers, our study seeks to address two fundamental
+questions: What drives bank CoCo issuance decisions? And how do CoCo issues a¤ect
+issuers’balance sheets?
+To determine the factors driving CoCo issuance, we perform a duration analysis and
+estimate which bank characteristics are associated with a higher propensity to issue a CoCo.
+Our …rst main broad …nding is that larger banks and banks with relatively strong balance
+sheets, were among the …rst wave of CoCo issuers. But banks with impaired balance sheets
+3

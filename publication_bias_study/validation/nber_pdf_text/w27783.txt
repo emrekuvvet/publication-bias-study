@@ -1,0 +1,127 @@
+NBER WORKING PAPER SERIES
+DOES INCREASING ACCESS TO FORMAL CREDIT REDUCE PAYDAY BORROWING?
+Sarah Miller
+Cindy K. Soo
+Working Paper 27783
+http://www.nber.org/papers/w27783
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2020
+The authors thank seminar participants at the University of Michigan and the NBER Summer
+Institute Corporate Finance meeting and Christopher Palmer for their helpful feedback. We also
+thank Cathleen Kelmar for assistance with the provision of the Experian credit report data, and
+Heather Lamoureux for assisting with the provision of the alternative credit data from Clarity
+Services, Inc. Thanks also to Peter Choi for his excellent research assistance. The results
+presented in this paper do not reflect the opinions of the aforementioned institutions, nor do they
+necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Sarah Miller and Cindy K. Soo. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Does Increasing Access to Formal Credit Reduce Payday Borrowing?
+Sarah Miller and Cindy K. Soo
+NBER Working Paper No. 27783
+September 2020
+JEL No. G5,G51
+ABSTRACT
+The use of high cost “payday loans” among subprime borrowers has generated substantial
+concern among policymakers. This paper provides the first evidence of substitution between
+“alternative” and “traditional” credit by exploiting an unexpected positive shock to traditional
+credit access among payday loan borrowers: the removal of a Chapter 7 bankruptcy flag. We find
+that the removal of a bankruptcy flag on a credit report results in a sharp increase in access to
+traditional credit and raises credit scores, credit card limits, and approval rates. However, despite
+meaningful increases in access to traditional credit, we find no evidence that borrowers reduce
+their use of payday loans, and our confidence intervals allow us to rule out even very small
+reductions in payday borrowing. Furthermore, we find evidence that flag removals increase the
+use of other alternative credit products such as online subprime installment loans. These results
+indicate that marginally improving access to less expensive formal credit is insufficient to
+meaningfully shift borrowers away from high cost subprime products. We discuss likely
+explanations for this including increased marketing of subprime products associated with the flag
+removal, the imperfect substitutability between cash and credit for low income borrowers, and an
+insufficiency in the size of the increase in credit access associated with the flag removal.
+Sarah Miller
+Ross School of Business
+University of Michigan
+701 Tappan Street
+Ann Arbor, MI 48109
+and NBER
+mille@umich.edu
+Cindy K. Soo
+University of Michigan,
+Ross School of Business,
+701 Tappan Street,
+Ann Arbor MI 48109-1234
+csoo@umich.edu
+
+I. Introduction
+The use of high-cost “payday” loans by low income borrowers has generated substantial con-
+cern among policymakers. Some regulators point to studies that show payday loan borrowers are
+extremely credit constrained and argue subprime borrowers are driven to use payday loans because
+their access to traditional credit products is limited. These regulators view policies to encourage
+banks and credit unions to extend credit to low income, high risk clientele as a way to reduce the
+use of these payday loan products.1 At the same time, other studies find that some borrowers
+puzzlingly take out high-interest payday loans even when they have less expensive credit card liq-
+uidity available. If borrowers are taking out payday loans for other reasons than credit constraints,
+improving access to traditional credit may not actually change payday loan borrowing behavior.2
+Identifying the causal impact of improved credit access is challenging, as those with higher credit
+scores or credit card limits likely vary on unobservable dimensions such as delinquency risk, finan-
+cial knowledge, or other characteristics that may affect the propensity of these borrowers to use
+payday loan products. Addressing this question has also been difficult empirically because the use
+of subprime products such as payday loans are not reported on standard credit reports. Analyzing
+the impact of credit access on payday borrowing behavior requires linking information on subprime
+credit behavior with information on traditional credit activity, as well as a source of exogenous
+variation in traditional credit access.
+In this paper, we address this empirical challenge by linking a new administrative panel of
+payday loan and other “alternative” credit borrowers with their traditional credit reports. Using
+this linked panel, we are able to implement an identification strategy that exploits an exogenous
+positive “shock” to traditional credit access: the removal of a bankruptcy flag from a borrower’s
+creditreport. TheFairCreditReportingActrequirescreditbureaustoremoveChapter7flagsafter
+10 years, generating a sharp increase in credit scores at the date of the flag removal. We analyze
+Chapter 7 rather than Chapter 13 filings in order to focus on low income borrowers who are more
+likely to take up alternative lending products.3 Previous research has found that the removal of
+1See, for example, “Banks Urged to Take On Payday Lenders With Small, Lower-Cost Loans” https://www.
+nytimes.com/2018/02/16/your-money/banks-payday-loans.html.
+2For example, studies find some borrowers use payday loans even when they are able to borrow on their credit
+cardatmuchlowerrates,andpointtopossibleexplanationsoflackofknowledgeorself-control(PagelandOlafsson
+(2016), Agarwal, Skiba, and Tobacman (2009), Melzer (2011)).
+3The Bankruptcy Abuse Prevention Act imposed income means testing for Chapter 7 filings in 2005, in order
+2
+
+theseflagsimmediatelyincreasescreditscoresandresultsinhighercreditlimitsandhigherapproval
+rates (Gross, Notowidigdo, and Wang (2018); Dobbie et al. (2017); Dobbie, Goldsmith-Pinkham,
+Mahoney, and Song (2019); Musto (2004)).4 Studies have also found that bankruptcy flag removals
+have a precise zero impact on labor market outcomes (Dobbie et al. (2019)), allowing us to rule
+out income effects. Thus with this newly linked panel, our work provides the first evidence as to
+whether improving access to “traditional” credit reduces payday borrowing.
+We obtain payday and alternative credit outcomes from an “alternative” credit bureau, Clarity
+Services (“Clarity”), that specializes in provides underwriting services for the subprime consumer
+population, including those with typically thin or no file credit reports.5 We link individuals in the
+Clarity database from 2013 to 2017 with their standard credit reports from Experian, one of the
+three major credit reporting agencies. These linkages allow us to see changes in both traditional
+and non-traditional credit product use that occurs around the time a bankruptcy flag is removed.
+Our data follows borrowing behavior through 4 years following the flag removal, allowing us to see
+longer term outcomes. Our final sample includes 30,246 alternative credit users who have had a
+Chapter 7 removal over our sample period. Our population of alternative credit users has limited
+credit access and faces higher credit constraints relative to the average borrower. The average
+alternative credit user in our sample has a total revolving credit limit of less than $2000 and has
+used over 80 percent of their available credit, whereas the typical credit card borrower has an
+average total limit of $18,000 and has only used approximately 54 percent.
+Using data from the traditional credit reports, we first confirm that bankruptcy flag removal
+did create a positive shock to credit access among our sample. Credit scores jump sharply by
+approximately 7 points upon flag removal, and continue to be approximately 6 to 7 points above
+pre-flag removal trends at the end of four years. Consistent with prior studies, we find that this
+jump in credit scores results in a corresponding increase in credit limits and credit approvals. The
+total amount of credit available on credit cards increases to $63 immediately upon the removal
+of a bankruptcy flag and to about $500 higher than the pre-flag removal mean by the end of four
+to shuttle higher income borrowers into Chapter 13 filings instead. While prior studies such as Dobbie, Keys, and
+Mahoney (2017) have used both Chapter 7 and Chapter 13 filings, their data filings are pre-2005, and thus before
+the Bankruptcy Abuse Prevention Act would have been imposed.
+4Due to the obscurity of bankruptcy flags on credit reports, survey evidence has demonstrated that the removal
+of these flags are unexpected by borrowers (Gross et al., 2018).
+5Clarity Services is now a subsidiary of Experian, our standard credit bureau data source.
+https://www.clarityservices.com/about-us/
+3

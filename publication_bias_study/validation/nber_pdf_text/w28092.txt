@@ -1,0 +1,174 @@
+NBER WORKING PAPER SERIES
+AGGREGATE AND DISTRIBUTIONAL IMPACTS OF LTV POLICY IN CHINA
+Kaiji Chen
+Qing Wang
+Tong Xu
+Tao Zha
+Working Paper 28092
+http://www.nber.org/papers/w28092
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+November 2020
+We thank Manuel Adelino, Markus Brunnermier, Gueorgui Kambourov, B. Ravikumar, Nobuhiro
+Kiyotaki, Dirk Krueger, Fabrizio Perri, Richard Rogerson, Stijn van Nieuwerburgh, Jim Poterba,
+Chris Sims, Amir Sufi, Gianluca Violante, Shang-Jin Wei, Junjie Xia, Wei Xiong, Bo Zhao, and
+seminar participants of the 2021 NBER-SAIF Research Conference on Real Estate Markets and
+Housing Finance in China, 2020 NBER Summer Institute, 2020 World Congress of Econometric
+Society, Geneva International Finance and Macroeconomic Workshop, Boston University, Federal
+Reserve Bank of New York, City University of New York, Peking University, 2019 NBER Chinese
+Economy Conference, 2019 SWUFE International Conference in Macroeconomics, Fifth Bank of
+Canada-Tsinghua PBCSF-Toronto University Conference in Chinese Economy, and University of
+Melbourne for helpful discussions. An earlier version of this paper is entitled “Aggregate and
+Distributional Impacts of LTV Policy: Evidence from China's Micro Data.” The views expressed
+herein are those of the authors and do not necessarily reflect those of the Federal Reserve Bank of
+Atlanta, the Federal Reserve System, or the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Kaiji Chen, Qing Wang, Tong Xu, and Tao Zha. All rights reserved. Short sections of
+text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Aggregate and Distributional Impacts of LTV Policy in China
+Kaiji Chen, Qing Wang, Tong Xu, and Tao Zha
+NBER Working Paper No. 28092
+November 2020
+JEL No. E02, E21, E50, G11, G12, G18
+ABSTRACT
+We study how China’s loan-to-value (LTV) policy affects mortgage markets and household
+consumption, focusing on an abrupt and unprecedented relaxation in LTV limits for secondary
+houses from 2014Q4 to 2016Q3. Using a rich dataset of over three million loan-level records from a
+major Chinese commercial bank, supplemented by survey data on urban household finances, we
+analyze how this policy shift influenced mortgage demand, house prices, and consumption across
+household groups and at the aggregate level. We find that this LTV relaxation, aimed at promoting
+housing investments, spurred a mortgage boom, especially in primary home mortgages, while
+crowding out household consumption among middle-aged, high-education households. Motivated
+by these findings, we develop and calibrate a dynamic equilibrium model that distinguishes
+between primary homes for housing services and secondary houses for investment. When the LTV
+limit for secondary houses is relaxed, demand for these properties surges, increasing house prices
+and capital gains. Unlike prior literature, we identify a housing investment channel in which these
+capital gains enable existing homeowners---particularly middle-aged and high-income
+households---to upsize their primary residences. Rising house prices then drive further demand and
+mortgage borrowing, amplifying the effects of the LTV policy change and reducing these
+households' non-housing consumption.
+Kaiji Chen Tong Xu
+Emory University Southwestern University of Finance
+and Federal Reserve Bank of Atlanta and Economics
+kaiji.chen@emory.edu xutong1985@gmail.com
+Qing Wang Tao Zha
+Southwest University of Finance and Emory University
+Economics Department of Economics
+wqing@swufe.edu.cn and Federal Reserve Bank of Atlanta
+and also NBER
+tzha@emory.edu
+
+AGGREGATE AND DISTRIBUTIONAL IMPACTS OF LTV POLICY 1
+I. Introduction
+The relationship between mortgage debt, house prices, and household consumption is a
+central topic in economic research, particularly in advanced economies such as the United
+States, where home equity often serves as a line of credit for consumption. When house
+prices rise, American homeowners commonly use cash-out refinancing to leverage increased
+home equity for consumption (e.g., Mian and Sufi, 2011; Mian et al., 2013; Berger et al.,
+2017). In emerging markets, however, this relationship can di!er due to distinct institu-
+tional structures. In China, households cannot use home equity for credit lines or cash-out
+refinancing, and there is no secondary market for mortgage securitization (Fang and Feng,
+2018). Despite China’s significance as the world’s largest emerging-market economy, limited
+research has examined how these institutional di!erences shape the relationship between
+mortgage debt, house prices, and consumption (Sufi, 2023).
+This paper studies the impact of China’s loan-to-value (LTV) policy on the housing and
+mortgage markets and its implications for household consumption. In China, investment in
+secondary houses is driven mainly by expected capital gains rather than housing services or
+rental income.1 Thus, LTV policy on non-primary houses plays a central role in mortgage
+and housing markets. We focus on an abrupt and unprecedented relaxation in LTV pol-
+icy for secondary houses between 2014Q4 and 2016Q3. Using over three million loan-level
+records from a major Chinese commercial bank and data from urban household surveys on
+both consumption and housing wealth, we study how this policy shift influenced mortgage
+demand, house prices, and consumption across household groups and at the aggregate level.
+We find that relaxing the LTV limit, aimed at promoting investment in non-primary houses,
+stimulated primary mortgage demand while crowding out household consumption, partic-
+ularly among middle-aged and highly educated households.2 These findings motivate and
+discipline a dynamic equilibrium model used to evaluate aggregate and distributional e!ects
+of LTV policy on mortgage borrowing and consumption across age-income groups.
+LTVpolicyinfluencesbothhousinginvestmentandhomeownershipdecisions,complicating
+the identification of mortgage demand for investment purposes. Unlike the conventional
+channel, which focuses on first-time buyers overcoming borrowing constraints to purchase
+housing services, the housing investment channel operates through existing homeowners
+responding to capital gains incentives under improved credit conditions. The 2014 policy
+shift provides an ideal case to study this channel. In 2014Q4, China raised the LTV limit for
+1A secondary house, or non-primary house, is a property purchased for investment rather than housing
+services. Examplesincludesecond,third,orfourthhousesownedbyahousehold. Weuse“secondaryhouse”
+and “non-primary house” interchangeably.
+2Households are classified as highly educated if any member holds a college degree or higher.
+
+AGGREGATE AND DISTRIBUTIONAL IMPACTS OF LTV POLICY 2
+secondary houses from 30–40% to 70% (Figure 1).3 This shift triggered a mortgage boom,
+particularly for primary homes. Real house prices in 70 major cities grew at an annualized
+rate of 5.94% during 2014Q4–2016Q3. New mortgage origination volumes were 92% higher
+than in 2013, while nationwide outstanding mortgage debt rose from 10.6 to 17.9 trillion
+RMB between December 2014 and December 2016. Meanwhile, aggregate consumption
+growth began to decline from 2014Q4, persisting even after the LTV policy was reversed in
+2016Q4. China’s targeted LTV policy thus o!ers a transparent natural experiment to gauge
+its impact on mortgage markets and consumption.
+Averageloan-to-valueratio
+oitar
+eulav−ot−naoL
+7.
+6.
+5.
+4.
+3. 1q1102 3q1102 1q2102 3q2102 1q3102 3q3102 1q4102 3q4102 1q5102 3q5102 1q6102 3q6102 1q7102 3q7102 1q8102
+TotalmortgageacrossTime
+Primary homes Secondary houses
+)noillib(
+tnuoma
+noitanigiro
+egagtroM
+001
+05
+0 1q1102 3q1102 1q2102 3q2102 1q3102 3q3102 1q4102 3q4102 1q5102 3q5102 1q6102 3q6102 1q7102 3q7102 1q8102
+051
+001
+05
+)dnasuoht(
+rebmun
+noitanigiro
+egagtroM
+Mortgage origination amount Mortgage origination number
+Houseprice
+)raey−ot−raey(
+etar
+htworg
+ecirp
+gnisuoH
+51
+01
+5
+0
+5−
+1q1102 3q1102 1q2102 3q2102 1q3102 3q3102 1q4102 3q4102 1q5102 3q5102 1q6102 3q6102 1q7102 3q7102 1q8102
+Real consumption per capita
+(log)
+)gol(
+atipac
+rep noitpmusnoc
+laeR
+6.
+4.
+2.
+0 1q1102 3q1102 1q2102 3q2102 1q3102 3q3102 1q4102 3q4102 1q5102 3q5102 1q6102 3q6102 1q7102 3q7102 1q8102 3q8102
+Figure 1. Timeseriesofaggregatevariables
+Notes: Thefourpanelsareorganizedasfollows. Thetopleftpanel: theLTVratiosforprimary
+andsecondaryhousesovertime;thetoprightpanel: themortgageoriginationamountand
+number;thebottomleftpanel: theyear-to-yeargrowthrateoftherealhouseprice;andthe
+bottomrightpanel: thelogarithmofrealconsumptionpercapita(normalizedtoonein2011Q1).
+Foragivencity,therealhousepriceiscalculatedasthehousepricedividedbytheGDPdeflator.
+City-levelrealhousepricesareaggregatedtoobtainthenationalaveragerealhouseprice,
+weightedbyeachcity’s2011population.
+Sources: TheBankLoanData,theNationalBureauofStatisticsofChina,andChina’s
+macroeconomictimeseriesavailableontheFederalReserveBankofAtlanta’swebsiteat
+https://www.atlantafed.org/cqer/research/china-macroeconomy.
+3The policy aimed to lower barriers for investment-driven purchases. The 2015 Central Economic
+Work Conference stated: “It is necessary to encourage natural persons and various institutional in-
+vestors to purchase inventories of commodity housing, ... to eliminate outdated restrictive measures”
+(http://finance.people.com.cn/GB/8215/392239/401049/index.html).

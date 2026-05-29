@@ -1,0 +1,118 @@
+NBER WORKING PAPER SERIES
+MEASURING SOVEREIGN CONTAGION IN EUROPE
+Massimiliano Caporin
+Loriana Pelizzon
+Francesco Ravazzolo
+Roberto Rigobon
+Working Paper 18741
+http://www.nber.org/papers/w18741
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+January 2013
+We thank Alessandro Fontana, David Lando, Marco Lippi, Andrew Lo, Steve Schaefer and seminar
+and conference participants at CREDIT 2012, Goethe University, Einaudi Institute for Economics
+and Finance, MAF 2012, MIT workshop of the Research Consortium for Systemic Risk, Norges Bank,
+Sixth CEPS Finance high-level roundtable on macro prudential policy in the EU, University of Geneva,
+Workshop on Sovereign Risk, Fiscal Solvency and Monetary Policy: Where Do We Stand?, for helpful
+comments. The views expressed in this paper are our own and do not necessarily reflect those of Norges
+Bank. The views expressed here in are those of the authors and do not necessarily reflect the views
+of the National Bureau of Economic Research.
+At least one co-author has disclosed a financial relationship of potential relevance for this research.
+Further information is available online at http://www.nber.org/papers/w18741.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2013 by Massimiliano Caporin, Loriana Pelizzon, Francesco Ravazzolo, and Roberto Rigobon.
+All rights reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+Measuring Sovereign Contagion in Europe
+Massimiliano Caporin, Loriana Pelizzon, Francesco Ravazzolo, and Roberto Rigobon
+NBER Working Paper No. 18741
+January 2013
+JEL No. E58,F34,F36,G12,G15
+ABSTRACT
+This paper analyzes the sovereign risk contagion using credit default swaps (CDS) and bond premiums
+for the major eurozone countries. By emphasizing several econometric approaches (nonlinear regression,
+quantile regression and Bayesian quantile regression with heteroskedasticity) we show that propagation
+of shocks in Europe's CDS has been remarkably constant for the period 2008-2011 even though a significant
+part of the sample periphery countries have been extremely affected by their sovereign debt and fiscal
+situations. Thus, the integration among the different eurozone countries is stable, and the risk spillover
+among these countries is not affected by the size of the shock, implying that so far contagion has remained
+subdue. Results for the CDS sample are confirmed by examining bond spreads. However, the analysis
+of bond data shows that there is a change in the intensity of the propagation of shocks in the 2003-2006
+pre-crisis period and the 2008-2011 post-Lehman one, but the coefficients actually go down, not up!
+All the increases in correlation we have witnessed over the last years come from larger shocks and
+the heteroskedasticity in the data, not from similar shocks propagated with higher intensity across
+Europe. This is the fi˝rst paper, to our knowledge, where a Bayesian quantile regression approach
+is used to measure contagion. This methodology is particularly well-suited to deal with nonlinear and
+unstable transmission mechanisms.
+Massimiliano Caporin Francesco Ravazzolo
+Department of Economics and Management Norges Bank
+Via del Santo 33 Francesco.ravazzolo@norges-bank.no
+Padova, Italy
+massimiliano.caporin@unipd.it Roberto Rigobon
+MIT Sloan School of Management
+Loriana Pelizzon 100 Main Street, E62-516
+University of Venice Cambridge, MA 02142
+Department of Economics and NBER
+Cannareggio 873 rigobon@mit.edu
+Venice, 30100 ITALY
+pelizzon@unive.it
+
+1 Introduction
+The sovereign debt crisis in Europe that began in late 2009 has reignited the literature on con-
+tagion. How much contagion to countries in the European Monetary Union could be expected
+as a result of a possible credit event in Greece, Italy or Spain?
+How much are France and Germany going to be affected? How about countries outside the
+European Union? Through which channel is the shock going to be transmitted? Clearly these
+are some of the important questions for economists, policymakers, and practitioners. However,
+addressing these questions requires surmounting some extraordinary empirical challenges.1
+The first challenge is definitional. What exactly is contagion? Is it the “normal” or “usual”
+propagation of shocks, or is it the transmission of shocks that takes place under unusual cir-
+cumstances?2
+Someliteraturetendstodefinecontagionastheco-movementthattakesplaceunderextreme
+conditions — or tail events3— while another sizeable proportion of the literature compares how
+shocks propagate differently during normal and rare events. The first definition concentrates
+on measuring the transmission after a bad shock occurs, while the second definition investigates
+how different the propagation mechanism is after a negative shock appears. It is impossible
+to solve this definitional problem in this paper; rather our objective is to present convincing
+evidence of the amount of contagion that takes place according to the second definition. In
+other words, we are interested in understanding how much potential contagion exists within the
+European sovereign debt market, where contagion is defined as how different the propagation is
+after a large negative realization has taken place compared to the propagation after an average
+realization.
+The second challenge is an empirical one. Contagion is an unobservable shock and there-
+1Rigobon (2001).
+2See Forbes and Rigobon (2002), as well as Dungey and Zhumabekova (2001).
+3As it has been defined by the copula approach to measure contagion (Rodriguez, 2007)
+2
+
+fore most empirical techniques have problems dealing with omitted variables and simultaneous
+equations. The problem is even more complicated because the data suffers from heteroskedas-
+ticity — which implies that if the conditional volatility moves in the sample it might result
+in econometric biases. In other words, if the correlation between two variables is different in
+normal and in crisis times, how can we be sure that this difference is due to the outcome of
+a shift in the propagation mechanism and not the result of the fact that correlations are not
+neutral to shifts in volatility? Crisis periods are usually associated with higher volatility and
+simple correlations are unable to deal with this problem.4 Moreover, if a linear regression has
+been estimated across different regimes, how can the researcher be sure that the coefficients
+are different because the underlying parameters are shifting, as opposed to the fact that the
+omitted variables and simultaneous equation biases are not neutral to changes in the volatility?
+Finally, the third challenge is that the channel of contagion is rarely understood before the
+crisis occurs. For example, very few would have ever predicted that the transmission channel
+of the 1998 Russian crisis was going to be Long Term Capital Management. Furthermore,
+even though several economists anticipated the 2008 U.S. crisis, none could foretell that the
+transmission would be from the subprime mortgage market to insurance companies, to AIG,
+and then to the rest of the world. The economics profession is extremely good at describing the
+channels through which shocks are transmitted internationally immediately after the contagion
+has taken place. This puts a significant constraint on structural estimations of contagion the
+problem being that the channel has to be specified ex-ante. Reduced-form estimations, on the
+other hand, have the advantage that they are channel-free and therefore might capture the
+presence of contagion that was not fully accounted for prior to the shock’s occurrence.
+In this paper we first evaluate the extent of contagion in the eurozone credit default swaps
+(CDS) by using a reduced-form approach based on quantile regressions. The main advantage of
+usingthequantileregressionsisthatthisisaverynaturalandpowerfulwaytodealwithpossible
+4See Forbes and Rigobon (2002).
+3

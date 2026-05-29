@@ -1,0 +1,129 @@
+NBER WORKING PAPER SERIES
+A RISK MANAGEMENT APPROACH TO
+EMERGING MARKET’S SOVEREIGN DEBT SUSTAINABILITY
+WITH AN APPLICATION TO BRAZILIAN DATA
+Márcio Garcia
+Roberto Rigobon
+Working Paper 10336
+http://www.nber.org/papers/w10336
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+March 2004
+The views expressed herein are those of the authors and not necessarily those of the National Bureau of
+Economic Research.
+©2004 by Márcio Garcia and Roberto Rigobon. All rights reserved. Short sections of text, not to exceed two
+paragraphs, may be quoted without explicit permission provided that full credit, including © notice, is given
+to the source.
+
+A Risk Management Approach to Emerging Market’s Sovereign Debt Sustainability with an
+Application to Brazilian Data
+Márcio Garcia and Roberto Rigobon
+NBER Working Paper No. 10336
+March 2004
+JEL No. F3
+ABSTRACT
+In this paper we study the question of debt sustainability from a risk management perspective. The
+debt accumulation equation for any country involves variables that are stochastic and closely
+intertwined. When these aspects are taken into consideration the notion of debt sustainability is
+expanded to studying the stochastic properties of the debt dynamics. We illustrate the methodology
+by studying the Brazilian case. We find that even though the debt could be sustainable in the absence
+of risk, there are paths in which it is clearly unsustainable. Furthermore, we show that properties of
+the debt dynamics are closely related to the spreads on sovereign dollar denominated debt.
+Marcio Garcia
+Department of Economics
+Pontifical Catholic University
+Rua Marques de Sao Vicente, 225
+Gavea - Rio de Janeiro - RJ
+22451-041 Brasil
+mgarcia@econ.puc.rio.br
+Roberto Rigobon
+Sloan School of Management
+MIT, E52-431
+50 Memorial Drive
+Cambridge, MA 02142-1347
+and NBER
+rigobon@mit.edu
+
+I. Introduction
+There are several ways to assess debt sustainability. A widely used criterion is the gap
+between the actual primary budget deficit and the one required to keep the debt GDP
+ratio stable (the “debt stabilizing primary balance”).1 This measure has several
+drawbacks: since the purpose of having debt in the first place is to smooth consumption,
+why would a country want to keep the debt to GDP ratio constant? Or, if a country is
+excessively heavily indebted, to keep the debt to GDP ratio would not be sustainable.
+Other measures have been proposed. IMF (2003) estimates the fiscal reaction function.
+The idea is similar to estimate the coefficient of the expected inflation in a Taylor rule,
+and check whether it exceeds one, as required for the rule to provide a stationary
+inflation. In the fiscal reaction function, the aim is to estimate how the primary balance
+reacts to increases in the debt to GDP ratio. Another measure is to compute a ratio
+between the actual debt level and a benchmark level equal to the present value of future
+primary surpluses computed under conservative assumptions. If the ratio exceeds one, the
+country would be over borrowing (IMF 2003).
+Risk based measures of fiscal sustainability have been borrowed from the financial
+literature. One of them is the very famous Value-at-Risk (V@R). Other sustainability
+measures include stress testing through Monte Carlo simulations.2
+Here we propose a related measure that takes very seriously the realization that the debt
+accumulation equation for any country involves variables that are stochastic and closely
+intertwined. By taking these aspects into consideration, the notion of debt sustainability is
+expanded to studying the stochastic properties of the debt dynamics. We propose a VAR
+(Vector Auto Regression) to estimate the correlation pattern of the macro variables and
+use it to implement Monte Carlo simulations. These simulations allow us to compute
+“risk probabilities”, i.e., probabilities that the simulated Debt to GDP ratio exceeds a
+given threshold deemed risky (say, 75% of GDP).3 The time-series of such probabilities
+is then used to investigate whether or not it is correlated with the market risk assessment,
+measured by the spread on sovereign dollar denominated debt. The application of our
+methodology for Brazil shows that even though the debt could be sustainable in the
+absence of risk, there are paths in which it is clearly unsustainable. Furthermore, we show
+that properties of the debt dynamics are closely related to the EMBI+ Brazil spread.
+Next Section describes the data used and performs a few debt decomposition exercises.
+Section III presents the core methodology and the application to Brazilian data. Section
+IV concludes.
+1 See IMF (2003), p. 124, for references.
+2 Garcia (2002) computes a V@R for the Brazilian debt and performs Monte Carlo simulations to
+implement a CF@R (cash-flow at risk).
+3 For a financial institution, this probability would be analogous to the probability of wiping out the
+net worth.
+
+II. Brazilian Sovereign Debt
+A. Data Description
+The simulation of the debt dynamics requires the compatibility of many statistics that are
+produced in different places. Bevilaqua and Garcia (2002) performed a decomposition
+exercise of the growth sources of the domestic bonded debt in Brazil. The domestic
+bonded debt is the component of the net public debt that grew the most: from 11.81% of
+GDP in December, 1994 to 48.95% of GDP in September, 2003. Here, we use a similar
+framework to decompose the sources of growth of the Brazilian net debt.
+To put together the data was not a straightforward task, and it took us a few months and
+many interactions with the Brazilian Central staff to clean the data and adapt them to the
+format required in the simulations.4 Currently, these data are all available at the Brazilian
+Central Bank web page (www.bcb.gov.br).
+We now briefly describe the data. We use debt stocks (domestic, foreign; gross and net)
+monthly series. These stocks are converted to ratios of GDP using the “valorized” GDP,5
+which are used to compute all ratios of GDP that we use in this paper. The PSBR (public
+sector borrowing requirements) are computed in three different concepts: primary,
+operational and nominal. We favor the use of the operational and primary concepts,
+which mitigate the effects of high inflation, because our sample contains the immediate
+aftermath of the Real plan, when the inflation came down from almost 50% per month.
+Massive distortions (see Figure 2 A) show up in the nominal deficit figures immediately
+succeeding the Real plan starting point (July 1, 1994) because we use twelve-month-
+moving averages to provide comparability and avoid excessive fluctuation.6 With the
+moving averages, until a full year had elapsed, the distortionary effects of the
+hyperinflation still contaminated the nominal deficit figures.7
+Two main adjustments have to be taken into consideration in order to make the debt
+statistics compatible with the PSBR’s. First, privatization revenues have the (accounting)
+effect of reducing the debt, but are not computed as fiscal revenues for purposes of
+calculating the PSBR. Second, many expenditures incurred in the present are results of
+4 Box 3.1 (Data on Public Debt in Emerging Market Economies) of the last World Economic
+Outlook (IMF 2003) describes the many difficulties involved in gathering such data.
+5 The “valorized” GDP is a better measure than the nominal GDP because, even under moderate
+inflation, the simple addition of the GDP flow within a twelve-month period distorts the statistic. For
+example, for a 10% yearly inflation, each unit of domestic currency of the last month will be worth 1.1
+units of domestic currency of the first month included in the sample. The “valorization” procedure
+mitigates this distortion. Under zero inflation, the “valorization” procedure reverts to usual addition of
+monthly GDP flows. Box 3.1 of the World Economic Outlook (IMF 2003) comments on the effects of such
+procedure, grossly exaggerating them.
+6 Since the deficits are so important to determine debt sustainability, we opted to use twelve-month-
+moving averages instead of monthly figures. This is because the latter series is very volatile, often changing
+signs. For example, if some expenses were concentrated in a given month, the monthly series would show a
+large deficit among many surpluses, while the moving average would better reflect the fiscal stance.
+7 See Figure 2.

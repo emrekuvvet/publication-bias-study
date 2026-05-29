@@ -1,0 +1,133 @@
+NBER WORKING PAPER SERIES
+A MULTIPLIER APPROACH TO UNDERSTANDING THE MACRO IMPLICATIONS
+OF HOUSEHOLD FINANCE
+YiLi Chien
+Harold Cole
+Hanno Lustig
+Working Paper 13555
+http://www.nber.org/papers/w13555
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+November 2007
+We would like to thank Bernard Dumas, Francisco Gomes, Mark Hugget, Urban Jermann, Narayana
+Kocherlakota, Dirk Krueger, Pete Kyle, Mark Loewenstein, Joseph Ostroy, Nikolai Roussanov, Viktor
+Tsyrennikov, Stijn Van Nieuwerburgh and Amir Yaron for comments. Andrew Hollenhurst provided
+excellent research assistance. We would also like to especially thank the editor Kjetil Storesletten and
+two anonymous referees for their efforts to improve our paper. The views expressed herein are those
+of the author(s) and do not necessarily reflect the views of the National Bureau of Economic Research.
+© 2007 by YiLi Chien, Harold Cole, and Hanno Lustig. All rights reserved. Short sections of text,
+not to exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+A Multiplier Approach to Understanding the Macro Implications of Household Finance
+YiLi Chien, Harold Cole, and Hanno Lustig
+NBER Working Paper No. 13555
+November 2007, Revised January 2010
+JEL No. G12
+ABSTRACT
+Our paper examines the impact of heterogeneous trading technologies for households on asset prices
+and the distribution of wealth. We distinguish between passive traders who hold fixed portfolios of
+stocks and bonds, and active traders who adjust their portfolios to changes in expected returns. To
+solve the model, we derive an optimal consumption sharing rule that does not depend on the trading
+technology, and we derive an aggregation result for state prices. This allows us to solve for equilibrium
+prices and allocations without having to search for market-clearing prices in each asset market separately.
+We show that the fraction of total wealth held by active traders, not the fraction held by all participants,
+is critical for asset prices, because only these traders respond to variation in state prices and hence
+absorb the residual aggregate risk created by non-participants. We calibrate the heterogeneity in trading
+technologies to match the equity premium and the risk-free rate. The calibrated model reproduces
+the skewness and kurtosis of the wealth distribution in the data. In contrast to existing models with
+heterogeneous agents, our model matches the high volatility of returns and the low volatility of the
+risk-free rate.
+YiLi Chien Hanno Lustig
+403 West State Street UCLA Anderson School of Management
+Krannert School of Management 110 Westwood Plaza, Suite C413
+Purdue University Los Angeles, CA 90095-1481
+West Lafayette and NBER
+IN 47907 hlustig@anderson.ucla.edu
+yilichien@gmail.com
+Harold Cole
+Economics Department
+University of Pennsylvania
+3718 Locust Walk
+160 McNeil Building
+Philadelphia, PA 19104
+and NBER
+colehl@sas.upenn.edu
+
+1 Introduction
+Incompletemarketmodelsinwhichallhouseholdscanonlytradeahighlylimitedmenuoftradeable
+assets were initially embraced to explain the strong correlation in the data between household
+consumption and income. However, the actual menu of assets that household can trade is very
+rich. At the same time, there is a growing body of empirical evidence that different households
+behave as if they had access to different menus of tradeable assets.1 A majority of households does
+notinvest directlyinequity, inspiteofthesizeablehistoricalequitypremium, butevenamongthose
+who participate in equity markets, sophisticated investors invest a larger share of their wealth in
+equity and realize higher returns, while less sophisticated investors take a more cautious approach.
+As a result, sophisticated investors load up on aggregate consumption risk. The consumption of
+the 10 % wealthiest households is five times more exposed to aggregate consumption growth than
+that of the average US household (Parker and Vissing-Jorgensen (2009)).
+Heterogeneity in preferences cannot explain these differences. In a complete markets environ-
+ment, when agents have constant relative risk aversion (CRRA) preferences, the most risk averse
+end up being the poorest households in equilibrium, only because they are the least willing to
+substitute intertemporally, not because of the risk preferences per se (Dumas (1989)). However, in
+an incomplete markets environment, the least risk averse tend to accumulate less wealth because
+their precautionary motive to save is not as strong, and hence they will be most exposed to both
+aggregate consumption and idiosyncratic risk, while the wealthiest households would end up hold-
+ing less equity and be less exposed to aggregate and idiosyncratic consumption growth risk. In the
+data, the consumption of the wealthy is more exposed to aggregate but less to idiosyncratic risk.
+These empiricalfindings leadustointroduceheterogeneoustradingtechnologies inanotherwise
+standard incomplete markets model. To solve this model, we develop a new method that does
+not rely on a price adjustment algorithm to clear each asset market separately. We introduce
+heterogeneity in trading technologies into an endowment economy with a large number of agents
+who are subject to both aggregate and idiosyncratic shocks, and who have CRRA preferences with
+coefficient α. Our model distinguishes between passive traders, who trade fixed-weighted portfolios
+ofbondsandequities, andactivetraders, whooptimallyre-adjusttheirportfolioholdingsovertime.
+We capture the differences in trading technologies by imposing different measurability restrictions
+on the household’s time-zero trading problem. These restrictions govern how net wealth is allowed
+to vary across different states of the world. We use the multipliers on these constraints to derive a
+consumption sharing rule for households and an analytical expression for the stochastic discount
+factor. Importantly, the household’s consumption sharing rule does not depend on the trading
+technology, only the dynamics of the multipliers do. The equilibrium stochastic discount factor
+only depends on aggregate consumption growth and a weighted average of these multipliers –the
+1Campbell (2006) refers to the body of literature that documents this heterogeneity as “household finance”.
+2
+
+−1/α-th moment. We refer to this simply as the aggregate multiplier.
+In our approach, this household multiplier is a new state variable that replaces wealth. We
+characterize its dynamics by means of a simple updating rule that depends on the trading technol-
+ogy of the household. The individual’s multiplier updating rule and the implied updating rule for
+theaggregatemultipliers completely characterize equilibrium allocationsandprices. Incontinuous-
+time finance, Cuoco and He (2001) and Basak and Cuoco (1998) used stochastic weighting schemes
+to characterize allocations and prices. Our approach differs because it provides a tractable and
+computationally efficient algorithm for computing equilibria in environments with a large number
+of agents subject to idiosyncratic risk as well as aggregate risk, and heterogeneity in trading op-
+portunities. The use of cumulative multipliers in solving macro-economic equilibrium models was
+pioneered by Kehoe and Perri (2002), building on earlier work by Marcet and Marimon (1999).
+Our use of measurability constraints to capture portfolio restrictions is similar to that in Aiyagari,
+Marcet, Sargent, and Seppala (2002) and Lustig, Sleet, and Yeltekin (2007), who consider an op-
+timal taxation problem, while the aggregation result extends that in Chien and Lustig (2009) and
+Lustig and Nieuwerburgh (2005) to an incomplete markets environment.
+Our paper is closely related to work by Krusell and Smith (1997) and (1998). Krusell and
+Smith (1998) consider a production economy with a large number of agents in which individual
+labor supply is subject to exogenous idiosyncratic shocks, while the aggregate production function
+is subject to aggregate productivity shocks. Households in this economy only trade claims to the
+physical capital stock. In this model with a single asset, KS only need to solve a forecasting
+problem for the return on capital. Similarly, we solve a forecasting problem for the growth rate of
+this aggregate multiplier. However, as soon as KS add an additional asset ( e.g. a risk-free bond
+in Krusell and Smith (1997)), KS need to solve for the market-clearing pricing function for this
+asset.2 Applying this KS method in our model would require searching for a new pricing function
+for each additional aggregate state in each iteration, not knowing the mapping from the wealth
+distribution to state prices. Our aggregation result implies that we only need to forecast a single
+moment of the multiplier distribution, regardless of the number and the nature of the different
+trading technologies. We can directly compute the pricing kernel as a function of this moment.
+Hence, there is no need to search for the vector of state prices that clears the various asset markets.
+Finally, solving for the multiplier updating rule turns out to be simpler and faster than solving the
+household’s Bellman equation or consumption Euler equation.
+We apply our method in a calibrated version of the model. To capture some of the richness
+of trading behavior in the data, we distinguish between passive traders who hold no stocks, the
+non-participants, and buy-and-hold passive traders who can only trade a fixed-weighted portfolio
+of stocks and bonds. The heterogeneity in trading technologies is calibrated to match the equity
+2Storesletten, Telmer,andYaron(2007)implement this procedurein anOLGmodelwith tradingin capitaland
+risk-free bonds.
+3

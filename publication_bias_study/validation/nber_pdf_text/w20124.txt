@@ -1,0 +1,117 @@
+NBER WORKING PAPER SERIES
+ACCOUNTING AND ACTUARIAL SMOOTHING OF RETIREMENT PAYOUTS
+IN PARTICIPATING LIFE ANNUITIES
+Raimond Maurer
+Olivia S. Mitchell
+Ralph Rogalla
+Ivonne Siegelin
+Working Paper 20124
+http://www.nber.org/papers/w20124
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2014
+The authors are grateful for research support provided by the TIAA-CREF Research Institute, the German
+Investment and Asset Management Association (BVI), the Pension Research Council/Boettner Center
+at The Wharton School of the University of Pennsylvania; and the Metzler Exchange Professor program.
+They also thank without implicating Benny Goodman, Michael Heller, Catherine Schrand, and Jochen
+Zimmermann, for comments. This research is part of the NBER programs on Aging, Public Economics,
+and Labor Studies. The views expressed herein are those of the authors and do not necessarily reflect
+the views of the National Bureau of Economic Research.
+At least one co-author has disclosed a financial relationship of potential relevance for this research.
+Further information is available online at http://www.nber.org/papers/w20124.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2014 by Raimond Maurer, Olivia S. Mitchell, Ralph Rogalla, and Ivonne Siegelin. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission provided
+that full credit, including © notice, is given to the source.
+
+Accounting and Actuarial Smoothing of Retirement Payouts in Participating Life Annuities
+Raimond Maurer, Olivia S. Mitchell, Ralph Rogalla, and Ivonne Siegelin
+NBER Working Paper No. 20124
+May 2014
+JEL No. G22,J14,J32,M41
+ABSTRACT
+Life insurers use accounting and actuarial techniques to smooth reporting of firm assets and liabilities,
+seeking to transfer surpluses in good years to cover benefit payouts in bad years. Nevertheless, these
+techniques been criticized as they make it difficult to assess insurers’ true financial status. We develop
+stylized and realistically-calibrated models of participating lifetime annuities, an insurance product
+that pays retirees guaranteed lifelong benefits along with variable non-guaranteed surplus. Our goal
+is to illustrate how accounting and actuarial techniques for this type of financial contract shape policyholder
+wellbeing, along with insurer profitability and stability. Smoothing adds value to both the annuitant
+and the insurer, so curtailing smoothing could undermine the market for long-term retirement payout
+products.
+Raimond Maurer Ralph Rogalla
+Goethe University Finance Department
+Finance Department Goethe University
+Grüneburgplatz 1 (Uni-PF. H 23) Grüneburgplatz 1 (Uni-PF. H 23)
+60323 Frankfurt am Main Germany Frankfurt am Main
+maurer@finance.uni-frankfurt.de Germany
+rogalla@finance.uni-frankfurt.de
+Olivia S. Mitchell
+University of Pennsylvania Ivonne Siegelin
+Wharton School Finance Department, Goethe University
+3620 Locust Walk, St 3000 SH-DH Grueneburgplatz 1 (Uni-PF. H 23)
+Philadelphia, PA 19104-6302 Frankfurt am Main, Germany
+and NBER ivonne.siegelin@hof.uni-frankfurt.de
+mitchelo@wharton.upenn.edu
+
+1
+Accounting and Actuarial Smoothing of Retirement Payouts
+in Participating Life Annuities
+Life is a short affair; we should try to make it smooth, and free from strife.
+Euripides
+1. Introduction
+Life insurers are permitted to employ both accounting and actuarial techniques to smooth
+surpluses earned in good years, in order to support benefit payouts to policyholders in bad years. To
+this end, insurers have a long history of reporting asset values at historical costs rather than fair
+market values in their financial statements, and assessing their liabilities using an actuarial rather
+than an alternative approach. Yet such smoothing techniques have come under fire of late, in part
+due to life insurers’ difficulties in the present low interest rate environment (Ng and Schism, 2010).
+Additionally, smoothing has been criticized for being nontransparent, making it difficult for
+shareholders, policyholders, and regulators to assess insurers’ financial status (Jorgensen 2004). In
+fact, based on their study of a Danish pension saving product, Guillen, Jorgensen, and Nielsen (2006)
+concluded that “smoothing is an illusion,” providing no value to policyholders. Their result,
+however, was limited to a product that provided no payouts until maturity; that is, benefits depended
+on the contract’s terminal value, but not on the particular return trajectory that led to this value.
+This paper explores how these smoothing techniques affect financial contracts known as
+lifetime payout annuities offered by life insurance companies and purchased by retirees to provide a
+steady stream of lifetime income. The predominant form of these payout products is with-profit or
+participating payout life annuities (PLAs), which provide retirees with a guaranteed benefit for life
+along with variable non-guaranteed payments that depend on investment returns and mortality
+experiences of the insurance pool (Maurer, Rogalla, and Siegelin 2013). Accordingly, the particular
+return trajectory has immediate consequences for the benefit stream provided by the annuity. Such
+products with variable payouts are one of the most rapidly growing financial products over the last
+few decades: in 2012, these products held $1.64 trillion of assets under management in the U.S. and
+sales accounted for $145 billion, or two-thirds of all annuity sales (IRI 2013). Our goal is to examine
+how the smoothing techniques employed by actuaries and accountants shape the risk and return
+profiles of PLA payout streams, as well as insurer profitability and solvency.
+
+2
+Accounting smoothing in the insurance context values assets at historical cost rather than at
+fair market value; this practice helps shield insurer balance sheets and income statements against
+capital market volatility. Additionally, surpluses to be shared with policyholders are conventionally
+computed using realized gains and losses. By contrast, those pressing for fair market valuation of
+insurer assets seek to determine and distribute surpluses generated by unrealized as well as realized
+gains and losses. Of course this introduces additional volatility into the insurer’s balance sheet,
+which could undermine insurer profitability and erase the appeal of retirement annuities. In addition
+to the accounting-related asset return smoothing, actuaries regularly smooth surplus payouts using a
+buffer fund on the liability side of the life insurer’s balance sheet, known as the contingency reserve
+position.
+For firms outside the insurance sector, international and general US accounting standards
+have moved from historical cost to fair market valuation, requiring that firms’ financial statements
+report both liabilities and assets at market values. According to US Financial Accounting Standard
+FAS 157, fair market values are measured as quoted prices from orderly transactions of identical
+assets in active markets, or on a mark-to-model approach.1 When assets are recorded at fair market
+values, unrealized gains and losses influence company balance sheets and can also impact their
+income statements. FMV proponents contend that mark-to-market prices improve transparency since
+they reflect current market conditions, depict the true financial status of the insurer, and provide an
+effective early warning mechanism for investors, creditors, and regulators (Bleck and Liu 2007).
+This allows capital providers to evaluate the ex-ante risk and return profile of a potential investment
+in the firm and to monitor the use of its capital by managers ex post (c.f., Beyer, Cohen, Lys, and
+Walther 2010). Opponents argue that FMV can be misleading for assets held to maturity, may not be
+reliable if based on model prices, and could lead to undesirable firm actions. In the context of banks,
+Allen and Carletti (2008) and Sapra (2008) argue that mark-to-market valuation of illiquid assets can
+result in fire sales, downward spirals, as well as contagion between financial institutions in a
+1 A similar definition is used according to International Accounting Standards (IAS).

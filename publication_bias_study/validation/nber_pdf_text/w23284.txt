@@ -1,0 +1,127 @@
+NBER WORKING PAPER SERIES
+STUDENTS IN DISTRESS:
+LABOR MARKET SHOCKS, STUDENT LOAN DEFAULT, AND FEDERAL INSURANCE PROGRAMS
+Holger M. Mueller
+Constantine Yannelis
+Working Paper 23284
+http://www.nber.org/papers/w23284
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+March 2017
+We thank David Berger, Jan Eberly, Caroline Hoxby, Amir Kermani, Theresa Kuchler, Andres
+Liberman, Adam Looney, Johannes Stroebel, Jeremy Tobacman, Eric Zwick, and seminar
+participants at NYU, Berkeley, and the Consumer Financial Protection Bureau for helpful
+comments. Any opinions and conclusions expressed herein are those of the authors and do not
+necessarily represent the views of the U.S. Treasury or any other organization. The views
+expressed herein are those of the authors and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2017 by Holger M. Mueller and Constantine Yannelis. All rights reserved. Short sections of
+text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Students in Distress: Labor Market Shocks, Student Loan Default, and Federal Insurance Programs
+Holger M. Mueller and Constantine Yannelis
+NBER Working Paper No. 23284
+March 2017
+JEL No. H81,I22,I26,J24
+ABSTRACT
+The collapse in home prices during the Great Recession triggered a sharp drop in consumer
+demand by households, leading to massive employment losses. This paper examines the
+implications of these labor market shocks for the dramatic rise in student loan defaults, which
+originated during this time period. Linking administrative student loan data at the individual
+borrower level to de-identified tax records and exploiting Zip code level variation in home price
+changes, we show that the drop in home prices during the Great Recession accounts for
+approximately 24 to 32 percent of the increase in student loan defaults. Consistent with a labor
+market channel, we find a strong relationship between home prices, employment losses, and
+student loan defaults at the individual borrower level, which is concentrated among low income
+jobs. Comparing the default responses of home owners and renters, we find no evidence of a direct
+liquidity effect of home prices on student loan defaults. Lastly, we show that the Income Based
+Repayment (IBR) program introduced by the federal government in the wake of the Great
+Recession reduced both student loan defaults and their sensitivity to home price fluctuations, thus
+providing student loan borrowers with valuable insurance against adverse income shocks.
+Holger M. Mueller
+Stern School of Business
+New York University
+44 West Fourth Street
+Suite 9-190
+New York, NY 10012-1126
+and NBER
+hmueller@stern.nyu.edu
+Constantine Yannelis
+Stern School of Business
+New York University
+44 West Fourth Street
+Suite 9-190
+New York, NY 10012-1126
+cyanneli@stern.nyu.edu
+
+1 Introduction
+Student loans constitute the largest source of non-mortgage household debt in the United
+States,withanoutstandingbalanceof$1.4trillion. Giventhesignificanceofstudentloans
+forthefinancingof highereducation, therecentsurgeinstudentloandefaultsisalarming.
+SincethebeginningoftheGreatRecession,studentloandefaultrateshavenearlydoubled.
+Between 2007 and 2010 alone, two-year cohort default rates increased from 6.7 percent
+to 9.1 percent (U.S. Department of Education). The sharp rise in student loan defaults
+has important consequences not only for the federal budget–more than 92 percent of
+all student loans are federal loans–but also for the defaulting student loan borrowers.1
+Unlike other types of loans, student loans are not dischargeable in bankruptcy, and wages
+can be garnished for the rest of a borrower’s lifetime. Thus, besides the usual stigma
+associated with loan defaults, such as tainted credit scores and limited future access to
+credit markets, the expectation of wages being garnished may affect borrowers’ job search
+and incentives to work, while the fact that loan defaults can be observed by employers
+may affect their prospects of finding a job in the first place.2
+As prior research has shown, the massive collapse in home prices during the Great
+Recession triggered a sharp drop in consumer spending by households (Mian, Rao and
+Sufi 2013; Stroebel and Vavra 2016; Kaplan, Mitman, and Violante 2016). This drop in
+consumer spending, in turn, led to a worsening of labor market outcomes: across different
+U.S. regions, those experiencing larger drops in home prices experienced significantly
+larger declines in employment (Mian and Sufi 2014; Giroud and Mueller 2017). Linking
+administrative student loan data from the U.S. Department of the Treasury to individual
+tax return data from IRS records, we examine the implications of these labor market
+1Student loans are the largest financial asset held by the federal government, accounting for 45.6
+percent of all federally owned financial assets (Financial Accounts of the United States, 2016 Q3).
+2Using panel data from the NLSY97, Ji (2016) finds that student loan borrrowers spend 8.3 percent
+less timeon theirjobsearch relativetonon-borrowers. As aresult, theyearn4.2percentlessannuallyin
+their first ten years after graduation. These findings are supported by survey evidence showing that 55
+percentofstudentloanborrowersage18to34“acceptedajobquickertohaveincomesooner”becauseof
+their student debt, while about 30 percent said that they “considered different industries or companies”
+(Earnest 2016). Other survey evidence shows that 47 percent of U.S. employers use credit checks to
+screen applicants, suggesting that loan defaults are likely to impact hiring decisions (SHRM 2010).
+2
+
+shocks for the rise in student loan defaults. Our student loan data represent a four
+percent random sample of all student loans that are either disbursed or guaranteed by
+the federal government. Our final sample consists of over one million annual observations
+of student borrowers who were in repayment during the Great Recession.
+Our focus on the massive collapse in home prices and worsening of labor market
+outcomes informs the academic debate on the rise in student loan defaults. In that
+debate, a leading explanation is that the increase in defaults is largely driven by shifts
+in the composition of student borrowers toward “non-traditional” borrowers attending
+community colleges and, especially, for-profit institutions (Deming, Goldin, and Katz
+2012; Looney and Yannelis 2015).3 These borrowers tend to be older, come from less
+affluent family backgrounds, have lower completion rates, and experience weaker labor
+market outcomes. As Looney and Yannelis (2015) argue, all of these factors contribute
+to higher default rates. As the share of non-traditional borrowers increases over time,
+aggregate default rates have risen, mechanically, so to speak. Much recent research has
+been devoted to understanding better the for-profit education sector, reflecting its rising
+importance within the overall U.S. education system.4
+Figure 1 provides suggestive evidence of a link between home prices and student loan
+defaults based on aggregated time series data. As home prices began to plummet at
+the onset of the Great Recession, student loan default rates began to rise. While the
+evidence in Figure 1 is suggestive, our empirical analysis exploits detailed variation in
+home price changes at the Zip code level during the Great Recession. Prior literature
+has argued that the massive collapse in home prices during the Great Recession has a
+causal effect on changes in consumer spending and local labor market outcomes (Mian,
+Rao and Sufi 2013; Mian and Sufi 2014; Stroebel and Vavra 2016; Kaplan, Mitman, and
+Violante 2016; Giroud and Mueller 2017). But even if the association between home
+price changes and local labor market outcomes were not causal, this would only mildly
+3“Repayment outcomes tend to be worse among borrowers who attend for-profit or community col-
+leges; those who are low-income or independent; those who attend part time; and, especially, those who
+do not complete their degrees. Many of these types of borrowers accounted for a disproportionate share
+of the increase in student borrowing during the Great Recession” (CEA 2016, pp. 4-5).
+4See, e.g., Turner 2006; Deming, Goldin, and Katz 2012; Cellini and Goldin 2014.
+3

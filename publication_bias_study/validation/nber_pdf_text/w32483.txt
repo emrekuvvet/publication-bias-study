@@ -1,0 +1,110 @@
+NBER WORKING PAPER SERIES
+(PRO-) SOCIAL LEARNING AND STRATEGIC DISCLOSURE
+Roland Bénabou
+Nikhil Vellodi
+Working Paper 32483
+http://www.nber.org/papers/w32483
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2024
+We thank Aislinn Bohren, Gabriel Carroll, Navin Kartik, Alex Wolitzky and various seminar
+participants for useful suggestions. Vellodi acknowledges funding from the EUR grant ANR-17-
+EURE-0001, as well as Princeton University, where this research was initiated in 2019. The
+views expressed herein are those of the authors and do not necessarily reflect the views of the
+National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2024 by Roland Bénabou and Nikhil Vellodi. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+(Pro-) Social Learning and Strategic Disclosure
+Roland Bénabou and Nikhil Vellodi
+NBER Working Paper No. 32483
+May 2024
+JEL No. D82,D83,D91
+ABSTRACT
+We study a sequential experimentation model with endogenous feedback. Agents choose between
+a safe and risky action, the latter generating stochastic rewards. When making this choice, each
+agent is selfishly motivated (myopic). However, agents can disclose their experiences to a public
+record, and when doing so are pro-socially motivated (forward-looking). When prior uncertainty
+is large, disclosure is both polarized (only extreme signals are disclosed) and positively biased
+(no feedback is bad news). When prior uncertainty is small, a novel form of unraveling occurs
+and disclosure is complete. Subsidizing disclosure costs can perversely lead to less disclosure but
+more experimentation.
+Roland Bénabou
+Department of Economics &
+School of Public and International Affairs
+Princeton University
+Princeton, NJ 08544
+and NBER
+rbenabou@princeton.edu
+Nikhil Vellodi
+PSE - Campus Jourdan
+48 Boulevard Jourdan
+75014 Paris
+France
+n.vellodi@gmail.com
+
+(Pro-)Social Learning
+and Strategic Disclosure∗
+Roland Bénabou† Nikhil Vellodi‡
+Current Draft : May 16, 2024
+Abstract
+We study a sequential experimentation model with endogenous feedback. Agents
+choose between a safe and risky action, the latter generating stochastic rewards. When
+makingthischoice,eachagentisselfishlymotivated(myopic). However,agentscandis-
+closetheirexperiencestoapublicrecord, andwhendoingsoarepro-sociallymotivated
+(forward-looking). When prior uncertainty is large, disclosure is both polarized (only
+extreme signals are disclosed) and positively biased (no feedback is bad news). When
+prior uncertainty is small, a novel form of unraveling occurs and disclosure is complete.
+Subsidizing disclosure costs can perversely lead to less disclosure but more experimen-
+tation.
+Keywords: social learning, experimentation, dynamic disclosure, consumer reviews,
+time-inconsistent preferences, motivated beliefs. JEL Classification: D82, L11, L12.
+1 Introduction
+In many settings, agents face a choice between safe and risky actions, with different individ-
+uals facing these choices in sequence. Agents might benefit from the information generated
+by those who preceded them. For instance, consider consumers choosing whether or not to
+dine at a restaurant with unknown quality, or to watch a new movie. Those who do so can
+∗WethankAislinnBohren,GabrielCarroll,NavinKartik,AlexWolitzkyandvariousseminarparticipants
+for useful suggestions. Vellodi acknowledges funding from the EUR grant ANR-17-EURE-0001, as well as
+Princeton University, where this research was initiated in 2019.
+†Princeton University, NBER, CEPR, IZA, BREAD, and briq. rbenabou@princeton.edu
+‡Paris School of Economics. n.vellodi@gmail.com
+1
+
+then leave feedback, helping later-arriving consumers make more informed choices. Similar
+settings include the adoption of new products and technologies, employment choices, and
+sequential voting.
+A well-known dynamic externality emerges in such settings, namely that agents do not
+internalize the benefit to future consumers of taking the risky action, leaving feedback and
+thereby generating socially valuable information.
+To remedy this inefficient under-exploration, a planner would direct agents to take the
+risky action even when it is unprofitable to them provided the informational gain to future
+agentsmorethancompensates; oftentimes, directincentivesareeitherabsentorforbidden.1
+Thisquestionhasbeenstudiedextensivelyineconomicsandcomputerscienceunderthe
+label of “incentivized exploration (IE)” (Kremer et al., 2014; Che and Hörner, 2018), itself
+part of the broader literatures on social learning and sequential experimentation (Banerjee,
+1992; Bikhchandani et al., 1992; Smith and Sørensen, 2000; Smith et al., 2021).2 Papers in
+the IE literature largely take a normative approach to the problem. Namely, they assume
+the presence of a benevolent designer who can control the provision of incentives either
+via dynamic information provision or through direct recommendations. Furthermore, these
+works largely assume that, once generated, individual signals are perfectly observed by the
+planner or designer in charge of public information provision.
+Such studies are thus silent on a particularly salient issue within the online feedback
+setting — why and when do people leave feedback in the first place? For instance, when
+leaving feedback regarding their dining experience, consumers might be driven by a desire
+to help future consumers make informed choices, or alternatively to reward or punish the
+restaurant for a positive or negative experience. Conversely, while the availability of feed-
+back is often highly valued by consumers, the vast majority fail to provide it.3 And those
+that do provide feedback generate well-known biases such as positive selection (Nosko and
+1For instance, the US Consumer Review Fairness Act forbids eliciting reviews for payment. See https:
+//tinyurl.com/5v3mt846.
+2See Slivkins (2022) and Bikhchandani et al. (2022) for recent surveys on IE and social learning more
+generally.
+3Recentsurveysreportthatonlyaround10%ofconsumersregularlyleavereviews. Seehttps://tinyurl.
+com/mrrsf9v5, https://tinyurl.com/ux3zyuem.
+2

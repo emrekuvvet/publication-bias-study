@@ -1,0 +1,115 @@
+NBER WORKING PAPER SERIES
+TARGETED PRICE CONTROLS ON SUPERMARKET PRODUCTS
+Diego Aparicio
+Alberto Cavallo
+Working Paper 24275
+http://www.nber.org/papers/w24275
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+February 2018
+We thank Manuel Bertolotto, Vivek Bhattacharya, Glenn Ellison, Ignacio Puente, Roberto
+Rigobon, Paulo Somaini, Jean Tirole, and workshop participants at MIT for helpful comments.
+All errors are our own. The data and scripts to reproduce the results in this paper are available at
+http://www.thebillionpricesproject.com The views expressed herein are those of the authors and
+do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2018 by Diego Aparicio and Alberto Cavallo. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Targeted Price Controls on Supermarket Products
+Diego Aparicio and Alberto Cavallo
+NBER Working Paper No. 24275
+February 2018
+JEL No. D22,E31
+ABSTRACT
+We study the impact of targeted price controls for supermarket products in Argentina from 2007
+to 2015. Using web-scraping, we collected daily prices for controlled and non-controlled goods
+and measured the differential effects on inflation, product availability, and price dispersion. We
+first show that, although price controls are imposed on goods with significant CPI weight, they
+have a temporary effect on aggregate inflation and no downward effect on other goods. Second,
+contrary to common beliefs, we find that controlled goods are consistently available for sale.
+Third, firms compensate for price controls by introducing new product varieties at higher prices.
+This behavior, which increases price dispersion within narrow categories, is consistent with a
+standard vertical differentiation model in the presence of price controls.
+Diego Aparicio
+Massachusetts Institute of Technology
+77 Mass Ave E52
+Cambridge, MA 02139
+dapa@mit.edu
+Alberto Cavallo
+MIT Sloan School of Management
+100 Main Street, E62-512
+Cambridge, MA 02142
+and NBER
+acavallo@mit.edu
+
+1 Introduction
+Inmanycountries,governmentsoftenconsidersomeformofpricecontrolswhenthepricesof
+populargoodsriseabovedesiredlevels. Onincreasinglyrareoccasions,thesepricecontrols
+areimposedacross-the-board,affectingallgoodsandcausingwidespreadshortages.1 Butin
+mostcases,governmentsprefertoimplementamoresubtleformof“targeted”pricecontrols
+on a limited number of carefully-selected goods.2 Traditionally, these targeted controls
+were limited to easy-to-regulate sectors, such as pharmaceuticals, utilities, or gas prices.3
+More recently, the availability of online data, mobile phone apps, and electronic records
+has dramatically increased the ability of governments to implement, monitor, and enforce
+targeted price controls in all kinds of consumer goods. In particular, developing countries
+such as Argentina, Ecuador, Israel, and Panama have had in the recent years some form of
+targetedpricecontrolsforfoodandgroceryproducts.4
+Despite the increased interest in the use of targeted price controls, there is still little
+empiricalresearchinvestigatingtheireconomiceffects. Arethesecontrolsbinding? Dothey
+affect prices and inflation of related goods? Can they avoid shortages associated with more
+generalizedcontrols? Whatstrategiesdofirmsemploytodealwithpotentiallylowerprofits
+andbetterenforcement?
+In this paper, we try to answer some of these questions by studying the rich and
+volatile experience with price controls in Argentina from 2007 to 2015. These were mostly
+1Venezuela is a particularly troubling recent case of across-the-board price controls. The armed forces
+are in charge of a strict price controls and food supply program. The country had over 250% inflation in
+2016 and is experiencing an unprecedented economic crisis with massive food shortages. See New York
+Times: http://nyti.ms/220pqO1; Financial Times: http://on.ft.com/2ba0eCM; The Wall Street Journal:
+http://on.wsj.com/29z2nCL. InMay2017,PresidentMaduroannouncedthathewasconsideringacomplete
+freezeofpricesthatwouldbeenforcedby“peopleinthestreets”. SeeElNacional: http://bit.ly/2pGhxSo.
+2Targetedcontrolsarealsoreferredtoas“selectivecontrols”intheliterature(Rockoff(2004)).
+3For example, developed countries such as Australia, Canada, and Switzerland currently have targeted
+price control programs for pharmaceutical drugs. See http://www.pbs.gov.au/pbs/home; http://www.
+pmprb-cepmb.gc.ca/home; https://www.trade.gov/td/health/drugpricingstudy.pdf; http://nyti.ms/
+2yYIzWt. In the US, the main candidates in the recent presidential election suggested they would push
+for legislation to control drug prices. See, for example, New York Times: http://nyti.ms/1FuGLq8,
+http://nyti.ms/1NqhboW;Bloomberg: http://bloom.bg/2aFZHna;Forbes: http://bit.ly/2ljpBX1.
+4See http://www.consumers.org.il/category/Price-monitoring; http://bit.ly/2i1rbNK; http://
+bit.ly/2yXldjT.
+2
+
+targeted controls, affecting a selected set of consumer products (e.g. whole milk, 1 liter,
+brand X) while similar varieties remained free from any kind of restrictions. To help with
+thevisibilityandenforcementprograms,thegovernmentrequiredretailerstodisplaylabels
+identifyingindividualgoodsasbeingundera“governmentagreement”,includingwhenthe
+goods were being sold online (as many Argentine supermarkets do). This meant we could
+use the information found on supermarket’s websites to distinguish price-controlled goods
+and track their prices on a daily basis. In particular, we used web-scraping technologies to
+collectdailypricesfromOctober2007toMay2015formorethan50thousandproductssold
+byoneofthelargestsupermarkets,includingapproximately1.4thousandthatwereundera
+pricecontrolatsomepointintime.5
+With this high-frequency panel of controlled and non-controlled goods, we examine
+thebefore-and-afterimpactsofpricecontrolsfrommicroandmacroperspectives. Ourmain
+resultscanbesummarizedasfollows:
+First, we show that price controls tend to be imposed on goods that have significant
+weights in the CPI basket and for varieties sold by leading brands. This result is consistent
+with Cox (1980), who argues that focusing on products with high CPI weight and on con-
+centrated industries would ensure the greatest impact on CPI inflation as well as the ability
+ofthegovernmenttoenforcethecontrols.
+Second,theimpactoftargetedpricecontrolsonaggregateinflationistemporaryand
+small. Controlled goods are sold at “government agreement” prices, which are on average
+3.3% lower than before the control. This lower price is usually compensated by a similar
+increaseinpricesassoonasthecontrolsarerelaxed.
+Third, contrary to common beliefs, we find that controlled goods are seldom discon-
+tinued and that their general availability is similar to that of non-controlled goods. They
+haveahigherprobabilityofgoingtemporarilyoutofstock,butstockoutsareshort-livedand
+goods are only occasionally discontinued. One likely explanation is that the government’s
+5SeeCavallo(2016)andCavalloandRigobon(2016)fordetailsonthescrapingmethodology. Cavallo(2017)
+comparesonlineandofflinepricesfor56largemultichannelretailersin10countriesandshowsthatpricestend
+tobeidenticalmostofthetime.
+3

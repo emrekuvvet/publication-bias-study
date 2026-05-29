@@ -1,0 +1,132 @@
+NBER WORKING PAPER SERIES
+FREE LUNCH(cid:4) ARBITRAGE OPPORTUNITIES IN THE FOREIGN EXCHANGE
+MARKETS
+Takatoshi Ito
+Kenta Yamada
+Misako Takayasu
+Hideki Takayasu
+Working Paper 18541
+http://www.nber.org/papers/w18541
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+November 2012
+Ito gratefully acknowledges research supports by the Japan Society for the Promotion of Science (JSPS)
+Grants-in-aid for Scientific Research (A) No. 20243014; and Center for Advanced Research on Finance
+(CARF) at University of Tokyo. Misako Takayasu acknowledges research supports by the Japan Society
+for the Promotion of Science (JSPS) Grants-in-aid for Scientific Research No. 22656025. The paper
+was presented in the Japan Economic Association Meeting in June, 2012. The views expressed herein
+are those of the authors and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2012 by Takatoshi Ito, Kenta Yamada, Misako Takayasu, and Hideki Takayasu. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission provided
+that full credit, including © notice, is given to the source.
+
+Free Lunch(cid:4) Arbitrage Opportunities in the Foreign Exchange Markets
+Takatoshi Ito, Kenta Yamada, Misako Takayasu, and Hideki Takayasu
+NBER Working Paper No. 18541
+November 2012
+JEL No. F31,G12,G14,G15,G23,G24
+ABSTRACT
+Using the “firm” quotes obtained from the tick-by-tick EBS (electronic broking system that is a major
+trading platform for foreign exchanges) data, it is found that risk-free arbitrage opportunities—free
+lunch—do occur in the foreign exchange markets, but it typically last only a few seconds. “Free lunch”
+is in the form of (a) negative spreads in a currency pair and (b) triangular arbitrage relationship involving
+three currency pairs. The latter occur much more often than the former. Such arbitrage opportunities
+tend to occur when the markets are active and volatile. Over the 12-year, tick-data samples, the number
+of free lunch opportunities has dramatically declined and the probability of the opportunities disappearing
+within one second has steadily increased. The size of expected profits is higher than transaction costs;
+trades that simultaneously take place on both sides of ask and bid (or three currency trades in case
+of triangular arbitrage) occur more often when free lunch appeared one second earlier than otherwise,
+suggesting that free lunch opportunities are actively taken. The probability of its disappearance within
+one second was less than 50% in 1999, but increased to about 90% by 2009. Less frequent occurrence
+and quicker disappearance in recent years are attributable to changes in trading microstructure: an
+introduction and proliferation of the Primary Customer system (weaker banks can use stronger banks’
+credit lines) and of direct connection of traders’ programmed computers to the EBS computer.
+Takatoshi Ito Misako Takayasu
+Graduate School of Economics Tokyo Institute of Technology
+University of Tokyo Department of Computational Intelligence
+7-3-1 Hongo, Bunkyo-ku and System Sciences
+Tokyo 113-0033 4259-G3-52 Nagatsuta-cho, Midori-ku
+JAPAN Yokohama, 226-8502, Japan
+and NBER takayasu@dis.titech.ac.jp
+tito@e.u-tokyo.ac.jp
+Hideki Takayasu
+Kenta Yamada Sony Computer Science Laboratories
+Waseda Institute for Advanced Study 3-14-13 Higashigotanda, Shinagawa-ku
+1-6-1 Nishi Waseda, Shinjuku-ku Tokyo 141-0022, Japan
+Tokyo, 169-8050, Japan takayasu@csl.sony.co.jp
+yamada@aoni.waseda.jp
+
+Takatoshi Ito, Kenta Yamada, Misako Takayasu, and Hideki Takayasu
+“Free Lunch! Arbitrage Opportunities in the Foreign Exchange Markets”
+Abstract:
+Using the “firm” quotes obtained from the tick-by-tick EBS (electronic broking system
+that is a major trading platform for foreign exchanges) data, it is found that risk-free
+arbitrage opportunities—free lunch—do occur in the foreign exchange markets, but it
+typically last only a few seconds. “Free lunch” is in the form of (a) negative spreads in a
+currency pair and (b) triangular arbitrage relationship involving three currency pairs.
+The latter occur much more often than the former. Such arbitrage opportunities tend to
+occur when the markets are active and volatile. Over the 12-year, tick-data samples, the
+number of free lunch opportunities has dramatically declined and the probability of the
+opportunities disappearing within one second has steadily increased. The size of
+expected profits is higher than transaction costs; trades that simultaneously take place
+on both sides of ask and bid (or three currency trades in case of triangular arbitrage)
+occur more often when free lunch appeared one second earlier than otherwise,
+suggesting that free lunch opportunities are actively taken. The probability of its
+disappearance within one second was less than 50% in 1999, but increased to about
+90% by 2009. Less frequent occurrence and quicker disappearance in recent years are
+attributable to changes in trading microstructure: an introduction and proliferation of the
+Primary Customer system (weaker banks can use stronger banks’ credit lines) and of
+direct connection of traders’ programmed computers to the EBS computer.
+Keywords: Market microstructure, High frequency data, Arbitrage, Negative spread,
+Triangular arbitrage, Free lunch, Electronic Broking System, Yen, US dollar, Euro,
+Acknowledgment:
+Ito gratefully acknowledges research supports by the Japan Society for the Promotion of
+Science (JSPS) Grants-in-aid for Scientific Research (A) No. 20243014; and Center for
+Advanced Research on Finance (CARF) at University of Tokyo. Misako Takayasu
+acknowledges research supports by the Japan Society for the Promotion of Science
+(JSPS) Grants-in-aid for Scientific Research No. 22656025. The paper was presented in
+the Japan Economic Association Meeting in June, 2012.
+JEL, F31, G12, G14, G15, G23, G24
+2
+
+1. Introduction
+The foreign exchange market is one of the largest financial markets in terms of
+volumes of transactions and the number of market participants, who reside all over the
+world. The market is open 24 hours a day, (almost) seven days a week. The average
+daily transaction volume is estimated at 4 trillion dollars a day (BIS (2010)).1 The
+market, especially for major currency pairs, is considered to be deep and liquid for
+virtually any hour of any business day.
+As it is one of the most deep and liquid markets, the foreign exchange market
+is often assumed to be “efficient” in both theoretical and empirical literature. In an
+“efficient” market, all the risk-free arbitrage opportunities—free lunch—would not be
+observed.2 “No free lunch” means that the bid (price of buyer’s limit order) should
+always be lower than ask (price of seller’s limit order). Thus, the negative spread is one
+form of free lunch. Among the three currency pairs, simultaneous transactions
+exchanging the yen (JPY) into the US dollar (USD), from the US dollar to Euro (EUR),
+and Euro back to the yen should not produce profits. Hence, bids and asks of the three
+pairs, USD/JPY, EUR/USD, and EUR/JPY, should satisfy certain inequality relationship.
+A theoretical model is commonly based on a “no free lunch” assumption and
+observations that suggest free lunch in data are most regarded as outliers and discarded.
+In the real world, however, any high-frequency currency trader would know
+that the free lunch situation do occur rather frequently. Of course the magnitude of
+profits is rather small and the duration of opportunities is short. In fact, the opportunity,
+if it exists, is said to disappear in the matter of seconds. In fact, large financial
+institutions invest heavily into a real-time trading system, which would not only spot
+such arbitrage opportunities but also take long or short positions with a bet on the
+1 According to the BIS Triennial Survey, the size of the global foreign exchange market in April
+2010 was the turnover of 3.98 trillion US dollars a day, of which spot transactions accounted 1.49
+trillion US dollars (37%). With respect to currency pairs, the USD/EUR accounted 28%; USD/JPY
+14%; and EUR/JPY 3%.
+2 There is a standard joke about the efficient market hypothesis believer: An efficient market
+believer and his friend are walking on the sidewalk. The friend says, “Look, there is a $100 bill on
+the sidewalk.” The believer says, “It should be a counterfeit bill. If it is a genuine bill, someone
+should have picked it up already.” The evidence in this paper can be interpreted as follows. Time to
+time, people do drop a $100 bill unknowingly. But, it does not take much time before someone finds
+it and picks it up, because people do check out whether the bill is genuine or counterfeit. So most of
+the time, you do not see $100 bill on the street.
+3

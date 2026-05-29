@@ -1,0 +1,145 @@
+NBER WORKING PAPER SERIES
+THE OUTPUT COMPOSITION PUZZLE:
+A DIFFERENCE IN THE MONETARY TRANSMISSION
+MECHANISM IN THE EURO AREA AND U.S.
+Ignazio Angeloni
+Anil K. Kashyap
+Benoît Mojon
+Daniele Terlizzese
+Working Paper 9985
+http://www.nber.org/papers/w9985
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2003
+Kashyap thanks the ECB, the University of Chicago George J. Stigler Center for the Study of the Economy
+and the State, and the National Science Foundation (through a grant administered by the National Bureau of
+Economic Research) for financial support. The views expressed in this paper are not necessarily shared by
+the institutions to which the authors are affiliated. We thank Michel Aglietta, Filippo Altissimo, Jean-Pascal
+Benassy, Alan Blinder, Larry Christiano, Martin Eichenbaum, Chris Erceg, Charlie Evans, Andrea Gerali,
+Luigi Guiso, Jean Pisani-Ferry, Rob McCulloch, Jean-Paul Pollin, David Reifschneider, Peter Rossi, Chris
+Sims, Frank Smets, Luca Sessa and Raf Wouters for helpful conversations, our discussants Jesper Lindé and
+Richard Clarida and seminar participants at the Central Bank of Chile, the European Central Bank, the
+University of Chicago, and the Wharton School for useful comments, Anna-Maria Agresti for excellent
+research assistance. Flint Brayton and Chris Erceg are thanking for running the FRB/US simulations that we
+report. Frank Smets and Raf Wouters are thanked for sharing with us the programs with which we ran
+simulations of the Smets-Wouters DSGE model. We also thank Jennifer Roush for assistance in calculating
+the standard errors in the Gordon and Leeper model and Andrea Gerali for assistance in calculating the Monte
+Carlo simulations of the DSGE models. All errors and shortcomings are our responsibility alone. The views
+expressed herein are those of the authors and are not necessarily those of the National Bureau of Economic
+Research.
+©2003 by Ignazio Angeloni, Anil K. Kashyap, Benoît Mojon, and Daniele Terlizzese. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission provided that
+full credit, including © notice, is given to the source.
+
+The Output Composition Puzzle: A Difference in the Monetary Transmission Mechanism in the
+Euro Area and U.S.
+Ignazio Angeloni, Anil K. Kashyap, Benoît Mojon, and Daniele Terlizzese
+NBER Working Paper No. 9985
+September 2003
+JEL No. E21, E22, E30, E52
+ABSTRACT
+We revisit recent evidence on how monetary policy affects output and prices in the U.S. and in the
+euro area. The response patterns to a shift in monetary policy are similar in most respects, but differ
+noticeably as to the composition of output changes. In the euro area investment is the predominant
+driver of output changes, while in the U.S. consumption shifts are significantly more important. We
+dub this difference the output composition puzzle and explore its implications and several potential
+explanations for it. While the evidence seems to point at differences in consumption responses,
+rather than investment, as the proximate cause for this fact, the source of the consumption difference
+remains a puzzle.
+Ignazio Angeloni Benoît Mojon
+European Central Bank, European Central Bank
+Kaiserstrasse 29, D-60311 Kaisersrasse 29, D-60 311
+Frankfurt am Main Frankfurt am Main
+Germany Germany
+ignazio.angeloni@ecb.int benoit.mojon@ecb.int
+Anil Kashyap Daniele Terlizzese
+University of Chicago Banca d'Italia
+Graduate School of Business Servizio Studi
+1101 E. 58th Street Via Nazionale 91, 00184
+Chicago, IL 60637 Roma
+and NBER daniele.terlizzese@bancaditalia.it
+anil.kashyap@gsb.uchicago.edu
+
+Introduction
+A consensus has emerged during the last twenty years, over the way that the actions of
+central banks affect the economy (the monetary transmission mechanism). In a nutshell,
+changes in monetary policy have a persistent, though not permanent, effect on output,
+with the output change being humped-shaped; prices react with some delay, and
+eventually settle down to a new level, with no permanent effect on inflation.
+Much of this consensus is based on the examination of the U.S. experience. Yet, recently,
+twelve European countries embarked upon an unprecedented grand monetary experiment.
+A new central bank was created from scratch and the currencies of twelve sovereign
+nations were replaced with the euro. A natural question is whether the consensus view on
+the monetary transmission mechanism holds for the euro area as well.
+While we expect this question will be the subject of intense research in the future, some
+first answers were provided by a momentous research effort involving the staffs of the
+European Central Bank (ECB) and of the twelve national central banks (NCB) forming
+the euro area (Angeloni, Kashyap and Mojon (2003). Some surprising similarities were
+found, together with some interesting differences.
+In this paper, drawing from that body of work, we first check the robustness of the
+similarities. These are important because, as the euro area is only about five years old,
+any time series analysis of the euro area transmission necessarily uses mostly data from
+the previous monetary policy regime. This confounds analyses based on either synthetic
+data of euro area aggregates or the aggregation of country-level findings. However, some
+of the uncertainty over the transmission mechanism may be reduced if the time series
+facts that can be compiled for the euro area resemble those for the U.S., a long
+functioning monetary union of similar size and openness as the euro area.
+The bulk of our analysis will focus on an intriguing difference between the two currency
+areas. In particular, we call attention to one aspect of the transmission mechanism that
+has previously received little attention: the composition of the output adjustments that
+follow a change in monetary policy. Along this dimension, an interesting contrast
+emerges between the euro area findings and those for the U.S. In the U.S. changes in
+consumption spending appear to be a much more important component of monetary
+adjustment than in the euro area (where investment spending changes appear to be pre-
+eminent). We dub this difference the output composition puzzle.
+We see the motivation for studying the composition of the output response as threefold.
+First, better understanding the composition effects can improve the central bank’s ability
+to monitor the economy. For instance, knowledge that consumption adjustments are
+typically dominant in the U.S. would suggest that consumer behavior is what needs to be
+watched carefully to see whether policy changes are working through the economy in the
+expected way. This ultimately would help determining whether the current monetary
+stance is appropriate or policy changes are called for.
+2
+
+A second, broader motivation is that knowledge of the composition can improve our
+understanding of the factors behind the monetary transmission mechanism. As will be
+discussed later on, the differences between a dominant consumption response in the U.S.
+and a dominant investment response in the euro area could be due to a variety of
+institutional or legal constraints, or frictions, linked for example to the structure of
+financial or labor markets, or differences in the levels of social insurance. Better
+understanding the composition seems a useful first step to uncover the relevance of these
+different factors. Moreover, having identified the relevant factors one could then discuss
+whether structural policies, e.g. in the financial or labor markets, might be warranted to
+alter these institutions.
+A third, and closely related, consideration is that this analysis can be informative about
+the stability of the transmission mechanism. By understanding which transmission
+channels are dominant and which are dormant, one can decide which changes to the
+economy merit most attention. For instance, if the consumption response in the U.S. is
+dominant a policymaker might conclude that paying close attention to changes in the
+mortgage markets is more important than studying changes in the tax treatment of
+depreciation.
+We organize the paper into three parts. We begin with a brief review of the stylized facts
+about the basic statistical properties of the data and on the transmission mechanisms for
+the U.S. and euro area, showing a number of similarities.
+In the next section we document the output composition puzzle, arguing that it is a robust
+feature of the two economies that can be confirmed using a host of statistical techniques
+and data.
+In the following section, we provide tentative interpretations and explanations for it. We
+first explore the puzzle in the class of tractable dynamic stochastic general equilibrium
+(DSGE) models that have recently been proposed as an accurate description of the
+monetary policy transmission (prominent examples are Christiano, Eichenbaum and
+Evans (2001) for the U.S. and Smets and Wouters (2002) for the euro area). The idea is to
+trace the differences in output composition to differences in “deep” parameters
+characterizing the two economies. We verify that these models, in their current estimated
+(or calibrated) version, have trouble fully accounting for the differences in the
+composition of output adjustments that we observe in the data.
+To do this we identify the mechanisms in the model that give rise to differences in the
+output composition, isolating a small subset of the models’ parameters that essentially
+govern the output composition. The differences estimated for these parameters are
+however too small, and sometimes even of the wrong sign, to fully account for the
+differences in the output composition between the two areas. Moreover, the mechanisms
+identified do not appear to be very powerful. It appears that large changes in these
+parameters are needed to bring the models in line with our data-based estimates of the
+consumption contributions to output adjustment.
+3

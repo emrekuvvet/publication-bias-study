@@ -1,0 +1,134 @@
+NBER WORKING PAPER SERIES
+PRACTICAL VOLATILITY AND CORRELATION MODELING
+FOR FINANCIAL MARKET RISK MANAGEMENT
+Torben G. Andersen
+Tim Bollerslev
+Peter F. Christoffersen
+Francis X. Diebold
+Working Paper 11069
+http://www.nber.org/papers/w11069
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+January 2005
+This paper is prepared for Mark Carey and René Stulz (eds.), Risks of Financial Institutions, University of
+Chicago Press for NBER. For helpful comments we would like to thank Ken Abbott, Casper de Vries, Philipp
+Hartmann, Patricia Jackson, Jim O'Brien, Hashem Pesaran, and Pedro Santa-Clara. For research support,
+Andersen, Bollerslev and Diebold thank the U.S. National Science Foundation, and Christoffersen thanks
+FQRSC, SSHRC and IFM2. The views expressed herein are those of the author(s) and do not necessarily
+reflect the views of the National Bureau of Economic Research.
+© 2005 by Torben G. Andersen, Tim Bollerslev, Peter F. Christoffersen, and Francis X. Diebold. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Practical Volatility and Correlation Modeling for Financial Market Risk Management
+Torben G. Andersen, Tim Bollerslev, Peter F. Christoffersen, and Francis X. Diebold
+NBER Working Paper No. 11069
+January 2005
+JEL No. G1
+ABSTRACT
+What do academics have to offer market risk management practitioners in financial institutions?
+Current industry practice largely follows one of two extremely restrictive approaches: historical
+simulation or RiskMetrics. In contrast, we favor flexible methods based on recent developments in
+financial econometrics, which are likely to produce more accurate assessments of market risk.
+(cid:1)
+Clearly, the demands of real-world risk management in financial institutions in particular, real-
+(cid:1)
+time risk tracking in very high-dimensional situations impose strict limits on model complexity.
+Hence we stress parsimonious models that are easily estimated, and we discuss a variety of practical
+approaches for high-dimensional covariance matrix modeling, along with what we see as some of
+the pitfalls and problems in current practice. In so doing we hope to encourage further dialog
+between the academic and practitioner communities, hopefully stimulating the development of
+improved market risk management technologies that draw on the best of both worlds.
+Torben G. Andersen Peter F. Christoffersen
+Department of Finance Faculty of Management
+Kellogg School of Management McGill University
+Northwestern University Montreal, Quebec H3A 1G5
+Evanston, IL 60208 peter.christoffersen@mcgill.ca
+and NBER
+t-andersen@kellogg.northwestern.edu Francis X. Diebold
+Department of Economics
+Tim Bollerslev University of Pennsylvania
+Department of Economics Philadelphia, PA 19104
+Duke University and NBER
+Durham, NC 27708 fdiebold@sas.upenn.edu
+and NBER
+boller@econ.duke.edu
+
+1. Introduction
+It is now widely agreed that financial asset return volatilities and correlations (henceforth
+“volatilities”) are time-varying, with persistent dynamics. This is true across assets, asset classes,
+time periods, and countries. Moreover, asset return volatilities are central to finance, whether in
+asset pricing, portfolio allocation, or market risk measurement. Hence the field of financial
+econometrics devotes considerable attention to time-varying volatility and associated tools for its
+measurement, modeling and forecasting.
+Here we survey, unify and extend recent developments in the financial econometrics of
+time-varying volatility, focusing exclusively on practical applications to the measurement and
+management of market risk, stressing parsimonious models that are easily estimated. Our
+ultimate goal is to stimulate dialog between the academic and practitioner communities,
+advancing best-practice market risk measurement and management technologies by drawing
+upon the best of both worlds. Three themes appear repeatedly, and so we highlight them here.
+The first is the issue of aggregation level. We consider both aggregated (portfolio level)
+and disaggregated (asset level) modeling, emphasizing the related distinction between risk
+measurement and risk management, because risk measurement generally requires only a
+portfolio-level model, whereas risk management requires an asset-level model. At the asset level,
+the issue of dimensionality and dimensionality reduction arises repeatedly, and we devote
+considerable attention to methods for tractable modeling of the very high-dimensional
+covariance matrices of practical relevance.
+The second theme concerns the use of low-frequency vs. high-frequency data, and the
+associated issue of parametric vs. nonparametric volatility measurement. We treat all cases, but
+we emphasize the appeal of volatility measurement using nonparametric methods in conjunction
+with high-frequency data, followed by modeling that is intentionally parametric.
+The third theme relates to the issue of unconditional vs. conditional risk measurement.
+We argue that, for most financial risk management purposes, the conditional perspective is
+exclusively relevant, notwithstanding, for example, the fact that popular approaches based on
+historical simulation and extreme-value theory typically adopt an unconditional perspective. We
+advocate, moreover, moving beyond a conditional volatility perspective to a full conditional
+density perspective, and we discuss methods for constructing and evaluating full conditional
+density forecasts.
+We proceed systematically in several steps. In section 2, we consider portfolio level
+analysis, directly modeling portfolio volatility using historical simulation, exponential
+smoothing, and GARCH methods. In section 3, we consider asset level analysis, modeling asset
+covariance matrices using exponential smoothing and multivariate GARCH methods, paying
+special attention to dimensionality-reduction methods. In section 4, we explore the use of high-
+frequency data for improved covariance matrix measurement and modeling, treating realized
+variance and covariance, and again discussing procedures for dimensionality reduction. In
+section 5 we treat the construction of complete conditional density forecasts via simulation
+methods. We conclude in section 6.
+
+2. Portfolio Level Analysis: Modeling Portfolio Volatility
+Portfolio risk measurement requires only a univariate, portfolio-level model (e.g., Benson
+and Zangari, 1997). In this section we discuss such univariate, portfolio-based methods. In
+contrast, active portfolio risk management, including portfolio allocation, requires a multivariate
+model, as we discuss subsequently in section 3.
+In particular, portfolio level analysis is rarely done other than via historical simulation
+(defined below). But we will argue that there is no reason why one cannot estimate a
+parsimonious dynamic model for portfolio level returns. If interest centers on the distribution of
+the portfolio returns, then this distribution can be modeled directly rather than via aggregation
+based on a larger and almost inevitably less-well-specified multivariate model.
+Berkowitz and O’Brien (2002) find evidence that existing bank risk models perform
+poorly and are easy outperformed by a simple univariate GARCH model (defined below). Their
+result is remarkable in that they estimate a GARCH model fit to the time series of actual
+historical portfolio returns where the underlying asset weights are changing over time. Berkowitz
+and O’Brien find that bank’s reported Value-at-Risk (VaRs) on average underestimate risk when
+comparing ex post P/Ls with ex ante VaR forecasts. This finding could however simply be due to
+the reported P/Ls being “dirty” in that they contain non-risky income from fees, commissions
+and intraday trading profits.1 More seriously though, Berkowitz and O’Brien find that the VaR
+violations which do occur tend to cluster in time. Episodes such as the Fall 1998 Russia default
+and LTCM debacle set off a dramatic and persistent increase in market volatility which bank
+models appear to largely ignore, or at least react to with considerable delay. Such VaR violation
+clustering is evidence of a lack of conditionality in bank VaR systems which in turn is a key
+theme in our discussion below.2
+We first discuss the construction of historical portfolio values, which is a necessary
+precursor to any portfolio-level VaR analysis. We then discuss direct computation of portfolio
+VaR via historical simulation, exponential smoothing, and GARCH modeling.3
+2.1 Constructing Historical Pseudo Portfolio Values
+In principle it is easy to construct a time series of historical portfolio returns using current
+1 Even though the Basel Accord calls for banks to report 1% VaR’s, for various reasons
+most banks tend to actually report more conservative VaR’s. Rather than simply scaling up a 1%
+VaR based on some “arbitrary” multiplication factor, the procedures that we discuss below is
+readily adapted to achieve any desired, more conservative, VaR.
+2 See also Jackson, Maude and Perraudin (1997).
+3 Duffie and Pan (1997) provide an earlier incisive discussion of related VaR procedures
+and corresponding practical empirical problems.
+2

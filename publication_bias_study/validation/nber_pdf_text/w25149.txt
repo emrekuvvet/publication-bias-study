@@ -1,0 +1,179 @@
+NBER WORKING PAPER SERIES
+BEYOND THE BALANCE SHEET MODEL OF BANKING:
+IMPLICATIONS FOR BANK REGULATION AND MONETARY POLICY
+Greg Buchak
+Gregor Matvos
+Tomasz Piskorski
+Amit Seru
+Working Paper 25149
+http://www.nber.org/papers/w25149
+NATIONAL BUREAU OF ECONOMIC RESERACH
+This paper was 1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2018, Revised July 2022
+This paper was previously titled “The Limits of Shadow Banks”. Buchak is at Stanford Graduate
+School of Business (GSB), Matvos is at Northwestern University and the National Bureau of Economic
+Research (NBER), Piskorski is at Columbia GSB and NBER, and Seru is at Stanford GSB, the Hoover
+Institution, the Stanford Institute for Economic Policy Research (SIEPR), and NBER. We thank the
+National Science Foundation (Award 1628895) for financial support. We thank Sumit Agarwal, Adrien
+Auclert, Anat Admati, Matteo Benetton, John Cochrane, Dean Corbae, Ramona Dagostino, Anthony
+DeFusco, Peter DeMarzo, Darell Duffie, Andrea Eisfeldt, Mark Egan, Neil Esho, Andreas Fuster, Paul
+Goldsmith-Pinkham, Itay Goldstein, Ben Hebert, Erik Hurst, Arvind Krishnamurthy, Debbie Lucas,
+Chris Mayer, Guillermo Ordonez, Chris Palmer, Karen Pence, Tarun Ramodarai, Alexi Savov, Antoinette
+Schoar, David Scharfstein, Hyun Shin, Jeremy Stein, Johannes Stroebel, Amir Sufi, Adi Sunderam,
+Joe Vavra, Arlene Wong, and seminar participants at AQR, Bank for International Settlements,
+Columbia GSB, European Central Bank, Harvard Business School, Hoover Institution, Housing
+Finance Policy Center, Indian School of Business, MIT Sloan, Stanford GSB, Yale University, UCLA,
+University of Texas at Austin, Washington University in St. Louis, Boston College, UNC, University of
+Rochester, Kellogg School of Management, University of Illinois at Urbana Champagne, and
+participants at ASSA meetings (Econometric Society), Kellogg Housing and Macroeconomics
+Conference, Midwest Finance Association Conference, NBER Monetary Economics, NBER Summer
+Institute, Wharton Conference on Liquidity and Financial Fragility, Stanford Institute of Theoretical
+Economics Financial Regulation Conference, Office for Financial Research Financial Stability
+Conference, FDIC Financial Technology Conference, Summer Real Estate Symposium, Central Bank
+Research Association annual meeting, and the San Francisco Federal Reserve Conference on
+Advances in Financial Research for helpful comments. We also thank Susan Cherry,
+Monica Clodius, Sam Liu, and Yilan Zheng for outstanding research assistance. First
+Version: February 2018. The views expressed herein are those of the authors and do
+not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2018 by Greg Buchak, Gregor Matvos, Tomasz Piskorski, and Amit Seru. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission provided
+that full credit, including © notice, is given to the source.
+
+Beyond the Balance Sheet Model of Banking: Implications for Bank Regulation and Monetary
+Policy
+Greg Buchak, Gregor Matvos, Tomasz Piskorski, and Amit Seru
+NBER Working Paper No. 25149
+October 2018, Revised July 2022
+JEL No. G2,L5
+ABSTRACT
+Bank balance sheet lending is commonly viewed as the predominant form of lending. We
+document and study two margins of adjustment that are usually absent from this view using
+microdata in the$10 trillion U.S. residential mortgage market. We first document the limits of the
+shadow bank substitution margin: shadow banks substitute for traditional—deposit-taking—
+banks in loans which are easily sold, but are limited from activities requiring on-balance-sheet
+financing. We then document the balance sheet retention margin: banks switch between
+traditional balance sheet lending and selling loans based on their balance sheet strength, behaving
+more like shadow banks following negative shocks. Motivated by this evidence, we build and
+estimate a workhorse structural model of the financial intermediation sector. Banks and shadow
+banks compete for borrowers. Banks face regulatory constraints but benefit from the ability to
+engage in balance sheet lending. Critically, departing from prior literature, banks can also choose
+to access the securitization market like shadow banks. To evaluate distributional consequences,
+we model a rich demand system with income and house price differences across borrowers. The
+model is identified using spatial pricing policies of government-sponsored entities and bunching
+at the regulatory threshold. We study the quantitative consequences of several policies on lending
+volume and pricing, bank stability, and the distribution of consumer surplus across rich and poor
+households. Both margins we identify significantly shape policy responses, accounting for more
+than $500 billion in lending volume across counterfactuals. Secondary market disruptions such as
+quantitative easing have significantly larger impacts on lending and redistribution than capital
+requirement changes once we account for these margins. We conclude that a regulatory policy
+analysis of the intermediation sector must incorporate the intricate industrial organization of the
+credit market and the equilibrium interaction of banks and shadow banks.
+Greg Buchak Tomasz Piskorski
+Graduate School of Business Columbia Business School
+Stanford University 3022 Broadway
+655 Knight Way Uris Hall 810
+Stanford, CA 94305b New York, NY 10027
+buchak@stanford.edu and NBER
+tp2252@columbia.edu
+Gregor Matvos
+Kellogg School of Management Amit Seru
+Northwestern University Stanford Graduate School of Business
+2211 Campus Drive Stanford University
+Global Hub 4361 655 Knight Way
+Evanston IL, 60208 and NBER
+and NBER aseru@stanford.edu
+gregor.matvos@kellogg.northwestern.edu
+
+Beyond the Balance Sheet Model of Banking:
+Implications for Bank Regulation and Monetary Policy
+Greg Buchak, Gregor Matvos, Tomasz Piskorski, and Amit Seru*
+This Version: JULY 2022
+Bank balance sheet lending is commonly viewed as the predominant form of lending. We document and study
+two margins of adjustment that are usually absent from this view using microdata in the $10 trillion U.S.
+residential mortgage market. We first document the limits of the shadow bank substitution margin: shadow banks
+substitute for traditional—deposit-taking—banks in loans which are easily sold, but are limited from activities
+requiring on-balance-sheet financing. We then document the balance sheet retention margin: banks switch
+between traditional balance sheet lending and selling loans based on their balance sheet strength, behaving more
+like shadow banks following negative shocks. Motivated by this evidence, we build and estimate a workhorse
+structural model of the financial intermediation sector. Banks and shadow banks compete for borrowers. Banks
+face regulatory constraints but benefit from the ability to engage in balance sheet lending. Critically, departing
+from prior literature, banks can also choose to access the securitization market like shadow banks. To evaluate
+distributional consequences, we model a rich demand system with income and house price differences across
+borrowers. The model is identified using spatial pricing policies of government-sponsored entities and bunching
+at the regulatory threshold. We study the quantitative consequences of several policies on lending volume and
+pricing, bank stability, and the distribution of consumer surplus across rich and poor households. Both margins
+we identify significantly shape policy responses, accounting for more than $500 billion in lending volume across
+counterfactuals. Secondary market disruptions such as quantitative easing have significantly larger impacts on
+lending and redistribution than capital requirement changes once we account for these margins. We conclude
+that a regulatory policy analysis of the intermediation sector must incorporate the intricate industrial organization
+of the credit market and the equilibrium interaction of banks and shadow banks.
+Keywords: Shadow Banks, Balance Sheet Capacity, Market Segmentation, Capital Requirements, Lending,
+Mortgages, GSEs, Unconventional Monetary Policy
+__________________________
+* This paper was previously titled “The Limits of Shadow Banks”. Buchak is at Stanford Graduate School of Business
+(GSB), Matvos is at Northwestern University and the National Bureau of Economic Research (NBER), Piskorski is at
+Columbia GSB and NBER, and Seru is at Stanford GSB, the Hoover Institution, the Stanford Institute for Economic Policy
+Research (SIEPR), and NBER. We thank the National Science Foundation (Award 1628895) for financial support. We thank
+Sumit Agarwal, Adrien Auclert, Anat Admati, Matteo Benetton, John Cochrane, Dean Corbae, Ramona Dagostino, Anthony
+DeFusco, Peter DeMarzo, Darell Duffie, Andrea Eisfeldt, Mark Egan, Neil Esho, Andreas Fuster, Paul Goldsmith-Pinkham,
+Itay Goldstein, Ben Hebert, Erik Hurst, Arvind Krishnamurthy, Debbie Lucas, Chris Mayer, Guillermo Ordonez, Chris
+Palmer, Karen Pence, Tarun Ramodarai, Alexi Savov, Antoinette Schoar, David Scharfstein, Hyun Shin, Jeremy Stein,
+Johannes Stroebel, Amir Sufi, Adi Sunderam, Joe Vavra, Arlene Wong, and seminar participants at AQR, Bank for
+International Settlements, Columbia GSB, European Central Bank, Harvard Business School, Hoover Institution, Housing
+Finance Policy Center, Indian School of Business, MIT Sloan, Stanford GSB, Yale University, UCLA, University of Texas
+at Austin, Washington University in St. Louis, Boston College, UNC, University of Rochester, Kellogg School of
+Management, University of Illinois at Urbana Champagne, and participants at ASSA meetings (Econometric Society),
+Kellogg Housing and Macroeconomics Conference, Midwest Finance Association Conference, NBER Monetary
+Economics, NBER Summer Institute, Wharton Conference on Liquidity and Financial Fragility, Stanford Institute of
+Theoretical Economics Financial Regulation Conference, Office for Financial Research Financial Stability Conference,
+FDIC Financial Technology Conference, Summer Real Estate Symposium, Central Bank Research Association annual
+meeting, and the San Francisco Federal Reserve Conference on Advances in Financial Research for helpful comments. We
+also thank Susan Cherry, Monica Clodius, Sam Liu, and Yilan Zheng for outstanding research assistance. First Version:
+February 2018.
+
+Section I: Introduction
+Policymakers and researchers have long viewed balance sheet lending by deposit-taking
+institutions—traditional banks—as the predominant way loans are supplied to households and firms
+(Sunderam 2015). Under this view, banks use deposits to extend loans, which they hold on their
+balance sheet until repayment or default. Therefore, traditional banks have been the main focus of
+regulation and supervision in financial intermediation. The bank balance sheet view omits two
+important aspects of modern financial intermediation.
+First, a substantial share of financial activity has migrated to the less regulated shadow banking
+sector.1 For instance, following the increase in bank regulation after the 2008 financial crisis, the
+share of shadow bank loan origination more than doubled in the $10 trillion U.S. residential mortgage
+market. Shadow banks now account for the majority of new mortgage originations (Buchak et al.
+2018). Financial intermediation regulation therefore needs to account for this “shadow bank
+migration margin” of adjustment in the supply of financial intermediation.2 In this paper, we
+document the shadow bank migration margin primarily for activities which do not require on-balance-
+sheet financing. Banks, by virtue of deposit financing, retain an advantage in balance-sheet intensive
+activities. In other words, differences in financing result in market segmentation.
+Second, banks themselves sell over 50% of the originated loans instead of holding them on their
+balance sheet (see Buchak et al. 2018, Irani et al. 2018, Seru 2019). We document a new margin of
+adjustment by traditional banks, which we call the “balance sheet retention margin.” When faced
+with shocks, traditional banks adjust their business models, switching from on-balance-sheet lending
+to off-balance-sheet lending. The two sets of facts we document suggest that the allocation of
+intermediation activity and risks between banks and shadow banks is determined by the industrial
+organization of financial intermediation as well as the changing business models of banks. We then
+build a workhorse structural model of the financial intermediation sector and demonstrate that these
+margins of adjustment are central to understanding consequences of policies such as capital
+requirements and monetary policy.
+We explore the interaction of banks and shadow banks in two main residential mortgage market
+segments in the U.S.—the conforming market and the jumbo market—for two broad reasons. First,
+these two segments account for the vast majority of the $19.5 trillion3 residential mortgages originated
+during our sample period (Beraja et al. 2019; Wong 2018; Palmer 2015). Second, the institutional
+difference between these segments allows us to study the role of balance sheet capacity. Originating
+conforming mortgages does not require as much balance sheet capacity since these loans are eligible
+for purchase by Government-Sponsored Enterprises (GSEs). Jumbo mortgages, on the other hand,
+1 See Gennaioli, Shleifer, and Vishny (2013); Ordonez (2018); and Moreira and Savov (2017) for models of shadow
+banking, and Greenwood and Scharfstein (2013) and Adrian and Ashcraft (2016) for a comprehensive review.
+2 For instance, the banking regulation proposal of the Minneapolis Federal Reserve, the “Minneapolis Plan,” discusses
+taxing activity that migrates to shadow banking following higher capital requirements:
+https://www.minneapolisfed.org/publications/special-studies/endingtbtf/final-proposal/summary-of-the-minneapolis-
+plan-to-end-too-big-to-fail.
+3 Mortgage Bankers Association estimates for 1–4 unit family homes [accessed August 12, 2019]
+https://www.mba.org/Documents/Research/Historical%20Mortgage%20Origination%20Estimates.xlsx.
+1

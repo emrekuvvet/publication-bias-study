@@ -1,0 +1,146 @@
+NBER WORKING PAPER SERIES
+SHADOW INSURANCE
+Ralph S.J. Koijen
+Motohiro Yogo
+Working Paper 19568
+http://www.nber.org/papers/w19568
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2013
+A.M. Best Company owns the copyright to Best’s Statement File and Best’s Schedule S, which we
+use with permission through their license agreement with the Federal Reserve Bank of Minneapolis.
+Koijen acknowledges financial support from the European Research Council (grant 338082). For
+comments and discussions, we thank Tobias Adrian, Daniel Bergstresser, Bruno Biais, Randolph
+Cohen, Liran Einav, Andrew Ellul, Francisco Gomes, Scott Harrington, Victoria Ivashina,
+Chotibhak Jotikasthira, Robert McDonald, Andrew Metrick, Alexander Michaelides, Alan
+Morrison, Adair Morse, Gregory Niehaus, Radek Paluszynski, and Harald Uhlig. We also thank
+seminar participants at Arizona State University; Bank of England; Cass Business School; CKGSB;
+Columbia University; Consumer Financial Protection Bureau; Federal Reserve Bank of Minneapolis;
+Federal Reserve Board; Financial Stability Board; Harvard University; INSEAD; IIES; London
+Business School; Nederlandsche Bank; Office of Financial Research; Stockholm School of
+Economics; Toulouse School of Economics; University of Alberta, British Columbia, California
+Berkeley, Illinois at Chicago, Illinois at Urbana-Champaign, Lausanne, Melbourne, Minnesota, and
+South Carolina; UCSD; Uppsala University; Vienna Graduate School of Finance; Yale University; the
+2013 FRIC Conference on Financial Frictions; the 2014 NBER Insurance Working Group Meeting;
+the 2014 Adam Smith Asset Pricing Workshop; the 2014 NBER Asset Pricing Program Meeting;
+the 2014 Workshop on Safety, Risk, and Incentives: The Role of the Insurance Industry in the
+Modern Financial System; the 2014 FMA Asian Conference; the 2014 Annual Conference of the
+Paul Woolley Centre; the 2014 North American Summer Meeting of the Econometric Society; the
+2014 WEAI Annual Conference; the 2014 NBER Summer Institute Corporate Finance Workshop; the
+2014 Workshop on Insurance and Systemic Risks; the 2014 Wharton Conference on Liquidity and
+Financial Crises; and the 2015 AFA Annual Meeting. The views expressed herein are those of the
+authors and not necessarily those of the Federal Reserve Bank of Minneapolis, the Federal
+Reserve System, or the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2013 by Ralph S.J. Koijen and Motohiro Yogo. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit, including
+© notice, is given to the source.
+
+Shadow Insurance
+Ralph S.J. Koijen and Motohiro Yogo
+NBER Working Paper No. 19568
+October 2013, Revised May 2016
+JEL No. G22,G28
+ABSTRACT
+Life insurers use reinsurance to move liabilities from regulated and rated companies that sell
+policies to shadow reinsurers, which are less regulated and unrated off-balance-sheet entities
+within the same insurance group. U.S. life insurance and annuity liabilities ceded to shadow
+reinsurers grew from $11 billion in 2002 to $364 billion in 2012. Life insurers using shadow
+insurance, which capture half of the market share, ceded 25 cents of every dollar insured to
+shadow reinsurers in 2012, up from 2 cents in 2002. By relaxing capital requirements, shadow
+insurance could reduce the marginal cost of issuing policies and thereby improve retail market
+efficiency. However, shadow insurance could also reduce risk-based capital and increase
+expected loss for the industry. We model and quantify these effects based on publicly available
+data and plausible assumptions.
+Ralph S.J. Koijen
+London Business School
+Regent's Park
+London NW1 4SA
+United Kingdom
+rkoijen@london.edu
+Motohiro Yogo
+Department of Economics
+Princeton University
+26 Prospect Avenue
+Princeton, NJ 08540
+and NBER
+myogo@princeton.edu
+
+1. Introduction
+LifeinsuranceandannuityliabilitiesofU.S.lifeinsurerswere$4,068billionin2012,which
+is substantial even when compared with $6,979 billion in savings deposits at U.S. depository
+institutions (Board of Governors of the Federal Reserve System (2013)). However, little
+research exists on life insurer liabilities, especially in comparison with the large banking
+literature. The reason, perhaps, is the traditional view that life insurance and annuity
+liabilities are safe because they are more predictable, have a longer maturity, and are less
+vulnerable to runs. Thus, the conventional wisdom is that all of the interesting action is on
+the asset side of the balance sheet, where life insurers take on some investment risk.
+Developments in the life insurance industry over the last decade challenge this traditional
+view. As a consequence of changes in regulation (see Section 2), life insurers are using
+reinsurance to move liabilities fromoperating companies (i.e., regulated and ratedcompanies
+that sell policies) to less regulated and unrated off-balance-sheet entities within the same
+insurance group. These “shadow reinsurers” are captives or special purpose vehicles in
+states (e.g., South Carolina and Vermont) or offshore domiciles (e.g., Bermuda, Barbados,
+and Cayman Islands) with more favorable capital regulation or tax laws. In contrast to
+traditional reinsurance with unaffiliated reinsurers, these transactions do not transfer risk
+because the liabilities stay within the same insurance group.
+Using U.S. data on reinsurance agreements (see Section 3), we document new facts about
+life insurance and annuity liabilities in Section 4, with a special emphasis on the shadow
+insurance sector. We find that liabilities ceded to shadow reinsurers grew significantly from
+$11 billion in 2002 to $364 billion in 2012. This activity now exceeds total unaffiliated
+reinsurance in the life insurance industry, which was $270 billion in 2012. Life insurers
+using shadow insurance tend to be larger and capture 48% of the market share for both life
+insurance and annuities. These companies ceded 25 cents of every dollar insured to shadow
+reinsurers in 2012, up from 2 cents in 2002.
+By relaxing capital requirements, shadow insurance could reduce the marginal cost of
+issuing policies and thereby improve retail market efficiency. However, shadow insurance
+could also reduce risk-based capital because it allows life insurers to issue more policies for
+a given amount of equity. We develop a simple model in Section 5 to illustrate these effects.
+In our model, a holding company consists of an operating company that sells policies and
+an affiliated reinsurer whose only role is to assume reinsurance from the operating company.
+The key friction is that required capital in the two companies is regulated, and the operating
+company faces tighter capital regulation than the affiliated reinsurer.1 Affiliated reinsurance
+1Wetakeasgiventhatlifeinsurersareregulated,whichbreakstheModiglianiandMiller(1958)theorem.
+The deeper economic frictions that justify regulation include informational frictions and agency problems,
+2
+
+allows the holding company to reallocate liabilities between the two companies to reduce the
+overall cost of regulatory frictions.
+The model predicts that affiliated reinsurance reduces the operating company’s marginal
+cost of issuing policies and increases the equilibrium supply in the retail market. To quan-
+tify this effect, we estimate a differentiated product demand system for the life insurance
+market, assuming oligopolistic price setting (Berry, Levinsohn, and Pakes (1995)). Our iden-
+tifying assumption is that shadow insurance reduces the operating company’s marginal cost,
+but it does not affect demand directly. Our structural estimates imply that shadow insur-
+ance reduces life insurance prices by 10% for the average company and increases annual life
+insurance issued by $6.8 billion for the industry, which is 7% of the current market size.
+If rating agencies and retail customers already have full knowledge of shadow insurance,
+life insurers and regulators should be indifferent to disclosing the financial statements of
+captives, or they may even prefer full disclosure to avoid any chance of misinterpretation.
+Yet, the financial statements of captives are not publicly available, except for those recently
+released by the Iowa Insurance Division (2014). This leaves open the possibility that shadow
+insurancereducesrisk-basedcapitalandincreasesexpectedlossfortheindustry. InSection6,
+we discuss the evidence from Lawsky (2013) and the financial statements of Iowa captives,
+which suggest that captives have significantly less equity than operating companies. We
+also quantify the potential risk of shadow insurance by adjusting measures of risk based
+on publicly available data and plausible assumptions. Our adjustment reduces risk-based
+capital by 53 percentage points (or 3 rating notches) and increases the 10-year cumulative
+default probability by a factor of 3.5 for the average company using shadow insurance.
+Our work on life and annuity reinsurance is related to the literature on property and
+casualty reinsurance. This literature finds that property and casualty reinsurance is used for
+various reasons, including risk transfer as well as capital and tax management (Mayers and
+Smith (1990), Adiel (1996)). For life insurers, risk transfer has always been a less important
+motive because of the more predictable nature of their business, which explains why there
+is relatively little unaffiliated reinsurance. All of the growth in life and annuity reinsurance
+over the last decade is within the same insurance group, which points to capital and tax
+management as the primary motive for this activity.
+Our work is also related to the literature on financial and regulatory frictions on the
+supply side of insurance markets. In particular, some recent papers show that capital reg-
+ulation and accounting rules, when they interact with financial frictions, affect investment
+behavior ontheasset side of thebalance sheet (Merrill, Nadauld, Stulz, andSherlund (2012),
+Becker andOpp(2013),Becker andIvashina(2015),Ellul, Jotikasthira, Lundblad, andWang
+such as moral hazard in the presence of state guaranty funds (Lee, Mayers, and Smith (1997)).
+3

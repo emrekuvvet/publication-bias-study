@@ -1,0 +1,138 @@
+NBER WORKING PAPER SERIES
+SUBSIDY TARGETING WITH MARKET POWER
+Maria Polyakova
+Stephen P. Ryan
+Working Paper 26367
+http://www.nber.org/papers/w26367
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2019, Revised August 2021
+We are grateful to David Card, Keith Ericson, Mark Shepard, and Pietro Tebaldi for their
+discussions of the paper, and seminar participants at Daniel McFadden 80th Birthday Conference,
+Junior Health Economics Summit, Ohlstadt Workshop, Stanford University, London School of
+Economics, American Society of Health Economists, Yale University, University of Connecticut,
+Columbia University, Bates White Life Sciences Symposium, University of Munich, 2018
+REStud Reunion Conference, Rice University, University of Utah, University of Leuven, Georgia
+State University, UNC Chapel Hill, SUNY Stony Brook, University of Toronto, MIT, 2019 Penn
+State-Cornell Econometrics & IO Conference, Stanford University, University of Wisconsin
+Madison, NBER Health Care Meetings, and NBER Public Economics Meetings for helpful
+comments. We thank Alan Jaske, Lynn Hua, and Vinni Bhatia for excellent research assistance.
+Support of preliminary work related to this research by the Agency for Healthcare Research and
+Quality is gratefully acknowledged (grant R03-HS024800). The views expressed herein are those
+of the authors and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2019 by Maria Polyakova and Stephen P. Ryan. All rights reserved. Short sections of text, not
+to exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Subsidy Targeting with Market Power
+Maria Polyakova and Stephen P. Ryan
+NBER Working Paper No. 26367
+October 2019, Revised August 2021
+JEL No. H0,H2,H20,H21,H22,H23,H31,H41,H5,H51,I1,I10,I11,I13,I18,I38,L0
+ABSTRACT
+Public programs frequently use observable characteristics of recipients, such as income, to target
+benefits. We show theoretically that when the provision of the subsidized good is decentralized to
+intermediaries with market power, targeting of subsidies induces a “demographic externality” that
+can distort the incidence and efficiency of public transfers. We examine this possibility
+empirically in the context of means-tested subsidies for privately-provided health insurance under
+the Affordable Care Act (ACA). We estimate that the overall incidence of premium subsidies on
+consumers in ACA Marketplaces is less than 50 percent, and a third of net government spending
+on premium subsidies is a deadweight loss. Market power in the presence of means-tested
+subsidies leads to regressive redistribution, lowering consumer surplus and rates of insurance in
+the poorer population targeted by subsidies. Under sufficiently high social preferences for
+redistribution, however, means-tested subsidies still dominate income-invariant transfers.
+Maria Polyakova
+Center for Health Policy
+Stanford School of Medicine
+Encina Commons, Room 182
+615 Crothers Way
+Stanford, CA 94305
+and NBER
+maria.polyakova@stanford.edu
+Stephen P. Ryan
+Olin Business School
+Washington University in St. Louis
+Campus Box 1133
+One Brookings Drive
+St. Louis, MO 63130
+and NBER
+stephen.p.ryan@wustl.edu
+
+1 Introduction
+Many public programs, such as housing assistance, food stamps, health insurance, free school
+lunch, and energy assistance, are in-kind government transfers targeted to recipients based
+on observable characteristics such as income, age, employment, family, or disability status
+(Akerlof, 1978; Nichols and Zeckhauser, 1982; Smeeding, 1984; Currie and Gahvari, 2008;
+Hoynes and Schanzenbach, 2016). The literature studying the economic costs and benefits of
+such transfers has almost exclusively focused on potential distortions in recipients’ behavior,
+whileassumingthatthesubsidizedgoodsorservicesareprovidedbyabenevolentgovernment
+or perfectly competitive firms (recent examples include Jacob and Ludwig, 2012; Allcott et
+al., 2015; Lieber and Lockwood, 2019; Basurto et al., 2017; Hendren and Sprung-Keyser,
+2020). In practice, however, governments are increasingly relying on imperfectly competitive
+intermediaries to deliver subsidized benefits.1 The fiscal magnitude of this shift is staggering.
+In health insurance alone, for example, the US government spends $0.6 trillion annually
+in subsidies for products provided by private firms (CBO, 2019a,b,c), with an expansion
+projected under the Biden administration for 2021 onward.2 Yet, despite the importance of
+understanding the economics of such environments for policy-making, the existing literature
+provides little guidance on how the presence of profit-maximizing intermediaries may affect
+the productive efficiency and the allocative properties of targeted in-kind transfers.
+In this paper, we seek to close this gap by extending the literature along two dimen-
+sions. First, we combine insights from both public economics and industrial organization to
+outline a set of fundamental economic forces that characterize the equilibrium outcomes of
+subsidy targeting under market power. Second, we apply these insights to the subsidized
+health insurance market that was launched under the Affordable Care Act in 2014 (hereafter:
+“ACA Marketplaces”), an important empirical setting that provides insurance to nearly ten
+million people in the United States and costs the federal government more than $40 bil-
+lion in annual outlays. Conceptually, we show that in addition to the standard imperfect
+pass-through of subsidies to consumers, a subsidy-induced “demographic externality” arises.
+Targeted transfers change the relative importance of different consumers in the firm’s profit-
+maximization problem and the equilibrium price a given consumer faces becomes a function
+1Privateprovisionisfrequentlymotivatedbythedesiretoimproveprogramefficiencythroughcompetition
+as well as to reduce fiscal uncertainty for federal and state program budgets.
+2Contractingwithprivatefirmstoprovidepublicbenefitsisparticularlycommoninhealthcare. Poterba
+(1996)outlinesthestarkdifferencesinthechoiceofpublicpolicyinstrumentsbetweeneducationandhealth
+care, highlighting the much more common payment to private agents—rather than direct provision—in the
+health domain.
+1
+
+of her neighbors’ eligibility for transfers.3 This externality can distort both which consumers
+benefit from subsidies and aggregate efficiency. In our ACA setting, we find that only 50%
+of surplus generated by subsidies is passed through to consumers, while the rest is captured
+by firms. Critically, we find that the interaction of market power with targeting generates
+regressive distributional effects in ACA markets, leading to disproportionately lower con-
+sumer surplus and insurance rates among lower income and older consumers relative to an
+environmentwithperfectcompetition, workingcountertothepolicy-makers’targetinggoals.
+The subsidy-driven interdependency of consumers belongs to a broader class of mecha-
+nisms where equilibrium outcomes are a function of the distribution of heterogeneous con-
+sumers in the same market. An extensive literature has studied several distinct types of
+such mechanisms. The classic notion of adverse or advantageous selection, for example, is
+a cost-driven demographic externality in which consumers are linked through risk pooling
+(Rothschild and Stiglitz, 1976). Tebaldi (2017), which is the closest work to our paper, both
+methodologically and in terms of the empirical context, examines such cost-based externality
+in the California ACA market. He estimates efficiency distortions that arise because insurers
+pool risks across consumers of different ages that have different costs, but are constrained in
+how much they can price-discriminate based on age. Demand-driven demographic externali-
+ties can arise due to the pooling of consumers with heterogeneous preferences. For example,
+features of differentiated products available to a consumer may depend on the preferences of
+the consumer’s neighbors (George and Waldfogel, 2003; Waldfogel, 2003). In general, when
+price discrimination is prohibited, the price a given group pays is a function of the distribu-
+tion of other demand types (Stole, 2007). In markets with selection, differences in consumer
+demand types may correlate with differences in costs, combining preference-based and cost-
+based spillovers (Finkelstein and McGarry, 2006; Handel et al., 2019; Shepard, 2016). In this
+paper, we develop a modeling strategy that encompasses these disparate effects in a unified
+framework. This allows us to assess the equilibrium interactions of the cost, demand, and
+subsidy spillover channels with market power.
+The aggregate direction of distortions attributable to the interaction of market power and
+targeted transfers is theoretically ambiguous and is thus an empirical question in any given
+setting. In this paper, we ask this empirical question in the context of a publicly subsidized
+health insurance market. We consider ACA Marketplaces facilitated through the federal
+online platform www.healthcare.gov that operates in 36 states. The ACA Marketplaces
+3The externality does not arise if firms are able to perfectly price-discriminate and set a different price
+for each group of differentially targeted consumers. Such perfect price discrimination is rarely possible in
+practice. In our empirical context, for instance, insurers are regulated to set one price per market.
+2

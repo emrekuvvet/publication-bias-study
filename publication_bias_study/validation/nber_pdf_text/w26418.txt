@@ -1,0 +1,138 @@
+NBER WORKING PAPER SERIES
+MEASURING “DARK MATTER” IN ASSET PRICING MODELS
+Hui Chen
+Winston Wei Dou
+Leonid Kogan
+Working Paper 26418
+http://www.nber.org/papers/w26418
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+November 2019, Revised December 2021
+We are grateful to Stefan Nagel (the Editor), an Associate Editor, and two referees for their
+helpful suggestions. We thank Xiaohong Chen, Frank Schorfheide, Martin Schneider, and
+especially Lars Hansen for detailed comments and discussions. We also thank Torben Andersen,
+Bradyn Breon-Drish, Murray Carlson, John Cochrane, Ian Dew-Becker, Frank Diebold, Stefano
+Giglio, Robert Korajczyk, Anna Mikusheva, Tom Sargent, Laura Veldkamp, Jessica Wachter,
+Tan Wang, Amir Yaron, Fernando Zapatero, Stan Zin, and seminar and conference participants at
+University of Chicago, MIT Sloan, CKGSB, INSEAD, Northwestern, Harvard, NYU Stern, Yale,
+Washington University in St. Louis, University of Pennsylvania, Chicago CITE, ITAM Finance
+Conference, Macrofinance Society Workshop, Macro Financial Modeling Meeting, NBER Asset
+Pricing Meeting, NBER SI Meeting on Capital Markets and Economy, Red Rock Finance
+Conference, UBC Winter Finance Conference, Utah Winter Finance Conference, and WFA for
+their comments. We thank Di Tian for his superb research assistance. All errors are our own. The
+views expressed herein are those of the authors and do not necessarily reflect the views of the
+National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2019 by Hui Chen, Winston Wei Dou, and Leonid Kogan. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that
+full credit, including © notice, is given to the source.
+
+Measuring “Dark Matter” in Asset Pricing Models
+Hui Chen, Winston Wei Dou, and Leonid Kogan
+NBER Working Paper No. 26418
+November 2019, Revised December 2021
+JEL No. C52,D81,E32,G12
+ABSTRACT
+We formalize the concept of “dark matter” in asset pricing models by quantifying the additional
+informativeness of cross-equation restrictions about fundamental dynamics. The dark matter
+measure captures the degree of fragility for models that are potentially misspecified and unstable:
+a large dark matter measure signifies that the model lacks internal refutability (weak power of
+optimal specification tests) and external validity (high overfitting tendency and poor out-of-
+sample fit). The measure can be computed at low cost even for complex dynamic structural
+models. To illustrate its applications, we provide quantitative examples applying the measure to
+(time-varying) rare-disaster risk and long-run risk models.
+Hui Chen Leonid Kogan
+MIT Sloan School of Management MIT Sloan School of Management
+100 Main Street, E62-637 100 Main Street, E62-636
+Cambridge, MA 02142 Cambridge, MA 02142
+and NBER and NBER
+huichen@mit.edu lkogan@mit.edu
+Winston Wei Dou
+2318 Steinberg Hall - Dietrich Hall
+The Wharton School at
+University of Pennsylvania
+3620 Locust Walk
+Philedalphia, PA 19104
+wdou@wharton.upenn.edu
+
+1. Introduction
+In cosmology, dark matter is a form of substance that is not directly observable, yet its presence
+is required for Einstein’s theory of general relativity to be consistent with the observable motions
+of stars and galaxies. Certain economic models rely on an analogous form of “dark matter.” For
+instance, to generate desirable predictions, many asset pricing models require subtle dynamics for
+the fundamentals (the process of endowment or productivity, for example), which are difficult to
+identify directly using the fundamental data alone. Instead, the evidence can only be indirectly
+inferred from asset prices through the lens of model-implied restrictions. This phenomenon is
+present, for instance, in some of the models of rare disasters, to which John Campbell refers as
+the “dark matter for economists” in his 2008 Princeton Lecture in Finance (Campbell, 2018).
+Intuitively, a model’s heavy reliance on such “dark matter” features raises at least two
+concerns regarding its robustness. First, it is difficult to detect potential misspecification in
+the dark matter elements of a model due to our inability to measure them or test against them
+using direct evidence. As such, economic dark matter effectively raises a model’s degrees of
+freedom. Second, as we estimate structural parameters from the data, the high effective degrees
+of freedom are likely to cause the model to overfit the data in sample, and lead to poor expected
+fit out of sample. We refer to these two problems as a lack of internal refutability and external
+validity, respectively.
+Our paper makes two contributions. We propose a quantitative measure of the economic
+dark matter in structural models, which is relatively easy to compute even for models with
+complex dynamics. Then, under a general semiparametric framework, we formally show that
+models with larger dark matter measures tend to have lower in-sample refutability and less
+reliable out-of-sample performance owing to their higher tendency to overfit the data.
+We define our measure of economic dark matter using a general GMM framework (see Hansen,
+1982), under which a structural model is summarized by a fixed set of unconditional moment
+restrictions. We focus on a set of model parameters that can be identified by the full set of
+moment restrictions, referred to as the full model, and by a subset of the moment restrictions
+on the fundamentals, referred to as the baseline model. These parameters can be more precisely
+estimated through the additional moment restrictions implied by the structural model. These
+additional moment restrictions are often referred to as cross-equation restrictions. Our dark
+matter measure quantifies the additional informativeness of cross-equation restrictions about
+these model parameters. Specifically, it compares the asymptotic variances of two efficient
+GMM estimators based on the baseline model and the full model, which imposes cross-equation
+restrictions, and searches for the largest discrepancy between the two asymptotic variances
+along all directions. For a model that relies heavily on dark matter, cross-equation restrictions
+appear highly informative about the parameters of the fundamental dynamics relative to the
+2
+
+fundamental data alone. It is important to note that, despite its close connection to asymptotic
+variances of efficient GMM estimators, economic dark matter is a model property and not a
+small-sample problem that can be ignored if one has sufficiently many observations.1
+We formally connect our measure of economic dark matter to model fragility. Our notion of
+model fragility is concerned with testing power and expected out-of-sample fit in the presence of
+potential misspecification and local instability of the data-generating process (DGP). Intuitively,
+a structural model that can fit the data well in sample because of its high effective degrees of
+freedom, with some key model parameters insufficiently disciplined by direct evidence, is difficult
+to refute in statistical tests.2 If a model is correctly specified, imposing highly informative
+cross-equation restrictions can significantly improve the precision of model parameter estimates,
+and thus the accuracy of the model’s fit in and out of sample. However, if cross-equation
+restrictions are potentially misspecified, excessive reliance on the information derived from such
+restrictions tends to degrade the out-of-sample fit of the model despite its apparently strong
+in-sample performance.
+We analyze the consequences of misspecification and local instability of the DGP by gener-
+alizing the framework of Li and Mu¨ller (2009) to the semiparametric setting.3 We show that
+models with large dark matter measures are difficult to reject even when they are misspecified –
+thus, such models lack refutability. In fact, we prove that the power of the optimal specification
+tests vanishes as the dark matter measure approaches infinity. Moreover, under the worst cases
+of local instability of the DGP, models with larger dark matter measures have a higher expected
+degree of overfitting, i.e., a larger gap between the expected in-sample and out-of-sample model
+fit based on the Sargan-Hansen J statistic. This model property is not captured fully by the
+traditional measures of overfitting that depend on the number of free model parameters (e.g.,
+AIC, BIC, among many others). In contrast, our measure focuses on the sensitivity of the model
+fit to perturbations in the parameters of the DGP.
+In practice, sensitivity analysis is a popular method to examine model fragility. A model
+is considered fragile if its key implications are excessively sensitive to small perturbations of
+the DGP. However, to formalize this notion of model fragility, one needs to specify the relevant
+magnitude of “small perturbations” and define what constitutes “excessive sensitivity.” To assess
+the full scope of model fragility in multivariate settings, one must further consider perturbations
+in the DGP that simultaneously affect multiple model parameters.
+1Cheng, Dou, and Liao (2021) show that dark matter in asset pricing models is inherently connected but not
+limited to weak identification of model parameters. Similarly, as explicitly stressed by Stock, Wright, and Yogo
+(2002), weak identification as a model property is not a small-sample problem either.
+2Kocherlakota (2007) similarly cautions about the “fallacy of fit” in structural economic models.
+3We need a general semiparametric framework for three main reasons: (i) it provides a formal general
+description of local perturbations in the space of DGPs; (ii) it allows us to justify the information-matrix
+interpretationofourdarkmattermeasureusingsemiparametricefficiencybounds; and(iii)itclarifiestherelation
+between a structural economic model and its representation through moment restrictions.
+3

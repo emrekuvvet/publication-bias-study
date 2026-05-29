@@ -1,0 +1,116 @@
+NBER WORKING PAPER SERIES
+SCREENING ADAPTIVE CARTELS
+Juan M. Ortner
+Sylvain Chassang
+Kei Kawai
+Jun Nakabayashi
+Working Paper 30219
+http://www.nber.org/papers/w30219
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2022
+The views expressed herein are those of the authors and do not necessarily reflect the views of the
+National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2022 by Juan M. Ortner, Sylvain Chassang, Kei Kawai, and Jun Nakabayashi. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission provided
+that full credit, including © notice, is given to the source.
+
+Screening Adaptive Cartels
+Juan M. Ortner, Sylvain Chassang, Kei Kawai, and Jun Nakabayashi
+NBER Working Paper No. 30219
+July 2022
+JEL No. C57,C72,D44,H57,L4
+ABSTRACT
+We propose an equilibrium theory of data-driven antitrust oversight in which regulators launch
+investigations on the basis of suspicious bidding patterns and cartels can adapt to the statistical
+screens used by regulators. We emphasize the use of asymptotically safe tests, i.e. tests that are
+passed with probability approaching one by competitive firms, regardless of the underlying
+economic environment. Our main result establishes that screening for collusion with safe tests is a
+robust improvement over laissez-faire. Safe tests do not create new collusive equilibria, and do
+not hurt competitive industries. In addition, safe tests can have strict bite, including unraveling all
+collusive equilibria in some settings. We provide evidence that cartel adaptation to regulatory
+oversight is a real concern.
+Juan M. Ortner Kei Kawai
+Boston University Department of Economics
+270 Bay State Rd. University of California, Berkeley
+Boston, MA 02215 530 Evans Hall #3880
+jortner@bu.edu Berkeley, CA 94720
+and NBER
+Sylvain Chassang kei@berkeley.edu
+Department of Economics
+Princeton University Jun Nakabayashi
+Julis Romo Rabinowitz Building Kindai University
+Princeton, NJ 08544 3-4-1 Kowakae
+and NBER Higashiosaka City
+chassang@princeton.edu Osaka 577-8502
+Japan
+nakabayashi.1@eco.kindai.ac.jp
+
+1 Introduction
+Competition authorities commonly rely on statistical screens to detect and investigate col-
+lusion between firms.1 Even if formal prosecution cannot rely on statistical evidence alone,
+detection tools can greatly facilitate the work of competition authorities. Such evidence can
+be used in court to obtain warrants or authorization for a more intrusive investigation, ulti-
+mately leading to actionable evidence and convictions (see Imhof et al., 2018, for a concrete
+example).2 Statistical evidence may be helpful in convincing cartel members to apply to
+leniency programs. Stakeholders other than antitrust authorities may also find statistical
+screens useful. For example, plaintiffs in civil antitrust complaints can use the results of
+statistical screens to provide sufficient grounds to state a claim under the Sherman Act.3 4
+However, this growth in the use of statistical screens raises numerous questions: Do firms
+adapt to the statistical tests implemented by competition authorities? If so, what is the im-
+pact of such screens in equilibrium? Can the tests backfire and either strengthen cartels, or
+hurt competitive firms? Can we find tests that cause no harm, and yet reduce the incentives
+to form cartels? We provide theory and evidence addressing these questions.
+We propose a model of collusion in the shadow of an antitrust authority. A group of
+firms repeatedly participates in a first-price procurement auction. We allow firms to observe
+arbitrarysignalsaboutoneanother, andallowbidders’coststobecorrelatedwithinperiods.5
+1Competition authorities that use statistical analysis or algorithms to screen for collusion include those
+in Brazil, South Korea, Switzerland and United Kingdom. A report by the OECD (2018) gives a brief
+description of the screening programs used in Brazil, Switzerland and the U.K. A document titled “Cartel
+Enforcement Regime of Korea and Its Recent Development” maintained by the Fair Trade Commission of
+Korea describes South Korea’s bid screening program.
+2Baker and Rubinfeld (1999) give an overview of the use of statistical evidence in court for antitrust
+litigation. In some jurisdictions, statistical evidence from screens have been used successfully to build a
+collusion case in court. See Mena-Labarthe (2015) for a case-study from Mexico.
+3Federal rules of civil procedure in the U.S. requires a statement showing that the plaintiff is entitled to
+relief. Failure to provide grounds of entitlement to relief can result in dismissal of the complaint.
+4Screensforcartelshaveawiderangeofotherusesaswell. Forexample,screeningcanhelpprocurement
+offices counter suspected bidding rings by more aggressively soliciting new bidders or adopting auction
+mechanisms that are less susceptible to collusion. Screening may also be helpful for internal auditors and
+compliance officers of complicit firms to identify collusion and help contain potential legal risks arising from
+compliance failures.
+5Our results extend as is if costs are correlated across periods via a publicly observed exogenous time-
+2
+
+At a finite date T, the antitrust authority observes the history of bids placed by firms, and
+performs a screening test to determine whether or not they acted competitively. Firms that
+don’t pass the test are further investigated, and may incur penalties if found guilty of bid-
+rigging. Investigation may also be costly to non-cartel members. We say that the tests
+used by the antitrust authority are asymptotically safe if and only if competitive bidders
+pass with probability approaching one as data size becomes large under all environments
+in the support of beliefs. Our companion papers Chassang et al. (2022) and Kawai et al.
+(2022b) develop asymptotically safe tests and illustrate their relevance by applying them to
+procurement data from Japan and the US.
+Our main set of results shows that antitrust oversight based on asymptotically safe tests
+is a robust improvement over laissez-faire. First, we show that regulation based on firm-
+level asymptotically safe tests does not significantly expand the set of enforceable collusive
+schemes available to cartels. Hence, asymptotically safe tests don’t increase firms’ incentives
+to form a cartel. This addresses a concern raised by Cyrenne (1999) and Harrington (2004)
+that some natural screens against collusion may backfire and enhance the ability of cartels
+to collude. Second, we establish by example that asymptotically safe tests can have strict
+bite. In complete information settings, optimally colluding bidders submit nearly tied bids.
+Testing for an excessive mass of close bids yields an asymptotically safe test whenever firms
+facestrictlypositivebidpreparationcosts. Thissafetestcausescollusiveequilibriatounravel
+for an open range of discount factors.
+Additionally, consistentwiththeworkofWollmann(2019)andCunninghametal.(2021),
+we provide suggestive evidence that cartels do in fact adapt to regulatory screens. Tests of
+frequent close bids turn out to be similar to variance screens frequently used by regulators
+(Abrantes-Metz et al., 2005, Imhof et al., 2016) that flag auctions with low bid dispersion,
+i.e. auctions whose bids are unusually close together. If regulators scrutinize auctions with
+close bids, a cartel seeking to avoid scrutiny may adapt by instructing its members to refrain
+varying state.
+3

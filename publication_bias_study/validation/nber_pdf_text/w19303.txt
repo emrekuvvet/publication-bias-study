@@ -1,0 +1,125 @@
+NBER WORKING PAPER SERIES
+THE INCENTIVE EFFECT OF SCORES:
+RANDOMIZED EVIDENCE FROM CREDIT COMMITTEES
+Daniel Paravisini
+Antoinette Schoar
+Working Paper 19303
+http://www.nber.org/papers/w19303
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+August 2013
+Previously circulated as "The Incentive Effect of IT: Randomized Evidence from Credit Committees."
+We are grateful to Heski Bar-Isaac, Greg Fischer, Luis Garicano, Danielle Li, Ulrike Malmendier,
+Andrea Prat, Anjan Thakor, John Van Reenen, and the Arizona State University, Boston University,
+Columbia University, Darmouth College - Tuck School of Business, HEC School of Management,
+Imperial College Business School, European Bank for Reconstruction and Development, Federal Reserve
+Bank of New York, Helsinki Center of Economic Research, Massachusetts Institute of Technology
+- Sloan School of Business, Northwestern University - Kellogg School of Management, Nova School
+of Business and Economics, Queen Mary School of Economics and Finance, Swiss Finance Institute
+- USI, University of Illinois Urbana-Champaign, University of Lausanne, University of London - Royal
+Holloway College, University of Namur, University of Oxford - SAID Business School, University
+of Toulouse, and Washington University seminar participants; and the CEPR Workshop on Incentives,
+Management and Organization, CEPR/AMID Development Economics Symposium, the NBER Corporate
+Finance Workshop, the NBER Productivity, Innovation, and Entrepreneurship Workshop, and the
+NBER Organizational Economics Workshop participants for helpful comments and discussions. We
+wish to thank BancaMia for their support, and Gustavo Caballero, Ximena Cadenas, Isabela Echeverry,
+Santiago Reyes and Lucia Sanchez for excellent research assistance. We thank IPA for the funding
+that made this study possible. The views expressed herein are those of the authors and do not necessarily
+reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2013 by Daniel Paravisini and Antoinette Schoar. All rights reserved. Short sections of text, not
+to exceed two paragraphs, may be quoted without explicit permission provided that full credit, including
+© notice, is given to the source.
+
+The Incentive Effect of Scores: Randomized Evidence from Credit Committees
+Daniel Paravisini and Antoinette Schoar
+NBER Working Paper No. 19303
+August 2013, Revised July 2015
+JEL No. D23,G21,L23,O33
+ABSTRACT
+We design a randomized controlled trial to evaluate the adoption of credit scoring with a bank that
+uses soft information in small businesses lending. We find that credit scores improve the productivity
+of credit committees, reduce managerial involvement in the loan approval process, and increase the
+profitability of lending. Credit committee members' effort and output also increase when they anticipate
+the score becoming available, indicating that scores improve incentives to use existing information.
+Our results imply that credit scores improve the efficiency and decentralize decision-making in loan
+production, which has implications for the optimal organization of banks.
+Daniel Paravisini
+Department of Finance
+London School of Economics
+Houghton Street
+London WC2A 2AE
+d.paravisini@lse.ac.uk
+Antoinette Schoar
+MIT Sloan School of Management
+100 Main Street, E62-638
+Cambridge, MA 02142
+and NBER
+aschoar@mit.edu
+
+1 Introduction
+The use of statistical models to analyze the determinants of borrower repayment and
+default behavior is standard in consumer and small business lending.1 The trade-offs
+involved in summarizing complex, multidimensional information into a single summary
+statistic —a credit score— are well understood in theory. On the benefits side, credit
+scoring has a direct effect on productivity by reducing the transaction cost of analyzing
+information. Itcanhaveacomplementaryeffectthroughreducingthecostofincentivizing
+the agents who evaluate loans by making the information they possess easier to monitor
+by the principal. On the costs side, relevant information may be lost in score-based
+lending. This could occur either because the information is difficult to incorporate into
+statistical models (soft information), or because reliance on the score encourages agents
+to only consider the information captured in the score but to ignore any other information
+(multitasking problems).2 Thus, from a theoretical standpoint scores may affect lending
+quantityandqualitythroughdifferentmechanisms,andthesignoftheeffectisambiguous.
+In the present paper we assess empirically whether and through which channel does
+credit scoring affect lending in environments where soft information is a crucial input
+in the lending decision. It is typically difficult to evaluate empirically the trade-offs in
+adopting credit scoring technologies because adoption occurs in response to changes in
+the environment and is bundled with other organizational innovations, such as changes
+in job descriptions or compensation structures.3 Since these also affect productivity and
+1Proprietary credit scoring models are widespread in the banking, credit card, crowd-funding, and
+otherconsumerlendingsectors. Thereisalsoaworldwidecreditscoringindustryforconsumerandbusi-
+ness lending, with Equifax, Transunion, Dun and Bradstreet, and Experian as some its most prominent
+players.
+2Rajan, Seru & Vig (2013) argue more generally that credit scoring is subject to the Lucas Critique:
+sincemodelspredictdefaultonthebasisofhistoricaldata,theymayfailtoaccountforagents’behavioral
+responses to the use of scores.
+3This is the case, for example, in the study by Einav, Jenkins & Levin (2013), which compares the
+change in lending practices by a large auto finance company before and after the adoption of automated
+credit scoring. The problem of endogenous and bundled adoption is not unique to the credit industry.
+See Milgrom & Roberts (1990) for examples in manufacturing and other industries.
+2
+
+incentives directly, they confound the evaluation of the net effect of the introduction of
+credit scores, or of whether scores are substitutes or complements with effort provision by
+the workers involved in the screening process.
+We address these identification challenges by conducting a randomized control trial
+(RCT) with a for-profit bank in Colombia where we were able to change the credit eval-
+uation process of the bank. We also were able to obtain direct measures of the inputs to
+the lending decision, including committee effort. The RCT approach allows us to evalu-
+ate the effect of credit scoring ceteris paribus, holding constant all other determinants of
+lending outcomes. We also design a novel treatment arm that allows us to measure the
+effect of the score holding constant the information set of the committee. The design,
+which we explain in more detail below, measures how committee behavior changes when
+its members anticipate the score becoming available, but before actually observing it.4
+We conduct the research with a for-profit bank in Colombia specialized in loans to
+small enterprises. Since most of the prospective borrowers do not have audited financial
+statements, the bank’s screening process begins when loan officers collect borrower infor-
+mation in the field (e.g., measures of sales, costs, demand volatility). This implies that
+most of the information is only verifiable by the loan officer who collects it. The informa-
+tion is then evaluated by a credit committee that includes the loan officer who collects the
+information and the local branch manager. When committees cannot reach a decision,
+they can take actions that create substantial transaction costs for the bank: they either
+refer the application to the regional manager who will then make the credit decision, or
+send the officer to collect additional information and make the decision in a second round
+4More information may affect agents’ behavior directly (the agent reacts to becoming more informed
+herself)andindirectly(theagentreactstotheprincipalbecomingmoreinformed). Ourtreatmentdesign
+evaluateshowtheagents’reacttotheexpectationoftheprincipalbecomingmoreinformed,andissimilar
+in spirit to the empirical strategy used in Hertzberg, Liberti & Paravisini (2011). That paper evaluates
+how one of the lenders to a firm reacts to the expectation that the private information it possesses about
+thefirmwillbecomepubliclyobservablebytheotherlenderstothesamefirm,butbeforetheinformation
+actually becomes public.
+3

@@ -1,0 +1,123 @@
+NBER WORKING PAPER SERIES
+DO FIRMS RESPOND TO GENDER PAY GAP TRANSPARENCY?
+Morten Bennedsen
+Elena Simintzi
+Margarita Tsoutsoura
+Daniel Wolfenzon
+Working Paper 25435
+http://www.nber.org/papers/w25435
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+January 2019
+We thank our discussants Irem Demirci, Daniel Ferreira, Camille Hebert, David Matsa, Geoff Tate,
+Karin Thorburn, and Rebecca Zarutskie. We are grateful for excellent comments from seminar participants
+at UC San Diego, IESE Barcelona, Columbia Business School, Cornell University, Darden, INSEAD,
+UIC, UCLA, ASU, and conference participants at LBS Summer Finance Symposium, Stanford SITE
+conference, CEPR Incentives, Management and Organization 2018 conference, European Commission-Gender
+equality Unit, Colorado Finance Summit, Swedish House of Finance and AFFECT conference, the
+Corporate Finance Beyond Public Companies conference, 2019 SOLE conference, 2019 EFA meetings,
+2019 WFA meetings, and 2020 AEA meetings. We thank Brian J. Lee and Jiacheng Yan for excellent
+research assistance, He Zhang for data management, and help with data understanding from Mona
+Larsen (VIVE), Helle Holt (VIVE) and Maria Boysen (Statistic Office Denmark). We are grateful
+for financial support from the Danish National Research Foundation (Niels Bohr Professorship).The
+views expressed herein are those of the authors and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2019 by Morten Bennedsen, Elena Simintzi, Margarita Tsoutsoura, and Daniel Wolfenzon. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Do Firms Respond to Gender Pay Gap Transparency?
+Morten Bennedsen, Elena Simintzi, Margarita Tsoutsoura, and Daniel Wolfenzon
+NBER Working Paper No. 25435
+January 2019, Revised April 2020
+JEL No. G18,G28,J16
+ABSTRACT
+We examine the effect of pay transparency on gender pay gap and firm outcomes. This paper exploits
+a 2006 legislation change in Denmark that requires firms to provide gender disaggregated wage statistics.
+Using detailed employee-employer administrative data and a difference-in-differences and difference-in-discontinuities
+designs, we find the law reduces the gender pay gap, primarily by slowing the wage growth for male
+employees. The gender pay gap declines by approximately two percentage points, or a 13% reduction
+relative to the pre-legislation mean. Despite the reduction of the overall wage bill, the wage-transparency
+mandate does not affect firm profitability, likely because of the offsetting effect of reduced firm productivity.
+Morten Bennedsen Margarita Tsoutsoura
+Department of Economics SC Johnson College of Business
+INSEAD Cornell University
+Fontainebleau Ithaca, NY 14853
+France and NBER
+Morten.BENNEDSEN@insead.edu tsoutsoura@cornell.edu
+Elena Simintzi Daniel Wolfenzon
+University of North Carolina at Chapel Hill Graduate School of Business
+Kenan-Flagler Business School Columbia University
+Chapel Hill, NC Uris Hall, Room 808
+United States 3022 Broadway
+Elena_Simintzi@kenan-flagler.unc.edu New York, NY 10027
+and NBER
+dw2382@columbia.edu
+
+I Introduction
+Gender pay disparities characterize labor markets in most developed countries
+(Goldin, 2014; Blau and Kahn, 2017). When a man earns $100, a woman earns $77
+in the US (Goldin, 2014), $78.5 in Germany, $79 in the UK, and $83.8, on average,
+across EU countries (Eurostat, 2016). Recent proposals across many countries focus on
+paytransparencytopromoteequalpay.1 However, evidenceontheeffectoftransparency
+on gender pay disparities on employee and firm outcomes is limited. In this paper, we
+draw insights from a regulation in Denmark that increased transparency by requiring
+companies to inform employees of average wages by gender and occupation.
+The debate about the consequences of disclosing gender wage gaps is ongoing. Gov-
+ernments often propose transparency as a tool to encourage firms to reduce the wage
+gap between men and women. Unions and employee groups representing women also
+seem to believe secrecy about pay contributes significantly to unequal pay for women.2
+Opponents of pay transparency argue disclosing gender pay comes as a challenge to firms
+because it lacks practical utility, increases administrative burden, and violates employee
+privacy.3
+The effect of transparency on the gender pay gap and firm outcomes is ultimately
+an empirical question. Whether transparency will provide sufficient incentives for firms
+1In the UK, employers of firms with more than 250 employees have to publish gender-based wage
+statisticsfromApril2018. InGermany,employeeshavetherighttoknowthemediansalaryforagroup
+of comparable employees in firms with more than 200 employees. An executive order signed by the US
+government in 2016 required large companies to report salary data broken down by gender starting in
+2017, but the succeeding administration overturned the rule.
+2AFL-CIO runs a petition campaign as a response to the halt of the equal pay initiative that
+would have required large corporations to report pay data by gender to the Equal Employment Op-
+portunity Commission. https://actionnetwork.org/petitions/tell-the-eeoc-we-need-the-equal-pay-data-
+collection?source=website. The Institute for Women’s Policy Research in a survey documents 60% of
+employees are discouraged or prohibited from sharing wage information, and concludes pay secrecy is
+an important determinant of the gender gap in earnings (IWPR, 2014).
+3See, for example, a letter representing employers against a bill in California that requires large
+firms in the state to file reports detailing the gender pay gap for people working in the same position.
+http://blob.capitoltrack.com/17blobs/e3526ab2-1360-4461-a1d3-b0580abe6172
+– 2 –
+
+to adjust their compensation policies is unclear. Moreover, these wage adjustments
+might have unintended consequences for firm outcomes, such as firm productivity and,
+eventually, profitability.
+Studying this question empirically requires addressing two key challenges: finding
+exogenous variation in wage transparency at the firm level and obtaining information on
+wages and employment at the individual level. For the source of exogenous variation,
+we exploit a 2006 legislation change in Denmark that requires firms with more than
+35 employees to report salary data broken down by gender for employee groups large
+enough for individual’s anonymity to be protected. Firms must inform their employees
+of wage gaps between men and women and explain the design of the statistics and the
+wage concept used. For data on wages and employment at the individual level, we use
+administrative records from the Danish Statistics matched employee-employer dataset.
+In our research design, we compare employees in firms above the 35-employee thresh-
+old with employees in firms below. Because firm size can influence wage dynamics and
+firm outcomes, our sample includes only employees in firms in a narrow band around 35
+employees. Specifically, we estimate a difference-in-differences model (diff-in-diff) where
+treated employees are those working in firms that employ 35-50 employees prior to the
+introduction of the law and the control employees are those working in firms with 20-34
+workers.
+In our specifications, we control for a variety of time-varying firm and individual
+characteristics (age, work experience, firm size), year fixed effects, interacted individual
+and firm fixed effects, and interacted firm and year fixed effects. By including individual-
+firm fixed effects, we control for time-invariant person characteristics, time-invariant firm
+characteristics, and the match between firms and workers. In essence, these fixed effects
+allow us to compare the same employee at the same firm before and after the regulation.
+By including firm-year fixed effects, we absorb any time-varying shocks at the firm level
+that may be correlated with wages.
+Intermsoftheeffectoftransparencyonfirmcompensationpolicies, wefindthatafter
+– 3 –

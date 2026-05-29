@@ -1,0 +1,142 @@
+NBER WORKING PAPER SERIES
+DANCING WITH ACTIVISTS
+Lucian A. Bebchuk
+Alon Brav
+Wei Jiang
+Thomas Keusch
+Working Paper 26171
+http://www.nber.org/papers/w26171
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+August 2019
+This discussion paper was prepared for publication in the Journal of Financial Economics. We
+have benefitted from the comments of Manuel Adelino, Amil Dasgupta, Veljko Fotak, Oliver
+Hart, Scott Hirst and participants in the 2015 FMA International Consortium on Activist
+Investors, Corporate Governance and Hedge Funds in London, the 2015 FMA International
+meeting in Helsinki, and workshops at Harvard, INSEAD, NYU, and Maastricht University. We
+are especially indebted to an anonymous referee for many valuable suggestions. We also wish to
+thank Brady Baldwin, Seung Hwan Bang, Vlad Bouchouev, Hannah Clark, Ahmet Degerli,
+Timothy Goh, Robert Holowka, Wenyin Huang, Kirti Kamboj, Kobi Kastiel, Zheng Li, Cong
+Liu, Yaron Nili, John Rady, Qingrong Ruan, June Rhee, Ruoxi Tian, Jun Xu, Jiaqi Yang, Zilan
+Yang, Kailei Ye, and Lu Zheng for their excellent research assistance. Finally, we are also
+grateful to many practitioners affiliated with the Harvard Law School Program on Corporate
+Governance, including senior proxy solicitors, investment bankers, and hedge fund officers, for
+helpful discussions about activist settlements. Financial support was provided by the INSEAD
+Corporate Governance Centre, Columbia Business School, Duke, and Harvard Law School. The
+views expressed herein are those of the authors and do not necessarily reflect the views of the
+National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2019 by Lucian A. Bebchuk, Alon Brav, Wei Jiang, and Thomas Keusch. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Dancing With Activists
+Lucian A. Bebchuk, Alon Brav, Wei Jiang, and Thomas Keusch
+NBER Working Paper No. 26171
+August 2019
+JEL No. G12,G23,G32,G35,G38,K22
+ABSTRACT
+An important milestone often reached in the life of an activist engagement is entering into a
+“settlement” agreement between the activist and the target’s board. Using a comprehensive hand-
+collected data set, we analyze the drivers, nature, and consequences of such settlement
+agreements. Settlements are more likely when the activist has a credible threat to win board seats
+in a proxy fight and when incumbents’ reputation concerns are stronger. Consistent with
+incomplete contracting, face-saving benefits and private information considerations, settlements
+commonly do not contract directly on operational or leadership changes sought by the activist but
+rather on board composition changes. Settlements are accompanied by positive stock price
+reactions, and they are subsequently followed by changes of the type sought by activists,
+including CEO turnover, higher shareholder payouts, and improved operating performance. We
+find no evidence to support concerns that settlements enable activists to extract rents at the
+expense of other investors. Our analysis provides a look into the “black box” of activist
+engagements and contributes to understanding how activism brings about changes in target
+companies.
+Lucian A. Bebchuk Harvard Wei Jiang
+Law School Graduate School of Business
+1545 Massachusetts Avenue Columbia University
+Cambridge, MA 02138 and 3022 Broadway, Uris Hall 803
+NBER New York, NY 10027
+bebchuk@law.harvard.edu and NBER
+wj2006@columbia.edu
+Alon Brav
+Fuqua School of Business Thomas Keusch
+Duke University INSEAD
+One Towerview Drive Boulevard de Constance
+Durham, NC 27708 Fontainebleau Cedex 77305
+and NBER France
+brav@duke.edu thomas.keusch@insead.edu
+A data appendix is available at http://www.nber.org/data-appendix/w26171
+
+1. Introduction
+In August 2013, Third Point, the hedge fund led by Daniel Loeb, disclosed a significant
+stake in the auction house Sotheby’s, criticized the company for its poor governance and its failure
+to take advantage of a booming market for luxury goods, and called for the ouster of the company’s
+CEO. Third Point launched a proxy fight for board representation and both sides were preparing
+for a contested election at the company’s upcoming annual meeting. However, the day before the
+scheduled annual shareholder meeting, the company and the activist fund entered into a settlement
+agreement in which Sotheby’s agreed to appoint three of the Third Point director candidates and
+Third Point agreed to discontinue the proxy fight. The settlement terms did not require the
+company to make any of the operational and executive changes that Third Point was seeking.
+However, ten months later, Sotheby’s announced the hiring of a new CEO, the appointment of a
+new board chairman, and a plan to return capital to its investors.
+While such settlements used to be rare, they now occur with significant frequency, and
+they have been attracting a great deal of media and practitioner attention. Understanding settlement
+agreements is important for obtaining a complete picture of the corporate governance landscape
+and the role of activism within it. Using a comprehensive, hand-collected dataset of settlement
+agreements, this paper provides the first systematic empirical investigation of settlements between
+activists and target companies. We study the drivers of settlements, their growth over time, the
+terms of settlements and their impact on board composition, and the stock market reaction
+accompanying them. We further study the aftermath of settlements in terms of CEO turnover,
+payouts to shareholders, M&A activity, and operating performance.
+With the growing recognition of the importance of hedge fund activism, a large empirical
+literature on the subject has emerged [see Brav et al. (2015b) for a recent survey]. This literature
+has extensively studied the initiation of activist interventions – the time at which activists announce
+their presence, usually by filing a Schedule 13(d) with the SEC after passing the 5% ownership
+threshold, and the stock market reactions accompanying such announcements.1 This literature has
+1 Studies analyzing such initiations, including the stock market reactions accompanying them, and the stock
+accumulations preceding them, include Clifford (2008); Klein and Zur (2009); Boyson, and Mooradian (2011); Brav,
+Jiang, Partnoy, and Thomas (2008); Bebchuk, Brav, Jackson, and Jiang (2013); Mietzner and Schweizer (2014);
+Edmans, Fang, and Zur (2013); Collin-Dufresne and Fos (2015); Becht, Franks, Grant, and Wagner (2017); Norli,
+1
+
+also studied extensively the changes in the value, performance, and behavior of firms in the years
+following activist interventions; among other things, researchers have studied the changes in
+Tobin’s Q, return on assets (ROA), productivity, innovation, payouts to shareholders, likelihood
+of an acquisition, divestitures, internal capital markets, and accounting practices that ultimately
+follow activist interventions.2 But there has been limited empirical work on the “black box” in
+between – the channels through which activists’ influence is transmitted and is reflected in targets’
+economic outcomes.3 In particular, the determinants, nature, and role of settlement agreements –
+and the cooperation between activists and companies that they target – have not been subject to a
+systematic empirical examination. Our study fills this gap.4
+We begin by quantifying the upward trend in activist settlements. We show that the
+unconditional likelihood of an activism campaign leading to a settlement increased sevenfold and
+almost linearly from 3% for campaign launched in 2000 to 21% for campaigns launched in 2013.
+This increase in the prevalence of settlement agreements is much stronger than the increase in
+contested votes during the same period. While contested votes also occurred in 3% of all activism
+campaigns started in 2000, this ratio only increases to 6% for campaigns started in 2013.
+We build on the insights generated by the economics of litigation and settlements to put
+forward hypotheses concerning the determinants of which cases will produce a settlement, rather
+than end up without either a contested vote or a settlement. We hypothesize that settlements are
+more likely in cases in which the activist has good chances to win board seats should a contested
+Oostergard, and Schindele (2015); Gantchev and Jotikasthira (2017); Back, Collin-Dufresne, Fos, Li, and Ljungqvist
+(2018); and Boyson, Ma, and Mooradian (2016).
+2 Studies of the subject include Brav, Jiang, Partnoy, and Thomas (2008); Clifford (2008); Klein and Zur (2009, 2011);
+Greenwood and Schor (2009); Becht, Franks, Mayer, and Rossi (2009); Boyson and Mooradian (2011); Cheng,
+Huang, Li, and Stanfield (2012); Sunder, Sunder, and Wongsunwai (2014); Gow, Shin, and Srinivasan (2014, 2016);
+Cheng, Huang, and Li (2015); Bebchuk, Brav, and Jiang (2015); Brav, Jiang, and Kim (2015a); Boyson and Pichler
+(2019); Brav, Jiang, Ma, and Tian (2018); Aslan and Kumar (2016); Boyson, Gantchev, and Shivdasani (2017);
+Boyson, Ma, and Mooradian (2016); Corum and Levit (2018); Gantchev, Gredil, and Jotikasthira (2018); Jiang, Li,
+and Mei (2018); Krishnan, Partnoy, and Thomas (2016); Johnson and Swem (2017); Swanson and Young (2017);
+Bourveau and Schoenfeld (2017); Hege and Zhang (2019); Guo, Utham, and Wang (2019); Kim (2018); and Gantchev,
+Sevilir, and Shivdasani (2019).
+3 Some studies have provided insights on the engagement process [see, e.g., Appel, Gormley, and Keim (2018); Becht,
+Franks, Mayer, and Rossi (2009); Boyson and Pichler (2019); Corum (2018); Gantchev (2013); He and Li (2018);
+Levit (2018); and McCahery, Sautner, and Starks (2016)]. However, none of the empirical studies has paid significant
+attention to investigating settlement agreements and their role.
+4 Recent work by Schoenfeld (2018) studies the determinants (but not the terms or consequences) of contracts between
+a wide variety of shareholders (not focusing on activists) and publicly-traded companies. In contrast to the settlement
+agreements in our study, the contracts in his study include a variety of provisions that pertain to financing terms,
+trading, directorships, payout policy, joint ventures, financial reporting, and selective disclosure.
+2

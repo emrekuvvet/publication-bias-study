@@ -1,0 +1,133 @@
+NBER WORKING PAPER SERIES
+SOURCES AND TRANSMISSION OF COUNTRY RISK
+Tarek Alexander Hassan
+Jesse Schreger
+Markus Schwedeler
+Ahmed Tahoun
+Working Paper 29526
+http://www.nber.org/papers/w29526
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+November 2021
+For excellent research assistance, we thank Nanyu Chen, Angus Lewis, Meha Sadasivam, and
+George Vojta. We are grateful to seminar participants at the AEA annual meeting, the Bank of
+Canada, the NBER Summer Institute, the Macro Finance Society, the Chicago International
+Finance and Macro Conference, Hoover, Boston University, Columbia University, Princeton
+University, University of Geneva, University of British Columbia, University of Maryland,
+University of Virginia, University of Wisconsin. In particular, we thank Tom Ferguson, Pia
+Malaney, Geert Bekaert, Karen Lewis, Matteo Maggiori, Chris Moser, Fernanda Nechio,
+Tommaso Porzio, Laura Veldkamp, Frank Warnock, Shang-Jin Wei, and Chenzi Xu for their
+comments. Tahoun sincerely appreciates continued support from the Institute for New Economic
+Thinking (INET). Schreger thanks the Jerome A. Chazen Institute for Global Business at
+Columbia Business School for financial support. The data in this paper are publicly available at
+www.country-risk.net. The views expressed herein are those of the authors and do not necessarily
+reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2021 by Tarek Alexander Hassan, Jesse Schreger, Markus Schwedeler, and Ahmed Tahoun.
+All rights reserved. Short sections of text, not to exceed two paragraphs, may be quoted without
+explicit permission provided that full credit, including © notice, is given to the source.
+
+Sources and Transmission of Country Risk
+Tarek Alexander Hassan, Jesse Schreger, Markus Schwedeler, and Ahmed Tahoun
+NBER Working Paper No. 29526
+November 2021
+JEL No. D21,F23,F3,F30,G15
+ABSTRACT
+We use textual analysis of earnings conference calls held by listed firms around the world to
+measure the amount of risk managers and investors at each firm associate with each country at
+each point in time. Flexibly aggregating this firm-country-quarter-level data allows us to
+systematically identify spikes in perceived country risk (“crises”) and document their source and
+pattern of transmission to foreign firms. While this pattern usually follows a gravity structure, it
+often changes dramatically during crises. For example, while crises originating in developed
+countries propagate disproportionately to foreign financial firms, emerging market crises transmit
+less financially and more to traditionally exposed countries. We apply our measures to show that
+(i) elevated perceptions of a country's riskiness, particularly those of foreign and financial firms,
+are associated with significant falls in local asset prices, capital outflows, and reductions in firm-
+level investment and employment. (ii) Risk transmitted from foreign countries affects the
+investment decisions of domestic firms. (iii) Heterogeneous currency loadings on perceived
+global risk can help explain the cross-country pattern of interest rates and currency risk premia.
+Tarek Alexander Hassan Markus Schwedeler
+Department of Economics Boston University
+Boston University 270 Bay State Road
+270 Bay State Road Boston, MA 02215
+Boston, MA 02215 mschwed@bu.edu
+and NBER
+thassan@bu.edu Ahmed Tahoun
+London Business School
+Jesse Schreger 26 Sussex plc, Regent's Park
+Columbia Business School London NW1 4SA
+3022 Broadway United Kingdom
+Uris Hall 821 atahoun@london.edu
+New York, NY 10027
+and NBER
+jesse.schreger@columbia.edu
+A website with all of the underlying data is available at www.country-risk.net
+
+Researchers and policymakers often argue that global perceptions of risk are a major
+driver of international capital flows, financial contagion, and sudden stops. In addition,
+business leaders often cite crises in foreign markets where they may produce, sell, or be
+otherwise exposed as affecting their investment and employment decisions. Although such
+notions of country risk and its transmission across borders feature prominently in policy
+circles and boardrooms, documenting the sources of country risk and its channels of global
+transmission has proven more difficult.
+This paper aims to provide a micro-to-macro approach to studying the sources and trans-
+mission of country risk. We measure perceived country risk at the firm-country-quarter level
+by computing the share of time that global firms’ executives and investors spend discussing
+risks related to countries around the world. In particular, we apply natural language pro-
+cessing (NLP) to more than 300,000 English-language conference call transcripts of publicly
+listed firms headquartered in 82 countries to measure the perceived risks and opportunities
+that each firm associates with each of the 45 largest economies in the world, collectively
+covering more than 90% of world GDP.
+The primitive of our analysis and our key contribution is to measure how much risk
+firm i headquartered in country d(i) associates with country c in quarter t. The major
+advantage of this granular approach to measuring country risk is that it allows for flexible
+aggregations: for example, we can separate global risks from those associated with particular
+countries, firms, and industries; separate the perceptions of different types of firms, such as
+financial vs. non-financial firms; and trace the transmission of risk between countries. A
+second advantage is that our approach to measurement is based on the semantic content of
+text. This enables us to distinguish variation in perceived risk (the second moment) from
+variation in perceived opportunities (the first moment), and to understand the sources of
+risks and opportunities that firms face.
+After validating our granular measure, we successively aggregate it into four different
+dimensions. In the first step of our analysis we average across all firms in our sample to
+obtain an aggregate measure of risk for each of our 45 countries: “Country Risk.”1 To
+validate these aggregate measures we show that increases in a country’s perceived riskiness
+1Thus we use “Country Risk” to mean the perceived risk associated with a given country, not as a
+synonym for sovereign default risk as it is occasionally used (i.e. Eaton et al. (1986)).
+1
+
+areaccompaniedbysharpdeclinesinequityprices,increasesinequityvolatility,andincreases
+in sovereign credit default swap (CDS) spreads.
+We then use these aggregate measures of country risk to systematically describe its
+sources. We first identify local and global spikes in risk (“crises”) over the last two decades.
+Leveraging the semantic content of our measures, we use the excerpts of underlying text that
+drive the spike in the aggregate series to pinpoint the specific concerns that led investors and
+executives to focus their conversations on risks associated with the country in question. In
+this sense, our approach allows us to identify the perceived sources of variation in Country
+Risk without much guesswork.
+Havingidentifiedanddescribedtheperceivedsourcesoftwoglobaland33country-specific
+crises in our sample, we turn to studying the transmission of these risks across borders. To
+this end, we construct a measure of the aggregate flow of risk from each origin country
+to each destination country by calculating the average country risk firms headquartered in
+country d associate with country c at time t (that is, we average across all i in d). We refer to
+this measure as “Transmission Risk” and we find that during normal times, the transmission
+of risk across countries follows a gravity structure. In other words, firms on average worry
+more about risks originating in countries geographically closer to them, that speak the same
+language, and that were in a common colonial relationship.
+However, despite this regular pattern of transmission of risk during normal times, we find
+that these patterns shift significantly during periods of crisis. To systematically quantify
+these shifts, we calculate the pattern of transmission for each of the 33 major country-
+specific crises identified in the first step of our analysis, and then regress this crisis-specific
+pattern onto the regular pattern of transmission from that origin country in non-crisis times.
+We argue that the predicted values, slope estimates, and R2 from these regressions usefully
+characterize how a crisis associated with a particular origin country affects the perceived risk
+of firms based in other countries. For example, our analysis shows that the beginning of the
+Global Financial Crisis (GFC) in the United States in 2008 and the start of the Coronavirus
+pandemic in China in the first quarter of 2020 are the two crises with the largest degree of
+global transmission in our sample: they transmit risk to firms in virtually all parts of the
+world. By contrast, crises originating in emerging markets (such at the Thai Floods of 2011
+and the Egyptian Revolution of 2011) tend to come with strong bilateral transmission of risk:
+2

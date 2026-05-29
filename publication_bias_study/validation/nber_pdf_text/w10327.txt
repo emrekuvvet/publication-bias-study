@@ -1,0 +1,131 @@
+NBER WORKING PAPER SERIES
+FLIGHT TO QUALITY, FLIGHT TO LIQUIDITY,
+AND THE PRICING OF RISK
+Dimitri Vayanos
+Working Paper 10327
+http://www.nber.org/papers/w10327
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+February 2004
+I thank Viral Acharya, John Cox, Xavier Gabaix, Denis Gromb, Tim Johnson, Leonid Kogan, Pete Kyle,
+Jonathan Lewellen, Hong Liu, Stew Myers, Jun Pan, Anna Pavlova, Steve Ross, Jiang Wang, Wei Xiong,
+Jeff Zwiebel, seminar participants at Amsterdam, Athens, Caltech, LSE, LBS, Michigan, MIT, NYU,
+Princeton, Stockholm, Toulouse, UBC, UCLA, UT Austin, Washington University, and participants at the
+Econometric Society 2003 Summer Meetings, for helpful comments. I am especially grateful to Jeremy Stein
+for discussions that helped define this project, and for insightful comments in later stages. Jiro Kondo
+provided excellent research assistance. Financial support for this research came from the MIT/Merrill Lynch
+partnership. The views expressed herein are those of the authors and not necessarily those of the National
+Bureau of Economic Research.
+©2004 by Dimitri Vayanos. All rights reserved. Short sections of text, not to exceed two paragraphs, may
+be quoted without explicit permission provided that full credit, including © notice, is given to the source.
+
+Flight to Quality, Flight to Liquidity, and the Pricing of Risk
+Dimitri Vayanos
+NBER Working Paper No. 10327
+February 2004
+JEL No. G1, G2
+ABSTRACT
+We propose a dynamic equilibrium model of a multi-asset market with stochastic volatility and
+transaction costs. Our key assumption is that investors are fund managers, subject to withdrawals
+when fund performance falls below a threshold. This generates a preference for liquidity that is time-
+varying and increasing with volatility. We show that during volatile times, assets' liquidity premia
+increase, investors become more risk averse, assets become more negatively correlated with
+volatility, assets' pairwise correlations can increase, and illiquid assets' market betas increase.
+Moreover, an unconditional CAPM can understate the risk of illiquid assets because these assets
+become riskier when investors are the most risk averse.
+Dimitri Vayanos
+Sloan School of Management
+MIT
+50 Memorial Drive, E52-437
+Cambridge, MA 02142
+and NBER
+dimitriv@mit.edu
+
+1 Introduction
+Financial assets differ in their liquidity (i.e., the ease at which they can be transacted), and an
+important question is how liquidity affects asset prices. One way to get at this question is to
+measure the price differential (liquidity premium) between two assets of different liquidity but very
+similar other characteristics. Many examples of such asset pairs come from the government bond
+market. Consider, for instance, a just-issued (on-the-run) thirty-year US Treasury bond, and a
+thirty-year bond issued three months ago (off-the-run). The two bonds are very similar in terms of
+1
+cash flows, but the on-the-run bond is significantly more liquid than its off-the-run counterpart.
+The analysis of liquid/illiquid asset pairs reveals that liquidity premia vary considerably over
+time, widening dramatically during extreme market episodes. A term often used to characterize
+these episodes is flight to liquidity, suggestive of the notion that investors experience a sudden and
+strong preference for holding liquid assets. An example of such an episode is the 1998 financial
+crisis. During the crisis, the yield spread between off- and on-the-run thirty-year US Treasury
+bonds increased to 24 basis points (bp), from a pre-crisis value of 4bp. Similar increases occurred
+2
+in other on-the-run spreads, as well as in other spreads for which liquidity plays some role.
+An important factor driving the variation in liquidity premia seems to be the extent of un-
+certainty in the market. For example, during the 1998 crisis there was a dramatic increase in
+3
+uncertainty, as measured by the implied volatilities of key financial indices. A link between liq-
+4
+uidity premia and volatility has also been empirically documented for less extreme times.
+In this paper, we propose an equilibrium model in which (i) assets differ in their liquidity, and
+(ii) the extent of uncertainty, represented by the volatility of asset payoffs, is stochastic. Our model
+generates liquidity premia that are time-varying and increasing with volatility. Thus, times of high
+volatility are associated with a flight to liquidity.
+1For example, Sundaresan (1997, pp.16-18) reports that trading volume for on-the-run bonds is about ten times
+aslargeasfortheiroff-the-runcounterparts. SeealsoBoudoukhandWhitelaw(1991),whodocumenttheon-the-run
+phenomenoninJapan,andWarga(1992),Krishnamurthy(2002),andGoldreich,Hanke,andNath(2003),whostudy
+the yield spread between off- and on-the-run bonds.
+2Forexample, theon-the-runfive-yearspreadincreasedfrom7bpto28bp, theten-year spreadfrom6bpto16bp,
+and the ten-year spread in the UK from 6bp to 18bp. The spread between AA-rated corporate bonds (for which
+default plays only a minor role) and government bonds increased from 80bp to 150bp in the US, and from 60bp
+to 120bp in the UK. For more information, and a comprehensive description of the crisis, see the report by the
+Committee on the Global Financial System (CGFS (1999)).
+3According to CGFS (1999), the implied volatility of the S&P500 index increased from 23% to 43%, that of the
+FTSE100 index from 27% to 48%, that of the three-month US eurodollar rate from 8% to 33%, and that of the
+thirty-year US T-bond rate from 7% to 14%.
+4For example, Kamara (1994) considers the yield spread between T-notes and T-bills with matched maturities.
+Heshowsthatthespread(whichismainlyduetothenotes’lowerliquidity)iscorrelatedwithinterest-ratevolatility.
+(SeealsoAmihudandMendelson(1991)andStrebulaev(2003).) Longstaff(2002)considerstheyieldspreadbetween
+the securities of Refcorp, a US government agency, and Treasury securities. He shows that the spread (which is
+mainly due to the lower liquidity of the Refcorp securities) is correlated with a consumer confidence index.
+1
+
+In our model, times of high volatility are associated with several other interesting phenomena,
+often mentioned in the context of financial crises. We show that during volatile times, investors’
+effectiveriskaversionincreases. Thus, thereisaflighttoquality, inthesensethattheriskpremium
+investors require per unit of volatility increases. We also show that assets become more negatively
+correlated with volatility, and can also become more correlated with each other. Moreover, illiquid
+assets become riskier, in the sense that their market betas increase. Some of these phenomena
+have been documented anecdotally or empirically, and some are new and testable predictions of
+5
+our model. To our knowledge, our model is the first to show that all these phenomena are related,
+and are also related to flight to liquidity.
+Finally, ourmodelhastheimplicationthatonecostofilliquidityistomakeanassetriskier, and
+more sensitive to the volatility. We also show that an unconditional CAPM can understate the risk
+of illiquid assets because of this risk’s time-varying nature: illiquid assets become riskier in volatile
+times,wheninvestorsarethemostriskaverse. Thishasimplicationsforevaluatingtheperformance
+of strategies investing in illiquid assets: if performance is evaluated under an unconditional CAPM,
+6
+the strategies could appear better than they actually are.
+We consider a continuous-time, infinite-horizon economy with one riskless and multiple risky
+assets. The riskless rate is exogenous and constant over time. The risky assets’ dividend processes
+are exogenous, and are characterized by a common volatility parameter which evolves according to
+a square-root process. The volatility parameter is the key state variable in our model.
+The risky assets differ in their liquidity. To model liquidity, we assume that each asset carries
+an exogenous transaction cost. These costs differ across assets, and could arise for reasons outside
+the model such as asymmetric information, market-maker inventory costs, search, etc. We assume
+that transaction costs are constant over time. Thus, the time-varying liquidity premia arise not
+because of the transaction costs, but because of the investors’ willingness to bear these costs.
+Our key assumption is in the modelling of investors. We assume that investors are fund man-
+agers, managing wealth on behalf of the individuals who own it. Managers receive an exogenous
+fee which depends on the amount of wealth under management. They are facing, however, the
+probability that the individuals investing in the fund might withdraw their wealth at any time.
+Withdrawals occur both for random reasons, and when a fund’s performance falls below an ex-
+5Section 5 presents the empirical evidence. Anecdotal evidence for increased risk aversion during volatile times
+can be found in the CGFS (1999) report. In page 6, the report describes investment decisions at the onset of the
+1998 crisis as follows: “More fundamentally, investment decisions reflected some combination of an upward revision
+touncertaintysurroundingtheexpectedfuturepricesoffinancialinstruments... andareducedtoleranceforbearing
+risk.”Thedramaticincreasesintheyieldsofspeculative-gradecorporatebondsandemergingmarketbondsduringthe
+crisiscanalsobe viewed asevidence forincreased riskaversion. Flight-to-quality phenomenaarehardtorationalize
+withinafrictionlessrepresentative-investormodel,becauseriskaversionisdrivenbypreferencesandshouldbestable
+over short time intervals.
+6Strategies long on illiquid assets were followed by many hedge funds prior to the 1998 crisis.
+2

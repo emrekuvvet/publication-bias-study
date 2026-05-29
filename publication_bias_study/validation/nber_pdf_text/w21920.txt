@@ -1,0 +1,127 @@
+NBER WORKING PAPER SERIES
+INTERMEDIARY ASSET PRICING:
+NEW EVIDENCE FROM MANY ASSET CLASSES
+Zhiguo He
+Bryan Kelly
+Asaf Manela
+Working Paper 21920
+http://www.nber.org/papers/w21920
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+January 2016
+We thank Markus Brunnermeier, Ian Dew-Becker, Valentin Haddad, Arvind Krishnamurthy, Alan
+Moreira, Tyler Muir, Lasse Pedersen, Alexi Savov, Rob Vishny, seminar participants at Stanford University,
+Penn State University, University of Iowa, Emory University, London School of Economics, London
+Business School, University of Houston, University of Washington, University of Oklahoma, Washington
+University, Gerzensee Summer School 2015, CITE 2015, NBER AP 2015, and Chicago Booth Asset
+Pricing Conference 2015 for helpful comments. The views expressed herein are those of the authors
+and do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2016 by Zhiguo He, Bryan Kelly, and Asaf Manela. All rights reserved. Short sections of text, not
+to exceed two paragraphs, may be quoted without explicit permission provided that full credit, including
+© notice, is given to the source.
+
+Intermediary Asset Pricing: New Evidence from Many Asset Classes
+Zhiguo He, Bryan Kelly, and Asaf Manela
+NBER Working Paper No. 21920
+January 2016
+JEL No. G01,G12,G21,G24
+ABSTRACT
+We find that shocks to the equity capital ratio of financial intermediaries—Primary Dealer counterparties
+of the New York Federal Reserve—possess significant explanatory power for crosssectional variation
+in expected returns. This is true not only for commonly studied equity and government bond market
+portfolios, but also for other more sophisticated asset classes such as corporate and sovereign bonds,
+derivatives, commodities, and currencies. Our intermediary capital risk factor is strongly pro-cyclical,
+implying counter-cyclical intermediary leverage. The price of risk for intermediary capital shocks is
+consistently positive and of similar magnitude when estimated separately for individual asset classes,
+suggesting that financial intermediaries are marginal investors in many markets and hence key to
+understanding asset prices.
+Zhiguo He Asaf Manela
+University of Chicago Washington University in St. Louis,
+Booth School of Business Olin Business School,
+5807 S. Woodlawn Avenue Campus Box 1133
+Chicago, IL 60637 One Brookings Drive
+and NBER St. Louis, MO 63130
+zhiguo.he@chicagobooth.edu amanela@wustl.edu
+Bryan Kelly
+University of Chicago
+Booth School of Business
+5807 S. Woodlawn Avenue
+Chicago, IL 60637
+and NBER
+bryan.kelly@chicagobooth.edu
+
+1 Introduction
+Intermediary asset pricing theories offer a new perspective for understanding risk premia. These
+theories are predicated on the fact that financial intermediaries are in the advantageous position of
+trading almost all asset classes, anytime and everywhere. For instance, Siriwardane (2015) shows
+that in 2011 about 50% of total net Credit Derivative Swaps (CDS) protection in U.S. was sold
+by the top five dealers.1 In the corporate bond market, more than 95% of bonds are traded in
+over-the-counter markets, in which dealers are necessarily involved.2 It is likely that intermediaries
+are marginal investors in many asset markets, and that their marginal value of wealth is a plausible
+pricing kernel for a broad cross-section of securities.
+This view stands in contrast to standard consumption-based models in which the focal pricing
+kernel is that of the household (e.g., Campbell and Cochrane (1999); Bansal and Yaron (2004)).
+Households’comparativelackofexpertiseintradingassets,especiallysophisticatedoneslikederiva-
+tives or commodities, casts doubt on the viability of household marginal utility as a unified model
+for jointly pricing the wide array of traded assets in the economy.3 Our hypothesis, inspired by
+intermediary asset pricing theory, is that the classic risk-return asset pricing trade-off is more
+likely to hold once we replace the first-order condition of unsophisticated households with that of
+sophisticated intermediaries.
+The central challenges facing this hypothesis are (i) how to identify a set of financial interme-
+diaries that are marginal investors in many markets, and (ii) how to measure their marginal utility
+of wealth in order to construct the pricing kernel. For the first choice, we focus on primary dealers
+who serve as counterparties of the Federal Reserve Bank of New York (“NY Fed” henceforth) in
+its implementation of monetary policy. Primary dealers are large and sophisticated financial in-
+stitutions that operate in virtually the entire universe of capital markets, and include the likes of
+Goldman Sachs, JP Morgan, and Deutsche Bank.4
+Our second choice is guided by the recent intermediary asset pricing models of He and Kr-
+1Thesetofalldealersareresponsiblefor80%ofthenetCDSsalesin2011. Onthebuyside,alldealerscomprise
+55% of net CDS purchases, and the top five dealers account for 25% of CDS purchases.
+2These trades are reported in the Trade Reporting and Compliance Engine (TRACE) database. According to
+Edwards et al. (2007), fewer than 5% of bonds are listed on the NYSE, and trades occuring via NYSE’s Automated
+Bond System (ABS) are almost all from small retail investors. In contrast, only 2% of corporate bonds trades in
+TRACE are from retail investors.
+3Vissing-Jorgensen (2002) and Calvet et al. (2007) document limited stock market participation by households.
+4Primary dealers as of 2014 are listed in Table 1, and the list of all primary dealers since 1960 is in Table A.1.
+1
+
+ishnamurthy (2012, 2013) and Brunnermeier and Sannikov (2014). In these models, which follow
+the tradition of Bernanke and Gertler (1989) and Holmstrom and Tirole (1997), the intermediary
+sector’s net worth (or, equivalently, its equity capital ratio) is the key determinant of its marginal
+value of wealth. When the intermediary experiences a negative shock to its equity capital, say due
+to an unexpected drop in the securitized mortgage market, its risk bearing capacity is impaired
+and its utility from an extra dollar of equity capital rises.
+Prompted by these theories, in Section 2 we propose a model for the intermediary pricing
+kernel that is composed of two-factors: the excess return on aggregate wealth, and the shock to
+intermediaries’(equity)capitalratio. ThereturnonaggregatewealthcapturestheusualTFP-style
+persistent technology shock that drives general economic growth. Innovations to the intermediary
+capital ratio capture financial shocks that affect the soundness of the financial intermediary sector,
+arising for example from shocks to agency/contracting frictions, changes in regulation, or large
+abnormal gains/losses in parts of an intermediary’s portfolio. We show how this pricing kernel
+arises in the theoretical framework of He and Krishnamurthy (2012).
+We construct the aggregate capital ratio for the intermediary sector by matching the New York
+Fed’s primary dealer list with CRSP/Compustat and Datastream data on their publicly traded
+holding companies (see Section 3). We define the intermediary capital ratio, denoted η , as the
+t
+aggregate value of market equity divided by aggregate market equity plus aggregate book debt of
+primary dealers active in quarter t
+P Market Equity
+i i,t
+η = .
+t (cid:16) (cid:17)
+P Market Equity +Book Debt
+i i,t i,t
+Our main empirical result is that assets’ exposure to intermediary capital ratio shocks (in-
+novations in η ) possess a strong and consistent ability to explain cross-sectional differences in
+t
+average returns for assets in seven different markets, including equities, US government and corpo-
+rate bonds, foreign sovereign bonds, options, credit default swaps (CDS), commodities, and foreign
+exchange (FX).
+We perform cross-sectional asset pricing tests both independently within each asset class, as
+well as jointly using all asset classes. By comparing the risk price on intermediary capital shocks
+estimated from different sets of test assets, we can evaluate the model assumptions that (i) inter-
+2

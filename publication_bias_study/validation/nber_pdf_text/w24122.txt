@@ -1,0 +1,134 @@
+NBER WORKING PAPER SERIES
+THE EFFECTS OF QUANTITATIVE EASING:
+TAKING A CUE FROM TREASURY AUCTIONS
+Yuriy Gorodnichenko
+Walker Ray
+Working Paper 24122
+http://www.nber.org/papers/w24122
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2017, Revised March 2018
+We thank Michael Bauer, Rhys Bidder, Michael Fleming, Ed Knotek, Matteo Maggiori, Eric
+Swanson, Michael Weber, and seminar participants at Berkeley, New York Fed, Cleveland Fed,
+San Francisco Fed, ASU, CMC, and Northwestern for comments on an earlier version of the
+paper. We are grateful to Maxime Sauzet for excellent research assistance. The views expressed
+herein are those of the authors and do not necessarily reflect the views of the National Bureau of
+Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2017 by Yuriy Gorodnichenko and Walker Ray. All rights reserved. Short sections of text, not
+to exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+The Effects of Quantitative Easing: Taking a Cue from Treasury Auctions
+Yuriy Gorodnichenko and Walker Ray
+NBER Working Paper No. 24122
+December 2017, Revised March 2018
+JEL No. E43,E44,E52
+ABSTRACT
+To understand the effects of large-scale asset purchase programs recently implemented by central
+banks, we study how markets absorb large demand shocks for risk-free debt. Using high-
+frequency identification, we exploit the structure of the primary market for U.S. Treasuries to
+isolate demand shocks. These shocks are sizable, leading to large movements in Treasury yields
+and impacting corporate borrowing rates. Informed by a preferred habitat model of the term
+structure, we test for “local” demand effects and find evidence consistent with theoretical
+predictions. Crucially, this local effect is strongest when financial markets are disrupted. Our
+estimates are consistent with the view that quantitative easing worked mainly via market
+segmentation, with a potentially limited role for other channels.
+Yuriy Gorodnichenko
+Department of Economics
+530 Evans Hall #3880
+University of California, Berkeley
+Berkeley, CA 94720-3880
+and IZA
+and also NBER
+ygorodni@econ.berkeley.edu
+Walker Ray
+Department of Economics
+University of California, Berkeley
+530 Evans Hall
+Berkeley, CA 94720-3880
+walkerdray@econ.berkeley.edu
+
+1 Introduction
+Demand for safe assets, and U.S. Treasuries in particular, plays a central role in the
+macro-financial landscape. To offset the negative effects of the recent financial crisis,
+central banks have implemented various large scale asset purchases, representing a sharp
+increase in demand for these assets. The most salient of these is the quantitative easing
+(QE) programs carried out by the Federal Reserve, which involved two trillion dollars of
+Treasury security purchases. Apart from the massive scale of these purchases, the Federal
+Reserve disproportionately bought long-term government debt, thus departing from the
+practice of having the distribution of its portfolio close to the distribution of outstanding
+debt (Figure 1).
+While evaluating the program, Ben Bernanke, the chair of the Fed at the time, ob-
+served, “The problem with QE is it works in practice but it doesn’t work in theory.”
+Indeed, QE was successful in reducing short- and long-term interest rates, but the mech-
+anism behind this reaction is still not well understood. For example, standard macro-
+financial models imply that the demand for assets such as Treasuries is determined solely
+by economic agents’ intertemporal consumption decisions, which does not capture the
+sources of demand shifts initiated by the Fed. Although the workhorse macroeconomic
+models cannot readily explain the workings of the QE, several explanations have been put
+forth. For instance, QE could be effective because it signaled to the markets that the Fed
+is serious about keeping short-term interest rates low for a long time (forward guidance).
+Or, perhaps the Fed exploited frictions (limited arbitrage and market segmentation) in
+the financial markets by purchasing securities in a particular segment. Finally, by buying
+assets on a massive scale, the Fed could signal a poor state of the economy which pushed
+interest rates down (“Delphic” effect; see Campbell et al. (2012) for more details).
+Future deployment of unconventional tools such as QE requires policymakers to move
+beyond the “heat of the moment” policies, and hence a central question for policymaking
+and academic research is which of these theories is the key channel. But given the paucity
+of QE events, it has proven remarkably hard to provide clear empirical evidence for
+each theory, as well as to assess the relative contributions of the proposed channels.
+Indeed, many channels were likely active during QE rounds and the reactions to QE were
+observed in a particular state of the economy, which potentially confounds identification
+and interpretation.
+The objective of this paper is to unbundle QE by focusing on one channel: market
+segmentation and preferred habitat, which posits that certain investors have preferences
+for specific maturities. Our approach is to identify shifts in private demand for Treasuries
+that mimic QE, but are independent of the other channels discussed above. The key
+mechanism through which market segmentation and preferred habitat forces operate is
+not the source of demand shifts, but rather how marginal investors in the market for
+1
+
+Treasury debt absorb these demand shocks. Therefore, the best way to isolate and study
+the preferred habitat channel of QE is to identify unexpected demand shifts that are
+unrelated to other channels of QE.
+Inordertoconstructdemandshockswiththeseproperties, weutilizethestructureand
+timing of the primary market for Treasury securities. Similar to the empirical monetary
+policy literature (e.g., Bernanke and Kuttner (2005), Gürkaynak et al. (2007), Gorod-
+nichenko and Weber (2016)), we look at high-frequency (intraday) changes in prices of
+Treasury futures in small windows around the close of Treasury auctions to identify un-
+expected shocks to demand for Treasuries. The key for identification is that all of the
+“supply” information (e.g. security characteristics such as the maturity, as well as the
+amount of newly offered and outstanding securities) is known and priced in by the mar-
+ket. For small enough windows around the close and release of the auction results, any
+price changes are reactions to information regarding the demand for the Treasury securi-
+ties from the given auction. We interpret these price changes as demand shocks. Utilizing
+high-frequency changes in asset prices along with the timing of Treasury auctions in this
+mannerallowsustoruleoutconfoundingfactorsandidentifyunexpectedshiftsindemand
+in a model-free way.
+Treasury auctions have a number of properties that can help us understand the work-
+ings of QE. First, although the auctions are not as large as the QE rounds, the Treasury
+sells about $150 billion in notes and bonds per month in recent years. Because the pri-
+mary market for Treasuries is a convenient venue for investors who wish to purchase large
+amounts of government securities, the release of Treasury auction results can reveal po-
+tentially large shifts in demand for Treasuries. The surprise movements in the yields are
+reasonably large: a typical (one standard deviation) shock is equivalent to a yield change
+of roughly 2 basis points, which is much larger than similar changes on non-auction dates.
+For comparison, Chodorow-Reich (2014) estimates that the first round of the QE pro-
+gram in the U.S. cut Treasury rates (five-year maturity) by 9 basis points following the
+announcement from Chairman Bernanke on December 1, 2008.
+Second, we document that demand shocks are driven by institutional investors such
+as foreign monetary authorities, investment funds, insurance companies and the like.
+Moreover, these shocks are not driven by changes in expectations about inflation, output,
+or other broad market conditions. Therefore, variation during Treasury auctions can help
+us to isolate the effect of idiosyncratic purchases in specific asset segments on the level
+and shape of the yield curve, which is difficult to achieve by examining only QE events.
+Finally,insharpcontrasttoQEevents,Treasuryauctionsarefrequentandinformation
+is available back to 1979. This gives us an opportunity for crisper inference and to study
+state-dependence in the effect of targeted purchases of assets (e.g., crisis vs. non-crisis
+states). Because QE events were both infrequent and confounded with a massive financial
+crisis, having a long time series is instrumental for understanding how QE-like programs
+2

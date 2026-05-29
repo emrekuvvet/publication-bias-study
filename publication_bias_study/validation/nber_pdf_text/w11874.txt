@@ -1,0 +1,120 @@
+NBER WORKING PAPER SERIES
+GENERALIZING THE TAYLOR PRINCIPLE
+Troy Davig
+Eric M. Leeper
+Working Paper 11874
+http://www.nber.org/papers/w11874
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2005
+The views expressed herein are those of the author(s) and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+©2005 by Troy Davig and Eric M. Leeper. All rights reserved. Short sections of text, not to exceed two
+paragraphs, may be quoted without explicit permission provided that full credit, including © notice, is given
+to the source.
+
+Generalizing the Taylor Principle
+Troy Davig and Eric M. Leeper
+NBER Working Paper No. 11874
+December 2005, Revised September 2006
+JEL No. E31, E52, C62
+ABSTRACT
+The paper generalizes the Taylor principle---the proposition that central banks can stabilize the
+macroeconomy by raising their interest rate instrument more than one-for-one in response to higher
+inflation---to an environment in which reaction coefficients in the monetary policy rule evolve
+according to a Markov process. We derive a long-run Taylor principle that delivers unique bounded
+equilibria in two standard models. Policy can satisfy the Taylor principle in the long run, even while
+deviating from it substantially for brief periods or modestly for prolonged periods. Macroeconomic
+volatility can be higher in periods when the Taylor principle is not satisfied, not because of
+indeterminacy, but because monetary policy amplifies the impacts of fundamental shocks. Regime
+change alters the qualitative and quantitative predictions of a conventional new Keynesian model,
+yielding fresh interpretations of existing empirical work.
+Troy Davig
+Federal Reserve Bank of Kansas City
+troy.davig@kc.frb.org
+Eric M. Leeper
+Department of Economics
+304 Wylie Hall
+Indiana University
+Bloomington, IN 47405
+and NBER
+eleeper@indiana.edu
+
+GENERALIZING THE TAYLOR PRINCIPLE
+TROY DAVIG AND ERIC M. LEEPER
+1. Introduction
+Monetary policy making is complex. Central bankers examine a vast array of data,
+hear from a variety of advisors, use suites of models to interpret the data, and apply
+judgment to adjust the predictions of models. This process produces a monetary
+policy rule that is a complicated, probably non-linear, function of a large set of
+information about the state of the economy.
+For both descriptive and prescriptive reasons, macroeconomists seek simple char-
+acterizations of policy. Perhaps the most successful simplification is due to Taylor
+(1993). He finds that a verysimplerule does a good job of describing FederalReserve
+interest-rate decisions, particularly since 1982. Taylor’s rule is
+i =¯i+α(π −π ∗ )+γx +ε , (1)
+t t t t
+where i is the central bank’s policy interest rate, ¯i is the long-run policy rate, π
+t t
+is inflation, π∗ is the central bank’s inflation target, x is output, and ε is a random
+variable. With settings of α = 1.5 and γ = .5 or 1, Taylor (1999a) uses this equation
+to interpret Federal Reserve behavior over several eras since 1960.
+The Taylor principle—theproposition that central banks can stabilize the macroe-
+conomy by adjusting their interest rate instrument more than one-for-one with infla-
+tion (setting α > 1)—and the Taylor rulethat embodies ithaveprovento be powerful
+devices to simplify the modeling of policy behavior. In many monetary models, the
+Taylor principle is necessary and sufficient for the existence of a determinate rational
+Date: August 28, 2006. Research Department, Federal Reserve Bank of Kansas
+City, Troy.Davig@kc.frb.org; Department of Economics, Indiana University and NBER,
+eleeper@indiana.edu. We thank Mark Gertler for the suggestions that spawned this paper and
+comments that improved it, Mike Woodford for comments that made the exposition more precise,
+and two anonymous referees whose comments were particularly helpful. We also thank Gadi Bar-
+levy,Marco Bassetto, Hess Chung,Steven Durlauf,Marty Eichenbaum,Jon Faust, DavidMarshall,
+Tack Yun, Tao Zha and seminar participants Columbia University and the Federal Reserve Banks
+of Atlanta, Chicagoand Kansas City. Leeper acknowledges support from NSF Grant SES-0452599.
+The views expressed herein are solely those of the authors and do not necessarily reflect the views
+of the Federal Reserve Bank of Kansas City or the Federal Reserve System.
+
+GENERALIZING THE TAYLOR PRINCIPLE 2
+expectations equilibrium. Failure of monetary policy to satisfy the principle can pro-
+duce undesirable outcomes in two ways. First, the effects of fundamental shocks are
+amplified and can cause fluctuations in output and inflation that are arbitrarilylarge.
+Second, there exist a multiplicityof bounded equilibria in which output and inflation
+respond to non-fundamental—sunspot—disturbances. If the objective of a central
+bank is to stabilize output and inflation, these outcomes are clearlyundesirable. Tay-
+lor (1999a) and Clarida, Gali, and Gertler (2000), among others, have argued that
+failure of Federal Reserve policy to satisfy the Taylor principle may have been the
+source of greater macroeconomic instability in the United States in the 1960s and
+1970s.
+Taylor-inspired rules have been found to perform well in a class of models that is
+now in heavy use in policy research [Bryant, Hooper, and Mann (1993), Rotemberg
+and Woodford (1997), Taylor (1999b), Faust, Orphanides, and Reifschneider (2005),
+Schmitt-Groheand Uribe(2006)]. Some policyinstitutionspublish thepolicyinterest
+rate paths produced by simple rules, treating the implied policy prescriptions as
+useful benchmarks for policy evaluation [Bank for International Settlements (1998),
+Sveriges Riksbank (2001, 2002), Norges Bank (2005), Federal Reserve Bank of St.
+Louis (2005)]. In large part because it is a gross simplification of reality, the Taylor
+rule has been extraordinarily useful.
+Gross simplificationis both a strength and a weakness of a constant-parameter rule
+like (1). Because the rule compresses and reduces information about actual policy
+behavior, it can mask important aspects of that behavior. There are clearly states
+of the economy in which policy settings of the nominal interest rate deviate from
+the rule in substantial and serially correlated ways. This confronts researchers with
+a substantive modeling choice: it matters whether these deviations are shuffled into
+the ε’s or modeled as time-varying feedback coefficients, α and γ . Positing that pol-
+t t
+icy rules mapping endogenous variables into policy choices evolve according to some
+probability distribution can fundamentally change dynamics, including conditions
+that ensure a unique equilibrium, and substantially expand the set of determinate
+rational expectations equilibria supported by conventional monetary models.
+This paper generalizes Taylor’s rule and principle by allowing the parameters of
+1
+that ruletovary stochasticallyovertime. Itexamineshowsuchtimevariation affects
+1
+Incontrasttoourapproach,somepapersconsider changesinprocesses governingexogenouspol-
+icyvariables[Dotsey(1990),Kaminsky(1993),Ruge-Murcia(1995),AndolfattoandGomme(2003),
+Davig(2003,2004),andLeeper and Zha (2003)]. Each ofthese considers changes in exogenous pro-
+cesses forpolicyinstruments likeataxrate,moneygrowthrate,orgovernmentexpenditures. Other
+papers modelpolicyswitchingaschanges inendogenous policyfunctions[Davig,Leeper, andChung
+(2006) and Davigand Leeper (2006b)].

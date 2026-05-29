@@ -1,0 +1,136 @@
+NBER WORKING PAPER SERIES
+ESTIMATING THE DIRECT AND INDIRECT EFFECTS OF MAJOR EDUCATION
+REFORMS
+Michael Gilraine
+Hugh Macartney
+Robert McMillan
+Working Paper 24191
+http://www.nber.org/papers/w24191
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+January 2018, Revised August 2020
+Previously circulated as "Education Reform in General Equilibrium: Evidence from California's
+Class Size Reduction." We would like to thank Pat Bayer and Gregorio Caetano for helpful
+discussions, and Marc-Antoine Chatelain, Damon Clark, Elaine Guo, Steve Lehrer, Ted
+Rosenbaum, Eduardo Souza-Rodrigues, Wilbert van der Klaauw, workshop participants at the
+University of Bristol (CPMO), Federal Trade Commission, New York Federal Reserve and
+University of Toronto, and participants at the CIREQ Applied Economics Conference and 2018
+SOLE Meetings for additional comments. Financial support is gratefully acknowledged from the
+IES, SSHRC, Duke University, and the University of Toronto Mississauga. All remaining errors
+are our own. The views expressed herein are those of the authors and do not necessarily reflect
+the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2018 by Michael Gilraine, Hugh Macartney, and Robert McMillan. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Estimating the Direct and Indirect Effects of Major Education Reforms
+Michael Gilraine, Hugh Macartney, and Robert McMillan
+NBER Working Paper No. 24191
+January 2018, Revised August 2020
+JEL No. H40,I21,I22
+ABSTRACT
+We propose an approach for credibly estimating indirect sorting effects of major education
+reforms and placing them alongside the reforms' direct and persistent effects for the first time.
+Applying our approach to California's state-wide class size reduction program, we estimate a
+large positive direct effect of smaller classes on test scores and an even larger indirect effect due
+to demographic changes as private school students switch into public schools; both effects also
+persist. Accounting for sorting using these estimates raises the program's benefit-cost ratio
+significantly. Further, our analysis indicates that indirect sorting is likely relevant in policy
+evaluations more generally.
+Michael Gilraine Robert McMillan
+New York University University of Toronto
+Department of Economics Department of Economics
+19 West 4th Street 150 St. George Street
+New York, NY 10012 Toronto, ON M5S 3G7
+mike.gilraine@nyu.edu CANADA
+and NBER
+Hugh Macartney mcmillan@chass.utoronto.ca
+Duke University
+Department of Economics
+239 Social Sciences Building
+Box 90097
+Durham, NC 27708
+and NBER
+hugh.macartney@duke.edu
+
+1 Introduction
+Empirical policy analysis often focuses on the direct, intended effects of policies “holding all else
+equal.” Measuring such direct effects accurately is an important ingredient in policy making, al-
+though it is well appreciated that large-scale reforms may have substantial indirect effects that
+work in offseting or reinforcing ways. Because of their potential to alter the policy-making calculus
+significantly, estimating the size of these indirect effects is of considerable practical interest. Yet
+doing so presents challenges for empirical research, not least because additional sources of indepen-
+dent variation are required to identify indirect effects separately from the direct impact of policies.
+As a consequence, the literature seeking to gauge their extent is relatively undeveloped.1
+This paper sets out an estimation approach that allows us to measure indirect effects of large-
+scale reforms in a credible way and place them on a common footing with the direct policy effects
+for the first time. We focus on an education context and a type of indirect response likely to matter
+whenever(i)areformimprovespublicschoolqualitysignificantly–thebasicgoalofmosteducation
+reforms,2 and (ii) private school options are popular pre-reform. In this common configuration
+of circumstances, some households will have an incentive to re-sort by switching out of private
+schools, potentially changing the student composition of public schools. In turn, to the extent
+that resulting compositional changes influence education production, either because the new public
+schoolstudentsaremoreadvantagedorviapeerspillovers,sotheyshouldaffectmeasuredoutcomes
+such as test scores – the indirect effects we seek to identify.3
+We develop our approach in the context of California’s class size reduction (CSR) program of
+the late-1990s – up to that point, the largest state-led education reform ever implemented in the
+United States. Inspired by Project STAR in Tennessee, a well-known experimental evaluation in
+education and the subject of a number of influential studies,4 the California legislature sought to
+replicate Project STAR’s publicized experimental benefits at an altogether larger scale. To that
+end, the CSR program targeted kindergarten through third grade (as did Project STAR), and cut
+class sizes in these early grades by around 20 percent throughout the state. The reform involved a
+grade-specific roll-out, starting with first grade in 1996-97, and schools had to hire enough teachers
+tolowerclasssizesbelow20intherelevantgradesinordertobeeligibleforCSRfunding,amounting
+1ExceptionsareJepsenandRivkin(2009)andDinersteinandSmith(2016),whichwediscussfurtherbelow. Another
+careful analysis, by Bianchi (2020), considers the indirect effects of a policy to expand Italian university enrollment:
+as will be made clear, our focus is on policies that change school quality directly, with enrollment changes being an
+indirect response.
+2Schoolfinancereformsprovideoneexample–seeJackson,JohnsonandPersico(2015)andLafortune,Rothsteinand
+Schanzenbach (2018).
+3Other indirect effects may include changes to teacher labor markets – see Jepsen and Rivkin (2009) and Jackson
+(2012) – and household residential sorting.
+4Prominent among these are Krueger (1999), Krueger and Whitmore (2001), and Chetty et al. (2011).
+1
+
+to 10 percent of per-pupil expenditure.
+The combination of strong financial incentives to implement the reform according to its specific
+timetable, the substantial reductions in class size it produced, and the sheer scale of California’s
+public education system would lead one to expect CSR to have broader effects. Convincing re-
+search by Jepsen and Rivkin (2009) has already highlighted impacts on the teacher labor market,
+showing that there was a sudden, significant increased need for new teacher hires, which dampened
+CSR’s benefits in the short term. Further, the effects of the policy were non-uniform, with some
+schoolsexperiencingreductionsinclasssizewithoutanyappreciabledeclineinteacherquality, thus
+becoming potentially more attractive to parents as a result. Such public school quality changes
+might in turn be expected to lead to sociodemographic sorting from some private to public schools
+in response to CSR.5
+We first document that significant re-sorting did occur. A difference-in-differences research
+design comparing treated versus untreated grades before and after the reform reveals that CSR
+caused a reduction in local private school shares of 1.4 percentage points for relevant elementary
+grades, or 12 percent of the pre-CSR K-3 average private school share. Further, we see pronounced
+changes in school sociodemographics in public schools with nearby private alternatives (relative to
+those without), the proportion white increasing while the proportion Hispanic declined – evidence
+consistent with recent research by Dinerstein and Smith (2016).6 We also show that a significant
+fractionoftheextra37,500studentsfoundinpublicelementaryschoolsinagivenyearasaresultof
+CSR remained there beyond third grade for the duration of elementary school; the evidence points
+to around two-thirds of these students then returning back to the private sector for middle school.
+To explore the effects of this substantial re-sorting on student performance, we use a framework
+that parameterizes the public school education production function. This captures the reform’s
+direct and indirect effects in terms of test scores, contemporaneously and also persisting into the
+future, as in well-known recent research (see Chetty et al. 2011 and Chetty, Friedman and Rockoff
+2014). Specifically, we assume the production technology is linear and additive in its inputs, as
+is standard in much of the education literature, and express each cohort’s grade-year average test
+score in terms of parameters governing the current and persisting effects of school resources and
+sociodemographics, respectively.
+Central to our analysis, we show the policy’s direct and indirect effects can be estimated on a
+5These indirect sorting effects will be our primary focus, rather than indirect effects of CSR on the teaching force
+studiedbyJepsenandRivkin(2009). Theapproachtoestimatingdirectandindirecteffectsweproposewillaccount
+for changes in teacher quality using a control strategy (described below) that draws on Jepsen and Rivkin (2009).
+6Those authors provide persuasive evidence that increased funding for public schools in New York City drew private
+school students into the public system, both by choice and through the forced closure of (typically small) private
+schools. They quantify the impact of public school policy on private school students, while we study the direct and
+indirect effects on existing public school students.
+2

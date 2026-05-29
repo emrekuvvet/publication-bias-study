@@ -1,0 +1,115 @@
+NBER WORKING PAPER SERIES
+THE VARIANCE RISK PREMIUM IN EQUILIBRIUM MODELS
+Geert Bekaert
+Eric Engstrom
+Andrey Ermolov
+Working Paper 27108
+http://www.nber.org/papers/w27108
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2020
+The views expressed in this document do not necessarily reflect those of the Board of Governors
+of the Federal Reserve System, its staff, or the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Geert Bekaert, Eric Engstrom, and Andrey Ermolov. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+The Variance Risk Premium in Equilibrium Models
+Geert Bekaert, Eric Engstrom, and Andrey Ermolov
+NBER Working Paper No. 27108
+May 2020
+JEL No. E44,G12,G13
+ABSTRACT
+The equity variance risk premium is the expected compensation earned for selling variance risk in
+equity markets. The variance risk premium is positive and shows moderate persistence. High
+variance risk premiums coincide with the left tail of the consumption growth distribution shifting
+down. These facts, together with a positive, yet moderate, difference between the risk-neutral
+entropy and variance of the aggregate market return, refute the bulk of the extant consumption-
+based asset pricing models. We introduce a tractable habit model that does fit the data. In the
+model, the variance risk premium depends positively (negatively) on “bad” (“good”)
+consumption growth uncertainty.
+Geert Bekaert Andrey Ermolov
+Graduate School of Business Fordham University
+Columbia University 45 Columbus Avenue (Martino Hall) room 623A
+3022 Broadway, 411 Uris Hall New York, NY 10023
+New York, NY 10027 aermolov1@fordham.edu
+and NBER
+gb241@columbia.edu
+Eric Engstrom
+Board of Governors of the Federal Reserve System
+Washington DC 20551
+eric.engstrom@frb.gov
+
+1 Introduction
+Consumption-based asset pricing models are typically confronted with a set of salient
+features regarding the first and second moments of interest rates, equity returns, and
+in some cases, bond returns including a low risk free rate, a high equity premium and
+high stock market volatility. At this point, the main paradigms, Campbell and Cochrane
+(1999)’s habit model, Bansal and Yaron (2004)’s long run risk model and Rietz (1988)’s
+disaster risk model can all match these stylized facts. A small subset of the vast literature
+on consumption-based asset pricing has started to explore equity option prices to disci-
+pline models and uncover what mechanisms best fit the data. These articles include, inter
+alia, Du (2011) and Bekaert and Engstrom (2017) for habit models; Bollerslev, Tauchen
+and Zhou (2009) and Drechsler and Yaron (2011) for long run risk models; Gabaix (2012)
+and Wachter and Seo (2019) for disaster risk models. Option prices are powerful financial
+instruments for this purpose, because they reflect at each point in time the conditional
+expectation of market participants on the equity return distribution, combining their
+preferences and views on the physical distribution of the underlying returns.
+In this article, we explore how these models fit salient facts regarding the variance risk
+premium and where they fail. The variance risk premium is the expected compensation
+earned for selling volatility in equity markets. While it can be measured from variance
+swaps, it can also be measured as the difference between the famous VIX index and an
+estimate of the conditional variance of equity returns, which is the approach we follow
+here. Well-known as a “fear index” for asset markets (Whaley, 2000), the VIX uses a
+weighted average of option prices to approximate the risk neutral variance and is usually
+higher than the “physical” expected stock market variance. Essentially, this premium
+reflects out of the money options being more expensive than near the money option
+prices (Britten-Jones and Neuberger, 2000; Bakshi, Kapadia, and Madan, 2003; Martin
+2017). The variance premium also varies considerably through time. In periods of stress,
+out-of-the money put options that insure against market downturns become relatively
+more expensive than call options; protection against increases in variance become more
+expensive as well and the VIX and the variance risk premium both increase.
+We confront representative models in the literature with three sets of stylized facts
+regarding the variance risk premium. The first set comprises time series properties of
+the variance risk premium. While many models are presumably calibrated to fit these
+1
+Electronic copy available at: https://ssrn.com/abstract=3553547
+
+features, the relative fit is still quite different across models. Moreover, the mere fact
+that the variance risk premium is positive refutes all models that employ only Gaussian
+shocks to key state variables. Such a result has surfaced in the literature before, but
+we provide an alternative proof and an alternative result showing that when returns and
+the pricing kernel are jointly conditionally log-normally distributed, the variance risk
+premium can only be positive if the equity premium is negative. This result is useful
+as the standard habit model (Campbell and Cochrane, 1999) and long-run risk model
+(Bansal and Yaron, 2004, when solved using the typical first order approximation), are
+conditionally Gaussian.
+Our second stylized fact regards the relation between tails in the variance risk pre-
+mium and consumption growth distributions. For consumption-based asset pricing mod-
+els to have any chance of explaining options data, there must be correlation between the
+variance risk premium and consumption growth. However, mimicking the general lack
+of correlation between asset returns and consumption growth, the correlation between
+the variance risk premium and consumption growth is negligible using real consump-
+tion growth of non-durables and services (1990:M1-2017:M12) to measure consumption
+growth. The correlation with the variance premium at time t is -0.13 using “future” con-
+sumption growth between time t and t+1; and -0.05 using consumption growth between
+time t−1 and t correlated with the variance risk premium at time t.
+However, there is a strong correlation in the tails of the distribution. When the
+variance risk premium is relatively high, the consumption growth distribution becomes
+more negatively skewed, and the quantile shifts for the consumption growth distribution
+when conditioning on low versus high variance risk premiums are statistically significant
+for the left tail. These empirical facts pose a challenge for most of the models we examine.
+Finally, as our third stylized fact, we rely on Martin (2017) who raises several issues
+regardingthemeasurementofriskneutralvariancesandshowsthatthedifferencebetween
+the risk-neutral entropy and the risk-neutral variance of returns provides a challenging
+data moment for various models in the literature. The moderately positive difference
+between the risk-neutral entropy and variance of returns is an economically important
+moment, because it tells us that the left tail of the risk-neutral aggregate equity return
+distribution is heavier than the right tail, but the difference is not large. We examine
+a wider set of models than Martin (2017) does, taking the opportunity to clarify the
+2
+Electronic copy available at: https://ssrn.com/abstract=3553547

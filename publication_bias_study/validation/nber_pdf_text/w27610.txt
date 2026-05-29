@@ -1,0 +1,115 @@
+NBER WORKING PAPER SERIES
+A DYNAMIC THEORY OF LENDING STANDARDS
+Michael J. Fishman
+Jonathan A. Parker
+Ludwig Straub
+Working Paper 27610
+http://www.nber.org/papers/w27610
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2020, Revised December 2023
+We thank Marco Bassetto, Doug Diamond, Aaron Goodman, Brett Green, Kinda Hachem, Robert
+Marquez, Will Mullins, Rodolfo Rigato, Jeremy Stein, Andrew Winton and participants in
+seminars at the Federal Reserve Bank of Boston, Duke, Princeton, MIT, UNC, Stanford, UVA,
+the Minnesota Corporate Finance Conference, the 2019 Annual Meetings of the SED, the NBER
+2019 Summer Institute (Corporate Finance and Capital Markets and the Economy Meetings), the
+2019 Wharton Conference on Liquidity and Financial Fragility, and the Harvard Finance Reading
+Group. Ludwig Straub appreciates support from the Macro-Financial Modeling Group. Jiageng
+Liu provided excellent research assistance. The views expressed herein are those of the authors
+and do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Michael J. Fishman, Jonathan A. Parker, and Ludwig Straub. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+A Dynamic Theory of Lending Standards
+Michael J. Fishman, Jonathan A. Parker, and Ludwig Straub
+NBER Working Paper No. 27610
+July 2020, Revised December 2023
+JEL No. D82,E51,G21
+ABSTRACT
+We analyze a dynamic credit market where banks choose lending standards, modeled as costly
+effort to screen out bad borrowers. Tighter standards worsen the borrower pool, increasing banks’
+incentives to employ tight standards in the future. This dynamic complementarity in lending
+standards can amplify and prolong downturns, decreasing lending and increasing credit spreads.
+Because lending standards have negative externalities, the market can converge to a steady state
+with inefficiently tight lending standards. We discuss the role of optimal policy to avoid this
+outcome as well as the impact of balance sheet costs on lending standards.
+Michael J. Fishman Ludwig Straub
+Kellogg School of Management Department of Economics
+Northwestern University Harvard University
+Jacobs Center, Room 417 Littauer Center
+2001 Sheridan Road Cambridge, MA 02138
+Evanston, IL 60208-2006 and NBER
+m-fishman@kellogg.northwestern.edu ludwigstraub@g.harvard.edu
+Jonathan A. Parker
+MIT Sloan School of Management
+100 Main Street, E62-642
+Cambridge, MA 02142-1347
+and NBER
+JAParker@MIT.edu
+A data appendix is available at http://www.nber.org/data-appendix/w27610
+
+1 Introduction
+Through the allocation of external financing, lending standards play a key role in the economy,
+determining,forexample,whichentrepreneursgetinitialfunding,whichfirmsgrow,andwhich
+consumersbuyhouses. Lendingstandardsbymanymetricsarehighlycountercyclical,tightening
+inrecessionsandlooseninginbooms. Forexample,lendingstandardswerelooseinthelending
+boomofthemid-2000’s,whencreditspreadsanddefaultrateswerelow,andrelativelytightduring
+thecreditcrunchandrecessionthatfollowed,whenspreadsanddefaultrateswerehigh. Notably,
+lendingstandardswereslowtorelaxfollowingthe2008-09financialcrisis. Animportantaspect
+ofcountercyclicallendingstandardsisthatbanksuselessprivatepayoff-relevantinformationto
+condition lending on during good times when lending standards are loose than during market
+slumpswhentheyaretight(e.g.HowesandWeitzner,2023). Thisraisesimportantquestions: What
+determinesthedynamicsofprivateinformationacquisitionamonglenders? Howdoesitmatter
+for the dynamics of credit markets as a whole? Are market outcomes efficient, and if not, can
+well-timedgovernmentinterventionsimprovematters?
+We study the dynamics and efficiency of credit provision in a model of a credit market in
+whichlendingstandardsareendogenous,bothinfluencingandrespondingtothequalityofthe
+borrowerpool. Wemodellendingstandardsastheextenttowhichbanksacquirecostlyprivate
+payoff-relevantinformationaboutborrowersandconditiontheirlendingonthisinformation. Our
+model consists of competitive banks and borrowers who are identical conditional on public or
+readily-availableinformation(e.g. conditionaloncreditscore). Eachinstant,someborrowershave
+theopportunitytoapproachbanksinsearchofaloantofundaninvestmentproject. Projectsdiffer
+by borrower type: projects of high-quality (low-quality) borrowers have positive (negative) net
+presentvalue. Abankcansimplylendtoaborrowerwhoapproachesit,oritcanconditionlending
+on costly private information about the borrower’s type, e.g. an interview with the applicant,
+verificationofreportedemploymentorincome,anappraisalofthecollateral,orananalysisofthe
+businessplan. Critically,borrowerswhoseloanapplicationsaredeclinedbyonebankmayapplyat
+anotherinthefuture.
+Theseassumptionsimplythatlendingstandardsaredynamicstrategiccomplements: tightlending
+1
+
+standardsinthepresentimplythatbankswillconfrontamoreadversely-selectedpoolinthefuture,
+whichraisestheirincentivetoimposetightlendingstandardsinthefuture. Ourmodel’sdynamics
+aremostinterestingwhentheexanteexpectednetpresentvalueofborrowers’projectsispositive,
+suchasincreditmarketswhereborrowersare“prime”orhavepassedapreliminaryevaluation.
+Underourassumptions,thelendingmarketexhibitsmultiplesteadystatesinthesinglestate
+variable,thepoolquality,definedastheshareofhigh-qualityborrowersinthepoolofborrowers.
+Inthepoolingsteadystate,thepoolqualityishighenoughthateachbankchoosestoapproveloans
+without incurring the additional information collection costs, what we call a “normal” lending
+standard. Low-qualityborrowersarefundedalongwithhigh-qualityborrowers,whichkeepsthe
+pool quality high. In this steady state, the volume of lending is high and loan spreads are low.
+Conversely, in the screening steady state, the pool quality is low enough that banks collect costly
+private information about borrowers andcondition lendingon that information, what wecall a
+“tight”lendingstandard. Inthissteadystate,thetightlendingstandardkeepsthepoolqualitylow,
+thevolumeoflendingislow,andloanspreadsarehigh.
+Ourfirstmainresultisthatlendingstandardscanendogenouslyleadtocreditmarkethysteresis.
+Whileatanypointintimetheequilibriumofourmodelisunique,transitorychangesinmarketfun-
+damentalscanleadtopermanentdifferencesinlendingvolumes,creditspreads,anddefaultrates.
+Atemporarydeteriorationinmarketfundamentals,e.g. aworseningofborrowers’projects,canset
+inmotionaself-reinforcingfeedbackloopbetweendeterioratingpoolqualityandtighterlending
+standards. Thisfeedbackloopculminatesinapermanentshiftinthecreditmarketequilibrium,from
+thepoolingsteadystatetothescreeningsteadystate.
+Whetherthesedynamicsleadtopermanentchangesornot,themodel’sdynamicsmatchthe
+correlationbetweenlendingandlendingstandardsobservedincreditboomsandbusts(asdiscussed
+subsequently),butthespecificmechanismoftime-varying,information-sensitivelendingstandards
+issupportedbydirectevidencethatbanksconditionlendingonmore(less)privateassessments
+duringmarketdownturns(booms)(seeLisowsky,MinnisandSutherland,2017;Bedayo,Jimenez,
+PeydroandVegas,2020;HowesandWeitzner,2023). Further,becausetheinformationacquisition
+associatedwithtighterlendingstandardsraisesthecostofloanorigination,themodeldynamics
+arealsoinlinewiththenegativecorrelationbetweenlendingand(labor)productivityoffinancial
+2

@@ -1,0 +1,131 @@
+NBER WORKING PAPER SERIES
+MEASURING MARKET EXPECTATIONS
+Christiane Baumeister
+Working Paper 29232
+http://www.nber.org/papers/w29232
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2021
+I am grateful to Jim Hamilton for many insightful discussions and helpful suggestions. The views
+expressed herein are those of the author and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2021 by Christiane Baumeister. All rights reserved. Short sections of text, not to exceed two
+paragraphs, may be quoted without explicit permission provided that full credit, including ©
+notice, is given to the source.
+
+Measuring Market Expectations
+Christiane Baumeister
+NBER Working Paper No. 29232
+September 2021
+JEL No. C52,E31,E43,E52,G14,Q43
+ABSTRACT
+Asset prices are a valuable source of information about financial market participants' expectations
+about key macroeconomic variables. However, the presence of time-varying risk premia requires
+an adjustment of market prices to obtain the market's rational assessment of future price and
+policy developments. This paper reviews empirical approaches for recovering market-based
+expectations. It starts by laying out the two canonical modeling frameworks that form the
+backbone for estimating risk premia and highlights the proliferation of risk pricing factors that
+result in a wide range of different asset-price-based expectation measures. It then describes a key
+methodological innovation to evaluate the empirical plausibility of risk premium estimates and to
+identify the most accurate market-based expectation measure. The usefulness of this general
+approach is illustrated for price expectations in the global oil market. Then, the paper provides an
+overview of the body of empirical evidence for monetary policy and inflation expectations with a
+special emphasis on market-specific characteristics that complicate the quest for the best possible
+market-based expectation measure. Finally, it discusses a number of economic applications where
+market expectations play a key role for evaluating economic models, guiding policy analysis, and
+deriving shock measures.
+Christiane Baumeister
+Department of Economics
+University of Notre Dame
+3028 Jenkins Nanovic Hall
+Notre Dame, IN 46556
+and CEPR
+and also NBER
+cbaumeis@nd.edu
+
+1 Introduction
+Expectations about the future play a key role in decision-making under uncertainty and form a
+building block for a wide range of forward-looking models in macroeconomics and …nance. For
+example, expectations about future in‡ation will in‡uence the price- and wage-setting behavior of
+…rms and the consumption and storage decisions of households. Similarly, expectations about com-
+modity price developments will a¤ect production and investment plans as well as economic policy
+interventions. One valuable source of information about agents’expectations of future macroeco-
+nomic outcomes such as in‡ation, monetary policy, and commodity prices are assets traded in
+…nancial and futures markets. This paper surveys the literature on extracting market expectations
+from asset prices and summarizes existing empirical methods.
+Section 2 reviews the asset pricing theory that forms the basis for the empirical analysis. In
+particular, it highlights the problem that …nancial instruments not only incorporate the ratio-
+nal expectation of market participants but also a compensation for undiversi…able risk. I revisit
+empirical e¤orts to uncover the presence of time-varying risk premia and provide an overview of
+modeling techniques used to separate out risk factors from the expectation component consider-
+ing two classes of models for estimating time-varying risk premia, return regressions and Gaussian
+a¢ ne term structure models.
+Section 3 addresses the question of which information set should be used for estimating the
+risk premium and introduces a general approach that allows to discriminate among di¤erent esti-
+mates. Using the oil futures market for illustration, I document the substantial disagreement on
+the magnitude and sign of the time-varying risk premium across predictor variables and discuss
+a methodology to identify the optimal estimate of the risk premium that allows to construct a
+unique and reliable measure of market expectations which can be used as input in economic deci-
+sion problems. Speci…cally, I will show how standard forecasting tools can be applied to obtain the
+most credible estimate of the market price of risk and thus the implied market expectation. This
+statistical assessment can be supplemented by economic criteria to evaluate the plausibility of the
+implied market expectations.
+Section4explorestheuniverseof…nancialinstrumentsthatareusefulforobtainingexpectation
+measures. It provides a description of the characteristics of di¤erent …nancial and futures markets
+that directly in‡uence the extraction of market expectations and discusses the di¢ culties that
+certain institutional features and trading frictions entail in accurately measuring expectations. In
+particular, I will focus on market-based monetary policy expectations and in‡ation expectations.
+Section5presentsanumberofeconomicapplicationswheremarket-basedexpectationmeasures
+havebeenusedtoaddressimportantpolicyquestions. Istartwitharetrospectiveanalysisoftheoil
+marketthattiestheselectedpriceexpectationmeasuretohistoricaleventsandchangesineconomic
+conditions to externally validate the usefulness of this market-based measure. I then consider a
+variety of contexts in which market expectations can be used as inputs for empirical exercises and
+theoretical models to test hypotheses, model decision problems, and inform policymakers. Speci…c
+2
+
+applicationsincludethee¤ectsofregulatorypoliciesonpriceexpectations, suchastheintroduction
+of the Renewable Fuel Standard, the management of the U.S. Strategic Petroleum Reserve, and
+changes in gasoline taxes; the evaluation of the credibility of central bank policies based on the
+anchoring of agents’in‡ation expectations; the detection of speculative bubbles in commodity
+markets; thedecisionsrelatedtohouseholdpurchasesofdurablegoodsaswellascapitalinvestment
+and inventory accumulation; the derivation of surprise measures, such as monetary policy shocks
+and oil price expectation shocks, that capture revisions in market expectations and are key to
+understanding the transmission of shocks to the economy and designing policy responses; and
+the implications for real-time out-of-sample forecasts and macroeconomic projections generated by
+central banks and international organizations. In discussing these various applications, I will o¤er
+some suggestions for promising directions for future research.
+Section 6 brie‡y concludes.
+2 Market Expectations and the Price of Risk
+It is common practice for central banks, international organizations, the private sector, and the
+…nancialpresstotreatthepricesoffutures,forwards,andother…nancialinstrumentsasmeasuresof
+market expectations. For example, Bernanke (2008) stresses that "policymakers and other analysts
+have often relied on quotes from commodity futures markets to derive forecasts of the prices of
+key commodities." This practice …nds its origin in the notion that the price of a futures contract
+Fh with maturity h purchased at time t equals the expected value of the spot price S at expiry:
+t
+Fh = E (S ) where E denotes the expectations operator conditional on information available at
+t t t+h t
+time t. Thus, under the expectations hypothesis the expected payo¤of holding a futures contract
+until maturity is zero since in e¢ cient and rational …nancial markets, it is impossible to devise a
+trading strategy based on all relevant information that leads to making economic pro…ts. This is
+equivalent to postulating that the prices of futures or forward contracts are unbiased predictors of
+future spot prices.
+2.1 Testable Implications
+This proposition can be tested using forecast e¢ ciency regressions of the form:
+(S S ) (Fh S )
+t+h (cid:0) t = (cid:11)+(cid:12) t (cid:0) t +" (1)
+t+h
+S S
+t t
+where the dependent variable is the realized percent change in the spot price between t and t+h,
+the independent variable is the current futures-spot spread expressed in percent changes and "
+t+h
+denotes the error term.1 If futures prices are rational expectations of the future spot price, then we
+1Muchoftheliteratureonforecaste¢ ciencyregressionsuseslogchangeswhichareagoodapproximationifprice
+changes are relatively small. However, some of the commodity prices considered in the empirical analysis below
+exhibit large ‡uctuations which makes the use of percent changes more appropriate.
+3

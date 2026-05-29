@@ -1,0 +1,107 @@
+NBER WORKING PAPER SERIES
+BACKTESTING EUROPEAN STRESS TESTS
+Thomas Philippon
+Pierre Pessarossi
+Boubacar Camara
+Working Paper 23083
+http://www.nber.org/papers/w23083
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+January 2017
+We are grateful to our discussant Til Schuermann, as well as Christian Gourieroux, Christian
+Gollier, Mark Carey, Paul Willen, Anna Kovner, and seminar participants at the NBER Summer
+Institute, the Federal Reserve Bank of Boston, the European Central Bank, the Banque de France,
+and Sciences Po. The views expressed herein are those of the authors and do not necessarily
+reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2017 by Thomas Philippon, Pierre Pessarossi, and Boubacar Camara. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Backtesting European Stress Tests
+Thomas Philippon, Pierre Pessarossi, and Boubacar Camara
+NBER Working Paper No. 23083
+January 2017
+JEL No. G01,G18,G2,G21,G28,G32
+ABSTRACT
+We provide a first evaluation of the quality of banking stress tests in the European Union. We use
+stress tests scenarios and banks’ estimated losses to recover bank level exposures to
+macroeconomic factors. Once macro outcomes are realized, we predict banks’ losses and
+compare them to actual losses. We find that stress tests are informative and unbiased on average.
+Model-based losses are good predictors of realized losses and of banks’ equity returns around
+announcements of macroeconomic news. When we perform our tests for the Union as a whole,
+we do not detect biases in the construction of the scenarios, or in the estimated losses across
+banks of different sizes and ownership structures. There is, however, some evidence that
+exposures are underestimated in countries with ex-ante weaker banking systems. Our results have
+implications for the modeling of credit losses, quality controls of supervision, and the political
+economy of financial regulation.
+Thomas Philippon Boubacar Camara
+New York University ACPR-Banque de France
+Stern School of Business Paris
+44 West 4th Street, Suite 9-190 France
+New York, NY 10012-1126 Boubacar.CAMARA@acpr.banque-france.fr
+and NBER
+tphilipp@stern.nyu.edu
+Pierre Pessarossi
+ACPR - Banque de France
+Paris
+France
+Pierre.PESSAROSSI@acpr.banque-france.fr
+
+Stress tests have become a major tool of banking supervision in the United States and in
+Europe. Regulatory stress tests are used to set bank capital levels and validate dividend policies.
+Stresstestingexercisesmobilizelargehumanandfinancialresourcesamongregulatorsandbankers.
+Regulators need to design the scenarios, run their own models, and monitor closely the answers
+provided by the banks. The banks, on the other hand, allocate considerable time and effort to
+comply with the guidelines and estimate their losses at a fairly granular level.
+Yet, despite the clear importance of stress tests, their quality has not yet been formally tested.
+In fact, the data from the tests are typically used only once, to assess the health of the banks.
+Stress tests data, despite their richness and granularity, have not been used for further research.
+The issue, of course, is to figure out a way to use the data, since the scenarios of the stress tests
+(almost) never actually happen. The central scenario should be close to the realized one on average
+but that is not very useful since we are precisely interested in deviations from this central scenario.
+The adverse scenarios, on the other hand, are more interesting but they are, by definition (and
+thankfully) usually far from the realized one.
+Our goal in this paper is to provide a first assessment of the quality of stress tests in Europe.
+We want to know whether stress tests results provide reliable information for regulators on the
+resilience of banks. To do so, we propose an approach in two steps. In a first step, we use
+the European stress test results to estimate bank loss rates sensitivity to macroeconomic shocks.
+Once we obtain these sensitivities, we compute loss rate predictions under actual macroeconomic
+outcomes. These predicted loss rates can then be backtested using actual market and accounting
+data.
+European Stress tests require banks to model loss rates on their credit exposures under a
+baseline scenario and under an adverse scenario. These scenarios cover all countries from the
+European Union. Banks report their projected losses in all countries where they have significant
+exposures. We use the data from the exercise (i.e. the scenarios for macroeconomic factors –
+GDP growth, inflation, and unemployment rates – and loss rate projections reported by banks) to
+2
+
+estimate banks’ sensitivity to macroeconomic shocks.
+We obtain six main results. First, a simple logistic-linear model of bank loss rates fits
+the stress data well. Second, stress tests scenarios are not biased in favor of countries with ex-
+ante fragile banking systems. Third, model-estimated losses are unbiased predictors of realized
+losses across all the banks in our sample, and for small and large banks separately. Fourth,
+the 2011 stress tests did not have the same quality as the 2014 stress tests, consistent with the
+theoretical prediction of Faria e Castro et al. [2017] that a common backstop (however incomplete)
+allows regulators to perform more informative stress tests. Fifth, however, we find some evidence
+that estimated exposures are under-estimated in countries with ex-ante fragile banking sectors.
+Finally, we show that our estimated exposures predict the cross sectional variation of bank stock
+returns after macro announcements, which shows that market participants agree with our model’s
+predictions (we cannot tell, however, if they learned the exposures from the stress tests themselves,
+or if they knew them all along).
+Overview of the EBA 2014 Stress Tests In 2014, the European Banking Authority (EBA)
+conducted Euro-wide stress tests on 123 banks covering approximately 80% of total banking assets
+in the EU [EBA, 2014].1 The EU-wide stress test was coordinated by the EBA across the EU
+and carried out in cooperation with the European Systemic Risk Board (ESRB), the European
+Commission, the European Central Bank (ECB), and the relevant national regulators. The various
+tasks involved in the stress tests were split as follows. The ECB was responsible for the overall
+quality assurance and for the asset quality review that provides the starting point of the stress
+test. The ESRB and the European Commission provided the underlying macroeconomic scenarios.
+The EBA developed the common methodology and ensured the disclosure of the results. The ECB
+and the national authorities could decide follow up actions.
+The starting point of the stress test is the balance sheet of banks at end of December 2013.
+1The total assets of banks participating to the exercise represent almost 22 trillion.
+3

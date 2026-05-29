@@ -1,0 +1,144 @@
+NBER WORKING PAPER SERIES
+A LOCAL PROJECTIONS APPROACH TO DIFFERENCE-IN-DIFFERENCES
+Arindrajit Dube
+Daniele Girardi
+Òscar Jordà
+Alan M. Taylor
+Working Paper 31184
+http://www.nber.org/papers/w31184
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+April 2023, revised May 2025
+We thank Alexander Busch, Colin Cameron, Clement de Chaisemartin, Sophie Hatte, Thomas
+Høgholm Jørgensen, and seminar participants at UC Davis, University of Milan La Statale, 2022
+NBER Summer Institute, 2023 Annual AEA Meetings, 2023 EEA-ESEM Annual Congress,
+PolMeth Europe 2023, Asia School of Business (ASB), Sant’Anna School of Advanced Studies,
+UMass Amherst, University of Pisa and King’s College London for helpful comments and
+exchanges. The lpdid STATA command, which implements the LP-DiD estimators discussed in
+this paper, can be found at https://econpapers.repec.org/software/bocbocode/S459273.htm.
+Additional STATA example files are available at https://github.com/danielegirardi/lpdid/. The
+views expressed in this paper are the sole responsibility of the authors and do not necessarily reflect
+the views of the Bank of England, the Federal Reserve Bank of San Francisco, the Federal Reserve
+System, or the National Bureau of Economic Research.
+At least one co-author has disclosed additional relationships of potential relevance for this research.
+Further information is available online at http://www.nber.org/papers/w31184
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2023 by Arindrajit Dube, Daniele Girardi, Òscar Jordà, and Alan M. Taylor. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+A Local Projections Approach to Difference-in-Differences
+Arindrajit Dube, Daniele Girardi, Òscar Jordà, and Alan M. Taylor
+NBER Working Paper No. 31184
+April 2023, revised May 2025
+JEL No. C1, C23, C5
+ABSTRACT
+We propose a local projections (LPs) based difference-in-differences approach that subsumes many
+of the recent solutions proposed in the literature to address possible biases arising from negative
+weighting. We combine LPs with a flexible ‘clean control’ condition to define appropriate sets of
+treated and control units. Our proposed LP-DiD estimator can be implemented with various
+weighting and normalization schemes for different target estimands, can be extended to include
+covariates or accommodate non-absorbing treatment, and is simple and fast to implement. A
+simulation and two empirical applications demonstrate that the LP-DiD estimator performs well in
+common applied settings.
+Arindrajit Dube Òscar Jordà
+University of Massachusetts, Amherst Federal Reserve Bank of San Francisco
+Department of Economics and University of California, Davis
+and NBER and also CEPR
+adube@econs.umass.edu oscar.jorda@gmail.com
+Daniele Girardi Alan M. Taylor
+King's College London Columbia University
+daniele.l.girardi@gmail.com and CEPR
+and also NBER
+amt2314@columbia.edu
+A STATA example files illustrating the implementation of the LP-DiD estimators discussed in this paper can be
+found here: is available at https://github.com/danielegirardi/lpdid/
+
+1 Introduction
+Difference-in-differences (DiD) designs are commonly used to estimate treatment effects
+with observational data. In canonical form, with two periods and two groups (of which
+one is treated), and under no anticipation and parallel trends assumptions, the DiD
+comparison is an unbiased estimator of the average treatment effect on the treated (ATT).
+In this basic two-periods/two-groups setting, conventional two-way fixed-effects (TWFE)
+or first-difference regression can be used to implement the DiD method.
+However, a recent literature has shown that conventional TWFE implementations
+can be biased in more general multi-period settings, where the dates of treatment can
+differ across groups (staggered treatment) and treatment effects can be dynamic and
+heterogeneous. In this setting, the conventional TWFE implementation has been shown to
+estimate a weighted average of group-specific effects where the weights may be negative,
+leading to potentially severe bias. Because of this ‘negative weighting’ bias, the TWFE
+estimate could even lie outside of the range of group-specific treatment effects. This
+1
+problem has led to the search for, and a proliferation of, several alternative estimators.
+In this paper we propose a framework for DiD estimation that exploits an important
+link to local projections (LPs), a statistical technique introduced in a time-series context
+2005
+in Jorda` ( ). By its very design, and as used in applied macroeconomics, the LP
+approach was set up to estimate dynamic average effects. As we show in this paper,
+an under-appreciated feature of the LP framework is that it is straightforward to limit
+the set of permissible comparisons based on a desired criterion, such as past treatment
+history. Leveraging this feature, we further develop the LP framework to derive a simple
+to implement, general and flexible regression-based framework for DiD.
+Our LP-DiD approach employs LPs to estimate dynamic effects alongside a flexible
+2019
+‘clean control’ condition in the spirit of Cengiz et al. ( ) to avoid the negative weighting
+bias of conventional fixed-effects estimators. Intuitively, negative weighting arises because
+previously treated units, which might still be experiencing lagged time-varying and
+heterogeneous treatment effects, are implicitly used as controls for newly treated ones.
+The LP-DiD clean control condition avoids this bias by restricting the estimation sample
+so that ‘unclean’ observations, whose outcome dynamics are still potentially influenced
+by previous changes in treatment status, are not in the control group.
+Under the usual DiD assumptions, LP-DiD provides an unbiased estimate of a convex
+1 SeeforexampleChaisemartinandD’Haultfœuille(2020),Goodman-Bacon(2021),SunandAbraham
+(2020),CallawayandSant’Anna(2020),Borusyak,Jaravel,andSpiess(2024),Chaisemartin,D’Haultfœuille,
+etal.(2022),Gardneretal.(2024),Baker,Larcker,andWang(2022),andWooldridge(2021). Surveysofthis
+‘newDiD’literatureareprovidedbyRothetal.(2023)andChaisemartinandD’Haultfœuille(2022)
+1
+
+weightedaverageofcohort-specificeffects. Weexplicitlycharacterizetheweightsassigned
+to each cohort-specific effect, and show that they are always positive and depend on
+treatment variance and subsample size. As we will explain, however, it is easy to
+implement different weighting schemes to obtain alternative estimands – including the
+equally-weighted ATT. It is also easy to obtain a ‘pooled’ estimate, averaged over the full
+post-treatment window.
+We then extend the LP-DiD approach to settings with covariates or non-absorbing
+treatment. Under conditional parallel trends, a regression-adjustment LP-DiD specifica-
+tion yields an unbiased estimate of the ATT. We also clarify the additional assumptions
+underwhichcovariatescanbeaddeddirectlytoanOLSLP-DiDspecification. Toillustrate
+how our framework can accommodate non-absorbing treatment, we derive (i) a LP-DiD
+estimator for the effect of first-time treatment entry, and (ii) a LP-DiD estimator for the
+average effect of a treatment event under an additional effect stabilization assumption.
+Importantly, several recent DiD estimators can be reproduced as specific sub-cases
+of our general approach based on either weights assigned to treatment events, or the
+choice of a base period for constructing LPs. In a baseline variance-weighted version,
+the LP-DiD estimate is numerically equivalent to the estimate from a stacked regression
+2019
+approach as implemented in Cengiz et al. ( ). The re-weighted LP-DiD regression that
+recovers an equally-weighted ATT is numerically equivalent to the estimator proposed
+2020
+by Callaway and Sant’Anna ( ). Yet another version of LP-DiD, reweighted and with
+an alternative pre-treatment base period, is very close to the Borusyak, Jaravel, and
+2024
+Spiess ( ) imputation estimator. However, the LP-DiD implementation is simpler and
+computationally faster, and can be more easily generalized for non-absorbing treatment.
+Moreover, all the estimators proposed in this paper allow for standard statistical
+inference using well understood techniques, already incorporated in common statistical
+software. For this reason, we don’t discuss statistical inference here.
+Evidence from a Monte Carlo simulation suggests that LP-DiD performs well in
+staggered DiD settings, also in comparison with other recent estimators. We consider a
+binary staggered treatment with dynamic and heterogeneous effects, where the parallel
+trends assumption holds but conventional TWFE performs poorly because of negative
+2020
+weighting bias. We show that LP-DiD performs similarly to the Sun and Abraham ( ),
+2020 2024
+Callaway and Sant’Anna ( ) and Borusyak, Jaravel, and Spiess ( ) estimators, while
+being computationally faster.
+We employ LP-DiD to estimate the impact of banking deregulation on the labor
+2020
+share (replicating and extending Leblebiciog˘lu and Weinberger ) and the effect of
+2019
+democratization on economic growth (replicating and extending Acemoglu et al. ),
+2

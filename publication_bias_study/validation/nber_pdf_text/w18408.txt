@@ -1,0 +1,118 @@
+NBER WORKING PAPER SERIES
+ENDOGENOUS LIQUIDITY AND DEFAULTABLE BONDS
+Zhiguo He
+Konstantin Milbradt
+Working Paper 18408
+http://www.nber.org/papers/w18408
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2012
+For helpful comments, we thank Nittai Bergman (MIT), Bruce Carlin (UCLA), Hui Chen (MIT), Richard
+Green (CMU), Nicolae Garleanu (UC Berkeley), Barney Hartman-Glaser (Duke), Burton Hollifield
+(CMU), Gustavo Manso (UC Berkeley), Holger Mueller (NYU), and seminar participants of the MIT
+Sloan lunchtime workshop, NYU lunchtime workshop, Columbia GSB lunchtime workshop, NBER
+Microstructure meeting, ASU winter conference, Duke-UNC asset pricing conference, Texas Finance
+Festival, UNC, Boston University, University of Colorado at Boulder, INSEAD, Imperial College
+London, UCLA Anderson, WFA 2012, SED 2012, NBER SI Asset Pricing meeting, and Gerzensee
+ESSFM 2012. We are especially grateful to Rui Cui for excellent research assistance. Zhiguo He acknowledges
+financial support from the Center for Research in Security Prices at the University of Chicago Booth
+School of Business. The views expressed herein are those of the authors and do not necessarily reflect
+the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2012 by Zhiguo He and Konstantin Milbradt. All rights reserved. Short sections of text, not to exceed
+two paragraphs, may be quoted without explicit permission provided that full credit, including © notice,
+is given to the source.
+
+Endogenous Liquidity and Defaultable Bonds
+Zhiguo He and Konstantin Milbradt
+NBER Working Paper No. 18408
+September 2012
+JEL No. E44,G01,G12
+ABSTRACT
+This paper studies the interaction between fundamental and liquidity for defaultable corporate bonds
+that are traded in an over-the-counter secondary market with search frictions. Bargaining with dealers
+determines a bond's endogenous liquidity, which depends on both the firm fundamental and the time-to-maturity
+of the bond. Corporate default decisions interact with the endogenous secondary market liquidity via
+the rollover channel. A default-liquidity loop arises: Earlier endogenous default worsens a bond's secondary
+market liquidity, which amplifies equity holders' rollover losses, which in turn leads to earlier endogenous
+default. Besides characterizing in closed form the full inter-dependence between liquidity premium
+and default premium for credit spreads, we also study the optimal maturity implied by the model based
+on the tradeoff between liquidity provision and inefficient default.
+Zhiguo He
+University of Chicago
+Booth School of Business
+5807 S. Woodlawn Avenue
+Chicago, IL 60637
+and NBER
+zhiguo.he@chicagobooth.edu
+Konstantin Milbradt
+Sloan School of Management
+MIT
+100 Main Street E62-633
+Cambridge, MA 02142
+milbradt@mit.edu
+
+1 Introduction
+Therecent2007-2008financialcrisisandtheongoingsovereigncrisishavevividlydemonstratedthe
+intricate interaction between asset fundamental and asset liquidity in financial markets. Liquid-
+ity tends to dry up for assets with deteriorating fundamentals when solvency becomes a concern,
+reflected by soaring liquidity premia and/or prohibitive transaction costs in trading. In the mean
+time, asset fundamentals worsen further due to endogenous reactions (say, default) of market par-
+ticipants in response to worsening liquidity in financial markets.
+The fundamental-liquidity spiral is at the center of the academic policy research on financial
+crises,andthispaperaimstodeliversuchafeedbackloopinthecontextofcorporatebondmarkets.1
+It has been well documented that secondary corporate bond markets – which are mainly over-the-
+counter (OTC) markets – are much less liquid than equity markets.2 On the one hand, Edwards,
+Harris, and Piwowar (2007) and Bao, Pan, and Wang (2011) document a strong empirical pattern
+that the liquidity for corporate bonds (measured as the transaction cost) deteriorates dramatically
+for bonds with lower fundamental, i.e., bonds that are issued by firms closer to default (reflected
+by higher credit derivative swaps, CDS). On the other hand, the recent financial crisis of 2007-2008
+illustrates that the deterioration of secondary market liquidity, through adversely affecting the
+refinancing operations of firms, can exacerbate the incentives of equity holders to default (He and
+Xiong (2012b), hereafter HX12). Taken together, these two observations imply a positive feedback
+loop between the secondary market liquidity and asset fundamentals for corporate bonds.
+To deliver such an default-liquidity spiral effect, we adopt two standard ingredients from the
+existing literature. First, we model the endogenous liquidity in the secondary corporate bond
+market as a search-based over-the-counter (OTC) market á la Duffie, Garlenau, and Pedersen
+1Corporate bond markets, for both financial and non-financial firms, make up a large part of the U.S. financial
+system. According to flow of funds, the values of corporate bonds reaches about 4.7 trillion in the first quarter of
+2010, which consists of about one third of total liabilities of U.S. corporate businesses.
+2Forinstance,Edwards,Harris,andPiwowar(2007)studytheU.S.OTCsecondarytradesincorporatebondsand
+estimatethetransactioncosttobearound150bps,andBao,Pan,andWang(2011)findanevenlargernumber. The
+fact that equity markets–while being presumably subject to more asymmetric information problems–are more liquid
+implytheimportanceofsearchfrictionincorporatebondmarkets. Otherempiricalpapersthatinvestigatesecondary
+bondmarketliquidityareHongandWarga(2000),Schultz(2001),Green,Hollifield,andSchurhoff(2007a,b);Harris
+and Piwowar (2006).
+1
+
+(2005). Bond investors who are hit by liquidity shocks prefer early payments, and with a certain
+matching technology they meet and trade with an intermediary dealer at an endogenous bid-ask
+spread. A novel feature is that the endogenous liquidity for the secondary bond market depends
+on both the firm’s distance-to-default and the bond’s time-to-maturity.
+The second important ingredient for the feedback between fundamental and liquidity is the
+endogenous default decision by equity holders. This mechanism is borrowed from the standard
+Leland-type corporate finance structural models, i.e., Leland (1994) and Leland and Toft (1996)
+(hereafter LT96). More specifically, a firm rolls over (refinances) maturing bonds by issuing new
+bonds of the same face value. When firm fundamentals deteriorate, equity holders will face heavier
+rollover losses due to falling prices of newly issued bonds. Equity holders default optimally when
+absorbing further losses is unprofitable, at which point bond investors with defaulted claims step
+in to recover part of the firm value subject to dead-weight bankruptcy cost.
+The secondary market liquidity of defaulted bonds, i.e., bonds of firms that have defaulted,
+is important in deriving the endogenous bond liquidity before the firm defaults. We model the
+(il)liquidity of defaulted bonds based on the fact that bankruptcy leads to a delay in the payout
+of any cash due to lengthy court proceedings, as for example in the Lehman Brothers bankruptcy
+(see footnote 15). This serves as one of the boundary conditions needed to solve the system of
+partial differential equations (PDEs) that describes the bond valuations.3 We solve for debt and
+equity valuation, the endogenous default boundary, and the endogenous liquidity in closed form in
+Section 3.
+Consistent with empirical findings in Edwards, Harris, and Piwowar (2007) and Bao, Pan, and
+Wang (2011), we show in Section 4.2 that the endogenous bid-ask spread is decreasing with the
+firm’s distance-to-default, holding the time-to-maturity constant; and decreasing in the bond’s
+time-to-maturity, holding the distance-to-default constant. Moreover, our model produces a novel
+testable empirical prediction that the slope with respect to time-to-maturity of the bid-ask spread
+3Thisarisesbecausebondvaluationsdependonfirmfundamental,thebond’stime-to-maturity,andtheliquidity
+state of bond holders.
+2

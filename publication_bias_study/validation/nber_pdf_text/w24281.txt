@@ -1,0 +1,142 @@
+NBER WORKING PAPER SERIES
+SOCIAL TRANSMISSION BIAS AND INVESTOR BEHAVIOR
+Bing Han
+David Hirshleifer
+Johan Walden
+Working Paper 24281
+http://www.nber.org/papers/w24281
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge MA 02138
+February 2018, Revised January 2020
+A previous version of this paper was entitled, “Self-Enhancing Transmission Bias and Active
+Investing.” We thank seminar participants at Cambridge University, Central University of Finance
+and Economics, Chinese University of Hong Kong, Columbia University, Emory University, the
+Federal Reserve Board of New York, Nanyang Business School, National University of Singapore,
+New York University, Oxford University, Princeton University, Shanghai Advanced Institute of Finance,
+Singapore Management University, Southwestern University of Finance and Economics, UCLA,
+UCSD, University of Hong Kong, University of North Carolina, University of Toronto, University of
+Washington at Seattle, Washington University in St. Louis, Xiamen University, Yale University, and the
+Institute for Mathematical Behavioral Sciences at UC Irvine; participants at the National Bureau of
+Economic Research behavioral finance working group meeting in Chicago, the American Finance
+Association annual meetings, the Applied Behavioral Finance Conference at UCLA, the Linde
+Conference at Caltech, the BYU Red Rock Finance Conference, the SITE conference at Stanford
+University, and the 2nd China International Forum on Finance and Policy; Jennifer Conrad (Editor), an
+anonymous referee, the NBER discussant, Nick Barberis; the AFA discussant, Blake LeBaron; the
+ABF discussant, Andrea Eisfeldt; the Five Star discussant JuanJuan Meng; Markus Brunnermeier,
+Terry Burnham, Jean-Paul Carvalho, David Dicks, Jakub Jurek, Edward Rice, Nikolai Roussanov,
+Martin Schmalz, Siew Hong Teoh, Paul Tetlock, Rossen Valkanov, Michela Verardo, Ivo Welch, Jeff
+Wurgler, Hongjun Yan, Liyan Yang, and Wei Xiong for very helpful comments; and Jason Chan,
+SuJung Choi, and Major Coleman for helpful research assistance. The views expressed herein are
+those of the authors and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2018 by Bing Han, David Hirshleifer, and Johan Walden. All rights reserved. Short sections of text,
+not to exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Social Transmission Bias and Investor Behavior
+Bing Han, David Hirshleifer, and Johan Walden
+NBER Working Paper No. 24281
+February 2018, Revised January 2020
+JEL No. D03,D83,D85,D9,D91,G02,G11,G12,G14,G4,G41
+ABSTRACT
+We offer a new social approach to investment decision making and asset prices. Investors discuss
+their strategies and convert others to their strategies with a probability that increases in
+investment returns. The conversion rate is shown to be convex in realized returns.
+Unconditionally, active strategies (e.g., high variance and skewness) dominate, although investors
+have no inherent preference over these characteristics. The model has strong predictions for how
+adoption of active strategies depends on investors' social networks. In contrast with nonsocial
+approaches, sociability, self-enhancing transmission and other features of the communication
+process determine the popularity and pricing of active investment strategies.
+Bing Han Johan Walden
+Department of Finance Haas School of Business
+Rotman School of Management University of California at Berkeley
+University of Toronto 545 Student services building, #1900
+105 St. George Street Berkeley, CA 94720
+Toronto, Ontario walden@haas.berkeley.edu
+Canada
+Bing.Han@Rotman.Utoronto.Ca
+David Hirshleifer
+The Paul Merage School of Business
+University of California, Irvine
+4291 Pereira Drive
+Irvine, CA 92697
+and NBER
+david.h@uci.edu
+
+1 Introduction
+A neglected topic in financial economics is how investment ideas are transmitted from per-
+son to person. In most investments models, the influence of individual choices on others
+is mediated by price or by quantities traded in impersonal markets. However, more di-
+rect forms of social interaction also affect investment decisions. As Shiller (1989) put it,
+“...Investing in speculative assets is a social activity. Investors spend a substantial part
+of their leisure time discussing investments, reading about investments, or gossiping about
+others’ successes or failures in investing.” In one survey, individual investors were asked
+what first drew their attention to the firm whose stock they had most recently bought.
+Almost all referred to direct personal contact; personal interaction was also important for
+institutional investors (Shiller and Pound 1989). Furthermore, an empirical literature finds
+that social interactions affect investment decisions by individuals and money managers,
+including selection of individual stocks.1
+We offer a new social approach to the theory of investor behavior by modeling how the
+process by which ideas are transmitted affects trading strategies. We explore how biases
+in conversation promote superficially-appealing personal investing strategies, focusing on
+active versus passive investment behavior in security markets. Our goal is to provide an
+integrated explanation for several well-known puzzles and stylized facts in the literature
+while providing new insights and empirical implications.
+Notably, individualinvestorstradeactivelyandhaveinvestedinactiveinvestmentfunds
+for decades, and thereby have on average underperformed net of costs relative to a pas-
+sive strategy such as holding a market index—the active investing puzzle.2 Second is the
+underdiversification puzzle, that investors hold individual stocks and active funds, thereby
+1Shiller (2000, 2017) discusses other indications that conversation matters for security investment de-
+cisions. The empirical literature includes Kelly and O’Grada (2000), Duflo and Saez (2002, 2003), Hong,
+Kubik, and Stein (2004, 2005), Massa and Simonov (2005), Ivkovi´c and Weisbenner (2007), Brown et al.
+(2008), Cohen, Frazzini and Malloy (2008, 2010), Shive (2010), Gray, Crawford, and Kern (2012), and
+Mitton, Vorkink, and Wright (2018).
+2On underperformance in individual trading, see Barber and Odean (2000a), Barber et al. (2009).
+Carhart (1997) and Daniel et al. (1997) find that active funds typically do not outperform the returns of
+passive benchmarks. French (2008) documents very large fees paid in the aggregate by investors to active
+funds. In recent years there has also been a shift from active mutual funds toward both indexing but also
+to hedge funds. In any case, what is notable is how slow has been the shift from active funds toward
+indexing over a period of decades.
+1
+
+increasing portfolio volatility without adequate compensating mean returns. For example,
+the idiosyncratic risk exposure of Swedish households accounts for half of the return vari-
+ance for the median household (Calvet, Campbell, and Sodini 2007). Third, individual
+investors are attracted to stocks with high skewness—so-called lottery stocks—see Kumar
+(2009), Bali, Cakici, and Whitelaw (2011), Han and Kumar (2013), and Boyer and Vorkink
+(2014). This behavior is not consistent with standard investor preferences. A final feature
+of investor behavior is that flows into funds are a convex function of past performance
+(Chevalier and Ellison 1997; Sirri and Tufano 1998).
+The leading explanations typically focus on a subset of these puzzles and stylized facts,
+and do not address other dimensions of investor behavior. Naive active investing, for
+example, has been explained by individual-level cognitive biases. Excessive individual
+investor trading is typically attributed to investor overconfidence (DeBondt and Thaler
+1995; Barber and Odean 2000a), the tendency of investors to overestimate their abilities.
+However, there is also evidence that trading aggressiveness is greatly exacerbated by social
+interactions, a fact that is not emphasized by this literature.3
+Standard explanations for underdiversification include hedging motives and heteroge-
+neouspreferences, butseveralstudieshighlightthelimitationsoftheseexplanations. Massa
+and Simonov (2006) find that hedging motives for human capital risk, which is a fundamen-
+tal source of individual investor risk, does not explain heterogeneous investment behavior
+among individual investors well. Similarly, Calvet, Campbell and Sodini (2007, 2009) find
+that rational diversification and portfolio rebalancing motives do not suffice to explain
+investors’ portfolio holdings well.
+Theleadingexplanationsfortheattractionofinvestorstolotterystockshavebeenbased
+on individual-level biases, and specifically on nontraditional preferences (Brunnermeier and
+Parker 2005; Barberis and Huang 2008). Such explanations do not, however, explain why
+higher intensity of social interactions is associated with stronger attraction of investors to
+both high volatility and high skewness stocks, where this intensity is proxied by population
+3For example, participants in investment clubs seem to select individual stocks based on reasons that
+are easily exchanged with others (Barber, Heath, and Odean 2003); select small, high-beta, growth stocks;
+turnovertheirportfoliosveryfrequently; andunderperformthemarket(BarberandOdean2000b). There
+isevidence(mentionedinfootnote1)thatstockpickingbyindividualsandinstitutions,anactiveinvesting
+behavior, spreads socially, and that stock market participation increases with measures of social connect-
+edness (Hong, Kubik, and Stein 2004; Kaustia and Knu¨pfer 2012). Furthermore, during the millennial
+high-tech boom, investors who switched early to online trading (and who were probably early participants
+in online forms of social interaction) subsequently began to trade more actively and speculatively, and
+earned reduced trading profits (Barber and Odean 2002; Choi, Laibson, and Metrick 2002).
+2

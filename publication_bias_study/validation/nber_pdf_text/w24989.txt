@@ -1,0 +1,152 @@
+NBER WORKING PAPER SERIES
+THE COSTS OF MACROPRUDENTIAL POLICY
+Björn Richter
+Moritz Schularick
+Ilhyock Shim
+Working Paper 24989
+http://www.nber.org/papers/w24989
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2018
+Schularick gratefully acknowledges support from the Thematic Fellowship Programme of the
+Hong Kong Institute for Monetary Research (HKIMR). We are grateful for Ozge Akinci, Claudio
+Borio, Stijn Claessens, Leonardo Gambacorta, Boris Hofmann, Enisse Kharroubi, Catherine
+Koch, Gianni Lombardo, Luiz Pereira da Silva, Hyun Song Shin, Nikola Tarashev, Silvana
+Tenreyro, Kostas Tsatsaronis and an anonymous referee for their helpful suggestions. We thank
+the participants in the NBER International Seminar on Macroeconomics 2018, the Banque de
+France 20th Central Bank Macro Modeling Workshop, the HKIMR seminar and the BIS internal
+seminar for comments. We also thank Jimmy Shek and Jose Maria Vidal Pastor for their
+excellent research assistance. The views expressed herein are those of the authors and do not
+necessarily reflect the views of the Bank for International Settlements or the National Bureau of
+Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2018 by Björn Richter, Moritz Schularick, and Ilhyock Shim. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+The Costs of Macroprudential Policy
+Björn Richter, Moritz Schularick, and Ilhyock Shim
+NBER Working Paper No. 24989
+September 2018
+JEL No. E58,G28
+ABSTRACT
+Central banks increasingly rely on macroprudential measures to manage the financial cycle.
+However, the effects of such policies on the core objectives of monetary policy to stabilise output
+and inflation are largely unknown. In this paper, we quantify the effects of changes in maximum
+loan-to-value (LTV) ratios on output and inflation. We rely on a narrative identification approach
+based on detailed reading of policy-makers’ objectives when implementing the measures. We
+find that over a four year horizon, a 10 percentage point decrease in the maximum LTV ratio
+leads to a 1.1% reduction in output. As a rule of thumb, the impact of a 10 percentage point LTV
+tightening can be viewed as roughly comparable to that of a 25 basis point increase in the policy
+rate. However, the effects are imprecisely estimated and the effect is only present in emerging
+market economies. We also find that tightening LTV limits has larger economic effects than
+loosening them. At the same time, we show that changes in maximum LTV ratios have
+substantial effects on credit and house price growth. Using inverse propensity weights to
+rerandomise LTV actions, we show that these effects are likely causal.
+Björn Richter Ilhyock Shim
+Institute for Macroeconomics and Econometrics Bank for International Settlements
+University of Bonn Centralbahnplatz 2
+Kaiserplatz, 7-9 4th floor 4002 Basel
+53113, Bonn, Germany Switzerland
+brichter@uni-bonn.de ilhyock.shim@bis.org
+Moritz Schularick
+University of Bonn
+Department of Economics
+Adenauerallee 24-42
+53113 Bonn
+Germany
+and CEPR
+moritz.schularick@uni-bonn.de
+
+1 ntroduction
+. I
+How do macroprudential policies interact with the core objectives of monetary policy to
+stabilise prices and output? As a response to the global financial crisis, central banks and
+regulatorsacrosstheworldhaveincreasinglyreliedonmacroprudentialpoliciestomaintain
+financial stability. A recent literature has shown that policy-makers can moderate credit and
+asset price cycles using macroprudential instruments (e.g. Akinci and Olmstead-Rumsey
+2018 2017 2016
+( ), Bruno et al. ( ) and Kuttner and Shim ( )). This way, they can reduce negative
+output tail risks emanating from the link between excess credit and costly financial crises
+2012 2013
+(Schularick and Taylor ( ) and Jorda` et al. ( )). However, there is very little empirical
+evidence on how the use of such instruments affects the traditional objectives of monetary
+policy, that is, output and inflation.
+Inthispaper,weexploretheeffectsofmacroprudentialmeasuresonoutputandinflation
+56
+for a large cross-country panel of countries over more than two decades. Building on a
+new dataset, we use a narrative approach in order to address identification challenges. Our
+results show that macroprudential measures, specifically changes in the maximum loan-to-
+value (LTV) ratio, do have modest and imprecisely estimated spillover effects on output and
+10
+inflation. In particular, we find that a percentage point reduction in the maximum LTV
+11
+ratio lowers output by about . % after four years. However, this effect is rather imprecisely
+estimated. The near-term impact on the price level is in most specifications even smaller
+and close to zero. The effect is more pronounced in emerging market economies (EMEs),
+while the path of output is almost unaffected by LTV limit changes in the set of advanced
+economies (AEs). In a back-of-the-envelope calculation, we compare the magnitude of this
+2017
+effect to estimates of GDP responses to monetary policy in Jorda` et al. ( ), which are
+also based on a broad sample of countries. We find that the two-year response of GDP to a
+10 26
+percentage point reduction in the maximum LTV ratio can be compared to that of a
+basis points increase in interest rates.
+Importantly we also test for potential asymmetries and find that the output effect is
+mainly driven by the negative effects of tightenings in maximum LTV ratios, and not by
+higher output generated through loosening actions. We also assess the treatment effects of
+LTV limit tightenings on financial variables using inverse propensity weighting and find
+that credit and house prices fall after a tightening. Overall, these results imply that central
+banks might be able to use macroprudential policies to dampen the financial cycle without
+risking major interference with their core monetary policy objectives.
+Macroprudential measures are not randomly assigned. In the ideal environment to
+measure the effects of changes in LTV limits on output and inflation, the following three
+1
+
+conditions are satisfied: (i) LTV policy actions are exogenous with respect to current and
+lagged real variables; (ii) such actions are uncorrelated with other shocks (e.g., monetary
+policyacting atthesame time); and (iii)theyareunexpected. While theunsystematicnature
+of macroprudential policies means they are typically unexpected, we clearly need to worry
+about the exogeneity of the policy action. To address the exogeneity condition, we rely in
+this paper on a novel hand-collected dataset detailing the intentions or stated objectives
+of policy-makers when they change LTV limits. This approach is in the tradition of the
+1963
+narrative approach pioneered in Friedman and Schwartz ( ) and Romer and Romer
+1989
+( ). In a similar spirit to the narrative identification of monetary policy shocks, we
+argue that macroprudential actions taken without reference to current or expected trends
+in real output and inflation can be seen as exogenous with respect to price and output
+stabilisation objectives of monetary policy. This new narrative measure therefore allows us
+to establish the causal effects of macroprudential actions on economic activity and inflation.
+Using a battery of tests, we confirm that there is indeed no systematic relationship between
+changes in our narrative measure and real economic variables. To address the second
+condition, we control for monetary policy shocks in all our specifications. To trace the
+dynamic propagation of such exogenous policy interventions, we rely on local projections
+2005
+(Jorda` ( )).
+Our identification approach requires detailed reading and understanding of the under-
+lying motivations for macroprudential measures and the information set of policy-makers.
+To keep the required information manageable, we focused on one specific tool that is
+frequently used to tackle boom-bust cycles in credit and housing markets, namely, changes
+in maximum LTV ratios. We compiled a comprehensive new dataset consisting of quarterly
+56
+observations of LTV actions in economies, building on the database developed by Shim
+2013 92
+et al. ( ). Our quarterly dataset contains changes in maximum LTV ratios and loan
+prohibitions.
+Almost all papers in the literature on measuring the effectiveness of macroprudential
+actions employ dummy variables to measure macroprudential policies. Such variables
+however do not capture the intensity of policy actions of the same type. For instance, a
+10
+decrease in the maximum LTV ratio by percentage points and a decrease in the ratio by
+20
+percentage points are treated equally. We use instead a numerical variable quantifying
+the quarterly changes in the maximum LTV ratio. To our knowledge, this paper is the first
+that constructs an intensity-adjusted LTV change variable, which considers not only the
+change in the maximum LTV ratio in percentage points, but also accounts for the scope
+of loans to which such a change is applied. This allows us to estimate the effect of a one
+percentage point change in LTV limits as described above. We also assess the differences
+2

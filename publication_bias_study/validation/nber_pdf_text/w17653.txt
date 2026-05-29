@@ -1,0 +1,105 @@
+NBER WORKING PAPER SERIES
+EVAPORATING LIQUIDITY
+Stefan Nagel
+Working Paper 17653
+http://www.nber.org/papers/w17653
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2011
+I thank Miguel Ferreira, Terrence Hendershott, David Hirshleifer, Charles Jones, Ron Kaniel, Ian Martin,
+Konstantin Milbradt, Laura Starks, Dimitry Vayanos, an anonymous referee, and seminar participants
+at the University of Amsterdam, University of Arizona, University of British Columbia, Columbia
+University, Federal Reserve Bank of New York, University of Maastricht, Princeton, Rice, Stanford,
+the American Finance Association Meetings, the NBER Summer Institute, and the Gutmann Center
+Symposium at WU Vienna for useful comments. The views expressed herein are those of the author
+and do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2011 by Stefan Nagel. All rights reserved. Short sections of text, not to exceed two paragraphs,
+may be quoted without explicit permission provided that full credit, including © notice, is given to
+the source.
+
+Evaporating Liquidity
+Stefan Nagel
+NBER Working Paper No. 17653
+December 2011
+JEL No. G12
+ABSTRACT
+The returns of short-term reversal strategies in equity markets can be interpreted as a proxy for the
+returns from liquidity provision. Analysis of reversal strategies shows that the expected return from
+liquidity provision is strongly time-varying and highly predictable with the VIX index. Expected returns
+and conditional Sharpe Ratios increase enormously along with the VIX during times of (cid:0)nancial market
+turmoil, such as the (cid:0)nancial crisis 2007-09. Even reversal strategies formed from industry portfolios
+(which do not yield high returns unconditionally) produce high rates of return and high Sharpe Ratios
+during times of high VIX. The results point to withdrawal of liquidity supply, and an associated increase
+in the expected returns from liquidity provision, as a main driver behind the evaporation of liquidity
+during times of (cid:0)nancial market turmoil, consistent with theories of liquidity provision by (cid:0)nancially
+constrained intermediaries.
+Stefan Nagel
+Stanford University
+Graduate School of Business
+518 Memorial Way
+Stanford, CA 94305
+and NBER
+nagel_stefan@gsb.stanford.edu
+
+1 Introduction
+Liquidity evaporated in many sectors of financial markets during the financial crisis 2007-09.
+Insome markets, such as those for “toxic” asset-backed securities, tradingactivity reportedly
+came to a complete halt.1 There are at least two possible explanations for this disappearance
+of market liquidity. One is that the crisis amplified asymmetric information problems. For
+example, Gorton and Metrick (2010) argue that large adverse shocks strongly increased the
+information sensitivity of securitized debt. According to this view, the reduction in liquidity
+is a symptom for aggravated adverse selection problems. An alternative and complementary
+theory is that the market turmoil strained the inventory-absorption capacity of the market-
+making sector, either because of a surge in liquidity demand from the public, or because
+market makers reduced liquidity supply in response to elevated levels of risk, tighter funding
+constraints, and reduced competition. According to this second view, the conditions during
+the crisis raised the expected return from liquidity provision.
+This paper studies this second channel using data from equity markets. The main objec-
+tive is to estimate the extent by which the expected return from liquidity provision rises in
+times of financial market turmoil. The notion of “liquidity providers” adopted in this paper
+is broad and not restricted to designated market makers. Liquidity provision in equity mar-
+kets is increasingly performed by algorithmic traders and other quantitative investors that
+perform, effectively, a market-making role, but without being officially designated as market
+makers (Hendershott, Jones, and Menkveld (2011)). Even individual investors could perform
+a liquidity provision role to some extent (Kaniel, Saar, and Titman (2008)).
+Toconstructaproxy forthereturnsfromliquidity provision, Iexamine reversalstrategies
+that buy stocks that went down over the prior days, and sell stocks that went up during the
+prior days, as in Lehman (1990) and Lo and MacKinlay (1990). This pattern of buying and
+selling in reversal strategies resembles the trading of a market maker who sells when the
+public buys (which tends to coincide with rising prices), and who buys when the public sells
+1See Brunnermeier (2009) for a review.
+1
+
+(which tends to coincide with falling prices). Setting up a model in which the public trades
+forliquidity andinformationalreasons, andinwhichmarketmakers have limited risk-bearing
+capacity, I show that reversal strategy returns closely track the returns earned by liquidity
+providers. Effectively, reversal strategies use lagged returns as a noisy proxy for unobserved
+market maker inventory imbalances. They profit from the transitory price impact of order
+flow and the negative serial correlation in price changes that arises from market makers’
+aversion to absorbing inventory. Price impact due to private information, in contrast, is
+permanent and does not induce negative serial correlation (Glosten and Milgrom (1985)),
+which allows me to isolate the variation in the expected returns from liquidity provision from
+adverse selection effects.2
+The focus of this paper is to examine whether there is predictable time-variation in the
+returns from liquidity provision. Recent work on risk-taking of financial intermediaries sug-
+geststhattheVIXindexofimpliedvolatilities ofS&P500indexoptionsisanaturalcandidate
+predictor. ThetheoriesinGrombandVayanos (2002) andBrunnermeierandPedersen(2009)
+predict that higher volatility tightens funding constraints of market makers and thereby re-
+duces their liquidity-provision capacity. Adrian and Shin(2010) argue that risk-management
+constraints reduce the risk appetite of financial intermediaries in times of high VIX. Ang,
+Gorovyy, and van Inwegen (2011) and Ben-David, Franzoni, and Moussawi (2011) find that
+hedge funds lose assets under management and reduce leverage in times of market turmoil
+and high VIX. Motivating evidence also comes from a recent literature that finds the VIX to
+be related to various asset-pricing phenomena that may be related to risk-taking of financial
+intermediaries, such as corporate bond liquidity (Bao, Pan, and Wang (2011)), foreign ex-
+change carry trades (Brunnermeier, Nagel, and Pedersen (2008)) or sovereign credit-default
+swaps (Longstaff, Pan, Pedersen, and Singleton (2010)).
+Figure 1 illustrates some of the key findings of the paper. The solid line plots a three-
+2InGlostenandMilgrom’smodel,greateradverseselectionleadstoawiderbid-askspread,buttransaction
+prices always follow a martingale (i.e., there is no bid-ask bounce), and market makers, as well as reversal
+strategies, earn zero expected return.
+2

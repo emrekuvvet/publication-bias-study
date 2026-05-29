@@ -1,0 +1,134 @@
+NBER WORKING PAPER SERIES
+A MODEL OF MONETARY POLICY AND RISK PREMIA
+Itamar Drechsler
+Alexi Savov
+Philipp Schnabl
+Working Paper 20141
+http://www.nber.org/papers/w20141
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2014
+We thank Viral Acharya, Xavier Gabaix, John Geanakoplos, Valentin Haddad, Matteo Maggiori, Alan
+Moreira, Stefan Nagel, Francisco Palomino, Cecilia Parlatore, participants at the 2012 CITE conference
+at the Becker Friedman Institute, the 2013 Kellogg Junior Macro conference, the Princeton Finance
+Seminar, the 2013 Five-Star Conference at NYU, the 2014 UBC Winter Finance Conference, the 2014
+Cowles GE Conference at Yale, Harvard Business School, the 2014 Woolley Centre conference at
+LSE, the Minneapolis Fed, and the 2015 AFA Meetings for their comments. The views expressed
+herein are those of the authors and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2014 by Itamar Drechsler, Alexi Savov, and Philipp Schnabl. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+A Model of Monetary Policy and Risk Premia
+Itamar Drechsler, Alexi Savov, and Philipp Schnabl
+NBER Working Paper No. 20141
+May 2014, Revised August 2015
+JEL No. E52,E58,G12,G21
+ABSTRACT
+We develop a dynamic asset pricing model in which monetary policy affects the risk premium component
+of the cost of capital. Risk-tolerant agents (banks) borrow from risk-averse agents (i.e. take deposits)
+to fund levered investments. Leverage exposes banks to funding risk, which they insure by holding
+liquidity buffers. By changing the nominal rate the central bank influences the liquidity premium in
+financial markets, and hence the cost of taking leverage. Lower nominal rates make liquidity cheaper
+and raise leverage, resulting in lower risk premia and higher asset prices, volatility, investment, and
+growth. We analyze forward guidance, a "Greenspan put", and the yield curve.
+Itamar Drechsler Philipp Schnabl
+Stern School of Business Stern School of Business
+New York University New York University
+44 West Fourth Street, 9-120 4 4 West Fourth Street
+New York, NY 10012 N ew York, NY 10012
+and NBER and NBER
+itamar.drechsler@stern.nyu.edu schnabl@stern.nyu.edu
+Alexi Savov
+Stern School of Business
+New York University
+44 West Fourth Street, Suite 9-85
+New York, NY 10012
+and NBER
+asavov@stern.nyu.edu
+
+I. Introduction
+In textbook models (e.g. Woodford, 2003), monetary policy works by changing the real
+interest rate. Yet a growing body of empirical evidence shows that monetary policy also
+has a large impact on the risk premium component of the cost of capital.1 Moreover, many
+central bank interventions can be usefully interpreted as targeting risk premia. For instance,
+a “Greenspan put” in the 1990s and low interest rates in the mid 2000s arguably led to
+excessive leverage and compressed spreads.2 During the financial crisis, large-scale asset
+purchases, equity injections, and asset guarantees were all explicitly aimed at supporting
+risky asset prices (see Bernanke, 2013, for a discussion). In subsequent years, with spreads
+near historic lows, an important debate centers on whether low interest rates fuel “reaching
+for yield” and hence pose a threat to financial stability (Stein, 2014). These observations
+point to an underlying risk premium channel of monetary policy.
+In this paper, we develop a dynamic asset pricing model of the risk premium channel
+of monetary policy. In the model, taking leverage exposes financial institutions to funding
+shocks that require them to liquidate assets. To avoid engaging in costly fire sales, they hold
+buffers of liquid securities, which can be sold rapidly at full value. Consequently, the cost
+of taking leverage depends on the cost of holding liquid securities, the liquidity premium.
+The central bank governs this liquidity premium by varying the nominal interest rate. A low
+nominal rate leads to a low liquidity premium, a relationship with strong empirical support.
+Alowliquiditypremiumdecreasesthecostoftakingleverageandhenceincreasesrisktaking,
+which reduces risk premia and the cost of capital in the economy.
+Our model features an economy populated by two types of agents who differ in their risk
+aversion. We think of the more risk tolerant agents as pooling their wealth into the net worth
+(equitycapital)offinancialinstitutions,orbanksforshort. Inequilibrium,bankstakelevered
+positions in risky assets by borrowing from the more risk averse agents using short-term risk-
+free claims, which we think of as taking deposits. Our view of banks as levered risk-takers
+is purposely simplified, abstracting from other functions such as screening and monitoring
+in order to focus on risk taking and risk premia. It has the advantage of accommodating a
+diverse set of financial institutions, including commercial banks, broker-dealers, and hedge
+funds, whose unifying characteristic is that they take leverage using short-term debt.
+Taking deposits exposes banks to funding (rollover) risk (e.g. Allen and Gale, 1994).
+When hit by a funding shock, banks are forced to redeem a fraction of their deposits. To do
+1Bernanke and Kuttner (2005) show that monetary policy surprises have a large impact on stock prices
+and that this impact primarily reflects changes in risk premia. Hanson and Stein (2014), and Gertler and
+Karadi (2014) find parallel results for long-term bond yields and credit spreads. Gilchrist and Zakrajˇsek
+(2012) find that changes in risk premia have a strong influence on the macroeconomy.
+2See for example Blinder and Reis (2005), Rajan (2011), and Yellen (2011).
+1
+
+so, they must immediately liquidate some of their assets. Liquidating risky assets rapidly is
+costlybecauseitleadstofiresales. Toavoidthis, banksholdbufferstocksofliquidsecurities,
+which can be liquidated rapidly at full value. Thus, to insure against losses in the event of
+a funding shock, banks set aside a fraction of each deposit dollar they raise and hold it in
+liquid securities. In this way, the risk of funding shocks creates a complementarity between
+holding liquidity and taking leverage.
+We model two types of liquid securities: central bank reserves, which have the highest
+level of liquidity, and government bonds. Banks’ demand for liquidity buffers causes liquid
+securities to command a premium in equilibrium. This liquidity premium depends on the
+nominal interest rate. The liquidity premium of reserves equals the nominal rate because
+that is the opportunity cost of holding them. The liquidity premium of government bonds
+is likewise proportional to the nominal rate because government bonds and reserves are
+substitutable sources of liquidity. Therefore, by changing the nominal rate, the central bank
+changes the cost of holding all liquid securities.3
+Figure 1 examines this prediction empirically. It plots the fed funds rate, a measure of
+the nominal interest rate, against the spread between the fed funds rate and the three-month
+T-bill rate, a measure of the liquidity premium on government bonds, from 1955 to 2010.
+As the figure shows, the relationship between these two series, a rate and a spread, is very
+strong. Their correlation is 78%, and they exhibit tight comovement both in the cycle and
+in the trend, consistent with the transmission of the nominal rate to the liquidity premium
+that we model.
+Thecentralbank’sabilitytoinfluencerisktakingworksthroughthistransmissionmecha-
+nism. When the central bank raises the nominal rate, the higher liquidity premium increases
+banks’ cost of taking leverage and so reduces their risk taking. The result is a decrease in
+the overall demand for risk taking in the economy, an increase in the effective aggregate risk
+aversion, and ultimately a rise in risk premia.
+Monetary policy in our model takes the form of a nominal interest rate rule which is a
+function of the single state variable, the share of banks’ net worth of the total wealth in the
+economy. We consider a number of interest rate rules and analyze their positive implications
+for equilibrium prices and quantities.4
+3Recently, interest on reserves has attracted significant attention. When reserves pay interest, reserves’
+liquidity premium equals the difference between the nominal rate and their rate of interest. In this case,
+the central bank targets this difference rather than the full level of the nominal rate. Section IV.B provides
+further discussion.
+4Wedonottakeastanceonoptimalitybecausedoingsorequiresmakingtwostrongassumptions. Thefirst
+isthechoiceofwelfarecriterion,whichisdifficultinourincomplete-marketsheterogeneous-agentsetup. The
+second, and more important assumption, requires choosing among the numerous frictions that the literature
+has argued create a need for regulating leverage, including moral hazard arising from deposit insurance (e.g.
+Keeley, 1990), pecuniary externalities due to financial constraints (e.g. Stein, 2012), and spillover effects to
+the oeconomy (e.g. Farhi and Werning, 2013). To preserve the model’s wide applicability and transparency,
+2

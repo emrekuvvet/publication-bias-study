@@ -1,0 +1,134 @@
+NBER WORKING PAPER SERIES
+ARE LEMONS SOLD FIRST? DYNAMIC SIGNALING IN THE MORTGAGE MARKET
+Manuel Adelino
+Kristopher Gerardi
+Barney Hartman-Glaser
+Working Paper 24180
+http://www.nber.org/papers/w24180
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+January 2018, revised March 2018
+We thank the editor Toni Whited, the anonymous referee, Darren Aiello, Brendan Daley, Stuart
+Gabriel, Brett Green, Joseph Mason, Christopher Palmer, Anthony Pennington-Cross, Tim
+Riddiough, Hongfei Tang, Nancy Wallace, Paul Willen, Basil Williams, James Vickery,
+conference participants at the AFA, AREUEA National Conference, Annual CEPR Symposium,
+CHUM, FIRS, and NBER Corporate Finance, and seminar participants at Columbia, Duke, MIT
+(Sloan), Minnesota (Carlson), Northwestern (Kellogg), Pittsburgh (Katz), Virginia (McIntire),
+University of Colorado at Boulder, UNC Charlotte, and Wharton for their helpful comments and
+discussions. We thank Valeria Vargas-Sejas for her outstanding research assistance. This paper
+was previously circulated under the title “A Test of Dynamic Signaling Models: Evidence from
+Mortgage Securitization.” The views expressed herein are those of the authors and do not
+necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2018 by Manuel Adelino, Kristopher Gerardi, and Barney Hartman-Glaser. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Are Lemons Sold First? Dynamic Signaling in the Mortgage Market
+Manuel Adelino, Kristopher Gerardi, and Barney Hartman-Glaser
+NBER Working Paper No. 24180
+January 2018, revised March 2018
+JEL No. D0,G0
+ABSTRACT
+A central result in the theory of adverse selection in asset markets is that informed sellers can
+signal quality and obtain higher prices by delaying trade. This paper provides some of the first
+evidence of a signaling mechanism through trade delays using the residential mortgage market as
+a laboratory. We find a strong relationship between mortgage performance and time to sale for
+privately securitized mortgages. Additionally, deals made up of more seasoned mortgages are
+sold at lower yields. These effects are strongest in the ”Alt-A” segment of the market, where
+mortgages are often sold with incomplete hard information, and in cases where the originator and
+the issuer of mortgage-backed securities are not affiliated.
+Manuel Adelino Barney Hartman-Glaser
+Fuqua School of Business University of California at Los Angeles
+Duke University 110 Westwood Plaza
+100 Fuqua Drive Suite C421
+Durham, NC 27708 Los Angeles, CA 90095
+and NBER barney.hartman-glaser@anderson.ucla.edu
+manuel.adelino@duke.edu
+Kristopher Gerardi
+Federal Reserve Bank of Atlanta
+1000 Peachtree St. NE
+Atlanta, GA 30309
+kristopher.gerardi@atl.frb.org
+
+1. Introduction
+One of the most widely studied market settings in economics is that of a seller with private in-
+formation about the quality of an asset facing less-informed buyers. In this kind of setting with
+adverse selection, sellers can take actions to reveal their private information, as in the classic sig-
+naling model of Spence (1973). This notion of signaling has been successfully applied in theoretical
+models of financial markets to explain a variety of phenomena, from the optimality of debt (De-
+Marzo and Duffie (1999)) to the temporary freezing of asset markets (Daley and Green (2012)).
+While many commonly observed behaviors are consistent with signaling, such as the attainment
+of education or the propensity of underwriters to retain equity in an initial public offering, there
+is little empirical evidence that agents actually engage in these activities to signal rather than
+for other reasons. The fundamental challenge for a test of signaling theory is that it requires the
+econometriciantoobserveagents’privateinformationorhidden“types.” Weaddressthischallenge
+by using unique features of the U.S. mortgage market.
+Wefirstpresentasimplemodelofmortgagesalestomotivateourempiricalwork. Inthemodel,
+sellers privately observe mortgage quality, and sellers of high-quality mortgages have a lower cost
+of waiting because they face lower probabilities of default. We assume that default is publicly
+observable and eliminates the possibility of a sale. A separating equilibrium emerges in which the
+time to sale of a mortgage increases in quality, a relationship often referred to as the skimming
+property. Many recent studies (e.g., Fuchs and Skrzypacz (2013) and Fuchs et al. (2015)) find that
+the skimming property can emerge in dynamic adverse selection models of financial markets, and a
+number of others (e.g., Daley and Green (2012) and Daley and Green (2016)) find that the timing
+of sales in asset markets can serve as a signal of quality. More broadly, the idea that the timing of
+actions can reveal private information is a central prediction of many adverse selection models.1
+Themortgagemarketiswell-suitedfortestingtheskimmingpropertyand,moregenerally,trade
+delay as a signal of quality. Mortgages are durable assets characterized by an objective measure
+of quality based on the probability of default. Detailed micro data are available to investors, orig-
+inators, and the econometrician on the characteristics of borrowers and mortgage contracts, which
+together serve as a good proxy for observable mortgage quality at the time of sale. Crucially, while
+future default is not known at the time of sale, it is known to the econometrician ex-post. These
+ex-post outcomesare(i)unknowntothebuyer(ii)knowntotheeconometricianand(iii)correlated
+with unobserved heterogeneity in asset quality known privately by the seller, as previous studies
+of the mortgage market show (Demiroglu and James (2012a), Jiang et al. (2014b), Griffin and
+Maturana (2016), and Piskorski et al. (2015)). The most relevant type of private information that
+originators collect is knowledge about borrower ability to repay, including future income prospects
+1SeealsoNoldekeandVanDamme(1990),Swinkels(1999),JanssenandRoy(2002),GrenadierandWang(2005),
+Kremer and Skrzypacz (2007), Guerrieri et al. (2010), Grenadier and Malenko (2011), Chang (2014), and Williams
+(2016).
+2
+
+or stability of employment, or even measures of liquid wealth, none of which are included in data
+sources available to investors. The distinction between observable and unobservable characteristics
+is central to our tests and is one of the main reasons that adverse selection models are particularly
+difficult to test empirically. In fact, most models predict that assets that are observably better
+should trade faster, not slower.
+This paper uses data on mortgages securitized in the non-agency, private-label securitization
+(PLS) market, which was very active in the middle of the last decade. In this market, investors
+in mortgage-backed securities (the buyers) purchased claims on large portfolios of mortgages from
+originators (the sellers). We measure delay of trade from the creation of the asset (the date of
+origination of each mortgage) up to the issuance of the securities that ultimately receive cash flows
+on those mortgages. The fact that we have a natural starting point for measuring time to sale is
+another advantage of using mortgages as a laboratory. While there is a chain of intermediaries
+between the originators of mortgages and the ultimate buyers of the securities (as Stanton et al.
+(2014) and Stanton et al. (2015) show), this in general would bias our tests against effectively
+capturing the role of signaling in transmitting information. We are also able to (imperfectly)
+observe the prices at which mortgage-backed securities were sold. While most of our analysis
+focuses on trade delays and mortgage quality, the combination of the availability of observed and
+unobserved quality measures and prices is rarely available in other contexts.
+We find a negative relation between time to sale and the component of mortgage performance
+that is not explained by observable mortgage characteristics. After conditioning on underwriting
+characteristics, PLS loans sold five months or more after origination are approximately 5 percent-
+age points less likely to default relative to loans sold immediately after origination. This is an
+economically meaningful difference, as it is approximately 30% of the average default rate in our
+sample (16%).
+Interpreting these magnitudes through the lens of our model indicates that adverse selection
+is an economically meaningful friction in this market. The difference between the best and worst
+possible realizations of the originator’s private information is almost one third of the average
+outcome. We provide a quantitative interpretation of our reduced form results by using a simple
+calibrated version of our model. The cost of signaling is approximately $540 for a mortgage of
+$300,000. This corresponds to a spread of 18 basis points that originators would charge borrowers
+to compensate for expected signaling costs, a substantial magnitude when compared to the other
+costs that borrowers pay when taking out a new mortgage.
+Theresultsonex-post defaultareincontrasttothoseusingex-ante measuresofcreditrisk. We
+construct predicted probabilities of default using only information available to mortgage investors
+at the time that mortgages are sold into PLS deals. We then explore whether ex-ante observable
+credit risk is related to time to sale. We find a positive relation between ex-ante observable risk
+and time to sale for loans sold in the first 6 months after origination, the opposite of what we
+find for ex-post default, despite the fact that the predicted default measure is highly correlated
+3

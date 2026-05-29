@@ -1,0 +1,129 @@
+NBER WORKING PAPER SERIES
+A SEARCH-BASED THEORY OF THE ON-THE-RUN PHENOMENON
+Dimitri Vayanos
+Pierre-Olivier Weill
+Working Paper 12670
+http://www.nber.org/papers/w12670
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+November 2006
+We thank Tobias Adrian, Yakov Amihud, Hal Cole, Darrell Duffie, Bernard Dumas, Humberto Ennis,
+Mike Fleming, Nicolae Garleanu, Ed Green, Joel Hasbrouck, Terry Hendershott, Jeremy Graveline,
+Narayana Kocherlakota, Anna Pavlova, Lasse Pedersen, Matt Richardson, Bill Silber, Stijn Van Nieuwerburgh,
+Neil Wallace, Robert Whitelaw, Randy Wright, seminar participants at the Federal Reserve Bank of
+Minneapolis, Federal Reserve Bank of Richmond, LSE, McGill, New Orleans, NY Fed, NYU, Oxford,
+UCLA Anderson, UCLA Economics, USC, Penn State, and participants at the American Finance Association
+2005, Caesarea Center Annual Conference 2005, Federal Reserve Bank of Cleveland Summer Workshops
+in Money, Banking and Payments 2005, NBER Asset Pricing 2005, and Society for Economic Dynamics
+2005 conferences for helpful comments. We are especially grateful to Mark Fisher, Kenneth Garbade,
+Tain Hsia-Schneider, and Frank Keane for discussions that greatly enhanced our understanding of
+the subject. The views expressed herein are those of the author(s) and do not necessarily reflect the
+views of the National Bureau of Economic Research.
+© 2006 by Dimitri Vayanos and Pierre-Olivier Weill. All rights reserved. Short sections of text, not
+to exceed two paragraphs, may be quoted without explicit permission provided that full credit, including
+© notice, is given to the source.
+
+A Search-Based Theory of the On-the-Run Phenomenon
+Dimitri Vayanos and Pierre-Olivier Weill
+NBER Working Paper No. 12670
+November 2006
+JEL No. D8,G1
+ABSTRACT
+We propose a model in which assets with identical cash flows can trade at different prices. Infinitely-lived
+agents can establish long positions in a search spot market, or short positions by first borrowing an
+asset in a search repo market. We show that short-sellers can endogenously concentrate in one asset
+because of search externalities and the constraint that they must deliver the asset they borrowed. That
+asset enjoys greater liquidity, measured by search times, and a higher lending fee ("specialness"). Liquidity
+and specialness translate into price premia that are consistent with no-arbitrage. We derive closed-form
+solutions for small frictions, and can generate price differentials in line with observed on-the-run premia.
+Dimitri Vayanos
+Department of Accounting and Finance
+London School of Economics
+Houghton Street
+London WC2A, 2AE
+UNITED KINGDOM
+and NBER
+d.vayanos@lse.ac.uk
+Pierre-Olivier Weill
+UC, Los Angeles
+Department of Economics
+Bunche Hall 8283, Box 951477
+Los Angeles, CA 90095
+poweill@econ.ucla.edu
+
+1 Introduction
+In fixed-income markets some bonds trade at lower yields than others with almost identical cash
+flows. In the US, for example, just-issued (“on-the-run”) Treasury bonds trade at lower yields than
+previously issued (“off-the-run”) bonds maturing on nearby dates. Warga (1992) reports that an
+on-the-run portfolio returns on average 55bp below an off-the-run portfolio with matched duration.
+Similar phenomena exist in other countries. In Japan, for example, one “benchmark” government
+bond trades at a yield of 60bp below other bonds with comparable characteristics.1
+How can the yields of bonds with almost identical cash flows differ by more than 50bp? Fi-
+nancial economists have suggested two apparently distinct hypotheses. First, on-the-run bonds
+are more valuable because they are significantly more liquid than their off-the-run counterparts.
+Second, on-the-run bonds constitute better collateral for borrowing money in the repo market.
+Namely, loans collateralized by on-the-run bonds offer lower interest rates than their off-the-run
+counterparts, a phenomenon referred to as “specialness.”2 These hypotheses, however, can provide
+only a partial explanation of the on-the-run phenomenon: one must still explain why assets with
+almost identical cash flows can differ in liquidity and specialness.
+In this paper we propose a theory of the on-the-run phenomenon. We argue that liquidity and
+specialness are not independent explanations of this phenomenon, but can be explained simultane-
+ously by short-selling activity. We determine liquidity and specialness endogenously, explain why
+they can differ across otherwise identical assets, and study their effect on prices. A calibration of
+our model for plausible parameter values can generate effects of the observed magnitude.
+We consider an infinite-horizon steady-state economy with two assets paying identical cash
+flows. There is a continuum of agents experiencing transitory needs to hold long or short positions.
+An agent needing to be long buys an asset, and sells it later when the need disappears. Conversely,
+anagentneedingtobeshortborrowsanasset, sellsit, andwhentheneeddisappearsbuystheasset
+backand deliversitto the lender. Trade involvestwo markets: aspot marketto buy and sell, and a
+repo market where short-sellers can borrow assets. We assume that both markets operate through
+search, and model them as in the standard framework (e.g., Diamond (1982)) where agents are
+1For US evidence, see also Amihud and Mendelson (1991), Krishnamurthy (2002), Goldreich, Hanke, and Nath
+(2002), and Strebulaev (2002). For Japan, see Mason (1987), Boudoukh and Whitelaw (1991), and Boudoukh and
+Whitelaw (1993).
+2On liquidity, Sundaresan (2002) reports that trading volume of on-the-run bonds is about ten times larger than
+that of off-the-run bonds, and Fleming (2002) reports that bid-ask spreads of off-the-run bills are about five times
+larger than when these bills are on-the-run. Specialness is measured by comparing a bond’s repo rate, which is the
+interestrateonaloancollateralizedbythebond,tothegeneralcollateralrate,whichisthehighestquotedreporate.
+Duffie(1996)reportsanaveragespecialnessof66bpforon-the-runbondsand26bpfortheiroff-the-runcounterparts.
+1
+
+matched randomly over time in pairs and bargain over the terms of trade. This captures the over-
+the-counter structure of government-bond markets: transactions between dealers and customers
+are negotiated bilaterally over the phone, and dealers often negotiate bilaterally in the inter-dealer
+market.3 Of course, the search framework is a stylized representation of government-bond markets
+- but so is the Walrasian auction which assumes multilateral trading. As long as search times are
+short, as is the case in our calibration, it is not obvious which model describes the markets better.
+Our model has an asymmetric equilibrium in which assets trade at different prices despite the
+identical cash flows. The intuition is as follows. Suppose that all short-sellers prefer to borrow
+a specific asset. Because they initially sell and eventually buy the asset back, they increase the
+asset’s trading volume in the spot market. This increases the asset’s liquidity by reducing search
+frictions: with more volume, buyers and sellers become easier to locate. What makes short-sellers’
+concentration self-fulfilling is the constraint that they must deliver the same asset they borrowed.
+Thisconstraintimpliesthatashort-sellerfindsitoptimaltoborrowtheassetthatiseasiertolocate,
+which is precisely the asset that other short-sellers are borrowing.4 The asset in which short-sellers
+concentrate trades at a premium for two reasons. Since it has a larger pool of buyers, it is easier to
+sell, and thus carries a liquidity premium. It also carries a specialness premium because its owners
+can lend it to short-sellers for a fee.
+Our mechanism relies critically on short-sellers: we show that in their absence, assets trade
+at the same price. One could conjecture that even without short-sellers, asymmetric liquidity can
+arise in a self-fulfilling manner: one asset is harder to sell because its lack of liquidity drives buyers
+away. What rules out such asymmetries is that the difficulty to sell hurts sellers more than buyers
+because for buyers it becomes relevant only later in time when they turn into sellers. Thus, sellers
+of a less liquid asset are willing to lower the price enough to compensate buyers. But then buyers
+buy both assets, implying that both are equally easy to sell and trade at the same price.
+Short-sellers can introduce asymmetries because, unlike longs, they are constrained to buy
+a specific asset - the one they borrowed. The mere presence of short-sellers, however, does not
+guarantee asymmetries because they could borrow both assets equally. Asymmetries are possible
+3Inthe US,inter-dealer tradingis conductedthroughbrokers. Some brokersoperate automated trading systems,
+structured as electronic limit-order books. Other brokers, however, operate voice-based systems in which orders are
+negotiatedoverthephone. Barclay,Hendershott,andKotz(2006)reportthatautomatedsystemsaccountforabout
+85% of trading volume for on-the-run bonds, but the situation is reversed for off-the-run bonds. To explain this
+phenomenon, they propose a search-based model.
+4The delivery constraint is standard in repo markets: lenders insist on receiving back the same asset they lent
+because of considerations of book-keeping, capital-gains taxes, etc. The prevalence of the delivery constraint is
+illustratedbytheincidenceofshort-squeezes,wherebyshort-sellershavedifficultydeliveringtheassettheyborrowed
+and the asset’s specialness in the repo market increases dramatically. For a description of short-squeezes see, for
+example, Dupont and Sack (1999).
+2

@@ -1,0 +1,119 @@
+NBER WORKING PAPER SERIES
+HOW RIGGED ARE STOCK MARKETS?:
+EVIDENCE FROM MICROSECOND TIMESTAMPS
+Robert P. Bartlett, III
+Justin McCrary
+Working Paper 22551
+http://www.nber.org/papers/w22551
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+August 2016
+Neither author has any financial interest or affiliation (including research funding) with any
+commercial organization that has a financial interest in the findings of this paper. The authors are
+grateful to the University of California, Berkeley School of Law, for providing general faculty
+research support. The views expressed herein are those of the authors and do not necessarily
+reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2016 by Robert P. Bartlett, III and Justin McCrary. All rights reserved. Short sections of text,
+not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+How Rigged Are Stock Markets?: Evidence From Microsecond Timestamps
+Robert P. Bartlett, III and Justin McCrary
+NBER Working Paper No. 22551
+August 2016
+JEL No. G10,G15,G18,G23,G28,K22
+ABSTRACT
+We use new timestamp data from the two Securities Information Processors (SIPs) to examine
+SIP reporting latencies for quote and trade reports. Reporting latencies average 1.13 milliseconds
+for quotes and 22.84 milliseconds for trades. Despite these latencies, liquidity-taking orders gain
+on average $0.0002 per share when priced at the SIP-reported national best bid or offer (NBBO)
+rather than the NBBO calculated using exchanges’ direct data feeds. Trading surrounding SIP-
+priced trades shows little evidence that fast traders initiate these liquidity-taking orders to pick-off
+stale quotes. These findings contradict claims that fast traders systematically exploit traders who
+transact at the SIP NBBO.
+Robert P. Bartlett, III
+890 Simon Hall
+University of California, Berkeley
+Berkeley, CA 94720
+rbartlett@law.berkeley.edu
+Justin McCrary
+School of Law
+University of California, Berkeley
+586 Simon Hall
+Berkeley, CA 94720-7200
+and NBER
+jmccrary@berkeley.edu
+
+1. Introduction
+A pressing question for contemporary equity markets concerns the extent to which they favor
+fast traders at the expense of slower ones. As vividly described in Michael Lewis’ Flash Boys,
+these concerns center on the differing speeds at which traders can access data emanating from
+one dozen U.S. stock exchanges and approximately fifty non-exchange trading venues. Because
+trading rules benchmark trade execution to the national best bid or offer (the “NBBO”) available
+across exchanges, traders with faster access to venues’ quotes can effectively foresee the NBBO
+on which slower traders rely. Indeed, market rules conventionally encourage brokers to fill
+market orders at (or better than) the NBBO as it appears on the two centralized Securities
+Information Processors (“SIPs”) to which all exchanges are required to report updates to their
+best bids and offers. The latency with which the SIPs process the NBBO thus generates an
+information asymmetry between fast traders having access to proprietary data feeds and slow
+traders who rely on the SIPs. In principle, this asymmetry could generate risk-free trading
+opportunities, with fast traders choosing whether to trade or not at NBBO prices they know to be
+stale. Until recently, however, understanding the extent to which these opportunities actually
+arise has been hampered by the absence of detailed information concerning the speed advantage
+of traders who use exchanges’ proprietary data rather than data from the SIPs.
+In this paper, we use new timestamp data provided by the two SIPs to conduct the first
+market-wide analysis of the latency with which the SIPs process quote and trade data.1 These
+data are the result of a regulatory change obligating exchanges and broker-dealers to report to the
+appropriate SIP the precise time (measured in microseconds) at which a trading venue either
+updated a quotation or executed a trade.2 Moreover, amendments to the SIP operating
+procedures at this time required the two SIPs to record in microseconds the precise time at which
+each SIP processed a trade or quotation update submitted by an exchange or broker-dealer.3
+Comparing these two timestamps thus permits a direct analysis of the SIP processing latency for
+all trades and quote updates across the entire market.
+1 Our paper builds on important prior work in this area focusing on BATS trading (Ding, Hanna, and Hendershott (2014)).
+2 A microsecond is one-thousandth of a millisecond, or one-millionth of a second.
+3 The new timestamps have been required since July 27, 2015 for securities listed on Nasdaq (Tape C Securities) and since
+August 3, 2015 for securities listed on the NYSE (Tape A Securities) or on any regional exchange (Tape B Securities). Prior to
+these amendments, SIP messages only carried timestamps marked in milliseconds that indicated when the processing of the
+messages by a SIP was completed, but not the time a venue processed a trade or a quote. The 2015 timestamp modifications also
+required clock synchronization among exchanges to ensure that timestamps are accurate within tolerances of 100 microseconds
+or less. See UTP Vendor Alert #2015 – 7: New Timestamp Definitions for July 2015 Release, available at
+https://www.nasdaqtrader.com/TraderNews.aspx?id=UTP2015-07.
+1
+
+We take advantage of these new data to estimate quote and trade latencies for all stocks
+within the Dow Jones 30 during the first eleven months of these new reporting requirements.
+Descriptively, we show that the SIP latency in processing both quote updates and trades is, on
+average, virtually non-existent for any human trader. This is especially true with respect to quote
+updates. We find that the mean time gap between the time a quote update is recorded by an
+exchange matching-engine and the time it is processed by a SIP is a scant 1.13 milliseconds.
+Mean latency for processing trades, however, is approximately 20 times higher, clocking in at
+22.84 milliseconds.4 While latencies are small on average, we document long right-hand tails for
+both quote and trade reports. For instance, more than 2% of all quote updates in our sample
+transactions from the Nasdaq BSX and the Chicago Stock Exchange have latencies exceeding 10
+milliseconds.
+We also document that the variation exhibited by quote and trade latencies reflects the
+institutional structure of SIP reporting obligations. For example, transaction reports in securities
+listed on the NYSE (Tape A securities) and in securities listed on any regional exchange (Tape B
+securities) must be sent to the NYSE-SIP located in Mahwah, New Jersey, while those in
+securities listed on Nasdaq (Tape C securities) must be sent to the Nasdaq-SIP located 35 miles
+south in Carteret, New Jersey. For Tape A securities, this requirement means quote and trade
+reports released by the NYSE matching engine arrive at the NYSE-SIP almost instantaneously,
+while quote and trade reports in Tape A securities occurring on the Nasdaq matching engine are
+certain to arrive at the NYSE-SIP at least 188 microseconds after they occur (the approximate
+time it takes light to travel 35 miles). The data confirm this basic institutional prediction,
+strengthening our confidence in the quality of measurement.
+In addition to documenting basic descriptive information about the SIPs’ reporting latencies,
+we utilize the new timestamps to explore empirically the economic significance of these
+latencies for liquidity takers such as retail traders. We focus on two aspects of SIP reporting
+latency that are often cited as potential problems and that are presently at the center of
+Department of Justice investigations into retail market-making firms Citadel and KCG
+(Levinson, 2016).
+4 The slower processing time for trades largely reflects the fact that nearly one-third of trades occur in non-exchange venues
+whereas quote updates are disseminated by exchange matching engines. Excluding trades executed in non-exchange venues,
+mean reporting latency for trades is less than 1 millisecond.
+2

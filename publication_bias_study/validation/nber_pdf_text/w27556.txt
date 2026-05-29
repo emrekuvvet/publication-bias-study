@@ -1,0 +1,138 @@
+NBER WORKING PAPER SERIES
+BOUNDS ON A SLOPE FROM SIZE RESTRICTIONS ON ECONOMIC SHOCKS
+Marco Stenborg Petterson
+David G. Seim
+Jesse M. Shapiro
+Working Paper 27556
+http://www.nber.org/papers/w27556
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2020, Revised March 2022
+Kevin Murphy’s lectures in price theory inspired this work. We acknowledge funding from the
+Jan Wallander and Tom Hedelius Foundation (Grant P2015-0095:1), the Population Studie and
+Training Center, the Eastman Professorship, and the JP Morgan Chase Research Assistant
+Program at Brown University, the Semester Undergraduate Program for Economics Research at
+Harvard University, and the National Science Foundation (Grant 1949047). Any opinions,
+findings, and conclusions or recommendations expressed in this material are those of the authors
+and do not necessarily reflect the views of the funding sources. We thank Isaiah Andrews, Nadav
+Ben Zeev, Steve Berry, Ray Fair, Amy Finkelstein, Peter Ganong, Ed Glaeser, Phil Haile, Toru
+Kitagawa, Pat Kline, Alex MacKay, Adam McCloskey, Emi Nakamura, Serena Ng, Matt
+Notowidigdo, Emily Oster, Sharon Oster, Mar Reguant, Michael Roberts, Jon Roth, Chris
+Snyder, Juan Carlos Suárez Serrato, Chad Syverson, Elie Tamer, seminar participants at Brown
+University, Iowa State University, the International Methods Colloquium, the NBER, the
+Interactive Online IO Seminar, the LACEA LAMES annual meeting, and especially NBER
+discussant Brigham Frandsen for helpful comments. We thank Masao Fukui, Emi Nakamura, and
+Jón Steinsson for sharing their code and data. We thank our dedicated research assistants for their
+contributions to this project. The views expressed herein are those of the authors and do not
+necessarily reflect the views of the National Bureau of Economic Research.
+At least one co-author has disclosed additional relationships of potential relevance for this
+research. Further information is available online at http://www.nber.org/papers/w27556.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Marco Stenborg Petterson, David G. Seim, and Jesse M. Shapiro. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Bounds on a Slope from Size Restrictions on Economic Shocks
+Marco Stenborg Petterson, David G. Seim, and Jesse M. Shapiro
+NBER Working Paper No. 27556
+July 2020, Revised March 2022
+JEL No. C22,C32,D41,Q11
+ABSTRACT
+We study the problem of learning about the effect of one market-level variable (e.g., price) on
+another (e.g., quantity) in the presence of shocks to unobservables (e.g., preferences). We show
+that economic intuitions about the plausible size of the shocks can be informative about the
+parameter of interest. We illustrate with a main application to the grain market.
+Marco Stenborg Petterson Jesse M. Shapiro
+Brown University Department of Economics
+marco_stenborg_petterson@brown.edu Harvard University
+Littauer Center
+David G. Seim Cambridge, MA 02138
+Universitetsvägen 10 A, 106 91 Stockholm and NBER
+Stockholm University jesse.m.shapiro@gmail.com
+david.g.seim@gmail.com
+
+Bounds on a Slope from Size Restrictions on Economic Shocks
+Marco Stenborg Petterson, Brown University
+David Seim, Stockholm University, CEPR, and Uppsala University
+Jesse M. Shapiro, Harvard University and NBER*
+March 2022
+Abstract
+Westudytheproblemoflearningabouttheeffectofonemarket-levelvariable(e.g., price)on
+another(e.g.,quantity)inthepresenceofshockstounobservables(e.g.,preferences). Weshow
+that economic intuitions about the plausible size of the shocks can be informative about the
+parameterofinterest. Weillustratewithamainapplicationtothegrainmarket.
+keywords: restrictionsonshocks,demand,supply,identification
+JELcodes: C20,J21,Q11
+1 Introduction
+Consider the problem of learning about the effect of one observed market-level variable p (e.g.,
+t
+log price) on another observed market-level variable q (e.g., log quantity demanded) from a finite
+t
+*Kevin Murphy’s lectures in price theory inspired this work. We acknowledge funding from the Jan Wallander
+and Tom Hedelius Foundation (Grant P2015-0095:1), the Population Studies and Training Center, the Eastman Pro-
+fessorship, and the JP Morgan Chase Research Assistant Program at Brown University, the Semester Undergraduate
+ProgramforEconomicsResearchatHarvardUniversity,andtheNationalScienceFoundation(Grant1949047). Any
+opinions,findings,andconclusionsorrecommendationsexpressedinthismaterialarethoseoftheauthorsanddonot
+necessarily reflect the views of the funding sources. We thank Isaiah Andrews, Nadav Ben Zeev, Steve Berry, Ray
+Fair, Amy Finkelstein, Peter Ganong, Ed Glaeser, Phil Haile, Toru Kitagawa, Pat Kline, Alex MacKay, Adam Mc-
+Closkey, EmiNakamura, SerenaNg, MattNotowidigdo, EmilyOster, SharonOster, MarReguant, MichaelRoberts,
+JonRoth,ChrisSnyder,JuanCarlosSuárezSerrato,ChadSyverson,ElieTamer,seminarparticipantsatBrownUni-
+versity, IowaStateUniversity, theInternationalMethodsColloquium, theNBER,theInteractiveOnlineIOSeminar,
+theLACEALAMESannualmeeting,andespeciallyNBERdiscussantBrighamFrandsenforhelpfulcomments. We
+thankMasaoFukui,EmiNakamura,andJónSteinssonforsharingtheircodeanddata.Wethankourdedicatedresearch
+assistantsfortheircontributionstothisproject. E-mail: marco_stenborg_petterson@brown.edu,david.seim@ne.su.se,
+jesse_shapiro@fas.harvard.edu.
+1
+
+T
+timeseries{(p ,q )} withatleastT ≥2periods. Economistsoftenspecifyalinearmodelofthe
+t t t=1
+form
+q =θp +ε , (1)
+t t t
+where θ is an unknown slope (e.g., the price elasticity of demand) and ε is an unobserved factor
+t
+(e.g.,preferences). Modelsthatcanbecastintotheforminequation(1)includeBarroandRedlick’s
+(2011, equation 1) model of the effect of fiscal policy on economic growth, Fiorito and Zanella’s
+(2012, equation 3) model of the supply of labor, Roberts and Schlenker’s (2013a, equations 1 and
+3)modelofthesupplyanddemandforfoodgrains,andAutor,Goldin,andKatz’s(2020,equation
+2)modelofthedemandforskill,amongmanyothers.
+Absent further restrictions, the data are uninformative about the slope θ. Economists often
+learn about θ by imposing restrictions on the evolution of ε , for example that it is unrelated to
+t
+an observable instrument (e.g., Fiorito and Zanella 2012; Roberts and Schlenker 2013a), or that
+it is unrelated to p after accounting for time trends (e.g., Autor, Goldin, and Katz 2020). These
+t
+restrictionsaretypicallymotivatedbyeconomicintuitionsaboutthedeterminantsofε .
+t
+In this paper we show that economic intuitions about the size of fluctuations in ε can also be
+t
+informative about θ. Suppose, for example, that log prices p for a good vary considerably from
+t
+year to year but log quantities q do not. Because q is stable, fluctuations in θp must be offset by
+t t t
+fluctuations in ε . It follows that a larger price elasticity of demand—a more negative θ—implies
+t
+larger fluctuations in ε than does a smaller price elasticity of demand. Large fluctuations in ε
+t t
+may be plausible if the good in question is a particular brand of scarf, preferences for which may
+change radically from year to year due to advertising campaigns, changes in fashion, etc. Large
+fluctuationsinε maybelessplausibleifthegoodinquestionisastandardagriculturalcommodity,
+t
+preferences for which are likely more stable. In this latter case, economic intuitions about the size
+offluctuationsinε maysuggestasmallerpriceelasticityofdemand—alessnegativevalueofθ.
+t
+WeformalizethislogicbysupposingwecanplaceanupperboundB≥0onageneralizedpower
+mean,withpoweratleastone,ofthevector(|∆ε |,...,|∆ε |)ofabsoluteshockstotheunobserved
+2 T
+factor, where ∆ε =ε −ε and ∆ is the first difference operator. We show that any feasible such
+t t t−1
+bound B implies that θ lies in a closed, bounded interval. We provide a computationally tractable
+characterization of the endpoints of the interval. We further show that some bounds B can be
+inconsistent with the data, implying that, in some settings, we can place a lower bound on the size
+ofthetrueshocksevenwithnoknowledgeofθ.
+An economist interested in informing an audience (of, say, policymakers or other economists)
+2

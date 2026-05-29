@@ -1,0 +1,144 @@
+NBER WORKING PAPER SERIES
+RACIAL BIAS IN BAIL DECISIONS
+David Arnold
+Will Dobbie
+Crystal S. Yang
+Working Paper 23421
+http://www.nber.org/papers/w23421
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2017
+We thank Pedro Bordalo, Leah Platt Boustan, David Deming, Hanming Fang, Hank Farber,
+Roland Fryer, Jonah Gelbach, Nicola Gennaioli, Edward Glaeser, Paul Goldsmith-Pinkham,
+Christine Jolls, Louis Kaplow, Larry Katz, Michal Kolesár, Ilyana Kuziemko, Magne Mogstad,
+Nicola Persico, Steven Shavell, Andrei Shleifer, David Silver, Alex Torgovitsky, and numerous
+seminar participants for helpful comments and suggestions. Molly Bunke, Kevin DeLuca, and
+Amy Wickett provided excellent research assistance. The views expressed herein are those of the
+authors and do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2017 by David Arnold, Will Dobbie, and Crystal S. Yang. All rights reserved. Short sections of
+text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Racial Bias in Bail Decisions
+David Arnold, Will Dobbie, and Crystal S. Yang
+NBER Working Paper No. 23421
+May 2017
+JEL No. J15,J71,K14
+ABSTRACT
+This paper develops a new test for identifying racial bias in the context of bail decisions – a high-
+stakes setting with large disparities between white and black defendants. We motivate our
+analysis using Becker's (1957) model of racial bias, which predicts that rates of pre-trial
+misconduct will be identical for marginal white and marginal black defendants if bail judges are
+racially unbiased. In contrast, marginal white defendants will have a higher probability of
+misconduct than marginal black defendants if bail judges are racially biased against blacks. To
+test the model, we develop a new estimator that uses the release tendencies of quasi-randomly
+assigned bail judges to identify the relevant race-specific misconduct rates. Estimates from Miami
+and Philadelphia show that bail judges are racially biased against black defendants, with
+substantially more racial bias among both inexperienced and part-time judges. We also find that
+both black and white judges are biased against black defendants. We argue that these results are
+consistent with bail judges making racially biased prediction errors, rather than being racially
+prejudiced per se.
+David Arnold Crystal S. Yang
+Industrial Relations Section Harvard Law School
+Louis A. Simpson International Bldg. Griswold 301
+Princeton University Cambridge, MA 02138
+Princeton, NJ 08544-2098 and NBER
+dharnold@princeton.edu cyang@law.harvard.edu
+Will Dobbie
+Industrial Relations Section
+Louis A. Simpson International Bldg.
+Princeton University
+Princeton, NJ 08544-2098
+and NBER
+wdobbie@princeton.edu
+
+Racial disparities exist at every stage of the criminal justice process. Compared to observably
+similar whites, blacks are more likely to be searched for contraband (Antonovics and Knight 2009),
+more likely to experience police force (Fryer 2016), more likely to be charged with a serious offense
+(Rehavi and Starr 2014), more likely to be convicted (Anwar, Bayer, and Hjalmarrson 2012), and
+more likely to be incarcerated (Abrams, Bertrand, and Mullainathan 2012). Racial disparities are
+particularlyprominentinthesettingofbail: inourdata,blackdefendantsare11.2percentagepoints
+more likely to be assigned monetary bail than white defendants and, conditional on being assigned
+monetary bail, have bail amounts that are $14,376 greater.1 However, determining whether these
+racial disparities are due to racial bias or statistical discrimination remains an empirical challenge.
+To distinguish between racial bias and statistical discrimination, Becker (1957) proposed an
+“outcome” test that uses the success or failure rates of decisions across groups at the margin. In
+our setting, Becker’s test is based on the idea that rates of pre-trial misconduct will be identical for
+marginal white and marginal black defendants if bail judges are racially unbiased and the observed
+racial disparities in bail setting are solely due to statistical discrimination (e.g., Phelps 1972, Arrow
+1973). In contrast, marginal white defendants will have a higher probability of pre-trial misconduct
+than marginal black defendants if bail judges are racially biased against blacks and the observed
+racial disparities in bail setting are driven at least in part by this racial bias. Thus, the key
+implication of the Becker test is that racial bias among bail judges can be estimated using the
+difference in pre-trial misconduct rates for white and black defendants at the margin of release.
+Importantly, however, researchers usually cannot observe which defendants are and are not on
+the margin of release and, thus, comparisons based on average defendant outcomes are biased if
+defendants have different risk distributions (e.g., Ayres 2002).
+In recent years, two seminal papers have developed outcome tests of racial bias that partially
+circumvent this infra-marginality problem. In the first paper, Knowles, Persico, and Todd (2001)
+show that if motorists respond to the race-specific probability of being searched, then all motorists
+of a given race will carry contraband with equal probability. As a result, the marginal and average
+success rates of police searches will be identical and there is not an infra-marginality problem.
+Knowles et al. (2001) find no difference in the average success rate of police searches for white and
+black drivers, leading them to conclude that there is no racial bias in police searches. In a second
+importantpaper, AnwarandFang(2006)developatestofrelativeracialbiasbasedontheideathat
+the ranking of search and success rates by white and black police officers should be unaffected by
+the race of the motorist even when there are infra-marginality problems. Consistent with Knowles
+et al. (2001), Anwar and Fang (2006) find no evidence of relative racial bias in police searches, but
+note that their approach cannot be used to detect absolute racial bias.2
+1Authors’calculationforMiami-DadeandPhiladelphiausingthedatadescribedinSectionII.Racialdisparities
+in bail setting are also observed in other jurisdictions. For example, black felony defendants in state courts are nine
+percentagepointsmorelikelytobedetainedpre-trialcomparedtootherwisesimilarwhitedefendants(McIntyreand
+Baradaran 2013).
+2We replicate the Knowles et al. (2001) and Anwar and Fang (2006) tests in our data, finding no evidence of
+racialbiasineithercase. ThedifferencesbetweenourtestandtheKnowlesetal. (2001)andAnwarandFang(2006)
+tests is that (1) we identify treatment effects for marginal defendants rather than the average defendant, and (2) we
+1
+
+In this paper, we propose a new outcome test for identifying absolute racial bias in the context
+of bail decisions. Bail is an ideal setting to test for racial bias for a number of reasons. First,
+the legal objective of bail judges is narrow, straightforward, and measurable: to set bail conditions
+that allow most defendants to be released while minimizing the risk of pre-trial misconduct. In
+contrast, the objectives of judges at other stages of the criminal justice process, such as sentencing,
+are complicated by multiple hard-to-measure objectives, such as the balance between retribution
+and mercy. Second, mostly untrained bail judges must make on-the-spot judgments with limited
+information and little to no interaction with defendants. These institutional features may make
+bail decisions particularly prone to the kind of stereotypes or categorical heuristics that exacerbate
+racial bias (e.g., Fryer and Jackson 2008, Bordalo et al. 2016). Finally, bail decisions are extremely
+consequential for both white and black defendants, with prior work suggesting that detained de-
+fendants suffer about $40,000 in lost earnings and government benefits alone (Dobbie, Goldin, and
+Yang 2016).3
+To implement the Becker outcome test in our setting, we develop an instrumental variables (IV)
+estimator for racial bias that identifies the difference in pre-trial misconduct rates for white and
+black defendants at the margin of release. Though IV estimates are often criticized for the local
+nature of the estimates, we exploit the fact that the Becker test relies on (the difference between)
+exactly these kinds of local treatment effects for white and black defendants at the margin of release
+to distinguish between racial bias and statistical discrimination. Specifically, we use the release
+tendencies of quasi-randomly assigned judges to identify local average treatment effects (LATEs)
+for white and black defendants near the margin of release. We then use the difference between these
+race-specific LATEs to estimate a weighted average of the racial bias among bail judges in our data.
+In the first part of the paper, we formally establish the conditions under which our IV-based
+estimate of racial bias converges to the true level of racial bias. We show that two conditions must
+holdforourempiricalstrategytoyieldconsistentestimatesofracialbias. Thefirstconditionisthat
+our instrument for judge leniency is continuous so that each race-specific IV estimate approaches
+a weighted average of treatment effects for defendants at the margin of release. With 177 bail
+judges in our sample, we argue that this condition is approximately true in our data.4 The second
+condition is that the judge IV weights are identical for white and black defendants near the margin
+of release so that we can interpret the difference in the LATEs as racial bias and not differences in
+how treatment effects from different parts of the distribution are weighted. This second condition
+is satisfied if, as is suggested by our data, there is a linear first-stage relationship between pre-trial
+identify absolute rather than relative bias. See Section III.D for additional details on why the Knowles et al. (2001)
+and Anwar and Fang (2006) tests yield different results than our test.
+3See also Gupta, Hansman, and Frenchman (2016), Leslie and Pope (2016), and Stevenson (2016).
+4In the online appendix, we show that an additional functional form assumption on the distribution of marginal
+treatment effects allows us to consistently estimate racial bias with a discrete instrument. We also characterize the
+estimationbiasfromadiscreteinstrumentwhennoadditionalfunctionalformassumptionsaremade. Weshowthat,
+underreasonableassumptions,ourinterpretationoftheIVestimatesremainsvalidandthatwecancalculatebounds
+ontheestimationbiasfromusingadiscreteinstrument. Inpractice,wefindthatthemaximumestimationbiasfrom
+using a discrete instrument in our setting is less than 0.5 percentage points, as the distance between any two judge
+leniency measures in our data is relatively small.
+2

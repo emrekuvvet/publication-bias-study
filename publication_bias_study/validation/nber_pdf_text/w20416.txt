@@ -1,0 +1,135 @@
+NBER WORKING PAPER SERIES
+ENTRY AND EXIT IN OTC DERIVATIVES MARKETS
+Andrew G. Atkeson
+Andrea L. Eisfeldt
+Pierre-Olivier Weill
+Working Paper 20416
+http://www.nber.org/papers/w20416
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+August 2014
+We’d like to thank, for fruitful comments and suggestions, the Co-Editor, three referees, as well as
+Gara Afonso, Saki Bigio, Briana Chang, Jean-Edouard Colliard, Darrell Duffie, Ben Lester, Gustavo
+Manso, Tyler Muir, Martin Oehmke, Ionid Rosu, Tano Santos, Daniel Sanches, Martin Schneider,
+Shouyong Shi, Randy Wright, Pierre Yared, and numerous seminar audiences. Patrick Kiefer, Pierre
+Mabille, Omair Syed, Alfredo Reyes, and Semih Uslu provided expert research assistance. We thank
+the Bank of France, the Fink Center for Finance and Investments, and the Ziman Center for Real Estate
+for financial support. Part of this project was completed when Pierre-Olivier Weill was a visiting Professor
+at the Paris School of Economics, whose hospitality is gratefully acknowledged. All errors are ours.
+The views expressed herein are those of the authors and do not necessarily reflect the views of the
+National Bureau of Economic Research.
+At least one co-author has disclosed a financial relationship of potential relevance for this research.
+Further information is available online at http://www.nber.org/papers/w20416.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2014 by Andrew G. Atkeson, Andrea L. Eisfeldt, and Pierre-Olivier Weill. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission provided
+that full credit, including © notice, is given to the source.
+
+Entry and Exit in OTC Derivatives Markets
+Andrew G. Atkeson, Andrea L. Eisfeldt, and Pierre-Olivier Weill
+NBER Working Paper No. 20416
+August 2014, Revised May 2015
+JEL No. G0,G1,G2
+ABSTRACT
+We develop a parsimonious model to study the equilibrium and socially optimal decisions of banks
+to enter, trade in, and possibly exit, an OTC market. Although we endow all banks with the same trading
+technology, banks’ optimal entry and trading decisions endogenously lead to a realistic market structure
+comprised of dealers and customers with distinct trading patterns. We decompose banks’ entry incentives
+into incentives to hedge risk and incentives to make intermediation profits. We show that dealer banks
+enter more than is socially optimal. In the face of large negative shocks, they may also exit more than
+is socially optimal when markets are not perfectly resilient.
+Andrew G. Atkeson Pierre-Olivier Weill
+Bunche Hall 9381 Department of Economics
+Department of Economics University of California, Los Angeles
+UCLA Bunche Hall 8283
+Box 951477 Los Angeles, CA 90095
+Los Angeles, CA 90095-1477 and NBER
+and NBER poweill@econ.ucla.edu
+andy@atkeson.net
+Andrea L. Eisfeldt
+UCLA Anderson School of Management
+110 Westwood Plaza
+Suite C4.10
+Los Angeles, CA 90095
+and NBER
+andrea.eisfeldt@anderson.ucla.edu
+A data appendix is available at:
+http://www.nber.org/data-appendix/w20416
+
+1 Introduction
+We develop a parsimonious model to study the equilibrium and socially optimal decisions
+of banks to enter and trade in an over-the-counter (OTC) market. Banks differ in terms
+of their exposure to an aggregate risk factor, their size, and their entry cost, but otherwise
+are endowed with the same OTC trading technology. In an entry equilibrium, banks’ opti-
+mal participation decisions determine the structure of the OTC market endogenously: the
+characteristics of participants, the heterogeneity in their portfolios and trading patterns, the
+dispersion in their marginal valuations and transaction prices. We argue that equilibrium
+outcomes reproduce stylized facts about the structure of OTC markets. In particular, large-
+sized banks endogenously emerge as “dealers” who profit from price dispersion, and in doing
+so provide intermediation services to middle-sized “customer” banks. We then formalize
+and explicitly characterize banks’ entry incentives, in equilibrium vs. in the corresponding
+constrained planning problem. This allows us to address policy questions about market size
+and composition. We show that a bank entering the market as a dealer adds social value,
+and we formalize the manner in which it mitigates OTC market frictions by facilitating trade
+among customer banks with dispersed marginal valuations. However, we also show that, in
+an entry equilibrium, the trading profits of the marginal dealer exceed its marginal social
+contribution. As a result, dealer banks tend to provide too many intermediation services
+relative to the social optimum.
+We extend our equilibrium concept to study exit. In an exit equilibrium, banks face
+shocks to their cost of ongoing participation in the OTC market, and they make optimal
+decisions to stayinortoexit themarket. Crucially, weassume thatthemarket isimperfectly
+resilient: a bank who has lost some of its trading counterparties due to exit may or may
+not be able to trade with new ones. In this context, we show that dealers are the most
+vulnerable to negative shocks: they have the strongest private incentives to exit. However,
+we find that, relative to the social optimum, dealers exit too much only if the shock is large
+enough and if the market is not perfectly resilient.
+Our model is populated by a continuum of financial institutions, called banks, who con-
+template entering an OTC market for derivative “swap” contracts. Each bank is a coalition
+of many risk-averse agents, called traders. Banks have heterogenous sizes and heterogenous
+endowments of a non-tradable risky loan portfolio, creating heterogenous exposures to an
+aggregate default risk factor. Since traders in banks are risk averse, they will attempt to
+equalize these exposures by trading Credit Default Swaps (CDS) in the OTC market. We
+focus on CDS for concreteness, but one could also consider any derivatives contracts for
+hedging an aggregate risk such as interest or exchange rate swaps, for example.
+2
+
+First, conditional ontheir size andinitial exposuretoaggregatedefault risk, bankschoose
+whether to pay a fixed cost in order to enter into the market. The fixed cost payment
+represents the acquisition of infrastructure and specialized expertise required to trade in
+OTC markets. Second, after entry, all banks are granted access to the same technology to
+trade swaps. Their traders are paired uniformly, and each pair negotiates over the terms
+of the contract subject to a uniform trade size limit. This limit represents banks’ risk-
+management constraints on individual trading desk positions in practice. Third, each bank
+consolidates the swaps signed by its traders and all contracts and loans are paid off.
+Banks have two distinct privateincentives toenter theOTC market. Thefirst incentive is
+to hedge their underlying risk exposure. The second incentive arises because, in equilibrium,
+hedging is imperfect. Imperfect hedging creates dispersion in banks’ marginal valuations
+and price dispersion. This dispersion gives banks incentives to enter in order to earn trading
+profits, and in doing so provide intermediation services. We show that both incentives
+are U-shaped functions of a bank’s initial risk exposure: they are larger for banks with
+extreme initial risk exposures, either small or large, and smaller for banks with intermediate
+exposures. Combined with fixed entry costs, these U-shaped incentives result in entry and
+trading patterns which are corroborated by empirical evidence. First, small-sized banks
+cannot spread the fixed entry cost over enough traders, and choose not to enter. Second,
+medium-sized banks only find it optimal to enter the market if their incentives are large
+enough, which occurs if their initial risk exposure is sufficiently small or large. They use
+the OTC market to take a large net position, either long or short, and in this sense act as
+customers. Third, bankswithintermediateexposureshavethesmallestincentivetoenterand
+so they onlypay thefixed cost ifthey arelargeenough. Since they start withanintermediate
+exposure, close to the market-wide average, they do not trade to hedge. Instead, they take
+many offsetting long and short positions, have large gross exposures, small net exposures,
+and enter mostly to make intermediation profits. Hence, these large banks endogenously
+emerge as dealers.
+Next, westudytheproblemofaplannerwhochooses banks’ entryandtradingpatternsin
+theOTCmarket, but isotherwise subject tothesamefrictionsasintheequilibrium. Wefind
+that trading patterns are socially optimal conditional on entry, but that entry patterns are
+not. We show that dealers are socially useful because they facilitate trade between banks
+with dispersed marginal valuations. However, we find that their profits are larger than
+their marginal social contribution. Hence, dealers have too great an incentive to enter in
+equilibrium. In a parametric example, we show that, starting from the equilibrium, a social
+planner finds it optimal to decrease the entry of dealers and increase the entry of customers.
+The resulting socially optimal OTC market structure has fewer participants, generates less
+3

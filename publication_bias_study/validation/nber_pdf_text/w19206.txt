@@ -1,0 +1,134 @@
+NBER WORKING PAPER SERIES
+OPTIMAL LIFE CYCLE PORTFOLIO CHOICE WITH VARIABLE ANNUITIES
+OFFERING LIQUIDITY AND INVESTMENT DOWNSIDE PROTECTION
+Vanya Horneff
+Raimond Maurer
+Olivia S. Mitchell
+Ralph Rogalla
+Working Paper 19206
+http://www.nber.org/papers/w19206
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2013
+The research reported herein was performed pursuant to a grant from the US Social Security Administration
+(SSA) to the Michigan Retirement Research Center (MRRC) as part of the Retirement Research Consortium.
+We are also grateful for research support provided by the TIAA-CREF Research Institute, the German
+Investment and Asset Management Association (BVI), the Pension Research Council/Boettner Center
+at The Wharton School of the University of Pennsylvania, and the Metzler Exchange Professor program.
+This research is part of the NBER programs on Aging, Public Economics, and Labor Studies. All opinions
+and any errors are solely those of the authors and not of the institutions with whom the authors are
+affiliated. © 2013 Horneff, Maurer, Mitchell, Rogalla. The views expressed herein are those of the
+authors and do not necessarily reflect the views of the National Bureau of Economic Research.
+At least one co-author has disclosed a financial relationship of potential relevance for this research.
+Further information is available online at http://www.nber.org/papers/w19206.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2013 by Vanya Horneff, Raimond Maurer, Olivia S. Mitchell, and Ralph Rogalla. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission provided
+that full credit, including © notice, is given to the source.
+
+Optimal Life Cycle Portfolio Choice with Variable Annuities Offering Liquidity and Investment
+Downside Protection
+Vanya Horneff, Raimond Maurer, Olivia S. Mitchell, and Ralph Rogalla
+NBER Working Paper No. 19206
+July 2013
+JEL No. D1,D14,D91,G11,G22
+ABSTRACT
+We evaluate lifecycle consumption and portfolio allocation patterns resulting from access to Guaranteed
+Minimum Withdrawal Benefit (GMWB) variable annuities, one of the most rapidly-growing financial
+innovations over the last two decades. A key feature of these products is that they offer access to equity
+investments with downside protection, hedging of longevity risk, and partially-refundable premiums.
+Welfare rises since policyholders exercise the product’s flexibility by taking withdrawals and dynamically
+adjusting their portfolios and consumption streams. Consistent with observed behavior, differences
+across individuals’ cash out and annuitization patterns result from variations in realized equity market
+returns and labor income trajectories.
+Vanya Horneff Olivia S. Mitchell
+Gruenebrugplatz 1 University of Pennsylvania
+House of Finance Wharton School
+60323 Frankfurt, Germany 3620 Locust Walk, St 3000 SH-DH
+vhorneff@finance.uni-frankfurt.de Philadelphia, PA 19104-6302
+and NBER
+Raimond Maurer mitchelo@wharton.upenn.edu
+Finance Department
+Goethe University Ralph Rogalla
+Grüneburgplatz 1 (Uni-PF. H 23) Finance Department
+Frankfurt am Main Goethe University
+Germany Grüneburgplatz 1 (Uni-PF. H 23)
+rmaurer@wiwi.uni-frankfurt.de Frankfurt am Main
+Germany
+rogalla@finance.uni-frankfurt.de
+
+Optimal Life Cycle Portfolio Choice with Variable Annuities Offering
+Liquidity and Investment Downside Protection
+1. Introduction
+Defined contribution pensions are the most rapidly growing form of retirement saving
+product around the world. Yet participants in such self-directed pension plans often fail to
+understand the risks associated with their investment and spending decisions (Lusardi and
+Mitchell, 2007, 2008), exposing them to the possibility of potential retirement shortfalls
+(Poterba, Rauh, Venti, and Wise, 2007). Accordingly, households could likely benefit from
+incorporating income and return guarantees into their defined contribution pension plans
+(Feldstein, 2009) in addition to improving their financial literacy (van Rooij, Lusardi, and
+Alessie 2011). Specifically, such products offer lifelong benefit payments during retirement,
+as well as protection of accumulated assets from downside market shocks. Such guarantees
+are offered by insurers in the form of investment-linked variable annuities (VAs), though
+relatively little is known about how to integrate these products into the pension context. This
+paper shows how such VAs with guarantees can be used to enhance retirement security in the
+context of a life cycle model.
+Variable annuities are one of the most rapidly growing financial products in the past
+few decades. As of 2010, some $1.5 trillion of assets were invested in VA contracts in the
+U.S. (IRI 2011). By contrast, assets invested in fixed annuities were only $660 billion. In the
+same year, the flow of annuity sales in the U.S. totaled $210 billion, two-thirds of which were
+variable annuities. The specific and popular innovation we examine in this paper is a deferred
+variable annuity with a Guaranteed Minimum Withdrawal Benefit (GMWB) rider; these
+constitute almost 80% of recent variable annuity sales (IRI 2011). GMWBs are insurance
+products with both investment and income components. During the accumulation phase, the
+policyholder pays premiums to a life insurer, which (after expenses) are invested in mutual
+fund-style sub-accounts. Then at retirement, the retiree has the possibility of converting her
+accumulated assets into a lifelong income stream.
+In the specific instance of the GMWB, the policyholder may elect to take back her
+entire premium in small portions (i.e. a “money-back” guarantee) over a certain time frame,
+regardless of the actual investment performance of her underlying portfolio (Milevsky and
+Salisbury, 2006). Typically, the consumer may withdraw a maximum percentage of her
+premium per year until the premium is completely recouped. Any remaining capital at the end
+of the deferral period can be converted either into a lifelong annuity or paid to the
+
+2
+policyholder in the form of a lump sum. In this way, the GMWB offers access to equity
+investments, downside protection against market risk, and the possibility of hedging longevity
+risk via annuitization. Because of the withdrawal option, premiums are at least in part
+refundable, so that GMWBs offer also liquidity which can help overcome consumer
+reluctance to voluntary annuitize retirement wealth.1
+Prior literature on dynamic portfolio choice has examined household demand for life
+annuities and its welfare implications.2 Though several authors study immediate and fixed
+annuities,3 only a few consider variable annuities with deferred benefits in a realistically-
+calibrated lifecycle portfolio choice model.4 For instance Horneff, Maurer, Mitchell, and
+Stamos (2009) investigate gradual annuitization with immediate variable annuities. Brown,
+Mitchell, Poterba, and Warshawsky (2001) use the utility equivalence concept introduced by
+Mitchell, Poterba, Warshawsky, and Brown (1999) to evaluate the welfare implications of
+having access to variable annuities during the decumulation phase. Feldstein and Ranguelova
+(2001) study variable annuities in an investment-linked Social Security system where
+households take individual investment risk. Using a continous time framework, Milevsky and
+Young (2007) allow the retiree to defer annuitization and move his entire savings into a
+equity-linked annuity as of a single switching date. Recent work by Maurer, Mitchell,
+Rogalla, and Kartashov (2013) examines variable deferred annuities where payments begin
+only when the deferring period is over and continue for life. In that context, benefits depend
+on the performance of the underlying asset portfolio (stocks, bonds, or some combination).
+Nevertheless, these studies do not account for the guarantees typically included in VAs
+actually offered in the market.
+The research literature on GWMBs is sparse. Recently, Steinorth and Mitchell (2012)
+evaluate variable annuities with guarantee riders and fees typical of the US annuity market.
+They conclude that GMWBs are welfare-enhancing for risk-averse consumers, despite the fact
+that their money’s worth ratios are substantially below 100%. Yet that study focuses only on
+the decumulation phase. Several other authors have investigated how to price the complex
+1 The discrepancy between the theoretical dominance of annuitization predicted by many economists (see originally
+Yaari, 1965, and more recently Davidoff, Brown, and Diamond, 2005) and the low annuity take-up rates of older
+households around the world is known as the ‘annuity puzzle’ (see, e.g., Inkmann, Lopez, and Michaelides, 2011).
+2 Other innovative retirement and saving products recently introduced into lifecycle models include longevity
+bonds to hedge the systematic mortality risk (Cocco and Gomes, 2012).
+3 See for instance Milevsky and Young (2007), Horneff, Maurer, and Stamos (2008), as well as Huang and
+Milevsky (2008) who study annuity with immediate fixed payouts within a dynamic portfolio choice model. Horneff,
+Maurer, and Rogalla (2010) explore deferred annuities with flat benefits.
+4 Xiong, Idzorek, and Chen (2010) provide a simulation analysis of GMWB products with various asset
+allocations, but this analysis does not embed the product in a life cycle portfolio context.

@@ -1,0 +1,147 @@
+NBER WORKING PAPER SERIES
+EQUILIBRIUM PORTFOLIO STRATEGIES IN THE PRESENCE OF SENTIMENT
+RISK AND EXCESS VOLATILITY
+Bernard Dumas
+Alexander Kurshev
+Raman Uppal
+Working Paper 13401
+http://www.nber.org/papers/w13401
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2007
+We are grateful to Wei Xiong, Tony Berrada, Julien Hugonnier and Erwan Morellec for useful discussions.
+We are also grateful for comments from Andrew Abel, Nick Barberis, Suleyman Basak, Tomas Bj¨ork,
+Andrea Buraschi, Joao Cocco, John Cochrane, George Constantinides, John Cotter, Alexander David,
+Mike Gallmeyer, Xavier Gabaix, Francisco Gomes, Lorenzo Garlappi, Joao Gomes, Tim Johnson,
+Leonid Kogan, Kostas Koufopoulos, Karen Lewis, Deborah Lucas, Pascal Maenhout, Massimo Massa,
+Stavros Panageas, Anna Pavlova, Ludovic Phalippou, Valery Polkovnichencko, Bryan Routledge,
+Andrew Scott, Jose Scheinkman, Hersh Shefrin, Matt Spiegel, Alex Stomper, Allan Timmermann,
+Skander van den Heuvel, Luis Viceira, Jiang Wang, Pierre-Olivier Weill, Hongjun Yan, Amir Yaron,
+Moto Yogo, Joseph Zechner, Stanley Zin and participants at presentations given at Bank of England,
+Columbia University, HEC Paris, INSEAD, Judge Institute at Cambridge University, London Business
+School, London School of Economics, Massachusetts Institute of Technology, Oxford University,
+Princeton University, Stanford University, University of California at Berkeley, University College
+Dublin, University of Frankfurt, University of Piraeus, University of Texas at Austin, University of
+Toulouse, University of Vienna, University of Zurich, Wharton School, Yale University, American
+Finance Association Meeting, Citigroup Smith Barney Quantitative Conference, Duke/UNC Asset
+Pricing Conference, European Finance Association Meeting, European Summer Symposium in Financial
+Markets at Gerzensee, European Central Bank, Isaac Newton Institute at Cambridge University, NBER
+workshop on Capital Markets and the Economy, NBER Summer Institute, NBER Asset Pricing Meeting,
+the Swiss Finance Institute and the Swiss National Bank. The views expressed herein are those of
+the author(s) and do not necessarily reflect the views of the National Bureau of Economic Research.
+© 2007 by Bernard Dumas, Alexander Kurshev, and Raman Uppal. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Equilibrium Portfolio Strategies in the Presence of Sentiment Risk and Excess Volatility
+Bernard Dumas, Alexander Kurshev, and Raman Uppal
+NBER Working Paper No. 13401
+September 2007
+JEL No. C11,D58,D84,D91
+ABSTRACT
+Our objective is to identify the trading strategy that would allow an investor to take advantage of "excessive"
+stock price volatility and "sentiment" fluctuations. We construct a general-equilibrium model of sentiment.
+In it, there are two classes of agents and stock prices are excessively volatile because one class is overconfident
+about a public signal. As a result, this class of overconfident agents changes its expectations too often,
+sometimes being excessively optimistic, sometimes being excessively pessimistic. We determine and
+analyze the trading strategy of the rational investors who are not overconfident about the signal. We
+find that, because overconfident traders introduce an additional source of risk, rational investors are
+deterred by their presence and reduce the proportion of wealth invested into equity except when they
+are extremely optimistic about future growth. Moreover, their optimal portfolio strategy is based not
+just on a current price divergence but also on their expectation of future sentiment behavior and a prediction
+concerning the speed of convergence of prices. Thus, the portfolio strategy includes a protection in
+case there is a deviation from that prediction. We find that long maturity bonds are an essential accompaniment
+of equity investment, as they serve to hedge this "sentiment risk."
+Bernard Dumas Raman Uppal
+Université de Lausanne London Business School
+Institut de Banque et Finance Regents Park
+Bâtiment Extranef London NW1 4SA
+1015 Lausanne UK
+Switzerland ruppal@london.edu
+and NBER
+bernard.dumas@unil.ch
+Alexander Kurshev
+London Business School
+akurshev.PHD2003@london.edu
+
+1 Introduction
+The excess-volatility puzzle – identified by Shiller (1981) and LeRoy and Porter (1981) – points to
+a form of market inefficiency. But, so far, the investment strategy that would serve to exploit that
+form of inefficiency and would cause those responsible for excess volatility to part with their wealth
+has not been identified. Suppose that a financial market is deemed to be affected by fluctuations
+in market “sentiment” so that sentiment volatility causes prices to be more volatile than what
+would be justified by dividend volatility alone.1 Suppose further that a Bayesian, intertemporally
+optimizing investor trades in that market. We would like to know what investment policy this
+person will undertake in equilibrium.
+To address this question, we build a general-equilibrium model of a financial market in which a
+subpopulationofinvestorstradeson“sentiment”andgeneratesexcessvolatility. Inourmodel,some
+investors are overconfident in the sense that they give too much credence to a public information
+signal. One way to capture that behavioral feature has recently been proposed by Scheinkman and
+Xiong (2003). In their model of a “tree” economy, a stream of dividends is paid. Some aspect
+of the stochastic process of dividends is not observable by anyone. All investors are risk neutral,
+are constrained from short selling, and receive information in the form of the current dividend
+and some public signals. Agents have different beliefs about the correlation between innovations
+in the signal and innovations in the unobserved variables: “overconfident”agents are people who
+steadfastly believe that this correlation is a positive number when, in fact, it is equal to zero. This
+causes them to give too much weight to the signals.
+Here, we consider a similar setting except that all investors are risk averse and are allowed to
+sell short. One class of agents knows the true correlation. They form “proper” beliefs by using
+Bayes’ formula. A second class of investors are overconfident about the public signal. As a result,
+they change their beliefs too often about economic prospects: when they receive a signal, they
+overreact to it, which then generates excessive stock price movements. We say that volatility is
+“excessive” when, for the given utility functions of agents, the level of volatility is larger than it
+wouldbeifallagentsknewthecorrelationtobeequaltozero,andwerefertothefluctuationsinthe
+1Whetherfinancial-marketvolatilityisactuallyexcessivehasbeendebated. Theliteratureontheequity-premium
+puzzle has developed a number of models, such as habit-formation models (see Constantinides (1990); Abel (1990);
+Campbell and Cochrane (1999)), in which the effective discount rate is strongly time varying even though the
+consumption stream remains very smooth. Using models of that kind, Menzly, Santos, and Veronesi (2004) have
+recently calibrated a model of the U.S. stock market in which the volatility of stock returns is larger than the one
+observed in the data. In another line of investigation, Bansal and Yaron (2004) and Hansen, Heaton, and Li (2005)
+findthatallowingforasmalllong-runpredictablecomponentindividendgrowthratesandforveryhighelasticityof
+intertemporalsubstitutioncangenerateseveralobservedasset-pricingphenomenon,includingvolatilityofthemarket
+return. Spiegel (1998) shows that excess volatility can be explained also in an overlapping-generations model with
+small shocks to the supply of the multiple risky assets. Bhamra and Uppal (2007) show that differences in risk
+aversions can also lead to large volatility.
+1
+
+probability beliefs of overconfident agents relative to agents with the proper beliefs as fluctuations
+in “sentiment.” The non-zero correlation number to which overconfident investors adhere, is the
+singleparameter inourmodelthatcausesittodifferfromatraditionalrational-expectationsgeneral
+equilibrium model.
+In their contest with investors who process information rationally under the proper beliefs, we
+want the traders who are overconfident to be full-fledged intertemporal optimizers nonetheless. It
+iswell-knownthatcompleteirrationalityinthemannerofpositive“feedbacktraders”`alaDeLong,
+Shleifer, Summers, and Waldmann (1990b) can amplify the volatility of stock prices and that the
+additional volatility creates “noise-trader risk” for rational arbitrageurs, thereby creating a limit to
+arbitrage. However,feedbacktradersortradersactingrandomlymaynotbethebestrepresentation
+of irrational behavior because they are “sitting ducks” for rational investors. Furthermore, it is not
+clear where the consumption units they are losing are coming from. For this reason, we prefer to
+model a general equilibrium economy where the overconfident traders are intertemporal optimizers
+with fully specified budget constraints, even if they have overconfident beliefs. In this way, welfare
+analysis and the analysis of gains and losses of the two groups of traders remain meaningful.2
+We identify three distinct aspects of the portfolio strategy of the investors who process infor-
+mation properly.3 First, these investors may not agree today with the market about its current
+estimate of the growth rate of dividends: there is a difference of opinion. When the investors with
+the proper beliefs are more optimistic than the market, they increase their investment in equity,
+while decreasing their investment in bonds (because equity and bonds are positively correlated).
+Second, all investors, whether they agree today or not, know that they will revise their forecasts
+of growth, with consequent future changes in the rate of interest. Third, if there is a difference
+of opinion today, investors with the proper beliefs are aware that the overconfident investors will
+revise their probability beliefs differently from the way their own will be revised: the difference
+of opinion drives sentiment, which is stochastic, and sentiment risk carries a risk premium. The
+second and third effects cause investors with the proper beliefs to hedge; they hold fewer shares of
+equity than would be optimal in a market without excess volatility. Thus, our analysis illustrates
+how “risk arbitrage” must be based not just on a current price divergence but also on a model of
+overconfident behavior, so that a protection can be put in place.
+2Models of feedback trading do not discuss the budget constraint of the feedback traders and, therefore, leave
+unclear the origin of the gains that the rational arbitrageurs would make. And, even when noise traders pursue an
+explicit objective, as is done in De Long, Shleifer, Summers, and Waldmann (1990a), one must be careful not to
+confuse“noiserisk”withsomeoutputriskinducedbythenoiserisk,ashasbeenpointedoutrecentlybyLoewenstein
+and Willard (2006). Restricting our analysis to a pure exchange general equilibrium economy allows us to maintain
+a clean distinction between output risk and noise risk.
+3ThequestionbeingansweredinourpaperisthesameastheonethatwasraisedbyWilliams(1977)andZiegler
+(2000) in a simpler setting in which the expected growth rate of dividends is constant (although unobserved) and in
+whichtherearefewersecurities. Inthesetwopapers,theinvestorwhosestrategyoneisstudyingisassumedtobeof
+negligible weight in the market, in contrast to our setting.
+2

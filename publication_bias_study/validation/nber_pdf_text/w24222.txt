@@ -1,0 +1,137 @@
+NBER WORKING PAPER SERIES
+LIQUIDITY REGIMES AND OPTIMAL DYNAMIC ASSET ALLOCATION
+Pierre Collin-Dufresne
+Kent D. Daniel
+Mehmet Sa lam
+Working Paper 24222
+http://www.nber.org/papers/w24222
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+January 2018, Revised October 2018
+For valuable comments and suggestions, we thank Darrell Duffie, Hui Guo, Ron Kaniel, an
+anonymous referee, and seminar participants at Princeton University, UCLA, University of
+Cincinnati and the 2018 Zurich Workshop on Asset Pricing. The views expressed herein are those
+of the authors and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+At least one co-author has disclosed a financial relationship of potential relevance for this
+research. Further information is available online at http://www.nber.org/papers/w24222.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2018 by Pierre Collin-Dufresne, Kent D. Daniel, and Mehmet Sa lam. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Liquidity Regimes and Optimal Dynamic Asset Allocation
+Pierre Collin-Dufresne, Kent D. Daniel, and Mehmet Sa lam
+NBER Working Paper No. 24222
+January 2018, Revised October 2018
+JEL No. D53,G11,G12
+ABSTRACT
+We solve a portfolio choice problem when expected returns, volatilities and trading-costs follow
+a regime-switching model. The optimal policy trades towards an aim portfolio given by a
+weighted-average of the conditional mean-variance portfolios in all future states. The trading
+speed is higher in more persistent, riskier and higher-liquidity states. It can be optimal to
+overweight low Sharpe-ratio assets such as Treasury bonds because they remain liquid even in
+crisis states. We illustrate our methodology by constructing an optimal US equity market timing
+portfolio based on an estimated regime-switching model and on trading costs estimated using a
+large-order institutional trading dataset.
+Pierre Collin-Dufresne Mehmet Sa(cid:0)lam
+Ecole Polytechnique Federale de Lausanne Assistant Professor of Finance
+CDM SFI SFI-PCD Carl H. Lindner College of Business
+EXTRA 209 University of Cincinnati
+CH-1015 Lausanne 408 Lindner Hall
+Switzerland Cincinnati, OH 45221
+pierre.collin-dufresne@epfl.ch mehmet.saglam@uc.edu
+Kent D. Daniel
+Graduate School of Business
+Columbia University
+3022 Broadway, Uris Hall 421
+New York, NY 10027
+and NBER
+kd2371@columbia.edu
+
+1 Introduction
+Mean-variance efficient portfolio optimization, introduced by Markowitz (1952), is still widely used
+in practice and taught in business schools. When either expected returns or the covariance matrix
+of returns changes over time then so will the conditional mean-variance efficient ‘Markowitz’ port-
+folio. In the presence of transaction costs however, it will generally not be optimal for investors to
+constantly rebalance to perfectly track the Markowitz portfolio. In recognition of this fact, practi-
+tioners generally employ ad-hoc adjustments to Markowitz optimization, but it is recognized that
+these approaches are not optimal (Grinold and Kahn 1999).
+In a recent paper, Gaˆrleanu and Pedersen (2013, GP) show that in the presence of quadratic
+transaction costs,1 an investor with mean-variance preferences should adopt a trading rule that
+only partially rebalances from her current position towards an aim portfolio at a fixed trading
+speed.2 They derive closed-form expressions for both the optimal aim portfolio and the trading
+speed that depend on the dynamics of expected returns, the quantity of and aversion to risk, and
+themagnitudeofpriceimpact. However, theGPmodelassumesthatboththecovariancematrixof
+price changes and the price-impact parameters are constant. In this paper we derive a closed-form
+solutionfortheoptimalportfoliotradingruleinasimilarsettingbutwhere, inadditiontoexpected
+returns, volatilities and transaction costs may be stochastic. This is consistent with considerable
+empirical evidence that stock return volatilities are stochastic and that transaction costs covary
+with the level of stock volatility (going back at least to Rosenberg (1972) for the former and to
+Stoll (1978) for the latter).
+Here, we develop a closed-form solution for the optimal dynamic portfolio when expected re-
+turns, covariances, and price impact parameters follow a multi-state Markov switching model.3
+Consistent with GP, we assume that the investor’s objective function is ‘dynamic’ mean-variance:
+investors maximize the expected discounted sum of portfolio returns net of trading costs, minus
+a penalty for the variance of portfolio returns. While this objective function is frequently used
+in practice and in academic papers, to our knowledge it lacks decision-theoretic foundations. In
+Appendices D-G, we show that the resulting optimal strategy corresponds to that of an agent who
+is risk-neutral to the regime-switching risk associated with variation in the investment opportunity
+set, while remaining risk-averse to the diffusion risk associated with return shocks. In Appendix E,
+we formalize this argument by defining a set of ‘source-dependent’ recursive (stochastic differen-
+tial) utility preferences which result in the same objective function, building on Skiadas (2008),
+and Hugonnier, Pelgrin, and St-Amour (2012).4
+In this setting, and for an agent with these preferences, we show that the optimal trading
+1Quadratic transaction costs emerge with a linear price impact model, i.e., trading ∆ shares of a stock move its
+average price by λ∆ for a given constant λ.
+2Litterman (2005) makes a similar point in an unpublished note.
+3One additional advantage of this approach, which we discuss more below, and develop fully in Section 4, is that
+it allows us to specify a process for return volatility as opposed to price-change volatility in each state, consistent
+with the observed log-normality of prices.
+4We thank the anonymous referee for encouraging us to provide decision-theoretic foundations to this objective
+function.
+2
+
+rule is similar to that derived in GP, namely to partially trade from the current position towards
+an aim portfolio. In GP the aim portfolio and trading speed are static. Here, when risk and
+trading costs can change, both the aim portfolio and the trading speed are conditional on the state.
+Specifically, the aim portfolio is a weighted average of the state-contingent Markowitz portfolios in
+all possible future states, where the weight on each conditional-Markowitz portfolio is a function of
+thelikelihoodoftransitioningtothatstate, thestatepersistence, andtheriskandtransactioncosts
+faced in that state relative to the current one. Similarly, the optimal trading speed depends on
+the relative magnitude of the transaction costs in various states and their transition probabilities.
+Moreover,whilewesolvethemodelinadiscrete-timesettinginthebodyofthepaper,AppendicesB
+and C solve a continuous time version of the model, and obtain consistent solutions.
+To develop some of the intuition underlying the model, consider a simple setting with a single
+risky asset, and with two states: a low volatility state L where transaction costs are zero, and a
+high volatility state H where transaction costs are positive. When the economy is in the L-state,
+it is clearly optimal to trade (at infinite speed) all the way to the aim portfolio because transaction
+costsinthatstatearezero. Incontrast,tradingspeedwillbefiniteintheH-state. Further,theaim
+portfolio in the H-state will equal the conditional Markowitz portfolio in that state.5 Intuitively, in
+the H-state the investor should put zero-weight on the L-state Markowitz portfolio, because when
+the economy enters that state she will face no cost to rebalance (to the optimal aim portfolio) in
+that state. However, the aim portfolio in the L-state will be a weighed average of both H- and
+L-conditionalMarkowitzportfolios,andwheretheweightontheH-conditionalMarkowitzportfolio
+increases with the likelihood of transitioning from L to H, the persistence of the state H, and with
+the ratio of the volatilities in the H- and L-states.
+One immediate implication of our model is that the aim portfolio will deviate significantly
+from the Markowitz benchmark in anticipation of possible future shifts in relative risk and/or
+transaction costs. Consider two assets, which can be thought of as a “Treasury” and a “Corporate”
+bond portfolio. Suppose that in the low-volatility state (state L), the Corporate portfolio has a far
+higher Sharpe ratio than the Treasury portfolio, so that the conditional Markowitz portfolio has
+most of its weight on Corporates. However, if the economy transitions to state H, then risk and
+tradingcostswilldramaticallyincreaseforCorporates,butwillremainunchangedforTreasuries. In
+anticipation of this, the aim portfolio in the L-state will have a large Treasury position. Intuitively,
+if the economy transitions from the L to the H state, then the volatility of the Corporate portfolio
+will increase, its Sharpe ratio will fall, and it will become illiquid and costly to trade out of. Thus,
+the optimal dynamic “aim” portfolio preemptively reduces the position of the Corporate portfolio
+in the L-state.
+A related implication of the model relates to the trading speed in the L state. When the
+current portfolio deviates from the aim portfolio, it may become optimal to trade the less liquid
+Corporate portfolio more aggressively than the Treasury portfolio. Intuitively, if the economy does
+transition to the H state, the Corporate portfolio will become much more expensive to trade, while
+5That is, the aim portfolio in the H-state puts zero weight on the L-state Markowitz portfolio.
+3

@@ -1,0 +1,126 @@
+NBER WORKING PAPER SERIES
+THE RUN ON REPO AND THE FED'S RESPONSE
+Gary Gorton
+Toomas Laarits
+Andrew Metrick
+Working Paper 24866
+http://www.nber.org/papers/w24866
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2018
+For comments and suggestions we thank Natee Amornsiripanitch, Ben Bernanke, Bill English,
+Darrell Duffie, Arun Gupta, Ben Hebert, Frank Keane, Trish Mosser, Dimitry Orlov, Manmohan
+Singh, and seminar participants at Stanford, Columbia, and the Federal Reserve/Maryland Short-
+Term Funding Markets Conference. We also thank some traders who wish to remain anonymous
+for help in providing the haircut data used in this paper. The authors have no sources of funding
+or relevant financial relationships to disclose. The views expressed herein are those of the authors
+and do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2018 by Gary Gorton, Toomas Laarits, and Andrew Metrick. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+The Run on Repo and the Fed's Response
+Gary Gorton, Toomas Laarits, and Andrew Metrick
+NBER Working Paper No. 24866
+July 2018
+JEL No. E32,E44,E58,G01
+ABSTRACT
+The Financial Crisis began and accelerated in short-term money markets. One such market is the
+multi-trillion dollar sale-and-repurchase (“repo”) market, where prices show strong reactions
+during the crisis. The academic literature and policy community remain unsettled about the role
+of repo runs, because detailed data on repo quantities is not available. We provide quantity
+evidence of the run on repo through an examination of the collateral brought to emergency
+liquidity facilities of the Federal Reserve. We show that the magnitude of repo discounts
+(“haircuts”) on specific collateral is related to the likelihood of that collateral being brought to
+Fed facilities.
+Gary Gorton Andrew Metrick
+Yale School of Management Yale School of Management
+135 Prospect Street 135 Prospect Street
+P.O. Box 208200 P.O. Box 208200
+New Haven, CT 06520-8200 New Haven, CT 06520
+and NBER and NBER
+Gary.Gorton@yale.edu metrick@yale.edu
+Toomas Laarits
+Yale School of Management
+135 Prospect Street
+P.O. Box 208200
+New Haven, CT 06520-8200
+toomas.laarits@yale.edu
+
+1 Introduction
+The panics of the Global Financial Crisis took place outside of the traditional banking system. The
+largestinstitutionstofailornearlyfail—BearStearns,LehmanBrothers,AIG—werenottraditional
+banks. Furthermore, the stress in the traditional-bank lending markets in late 2008 were preceded
+by turmoil in lightly regulated short-term money markets: sale and repurchase agreements (repo),
+asset-backed commercial paper (ABCP), structured investment vehicles (SIVs), collateralized debt
+obligations (CDOs), and other acronymic products. These non-bank institutions and markets go
+by a variety of names—shadow banking, market-based finance, securitized banking—but whatever
+we call them the challenge is the same: we do not have anywhere near the data needed to fully
+understand what happened.
+This a major data gap, because an enormous new edifice of regulatory policy continues to be built
+onhighlyincompleteinformation. Thisgapwillnoteasilybefilled: inmanycases,therawdatawas
+simply not collected by anyone. Governments did not track—and in some cases stopped tracking—
+someofthemarkets. Furthermore, sincemostofthesemarketsareoperatedover-the-counter, there
+are no centralized exchanges with comprehensive coverage. What we are left with is a hodgepodge
+of information from market makers, industry surveys, and government emergency programs. To
+make any progress, researchers must carefully combine these various sources. In this paper, we
+attack this problem by merging two unique data sets: first, information about the quantities of
+specificcollateralusedinFederalReserveemergencyprogramsand, second, tradersuppliedhaircut
+data on various categories of bonds. With this combined dataset, we provide important evidence
+about the repo market, a major vector of crisis contagion.
+Prior to the crisis, repo was a lightly regulated multi-trillion dollar market which funded nearly
+half of the asset holdings by the major investment banks. In a repo contract a lender makes a
+short term cash loan in exchange for collateral. The amount by which the loan is less than the
+value of the collateral is called the haircut. For instance, a bond with $100 value and 10% haircut
+will allow the borrower access to $90 in repo financing. An increase in the haircut for a type of
+collateral, then, is economically equivalent to a reduction in the quantity of securitized borrowing
+that can be done using a given amount of collateral. When repo contracts have short maturities,
+such reductions in borrowing can look just like old-fashioned runs on banks. Gorton and Metrick
+(2012) used evidence about haircut changes to infer such a “run on repo” during the crisis. But
+haircuts represent only price evidence consistent with a run. In this paper, we document quantity
+evidence of the run.
+Repo is divided into two different markets: “tri-party repo” and “bilateral repo.” In tri-party
+repo, a clearing bank stands between borrowers and lenders. Because the tri-party repo market is
+dominated by regulated institutions, the data there is relatively complete.1 In contrast, bilateral
+1See Copeland et al. (2010) for a discussion of the pre-crisis tri-party system.
+2
+
+repo is the home of hedge funds, many types of offshore institutions, and other unregulated cash
+pools. A 2004 industry survey found that bilateral repo was about three times as large as tri-party
+repo (see discussion in Gorton and Metrick (2015)). The situation is similar post-crisis. Baklanova
+et al. (2017) study a cross-section of bilateral repo transactions in the first quarter of 2015. They
+find that “...more than half the trades in terms of dollar volume involve a bank or a broker-dealer,
+followed by hedge funds. The results differ from that of tri-party repo, where the money market
+funds and cash reinvestment arms of securities lending agents are the largest participants.”
+Krishnamurthy et al. (2014) perform a careful study of repo quantities in the tri-party market and
+conclude that any runs were limited. However, the evidence in Gorton and Metrick (2015) shows
+that extrapolating from the tri-party market does not allow any inference for bilateral repo—
+thus leaving more than half of the market unknown. To study quantity evidence of a run on
+bilateral repo we exploit data from the emergency lending facilities set up by the Federal Reserve.
+These facilities allowed borrowers to bring collateral to the Fed in exchange for cash or Treasuries.
+Consistent with a run on repo, we show that an increase in haircuts on a given type of collateral in
+the repo market resulted in these assets being brought to the Fed as collateral against emergency
+loans. In a difference-in-differences setting, we use changes in bilateral repo haircuts to explain
+bank-collateral-level borrowing from three facilities—the Term Auction Facility (TAF), the Term
+Securities Lending Facility (TSLF), and the Primary Dealer Credit Facility (PDCF). Our finding
+is robust to including proxies for shocks to bank capital and counterparty risk.
+Weorganizethepaperasfollows. InSection2wesummarizethemainfeaturesoftheFedemergency
+lending facilities. Section 3 discusses lending data provided by the Fed, the bilateral haircut data,
+and the merging of the two datasets. In Section 4 we present our empirical evidence: we show that
+changes in haircuts on specific asset classes caused borrowers to take those assets to the facilities.
+Section 5 concludes.
+2 The Emergency Lending Facilities
+During the 2007-2008 Financial Crisis the Federal Reserve introduced a number of temporary
+emergency facilities to address pressures in various financial markets. At one point there were
+nine temporary liquidity facilities in place.2 In this paper we focus on three important facilities—
+the Term Auction Facility (TAF), the Term Securities Lending Facility (TSLF), and the Primary
+Dealer Credit Facility (PDCF)—that allowed depository institutions or primary dealers to borrow
+against collateral outside the usual discount window, and where detailed collateral data has been
+made available by the Fed.
+Table 1 and Figure 1 summarize the main characteristics of the three programs. The TSLF was a
+2https://www.newyorkfed.org/medialibrary/media/markets/Forms of Fed Lending.pdf
+3

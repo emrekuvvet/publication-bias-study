@@ -1,0 +1,130 @@
+NBER WORKING PAPER SERIES
+FORWARD GUIDANCE IN THE YIELD CURVE:
+SHORT RATES VERSUS BOND SUPPLY
+Robin Greenwood
+Samuel Hanson
+Dimitri Vayanos
+Working Paper 21750
+http://www.nber.org/papers/w21750
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2015
+We thank Simone Manganelli (discussant), Mike Woodford, and participants at the Central Bank of
+Chile Annual Conference for helpful comments. Young Min Kim and Tiago Florido provided helpful
+research assistance. This research was funded by the Division of Research at Harvard Business School.
+The views expressed herein are those of the authors and do not necessarily reflect the views of the
+National Bureau of Economic Research. Additional and up-to-date author disclosures about outside
+activities are provided on the authors' personal websites.
+At least one co-author has disclosed a financial relationship of potential relevance for this research.
+Further information is available online at http://www.nber.org/papers/w21750.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2015 by Robin Greenwood, Samuel Hanson, and Dimitri Vayanos. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Forward Guidance in the Yield Curve: Short Rates versus Bond Supply
+Robin Greenwood, Samuel Hanson, and Dimitri Vayanos
+NBER Working Paper No. 21750
+December 2015
+JEL No. G12,G18
+ABSTRACT
+We present a model of the yield curve in which the central bank can provide market participants with
+forward guidance on both future short rates and on future Quantitative Easing (QE) operations, which
+affect bond supply. Forward guidance on short rates works through the expectations hypothesis, while
+forward guidance on QE works through expected future bond risk premia. If a QE operation is expected
+to be undone in the near term, then its announcement will have a hump-shaped effect on the yield and
+forward-rate curves; otherwise the effect may be increasing with maturity. Humps associated to QE
+announcements typically occur at maturities longer than those associated to short-rate announcements,
+even when the effects of the former are expected to last over a shorter horizon. We use our model
+to re-examine the empirical evidence on QE announcements in the US.
+Robin Greenwood Dimitri Vayanos
+Harvard Business School Department of Finance, OLD 3.41
+Baker Library 267 London School of Economics
+Soldiers Field Houghton Street
+Boston, MA 02163 London WC2A 2AE
+and NBER UNITED KINGDOM
+rgreenwood@hbs.edu and CEPR
+and also NBER
+Samuel Hanson d.vayanos@lse.ac.uk
+Harvard Business School
+Baker Library 361
+Soldiers Field
+Boston, MA 02163
+and NBER
+shanson@hbs.edu
+
+1 Introduction
+Since late 2008, when short-term interest rates reached their zero lower bound, central banks have
+been conducting monetary policy through two primary instruments: quantitative easing (QE), in
+which they buylong-term government bondsand other long-term securities, and so-called “forward
+guidance,” in which they guide market expectations about the path of future short rates. Because
+QE alters the maturity structure of the government debt that is available to the public, it changes
+the amount of duration risk that market participants must bear, thereby impacting bond risk
+premia and long-term interest rates. Forward guidance may also impact long rates because it
+contains information about the central bank’s willingness to keep short rates low in the future.
+Although the term “forward guidance” is normally used in reference to central-bank policy on
+future short rates, QE operations typically involve some forward guidance as well. This is because
+announcements that the central bank will purchase long-term securities are made well in advance
+of the actual purchases, which are spread out over a period of months or years. For example, on
+March 18, 2009, the Federal Open Market Committee (FOMC) announced that to “help improve
+conditions in private credit markets,” the Federal Reserve would increase the scale of its previously
+announced asset purchase program from $600 billion to $1.75 trillion and that these purchases
+would be carried out over the next six to twelve months. At the same time, the FOMC provided
+forward guidance on short rates, stating that it “anticipates that economic conditions are likely to
+warrant exceptionally low levels of the Federal Funds rate for an extended period.” The impact
+of announcements such as these on the yield curve has been substantial. Following the March 18,
+2009 announcement, for example, ten-year zero-coupon Treasury yields fell by 51 basis points over
+the course of two days.
+How should forward guidance on short rates and forward guidance on QE be reflected in the
+yield curve? Policymakers have taken the implicit view that forward guidance on short rates is
+easy to interpret. If the expectations hypothesis of the yield curve holds, then the expected future
+path of short rates coincides with the curve of instantaneous forward rates. But forward guidance
+on QE is inherently more difficult to assess because it depends on how future bond risk premia
+change in response to QE and how these changes are incorporated into current bond prices. For
+example, suppose that market participants believe the central bank plans to acquire large amounts
+of long-term government bonds, but then plans to sell these bonds in five years. How should these
+beliefs impact long rates today? What if the market revises its expectations about how long the
+central bank will maintain its elevated holdings of long-term bonds?
+To make these questions concrete, consider the so-called “Taper Tantrum” of May-June 2013,
+a period in which market participants feared that the Fed might reduce the pace of future bond
+1
+
+purchases. On May 22, 2013, Federal Reserve Chairman Bernanke testified in front of Congress
+that the Fed would slow or “taper” its QE program if the economy showed signs of improving.
+Within a week, yields of ten-year government bonds had increased by 21 basis points. On June 19,
+2013, bond yields increased further following a Federal Reserve press conference, as markets feared
+an end to the Fed’s balance-sheet expansion.
+Figure 1 shows the evolution of the zero-coupon Treasury yield curve between May 21 and June
+28, 2013 (nine days after the Fed press conference). Panel (a) shows yields and Panel (b) shows
+changes in yields between the two dates. The peak increase in yields occurred at a maturity of
+seven years, wherethe yield to maturity increased by a total of 60 basis points (bps). Panel (c) and
+Panel (d)show the sameinformation forthe forwardrate curve. Thepeak increase in forwardrates
+occurred at five years to maturity: the one-year yield four-year ahead increased by over 100bps
+between the two dates. The change in forward rates was large even as far as ten years into the
+future.
+How should we interpret the yield curve changes in Figure 1? Were they mainly driven by
+market participants’ revised expectations about the path of future short rates? If so, then under
+the expectations hypothesis of the yield curve, expectations were revised the most about short
+rates five years into the future, and revisions were significant even over a ten-year horizon. Were
+the changes in the yield curve instead driven by expectations about future purchases of long-term
+bonds by the Fed? If so, then over what horizon did expectations have to change to generate the
+observed yield curve changes?
+In this paper, we build a no-arbitrage model of the yield curve that allows us to characterize
+and compare the effects of forward guidance on short rates and forward guidance on QE. Among
+other results,weshowthatforwardguidanceonQEtendstoimpactlongermaturities thanforward
+guidance on shortrates, even whenexpectations aboutbondpurchases by thecentral bank concern
+ashorterhorizonthanexpectationsaboutfutureshortrates. Usingourmodelweinterpretreactions
+of the US yield curve to policy announcements during the QE period.
+Our model builds on Vayanos and Vila (2009) and Greenwood and Vayanos (2014). There is a
+continuum of default-free, zero-coupon bonds that are available in positive supply. For simplicity,
+we consolidate the central bank and the fiscal authority, so that the only relevant quantity is the
+supply of bonds that must beheld by the public. Themarginal holders of the bonds are risk-averse
+arbitrageurswithshortinvestmenthorizons. Thesearbitrageursdemandariskpremiumforholding
+bonds, because of the possibility that unexpected shocks will cause the bonds to underperform
+relative to the short rate. Following a long line of research on the portfolio-balance channel (Tobin
+(1958), Tobin (1969)), declines in bond supply lower the amount of duration risk that is borne by
+arbitrageurs, reducing bond risk premia and raising bond prices.
+2

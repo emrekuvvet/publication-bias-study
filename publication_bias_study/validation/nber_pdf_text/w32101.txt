@@ -1,0 +1,127 @@
+NBER WORKING PAPER SERIES
+CEO COMPENSATION AND CASH-FLOW SHOCKS:
+EVIDENCE FROM CHANGES IN ENVIRONMENTAL REGULATIONS
+Seungho Choi
+Ross Levine
+Raphael Jonghyeon Park
+Simon Xu
+Working Paper 32101
+http://www.nber.org/papers/w32101
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+February 2024
+We greatly appreciate the comments of Sudipto Dasgupta, Jungmin Kim, Pureum Kim, Ulrike
+Malmendier, Joseph Shapiro and seminar participants at UC Berkeley Haas School of Business,
+Hanyang University, Financial Information Society of Korea 2023, Boca Corporate Finance and
+Governance Conference 2023, CAFM 2023, BAR Annual Conference (Harvard) 2023, and
+Haskell & White Academic Conference 2023. We also thank the EPA for helpful discussions on
+data. All remaining errors are our own. This work was supported by the research fund of
+Hanyang University. The views expressed herein are those of the authors and do not necessarily
+reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2024 by Seungho Choi, Ross Levine, Raphael Jonghyeon Park, and Simon Xu. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+CEO Compensation and Cash-Flow Shocks: Evidence from Changes in Environmental Regulations
+Seungho Choi, Ross Levine, Raphael Jonghyeon Park, and Simon Xu
+NBER Working Paper No. 32101
+February 2024
+JEL No. G34,G38,M52,Q53,Q58
+ABSTRACT
+This paper investigates how shocks to expected cash flows influence CEO incentive
+compensation. Exploiting changes in compliance with environmental regulations as shocks to
+expected future cash flows, we find that adverse shocks typically prompt corporate boards to
+recalibrate CEO compensation to reduce risk-taking incentives. However, this pattern is not
+uniform. Financially distressed firms exhibit milder reductions in compensation convexity, with
+some even increasing it, suggesting a “gambling for resurrection” strategy. Moreover, the
+strength of corporate governance influences shareholders’ capacity to align executive incentives
+with shareholder risk preferences following unanticipated changes in the stringency of
+environmental regulations.
+Seungho Choi Raphael Jonghyeon Park
+Department of Finance University of Technology Sydney
+Hanyang University jonghyeon.park@uts.edu.au
+Seoul 04763
+South Korea Simon Xu
+seunghochoi@hanyang.ac.kr Harvard Business School
+117 Western Avenue
+Ross Levine Boston, MA 02163
+Hoover Institution (HHMB 313) sxu@hbs.edu
+Stanford University
+434 Galvez Mall
+Stanford, CA 94305-6010
+and NBER
+rosslevine@stanford.edu
+
+1. Introduction
+Foundational theories of the firm suggest that shocks to expected cash flows influence share-
+holder preferences toward corporate risk-taking and the structure of executive compensation
+(e.g., Jensen & Meckling, 1976; Myers, 1977; Myers & Majluf, 1984; Pindyck, 1988). For
+example, adverse shocks might lead shareholders to prefer less risky corporate investments
+to mitigate bankruptcy risk and, therefore, offer their executives convex compensation pack-
+ages with reduced risk-taking incentives, i.e., less convex compensation packages. However,
+shareholders of financially distressed firms might react oppositely, preferring their firms to
+shift toward higher-risk strategies to generate the returns necessary to avert bankruptcy. The
+relationship between cash-flow shocks and executive compensation is further complicated by
+the effectiveness of corporate governance, as the effect of shareholder preferences on executive
+compensation depends on each firm’s governance structure (e.g., Chhaochharia & Grinstein,
+2009; Dai, Rau, Stouraitis, & Tan, 2020; Hoi, Wu, & Zhang, 2019; Humphery-Jenner, Lisic,
+Nanda, & Silveri, 2016). Thus, the impact of expected cash flows on executive compensation
+is an empirical question that may depend on firms’ financial conditions and governance
+structures.
+Despite the importance of understanding how firms respond to shocks, few researchers
+have empirically examined the impact of expected cash flows on the convexity of executive
+compensation. Gormley, Matsa, and Milbourn (2013) address critical aspects of this question
+by examining the link between increased corporate liability risk and the convexity of new equity
+grants. Yet, there is a lack of evidence on how different financial conditions and governance
+structures modulate the response of executive compensation to expected cash-flow shocks,
+which theory highlights as crucial to understanding this relationship.
+To address this gap, we examine the impact of changes in environmental regulations
+that alter expected net cash flows on executive compensation while differentiating by pre-
+existing corporate financial conditions and governance effectiveness. Research demonstrates
+that environmental regulations significantly affect firms’ expected cash flows, forming the
+basis of this study (e.g., Choi, Levine, Park, & Xu, 2023; Hsu, Li, & Tsou, 2023; Karpoff,
+Lott, & Wehrly, 2005; Krueger, Sautner, & Starks, 2020; Seltzer, Starks, & Zhu, 2022; Xu
+& Kim, 2022). However, researchers have not explored how these regulations influence
+shareholder preferences toward their firm’s risk-taking or the compensation packages they
+offer executives. Thus, besides exploiting changes in environmental regulation to provide
+new evidence on how (1) shocks to expected cash flows influence executive compensation and
+2
+
+(2) firms’ pre-existing financial conditions and governance structures shape the response of
+executive compensation to those shocks, we provide novel information on potentially significant
+consequences of environmental regulations: shareholders’ preferences toward risk-taking and
+executive compensation.
+We leverage a unique feature of the U.S. Clean Air Act (CAA) to evaluate the effect
+of environmental regulations on executive compensation. The CAA requires the annual
+designation of counties as either in attainment or nonattainment with National Ambient Air
+Quality Standards (NAAQS) for ground-level ozone. Nonattainment designations lead to more
+stringent environmental regulations, increasing production costs and reducing expected cash
+flows on ozone-emitting facilities in “treated” counties (Becker, 2005; Becker & Henderson,
+2000, 2001; Greenstone, 2002). This regulatory policy yields considerable heterogeneity in the
+environmental regulations affecting firms, as the attainment status of counties changes over
+time, only ozone-emitting plants within treated counties experience shocks to production costs,
+and otherwise identical firms may experience different environmental regulations depending on
+the cross-county locations of their ozone-emitting plants. We exploit this regulatory setting to
+explore the effects of adverse cash flow shocks on the design of managerial incentive contracts.
+We construct annual, firm-specific measures of environmental regulations and executive
+compensation. To gauge firm-year exposure to environmental regulations, we construct NA
+exposure, which is based on ozone emissions from firms’ facilities in nonattainment counties. We
+focusonozoneemissionsbecauseviolatingozoneNAAQSistheprincipalreasoncountiesreceive
+a nonattainment designation. To measure the risk-taking incentives of CEO’s compensation
+packages, we primarily use Vega—the sensitivity of CEO wealth to stock return volatility.
+Vega is commonly employed to gauge the convexity of executive compensation. A large body
+of research suggests that Vega is positively associated with increases in corporate risk-taking
+(e.g., Armstrong & Vashishtha, 2012; Bakke, Mahmudi, Fernando, & Salas, 2016; Chava &
+Purnanandam, 2010; Coles, Daniel, & Naveen, 2006; Edmans, Gabaix, & Jenter, 2017; Guay,
+1999; Hayes, Lemmon, & Qiu, 2012; Liu & Mauer, 2011; Low, 2009; Mao & Zhang, 2018;
+Rajgopal & Shevlin, 2002; Shue & Townsend, 2017). In contrast to this literature, we explore
+how environmental regulatory shocks reshape Vega.
+We employ difference-in-differences (DiD) analyses with continuous treatment to evaluate
+theimpactofNA exposure onVega. Oursamplecoversthe1993-2019periodandcomprisesover
+2,700 publicly listed U.S. firms with over 30,000 firm-year observations. Besides conditioning
+on firm- and year-fixed effects, the analyses control for an array of time-varying firm and CEO
+3

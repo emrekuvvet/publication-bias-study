@@ -1,0 +1,119 @@
+NBER WORKING PAPER SERIES
+BANK LIQUIDITY PROVISION ACROSS THE FIRM SIZE DISTRIBUTION
+Gabriel Chodorow-Reich
+Olivier Darmouni
+Stephan Luck
+Matthew C. Plosser
+Working Paper 27945
+http://www.nber.org/papers/w27945
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2020, Revised December 2020
+We thank Tania Babina, Tobias Berg, Xavier Giroud, Ivan Ivanov, Martina Jasova, Trish Mosser,
+Stijn Van Nieuwerburgh, Pascal Paul, Giorgia Piacentino, Kerry Siani, and seminar
+participants˛at the UC Berkeley Haas School of Business, Columbia Business School, the FDIC,
+John Hopkins University, the Temple Fox School of Business, and the University of Rochester
+Simon School of Business for useful comments and Sungmin An, Harry Cooperman, and Alena
+Kang-Landsberg for excellent research assistance. The opinions expressed in this paper do not
+necessarily reflect those of the Federal Reserve Bank of New York, the Federal Reserve System,
+or the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2020 by Gabriel Chodorow-Reich, Olivier Darmouni, Stephan Luck, and Matthew C. Plosser. All
+rights reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+Bank Liquidity Provision Across the Firm Size Distribution
+Gabriel Chodorow-Reich, Olivier Darmouni, Stephan Luck, and Matthew C. Plosser
+NBER Working Paper No. 27945
+October 2020, Revised December 2020
+JEL No. E51,G21,G32
+ABSTRACT
+We use supervisory loan-level data to document that small firms (SMEs) obtain shorter maturity
+credit lines than large firms; have less active maturity management; post more collateral; have
+higher utilization rates; and pay higher spreads. We rationalize these facts as the equilibrium
+outcome of a trade-off between lender commitment and discretion. Using the COVID recession,
+we test the prediction that SMEs are subject to greater lender discretion by examining credit line
+utilization. We show that SMEs do not drawdown in contrast to large firms despite SME demand,
+but that PPP loans helped alleviate the shortfall.
+Gabriel Chodorow-Reich Stephan Luck
+Department of Economics Federal Reserve Bank of New York
+Harvard University 33 Liberty St
+1805 Littauer Center New York, NY 10045
+Cambridge, MA 02138 stephan.luck@ny.frb.org
+and NBER
+chodorowreich@fas.harvard.edu Matthew C. Plosser
+Financial Intermediation Function
+Olivier Darmouni Federal Reserve Bank of New York
+Columbia Business School 33 Liberty Street
+Uris 816 New York, NY 10045
+New York, NY 10027 matthew.plosser@ny.frb.org
+omd2109@columbia.edu
+
+1 Introduction
+The ability of borrowers to access funds in bad times is crucial to avoiding financial distress, with banks
+playing a key role as liquidity providers (Kashyap et al., 2002; Gatev and Strahan, 2006). However, there
+are widespread concerns that small firms might not be able to access this liquidity, unlike firms at the
+top of the size distribution.1 These concerns reflect the high reliance of small firms on bank funding and
+that they are riskier and more opaque than larger firms (Petersen and Rajan, 1994; Berger and Udell,
+1995; Gertler and Gilchrist, 1994), so that financing may not materialize when it is most needed. And
+yet, empirical evidence of differential access to bank liquidity by small and medium enterprises (SMEs)
+remains scarce, as most analyses of loan terms in the United States rely on syndicated loan data that
+only includes large loans and by extension large borrowers.
+In this paper we document sharp differences in the provision of bank liquidity to small and large
+firms. Using supervisory data covering 60% of all corporate loans, including to 50,000 SMEs, we present
+five facts about differences in loan terms that reflect lender commitment to large firms and discretion to
+small firms. Relative to large firms, small firms (i) obtain credit lines with much shorter maturity, (ii)
+have less active maturity management and as a result frequently have expiring credit, (iii) post more
+collateral, (iv) have higher utilization rates, and (v) pay higher spreads even conditional on other firm
+characteristics.
+We then show that differences in loan terms impacted firms’ access to liquidity at the outset of the
+COVID-19 recession. The increase in bank credit in 2020Q1 and 2020Q2 came almost entirely from
+drawdowns by large firms on pre-committed lines of credit, whereas small firms had no net drawdown
+of credit lines. To minimize differences in demand for credit in explaining these results, we further
+show that large firms exhibited much higher sensitivity of drawdown rates to industry-level measures
+of exposure to the COVID recession. Instead, differences in drawdowns appear to reflect deteriorating
+firm fundamentals and banks’ ability to exercise discretion in lending to small firms. Finally, we analyze
+the role of the government-sponsored Paycheck Protection Program (PPP) in alleviating the liquidity
+shortfall to small firms. By merging the PPP data with our supervisory data, we find that PPP recipients
+on net reduced their non-PPP bank borrowing in 2020Q2, suggesting that the program fully overcame
+any shortfall but at a cost to the government.
+1See e.g. "Much of America Is Shut Out of The Greatest Borrowing Binge Ever", Au-
+gust 13th 2020, Bloomberg, https://www.bloomberg.com/news/articles/2020-08-13/
+a-2-trillion-credit-boom-leaves-america-s-smaller-firms-behind(accessedSeptember8,2020).
+1
+
+The paper unfolds as follows. Section 2 describes the supervisory data. The data come from the
+Federal Reserve Y-14 and contain information on all loans of more than $1 million made by banks with
+more than $100 billion in total consolidated assets. For each loan, the data contain information on
+loan terms (loan type, commitment, maturity, origination date, interest rate, collateral type, etc.) and
+borrower characteristics (industry, assets, sales, risk rating, etc.). We benchmark the Y-14 sample against
+the universe of corporate loans as well as loans to public firms (Compustat) and syndicated loans.
+Section 3 presents an illustrative framework of equilibrium loan term determination to set the stage
+for the empirical analysis. We emphasize an incomplete contracting view of credit lines in the cross-
+section of firms. The framework extends the Holmström and Tirole (1998) model of liquidity provision
+to firms facing cash-flow shocks to allow for uncertainty over the borrower’s final pledgable value.
+Loan terms give lenders either commitment or discretion in granting funds. With lender commitment, the
+borrower can always draw on credit limits determined ex-ante. With discretion the lender can deny
+requests for funds ex-post even though liquidity is available on paper. Both types of contracts reduce
+creditconstraints: commitmentthroughaninsurancechannelbycross-subsidizinghighshockswithlow
+shocks and discretion by giving the lender an option to monitor and make funding contingent on the
+borrower’s repayment prospects. In equilibrium, firms choose contracts that minimize the probability of
+liquidity-driven default. Firms that choose discretion have pledgeable value that is (i) small relative
+to expected cash-flow shocks and (ii) more uncertain ex-ante. Intuitively, insurance is less valuable
+when large cash-flow shocks are more likely, and discretion more valuable when the option value
+of monitoring is larger. We provide evidence of audit frequency and firm volatility that links these
+characteristics to small firms.
+Section 4 presents the five facts about bank loan terms across the firm size distribution. Fact 1
+documents sharp differences in maturity at origination for credit lines, but not for other loan types.
+Among firms with less than $50 million in assets, three-quarters of credit lines have maturity of 1 year
+or less at origination and more than one-quarter of loans to these firms are demand loans immediately
+callable by the lender. These loans grant banks discretion — any time the borrower requests funds, the
+lender can monitor and reject. The share of credit lines with less than 1 year maturity at origination
+declines to below 10% for firms with more than $1 billion of assets, for which the median and modal
+credit line is a 5 year facility. The maturity difference disappears for term loans, for which the vast
+majority of credit to both small and large firms originates with 5 or more years of maturity. In our
+framework, term loans offer less scope for discretion since the bank disburses the funds up front.
+2

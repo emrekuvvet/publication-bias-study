@@ -1,0 +1,128 @@
+NBER WORKING PAPER SERIES
+MONETARY TRANSMISSION THROUGH BANK SECURITIES PORTFOLIOS
+Daniel Greenwald
+John Krainer
+Pascal Paul
+Working Paper 32449
+http://www.nber.org/papers/w32449
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2024
+The authors have no relevant material relationships to disclose. The views expressed herein are
+those of the authors and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2024 by Daniel Greenwald, John Krainer, and Pascal Paul. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that
+full credit, including © notice, is given to the source.
+
+Monetary Transmission Through Bank Securities Portfolios
+Daniel Greenwald, John Krainer, and Pascal Paul
+NBER Working Paper No. 32449
+May 2024
+JEL No. E32,E43,E44,E51,E52,E60,G21,G32
+ABSTRACT
+We study the transmission of monetary policy through bank securities portfolios using granular
+supervisory data on U.S. bank securities, hedging positions, and corporate credit. Banks that
+experienced larger losses on their securities during the 2022-2023 monetary tightening cycle
+extended less credit to firms. This spillover effect was stronger for available-for-sale securities,
+unhedged securities, and banks that must include unrealized gains and losses in their regulatory
+capital. A structural model, disciplined by our cross-sectional regression estimates, shows that
+interest rate transmission is stronger the more banks are required to adjust their regulatory capital
+for unrealized value changes of securities.
+Daniel Greenwald Pascal Paul
+Kaufman Management Center Federal Reserve Bank of San Francisco
+44 West Fourth Street, Office 9-97 101 Market Street
+United States San Francisco, CA 94105
+New York, NY 10012 United States
+and NBER Pascal.Paul@sf.frb.org
+dlg340@stern.nyu.edu
+John Krainer
+Research Department
+Federal Reserve Bank of San Francisco
+P.O. Box 7702
+San Francisco, CA 94120
+john.r.krainer@frb.gov
+A data appendix is available at http://www.nber.org/data-appendix/w32449
+
+1 Introduction
+In March 2023, the United States experienced one of the largest bank failures in decades
+asdepositorsranonSiliconValleyBank(SVB).Inthelead-uptoitsfailure,SVBhadmain-
+tainedalargeportfoliooflong-termsecurities. Asinterestratesroserapidlyin2022,mar-
+ket prices of these securities plummeted, generating unrealized losses that were widely
+believedtohavetriggeredtherun.
+Theseeventshaveputtheregulatorytreatmentofbanksecuritiesunderthespotlight.
+Under U.S. regulation, unrealized losses on SVB’s securities did not pass through to its
+regulatory capital, making SVB appear relatively well capitalized from a regulatory per-
+spectivedespiteitsfragileposition. Inlightofthis,adiscussionhasbeensparkedamong
+academics and policymakers to enlarge the set of securities whose value changes affect
+regulatorycapital.1 Withsuchapolicychange,banksexperiencingmarketlossesonsecu-
+ritieswouldbepressuredtoimprovetheircapitalratios,forexamplebyraisingadditional
+equity,toavoidviolatingtheirregulatorycapitalrequirements. Inturn,animprovedcap-
+italpositioncouldlowertheprobabilityofasubsequentbankrunorfailure.2
+At the same time, recognizing security market losses in regulatory capital could have
+important consequences for the supply of credit. If banks are reluctant to raise capital,
+they can instead cut lending to households and firms, thereby reducing risk-weighted
+assets and improving their capital ratios. If so, the resulting contraction in credit supply
+mayalsoreducefirminvestmentandhouseholdconsumption,affectingoveralleconomic
+activity. Asaresult,theaccountingtreatmentofunrealizedgainsandlossescaninfluence
+thepass-throughfrombanksecuritiesvaluestotherealeconomy.
+Inthispaper,weexplorethischannel,studyinghowtheregulatoryaccountingframe-
+workinfluencestransmissionfrominterestrates,throughsecuritiesvaluesandregulatory
+capital,intofirmcreditandinvestment. Ourapproachcombinesgranularadministrative
+datawithastructuralmodelthatallowsustocomparepolicyregimes. Forourempirical
+analysis, we construct a novel data set combining supervisory data on securities portfo-
+lios, hedging positions, and corporate credit for large U.S. banks from the Federal Re-
+serve’s Y-14Q data set, which is collected for the purpose of stress-testing. These data
+1See,forinstance,arecentsurveyconductedbytheKentClarkCenteratChicagoBooth:https://www.
+kentclarkcenter.org/surveys/banks-business-model/. Asimilardebateaboutmarkingbankassetsto
+market took place after the 2007-09 financial crisis, see, e.g., Allen and Carletti (2008), Heaton, Lucas and
+McDonald(2010),andLauxandLeuz(2010).
+2Forexample,suchargumentsaremadeintheReviewoftheFederalReserve’sSupervisionandRegu-
+lationofSiliconValleyBank(page89)andinarecentspeechbyChairmanoftheFDICMartinJ.Gruenberg,
+see: https://www.fdic.gov/news/speeches/2023/spjun2223.html and https://www.federalreserve.
+gov/publications/files/svb-review-20230428.pdf
+1
+
+give us an unparalleled view, not only into the various credit relationships, but also into
+the securities holdings of banks, allowing us to observe the specific securities held, their
+gainsandlossesovertime,aswellastheirassociatedaccountinghedges.
+To begin, we document differences in the regulatory treatment of the banks within
+our data and their influence on investment decisions. The larger banks, labeled AOCI-
+Capital (AC) banks, must include unrealized gains and losses on their available-for-sale
+(AFS)securitiesintheirregulatorycapital,whilethesmallerbanksinoursample,referred
+toasnon-AOCI-Capital(NC)banks,areexemptfromthisrequirement.3 Thisdifferential
+regulatory treatment appears to influence banks’ securities choices. During the period of
+low interest rates in 2020 and 2021, AC banks increased their security holdings by much
+less than NC banks, and sharply raised both the fraction of their securities recorded as
+held-to-maturity(HTM)andtheportionoftheirAFSsecuritiesthatwerehedged.4 These
+resultsareconsistentwithACbanksmakingeffortstoavoidexposureoftheirregulatory
+capitaltosecurityvaluefluctuations.
+In our main set of empirical results, we measure the effect of changes in securities
+values on bank credit supply, and how this varies with the regulatory treatment of those
+securities. We focus on the 2022-2023 monetary tightening episode, which featured large
+declines in the value of securities, and the consequences for bank credit to nonfinancial
+firms. Using the fixed effects approach of Khwaja and Mian (2008) that allows us to
+controlforfirmcreditdemand,wefindthatbanksthatexperiencedlargervaluelosseson
+their AFS portfolios extended relatively less credit to firms. The effect is sizable, with a
+$1 price decline leading to a relative credit contraction of around 20 cents. However, we
+obtainsubstantiallysmallerandinsignificantresultsforvaluechangesofHTMsecurities
+that, unlike AFS securities, do not affect regulatory capital at any bank.5 Differentiating
+AFS securities by whether they are hedged against interest rate risk, we further find that
+our baseline results are driven by unhedged securities, while value changes of hedged
+securities,whichalsodonotimpactregulatorycapital,exhibitasmallerandinsignificant
+crowdingouteffectonfirmcredit.
+Next, we exploit the fact that changes in AFS values at AC banks, but not NC banks,
+passthroughintoregulatorycapitaltodirectlytestourregulatorycapitalmechanism. We
+3These regulations have evolved in recent years, and the turmoil around SVB reignited a debate on
+whethertoenlargethesetofbanksthatneedtorecognizesuchunrealizedgainsandlossesintheirregu-
+latorycapital. See,forexample,theReviewoftheFederalReserve’sSupervisionandRegulationofSilicon
+ValleyBank(page3)andtheproposedreformstobankcapitalrequirementsbyViceChairforSupervision
+Michael Barr: https://www.federalreserve.gov/publications/files/svb-review-20230428.pdf and
+https://www.federalreserve.gov/newsevents/speech/barr20230710a.htm.
+4SeealsorelatedevidencebyFusterandVickery(2018)andKim,KimandRyan(2019).
+5Orame,RamcharanandRobatto(2023)findsimilarresultsusingEuropeandata.
+2

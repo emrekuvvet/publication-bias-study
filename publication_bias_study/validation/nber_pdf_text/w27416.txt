@@ -1,0 +1,128 @@
+NBER WORKING PAPER SERIES
+TREASURY INCONVENIENCE YIELDS DURING THE COVID-19 CRISIS
+Zhiguo He
+Stefan Nagel
+Zhaogang Song
+Working Paper 27416
+http://www.nber.org/papers/w27416
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2020, Revised November 2020
+We appreciate helpful comments from Vic Chakrian, Wenxin Du, Darrell Duffie, Michael
+Fleming, Jay Kahn, Anil Kashyap, Arvind Krishnamurthy, Ricardo Largos, Antoine Martin, and
+Rene Stulz, as well as participants at the Chicago Finance Workshop, the SaMMF Workshop on
+Liquidity in Fixed Income Markets, and the Office of Financial Research seminar. We are
+especially grateful to Grace Hu and Haoyang Liu for the help with data sources, as well as Yiran
+Fan and Tianshu Lyu for great research assistance. The views expressed herein are those of the
+authors and do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Zhiguo He, Stefan Nagel, and Zhaogang Song. All rights reserved. Short sections of
+text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Treasury Inconvenience Yields during the COVID-19 Crisis
+Zhiguo He, Stefan Nagel, and Zhaogang Song
+NBER Working Paper No. 27416
+June 2020, Revised November 2020
+JEL No. E4,E5,G01,G21,G23
+ABSTRACT
+In sharp contrast to most previous crisis episodes, the Treasury market experienced severe
+stress and illiquidity during the COVID-19 crisis, raising concerns that the safe-haven
+status of U.S. Treasuries may be eroding. We document large shifts in Treasury
+ownership and temporary accumulation of Treasury and reverse repo positions on dealer
+balance sheets during this period. We build a dynamic equilibrium asset pricing model in
+which dealers subject to regulatory balance sheet constraints intermediate demand/supply
+shocks from habitat agents and provide repo financing to levered investors. The model
+predicts that Treasury inconvenience yields, measured as the spread between Treasuries
+and overnight-index swap rates (OIS), as well as spreads between dealers’ reverse repo and
+repo rates, should be highly positive during the COVID-19 crisis, which are confirmed in
+the data. The same model framework, adapted to the institutional setting in 2007-2009,
+also helps explain the negative Treasury-OIS spread observed during the Great Recession.
+Zhiguo He Zhaogang Song
+University of Chicago The Johns Hopkins
+Booth School of Business Carey Business School
+5807 S. Woodlawn Avenue 100 International Drive
+Chicago, IL 60637 Baltimore, MD 21202
+and NBER zsong8@jhu.edu
+zhiguo.he@chicagobooth.edu
+Stefan Nagel
+University of Chicago
+Booth School of Business
+5807 South Woodlawn Avenue
+Chicago, IL 60637
+and NBER
+stefan.nagel@chicagobooth.edu
+
+1 Introduction
+U.S. Treasury bonds are generally viewed as some of the most liquid and safe assets in the world.
+Their safety and liquidity is reflected in a price premium (Longstaff (2004); Krishnamurthy and
+Vissing-Jorgensen (2012)). During periods of financial market turmoil when prices of risky and
+illiquid assets fall dramatically due to a flight-to-safety and flight-to-liquidity, the price premium
+of Treasuries typically rises (Nagel (2016); Adrian, Crump, and Vogt (2019)). More generally,
+Treasury bonds have had negative beta in recent decades, rising in price when stock prices fall (He,
+Krishnamurthy, and Milbradt (2019); Baele, Bekaert, Inghelbrecht, and Wei (2019); Campbell,
+Pflueger, and Viceira (2019)); Cieslak and Vissing-Jorgensen (2020)).
+EventsinMarch2020duringtheCOVID-19crisisdidnotfollowthisestablishedcrisisplaybook.
+Like in many previous periods of financial market turmoil, stock prices fell dramatically, the VIX
+of implied stock index return volatility spiked, credit spreads widened, the dollar appreciated, and
+prime money market funds experienced outflows. Yet, in sharp contrast to previous crisis episodes,
+prices of long-term Treasury securities fell sharply. From March 9 to 23 when the stock market
+experienced four trading halts, the 10-year Treasury yield increased up to 60 basis points (bps),
+resulting in a striking and unusual positive correlation between stock and bond returns (see Figure
+1). Widening bid-ask spreads and collapsing order book depth indicated market illiquidity in the
+Treasury bond market (Fleming and Ruela (2020)). In direct response, the Federal Reserve (Fed)
+first offered essentially unconstrained short-term financing to primary dealers and then quickly
+began to purchase Treasuries directly in amounts even larger than those during the 2008 crisis.
+Why was it different this time? Given the Treasury bond market’s outsized role in the financial
+system, this stunning deviation from historical correlations in recent decades calls for an explana-
+tion. Are the events in March 2020 the canary in the coal mine indicating a fundamental change
+in the properties of Treasury bonds away from being a negative-beta flight-to-safety target asset?
+Or can the surprising price movements of Treasury bonds be attributed to market dysfunctionality
+induced by frictions? Our goal in this paper is to shed light on this question, both theoretically
+and empirically.
+We start by characterizing major features of asset price movements and investor flows during
+the crucial weeks in March 2020. A simple explanation of the rise in long-term Treasury yields
+1
+
+Figure 1: Treasury Yields and VIX during the COVID-19 Crisis
+1/30/2020 3/9/2020
+3/23/2020
+00.2
+05.1
+00.1
+05.0
+00.0
+1/30/2020 3/9/2020
+3/23/2020
+01jan2020 01feb2020 01mar2020 01apr2020 01may2020
+CMT: 3m CMT: 10y
+08
+06
+04
+02
+01jan2020 01feb2020 01mar2020 01apr2020 01may2020
+VIX
+Notes: This figure plots daily series of the constant-maturity Treasury (CMT) yields in percent, of 3-month
+and 10-year maturities (left panel), and of the VIX (right panel), from January 1, 2020 to June 30, 2020.
+would be that the enormous fiscal burden of the COVID-19 pandemic triggered a shift in inflation
+expectationsandinflationuncertainty. However, marketdatasuggestthatthisisunlikely. Pricesof
+inflation-protected bonds (TIPS) fell along with the prices of nominal Treasuries. Inflation-swaps
+show no increase in risk-neutral inflation expectations. Prices of inflation caps and floors do not
+provide evidence of an increase in inflation uncertainty either.
+An alternative explanation would be that the cyclicality of real interest rates has changed. As
+Campbell, Sunderam, and Viceira (2017) emphasize, the negative beta of Treasuries in the decades
+leading up to 2020 partly reflects a positive correlation between stock prices and real interest rates.
+That March 2020 represents a regime-shift towards a negative correlation cannot be ruled out at
+this point. But it would be difficult to come up with an economic mechanism that explains this
+shift. In the post-WWII history examined by Campbell, Sunderam, and Viceira (2017), the only
+major episode with pro-cyclical bond prices (or, counter-cyclical real interest rates) was the Volcker
+disinflation of the early 1980s where the rise of real interest rates in a recession was induced by
+contractionary monetary policy intended to crush inflation. This is clearly not what happened in
+March 2020.
+We therefore turn to an examination of investor flows to understand whether supply and de-
+mand balances may have interacted with intermediation frictions to give rise to the unusual price
+movements in the Treasury market. As shown in Figure 3, during the first quarter of 2020, for-
+2

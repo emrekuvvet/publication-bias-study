@@ -1,0 +1,106 @@
+NBER WORKING PAPER SERIES
+FORECASTING CRASHES: TRADING VOLUME, PAST RETURNS
+AND CONDITIONAL SKEWNESS IN STOCK PRICES
+Joseph Chen
+Harrison Hong
+Jeremy C. Stein
+Working Paper 7687
+http://www.nber.org/papers/w7687
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2000
+We are grateful to the National Science Foundation for research support, and to John Campbell, Kent Daniel,
+Ken Froot, Ravi Jagannathan, Chris Lamoreaux, Ken Singleton, an anonymous referee and seminar
+participants at Cornell, HBS, Northwestern, Stanford, Arizona, Maryland, Texas and the NBER for helpful
+comments and suggestions. Thanks also to Jun Pan for generously sharing her option-pricing software with
+us. The views expressed herein are those of the authors and not necessarily those of the National Bureau of
+Economic Research.
+© 2000 by Joseph Chen, Harrison Hong and Jeremy C. Stein. All rights reserved. Short sections of text,
+not to exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Forecasting Crashes: Trading Volume, Past Returns
+and Conditional Skewness in Stock Prices
+Joseph Chen, Harrison Hong and Jeremy C. Stein
+NBER Working Paper No. 7687
+May 2000
+JEL No. G12, G14
+ABSTRACT
+This paper is an investigation into the determinants of asymmetries in stock returns. We
+develop a series of cross-sectional regression specifications which attempt to forecast skewness in
+the daily returns of individual stocks. Negative skewness is most pronounced in stocks that have
+experienced: 1) an increase in trading volume relative to trend over the prior six months; and 2)
+positive returns over the prior thirty-six months. The first finding is consistent with the model of
+Hong and Stein (1999), which predicts that negative asymmetries are more likely to occur when there
+are large differences of opinion among investors. The latter finding fits with a number of theories,
+most notably Blanchard and Watson’s (1982) rendition of stock-price bubbles. Analogous results
+also obtain when we attempt to forecast the skewness of the aggregate stock market, though our
+statistical power in this case is limited.
+Joseph Chen Jeremy C. Stein
+Stanford Business School Harvard Business School
+Stanford University Morgan 361
+Stanford, CA 94305 Boston, MA 02163
+chenjs@leland.stanford.edu MIT Sloan School of Management
+and NBER
+jstein@hbs.edu
+Harrison Hong
+Stanford Business School
+Stanford University
+Stanford, CA 94305
+hghong@leland.stanford.edu
+
+I. Introduction
+Aggregate stock-market returns are asymmetrically distributed. This asymmetry can be
+measured in several ways. First, and most simply, the very largest movements in the market are
+usually decreases, rather than increases—that is, the stock market is more prone to melt down
+than to melt up. For example, of the ten biggest one-day movements in the S&P 500 since 1947,
+nine were declines.1 Second, a large literature documents that market returns exhibit negative
+skewness, or a closely related property, “asymmetric volatility”—a tendency for volatility to go
+up with negative returns.2 Finally, since the crash of October 1987, the prices of stock-index
+options have been strongly indicative of a negative asymmetry in returns, with the implied
+volatilities of out-of-the-money puts far exceeding those of out-of-the-money calls; this pattern
+has come to be known as the “smirk” in index implied volatilities.3
+While the existence of negative asymmetries in market returns is generally not disputed,
+it is less clear what underlying economic mechanism these asymmetries reflect. Perhaps the
+most venerable theory is based on leverage effects (Black (1976), Christie (1982)), whereby a
+drop in prices raises operating and financial leverage, and hence the volatility of subsequent
+returns. However, it appears that leverage effects are not of sufficient quantitative importance to
+explain the data (Schwert (1989), Bekaert and Wu (1997)). This is especially true if one is
+interested in asymmetries at a relatively high frequency, e.g., in daily data. To explain these, one
+has to argue that intra-day changes in leverage have a large impact on volatility—that a drop in
+1 Moreover, the one increase—of 9.10 percent on October 21, 1987—was right on the heels of the 20.47 percent
+decline on October 19, and arguably represented a correction of the microstructural distortions that arose on that
+chaotic day, rather than an independent price change.
+2 If, in a discrete-time setting, a negative return in period t raises volatility in period t+1 and thereafter, returns
+measured over multiple periods will be negatively skewed, even if single-period returns are not. The literature on
+these phenomena includes Pindyck (1984), French, Schwert and Stambaugh (1987), Campbell and Hentschel
+(1992), Nelson (1991), Engle and Ng (1993), Glosten, Jagannathan and Runkle (1993), Braun, Nelson and Sunier
+(1995), Duffee (1995), Bekaert and Wu (1997) and Wu (1997).
+1
+
+prices on Monday morning leads to a large increase in leverage and hence in volatility by
+Monday afternoon, so that overall, the return for the full day Monday is negatively skewed.
+An alternative theory is based on a “volatility feedback” mechanism. As developed by
+Pindyck (1984), French, Schwert and Stambaugh (1987), Campbell and Hentschel (1992) and
+others, the idea is as follows: When a large piece of good news arrives, this signals that market
+volatility has increased, so the direct positive effect of the good news is partially offset by an
+increase in the risk premium. On the other hand, when a large piece of bad news arrives, the
+direct effect and the risk-premium effect now go in the same direction, so the impact of the news
+is amplified. While the volatility-feedback story is in some ways more attractive than the
+leverage-effects story, there are again questions as to whether it has the quantitative kick that is
+needed to explain the data. The thrust of the critique, first articulated by Poterba and Summers
+(1986), is that shocks to market volatility are for the most part very short-lived, and hence cannot
+be expected to have a large impact on risk premia.
+A third explanation for asymmetries in stock-market returns comes from stochastic
+bubble models of the sort pioneered by Blanchard and Watson (1982). The asymmetry here is
+due to the popping of the bubble—a low-probability event that produces large negative returns.
+What the leverage-effects, volatility-feedback and bubble theories all have in common is
+that they can be cast in a representative-investor framework.4 In contrast, a more recent
+explanation of return asymmetries, Hong and Stein (1999), argues that investor heterogeneity is
+central to the phenomenon. The Hong-Stein model rests on two key assumptions: 1) there are
+differences of opinion among investors as to fundamental value; and 2) some—though not all—
+3 See, e.g., Bates (1997), Bakshi, Cao and Chen (1997), and Dumas, Fleming and Whaley (1998).
+4 This is not to say that all bubble models adopt a representative-agent approach—only that their central prediction
+of return asymmetries does not require investor heterogeneity. For a more recent bubble model that explicitly
+2

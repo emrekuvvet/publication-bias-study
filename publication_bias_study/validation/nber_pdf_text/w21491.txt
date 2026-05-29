@@ -1,0 +1,125 @@
+NBER WORKING PAPER SERIES
+THE PRICING OF SHORT-TERM MARKET RISK:
+EVIDENCE FROM WEEKLY OPTIONS
+Torben G. Andersen
+Nicola Fusari
+Viktor Todorov
+Working Paper 21491
+http://www.nber.org/papers/w21491
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+August 2015
+Andersen gratefully acknowledges support from CREATES, Center for Research in Econometric Analysis
+of Time Series (DNRF78), funded by the Danish National Research Foundation. Todorov's work was
+partially supported by NSF Grant SES-0957330. The views expressed herein are those of the authors
+and do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2015 by Torben G. Andersen, Nicola Fusari, and Viktor Todorov. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+The Pricing of Short-Term market Risk: Evidence from Weekly Options
+Torben G. Andersen, Nicola Fusari, and Viktor Todorov
+NBER Working Paper No. 21491
+August 2015
+JEL No. C01,C14,C52,C58,G12,G13,G17,G32
+ABSTRACT
+We study short-term market risks implied by weekly S&P 500 index options. The introduction of weekly
+options has dramatically shifted the maturity profile of traded options over the last five years, with
+a substantial proportion now having expiry within one week. Economically, this reflects a desire among
+investors for actively managing their exposure to very short-term risks. Such short-dated options provide
+an easy and direct way to study market volatility and jump risks. Unlike longer-dated options, they
+are largely insensitive to the risk of intertemporal shifts in the economic environment, i.e., changes
+in the investment opportunity set. Adopting a novel general semi-nonparametric approach, we uncover
+variation in the shape of the negative market jump tail risk which is not spanned by market volatility.
+Incidents of such tail shape shifts coincide with serious mispricing of standard parametric models for
+longer-dated options. As such, our approach allows for easy identification of periods of heightened
+concerns about negative tail events on the market that are not always "signaled" by the level of market
+volatility and elude standard asset pricing models.
+Torben G. Andersen Viktor Todorov
+Kellogg School of Management Department of Finance
+Northwestern University Kellogg School of Management
+2001 Sheridan Road Northwestern University
+Evanston, IL 60208 2001 Sheridan Road
+and NBER Evanston, IL
+t-andersen@kellogg.northwestern.edu v-todorov@kellogg.northwestern.edu
+Nicola Fusari
+Department of Finance
+Carey School of Business
+The Johns Hopkins Univer
+Baltimore, MD 21202
+nicola.fusari@jhu.edu
+
+1 Introduction
+Recent years have witnessed a rapid increase in the trading of short-dated options. For instance,
+S&P 500 option contracts with about one week or less to maturity have seen their share of trading
+at the Chicago Board of Options Exchange (CBOE) rise steadily from about 12% in 2010 to 25%
+in 2014. Furthermore, the volume in shorter-dated options is skewed disproportionate towards out-
+of-the-money (OTM) options relative to the pattern for longer-dated options. Qualitatively similar
+developmentsareobservedinmanyotherindexoptionmarketsandforoptionsonindividualnames.
+This process has been facilitated by the introduction of a new option category, featuring sequential
+issuance of contracts expiring one week apart, the so-called weekly options, or “weeklies.”
+This begs the question of what economic function these newly popular instruments serve. The
+primarydistinguishingfeature,relativetoregularlonger-datedoptions,istheintimatelinkbetween
+the pricing of options close to expiry and the state of the underlying asset return process.1 When
+tenor is short, the volatility and jump intensity are not expected to vary much over the remaining
+life of the option. This implies, in particular, that the prices of deep OTM options are largely
+independent of the level of diffusive volatility. They reflect solely the characteristics of the risk-
+neutral jump process. Likewise, the pricing of short-dated at-the-money (ATM) options depends
+primarily on spot volatility. These arguments fail in the case of longer-dated instruments for which
+theexpectedvariationinthefuturevolatilityandjumpintensitycannotbeignoredinvaluation. In
+fact,realisticmodelsforthejointvolatilityandjumpdynamicsinvolveacomplexinteractionamong
+these distinct components, rendering semi-closed form option pricing and traditional statistical
+inference feasible only under strong parametric assumptions, e.g., the specifications reside within
+the affine jump-diffusion model class of Duffie et al. (2000).
+Consequently, short-dated OTM options represent exposures tied closely to the possibility of an
+abrupt shift, or jump, in the near future, i.e., such instruments are well suited for short-term crash
+(or boom) protection. In contrast, a position in short-dated ATM options reflects an exposure to
+regular (diffusive) price movements, whose size scale with spot volatility. In other words, short-
+dated options allow us to decompose the exposure to distinct features of the underlying return
+process. They enable investors to trade securities representing jump or crash risk on the one hand,
+and instruments with primary exposure to diffusive risks on the other.
+Hence, the introduction of weeklies has improved on the spanning of market jump risk and
+represents a step towards market completion. This topic has a long history, with Ross (1976)
+1Asimilartypeofconnectionispresentforshort-maturitybondprices. Collin-Dufresneetal.(2008)explorethis
+relation to identify the state vector driving the short-rate dynamics in a model-free way.
+1
+
+emphasizing the enhanced spanning and the associated potential for efficiency gains from options
+trading, and Breeden and Litzenberger (1978) stressing the ability to replicate a wide range of
+payoffs through a static option portfolio.2
+Reversing the above reasoning, we infer that prices for actively traded short-dated options
+may simplify the task of identifying the concurrent spot volatility and pertinent features of the
+risk-neutral jump process, subject to only minimal assumptions on the return generating process.
+Specifically, short-maturity ATM options should help pin down spot volatility while the relative
+prices of deep OTM options assist in determining the jump intensity and jump distribution. The
+emergenceoftheweeklyoptionshasmovedthisobservationfromtherealmoftheorytothedomain
+of practical empirical work. The requisite quotes for short-dated options are now available on a
+daily basis. The goal of the current paper is to capitalize on the new opportunities afforded by
+the trading of weeklies to explore the characteristics of the risk-neutral distribution of equity-index
+returns as implied directly by the option data, largely avoiding reliance on parametric restrictions.
+The current paper is, as far as we know, the first to explore the information content of weekly
+optionsfortheunderlyingrisk-neutralreturndynamicsinasystematicway. Inpart,thisreflectsthe
+very recent emergence of near-continuous trading in very short-dated options. Therefore, we first
+carefully review the basic features of our weekly option sample and provide detailed descriptions
+of our filtering procedures, imposed to control for excessive noise or errors.
+In order to exploit all available information in our short-dated option sample, we develop a new
+asymptoticpricingapproximation,operativeacrossallstrikes,andnotjustforATManddeepOTM
+options. Exploiting this novel approximation, we proceed semi-nonparametrically and impose only
+weak parametric restrictions on the jump distribution, but remain silent about the dynamics of
+the volatility and jump intensity. The approach allows us to infer the spot characteristics for the
+risk-neutralreturndistributionexclusivelyfromtheshort-datedoptions. Inparticular, wegenerate
+separate estimates of the underlying state of the volatility and jump intensity process as well as
+the current jump size distribution at the conclusion of each single trading day.
+Our approach bears superficial resemblance to calibration procedures commonly applied in
+approximating option-implied volatility surfaces. The differences are critical and fundamental,
+however. Our approach explicitly imposes no-arbitrage constraints in estimation and synthesizes
+the option price information into consistent estimates for the spot volatility and the key jump
+characteristics, amenable to direct econometric analysis. In contrast, standard calibration delivers
+a smoothed risk-neutral density for a specific horizon, but provides no direct guidance for the ex-
+2The latter statement is more formally explored in Green and Jarrow (1987) and Nachman (1988). For further
+developments, see, e.g., Bakshi and Madan (2000) and Pan and Liu (2003), among many others.
+2

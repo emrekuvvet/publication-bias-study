@@ -1,0 +1,143 @@
+NBER WORKING PAPER SERIES
+RETHINKING SHORT-TERM REAL INTEREST RATES AND TERM SPREADS
+USING VERY LONG-RUN DATA
+Kenneth S. Rogoff
+Barbara Rossi
+Paul Schmelzing
+Working Paper 33079
+http://www.nber.org/papers/w33079
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2024
+The views expressed in this paper are solely those of the authors. We thank audiences at
+the Austrian Central Bank, Boston College, the Harvard Economics department, and
+Harvard Kennedy School as well as Laura Nicolae, Baiyun Jing, and Alessandro Tarozzi for
+comments. The views expressed herein are those of the authors and do not necessarily reflect
+the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not
+been peer-reviewed or been subject to the review by the NBER Board of Directors that
+accompanies official NBER publications.
+© 2024 by Kenneth S. Rogoff, Barbara Rossi, and Paul Schmelzing. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Rethinking Short-Term Real Interest Rates and Term Spreads Using Very Long-Run Data
+Kenneth S. Rogoff, Barbara Rossi, and Paul Schmelzing
+NBER Working Paper No. 33079
+October 2024
+JEL No. E04, F3, N20
+ABSTRACT
+Utilizing critical recent data advances, we analyze empirical evidence on long-run samples of short-
+maturity real interest rates as well as term spreads based on multi-century data. In contrast to an
+extensive literature on short-maturity real interest rates over the past few decades, we find strong
+and consistent evidence of trend stationarity in long horizon series, relatively fast adjustment
+speeds, and a paucity of structural breaks – results that we show to survive out of sample tests. The
+use of very long-run data offers a fresh perspective for ongoing monetary policy debates
+surrounding r*, and also provides a crucial missing link to reconstructing the long-run properties of
+term spreads. On balance and against limited post-COVID data, our evidence suggests caution on
+the idea of a break in short-term real interest rate behavior and instead points to elements of
+continuity over very long time periods. Relatedly, we show that term spreads are secularly rising
+while inflation volatility trends in the exact opposite direction – a finding questioning the emphasis
+of influential term structure models.
+Kenneth S. Rogoff Paul Schmelzing
+Maurits C. Boas Professor of Boston College
+International Economics Carroll School of Management
+Economics Department 140 Commonwealth Ave
+Harvard University Chestnut Hill, MA 02467
+Littauer Center 216 and Hoover Institution
+Cambridge, MA 02138-3001 paul.schmelzing@bc.edu
+and NBER
+krogoff@harvard.edu
+Barbara Rossi
+ICREA-Universitat Pompeu Fabra
+and EUI, Barcelona School of
+Economics, CREI.
+barbara.rossi@upf.edu
+
+1 Introduction
+In this paper, we revisit the econometric properties of advanced economies’ short-maturity real
+interest rates as well as term spreads, over the very long run, building on comprehensive advances
+1
+by financial historians over recent years.
+Short-maturityrealinterestratesare,ofcourse,verycloselyrelatedtotheconceptoftheunderlying
+"neutral interest rate", "r*", the north star of modern monetary policy. At the same time, term
+spreads are important across a host of financial issues, not least for the maturity structure of
+public debt. As we shall demonstrate, a perspective based on centuries instead of decades of
+data, indeed gives fresh perspectives, for example challenging the consensus view that there is a
+significantpermanentcomponenttoshort-runrealratemovements,andperhapssignallingcaution
+in overstating the widespread belief that the sharp fall in r* after the financial crisis was mostly
+permanent. Relatedly, we show that centuries long trends in term spreads have been upward
+rather than downward, again raising questions about how much of the downward shift of recent
+decades can be expected to last.
+Until now, broader types of investigations could simply not be undertaken, given the absence of a
+consistent long span of short-maturity rates. Seminal work on secular interest rate dynamics, such
+1987
+as Barro ( ), categorically declared: "A usable series on short-term interest rates is unavailable
+for the full sample". When more recent attempts were made to construct long-run series, they
+were inconsistent with regards to issuers and maturities – even for key economies such as the
+United States. The situation has fundamentally changed and this study exploits substantial recent
+data advances for both nominal rate and inflation series, as well as introducing new data, to
+leverage the radically improved statistical power that accompanies the use of multi-century, higher
+frequency, and conceptually consistent time series for the two key "safe economies" over the past
+centuries – the United Kingdom and the United States – and apply the insights to the major
+ongoing policy questions. Our data set is not only significantly longer than any previously studied
+in the literature, it is quarterly instead of annual, and based on consistent data construction.
+Besides its basic properties, we are interested in the empirical evidence on structural breaks
+and half-lives – the time it takes for time series with such trend components to revert halfway
+back to the trendline: only if such half-lives (and higher order measures of mean reversion)
+are sufficiently short, and the frequency of structural breaks sufficiently low, are the results on
+stationarity also economically significant. We show that these properties indeed all apply, and
+not least we demonstrate that, on the basis of our new long-sample interest rate series, our main
+points survive an out of sample robustness check.
+Inaninterpretativesectionfollowingtheeconometricpart,weapplyournovellongsampleinsights
+6
+toakeytopicaltheoreticalandempiricaldebateofrecentyears(section ): arguably,short-maturity
+1 Recent application of long-dated historical data to long-maturity real rates (Rogoff et al., 2024), while perhaps
+suggestive,doesnotreallyaddressthequestionofhowshort-runrealratesbehave,givenlargeandongoingchangesin
+termspreads,investorpreferencesandpublicdebtissuancestrategies.
+2
+
+real rates are the decisive variable for matters of monetary policy and also from the perspective
+of many financial intermediaries: we therefore discuss in particular what our re-assessment of
+real short-maturity interest rate properties implies for the characterization of r*, also known as the
+"neutral" rate of interest. Assessing the evidence from both long- and short-maturity sections of
+the term structure, we argue that r* should be modeled as a stationary process – whatever other
+specific modelling assumptions one incorporates for r*. Equally, the absence of clear evidence for
+1980
+a structural break in or around carries relevant policy implications, though it is very well
+conceivable that tests beyond our standard ones may nuance the break narratives.
+There is a natural fundamental extension from our new short-maturity data with recent new data
+on long-maturity rates to derive term spreads over centuries. Though short-maturity debt is the
+decidedly more recent part of public debt, such a reconstruction using private commercial paper
+and also central bank discount rates is now possible for selected leading economies for more
+than two hundred years: in the process, the empirical backdrops afflicting the literature on term
+1945
+spreads can also be addressed, a literature that has equally operated with post- data even
+when purportedly analyzing long-term structural trends and associations.
+Crucially, we find that short-maturity rates have secularly fallen faster than long-maturity rates –
+resulting in clear evidence of secularly rising term spreads. This is surprising against a consensus
+literature that focused on falling term spreads over the recent decades in the context of the "great
+moderation" and falling inflation volatility. Indeed, we document that falling inflation volatility
+across advanced economies is unfolding against a backdrop of secularly rising term spreads over
+time. While we abstain from sweeping generalizations, we propose that, in order to jointly match
+long-run patterns in inflation volatility and term spreads, important qualifications in the existing
+literature are required: either term premia remain a close approximation of sovereign default risk –
+and default risk has in fact risen (in contrast to "safe asset" propositions) – say because financial
+repression risk has increased; or else, factors other than default risk are long-run determinants of
+term premia time variation – plausibly liquidity factors.
+Overall, our evidence suggests that crucial stylized interest rate facts – including those most
+important to financial markets and monetary policy – may need to be reconsidered when much
+longer run data are applied.
+2 Literature
+Short-maturity real interest rates have been investigated extensively, especially for the U.S. and the
+1945 1980
+U.K., though overwhelmingly they focus on post- or even post- data. A few examples of
+1988
+long sample econometric studies on short-maturity rates include Rose ( ), and Hamilton et al.
+2016 1945
+( ), with these two being distinct for their attempt to incorporate pre- annual data. Both
+were unable to reject a unit root in their short-maturity real rate series, echoing results from short
+sample literature. However, while covering longer samples than related literature, it is not clear
+that either approach in fact exploited a sufficiently long sample to obtain significant statistical
+3

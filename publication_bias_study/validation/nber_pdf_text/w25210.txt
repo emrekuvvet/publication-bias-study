@@ -1,0 +1,141 @@
+NBER WORKING PAPER SERIES
+IDENTIFYING PRICE INFORMATIVENESS
+Eduardo Dávila
+Cecilia Parlatore
+Working Paper 25210
+http://www.nber.org/papers/w25210
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+November 2018
+We would like to thank Ricardo Caballero, Jennifer Carpenter, John Campbell, Ian Dew-Becker,
+Darrell Duffie, Emmanuel Farhi, Itay Goldstein, Joel Hasbrouck, Arvind Krishnamurthy, Ben
+Lester, Stephen Morris, Stefan Nagel, Guillermo Ordoñez, Michael Sockin, David Thesmar, Aleh
+Tsyvinski, Kathy Yuan, Wei Xiong, and Toni Whited, as well as seminar participants at SITE,
+Michigan Ross, and BYU for helpful comments and discussions. We are especially thankful to
+Alexi Savov for extended conversations on the topic of this paper, as well as for sharing code and
+data. Luke Min provided outstanding research assistance. The views expressed herein are those of
+the authors and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2018 by Eduardo Dávila and Cecilia Parlatore. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Identifying Price Informativeness
+Eduardo Dávila and Cecilia Parlatore
+NBER Working Paper No. 25210
+November 2018
+JEL No. D82,D83,G14
+ABSTRACT
+We show that outcomes (parameter estimates and R-squareds) of regressions of prices on
+fundamentals allow us to recover exact measures of the ability of asset prices to aggregate
+dispersed information. Formally, we show how to recover absolute and relative price
+informativeness in dynamic environments with rich heterogeneity across investors (regarding
+signals, private trading needs, or preferences), minimal distributional assumptions, multiple risky
+assets, and allowing for stationary and non-stationary asset payoffs. We implement our
+methodology empirically, finding stock-specific measures of price informativeness for U.S.
+stocks. We find a right-skewed distribution of price informativeness, measured in the form of the
+Kalman gain used by an external observer that conditions its posterior belief on the asset price.
+The recovered mean and median are 0.05 and 0.02 respectively. We find that price
+informativeness is higher for stocks with higher market capitalization and higher trading volume.
+Eduardo Dávila
+Stern School of Business
+New York University
+44 West 4th Street
+New York, NY 10012
+and NBER
+edavila@stern.nyu.edu
+Cecilia Parlatore
+NYU Stern
+Department of Finance
+44 W 4th street suite 9-87
+New York, NY, 10012
+cparlato@stern.nyu.edu
+
+1 Introduction
+Financial markets play an important role by aggregating dispersed information about the
+fundamentalsoftheeconomy. Bypoolingdifferentsourcesofinformation,assetpricesactasapublic
+signal to any external observer, potentially influencing individual decisions. This view, uncontested
+withineconomicsandtracedbacktoHayek(1945),hasfacedsignificantchallengeswhentranslatingits
+theoreticalfindingstomoreappliedsettingsbecausemeasuringtheinformationalcontentofpricesis
+not an easy task.1 In particular, one may be interested in understanding whether different markets
+aggregate dispersed information to different degrees. However, without direct measures of the
+informationalcontentofprices(priceinformativeness),howcanoneknowwhichmarketsarebetterat
+aggregatinginformation?
+In this paper, we develop a methodology that allows us to recover exact stock-specific measures
+of price informativeness. Formally, we show that the outcomes (parameters and R-squareds) of
+linear regressions of prices on fundamentals are sufficient to identify absolute and relative price
+informativeness within a large class of linear asset demand models that feature rich heterogeneity
+across investors (regarding signals, private trading needs, or preferences) and minimal distributional
+assumptions.2
+Throughout the paper, we formally define and study two measures of the informational content
+of prices: absolute and relative price informativeness. Absolute price informativeness measures the
+amount of information contained in the price for an investor who only learns about an asset’s payoff
+from the price. We formally define absolute price informativeness as the precision of the unbiased
+signalabouttheinnovationtothefundamentalrevealedbyassetprices. Relativepriceinformativeness
+measures the informational content of prices relative to the total amount of uncertainty about the
+asset’s payoff. Formally, relative price informativeness corresponds to the ratio between absolute
+price informativeness and the precision of the innovation to the fundamental, which measures the
+underlying source of uncertainty. This measure captures how much can be learned from the price
+relativetothetotalamountthatcanbelearned.
+The main contribution of this paper is methodological. For illustration, let us describe how
+price informativeness can be recovered. In a stationary environment, consider running the following
+regressionrelatingtheex-dividendpriceatwhichanassetistradedinperiod t, p ,totheassetpayoff
+t
+toberealizedattheendofperiodt,θ ,anditscontemporarypayoff,θ ,
+t+1 t
+p = β +β θ +β θ +ε . (R0)
+t 0 1 t 2 t+1 t
+1Hayek (1945) highlights the relevance of price informativeness as follows: “The economic problem of society is (...)
+ratheraproblemofhowtosecurethebestuseofresourcesknowntoanyofthemembersofsociety,forendswhoserelative
+importanceonlytheseindividualsknow. Or, toputitbriefly, itisaproblemoftheutilizationofknowledgewhichisnot
+giventoanyoneinitstotality.”
+2Giventhatlinearassetdemandscanbeinterpretedasanapproximationtomoregeneralmodels,oneshouldexpectour
+resultstobevalidmorebroadlyinanapproximatesense.
+2
+
+The equilibrium relation that supports Regression R0 provides the foundation for our procedure
+β2
+to identify price informativeness. We show that 2 exactly corresponds to absolute price
+Var[εt]
+informativeness,thatis,totheprecisionoftheunbiasedsignalabouttheinnovationtothefundamental
+containedinassetprices. Westructurallymaptheerrortermε tothenoisecomponentofassetprices,
+t
+andweshowhowitcanarisefromdifferentprimitiveassumptions(e.g. randomheterogeneouspriors,
+multipleriskyassets,unlearnablecomponentofthefundamental,etc.).
+We also show that the difference between the R-squared of Regression R0 and the R-squared
+of an identical regression that does not include θ can be directly mapped to relative price
+t+1
+informativeness. Formally,weshowthatacorrectedincrementalR-squaredbetweenbothregressions
+exactly determines relative price informativeness. Under Gaussian primitives, we also show that
+the same difference directly determines the Kalman gain that an external observer attributes to
+the innovation to the fundamental when forming a posterior about the future payoff of the asset.
+Importantly, our results are not only qualitative, but they provide exact measures of informativeness.
+Forinstance,findingaKalmangainofK = 0.2impliesthatanexternalobserverweighstheinformation
+containedinthepriceby20%relativetohisprior.
+It is worth highlighting that our identification procedure does not make parametric assumptions
+regarding the underlying source of noise and does not require that investors form beliefs using
+Bayesianupdating. Wealsodiscussindetailhowourresultsrelatetoalternativemeasuresthatrelate
+to price informativeness, like the posterior variance of the fundamental or forecasting price efficiency
+measures.
+Although we derive our identification results without the need to fully specify the model
+primitives, we explicitly develop a fully microfounded dynamic model of trading in Section 4 of
+the paper. In the context of this model, we provide a new identification result that allows us to
+recover, using aggregate information, the precision of investors’ private signals and the volatility of
+the aggregate component of investors trading needs (noise). To our knowledge, this result provides
+the first methodology that transparently recovers the precision of investors’ signals precision in REE
+models. ItalsoprovidesadirectmethodologytocapturetheamountofnoisetradinginREEmodels.
+Wesystematicallyextendourmethodologytomoregeneralenvironments. Inparticular,weshow
+how to adapt our methodology to allow for unit-roots in the process followed by the fundamental.
+Whenallowingfornon-stationarypayoffs,weshowhowtoimplementourresultsindifferenceform.
+Wealsoextendourresultstoincludemultipleriskyassets,andpayoffswithlearnableandunlearnable
+components. Inallscenarios,ourmethodologyremainsvalidtoanswerthequestionofhowmuchan
+external observer can learn from the price. These extensions highlight that the exact interpretation of
+the noise term depends on the exact assumptions of the model. Throughout the paper, we discuss at
+lengththerationalebehindourmeasuresofinformativeness,andhowtheexerciseofidentifyingprice
+informativenessisdistinctfromexploringpredictabilityrelations.
+After describing the methodology, we proceed to implement our results empirically, recovering
+3

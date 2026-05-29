@@ -1,0 +1,109 @@
+NBER WORKING PAPER SERIES
+MEASURING INSTITUTIONAL INVESTORS’ SKILL FROM THEIR INVESTMENTS
+IN PRIVATE EQUITY
+Daniel R. Cavagnaro
+Berk A. Sensoy
+Yingdi Wang
+Michael S. Weisbach
+Working Paper 22547
+http://www.nber.org/papers/w22547
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+August 2016
+Andrea Rossi provided exceptionally good research assistance. We thank Arthur Korteweg,
+Ludovic Phalippou, and seminar and conference at the 9th Annual London Business School
+Private Equity Conference and Ohio State University for helpful suggestions. The views
+expressed herein are those of the authors and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2016 by Daniel R. Cavagnaro, Berk A. Sensoy, Yingdi Wang, and Michael S. Weisbach. All
+rights reserved. Short sections of text, not to exceed two paragraphs, may be quoted without
+explicit permission provided that full credit, including © notice, is given to the source.
+
+Measuring Institutional Investors’ Skill from Their Investments in Private Equity
+Daniel R. Cavagnaro, Berk A. Sensoy, Yingdi Wang, and Michael S. Weisbach
+NBER Working Paper No. 22547
+August 2016
+JEL No. G11,G23,G24
+ABSTRACT
+Using a large sample of institutional investors’ private equity investments in venture and buyout
+funds, we estimate the extent to which investors’ skill affects returns from private equity
+investments. We first consider whether investors have differential skill by comparing the
+distribution of investors’ returns relative to the bootstrapped distribution that would occur if funds
+were randomly distributed across investors. We find that the variance of actual performance is
+higher than the bootstrapped distribution, suggesting that higher and lower skilled investors
+consistently outperform and underperform. We then use a Bayesian approach developed by
+Korteweg and Sorensen (2015) to estimate the incremental effect of skill on performance. The
+results imply that a one standard deviation increase in skill leads to about a three percentage point
+increase in returns, suggesting that variation in institutional investors’ skill is an important driver
+of their returns.
+Daniel R. Cavagnaro Yingdi Wang
+Dept of Information and Decision Sciences Department of Finance
+California State University Fullerton Mihaylo College of Business and Economics
+Fullerton, CA 92834 California State University
+dcavagnaro@fullerton.edu Fullerton, CA 92834
+yingdiwang@fullerton.edu
+Berk A. Sensoy
+Ohio State University Michael S. Weisbach
+2100 Neil Ave. Department of Finance
+Columbus, OH 43210 Fisher College of Business
+sensoy.4@osu.edu Ohio State University
+2100 Neil Ave.
+Columbus, OH 43210
+and NBER
+weisbach.2@osu.edu
+
+1. Introduction
+Institutional investors have become the most important investors in the U.S. economy, controlling
+more than 70% of the publicly traded equity, much of the debt, and virtually all of the private equity.
+Their investment decisions have far reaching consequences for their beneficiaries: universities’ spending
+decisions, pension plan funding levels and consequent funding decisions by states and corporations, as
+well as the ability of foundations to support charitable endeavors all depend crucially on the returns they
+receive on their investments. For this reason, the highest paid individuals in these organizations are often
+their investment officers. This high level of pay is often controversial, and it is not clear from existing
+evidence whether these compensation decisions are optimal.1 If investment performance is random, then
+it is hard to justify this high level of pay; however, if higher quality investment officers lead to better
+returns, then it potentially makes sense to pay high salaries to attract them.
+One place where investment officers’ skill is potentially important is their ability to select private
+equity funds. The private equity industry has experienced dramatic growth since the 1990s, bringing the
+total assets under management to more than $3.4 trillion in June 2013 (Preqin). Most of the money in this
+industry comes from institutional investors, and private equity investments represent a substantial portion
+of their portfolios. Moreover, the variation in returns across private equity funds is large; the difference
+between top quartile and bottom quartile returns has averaged approximately nineteen percentage points.
+Evaluating private equity partnerships, especially new ones, requires substantial judgment from potential
+investors, who much assess a partnership’s strategy, talents, experience, and even how the various
+partners interact with one another. Consequently, the ability to select high quality partnerships is one
+place where an institutional investor’s talent is likely to be particularly important. However, it is not
+known whether different institutional investors on average receive different returns. Moreover, it is not
+1 For example, Harvard University pays its top 5 endowment officers more than $100m annually, a pay package that
+has generated much negative attention recently (see Bloomberg, August 27, 2014).
+1
+
+clear whether any differences in returns across investors reflect the investors’ skill, their access to better
+private equity groups, or just random luck.
+In this paper, we consider a large sample of limited partners’ (LPs’) private equity investments in
+venture and buyout funds and estimate the extent to which manager skill affects the returns from their
+private equity investments. Our sample includes 12,043 investments made by 630 unique LPs, each of
+which have at least four private equity investments in either venture capital or buyout funds during the
+1991 to 2006 period. We first test the hypothesis that skill in fund selection, in addition to luck, affects
+investors’ returns. We then estimate the importance of skill in determining returns. Our results imply that
+an increase of one standard deviation in skill leads to about a 3% increase in IRR. The magnitude of this
+effect suggests that variation in skill is an important driver of institutional investors’ returns.
+We first perform a model-free test of whether there is differential skill in selecting private equity
+investments. We use a bootstrap approach to simulate the distribution of LPs’ performance under the
+assumption that all LPs are identically skilled (i.e., that there is no differential skill and all differences in
+performance reflect random luck). We measure performance first in terms of the proportion of an LP’s
+investments that are in the top half of the return distribution for funds of the same type in the same
+vintage year, and then in terms of average returns across all of the LP’s private equity investments. The
+comparison with the bootstrapped distributions suggests that more LPs do consistently well (above
+median) or consistently poorly (below median) in their selection of private equity funds than what one
+would expect in the absence of differential skill. Furthermore, statistical tests of the standard deviation of
+LP performance shows that there is more variation in performance that what one would expect in the
+absence of differential skill. These results hold when restricting the analysis to various subsamples by
+time period, fund and investor type. These analyses suggest that there are more LPs who are consistently
+able to earn abnormally high returns than one would expect by chance. Some LPs appear to be better than
+other LPs at selecting the GPs who will subsequently earn the highest returns.
+2

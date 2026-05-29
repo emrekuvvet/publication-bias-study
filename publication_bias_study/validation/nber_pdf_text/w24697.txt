@@ -1,0 +1,111 @@
+NBER WORKING PAPER SERIES
+INVESTOR EXPERIENCES AND FINANCIAL MARKET DYNAMICS
+Ulrike Malmendier
+Demian Pouzo
+Victoria Vanasco
+Working Paper 24697
+http://www.nber.org/papers/w24697
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2018
+We thank Marianne Andries, Nick Barberis, Dirk Bergemann, Julien Cujean, Xavier Gabaix,
+Lawrence Jin, and workshop participants at LBS, LSE, NYU, Pompeu Fabra, Stanford, UC
+Berkeley, as well as the ASSA, NBER EFG Behavioral Macro, NBER Behavioral Finance, SITE
+(Psychology and Economics segment), SFB TR 15 (Tutzing, Germany) conferences for helpful
+comments. We also thank Felix Chopra, Marius Guenzel, Canyao Liu, Leslie Shen, and Jonas
+Sobott for excellent research assistance. The views expressed herein are those of the authors and
+do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2018 by Ulrike Malmendier, Demian Pouzo, and Victoria Vanasco. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Investor Experiences and Financial Market Dynamics
+Ulrike Malmendier, Demian Pouzo, and Victoria Vanasco
+NBER Working Paper No. 24697
+June 2018
+JEL No. E03,G02,G11,G12
+ABSTRACT
+How do macro-financial shocks affect investor behavior and market dynamics? Recent evidence
+suggests long-lasting effects of personally experienced outcomes on investor beliefs and
+investment but also significant differences across older and younger generations. We formalize
+experience-based learning in an OLG model, where different cross-cohort experiences generate
+persistent heterogeneity in beliefs, portfolio choices, and trade. The model allows us to
+characterize a novel link between investor demographics and the dependence of prices on past
+dividends, while also generating known features of asset prices, such as excess volatility and
+return predictability. The model produces new implications for the cross-section of asset
+holdings, trade volume, and investors' heterogeneous responses to recent financial crises, which
+we show to be in line with the data.
+Ulrike Malmendier Victoria Vanasco
+Department of Economics Stanford University
+549 Evans Hall # 3880 Department of Economics
+University of California, Berkeley vvanasco@stanford.edu
+Berkeley, CA 94720-3880
+and NBER
+ulrike@econ.berkeley.edu
+Demian Pouzo
+University of California at Berkeley
+530-1 Evans Hall #3880
+Berkeley, CA 94720
+dpouzo@econ.berkeley.edu
+
+1 Introduction
+Recent crises in the stock and housing markets have stimulated a new wave of macro-
+finance models of risk-taking. A key challenge, and motivation, has been to find tractable
+models of investor expectations that account not only for asset pricing puzzles such as
+return predictability (Campbell and Shiller (1988), Fama and French (1988)) and excess
+volatility (LeRoy and Porter (1981), Shiller (1981), LeRoy (2005)), but also for micro-
+level stylized facts such as investors chasing past performances. As argued by Woodford
+(2013), the empirical evidence suggests a need for dynamic models that go beyond the
+rational-expectations hypothesis. In line with Woodford’s proposal, models of natural
+expectation formation (Fuster, Hebert, and Laibson (2011); Fuster, Laibson, and Mendel
+(2010)) and over-extrapolation (Barberis, Greenwood, Jin, and Shleifer (2015); Barberis,
+Greenwood, Jin, and Shleifer (2016)) successfully capture a wide range of the stylized
+facts. A core feature of these models is that agents over-weigh recent realizations of the
+relevant economic variables when forming beliefs.
+Another set of emerging stylized facts, which focuses on the long-lasting effects of
+macro-financial shocks and their systematic cross-sectional differences, has been harder
+to capture by these approaches. As conveyed by the notion of “depression babies” or the
+“deep scars” of the 2008 financial crisis (Blanchard (2012)), macro-economic shocks ap-
+pear to alter investment and consumption behavior for decades to come, beyond the time
+frame of existing models, and there is significant cross-sectional heterogeneity. Younger
+cohorts tend to react significantly more strongly than older cohorts. A growing em-
+pirical literature on experience effects documents, for example, that personal lifetime
+experiences in the stock-market predict future willingness to invest in the stock market
+(Malmendier and Nagel (2011)), and the same for IPO experiences and future IPO in-
+vestment (Kaustia and Knu¨pfer (2008); Chiang, Hirshleifer, Qian, and Sherman (2011)).
+There is also evidence of experience effects in non-finance settings, e.g., on the long-term
+1
+
+effects of graduating in a recession on labor market outcomes (Oreopoulos, von Wachter,
+and Heisz (2012)) or of living in (communist) Eastern Germany to political attitudes
+post-reunification (Alesina and Fuchs-Schundeln (2007)).1 In all of these applications,
+researchers identify a long-lasting impact of crisis experiences on individual risk-taking
+and illustrate their cohort-specific impact.
+Much of the evidence on experience effects pertains directly to stated beliefs, e.g.,
+beliefs about future stock returns (in the UBS/Gallup data), about future inflation (in
+the Michigan Survey of Consumers), or about the outlook for durable consumption (also
+in the MSC).2 A key difference relative to over-extrapolation and related approaches is
+that experience-based learning generates cohort-specific differences in beliefs and in their
+updating after a common shock. While more evidence on the exact process of household-
+level learning is needed (see the discussions in Campbell (2008) and Agarwal, Driscoll,
+Gabaix, and Laibson (2013)), the over-weighing of personal experiences appears to be
+a pervasive and robust psychological phenomenon affecting belief formation, which is
+related to availability bias as first put forward by Tversky and Kahneman (1974), as well
+as the extensive evidence on the different effects of description versus experience.3
+This growing empirical literature on experience effects and its strong psychological un-
+derpinning raise the question whether experience-based learning and the implied dynamic
+cross-cohort differences have the potential to explain aggregate dynamics. For example,
+which generations invest in the stock market and how much? What are the dynamics of
+stock market investment? How will the market react to a macro-shock?
+Our paper develops an equilibrium model of asset markets that formalizes experience-
+based learning and the resulting belief heterogeneity across investors. The model clarifies
+1 See also Giuliano and Spilimbergo (2013), who relate the effects of growing up in a recession to
+redistribution preferences.
+2 Cf. Malmendier and Nagel (2011), Malmendier and Nagel (2016), Malmendier and Shen (2017).
+3See, for example, Weber, B¨ockenholt, Hilton, and Wallace (1993), Hertwig, Barron, Weber, and
+Erev (2004), and Simonsohn, Karlsson, Loewenstein, and Ariely (2008).
+2

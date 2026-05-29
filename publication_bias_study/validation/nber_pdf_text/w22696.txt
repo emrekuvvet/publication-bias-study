@@ -1,0 +1,122 @@
+NBER WORKING PAPER SERIES
+LOAN PRODUCT STEERING IN MORTGAGE MARKETS
+Sumit Agarwal
+Gene Amromin
+Itzhak Ben-David
+Douglas D. Evanoff
+Working Paper 22696
+http://www.nber.org/papers/w22696
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2016
+The authors thank Caitlin Kearns, Mike Mei, and Michael Murto for outstanding research
+assistance and Han Choi for editorial assistance. They also thank Viral Acharya, Gadi Barlevy,
+Mike Berry, Jason Keller, Steve Kuehl, Elizabeth Laderman, Geng Li, Leonard Nakamura,
+Mitchell Petersen, Amit Seru, Greg Udell, Lena Vanterpool, Alicia Williams and Marva Williams
+for constructive input. All errors are those of the authors. The views expressed in this paper are
+those of the authors and do not reflect those of the Federal Reserve Bank of Chicago, the Federal
+Reserve System, or the National Bureau of Economic Research.
+At least one co-author has disclosed a financial relationship of potential relevance for this
+research. Further information is available online at http://www.nber.org/papers/w22696.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2016 by Sumit Agarwal, Gene Amromin, Itzhak Ben-David, and Douglas D. Evanoff. All
+rights reserved. Short sections of text, not to exceed two paragraphs, may be quoted without
+explicit permission provided that full credit, including © notice, is given to the source.
+
+Loan Product Steering in Mortgage Markets
+Sumit Agarwal, Gene Amromin, Itzhak Ben-David, and Douglas D. Evanoff
+NBER Working Paper No. 22696
+September 2016
+JEL No. D12,D18,G18,G21,K2
+ABSTRACT
+We present evidence of a particular type of loan steering in which lenders lead borrowers to take
+out high margin mortgage products. We identify this activity by comparing borrowers who were
+rejected by lenders but were subsequently approved by their affiliates (steered borrowers) to other
+initially rejected borrowers who obtained loans elsewhere. Although steered borrowers default
+less, they pay significantly higher interest rates and are more likely to borrow through contracts
+with unconventional features, such as negative amortization or prepayment penalties. Female
+borrowers, single borrowers with no co-signers, and borrowers in low-income locations are more
+likely to be steered.
+Sumit Agarwal Itzhak Ben-David
+McDonough School of Business Department of Finance
+Room 427 Fisher College of Business
+Georgetown University The Ohio State University
+3700 O Street NW 2100 Neil Avenue
+Washington, DC 20057 Columbus, OH 43210
+ushakri@yahoo.com and NBER
+bendavid@fisher.osu.edu
+Gene Amromin
+Federal Reserve Bank of Chicago Douglas D. Evanoff
+230 South LaSalle Street Federal Reserve Bank of Chicago
+Chicago, IL 60604-1413 230 South LaSalle Street
+gamromin@frbchi.org Chicago, IL 60604-1413
+devanoff@frbchi.org
+
+1 Introduction
+At the height of the housing market boom of the 2000s, accusations of unscrupulous
+lender behavior abounded. Examples included excessive fees, high interest rates, obscured
+prepayment penalties, and clauses barring borrowers from seeking judicial redress for predatory
+behavior by lenders (Engel and McCoy, 2002). Yet, the vast majority of the evidence to date has
+been anecdotal in nature or came from select examples of regulatory enforcement actions or
+isolated lawsuits. Some research was undertaken to evaluate whether particular groups were
+targeted with predatory loan terms (Goldstein, 2002; Staten and Elliehausen, 2001; Immergluck
+and Smith, 2003; Bocian, Ernst, and Li, 2008). However, there has not been a comprehensive,
+methodical evaluation of whether lenders engaged in business practices—broadly referred to as
+steering—that led households to mortgage products that were too expensive or contained hidden
+risks. Conducting such evaluations is difficult since identifying instances of steering in the data
+requires overcoming two major hurdles. First, one needs to separate cases in which lenders
+steered borrowers into a product from cases in which borrowers themselves expressed demand
+for the product. Second, assessing the optimality of a selected product is problematic in itself as
+the econometrician does not observe the full set of borrower characteristics and constraints. An
+ideal empirical setting to detect steering activity would be to observe borrowers demanding one
+product, and measure whether lenders concur or try to market a different product, with features
+that are unambiguously inferior to the borrower.
+In the absence of transaction-level negotiation data, we develop a methodology to
+identify steered loans. We do this by contrasting the outcomes of two observationally equivalent
+groups of borrowers whose mortgage applications were rejected by one lender, but subsequently
+approved by another. Borrowers in one group had their applications approved by an affiliate of
+the original lender, while others were approved by unaffiliated entities. We contend that
+borrowers in the former group are more likely to have been steered.
+The identification strategy behind this approach can be illustrated with the following
+thought experiment, summarized in Figure 1. A borrower enters a lending institution seeking a
+mortgage and their loan application is evaluated. If they are judged to be a poor credit risk, their
+application is rejected outright. However, if their credit risk is acceptable they might still be told
+that they do not qualify for the specific loan applied for, but would qualify for another mortgage
+product from an affiliate of the organization. The applicant is thus ‘steered’ to an affiliate, which
+1
+
+approves the new loan product. In making this decision, the original lender takes the risk that the
+rejected applicant will apply for a loan with a competitor. To lessen this risk, the lender may
+choose to deploy this strategy with borrowers more likely to follow the referral, i.e., those that
+are perceived to be less financially sophisticated. All rejected applicants retain the option of
+pursuing their loan applications elsewhere, i.e., with a lender unaffiliated with the original entity,
+and some of them will be successful in obtaining mortgage credit. These are the applicants that
+we consider to be ‘non-steered’.1 If the initial rejection of the ‘steered’ applicants was based on
+reasons largely unrelated to credit quality, we would expect the ‘steered’ group to be
+systematically different from the ‘non-steered’ group in terms of their subsequent loan
+performance. Moreover, if the initial rejection was motivated by the possibility of guiding the
+applicants towards a different set of mortgage products (possibly those that are more profitable to
+the lender), we would also expect the two groups to differ in terms of eventual contract
+outcomes. Finally, if the likelihood of successful steering was a function of borrower financial
+sophistication, we would expect the ‘steered’ group to contain a higher share of individuals with
+characteristics associated with lower levels of financial literacy.
+The focus on borrowers whose original applications were rejected allows us to deal with
+the first empirical hurdle of not observing the borrower’s demand function. All borrowers in our
+sample are rejected on their original attempt, whose latent parameters presumably reflect the
+borrowers’ most desired outcome. The eventual contract captures the differences that lender
+paths have on observed outcomes (e.g., mortgage characteristics) rather than borrower’s own
+demand for these features. Closely matching borrower characteristics in the two groups further
+allows us to ascribe the difference in outcomes to lender behavior rather than differences in the
+underlying borrower preferences. Put differently, the sample is designed in a way that makes it
+plausible to assume that desired (and rejected) contract choices are similar between the steered
+and non-steered groups. Lender actions then become the focal point for analyzing differences in
+the actual observed outcomes.
+To implement this strategy, we focus on a subset of lenders who are organized under
+bank holding companies (BHCs), and thus are likely to be more closely affiliated with each
+1 Strictly speaking, observing a loan being originated by an affiliate of the lender that rejected the original
+application only implies the possibility of steering. For ease of exposition, we will be using the term “steered
+borrowers” rather than “potentially steered borrowers” throughout the paper.
+2

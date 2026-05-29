@@ -1,0 +1,117 @@
+NBER WORKING PAPER SERIES
+FROM MAN VS. MACHINE TO MAN + MACHINE:
+THE ART AND AI OF STOCK ANALYSES
+Sean Cao
+Wei Jiang
+Junbo L. Wang
+Baozhong Yang
+Working Paper 28800
+http://www.nber.org/papers/w28800
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2021
+The authors have benefited from discussions with Svetlana Bryzgalova, Will Cong, Jillian
+Grennan, Gerry Hoberg, Markus Pelger, Siew Hong Teoh, and Christina Zhu, and comments and
+suggestions from seminar/conference participants at CKGSB and Stanford Engineering the AI
+Big Data in Finance Research Forum (ABFR) webinar. The views expressed herein are those of
+the authors and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2021 by Sean Cao, Wei Jiang, Junbo L. Wang, and Baozhong Yang. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+From Man vs. Machine to Man + Machine: The Art and AI of Stock Analyses
+Sean Cao, Wei Jiang, Junbo L. Wang, and Baozhong Yang
+NBER Working Paper No. 28800
+May 2021
+JEL No. G11,G12,G14,G31,M41
+ABSTRACT
+An AI analyst we build to digest corporate financial information, qualitative disclosure and
+macroeconomic indicators is able to beat the majority of human analysts in stock price forecasts
+and generate excess returns compared to following human analyst. In the contest of “man vs
+machine,” the relative advantage of the AI Analyst is stronger when the firm is complex, and
+when information is high-dimensional, transparent and voluminous. Human analysts remain
+competitive when critical information requires institutional knowledge (such as the nature of
+intangible assets). The edge of the AI over human analysts declines over time when analysts gain
+access to alternative data and to in-house AI resources. Combining AI’s computational power and
+the human art of understanding soft information produces the highest potential in
+generating accurate forecasts. Our paper portraits a future of “machine plus human” (instead
+of human displacement) in high-skill professions.
+Sean Cao Junbo L. Wang
+J.Mack Robinson College of Business School of Business
+Georgia State University Louisiana State University
+35 Broad Street, Suite 1243 Baton Rouge, LA 70803
+Atlanta, GA 30302-3992 junbowang@lsu.edu
+scao@gsu.edu
+Baozhong Yang
+Wei Jiang Georgia State University
+Graduate School of Business J.Mack Robinson College of Business
+Columbia University 35 Broad Street, Suite 1243
+3022 Broadway, Uris Hall 803 Atlanta, GA 30303
+New York, NY 10027 bzyang@gsu.edu
+and NBER
+wj2006@columbia.edu
+
+1. Introduction
+Since its inception and as it rises, artificial intelligence (AI) constantly makes human
+beings to rethink their own roles. While AI is meant to be intelligence augmentation for
+humans, concerns abound that AI could replace human tasks and increasingly skilled ones,
+and thus displace jobs by those currently performed by the better-paid and better-educated
+workers (Muro, Maxim, and Whiton, 2019). Such a concern and the associated debates have
+motivated a quickly growing literature. Recent work by Webb (2020), Acemoglu, Autor,
+Hazell, and Restrepo (2020), Babina, Fedyk, He, and Hodson (2020), and Jiang, Tang, Xiao,
+and Yao (2021) have all conducted large-sample analyses on the extent of job exposure
+and vulnerability to AI-related technology as well as the consequences on employment and
+productivity.
+The existing literature has been mostly focusing on characterizing the type of jobs that
+are vulnerable to disruption by, as well as those that could be created due to, AI evolution.
+In other words, the sentiment of the existent studies mostly involves a theme of “man-
+versus-machine,” i.e., to characterize the contest between human and AI, to explore ways
+human adapts, and to predict the resulting job redeployment. In such settings, human
+beings are often rendered passive or reactive – dealing with disruptions and looking for new
+opportunities defined by the AI landscape. There has been relatively little research devoted
+toprescribinghowskilledhumanworkerscouldtapintoahigherpotentialwithenhancement
+from AI technology, presumably the primary goal for human beings to design and develop
+AI in the first place. This study aims to connect the contest of “man-versus-machine” (“man
+v. machine” hereafter) to a potential equilibrium of “man-plus-machine” (“man + machine”
+hereafter).
+Our study could be motivated by the experience of chess grand master Garry Kasparov.
+The story that IBM’s Deep Blue beat the then reigning grand master Kasparov in 1997 was
+well-known. Multiple contests repeated in a similar setting afterwards killed any remaining
+suspense for the outcome of man v. machine in chess playing. What is far less known is that
+1
+
+humans, despite having lost interest in man-versus-machine chess contests, have not lost
+interest in either the game or the machine. In fact, the encounter with the Deep Blue was a
+catalyst for people like Kasparov to pioneer the concept of man + machine matches, in which
+a chess player equipped with AI assistance (a “centaur” player) competes against AI. Up
+to today the centaur keeps an upper hand against machines; and even more encouragingly,
+there have been more and better human chess players with the advent of affordable AI-
+engineered chess programs.1 If AI can help more humans become better chess players, it
+stands to reason that it can help more of us become better at many skilled jobs, from pilots,
+medical doctors, to investment advisors. In this study, we zoom into the profession of stock
+analysis, whose data availability allows us to calibrate both man vs. machine and man +
+machine. Stock analysts are among the most important information intermediaries in the
+market place (e.g., Brav and Lehavy, 2003; Jegadeesh, Kim, Krische, and Lee, 2005; Crane
+and Crotty, 2020). Their job, which require both institutional knowledge and data analytics,
+has not been spared by AI as more and more investors start to heed to recommendations
+about stock picking and portfolio formation made by AI-powered tools.2
+To trace out the path from “man v. machine” to “man + machine,” we decided to
+build our own AI model for year-end stock predictions so that we have a consistent and
+time-adapted benchmark for AI performance which we understand and are able to explain.3
+Target prices and earnings are the two primary subjects of analyst forecasts, we choose the
+former as the latter are subject to managerial discretion, which a large body of accounting
+literature on earnings management manifests. Our “AI analyst” is built on training a com-
+1Source of information: The Inevitable, by Keven Kelly, Penguin Publishing Group, 2016. See also
+“Defeated Chess Champ Garry Kasparov Has Made Peace With AI,” Wired, February 2020.
+2Sources: “What Machine Learning Will Mean for Asset Managers,” Robert C. Pozen and Jonathan
+Ruane, Havard Business Review, December 3, 2019. “How Startup Investors Can Utilize AI To Make
+Smarter Investments,” Jia Wertz, Forbes, January 18, 2019.
+3We focus on year-end prices because these are a typical focal point for investors and corporations for
+tax and reporting reasons. For example, “Credit Suisse Raised Its SP 500 Target – Earnings Are Too Good
+to Ignore,” Jacob Sonenshine, Barron’s, April 30, 2021.
+2

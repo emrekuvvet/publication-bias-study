@@ -1,0 +1,133 @@
+NBER WORKING PAPER SERIES
+VOTING CHOICE
+Andrey Malenko
+Nadya Malenko
+Working Paper 31636
+http://www.nber.org/papers/w31636
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+August 2023
+We have nothing to disclose. We are grateful to Tim Baldenius, Sugato Bhattacharyya, Erik
+Gordon, Ali Lazrak, Uday Rajan, Tobias Tröger, Kostas Zachariadis, Jeff Zwiebel, Jonathon
+Zytnick, participants of the Fourth BI Conference on Corporate Governance, UBC Summer
+Finance Conference, NYU-LawFin/SAFE-ESCP BS Law & Banking/Finance Conference,
+Research Symposium on Finance and Economics, Aarhus Workshop on Strategic Interaction in
+Corporate Finance, Vienna Festival of Finance Theory, and seminar participants at the University
+of Michigan for helpful comments and suggestions. The views expressed herein are those of the
+authors and do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2023 by Andrey Malenko and Nadya Malenko. All rights reserved. Short sections of text, not
+to exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Voting Choice
+Andrey Malenko and Nadya Malenko
+NBER Working Paper No. 31636
+August 2023
+JEL No. D74,G34
+ABSTRACT
+Traditionally, fund managers cast votes on behalf of investors whose capital they manage.
+Recently, this system has come under intense debate given the growing concentration of voting
+power among a few asset managers and disagreements over environmental and social issues.
+Major fund managers now offer their investors a choice: delegate their votes to the fund or cast
+votes themselves ("voting choice"). This paper develops a theory of delegation of voting rights
+and studies the implications of voting choice for investor welfare. If the reason for offering voting
+choice is that investors have different preferences, then investors may retain their voting rights
+excessively, inefficiently prioritizing their private preferences over information. As a result,
+investors on aggregate are not always better off if voting choice is offered to them. In contrast, if
+the reason for offering voting choice is that investors have information about the proposal that the
+fund manager does not have, then voting choice is generally efficient, increasing investor welfare.
+However, if information collection is costly, voting choice may lead to coordination failure,
+resulting in less informed voting outcomes.
+Andrey Malenko
+140 Commonwealth Ave
+Carroll School of Management,
+Boston College
+Chestnut Hill, MA 02467
+malenkoa@bc.edu
+Nadya Malenko
+Boston College
+124 Hartman Rd
+Newton, MA 02459
+and CEPR, and ECGI
+and also NBER
+malenko@bc.edu
+
+1 Introduction
+The tremendous growth of institutional investors, particularly large passive funds, has drawn
+attention to their increasingly important role in corporate governance. Major investment ad-
+visors such as BlackRock, Vanguard, and State Street have become among the largest share-
+holders in many publicly traded …rms (Lewellen and Lewellen, 2022). In this role, they cast
+votes on behalf of millions of investors and have substantial voting power, making them piv-
+otal in important corporate votes (Bebchuk and Hirst, 2019; Brav et al., 2023). At the same
+time, shareholder disagreements over voting issues are becoming increasingly prevalent given
+the growth in environmental and social (E&S) issues that appear on companies’agendas.
+Thesetrendshavegeneratedanintensedebateaboutwhetherassetmanagersareinthebest
+position to vote their investors’shares.1 Do funds’votes represent their investors’preferences?
+Are their votes su¢ ciently informed? This debate has become especially heated in the context
+of E&S issues and has led to several important institutional and regulatory developments. In
+October 2021, BlackRock announced the “Voting Choice”program, which gives its investors
+the choice: delegate their votes to BlackRock, as had been the default before, or exercise their
+voting rights themselves (so-called “pass-through voting”). As of September 2022, investors
+representing 25% of BlackRock’s eligible assets had chosen to cast their own votes. Vanguard,
+State Street, and other asset managers have followed suit.2 While BlackRock initially o¤ered
+this choice only to institutional clients, in July 2023 it expanded the program to its retail
+investors through iShares Core S&P 500 ETF (IVV), its largest ETF with $305 billion in
+AUM. Regulators have been considering a more drastic change: The INvestor Democracy is
+EXpected (INDEX) Act, introduced in the Senate in May 2022, aims to require passively
+managed funds to collect voting instructions from all of their individual investors and vote
+according to them.3
+1See “BlackRock Walks a Political Tightrope on Climate Issues,”The Wall Street Journal, Oct. 9, 2022.
+AccordingtoReuters (May22, 2023), largeassetmanagers’“in‡uentialvoteshavedrawnmuchcriticism,both
+from activists urging them to push portfolio companies harder on issues such as climate change or workforce
+diversity and, this year, from right-wing U.S. politicians who say the …rms focus too much on ESG matters.”
+SeeLund(2018)andFischandSchwartz(2023)forthelegaldebateabouttheroleofassetmanagersinvoting.
+2For BlackRock, see https://www.blackrock.com/corporate/about-us/investment-
+stewardship/blackrock-voting-choice/proxy-voting-power-of-choice; for Vanguard, see
+https://advisors.vanguard.com/insights/article/empoweringeverydayinvestorsthroughproxyvotingchoice;
+and for State Street, see https://newsroom.statestreet.com/press-releases/press-release-details/2022/State-
+Street-Global-Advisors-Extends-Proxy-Voting-Choice-to-More-Investors/default.aspx. In June 2023, the …rst
+UK asset manager CIRCA5000 introduced voting choice for its clients.
+3Speci…cally, the Act proposes that the fund “cannot vote without instructions from
+fund investors, except for routine matters” if it holds more than 1% of a …rm’s shares
+1
+
+Motivated by this ongoing debate and important institutional changes, our paper develops
+a theory of delegation of voting rights and explores the following questions. When is delegating
+voting to the fund manager bene…cial for a fund’s investor, and when will the investor prefer to
+cast his own vote? Do investors bene…t from having the choice between delegating and voting
+themselves? Does such “voting choice”dominate the two other alternatives –the fund voting
+all its investors’shares and all investors voting themselves?
+In our model, the fund manager owns the …rm on behalf of the fund’s investors. There is a
+proposal up for a vote, whose value depends on the unknown state. The fund manager gets a
+signal about the state and casts the votes that are delegated to her. Under complete delegation
+(which corresponds to the system that has been in place until recently), all investors delegate
+their voting rights to the fund manager, so she votes all the shares and e¤ectively controls
+the voting outcome. Under mandatory pass-through voting (which corresponds to the system
+proposed by the INDEX Act), all investors cast their own votes. Finally, under voting choice,
+all investors independently decide whether to delegate their votes to the fund manager or to
+votethemselves.4 Investorsmayprefertoretaintheirvotesfortworeasons: tovoteaccordingto
+their own preferences (rather than the preferences of the fund manager) or to use their private
+information about the proposal (rather than to rely on the fund manager’s information).
+Our analysis demonstrates that whether voting choice increases investor welfare crucially
+depends on whether investors retain their votes because of their private preferences or their
+private information. To show this, we consider two scenarios: in the …rst, fund investors have
+heterogeneous preferences but no private information, whereas in the second, investors have
+aligned preferences but receive conditionally independent private signals about the proposal.
+In the setting with heterogeneous preferences, the value of the proposal to each investor
+depends on an uncertain common value and on an investor-speci…c private value. The fund
+manager gets a private signal about the common value and votes to maximize the expected
+welfare of her investors, knowing that their private values are drawn from some distribution
+centered around zero. Each fund investor faces the following trade-o¤when deciding whether
+to delegate his vote to the fund manager. On the one hand, delegation is valuable because the
+(https://www.sullivan.senate.gov/download/indexact_051722). An identical bill was introduced in the
+House of Representatives in July 2022.
+4Morespeci…cally,underthe“VotingChoice”program,thefund’sinvestorshaveachoicebetweendelegating
+their vote to the fund manager, casting their own vote, and voting according to a custom policy o¤ered by
+a proxy advisor that best aligns with their preferences. In our paper, for simplicity, we analyze the last two
+options together and treat both of them as the investor casting his own vote (since for both options, the
+investor’s vote closely represents the investor’s preferences).
+2

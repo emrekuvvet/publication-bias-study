@@ -1,0 +1,129 @@
+NBER WORKING PAPER SERIES
+FUND FLOWS AND INCOME RISK OF FUND MANAGERS
+Xiao Cen
+Winston Wei Dou
+Leonid Kogan
+Wei Wu
+Working Paper 31986
+http://www.nber.org/papers/w31986
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2023, Revised April 2024
+We are grateful to Jonathan Berk, Jan Eberly, Richard Evans, Gene Fama, Itay Goldstein, John
+Heaton, Urban Jermann, Ron Kaniel, Stijn Van Nieuwerburgh, Uday Rajan, Nick Roussanov,
+Sergio Salgado, Larry Schmidt, Luke Taylor, Yu Xu, and Russ Wermers, as well as seminar and
+conference participants at Colorado Finance Summit, MFA, NBER Big Data and Securities
+Markets, Texas A&M University, University of Chicago (Booth), University of Delaware
+(Lerner), University of Michigan (Ross), and Wharton for their comments and suggestions. We
+thank Gajendra Choudhary, Wenting Dai, Yijing Ren, Lorry Wu, Xiaoling Wu, Shuman Zhang,
+and Zitong Zhao for excellent research assistance. Cen and Wu acknowledge the financial
+supports from Mays Mini Research Grant. Dou is grateful for the financial supports from the
+Rodney L. White Center for Financial Research, Wharton Dean’s Research Fund, and the Golub
+Faculty Scholar Award at Wharton. This research uses data from the Census Bureau’s
+Longitudinal Employer Household Dynamics Program, which was partially supported by the
+following National Science Foundation Grants SES-9978093, SES-0339191 and ITR-0427889;
+National Institute on Aging Grant AG018854; and grants from the Alfred P. Sloan Foundation.
+Any views expressed are those of the authors and not those of the U.S. Census Bureau. The
+Census Bureau has reviewed this data product to ensure appropriate access, use, and disclosure
+avoidance protection of the confidential source data used to produce this product. This research
+was performed at a Federal Statistical Research Data Center under FSRDC Project Number 1831.
+(CBDRB-FY23-P1831-R10556, CBDRB-FY23-P1831-R10848, FY24-P1831-R11063, FY24-
+P1831-R11149, FY24-P1831-R11171, FY24-P1831-R11210). The views expressed herein are
+those of the authors and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2023 by Xiao Cen, Winston Wei Dou, Leonid Kogan, and Wei Wu. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Fund Flows and Income Risk of Fund Managers
+Xiao Cen, Winston Wei Dou, Leonid Kogan, and Wei Wu
+NBER Working Paper No. 31986
+December 2023, Revised April 2024
+JEL No. G11,G23,J24,J31,J33,J44,J63
+ABSTRACT
+We develop a unique dataset, the first-ever of its kind, by leveraging the US Census Bureau’s LEHD
+program and various big textual data sources, to examine the factors influencing the compensation
+and career trajectories of US active equity mutual fund managers. We find that managers’ compensation
+is primarily determined by assets under management (AUM), with return performance directly influencing
+bonuses beyond its impact on AUM. Despite not aligning with client interests, fund flows significantly
+affect manager compensation and career outcomes. Large fund outflows increase a manager’s likelihood
+of job turnover (with a substantial decline in compensation) by 4 percentage points.
+Xiao Cen Leonid Kogan
+Department of Finance MIT Sloan School of Management
+Mays Business School 100 Main Street, E62-636
+360 Wehner Building (4218) Cambridge, MA 02142
+Texas A&M University and NBER
+College Station, TX 77843-4218 lkogan@mit.edu
+xcen@mays.tamu.edu
+Wei Wu
+Winston Wei Dou Department of Finance
+The Wharton School Mays Business School
+University of Pennsylvania 360 Wehner Building (4218)
+2318 Steinberg-Dietrich Hall Texas A&M University
+3620 Locust Walk College Station, TX 77843-4218
+Philadelphia, PA 19104 wwu@mays.tamu.edu
+and NBER
+wdou@wharton.upenn.edu
+An online appendix is available at http://www.nber.org/data-appendix/w31986
+
+1 Introduction
+In recent decades, the prominence of delegated asset management services, notably
+mutual funds and pension funds, has grown significantly in the United States (US)
+financial markets (e.g., French, 2008). Data from the Investment Company Institute
+reveals that approximately half of all US households have consistently invested in mutual
+funds across the past decades, spanning a broad range of age and income groups. In
+2016, mutual and pension funds collectively held roughly 44% of the US equity market,
+maintaining a consistently high share of ownership over the past two decades. Given their
+considerable stake, the investment strategies and trading decisions of active equity funds
+– primarily active mutual and pension funds – not only wield significant influence over
+stock market valuations but also directly impact the wealth accumulation of a significant
+portion of US households.
+Managers of active equity funds make daily trading and asset allocation decisions
+in the equity market, on behalf of a diverse cross-section of US households spanning
+various demographics and income levels. Their role is not merely unique; it’s pivotal to
+the economic landscape. To understand the investment decisions of these fund managers
+and their implications for the capital market, it’s imperative to examine the incentives
+they operate under, as well as the income and career risks they face. In particular, Dou,
+Kogan and Wu (2023) find that managers of active funds tilt their portfolios to hedge
+against fund flow shocks, even at the expense of performance. They further demonstrate
+that this flow-hedging behavior by active fund managers significantly influences stock
+market valuations. Central to their argument is the notion that fluctuations in a fund’s
+assets under management (AUM) causally affect its managers’ compensations. Given
+that fund flows are a primary driver of these AUM variations, managers are concerned
+about the inherent income risks associated with these flows. Drawing on Swedish data,
+Ibert et al. (2018) demonstrate a statistically significant but concave relationship between
+a fund manager’s compensation and the fund’s AUM. However, similar conclusive or
+1
+
+causal evidence for US mutual funds is still lacking in the current literature.
+This paper fills this gap by offering direct and causal evidence concerning the factors
+influencingfundmanagers’compensationsinUSactiveequitymutualfunds. Undertaking
+this empirical exploration is challenging, largely owing to the scarcity of comprehensive
+and precise data on the compensation and career trajectories of individual managers.
+Consequently, prior research has predominantly concentrated on studying the advisory
+contracts between funds and their clients. Meanwhile, the intricacies of the compensation
+agreements between fund companies and their fund managers remain largely understud-
+ied, particularly in major economies like the US, where capital markets are instrumental
+in driving economic activities.
+A primary contribution of this paper is the creation of a unique and novel dataset
+detailing the compensation and employment history of managers within US active equity
+mutual funds. We emphasize that this paper represents the first endeavor to construct a
+fund manager compensation and employment panel dataset at the individual level, based
+on authentic income data within the US. Our data construction process starts with the
+entire universe of US active mutual funds. From there, we meticulously extracted the
+names of all fund managers using both the CRSP survivor-bias-free mutual fund database
+and the Morningstar direct mutual fund database. While the resulting dataset appears
+straightforward, the intricacies and challenges involved in its construction, even in the
+first step, are substantial. Approximately 13% of fund managers are not listed with their
+full names (with first names missing) in the combined CRSP-Morningstar dataset. To
+address this, we employ data scraping techniques, complemented by manual searches
+and verifications. We source this information from mutual fund prospectus, LinkedIn
+profiles, and the official websites of the mutual funds.
+We further gather information regarding fund managers’ age, partial social security
+number (SSN) information, and home address history from public record datasets such as
+LexisNexis and CoreLogic. Facilitated by these data, we are able to map fund managers
+2

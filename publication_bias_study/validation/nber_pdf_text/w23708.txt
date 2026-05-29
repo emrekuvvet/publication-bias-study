@@ -1,0 +1,113 @@
+NBER WORKING PAPER SERIES
+MISPRICED INDEX OPTION PORTFOLIOS
+George M. Constantinides
+Michal Czerwonko
+Stylianos Perrakis
+Working Paper 23708
+http://www.nber.org/papers/w23708
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+August 2017
+We thank Giovanni Barone-Adesi, Brendan Beare, Jens Jackwerth, Carlo Sala, conference
+participants, and our colleagues for their constructive feedback. Constantinides acknowledges
+financial support from the Center for Research in Security prices, the University of Chicago and
+as trustee/director of the DFA group of funds, SW7 Holdings, Cook County Illinois Investment
+Policy Committee, and as member of the advisory board of FTSE Russell. Czerwonko and
+Perrakis acknowledge financial support from the Social Sciences and Humanities Research
+Council of Canada. The views expressed herein are those of the authors and do not necessarily
+reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2017 by George M. Constantinides, Michal Czerwonko, and Stylianos Perrakis. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+Mispriced Index Option Portfolios
+George M. Constantinides, Michal Czerwonko, and Stylianos Perrakis
+NBER Working Paper No. 23708
+August 2017
+JEL No. G10,G11,G13,G23
+ABSTRACT
+The optimal portfolio of a utility-maximizing investor trading in the S&P 500 index and cash,
+subject to proportional transaction costs, becomes stochastically dominated when overlaid with a
+zero-net-cost portfolio of S&P 500 options bought at their ask and written at their bid price in
+most months over 1990-2013. Dominance is prevalent when the ATM-IV is high, right skew is
+low, and option maturity is short. The portfolios include mostly calls and positions are
+overwhelmingly short. Similar results obtain with options on the CAC and DAX indices. The
+results are explained neither by priced factors nor a non-monotonic stochastic discount factor.
+George M. Constantinides Stylianos Perrakis
+The University of Chicago Department of Finance
+Booth School of Business Concordia University
+5807 South Woodlawn Avenue 1455 de Maisonneuve Bvd. West.
+Chicago, IL 60637 Quebec, Canada H3G 1M8
+and NBER SPerrakis@jmsb.concordia.ca
+gmc@ChicagoBooth.edu
+Michal Czerwonko
+McGill University
+michalc04@gmail.com
+
+1 Introduction
+We consider an investor who trades at 28-, 14-, or seven-day intervals in the S&P 500 index and
+a risk free bond, subject to proportional transaction costs. The investor maximizes the expectation
+of her increasing and concave utility function of cash wealth at the end of the trading interval. We
+then consider overlaying on this portfolio a zero-net-cost portfolio, the Option Trading or OT
+portfolio, consisting of long and short positions in any number of European-style call and put
+options on the index and borrowing or lending at the risk free rate. We account for transaction
+costs in the trading of options by buying the options at their ask price and selling them at their bid
+price.
+We apply standard results of stochastic dominance and state sufficient conditions under
+which the investor’s portfolio, overlaid with the zero-net-cost portfolio, stochastically dominates
+the investor’s original portfolio. These conditions apply irrespective of the investor’s initial wealth
+and utility function. An intuitive interpretation of stochastic dominance is that the investor
+increases her expected utility by shifting income from states where the index level is high to states
+where the index level is low at zero net cost while maintaining the same or higher expected
+portfolio return.
+In almost every month from 1990 to 2013 we identify zero-net-cost portfolios that
+potentially imply stochastic dominance, using only information available at the time that the
+portfolio is formed. For each date the set of admissible portfolios is derived by a numerical
+algorithm presented in the appendix for which the total payoff is non-negative at low values of the
+index support, intersects the support at a single value, becomes non-positive at high values, and
+has a positive expectation. The optimal portfolio is selected from the set by maximizing a given
+criterion. The resulting portfolios are of variable composition and contain both call and put options
+with either 28 days, or 14 days, or seven days to maturity. Using realized returns we then verify
+by out-of-sample tests that do not depend on the selection criteria that the identified portfolios
+would have increased, on average, the utility of any risk-averse investor holding the underlying
+index and the risk free asset. The results are stronger for shorter maturity options than for their
+longer term counterparts both in terms of profitability and the significance of the stochastic
+dominance tests. As a robustness check we repeat our tests using options on the CAC and DAX
+indices and obtain similar results.
+1
+
+It is important to note that the out-of-sample stochastic dominance tests do not depend on
+the portfolio selection criteria that establish in-sample stochastic dominance. The stochastic
+dominance test compares two time series drawn from two different distributions and examines the
+null of non-dominance. The only requirement is that the observations be serially uncorrelated, a
+requirement that is verified for all the series used in our tests.
+Stochastic dominance is prevalent when the at-the-money (ATM) implied volatility (IV) is
+high and/or the right skew is low. Although most options in the portfolios are out-of-the money
+(OTM), more than 37% of the cross-sections contain in-the-money (ITM) calls and more than 32%
+ITM puts. The portfolios include more than double the number of calls than puts and the call
+positions are overwhelmingly short positions, consistent with the practice of writing covered calls.
+This contradicts the common belief that puts but not calls are overvalued, which was established
+in a frictionless context and is discussed further on in this section.1
+During the 2008 to 2009 financial crisis the majority of portfolio positions are net short put
+positions. We interpret this finding as investor overreaction to the crisis in the form of inflated put
+prices. Furthermore we find that the option portfolio composition depends on characteristics of the
+projected index distribution. We also refute the conjecture that the OT portfolios primarily consist
+of long positions in options with IV below the IV smile and short positions in options with IV
+above the IV smile: such options constitute a small component of the OT portfolio. We conclude
+that at least some S&P 500 call and put options may be significantly mispriced relative to the
+index. This potential mispricing is qualitatively different from other anomalous results such as
+overpriced straddles in earlier studies, all of which were studied in a frictionless economy.2 In our
+case the mispriced portfolios correspond to a tradable anomaly insofar as an investor holding an
+index-tracking tradable fund such as a SPDR can costlessly increase her returns without incurring
+additional risk.
+Stochastic dominance tests are subject to the criticism that they are based on the maintained
+hypothesis that the index return is the only priced factor and the stochastic discount factor is
+monotone decreasing in the index return. Without relying on this maintained hypothesis we test
+whether the excess returns of the OT portfolios are rewards for risks other than market risk. To
+1 See Bondarenko (2014) and Driessen and Maenhout (2007).
+2 See Broadie, Chernov, and Johannes (2007, 2009).
+2

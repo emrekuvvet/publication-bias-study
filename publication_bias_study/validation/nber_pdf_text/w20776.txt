@@ -1,0 +1,157 @@
+NBER WORKING PAPER SERIES
+OPTION-BASED CREDIT SPREADS
+Christopher L. Culp
+Yoshio Nozawa
+Pietro Veronesi
+Working Paper 20776
+http://www.nber.org/papers/w20776
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2014, Revised September 2017
+For their comments, we thank Pierluigi Balduzzi, Jack Bao, Hui Chen, Alexander David, Darrell
+Duffie, Peter Feldhütter, Stefano Giglio, Zhiguo He, John Heaton, J.B. Heaton, Steven Heston,
+Erica Li, Francis Longstaff, Monika Piazzesi, Juliana Salomao, Steve Schaefer, Yang Song,
+Suresh Sundaresan, Andrea Vedolin, and seminar participants at Bocconi University, Stockholm
+School of Economics, Bank of Canada, Federal Reserve Board, Federal Reserve Bank of
+Chicago, University of Maryland, University of Chicago Booth School of Business, the Einaudi
+Institute for Economics and Finance, AQR, CICF, the 2014 NBER Asset Pricing meeting, the
+2015 European Summer Symposium in Financial Markets, the 2016 European Finance
+Association, London Business School, Boston College, Oxford University, and Copenhagen
+Business School. We thank Bryan Kelly for helping with CME data. The views expressed herein
+are the authors’ and do not necessarily reflect those of the Board of Governors of the Federal
+Reserve System, nor any institutions with which any of the authors are affiliated. A previous
+version of this paper was briefly circulated with the title “The Empirical Merton Model.”
+Veronesi acknowledges financial support from the Fama-Miller Center for Research in Finance
+and by the Center for Research in Security Prices at the University of Chicago Booth School of
+Business. The views expressed herein are the authors’ and do not necessarily reflect those of the
+Board of Governors of the Federal Reserve System or the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2014 by Christopher L. Culp, Yoshio Nozawa, and Pietro Veronesi. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Option-Based Credit Spreads
+Christopher L. Culp, Yoshio Nozawa, and Pietro Veronesi
+NBER Working Paper No. 20776
+December 2014, Revised September 2017
+JEL No. G0,G12,G13,G21,G24,G3
+ABSTRACT
+We present a novel empirical benchmark for analyzing credit risk using “pseudo firms” that
+purchase traded assets financed with equity and zero-coupon bonds. By no-arbitrage, pseudo
+bonds are equivalent to Treasuries minus put options on pseudo-firm assets. Empirically, like
+corporate spreads, pseudo-bond spreads are large, countercyclical, and predict lower economic
+growth. Using this framework, we find that bond market illiquidity, investors’ over-estimation of
+default risks, and corporate frictions do not seem to explain excessive observed credit spreads,
+but, instead, a risk premium for tail and idiosyncratic asset risks is the primary determinant of
+corporate spreads.
+Christopher L. Culp Pietro Veronesi
+Johns Hopkins Institute University of Chicago
+for Applied Economics Booth School of Business
+Global Health and Study 5807 South Woodlawn Avenue
+of Business Enterprise Chicago, IL 60637
+3400 North Charles St. and NBER
+Baltimore, MD 21218 pietro.veronesi@chicagobooth.edu
+cculp@rmcsinc.com
+Yoshio Nozawa
+Federal Reserve Board
+20th and Constitution Avenue NW
+Mail Stop 165
+Washington D.C. 20551
+yoshio.nozawa@frb.gov
+
+1. Introduction
+The understanding of credit risk, its time variation, and its relation to the aggregate econ-
+omy is critical to policy makers, market participants, and researchers. Yet, questions about
+credit risk are hard to answer with purely empirical methods because corporate bonds are
+complicated and often illiquid securities, the market values of the assets of firms issuing
+bonds are not observable, leverage is endogenous, and the corporate bond market is replete
+with market-microstructure idiosyncrasies. Fully empirical methodologies, moreover, do not
+easily facilitate analyses of counterfactuals to learn from “what-if” experiments. Instead,
+counterfactual experiments generally must be tackled by positing stylized structural models
+of default risk, which give rise to other challenges arising from dependencies on highly pa-
+rameterizedmodels,modelspecifications(e.g., assumeddistributionsof shocks), and genuine
+difficulties in estimation.
+In this paper we propose a novel, option-based methodology for analyzing credit risk.
+We build fictitious firms, which we call “pseudo firms,” that have simple and empirically
+observable balance sheets. Our pseudo firms have assets comprised of real traded securities,
+and liabilities comprised of equity and zero-coupon bonds. In the absence of arbitrage, the
+market value of a pseudo firm’s zero-coupon bond is equal to the value of a comparable
+default-free bond minus the market value of a put option on the traded securities held as
+assets by the pseudo firm.1 Using observed prices of traded put options and Treasuries, we
+extract the empirical properties of zero-coupon bonds “issued” by pseudo firms, which we
+call “pseudo bonds.”
+To be concrete, consider a pseudo firm that purchases the S&P500 (SPX) index portfolio
+financed by issuing equity and zero-coupon debt with face value K and maturity T.2 The
+asset value of this pseudo firm is A = SPX , which is observable. At maturity, the bond
+t t
+holders of this pseudo firm receivethe minimum between K (no default) or the assets of the
+pseudo firm A (default). The payoff to bond holders thus is min(K,A ) = K max(K
+T T
+− −
+A ,0), which is the payoff of the risk-free debt K minus the payoff on a put option on the
+T
+SPX. The no-arbitrage value of the pseudo bond at t < T is:
+B (K,T) = KZ (T) PSPX(K,T), (1)
+t t − t
+1The basic insight that corpo b rate debt can be b viewed a b s risk-free debt plus a short put option is at-
+tributable to Merton (1974). We distinguish between this Merton insight – which requires no assumptions
+about the distribution of the values of underlying assets owned by the pseudo firm – and the Merton model
+forthevaluationofriskycorporate debt–whichassumes underlyingassetvaluesarelognormallydistributed
+and thus uses the Black, Scholes, and Merton formulafor the valuationof corporate debt.
+2SPXSM isaservicemarkregisteredbytheChicagoBoardOptionsExchange. Ouruseoftheabbreviation
+SPX refers throughout the text to the S&P500 index generally.
+1
+
+where Z (T) is the risk-free discount factor at time t corresponding to maturity T, and
+t
+PSPX(Kb,T) is the value of an SPX put option at t with strike price K and maturity T.
+t
+Qbuantities denoted with “hats” indicate that their prices are observable from Treasuries and
+traded option prices, which comprise the observed values of the liabilitiesof the pseudo firm,
+B (K,T). Although the pseudo firm is fictitious, we can nonetheless observe the values of
+t
+ibts assets and debt from traded securities and thus we have a fully observable balance sheet.3
+Toillustrate,PanelAofFigure1plotsthetimeseriesoftwopseudobond pricesB (K ,T)
+t i
+constructed from equation (1) using Treasuries and two different SPX put optionbs traded
+on the Chicago Board Options Exchange (CBOE). Both put options have maturity dates of
+T = 12/18/2009, and are distinguished only by their different strike prices, K = 800 and
+1
+K = 1150. The two strike prices imply two different leverage ratios K /A – i.e., low and
+2 i t
+high leverage for K = 800 and K = 1150, respectively, where the value of assets A is the
+1 2 t
+value of the SPX index. The time series of leverage is plotted in Panel B.
+Panel A of Figure 1 shows that the low-leverage pseudo bond price steadily increases
+over time (like any zero-coupon bond) except during the 2008 crisis, when the price drops
+substantially as the SPX (i.e., the asset value of the first pseudo firm) declines by over 50%.
+Nevertheless, this pseudo bond recovers in 2009 and eventually pays 100% of principal at
+maturity. The pseudo bond issued by the high-leverage pseudo firm, however, displays a
+larger price drop during the financial crisis, and the bond never fully recovers. Indeed, the
+second pseudo firm eventually defaults, as the the value of the SPX on December 18, 2009
+was A = 1102.47 and hence A /K = 95% – i.e. bond holders of the high-leverage pseudo
+T T 2
+firm would have lost 5% of principal value.
+Panel C plots the time series of credit spreads implied by the two pseudo bond prices
+B (K ,T) and Treasuries. Their dynamics highlight the variations in credit spreads during
+t i
+tbhe financial crisis, a topic to which we return later. Indeed, for the first year or so, the two
+credit spreads were increasing, albeit by relatively small amounts. September 2008 (when
+Lehman failed and AIG was bailed out), however, was a clear turning point when spreads
+of both pseudo firms – especially the high-leverage one – skyrocketed. The difference in
+reactions of the credit spreads of the two pseudo firms (which are otherwise identical except
+for leverage) highlights the increase of a firm’s financial fragility and sensitivity to shocks in
+asset value changes resulting from leverage.
+Our methodology also allows us to exploit standard econometrictools to computepseudo
+bonds’ ex ante default probabilities – i.e., the probabilities p (K) = Pr[A < K ], where
+t T t
+|F
+3For completeness, note that equity holders of the pseudo firm are instead entitled to the residual payoff
+max(A K,0) at maturity T and to allcash dividends paid by SPX portfoliountil then.
+T
+−
+2

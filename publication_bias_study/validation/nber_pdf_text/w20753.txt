@@ -1,0 +1,108 @@
+NBER WORKING PAPER SERIES
+TO CUT OR NOT TO CUT? ON THE IMPACT OF CORPORATE TAXES ON EMPLOYMENT
+AND INCOME
+Alexander Ljungqvist
+Michael Smolyansky
+Working Paper 20753
+http://www.nber.org/papers/w20753
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2014, Revised October 2018
+We are grateful to Robert Chirinko, Stefano Giglio, Boyan Jovanovic, David Merriman, Holger
+Mueller, Thomas Philippon, Steve Sharpe, Robert Shimer, Lisa De Simone (our Tax Symposium
+discussant), Gustavo Suarez, David Thesmar, Owen Zidar (our NBER discussant), and seminar
+participants at Sveriges Riksbank, the NYU Macro Lunch, the 2014 UNC Tax Symposium, the
+2015 National Tax Association meetings, and the 2016 NBER Universities Conference for
+helpful comments. The views expressed herein are those of the authors and do not necessarily
+reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2014 by Alexander Ljungqvist and Michael Smolyansky. All rights reserved. Short sections of
+text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+To Cut or Not to Cut? On the Impact of Corporate Taxes on Employment and Income
+Alexander Ljungqvist and Michael Smolyansky
+NBER Working Paper No. 20753
+December 2014, Revised October 2018
+JEL No. E3,E62,H2,H25,H31,H32,H71
+ABSTRACT
+Do corporate tax increases destroy jobs? And do corporate tax cuts boost employment?
+Answering these questions has proved empirically challenging. We propose an identification
+strategy that exploits variation in corporate income tax rates across U.S. states. Comparing
+contiguous counties straddling state borders over the period 1970 to 2010, we find that increases
+in corporate tax rates lead to significant reductions in employment and wage income, while
+corporate tax cuts only boost economic activity if implemented during recessions. Our spatial-
+discontinuity approach permits a causal interpretation of these findings by both establishing a
+plausible counterfactual and overcoming biases resulting from the fact that tax changes are often
+prompted by changes in economic conditions.
+Alexander Ljungqvist
+Stockholm School of Economics
+Box 6501
+SE-113 83 Stockholm, Sweeden
+and NBER
+aljungqv@stern.nyu.edu
+Michael Smolyansky
+Board of Governors of the Federal Reserve System
+20th and C Streets NW
+Washington, DC 20551
+michael.smolyansky@frb.gov
+
+1. Introduction
+Despite the recent enactment of a large cut in the federal corporate tax rate,1 the effects that
+corporate taxes have on economic activity remains controversial. Academic studies, for example,
+have found mixed evidence on how companies respond to changes in corporate tax rates,2 while
+opinion among public commentators appears starkly divided. This controversy in large part
+stems from the fact that the effects of corporate tax changes are so difficult to measure
+empirically.
+The challenges are twofold. First, changes in tax policy are unlikely to be random and instead
+may themselves be influenced by prevailing economic conditions and other factors. For example,
+governments may cut taxes in the hope of stimulating sluggish growth. As a result, observed
+correlations between changes in tax policy and ex post economic outcomes will, to some
+unknown extent, reflect unobserved or omitted variation in economic conditions. Compounding
+this problem is the fact that macroeconomic time-series are relatively short and so typically cover
+few policy changes. This means that disentangling the effects of a given tax change from the
+confounding effects of other events that coincide with it is difficult. Moreover, tax reform at the
+federal level often involves highly complex pieces of legislation affecting numerous aspects of
+the tax code, making it nearly impossible to evaluate the effects attributable to a change in the
+corporate tax rate, while holding all else equal.
+The second empirical challenge is that we do not observe counterfactual outcomes. That is,
+even if a tax change was truly random, we do not know how outcomes such as employment and
+income would have evolved had the tax change not occurred. The absence of a counterfactual
+1 Among its many provisions, the Tax Cuts and Jobs Act of 2017 cut the statutory federal corporate income tax rate
+from 35% to 21%.
+2 For example, Mertens and Ravn (2013) find that federal corporate tax cuts have significant effects on aggregate
+investment, but not on employment, while Hassett and Hubbard (2002) conclude that most studies find limited
+effects of federal corporate tax changes on investment. At the state level, Giroud and Rauh (2017) find notable
+effects of corporate tax changes on employment. We further review the literature below.
+1
+
+means that it is impossible to measure the impact of changes in tax policy without imposing
+further assumptions on the behavior of the economic variables of interest.
+We propose an empirical strategy designed to address these identification challenges. Our
+strategy has two key elements. First, we focus on individual U.S. states rather than the federal
+level. In contrast to federal corporate tax rates, which change only rarely,3 changes in state-level
+corporate taxes are plentiful: we count 250 changes in state corporate income tax rates from 1970
+to 2010.
+The second element of our empirical strategy is designed to minimize the effects of
+confounding variation in economic conditions as much as possible. To this end, we exploit the
+fact that a state’s tax jurisdiction stops at its border. This suggests that when a state undertakes a
+corporate tax change, its neighboring states, which arguably share similar economic conditions
+but where taxes haven’t changed, might provide a suitable “control group” against which to
+measure the effects of the tax change. To get as close to a plausible counterfactual as possible,
+however, our tests compare not neighboring states but rather contiguous counties located on
+either side of a state border.4 Because of their proximity to each other, these neighboring counties
+are likely to be experiencing similar local economic conditions prior to one them being affected
+by a tax change – and indeed, our tests validate that this “parallel trends” assumption holds in the
+data. Thus, by comparing outcomes in the “treated” county to its neighboring control county on
+the other side of the state border, we can effectively remove the biasing influence of otherwise
+unobservable variation in local economic conditions. Doing so allows us isolate the effects
+specifically attributable to the tax change. Essentially, our strategy is therefore a standard diff-in-
+diff approach that exploits a spatial discontinuity in tax policy for identification purposes.
+3 Since 1970, there have been only four major changes in the top federal corporate income tax rate: in 1979 (from
+48% to 46%), in 1986 (from 46% to 34%), in 1993 (from 34% to 35%), and in 2018 (from 35% to 21%).
+4 Several prior studies have implemented the border-county methodology in other contexts, including Holmes
+(1998), Huang (2008), Dube, Lester, and Reich (2010), Heider and Ljungqvist (2015), and Hagedorn et al. (2016).
+2

@@ -1,0 +1,121 @@
+NBER WORKING PAPER SERIES
+RESERVES WERE NOT SO AMPLE AFTER ALL
+Adam Copeland
+Darrell Duffie
+Yilin Yang
+Working Paper 29090
+http://www.nber.org/papers/w29090
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2021, Revised August 2022
+We are grateful for conversations with Viral Acharya, Gara Afonso, Sriya Anbil, Yakov Amihud,
+David Andolfatto, Adrien d'Avernas, Cecilia Caglio, Seth Carpenter, John Cochrane, Ricardo
+Correa, Lou Crandall, Wenxin Du, Bill English, Egemen Eren, Andy Filardo, Peter Fisher, Andy
+Filardo, Michael Fleming, Scott Freidenrich, Ken Garbade, Beth Hammack, Tom Harrop, Ben
+Hébert, Sebastian Infante, Peter Ireland, Frank Keane, Narayana Kocherlakota, Don˛Kohn,
+Arvind Krishnamurthy, Gabriele La Spada, Jenn LeClair, Mickey Levy, Gordon Liao, Lorie
+Logan, Brian Madigan, Andrei Magasiner, Antoine Martin, Jamie McAndrews, Al Moffitt, Jamie
+McAndrews, Bill Nelson, Peter Nowicki, Patrick Parkinson, Monika Piazzesi, Simon Potter,
+Michael Roberts, Brian Sack, George Selgin, John Taylor, Quentin Vandeweyer, Mike
+Verdeschi, Josh Younger, John Williams, Stephen Williamson, and AmyWang. The views
+expressed in this paper are those of the authors and do not necessarily reflect those of the Federal
+Reserve Bank of New York, the Federal Reserve System, or the National Bureau of Economic
+Research. Research assistance by Renhao Jiang is gratefully acknowledged.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2021 by Adam Copeland, Darrell Duffie, and Yilin Yang. All rights reserved. Short sections of
+text, not to exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Reserves Were Not So Ample After All
+Adam Copeland, Darrell Duffie, and Yilin Yang
+NBER Working Paper No. 29090
+July 2021, Revised August 2022
+JEL No. G12,G2
+ABSTRACT
+The Federal Reserve's "balance-sheet normalization," which reduced aggregate reserves between
+2017 and September 2019, increased repo rate distortions, the severity of rate spikes, and intraday
+payment timing stresses, culminating with a significant disruption in Treasury repo markets in
+mid-September 2019. We show that repo rates rose above efficient-market levels when the total
+reserve balances held at the Federal Reserve by the largest repo-active bank holding companies
+declined and that repo rate spikes are strongly associated with delayed intraday payments of
+reserves to these large bank holding companies. Intraday payment timing stresses are magnified
+by early-morning settlement of Treasury security issuances. Substantially higher aggregate levels
+of reserves than existed in the period leading up to September 2019 would likely have eliminated
+most or all of these payment timing stresses and repo rate spikes.
+Adam Copeland Yilin Yang
+Federal Reserve Bank of New York Stanford University
+33 Liberty Street davyang@stanford.edu
+New York, NY 10045
+USA
+adam.copeland@gmail.com
+Darrell Duffie
+Graduate School of Business
+Stanford University
+Stanford, CA 94305-7298
+and NBER
+duffie@stanford.edu
+
+1 Introduction
+We show how post-crisis liquidity regulations and the Federal Reserve’s “balance-sheet nor-
+malization”stressedtheintradaymanagementofreservebalancesheldattheFederalReserve
+(Fed) by large bank holding companies (BHCs) that are active in repo markets. This led to
+spikes in Treasury repo rates during 2018-2019. After an especially large and prominently
+reported1 disruption in repo markets during September 16-18, 2019, the Fed reversed its
+balance-sheet normalization. Despite this change in policy, our analysis implies that the
+reserve balances held at the Fed by the large BHCs that are active intermediaries in the
+Treasury repo market were still not sufficiently large to avoid repo liquidity crunches until
+the Fed created a large quantity of additional reserves in response to the Covid shock of
+March 2020. Whether the Fed should aim, over the long run, for a small or large balance
+sheet remains controversial.
+Before the failure of Lehman Brothers in September 2008, a small aggregate supply of
+federal reserve balances, typically under $50 billion, was sufficient for large U.S. banks to
+manage trillions of dollars of daily payments and for wholesale overnight funding markets
+to function efficiently. Banks liberally exploited daylight overdrafts of their federal reserve
+accounts to manage their intraday payments. The Fed’s crisis and post-crisis quantitative-
+easing programs increased reserve balances to about $2.8 trillion in 2014. In late 2017,
+the Fed activated its policy of balance sheet normalization, by which aggregate reserves
+steadily declined, reaching about $1.4 trillion by September 2019, still far above pre-crisis
+levels. As part of its post-crisis regulatory reform, however, the Fed also introduced a
+battery of new liquidity requirements that provided incentives for large BHCs to maintain
+substantial balances at the Fed and which strongly discouraged them from incurring daylight
+1For examples of reporting, see “Fed Preps Second $75 Billion Blast With Repo Market Still On Edge,”
+Bloomberg, September 17, 2019; “Why the U.S. Repo Market Blew Up and How to Fix It,” Bloomberg,
+January 6, 2020; “Fed Plans Second Intervention to Ease Funding Squeeze,” Financial Times, September
+17, 2019; “New York Fed Examines Banks’ Role in Money Market Turmoil,” Financial Times, September
+20, 2019; “Wall Street Is Buzzing About Repo Rates. Here’s Why,” New York Times, September 18, 2019;
+“Fed Intervenes to Curb Soaring Short-Term Borrowing Costs,”Wall Street Journal, September 17, 2019.
+1
+
+overdrafts on their reserve accounts at the Fed. We find that as balance sheet normalization
+reducedaggregatereserves, intradaypaymentstothelargeBHCsactiveinrepomarketswere
+significantly delayed and these BHCs quoted inefficiently high rates for wholesale overnight
+funding. TheselargeBHCsavoideddaylightoverdraftsandthediscountwindow, prioritizing
+regulatory liquidity requirements by maintaining a significant cushion of reserve balances at
+the Fed to manage intraday payments.
+Inanefficientwholesalefundingmarket, Treasuryreporateswouldbeessentiallyequated
+by arbitrage with the overnight interest rate offered by the Fed on balances held at the Fed
+(IOR). This is so because Treasury repos and balances held at the Fed are nearly equivalent
+risk-free overnight investments available to banks. From 2015 to 2020, however, we find that
+the Secured Overnight Financing Rate (SOFR), a broad measure of overnight Treasury repo
+rates, was typically well above IOR whenever the total balances held at the Fed of the ten
+largest repo-active BHCs was below roughly $580 billion.
+Low balances held at the Fed can lead to intraday cash hoarding by banks, raising
+concerns over market liquidity and sometimes even threatening financial stability.2 Intraday
+payment delays can be exacerbated by self-fulfilling expectations. That is, whenever a bank
+believesthatotherbankswilldelaytheirpaymentsbecausetheyhavelowbalances,thatbank
+also has an increased incentive to delay payments in order to conserve intraday balances.
+This feedback effect naturally leads to even higher jumps in repo rates (Yang, 2020).
+Intraday payment timing stresses are also exacerbated by issuances of Treasuries because
+payments to the U.S. Treasury for these issuances must occur early in the day.3 That is,
+Treasury issuances increase repo rates not only through the supply-of-reserves channel, but
+also through the intraday payment timing channel. Issuances also place upward demand-side
+pressure on repo rates because newly issued Treasury notes are particularly heavily financed
+2See Hamilton (1996), McAndrews and Potter (2002), Bech and Garratt (2003), Ashcraft and Duffie
+(2007),Bech(2008),Ashcraft,McAndrewsandSkeie(2011),Afonso,KovnerandSchoar(2011),Afonsoand
+Shin (2011), d’Avernas and Vandeweyer (2020) and Yang (2020).
+3See Pozsar (2019b). We checked this fact in conversations with multiple knowledgeable market partici-
+pants and official-sector sources.
+2

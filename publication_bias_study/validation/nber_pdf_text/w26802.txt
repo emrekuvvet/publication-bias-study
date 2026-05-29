@@ -1,0 +1,143 @@
+NBER WORKING PAPER SERIES
+DYNAMIC BANKING AND THE VALUE OF DEPOSITS
+Patrick Bolton
+Ye Li
+Neng Wang
+Jinqiang Yang
+Working Paper 26802
+http://www.nber.org/papers/w26802
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+February 2020
+We thank the anonymous Associate Editor, two anonymous referees, Jason Allen, Adrien
+d’Avernas, Juliane Begenau (discussant), Philip Bond, Markus Brunnermeier, Peter
+DeMarzo, Jason Donaldson, Itamar Drechsler (discussant), Philip Dybvig, Isil Erel, Xavier
+Gabaix, Zhiguo He (discussant), Ji Huang (discussant), Sebastian Infante, Bart Lambrecht,
+Anil Kashyap, Naveen Khanna, Arvind Krishnamurthy, Bernadette Minton, Cyril Monnet
+(discussant), Stefan Nagel, Dirk Niepelt (discussant), Christian Opp (discussant),
+Guillermo Ordoñez, Jonathan Payne (discussant), Monika Piazzesi, Alexi Savov
+(discussant), Dejanir Silva (discussant), René Stulz, Anjan Thakor, Quentin Vandeweyer,
+Matías Vieyra (discussant), Ernst-Ludwig von Thadden, Larry Wall (discussant), Mike
+Weisbach, Chao Ying (discussant), Haoxiang Zhu and seminar/conference participants at
+Biennial International Association of Deposit Insurers Conference, BI-SSE Asset Pricing &
+Financial Econometrics Conference, Cambridge Corporate Finance Theory Symposium, CESifo
+Macro Money & International Finance, China International Conference in Finance, China
+International Conference in Macroeconomics, European Finance Association 2021, Federal
+Reserve Board, FOM Virtual Corporate Finance Fridays, Fed-Maryland Short-Term Funding
+Markets 2021, Midwest Finance Association 2021, NBER Summer Institute 2021,
+Northern Finance Association 2021, Society for Economic Dynamics 2021, Ohio State
+University, and Washington University in St. Louis Annual Corporate Finance Conference. The
+views expressed herein are those of the authors and do not necessarily reflect the views of the
+National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Patrick Bolton, Ye Li, Neng Wang, and Jinqiang Yang. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Dynamic Banking and the Value of Deposits
+Patrick Bolton, Ye Li, Neng Wang, and Jinqiang Yang
+NBER Working Paper No. 26802
+February 2020
+JEL No. G11,G31,G32,G35
+ABSTRACT
+We propose a theory of banking in which banks cannot perfectly control deposit flows. Facing
+uninsurable loan and deposit shocks, banks dynamically manage lending, wholesale funding,
+deposits, and equity. Deposits create value by lowering funding costs. However, when the bank is
+undercapitalized and at risk of breaching leverage requirements, the marginal value of deposits
+can turn negative as deposit inflows, by raising leverage, increase the likelihood of costly equity
+issuance. Banks’ inability to fully control leverage distinguishes them from non-depository
+intermediaries. Our model suggests a re-evaluation of leverage regulations and offers new
+perspectives on banking in a low interest-rate environment.
+Patrick Bolton Neng Wang
+Columbia Business School Columbia Business School
+804 Uris Hall 3022 Broadway, Uris Hall 812
+New York, NY 10027 New York, NY 10027
+and NBER and NBER
+pb2208@columbia.edu nw2128@columbia.edu
+Ye Li Jinqiang Yang
+University of Washington Shanghai University of Finance
+Foster School of Business and Economics
+PACCAR Hall 444 Guoding Rd. 777
+4273 E Stevens Way NE Shanghai, 200433
+Seattle, WA 98195 China
+united states of america yang.jinqiang@mail.sufe.edu.cn
+liye@uw.edu
+
+1 Introduction
+We propose a new dynamic banking model with both asset return risk and deposit funding risk.
+The main novelty is in the way we model deposit liabilities and in the role of leverage regulations
+such as the supplementary leverage ratio (SLR) in affecting the bank’s dynamic balance-sheet
+management. Demand deposit contracts allow depositors to freely put money in and take money
+out of their deposit accounts. This is necessary for the seamless operation of the payment system.
+Theconsequence,however,isthatbankscannotperfectlycontroltheirdeposits.
+In our model deposit inflows create both opportunities and challenges for banks. Deposits
+are a source of cheap funding. Depositors accept relatively low interest rates for the convenience
+of using deposits as a means of payment.1 However, whether deposit inflows are good or bad for
+the bank depends on the bank’s balance-sheet condition. The key variable reflecting the state of
+thebank’sbalancesheetinourmodelattimetistheratioofitsequitycapitalK anddepositsX ,
+t t
+denoted by k ≡ K /X . When the bank is well capitalized (in that k is high), additional deposits
+t t t t
+are a source of cheap financing allowing the bank to expand profitable lending. But when k is
+t
+low, additional deposit inflows may force the bank into a costly equity issuance so as to comply
+with leverage regulations. Facing equity issuance costs (Myers and Majluf, 1984), the bank finds
+itcostlytoaccommodatedepositinflowswhenk islow.
+t
+Akeyresultofouranalysisisthatthebank’smarginalvalueofdeposits(thedepositmarginal
+q) may turn negative when it has a low k and is close to breaching leverage regulations. At
+t
+the onset of the COVID-19 pandemic, U.S. banks have undergone unprecedented balance-sheet
+expansions because of massive deposit inflows. From Q4 2019 to Q1 2020, JP Morgan Chase had
+anincreaseof18%ofitsdepositbase,andthedepositliabilitiesofCitigroupandBankofAmerica
+increasedby11%and10%,respectively.2 Contrarytoreceivedwisdom,thissignificantincreasein
+depositfundingdidnotincreasebankvaluationsnordiditstimulatelending. USregulatorstraded
+off the financial stability benefits of leverage regulations against the costs for banks facing large
+1Arecentliteratureincorporatesthemoneypremiumintomacroeconomicandbankingmodels(Stein,2012;DeAn-
+geloandStulz,2015;KrishnamurthyandVissing-Jørgensen,2015;Nagel,2016;Begenau,2020)
+2See “U.S. Banks are ‘Swimming in Money’ as deposits increase by 2 trillion dollars amid the coronavirus” by
+HughSon,CNBCJune21,2020. Suchdepositinfluxalsohappenedinthefinancialcrisisof2007–2008.
+1
+
+deposit inflows and decided to relax the SLR.3 In April 2021, the SLR was restored as regulators
+faced a different trade-off. In response, banks encouraged depositors to move money to money
+market funds that in turn invest in the reverse repo facility at the Federal Reserve.4 Within three
+months,thereverserepoamountrosefromalmostzerotoonetrilliondollars.5
+The key to our mechanism is the link between deposit inflows and costly equity issuance.
+In our model, the equity issuance (lower) boundary for k is given by the SLR but it can arise
+t
+from other regulations.6 To be sure, our results hold as long as bank leverage is bounded above.
+The banking literature has modeled deposit risk mostly in terms of the risk of depositors running
+and forcing the bank into fire-sale liquidations of its assets (Diamond and Dybvig, 1983). Our
+modeldepartsfromthisframingbyintroducingariskwithrespecttodepositinflowsunderequity
+issuancecosts. Thus,inourmodelbothinflowandoutflowshockscanbeproblematic.
+The bank’s inability to fully control the size of its liabilities gives rise to a balance-sheet
+management problem that is conceptually very different from that of non-depository intermedi-
+aries and nonfinancial firms. The deposit stock in our model follows a stochastic process partially
+controlled by the bank through the deposit rate, i . The optimal deposit rate policy resembles the
+t
+q-theoryofinvestment(LucasandPrescott,1971;Hayashi,1982). Thedifferenceisthatunlikein
+theq-theoryliterature,wherethefirminvestsinproductivecapital,inourmodelthebanksetsi to
+t
+attract (or repel) deposits as a function of the marginal value of deposits (the deposit marginal q).
+The deposit base in our model is sticky and has random yet persistent flows. Raising the deposit
+ratei isakintoinvestingincustomercapital(thedepositbase)tolowerthebank’sfinancingcosts.
+t
+3See“Fed’sPowellmakescasewhyCongressshouldrelaxbankcapitalrule”byHannahLang,AmericanBanker
+July29,2020. TheSLRwaslikelybindingasitaffectedtheTreasurymarket(He,Nagel,andSong,2021).
+4See“Cash-richUSbanksmovetoreducecorporatedeposits”byImaniMoise,FinancialTimesMay3,2021. See
+also,“BankstoCompanies: NoMoreDeposits,Please”byNinaTrentmann,WallStreetJournalJune9,2021.
+5A similar episode took place following the collapse of SVB in March 2023 when deposits rushed into larger
+banks.AsWilliamDudley,theformerPresidentoftheFederalReserveBankofNewYorkcommented,theSLRagain
+caused a sharp rise in reverse repo. See, “Deposit Outflows Shine Light on Fed Program That Pays Money-Market
+Funds”byEricWallersteinandNickTimiraos,WallStreetJournalApril7,2023.
+6The SLR represents the U.S. implementation of the Basel III Leverage Ratio. During the Covid-19 pandemic,
+European banks faced similar challenges of complying with their versions of leverage regulations in response to
+massivedepositinflows.See“BanksinGermanyTellCustomerstoTakeDepositsElsewhere”ByPatriciaKowsmann,
+WallStreetJournalMarch1,2021. BeyondtheSLR,USbankshavelongbeensubjecttoregulationsontheratioof
+Tier 1 capital to total consolidated assets (“U.S. leverage ratio”). The main difference between the SLR and U.S.
+leverageratioisthattheformeraccountsforbothon-andcertainoff-balancesheetassetsandexposures.
+2

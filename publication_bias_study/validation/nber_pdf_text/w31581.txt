@@ -1,0 +1,142 @@
+NBER WORKING PAPER SERIES
+THE IMPACT OF CRIMINAL FINANCIAL SANCTIONS:
+A MULTI-STATE ANALYSIS OF SURVEY AND ADMINISTRATIVE DATA
+Keith Finlay
+Matthew Gross
+Carl Lieberman
+Elizabeth Luh
+Michael G. Mueller-Smith
+Working Paper 31581
+http://www.nber.org/papers/w31581
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+August 2023
+We are grateful to Amanda Agan, Charlie Brown, Jennifer Doleac, Katie Genadek, Tyler Giles,
+Sara Heller, Brian Jacob, Mark Klee, Michael Makowsky, Carla Medalia, Steve Mello, Jordan
+Papp, Paolo Pinotti, Benjamin Pyle, James Reeves, Kevin Schnepel, Megan Stevenson, Christian
+Traxler, and Caroline Walker for their thoughtful and constructive comments as well as seminar
+participants at the CLEAN seminar at Bocconi University, the Texas Economics of Crime
+Workshop, University of Wisconsin IRP, WEA Annual Meeting, and APPAM Annual Meeting.
+We thank Jay Choi, Brian Miller, Tyler Shea, Diana Sutton, and Konstantine Wade for their
+excellent research assistance. This research would not be possible without the financial support
+from the University of Michigan Poverty Solutions and the National Science Foundation. Any
+opinions and conclusions expressed herein are those of the authors and do not represent the views
+of the U.S. Census Bureau. The Census Bureau has ensured appropriate access and use of
+confidential data and has reviewed these results for disclosure protection (Project P-7512453:
+CBDRB-FY22-ERD002-011, CBDRB-FY-ERD002-015, CBDRB-FY23-CES014-006, CBDRB-
+FY23-0374). This manuscript fully subsumes two previously circulated working papers:
+“Criminal court fees, earnings, and expenditures: A multi-state RD analysis of survey and
+administrative data” (Lieberman, Luh, and Mueller-Smith) and “The Impact of Financial
+Sanctions: Regression Discontinuity Evidence from Driver Responsibility Fee Programs in
+Michigan and Texas” (Finlay, Gross, Luh, and Mueller-Smith). The views expressed herein are
+those of the authors and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2023 by Keith Finlay, Matthew Gross, Carl Lieberman, Elizabeth Luh, and Michael G.
+Mueller-Smith. All rights reserved. Short sections of text, not to exceed two paragraphs, may be
+quoted without explicit permission provided that full credit, including © notice, is given to the
+source.
+
+The Impact of Criminal Financial Sanctions: A Multi-State Analysis of Survey and
+Administrative Data
+Keith Finlay, Matthew Gross, Carl Lieberman, Elizabeth Luh, and Michael G. Mueller-Smith
+NBER Working Paper No. 31581
+August 2023
+JEL No. H72,J24,K42
+ABSTRACT
+We estimate the impact of financial sanctions in the U.S. criminal justice system using nine
+distinct natural experiments across five states. These regression discontinuity designs capture a
+range of enforcement levels ($17–$6,000) and institutional environments, providing robust
+causal evidence and external validity. We leverage survey and administrative data to consider a
+variety of short and long-term outcomes including employment, recidivism, household
+expenditures, spousal spillovers, and other self-reported measures of well-being. We find
+consistent, robust evidence of precise null effects on the population, including ruling out long-
+run impacts larger than -$347–$168 in annual earnings and -0.002–0.01 in annual convictions.
+Keith Finlay Elizabeth Luh
+U.S. Census Bureau University of Michigan
+4600 Silver Hill Road eluh@uh.edu
+Washington, DC 20233
+United States Michael G. Mueller-Smith
+keith.ferguson.finlay@census.gov Department of Economics
+University of Michigan
+Matthew Gross 365C Lorch Hall
+New York Mets 611 Tappan Ave.
+mbgross@umich.edu Ann Arbor, MI 48109-1220
+and NBER
+Carl Lieberman mgms@umich.edu
+U.S. Census Bureau
+nber@me.carl.ac
+
+1 Introduction
+Recentdecadeshaveseenasteadyexpansionintheuseandmagnitudeoflegalfinancialobligations
+(LFO)owedbycriminaldefendantsintheUnitedStates(Bannon,Mitali,andDiller2010;Harris,
+Pattillo,andSykes2022). Thesejustice-relatedfeesandfinancialsanctionsrangefromminortraf-
+ficticketstomoresubstantialrestitutionandcorrectionalsupervisionfees. LFOsarecomprisedof
+threemaincategories: (1)paymentsfromconvicteddefendantstovictimsintheformofrestitution,
+(2)sanction-orientedfinestodiscouragefurthercriminalactivityandencouragecourtappearances
+(Emanuel and Ho 2022), and (3) service-based fees to cover the cost of trials or punishment and
+supervision. Many state and local governments have come to rely on the revenue generated from
+thesefinesandfeestofundcourtsandothergovernmentservices(Makowsky2019;Maciag2020).
+According to the Survey of Inmates in State and Federal Correctional Facilities, the share of in-
+mates with LFOs increased from 25% in 1991 to 66% in 2007 (Harris, Evans, and Beckett 2010);
+the Fines and Fees Justice Center estimates that recent national court debt exceeded $27 billion
+(Hammons2021).
+From 2003 to 2014, Florida, Michigan, North Carolina, Texas, and Wisconsin each passed laws
+sharply increasing the financial obligations imposed upon conviction. We leverage these differ-
+ent jurisdiction-specific policy changes (nine in total) in a regression discontinuity design (RDD)
+frameworktomeasurethecausalimpactoftheincreasedmonetarysanctionsonindividualcriminal
+andlabormarkettrajectoriesalongwithspilloversonthehousehold. Themarginalincreaseinlegal
+financial obligations across our considered natural experiments range from $17 to $6,000, provid-
+ing important exogenous variation across the distribution of potential LFO levels. This breadth of
+settings also strengthens both the precision and external validity of our results; our final sample
+draws from five states that together represent 24% of the U.S. population. Finally, the variation
+in institutional rules and contexts across states allows for a rich exploration of important policy
+mechanisms(e.g.,consequencesofnon-payment,considerationsforabilitytopay,etc.).1
+In each of the natural experiments, fine increases were strictly applied based on whether the event
+date, typically the case disposition, was after the policy implementation date. We utilize these
+institutionalfeaturestopresentbothpolicy-specificandcombined-sampleregressiondiscontinuity
+findingsthattogetherexplorethepossibilityfortreatmenteffectheterogeneityacrossjurisdictional
+1Tothebestofourknowledge,eightoutoftheninenaturalexperimentsstudiedinthispaperhavenotbeenprevi-
+ouslyexploredintheliterature. WeoverlapwithGiles(2021),whostudiestheimpactonrecidivismofWisconsin’s
+universal $200 DNA fee introduced in 2015 for misdemeanor cases (see Section 3 for details). While we extend
+the analysis of this natural experiment to non-recidivism outcomes and longer follow-up windows, we also come to
+differentsubstantiveconclusionsregardingtheeffectoftheDNAfeesonrecidivismcomparedtoGiles(2021). Our
+reasoningisdiscussedindetailinOnlineAppendixA.
+1
+
+boundaries and strengthen precision in pooled regressions. When pooling sub-experiments in re-
+gression and graphical exercises, we apply a strategy to reweight observations to ensure that each
+policyexperimentcontributesequallytothecombinedestimatestoavoidoveremphasizingnatural
+experimentswithmoresampleobservations.
+We find that criminal financial sanctions have no economically meaningful impact on short- or
+long-term recidivism or labor market outcomes. Given the size of our research sample, these are
+precise null effects. Specifically, we can rule out effects greater than -2.3 percent to 1.1 percent
+with 95% confidence on total earnings reported on W-2 tax returns for the first 10 years after the
+cutoff(-$347–$168peryear)andeffectslargerthan-0.9percentto4.8percentontotalrecidivism
+(-.001–.01 number of convictions per year) 10 years after the focal event. A parallel analysis
+arrives at the same conclusions regarding potential spillovers of fines and fees onto the romantic
+partnersofourfocaldefendants.
+Theimpactsoffinesandfees,however,mightmanifestinwaysmissedintraditionaladministrative
+data sources (e.g., informal labor supply, consumption, stress, or expenditures). In addition, many
+criminalfinesusethethreatofdriver’slicensesuspensiontoenforcepayment,whichcoulddisrupt
+commutingpatternsevenifemploymentremainsunchanged. Toexaminetheseissues,weestimate
+theimpactsoftheLFOsonself-reportedearnings,housingcosts,commutingpatterns,andmental
+well-beingusingindividualresponsestotheAmericanCommunitySurvey(ACS).Consistentwith
+our administrative data results, we do not find any changes in self-reported total income, which
+rules out potential responses in either informal income or earnings from self-employment that
+wouldbemissedinouradministrativedata. Wealsodonotfindanysignificantchangesinmonthly
+housing costs, rent, or mortgages. Specifically, we can rule out effects larger than -3 to 2 percent
+(-7 to 1 percent) with 95% confidence on monthly housing costs (self-reported monthly income).
+Similarly, we find no significant impact on whether the respondent commutes to work by car or
+theirself-reportedlikelihoodofdifficultyconcentratingorrememberingduetoamental,physical,
+oremotionalcondition,indicatingnoperceptiblechangeindrivingbehaviororinmentalhealth.
+Although the sub-experiments in our study represent diverse institutional and demographic con-
+texts,ourlong-runresultsarelargelyconsistent. Thissuggestsournullfindingsarenotsimplythe
+consequence of the LFOs being too high, too low, or relying on a specific punishment mechanism
+thatmightnotgeneralizetoothercontexts.
+Our findings contrast with descriptive research, which has largely found strong correlational evi-
+dence linking fines and fees with financial instability, criminal recidivism, and poor labor market
+2

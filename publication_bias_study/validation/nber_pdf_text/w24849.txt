@@ -1,0 +1,160 @@
+NBER WORKING PAPER SERIES
+CONTRACT TERMS, EMPLOYMENT SHOCKS, AND DEFAULT IN CREDIT CARDS
+Sara G. Castellanos
+Diego Jiménez Hernández
+Aprajit Mahajan
+Eduardo Alcaraz Prous
+Enrique Seira
+Working Paper 24849
+http://www.nber.org/papers/w24849
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2018, Revised April 2025
+We thank Stephanie Bonds, Felipe Brugués, Arun Chandrashekhar, Pascaline Dupas, Liran
+Einav, Marcel Fafchamps, Marco Gonzalez-Navarro, Dean Karlan, Asim Khwaja, Markus
+Mobius, Melanie Morten, Mauricio Romero, Carlos Serrano, Sirenia Vazquez, and Jon Zinman
+for their helpful comments. We thank Alan Elizondo, Carlos Serrano, David Jaume, Adalberto
+González and Daniel Chiquiar for useful conversations. We thank Ana Aguilar and Alan
+Elizondo for their support, and Luis Alberto Martinez Chigo and Nancy Flores Sosa for their
+help with the social security data. We thank seminar participants at Banco de Mexico, the Central
+Bank of Armenia, Columbia, ITAM, The Naval Postgraduate School, Stanford, UC Berkeley,
+Yale, USC, UC Merced, BREAD (May 2018), UC Davis, Barcelona GSE Conference (June
+2018), HKUST, UConn, Penn State and Harvard-MIT. We would like to thank Bernardo Garcia
+Bulle, Roberto Gonzalez Tellez, Marco Medina, Alli Marney-Bell, Taegan Mullane, Abbie
+Natkin, Ryan Perry, Eduardo Rivera, and Isaac Meza for their outstanding research assistance.
+We thank the editor and the referees for their exceptionally constructive suggestions. Previous
+versions of this paper were circulated under the titles “Financial Inclusion with Credit Cards in
+Mexico” and “The Perils of Bank Lending and Financial Inclusion: Experimental Evidence from
+Mexico.” The views expressed herein are those of the authors and do not necessarily reflect the
+views of the National Bureau of Economic Research, Banco de México, the Federal Reserve
+Bank of Chicago or the Federal Reserve System. AEA RCT Registry Identifying Number:
+AEARCTR–0003941. All errors are our own.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2018 by Sara G. Castellanos, Diego Jiménez Hernández, Aprajit Mahajan, Eduardo Alcaraz
+Prous, and Enrique Seira. All rights reserved. Short sections of text, not to exceed two
+paragraphs, may be quoted without explicit permission provided that full credit, including ©
+notice, is given to the source.
+
+Contract Terms, Employment Shocks, and Default in Credit Cards
+Sara G. Castellanos, Diego Jiménez Hernández, Aprajit Mahajan, Eduardo Alcaraz Prous,
+and Enrique Seira
+NBER Working Paper No. 24849
+July 2018, Revised April 2025
+JEL No. D14, D18, D82, G20, G21
+ABSTRACT
+Regulatory concerns over a tension between expanding financial access and limiting default have
+led to significant restrictions on contract terms in a number of countries, despite limited evidence on
+their effectiveness. We use a large nation-wide RCT to examine new borrower responses to
+changes in interest rates and minimum payments for a credit card that accounted for 15% of all first-
+time formal loans in Mexico. Default rates were 19% over the 26 month experiment and a 30 pp
+decrease in interest rates decreased default by 2.5 pp with no effects on the newest borrowers.
+Doubling minimum payments increased default by 0.8 pp during the experiment but reduced it by 1
+pp afterwards, possibly by reducing debt. Matching the experimental sample to their formal
+employment histories we find that the effect of job separation—more common among new
+borrowers—on default is seven times larger than the effect of the 30 pp interest rate change. We
+provide a simple framework for interpreting the experimental results, and rationalize the smaller
+contract term effects by their limited effects on cash flow rather than by differences in per-peso
+impacts.
+Sara G. Castellanos Eduardo Alcaraz Prous
+Banco de México Instituto Mexicano del Seguro Social
+saragcastellanos@gmail.com eduardo.alcarazp@imss.gob.mx
+Diego Jiménez Hernández Enrique Seira
+Federal Reserve Bank of Chicago Michigan State University
+diego.j.jimenez.h@gmail.com Department of Economics
+seiraenr@msu.edu
+Aprajit Mahajan
+University of California, Berkeley
+and NBER
+aprajit@gmail.com
+
+1 Introduction
+Policymakersindevelopingcountriespursuetwogoalsoftenperceivedtobeintensionwitheachother.
+Limiting credit market default is viewed as key to financial stability, while expanding formal credit to
+under-served populations is seen as critical for growth and welfare. The tension arises because new
+borrowers typically default at higher rates than established ones. This is particularly evident in policy
+discussions about credit-card borrowing—the most common way for new borrowers to access formal
+credit in many countries.1 Concerns over new borrower card default have led several countries (e.g.,
+Canada,Chile,Mexico,Taiwan,Turkey,andIndonesia)tomandateminimumpaymentfloorsorinterest
+rateceilings.2
+Despite its role in expanding credit access and facing increased regulation, credit card borrowing
+in developing countries remains relatively understudied. Perhaps as a result, policy discussions lack
+a coherent theoretical underpinning and credible empirical evidence on the drivers of new borrower
+default and the effectiveness of policy alternatives. For instance, interest rate regulations to limit card
+default typically presume strategic considerations. However, adverse life events such as job loss are
+common in such settings and are potentially important default triggers, but remain under-explored. In
+partthisreflectsthedifficultyoflinkinginformationondefault,contractterms,andadverselife-events,
+andisolatingexogenousvariationforallkeyvariablesonacommonsample.
+Weaddresstheselimitationsbycomparingtheeffectsofcontracttermsandjoblossondefaultwithin
+a large common sample of new card borrowers. First, by using a large nationwide experiment we find
+that substantial changes in contract terms—decreasing credit card interest rates by 30 pp (67% of base-
+line) and doubling minimum payments—had limited effects on default, far below expert predictions.
+Second, we document frequent job loss among new borrowers and that plausibly exogenous job sepa-
+ration events substantially increase default. Finally, a back-of-the-envelope calculation that normalizes
+thethree“shocks”(contracttermchangesandjobloss)findsthatallthreehadsimilarper-pesoeffectson
+default, so that the smaller effects of contract terms can be rationalized by their smaller effects on total
+cashflow.
+We examine a popular Mexican credit card (hereafter the “study card”) that was at the center of
+national financial inclusion efforts and regulatory concerns. Issued by a large commercial bank (“Bank
+A”)targetedspecificallyatborrowerswithlimitedornoformalcredithistories,thestudycardaccounted
+forapproximately15%ofallfirst-timeformalsectorloanproductsinthecountryby2010. Defaultrates
+werehigherforthenewestborrowers—borrowerswhohadbeenwiththebankfor6–11months(atthe
+start of the experiment) defaulted at twice the rate of those who had been with the bank for at least
+1InMexico,cardsarethefirstloantypefor74%ofallformalsectorborrowers.ThecorrespondingfiguresforPeru,Colombia,
+andtheU.S.are83%,51%,and50%,respectively.SeeAppendixB.1fordetailsondatasources.
+2Weemphasizeperceptionsastheymatterforpolicy. Inparticular,eventhoughhighdefaultratesmaybeoptimalfroma
+welfareperspective(seee.g.,Garzetal.,2021),theregulatorymeasureswestudyproceedontheassumptionthattheyarenot.
+See,e.g.,FinancialConductAuthority(2015)forminimumpaymentregulationsinMexicoandTaiwan. SeeBreen(2019)for
+minimumpaymentfloorsinQuebec.Singaporemandatesminimumincomerequirementsandautomaticcreditsuspensionfor
+anyborrowernotmakingtheirminimumpaymentfor60days. IntheUnitedStates,OfficeoftheControlleroftheCurrency
+(2003)providedguidancetolenderstoensureminimumpaymentsweresethighenoughtoavoidnegativeamortization,with
+Citigroup,J.P.MorganChase,BankofAmerica,andothersfollowingtheguidance(Kim,2005).SeealsoCuestaandSepulveda
+(2023);Nelson(2025);Williams(2005).
+1
+
+two years (36% versus 18%). Such default rates among financially inexperienced populations attracted
+regulatorattentionbecauseoftheirimplicationsbothforsystemicriskanddefaulters’subsequentaccess
+toformalcredit(see,forinstance,thediscussionsinBancodeMexico,2008,2009,2010).3 Thisattention
+led,mostprominently,tonationallegislationrestrictingcreditcardcontracttermsin2010.
+The experiment allocated a large nationwide stratified random sample of 144,000 pre-existing study
+card borrowers (hereafter “the study sample”) to 8 treatment arms that varied annual interest rates be-
+tween15%,25%,35%,and45%,andmonthlyminimumpaymentsbetween5%and10%,for26months,
+from March 2007 to May 2009. The experimental variation is substantially larger than typical policy
+interventions, providing a strong test of contract terms’ potential for limiting default.4 The large sam-
+ple size enables precise estimation of treatment effects across a range of contract terms and population
+strata(inourempiricalresultsweusethreeasteriskstodenotesignificanceatthe0.001level). Thesam-
+plingschemeensurestheexperimentalresultsarerepresentativeofthebank’spopulationofstudycard
+customers (about 1.3 million). We follow participants for five years after the intervention ended and
+examine their behavior across all formal financial institutions. In addition, we match the experimen-
+tal sample to its monthly employment histories in the Mexican Social Security database (the Instituto
+MexicanodelSeguroSocialorIMSS).
+We document four main results. First, reducing the interest rate by 30 percentage points (pp) from
+45% to 15% decreases default by 2.5 pp over the 26 month experiment (compared to a base default rate
+of19%). Theimpliedelasticityof+0.20isconsiderablysmallerthanpreviouscomparableestimates(e.g.,
+Adams et al., 2009; Karlan and Zinman, 2019) and far below expert predictions—Mexican central bank
+regulators predicted a mean decrease of 8.6 pp and experts on the Social Science Prediction Platform
+predictedameandecreaseof5pp. Thelargestratifiedexperimentallowsustopreciselyestimateeffects
+for the newest borrowers, a population of considerable academic and policy interest, and our second
+result is that the interest rate changes have no effect on default for the newest borrowers over the 26
+monthexperiment.
+Higherminimumpaymentsareanotherpotentialpolicytoolforlimitingdefault.5 Higherminimum
+payments, however, have two opposing effects, and it is not clear a priori which one will dominate. On
+the one hand, higher payments tighten short-run liquidity constraints by requiring higher payments
+immediately,whichmayincreasecurrentdefault. Liquidityconstraintsmaybeparticularlyrelevantas,
+at the start of the experiment, 73% of cardholders’ monthly payments were below 10% of the amount
+due. Ontheotherhand,higherminimumpayments,ceterisparibus,reducedebtandmaydecreasedebt-
+burden-drivendefaultinthelongerrun.
+Ourthirdresultisthatdoublingtheminimumpaymentrequirementsdoesnotreducedefaultduring
+3Similarconcernshavebeenraisedelsewhere.See,e.g.,BlackandMorgan(1999);Livshits(2022)fortheU.S.
+4Policychangeshavebeenmuchsmaller—themandatedincreasesinminimumpaymentsinMexicowas1.5%,whileinterest
+ratecapsconsideredinTurkeyandIndonesiainvolvedchangesofnomorethan5–10pp.See,e.g.,WebArchiveLinkforTurkey
+andWebArchiveLinkforIndonesia.
+5See,e.g.,Bar-Gill(2003);FinancialConductAuthority(2015);Rushton(2003);Warren(2007)andthiscircularfromtheMex-
+icanCentralBank(https://goo.gl/MkYbVO).Asnotedearlier,MexicoandTaiwanmandateminimumpaymentrequirements
+promptedbysucharguments.Suchprescriptionsfindsomesupportinmodelsoftime-inconsistentorunawareagents(DellaV-
+ignaandMalmendier,2004;GabaixandLaibson,2006;HeidhuesandKo˝szegi,2016;HeidhuesandKo˝szegi,2010). Thereis
+someevidencethattime-inconsistentpreferencesplayaroleincreditcarddebtaccumulation(Laibsonetal.,2003;Meierand
+Sprenger,2010;ShuiandAusubel,2005)andthatminimumpaymentsserveasananchoringdevice(Stewart,2009).
+2

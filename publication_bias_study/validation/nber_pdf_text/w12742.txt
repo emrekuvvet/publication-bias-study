@@ -1,0 +1,138 @@
+NBER WORKING PAPER SERIES
+CATASTROPHE BONDS, REINSURANCE, AND THE OPTIMAL COLLATERALIZATION
+OF RISK-TRANSFER
+Darius Lakdawalla
+George Zanjani
+Working Paper 12742
+http://www.nber.org/papers/w12742
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2006
+The views expressed in this paper are those of the authors, and do not necessarily reflect the views
+of the Federal Reserve Bank of New York, the Federal Reserve System, the RAND Corporation, or
+the RAND Center for Terrorism Risk Management and Policy. We thank Robert Craig, Ken Garbade,
+Robert M. Hall, Thomas Holzheu, Stewart C. Myers, and seminar participants at the 2006 NBER Insurance
+Project Workshop and the 2006 Risk Theory Seminar for helpful comments and discussions. The views
+expressed herein are those of the author(s) and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+© 2006 by Darius Lakdawalla and George Zanjani. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit, including
+© notice, is given to the source.
+
+Catastrophe Bonds, Reinsurance, and the Optimal Collateralization of Risk-Transfer
+Darius Lakdawalla and George Zanjani
+NBER Working Paper No. 12742
+December 2006
+JEL No. G11,G22
+ABSTRACT
+Catastrophe bonds feature full collateralization of the underlying risk transfer, and thus abandon the
+insurance principle of economizing on collateral through diversification. We examine the theoretical
+foundations beneath this paradox, finding that fully collateralized instruments have important uses
+in a risk transfer market when insurers cannot contract completely over the division of assets in the
+event of insolvency, and, more generally, cannot write contracts with a full menu of state-contingent
+payments. In this environment, insureds have different levels of exposure to an insurer's default. When
+contracting constraints limit the insurer's ability to smooth out such differences, catastrophe bonds
+can be used to deliver coverage to those most exposed to default. We demonstrate how catastrophe
+bonds can improve welfare in this way by mitigating differences in default exposure, which arise with:
+(1) contractual incompleteness, and (2) heterogeneity among insureds, which undermines the efficiency
+of the mechanical pro rata division of assets that takes place in the event of insurer insolvency.
+Darius Lakdawalla
+The RAND Corporation
+1776 Main Street
+Santa Monica, CA 90407-2138
+and NBER
+darius@rand.org
+George Zanjani
+Capital Markets Function
+Federal Reserve Bank of New York
+33 Liberty St.
+New York, NY 10045
+george.zanjani@ny.frb.org
+
+1 Introduction
+Recent disaster experience has produced a flurry of economic inquiry into catastrophe in-
+surance markets. Especially puzzling is the apparent incompleteness of catastrophe risk
+transfer: The price of risk transfer seems high, risk is not spread evenly among insur-
+ers in the manner suggested by Borch’s [1] groundbreaking theoretical result, and, in stark
+contrast to Arrow’s well-known characterization of optimal insurance contracts, reinsurance
+consumers do not purchase coverage for high layers of risk. Froot [11] documents these
+puzzles and fingers various market imperfections as possible explanations.
+Some view the catastrophe bond as a promising vehicle for overcoming imperfections
+in the reinsurance market. In principle, the catastrophe bond opens a direct channel for
+catastrophe risk to flow to the capital markets, sidestepping frictions present in the rein-
+surance market and connecting those who need protection with well-funded investors eager
+to provide it. On the other hand, others are skeptical that catastrophe securitization will
+be a panacea. Bouriaux and Scott [2] argue that securitization terms are unlikely to be
+attractive to buyers of terrorism coverage and note that the record of risk-linked capital
+market instruments has not been encouraging. Indeed, catastrophe bond issuance to date
+has been relatively limited, even in the aftermath of events that were expected to stimulate
+issuance. It is too early to write an epitaph for the catastrophe bond, but the experience
+to date raises questions about its theoretical foundations and its likely future role.
+On closer inspection, the catastrophe bond seems both paradoxical and primitive. Its
+current form features full collateralization and links principal forfeiture only to specific risks,
+thereby retreating from the fundamental, time-tested concept of diversification that allows
+insurers to protect insured value far in excess of the actual assets held as collateral. In a
+world where frictional costs (e.g., due to taxes, regulations, or moral hazard) make capital
+costly to hold, diversification lowers the cost of insurance. Viewed in this light, a fully
+collateralized instrument seems an unlikely competitor to traditional reinsurance products.1
+This paper examines this issue by developing a theory of risk collateralization. Specif-
+ically, we study the efficient division of risk-bearing assets between reinsurance company
+assets and catastrophe bond principal (both of which can be used to “collateralize” promises
+to indemnify consumers). In a narrow sense, the analysis supports the skeptical intuition
+outlined above. When reinsurance companies can write any type of contract with their
+insureds and frictional costs are identical for catastrophe bonds and reinsurer assets, catas-
+trophe bonds are at best redundant, and at worst welfare-reducing. If the insurer has
+complete freedom to vary indemnity payments to consumers in every state of the world, it
+can engineer any possible menu of pay-outs through its own contracts: Catastrophe bonds
+add nothing in the absence of contracting constraints.
+However, reinsurers and insurers do face contracting constraints in practice. Typical
+contracts promise an indemnity payment to a policyholder who has suffered a covered loss
+but do not specify rules ex ante for who gets what in the event of insurer failure. Instead,
+the division of assets under bankruptcy is determined by insurance receivership laws, and
+insurers either cannot or do not attempt to contractually specify how assets will be divided
+in the event of bankruptcy. As a result, assets of failed companies are distributed according
+1Niehaus [21] observes this paradox on Page 593.
+1
+
+to inflexible and potentially inefficient mechanical rules.
+Constraints on company asset distribution under default open up a role for catastrophe
+bonds (and other highly collateralized vehicles, such as reinsurance “side-cars”), even if
+there are no differences in the frictional costs. When insureds are homogeneous and risk
+exposures are binary (loss or no loss), optimal insurance contracts are similar, and simple
+rules—e.g.,apro rata rulethatpaysallclaimantsatthesamerateonthedollarintheeventof
+insurer bankruptcy—can perform well. Heterogeneity, however, exposes the shortcomings
+of insurance contracts in the presence of pro rata rules, which may misallocate assets in
+the bankruptcy state.2 Pro rata allocations can be suboptimal when some insureds are
+more concerned about the bankruptcy state than others, and this will generally be the case.
+Reinsurancebuyersholdpoliciesofdifferingqualityevenwhenpurchasingthesepoliciesfrom
+the same reinsurer. Some are more exposed to default than others, and those that have
+greater exposure to bankruptcy risk may desire greater collateralization of their potential
+claims than can be provided under pro rata rules. This need opens up a role for catastrophe
+bonds and other related instruments in the risk transfer market, which can vary the degree
+of collateralization of coverage for specific insureds.
+Thus, catastrophe bonds can improve welfare when reinsurers face constraints on the
+distribution of assets in bankruptcy, and when they must insure a heterogeneous group of
+risks. Catastrophe bonds cansmooth out allocationsmade ragged bythe riskof bankruptcy.
+Put differently, reinsurance capital may weakly dominate the catastrophe bond in terms
+of raising average policy quality, but such capital can be rendered a blunt instrument by
+bankruptcy laws: Catastrophe bonds can improve welfare for those insureds most exposed
+to bankruptcy risk.
+The paper is laid out as follows. Section 2 provides some background and context on
+catastrophe bonds. Section 3 then develops a concrete two-consumer example to illustrate
+the intuition behind our results. Section 4 develops our results formally in the context
+of a social planning problem with N consumers. Section 5 discusses other strategies for
+protecting consumers against default and interprets them in the context of the model. In
+particular, it considers how collateralization clauses in reinsurance policies influence the
+priority of claimants under bankruptcy, and the extent to which such clauses substitute for
+fully collateralized instruments such as catastrophe bonds. Section 6 concludes.
+2 Background and Motivation
+While structures vary, a typical catastrophe bond transaction involves a special purpose
+vehicle (SPV). The SPV sells securities (catastrophe bonds) to investors, and the proceeds
+from the sale are deposited in trust and invested. The SPV then provides reinsurance to
+a ceding insurer or reinsurer, who pays a premium in exchange. The premium, as well
+as income earned on the trust investments, funds interest payments to investors. If a
+contractually-defined trigger event occurs, part or all of the bond principal is forfeited to the
+2MahulandWright[17]alsonotetheinefficiencyofpro rata rulesinthecontextofamodelwithidentical
+consumers but generalized loss distributions.
+2

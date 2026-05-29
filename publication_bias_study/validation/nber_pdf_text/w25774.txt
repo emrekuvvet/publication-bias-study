@@ -1,0 +1,124 @@
+NBER WORKING PAPER SERIES
+LIQUIDITY RISK AFTER 20 YEARS
+Lubos Pastor
+Robert F. Stambaugh
+Working Paper 25774
+http://www.nber.org/papers/w25774
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+April 2019
+The views in this paper are the responsibility of the authors, not the institutions with which they
+are affiliated, nor of the National Bureau of Economic Research. For helpful comments, we thank
+Doug Diamond, Ralph Koijen, Stefan Nagel, Robert Novy-Marx, Jeff Pontiff, Jeff Russell, Rob
+Vishny, and the seminar audience at the University of Chicago. We are also grateful to the Fama-
+Miller Center for Research in Finance and the Center for Research in Security Prices, both at
+Chicago Booth, for research support.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2019 by Lubos Pastor and Robert F. Stambaugh. All rights reserved. Short sections of text, not
+to exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Liquidity Risk After 20 Years
+Lubos Pastor and Robert F. Stambaugh
+NBER Working Paper No. 25774
+April 2019
+JEL No. G12
+ABSTRACT
+The Critical Finance Review commissioned Li, Novy-Marx, and Velikov (2017) and Pontiff and
+Singla (2019) to replicate the results in Pástor and Stambaugh (2003). Both studies successfully
+replicate our market-wide liquidity measure and find similar estimates of the liquidity risk
+premium. In the sample period after our study, the liquidity risk premium estimates are even
+larger, and the liquidity measure displays sharp drops during the 2008 financial crisis. We
+respond to both replication studies and offer some related thoughts, such as when to use our
+traded versus non-traded liquidity factors and how to improve the precision of liquidity beta
+estimates.
+Lubos Pastor
+University of Chicago
+Booth School of Business
+5807 South Woodlawn Ave
+Chicago, IL 60637
+and NBER
+lubos.pastor@chicagobooth.edu
+Robert F. Stambaugh
+Finance Department
+The Wharton School
+University of Pennsylvania
+Philadelphia, PA 19104-6367
+and NBER
+stambaugh@wharton.upenn.edu
+
+1. Introduction
+We began our work on liquidity risk 20 years ago, shortly after the 1998 collapse of the
+Long-Term Capital Management (LTCM) hedge fund. LTCM held multiple large trading
+positions that were exposed to the risk that market liquidity might deteriorate. One famous
+examplewastheirlong-shortpositioninoff-the-runversuson-the-runTreasurybonds. These
+positions performed well in normal times, but they suffered when liquidity dried up in the
+summer of 1998. The LTCM episode highlighted the facts that market liquidity fluctuates
+over time and that asset prices respond to these fluctuations.
+Twenty years ago, the role of liquidity in asset pricing was viewed largely in static terms,
+based on differences in liquidity across assets. As in Amihud and Mendelson (1986), less
+liquid assets were understood to offer higher expected returns to compensate for their lower
+liquidity. Inspired by the LTCM episode, we took a dynamic view, focusing on time variation
+in liquidity. Our idea was that the price of an asset can depend not only on the asset’s
+liquidity but also on the sensitivity of the asset’s return to pervasive liquidity shocks.
+Our published study, Pa´stor and Stambaugh (2003), makes three primary contributions.
+First, it advances the hypothesis that aggregate liquidity is a state variable relevant for
+asset pricing. Motivated by the evidence of commonality in liquidity (Chordia, Roll, and
+Subrahmanyam, 2000), we hypothesize that liquidity risk is systematic, or non-diversifiable,
+and thus potentially priced. Second, to test the above hypothesis, we construct a measure
+of aggregate stock market liquidity. From that measure, we derive a liquidity factor that
+capturesinnovationsinaggregateliquidity. Finally, wefindthattheliquidityfactorispriced,
+in that stocks with higher sensitivities to this factor—i.e., higher liquidity betas—have higher
+average returns. Liquidity betas are defined as slope coefficients βL from the regression
+i
+r = β0 +βLL +βMMKT +βSSMB +βHHML +(cid:15) , (1)
+i,t i i t i t i t i t i,t
+where r denotes asset i’s excess return, L is the liquidity factor, and MKT, SMB, and
+i,t t
+HML are the three factors of Fama and French (1993).
+While our study focuses on equities, subsequent studies find liquidity risk to be priced
+in other asset classes, such as hedge funds (e.g., Sadka, 2010), private equity (e.g., Franzoni,
+Nowak, and Phalippou, 2012), emerging markets (e.g., Bekaert, Harvey, and Lundblad,
+2007), and corporate bonds (e.g., Bongaerts, de Jong, and Driessen, 2017). Important theo-
+reticalinsightsintoliquidityriskareprovidedbyAcharyaandPedersen(2005),Brunnermeier
+and Pedersen (2009), and others. The literature on liquidity risk has grown tremendously,
+and we do not attempt to review it here.
+1
+
+A decade after LTCM, academic interest in liquidity risk was further stimulated by the
+2008 financial crisis, during which markets experienced dramatic reductions in liquidity. The
+crisis highlighted the effects of liquidity shocks on not only asset prices but also real activity.
+When liquidity dries up in the market, other bad things tend to happen. Liquidity shocks
+can destroy value, for example, by creating runs on financial institutions or by impeding
+the financing of viable investment projects. The crisis clearly showed why investors may be
+willing to pay more for assets whose values better withstand market-wide liquidity shocks.
+Ourliquidityfactorpicksupthekeyeventsofthecrisis, asweshowinSection2.2. Becauseit
+happened five years after the publication of our paper, the crisis provides some out-of-sample
+validation for the methodology behind our liquidity factor.
+WearegratefultotheeditoroftheCritical Finance Review, IvoWelch, forcommissioning
+two studies to assess the extent to which our empirical results can be replicated. We are
+especially grateful to the authors of those studies, namely Hongtao Li, Robert Novy-Marx,
+Mihail Velikov, Jeffrey Pontiff, and Rohit Singla, for undertaking this task and executing it
+with the utmost competence and professionalism. We have learned a lot from their work.
+In the rest of this paper, we first review key results of the replicators and respond to
+some of their claims. We then present a few thoughts on our liquidity factor, such as when
+to use its traded versus non-traded version, why we pay more attention to historical rather
+than predicted liquidity betas, and why our liquidity measure is more useful at the aggregate
+rather than the individual-stock level. Finally, we discuss the implications of the asymmetric
+nature of liquidity shocks. For example, we explain why liquidity betas are relatively hard
+to estimate and what can be done to improve their precision.
+2. Replication Results
+Both Li, Novy-Marx, and Velikov (2017) and Pontiff and Singla (2019) successfully replicate
+the construction of our liquidity factor over the time period used in our study (1962 through
+1999). Li, Novy-Marx, and Velikov report a correlation of 98.9% between their liquidity
+series and ours. Pontiff and Singla report a correlation of one, up to five significant digits.
+The above correlations pertain to our main liquidity factor, L from equation (1). Both
+t
+studies also replicate the traded version of our factor, which we discuss in more detail in
+Section 3.1. Li, Novy-Marx, and Velikov (2017) report a 95% correlation between their
+traded liquidity factor and ours in 1968 through 1999. Both their factor and ours produce
+very similar alphas (see their Table 2). For example, both factors produce in-sample four-
+2

@@ -1,0 +1,137 @@
+NBER WORKING PAPER SERIES
+SELLING FAST AND BUYING SLOW:
+HEURISTICS AND TRADING PERFORMANCE OF INSTITUTIONAL INVESTORS
+Klakow Akepanidtaworn
+Rick Di Mascio
+Alex Imas
+Lawrence Schmidt
+Working Paper 29076
+http://www.nber.org/papers/w29076
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2021
+We thank Bronson Argyle, Ned Augenblick, Aislinn Bohren, Pedro Bordalo, John Campbell,
+Colin Camerer, Cary Frydman, Samuel Hartzmark, David Hirshleifer, Zwetelina Iliewa,
+Lawrence Jin, David Laibson, Ulrike Malmendier, Joshua Miller, Terry Odean, Alex Rees-Jones,
+Andrei Shleifer, Richard Thaler, Tuomo Vuolteenaho, Russ Wermers, conference and seminar
+participants at the NBER Behavioral Finance Meeting, Society of Judgment and Decision Making
+Conference, WFA Annual Conference, Booth School of Business, UC Berkeley, briq Institute,
+Caltech, ETH Zurich, Florida State, Harvard Business School, Higher School of Economics, New
+School of Economics, University of Amsterdam, and University of Frankfurt for helpful
+comments. We thank Kushan Tyagi, and especially Brice Green, for outstanding research
+assistance. The views expressed in the paper are solely those of the authors and do not necessarily
+represent the views of the institutions to which the authors are affiliated. The views expressed
+herein are those of the authors and do not necessarily reflect the views of the National Bureau of
+Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2021 by Klakow Akepanidtaworn, Rick Di Mascio, Alex Imas, and Lawrence Schmidt. All
+rights reserved. Short sections of text, not to exceed two paragraphs, may be quoted without
+explicit permission provided that full credit, including © notice, is given to the source.
+
+Selling Fast and Buying Slow: Heuristics and Trading Performance of Institutional Investors
+Klakow Akepanidtaworn, Rick Di Mascio, Alex Imas, and Lawrence Schmidt
+NBER Working Paper No. 29076
+July 2021
+JEL No. D91,G02,G12,G4,G41
+ABSTRACT
+Are market experts prone to heuristics, and if so, do they transfer across closely related domains
+—buying and selling? We investigate this question using a unique dataset of institutional
+investors with portfolios averaging $573 million. A striking finding emerges: while there is clear
+evidence of skill in buying, selling decisions underperform substantially—even relative to
+random selling strategies. This holds despite the similarity between the two decisions in
+frequency, substance and consequences for performance. Evidence suggests that an asymmetric
+allocation of cognitive resources such as attention can explain the discrepancy: we document a
+systematic, costly heuristic process when selling but not when buying.
+Klakow Akepanidtaworn Alex Imas
+University of Chicago Booth School of Business
+5757 S University Ave University of Chicago
+Chicago, IL 60637 5897 S. Woodlawn Avenue
+klakowa@uchicago.edu Chicago, IL 60637
+and NBER
+Rick Di Mascio alex.imas@chicagobooth.edu
+Inalytics Ltd
+12th Floor, Emerald House Lawrence Schmidt
+15 Lansdowne Road Sloan School of Management
+CR0 2BX, Croydon, UK Massachusetts Institute of Technology
+rick@inalytics.com 100 Main Street
+Cambridge, MA
+ldws@mit.edu
+A data appendix is available at http://www.nber.org/data-appendix/w29076
+
+1 Introduction
+A large literature has demonstrated that market participants use heuristics and are
+prone to systematic biases. However, the majority of evidence comes from unsophisti-
+cated traders such as retail investors, who have been shown to be overconfident (Barber
+and Odean 2001), loss-averse (Larson, List, and Metcalfe 2016) and to exhibit limited
+attention in their trade decisions (Barber and Odean 2008; Hartzmark 2014). Com-
+paratively little is known about the decision-making of market experts and it remains
+important to better understand whether they are prone to behavioral biases and, if so,
+the extent to which these biases a↵ect performance.
+Thispaperexaminesthedecisionsofsophisticatedmarketparticipants—experienced
+institutional portfolio managers (PMs)—using a rich data set containing the entirety of
+their daily holdings and trades. Our data is comprised of 783 portfolios, with an aver-
+age portfolio valued at approximately $573 million. The modal PM is hired by a single
+institutional client such as a pension fund in a separately managed account to generate
+excess returns by forming concentrated portfolios that depart substantially from their
+benchmarks. More than 89 million fund-security-trading dates and 4.4 million high-
+stakes trades (2.0 and 2.4 million sells and buys, respectively) are observed between
+2000 and 2016. We evaluate performance by constructing counterfactual portfolios,
+and compare PMs’ actual decisions to returns of the counterfactual strategy. Our data
+set uniquely allows us to evaluate selling decisions relative to a conservative counter-
+factual that assumes no skill: randomly selling an alternative position that was not
+traded on the same date.1
+We document a striking pattern: While the investors display clear skill in buy-
+ing, their selling decisions underperform substantially. Positions added to the portfolio
+outperform both the benchmark and a strategy which randomly buys more shares of
+1Throughout the paper we construct counterfactuals based on current holdings. In a setting such as
+ours with active managers forming concentrated portfolios subject to short-sales constraints, evalu-
+ating a selling decision relative to a counterfactual which is unrelated to existing holdings (e.g., a
+benchmarkindex)isnotanappropriatecomparison. First,becauseportfoliosdepartquiteabitfrom
+the benchmark, selling the benchmark is often not feasible on the margin. Additionally, PMs may
+be selling in order to raise capital to buy, or because their opinion about a security has changed. An
+asset sold may outperform (underpeform) a benchmark index, but the sale may be optimal (subop-
+timal) depending on what is bought with that capital and what other assets could have been sold
+(e.g. an alternative may have gone up even more).
+1
+
+assets already held in the portfolio by over 100 basis points annually per dollar of
+purchase volume. In contrast, selling decisions not only fail to beat a no-skill random
+selling strategy, they consistently underperform it by substantial amounts. In our pre-
+ferred specification, PMs forgo 80 basis points per year relative to a factor neutral,
+random-selling strategy.2 We perform a wide array of robustness checks, constructing
+counterfactuals that match assets bought and sold on size, value, idiosyncratic volatil-
+ity, prior returns, and momentum, and ‘characteristic selectivity’ (Daniel, Grinblatt,
+Titman, and Wermers 1997). We also perform sample splits to account for the po-
+tential impact of outflow pressure and price impact. Our results are robust to these
+alternative specifications both in terms of statistical significance and economic mag-
+nitude. Heterogeneity analyses reveal that underperformance in selling appears most
+prominently amongst fundamentals-oriented managers who hold more active, concen-
+trated portfolios with higher tracking error; PMs who rely on momentum strategies
+exhibit the least underperformance in selling. Finally, we show that the decomposed
+buying and selling measures have a meaningful relationship with overall portfolio re-
+turns: outperforming (underperforming) the counterfactual when buying (selling) is
+strongly predictive of higher (lower) excess portfolio returns.3
+Why would a majority of portfolio managers appear to exhibit skill in buying while
+at the same time underperforming substantially in selling? At face value, the funda-
+mentals of buying and selling to optimize performance are essentially the same: Both
+require incorporating information to forecast the distribution of future returns of an
+asset.4 Skill in both decisions requires the investor to look for relevant information and
+integrateitintotheforecast. However,thereisreasontosuspectthatsellingandbuying
+decisions involve di↵erent psychological processes (Barber and Odean 2013). Recent
+2As a benchmark, active managers of mutual funds charge between 20 to 50 basis points per year
+in fees, depending on the size of the portfolio. The foregone returns due to poor selling are also
+substantiallylargerthantheaveragecostdi↵erential(andnet-of-feeperformancedi↵erential)between
+mutual funds and institutional seperately managed accounts (SMAs) of the sort we have in our
+sample, which is around 10-35 bp per annum (Chen, Chen, Johnson, and Sardarli 2017; Elton,
+Gruber, and Blake 2013).
+3Moreover, we show that poor selling a↵ects overall performance through two channels: the first is
+through the stocks sold outperforming the counterfatual (direct channel), and the second is through
+‘fast’ selling leading PMs to prematurely disgard viable investment ideas (indirect channel). As
+evidence for the latter, PMs rarely re-purchase assets that have left their portfolio, suggesting that
+sales eliminate equities from future consideration sets.
+4AsnotedinBarberandOdean(2008), ‘informalmodels, thedecisionstobuyandtoselloftendi↵er
+only by a minus sign.’
+2

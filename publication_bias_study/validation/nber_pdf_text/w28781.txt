@@ -1,0 +1,114 @@
+NBER WORKING PAPER SERIES
+MORTGAGE LENDERS AND
+THE GEOGRAPHIC CONCENTRATION OF FORECLOSURES
+Stephen L. Ross
+Yuan Wang
+Working Paper 28781
+http://www.nber.org/papers/w28781
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+May 2021, Revised January 2022
+An earlier version of this paper was entitled “High Cost Lenders and the Geographic Concentration
+of Foreclosures”. The authors thank Bob Avery for inspiring the paper, and Morris Davis, Ingrid Ellen,
+Fernando Ferreira, Kris Gerardi, Andra Ghent, Lauren Lambie-Hansen and additional conference and
+seminar participants at the Econometric Society meetings, the Federal Reserve Banks of Boston, Kansas
+City and New York, the Furman Center at New York University, and the Housing-Urban-Labor-Macro
+Conference for providing advice on this research. The authors thank Gordon MacDonald, Kyle Mangum,
+Yuan Wang, Ailing Zhang, and Samantha Minieri for outstanding research assistance. The analyses
+presented in this paper use information provided by one of the major credit reporting agencies. The
+credit agency has the legal right to view the research prior to its public release. However, the substantive
+content of the paper is the responsibility of the authors and does not reflect the specific views of any
+credit reporting agencies, nor does it reflect the views of Freddie Mac or its board of directors. This
+work was supported by the Ford Foundation, the Research Sponsors Program of the Zell/Lurie Real
+Estate Center at Wharton, and the Center for Real Estate and Urban Economic Studies at the University
+of Connecticut. Professor Ross has worked in the past as a consultant on fair housing and fair lending
+issues, but he has not done any consulting in this area within the last three years. The views expressed
+herein are those of the authors and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2021 by Stephen L. Ross and Yuan Wang. All rights reserved. Short sections of text, not to exceed
+two paragraphs, may be quoted without explicit permission provided that full credit, including © notice,
+is given to the source.
+
+Mortgage Lenders and the Geographic Concentration of Foreclosures
+Stephen L. Ross and Yuan Wang
+NBER Working Paper No. 28781
+May 2021, Revised January 2022
+JEL No. D14,G01,G21,R21,R23
+ABSTRACT
+We use HMDA rate spread loans to identify lenders involved in riskier lending prior to the
+foreclosure crisis. We develop a shift-share measure of changes in high rate spread share lender
+representation in housing submarkets across origination years. While half the cross-sectional
+correlation between foreclosure and high rate spread lender share is explained by borrower
+observables, we find robust and stable estimates of the within housing submarket relationship
+between foreclosure and predicted changes in market share. Estimates are not explained by local
+housing price variation, rather evidence suggests servicer behavior in response to rising local
+foreclosure rates as a mechanism.
+Stephen L. Ross
+Department of Economics
+University of Connecticut
+341 Mansfield Road, Unit 1063
+Storrs, CT 06269-1063
+and NBER
+stephen.l.ross@uconn.edu
+Yuan Wang
+FreddieMac
+McLean, VA
+wangyuansdu@gmail.com
+
+Mortgage Lenders and the Geographic Concentration of Foreclosures
+Stephen L Ross, University of Connecticut and NBER
+Yuan Wang, FreddieMac
+A central feature of the U.S. foreclosure crisis is that effects were concentrated in specific
+locations. Subprime lending was concentrated in low income and minority neighborhoods (Calem,
+Gillen and Wachter 2004; Calem, Hershaff, Wachter 2004; Mayer and Pence 2009; Ghent,
+Hernández-Murillo and Owyang 2014; Bayer, Ferreira and Ross 2014, 2018).1 Minority and low
+income neighborhoods also experienced especially high foreclosure rates (Bayer, Ross and
+Ferreira 2016; Ghent, Hernández-Murillo and Owyang 2014; Chan, Gedal, Been and Haughwout
+2013; Geradi and Willen 2009; Fisher, Lambie-Hanson and Willen 2011; Edminston 2009).2
+Finally, neighborhoods experiencing high foreclosure rates also tended to have high rates of
+subprime lending leading up to the crisis (Reid and Laderman 2009; Mian and Sufi 2009; LaCour-
+Little, Calhoun and Yu 2011; Reid, Bocian, Li and Quercia 2016).3
+Subprime and other high risk lending almost certainly contributed to the spatial
+concentration of foreclosures through either loans to riskier borrowers and/or loans with riskier
+attributes. However, more limited research exists on whether the spatial concentration of lenders
+engaging in such lending had effects on foreclosure above and beyond the specific loans
+originated. Many papers document evidence of neighborhood spillovers from foreclosure (e.g.
+Campbell et al., 2011; Gerardi et al., 2015; Gupta, 2016; Munroe and Wilse-Samson, 2013). While
+1 This empirical regularity has been established using many different indicators including the Department of
+Housing and Urban Development (HUD) subprime lender list, non-agency securitized lending, high cost lending
+based on rate spread loans in the Home Mortgage Disclosure Act data, and measures of ex-post foreclosure rates.
+2 Ghent, Hernández-Murillo and Owyang (2014) find higher rates of foreclosure in low income neighborhoods, but
+find lower rates of foreclosure in minority neighborhoods in their sample of privately securitized mortgages.
+3 For recent reviews, see Foote and Willen (2018) and Chan, Haughwout and Tracy (2015). For a more general
+discussion of redlining see Ross and Yinger (2002).
+2
+
+those spillover estimates arise from close proximity to a foreclosure (often within 250 feet) and
+tend to be small in magnitude, a few recent papers suggest that these spillovers could have had
+larger aggregate impacts (Mian, Sufi and Trebbi 2015; Huang, Nelson and Ross 2018; Gupta 2019;
+Guren and McQuade 2020).
+We examine the effect of geographic lending patterns using a shift-share approach based
+on the composition of lending during an initial period, similar to Greenstone, Mas and Ngyuen’s
+(2020) study of small business lending. We define mortgage lenders that appear heavily engaged
+in “higher risk” lending using the Home Mortgage Disclosure Act (HMDA) rate spread variable,
+i.e. mortgages with a substantial rate spread above the return on comparable maturity treasury
+bonds (3 points above treasury yields). Both, Mayer and Pence (2008) and Chan, Haughwout, and
+Tracy (2015) use rate spread mortgages as an indicator of subprime mortgage lending. Further,
+Bayer, Ferreira and Ross (2018) conclude that lenders with a high share of rate spread loans served
+a different segment of the market, having unusually high unexplained ex-post foreclosure rates.
+We categorize lenders as having a high rate spread share, or as a short hand “high cost lenders”, if
+20 percent or more of their mortgages were rate spread loans. We measure the high cost lender
+share within housing submarkets using Public Use Microdata Areas (PUMAs), geographically
+contiguous areas containing at least 100,000 people.4 As shown below (Table 2), high cost lender
+share was much more volatile over time than traditional measures of underwriting risk, like loan
+to value or debt to income ratios.
+First, we document the correlation between foreclosures and the geographic concentration
+of these high cost lenders using home purchase mortgages originated between 2004 and 2007 from
+4 Our data agreement prevents the use of smaller geography like census tract. PUMA’s also have the advantage of
+being at a scale well above the geographic level of the foreclosure spillovers studied by other papers. Further, this
+geographic scale still captures dramatic variation in foreclosures.
+3

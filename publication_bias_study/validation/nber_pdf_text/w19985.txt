@@ -1,0 +1,126 @@
+NBER WORKING PAPER SERIES
+NONLINEARITIES IN SOVEREIGN RISK PRICING:
+THE ROLE OF CDS INDEX CONTRACTS
+Anne-Laure Delatte
+Julien Fouquau
+Richard Portes
+Working Paper 19985
+http://www.nber.org/papers/w19985
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+March 2014
+Previous versions of this paper were presented at seminar in London Business School, Nanterre University,
+the International Finance and Banking Society 2013 conference and the Graduate Institute Geneva.(cid:3)We
+are grateful for comments from seminars participants. We would like to acknowledge helpful discussions
+with Vincent Bouvatier, Isabelle Couet, Jérôme Creel, Darrell Duffie, Frédéric Malherbe, Lisa Pollack,
+Hélène Rey, Giovanni Ricco and Paolo Surico. This research was partly supported by a grant from
+the London Business School RAMD fund and from the European Commission under Framework Programme
+7. The views expressed herein are those of the authors and do not necessarily reflect the views of the
+National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2014 by Anne-Laure Delatte, Julien Fouquau, and Richard Portes. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Nonlinearities in Sovereign Risk Pricing: The Role of CDS Index Contracts
+Anne-Laure Delatte, Julien Fouquau, and Richard Portes
+NBER Working Paper No. 19985
+March 2014
+JEL No. C23,E44,F34,G12,H63
+ABSTRACT
+Is the pricing of sovereign risk linear during bearish episodes? Or can initial shocks on economic
+fundamentals(cid:3)be exacerbated by endogenous factors that create nonlinearities? We test for nonlinearities
+in the sovereign(cid:3)bond market of European peripheral countries during the debt crisis and explain them.
+Our estimates(cid:3)based on a panel smooth threshold regression model during January 2006 to September
+2012 show(cid:3)four main findings: 1) Peripheral sovereign spreads are subject to significant nonlinear
+dynamics. 2)(cid:3)The deterioration of market conditions for financial names changes the way investors
+price risk of(cid:3)the sovereigns. 3) The spreads of European peripheral countries have been priced above
+their historical(cid:3)values, given fundamentals, because of amplification effects. 4) Two CDS indices on
+financial names(cid:3)unambiguously stand out as leading drivers of these amplification effects.
+Anne-Laure Delatte Richard Portes
+CNRS- Nanterre University, London Business School
+OFCE, CEPR Regent's Park
+69 quai d’Orsay London NW1 4SA
+75007 Paris, France UNITED KINGDOM
+annelaure.delatte@sciencespo.fr and NBER
+rportes@london.edu
+Julien Fouquau
+Neoma Business School
+1 Rue du Maréchal Juin BP 215
+76825 Mont Saint Aignan Cedex
+France
+Julien.FOUQUAU@neoma-bs.fr
+An online appendix is available at:
+http://www.nber.org/data-appendix/w19985
+
+1 Introduction
+Fromthebeginningofthesovereign debtcrisisinMay2010, thedecade-long
+process of interest rate convergence in the euro-area reversed. Two distinct
+categories emerged, the peripheral and the core euro-area economies. Aside
+from Greece, the sharp rise of peripheral sovereign bond spreads and their
+volatility are hard to reconcile with the underlying economic fundamentals:
+spreads surged suddenly, while the economic conditions were deteriorating
+gradually1. We consider the hypothesis that amplification dynamics have
+driven sovereign risk during the crisis. Initial shocks on economic funda-
+mentals may have been exacerbated by endogenous mechanisms. Is pricing
+of sovereign risk linear, or can we identify endogenous factors of amplifica-
+tion? The answers will help to monitor and price sovereign risk and to curb
+financial fragmentation.
+There is now extensive theoretical research suggesting that the pricing
+of assets, including sovereign debt, may be nonlinear. Recent work stresses
+the importance of nonlinear effects and amplification dynamics through the
+pricemechanismduringfinancialcrises (BrunnermeierandOehmeke, 2009).
+Ontheonehand,theinitialdropinassetpriceswillbeexacerbated ifittrig-
+gers fire-sale liquidations driven by the deterioration of the mark-to-market
+portfoliovalue. Theory suggests thatrelatively small shockscan imply large
+spillover effects (Brunnermeier and Pedersen, 2009). Moreover, Brock et al.
+(2009) show that proliferation of hedging instruments may produce non-
+linear systems and destabilize markets. Here we test whether the credit
+derivatives market has amplifed the risk instead of mitigating it.
+Previous empirical work has identified non-linearity in the spread deter-
+mination model for euro-area peripheral sovereigns during the crisis (Aizen-
+1In Spain, for example, the public debt amounted to less than 60% of GDP even by
+end 2009. The Italian primary budget surplus implied that if interest rates had stayed
+low, only modest fiscal adjustment would have been necessary to service the debt. Even
+invokingabroaderset of economicfundamentals seemsinsufficient toexplainthesudden
+eruptionofthecrisis. Unemploymentandthetradedeficithadbeenincreasing gradually.
+AndIreland’s tradebalance had been improving at thetime of thecrisis.
+2
+
+man et al. (2011), Gerlach et al. (2010), Montfort and Renne (2012),
+Borgy et al. (2011), Favero and Missale (2011)). Twodifferent regimes have
+beendescribed,acrisisandanon-crisisregime, withadditionalfundamental
+factors important in the crisis regime. These papers usually attribute non-
+linearities to the fiscal situation: they find that yield spreads have become
+much more sensitive to fiscal imbalances after 2008, with a deterioration of
+fiscal indicators generating a significant widening of the spreads after 2008.
+But the crisis may have other than fiscal roots. Attributing nonlinear dy-
+namics only to fiscal imbalances, an exogenous driver, is questionable in the
+light of recent advances in macro-finance.
+In this paper, we draw on recent research on financial crises to explore
+the endogenous drivers of nonlinearities in the sovereign bond markets of
+euro-zone peripheral countries. We explicitly test three hypotheses. First,
+we hypothesize that the nexus between sovereigns and banks observed dur-
+ing the crisis (Gennaioli et al., 2010, Huizinga and Demirguc-Kunt, 2010,
+Acharya and Steffen, 2013) may have created a nonlinear relationship which
+goes both ways and features some amplification in the sovereign risk. Sec-
+ond,adverse liquidity effects on euroarea bankshavebeendocumented dur-
+ing the crisis, including a significant fall of interbank loans after mid-2010
+(Allen and Moessner, 2013). So we will examine the effects on sovereign
+risk of a negative externality due to fire-sale liquidation of assets by test-
+ing whether liquidity shocks have had self-reinforcing effects on sovereign
+bonds. Third, we explore the hypothesis that derivatives produce nonlinear
+systems (Brock et al. 2009, Simsek, 2013) by investigating the effects on the
+sovereign price of credit default swaps (CDS), the most active credit deriva-
+tive market. Delatte et al. (2012) and Palladini and Portes (2011) have
+documented an adverse influence of the sovereign CDS on the underlying
+bond pricing when bearish investors use these instruments to express their
+views on the sovereign credit. But we know much less about the effects of
+corporate CDS on sovereign risk. In a down-cycl,e however, their effect on
+thecashmarketmayfeedbacktothesovereign risk. Toexplorethishypoth-
+esis, we focus on synthetic CDS indices which cover default risk on various
+poolsof corporateentities, becausetheir standardization and liquidity make
+3

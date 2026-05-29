@@ -1,0 +1,123 @@
+NBER WORKING PAPER SERIES
+THE LOAN COVENANT CHANNEL:
+HOW BANK HEALTH TRANSMITS TO THE REAL ECONOMY
+Gabriel Chodorow-Reich
+Antonio Falato
+Working Paper 23879
+http://www.nber.org/papers/w23879
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+September 2017
+We thank Dan Andrews (discussant), Indraneel Chakraborty (discussant), Arpit Gupta
+(discussant), Marcel Jansen (discussant), Justin Murfin (discussant), Michael Roberts
+(discussant), David Scharfstein, Andrei Shleifer, Jeremy Stein, Amir Sufi, participants at the 2017
+St. Louis Fed STLAR conference, 2017 Bank Of Spain Conference on Financial Stability, the
+2017 NBER ME summer meeting, the 2017 Advances in Macro Finance Tepper-Laef
+Conference, the 2017 NBER CF fall meeting, the 2018 IMF Annual Macro-Financial Research
+Conference, the 2018 NYU/Stern Conference on Financial Intermediation, the 2019 AEA
+meetings, and seminar participants at Columbia University, Federal Reserve Bank of San
+Francisco, London Business School, MIT, NOVA School of Business and Economics, Ohio
+State, Stanford, UCLA Anderson, U. of Chicago, and UT Austin for helpful comments and Ivan
+Ivanov for sharing snow cover data with us. The views expressed herein are those of the authors
+and not necessarily those of the Federal Reserve Board of Governors, the Federal Reserve
+System, or the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2017 by Gabriel Chodorow-Reich and Antonio Falato. All rights reserved. Short sections of text,
+not to exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+The Loan Covenant Channel: How Bank Health Transmits to the Real Economy
+Gabriel Chodorow-Reich and Antonio Falato
+NBER Working Paper No. 23879
+September 2017, Revised June 2020
+JEL No. E44,G21,G32
+ABSTRACT
+We document the importance of covenant violations in transmitting bank health to non-financial
+firms using a new supervisory data set of bank loans. Roughly one-third of loans in our data
+breach a covenant during the 2008-09 period, providing lenders the opportunity to force a
+renegotiation of loan terms or to accelerate repayment of otherwise long-term credit. Lenders in
+worse health are more likely to force a reduction in the loan commitment following a violation.
+The reduction in credit to borrowers who violate a covenant accounts for the majority of the
+cross-sectional variation in credit supply during the 2008-09 crisis.
+Gabriel Chodorow-Reich
+Department of Economics
+Harvard University
+1805 Littauer Center
+Cambridge, MA 02138
+and NBER
+chodorowreich@fas.harvard.edu
+Antonio Falato
+Federal Reserve Board
+Mail Stop #89
+20th Street & Constitution Ave. NW
+Washington DC 20551
+antonio.falato@frb.gov
+
+1. Introduction
+Alargeliteraturedocumentstheimportanceofthehealthofthebankingsectorfornonfinancial
+firm outcomes such as investment and employment.1 Most recently, the 2008-09 period contained
+both a financial crisis and the deepest recession in the United States in 60 years. Yet, at the start
+of the financial panic in 2008 only 10% of bank loans had remaining maturity of less than one
+year and the typical firm did not face the prospect of a maturing bank loan until 2011. This fact
+reveals an important gap in our understanding of the transmission of bank health: why do shocks
+to lenders affect their existing corporate borrowers despite the prevalence of long-term credit?
+Wedocumentthecentralroleofloancovenantviolationsinthistransmissionmechanism. Loan
+covenants appear in nearly all commercial loan contracts. They circumscribe the set of actions a
+borrower may take (nonfinancial covenants) or specify minimum or maximum thresholds for cash
+flow or balance sheet variables (financial covenants). Breaching of a covenant puts a borrower into
+technical default and gives the lender the right to accelerate repayment of the loan. Thus, loan
+covenant violations increase lenders’ bargaining power and provide them broad opportunity to
+renegotiate contract terms when their internal cost of funds rises. As a result, covenant violations
+allow lenders to reduce the existing stock of credit, potentially affecting many more borrowers
+than just those with expiring credit or seeking new originations. We refer to the transmission of
+lender health to existing borrowers through the forced renegotiation of contract terms as the loan
+covenant channel.
+We assess the covenant channel in the context of the 2008-09 financial crisis using a new
+supervisory data set of covenant compliance in syndicated loans. We observe the identities of
+borrowers and lenders and follow individual loans over time, including through amendments.
+Following the violation of a covenant, a lender may accelerate repayment, force a renegotiation of
+the loan contract, or simply waive or reset the covenant with no further impact on the loan. Our
+data track each of these potential outcomes.
+We document two key facts using these data: most bank loans have long stated maturity, but
+many loans breach covenants. Our full data set covers $2 trillion of loan commitments at the start
+of2008. Ofthese, 91%haveatleastoneyearmaturityremainingandthemeanmaturityremaining
+1See e.g. Peek and Rosengren (2000), Lin and Paravisini (2012), Chodorow-Reich (2014), and Benmelech,
+Bergman, and Seru (2015) for evidence from the United States and Gan (2007), Amiti and Weinstein (2018), and
+Bentolila, Jansen, and Jim´enez (2017) for evidence in other countries.
+1
+
+within this group is 3.3 years. Roughly one-quarter of loans in the data breach a covenant during
+a typical year before the 2008-09 financial crisis and one-third of loans breach a covenant each
+year during the financial crisis. Together, long stated maturity but high violation frequency make
+the loan covenant channel a potentially important transmission mechanism.
+For a causal assessment of the covenant channel we turn to variation in the cross-section of
+lendersduringthe2008-09financialcrisis. Thewrite-downsonassetslinkedtorealestateloansled
+to an enormous decline in the market equity of the U.S. financial sector and coincided with a sharp
+increaseinbankfundingcosts. Bothfactorsincreasedtheinternalcostoffundsatlenders. Abody
+of evidence documents the transmission from the reduction in credit supply at lenders to outcomes
+at nonfinancial firms during the crisis (Campello, Graham, and Harvey, 2010; Duchin, Ozbas, and
+Sensoy, 2010; Campello, Giambona, et al., 2011; Chodorow-Reich, 2014; Duygan-Bump, Levkov,
+and Montoriol-Garriga, 2015; Siemer, 2016). However, banks varied greatly in their exposure to
+the crisis. We assign lender health by combining three measures used in Chodorow-Reich (2014)
+that capture a bank’s exposure to the crisis through counterparty risk and mortgage-related losses.
+Our empirical exercises ask whether the outcome of a covenant violation during the 2008-09
+crisisdependedontheleadlender’sfinancialhealth. Asimplecomparisonofoutcomesofviolations
+based on lender health raises two main concerns. First, firms that violate covenants and have
+unhealthy lenders may differ along other dimensions from firms that violate covenants and have
+healthier lenders. We attempt to assuage this concern by presenting evidence that borrowers of
+healthier and less healthy lenders appear similar along numerous observable dimensions including
+pre-crisisleverage,riskrating, andex ante covenanttightness,havesimilarpropensitiestoviolatea
+covenant during the crisis, and that the balancing of observable characteristics holds even within
+the subset of firms that violate covenants. The second concern is that violation of a covenant
+correlates with other firm characteristics and loan outcomes may also depend on the interplay of
+lender health and these other characteristics. We address this concern by including as covariates
+in our main specification measures of borrower quality interacted with lender health, which isolate
+the impact of lender health× violation from the impact of lender health×borrower quality.
+We also offer two additional causal identification strategies. The first follows an influential
+literature using regression discontinuity methods to study the impact of covenant violations on
+firms (Chava and Roberts, 2008; Roberts and Sufi, 2009a; Nini, Smith, and Sufi, 2012; Falato and
+Liang, 2016). We provide conditions under which this analysis causally identifies the treatment
+2

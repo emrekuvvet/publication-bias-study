@@ -1,0 +1,117 @@
+NBER WORKING PAPER SERIES
+MONETARY POLICY TRANSMISSION THROUGH ONLINE BANKS
+Isil Erel
+Jack Liebersohn
+Constantine Yannelis
+Samuel Earnest
+Working Paper 31380
+http://www.nber.org/papers/w31380
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2023, Revised 2025
+We are thankful to Marco Grotteria, Eduard Inozemtsev, Ralf Meisenzahl, Jungu Myung, Stefan
+Nagel, Friederike Niepmann, Lubos Pastor, Carolin Pflueger, Alp Simsek, Dominik Supera,
+Kandarp Srinivasan, Rene Stulz, Quentin Vandeweyer, Anne Villamil, Michael Weber, Yufeng
+Wu, Kairong Xiao, Yao Zeng, and Anthony Zhang as well as seminar participants at Baruch
+College, Berkeley, Chicago, Colorado Finance Summit, Delaware, Federal Reserve Board, Jackson
+Hole Finance Group Conference, Ohio State, SMU, the SFS Cavalcade, the New York Fed/NYU
+Stern Conference on Financial Intermediation, the UIC Finance Conference and the ECB’s
+Inaugural Conference of the ChaMP Research Network for helpful comments. Yannelis gratefully
+acknowledges financial support from the Booth School of Business and the Fama Miller Center at
+the University of Chicago. The views expressed herein are those of the authors and do not
+necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2023 by Isil Erel, Jack Liebersohn, Constantine Yannelis, and Samuel Earnest. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+Monetary Policy Transmission Through Online Banks
+Isil Erel, Jack Liebersohn, Constantine Yannelis, and Samuel Earnest
+NBER Working Paper No. 31380
+June 2023, Revised 2025
+JEL No. E52, E58, G21, G23, G28
+ABSTRACT
+Financial technology has the potential to alter the transmission of monetary policy by lowering
+search costs and expanding banking markets. This paper studies the reaction of online banks to
+changes in the federal funds rate. We find that a 100 basis points increase in the federal funds rate
+leads to a 30 basis points larger increase in the deposit rates of online banks relative to traditional
+banks. Consistent with the rate movements, online bank deposits experience inflows, while
+traditional banks experience outflows. Results are similar across markets with differing
+competitiveness and demographics, but vary with the stickiness of depositors.
+Isil Erel Constantine Yannelis
+Fisher College of Business Faculty of Economics
+The Ohio State University University of Cambridge
+2100 Neil Avenue Austin Robinson Building
+Columbus, OH 43210 Cambridge, CB3 9DD
+and NBER United Kingdom
+erel@fisher.osu.edu cny21@cam.ac.uk
+Jack Liebersohn Samuel Earnest
+University of California Irvine searnest@mit.edu
+cjlieber@uci.edu
+
+1 Introduction
+Alargenumberofstudieshavefoundthatmonetarypolicytransmissionisimperfect,andcur-
+rent empirical estimates of the effects of monetary policy include these frictions. In particular,
+market concentration in deposits (Drechsler et al., 2017), search costs (Duffie and Krishna-
+murthy, 2016), lender market power (Scharfstein and Sunderam, 2016), duration (Binsber-
+gen and Grotteria, 2023), and human frictions (D’Acunto et al., 2021) have all been shown
+to affect how monetary policy is transmitted through market interest rates. Monetary policy
+is mainly transmitted through the regulated banking system. However, recent technological
+advances that have revolutionized traditional banking services have the potential to radically
+alter this transmission process. Individuals can now transfer funds via mobile devices and
+compare investments online, which dramatically lowers search costs, weakens banking rela-
+tionships, and increases geographic scope and financial market competitiveness. How does
+thisunprecedentedgrowthinfinancialtechnology(FinTech)inbankingimpactmonetarypol-
+icy transmission?
+Standardmodelspredictthattheincreasedrelianceonfinancialtechnologyin21stcentury
+banking should dramatically impact how monetary policy is transmitted.1 Consistent with
+increasesincompetitionandlowersearchfrictions,onlinebanksoffersignificantlyhigherrates
+ondepositsthantraditionalbanksdothroughtheirbranches. Inthispaper,weexplorehowthe
+increasing share of online banks affects monetary policy transmission. Specifically, we study
+whetheronlinebanks’depositratesresponddifferentlyrelativetotraditionalbrick-and-mortar
+banks. We exploit changes in the Federal Funds Rate (FFR) in the U.S., with a rapid increase
+fromzeroinMarch2022to5percentinApril2023. Ourmainfindingisthata100basispoint
+increase in the federal funds rate leads to an approximate 30 basis points larger increase in
+1By 2023, online bank deposits constituted about 13 percent of the total deposits held by commercial banks
+in the US. While many regulated commercial banks in the US now start their operations almost exclusively on-
+line,offeringonlinedepositsandloans,wealsoobservemanytraditionalbanksswitchingfrombrick-and-mortar
+branches to online deposits. In other areas of the world, online banks have a larger market share. This is par-
+ticularlytrueinLatinAmerica,where17%ofindividualsusedigitalbanksastheirprimaryfinancialinstitution.
+Demographics suggest that this share will continue to grow, as more than half (54%) of Latin American adults
+undertheageof35prefertouseonlinebanksastheirprimaryfinancialinstitution.
+2
+
+deposit rates offered by online banks, relative to traditional brick-and-mortar lenders.
+WebeginbyprovidingastylizedtheoreticalframeworkthatfollowsDrechsleretal.(2017),
+wherethekeyinsightisthatdepositorsofonlinebanksadjusttheirdepositholdingsinresponse
+tochangesininterestrates,whiledepositorsintraditionalbrick-and-mortarcommercialbanks
+aregenerallysticky.2 Comparingratesatonlinebankstothoseattraditionalbanks,weseepar-
+alleltrendspriorandsignificantdivergencefollowingthe2022-2023hikesintheFFR.Consis-
+tent with the deposit channel, we find that interest-rate passthrough is significantly larger for
+online banks relative to traditional brick-and-mortar banks. Using a difference-in-differences
+empirical design, we show a 17 to 36 basis points larger increase in rates of various types of
+deposits offered by online banks, compared with ones offered by traditional banks, due to a
+100 basis points increase in the FFR.3
+An implication of our framework is that, along with differential changes in deposit rates,
+thereshouldbesignificantdifferencesinlevelsofdepositflowsbetweenonlinebanksandbanks
+with brick-and-mortar branches. We show that deposits of online banks have been growing
+at a much faster rate (almost 40x) than that of traditional banks (under 10x) over the past
+twodecades,withtotaldepositsofonlinebanksreachingabout13%oftotalbankingdeposits.
+Moreover,supportingourframework’spredictions,thisgrowthcontinuedandgotsteeperafter
+the rate hikes for online banks, while traditional banks experienced net deposit outflows. We
+also show that the increase in overall deposits for online banks during interest hikes is due
+to inflows to their interest-bearing deposits being larger for them than for traditional banks.
+Finally, online bank lending also increased relative to traditional bank lending.
+Our paper’s main contribution is to show that monetary policy transmission is distinct for
+onlinebanks,whichhavebeengrowingatanenormouspace. Therefore,goingforward,policy
+2This is not the only framework which can generate a spread between rates at online and traditional banks
+following monetary policy shocks. In section 2.2, we also discuss alternative channels, building on different
+theoreticalframeworks,thatleadtodivergentrateadjustmentsforonlinebanks.
+3AnimportantimplicationofourresultsisthatonlinebankssharefeatureswithMoneyMarketMutualFunds
+(MMMFs). MMMFs passed through Fed funds rate increases nearly one-for-one in 2022 and subsequently saw
+largeinvestmentinflows,similartoonlinebanks. Eventhoughonlinebankssharearegulatoryenvironmentwith
+traditionalbanks,theireconomicbehaviormaymorecloselyresembleothertypesofinvestments.
+3

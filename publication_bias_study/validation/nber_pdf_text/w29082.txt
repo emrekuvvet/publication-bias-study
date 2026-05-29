@@ -1,0 +1,115 @@
+NBER WORKING PAPER SERIES
+CURRENCY MANAGEMENT BY INTERNATIONAL FIXED INCOME MUTUAL
+FUNDS
+Clemens Sialm
+Qifei Zhu
+Working Paper 29082
+http://www.nber.org/papers/w29082
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2021
+We thank George Aragon, Yiming Ma, Matteo Maggiori, Lasse Pedersen, Dave Plecha, Savina
+Rizova, Nathan Sosner, Matti Suominen, Hong Zhang, conference participants at the 2021 China
+International Conference of Finance, the 2021 Virtual Asset Management Seminar, the 2021
+Western Finance Association, and the 2021 World Symposium on Investment Research, and
+seminar participants at the BI Norwegian Business School, Copenhagen Business School, the
+Federal Reserve Board, the Shanghai Advanced Institute of Finance, the University of
+Mannheim, the Nanyang Technological University, and the University of Texas at Austin for
+helpful comments. Wei Li provided excellent research assistance. Clemens Sialm is an
+independent contractor at AQR Capital Management. Qifei Zhu acknowledges the financial
+support of the Ministry of Education, Singapore, under its Academic Research Fund 2019-
+T1-001-108. The views expressed herein are those of the authors and do not necessarily reflect
+the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2021 by Clemens Sialm and Qifei Zhu. All rights reserved. Short sections of text, not to exceed
+two paragraphs, may be quoted without explicit permission provided that full credit, including ©
+notice, is given to the source.
+
+Currency Management by International Fixed Income Mutual Funds
+Clemens Sialm and Qifei Zhu
+NBER Working Paper No. 29082
+July 2021
+JEL No. F21,F31,F34,G11,G12,G13,G15,G23,G32
+ABSTRACT
+Investments in international fixed income securities are exposed to significant currency risks. We
+collect novel data on mutual fund currency derivatives and document that around 90% of U.S.
+international fixed income funds use currency forwards to manage their foreign exchange
+exposure. Funds' currency forward positions differ substantially based on risk management
+demands related to portfolio currency exposures, return-enhancement motives such as currency
+momentum and carry trade, and strategic considerations related to past performance and fund
+clienteles. Funds that hedge their currency risk exhibit lower return variability, but do not
+generate inferior abnormal returns.
+Clemens Sialm
+University of Texas at Austin
+McCombs School of Business
+2110 Speedway; B6600
+Austin, TX 78712-1276
+and NBER
+clemens.sialm@mccombs.utexas.edu
+Qifei Zhu
+Nanyang Technological University
+qifei.zhu@ntu.edu.sg
+
+I. Introduction
+Currency exchange rate fluctuations are an important contributor to the risk and return of
+globally-diversified investments, particularly fixed income portfolios. Indeed, over the last
+three decades (1990 to 2019), the average U.S. dollar return of the Bloomberg Barclays
+Global Aggregate Total Return Index, a widely-used global investment grade debt index,
+was 0.47% per month, and its standard deviation was 1.54%. During the same period,
+its U.S. dollar-hedged counterpart had a similar average return of 0.49% per month and
+a standard deviation of 0.86% – almost one half lower.1 Despite such an economically
+significant impact, we know little about the determinants and the consequences of currency
+management strategies of international fixed income funds.
+Conceptually, mutual funds that are domiciled in the U.S. but invest outside of the
+U.S. can manage their currency exposures by changing portfolio allocations or by deploy-
+ing currency derivatives.2 In the first approach, a fund adjusts its portfolio between U.S.
+dollar denominated foreign bonds and local-currency denominated foreign bonds. Maggiori,
+Neiman, and Schreger (2020) show that mutual funds prefer to hold securities denominated
+in home currencies, reducing their currency exposure. However, investing in only U.S. dollar-
+denominatedbondsconstrainsafund’sinvestmentuniverse,assomeforeignissuersonlyissue
+in local currency. Alternatively, funds may hold currency derivatives, which enable them to
+alter their currency exposures independent of their portfolio holdings. However, primarily
+due to data availability, researchers have not been able to examine mutual funds’ use of cur-
+rency derivatives and how derivative holdings affect overall portfolio currency management.3
+Our paper fills this gap by documenting the prevalent use of currency derivatives by bond
+mutual funds and by analyzing the factors that determine funds’ currency management poli-
+1The U.S. dollar-hedged Bloomberg Barclays Global Aggregate Total Return Index uses hypothetical
+one-month currency forwards to hedge its currency exposures.
+2Investors of US-domiciled mutual funds have to be based in the U.S. for tax and regulatory reasons
+(Khorana, Servaes, and Tufano, 2005).
+3Information on mutual funds’ derivative positions is not available in commonly-used databases such as
+ThomsonReuters,CRSP,orMorningstar. Withoutinformationonfunds’currencyderivatives,priorstudies
+assume that a fund’s currency exposure is determined by the currency denomination of its assets.
+1
+
+cies. WeassemblethefirstdatasetofcurrencyforwardcontractsusedbyU.S.-domiciledfixed
+incomefundsinvestingininternationalmarkets, togetherwiththecurrencydenominationsof
+their portfolio holdings. Our final sample contains 476,622 currency forward contracts used
+by 6,457 fund–quarters between 2010Q2 and 2018Q4. This novel dataset provides detailed
+quarterly snapshots of fund currency exposures that allow us to examine funds’ currency
+management practices, especially through their use of currency derivatives.
+Currency forwards are the predominant type of currency derivatives used by the funds in
+our sample. During our sample period, about 90% of international fixed income funds use
+currency forwards. For an average fund, the notional amount of foreign currency forward
+sales is equivalent to 19.9% of fund total net assets (TNA), and the notional amount of
+forward purchases (of other foreign currencies) is equivalent to 13.1% of fund TNA, resulting
+in a net currency exposure reduction of 6.8% through currency forwards. The distribu-
+tion of funds’ net currency forward positions is as dispersed as the distribution of funds’
+foreign-denominated assets. Some funds use forwards to completely or selectively hedge
+their currency exposures from bond holdings, while others use forwards to increase their
+exposures to foreign currencies. These stylized facts highlight the importance of accounting
+for currency derivatives when studying funds’ currency exposures.
+Theories suggest that bond funds’ use of currency derivatives can be driven by both risk
+management demands and speculative motives. For risk management, the key determinants
+of currency positions are currency return volatility and the covariance between currency
+returns and asset returns. Campbell, Serfaty-De Medeiros, and Viceira (2010) show that
+globalbondreturnsarealmostuncorrelatedwithcurrencyreturns. Amean-varianceefficient
+portfolio hence hedges its currency exposures almost completely. For speculative purposes,
+investors may condition their derivative positions on currency characteristics that are known
+to predict currency returns. When the expected excess return of particular currencies is
+relatively high, investors may buy (or sell less) currency forwards.
+Consistent with risk management demands, we find that funds’ use of currency forwards
+2

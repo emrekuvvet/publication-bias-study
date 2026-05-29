@@ -1,0 +1,115 @@
+NBER WORKING PAPER SERIES
+MUTUAL FUND FLOWS AND THE SUPPLY OF CAPITAL IN MUNICIPAL FINANCING
+Manuel Adelino
+Sophia Chiyoung Cheong
+Jaewon Choi
+Ji Yeol Jimmy Oh
+Working Paper 30980
+http://www.nber.org/papers/w30980
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+February 2023
+We thank Daniel Bergstresser, Peter Block, Jun Chen, Ahmet Degerli, Dimitris Georgoutsos,
+Chang Joo Lee, Junho Oh, Clemens Sialm, Hanyi Livia Yi and seminar participants at the 2023
+AFA, 2022 AIM Investment Conference, 2022 AoF, 2022 Asian FA, 2022 APAD, 2022
+Brookings Municipal Finance Conference, 2022 CAFM, 2022 FMA, 2022 Paris December
+Conference, 2022 PFMC, 2022 SFS Cavalcade Asia-Pacific, the University of Illinois Urbana-
+Champaign, and the City University of Hong Kong. The views expressed herein are those of the
+authors and do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2023 by Manuel Adelino, Sophia Chiyoung Cheong, Jaewon Choi, and Ji Yeol Jimmy Oh. All
+rights reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+Mutual Fund Flows and the Supply of Capital in Municipal Financing
+Manuel Adelino, Sophia Chiyoung Cheong, Jaewon Choi, and Ji Yeol Jimmy Oh
+NBER Working Paper No. 30980
+February 2023
+JEL No. G23,G32,H74
+ABSTRACT
+This paper identifies the impact of fluctuations in the supply of capital from mutual funds on
+municipal bond financing and makes three contributions to the literature. First, we develop an
+identification strategy based on the Morningstar rating methodology at the moment that funds
+reach 5 years in operation. This approach isolates supply-side effects that are orthogonal to both
+fund and issuer fundamentals and can be applied in a broad range of settings. Second, we show
+that exogeneous fund flows lead to more municipal bond issuances and raise bond prices, but only
+when funds, issuers, and underwriters are connected through existing relationships. This result
+highlights the role of relationship lending in the context of municipal bond financing. Third, our
+results suggest that municipal bond issuers exploit favorable financing conditions to issue bonds
+with shorter delays and lower transaction costs, such as non-general-obligation bonds that require
+no voter approval and non-green bonds. These frictions can limit the impact of capital-supply
+shocks on municipal financing.
+Manuel Adelino Jaewon Choi
+Fuqua School of Business Department of Finance
+Duke University University of Illinois at Urbana-Champaign
+100 Fuqua Drive jaewchoi@illinois.edu
+Durham, NC 27708
+and NBER Ji Yeol Jimmy Oh
+manuel.adelino@duke.edu 25-2 Sungkyunkwan-ro
+Jongno-gu
+Sophia Chiyoung Cheong Seoul 03063
+City University of Hong Kong Korea (South)
+c.cheong@cityu.edu.hk jyjoh@skku.edu
+A data appendix is available at http://www.nber.org/data-appendix/w30980
+
+1. Introduction
+Bond mutual funds are an important source of capital in the municipal bond market. Figure 1
+shows that mutual funds accounted for 26.5% of all municipal bond holdings in the U.S. as of the third
+quarter of 2020, making those funds the largest non-household municipal bondholders. In this paper, we
+propose and implement a novel identification strategy to provide causal evidence that capital flows from
+bond funds have a significant impact on municipal bond issuance decisions and that this impact is
+mediated through existing fund-underwriter-issuer relationships.
+FIGURE 1 HERE
+It is not immediately apparent how much and through which mechanisms fund flows impact
+municipal financing. On one hand, municipalities largely raise funds through bond issuance as opposed
+to lending from banks.1 Mutual funds are the second largest holders of municipal bonds after households,
+and, as such, a larger supply of capital to funds should encourage debt issuance. On the other hand,
+demand-side frictions (e.g., institutional or local political constraints) could lead to a sluggish response
+and a small measured elasticity of issuance to flows. More generally, measuring the effects of flows on
+issuance is complicated by the fact that mutual fund flows are affected by past performance and,
+consequently, by the fundamentals of bond issuers themselves (Wardlaw, 2020; Berger, 2021).
+There is also limited evidence of whether fund-underwriter-issuer relationships matter in this
+setting. Despite functioning as a public market, and thus in principle largely involving arm’s-length
+lending, the municipal bond market is also highly fragmented. Small regional borrowers seeking financing
+rely on their underwriters, who also have ongoing relationships with mutual funds.2 On the mutual fund
+side, funds are likely to value relationships with underwriters who enable them to obtain the desired
+1 Ivanov and Zimmermann (2021) estimate the size of the municipal bank loan market at around $200 billion as of the third
+quarter of 2020, which only accounts for just over 5% of the total amount outstanding in municipal bonds, at over $3.9 trillion.
+2 Municipal bonds for relatively small issuers (e.g., local municipalities) are typically sold through negotiated sales, in which
+issuers sell bonds through their relationship underwriters. Large muni issuers (e.g., states) often issue bonds through
+competitive sales, in which issuers take bids from multiple underwriters.
+1
+
+allocations in initial bond offerings,3 and they also need to trade with these institutions later when they
+function as dealers in secondary markets.4 These factors suggest that capital flows from funds to
+municipal issuers are likely to operate through fund-underwriter-issuer relationships, a channel that
+shapes the feedback channel that operates through market prices.5
+In this paper, we document a statistically and economically strong association between fund flows
+and the likelihood of issuance. We use a sample of 20,502 municipal issuers held by one or more of the
+3,312 share classes of 1,010 U.S. municipal bond funds between 2000 and 2020. A simple regression of
+fund flows on issuance suggests that a one-standard-deviation increase in fund flows is associated with a
+0.55% increase in the likelihood of new issuance by issuers already included in a fund’s portfolio as well
+as with a 1.4% increase in the issuance amount.
+We employ a new identification approach to separate the supply-side effects of bond investor
+flows from demand-side effects in which municipalities may have better performance (and thus drive
+fund flows) and also be more likely to issue new bonds to finance local growth opportunities. The starting
+point for this approach is the stylized fact that Morningstar ratings are an important driver of fund flows
+(Del Guercio and Tkac, 2008 and Reuter and Zitzewitz, 2021). Our instrument exploits mechanical and
+predictable changes in Morningstar overall star ratings that are unrelated to recent performance or fund
+fundamentals. Morningstar publishes overall star ratings ranging from 1 to 5 stars, calculated as the
+weighted averages of 3-, 5-, and 10-year star ratings, which in turn are constructed using the within-
+category rankings of each share class based on its risk-adjusted return over the corresponding time
+horizon (Morningstar, 2021). Crucially, overall star-rating calculations depend on the age of a fund. When
+a fund is between 3 and 5 years old, the 5-year star rating is unavailable and the overall star rating is the
+3 Prior studies of corporate bonds document favoritism in bond offerings (e.g., Nikolova, Wang, and Wu, 2020), with
+underwriters offering greater portions to their relationship investors at discounts (e.g., Cai, Helwege, and Warga, 2007).
+4 The lack of market liquidity for municipal bonds also adds to the importance of relationships in this market (Harris and
+Piwowar, 2006; Green, Li, and Schürhoff, 2007; Schwert, 2017). Lenders, or asset managers in the municipal bond market,
+need to contact dealers, who also tend to be underwriters in the primary market, to execute secondary-market transactions.
+5 Edmans, Goldstein, and Jiang (2012) and Khan, Kogan, and Serafeim (2012) show, for example, that noise in prices induced
+by fund fire sales and purchases affects corporate financing. For municipal bonds, this feedback effect of market prices is
+almost non-existent, as municipal bonds typically trade only a few times per year (see, e.g., Schwert, 2017).
+2

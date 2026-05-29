@@ -1,0 +1,107 @@
+NBER WORKING PAPER SERIES
+INSIDER TRADING, STOCHASTIC LIQUIDITY AND EQUILIBRIUM PRICES
+Pierre Collin-Dufresne
+Vyacheslav Fos
+Working Paper 18451
+http://www.nber.org/papers/w18451
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2012
+We thank Bruno Biais, Thierry Foucault, Gur Huberman, Larry Glosten, Wei Jiang, Norman Schuerhoff,
+Semyon Malamud and seminar participants at Copenhagen Business School, University of Illinois
+at Urbana-Champaign, ESADE, the SFI-Finrisk meeting and, especially, Kerry Back, Darrell Duffie
+and Julien Hugonnier for many helpful comments. The views expressed herein are those of the authors
+and do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2012 by Pierre Collin-Dufresne and Vyacheslav Fos. All rights reserved. Short sections of text,
+not to exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Insider Trading, Stochastic Liquidity and Equilibrium Prices
+Pierre Collin-Dufresne and Vyacheslav Fos
+NBER Working Paper No. 18451
+October 2012
+JEL No. D4,D8,D80,D82,D83,D84,G0,G00,G1,G10,G12,G14
+ABSTRACT
+We extend Kyle's (1985) model of insider trading to the case where liquidity provided by noise traders
+follows a general stochastic process. Even though the level of noise trading volatility is observable,
+in equilibrium, measured price impact is stochastic. If noise trading volatility is mean-reverting, then
+the equilibrium price follows a multivariate 'stochastic bridge' process, which displays stochastic volatility.
+This is because insiders choose to optimally wait to trade more aggressively when noise trading activity
+is higher. In equilibrium, market makers anticipate this, and adjust prices accordingly. More private
+information is revealed when volatility is higher. In time series, insiders trade more aggressively, when
+measured price impact is lower. Therefore, execution costs to uninformed traders can be higher when
+price impact is lower.
+Pierre Collin-Dufresne
+Graduate School of Business
+Columbia University
+Uris Hall 404
+3022 Braodway
+New York, NY 10027
+and NBER
+pc2415@columbia.edu
+Vyacheslav Fos
+College of Business
+University of Illinois at Urbana-Champaign
+340 Wohlers Hall
+1206 South Sixth Street
+Champaign, IL, 61820
+vfos@illinois.edu
+
+1. Introduction
+In his seminal contribution, Kyle (1985) derives the equilibrium price dynamics in a
+model where a large trader possesses long-lived private information about the value of a
+stock that will be revealed at some known date, and optimally trades into the stock to
+maximize his expected profits. Risk-neutral market makers try to infer from aggregate
+order flow the information possessed by the insider. Because order flow is also driven by
+uninformed ‘noise traders,’ who trade solely for liquidity purposes, prices are not fully
+revealing. Instead, prices respond linearly to order flow. Kyle’s lambda, which measures
+the equilibrium price impact of order flow is constant in the model. In the cross-section,
+stocks with more insider trading relative to noise trading experience larger price impact.
+More precisely, Kyle’s lambda, which can be estimated from a regression of price change
+on order flow, is higher for stocks with more private information (relative to the amount
+of liquidity trading).
+Recent empirical results (Collin-Dufresne and Fos (CF 2012)) suggest however, that
+informed traders may condition their trades on such measures of price-impact, thus
+leading to selection biases in estimates of liquidity measures. Specifically, CF document
+that informed traders tend to trade more aggressively, when measures of stock price
+liquidity are better (and measured price impact is lower). In Kyle’s model (and indeed
+in many extensions, such as Back, 1992; Foster and Viswanathan, 1990) this cannot
+happen because measures of market depth are constant in equilibrium (as discussed in
+Back and Pedersen, 1998).
+In this paper, we propose an extension of Kyle’s model that helps explain some of
+these findings. We generalize Kyle’s model (in the continuous time formulation given by
+Back,1992)toallownoisetradingvolatilitytochangestochasticallyovertime. Themain
+(economic) restriction we put on the process is that it be independent of the insider’s
+2
+
+private information and of shocks to the order flow.
+We ask the following questions. How does the insider adapt his optimal trading
+strategy to account for these time-varying noise trader liquidity shocks? How are the
+equilibriumpricedynamicsaffectedbytheseshocks, whicharebyassumptionorthogonal
+to the private information of the insider, and to the aggregate order flow dynamics?
+Kyle’s model provides the insight that the larger the noise trading liquidity for a
+given amount of private information, the more aggressive the insider will trade, since, in
+equilibrium, his optimal trading rule is inversely related to Kyle’s lambda (a measure of
+price impact). The insider makes more profits when there is more noise trading, since
+themarketmakercanrecoupmoreprofitshimselffromthegreatervolumeofuninformed
+traders. In a dynamic setting where ‘noise trader volume’ changes stochastically, one
+therefore expects price impact measures to move over time, and the insider to adjust his
+trading to take advantage of those moments when ‘liquidity’ is greater.
+At first, this problem may seem like a simple extension of the Back (1992) model,
+as one might conjecture that one can simply ‘paste together’ Kyle economies with
+different levels of noise-trading volatility. However, this is not so. Indeed, the insider
+will optimally choose to trade less in the lower liquidity states than he would were
+these to last forever, because he anticipates the future opportunity to trade more when
+liquidity is better and he can reap a larger profit. Of course, in a rational expectations’
+equilibrium, the market maker foresees this, and adjusts prices accordingly.
+Therefore, price dynamics are more complex than in the standard Kyle model.
+First, in equilibrium, price impact measures are stochastic. Price impact is larger
+when noise-trading volatility is lower. When noise trading volatility is lower, the
+informed trader trades less aggressively. Thus, in equilibrium, the probability of facing
+an informed trader, may actually decrease in price impact (Kyle’s lambda).
+Second, market depth (the inverse of price impact) is a martingale in equilibrium,
+3

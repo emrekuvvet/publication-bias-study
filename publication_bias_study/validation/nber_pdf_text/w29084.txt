@@ -1,0 +1,138 @@
+NBER WORKING PAPER SERIES
+PROPAGATION AND AMPLIFICATION OF LOCAL PRODUCTIVITY SPILLOVERS
+Xavier Giroud
+Simone Lenzu
+Quinn Maingi
+Holger Mueller
+Working Paper 29084
+http://www.nber.org/papers/w29084
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2021
+We thank Costas Arkolakis, Lorenzo Caliendo, Xavier Gabaix, Cecile Gaubert, Elisa Giannone,
+Matthias Kehrig, Esteban Rossi-Hansberg, Philipp Schnabl, Pete Schott, Amit Seru, Andrei
+Shleifer, Johannes Stroebel, Amir Sufi, Sharon Traiberman, and various seminar audiences for
+helpful comments and suggestions. We are grateful to Jun Wong for excellent research assistance.
+Any views expressed are those of the authors and not those of the U.S. Census Bureau. The
+Census Bureau's Disclosure Review Board and Disclosure Avoidance Officers have reviewed this
+information product for unauthorized disclosure of confidential information and have approved
+the disclosure avoidance practices applied to this release. This research was performed at a
+Federal Statistical Research Data Center under FSRDC Project Number 1908 (CBDRB-FY21-
+P1908-R9062). The views expressed herein are those of the authors and do not necessarily reflect
+the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2021 by Xavier Giroud, Simone Lenzu, Quinn Maingi, and Holger Mueller. All rights
+reserved. Short sections of text, not to exceed two paragraphs, may be quoted without explicit
+permission provided that full credit, including © notice, is given to the source.
+
+Propagation and Amplification of Local Productivity Spillovers
+Xavier Giroud, Simone Lenzu, Quinn Maingi, and Holger Mueller
+NBER Working Paper No. 29084
+July 2021
+JEL No. C51,C68,E23,E24,L23,O4,R12,R13,R3
+ABSTRACT
+This paper shows that local productivity spillovers propagate throughout the economy through
+the plant-level networks of multi-region firms. Using confidential Census plant-level data, we
+show that large manufacturing plant openings not only raise the productivity of local plants but
+also of distant plants hundreds of miles away, which belong to multi-region firms that are
+exposed to the local productivity spillover through one of their plants. To quantify the
+significance of plant-level networks for the propagation and amplification of local productivity
+shocks, we develop and estimate a quantitative spatial model in which plants of multi-region
+firms are linked through shared knowledge. Our model features heterogeneous regions, which
+interact through goods trade and labor markets, as well as within-location, across-plant
+heterogeneity in productivity, wages, and employment. Counterfactual exercises show that while
+knowledge sharing through plant-level networks amplifies the aggregate effects of local
+productivity shocks, it widens economic disparities between individual workers and regions in the
+economy.
+Xavier Giroud Quinn Maingi
+Columbia Business School Stern School of Business
+Finance Division New York University
+3022 Broadway, Uris Hall 806 44 West Fourth Street Suite
+New York, NY 10027 9-190
+and NBER New York, NY 10012
+xavier.giroud@gsb.columbia.edu rmaingi@stern.nyu.edu
+Simone Lenzu Holger Mueller
+Stern School of Business Stern School of Business
+New York University New York University
+44 West Fourth Street 44 West Fourth Street Suite
+Suite 9-190 9-190
+New York, NY 10012 New York, NY 10012-1126
+slenzu@stern.nyu.edu and NBER
+hmueller@stern.nyu.edu
+
+1 Introduction
+Local governments spend billions of dollars in subsidies every year for companies to
+locate within their jurisdictions (Story, 2012; Bartik, 2020). From an efficiency standpoint,
+a common rationale for such place-based incentives is the existence of Marshallian
+agglomeration economies—spillovers to the local economy in the form of input sharing,
+labor market pooling, and knowledge externalities—that raise the productivity of local
+workers and businesses (Moretti, 2010; Kline and Moretti, 2014a; Neumark and Simpson,
+2015). In this paper, we provide both reduced-form and model-based evidence that these
+local productivity spillovers propagate throughout the economy through the plant-level
+networksofmulti-regionfirms.
+Identifying local productivity spillovers is difficult. In our reduced-form analysis, we
+build on the natural experiments in Greenstone, Hornbeck, and Moretti (2010), who study
+the effects of large plant openings (“Million Dollar Plants,” or MDPs) on the productivity
+of incumbent plants. In their setting, plants in one or more runner-up counties, which
+narrowly lost the competition, provide a counterfactual for incumbent plants in the
+“winner” county, where the MDP ultimately located. Using confidential plant-level data
+from the Census Bureau, we show that the MDP openings raise the productivity of
+incumbent plants by 4%. This (“local”) productivity spillover is strong within a 50 mile
+radius around the MDP,weaker within a 100 mile radius, and insignificant beyond. Hence,
+consistent with a large empirical literature, we find that productivity spillovers between
+(plantsof)differentfirmsdecayrapidlywithgeographicaldistance.1
+A different picture emerges when we examine how productivity spillovers spread
+within firm boundaries. We consider large multi-plant, multi-region firms which are
+exposed to the MDP openings, and thus to the local productivity spillover, by having a
+plant in the winner county. We find that, in response to the MDP openings, these firms’
+plants outside the winner county (“treated plants”) experience productivity gains of 1.8%,
+along with employment gains of 1.6%. To identify the (“global”) productivity spillover on
+plants outside the winner county, we compare plants in the same county, industry, and
+year that belong to firms which either own plants in the winner county (treatment) or the
+runner-up counties (control). This specification accounts for the possibility of correlated
+shocks between the county of the treated plant and the winner county, thus addressing
+potential concerns that the productivity gains at treated plants may be due to common
+regionalshocksratherthaninternalspilloverswithinthefirm’sboundaries.
+1Rosenthal and Strange (2004, 2020) and Combes and Gobillon (2015) review the empirical literature on
+agglomerationeconomies.Mostempiricalstudiesfindthattheseeconomiesarehighylocalized.
+1
+
+What explains the global productivity spillover? While the local productivity gains
+may be due to either labor market pooling or knowledge spillovers, it is unlikely that a
+thicker labor market in the winner county would affect the productivity of treated plants
+hundreds of miles away. Knowledge, on the other hand, can be used in local and distant
+plants alike. Indeed, once it spills over to the firm’s local plant, it can be freely shared
+with other plants inside the firm’s boundaries (Markusen, 1984). To explore this issue, we
+examine ifthe global productivityspillover becomes weakeras we increase thedistance to
+the MDP. We find that the estimates remain virtually unchanged if we exclude all plants
+within a 500 mile radius, or within the same state or Census division as the MDP. Hence,
+unlike the local productivity spillover, which takes place across plants of different firms,
+theglobalproductivityspillover,whichtakesplaceacrossdifferentplantsofthesamefirm,
+does not decay with geographical distance. Further, and also consistent with knowledge
+sharing, we find that the global productivity spillover is much stronger if the distant plant
+and either the MDP or the firm’s plant in the winner county are in the same industry or in
+(knowledge-based)industriescharacterizedbymutualR&Dflowsorpatentcitations.
+Inarecentsurveyarticle,RosenthalandStrange(2020)write:
+“Implicitintheideathatspatialconcentrationincreasesproductivityisanother
+idea: the degree of proximity matters. Agglomeration economies must decay
+with distance. How close, then, do firms and workers need to be to each other
+to benefit from agglomeration economies? Or more colloquially, how close is
+close?” (p. 27).
+Our paper provides a nuanced answer. On the one hand, firms must have a nearby plant
+to benefit from knowledge spillovers. As we show, the local agglomeration economy is
+strongly significant only within a 50 mile radius around the MDP. On the other hand, not
+all of a firm’s plants need to be located nearby. In fact, it may suffice if only one of the
+firm’s plants is located in close proximity to the MDP. Once the knowledge spills over to
+that plant, it can be passed on to other plants inside the firm’s boundaries, increasing the
+productivityofdistantplantshundredsofmilesaway.
+To quantify the significance of knowledge sharing through plant-level networks,
+we develop and estimate a quantitative spatial model with goods trade, labor mobility,
+plant-level networks, and a rich and realistic geography. While we build on the theoretical
+framework developed by Allen and Arkolakis (2014), Ahlfeldt et al. (2015), Redding (2016),
+and Monte, Redding, and Rossi-Hansberg (2018), we depart from the canonical model in
+a number of significant ways.2 Our model features finitely many firms, some of which
+2ReddingandRossi-Hansberg(2017)provideacomprehensivetaxonomyofthemodelingassumptionsand
+2

@@ -1,0 +1,120 @@
+NBER WORKING PAPER SERIES
+EXPECTATIONS WITH ENDOGENOUS INFORMATION ACQUISITION:
+AN EXPERIMENTAL INVESTIGATION
+Andreas Fuster
+Ricardo Perez-Truglia
+Mirko Wiederholt
+Basit Zafar
+Working Paper 24767
+http://www.nber.org/papers/w24767
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2018
+We thank two anonymous referees, Rudi Bachmann, Christopher Carroll, Olivier Coibion (the editor),
+Theresa Kuchler, Kristoffer Nimark, Luigi Pistaferri, Dan Silverman, Michael Weber, as well as participants
+at numerous seminars and conferences for helpful comments. Felipe Montano Campos and Jacob French
+provided superb research assistance. We thank the UCLA Ziman Center for Real Estate’s Rosalinde
+and Arthur Gilbert Program in Real Estate, Finance and Urban Economics for funding. Fuster and
+Zafar were employed at the Federal Reserve Bank of New York while much of this paper was written.
+The views presented here are those of the authors and do not necessarily reflect those of the Swiss
+National Bank, the Federal Reserve Bank of New York, or the Federal Reserve System, or the National
+Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2018 by Andreas Fuster, Ricardo Perez-Truglia, Mirko Wiederholt, and Basit Zafar. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission provided
+that full credit, including © notice, is given to the source.
+
+Expectations with Endogenous Information Acquisition: An Experimental Investigation
+Andreas Fuster, Ricardo Perez-Truglia, Mirko Wiederholt, and Basit Zafar
+NBER Working Paper No. 24767
+June 2018, Revised in September 2020
+JEL No. C81,C93,D80,D83,D84,E27,E3
+ABSTRACT
+Information frictions play an important role in many theories of expectation formation. We use a
+survey experiment to generate direct evidence on how people select, acquire and process
+information. Participants can buy different information signals that could help them forecast
+future national home prices. We elicit their willingness to pay for information, and introduce
+exogenous variation in the cost of information. We find that participants put substantial value on
+their preferred signal and, when acquired, incorporate the signal in their beliefs. However, they
+disagree on which signal to buy. As a result, making information cheaper does not decrease the
+cross-sectional dispersion of expectations. We further document that numeracy and the revealed
+“taste” for accurate expectations are important correlates of heterogeneity in all stages of the
+process. We provide a model with costly acquisition and processing of information, which can
+match most of our empirical results.
+Andreas Fuster Mirko Wiederholt
+Swiss National Bank Professor of Economics
+Boersenstrasse 15 Sciences Po, Paris
+CH-8022 Zurich 28 rue des Saints Peres
+Switzerland 75007 Paris
+andreas.fuster@gmail.com France
+Mirko.Wiederholt@gmail.com
+Ricardo Perez-Truglia
+Haas School of Business Basit Zafar
+University of California, Berkeley Department of Economics
+545 Student Services Building #1900 University of Michigan
+Berkeley, CA 94720-1900 611 Tappan Street
+and NBER Ann Arbor, Michigan 48109
+ricardotruglia@berkeley.edu and NBER
+basitak@gmail.com
+A online appendix is available at http://www.nber.org/data-appendix/w24767
+
+1 Introduction
+Consumer expectations play a central role in modern macroeconomics and finance. As a result, a
+growingliteraturestudiessurveydataonexpectations. Oneoftherobustfindingsinthisliteratureis
+thelargeheterogeneityinconsumerexpectations(e.g.,Mankiw,Reis,andWolfers,2003;Coibion
+andGorodnichenko,2012). Thisdisagreementisimportantforanumberofreasons. Heterogeneity
+in expectations drives trade in asset markets (e.g., Hong and Stein, 2007), explains variation in
+householdportfolios(Meeuwisetal.,2018;Giglioetal.,2019),reducestheeffectivenessofpolicy
+announcements (Angeletos and Lian, 2018), and causes inefficiencies in allocations (Angeletos
+and Pavan, 2009). For these reasons, the study of subjective expectations has increasingly gained
+attentionfrompolicymakers(e.g.,Bernanke,2007).
+The literature has explored various approaches to depart from full-information rational expec-
+tations and generate such heterogeneity. In existing models, the heterogeneity in expectations
+emerges at three different stages of belief formation: information selection, information acqui-
+sition, and information processing. In early noisy rational expectations models of asset markets
+(e.g.,GrossmanandStiglitz,1980)andinstickyinformationmodels(e.g.,MankiwandReis,2002;
+Reis, 2006), heterogeneity in beliefs emerges because only some agents acquire information in a
+given period. In other noisy rational expectations models, heterogeneity in beliefs arises because
+agents who acquire information select different pieces of information (e.g., Van Nieuwerburgh
+and Veldkamp, 2009) or agents are simply assumed to see different pieces of information (Lucas,
+1972). Finally, there is a family of models where the heterogeneity in expectations emerges at the
+information processing stage, because those who acquire the same information arrive at different
+posteriors: theseincludemodelswithidiosyncraticnoiseinsignalsorheterogeneityinsignalpre-
+cision (e.g., Woodford, 2003; Sims, 2003), with heterogeneity in behavioral biases (e.g., Bordalo
+etal.,2019)orwithheterogeneousforecastingfunctions(e.g.,BrockandHommes,1997).
+The goal of this paper is to use experimental methods to measure how each of these three
+stages of belief formation give rise to heterogeneity in expectations. To this end, we conduct
+1
+
+an experiment in the Federal Reserve Bank of New York’s Survey of Consumer Expectations
+(SCE). The SCE is conducted on a nationwide sample of households, broadly representative of
+the U.S. population. In our experiment, respondents can select, acquire, and process information.
+Moreover, we create exogenous variation in the information acquisition costs, which allows to
+measuretheeffectsofthesecostsontheheterogeneityinexpectations.
+The experimental design is inspired by the recent literature on information-provision experi-
+mentsinsurveys. Forexample,Armantieretal. (2016),Cavallo,Cruces,andPerez-Truglia(2017),
+Binder and Rodrigue (2018), and Coibion, Gorodnichenko, and Weber (2019) use this method to
+study household inflation expectations, while Armona, Fuster, and Zafar (2019) and Roth and
+Wohlfart (2019) apply it to home price expectations and GDP growth expectations, respectively.1
+Thesestudiesprovidearandomsubsetofrespondentswithapieceofinformationandmeasurethe
+corresponding effects on expectations. In the real world, however, individuals are rarely offered
+hand-picked information by academics. Instead, individuals have to find the information on their
+own, having to choose from multiple information sources and incurring acquisition costs. In our
+experiment, we study a more realistic information acquisition environment, in which agents have
+toacquiretheinformationatacostandhaveachoiceoftheinformationsourcestheywanttosee.
+The main survey underlying our study was conducted in February 2017 as part of an annual
+SCE special module on the topic of housing. While the experimental design can be applied to
+many contexts, we provide an application to the context of home price expectations. This choice
+is motivated by the fact that home price expectations play a prominent role in many accounts
+of the housing boom that occurred during the mid-2000s in the United States (e.g., Shiller, 2005;
+GlaeserandNathanson,2015;GennaioliandShleifer,2018;Kaplan,Mitman,andViolante,2019).
+Furthermore,individuals’homepriceexpectationsmeasuredinsurveyshavebeenshowntobeas-
+sociatedwithrealbehaviorsuchasbuyingormakinginvestmentsinahome(Armonaetal.,2019;
+Baileyetal.,2018). Giventheprominenceofhousinginhouseholdportfolios,thesedecisionscan
+1Coibion, Gorodnichenko, andKumar(2018)andCoibion, Gorodnichenko, andRopele(2019)studyfirms’ex-
+pectations(andtheireffectonbehavior)inasimilarmanner.Theformerpaperalsoinvestigateswhichmacroeconomic
+variablesfirmstrack,andhowfirmsacquireinformationabouteconomicconditions.
+2

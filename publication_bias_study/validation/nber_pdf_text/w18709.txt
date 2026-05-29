@@ -1,0 +1,120 @@
+NBER WORKING PAPER SERIES
+NUMERICAL SOLUTION OF DYNAMIC PORTFOLIO OPTIMIZATION WITH
+TRANSACTION COSTS
+Yongyang Cai
+Kenneth L. Judd
+Rong Xu
+Working Paper 18709
+http://www.nber.org/papers/w18709
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+January 2013
+Cai and Judd gratefully acknowledge NSF support (SES-0951576) We thank Walter Murray, Michael
+Saunders, Sunil Kumar, Benjamin Van Roy and Gerd Infanger for comments on earlier versions of
+this work. The views expressed herein are those of the authors and do not necessarily reflect the views
+of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2013 by Yongyang Cai, Kenneth L. Judd, and Rong Xu. All rights reserved. Short sections of text,
+not to exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Numerical Solution of Dynamic Portfolio Optimization with Transaction Costs
+Yongyang Cai, Kenneth L. Judd, and Rong Xu
+NBER Working Paper No. 18709
+January 2013
+JEL No. C61,C63,G11
+ABSTRACT
+We apply numerical dynamic programming to multi-asset dynamic portfolio optimization problems
+with proportional transaction costs. Examples include problems with one safe asset plus two to six
+risky stocks, and seven to 360 trading periods in a finite horizon problem. These examples show that
+it is now tractable to solve such problems.
+Yongyang Cai Rong Xu
+Hoover Institution Department of Management Science and Engineering
+Stanford University Stanford University
+Stanford, CA 94305 Stanford, CA 94305, USA
+yycai@stanford.edu rongxu06@gmail.com
+Kenneth L. Judd
+Hoover Institution
+Stanford University
+Stanford, CA 94305-6010
+and NBER
+kennethjudd@mac.com
+
+1 Introduction
+Dynamic management of portfolios is a critical part of any investment strat-
+egy by individuals and firms. Standard theory assumes that there is no cost
+to rebalancing a portfolio but transaction costs are not negligible in real
+markets. Not only are there transaction fees such as brokerage expenses
+but the presence of a bid-ask spread creates a transaction cost to a trader.
+These costs may be small, but the frequency of rebalancing is, theoretically,
+high. Therefore, any examination of real-world dynamic portfolio manage-
+ment needs to consider these frictions.
+Multi-stage portfolio optimization problems with transaction costs as-
+sume that there are k risky assets (“stocks”) and/or a riskless asset (“bank
+account” paying a fixed interest rate r) traded during the period [0,T]. In
+our discrete-time analysis, portfolio adjustments are made at N fixed times
+in [0,T], 0 = t < t < ··· < t < t = T. Trades are made to maximize
+0 1 N−1 N
+the investor’s expected utility over terminal wealth (T is the terminal time)
+and/or consumption during [0,T]. We will examine only the case of propor-
+tional transaction costs. If the major transaction cost is the bid-ask spread,
+then proportional transaction costs are the correct case to study.
+Multi-stage portfolio optimization problems with transaction costs have
+been studied in many papers. The problem with one risky asset has been
+well studied; see Zabel (1973), Constantinides (1976, 1986), Gennotte and
+Jung (1994), and Boyle and Lin (1997). The key insight is that transaction
+costs create a “no-trade region” (NTR); that is, no trading is done if the
+current portfolio is inside the no-trade region, and otherwise the investor
+trades to some point on the boundary of the no-trade region. Kamin (1975)
+considered the case with only two risky assets. Constantinides (1979) and
+Abrams and Karmarkar (1980) established some properties of the NTR for
+multiple assets, but present only numerical examples with one safe and one
+risky asset. Brown and Smith (2011) evaluated some heuristic strategies and
+their bounds based on simulation, but their method cannot give the optimal
+portfolios.
+Inthecontinuous-timeversion,therearemanypapersabouttheportfolio
+2
+
+optimization problem with transaction costs with one or two risky assets;
+see Davis and Norman (1990), Duffie and Sun (1990), Akian et al. (1996),
+Janecek and Shreve (2004), Liu (2004), and Goodman and Ostrov (2010).
+Muthuraman and Kumar (2006, 2008) gave numerical examples at most
+three risky assets. Muthuraman and Zha (2008) provided a computational
+scheme that combines simulation with the boundary update procedure, and
+presented some computational results with k ≥ 3. However, the presence of
+simulation implies that the boundary of the NTR is not precisely computed.
+To the best of our knowledge, when the number of correlated risky assets
+is bigger than three and T ≥ 6, our DP method is the first one to explic-
+itly give good numerical solutions with transaction costs and general utility
+functions.
+2 Portfolio Models
+Assumethattherearekriskyassets("stocks")andonerisklessasset("bond")
+available for investment. The investor’s objective is to maximize the ex-
+pected utility at the terminal time T. In [0,T], there are N + 1 stages,
+0 = t < t < ··· < t < t = T. At each stage t (for i = 0,...,N −1),
+0 1 N−1 N i
+the investor has an opportunity to reallocate the portfolio, which will incur
+transaction costs. For simplicity, we assume these stages are equally sepa-
+rated with a unit length of time, and then we use t = i as the i-th stage in
+this paper.
+Let R = (R ,...,R )(cid:62) be the random one-period return vector of the
+1 k
+stocks, and R be the return of the bond. The portfolio fraction for asset
+f
+i at the beginning of period t right before reallocation is denoted x , and
+ti
+let x = (x ,...,x )(cid:62). Let W be the total wealth at the beginning of
+t t,1 t,k t
+period t right before reallocation. The difference between the total wealth
+and the wealth invested in stocks is invested in the bond. Let δ W denote
+t,i t
+the amount of dollars for buying or selling part of the i-th stock at stage t,
+expressed as a fraction of wealth, while δ > 0 means buying, and δ < 0
+t,i t,i
+means selling. We assume that f(δ W ) = τ|δ W | with a constant τ > 0
+t,i t t,i t
+is the transaction cost function for buying or selling part of the i-th stock
+3

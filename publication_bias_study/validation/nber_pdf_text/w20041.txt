@@ -1,0 +1,124 @@
+NBER WORKING PAPER SERIES
+CREDIT RISK IN THE EURO AREA
+Simon Gilchrist
+Benoît Mojon
+Working Paper 20041
+http://www.nber.org/papers/w20041
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+April 2014
+We are particularly grateful to Beatrice Saes-Escorbiac, Jocelyne Tanguy and Aurelie Touchais for
+their excellent research assistance. We also thank Viral Acharya, Marcus Brunnermeier, Christina
+Romer, David Romer, Richard Portes, Pierre Sicsic and participants to Banque de France, Banco de
+Espagna and LBS seminars and the NBER Summer Institute. The opinions expressed in the paper
+are those of the authors and do not reflect the views of the Banque de France or the National Bureau
+of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2014 by Simon Gilchrist and Benoît Mojon. All rights reserved. Short sections of text, not to exceed
+two paragraphs, may be quoted without explicit permission provided that full credit, including © notice,
+is given to the source.
+
+Credit Risk in the Euro Area
+Simon Gilchrist and Benoît Mojon
+NBER Working Paper No. 20041
+April 2014
+JEL No. E32,E44,G12
+ABSTRACT
+We construct credit risk indicators for euro area banks and non-financial corporations. These are the
+average spreads on the yield of euro area private sector bonds relative to the yield on German federal
+government securities of matched maturities. The indicators are also constructed at the country level
+for Germany, France, Italy and Spain. These indicators reveal that the financial crisis of 2008 has dramatically
+increased the cost of market funding for both banks and non-financial firms. In contrast, the prior recession
+following the 2000 U.S. dot-com bust led to widening credit spreads of non-financial firms but had
+no effect on the credit spreads of financial firms. The 2008 financial crisis also led to a systematic
+divergence in credit spreads for financial firms across national boundaries. This divergence in cross-country
+credit risk increased further as the European debt crisis has unfolded since 2010. Since that time, credit
+spreads for both non-financial and financial firms increasingly reflect national rather than euro area
+financial conditions. Consistent with this view, credit spreads provide substantial predictive content
+for a variety of real activity and lending measures for the euro area as a whole and for individual countries.
+VAR analysis implies that disruptions in corporate credit markets lead to sizable contractions in output,
+increases in unemployment, and declines in inflation across the euro area.
+Simon Gilchrist
+Department of Economics
+Boston University
+270 Bay State Road
+Boston, MA 02215
+and NBER
+sgilchri@bu.edu
+Benoît Mojon
+Banque de France
+31 rue Croix des Petits Champs
+DGEI-DEMFI-POMONE 41-1422
+75049 Paris Cedex 01
+benoit.mojon@banque-france.fr
+
+1 Introduction
+The euro area has become the epicenter of world financial stress since the post-Lehman
+recession escalated into a sovereign debt crisis that began in 2010. The fear of a sovereign
+default and the possible break up of the euro has resulted in diverging financial conditions
+for debt issuers across countries within the euro area. This divergence of financial conditions
+within the Eurosystem has been among the main motivations for a series of non-conventional
+monetary policy measures taken by the ECB since May 2010. In particular, the launch of the
+OMT in the late summer of 2012 was motivated by the need to “restore” the transmission
+mechanism, i.e. the uniqueness of financial conditions within the euro area.
+Although policy makers remain concerned about the fragmentation of the European
+financial system, gauging the extent of financial distress for countries within the euro area
+remains a considerable challenge. There are very few reliable indicators of credit risk in
+the euro area and across euro area countries. Most statistics on euro area interest rates are
+either sovereign interest rates or bank retail interest rates. In principle, the latter reflect the
+effective cost of external finance for a large proportion of the population of euro area firms
+and for households. In practice, retail bank interest rates are based on surveys rather than
+market-based indicators. In addition, bank retail interest rates reflect compositional changes
+among borrowers as well as the varying degree of competition between banks.
+Market interest rates arguably provide better indicators of credit risk as they reflect, in
+real time, the beliefs of many investors. Although market-based indices of an average of
+corporate bond yields are commercially available, these are frequently constructed from ar-
+bitrary samples of firms whose characteristics evolve over time in a non-transparent manner.
+Furthermore, thelackofinformationregardingtheunderlyingstructureoftheportfolioleads
+to a maturity mismatch when constructing credit spreads as the difference in yields between
+corporate bonds and sovereign bonds. This maturity mismatch confounds measurement by
+not properly distinguishing between credit risk and term premia.
+Thispaperintroducesnewindicesofcreditrisksintheeuroarea. Theseindicesaggregate
+the information obtained from thousands of corporate bonds and hundreds of thousands of
+monthly observations on the yield to maturity of such bonds since the launch of the euro
+in January 1999. Following Gilchrist et al. (2009) and Gilchrist and Zakrajsek (2012b),
+we construct a credit spread at the bond level as the difference between the corporate bond
+yield and the yield of a German Bund zero coupon bond of the same maturity. By construct-
+2
+
+ing credit spreads at the bond-issuance level we thus avoid confounding credit risk premia
+with term premia. We then aggregate these bond-level credit spreads to obtain indices of
+credit risk for two sectors, banks and non-financial corporations (NFC thereafter) for the
+four largest euro area countries: Germany, France, Italy and Spain. By aggregating this
+information across countries, we are also able to construct credit spreads for the euro area
+as a whole.
+Our credit spreads reveal that the financial crisis of 2008 dramatically increased the cost
+of market funding for both financial and non-financial firms in the euro area. Furthermore,
+since the summer of 2010, there is a strong divergence in corporate credit spreads across
+countries similar to the one observed for sovereign spreads. The credit spreads of both
+financial and non-financial corporations in Italy and Spain widened dramatically during this
+time period. Although not as pronounced, we further document a deterioration in the credit
+spreads of financial institutions in France and Germany during the post 2010 period. In
+contrast, the credit spreads of non-financial firms in France and Germany remain below
+their 2009 peak.
+In addition to documenting the evolution of credit spreads across countries within the
+euro area, we also analyze the information content of these credit spreads by examining
+their ability to predict commonly used indicators of economic activity, inflation and bank
+lending. These results imply that both financial and non-financial credit spread indices are
+highly robust leading indicators for economic activity and the growth in bank lending. In
+terms of aggregate spending components, we find that both bank and NFC credit spreads
+are particularly informative about the future growth in non-residential investment both in
+the euro area and at the country level. In contrast, only bank credit spreads appear to be
+robust predictors of the future growth in consumption spending.
+In order to characterize the response of economic activity to disruptions in credit markets
+wealsoestimateaFactor-AugmentedVectorAutoregression(FAVAR)andstudytheimpulse
+response of euro area and country-specific measures of economic activity to shocks to credit
+spreads that are orthogonal to information contained in both real activity series and other
+assetprices. Consistentwiththefindingsthatcreditspreadspredictfutureeconomicactivity,
+theFAVARresultsimplythatdisruptionsincreditmarketsleadtoasharpreductioninstock
+returns, significant declines in output and inflation, and increases in unemployment across
+the euro area and within each of the four countries.
+3

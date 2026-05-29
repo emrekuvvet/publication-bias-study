@@ -1,0 +1,122 @@
+NBER WORKING PAPER SERIES
+A NEW ERA OF MIDNIGHT MERGERS:
+ANTITRUST RISK AND INVESTOR DISCLOSURES
+John M. Barrios
+Thomas G. Wollmann
+Working Paper 29655
+http://www.nber.org/papers/w29655
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+January 2022
+We thank Jeremy Bertomeu, Jonathan Bonham, Hans Christensen, Jason Donaldson, Elisabeth
+Kempf, Christian Leuz, Jose Liberti, and Luigi Zingales for helpful comments and suggestions.
+Paulo Ramos provided exceptional research assistance. The views expressed herein are those of
+the authors and do not necessarily reflect the views of the National Bureau of Economic
+Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2022 by John M. Barrios and Thomas G. Wollmann. All rights reserved. Short sections of text,
+not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+A New Era of Midnight Mergers: Antitrust Risk and Investor Disclosures
+John M. Barrios and Thomas G. Wollmann
+NBER Working Paper No. 29655
+January 2022
+JEL No. G3,G34,L0,L4,L40,M4
+ABSTRACT
+Antitrust authorities search public documents to discover anticompetitive mergers. Thus, investor
+disclosures may alert them to deals that would otherwise escape scrutiny, creating disincentives
+for managers to divulge transactions. We study this behavior in publicly traded US companies.
+First, we estimate a regression discontinuity that exploits mandatory disclosure thresholds
+stipulated by securities law. We find that releasing information to investors poses antitrust risk.
+Second, we present a method for measuring undisclosed merger activity that relies on financial
+accounting reporting requirements. We find that undisclosed mergers total $2.3 trillion between
+2002 and 2016.
+John M. Barrios
+Olin Business School
+Washington University in St. Louis
+1 Brookings Drive
+St. Louis, MO 63130
+and NBER
+John.barrios@wustl.edu
+Thomas G. Wollmann
+Booth School of Business
+University of Chicago
+5807 South Woodlawn Avenue
+Chicago, IL 60637
+and NBER
+Thomas.Wollmann@chicagobooth.edu
+
+1 Introduction
+Topolicemergers,antitrustauthoritiesmustlearnaboutthemintheirincipiency.1 Largetransactions
+arerequiredbylawtobereportedtothefederalgovernment,butmostarenot,forcingagencystaffto
+scanalternativesourcesofinformationtodiscoverpendingdeals. Separatefromtheseconsiderations,
+efficientcapitalmarketsrequiredetailedandtimelyinformationaboutcorporatedevelopments[Fama
+et al., 1969, Fama, 1970], including news surrounding recent mergers. In other words, the same
+disclosuresneededbyinvestorstoaccuratelyvalueassetscanalsoalertantitrustauthoritiestoillegal
+mergersthatwouldhaveotherwiseescapeddetection. Thus,wearguethatinvestordisclosurescan
+poseantitrustriskand,byextension,thatmanagerswillrefrainfromreportingsomeanticompetitive
+dealstothepublic. Asaresult,harmfuldealsmayavoidscrutiny,andcommonlycitedmeasuresof
+mergersactivitymayseverelyunderstatetheirprevalence.
+Thequestionofwhethermanagersconcealmergeractivityhearkensbackmorethanacenturyinthe
+US.EvenafterCongressbannedmergersbetweencompetitorsin1914,manyfirmscontinuedtoacquire
+rivals, albeit quietly enough to avoid immediate detection. The resulting transactions—pejoratively
+called“midnightmergers”—weretypicallydiscoveredonlyafterthepartieshadsharedinformation
+and commingled assets, making the unwinding process infeasible [Baer, 1996]. The practice abated
+in 1976, due to legislation establishing a premerger notification program, which requires firms to
+notify the government in advance of large mergers. However, Congress exempted many deals in
+the original legislation, and it greatly expanded exemptions in 2001 [Wollmann, 2019]. As a result,
+mostUSacquirerstodayfacesimilarincentivestothosefaced70yearsago.2 Thispresentsaconcern,
+givenrecentevidencethatevenrelativelysmallmergerscanaccumulatetoconsolidateeconomically
+importantindustriesandharmconsumers[Wollmann,2021]aswellas“kill”innovation[Cunningham
+etal.,2021].
+WeexaminetherelationshipbetweeninvestordisclosuresandantitrustriskinpubliclytradedUS
+companies. Our paper begins with a model that presents the conceptual issues and motivates our
+empiricalanalysis. Atitscore,managersfacetrade-offswhendecidingtodiscloseprofit-enhancing
+mergers. Boundbyfiduciaryduty,theyseektomaximizethewealthofcurrentshareholders,3 mostof
+whomwillnotholdtheirsharesindefinitely. Disclosurecausesthefirm’ssharepricetorapidlyreflect
+1See, e.g., statements by Senator Philip Hart [1976] and former Director of the Bureau of Competition Bill Baer [1996].
+Empiricalevidenceisdescribedlaterinthissection.
+2Thesameholdstrueforfirmsheadquarteredabroad,sincemanyotherdevelopednationshavewitnessedsimilarlegislative
+changesoverthelasttwodecades[Morzenti,2020].
+3SeeSection3forabriefdiscussionofagencyissues.
+2
+
+the value added by the transaction (assuming it is completed), while not doing so causes the share
+price to rise gradually, as higher profits are eventually realized, meaning many shareholders at the
+timeofthemergerwillnotparticipateinthegains.4 Thus,disclosuresproducebenefits. However,they
+canalsobecostly,alertingantitrustauthoritiestomergersthatwouldhaveotherwiseescapedscrutiny.
+Onaverage,thesecostsarehighestforhorizontalmergers,wherethetargetandacquireroccupythe
+sameindustry,sincethesedealsaremorelikelytoinvolveacquisitionsofcompetitors.
+To produce empirically relevant predictions, we incorporate deterrent effects. This is essential
+in light of recent work, which shows that firms are so acutely aware of antitrust risks that intense
+government scrutiny results not in enforcement actions but rather anticompetitive mergers never
+being attempted in the first place.5 We also characterize four relatively distinct levels of disclosure,
+ordered by the amount and timeliness of the released information. First, premerger notifications
+areantitrust-specificfilingsrequiredundertheHart-Scott-Rodino(HSR)Act. Theyfullyinformthe
+governmentabouttransactionsinadvanceofclosingbutcoveronlyasmallfractionofdeals,whichwe
+call HSRmergers. Second, Item2 reports are required under the Securities and Exchange Act (SEA).
+Managementmustfilethemimmediatelyafterclosingcertaindeals. Notably,premergernotifications
+andItem2reportsarebasedondifferentcriteria,sothesetsofdealscoveredbythemarenotmutually
+exclusive. Wecategorizeallotherdisclosuresmeetingaminimumbarintermsofinformativenessas
+basicandrefertoremainingmergersasundisclosed.
+Underthesedefinitions,themodelyieldsfourpredictions. Thefirstappliestonon-HSRmergers. It
+holdsthattheshareofhorizontalmergersisloweramongtransactionsthatrequiremandatoryinvestor
+disclosures. Italsosuggestsastraightforwardfalsificationtest. HSRmergersrequirepremergernotifi-
+cations,whichfullyinformthegovernmentaboutatransaction,renderingItem2reportsuninformative
+forenforcementpurposes. Thus,ifwerestrictattentiontoHSRmergers,thefirstpropositionshouldnot
+hold. Thesecondpredictionisthatmanagersfindnondisclosureprofitableforatleastsomemergers.
+Thethirdisthatahighershareofundisclosedmergersthandisclosedonesarehorizontal. Thefourth
+providesanexpressionfortheexpectedantitrust-relatedcostofinvestordisclosures,whicharestrictly
+positive.
+Wetakethesepredictionstodatafrom2002to2016. Totestthefirst,werelyontransactionlevel
+mergerdataandrestrictattentiontonon-HSRmergers. However,thisexercisepresentsanchallenge:
+4WhiletheliteratureonM&Aannouncementsfindsthatbiddershareholdersearnzeroreturnsatthetakeoverannouncement
+[Moelleretal.,2004].Thesestudiesexplicitlyexcludesmalldealsandprivatetargets,whicharethefocusofourcurrentstudy.
+Whenprivatetargetannouncementreturnsareexamined,acquirerreturnsarefoundtobesignificantlypositive,consistentwith
+ourunderlyingassumption[Netteretal.,2011].
+5SeeWollmann[2019].
+3

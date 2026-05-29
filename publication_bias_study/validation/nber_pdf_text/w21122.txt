@@ -1,0 +1,109 @@
+NBER WORKING PAPER SERIES
+HIGH-FREQUENCY, ALGORITHMIC SPILLOVERS BETWEEN NASDAQ AND
+FOREX
+Takatoshi Ito
+Masahiro Yamada
+Working Paper 21122
+http://www.nber.org/papers/w21122
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+April 2015
+Ito acknowledges financial support Grant-in-Aid for Scientific Research A-25245044. We thank Frank
+Hatheway (Nasdaq OMX) for providing Nasdaq OMX data. The views expressed herein are those
+of the authors and do not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2015 by Takatoshi Ito and Masahiro Yamada. All rights reserved. Short sections of text, not to exceed
+two paragraphs, may be quoted without explicit permission provided that full credit, including © notice,
+is given to the source.
+
+High-frequency, Algorithmic Spillovers Between NASDAQ and Forex
+Takatoshi Ito and Masahiro Yamada
+NBER Working Paper No. 21122
+April 2015
+JEL No. F31,G12,G14,G15,G23
+ABSTRACT
+We empirically examine the order flows spillovers between Nasdaq and the Forex markets in 2008
+and 2009. With emphasis on a role of high-frequency traders (HFTs) who aggregate information between
+the two markets as well as within each market, our results show that HFTs in Nasdaq trade intensively
+on the market-wide information more rapidly than other market participants, and that their order flows
+contain more information about the Forex rates than those of the Forex themselves. As a result, order
+flows by HFTs in Nasdaq significantly lead those in the Forex activities. Reflecting each market's
+exposures to the common shocks during the Global Financial crisis, these spillovers vary over time,
+and HFTs have increased their influences. These empirical results are consistent with theoretical predictions
+of the rational expectations model of multi-asset trading.
+Takatoshi Ito
+Columbia University
+School of International and Public Affairs
+International Affairs Building
+Room 927, (MC 3333)
+420 West 118th Street
+New York, NY 10027
+and NBER
+ti2164@columbia.edu
+Masahiro Yamada
+Hitotsubashi University
+2-1 Naka
+Kunitachi, Tokyo, 186-8601
+Japan
+m.yamada@r.hit-u.ac.jp
+
+1 Introduction
+Recently, behavior of high-frequency traders (HFTs) becomes a focus of intensive exami-
+nation among practitioners, regulators, as well as academics. Although there is a growing
+literature of HFTs in individual assets, their spillovers across different markets have not been
+investigated in the literature. In this study, using a dataset that identifies transactions by
+HFTs in Nasdaq OMX, we explore the spillovers between Nasdaq stock market and Foreign
+exchange (Forex) markets. We find that HFTs trade on the common information more ag-
+gressively and rapidly than non-HFTs and their order flows contain more information about
+the Forex rates than those of the Forex themselves.
+Stock prices and Forex rates are correlated. Figure 1 plots three Forex rates (EUR/JPY,
+EUR/USD, USD/JPY), Nasdaq index, and the volume share of Nasdaq HFTs from January
+2008 to August 2009. The plots shows that the correlation between Forex rates and the
+stock index are time-varying. After September 2008, the correlation seems increased as the
+volume share of HFTs rose. Then, what is the role of HFT in the determination of the
+correlation between stocks and Forex? Recent studies on HFTs show that HFTs trade in the
+same direction of permanent price changes and contribute to the price discovery as a market
+maker (Hirschey (2013); Menkveld (2013); Hendershott (2011); Carrion (2013); Brogaard,
+Hendershott and Riordan (2012)), but they do not investigate the spillovers of HFTs to
+other markets or the source of better price discovery by HFTs.
+We aim to answer HFT’s role in influencing cross-market correlation. To do so, we
+combineNasdaqOMXhigh-frequencytraderdatasetandEBSForexdataset. Nasdaqdataset
+identifies transactions by HFTs, allowing an analysis on HFTs as a group. By using the
+dataset, we compare market-wide order flows in Nasdaq and Forex activities. A standard
+vector auto-regression (VAR) is used to investigate the lead-lag, cross-price impacts, and the
+information share of order flows among order flows in the Forex, Nasdaq HFT, non-HFT,
+and the Forex returns.
+Since we can interpret these empirical results in many ways, a theoretical framework
+1
+
+which provides a consistent explanation of the results is presented. In the Kodres and
+Pritsker (2002) framework, where traders can trade multiple-assets in a one-shot game, since
+uninformed traders make signal extraction from prices, noise trading in one market can
+influence the other markets. We numerically examine the estimated cross-price impacts and
+price correlations and judge whether the model can replicate empirical results.
+Our main empirical findings are as follows. First, we find strong evidence that HFT
+order flows are very influential to the Forex market. In particular, an empirical results show
+that order flows by Nasdaq HFTs proceed to the Forex activities but those by non-HFT
+do not have such property. Forex returns and order flows lag to HFT’s order flows by 500
+milliseconds. However, this lead-lag can occur due to not only some economic reasons but
+also mechanical reasons such as a difference of trading architectures. Theoretical analysis
+suggests that a response in a market to noise tradings in other markets can be different
+depending on the price informativeness in each market. This asymmetry can be interpreted
+as a short-run lead-lag relationship. To examine the informativeness, we estimate following
+Hasbrouck(1991), eachorderflow’scontributiontothepermanentchangesofForexrates. As
+a result, we find that the contribution by Nasdaq HFT order flows dominate the contribution
+from non-HFT order flows and Forex order flows. This result means that the HFT order
+flows contain more market-wide information that affects both stocks and Forex rates.
+Second, we find that HFTs and non-HFTs differs in the weight and reaction speed for
+market-wide information. HFT order flows in individual stocks are more correlated with
+market-wide order flows than non-HFT order flows.1 Since idiosyncratic order flows in in-
+dividual stocks do not affect the Forex market at all, influences to Forex by Nasdaq traders
+can be different between HFTs and non-HFTs. In addition, the spillovers from the Forex
+are different between HFTs and non-HFTs. After the changes in Forex return, HFTs order
+more aggressively than non-HFTs for less than around two seconds. After that, orders from
+non-HFTs become larger than those from HFTs.
+1Brogaard, Hendershott and Riordan (2012) also report this property.
+2

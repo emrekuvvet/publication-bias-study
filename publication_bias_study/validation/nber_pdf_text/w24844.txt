@@ -1,0 +1,119 @@
+NBER WORKING PAPER SERIES
+EYES WIDE SHUT? THE MORAL HAZARD OF MORTGAGE INSURERS DURING
+THE HOUSING BOOM
+Neil Bhutta
+Benjamin J. Keys
+Working Paper 24844
+http://www.nber.org/papers/w24844
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2018
+We thank Larry Cordell, Karen Dynan, Fernando Ferreira, Scott Frame, Joe Gyourko, Doug
+McManus, Steve Oliner, Michael Palumbo, Ed Pinto, Todd Sinai, Nancy Wallace, representatives
+from two mortgage insurance firms, and numerous seminar and conference participants for
+helpful comments and suggestions. Jeremy Kirk provided outstanding research assistance. The
+views expressed herein are those of the authors and do not necessarily reflect the views of the
+Federal Reserve Board, its staff, or National Bureau of Economic Research. Any remaining errors
+are our own.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2018 by Neil Bhutta and Benjamin J. Keys. All rights reserved. Short sections of text, not to
+exceed two paragraphs, may be quoted without explicit permission provided that full credit,
+including © notice, is given to the source.
+
+Eyes Wide Shut? The Moral Hazard of Mortgage Insurers during the Housing Boom
+Neil Bhutta and Benjamin J. Keys
+NBER Working Paper No. 24844
+July 2018
+JEL No. G21,G22,L10,L14
+ABSTRACT
+In the U.S. mortgage market, private mortgage insurance (PMI) is mandated for high-leverage
+mortgages purchased by Fannie Mae and Freddie Mac to serve as a private market check on GSE
+risk-taking. However, we document that PMI firms dramatically expanded insurance on high-
+risk mortgages at the tail-end of the housing boom, contradicting the industry's own research
+regarding house price risk. Using three detailed sources of mortgage and insurance data, we
+examine PMI application denial rates, default rates on PMI-backed loans, and growth rates of
+high-leverage lending around the GSE conforming loan limit, along with information extracted
+from company, industry and regulatory filings and reports. We conclude that PMI behavior
+during the housing boom in part reflects a "moral hazard" incentive inherent to insurance
+companies in general to underprice risk and be undercapitalized. Our results suggest that rather
+than providing discipline, private mortgage insurers facilitated GSE risk-taking.
+Neil Bhutta
+Federal Reserve Board
+20th and C St N
+Stop 149
+Washington DC 20551
+neil.bhutta@frb.gov
+Benjamin J. Keys
+Department of Real Estate
+The Wharton School
+University of Pennsylvania
+1461 Steinberg-Dietrich Hall
+3620 Locust Walk
+Philadelphia, PA 19104
+and NBER
+benkeys@wharton.upenn.edu
+
+2
+“Mortgage insurers were designed to be review underwriters. Because they are in the
+first loss position on insured mortgages, they are the second set of eyes looking at
+potential loans to check and see if it is safe for both the investor and the borrower.”
+–Mortgage Insurance Companies of America (MICA) 2008–2009 Factbook
+I Introduction
+In banking and financial markets, the government often plays a role as a guarantor to help ensure
+market stability and confidence. One well-known example is federal deposit insurance. Another
+example is in residential mortgage markets, where the government implicitly and explicitly guaran-
+tees investments in certain mortgage-backed securities (MBS). While these guarantees can provide
+essential countercyclical liquidity support, the presence of a guarantee can also blunt the incentives
+of market participants to monitor intermediaries and accurately price risk. To help restore market
+discipline, the government may require a significant involvement of private capital that does not
+receive government protection.
+Two giants of the U.S. mortgage market that have benefited from implicit government back-
+ing are Fannie Mae and Freddie Mac, collectively known as Government-Sponsored Enterprises,
+or GSEs. The GSEs purchase loans from lenders, bundle them into MBS, and provide a credit
+guarantee that protects investors against losses. Investors perceived the GSEs’ credit guarantee to
+be as good as a government guarantee because of the tight link between the GSEs and the federal
+government (Acharya, Richardson, Van Nieuwerburgh and White 2011). Given this guarantee,
+investors had little incentive to monitor the GSEs or constrain profit-driven risk-taking. To help
+overcome these incentive incompatibilities, Congress requires the GSEs to obtain a private market
+“credit enhancement” for high-leverage mortgage loans.
+The most common form of credit enhancement is private mortgage insurance, or PMI. Private
+mortgage insurers partially cover the losses incurred from a mortgage default. When a high loan-
+to-value (LTV > 80%) mortgage is securitized through Fannie Mae or Freddie Mac, PMI takes a
+first-loss position in front of the GSEs. PMI companies are independent firms, and can set their
+ownunderwritingstandardsandreviewloanspriortoorigination. IfPMIcompanieswereunwilling
+to insure a high-LTV loan, it would be ineligible for purchase by the GSEs. The PMI industry
+frequently touts its role in providing market discipline as a “second set of eyes,” as in the above
+
+3
+quote (MICA 2009).
+In this paper we show that, rather than providing restraint, PMI companies facilitated a dra-
+matic expansion of risky lending by the GSEs in 2007. Employing rarely used data on the universe
+of PMI applications, along with loan-level data reported under the Home Mortgage Disclosure Act
+(HMDA) and from mortgage servicers, we document several troubling facts about PMI activity
+during the housing boom. First, PMI issuance grew sharply — by nearly 50 percent — in 2007, at
+the tail-end of the housing boom when fears of a housing downturn were elevated. This surge in
+issuance pushed the fraction of home purchase loans covered by PMI to historic levels.
+Second, PMIissuancegrewdisproportionatelyincitieswherethePMIindustry’sownpublished
+research indicated the highest levels of housing risk. Moreover, PMI issuance grew disproportion-
+atelyin2007intheriskiesttypesofloans,suchasthosewithzerodownpayment,andfortheriskiest
+types of borrowers, with both low FICO scores and small down payments (high LTV ratios).
+Third, we demonstrate that PMI growth in 2007 was closely connected to declines in “piggy-
+back” lending — junior liens combined with standard 80 percent LTV first liens at the time of
+origination. In 2005 and 2006, piggyback lending became heavily used, with these loans usually
+going into private-label (non-GSE) MBS. The piggyback lending market dried up in late 2006,
+indicative of other private participants being no longer willing to bear high-LTV risk. Indeed,
+the PMI industry research noted above argued that areas with high concentrations of piggyback
+loans were the places most likely to experience near-term house price corrections (Calhoun 2005).
+Nonetheless, PMI growth occurred precisely when piggyback lending retrenched, and we document
+a strong negative correlation at the neighborhood (census tract) level between PMI and piggyback
+growth from 2006 to 2007.
+Fourth, this sharp increase in risk exposure in 2007 was not associated with any change in
+insurancepremiums. Basedonratesheetsobtainedfromthistimeperiod,weconfirmthatinsurance
+premiums were based largely on LTV, with constant pricing within LTV bins across much of the
+credit score distribution, and that prices based on leverage were essentially unchanged from 1996 to
+2008. Notably, PMIfirmsdidnotpriceregionalrisk, despitetheindustry’sawarenessofsubstantial
+differential likelihoods of house price declines across metro areas.
+Rapid expansion in issuance at the height of the boom contributed to a dramatic collapse of

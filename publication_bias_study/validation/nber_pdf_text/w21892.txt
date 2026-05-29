@@ -1,0 +1,131 @@
+NBER WORKING PAPER SERIES
+WHOLESALE BANKING AND BANK RUNS IN MACROECONOMIC MODELLING
+OF FINANCIAL CRISES
+Mark Gertler
+Nobuhiro Kiyotaki
+Andrea Prestipino
+Working Paper 21892
+http://www.nber.org/papers/w21892
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+January 2016
+National Science Foundation The views expressed herein are those of the authors and do not necessarily
+reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2016 by Mark Gertler, Nobuhiro Kiyotaki, and Andrea Prestipino. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Wholesale Banking and Bank Runs in Macroeconomic Modelling of Financial Crises
+Mark Gertler, Nobuhiro Kiyotaki, and Andrea Prestipino
+NBER Working Paper No. 21892
+January 2016
+JEL No. E44
+ABSTRACT
+There has been considerable progress in developing macroeconomic models of banking crises. However,
+most of this literature focuses on the retail sector where banks obtain deposits from households. In
+fact, the recent financial crisis that triggered the Great Recession featured a disruption of wholesale
+funding markets, where banks lend to one another. Accordingly, to understand the financial crisis as
+well as to draw policy implications, it is essential to capture the role of wholesale banking. The objective
+of this paper is to characterize a model that can be seen as a natural extension of the existing literature
+that provides a step toward accomplishing this objective. The model accounts for both the buildup
+and collapse of wholesale banking, and also sketches out the transmission of the crises to the real sector.
+We also draw out the implications of possible instaibility in the wholesale banking sector for lender-
+of-last(cid:3)resort policy as well as for macroprudential policy.
+Mark Gertler Andrea Prestipino
+Department of Economics Federal Reserve System
+New York University Washington DC, 20551
+269 Mercer Street, 7th Floor andrea.prestipino@frb.gov
+New York, NY 10003
+and NBER
+mark.gertler@nyu.edu
+Nobuhiro Kiyotaki
+Department of Economics
+Princeton University
+Fisher Hall
+Princeton, NJ 08544-1021
+and NBER
+kiyotaki@princeton.edu
+
+1 Introduction
+One of the central challenges for contemporary macroeconomics is adapting the core
+models to account for why the recent financial crisis occurred and for why it then
+devolved into the worst recession of the postwar period. On the eve of the crisis
+the basic workhorse quantitative models used in practice largely abstracted from
+financial market frictions. These models were thus largely silent on how the crisis
+broke out and how the vast array of unconventional policy interventions undertaken
+by the Federal Reserve and Treasury could have worked to mitigate the effects of
+the financial turmoil. Similarly, these models could not provide guidance for the
+regulatory adjustments needed to avoid another calamity.
+From the start of the crisis there has been an explosion of literature aimed at
+meeting this challenge. Much of the early wave of this literature builds on the fi-
+nancial accelerator and credit cycle framework developed in Bernanke and Gertler
+(1989) and Kiyotaki and Moore (1997). This approach stresses the role of balance
+sheets in constraining borrower spending in a setting with financial market frictions.
+Procyclical movement in balance sheet strength amplifies spending fluctuations and
+thus fluctuations in aggregate economic activity. A feedback loop emerges as con-
+ditions in the real economy affect the condition of balance sheets and vice-versa.
+Critical to this mechanism is the role of leverage: The exposure of balance sheets to
+systemic risk is increasing in the degree of borrower leverage.
+The new vintage of macroeconomic models with financial frictions makes progress
+in two directions: First, it adapts the framework to account for the distinctive fea-
+tures of the current crisis. In particular, during the recent crisis, it was highly lever-
+aged financial institutions along with highly leveraged households that were most
+immediately vulnerable to financial distress1. The conventional literature featured
+balance sheet constraints on non-financial firms. Accordingly, a number of recent
+macroeconomic models have introduced balance sheet constraints on banks, while
+others have done so for households.2 The financial accelerator remains operative,
+but the classes of agents most directly affected by the financial market disruption
+differ from earlier work.
+Another direction has involved improving the way financial crises are modeled.
+For example, financial crises are inherently nonlinear events, often featuring a simul-
+1To be sure, the financial distress also directly affected the behavior of non-financial firms. See
+Giroud and Mueller (2015) for evidence of firm balance sheet effects on employment during the
+crisis.
+2See Gertler and Karadi (2011), Gertler and Kiyotaki (2010) and Curdia and Woodford (2010)
+for papers that incorporate banking and Eggertsson and Krugman (2012), Geurreri and Lorenzoni
+(2011) and Midrigan and Philippon (2011) for papers that incuded household debt.
+2
+
+taneous sudden collapse in asset prices and rise in credit spreads.3 A sharp collapse
+in output typically ensues. Then recovery occurs only slowly, as it is impeded by a
+slow process of develeraging. A number of papers have captured this nonlinearity by
+allowing for the possibility that the balance sheet constraints do not always bind.4
+Financial crises are then periods where the constraints bind, causing an abrupt con-
+traction in economic activity. Another approach to handling the nonlinearity is to
+allow for bank runs.5 Indeed, runs on the shadow banking system were a salient
+feature of the crisis, culminating with the collapse in September 2008 of Lehman
+Brothers, of some major money market funds and ultimately of the entire invest-
+ment banking sector. Yet another literature captures the nonlinearity inherent in
+financial crises by modeling network interactions (see, e.g., Garleanu, Panegeas, and
+Yu, 2015).
+One area the macroeconomics literature has yet to address adequately is the
+distinctive role of the wholesale banking sector in the breakdown of the financial
+system. Our notion of wholesale banks corresponds roughly, though not exactly,
+to the shadow banking sector on the eve of the 2007-2009 financial crisis. Shadow
+banking includes all financial intermediaries that operated outside the Federal Re-
+serve’s regulatory framework. By wholesale banking, we mean the subset that (i)
+was highly leveraged, often with short term debt and (ii) relied heavily on borrowing
+from other financial institutions in ”wholesale” markets, as opposed to borrowing
+from households in ”retail” markets for bank credit.
+When the crisis hit, the epicenter featured malfunctioning of the wholesale bank-
+ing sector. Indeed, retail markets remained relatively stable while wholesale funding
+markets experienced dry-ups and runs. By contrast, much of the macroeconomic
+modeling of banking features traditional retail banking. In this respect it misses
+some important dimensions of both the run-up to the crisis and how exactly the
+crisis played out. In addition, by omitting wholesale banking, the literature may be
+missing some important considerations for regulatory design.
+In this Handbook chapter we present a simple canonical macroeconomic model
+of banking crises that (i) is representative of the existing literature; and (ii) extends
+this literature to feature a role for wholesale banking. The model will provide some
+insight both into the growth of wholesale banking and into how this growth led to
+a build-up of financial vulnerabilities that ultimately led to a collapse. Because the
+3SeeHeandKrishnamurthy(2014)forevidenceinsupportofthenonlinearityoffinancialcrises.
+4See Brunnermeier and Sannikov (2014), He and Krishnamurthy (2013,2014) and Mendoza
+(2010).
+5See Gertler and Kiyotaki (2015), Ferrante (2015a), Robatto (2014) and Martin, Skeie and Von
+Thadden (2014a,b).
+3

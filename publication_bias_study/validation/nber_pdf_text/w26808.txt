@@ -1,0 +1,131 @@
+NBER WORKING PAPER SERIES
+WHAT DETERMINES CONSUMER FINANCIAL DISTRESS?
+PLACE- AND PERSON-BASED FACTORS
+Benjamin J. Keys
+Neale Mahoney
+Hanbin Yang
+Working Paper 26808
+http://www.nber.org/papers/w26808
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+February 2020
+The results in this paper were calculated (or derived) based on credit data provided by
+TransUnion, a global information solutions company, through a relationship with the Kilts Center
+for Marketing at The University of Chicago Booth School of Business. All views expressed and
+any errors contained in this paper are solely those of the authors. We thank Bruno Escobar
+Izquierdo and Xuyang Xia for excellent research assistance and seminar audiences at the Bank of
+England, the Central Bank of Ireland, Dartmouth, Georgetown, Imperial College London, the J.P.
+Morgan Chase Institute, Kellogg, NYU-Stern, Washington University, and the Wharton School
+for helpful comments. Keys thanks the Research Sponsors Program of the Zell/Lurie Real Estate
+Center. Mahoney acknowledges support from the Initiative on Global Markets at the University
+of Chicago Booth School of Business. The views expressed herein are those of the authors and do
+not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2020 by Benjamin J. Keys, Neale Mahoney, and Hanbin Yang. All rights reserved. Short
+sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+What Determines Consumer Financial Distress? Place- and Person-Based Factors
+Benjamin J. Keys, Neale Mahoney, and Hanbin Yang
+NBER Working Paper No. 26808
+February 2020
+JEL No. G5,G51,K35
+ABSTRACT
+We use credit report data to study consumer financial distress in America. We show there are
+large, persistent disparities in financial distress across regions. To understand these patterns, we
+conduct a “movers” analysis. For collections and default, there is only weak convergence
+following a move, suggesting these types of distress are not primarily caused by place-based
+factors (e.g., local economic conditions and state laws) but instead reflect person-based
+characteristics (e.g., financial literacy and risk preferences). In contrast, for personal bankruptcy,
+we find a sizable place-based effect, which is consistent with anecdotal evidence on how local
+legal factors influence personal bankruptcy.
+Benjamin J. Keys Hanbin Yang
+Department of Real Estate Harvard University
+The Wharton School hanbin.v.yang@gmail.com
+University of Pennsylvania
+432 Vance Hall
+3733 Spruce Street
+Philadelphia, PA 19104
+and NBER
+benkeys@wharton.upenn.edu
+Neale Mahoney
+Department of Economics
+Stanford University
+579 Jane Stanford Way
+Stanford, CA 94305
+and NBER
+nmahoney@stanford.edu
+
+1 Introduction
+ConsumerfinancialdistressintheUnitedStatesishighinbothabsoluteandrelativeterms.
+In credit report data, one-third of individuals have at least one debt in collections and
+nearly5%havedeclaredbankruptcyinthelast7years.1 Whilethereisnoperfectdatafor
+relative comparisons, the available data indicate that financial distress is much higher in
+theU.S.thaninEurope.2
+In this paper, we aim to advance our understanding of consumer financial distress in
+the U.S. by examining patterns of financial distress across geographic areas. We measure
+financialdistressusinganationallyrepresentativepanelofTransUnioncreditreportdata
+that tracks approximately 35 million individuals on a monthly basis over 2000–2016. We
+focusouranalysisonthreecommonmetricsoffinancialdistress–debtincollections,credit
+carddelinquency,andpersonalbankruptcy. Weemphasizethesemetricsbecauseouraim
+istoobservefinancialdistressforthebroadestpossiblesegmentofthepopulation. Other
+financial products – such as home loans and auto loans – are held by a smaller and less
+representativesampleofthepopulation,andthusprovideuswithanarrowerwindowon
+peopleatriskofdefault.
+The first part of our paper documents large and persistent geographic disparities in
+financialdistressbetweentheUpperMidwestandDeepSouthregionsofthecountry.3 In
+theDeepSouth,44%ofpeoplewithacreditreporthaveunpaiddebtincollectionsversus
+24%intheUpperMidwest. Similarly,measuresofcreditcarddelinquencyandbankruptcy
+are40%to50%higherintheDeepSouththanintheUpperMidwest.
+Themainpartofthepaperaimstobetterunderstandwhatdeterminesthesepersistent
+geographic disparities. As we show in a variance decomposition, roughly three-quarters
+ofthevariationinfinancialdistressover2000-2016occursacrossgeographicareas, asop-
+1Authors’calculationsusingcreditbureaudatafromJune2015.SeeSection2formoredetails.
+2For the sake of comparability, it is useful to rely on survey data from similar years. Ac-
+cording to the 2007 Survey of Consumer Finances, 20.8% of U.S. households are late on their
+debt payments (https://www.federalreserve.gov/pubs/bulletin/2014/articles/scf/scf.htm). In contrast,
+the EU-SILC (Statistics on Income and Living Conditions) 2008 ad hoc module indicates a median
+rate of arrears across E.U. countries of 3.2% on mortgage loans and 1.2% on non-mortgage loans
+(http://ec.europa.eu/eurostat/web/income-and-living-conditions/data/ad-hoc-modules).
+3We define the Upper Midwest as Iowa, Minnesota, North Dakota, South Dakota, Wisconsin, and the
+Upper Peninsula of Michigan and the Deep South as Alabama, Arkansas, Georgia, Louisiana, Mississippi,
+andSouthCarolina.
+1
+
+posedtowithingeographicareasovertime. Ourgoalistounderstandthesourcesofthese
+cross-sectionaldifferences. Wedonotattempttouncoverthedriversofover-timevariation
+infinancialdistressthatisoftenthefocusofmacroeconomicanalysis.
+Much of the existing research on the sources of financial distress can be separated
+into two categories. One category emphasizes local institutional and economic factors,
+suchasstate-levelbankruptcylaws(e.g.,Fay,HurstandWhite,2002;Auclert,Dobbieand
+Goldsmith-Pinkham, 2019) and local economic conditions (e.g., Agarwal and Liu, 2003).
+A second category emphasizes individual characteristics, such as preference parameters
+(e.g., discount rates, risk preference, default stigma, social capital) and behavioral factors
+(e.g.,inattention,financialliteracy).4
+Wequantifytherelativeimportanceofthesecategoriesusinga“movers”researchde-
+sign that examines how financial distress evolves when individuals move to places with
+different levels of financial distress. If local institutional and economic factors are impor-
+tant,wewouldexpectoutcomestoconvergetothoseinthenewlocation. Iffinancialdis-
+tress is determined by individual characteristics, we would not expect any convergence.
+Inkeepingwiththemoversdesignliterature,wewillsometimesrefertolocalinstitutional
+and economic factors as “place effects” and individual characteristics as “person effects”
+(e.g.,Finkelstein,GentzkowandWilliams,2016).5
+We operationalize this movers research design by estimating event-study regressions
+of a given outcome on the “size of the move,” defined as the average difference in that
+outcome between the origin and destination areas, controlling for individual and time
+fixed effects. We show robustness to defining the size of the move using narrower and
+broader levels of geographic aggregation and to estimating two-way fixed effects models
+thatrelaxassumptionsimplicitintheevent-studydesign.
+The identifying assumption for the movers research design is the standard parallel
+4Seee.g. GrossandSouleles(2002)ondefaultstigma,Agarwal,ChomsisengphetandLiu(2011)on“indi-
+vidualsocialcapital,”andGerardi,GoetteandMeier(2013)onfinancialliteracy.
+5Asnotedinthepriorliterature, individualcharacteristicsmaybeshapedbythelocalenvironment, es-
+peciallyatyoungages(e.g.,Bronnenberg, DubeandGentzkow,2012;Finkelstein, GentzkowandWilliams,
+2016).Assuch,thepersoneffectsweestimatemaypartiallyembedtheplaceeffectsofwherepeoplegrewup.
+Thatbeingsaid,wethinkitisappropriateinmostcontextstorefertothesecharacteristicsaspersoneffects,
+sincetheyarepersistentfeaturesofindividualbehaviorthatarenotaffectedoverthemediumrunbylocal
+institutionalorculturalfactors.
+2

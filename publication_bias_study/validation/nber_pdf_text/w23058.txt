@@ -1,0 +1,111 @@
+NBER WORKING PAPER SERIES
+WILL AD BLOCKING BREAK THE INTERNET?
+Ben Shiller
+Joel Waldfogel
+Johnny Ryan
+Working Paper 23058
+http://www.nber.org/papers/w23058
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+January 2017
+Johnny Ryan is an employee of PageFair, a firm that measures the extent of ad blocking and
+offers ad-recovery technologies that enable publishers to display ads in a manner that adblockers
+cannot block. Neither Shiller nor Waldfogel has received any compensation for the research in
+the paper. PageFair was allowed to review the paper for accuracy but did not have control over
+the paper's findings nor conclusions. The views expressed herein are those of the authors and do
+not necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2017 by Ben Shiller, Joel Waldfogel, and Johnny Ryan. All rights reserved. Short sections of
+text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+
+Will Ad Blocking Break the Internet?
+Ben Shiller, Joel Waldfogel, and Johnny Ryan
+NBER Working Paper No. 23058
+January 2017
+JEL No. L81,L82
+ABSTRACT
+Ad blockers allow Internet users to obtain information without generating ad revenue for site
+owners; and by 2016 they were used by roughly a quarter of site visitors. Given the ad-supported
+nature of much of the web, ad blocking poses a threat to site revenue and, if revenue losses
+undermine investment, a possible threat to consumers' access to appealing content. Using unique,
+proprietary, and site-specific data on the share of site visitors using ad blockers at a few thousand
+sites, along with Alexa traffic data, we explore the impact of ad blocker usage on site quality, as
+inferred from traffic ranks, 2013-2016. We find that each additional percentage point of site
+visitors using ad blockers raises (worsens) its traffic rank by about 0.6 percent over a 35 month
+period, with stronger effects at initially worse-ranked sites. We provide additional evidence of
+causality by showing that the relationship between traffic trends and eventual ad blocking does
+not predate ad blocking. Plausible instruments for ad blocking also deliver consistent results.
+Effects of ad blocking on revenue are compounded by the fact that ad blocking reduces visits,
+while also generating less revenue from remaining visitors employing ad blockers. We conclude
+that ad blocking poses a substantial threat to the ad-supported web.
+Ben Shiller Johnny Ryan
+Brandeis University PageFair
+Department of Economics johnny@pagefair.com
+Waltham, MA 02453
+shiller@brandeis.edu
+Joel Waldfogel
+Frederick R. Kappel Chair in Applied Economics
+3-177 Carlson School of Management
+University of Minnesota
+321 19th Avenue South
+Minneapolis, MN 55455
+and NBER
+jwaldfog@umn.edu
+
+Copyright protection is an important theoretical determinant of incentives for creation of
+new products, and recent research documents the relationship between legal intellectual property
+regime and the quality and quantity of new output.1 Beyond legal rules alone, intellectual
+property is in general protected by a combination of law and technology that may together allow
+sellers to appropriate enough of consumers’ willingness to pay to finance the creation of new
+products. The development of various digital technologies over the past few decades has
+undermined sellers’ ability to appropriate consumers’ willingness to pay, raising the possibility
+of a diminished supply of new information and entertainment products. For example, new
+digital technologies have challenged traditional revenue models through direct piracy (e.g.
+Napster), diversion of attention to aggregators rather than the underlying information sources
+(e.g. Google News), and pure-play advertising platforms such as Craigslist, which divert revenue
+from newspaper classified ads.2
+Despite these and related challenges, much of the commercial information on the web is
+provided under ad-financed business models. While a growing number of newspaper sites have
+moved behind paywalls (Chiou and Tucker, 2013), most other commercial information sources
+rely on advertising. The finance of information production with ad revenue has come under
+threat with the development of ad blocking technologies. Ad blockers, such as Ad block Plus,
+are browser extensions that allow users to browse the web without having to see sites’ ads. As a
+1 See Giorcelli and Moser (2016).
+2 See, for example. Oberholzer-Gee and Strumpf (2006), Rob and Waldfogel (2006), and Seamans and Zhu (2010),
+among others. Ad blocking is not the first technology that allows consumption without compensation to rights
+holders. Digital video recorders such as TiVo allowed users to fast forward through ads, threatening their revenue
+generating potential. See Wilbur (2008). In 2012 Aereo created a service distributing broadcast television online
+without paying rights holders transmission fees. ABC sued and won, shuttering Aereo. See
+http://www.nytimes.com/2014/06/26/business/media/supreme-court-rules-against-aereo-in-broadcasters-
+challenge.html .
+1
+
+result, many site visitors obtain information without seeing ads, clicking through to advertisers'
+sites, or otherwise generating revenue for site owners. The use of ad blockers has grown sharply
+in recent years. By some estimates, roughly a quarter of site visitors used ad blockers by 2016, a
+magnitude of ad blocking that may produce a serious threat to site revenue and, if revenue losses
+undermine investment, a possible threat to consumers' access to appealing content.3 This is the
+question this paper seeks to explore.4
+The mechanism we have in mind, as in the traditional literature on the relationship
+between intellectual property revenue appropriation and supply, is that reduced revenue may
+undermine a site's ability to invest, which could then manifest itself as a diminished site that is
+less appealing to potential visitors. Web users might then visit the degraded sites less, reducing
+the sites’ traffic. While getting data on the relevant issues - site traffic and site-specific measures
+of ad blocker usage - is challenging, we have put together a dataset that allows us to explore this.
+Using unique, proprietary, and site-specific data on the share of site visitors using ad blockers at
+a few thousand sites, matched with Alexa traffic data, we explore the impact of ad blocker usage
+on site traffic between 2013 and 2016.
+Aggregate ad blocking has grown rapidly between 2013 and 2016, and during this period,
+we find that sites with a high proportion of ad blocking visitors experience deterioration in their
+traffic ranks, relative to sites with fewer ad blocking visitors. In our main analyses, we find that
+each additional percentage point of site visitors using ad blockers raises (worsens) a site’s traffic
+rank by about 0.6 percent over a 35 month period, with the effects concentrated in sites that are
+initially lower ranked. We have two ways of dealing with possible concerns about unobserved
+3 http://www.emarketer.com/Article/US-Ad-Blocking-Jump-by-Double-Digits-This-Year/1014111
+4 Anderson and Gans (2011) develop a theoretical model of ad-blocking showing the possibility of a downward
+spiral in which ad blocking leads websites to carry more ads, further reducing their appeal.
+2

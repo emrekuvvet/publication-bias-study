@@ -1,0 +1,136 @@
+NBER WORKING PAPER SERIES
+MEASURING LIQUIDITY MISMATCH IN THE BANKING SECTOR
+Arvind Krishnamurthy
+Jennie Bai
+Charles-Henri Weymuller
+Working Paper 22729
+http://www.nber.org/papers/w22729
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+October 2016
+We thank Viral Acharya, Christa Bouwman, Markus Brunnermeier, Allen Berger, Adam
+Copeland, Darrell Duffie, Michael Fleming, Itay Goldstein, Gary Gorton, Samuel Hanson, Song
+Han, Larry Harris, Benjamin Hébert, Yi Li, Angela Maddaloni, Antoine Martin, Stefan Nagel,
+Mitchell Petersen, Klaus Schaeck, Philipp Schnabl, Mark Seasholes, David Skeie, Philip E.
+Strahan, and seminar participants at AFA (2016), WFA (2014), EFA (2014), SFS Finance
+Calvacade (2014), FDIC Annual Conference (2014), BIS Research Network meeting (2014),
+European Bank Association s Annual Financial Stability Conference (2014), Mitsui Finance
+Symposium (2015), the Role of Liquidity in the Financial System Conference (2015), Stanford
+University, New York University, Copenhagen Business School, Georgetown University, and
+University of Rhode Island for helpful comments. We also thank participants in discussions at the
+BIS, European Central Bank, International Monetary Fund, the Federal Reserve Board, Federal
+Reserve Bank of New York, Federal Reserve Bank of Atlanta, Deutsche Bundesbank, Bank of
+France, Bank of England, and the Department of the Treasury's Office of Financial Research.
+Jonathan Choi, Jay Im, and Jiacui Liu provided excellent research assistance. The views
+expressed herein are those of the authors and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+At least one co-author has disclosed a financial relationship of potential relevance for this
+research. Further information is available online at http://www.nber.org/papers/w22729.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2016 by Arvind Krishnamurthy, Jennie Bai, and Charles-Henri Weymuller. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+Measuring Liquidity Mismatch in the Banking Sector
+Arvind Krishnamurthy, Jennie Bai, and Charles-Henri Weymuller
+NBER Working Paper No. 22729
+October 2016
+JEL No. E44,E51,G21,G28
+ABSTRACT
+This paper implements a liquidity measure, “Liquidity Mismatch Index (LMI),” to gauge the
+mismatch between the market liquidity of assets and the funding liquidity of liabilities. We
+construct the LMIs for 2882 bank holding companies during 2002-2014 and investigate the time-
+series and cross-sectional patterns of banks' liquidity and liquidity risk. Aggregate banking sector
+liquidity worsens from +$4 trillion before the crisis to -$6 trillion in 2008, and reverses back to
+the pre-crisis level in 2009. We also show how a macro-prudential liquidity stress test can be
+conducted with the LMI metric, and that such a stress test could have revealed the fragility of the
+banking system in early 2007. In the cross section, we find that banks with more ex-ante liquidity
+mismatch have a higher stock-market crash probability and are more likely to borrow from the
+government during the financial crisis. Thus the LMI measure is informative regarding both
+individual bank liquidity risk as well as the liquidity risk of the entire banking system. We
+compare the LMI measure of liquidity to other measures such as Basel III's liquidity coverage
+ratio and net stable funding ratio, and show that LMI performs better in many dimensions. The
+outperformance of LMI partially results from the contract-specific time-varying liquidity
+sensitivity weights which are driven by market prices.
+Arvind Krishnamurthy Charles-Henri Weymuller
+Stanford Graduate School of Business Sciences Po Paris
+Stanford University 27 rue Saint Guillaume
+655 Knight Way 75007 Paris
+Stanford, CA 94305 France
+and NBER charleshenri.weymuller@sciencespo.fr
+akris@stanford.edu
+Jennie Bai
+Georgetown University
+3700 O St. N.W.
+Washington DC, 20057
+jb2348@georgetown.edu
+
+1 Introduction
+Liquidity plays an enormous role in financial crises. In the classic model of Diamond and Dybvig
+(1983), the illiquidity of bank assets coupled with the liquidity promised through bank liabilities
+leaves banks vulnerable toruns and financial crises. In the 2007-2009financial crisis,the US govern-
+ment provided several trillion dollars of reserves to the financial sector to forestall and ameliorate
+a liquidity crisis.1 Recognizing the importance of liquidity, regulators have taken steps to improve
+the liquidityof banks since the financial crisis. The Basel III committee has implemented minimum
+liquidity standards for commercial banks, including the liquidity coverage ratio and the net stable
+funding ratio. In 2012, the Federal Reserve incorporated a liquidity stress test (the Comprehensive
+Liquidity Assessment and Review) as part of its oversight of the largest banks.
+These policy measures have run ahead of research, and raise important questions for researchers
+to answer. We lackan agreed upon frameworkfor examiningwhen governmentregulationof private
+liquidity choices is desirable, and what instruments should be used to best implement liquidity
+regulations. A small and growing academic literature has sought to address these questions (see
+Holmstrom and Tirole (1998), Caballero and Krishnamurthy (2004), Farhi, Golosov,and Tsyvinski
+(2009), Perotti and Suarez (2011), Allen (2014), Diamond and Kashyap (2015)). We also lack
+an agreed upon framework for how to measure the liquidity of financial firms and the financial
+sector. Beyond simple intuitions for special cases — long-term loans are illiquid assets while cash
+is liquid, and short-term debt liabilities leave a bank prone to liquidity risk while long-term debt
+liabilitiesreduce liquidityrisk— welackageneralmeasurement systemforliquiditythatcanhandle
+a sophisticated financial sector.
+As Allen (2014)and Diamond and Kashyap (2015)note, there is a strikingcontrastbetween the
+analysis of capital and liquidity regulations. With capital, there is consensus on how to measure
+capital and why it should be regulated, although disagreements persist on the optimal level of
+requirements. With liquidity, there is little consensus beyond the recognition that liquidity is hard
+to measure.
+This paper develops and implements a liquidity measurement system. It builds on earlier theo-
+1Fleming (2012) notes that across its many liquidity facilities, the Federal Reserve provided over $1.5 trillion of
+liquidity support during the crisis. The number is much higher if one includes other forms of government liquidity
+support. Lending by the Federal Home Loan Bank peaked at $1 trillion in September 2008. The Federal Deposit
+Insurance Corporation guarantees whereby insurance limitswereincreased in thecrisisprovided afurther guaranteed
+support of$336 billionasofMarch 2009 (He,Khang,and Krishnamurthy (2010)). TheUSTreasuryalso offered $431
+billion of liquiditysupport through the Troubled Asset ReliefProgram (TARP).
+1
+
+retical work by Brunnermeier, Gorton, and Krishnamurthy (2012) and is also related to Berger and
+Bouwman (2009)’s empirical approach to measuring liquidity. Adopting the terminology in Brun-
+nermeier et al. (2012), the “Liquidity Mismatch Index (LMI),” measures the mismatch between the
+market liquidity of assets and the funding liquidity of liabilities. LMI is based on a stress liquidity-
+withdrawalscenario. In short, it measures the liquidityof a firm assuming that all claimantson the
+institution act under the terms of their contract to extract the maximum liquidity from the firm,
+and the firm reacts by maximizing the liquidity it can raise from its assets. Brunnermeier et al.
+(2012) derive their liquidity metric in settings with a fixed liquidity-stress horizon (i.e., overnight).
+We extend their measure to encompass dynamic settings: the LMI today is the appropriately “dis-
+counted” valueofthe expected LMI tomorrow. Therecursiveconstructionhandlesthe measurement
+of the liquidityof different maturityliabilities,as for example, a two-dayliabilitytoday will become
+a one-day liabilitytomorrow.
+In additiontoincorporatingtime(maturity)intheliquiditymeasure, ourapproachalsoaccounts
+for the time-varying state of liquidity conditions. We do so by linking the liquidity stress-horizon
+underlying the liquidity computation to asset market measures of market and funding liquidity.
+Other measures, including Basel’s liquidity measures and the Berger and Bouwman (2009) measure
+restrictmeasurementtoafixed liquidity-stresshorizon. Onboth ofthese points,coherentlyincorpo-
+ratingtimeandstatesviathemarketmeasures ofliquiditypremia,ourapproachimproveson Berger
+and Bouwman (2009). As we will show in empirical results, varying the time-horizon contributes
+significantly to the superior performance of the LMI to other liquidity measures.
+Whatmakesagoodliquiditymeasure? The measuremustbe theoreticallyfounded. Thepreced-
+ing arguments regarding the recursive principle and incorporation of market prices are theoretical
+arguments in favorof our construction. The bulk of this paper shows that our theoreticallyfounded
+LMI performs well on empirical dimensions. First, we show that the LMI is useful for macropru-
+dential purposes. A liquidity metric should capture liquidity imbalances in the financial system,
+offering an early indicator of financial crises. It should also quantitatively describe the liquidity
+condition of the financial sector, and the amount of liquiditythe Fed may be called upon to provide
+in a financial crisis. The LMI performs well on these dimensions. An important aspect of the LMI
+is that it can be aggregated across banks to measure the liquidity mismatch of a group of banks or
+the entire financial sector. Liquidity measures which are based on ratios, such as Basel’s liquidity
+2

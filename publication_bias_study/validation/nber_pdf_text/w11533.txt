@@ -1,0 +1,105 @@
+NBER WORKING PAPER SERIES
+NOTES FOR A CONTINGENT CLAIMS
+THEORY OF LIMIT ORDER MARKETS
+Bruce N. Lehmann
+Working Paper 11533
+http://www.nber.org/papers/w11533
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+July 2005
+This research is part of the NBER’s program on Asset Pricing and was supported in part by a Morgan Stanley
+Equity Microstructure Research Grant for which I am quite grateful. The views expressed herin are solely
+my own and not those of any other person or entity including Morgan Stanley and the National Bureau of
+Economic Research. It has also benefitted from the comments of participants at the conferences in Honor
+of David K. Whitcomb at Rutgers University (where participants found a dreadful blunder), on the
+Econometrics of the Microstructure of Financial Markets at Tilburg University, on the Analysis of High-
+Frequency Financial Data and Market Microstructure at Academia Sinica, and on the Workshop on
+Microstructure of Financial Markets at the Bolsa Madrid. All errors that remain are my own responsibility.
+The views expressed herein are those of the author(s) and do not necessarily reflect the views of the National
+Bureau of Economic Research.
+©2005 by Bruce N. Lehmann. All rights reserved. Short sections of text, not to exceed two paragraphs, may
+be quoted without explicit permission provided that full credit, including © notice, is given to the source.
+
+Notes for a Contingent Claims Theory of Limit Order Markets
+Bruce N. Lehmann
+NBER Working Paper No. 11533
+July 2005
+JEL No. G10, G13, G19
+ABSTRACT
+This paper provides a road map for building a contingent claims theory of limit order markets
+grounded in a simple observation: limit orders are equivalent to a portfolio of cash-or-nothing and
+asset-or-nothing digital options on market order flow. However, limit orders are not conventional
+derivative securities: order flow is an endogenous, non-price state variable; the underlying asset
+value is a construct, the value of the security in different order flow states; and arbitrage trading or
+hedging of limit orders is not feasible. Fortunately, none of these problems is fatal since options on
+order flow can be conceptualized as bets implicit in limit orders, arbitrage trading can be replaced
+by limit order substitution, and plausible assumptions can be made about the endogeneity of order
+flow states and their associated asset values. The analysis yields two main results: Arrow-Debreu
+prices for order flow ‘‘states’’ are proportional to the slope of the limit order book and the limit order
+book at one time proves to be identical to that at an earlier time adjusted for the net order flow since
+that time when all information arrives via trades.
+Bruce Lehmann
+University of California, San Diego
+IR/PS
+1415 Robinson Building Complex
+La Jolla, CA 92093-0519
+and NBER
+blehmann@ucsd.edu
+
+1. Introduction
+A dozen or so years ago, I visited David Whitcomb in his New York apartment to view
+his limit order trading system. He invited me to do so under the misapprehension that I might be
+able to help him find a buyer, a notion of which he was rapidly disabused.1 I came away
+remembering one detail of the system: limit orders were always canceled if they were not
+executed within two minutes because the specialist’s commission – a number on the order of a
+mil at the time as I recall – was only paid on orders that resided on the book more than two
+minutes. The idea that stuck with me is that one could learn a great deal about optimal trading
+strategies by paying close attention to the minutiae of the microstructure of a market. Anyone
+who feels the need to verify the claim that I see value in paying attention to such minutiae should
+examine the description of the Tokyo Stock Exchange in Lehmann and Modest (1995).
+The research reported here marries this observation with a simple idea: the apparatus of
+state pricing can be applied profitably in microstructure. Just as Hicks (1939) noted that
+conventional microeconomic theory could be applied to economic dynamics by treating the same
+goods on different dates as different commodities and Arrow (1964) and Debreu (1959) showed
+that dynamics under uncertainty could be analyzed similarly by treating the same good on
+different dates in different states of nature as different commodities, it has long seemed to me
+that one could exploit this strategy in microstructure by defining states in terms of trade prices,
+quotes, and quantities. Limit order markets are a natural environment within which to apply this
+idea precisely because the mechanical nature of the order execution process makes for a clear
+definition of order flow states.
+The idea of using contingent claims analysis in a microstructure setting is hardly new:
+since at least Copeland and Galai (1983), it has been commonplace to view quotes or limit orders
+
+2
+as free options given by limit order traders or market makers to market order traders who may
+possess superior information regarding asset values. On this view, a limit buy (sell) order is a
+call (put) option with a strike price equal to the limit price with an implicit option premium —
+actually a contingent premium since it is not paid unless the option is exercised — given by the
+spread between the limit price and the midpoint of the bid-ask spread, albeit one with an
+uncertain expiration date since limit orders are typically good until cancelled. This spread
+reflects the by now classic balance between losses to informed investors and profits from
+uninformed liquidity traders along with traders who falsely believe they possess value-relevant
+private information.
+Examining this implicit option from the perspective of limit order traders sheds quite
+different light on the sources of value in limit orders. A limit buy (sell) order for X shares
+t
+involves the receipt (expenditure) of PX dollars in exchange for (delivery of) X shares. In the
+t t t
+language of exotic options markets, the first payoff is that of X cash-or-nothing digital call
+t
+options struck at P and the second is the same as that on X asset-or-nothing digital call options
+t t
+struck at P as well. Since limit order markets only result in transactions at a given price P(q)
+t t
+when a market order of size Q is large enough to hit the limit orders posted at the price (i.e.,
+t
+when Q ≥ q), one can view these implicit derivative securities as options on order flow.
+t
+The chapter is laid out as follows. The next section describes both my assumptions about
+limit order markets and the digital options implicit in limit orders. The third section is devoted
+primarily to the identification of the Arrow-Debreu prices for order flow ‘states’ based on the
+implicit options embedded in the limit order book. Care is needed since these implicit digital
+options differ in important ways from their analogues in conventional derivative asset markets
+since the nature of the underlying asset, the definition of states of nature, and the notion of
+1 As I recall, the asking price was $10 million and the proposed commission was 10 per cent.

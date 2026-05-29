@@ -1,0 +1,127 @@
+NBER WORKING PAPER SERIES
+A MACROECONOMIC MODEL WITH FINANCIALLY CONSTRAINED PRODUCERS
+AND INTERMEDIARIES
+Vadim Elenev
+Tim Landvoigt
+Stijn Van Nieuwerburgh
+Working Paper 24757
+http://www.nber.org/papers/w24757
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+June 2018
+We thank our discussants Aubhik Khan, Xiaoji Lin, Simon Gilchrist, Sebastian Di Tella, Michael
+Reiter, Pablo Kurlat, Tyler Muir, and Motohiro Yogo, and seminar and conference participants at
+the Econometric Society Summer Meeting, the New York Fed, UT Austin, the SED Meetings in
+Toulouse, the CEPR Gerzensee Corporate Finance conference, the Swedish Riksbank Conference
+on Interconnected Financial Systems, the LAEF conference at Carnegie Mellon University, the
+University of Chicago, the University of Houston, the American Finance Association meetings in
+Chicago, the Jackson Hole Finance Conference, Ohio State, the NYU macro lunch, Georgetown
+University, the FRSB Conference on Macroeconomics, the University of Minnesota, the Federal
+Reserve Board, the Macro-Finance Society, CEMFI, the NBER Summer Institute Asset Pricing
+meeting, London Business School, the Bank of Canada's Financial Stability and Monetary Policy
+conference, MIT Sloan, Boston College, the BI CAPR Conference for Production-based Asset
+Pricing, and Catholic University of Leuven for useful comments. We thank Pierre Mabille for
+excellent research assistance. The views expressed herein are those of the authors and do not
+necessarily reflect the views of the National Bureau of Economic Research.
+NBER working papers are circulated for discussion and comment purposes. They have not been
+peer-reviewed or been subject to the review by the NBER Board of Directors that accompanies
+official NBER publications.
+© 2018 by Vadim Elenev, Tim Landvoigt, and Stijn Van Nieuwerburgh. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission
+provided that full credit, including © notice, is given to the source.
+
+A Macroeconomic Model with Financially Constrained Producers and Intermediaries
+Vadim Elenev, Tim Landvoigt, and Stijn Van Nieuwerburgh
+NBER Working Paper No. 24757
+June 2018
+JEL No. E02,E1,E20,E44,E6,G12,G18,G21
+ABSTRACT
+How much capital should financial intermediaries hold? We propose a general equilibrium model
+with a financial sector that makes risky long-term loans to firms, funded by deposits from savers.
+Government guarantees create a role for bank capital regulation. The model captures the sharp
+and persistent drop in macro-economic aggregates and credit provision as well as the sharp
+change in credit spreads observed during the Great Recession. Policies requiring intermediaries to
+hold more capital reduce financial fragility, reduce the size of the financial and non-financial
+sectors, and locally increase macro-economic volatility. They redistribute wealth from savers to
+the owners of banks and non-financial firms. Current capital requirements are close to optimal.
+Vadim Elenev Stijn Van Nieuwerburgh
+Johns Hopkins University Stern School of Business
+100 International Drive New York University
+Suite 1329 44 W 4th Street, Suite 9-120
+Baltimore, MD 21202 New York, NY 10012
+velenev@jhu.edu and NBER
+svnieuwe@stern.nyu.edu
+Tim Landvoigt
+The Wharton School
+University of Pennsylvania
+3620 Locust Walk
+Philadelphia, PA 19104
+and NBER
+timland@wharton.upenn.edu
+
+1 Introduction
+The financial crisis and Great Recession of 2007-09 underscored the importance of the financial
+systemforthebroadereconomy. Borrowerdefaultrates, bankinsolvencies, governmentbailouts
+offinancialinstitutions, andcreditspreadsallspikedwhilerealinterestrateswereverylow. The
+disruptions in financial intermediation fed back on the real economy. Consumption, investment,
+and output all fell substantially and persistently.
+These events have prompted a vigorous yet unresolved debate among policymakers and aca-
+demics on whether the economy would be better off with stricter bank capital requirements.
+The December 2017 Minneapolis Plan reflects the Federal Reserve’s view and proposes raising
+bank capital requirements to 23.5% of risk-weighted assets, with further increases to 38% for
+banks that remain systemically important. In their seminal book, Admati and Hellwig (2013)
+propose raising capital requirements to 25% of assets. Larger equity capital buffers would re-
+sult in less risk-taking, lower risk of bank failure and concomitant government bailouts, but
+also in a smaller banking sector that lends less to the real economy, depressing investment and
+output. Considering this trade-off, Admati and Hellwig argue that “for society, there are in
+fact significant benefits and essentially no cost from much higher equity requirements.” The
+authors of the Minneapolis Plan agree, writing that their plan “will have paid for itself many
+times over if it avoids one financial crisis.” This argument is not without controversy in the
+academy (Calomeris, 2013) and heavily contested by the industry.
+What is missing in this debate is a quantitative general equilibrium model that embeds a
+financial sector in a model of the macro-economy, and that can capture infrequent but large
+financial crises. Our paper proposes such a model. In the model, banks extend long-term
+loans to firms who invest and are subject to aggregate and idiosyncratic productivity shocks.
+Firm default results in losses for their lenders, which can trigger bank default. Even banks
+that remain standing become fragile and cut lending to firms. A large and persistent decline
+in credit depresses output persistently. The high leverage of banks, which far exceeds that of
+firms, amplifies modest credit losses into financial disasters. The nonlinear behavior of credit
+spreads reflects this financial distress. The government bails out the creditors of the banks that
+fail by issuing government debt, gradually repaid through future taxation. Because financial
+intermediaries are constrained in their ability to re-lever and raising new equity from their
+1
+
+shareholders is expensive, the banking sector shrinks substantially and persistently. Real inter-
+est rates must fall to induce savers to accommodate the reduction in deposits. Banks’ reduced
+ability to absorb aggregate risk in financial crises results in a deterioration of risk sharing and
+higher macro-economic volatility. The intermediary-driven dynamics arise in equilibrium since
+all aggregate shocks emerge from the real sector.
+The calibrated model matches many features of the data, both in terms of macro-economic
+quantities and prices. It matches the average credit spread and its volatility. Faced with a
+realistic corporate bond rate, firms choose the observed amount of leverage. The non-financial
+leverageratiois37%,closetotheU.S.data. Themodeldeliversa93%leverageratioforfinancial
+firms, a key moment not directly targeted by the calibration, which is close to the data. Debt
+is attractive to banks for four reasons. First, debt enjoys a tax shield. Second, the government
+guarantees the liabilities of the bank. This guarantee captures not only deposit insurance but
+also broader too-big-to-fail guarantees to banks and the rest of the levered financial system.1
+Third, banks face equity adjustment costs which increase the cost of equity relative to debt.
+Fourth, banks provide a safe asset to patient households with a strong preference for holding
+suchrisk-freeassets. Whilethefirstmotivefordebtfinancingalsoappliestonon-financialfirms,
+the other three do not. The large wedge between financial and non-financial sector leverage is a
+key feature of many developed economies and crucial to understanding systemic risk in society.
+The equilibrium fully takes into account that the cost of bank debt changes endogenously with
+the safety of the financial sector.
+Our main exercise is to study macro-prudential policy in this environment. We study in-
+creasing the minimum bank equity capital requirement from its pre-crisis level of 6% of assets.
+Higher capital requirements reduce financial fragility but at the cost of shrinking the economy
+and, in some cases, increasing macroeconomic volatility. They are successful at reducing finan-
+cial leverage and the bank failure rate. Banks that hold more equity capital become effectively
+more risk averse and stay away farther from their regulatory constraint. They also become
+smaller, shrinking both assets and liabilities. The charter value of a bank shrinks because
+banks with more onerous equity capital requirements have reduced ability to take advantage of
+1Weusethelabelsintermediariesandbanksinterchangeablytomeantheentireleveredfinancialsector. That
+sector also includes broker-dealers and insurance companies, which are subject to macro-prudential regulation
+and enjoy explicit or implicit government guarantees on their liabilities. Appendix C.7 provides a detailed
+definition of our intermediary sector.
+2

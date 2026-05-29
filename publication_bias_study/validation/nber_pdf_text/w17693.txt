@@ -1,0 +1,138 @@
+NBER WORKING PAPER SERIES
+EMPLOYMENT PROTECTION LEGISLATION AND PLANT-LEVEL PRODUCTIVITY
+IN INDIA
+Sean Dougherty
+Verónica C. Frisancho Robles
+Kala Krishna
+Working Paper 17693
+http://www.nber.org/papers/w17693
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+December 2011
+We would like to thank TCA Anant (Indian Ministry of Statistics) and Alok Sheel (Indian Ministry
+of Finance) for their support of this project, which was partially carried out while Sean Dougherty
+was visiting the National Institute of Public Finance and Policy (New Delhi, India) and Veronica Frisancho
+Robles was an external consultant to the OECD. Useful feedback was received from colleagues at
+the OECD, The Pennsylvania State University and the Paris School of Economics. The views expressed
+in this paper are those of the authors and do not necessarily reflect those of the NBER, the OECD
+nor its member countries or partners.
+At least one co-author has disclosed a financial relationship of potential relevance for this research.
+Further information is available online at http://www.nber.org/papers/w17693.ack
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+© 2011 by Sean Dougherty, Verónica C. Frisancho Robles, and Kala Krishna. All rights reserved.
+Short sections of text, not to exceed two paragraphs, may be quoted without explicit permission provided
+that full credit, including © notice, is given to the source.
+
+Employment Protection Legislation and Plant-Level Productivity in India
+Sean Dougherty, Verónica C. Frisancho Robles, and Kala Krishna
+NBER Working Paper No. 17693
+December 2011
+JEL No. D24,F16,J5,J8,K31
+ABSTRACT
+Using plant-level data from the Annual Survey of Industries (ASI) for the fiscal years from 1998-99
+through 2007-08, this study provides plant-level cross-state/time-series evidence of the impact of employment
+protection legislation (EPL) on total factor productivity (TFP) and labor productivity in India. Identification
+of the effect of EPL follows from a difference-in-differences estimator inspired by Rajan and Zingales
+(1998) that takes advantage of the state-level variation in labor regulation and heterogeneous industry
+characteristics. The fundamental identification assumption is that EPL is more likely to restrict firms
+operating in industries with higher labor intensity and/or higher sales volatility. Our results show that
+firms in labor intensive or more volatile industries benefited the most from labor reforms in their states.
+Our point estimates indicate that, on average, firms in labor intensive industries and in flexible labor
+markets have TFP residuals 14% higher than those registered for their counterparts in states with more
+stringent labor laws. However, no important differences are identified among plants in industries with
+low labor intensity when comparing states with high and low levels of EPL reform. Similarly, the
+TFP of plants in volatile industries and in states that experienced more pro-employer reforms is 11%
+higher than that of firms in volatile industries and in more restrictive states; however, the TFP residuals
+of plants in industries with low labor intensity are 11% lower in high EPL reform states than in states
+with lower levels of EPL reform. In sum, the evidence presented here suggests that the high labor costs
+and rigidities imposed through Indian federal labor laws are lessened by labor market reforms at the
+state level.
+Sean Dougherty Kala Krishna
+OECD Economics Department Department of Economics
+2, rue Andre Pascal 523 Kern Graduate Building
+75775 Paris Cedex 16 The Pennsylvania State University
+France University Park, PA 16802
+sean.dougherty@oecd.org and NBER
+kmk4@psu.edu
+Verónica C. Frisancho Robles
+Department of Economics
+306 Kern Building
+The Pennsylvania State University
+University Park, PA 16802
+vfrisancho@psu.edu
+
+1 Introduction
+It is well known that India’s formal Employment Protection Legislation (EPL) is among the most
+stringent in the world. Many believe that this is one of the main reasons behindthe stagnant share
+of manufacturing output in India’s GDP during the last 40 years (OECD, 2007). Although the
+country has recorded impressive output growth rates since the 1970s, the share of manufactures in
+total output has remained between 14% and 18%. Though infrastructure and product market reg-
+ulation have been major challenges, strict labor laws have been blamed in particular for the poor
+performance of large-scale labor intensive manufactures despite India’s labor abundance (Pana-
+gariya, 2008; Conway and Herd, 2009; Dougherty et al., 2009). According to the Indian Ministry of
+CommerceandIndustry(2011), thetopfivegoodsexportedduring2010-11 representedalmost50%
+of the country’s total exports and they were all relatively capital intensive goods such as petroleum
+products, gems and jewelry, transport equipment, machinery and instruments, and pharmaceutical
+products. In contrast, ready-made garments, traditionally an unskilled-labor intensive export, has
+seen its share in total Indian exports decline from 12.5% to 6% between 2000 and 2010. In 2009,
+India was the fifth largest exporter of apparel with 3.6% of the world’s exports (WTO, 2010).
+Industrialrelations inIndiafall underthejointjurisdictionof central andstate governments, an
+arrangementthathasgeneratedadegreeofvariationinlaborregulationsacrossstates. Althoughall
+states had essentially the same starting point under the License Raj, each state has independently
+amended labor regulations, rules and practices during the post-Independence period. In the last
+decade, this “natural experiment” setting has been exploited by several empirical studies that have
+1
+tried to assess the effects of labor regulation on output, employment, and productivity. However,
+and despite increasing interest in the topic, the evidence for India is still inconclusive and mostly
+limited to industry-level analysis.
+One of the most influential studies of India is Besley and Burgess (2004), which constructs
+an index summarizing state-level amendments to the Industrial Disputes Act (IDA) between 1949
+and 1992. The index, henceforth referred to as BB, is used along with several control variables to
+explain state-level outcomes corresponding to the organized manufacturing sector using industry-
+level panel data for 1958-92. The authors identify a negative impact of pro-worker regulation on
+output, investment, employment, and labor productivity among registered manufacturing firms.
+1One must keep in mind that the state-level amendments may not have been as exogenous as a true natural
+experiment would require.
+1
+
+2
+Several papers that also rely on the BB index reach similar conclusions.
+Nonetheless, the validity of theBB index and theeconometric methodology usedto identify the
+effect of excessive pro-worker regulation have been extensively criticized. The main concerns with
+the use of this index are related to problems in the coding of labor laws and its exclusive focus on
+formal reforms to the IDA. This study tries to overcome the shortcomings of the previous empirical
+evidence in the tradition of Besley and Burgess (2004) to evaluate the effect of labor regulation
+on the Indian organized manufacturing sector. We make use of a more comprehensive measure of
+labor market regulations proposed in OECD (2007) and elaborated in Dougherty (2009). We argue
+that this index is superior to the BB index as it includes information on formal and informal labor
+market reforms, not only to the IDA but in seven additional areas: the Factories Act, the State
+Shops and Commercial Establishments Acts, the Contract labor Act, the role of inspectors, the
+maintenance of registers, the filing of returns and union representation.
+Using this comprehensive EPL measure and plant-level data from the Annual Survey of Indus-
+tries (ASI) for all the fiscal years between 1998-99 and 2007-08, we evaluate whether labor market
+3
+regulation differences across Indian states led to a differential response in industrial performance.
+However, differencesacrossstatesintermsoflaborregulationmaybeendogenous. Ahighernumber
+of pro-employer reforms in a given state may be driven by the characteristics of the firms located
+in that state.
+Following Rajan and Zingales (1998), we focus on the details of the theoretical mechanisms at
+play. As we will show below, unit labor costs increase with more stringent EPL, and more so for
+firms operating in industries with higher labor intensity. This implies that firms in industries with
+higher labor shareswill sufferthemost fromthe additional costs of hiringandfiringworkers. Thus,
+we implement a difference-in-difference estimator that exploits both the variation in EPL by state,
+as well as the variation in industry-specific characteristics related to labor intensity and volatility.
+In addition, to the extent that such costs act as adjustment costs, they will have more of an effect
+in more volatile industries so that the productivity of firms in more volatile sectors should be more
+affected by strict labor laws. By focusing on a specific mechanism through which EPL reform
+operates (labor intensity or volatility), this approach provides stronger evidence of causality.
+4
+Previous studies have also exploited the variation in state and industry characteristics but
+2See Aghion et al. (2008) and Ahsan and Pag´es (2006) as examples.
+3In this paper, EPL is used as a shorthand to refer to a customized measure of state-level labor regulation
+reforms in India as presented in OECD (2007) and elaborated in Dougherty (2009). The official OECD measure is
+country-specificand has a longstanding standardized definition,as most recently elaborated in Venn(2009).
+4See Guptaet al. (2009) and Bassanini et al. (2009).
+2

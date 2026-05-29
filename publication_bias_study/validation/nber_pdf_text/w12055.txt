@@ -1,0 +1,119 @@
+NBER WORKING PAPER SERIES
+ESTIMATING AND TESTING BETA PRICING MODELS:
+ALTERNATIVE METHODS AND THEIR PERFORMANCE IN SIMULATIONS
+Jay Shanken
+Guofu Zhou
+Working Paper 12055
+http://www.nber.org/papers/w12055
+NATIONAL BUREAU OF ECONOMIC RESEARCH
+1050 Massachusetts Avenue
+Cambridge, MA 02138
+February 2006
+Shanken is the Goizueta Chair in Finance at Emory University and a Research Associate at NBER and Zhou
+is from Washington University in St. Louis. This paper earlier version of the paper circulated under the titles
+“Analytical cross-sectional tests of asset pricing models” and “On cross-sectional stock returns: maximum
+likelihood approach.” We are grateful to Phil Dybvig, Wayne Ferson, Will Goeztmann, Campbell Harvey,
+John Heaton, Ravi Jagannathan, Raymond Kan, Dongcheol Kim, Robert Korajczyk, Mark Loewenstein,
+Cesare Robotti, William Schwert (the managing editor), seminar participants at Northwestern University,
+Univerisyt of Michigan, University of Missouri-Columbia, and the 2005 SBFSIF conference, and especially
+an anonymous referee for several insightful and detailed comments that substantially improved the paper.
+We also appreciate the outstanding research of Jun Tu. The views expressed herein are those of the author(s)
+and do not necessarily reflect the views of the National Bureau of Economic Research.
+©2006 by Jay Shanken and Guofu Zhou. All rights reserved. Short sections of text, not to exceed two
+paragraphs, may be quoted without explicit permission provided that full credit, including © notice, is given
+to the source.
+
+Estimating and Testing Beta Pricing Models: Alternative Methods and their Performance in
+Simulations
+Jay Shanken and Guofu Zhou
+NBER Working Paper No. 12055
+February 2006
+JEL No. G12
+ABSTRACT
+In this paper, we conduct a simulation analysis of the Fama and MacBeth (1973) two-pass procedure,
+as well as maximum likelihood (ML) and generalized method of moments estimators of cross-
+sectional expected return models. We also provide some new analytical results on computational
+issues, the relations between estimators, and asymptotic distributions under model misspecification.
+The GLS estimator is often much more precise than the usual OLS estimator, but it displays more
+bias as well. A "truncated" form of ML performs quite well overall in terms of bias and precision,
+but produces less reliable inferences than the OLS estimator.
+Jay Shanken
+Goizueta Business School
+Emory University
+1300 Clifton Road
+Atlanta, GA 30322
+and NBER
+jay_shanken@bus.emory.edu
+Guofu Zhou
+Olin School of Business
+Washington University
+St. Louis, MO 63130
+zhou@wustl.edu
+
+1 Introduction
+Explaining cross-sectional differences in asset expected returns is one of the great challenges of
+modern finance. Theoretical models, such as the CAPM of Sharpe (1964), Lintner (1965), and
+Black (1972), and the intertemporal/consumption models of Merton (1973), Breeden (1979), and
+Rubinstein (1976), imply that expected returns should be linear in asset betas with respect to
+fundamental economic aggregates. Equilibrium extensions of the Ross (1976) APT and the “mul-
+tivariate proxy” perspective on factor pricing models, e.g. Shanken (1987), yield similar relations.
+There is an enormous body of empirical research that examines these linear asset pricing relation-
+ships. One of the most widely used methodologies is the two-pass regression approach, known as
+the Fama-MacBeth procedure, developed by Fama and MacBeth (1973) and Black, Jensen and
+Scholes (1972). The two-pass procedure is used not only in asset pricing, but also in many other
+areas of finance. For example, Fama and French (1998), Grinstein and Michaely (2002) and Easley,
+Hvidjkaer and O’Hara (2002) apply it in analyzing corporate finance and market microstructure
+issues.1
+The asymptotic statistical properties of the Fama-MacBeth procedure were first established
+in the study by Shanken (1992) and later extended by Jagannathan and Wang (1998). However,
+despite its widespread application, surprisingly little is known about the small-sample statistical
+properties of the methodology. An early simulation study by Amsler and Schmidt (1985) provides
+some insights, though the main focus of that paper is on multivariate tests of the linear expected
+return relation. A contemporaneous paper by Chen and Kan (2005) provides analytical results
+on estimation bias as well as some simulation evidence. Our paper attempts to fill in some of
+the important gaps in our knowledge, comparing the performance of the usual OLS version of the
+Fama-MacBeth procedure to the WLS and GLS approaches occasionally seen in the literature.2
+In addition to the two-pass approach, we explore alternative analytically tractable procedures
+based on maximum likelihood (ML) estimation and the generalized method of moments (GMM) of
+Hansen(1982). TheMLmethodisimportantinthatitisasymptoticallyefficientundertheclassical
+independent and identically distributed (iid) multivariate normal returns assumption. The GMM
+approach is of further interest since serial correlation and conditional heteroscedasticity in the
+joint distribution of returns and factors is easily accommodated in making asymptotically valid
+1Applications of the procedure in recent years can be found in at least 735 papers that cite Fama and MacBeth
+(1973), as complied by Google.
+2BalduzziandRobotti(2004)considerestimationissuesrelatedtotheuseofmimickingportfoliosfornon-traded
+factors.
+1
+
+inferences. These characteristics of the data have typically been ignored in the empirical literature,
+but will likely receive more attention in the future. The computational simplifications that we
+introduce facilitate the simulation analysis and should make these methods more accessible to
+researchers. We also demonstrate an equivalence between ML estimation and one form of the
+GMM estimator under the classical assumptions.
+Application of the estimation methods considered here implicitly assumes that the expected
+return relation is well specified. One approach to testing this specification is to include additional
+cross-sectional regressors in the relation and see whether such variables are significantly related to
+returns. For example, Fama-MacBeth add beta-squared and residual variance in their study. This
+approachrequiresthattheresearcherhavesomeideaastothenatureofthedeparturefromtheasset
+pricing relation and is vulnerable to the influence of data mining. In contrast, multivariate tests
+focus on the overall magnitude of estimated pricing deviations and have the potential to reject the
+null for a broad range of general alternatives. The downside, however, may be a reduction in power
+against particular alternatives of interest. Moreover, since the tests typically require some sort of
+sorting of securities into portfolios, data mining can still be a problem, e.g., Lo and MacKinlay
+(1990). Weevaluatetheactualsizeofvarioustestsandpoweragainstseveralalternativesofinterest.
+One could argue that, strictly speaking, all models are false and are, at best, close approxi-
+mations to reality. Moreover, even if we entertain the possibility that a given asset pricing model
+does hold exactly, the limited power of pricing tests implies that we cannot always know whether
+the model is well-specified. Thus, it is inevitable that we will often, knowingly or unknowingly,
+estimate an expected return relation that departs from exact linearity in the betas. We derive the
+asymptotic distribution of the Fama-MacBeth estimator in this context, thereby providing insight
+into the extent to which misspecification can affect inferences about factor risk premia.
+The paper is organized as follows. Section 2 reviews the statistical specification of the asset
+pricing model and the different versions of the Fama-MacBeth procedures. We then present the
+asymptotic theory for the second-pass risk premium estimators when the asset pricing restrictions
+are violated. In Section 3, we study the ML method and show how to obtain the parameter
+estimates analytically. In Section 4, we develop two analytical GMM methods that are robust
+to conditional heteroscedasticity and serial correlation. Extensive simulations are conducted in
+Section 5, to study the finite sample properties of the various approaches to estimation and testing.
+An empirical application is discussed in Section 6. Conclusions are offered in the final section.
+2
