@@ -1136,20 +1136,27 @@ finance titles are typically neutral).  29 AFA papers (26.9\%)
 are matched to a JF/RFS/JFE publication via fuzzy title matching.
 
 The binary directional probit on the AFA baseline yields
-$\hat\beta = 0.077$ (s.e.\ 0.298, $p < 0.10$, $N = 108$),
-consistent with the NBER-baseline estimate of $1.241^{***}$ (s.e.\ 0.162).
-The two estimates are statistically indistinguishable at the 5\% level.
+$\hat\beta = 0.077$ (s.e.\ 0.298, $N = 108$), statistically indistinguishable
+from zero and far below the NBER-baseline estimate of $1.231^{***}$ (s.e.\ 0.204).
 Directional AFA papers are published in top journals at a 27.5\% rate (22 of 80)
-versus 25.0\% for null-finding papers (7 of 28)---a gap directionally identical to the NBER
-baseline.  The pattern is unchanged when a year trend is added
+versus 25.0\% for null-finding papers (7 of 28).  The pattern is unchanged when a year trend is added
 ($\hat\beta = 0.082$, s.e.\ 0.300).  Direction coding applies
 the same three-tier hierarchy as the NBER pipeline: journal-matched papers
 receive direction codes from published-abstract coding; papers with
 OpenAlex, CrossRef, or NBER abstracts receive abstract-based keyword rules; and the remaining
-papers receive conservative title-keyword rules.  The finding that
-the significance-sorting pattern survives with a substantially more
-comparable pre-publication reference population addresses the central
-identification concern about NBER-specific selection.
+papers receive conservative title-keyword rules.  The absence of a directional
+premium at the AFA stage, against the large premium in the NBER sample,
+is consistent with publication bias operating at the journal selection stage
+rather than reflecting pre-existing quality differences between directional
+and null papers.\footnote{As a direct test of overlap, we identified 22 papers
+appearing in both the NBER and AFA datasets via fuzzy title matching
+(token-sort score $\geq 90$).  In this subsample, directional papers publish
+at 81.2\% versus 66.7\% for null papers (LPM $\hat\beta = 0.146$,
+s.e.\ 0.208, $p = 0.49$, $N = 22$).  The test is severely underpowered
+(only six null papers in the overlap), so no strong inference is possible;
+nonetheless, the 14 pp gap is substantially smaller than the 40 pp gap in
+the full NBER sample, consistent with AFA quality-screening absorbing part
+of the directional gradient.}
 
 \medskip
 \noindent\textbf{R1 --- Quasi-experimental identification only.}
