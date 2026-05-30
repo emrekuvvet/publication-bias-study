@@ -170,16 +170,36 @@ effect, suppression of null results generates the false impression that most
 interventions work---or, more precisely, that most interventions have discernible
 effects in one direction or the other.
 
-This paper provides the first systematic evidence on publication bias in the
-finance literature's treatment of government intervention.  Our research design
-combines two complementary samples.  The \textit{published paper} sample
-consists of all in-scope articles published in the \JF{}, the \RFS{}, and the
-\JFE{} from 2000 to 2024.  The \textit{working paper} sample is drawn from NBER
-working papers in five programs: Corporate Finance (CF), Asset Pricing (AP),
-Monetary Economics (ME), Economic Fluctuations and Growth (EFG), and Public
-Economics (PE), covering papers from 2000 to 2024.  Together, these samples allow us to compare the distribution of findings
-across publication states in this domain---not merely the subset that appears
-in top journals.
+This paper studies publication bias in a domain the existing literature has
+not examined: the finance literature's treatment of government intervention.
+Prior work on publication bias in finance has focused on the cross-section of
+asset pricing anomalies, documenting that factor-zoo proliferation reflects
+selection for high t-statistics \citep{Harvey2016,Hou2020,Jensen2023}.  A
+parallel economics literature \citep{Brodeur2016,Andrews2019} infers bias from
+the shape of published p-value distributions, finding excess mass just below
+conventional significance thresholds.  Neither strand addresses the
+policy-intervention literature, nor do they distinguish two conceptually
+distinct forms of bias with different welfare implications.
+\textit{Significance bias}---directional findings over-published relative to
+null findings---makes every intervention appear detectable.
+\textit{Directional bias}---pro-intervention findings over-published relative
+to anti-intervention findings---additionally skews the regulatory record toward
+a particular conclusion about the sign of policy effects.  We design our study
+to test for both.
+
+Our research design combines two complementary samples.  The
+\textit{published paper} sample consists of all in-scope articles published in
+the \JF{}, the \RFS{}, and the \JFE{} from 2000 to 2024.  The
+\textit{working paper} sample is drawn from NBER working papers in five
+programs: Corporate Finance (CF), Asset Pricing (AP), Monetary Economics (ME),
+Economic Fluctuations and Growth (EFG), and Public Economics (PE), covering
+papers from 2000 to 2024.  A key methodological advantage of this two-sample
+design is that we observe actual pre-publication findings rather than merely
+the shape of the published distribution: the gap between pre- and
+post-publication finding rates can be attributed to the publication process
+directly, rather than inferred from p-value bunching.  Together, these samples
+allow us to compare the full distribution of findings across publication
+states---not merely the subset that appears in top journals.
 
 We define a paper as in-scope if its primary research question is the causal
 effect of a specific government law, regulation, or public policy on financial
@@ -264,17 +284,30 @@ the publication pattern settled into a symmetric significance-sorting regime.
 These sub-period estimates are based on small sub-samples ($N = 28$, $69$, $103$)
 and should be interpreted as descriptive, not confirmatory.
 
-The paper makes three main contributions.  First, we introduce a scalable
-LLM-assisted pipeline for classifying and coding large economics paper corpora,
-with broad applicability to meta-science and literature-surveying research.
-Second, we provide the first quantitative evidence on the structure of
-significance sorting in the finance literature, a domain where the policy stakes
-are exceptionally high.  Third, we document exploratory time variation and
-cross-journal heterogeneity in this pattern.  We are explicit throughout that
-our cross-sectional design identifies an association between finding direction
-and publication status, not a causal editorial-filter effect; the design cannot
-distinguish editorial selection from author self-selection in submission
-or specification search.
+The paper makes three contributions.  First, we provide the first systematic
+evidence on publication bias in the government-intervention finance literature
+and identify the \textit{form} it takes: significance bias (sorting on any
+directional finding vs.\ null), not directional bias (sorting on sign).  This
+distinction has direct welfare implications.  Significance bias inflates the
+apparent measurability of policy effects---regulators see a record in which
+most interventions appear to have detectable consequences, when the true share
+of null effects is substantially higher.  But because neither the
+pro-intervention nor the anti-intervention sign enjoys a premium, the direction
+of the published record is not systematically skewed; the bias is about
+\textit{precision} rather than \textit{direction}.  Second, our pre-publication
+NBER baseline and AFA conference falsification test allow us to attribute the
+sorting gap to the journal publication stage directly, rather than inferring it
+from p-value bunching.  The near-zero coefficient at the AFA conference
+presentation stage ($\hat\beta = 0.077$, $p = 0.80$) contrasts sharply with
+the large coefficient in the journal sample ($\hat\beta = 1.231^{***}$),
+pinning the mechanism to editorial selection rather than earlier-stage
+researcher or author decisions.  Third, we introduce a scalable LLM-assisted
+pipeline for in-scope classification and direction coding of large paper
+corpora, with broad applicability to meta-science and systematic review
+research.  We are explicit throughout that our design identifies an association
+between finding direction and publication status; it cannot distinguish
+editorial selection from author self-selection in submission or specification
+search.
 
 The remainder of the paper proceeds as follows.
 Section~\ref{sec:literature} reviews the related literature.
@@ -290,6 +323,22 @@ limitations.  Section~\ref{sec:conclusion} concludes.
 \label{sec:literature}
 %% ============================================================
 
+\paragraph{Publication bias in asset pricing.}
+The closest prior work on publication bias in finance examines the
+cross-section of expected returns.  \citet{Harvey2016} survey hundreds of
+return predictors published in top finance journals and argue that the
+conventional $t > 2$ threshold is inadequate given the scale of multiple
+testing in the factor zoo.  \citet{Hou2020} attempt to replicate 452 published
+anomalies and find that 65\% fail under standard portfolio construction
+choices, consistent with upward-biased published effect sizes.
+\citet{Jensen2023} document that most factors replicate out-of-sample but that
+the factor space is highly redundant, implying substantial duplication in
+published claims.  This strand focuses entirely on the asset pricing domain
+and diagnoses bias through t-statistic distributions or replication rates.  It
+does not study policy-intervention research, and it cannot distinguish
+significance bias from directional bias because factor-return sign is not
+normatively coded.
+
 \paragraph{Publication bias in economics.}
 The economics literature on publication bias draws on a long tradition in
 statistics and medicine.  \citet{Brodeur2016} analyze 50,000 hypothesis tests
@@ -303,9 +352,12 @@ systematic underpowering across economics studies, which mechanically amplifies
 bias whenever only significant findings are reported.  \citet{Christensen2018}
 survey the broader reproducibility literature and document that publication
 bias, p-hacking, and HARKing (hypothesizing after results are known) are
-pervasive in empirical economics.  Our paper adds domain-specific evidence for
-the finance-regulation literature, where the distinction between directional
-bias and significance bias has direct policy relevance.
+pervasive in empirical economics.  These approaches infer bias from the
+internal shape of the published distribution---they do not observe
+pre-publication findings and therefore cannot attribute the sorting gap to
+editorial selection specifically.  Our paper contributes domain-specific
+evidence for the finance-regulation literature using a pre-publication baseline
+that identifies the editorial stage directly.
 
 \paragraph{Government intervention in financial markets.}
 Academic finance contains a large and consequential body of work on the
