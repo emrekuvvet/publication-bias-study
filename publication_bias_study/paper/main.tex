@@ -1014,11 +1014,12 @@ inclusion of monetary policy papers.
 \noindent\textbf{R3 --- Journal subsets.}
 We re-estimate the probit treating publication in the \JF{} alone (versus all
 other in-scope papers) and, separately, publication in the \RFS{} or \JFE{}
-(versus all other papers) as the outcome.  The positive-finding premium is
-insignificant in the JF-only specification ($\hat\beta_1 = 0.310$,
-$p = 0.18$), consistent with the low-power caveat noted in Section~\ref{sec:results}.
+(versus all other papers) as the outcome.  Both the positive- and negative-finding premiums are
+insignificant in the JF-only specification ($\hat\beta_1 = 0.297$,
+$\hat\beta_2 = 0.135$, $p > 0.10$), consistent with the low-power caveat
+noted in Section~\ref{sec:results}.
 The RFS+JFE specification, by contrast, yields large and highly significant
-coefficients ($\hat\beta_1 = 1.059^{***}$, $\hat\beta_2 = 1.086^{***}$,
+coefficients ($\hat\beta_1 = 1.037^{***}$, $\hat\beta_2 = 1.038^{***}$,
 $p < 0.001$), confirming that the overall result is driven by these two journals.
 
 \medskip
@@ -1066,7 +1067,7 @@ instability is consistent with the null category being the leak, not the
 directional categories.  To assess Direction (ii) directly, Robustness Check R8 adds
 $\log(\text{abstract length})$ as a control.  When this control is included,
 the direction coefficients shrink substantially and lose statistical significance
-($\hat\beta_1 = 0.037$, $p = 0.943$; $\hat\beta_2 = 0.395$, $p = 0.363$).
+($\hat\beta_1 = 0.171$, $p = 0.766$; $\hat\beta_2 = 0.322$, $p = 0.486$).
 This result must be interpreted with care, however.  Abstract length is
 virtually a proxy for publication status in our sample: published abstracts
 average 104 words versus 45 words for NBER working papers, a gap that is
@@ -1206,16 +1207,16 @@ R1: Quasi-exp.\ ID only    & Positive & $1.282^{***}$ & $<$0.001 & 146 \\
                             & Negative & $1.518^{***}$ & $<$0.001 & 146 \\[4pt]
 R2: Excl.\ monetary policy & Positive & $0.999^{***}$ & $<$0.001 & 180 \\
                             & Negative & $1.018^{***}$ & $<$0.001 & 180 \\[4pt]
-R3: \JF{} only             & Positive & $0.310$       & 0.184    & 200 \\
-                            & Negative & $0.295$       & 0.207    & 200 \\[4pt]
-R3: \RFS{}+\JFE{} only     & Positive & $1.059^{***}$ & $<$0.001 & 200 \\
-                            & Negative & $1.086^{***}$ & $<$0.001 & 200 \\[4pt]
+R3: \JF{} only             & Positive & $0.297$       & 0.285    & 200 \\
+                            & Negative & $0.135$       & 0.630    & 200 \\[4pt]
+R3: \RFS{}+\JFE{} only     & Positive & $1.037^{***}$ & $<$0.001 & 200 \\
+                            & Negative & $1.038^{***}$ & $<$0.001 & 200 \\[4pt]
 R4: Binary directional     & Directional & $1.231^{***}$ & $<$0.001 & 200 \\[4pt]
 R4+: Binary + year + authors & Directional & $1.151^{***}$ & $<$0.001 & 200 \\[4pt]
 R6: LPM (OLS, HC3)         & Positive & $0.406^{***}$ & $<$0.001 & 200 \\
                             & Negative & $0.401^{***}$ & $<$0.001 & 200 \\[4pt]
-R8: + log(abstract length) & Positive & $0.037$       & 0.943    & 200 \\
-\small{[lower-bound spec]}  & Negative & $0.395$       & 0.363    & 200 \\[4pt]
+R8: + log(abstract length) & Positive & $0.171$       & 0.766    & 200 \\
+\small{[lower-bound spec]}  & Negative & $0.322$       & 0.486    & 200 \\[4pt]
 R10: AFA conference baseline & Directional & $0.077$ & --- & 108 \\
 \small{[AFA pre-pub.\ control]} & (+ year) & $0.082$ & --- & 108 \\
 \bottomrule
