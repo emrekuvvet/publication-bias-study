@@ -432,13 +432,16 @@ Journal & Abbrev. & ISSN & Publisher & Abstract source \\
 \par\smallskip
 \begin{minipage}{\textwidth}
 \small
-Coverage: 2000--2024.  Abstract text is available for 91.8\% of
-\JF{} research articles (74.6\% of all JF entries; the remainder are editorial
-matter, announcements, and AFA administrative items without abstracts), 97.7\%
-of \RFS{} articles, and 94.6\% of \JFE{} articles after Elsevier API
-enrichment.  Because our pipeline classifies NBER working papers using NBER
-abstracts---not journal abstracts---the JF coverage gap does not affect our
-classification results.
+Coverage: 2000--2024.  Abstract text is available for 91.8\% of \JF{}
+research articles, 97.7\% of \RFS{} articles, and 94.6\% of \JFE{} articles
+after Elsevier API enrichment.  The \JF{} denominator is restricted to
+research articles only; the raw Web of Science record for the \JF{} includes
+a large number of editorial matter, meeting announcements, and AFA
+administrative items (which carry no abstracts), so the overall entry-level
+coverage rate is 74.6\%.  Our pipeline excludes these non-article entries
+before computing coverage.  Because the pipeline classifies NBER working
+papers using NBER abstracts---not journal abstracts---any residual \JF{}
+coverage gap does not affect our classification results.
 \end{minipage}
 \end{singlespace}
 \end{table}
