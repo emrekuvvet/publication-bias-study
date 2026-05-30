@@ -1718,8 +1718,7 @@ sentence).
 \caption{Probit Results by Sub-Period \textit{(Exploratory)}}
 \label{tab:time_trends}
 \begin{singlespace}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{lccc}
+\begin{tabularx}{\textwidth}{l>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
 \toprule
  & 2000--2007 & 2008--2015 & 2016--2024 \\
 \midrule
@@ -1733,7 +1732,7 @@ Negative ($-1$) & $0.319$       & $1.307^{***}$ & $1.022^{***}$ \\
 $N$             &  28           &  69           & 103           \\
 Pseudo $R^2$    & 0.179         & 0.163         & 0.138         \\
 \bottomrule
-\end{tabular}}
+\end{tabularx}
 \par\smallskip
 \begin{minipage}{\textwidth}
 \small
@@ -1762,8 +1761,7 @@ the costs of the post-crisis regulatory expansion.
 \caption{LLM Direction Coding: Replication Confusion Matrix}
 \label{tab:confusion_matrix}
 \begin{singlespace}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{lrrrr}
+\begin{tabularx}{\textwidth}{l>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
 \toprule
  & \multicolumn{3}{c}{Replication code} & \\
 \cmidrule(lr){2-4}
@@ -1775,7 +1773,7 @@ Positive ($+1$) &  2 &  0 & \textbf{18} &  20 \\
 \midrule
 Column total & 31 & 5 & 24 & 60 \\
 \bottomrule
-\end{tabular}}
+\end{tabularx}
 \par\smallskip
 \begin{minipage}{\textwidth}
 \small
