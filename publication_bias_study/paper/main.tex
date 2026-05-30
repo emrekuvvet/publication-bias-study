@@ -452,13 +452,21 @@ The model returns a JSON object with three fields: \texttt{in\_scope}
 (boolean), \texttt{confidence} (high, medium, or low), and a one-sentence
 \texttt{reason}.  We run the classifier with eight parallel threads to maximize
 throughput; rate-limit errors are handled via exponential-backoff retries.
-The LLM classifier retains \textbf{200 in-scope papers} from the 900
-candidates, a pass rate of 22.2\%.  The high rejection rate reflects the
-strictness of our causal-effect criterion: a paper that describes a regulation,
-discusses its mechanics, or studies firm responses without identifying a causal
-effect is excluded.  The final analysis sample consists of \textbf{200 papers}:
-68 NBER working papers and 132 published journal articles (27 in the \JF{},
-48 in the \RFS{}, and 57 in the \JFE{}).
+
+Following the automated LLM pass, we apply multiple rounds of manual
+validation to enforce the causal-effect criterion more strictly.  The most
+consequential step removes papers that use a regulatory event \textit{only}
+as an exogenous instrument to identify a non-regulatory relationship---for
+example, using SOX passage to instrument for disclosure quality in order to
+study its effect on firm investment.  Such papers' primary research question
+is not the policy effect itself; they fall under the third LLM exclusion
+criterion (main topic is private behaviour with policy as incidental context)
+but were not consistently flagged by the automated classifier.  The automated
+pipeline and manual validation together retain \textbf{200 in-scope papers}
+from the 900 candidates, an effective pass rate of 22.2\%.  The final analysis
+sample consists of \textbf{200 papers}: 68 NBER working papers and 132
+published journal articles (27 in the \JF{}, 48 in the \RFS{}, and 57 in
+the \JFE{}).
 
 \begin{table}[H]
 \centering
@@ -632,12 +640,17 @@ All papers                   & 200 & 25.5 & 32.5 & 42.0 & 2014.7 \\
 \end{tabular}
 \begin{tablenotes}
 \small
-\item \textit{Notes.} The sample consists of NBER working papers (programs
-CF, AP, ME, EFG, and PE, 2000--2024) and published journal articles (\JF{},
-\RFS{}, \JFE{}) classified as in-scope government-intervention papers by our
-LLM pipeline.  Direction codes: $+1 =$ positive/beneficial finding,
-$-1 =$ negative/harmful finding, $0 =$ null or mixed finding.  Column
-percentages may not sum to 100 due to rounding.
+\item \textit{Notes.} The sample consists of 68 NBER working papers (programs
+CF, AP, ME, EFG, and PE, 2000--2024) and 132 published journal articles
+(\JF{}, \RFS{}, \JFE{}) classified as in-scope government-intervention papers
+by our LLM pipeline and manual validation.  Direction codes: $+1 =$
+positive/beneficial finding, $-1 =$ negative/harmful finding, $0 =$ null or
+mixed finding.  The NBER and Published rows are not mutually exclusive: 10
+papers in the NBER working paper sample were matched to published journal
+articles and therefore appear in both the NBER ($N=68$) and Published
+($N=142$) rows; the Published count of 142 is what enters the probit
+regressions as $\text{Published}=1$.  Column percentages may not sum to 100
+due to rounding.
 \end{tablenotes}
 \end{threeparttable}
 \end{table}
