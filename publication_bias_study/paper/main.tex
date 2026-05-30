@@ -1371,8 +1371,10 @@ Quasi-exp.\ papers only    & Positive & $1.603^{***}$ & $<$0.001 & 100 \\
 + log(abstract length)     & Positive & $0.171$       & 0.766    & 200 \\
 \small{[lower-bound spec]} & Negative & $0.322$       & 0.486    & 200 \\[4pt]
 \multicolumn{5}{l}{\textit{Panel D: Alternative Pre-Publication Baseline}} \\[2pt]
-AFA conference baseline    & Directional & $0.077$ & --- & 108 \\
-\small{(+ year trend)}     & Directional & $0.082$ & --- & 108 \\
+AFA conference baseline    & Directional & $0.077$ & $0.797$ & 108 \\
+\small{(+ year trend)}     & Directional & $0.082$ & $0.785$ & 108 \\[4pt]
+Uniform LLM coding         & Directional & $0.038$ & $0.900$ & 108 \\
+\small{[AFA, + year]}      & Directional & $0.044$ & $0.884$ & 108 \\
 \bottomrule
 \end{tabular}}
 \par\smallskip
@@ -1387,14 +1389,17 @@ $\log(1+N_{\text{authors}})$ to the binary specification.  The quasi-experimenta
 restriction uses identification strategies classified by our LLM pipeline from
 abstracts ($N = 100$).  The 100-word truncation specification re-codes all paper directions from
 the first 100 words of the abstract only, creating a symmetric text window
-across pre-publication and published papers; dashes indicate results pending
-final LLM re-coding run.  The abstract-length specification is a lower-bound
+across pre-publication and published papers.  The abstract-length specification is a lower-bound
 bounding exercise: the control is partly endogenous (journals require longer
 abstracts during revision), so these coefficients represent a lower bound on
 the true direction-publication association.  The AFA conference baseline uses
 AFA annual meeting papers (2006--2024, $N = 108$ in-scope) as the
 pre-publication comparison group; direction codes follow the same three-tier
-hierarchy as the NBER pipeline.  Standard errors omitted for brevity.
+hierarchy as the NBER pipeline.  ``Uniform LLM coding'' replaces keyword-based
+direction codes for unmatched AFA papers with the same LLM pipeline used for
+the main NBER/published sample; $\beta \approx 0$ is unchanged, confirming
+the AFA stage-identification result is not an artifact of the mixed coding method.
+Standard errors omitted for brevity.
 $^{***}p < 0.01$, $^{**}p < 0.05$, $^{*}p < 0.10$.
 \end{minipage}
 \end{singlespace}
