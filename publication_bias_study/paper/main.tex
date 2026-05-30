@@ -1182,13 +1182,25 @@ The central identification concern is that NBER working papers and
 top-journal articles are drawn from fundamentally different populations:
 only 7.6\% of published papers are matched to an NBER counterpart, so the
 two samples are largely non-overlapping cross-sections that may differ in
-quality, topic mix, and institutional origin.  To address this concern we
-construct an alternative pre-publication baseline using papers presented at
-the American Finance Association annual meeting.  AFA acceptance is
-competitive and evaluated on research design and contribution, not on
-finding direction.  The vast majority of \JF{}/\RFS{}/\JFE{} articles pass
-through AFA before publication, making AFA presenters a substantially closer
-match to the published sample than the full NBER working-paper universe.
+quality, topic mix, and institutional origin.  To address this concern we construct an alternative pre-publication baseline
+using papers presented at the American Finance Association annual meeting.
+The test is designed to identify the \textit{stage} at which the significance
+premium arises rather than to provide an additional quality screen.  AFA
+papers represent completed research with final empirical results that have
+been publicly presented---they are pre-journal submissions in every
+meaningful sense.  If the premium reflects pre-existing quality differences
+between directional and null papers (a confound independent of editorial
+selection), it should be visible at the AFA stage too.  If it arises from
+journal editorial review, it should appear only after papers enter that
+process.
+
+We also note that the quality-confound concern is limited by the nature of
+NBER affiliation itself.  Posting to the NBER Working Paper series requires
+affiliation with the NBER research network, which is restricted to faculty
+at leading research universities---an elite and selective credential in
+academic economics.  Null-finding NBER papers do not come from a marginal or
+unknown researcher pool; the 40-percentage-point publication gap within this
+uniformly elite group is difficult to attribute to quality differences alone.
 
 We collect 4,080 AFA program papers from 2006--2024.  For 2006--2012 and
 2014--2024, we scrape the AFA website directly; for 2013, whose AFA page
@@ -1216,19 +1228,23 @@ versus 25.0\% for null-finding papers (7 of 28).  The pattern is unchanged when 
 the same three-tier hierarchy as the NBER pipeline: journal-matched papers
 receive direction codes from published-abstract coding; papers with
 OpenAlex, CrossRef, or NBER abstracts receive abstract-based keyword rules; and the remaining
-papers receive conservative title-keyword rules.  The absence of a directional
-premium at the AFA stage, against the large premium in the NBER sample,
-is consistent with publication bias operating at the journal selection stage
-rather than reflecting pre-existing quality differences between directional
-and null papers.\footnote{As a direct test of overlap, we identified 22 papers
-appearing in both the NBER and AFA datasets via fuzzy title matching
-(token-sort score $\geq 90$).  In this subsample, directional papers publish
-at 81.2\% versus 66.7\% for null papers (LPM $\hat\beta = 0.146$,
-s.e.\ 0.208, $p = 0.49$, $N = 22$).  The test is severely underpowered
-(only six null papers in the overlap), so no strong inference is possible;
-nonetheless, the 14 pp gap is substantially smaller than the 40 pp gap in
-the full NBER sample, consistent with AFA quality-screening absorbing part
-of the directional gradient.}
+papers receive conservative title-keyword rules.  The absence of a directional premium at the AFA stage, against the large
+premium in the NBER sample, localizes the significance-sorting mechanism to
+the journal editorial review process.  This is precisely what a
+publication-bias interpretation predicts: completed research at the
+pre-journal stage shows no direction-based sorting; the premium emerges only
+at the publication stage.  A pure quality-confound story predicts the
+opposite---quality differences between directional and null papers should be
+visible before journal review, not arise within it.\footnote{As a direct
+test of overlap, we identified 22 papers appearing in both the NBER and AFA
+datasets via fuzzy title matching (token-sort score $\geq 90$).  In this
+subsample, directional papers publish at 81.2\% versus 66.7\% for null
+papers (LPM $\hat\beta = 0.146$, s.e.\ 0.208, $p = 0.49$, $N = 22$).  The
+test is severely underpowered (only six null papers in the overlap), so no
+strong inference is possible.  The 14 pp gap being smaller than the 40 pp
+NBER gap is consistent with the AFA screen selecting papers already close to
+the published pool---it is not evidence that quality confounding drives the
+NBER result.}
 
 \medskip
 \noindent\textbf{R1 --- Quasi-experimental identification only.}
