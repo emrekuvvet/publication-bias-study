@@ -199,8 +199,10 @@ Economic Fluctuations and Growth (EFG), and Public Economics (PE), covering
 papers from 2000 to 2024.  A key methodological advantage of this two-sample
 design is that we observe actual pre-publication findings rather than merely
 the shape of the published distribution: the gap between pre- and
-post-publication finding rates can be attributed to the publication process
-directly, rather than inferred from p-value bunching.  Together, these samples
+post-publication finding rates is directly observable rather than inferred
+from p-value bunching, though the cross-sectional design cannot rule out
+that it reflects differences between the two populations rather than the
+editorial filter alone.  Together, these samples
 allow us to compare the full distribution of findings across publication
 states---not merely the subset that appears in top journals.
 
@@ -304,13 +306,15 @@ toward a particular policy conclusion; the distortion is about
 The paper also contributes methodologically to the literature on identifying
 publication bias.  Unlike approaches that infer bias from the internal shape
 of published p-value distributions, our NBER working paper baseline allows us
-to observe actual pre-publication findings and attribute the sorting gap
-directly to the publication stage.  The AFA conference test reinforces this
-identification: at the pre-journal presentation stage directional papers carry
-no publication premium ($\hat\beta = 0.077$, $p = 0.80$); the premium emerges
-only in the journal publication comparison ($\hat\beta = 1.231^{***}$),
-localizing the mechanism to editorial review rather than earlier research or
-submission decisions.
+to observe actual pre-publication findings and measure the sorting gap in
+the cross-section.  The AFA conference test provides a useful bounding
+exercise: at the pre-journal presentation stage directional papers carry
+no detectable association with eventual publication ($\hat\beta = 0.077$,
+$p = 0.80$); the association is large only in the journal publication
+comparison ($\hat\beta = 1.231^{***}$), consistent with the gap arising
+at or after the journal review stage rather than earlier in the research
+process---though supply-side submission decisions at that stage cannot be
+ruled out.
 
 Finally, the paper introduces a scalable LLM-assisted pipeline for classifying
 and direction-coding large economics paper corpora.  Throughout, we are
@@ -747,22 +751,28 @@ non-overlapping populations.
 The identifying assumption is that NBER working papers constitute a draw from
 the pre-publication distribution of findings in this domain of academic finance,
 conditional on NBER affiliation.  Under this assumption, systematic differences
-in the direction distribution between the NBER and published sub-samples reflect
-the editorial filter.  This assumption is analogous to the design in
-\citet{Franco2014}, who use NSF pre-registration to identify the pre-publication
-distribution; and to the spirit (though not the implementation) of
-\citet{DellaVigna2022}, who obtain institutional RCT records.  Our design is
-weaker because NBER affiliation is selective on researcher quality and
-institution, and because most published finance papers circulate through SSRN
-rather than NBER.
+in the direction distribution between the NBER and published sub-samples are
+informative about the editorial filter.  This assumption is analogous to the
+design of \citet{Franco2014}, who use NSF pre-registration to observe the
+pre-publication distribution of social-science findings; and to
+\citet{DellaVigna2022}, who obtain institutional RCT records.  Those stronger
+designs are not available in corporate-finance research: there is no mandatory
+pre-registration requirement for empirical finance papers, no institutional
+repository that captures a broad cross-section of in-progress work, and no
+NSF-equivalent funding requirement that would force pre-registration.  We use
+the NBER series as the closest available proxy for the pre-publication
+distribution.
 
-Two features of the data are reassuring about the assumption.  First, the
-low match rate (7.6\%) reflects broad SSRN circulation in this domain,
-and the direction-code instability documented in Section~\ref{subsec:direction}
-is consistent with this interpretation.
-Second, NBER selection, if anything, makes our estimates \textit{conservative}:
-if NBER researchers have higher-quality null results than the average researcher,
-the true direction-publication association would be larger than we document.
+Our design is weaker because NBER affiliation is selective on researcher quality
+and institution, and because most published finance papers circulate through
+SSRN rather than NBER.  The direction of the resulting bias is ambiguous:
+NBER selection could make estimates \textit{conservative} (if high-quality NBER
+researchers more often produce genuine null results, our null-paper baseline is
+unusually good, and the true gap for average researchers is larger); or it could
+make estimates \textit{overstated} (if productive NBER researchers circulate
+work only once it is results-ready, the NBER corpus may be upwardly selected
+toward directional findings relative to all ongoing research, inflating the
+measured gap).  We cannot resolve this ambiguity without submission-level data.
 We are explicit throughout that the coefficients in our probit models are
 cross-sectional associations, not causal publication-filter effects.
 
@@ -841,7 +851,7 @@ size for the earliest period ($N = 28$).
 \label{sec:results}
 %% ============================================================
 
-\subsection{Raw Publication Rates}
+\subsection{Directional vs.\ Null Findings}
 
 Table~\ref{tab:pub_rates} reports the unconditional publication rates by
 direction code.  Positive-finding papers are published at a rate of 88.2\%
@@ -990,8 +1000,9 @@ gap is 40 pp.  For Cols.~(2)--(6), at the bivariate-spec baseline ($\hat\alpha =
 implied null publication probability $\approx 47.6\%$), 41 pp for positive-finding
 and 40 pp for negative-finding papers in Col.~(2).  A Wald test for
 $H_0\colon\hat\beta_1 = \hat\beta_2$ in Column~(2) yields $\chi^2 = 0.008$,
-$p = 0.93$; the minimum detectable difference at 80\% power is 0.851 coefficient
-units.  Failure to reject does not rule out moderate directional asymmetries.
+$p = 0.93$.  At the observed sample size the test has only 5.9\% power; the
+minimum detectable difference at 80\% power is 0.864 coefficient units.
+Failure to reject does not rule out moderate directional asymmetries.
 \end{minipage}
 \end{singlespace}
 \end{table}
@@ -1086,26 +1097,27 @@ Table~\ref{tab:time_trends} in Appendix~\ref{app:additional_tables} reports
 probit estimates for all three sub-periods.
 
 During the \textit{pre-crisis period} (2000--2007, $N = 28$), the positive-
-finding premium ($\hat\beta_1 = 1.600^{**}$, s.e.\ 0.628) is large and
-significant, while the negative-finding premium ($\hat\beta_2 = 0.319$,
-s.e.\ 0.942) is imprecisely estimated.  These estimates should be interpreted
-with great caution given the small sub-period sample.
+finding premium ($\hat\beta_1 = 1.600^{**}$, 95\% CI [0.370, 2.831]) is large
+and significant, while the negative-finding premium ($\hat\beta_2 = 0.319$,
+95\% CI [$-$1.528, 2.165]) is imprecisely estimated.  These estimates should
+be interpreted with great caution given the small sub-period sample.
 
 During the \textit{financial crisis and post-crisis period} (2008--2015,
 $N = 69$), the negative-finding premium ($\hat\beta_2 = 1.307^{***}$,
-s.e.\ 0.397) exceeded the positive-finding premium
-($\hat\beta_1 = 1.148^{**}$, s.e.\ 0.487), though the gap is smaller than before.
-This pattern is consistent with elevated publication rates for research documenting the
-unintended costs of the post-crisis regulatory expansion, though the small
-sub-period sample precludes causal interpretation and the confidence intervals
-for the two coefficients overlap.
+95\% CI [0.528, 2.086]) was somewhat larger than the positive-finding premium
+($\hat\beta_1 = 1.148^{**}$, 95\% CI [0.193, 2.103]), though the confidence
+intervals overlap substantially.  Whether this pattern reflects editorial
+preferences, author self-selection in submission, or the broader research
+environment during the post-crisis regulatory period cannot be determined
+from these data.
 
 In the \textit{post-Dodd-Frank period} (2016--2024, $N = 103$), the two
 premiums converge markedly: positive findings carry a premium of $0.995^{**}$
-(s.e.\ 0.387) and negative findings $1.022^{***}$ (s.e.\ 0.352).
-The convergence suggests that the asymmetry of the crisis period was temporary,
-and the publication--direction association settled into a more symmetric
-significance-sorting pattern in the post-implementation period.
+(95\% CI [0.237, 1.753]) and negative findings $1.022^{***}$ (95\% CI [0.333,
+1.712]).  The overlapping intervals are consistent with a more symmetric
+direction-publication association in the post-implementation period, though
+the small sub-period samples preclude strong inference about the source of
+the earlier divergence.
 
 %% ============================================================
 \section{Robustness}
@@ -1220,13 +1232,20 @@ reclassified as directional in the independent replication run, while no
 directional-coded papers are reclassified as null.  This asymmetry implies that
 null-coding error attenuates rather than inflates our estimate.
 
-For completeness, Table~\ref{tab:robustness} Panel~C also reports the
-abstract-length covariate specification ($\hat\beta_1 = 0.171$, $p = 0.766$;
-$\hat\beta_2 = 0.322$, $p = 0.486$).  This specification is endogenous: abstract
-length is partly shaped by journals requiring polished abstracts at acceptance,
-making it close to a second proxy for publication status.  We treat it as an
-extreme lower bound; the symmetric truncation, which does not suffer from
-this endogeneity, is the preferred robustness check.
+Table~\ref{tab:robustness} Panel~C also reports a bounding specification
+that adds $\log(\text{abstract length})$ as a covariate
+($\hat\beta_1 = 0.171$, $p = 0.766$; $\hat\beta_2 = 0.322$, $p = 0.486$).
+This bounds the association from below: because abstract length is partly
+shaped by journals requiring polished abstracts at acceptance, the control
+is endogenous (close to a second proxy for publication status), so this
+coefficient is a lower bound rather than an unbiased estimate.  Together,
+the main uninstrumented estimates provide an \textit{upper bound} on the
+direction-publication association if abstract polish fully drives it, and the
+abstract-length control provides an \textit{extreme lower bound} if all
+abstract-length variation is editorial.  The symmetric 100-word truncation
+sits between these poles and does not share the endogeneity problem:
+its results ($\hat\beta_1 = 1.179^{***}$, $\hat\beta_2 = 1.350^{***}$)
+indicate that the true association is well above the lower bound.
 
 \textit{Matched-pairs direction stability.}
 Among the 25 papers confirmed to exist as both an NBER working paper and a
@@ -1558,8 +1577,10 @@ domain may disproportionately circulate through SSRN rather than NBER.
 Addressing this fully would require either submission-level data from journal
 editors (desk-rejection rates and review outcomes by direction code) or a
 pre-registration registry for finance papers analogous to the AEA RCT Registry.
-We interpret all coefficients as cross-sectional associations, not causal
-editorial-filter effects.
+SSRN preprint histories for authors in our sample would also allow a more
+comprehensive pre-publication baseline by capturing papers that circulate
+outside NBER.  We interpret all coefficients as cross-sectional associations,
+not causal editorial-filter effects.
 
 \medskip
 \noindent\textbf{LLM classification errors and abstract polish.}
