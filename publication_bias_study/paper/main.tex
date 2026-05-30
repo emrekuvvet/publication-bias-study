@@ -822,10 +822,12 @@ Adding the author-count quality proxy in Column~(5) leaves the direction
 coefficients virtually unchanged ($\hat\beta_1 = 1.213^{***}$,
 $\hat\beta_2 = 1.137^{***}$), indicating that team size does not explain
 the null-paper disadvantage.  The author-count coefficient is positive and
-marginally significant ($\hat\delta = 0.772^{*}$, s.e.\ 0.407).
+marginally significant ($\hat\delta = 0.770^{*}$, s.e.\ 0.407).
 The estimated year trend (Column~(3)) is positive and marginally significant
 ($\hat\gamma = 0.032^{*}$, s.e.\ 0.017),
 suggesting a modest upward drift in the publication--direction association over the period.
+In Column~(5), the year trend becomes statistically insignificant ($\hat\gamma = 0.027$, s.e.\ 0.017)
+after controlling for team size.
 Decade fixed effects (Column~(4)) leave the direction coefficients essentially
 unchanged.
 
@@ -844,17 +846,17 @@ Positive ($+1$) &               & $1.247^{***}$ & $1.198^{***}$ & $1.210^{***}$ 
                 &               & $(0.267)$     & $(0.269)$     & $(0.268)$     & $(0.270)$     & $(0.281)$     \\[4pt]
 Negative ($-1$) &               & $1.219^{***}$ & $1.111^{***}$ & $1.180^{***}$ & $1.137^{***}$ & $1.228^{***}$ \\
                 &               & $(0.242)$     & $(0.251)$     & $(0.250)$     & $(0.255)$     & $(0.270)$     \\[4pt]
-Year trend      &               &               & $0.032^{*}$   &               & $0.032^{*}$   & $-0.001$      \\
+Year trend      &               &               & $0.032^{*}$   &               & $0.027$       & $-0.001$      \\
                 &               &               & $(0.017)$     &               & $(0.017)$     & $(0.013)$     \\[4pt]
-$\log(N_{\text{authors}})$ & & &             &               & $0.772^{*}$   & $0.013$       \\
+$\log(N_{\text{authors}})$ & & &             &               & $0.770^{*}$   & $0.013$       \\
                 &               &               &               &               & $(0.407)$     & $(0.313)$     \\[4pt]
 Quasi-Exp.\ ID  &               &               &               &               &               & $0.734^{***}$ \\
-                &               &               &               &               &               & $(0.220)$     \\[4pt]
+                &               &               &               &               &               & $(0.221)$     \\[4pt]
 Decade FEs      & No            & No            & No            & Yes           & No            & No            \\
-Intercept       & $-0.060$      & $-0.060$      & $-0.003$      & $-0.060$      & $-0.971^{*}$  & $-1.301^{**}$ \\
+Intercept       & $-0.060$      & $-0.060$      & $0.040$       & $-0.060$      & $-0.931^{*}$  & $-1.274^{**}$ \\
 \midrule
 $N$             & 200           & 200           & 200           & 200           & 200           & 200           \\
-Pseudo $R^2$    & 0.163         & 0.163         & 0.178         & 0.178         & 0.193         & 0.241         \\
+Pseudo $R^2$    & 0.163         & 0.163         & 0.178         & 0.173         & 0.193         & 0.241         \\
 \bottomrule
 \end{tabular}
 \begin{tablenotes}
@@ -939,11 +941,11 @@ Positive ($+1$) & $1.150^{***}$ & $1.287^{***}$ & $1.448^{***}$ \\
                 & $(0.383)$     & $(0.377)$     & $(0.329)$     \\[4pt]
 Negative ($-1$) & $0.900^{**}$  & $1.459^{***}$ & $1.232^{***}$ \\
                 & $(0.382)$     & $(0.333)$     & $(0.312)$     \\[4pt]
-Year trend      & $-0.031$      & $0.020$       & $0.023$       \\
-                & $(0.019)$     & $(0.018)$     & $(0.017)$     \\
+Year trend      & $-0.001$      & $0.044^{*}$   & $0.051^{**}$  \\
+                & $(0.024)$     & $(0.025)$     & $(0.022)$     \\
 \midrule
 $N$             &  85           & 106           & 115           \\
-Pseudo $R^2$    & 0.127         & 0.223         & 0.207         \\
+Pseudo $R^2$    & 0.114         & 0.273         & 0.236         \\
 \bottomrule
 \end{tabular}
 \begin{tablenotes}
@@ -1038,7 +1040,7 @@ positive-versus-negative coding convention.  The coefficient on the directional
 indicator is $1.231^{***}$ (s.e.\ 0.204, $p < 0.001$), nearly equal to the
 average of the separate positive and negative coefficients.  Adding the year
 trend and author-count control leaves the coefficient essentially unchanged
-($1.151^{***}$, s.e.\ 0.209).  These estimates confirm that the significance
+($1.173^{***}$, s.e.\ 0.212).  These estimates confirm that the significance
 bias does not depend on whether or how we distinguish positive from negative
 effects, or on any particular normative coding convention.
 
@@ -1091,8 +1093,8 @@ hedged NBER abstract language may push genuinely directional papers into the
 null category, attenuating the premium.  We treat the abstract-length control
 as a \textit{bounding} exercise rather than a causal control.  Column~(R8)
 adds $\log(\text{abstract length})$ as a covariate; direction coefficients
-shrink substantially ($\hat\beta_1 = 0.037$, $p = 0.943$;
-$\hat\beta_2 = 0.395$, $p = 0.363$).  We interpret our main estimates (R8
+shrink substantially ($\hat\beta_1 = 0.171$, $p = 0.766$;
+$\hat\beta_2 = 0.322$, $p = 0.486$).  We interpret our main estimates (R8
 omitted) as an upper bound, and these R8 estimates as a lower bound on the
 true direction--publication association---under the extreme assumption that
 all abstract-length variation reflects editorial revision rather than genuine
@@ -1169,9 +1171,10 @@ The most substantive quality-control check restricts the sample to papers
 using quasi-experimental identification strategies (RDD, IV, DiD, or Event
 Study), as classified by our LLM pipeline applied to abstracts.  This
 directly addresses the concern that null-finding papers systematically rely on
-weaker identification strategies.  Among quasi-experimental papers, the
-significance premium remains large and statistically significant
-(Table~\ref{tab:robustness}), confirming that the result is not driven by
+weaker identification strategies.  Among quasi-experimental papers ($N = 100$), the positive coefficient remains large and
+statistically significant ($\hat\beta_1 = 1.603^{***}$); the negative coefficient
+cannot be identified due to perfect separation (all quasi-experimental negative-finding papers
+are published).  This confirms that the result is not driven by
 an identification-quality gradient between directional and null papers.
 
 \medskip
@@ -1203,16 +1206,16 @@ matched subsample.
 \toprule
 Check & Variable & Coefficient & $p$-value & $N$ \\
 \midrule
-R1: Quasi-exp.\ ID only    & Positive & $1.282^{***}$ & $<$0.001 & 146 \\
-                            & Negative & $1.518^{***}$ & $<$0.001 & 146 \\[4pt]
+R1: Quasi-exp.\ ID only    & Positive & $1.603^{***}$ & $<$0.001 & 100 \\
+                            & Negative & \multicolumn{2}{c}{separation} & 100 \\[4pt]
 R2: Excl.\ monetary policy & Positive & $0.999^{***}$ & $<$0.001 & 180 \\
                             & Negative & $1.018^{***}$ & $<$0.001 & 180 \\[4pt]
-R3: \JF{} only             & Positive & $0.297$       & 0.285    & 200 \\
-                            & Negative & $0.135$       & 0.630    & 200 \\[4pt]
+R3: \JF{} only             & Positive & $0.297$       & 0.283    & 200 \\
+                            & Negative & $0.135$       & 0.629    & 200 \\[4pt]
 R3: \RFS{}+\JFE{} only     & Positive & $1.037^{***}$ & $<$0.001 & 200 \\
                             & Negative & $1.038^{***}$ & $<$0.001 & 200 \\[4pt]
 R4: Binary directional     & Directional & $1.231^{***}$ & $<$0.001 & 200 \\[4pt]
-R4+: Binary + year + authors & Directional & $1.151^{***}$ & $<$0.001 & 200 \\[4pt]
+R4+: Binary + year + authors & Directional & $1.173^{***}$ & $<$0.001 & 200 \\[4pt]
 R6: LPM (OLS, HC3)         & Positive & $0.406^{***}$ & $<$0.001 & 200 \\
                             & Negative & $0.401^{***}$ & $<$0.001 & 200 \\[4pt]
 R8: + log(abstract length) & Positive & $0.171$       & 0.766    & 200 \\
@@ -1227,7 +1230,7 @@ R10: AFA conference baseline & Directional & $0.077$ & --- & 108 \\
 on the indicated variable.  The omitted category is Null/Mixed ($0$) except
 in R4 where it is Null/Mixed ($0$) vs.\ any directional finding.  R1 restricts
 to papers with quasi-experimental identification (RDD, IV, DiD, Event Study)
-as classified by our LLM pipeline ($N = 146$).  All probit
+as classified by our LLM pipeline ($N = 100$).  All probit
 specifications include a linear year trend.  R4 ``+ controls'' adds
 $\log(1+N_{\text{authors}})$.  R8 is a lower-bound bounding specification:
 the abstract-length control is partly endogenous (journals require longer
@@ -1426,7 +1429,7 @@ null-finding papers rely on weaker empirical designs that are less likely to
 detect effects regardless of the true effect size.  We address this through
 two controls.  First, Spec~(4) adds $\log(1+N_{\text{authors}})$: the
 direction coefficients are virtually unchanged and the author-count coefficient
-is positive and marginally significant ($\hat\delta = 0.772^{*}$, s.e.\ 0.407),
+is positive and marginally significant ($\hat\delta = 0.770^{*}$, s.e.\ 0.407),
 suggesting that larger teams are more likely to publish---an independent quality
 gradient that does not absorb the direction premium.  Second, and more directly, Spec~(5) adds a
 quasi-experimental identification dummy (equal to one if the paper uses RDD, IV,
@@ -1470,7 +1473,7 @@ primary regression.  The cross-journal and sub-period analyses are exploratory.
 Applying a Bonferroni correction for the nine robustness checks in
 Table~\ref{tab:robustness} (R1, R2, R3$\times$2, R4$\times$2, R6, R8, R10) yields a
 corrected threshold of $p < 0.00556$.  All main results ($p < 0.001$) easily
-clear this threshold; only R3 (JF-only subset, $p = 0.18$) does not, which we
+clear this threshold; only R3 (JF-only subset, $p \approx 0.28$) does not, which we
 interpret as a power issue rather than evidence against the main finding.
 
 %% ============================================================
