@@ -1426,7 +1426,9 @@ null-finding papers rely on weaker empirical designs that are less likely to
 detect effects regardless of the true effect size.  We address this through
 two controls.  First, Spec~(4) adds $\log(1+N_{\text{authors}})$: the
 direction coefficients are virtually unchanged and the author-count coefficient
-is near zero and insignificant.  Second, and more directly, Spec~(5) adds a
+is positive and marginally significant ($\hat\delta = 0.772^{*}$, s.e.\ 0.407),
+suggesting that larger teams are more likely to publish---an independent quality
+gradient that does not absorb the direction premium.  Second, and more directly, Spec~(5) adds a
 quasi-experimental identification dummy (equal to one if the paper uses RDD, IV,
 DiD, or Event Study methods, as classified by our LLM pipeline from abstracts).
 Papers with quasi-experimental designs are both more likely to detect genuine
