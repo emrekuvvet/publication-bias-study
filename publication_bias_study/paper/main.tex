@@ -105,6 +105,8 @@
 \date{This version: \today \\[6pt]
       \small\textit{[Working paper --- please do not cite without permission]}}
 
+\setlength{\emergencystretch}{3em}   % allow slightly looser lines to prevent overflow
+
 \begin{document}
 \hypersetup{pageanchor=false}
 \maketitle
@@ -416,7 +418,9 @@ sources.
 \centering
 \caption{Journal Sample}
 \label{tab:journals}
+\begin{singlespace}
 \begin{threeparttable}
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{llcll}
 \toprule
 Journal & Abbrev. & ISSN & Publisher & Abstract source \\
@@ -425,7 +429,7 @@ Journal & Abbrev. & ISSN & Publisher & Abstract source \\
 \RFS{} & RFS & 0893-9454 & Oxford   & Web of Science \\
 \JFE{} & JFE & 0304-405X & Elsevier & ScienceDirect API \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \begin{tablenotes}
 \small
 \item Coverage: 2000--2024.  Abstract text is available for 91.8\% of
@@ -437,6 +441,7 @@ abstracts---not journal abstracts---the JF coverage gap does not affect our
 classification results.
 \end{tablenotes}
 \end{threeparttable}
+\end{singlespace}
 \end{table}
 
 \subsection{NBER Working Papers}
@@ -530,7 +535,9 @@ the \JFE{}).
 \centering
 \caption{Sample Selection}
 \label{tab:sample_selection}
+\begin{singlespace}
 \begin{threeparttable}
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{lrr}
 \toprule
 Selection step & Papers remaining & Papers dropped \\
@@ -560,7 +567,7 @@ Selection step & Papers remaining & Papers dropped \\
 \quad NBER working papers (unpublished) &     58 & \\
 \quad \textbf{Total}                    & \textbf{200} & \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \begin{tablenotes}
 \small
 \item \textit{Notes.} The starting universe consists of all NBER working papers
@@ -574,6 +581,7 @@ comprises all in-scope journal articles regardless of whether a corresponding
 NBER working paper exists.
 \end{tablenotes}
 \end{threeparttable}
+\end{singlespace}
 \end{table}
 
 \subsection{Direction Coding}
@@ -681,7 +689,9 @@ rate disparities documented in Section~\ref{sec:results}.
 \centering
 \caption{Summary Statistics}
 \label{tab:summary}
+\begin{singlespace}
 \begin{threeparttable}
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{lrrrrr}
 \toprule
 Sample & $N$ & Positive (\%) & Negative (\%) & Null (\%) & Mean year \\
@@ -695,7 +705,7 @@ All papers                   & 200 & 25.5 & 32.5 & 42.0 & 2014.7 \\
 \quad \RFS{} &  48 & 29.2 & 52.1 & 18.8 & 2017.1 \\
 \quad \JFE{} &  57 & 36.8 & 38.6 & 24.6 & 2015.9 \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \begin{tablenotes}
 \small
 \item \textit{Notes.} The sample consists of 68 NBER working papers (programs
@@ -711,6 +721,7 @@ regressions as $\text{Published}=1$.  Column percentages may not sum to 100
 due to rounding.
 \end{tablenotes}
 \end{threeparttable}
+\end{singlespace}
 \end{table}
 
 %% ============================================================
@@ -828,7 +839,9 @@ of government interventions with detectable effects in the published record.
 \centering
 \caption{Publication Rates by Finding Direction}
 \label{tab:pub_rates}
+\begin{singlespace}
 \begin{threeparttable}
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{lrrrr}
 \toprule
 Finding Direction & Total Papers & $N$ Published & Publication Rate & 95\% CI \\
@@ -839,7 +852,7 @@ Null/Mixed (0)  &  84 &  40 & 47.6\% & [37.3, 58.2] \\
 \midrule
 Total           & 200 & 142 & 71.0\% & \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \begin{tablenotes}
 \small
 \item \textit{Notes.} Publication rates for in-scope papers, 2000--2024.
@@ -860,6 +873,7 @@ $\chi^2 = 38.456$ ($p < 0.001$).  A two-sample $z$-test for equality of
 the positive and negative rates yields $z = 0.09$ ($p = 0.93$).
 \end{tablenotes}
 \end{threeparttable}
+\end{singlespace}
 \end{table}
 
 \subsection{Probit Regression Results}
@@ -906,7 +920,9 @@ unchanged.
 \centering
 \caption{Probit Models: Probability of Publication in a Top Finance Journal}
 \label{tab:probit_main}
+\begin{singlespace}
 \begin{threeparttable}
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{lcccccc}
 \toprule
  & \shortstack{(1)\\Binary\\(Primary)} & \shortstack{(2)\\Bivariate} & \shortstack{(3)\\+~Year} & \shortstack{(4)\\+~Decade FE} & \shortstack{(5)\\+~Authors} & \shortstack{(6)\\+~ID Strategy} \\
@@ -929,7 +945,7 @@ Intercept       & $-0.060$      & $-0.060$      & $0.040$       & $-0.060$      
 $N$             & 200           & 200           & 200           & 200           & 200           & 200           \\
 Pseudo $R^2$    & 0.163         & 0.163         & 0.178         & 0.173         & 0.193         & 0.241         \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \begin{tablenotes}
 \small
 \item \textit{Notes.} Probit estimates of the probability that an in-scope
@@ -954,6 +970,7 @@ $p = 0.93$; the minimum detectable difference at 80\% power is 0.851 coefficient
 units.  Failure to reject does not rule out moderate directional asymmetries.
 \end{tablenotes}
 \end{threeparttable}
+\end{singlespace}
 \end{table}
 
 \subsection{Economic Magnitude}
@@ -1003,7 +1020,9 @@ this difference cannot be statistically confirmed at the available sample sizes.
 \centering
 \caption{Probit Models by Journal}
 \label{tab:probit_by_journal}
+\begin{singlespace}
 \begin{threeparttable}
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{lccc}
 \toprule
  & \JF{} & \RFS{} & \JFE{} \\
@@ -1018,7 +1037,7 @@ Year trend      & $-0.001$      & $0.044^{*}$   & $0.051^{**}$  \\
 $N$             &  85           & 106           & 115           \\
 Pseudo $R^2$    & 0.114         & 0.273         & 0.236         \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \begin{tablenotes}
 \small
 \item \textit{Notes.} Each column re-estimates equation~\eqref{eq:probit}
@@ -1029,6 +1048,7 @@ The \JF{} sample contains only 27 in-scope published articles in 2000--2024,
 limiting statistical power for journal-specific tests.
 \end{tablenotes}
 \end{threeparttable}
+\end{singlespace}
 \end{table}
 
 \subsection{Time-Period Heterogeneity (Exploratory)}
@@ -1274,7 +1294,9 @@ the probit functional form.
 \centering
 \caption{Robustness Checks}
 \label{tab:robustness}
+\begin{singlespace}
 \begin{threeparttable}
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{llccc}
 \toprule
 Specification & Variable & Coefficient & $p$-value & $N$ \\
@@ -1300,7 +1322,7 @@ Quasi-exp.\ papers only    & Positive & $1.603^{***}$ & $<$0.001 & 100 \\
 AFA conference baseline    & Directional & $0.077$ & --- & 108 \\
 \small{(+ year trend)}     & Directional & $0.082$ & --- & 108 \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \begin{tablenotes}
 \small
 \item \textit{Notes.} Each row reports the probit (or OLS for the LPM
@@ -1320,6 +1342,7 @@ hierarchy as the NBER pipeline.  Standard errors omitted for brevity.
 $^{***}p < 0.01$, $^{**}p < 0.05$, $^{*}p < 0.10$.
 \end{tablenotes}
 \end{threeparttable}
+\end{singlespace}
 \end{table}
 
 %% ============================================================
@@ -1661,7 +1684,8 @@ keyword before the paper is flagged as a candidate.
 \subsection{In-Scope Classification Prompt}
 
 \begin{quote}
-\texttt{A finance research paper is `in scope' for a study of publication
+\small\sloppy\ttfamily
+A finance research paper is `in scope' for a study of publication
 bias in government intervention research if and only if its PRIMARY
 research question is the CAUSAL EFFECT of a specific government law,
 regulation, or public policy on financial markets, firms, or investors.
@@ -1671,13 +1695,14 @@ its effect; (3) papers whose main topic is private firm or market
 behaviour, with policy as incidental context; (4) papers studying
 central bank communication WITHOUT a specific policy instrument.
 Return JSON with exactly three keys: in\_scope (boolean), confidence
-(``high'', ``medium'', or ``low''), reason (one sentence).}
+(``high'', ``medium'', or ``low''), reason (one sentence).
 \end{quote}
 
 \subsection{Direction Coding Prompt}
 
 \begin{quote}
-\texttt{The following is the abstract of a finance paper that studies
+\small\sloppy\ttfamily
+The following is the abstract of a finance paper that studies
 the effect of a government law, regulation, or public policy.  Classify
 the MAIN empirical finding as: +1 if the government intervention
 produced a POSITIVE or BENEFICIAL outcome (e.g., improved market
@@ -1688,7 +1713,7 @@ NULL, MIXED, or INCONCLUSIVE.  Coding rule: code the sign of the
 estimated coefficient on the primary intervention variable, NOT the
 authors' normative framing.  Return JSON with: direction (1, -1, or
 0), confidence (``high'', ``medium'', or ``low''), rationale (one
-sentence).}
+sentence).
 \end{quote}
 
 %% ============================================================
@@ -1699,7 +1724,9 @@ sentence).}
 \centering
 \caption{Probit Results by Sub-Period \textit{(Exploratory)}}
 \label{tab:time_trends}
+\begin{singlespace}
 \begin{threeparttable}
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{lccc}
 \toprule
  & 2000--2007 & 2008--2015 & 2016--2024 \\
@@ -1714,7 +1741,7 @@ Negative ($-1$) & $0.319$       & $1.307^{***}$ & $1.022^{***}$ \\
 $N$             &  28           &  69           & 103           \\
 Pseudo $R^2$    & 0.179         & 0.163         & 0.138         \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \begin{tablenotes}
 \small
 \item \textit{Notes.} \textbf{This analysis is exploratory.}  Sub-period sample
@@ -1731,6 +1758,7 @@ but does not causally identify elevated publication rates for research on
 the costs of the post-crisis regulatory expansion.
 \end{tablenotes}
 \end{threeparttable}
+\end{singlespace}
 \end{table}
 
 %% ============================================================
@@ -1741,7 +1769,9 @@ the costs of the post-crisis regulatory expansion.
 \centering
 \caption{LLM Direction Coding: Replication Confusion Matrix}
 \label{tab:confusion_matrix}
+\begin{singlespace}
 \begin{threeparttable}
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{lrrr|r}
 \toprule
  & \multicolumn{3}{c|}{Replication code} & \\
@@ -1753,7 +1783,7 @@ Positive ($+1$) &  2 &  0 & \textbf{18} &  20 \\
 \midrule
 Column total & 31 & 5 & 24 & 60 \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \begin{tablenotes}
 \small
 \item \textit{Notes.} Entries are paper counts from a 60-paper stratified
@@ -1772,6 +1802,7 @@ ambiguous papers \textit{toward} directional codes rather than toward null,
 any resulting measurement error attenuates our estimated significance premium.
 \end{tablenotes}
 \end{threeparttable}
+\end{singlespace}
 \end{table}
 
 %% ============================================================
