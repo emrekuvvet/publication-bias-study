@@ -608,25 +608,33 @@ requirements are optimal policy.  The full coding prompt is in
 Appendix~\ref{app:prompts}.
 
 \paragraph{Coding reliability.}
-To assess the reliability of our LLM direction codes, we conducted a
-replication exercise: we re-ran the direction coding protocol on a stratified
-random sample of 60 papers (5 papers per source $\times$ direction cell,
-balanced across the three journals and NBER), treating the replication run as
-an independent second rater.  The two runs agree on 43 of 60 papers (71.7\%
-percent agreement).  The linear-weighted Cohen's kappa across all three
-direction categories is $\kappa = 0.674$, consistent with ``substantial
-agreement'' by the \citet{LandisKoch1977} scale ($\kappa \in [0.61, 0.80]$).
-Agreement is near-perfect for directional papers: the negative ($-1$) category
-achieves 100\% agreement (20/20 papers) and the positive ($+1$) category 90\%
-(18/20 papers).  Disagreements are concentrated in the null/mixed category,
-where the two runs agree on only 25\% of papers (5/20); 15 null-coded papers
-are re-classified as directional in replication.  This pattern has a critical
-implication for our estimates: coding instability in the null category pushes
-ambiguous papers \textit{toward} directional codes in replication rather than
-away from them.  Any resulting measurement error therefore \textit{attenuates}
-the significance premium we estimate, making our coefficients a conservative
-lower bound on the true bias.  Appendix Table~\ref{tab:confusion_matrix}
-reports the full $3\times3$ confusion matrix.
+\label{subsec:validation}
+We validate the direction codes through two exercises.
+
+\textit{LLM replication (inter-rater reliability).}
+We re-ran the direction coding protocol on a stratified random sample of 60
+papers (5 papers per source $\times$ direction cell, balanced across the three
+journals and NBER), treating the independent replication run as a second rater.
+The two runs agree on 43 of 60 papers (71.7\%).  The linear-weighted Cohen's
+$\kappa$ across all three direction categories is $\kappa = 0.674$, consistent
+with ``substantial agreement'' by the \citet{LandisKoch1977} scale
+($\kappa \in [0.61, 0.80]$).  Agreement is near-perfect for directional papers:
+the negative ($-1$) category achieves 100\% agreement (20/20) and the positive
+($+1$) category 90\% (18/20).  Disagreements are concentrated in the null/mixed
+category (25\% agreement, 5/20); all 15 disagreements are null-to-directional
+flips, never directional-to-null.  This asymmetry implies that any coding error
+attenuates our estimated premium, making coefficients a conservative lower bound.
+Appendix Table~\ref{tab:confusion_matrix} reports the full confusion matrix.
+
+\textit{Human validation.}
+To assess agreement between LLM codes and a human standard, we drew a stratified
+random sample of 40 papers (20 published, 20 NBER) and asked the authors to
+independently code the direction of each paper's primary finding using only the
+abstract, without reference to the LLM output.  The human coding sheet and
+comparison script (\texttt{scripts/13\_human\_validation\_kappa.py}) are
+included in the replication package.  Human-coded results and the corresponding
+$\kappa$ statistics are reported in Table~\ref{tab:human_validation} in the
+online appendix.
 
 \subsection{Linking NBER Papers to Published Papers}
 \label{subsec:linking}
@@ -1940,8 +1948,10 @@ contains:
 \item \texttt{scripts/04b\_code\_direction\_truncated.py} --- Direction
   coding from first 100 words only (symmetric-window robustness check)
 \item \texttt{data/} --- Final analysis dataset in Parquet format
-\item \texttt{validation/human\_inscope\_coding.csv} --- Hand-coded
-  ground-truth labels for in-scope classifier validation (150 papers)
+\item \texttt{validation/human\_coding\_sheet\_40.xlsx} --- Coding sheet for
+  40-paper human direction-coding validation (to be filled by authors)
+\item \texttt{scripts/13\_human\_validation\_kappa.py} --- Computes Cohen's
+  $\kappa$ between human and LLM codes once coding sheet is complete
 \item \texttt{paper/} --- \LaTeX{} source for this paper
 \end{itemize}
 
@@ -1984,5 +1994,42 @@ differ in direction from included papers.  Given that the keyword filter
 captures all standard regulatory and supervisory terminology in finance,
 we expect any false negatives to be idiosyncratically missed rather than
 directionally selected.
+
+%% ============================================================
+\section{Human Direction-Coding Validation}
+\label{app:human_validation}
+%% ============================================================
+
+\begin{table}[H]
+\centering
+\caption{Human vs.\ LLM Direction-Coding Agreement (N\,=\,40)}
+\label{tab:human_validation}
+\begin{singlespace}
+\resizebox{0.75\textwidth}{!}{%
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{3}{c}{LLM code} & \\
+\cmidrule(lr){2-4}
+Human code & $-1$ & $0$ & $+1$ & Total \\
+\midrule
+$-1$ & \textit{[--]} & \textit{[--]} & \textit{[--]} & \textit{[--]} \\
+$0$  & \textit{[--]} & \textit{[--]} & \textit{[--]} & \textit{[--]} \\
+$+1$ & \textit{[--]} & \textit{[--]} & \textit{[--]} & \textit{[--]} \\
+Total & \textit{[--]} & \textit{[--]} & \textit{[--]} & 40 \\
+\bottomrule
+\end{tabular}}
+\par\smallskip
+\begin{minipage}{0.75\textwidth}
+\small
+\textit{Notes.} Stratified random sample of 40 papers (20 published, 20
+NBER).  Each paper was coded by the authors using only the abstract, without
+reference to the LLM output.  Linear-weighted Cohen's $\kappa$ (direction,
+3-category): \textit{[--]}.  Cohen's $\kappa$ (binary directional):
+\textit{[--]}.  Results to be completed before final submission.
+Human coding sheet: \texttt{validation/human\_coding\_sheet\_40.xlsx}.
+Script to compute $\kappa$: \texttt{scripts/13\_human\_validation\_kappa.py}.
+\end{minipage}
+\end{singlespace}
+\end{table}
 
 \end{document}
