@@ -2,7 +2,7 @@
 %%  Significance Bias in Government Intervention Research:
 %%  Evidence from Top Finance Journals
 %%
-%%  Target: Journal of Finance
+%%  Target: Journal of Corporate Finance
 %%
 %%  Compile: pdflatex main.tex
 %%           bibtex main
@@ -35,16 +35,16 @@
 \usepackage{microtype}
 \usepackage{caption}
 \captionsetup[table]{
-  labelfont={bf,up},
-  textfont={normalsize,up},
-  labelsep=newline,
-  justification=centering,
+  labelfont={bf},
+  textfont={normalsize},
+  labelsep=period,
+  justification=raggedright,
   singlelinecheck=false,
   skip=6pt
 }
 \captionsetup[figure]{font=small,labelfont=bf,labelsep=period}
-\renewcommand{\tablename}{TABLE}
-\renewcommand{\figurename}{FIGURE}
+\renewcommand{\tablename}{Table}
+\renewcommand{\figurename}{Figure}
 \usepackage{threeparttable}
 \usepackage{multirow}
 \usepackage{rotating}
@@ -55,31 +55,31 @@
 \usepackage{titlesec}
 \usepackage{titletoc}
 
-%% ---- JF-style section/subsection formatting -----------------
-%% Sections: Roman numeral, large bold, centered, ALL CAPS
+%% ---- JCF-style section/subsection formatting ----------------
+%% Sections: Arabic numeral, bold, flush left, title case
 \titleformat{\section}
-  {\normalfont\Large\bfseries\centering}
-  {\Roman{section}.}{0.5em}{\MakeUppercase}
+  {\normalfont\large\bfseries}
+  {\arabic{section}.}{0.5em}{}
 \titlespacing*{\section}{0pt}{18pt}{8pt}
 
-%% Subsections: capital letter, large slanted (italic), flush left
+%% Subsections: 2.1 dot notation, bold, flush left
 \titleformat{\subsection}
-  {\normalfont\large\slshape}
-  {\Alph{subsection}.}{0.5em}{}
+  {\normalfont\normalsize\bfseries}
+  {\arabic{section}.\arabic{subsection}}{0.5em}{}
 \titlespacing*{\subsection}{0pt}{12pt}{4pt}
 
-%% Sub-subsections: A.1. format, normal size italic
+%% Sub-subsections: normal size italic
 \titleformat{\subsubsection}
-  {\normalfont\normalsize\slshape}
-  {\Alph{subsection}.\arabic{subsubsection}.}{0.5em}{}
+  {\normalfont\normalsize\itshape}
+  {}{0em}{}
 \titlespacing*{\subsubsection}{0pt}{8pt}{3pt}
 
-%% Roman-numeral table and figure numbering
-\renewcommand{\thetable}{\Roman{table}}
-\renewcommand{\thefigure}{\Roman{figure}}
+%% Arabic table and figure numbering
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\thefigure}{\arabic{figure}}
 
-%% REFERENCES in all-caps
-\renewcommand{\refname}{REFERENCES}
+%% References heading
+\renewcommand{\refname}{References}
 
 %% ---- Custom commands ----------------------------------------
 \newcommand{\JF}{\textit{Journal of Finance}}
@@ -136,12 +136,14 @@ selection from author self-selection in submission.
 \vspace{4pt}
 \noindent\small\textit{JEL classification:} G18, G28, C80, B40.
 
+\noindent\small\textit{Keywords:} Publication bias; Government intervention; Finance journals; Significance sorting; Working papers
+
 \clearpage
 \hypersetup{pageanchor=true}
 \setcounter{page}{1}
 
 %% ============================================================
-\section*{Introduction}
+\section{Introduction}
 \label{sec:intro}
 %% ============================================================
 
@@ -284,30 +286,35 @@ the publication pattern settled into a symmetric significance-sorting regime.
 These sub-period estimates are based on small sub-samples ($N = 28$, $69$, $103$)
 and should be interpreted as descriptive, not confirmatory.
 
-The paper makes three contributions.  First, we provide the first systematic
-evidence on publication bias in the government-intervention finance literature
-and identify the \textit{form} it takes: significance bias (sorting on any
-directional finding vs.\ null), not directional bias (sorting on sign).  This
-distinction has direct welfare implications.  Significance bias inflates the
-apparent measurability of policy effects---regulators see a record in which
-most interventions appear to have detectable consequences, when the true share
-of null effects is substantially higher.  But because neither the
-pro-intervention nor the anti-intervention sign enjoys a premium, the direction
-of the published record is not systematically skewed; the bias is about
-\textit{precision} rather than \textit{direction}.  Second, our pre-publication
-NBER baseline and AFA conference falsification test allow us to attribute the
-sorting gap to the journal publication stage directly, rather than inferring it
-from p-value bunching.  The near-zero coefficient at the AFA conference
-presentation stage ($\hat\beta = 0.077$, $p = 0.80$) contrasts sharply with
-the large coefficient in the journal sample ($\hat\beta = 1.231^{***}$),
-pinning the mechanism to editorial selection rather than earlier-stage
-researcher or author decisions.  Third, we introduce a scalable LLM-assisted
-pipeline for in-scope classification and direction coding of large paper
-corpora, with broad applicability to meta-science and systematic review
-research.  We are explicit throughout that our design identifies an association
-between finding direction and publication status; it cannot distinguish
-editorial selection from author self-selection in submission or specification
-search.
+This paper contributes to three strands of the literature.  It provides the
+first systematic evidence on publication bias in the government-intervention
+finance literature and identifies the \textit{form} it takes: significance
+bias---sorting on any directional finding relative to null results---rather
+than directional bias based on the sign of findings.  This distinction
+matters for policy.  Significance bias inflates the apparent measurability of
+policy effects, creating the impression that most interventions have
+detectable consequences when the true share of null results is substantially
+higher.  Because neither pro-intervention nor anti-intervention findings carry
+a differential premium, the regulatory record is not systematically skewed
+toward a particular policy conclusion; the distortion is about
+\textit{detectability} rather than \textit{direction}.
+
+The paper also contributes methodologically to the literature on identifying
+publication bias.  Unlike approaches that infer bias from the internal shape
+of published p-value distributions, our NBER working paper baseline allows us
+to observe actual pre-publication findings and attribute the sorting gap
+directly to the publication stage.  The AFA conference test reinforces this
+identification: at the pre-journal presentation stage directional papers carry
+no publication premium ($\hat\beta = 0.077$, $p = 0.80$); the premium emerges
+only in the journal publication comparison ($\hat\beta = 1.231^{***}$),
+localizing the mechanism to editorial review rather than earlier research or
+submission decisions.
+
+Finally, the paper introduces a scalable LLM-assisted pipeline for classifying
+and direction-coding large economics paper corpora.  Throughout, we are
+explicit that our design identifies a cross-sectional association between
+finding direction and publication status; it cannot distinguish editorial
+selection from author self-selection in submission or specification search.
 
 The remainder of the paper proceeds as follows.
 Section~\ref{sec:literature} reviews the related literature.
@@ -323,7 +330,7 @@ limitations.  Section~\ref{sec:conclusion} concludes.
 \label{sec:literature}
 %% ============================================================
 
-\paragraph{Publication bias in asset pricing.}
+\subsection{Publication Bias in Asset Pricing}
 The closest prior work on publication bias in finance examines the
 cross-section of expected returns.  \citet{Harvey2016} survey hundreds of
 return predictors published in top finance journals and argue that the
@@ -339,7 +346,7 @@ does not study policy-intervention research, and it cannot distinguish
 significance bias from directional bias because factor-return sign is not
 normatively coded.
 
-\paragraph{Publication bias in economics.}
+\subsection{Publication Bias in Economics}
 The economics literature on publication bias draws on a long tradition in
 statistics and medicine.  \citet{Brodeur2016} analyze 50,000 hypothesis tests
 reported in the \textit{American Economic Review}, the \textit{Journal of
@@ -359,7 +366,7 @@ editorial selection specifically.  Our paper contributes domain-specific
 evidence for the finance-regulation literature using a pre-publication baseline
 that identifies the editorial stage directly.
 
-\paragraph{Government intervention in financial markets.}
+\subsection{Government Intervention in Financial Markets}
 Academic finance contains a large and consequential body of work on the
 effects of securities law, banking regulation, and macroprudential policy.
 Studies of financial regulation \citep{Berger2016}, law and finance
@@ -370,7 +377,7 @@ time periods, and countries.  Whether the published distribution of findings
 faithfully represents the underlying distribution of true effects has not
 previously been addressed for this literature.  We fill this gap.
 
-\paragraph{LLMs in economics research.}
+\subsection{LLMs in Economics Research}
 Recent work demonstrates that large language models can accurately classify
 economic texts, extract structured data from unstructured documents, and
 replicate tasks that previously required extensive human coding
@@ -1060,124 +1067,119 @@ and the publication--direction association settled into a more symmetric
 significance-sorting pattern in the post-implementation period.
 
 %% ============================================================
-\section{Robustness Checks}
+\section{Robustness}
 \label{sec:robustness}
 %% ============================================================
 
-Table~\ref{tab:robustness} summarizes the main robustness checks.
+Table~\ref{tab:robustness} summarizes the robustness checks. We organize them
+into four groups: sample and scope, alternative specifications, classification
+and quality concerns, and an alternative pre-publication baseline.
 
-\medskip
-\noindent\textbf{R2 --- Strict intervention definition.}
+\subsection{Sample and Scope Robustness}
+
+\textit{Excluding monetary policy papers.}
 We exclude the 20 papers whose primary topic is monetary or central bank policy
 (quantitative easing, discount window, lender-of-last-resort operations, and
 unconventional monetary policy) and restrict attention to explicit financial
 legislation, securities regulation, and banking supervision.  The results remain
-highly significant:
-$\hat\beta_1 = 0.999^{***}$ and $\hat\beta_2 = 1.018^{***}$ ($p < 0.001$,
-$N = 180$), confirming that the significance-sorting pattern is not driven by the
-inclusion of monetary policy papers.
+highly significant: $\hat\beta_1 = 0.999^{***}$ and $\hat\beta_2 = 1.018^{***}$
+($p < 0.001$, $N = 180$), confirming that the significance-sorting pattern is not
+driven by the inclusion of monetary policy papers.
 
-\medskip
-\noindent\textbf{R3 --- Journal subsets.}
+\textit{Journal subsets.}
 We re-estimate the probit treating publication in the \JF{} alone (versus all
 other in-scope papers) and, separately, publication in the \RFS{} or \JFE{}
-(versus all other papers) as the outcome.  Both the positive- and negative-finding premiums are
-insignificant in the JF-only specification ($\hat\beta_1 = 0.297$,
-$\hat\beta_2 = 0.135$, $p > 0.10$), consistent with the low-power caveat
-noted in Section~\ref{sec:results}.
-The RFS+JFE specification, by contrast, yields large and highly significant
-coefficients ($\hat\beta_1 = 1.037^{***}$, $\hat\beta_2 = 1.038^{***}$,
-$p < 0.001$), confirming that the overall result is driven by these two journals.
+(versus all other papers) as the outcome.  Both premiums are statistically
+insignificant in the \JF{}-only specification ($\hat\beta_1 = 0.297$,
+$\hat\beta_2 = 0.135$, $p > 0.10$), consistent with the low-power caveat noted
+in Section~\ref{sec:results}.  The \RFS{}+\JFE{} specification yields large and
+highly significant coefficients ($\hat\beta_1 = 1.037^{***}$,
+$\hat\beta_2 = 1.038^{***}$, $p < 0.001$), confirming that the overall result
+is driven by these two journals.
 
-\medskip
-\noindent\textbf{R4 --- Binary directional specification.}
-A potential concern about our direction coding is that the classification of
-a finding as ``positive'' versus ``negative'' rests on a normative judgment
-about what constitutes a beneficial intervention outcome.  For example, a paper
-finding that capital requirements reduce bank risk-taking might reasonably be
-coded either positive (intervention achieved regulatory intent) or negative
-(intervention constrained bank activity).  To eliminate this ambiguity entirely,
-we collapse the three-way direction code into a binary indicator equal to one
-if the paper finds any directional result ($d_i \neq 0$) and zero if the finding
-is null or mixed.  The binary specification estimates a single premium for
-having \textit{any} detectable directional effect, sidestepping the
-positive-versus-negative coding convention.  The coefficient on the directional
-indicator is $1.231^{***}$ (s.e.\ 0.204, $p < 0.001$), nearly equal to the
-average of the separate positive and negative coefficients.  Adding the year
-trend and author-count control leaves the coefficient essentially unchanged
-($1.173^{***}$, s.e.\ 0.212).  These estimates confirm that the significance
-bias does not depend on whether or how we distinguish positive from negative
-effects, or on any particular normative coding convention.
+\subsection{Alternative Specifications}
 
-\medskip
-\noindent\textbf{R5 --- Abstract language and LLM confidence.}
-Abstract polish introduces a \textit{two-sided} measurement concern that we
-address directly.  Among published papers, 75.4\% receive a
-``high-confidence'' direction code; among NBER-only papers, only 15.5\% do,
-with 74.1\% receiving ``low-confidence'' ratings.  Two distinct confounds arise
-from this asymmetry.  \textit{Direction (i): attenuating.}  Lower-confidence
-LLM codes are more likely to be miscoded as null, because hedged abstract
-language makes null the easier assignment.  Any such miscoding pushes some
-directional NBER papers into the null category, mechanically lowering the
-null-paper publication rate and attenuating our estimated premium.
-\textit{Direction (ii): inflating.}  If authors revise their abstracts to
-sound more decisive after receiving a revise-and-resubmit, the LLM may code
-published papers as directional not because they \textit{are} more directional
-but because their language \textit{signals} directionality more clearly.
-This would inflate our estimated premium.
+\textit{Binary directional indicator.}
+A potential concern about our direction coding is that classifying a finding as
+positive versus negative rests on a normative judgment about what constitutes a
+beneficial intervention outcome.  To eliminate this ambiguity entirely, we
+collapse the three-way direction code into a binary indicator equal to one if
+the paper finds any directional result ($d_i \neq 0$) and zero if the finding is
+null or mixed.  The coefficient is $1.231^{***}$ (s.e.\ 0.204, $p < 0.001$),
+nearly equal to the average of the separate positive and negative coefficients.
+Adding the year trend and author-count control leaves the coefficient essentially
+unchanged at $1.173^{***}$ (s.e.\ 0.212), confirming that the result does not
+hinge on any particular normative coding convention.
+
+\textit{Linear probability model.}
+Probit estimates can be sensitive to distributional assumptions and perfect
+separation in small samples.  Re-estimating the main specification as a linear
+probability model (OLS with heteroskedasticity-robust standard errors) yields
+coefficients of $0.406^{***}$ (s.e.\ 0.072) for positive findings and
+$0.401^{***}$ (s.e.\ 0.069) for negative findings, directly interpretable as
+percentage-point differences in publication probability relative to null papers.
+These magnitudes closely match the probit marginal effects and confirm the
+results do not hinge on the probit functional form.
+
+\textit{NBER-to-journal matching sensitivity.}
+We verify that results hold when we drop all matched NBER-journal pairs and
+estimate the model on papers with unambiguously clear publication status.  The
+resulting coefficients are nearly identical to the full-sample estimates,
+confirming that the results do not hinge on the small matched subsample.
+
+\subsection{Classification and Quality Concerns}
+
+\textit{Quasi-experimental papers only.}
+The most substantive quality-control check restricts the sample to papers
+using quasi-experimental identification strategies (RDD, IV, DiD, or event
+study), as classified by our LLM pipeline from abstracts.  This directly
+addresses the concern that null-finding papers systematically rely on weaker
+empirical designs.  Among quasi-experimental papers ($N = 100$), the positive
+coefficient remains large and significant ($\hat\beta_1 = 1.603^{***}$); the
+negative coefficient cannot be identified due to perfect separation (all
+quasi-experimental negative-finding papers in the sample are published).  This
+confirms that the significance-sorting result is not driven by an
+identification-quality gradient between directional and null papers.
+
+\textit{Abstract language and LLM classification confidence.}
+Abstract polish introduces a two-sided measurement concern.  Among published
+papers, 75.4\% receive a high-confidence direction code; among NBER-only
+papers, only 15.5\% do, with 74.1\% receiving low-confidence ratings.  On one
+hand, hedged NBER abstract language may push genuinely directional papers into
+the null category, attenuating the estimated premium.  On the other hand, if
+authors revise abstracts to sound more decisive after a revise-and-resubmit,
+the LLM may code published papers as directional partly because their language
+signals directionality more clearly, inflating the premium.
 
 Our replication exercise (Section~\ref{subsec:direction}) provides evidence
-that Direction (i) dominates: of the 20 null-coded papers in the validation
-sample, 15 are re-classified as directional in the independent replication run,
-while no directional-coded papers are reclassified as null.  This asymmetric
-instability is consistent with the null category being the leak, not the
-directional categories.  To assess Direction (ii) directly, Robustness Check R8 adds
-$\log(\text{abstract length})$ as a control.  When this control is included,
-the direction coefficients shrink substantially and lose statistical significance
-($\hat\beta_1 = 0.171$, $p = 0.766$; $\hat\beta_2 = 0.322$, $p = 0.486$).
-This result must be interpreted with care, however.  Abstract length is
-virtually a proxy for publication status in our sample: published abstracts
-average 104 words versus 45 words for NBER working papers, a gap that is
-primarily mechanical---journals require well-developed abstracts as a condition
-of acceptance.  Including log(abstract length) is therefore roughly equivalent
-to adding an additional publication-status predictor, which by construction
-absorbs most of the variation we are trying to explain.  This renders the
-control endogenous in the strictest sense: it is partly an \textit{outcome}
-of the same editorial process that generates our main result.  We do not
-interpret the R8 attenuation as evidence that abstract polish confounds our
-findings; rather, it confirms that abstract length and publication status are
-tightly linked---as expected if editorial revision routinely expands abstracts.
+that attenuation dominates: of the 20 null-coded papers in the validation
+sample, 15 are reclassified as directional in the independent replication run,
+while no directional-coded papers are reclassified as null.  To bound the
+inflation concern, we add $\log(\text{abstract length})$ as a covariate.
+Direction coefficients shrink substantially ($\hat\beta_1 = 0.171$,
+$p = 0.766$; $\hat\beta_2 = 0.322$, $p = 0.486$).  Abstract length, however,
+is close to a proxy for publication status in our sample---published abstracts
+average 104 words versus 45 for NBER papers, a gap that is largely mechanical,
+since journals require well-developed abstracts as a condition of acceptance.
+Including this control is therefore roughly equivalent to adding a second
+publication-status predictor, rendering it endogenous.  We treat the
+uninstrumented main estimates as an upper bound and the abstract-length
+specification as a lower bound on the true direction-publication association;
+the truth lies between them, and we regard the lower bound as conservative
+given that NBER abstract brevity reflects institutional conventions unrelated
+to finding direction.
 
-\medskip
-\noindent\textbf{R8 --- Abstract-length control (bounding exercise).}
-Abstract polish creates a two-sided measurement concern: (i) published abstracts
-are on average 104 words versus 45 for NBER abstracts, and the LLM may code
-published papers as directional partly because their language signals
-directionality more clearly, inflating our estimated premium; (ii) conversely,
-hedged NBER abstract language may push genuinely directional papers into the
-null category, attenuating the premium.  We treat the abstract-length control
-as a \textit{bounding} exercise rather than a causal control.  Column~(R8)
-adds $\log(\text{abstract length})$ as a covariate; direction coefficients
-shrink substantially ($\hat\beta_1 = 0.171$, $p = 0.766$;
-$\hat\beta_2 = 0.322$, $p = 0.486$).  We interpret our main estimates (R8
-omitted) as an upper bound, and these R8 estimates as a lower bound on the
-true direction--publication association---under the extreme assumption that
-all abstract-length variation reflects editorial revision rather than genuine
-content difference.  The true effect lies between these bounds.  Given that
-NBER abstracts are short partly for institutional reasons unrelated to finding
-direction, we regard the lower bound as conservative.
+\textit{Matched-pairs direction stability.}
+Among the 10 papers matched between their NBER working paper version and a
+top-journal publication, 30.0\% are coded directional for the NBER version
+versus 75.0\% for the 132 directly identified journal articles.  This
+divergence reflects the shorter NBER abstracts (mean 45 words) rather than a
+true direction difference, consistent with the abstract-polish mechanism
+documented in Section~\ref{subsec:direction}.  Publication rates by direction
+code within this matched subsample are consistent with the full-sample results.
 
-\medskip
-\noindent\textbf{R9 --- Matched-pairs direction stability.}
-Among the 10 papers matched between their NBER working paper and a top-journal
-publication, 30.0\% are directional for matched NBER working papers versus 75.0\% for the 132 directly identified journal articles.
-This divergence primarily reflects the shorter NBER abstracts (mean 45 words) from which direction codes are assigned, rather than a true direction difference; the abstract-polish mechanism documented in Section~\ref{subsec:direction} predicts exactly this pattern.
-Publication rates by direction code within this matched subsample are consistent
-with the full-sample results, providing evidence that the non-overlapping
-structure of our two samples does not introduce direction-specific selection bias.
+\subsection{AFA Conference Baseline}
 
-\medskip
-\noindent\textbf{R10 --- AFA conference baseline.}
 The central identification concern is that NBER working papers and
 top-journal articles are drawn from fundamentally different populations:
 only 7.6\% of published papers are matched to an NBER counterpart, so the
@@ -1246,8 +1248,7 @@ NBER gap is consistent with the AFA screen selecting papers already close to
 the published pool---it is not evidence that quality confounding drives the
 NBER result.}
 
-\medskip
-\noindent\textbf{R1 --- Quasi-experimental identification only.}
+\textit{Quasi-experimental papers only.}
 The most substantive quality-control check restricts the sample to papers
 using quasi-experimental identification strategies (RDD, IV, DiD, or Event
 Study), as classified by our LLM pipeline applied to abstracts.  This
@@ -1258,8 +1259,7 @@ cannot be identified due to perfect separation (all quasi-experimental negative-
 are published).  This confirms that the result is not driven by
 an identification-quality gradient between directional and null papers.
 
-\medskip
-\noindent\textbf{R6 --- Linear probability model.}
+\textit{Linear probability model.}
 Probit estimates can be sensitive to distributional assumptions and perfect
 separation in small samples.  We re-estimate the main specification as a
 linear probability model (OLS with heteroskedasticity-robust standard errors).
@@ -1270,13 +1270,6 @@ relative to null-finding papers.  These magnitudes closely match the probit
 marginal effects (41 pp and 40 pp) and confirm the results do not hinge on
 the probit functional form.
 
-\medskip
-\noindent\textbf{R7 --- NBER-to-journal matching sensitivity.}
-We verify that the probit results hold if we drop all eight matched
-NBER-journal pairs and estimate the model on papers with unambiguously clear
-publication status.  The resulting coefficients are nearly identical to the
-full-sample estimates, confirming that the results do not hinge on the small
-matched subsample.
 
 \begin{table}[H]
 \centering
@@ -1285,51 +1278,47 @@ matched subsample.
 \begin{threeparttable}
 \begin{tabular}{llccc}
 \toprule
-Check & Variable & Coefficient & $p$-value & $N$ \\
+Specification & Variable & Coefficient & $p$-value & $N$ \\
 \midrule
-R1: Quasi-exp.\ ID only    & Positive & $1.603^{***}$ & $<$0.001 & 100 \\
-                            & Negative & \multicolumn{2}{c}{separation} & 100 \\[4pt]
-R2: Excl.\ monetary policy & Positive & $0.999^{***}$ & $<$0.001 & 180 \\
+\multicolumn{5}{l}{\textit{Panel A: Sample and Scope}} \\[2pt]
+Excl.\ monetary policy     & Positive & $0.999^{***}$ & $<$0.001 & 180 \\
                             & Negative & $1.018^{***}$ & $<$0.001 & 180 \\[4pt]
-R3: \JF{} only             & Positive & $0.297$       & 0.283    & 200 \\
+\JF{} only                 & Positive & $0.297$       & 0.283    & 200 \\
                             & Negative & $0.135$       & 0.629    & 200 \\[4pt]
-R3: \RFS{}+\JFE{} only     & Positive & $1.037^{***}$ & $<$0.001 & 200 \\
+\RFS{}+\JFE{} only         & Positive & $1.037^{***}$ & $<$0.001 & 200 \\
                             & Negative & $1.038^{***}$ & $<$0.001 & 200 \\[4pt]
-R4: Binary directional     & Directional & $1.231^{***}$ & $<$0.001 & 200 \\[4pt]
-R4+: Binary + year + authors & Directional & $1.173^{***}$ & $<$0.001 & 200 \\[4pt]
-R6: LPM (OLS, HC3)         & Positive & $0.406^{***}$ & $<$0.001 & 200 \\
+\multicolumn{5}{l}{\textit{Panel B: Alternative Specifications}} \\[2pt]
+Binary directional          & Directional & $1.231^{***}$ & $<$0.001 & 200 \\[4pt]
+Binary + year + authors     & Directional & $1.173^{***}$ & $<$0.001 & 200 \\[4pt]
+LPM (OLS, HC3)              & Positive & $0.406^{***}$ & $<$0.001 & 200 \\
                             & Negative & $0.401^{***}$ & $<$0.001 & 200 \\[4pt]
-R8: + log(abstract length) & Positive & $0.171$       & 0.766    & 200 \\
-\small{[lower-bound spec]}  & Negative & $0.322$       & 0.486    & 200 \\[4pt]
-R10: AFA conference baseline & Directional & $0.077$ & --- & 108 \\
-\small{[AFA pre-pub.\ control]} & (+ year) & $0.082$ & --- & 108 \\
+\multicolumn{5}{l}{\textit{Panel C: Classification and Quality Concerns}} \\[2pt]
+Quasi-exp.\ papers only    & Positive & $1.603^{***}$ & $<$0.001 & 100 \\
+                            & Negative & \multicolumn{2}{c}{separation} & 100 \\[4pt]
++ log(abstract length)     & Positive & $0.171$       & 0.766    & 200 \\
+\small{[lower-bound spec]} & Negative & $0.322$       & 0.486    & 200 \\[4pt]
+\multicolumn{5}{l}{\textit{Panel D: Alternative Pre-Publication Baseline}} \\[2pt]
+AFA conference baseline    & Directional & $0.077$ & --- & 108 \\
+\small{(+ year trend)}     & Directional & $0.082$ & --- & 108 \\
 \bottomrule
 \end{tabular}
 \begin{tablenotes}
 \small
-\item \textit{Notes.} Each row reports the probit (or OLS for R6) coefficient
-on the indicated variable.  The omitted category is Null/Mixed ($0$) except
-in R4 where it is Null/Mixed ($0$) vs.\ any directional finding.  R1 restricts
-to papers with quasi-experimental identification (RDD, IV, DiD, Event Study)
-as classified by our LLM pipeline ($N = 100$).  All probit
-specifications include a linear year trend.  R4 ``+ controls'' adds
-$\log(1+N_{\text{authors}})$.  R8 is a lower-bound bounding specification:
-the abstract-length control is partly endogenous (journals require longer
-abstracts during revision), so the R8 coefficients should be read as a lower
-bound on the true direction--publication association; see text for details.
-R10 uses AFA annual meeting papers (2006--2024, $N=108$ in-scope) as the
-pre-publication baseline in place of NBER working papers; 2013 papers sourced
-from the AEA ASSA program (afajof.org returns 404 for 2013).  Abstracts are
-retrieved from OpenAlex, CrossRef, and the NBER working paper dataset for AFA papers
-(3,960 total; 108 in-scope) and applied via the same title-plus-abstract keyword
-filter as the NBER pipeline.
-The outcome is matched to a JF/RFS/JFE publication via fuzzy title matching
-(26.9\% match rate; $N_{\text{directional}}=80$).  Direction codes follow the
-same three-tier hierarchy as the NBER pipeline: (1)~published-abstract coding
-for journal-matched papers; (2)~abstract-based keyword rules for papers with
-OpenAlex, CrossRef, or NBER abstracts; (3)~title-keyword rules for the remainder.
-Standard errors omitted for brevity.
-*** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$.
+\item \textit{Notes.} Each row reports the probit (or OLS for the LPM
+specification) coefficient on the indicated variable.  The omitted category is
+null/mixed ($d_i = 0$), except for binary directional specifications where it
+is null/mixed vs.\ any directional finding.  All probit specifications include
+a linear year trend unless otherwise noted.  ``Binary + year + authors'' adds
+$\log(1+N_{\text{authors}})$ to the binary specification.  The quasi-experimental
+restriction uses identification strategies classified by our LLM pipeline from
+abstracts ($N = 100$).  The abstract-length specification is a lower-bound
+bounding exercise: the control is partly endogenous (journals require longer
+abstracts during revision), so these coefficients represent a lower bound on
+the true direction-publication association.  The AFA conference baseline uses
+AFA annual meeting papers (2006--2024, $N = 108$ in-scope) as the
+pre-publication comparison group; direction codes follow the same three-tier
+hierarchy as the NBER pipeline.  Standard errors omitted for brevity.
+$^{***}p < 0.01$, $^{**}p < 0.05$, $^{*}p < 0.10$.
 \end{tablenotes}
 \end{threeparttable}
 \end{table}
@@ -1551,11 +1540,11 @@ projects or as \citet{DellaVigna2022} do for institutional RCTs.
 Our main hypothesis---that directional-finding papers are published at higher
 rates than null-finding papers---is pre-specified and tested in a single
 primary regression.  The cross-journal and sub-period analyses are exploratory.
-Applying a Bonferroni correction for the nine robustness checks in
-Table~\ref{tab:robustness} (R1, R2, R3$\times$2, R4$\times$2, R6, R8, R10) yields a
-corrected threshold of $p < 0.00556$.  All main results ($p < 0.001$) easily
-clear this threshold; only R3 (JF-only subset, $p \approx 0.28$) does not, which we
-interpret as a power issue rather than evidence against the main finding.
+Applying a Bonferroni correction for the nine robustness specifications in
+Table~\ref{tab:robustness} yields a corrected threshold of $p < 0.00556$.  All
+main results ($p < 0.001$) clear this threshold; only the \JF{}-only subset
+($p \approx 0.28$) does not, which we interpret as a power issue rather than
+evidence against the main finding.
 
 %% ============================================================
 \section{Conclusion}
@@ -1606,8 +1595,8 @@ that it reflects demand-side editorial behavior.
 \appendix
 \renewcommand{\thesection}{\Alph{section}}
 \titleformat{\section}
-  {\normalfont\Large\bfseries\centering}
-  {Appendix \Alph{section}.}{0.5em}{\MakeUppercase}
+  {\normalfont\large\bfseries}
+  {Appendix \Alph{section}.}{0.5em}{}
 \setcounter{table}{0}
 \renewcommand{\thetable}{A\arabic{table}}
 \setcounter{figure}{0}
@@ -1823,7 +1812,7 @@ contains:
 \item \texttt{scripts/10c\_fix\_2014\_2016\_parsing.py} --- Corrected
   HTML parsing for 2014--2016 AFA program pages
 \item \texttt{scripts/11\_afa\_analysis.py} --- AFA-baseline probit
-  regressions (R10 robustness check)
+  regressions (AFA conference baseline, Section~\ref{sec:robustness})
 \item \texttt{data/} --- Final analysis dataset in Parquet format
 \item \texttt{paper/} --- \LaTeX{} source for this paper
 \end{itemize}
