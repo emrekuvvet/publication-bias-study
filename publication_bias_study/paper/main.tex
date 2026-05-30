@@ -419,7 +419,6 @@ sources.
 \caption{Journal Sample}
 \label{tab:journals}
 \begin{singlespace}
-\begin{threeparttable}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{llcll}
 \toprule
@@ -430,17 +429,17 @@ Journal & Abbrev. & ISSN & Publisher & Abstract source \\
 \JFE{} & JFE & 0304-405X & Elsevier & ScienceDirect API \\
 \bottomrule
 \end{tabular}}
-\begin{tablenotes}
+\par\smallskip
+\begin{minipage}{\textwidth}
 \small
-\item Coverage: 2000--2024.  Abstract text is available for 91.8\% of
+Coverage: 2000--2024.  Abstract text is available for 91.8\% of
 \JF{} research articles (74.6\% of all JF entries; the remainder are editorial
 matter, announcements, and AFA administrative items without abstracts), 97.7\%
 of \RFS{} articles, and 94.6\% of \JFE{} articles after Elsevier API
 enrichment.  Because our pipeline classifies NBER working papers using NBER
 abstracts---not journal abstracts---the JF coverage gap does not affect our
 classification results.
-\end{tablenotes}
-\end{threeparttable}
+\end{minipage}
 \end{singlespace}
 \end{table}
 
@@ -536,7 +535,6 @@ the \JFE{}).
 \caption{Sample Selection}
 \label{tab:sample_selection}
 \begin{singlespace}
-\begin{threeparttable}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{lrr}
 \toprule
@@ -568,9 +566,10 @@ Selection step & Papers remaining & Papers dropped \\
 \quad \textbf{Total}                    & \textbf{200} & \\
 \bottomrule
 \end{tabular}}
-\begin{tablenotes}
+\par\smallskip
+\begin{minipage}{\textwidth}
 \small
-\item \textit{Notes.} The starting universe consists of all NBER working papers
+\textit{Notes.} The starting universe consists of all NBER working papers
 under programs CF, AP, ME, EFG, and PE from 2000 to 2024, plus all research
 articles retrieved from the \JF{}, \RFS{}, and \JFE{} over the same period.
 Pass~1 applies a keyword taxonomy of government intervention terminology
@@ -579,8 +578,7 @@ verify that each flagged paper's primary research question is the causal effect
 of a specific government policy on financial markets, firms, or investors.  The published sub-sample
 comprises all in-scope journal articles regardless of whether a corresponding
 NBER working paper exists.
-\end{tablenotes}
-\end{threeparttable}
+\end{minipage}
 \end{singlespace}
 \end{table}
 
@@ -690,7 +688,6 @@ rate disparities documented in Section~\ref{sec:results}.
 \caption{Summary Statistics}
 \label{tab:summary}
 \begin{singlespace}
-\begin{threeparttable}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{lrrrrr}
 \toprule
@@ -706,9 +703,10 @@ All papers                   & 200 & 25.5 & 32.5 & 42.0 & 2014.7 \\
 \quad \JFE{} &  57 & 36.8 & 38.6 & 24.6 & 2015.9 \\
 \bottomrule
 \end{tabular}}
-\begin{tablenotes}
+\par\smallskip
+\begin{minipage}{\textwidth}
 \small
-\item \textit{Notes.} The sample consists of 68 NBER working papers (programs
+\textit{Notes.} The sample consists of 68 NBER working papers (programs
 CF, AP, ME, EFG, and PE, 2000--2024) and 132 published journal articles
 (\JF{}, \RFS{}, \JFE{}) classified as in-scope government-intervention papers
 by our LLM pipeline and manual validation.  Direction codes: $+1 =$
@@ -719,8 +717,7 @@ articles and therefore appear in both the NBER ($N=68$) and Published
 ($N=142$) rows; the Published count of 142 is what enters the probit
 regressions as $\text{Published}=1$.  Column percentages may not sum to 100
 due to rounding.
-\end{tablenotes}
-\end{threeparttable}
+\end{minipage}
 \end{singlespace}
 \end{table}
 
@@ -840,7 +837,6 @@ of government interventions with detectable effects in the published record.
 \caption{Publication Rates by Finding Direction}
 \label{tab:pub_rates}
 \begin{singlespace}
-\begin{threeparttable}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{lrrrr}
 \toprule
@@ -853,9 +849,10 @@ Null/Mixed (0)  &  84 &  40 & 47.6\% & [37.3, 58.2] \\
 Total           & 200 & 142 & 71.0\% & \\
 \bottomrule
 \end{tabular}}
-\begin{tablenotes}
+\par\smallskip
+\begin{minipage}{\textwidth}
 \small
-\item \textit{Notes.} Publication rates for in-scope papers, 2000--2024.
+\textit{Notes.} Publication rates for in-scope papers, 2000--2024.
 \textit{Finding Direction} is the LLM-assigned sign of the paper's primary
 empirical result: $+1$ (positive/beneficial effect), $-1$
 (negative/harmful), or $0$ (null or mixed).
@@ -871,8 +868,7 @@ publication rate.
 A $\chi^2$ test of homogeneity across the three rates gives
 $\chi^2 = 38.456$ ($p < 0.001$).  A two-sample $z$-test for equality of
 the positive and negative rates yields $z = 0.09$ ($p = 0.93$).
-\end{tablenotes}
-\end{threeparttable}
+\end{minipage}
 \end{singlespace}
 \end{table}
 
@@ -921,7 +917,6 @@ unchanged.
 \caption{Probit Models: Probability of Publication in a Top Finance Journal}
 \label{tab:probit_main}
 \begin{singlespace}
-\begin{threeparttable}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{lcccccc}
 \toprule
@@ -946,9 +941,10 @@ $N$             & 200           & 200           & 200           & 200           
 Pseudo $R^2$    & 0.163         & 0.163         & 0.178         & 0.173         & 0.193         & 0.241         \\
 \bottomrule
 \end{tabular}}
-\begin{tablenotes}
+\par\smallskip
+\begin{minipage}{\textwidth}
 \small
-\item \textit{Notes.} Probit estimates of the probability that an in-scope
+\textit{Notes.} Probit estimates of the probability that an in-scope
 paper is published in the \JF{}, \RFS{}, or \JFE{}.  Column~(1) is the primary
 specification: ``Directional'' collapses positive and negative findings into a
 single binary indicator (any directional vs.\ null), avoiding normative coding
@@ -968,8 +964,7 @@ and 40 pp for negative-finding papers in Col.~(2).  A Wald test for
 $H_0\colon\hat\beta_1 = \hat\beta_2$ in Column~(2) yields $\chi^2 = 0.008$,
 $p = 0.93$; the minimum detectable difference at 80\% power is 0.851 coefficient
 units.  Failure to reject does not rule out moderate directional asymmetries.
-\end{tablenotes}
-\end{threeparttable}
+\end{minipage}
 \end{singlespace}
 \end{table}
 
@@ -1021,7 +1016,6 @@ this difference cannot be statistically confirmed at the available sample sizes.
 \caption{Probit Models by Journal}
 \label{tab:probit_by_journal}
 \begin{singlespace}
-\begin{threeparttable}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{lccc}
 \toprule
@@ -1038,16 +1032,16 @@ $N$             &  85           & 106           & 115           \\
 Pseudo $R^2$    & 0.114         & 0.273         & 0.236         \\
 \bottomrule
 \end{tabular}}
-\begin{tablenotes}
+\par\smallskip
+\begin{minipage}{\textwidth}
 \small
-\item \textit{Notes.} Each column re-estimates equation~\eqref{eq:probit}
+\textit{Notes.} Each column re-estimates equation~\eqref{eq:probit}
 treating publication in the specified journal as the outcome (versus any of
 the remaining two journals or the NBER-only group).  Standard errors in
 parentheses.  *** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$.
 The \JF{} sample contains only 27 in-scope published articles in 2000--2024,
 limiting statistical power for journal-specific tests.
-\end{tablenotes}
-\end{threeparttable}
+\end{minipage}
 \end{singlespace}
 \end{table}
 
@@ -1295,7 +1289,6 @@ the probit functional form.
 \caption{Robustness Checks}
 \label{tab:robustness}
 \begin{singlespace}
-\begin{threeparttable}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{llccc}
 \toprule
@@ -1323,9 +1316,10 @@ AFA conference baseline    & Directional & $0.077$ & --- & 108 \\
 \small{(+ year trend)}     & Directional & $0.082$ & --- & 108 \\
 \bottomrule
 \end{tabular}}
-\begin{tablenotes}
+\par\smallskip
+\begin{minipage}{\textwidth}
 \small
-\item \textit{Notes.} Each row reports the probit (or OLS for the LPM
+\textit{Notes.} Each row reports the probit (or OLS for the LPM
 specification) coefficient on the indicated variable.  The omitted category is
 null/mixed ($d_i = 0$), except for binary directional specifications where it
 is null/mixed vs.\ any directional finding.  All probit specifications include
@@ -1340,8 +1334,7 @@ AFA annual meeting papers (2006--2024, $N = 108$ in-scope) as the
 pre-publication comparison group; direction codes follow the same three-tier
 hierarchy as the NBER pipeline.  Standard errors omitted for brevity.
 $^{***}p < 0.01$, $^{**}p < 0.05$, $^{*}p < 0.10$.
-\end{tablenotes}
-\end{threeparttable}
+\end{minipage}
 \end{singlespace}
 \end{table}
 
@@ -1725,7 +1718,6 @@ sentence).
 \caption{Probit Results by Sub-Period \textit{(Exploratory)}}
 \label{tab:time_trends}
 \begin{singlespace}
-\begin{threeparttable}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{lccc}
 \toprule
@@ -1742,9 +1734,10 @@ $N$             &  28           &  69           & 103           \\
 Pseudo $R^2$    & 0.179         & 0.163         & 0.138         \\
 \bottomrule
 \end{tabular}}
-\begin{tablenotes}
+\par\smallskip
+\begin{minipage}{\textwidth}
 \small
-\item \textit{Notes.} \textbf{This analysis is exploratory.}  Sub-period sample
+\textit{Notes.} \textbf{This analysis is exploratory.}  Sub-period sample
 sizes are small ($N = 28$, 69, 103) and results should be interpreted as
 descriptive evidence, not confirmatory tests; confidence intervals overlap
 substantially across periods.  Each column estimates equation~\eqref{eq:probit}
@@ -1756,8 +1749,7 @@ financial crisis and post-crisis regulatory response (Dodd-Frank enacted July
 asymmetry in the 2008--2015 period (negative $>$ positive) is consistent with
 but does not causally identify elevated publication rates for research on
 the costs of the post-crisis regulatory expansion.
-\end{tablenotes}
-\end{threeparttable}
+\end{minipage}
 \end{singlespace}
 \end{table}
 
@@ -1770,7 +1762,6 @@ the costs of the post-crisis regulatory expansion.
 \caption{LLM Direction Coding: Replication Confusion Matrix}
 \label{tab:confusion_matrix}
 \begin{singlespace}
-\begin{threeparttable}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{lrrr|r}
 \toprule
@@ -1784,9 +1775,10 @@ Positive ($+1$) &  2 &  0 & \textbf{18} &  20 \\
 Column total & 31 & 5 & 24 & 60 \\
 \bottomrule
 \end{tabular}}
-\begin{tablenotes}
+\par\smallskip
+\begin{minipage}{\textwidth}
 \small
-\item \textit{Notes.} Entries are paper counts from a 60-paper stratified
+\textit{Notes.} Entries are paper counts from a 60-paper stratified
 random subsample (5 papers per source $\times$ direction cell, balanced across
 the three journals and NBER).  Rows show the original direction code used in
 the main analysis; columns show the code from an independent second LLM run
@@ -1800,8 +1792,7 @@ directional in replication---consistent with null abstracts being less decisive
 and more sensitive to prompt context.  Because coding instability pushes
 ambiguous papers \textit{toward} directional codes rather than toward null,
 any resulting measurement error attenuates our estimated significance premium.
-\end{tablenotes}
-\end{threeparttable}
+\end{minipage}
 \end{singlespace}
 \end{table}
 
