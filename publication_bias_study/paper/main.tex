@@ -1118,6 +1118,17 @@ and quality concerns, and an alternative pre-publication baseline.
 
 \subsection{Sample and Scope Robustness}
 
+\textit{Matched pairs only.}
+Among the 25 published papers with a confirmed NBER working-paper match, we
+independently LLM-code the direction from the NBER \textit{draft} abstract and
+from the published abstract, yielding 50 observations (25 draft-stage, 25
+published-stage) for the same set of papers.  Direction codes were stable across
+versions in 15 of 25 pairs (60\%); the remaining pairs shifted predominantly
+from null at draft stage to directional at publication stage, consistent with
+attenuation bias in the main NBER control group.  The binary probit on this
+matched sample yields $\hat\beta = 0.935^{**}$ ($N = 50$, $p = 0.011$),
+qualitatively consistent with the main estimate.
+
 \textit{Excluding monetary policy papers.}
 We exclude the 20 papers whose primary topic is monetary or central bank policy
 (quantitative easing, discount window, lender-of-last-resort operations, and
@@ -1358,6 +1369,8 @@ Excl.\ monetary policy     & Positive & $0.999^{***}$ & $<$0.001 & 180 \\
                             & Negative & $0.135$       & 0.629    & 200 \\[4pt]
 \RFS{}+\JFE{} only         & Positive & $1.037^{***}$ & $<$0.001 & 200 \\
                             & Negative & $1.038^{***}$ & $<$0.001 & 200 \\[4pt]
+Matched pairs only         & Directional & $0.935^{**}$ & $0.011$ & 50 \\
+\small{[N=25 paper pairs]}  & \multicolumn{4}{l}{\small{Draft vs.\ published version of same paper}} \\[4pt]
 \multicolumn{5}{l}{\textit{Panel B: Alternative Specifications}} \\[2pt]
 Binary directional          & Directional & $1.231^{***}$ & $<$0.001 & 200 \\[4pt]
 Binary + year + authors     & Directional & $1.173^{***}$ & $<$0.001 & 200 \\[4pt]
@@ -1384,7 +1397,11 @@ Uniform LLM coding         & Directional & $0.038$ & $0.900$ & 108 \\
 specification) coefficient on the indicated variable.  The omitted category is
 null/mixed ($d_i = 0$), except for binary directional specifications where it
 is null/mixed vs.\ any directional finding.  All probit specifications include
-a linear year trend unless otherwise noted.  ``Binary + year + authors'' adds
+a linear year trend unless otherwise noted.  ``Matched pairs only'' uses the
+25 papers confirmed to exist in both NBER and published form; the LLM codes
+each paper's direction from its NBER \textit{draft} abstract and from its
+published abstract separately, yielding $N = 50$ observations (25 draft, 25
+published); direction codes were stable across versions in 60\% of pairs.  ``Binary + year + authors'' adds
 $\log(1+N_{\text{authors}})$ to the binary specification.  The quasi-experimental
 restriction uses identification strategies classified by our LLM pipeline from
 abstracts ($N = 100$).  The 100-word truncation specification re-codes all paper directions from
