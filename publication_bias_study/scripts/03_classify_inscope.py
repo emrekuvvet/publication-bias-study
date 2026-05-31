@@ -110,6 +110,7 @@ Exclusion criteria (mark in_scope=false):
 - Papers that only DESCRIBE a regulation without estimating its effect
 - Papers whose main topic is private firm/market behaviour, with policy as incidental context
 - Papers studying central bank communication WITHOUT a specific policy instrument
+- Papers whose primary policy variable is a rule imposed by a stock exchange (NYSE, NASDAQ, etc.) without a specific government or regulatory mandate (e.g., exchange-designed trading halts, voluntary tick size conventions, exchange fee structures)
 
 Title: \"\"\"{title}\"\"\"
 Abstract:
