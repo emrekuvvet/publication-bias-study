@@ -1215,24 +1215,32 @@ identification-quality gradient between directional and null papers.
 
 \textit{Abstract language and LLM classification confidence.}
 Abstract polish introduces a two-sided measurement concern.  Among published
-papers, 75.4\% receive a high-confidence direction code; among NBER-only
-papers, only 15.5\% do, with 74.1\% receiving low-confidence ratings.  On one
+papers, 78.9\% receive a high-confidence direction code; among NBER-only
+papers, only 17.2\% do, with 70.7\% receiving low-confidence ratings.  On one
 hand, hedged NBER abstract language may push genuinely directional papers into
 the null category, attenuating the estimated premium.  On the other hand, if
 authors revise abstracts to sound more decisive after a revise-and-resubmit,
 the LLM may code published papers as directional partly because their language
 signals directionality more clearly, inflating the premium.
 
-The cleanest test of whether abstract-length asymmetry drives the finding is a
-symmetric truncation: we recode all direction codes from only the first 100 words
-of each abstract, equalising the text available to the LLM across both corpora.
-Published abstracts average 94 words after truncation versus 45 for NBER papers
-(the truncation is binding only for published papers), so the window is still
-not perfectly symmetric, but it eliminates the bulk of the length gap.  The
-results are qualitatively unchanged: $\hat\beta_1 = 1.179^{***}$ ($p < 0.001$)
-and $\hat\beta_2 = 1.350^{***}$ ($p < 0.001$), reported in
-Table~\ref{tab:robustness} Panel~C.  Abstract length therefore cannot account
-for the direction-publication association.
+The cleanest test is a symmetric truncation: we recode all direction codes from
+only the first 100 words of each abstract, equalising the text available to the
+LLM across both corpora.  NBER abstracts in our final dataset average 150 words
+and published abstracts average 104 words, so the 100-word window is binding for
+47 of 58 NBER papers and 67 of 142 published papers---a genuinely symmetric
+restriction.\footnote{Initial data collection retrieved NBER abstracts from the
+NBER API, which truncates responses at approximately 300 characters ($\approx$45
+words). We subsequently re-fetched full abstract text for all 58 NBER working
+papers directly from the NBER website and reran the direction-coding and
+regression pipeline. The main probit estimates are unchanged
+($\hat\beta_1 = 1.247^{***}$, $\hat\beta_2 = 1.219^{***}$), confirming that
+the truncated API abstracts already contained enough directional signal; the
+robustness checks reported here use the corrected full-text abstracts.}
+The results remain positive and statistically significant:
+$\hat\beta_1 = 0.624^{**}$ ($p = 0.012$) and $\hat\beta_2 = 0.400^{*}$
+($p = 0.072$), reported in Table~\ref{tab:robustness} Panel~C.  The attenuation
+relative to the main estimate reflects information loss from truncating both
+corpora, not reversal of the direction-publication pattern.
 
 Our replication exercise (Section~\ref{subsec:direction}) further supports this
 conclusion: of the 20 null-coded papers in the validation sample, 15 are
@@ -1252,7 +1260,7 @@ direction-publication association if abstract polish fully drives it, and the
 abstract-length control provides an \textit{extreme lower bound} if all
 abstract-length variation is editorial.  The symmetric 100-word truncation
 sits between these poles and does not share the endogeneity problem:
-its results ($\hat\beta_1 = 1.179^{***}$, $\hat\beta_2 = 1.350^{***}$)
+its results ($\hat\beta_1 = 0.624^{**}$, $\hat\beta_2 = 0.400^{*}$)
 indicate that the true association is well above the lower bound.
 
 \textit{Matched-pairs direction stability.}
@@ -1409,8 +1417,8 @@ LPM (OLS, HC3)              & Positive & $0.406^{***}$ & $<$0.001 & 200 \\
 \multicolumn{5}{l}{\textit{Panel C: Classification and Quality Concerns}} \\[2pt]
 Quasi-exp.\ papers only    & Positive & $1.603^{***}$ & $<$0.001 & 100 \\
                             & Negative & \multicolumn{2}{c}{separation} & 100 \\[4pt]
-100-word truncation        & Positive & $1.179^{***}$ & $<$0.001 & 200 \\
-\small{[symmetric window]} & Negative & $1.350^{***}$ & $<$0.001 & 200 \\[4pt]
+100-word truncation        & Positive & $0.624^{**}$  & 0.012    & 200 \\
+\small{[symmetric window]} & Negative & $0.400^{*}$   & 0.072    & 200 \\[4pt]
 + log(abstract length)     & Positive & $0.171$       & 0.766    & 200 \\
 \small{[lower-bound spec]} & Negative & $0.322$       & 0.486    & 200 \\[4pt]
 \multicolumn{5}{l}{\textit{Panel D: Alternative Pre-Publication Baseline}} \\[2pt]
@@ -1435,8 +1443,9 @@ published); direction codes were stable across versions in 60\% of pairs.  ``Bin
 $\log(1+N_{\text{authors}})$ to the binary specification.  The quasi-experimental
 restriction uses identification strategies classified by our LLM pipeline from
 abstracts ($N = 100$).  The 100-word truncation specification re-codes all paper directions from
-the first 100 words of the abstract only, creating a symmetric text window
-across pre-publication and published papers.  The abstract-length specification is a lower-bound
+the first 100 words of the abstract only; the truncation is binding for
+47 of 58 NBER papers and 67 of 142 published papers, creating a genuinely
+symmetric text window across corpora.  The abstract-length specification is a lower-bound
 bounding exercise: the control is partly endogenous (journals require longer
 abstracts during revision), so these coefficients represent a lower bound on
 the true direction-publication association.  The AFA conference baseline uses
