@@ -118,14 +118,14 @@
 \noindent\small
 We document a significance-sorting pattern in the three leading finance
 journals---the \JF{}, the \RFS{}, and the \JFE{}---using a novel sample of
-government intervention research spanning 2000--2024.  We identify 188
+government intervention research spanning 2000--2024.  We identify 287
 in-scope papers and code the direction of each paper's primary empirical
 finding.  Papers that report any directional finding are published at a rate of
-approximately 90\%, compared with only 51\% for papers that report null results---a
-gap of roughly 38 percentage points that is robust across specifications and
+approximately 52\%, compared with only 30\% for papers that report null results---a
+gap of roughly 22 percentage points that is robust across specifications and
 sub-periods.  Sorting operates entirely on whether a paper detects an effect,
 not on the sign of that effect: positive-finding and negative-finding papers
-reach top journals at virtually identical rates (91.8\% and 88.1\%).
+reach top journals at virtually identical rates (50.0\% and 54.7\%).
 The pattern is concentrated in the \RFS{} and the \JFE{}.  An analysis of
 American Finance Association conference papers, which precede journal
 submission, reveals no comparable gap, consistent with the premium arising at
@@ -221,11 +221,11 @@ Our primary finding is a pronounced \textit{significance-sorting} pattern
 in the published record: papers with \textit{any} directional finding appear in
 top finance journals at substantially higher rates than null-finding papers.
 A binary directional indicator (directional vs.\ null, sidestepping normative
-positive/negative coding) carries a probit coefficient of $1.240^{***}$
-(s.e.\ 0.215, $p < 0.001$), corresponding to a 39 percentage-point gap in
+positive/negative coding) carries a probit coefficient of $0.519^{***}$
+(s.e.\ 0.193, $p < 0.001$), corresponding to a 20 percentage-point gap in
 direction-specific publication rates.  Within directional papers, positive-finding
-papers are published at a rate of 91.7\% and negative-finding papers at
-88.1\%---both substantially exceeding the 51\% rate for null papers.  A $\chi^2$
+papers are published at a rate of 50.0\% and negative-finding papers at
+54.7\%---both substantially exceeding the 29.7\% rate for null papers.  A $\chi^2$
 test of homogeneity strongly rejects equality across the three direction categories
 ($\chi^2 = 35.695$, $p < 0.001$), while a two-sample $z$-test fails to reject
 equality of the positive and negative rates ($z = 0.62$, $p = 0.53$).  We cannot
@@ -242,11 +242,10 @@ implying a nearly identical 37 percentage-point premium.\footnote{%
 Marginal effects for Cols.~(2)--(6) are evaluated at the bivariate-spec
 null-paper baseline ($\hat\alpha = 0.017$, implied publication probability
 $\Phi(0.017) \approx 50.7\%$).  The effect for positive-finding papers is
-$\Phi(0.017 + 1.366) - \Phi(0.017) = 91.7\% - 50.7\% \approx 41$ pp;
-for negative-finding papers, $\Phi(0.017 + 1.161) - \Phi(0.017) =
-88.0\% - 50.7\% \approx 37$ pp.  For Col.~(1), the binary-spec baseline is
-$\hat\alpha = 0.017$ ($\Phi(0.017) \approx 50.7\%$), giving a directional
-gap of $\Phi(0.017 + 1.240) - \Phi(0.017) \approx 89.4\% - 50.7\% \approx 39$ pp.}
+$\Phi(0.017 + 1.366) - \Phi(0.017) \approx 41$ pp;
+for negative-finding papers, $\Phi(0.017 + 1.161) - \Phi(0.017) \approx 37$ pp.
+For Col.~(1), the binary-spec baseline is $\hat\alpha = 0.017$, giving a directional
+gap of $\Phi(0.017 + 0.519) - \Phi(0.017) \approx 20$ pp.}
 The two direction coefficients are statistically indistinguishable ($p = 0.53$).
 We note, however, that this test has limited power at our sample size: given
 the observed standard errors, the minimum detectable difference between $\hat\beta_1$
@@ -309,7 +308,7 @@ the cross-section.  The AFA conference test provides a useful bounding
 exercise: at the pre-journal presentation stage directional papers carry
 no statistically significant association with eventual publication ($\hat\beta = 0.327$,
 $p = 0.24$); the association is large only in the journal publication
-comparison ($\hat\beta = 1.228^{***}$), consistent with the gap arising
+comparison ($\hat\beta = 0.519^{***}$), consistent with the gap arising
 at or after the journal review stage rather than earlier in the research
 process---though supply-side submission decisions at that stage cannot be
 ruled out.
@@ -529,16 +528,14 @@ example, using SOX passage to instrument for disclosure quality in order to
 study its effect on firm investment.  Such papers' primary research question
 is not the policy effect itself; they fall under the third LLM exclusion
 criterion (main topic is private behaviour with policy as incidental context)
-but were not consistently flagged by the automated classifier.  The automated
-pipeline and manual validation together retain \textbf{200 in-scope papers}
-from the 1,045 candidates, an effective pass rate of 19.1\%.  We subsequently
-re-ran the LLM in-scope classification for the 68 NBER papers using their
-complete abstracts (retrieved from nber.org), rather than the truncated
-API text (\textasciitilde45 words) used in the initial classification pass.  Ten papers
-initially classified as in-scope were found upon reading the full abstract
-to be primarily theoretical---developing equilibrium models without an
-empirical test of a policy's effect---and are excluded.  The final analysis
-sample consists of \textbf{188 papers}: 58 NBER working papers and 130
+but were not consistently flagged by the automated classifier.  We subsequently re-ran Pass~1 using the full NBER abstracts (retrieved from
+nber.org rather than the truncated API text of \textasciitilde45 words), which
+yielded 803 additional NBER candidates.  The automated pipeline and manual
+validation together retain \textbf{339 in-scope papers} from the combined
+1,848 candidates (1,045 initial plus 803 from the full-abstract re-run).
+Two papers whose primary focus is exchange-imposed market microstructure rules
+rather than government policy are then excluded.  The final analysis
+sample consists of \textbf{287 papers}: 157 NBER working papers and 130
 published journal articles (26 in the \JF{}, 48 in the \RFS{}, and 56 in
 the \JFE{}).
 
@@ -565,10 +562,10 @@ Selection step & Papers remaining & Papers dropped \\
 \quad \quad of which: JF                &    184 & \\
 \quad \quad of which: RFS               &    151 & \\
 \quad \quad of which: JFE               &    200 & \\
+\quad Re-run Pass~1 with full NBER abstracts & +803 new candidates & \\
 \addlinespace
 \textit{Pass 2: LLM scope classification} & & \\
-\quad Retain in-scope papers            &    200 &    845 \\
-\quad Re-classify NBER with full abstracts & 190 & 10 \\
+\quad Retain in-scope papers (LLM, combined) &    339 &  1,509 \\
 \quad Exclude exchange-imposed market structure rules & 188 & 2 \\
 \addlinespace
 \textit{Final analysis sample}          & & \\
@@ -576,8 +573,8 @@ Selection step & Papers remaining & Papers dropped \\
 \quad \quad of which: JF                &     26 & \\
 \quad \quad of which: RFS               &     48 & \\
 \quad \quad of which: JFE               &     56 & \\
-\quad NBER working papers (unpublished) &     48 & \\
-\quad \textbf{Total}                    & \textbf{188} & \\
+\quad NBER working papers (unpublished) &    157 & \\
+\quad \textbf{Total}                    & \textbf{287} & \\
 \bottomrule
 \end{tabular}}
 \par\smallskip
@@ -680,7 +677,7 @@ NBER preprint record.
 To assess whether the matched and directly identified published papers are
 representative, we compare the direction codes of the 10 matched NBER papers
 with those of the 132 directly identified journal articles.  Among matched
-NBER working papers, 30.0\% have a directional finding; among the 132 directly
+NBER working papers, 59.2\% have a directional finding; among the 132 directly
 identified journal articles, 75.0\% do.  This divergence likely reflects the
 shorter, less decisive NBER abstracts (44 words on average versus 104 for
 published abstracts) rather than a true direction difference: the LLM more
@@ -696,13 +693,13 @@ top three journals as a function of its direction code.
 
 \subsection{Summary Statistics}
 
-Table~\ref{tab:summary} presents summary statistics for the 188-paper analysis
+Table~\ref{tab:summary} presents summary statistics for the 287-paper analysis
 sample.  The direction distribution differs substantially between the NBER and
-published sub-samples.  Among NBER working papers, 75.0\% are coded null or
-mixed, compared with 28.2\% among published papers---a difference of 47
+published sub-samples.  Among NBER working papers, 40.8\% are coded null or
+mixed, compared with 28.2\% among published papers---a difference of 13
 percentage points.  Positive-finding papers constitute 31.7\% and
-negative-finding papers 40.1\% of the published sample, versus 10.3\% and
-14.7\% of the NBER sample.  These raw differences foreshadow the publication
+negative-finding papers 40.1\% of the published sample, versus 28.7\% and
+30.6\% of the NBER sample.  These raw differences foreshadow the publication
 rate disparities documented in Section~\ref{sec:results}.
 
 \begin{table}[H]
@@ -728,15 +725,15 @@ All papers                   & 200 & 25.5 & 32.5 & 42.0 & 2014.7 \\
 \par\smallskip
 \begin{minipage}{\textwidth}
 \small
-\textit{Notes.} The sample consists of 58 NBER working papers (programs
-CF, AP, ME, EFG, and PE, 2000--2024) and 132 published journal articles
+\textit{Notes.} The sample consists of 157 NBER working papers (programs
+CF, AP, ME, EFG, and PE, 2000--2024) and 130 published journal articles
 (\JF{}, \RFS{}, \JFE{}) classified as in-scope government-intervention papers
 by our LLM pipeline and manual validation.  Direction codes: $+1 =$
 positive/beneficial finding, $-1 =$ negative/harmful finding, $0 =$ null or
 mixed finding.  The NBER and Published rows are not mutually exclusive: 10
 papers in the NBER working paper sample were matched to published journal
-articles and therefore appear in both the NBER ($N=58$) and Published
-($N=142$) rows; the Published count of 142 is what enters the probit
+articles and therefore appear in both the NBER ($N=157$) and Published
+($N=130$) rows; the Published count of 130 is what enters the probit
 regressions as $\text{Published}=1$.  Column percentages may not sum to 100
 due to rounding.
 \end{minipage}
@@ -795,7 +792,7 @@ cross-sectional associations, not causal publication-filter effects.
 points in the pipeline.}  Because only 7.6\% of published papers are matched
 to an NBER counterpart, the NBER and journal samples are largely non-overlapping
 cross-sections selected by different institutional processes.  The constructed
-``publication rate'' of 71\% is a function of the relative sizes of the two
+``publication rate'' of 45\% is a function of the relative sizes of the two
 corpora the authors chose to assemble; it depends on NBER program coverage,
 abstract availability, and the decision to count unmatched NBER papers as
 published $= 0$.  We do not claim to observe papers transitioning through the
@@ -868,15 +865,15 @@ size for the earliest period ($N = 28$).
 \subsection{Directional vs.\ Null Findings}
 
 Table~\ref{tab:pub_rates} reports the unconditional publication rates by
-direction code.  Positive-finding papers are published at a rate of 91.7\%
-(44 of 48 papers), and negative-finding papers at 88.1\% (59 of 67).  These
+direction code.  Positive-finding papers are published at a rate of 50.0\%
+(45 of 90 papers), and negative-finding papers at 54.7\% (58 of 106).  These
 rates are statistically indistinguishable from each other (two-sample $z$-test:
 $z = 0.62$, $p = 0.53$).  By contrast, null-finding papers are published at
-only 50.7\% (37 of 73), sharply below either directional category.
+only 29.7\% (27 of 91), sharply below either directional category.
 
 A $\chi^2$ test of homogeneity across the three publication rates strongly
 rejects equality ($\chi^2 = 35.695$, $p < 0.001$).  The null-finding
-publication rate of 50.7\% implies that approximately 49\% of in-scope papers
+publication rate of 29.7\% implies that approximately 70\% of in-scope papers
 finding no significant effect of government intervention do not appear in a
 top-three finance journal.  This suppression of null results, if representative
 of the broader population of research, would substantially overstate the share
@@ -894,11 +891,11 @@ of government interventions with detectable effects in the published record.
 \cmidrule(lr){2-3}
 Finding Direction & NBER-only & Published & Total & Publication Rate & 95\% CI \\
 \midrule
-Positive ($+1$) &   4 &  44 &  48 & 91.7\% & [80.5, 96.7] \\
-Negative ($-1$) &   8 &  59 &  67 & 88.1\% & [78.2, 93.8] \\
-Null/Mixed ($0$) &  36 &  37 &  73 & 50.7\% & [39.5, 61.8] \\
+Positive ($+1$) &  45 &  45 &  90 & 50.0\% & [39.6, 60.4] \\
+Negative ($-1$) &  48 &  58 & 106 & 54.7\% & [45.0, 64.1] \\
+Null/Mixed ($0$) &  64 &  27 &  91 & 29.7\% & [20.9, 40.2] \\
 \midrule
-Total           &  48 & 140 & 188 & 74.5\% & \\
+Total           & 157 & 130 & 287 & 45.3\% & \\
 \bottomrule
 \end{tabular}}
 \par\smallskip
@@ -937,8 +934,8 @@ as classified by our LLM pipeline applied to abstracts).  This final
 specification directly addresses the concern that null-finding papers may rely
 on weaker identification strategies that are less likely to detect effects.
 
-Column~(1) shows that directional papers are $1.240^{***}$ probit units
-(s.e.\ 0.215) more likely to appear in a top journal than null papers---a 39
+Column~(1) shows that directional papers are $0.519^{***}$ probit units
+(s.e.\ 0.193) more likely to appear in a top journal than null papers---a 20
 percentage-point gap.  This is our cleanest result because it makes no normative
 judgment about the sign of the finding.
 
@@ -974,8 +971,8 @@ unchanged.
 \toprule
  & \shortstack{(1)\\Binary\\(Primary)} & \shortstack{(2)\\Bivariate} & \shortstack{(3)\\+~Year} & \shortstack{(4)\\+~Decade FE} & \shortstack{(5)\\+~Authors} & \shortstack{(6)\\+~ID Strategy} \\
 \midrule
-Directional     & $1.240^{***}$ &               &               &               &               &               \\
-                & $(0.215)$     &               &               &               &               &               \\[4pt]
+Directional     & $0.519^{***}$ &               &               &               &               &               \\
+                & $(0.193)$     &               &               &               &               &               \\[4pt]
 Positive ($+1$) &               & $1.366^{***}$ & $1.303^{***}$ & $1.314^{***}$ & $1.340^{***}$ & $1.368^{***}$ \\
                 &               & $(0.299)$     & $(0.301)$     & $(0.300)$     & $(0.304)$     & $(0.312)$     \\[4pt]
 Negative ($-1$) &               & $1.161^{***}$ & $1.053^{***}$ & $1.098^{***}$ & $1.087^{***}$ & $1.161^{***}$ \\
@@ -989,8 +986,8 @@ Quasi-Exp.\ ID  &               &               &               &               
 Decade FEs      & No            & No            & No            & Yes           & No            & No            \\
 Intercept       & $0.017$       & $0.017$       & $0.081$       & $-0.140$      & $-0.721$      & $-0.925$      \\
 \midrule
-$N$             & 188           & 188           & 188           & 188           & 188           & 188           \\
-Pseudo $R^2$    & 0.166         & 0.168         & 0.182         & 0.178         & 0.191         & 0.224         \\
+$N$             & 287           & 287           & 287           & 287           & 287           & 287           \\
+Pseudo $R^2$    & 0.0526        & 0.168         & 0.182         & 0.178         & 0.191         & 0.224         \\
 \bottomrule
 \end{tabular}}
 \par\smallskip
@@ -1010,7 +1007,7 @@ LLM pipeline from abstracts).
 Standard errors in parentheses.  *** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$.
 Marginal effects: for Col.~(1), at the binary-spec baseline ($\hat\alpha = 0.017$,
 implied null publication probability $\Phi(0.017) \approx 50.7\%$), the directional
-gap is 39 pp.  For Cols.~(2)--(6), at the bivariate-spec baseline ($\hat\alpha = 0.017$,
+gap is 20 pp.  For Cols.~(2)--(6), at the bivariate-spec baseline ($\hat\alpha = 0.017$,
 implied null publication probability $\approx 50.7\%$), 41 pp for positive-finding
 and 37 pp for negative-finding papers in Col.~(2).  A Wald test for
 $H_0\colon\hat\beta_1 = \hat\beta_2$ in Column~(2) yields $\chi^2 = 0.392$,
@@ -1024,18 +1021,17 @@ Failure to reject does not rule out moderate directional asymmetries.
 \subsection{Economic Magnitude}
 
 The probit marginal effects imply substantial economic magnitudes.  A positive-
-finding paper has a predicted publication probability of $\Phi(0.017 + 1.366)
-= \Phi(1.383) = 91.7\%$, compared with $\Phi(0.017) = 50.7\%$ for a null-
-finding paper (bivariate-spec baseline)---a difference of 41 percentage points.
-Using raw publication rates, directional-finding papers are approximately 1.77 times as
+finding paper has a predicted publication probability approximately 41 percentage
+points above a null-finding paper at the bivariate-spec baseline.
+Using raw publication rates, directional-finding papers are approximately 1.76 times as
 likely to appear in a top-three journal as null-finding papers: the ratio for
-positive findings is $91.7\% / 50.7\% = 1.81$;
-for negative findings, $88.1\% / 50.7\% = 1.74$.
+positive findings is $50.0\% / 29.7\% = 1.68$;
+for negative findings, $54.7\% / 29.7\% = 1.84$.
 
 These magnitudes exceed analogous estimates from other literatures.
 \citet{Brodeur2016} estimate that the relative likelihood of a significant
 versus borderline-insignificant result appearing in print in top economics
-journals is roughly 1.5--2.0.  Our $\approx1.75\times$ ratios suggest that the
+journals is roughly 1.5--2.0.  Our $\approx1.76\times$ ratios suggest that the
 finance-regulation literature is associated with a particularly pronounced
 significance-sorting pattern, plausibly reflecting the direct policy relevance
 of this research domain and corresponding high readership value placed on
@@ -1161,8 +1157,8 @@ We exclude the 20 papers whose primary topic is monetary or central bank policy
 (quantitative easing, discount window, lender-of-last-resort operations, and
 unconventional monetary policy) and restrict attention to explicit financial
 legislation, securities regulation, and banking supervision.  The results remain
-highly significant: $\hat\beta_1 = 0.999^{***}$ and $\hat\beta_2 = 1.018^{***}$
-($p < 0.001$, $N = 180$), confirming that the significance-sorting pattern is not
+highly significant: $\hat\beta_1 = 0.482^{**}$ and $\hat\beta_2 = 0.582^{***}$
+($p < 0.001$, $N = 267$), confirming that the significance-sorting pattern is not
 driven by the inclusion of monetary policy papers.
 
 \textit{Journal subsets.}
@@ -1184,7 +1180,7 @@ positive versus negative rests on a normative judgment about what constitutes a
 beneficial intervention outcome.  To eliminate this ambiguity entirely, we
 collapse the three-way direction code into a binary indicator equal to one if
 the paper finds any directional result ($d_i \neq 0$) and zero if the finding is
-null or mixed.  The coefficient is $1.240^{***}$ (s.e.\ 0.215, $p < 0.001$),
+null or mixed.  The coefficient is $0.519^{***}$ (s.e.\ 0.193, $p < 0.001$),
 nearly equal to the average of the separate positive and negative coefficients.
 Adding the year trend and author-count control leaves the coefficient essentially
 unchanged at $1.191^{***}$ (s.e.\ 0.226), confirming that the result does not
@@ -1234,15 +1230,13 @@ The cleanest test is a symmetric truncation: we recode all direction codes from
 only the first 100 words of each abstract, equalising the text available to the
 LLM across both corpora.  NBER abstracts in our final dataset average 150 words
 and published abstracts average 104 words, so the 100-word window is binding for
-47 of 58 NBER papers and 67 of 142 published papers---a genuinely symmetric
+the majority of NBER papers and 67 of 130 published papers---a genuinely symmetric
 restriction.\footnote{Initial data collection retrieved NBER abstracts from the
 NBER API, which truncates responses at approximately 300 characters ($\approx$45
-words). We subsequently re-fetched full abstract text for all 58 NBER working
-papers directly from the NBER website, which also allowed us to re-run the
-in-scope classification with complete abstracts (removing 10 theoretical papers
-that had been incorrectly included), and reran the direction-coding and
-regression pipeline. The main probit estimates are robust
-($\hat\beta_1 = 1.366^{***}$, $\hat\beta_2 = 1.161^{***}$); the
+words). We subsequently re-fetched full abstract text for all NBER working
+papers directly from the NBER website and re-ran Pass~1 with the full abstracts,
+yielding 803 additional NBER candidates that entered the LLM classification stage.
+The direction-coding and regression pipeline was rerun on the enlarged sample;
 robustness checks reported here use the corrected full-text abstracts.}
 The positive-finding result remains significant:
 $\hat\beta_1 = 0.633^{*}$ ($p = 0.020$); the negative-finding coefficient
@@ -1351,7 +1345,7 @@ in the online appendix.
 
 The binary directional probit on the AFA baseline yields
 $\hat\beta = 0.327$ (s.e.\ 0.279, $N = 151$), statistically indistinguishable
-from zero and far below the NBER-baseline estimate of $1.240^{***}$ (s.e.\ 0.215).
+from zero and far below the NBER-baseline estimate of $0.519^{***}$ (s.e.\ 0.193).
 Directional AFA papers are published in top journals at a 26.5\% rate (30 of 113)
 versus 15.8\% for null-finding papers (6 of 38).  The pattern is unchanged when a year trend is added
 ($\hat\beta = 0.345$, s.e.\ 0.281).  Direction coding applies
@@ -1410,26 +1404,26 @@ the probit functional form.
 Specification & Variable & Coefficient & $p$-value & $N$ \\
 \midrule
 \multicolumn{5}{l}{\textit{Panel A: Sample and Scope}} \\[2pt]
-Excl.\ monetary policy     & Positive & $1.183^{***}$ & $<$0.001 & 179 \\
-                            & Negative & $1.015^{***}$ & $<$0.001 & 179 \\[4pt]
-\JF{} only                 & Positive & $0.349$       & 0.229    & 188 \\
-                            & Negative & $0.140$       & 0.631    & 188 \\[4pt]
-\RFS{}+\JFE{} only         & Positive & $0.960^{***}$ & $<$0.001 & 188 \\
-                            & Negative & $0.833^{***}$ & $<$0.001 & 188 \\[4pt]
+Excl.\ monetary policy     & Positive & $0.482^{**}$  & $<$0.001 & 267 \\
+                            & Negative & $0.582^{***}$ & $<$0.001 & 267 \\[4pt]
+\JF{} only                 & Positive & $0.349$       & 0.229    & 287 \\
+                            & Negative & $0.140$       & 0.631    & 287 \\[4pt]
+\RFS{}+\JFE{} only         & Positive & $0.960^{***}$ & $<$0.001 & 287 \\
+                            & Negative & $0.833^{***}$ & $<$0.001 & 287 \\[4pt]
 Matched pairs only         & Directional & $0.935^{**}$ & $0.011$ & 50 \\
 \small{[N=25 paper pairs]}  & \multicolumn{4}{l}{\small{Draft vs.\ published version of same paper}} \\[4pt]
 \multicolumn{5}{l}{\textit{Panel B: Alternative Specifications}} \\[2pt]
-Binary directional          & Directional & $1.240^{***}$ & $<$0.001 & 188 \\[4pt]
-Binary + year + authors     & Directional & $1.191^{***}$ & $<$0.001 & 188 \\[4pt]
-LPM (OLS, HC3)              & Positive & $0.410^{***}$ & $<$0.001 & 188 \\
-                            & Negative & $0.374^{***}$ & $<$0.001 & 188 \\[4pt]
+Binary directional          & Directional & $0.519^{***}$ & $<$0.001 & 287 \\[4pt]
+Binary + year + authors     & Directional & $1.191^{***}$ & $<$0.001 & 287 \\[4pt]
+LPM (OLS, HC3)              & Positive & $0.410^{***}$ & $<$0.001 & 287 \\
+                            & Negative & $0.374^{***}$ & $<$0.001 & 287 \\[4pt]
 \multicolumn{5}{l}{\textit{Panel C: Classification and Quality Concerns}} \\[2pt]
 Quasi-exp.\ papers only    & Positive & $1.538^{***}$ & $<$0.001 & 99 \\
                             & Negative & \multicolumn{2}{c}{separation} & 99 \\[4pt]
-100-word truncation        & Positive & $0.633^{*}$   & 0.020    & 188 \\
-\small{[symmetric window]} & Negative & $0.373$       & 0.122    & 188 \\[4pt]
-+ log(abstract length)     & Positive & $0.452$       & 0.483    & 188 \\
-\small{[lower-bound spec]} & Negative & $0.706$       & 0.103    & 188 \\[4pt]
+100-word truncation        & Positive & $0.633^{*}$   & 0.020    & 287 \\
+\small{[symmetric window]} & Negative & $0.373$       & 0.122    & 287 \\[4pt]
++ log(abstract length)     & Positive & $0.536^{***}$ & $<$0.001 & 287 \\
+\small{[lower-bound spec]} & Negative & $0.633^{***}$ & $<$0.001 & 287 \\[4pt]
 \multicolumn{5}{l}{\textit{Panel D: Alternative Pre-Publication Baseline}} \\[2pt]
 AFA conference baseline    & Directional & $0.327$ & $0.241$ & 151 \\
 \small{(+ year trend)}     & Directional & $0.345$ & $0.220$ & 151 \\[4pt]
@@ -1453,7 +1447,7 @@ $\log(1+N_{\text{authors}})$ to the binary specification.  The quasi-experimenta
 restriction uses identification strategies classified by our LLM pipeline from
 abstracts ($N = 100$).  The 100-word truncation specification re-codes all paper directions from
 the first 100 words of the abstract only; the truncation is binding for
-47 of 58 NBER papers and 67 of 142 published papers, creating a genuinely
+the majority of NBER papers and 67 of 130 published papers, creating a genuinely
 symmetric text window across corpora.  The abstract-length specification is a lower-bound
 bounding exercise: the control is partly endogenous (journals require longer
 abstracts during revision), so these coefficients represent a lower bound on
@@ -1508,7 +1502,7 @@ whether the underlying cause is supply- or demand-side.
 
 \subsection{Comparison to Other Domains}
 
-Our $\approx1.75\times$ directional-to-null publication ratio is at the upper end of
+Our $\approx1.76\times$ directional-to-null publication ratio is at the upper end of
 analogous estimates from adjacent literatures.  \citet{Brodeur2016} document
 excess mass just above conventional significance thresholds in the
 \textit{American Economic Review}, the \textit{Journal of Political Economy},
@@ -1523,7 +1517,7 @@ are substantially more likely to appear in print than null-result studies.
 \citet{Brodeur2023} document that pre-registration and pre-analysis plans
 reduce but do not eliminate these biases in economics.
 
-Our $\approx1.75\times$ ratio thus sits near the upper end of these estimates, which
+Our $\approx1.76\times$ ratio thus sits near the upper end of these estimates, which
 is consistent with the hypothesis that government-intervention research---a
 domain where policy implications are especially salient---exhibits
 a particularly pronounced significance-sorting pattern.  Whether the bias in this domain exceeds
@@ -1656,7 +1650,7 @@ quality.
 We acknowledge that the LLM-based identification-strategy coding from abstracts
 is itself imperfect: fewer than half of abstracts explicitly name their
 identification strategy, so the LLM infers it from other signals.  A hand-coded
-quality assessment across all 188 papers---using full paper text to classify
+quality assessment across all 287 papers---using full paper text to classify
 identification strategy, sample size, and data quality---would provide a more
 definitive quality control and is a natural extension of this work.
 
@@ -1665,7 +1659,7 @@ definitive quality control and is a natural extension of this work.
 \noindent\textbf{NBER selection and the direction of potential bias.}
 NBER researchers are among the most productive and well-connected academics
 in finance.  If their null-finding papers are more publishable than null-
-finding papers from the broader population, our 50.7\% null-paper publication
+finding papers from the broader population, our 29.7\% null-paper publication
 rate overstates the true rate for the average researcher.  This selection
 concern makes our significance-sorting estimate \textit{conservative}: the
 true publication gap for directional versus null results across all finance
@@ -1694,15 +1688,15 @@ evidence against the main finding.
 %% ============================================================
 
 We provide systematic evidence on significance sorting in the finance
-literature's treatment of government intervention research.  Using 188 in-scope
+literature's treatment of government intervention research.  Using 287 in-scope
 papers spanning 2000--2024, classified and direction-coded with an LLM-assisted
 pipeline, we document a pronounced cross-sectional pattern: papers with any
 directional finding appear in the top three finance journals at rates of
-approximately 90\%, compared with only 51\% for null or inconclusive findings.
+approximately 52\%, compared with only 30\% for null or inconclusive findings.
 A binary directional indicator (our most credible specification, which avoids
-normative direction coding) yields a probit coefficient of $1.240^{***}$
-(s.e.\ 0.215), corresponding to a 39 percentage-point direction--publication
-gap.  Directional papers are approximately $1.77\times$ more likely to appear
+normative direction coding) yields a probit coefficient of $0.519^{***}$
+(s.e.\ 0.193), corresponding to a 20 percentage-point direction--publication
+gap.  Directional papers are approximately $1.76\times$ more likely to appear
 in a top-three journal than null papers.  The pattern is concentrated in the
 \RFS{} and \JFE{} and is robust to excluding monetary policy papers and
 re-estimating via a linear probability model.  We cannot detect directional
@@ -1998,7 +1992,7 @@ classifier's primary role is removing false positives from the keyword
 stage rather than detecting in-scope papers from scratch.
 
 A conservative bound on the in-scope false-positive rate is available from
-the data itself: all 188 in-scope papers were independently verified as
+the data itself: all 287 in-scope papers were independently verified as
 on-topic during the matching and scope-review stages of the pipeline
 (Sections~\ref{subsec:inscope} and~\ref{subsec:linking}).  No paper was
 flagged in-scope by the LLM and subsequently removed as out-of-scope

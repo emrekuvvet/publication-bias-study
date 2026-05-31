@@ -266,7 +266,10 @@ def table_probit_main(df: pd.DataFrame) -> pd.DataFrame:
     df["log_ablen"]= np.log1p(pd.to_numeric(df["abstract_len"], errors="coerce").fillna(
         df["abstract_len"].dropna().astype(float).median()))
     # Identification strategy quality control (from script 09)
-    df["quasi_exp"]= pd.to_numeric(df.get("quasi_exp", 0), errors="coerce").fillna(0).astype(int)
+    if "quasi_exp" in df.columns:
+        df["quasi_exp"] = pd.to_numeric(df["quasi_exp"], errors="coerce").fillna(0).astype(int)
+    else:
+        df["quasi_exp"] = 0
 
     all_results = []
     fitted_models = {}
@@ -471,7 +474,10 @@ def table_binary_directional(df: pd.DataFrame) -> pd.DataFrame:
     df["year_c"]     = df["year"] - df["year"].mean()
     df["log_nauth"]  = np.log1p(pd.to_numeric(df["n_authors"], errors="coerce").fillna(0))
     df["log_ablen"]  = np.log1p(pd.to_numeric(df["abstract_len"], errors="coerce").fillna(df["abstract_len"].dropna().astype(float).median()))
-    df["quasi_exp"]  = pd.to_numeric(df.get("quasi_exp", 0), errors="coerce").fillna(0).astype(int)
+    if "quasi_exp" in df.columns:
+        df["quasi_exp"] = pd.to_numeric(df["quasi_exp"], errors="coerce").fillna(0).astype(int)
+    else:
+        df["quasi_exp"] = 0
     results = []
     results.append(run_probit("pub ~ directional",                          df, "Binary (1): Bivariate"))
     results.append(run_probit("pub ~ directional + year_c",                 df, "Binary (2): + Year"))

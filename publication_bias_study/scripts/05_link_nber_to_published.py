@@ -277,7 +277,7 @@ def ss_lookup_one(
                 timeout=20,
             )
             if resp.status_code == 429:
-                time.sleep(60)   # back off 60 s on rate limit, then retry
+                time.sleep(8)   # back off on rate limit, then retry
                 continue
             break
         else:
