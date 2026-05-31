@@ -308,8 +308,8 @@ of published p-value distributions, our NBER working paper baseline allows us
 to observe actual pre-publication findings and measure the sorting gap in
 the cross-section.  The AFA conference test provides a useful bounding
 exercise: at the pre-journal presentation stage directional papers carry
-no detectable association with eventual publication ($\hat\beta = 0.077$,
-$p = 0.80$); the association is large only in the journal publication
+no statistically significant association with eventual publication ($\hat\beta = 0.327$,
+$p = 0.24$); the association is large only in the journal publication
 comparison ($\hat\beta = 1.223^{***}$), consistent with the gap arising
 at or after the journal review stage rather than earlier in the research
 process---though supply-side submission decisions at that stage cannot be
@@ -1332,18 +1332,18 @@ and papers without abstracts use title rules.  Because keyword and title
 rules default more often to null when abstracts are ambiguous or absent,
 this asymmetry likely \textit{overstates} the null share of the AFA sample
 and therefore \textit{understates} the AFA directional premium relative to
-a uniform-LLM-coded baseline.  The absence of a premium at the AFA stage
-($\hat\beta = 0.077$) can therefore be interpreted as an upper bound on the
+a uniform-LLM-coded baseline.  The absence of a significant premium at the AFA stage
+($\hat\beta = 0.327$, $p = 0.24$) can therefore be interpreted as an upper bound on the
 true AFA premium: if anything, uniform LLM coding would raise this estimate.
 An analysis using LLM coding uniformly across all three samples is presented
 in the online appendix.
 
 The binary directional probit on the AFA baseline yields
-$\hat\beta = 0.077$ (s.e.\ 0.298, $N = 108$), statistically indistinguishable
+$\hat\beta = 0.327$ (s.e.\ 0.279, $N = 151$), statistically indistinguishable
 from zero and far below the NBER-baseline estimate of $1.223^{***}$ (s.e.\ 0.203).
-Directional AFA papers are published in top journals at a 27.5\% rate (22 of 80)
-versus 25.0\% for null-finding papers (7 of 28).  The pattern is unchanged when a year trend is added
-($\hat\beta = 0.082$, s.e.\ 0.300).  Direction coding applies
+Directional AFA papers are published in top journals at a 26.5\% rate (30 of 113)
+versus 15.8\% for null-finding papers (6 of 38).  The pattern is unchanged when a year trend is added
+($\hat\beta = 0.345$, s.e.\ 0.281).  Direction coding applies
 the same three-tier hierarchy as the NBER pipeline: journal-matched papers
 receive direction codes from published-abstract coding; papers with
 OpenAlex, CrossRef, or NBER abstracts receive abstract-based keyword rules; and the remaining
@@ -1420,8 +1420,8 @@ Quasi-exp.\ papers only    & Positive & $1.603^{***}$ & $<$0.001 & 100 \\
 + log(abstract length)     & Positive & $0.171$       & 0.766    & 200 \\
 \small{[lower-bound spec]} & Negative & $0.322$       & 0.486    & 200 \\[4pt]
 \multicolumn{5}{l}{\textit{Panel D: Alternative Pre-Publication Baseline}} \\[2pt]
-AFA conference baseline    & Directional & $0.077$ & $0.797$ & 108 \\
-\small{(+ year trend)}     & Directional & $0.082$ & $0.785$ & 108 \\[4pt]
+AFA conference baseline    & Directional & $0.327$ & $0.241$ & 151 \\
+\small{(+ year trend)}     & Directional & $0.345$ & $0.220$ & 151 \\[4pt]
 Uniform LLM coding         & Directional & $0.038$ & $0.900$ & 108 \\
 \small{[AFA, + year]}      & Directional & $0.044$ & $0.884$ & 108 \\
 \bottomrule
@@ -1447,12 +1447,12 @@ symmetric text window across corpora.  The abstract-length specification is a lo
 bounding exercise: the control is partly endogenous (journals require longer
 abstracts during revision), so these coefficients represent a lower bound on
 the true direction-publication association.  The AFA conference baseline uses
-AFA annual meeting papers (2006--2024, $N = 108$ in-scope) as the
+AFA annual meeting papers (2006--2024, $N = 151$ in-scope) as the
 pre-publication comparison group; direction codes follow the same three-tier
 hierarchy as the NBER pipeline.  ``Uniform LLM coding'' replaces keyword-based
 direction codes for unmatched AFA papers with the same LLM pipeline used for
-the main NBER/published sample; $\beta \approx 0$ is unchanged, confirming
-the AFA stage-identification result is not an artifact of the mixed coding method.
+the main NBER/published sample; $\beta \approx 0$ is unchanged ($N = 108$),
+confirming the AFA stage-identification result is not an artifact of the mixed coding method.
 Standard errors omitted for brevity.
 $^{***}p < 0.01$, $^{**}p < 0.05$, $^{*}p < 0.10$.
 \end{minipage}
