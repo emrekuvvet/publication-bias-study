@@ -67,7 +67,7 @@ _TZ_PAT = re.compile(r'(?<![a-z])(?:t|z)[\s\-]?(?:stat(?:istic)?|score)?[\s=of]{
 def regex_extract(abstract: str) -> float | None:
     if not abstract or not abstract.strip():
         return None
-    txt = abstract[:2000]
+    txt = abstract
 
     # Direct t or z statistic
     m = _TZ_PAT.search(txt)
@@ -148,7 +148,7 @@ def llm_extract(client: Anthropic, abstract: str) -> float | None:
         system=TSTAT_SYSTEM,
         messages=[{
             "role": "user",
-            "content": TSTAT_PROMPT.format(abstract=abstract[:2500])
+            "content": TSTAT_PROMPT.format(abstract=abstract)
         }],
     )
     raw = msg.content[0].text.strip()

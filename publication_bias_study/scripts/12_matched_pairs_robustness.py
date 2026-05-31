@@ -95,7 +95,7 @@ def code_one(client: Anthropic, abstract: str) -> dict:
         max_tokens=200,
         temperature=0,
         system=DIRECTION_SYSTEM,
-        messages=[{"role": "user", "content": DIRECTION_PROMPT.format(abstract=abstract[:3000])}],
+        messages=[{"role": "user", "content": DIRECTION_PROMPT.format(abstract=abstract)}],
     )
     raw = msg.content[0].text.strip()
     try:

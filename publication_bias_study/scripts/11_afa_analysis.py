@@ -321,7 +321,7 @@ Return JSON with exactly these keys:
 def classify_one_afa(client: Anthropic, title: str, abstract: str = "") -> dict:
     if abstract and len(abstract.split()) >= 20:
         prompt = AFA_SCOPE_PROMPT_ABSTRACT.format(
-            title=title[:400], abstract=abstract[:1200]
+            title=title[:400], abstract=abstract
         )
     else:
         prompt = AFA_SCOPE_PROMPT_TITLE_ONLY.format(title=title[:500])
@@ -512,7 +512,7 @@ Return JSON with exactly these keys:
        wait=wait_exponential(multiplier=1, min=2, max=30))
 def code_direction_afa(client: Anthropic, title: str, abstract: str = "") -> dict:
     if abstract and len(abstract.split()) >= 20:
-        prompt = AFA_DIRECTION_PROMPT_ABSTRACT.format(abstract=abstract[:1500])
+        prompt = AFA_DIRECTION_PROMPT_ABSTRACT.format(abstract=abstract)
     else:
         prompt = AFA_DIRECTION_PROMPT_TITLE.format(title=title[:500])
 

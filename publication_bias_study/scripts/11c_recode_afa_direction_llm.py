@@ -127,7 +127,7 @@ Return JSON with exactly:
        wait=wait_exponential(multiplier=1, min=2, max=30))
 def code_direction_llm(client: Anthropic, abstract: str) -> dict:
     """Call the LLM to code direction from an abstract. Returns direction/confidence/rationale."""
-    prompt = DIRECTION_PROMPT_ABSTRACT.format(abstract=abstract[:1500])
+    prompt = DIRECTION_PROMPT_ABSTRACT.format(abstract=abstract)
     msg = client.messages.create(
         model=ANTHROPIC_MODEL,
         max_tokens=200,

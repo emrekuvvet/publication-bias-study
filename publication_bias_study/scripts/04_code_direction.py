@@ -110,9 +110,9 @@ Return JSON with exactly:
 @retry(stop=stop_after_attempt(4),
        wait=wait_exponential(multiplier=1, min=2, max=30))
 def code_one(client: Anthropic, text: str, title_only: bool = False) -> dict:
-    prompt = (DIRECTION_PROMPT_TITLE_ONLY.format(title=text[:1200])
+    prompt = (DIRECTION_PROMPT_TITLE_ONLY.format(title=text)
               if title_only
-              else DIRECTION_PROMPT.format(abstract=text[:3000]))
+              else DIRECTION_PROMPT.format(abstract=text))
     msg = client.messages.create(
         model=ANTHROPIC_MODEL,
         max_tokens=200,

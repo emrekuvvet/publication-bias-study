@@ -138,7 +138,7 @@ def classify_one(client: Anthropic, paper_id: str,
             "role": "user",
             "content": SCOPE_PROMPT_TEMPLATE.format(
                 title=title[:300] if title else "",
-                abstract=abstract[:2700]
+                abstract=abstract
             )
         }],
     )
