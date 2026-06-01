@@ -660,7 +660,7 @@ four-round pipeline in which each round searches only among the papers left
 unmatched by earlier rounds.
 
 In the \textit{first round} we apply token-sort Levenshtein similarity
-(RapidFuzz) to normalized titles, comparing each of the 136 journal papers
+(RapidFuzz) to normalized titles, comparing each of the 134 journal papers
 against the full NBER archive of 30,212 working papers.  A shared author
 surname is required as a second gate.  Scores of 90 or above are
 automatically linked; scores in $[75, 90)$ are flagged for manual inspection
@@ -676,20 +676,20 @@ round} we supply Claude with the complete published journal PDF alongside the
 NBER draft, enabling identification of matches where both the title and the
 abstract were substantially rewritten during peer review.
 
-The pipeline identifies 10 matched pairs among the 136 in-scope journal articles.
+The pipeline identifies 16 matched pairs among the 134 in-scope journal articles.
 The majority of matches are identified in Round~1 via fuzzy title matching; Rounds~2--4 contribute the remainder.
-The remaining 126 journal articles (92.6\%) are unmatched.  This reflects the prevalence of SSRN and
+The remaining 118 journal articles (88.1\%) are unmatched.  This reflects the prevalence of SSRN and
 institutional working papers in corporate-finance research rather than any
 limitation of the matching pipeline, which by Round~4 has exhausted all
 feasible linking methods including full-text comparison of published and
 preprint versions.  External verification via OpenAlex, Unpaywall, and
-CrossRef independently confirms that these 126 papers have no retrievable
+CrossRef independently confirms that these 118 papers have no retrievable
 NBER preprint record.
 
 To assess whether the matched and directly identified published papers are
-representative, we compare the direction codes of the 10 matched NBER papers
-with those of the 136 directly identified journal articles.  Among matched
-NBER working papers, 59.2\% have a directional finding; among the 136 directly
+representative, we compare the direction codes of the 16 matched NBER papers
+with those of the 134 directly identified journal articles.  Among matched
+NBER working papers, 59.2\% have a directional finding; among the 134 directly
 identified journal articles, 75.0\% do.  This divergence likely reflects the
 shorter, less decisive NBER abstracts (44 words on average versus 104 for
 published abstracts) rather than a true direction difference: the LLM more
@@ -742,12 +742,11 @@ CF, AP, ME, EFG, and PE, 2000--2024) and 134 published journal articles
 (\JF{}, \RFS{}, \JFE{}) classified as in-scope government-intervention papers
 by our LLM pipeline and manual validation.  Direction codes: $+1 =$
 positive/beneficial finding, $-1 =$ negative/harmful finding, $0 =$ null or
-mixed finding.  The NBER and Published rows are not mutually exclusive: 10
-papers in the NBER working paper sample were matched to published journal
-articles and therefore appear in both the NBER ($N=157$) and Published
-($N=134$) rows; the Published count of 134 is what enters the probit
-regressions as $\text{Published}=1$.  Column percentages may not sum to 100
-due to rounding.
+mixed finding.  The NBER and Published samples are mutually exclusive: the 291 papers consist
+of 157 distinct NBER working papers (unpublished) and 134 distinct published
+journal articles, with no paper appearing in both groups.  The Published count
+of 134 is what enters the probit regressions as $\text{Published}=1$.
+Column percentages may not sum to 100 due to rounding.
 \end{minipage}
 \end{singlespace}
 \end{table}
@@ -767,7 +766,7 @@ circulated as NBER working papers and a separate sample of papers that were
 published in the \JF{}, the \RFS{}, or the \JFE{}, and we ask whether the
 direction distribution of findings differs between the two groups.  This is
 \textit{not} a within-paper design in which the same papers are tracked from
-submission to publication outcome.  Only 10 of 136 published papers (7.4\%)
+submission to publication outcome.  Only 16 of 134 published papers (11.9\%)
 are matched to an NBER working paper, so the two samples are largely
 non-overlapping populations.
 
@@ -801,7 +800,7 @@ cross-sectional associations, not causal publication-filter effects.
 
 \medskip
 \noindent\textbf{Limitation: the two samples are not the same papers at two
-points in the pipeline.}  Because only 7.4\% of published papers are matched
+points in the pipeline.}  Because only 11.9\% of published papers are matched
 to an NBER counterpart, the NBER and journal samples are largely non-overlapping
 cross-sections selected by different institutional processes.  The constructed
 ``publication rate'' of 46\% is a function of the relative sizes of the two
@@ -1167,8 +1166,8 @@ We exclude the 20 papers whose primary topic is monetary or central bank policy
 (quantitative easing, discount window, lender-of-last-resort operations, and
 unconventional monetary policy) and restrict attention to explicit financial
 legislation, securities regulation, and banking supervision.  The results remain
-highly significant: $\hat\beta_1 = 0.482^{**}$ and $\hat\beta_2 = 0.582^{***}$
-($p < 0.001$, $N = 271$), confirming that the significance-sorting pattern is not
+highly significant: $\hat\beta_1 = 0.495^{**}$ ($p = 0.012$) and $\hat\beta_2 = 0.571^{***}$
+($p = 0.003$, $N = 271$), confirming that the significance-sorting pattern is not
 driven by the inclusion of monetary policy papers.
 
 \textit{Journal subsets.}
@@ -1219,12 +1218,12 @@ The most substantive quality-control check restricts the sample to papers
 using quasi-experimental identification strategies (RDD, IV, DiD, or event
 study), as classified by our LLM pipeline from abstracts.  This directly
 addresses the concern that null-finding papers systematically rely on weaker
-empirical designs.  Among quasi-experimental papers ($N = 136$), the direction
-coefficients are positive---$\hat\beta_1 = 0.427$ ($p = 0.155$) and
-$\hat\beta_2 = 0.531^{*}$ ($p = 0.066$)---though the positive coefficient
-does not reach conventional significance thresholds in this sub-sample.
+empirical designs.  Among quasi-experimental papers ($N = 139$), the direction
+coefficients are positive---$\hat\beta_1 = 0.489^{*}$ ($p = 0.099$) and
+$\hat\beta_2 = 0.556^{*}$ ($p = 0.053$)---both marginal at conventional
+significance thresholds in this sub-sample.
 The positive direction of both coefficients is consistent with the pooled
-result; the loss of significance reflects the smaller sample size rather
+result; the borderline significance reflects the smaller sample size rather
 than absence of an effect, and the magnitude remains economically meaningful.
 
 \textit{Abstract language and LLM classification confidence.}
@@ -1320,7 +1319,7 @@ returns a 404, we parse AFA sessions from the full ASSA preliminary program
 hosted by the AEA (\url{https://www.aeaweb.org/conference/2013/preliminary.php}),
 yielding 186 papers from 57 AFA sessions.  We supplement AFA conference titles with abstracts retrieved from
 OpenAlex, CrossRef, and the NBER working paper dataset (local fuzzy-title matching),
-obtaining abstracts for 3,960 of the 3,972 AFA papers (99.7\% overall; coverage is
+obtaining abstracts for 3,975 of the 4,080 AFA papers (97.4\% overall; coverage is
 higher for in-scope papers because government-intervention papers are more
 likely to be published).  We apply our standard title-plus-abstract keyword
 filter (identical to the NBER pipeline) to papers with abstracts, and the
@@ -1331,7 +1330,7 @@ our main pipeline; papers with available abstracts but no published match
 receive abstract-based keyword-rule codes; and the remaining papers (those
 without abstracts and unmatched) receive conservative title-keyword rules,
 which predominantly yield null codes because finance titles are typically
-neutral.  29 AFA papers (26.9\%) are matched to a JF/RFS/JFE publication
+neutral.  36 AFA papers (23.8\%) are matched to a JF/RFS/JFE publication
 via fuzzy title matching.
 
 \medskip
@@ -1352,8 +1351,8 @@ in the online appendix.
 The binary directional probit on the AFA baseline yields
 $\hat\beta = 0.327$ (s.e.\ 0.279, $N = 151$), statistically indistinguishable
 from zero and far below the NBER-baseline estimate of $0.594^{***}$ (s.e.\ 0.163).
-Directional AFA papers are published in top journals at a 26.5\% rate (30 of 113)
-versus 15.8\% for null-finding papers (6 of 38).  The pattern is unchanged when a year trend is added
+Directional AFA papers are published in top journals at a 26.1\% rate (30 of 115)
+versus 16.2\% for null-finding papers (6 of 37).  The pattern is unchanged when a year trend is added
 ($\hat\beta = 0.345$, s.e.\ 0.281).  Direction coding applies
 the same three-tier hierarchy as the NBER pipeline: journal-matched papers
 receive direction codes from published-abstract coding; papers with
@@ -1381,12 +1380,12 @@ The most substantive quality-control check restricts the sample to papers
 using quasi-experimental identification strategies (RDD, IV, DiD, or Event
 Study), as classified by our LLM pipeline applied to abstracts.  This
 directly addresses the concern that null-finding papers systematically rely on
-weaker identification strategies.  Among quasi-experimental papers ($N = 136$),
-the direction coefficients are positive ($\hat\beta_1 = 0.427$, $p = 0.155$;
-$\hat\beta_2 = 0.531^{*}$, $p = 0.066$), though the positive coefficient does
-not reach conventional significance in this sub-sample.  The positive direction
+weaker identification strategies.  Among quasi-experimental papers ($N = 139$),
+the direction coefficients are positive ($\hat\beta_1 = 0.489^{*}$, $p = 0.099$;
+$\hat\beta_2 = 0.556^{*}$, $p = 0.053$), both marginal at conventional
+significance thresholds in this sub-sample.  The positive direction
 of both coefficients and their economic magnitude are consistent with the pooled
-result; the loss of significance reflects the smaller sub-sample rather than
+result; the borderline significance reflects the smaller sub-sample rather than
 the absence of an effect.
 
 \textit{Linear probability model.}
@@ -1412,26 +1411,26 @@ do not hinge on the probit functional form.
 Specification & Variable & Coefficient & $p$-value & $N$ \\
 \midrule
 \multicolumn{5}{l}{\textit{Panel A: Sample and Scope}} \\[2pt]
-Excl.\ monetary policy     & Positive & $0.482^{**}$  & $<$0.001 & 271 \\
-                            & Negative & $0.582^{***}$ & $<$0.001 & 271 \\[4pt]
-\JF{} only                 & Positive & $0.716^{**}$  & 0.022    & 291 \\
-                            & Negative & $0.704^{**}$  & 0.023    & 291 \\[4pt]
-\RFS{}+\JFE{} only         & Positive & $0.298$       & 0.134    & 291 \\
-                            & Negative & $0.415^{**}$  & 0.030    & 291 \\[4pt]
+Excl.\ monetary policy     & Positive & $0.495^{**}$  & 0.012    & 271 \\
+                            & Negative & $0.571^{***}$ & 0.003    & 271 \\[4pt]
+\JF{} only                 & Positive & $0.702^{**}$  & 0.024    & 291 \\
+                            & Negative & $0.702^{**}$  & 0.023    & 291 \\[4pt]
+\RFS{}+\JFE{} only         & Positive & $0.319$       & 0.103    & 291 \\
+                            & Negative & $0.404^{**}$  & 0.033    & 291 \\[4pt]
 Matched pairs only         & Directional & \multicolumn{2}{c}{separation} & 32 \\
 \small{[N=16 paper pairs]}  & \multicolumn{4}{l}{\small{Draft vs.\ published version of same paper}} \\[4pt]
 \multicolumn{5}{l}{\textit{Panel B: Alternative Specifications}} \\[2pt]
 Binary directional          & Directional & $0.594^{***}$ & $<$0.001 & 291 \\[4pt]
 Binary + year + authors     & Directional & $0.567^{***}$ & $<$0.001 & 291 \\[4pt]
-LPM (OLS, HC3)              & Positive & $0.193^{***}$ & 0.008    & 291 \\
-                            & Negative & $0.233^{***}$ & 0.001    & 291 \\[4pt]
+LPM (OLS, HC3)              & Positive & $0.207^{***}$ & 0.004    & 291 \\
+                            & Negative & $0.247^{***}$ & $<$0.001 & 291 \\[4pt]
 \multicolumn{5}{l}{\textit{Panel C: Classification and Quality Concerns}} \\[2pt]
-Quasi-exp.\ papers only    & Positive & $0.427$       & 0.155    & 136 \\
-                            & Negative & $0.531^{*}$   & 0.066    & 136 \\[4pt]
+Quasi-exp.\ papers only    & Positive & $0.489^{*}$   & 0.099    & 139 \\
+                            & Negative & $0.556^{*}$   & 0.053    & 139 \\[4pt]
 100-word truncation        & Positive & $0.633^{*}$   & 0.020    & 291 \\
 \small{[symmetric window]} & Negative & $0.373$       & 0.122    & 291 \\[4pt]
-+ log(abstract length)     & Positive & $0.536^{***}$ & $<$0.001 & 291 \\
-\small{[lower-bound spec]} & Negative & $0.633^{***}$ & $<$0.001 & 291 \\[4pt]
++ log(abstract length)     & Positive & $0.544^{***}$ & 0.006    & 291 \\
+\small{[lower-bound spec]} & Negative & $0.620^{***}$ & 0.001    & 291 \\[4pt]
 \multicolumn{5}{l}{\textit{Panel D: Alternative Pre-Publication Baseline}} \\[2pt]
 AFA conference baseline    & Directional & $0.327$ & $0.241$ & 151 \\
 \small{(+ year trend)}     & Directional & $0.345$ & $0.220$ & 151 \\[4pt]
@@ -1454,7 +1453,7 @@ published); all directional-finding pairs are published in this small subsample
 (perfect separation), so the probit cannot be identified.  ``Binary + year + authors'' adds
 $\log(1+N_{\text{authors}})$ to the binary specification.  The quasi-experimental
 restriction uses identification strategies classified by our LLM pipeline from
-abstracts ($N = 136$).  The 100-word truncation specification re-codes all paper directions from
+abstracts ($N = 139$).  The 100-word truncation specification re-codes all paper directions from
 the first 100 words of the abstract only; the truncation is binding for
 the majority of NBER papers and 67 of 134 published papers, creating a genuinely
 symmetric text window across corpora.  The abstract-length specification is a lower-bound
@@ -1595,7 +1594,7 @@ Five main threats to the validity of our analysis deserve discussion.
 The most important limitation is that NBER working papers and published journal
 articles are not different states of the same population of papers.  They are
 largely non-overlapping samples selected through different institutional
-processes: only 10 of 136 published papers (7.4\%) are matched to an NBER
+processes: only 16 of 134 published papers (11.9\%) are matched to an NBER
 working paper.  Our design therefore compares two different cross-sections,
 not papers tracked through the editorial filter.  The observed difference in
 direction distributions is consistent with editorial selection but equally
