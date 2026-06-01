@@ -470,7 +470,7 @@ challenge formally in Section~\ref{subsec:design}.
 \subsection{In-Scope Classification Pipeline}
 \label{subsec:inscope}
 
-Identifying government-intervention papers in a corpus of 40,326
+Identifying government-intervention papers in a corpus of 40,324
 documents requires an automated approach.  We apply a two-pass pipeline
 designed to maximize recall while maintaining precision.
 Table~\ref{tab:sample_selection} reports the number of papers surviving each
@@ -480,8 +480,8 @@ stage of the selection process.
 \noindent\textbf{Starting universe.}
 We begin with all articles and working papers collected from our four
 sources---the \JF{}, the \RFS{}, the \JFE{}, and the NBER Working Paper
-Series---for the period 2000--2024, yielding a combined corpus of 40,326
-documents (30,214 NBER working papers plus 10,112 journal articles: 4,176 from
+Series---for the period 2000--2024, yielding a combined corpus of 40,324
+documents (30,212 NBER working papers plus 10,112 journal articles: 4,176 from
 the \JF{}, 2,778 from the \RFS{}, and 3,158 from the \JFE{}).
 
 \medskip
@@ -497,7 +497,7 @@ easing,'' ``fiscal stimulus''), market microstructure rules (e.g., ``uptick rule
 ``proxy access,'' ``mandatory disclosure'').  Ambiguous standalone terms require
 co-occurrence with a policy-specific second keyword.  The full taxonomy is
 reported in Appendix~\ref{app:keywords}.  The keyword filter reduces the corpus
-from 40,326 documents to \textbf{1,045 candidates} (510 NBER, 184 \JF{}, 151
+from 40,324 documents to \textbf{1,045 candidates} (510 NBER, 184 \JF{}, 151
 \RFS{}, and 200 \JFE{}).
 
 \medskip
@@ -548,14 +548,14 @@ the \JFE{}).
 Selection step & Papers remaining & Papers dropped \\
 \midrule
 \textit{Starting universe (2000--2024)} & & \\
-\quad NBER working papers               & 30,214 & \\
+\quad NBER working papers               & 30,212 & \\
 \quad Journal articles: JF              &  4,176 & \\
 \quad Journal articles: RFS             &  2,778 & \\
 \quad Journal articles: JFE             &  3,158 & \\
-\quad \textbf{Total corpus}             & \textbf{40,326} & \\
+\quad \textbf{Total corpus}             & \textbf{40,324} & \\
 \addlinespace
 \textit{Pass 1: Keyword filter} & & \\
-\quad Retain keyword-hit papers         &  1,045 & 39,281 \\
+\quad Retain keyword-hit papers         &  1,045 & 39,279 \\
 \quad \quad of which: NBER              &    510 & \\
 \quad \quad of which: JF                &    184 & \\
 \quad \quad of which: RFS               &    151 & \\
@@ -647,7 +647,7 @@ unmatched by earlier rounds.
 
 In the \textit{first round} we apply token-sort Levenshtein similarity
 (RapidFuzz) to normalized titles, comparing each of the 132 journal papers
-against the full NBER archive of 30,214 working papers.  A shared author
+against the full NBER archive of 30,212 working papers.  A shared author
 surname is required as a second gate.  Scores of 90 or above are
 automatically linked; scores in $[75, 90)$ are flagged for manual inspection
 by the authors.  In the \textit{second round} we query six external
