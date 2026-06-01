@@ -432,8 +432,8 @@ Journal & Abbrev. & ISSN & Publisher & Abstract source \\
 \par\smallskip
 \begin{minipage}{\textwidth}
 \small
-Coverage: 2000--2024.  Abstract text is available for 96.4\% of \JF{}
-research articles, 98.5\% of \RFS{} articles, and 97.4\% of \JFE{} articles
+Coverage: 2000--2024.  Abstract text is available for 99.7\% of \JF{}
+research articles, 98.5\% of \RFS{} articles, and 97.5\% of \JFE{} articles
 after Elsevier API enrichment.  The \JF{} denominator is restricted to
 research articles only; the raw Web of Science record for the \JF{} includes
 a large number of editorial matter, meeting announcements, and AFA
@@ -470,7 +470,7 @@ challenge formally in Section~\ref{subsec:design}.
 \subsection{In-Scope Classification Pipeline}
 \label{subsec:inscope}
 
-Identifying government-intervention papers in a corpus of 39,443
+Identifying government-intervention papers in a corpus of 39,259
 documents requires an automated approach.  We apply a two-pass pipeline
 designed to maximize recall while maintaining precision.
 Table~\ref{tab:sample_selection} reports the number of papers surviving each
@@ -480,9 +480,9 @@ stage of the selection process.
 \noindent\textbf{Starting universe.}
 We begin with all articles and working papers collected from our four
 sources---the \JF{}, the \RFS{}, the \JFE{}, and the NBER Working Paper
-Series---for the period 2000--2024, yielding a combined corpus of 39,443
-documents (30,212 NBER working papers plus 9,231 journal articles: 3,559 from
-the \JF{}, 2,600 from the \RFS{}, and 3,072 from the \JFE{}).
+Series---for the period 2000--2024, yielding a combined corpus of 39,259
+documents (30,212 NBER working papers plus 9,047 journal articles: 3,383 from
+the \JF{}, 2,598 from the \RFS{}, and 3,066 from the \JFE{}).
 
 \medskip
 \noindent\textbf{Pass 1 --- Keyword filter.}
@@ -511,7 +511,7 @@ over-inclusive: the cost of an extra LLM call is negligible relative to the cost
 of omitting a genuine in-scope paper.
 
 The keyword filter reduces the corpus
-from 39,443 documents to \textbf{1,045 candidates} (510 NBER, 184 \JF{}, 151
+from 39,259 documents to \textbf{1,045 candidates} (510 NBER, 184 \JF{}, 151
 \RFS{}, and 200 \JFE{}).
 
 \medskip
@@ -563,13 +563,13 @@ Selection step & Papers remaining & Papers dropped \\
 \midrule
 \textit{Starting universe (2000--2024)} & & \\
 \quad NBER working papers               & 30,212 & \\
-\quad Journal articles: JF              &  3,559 & \\
-\quad Journal articles: RFS             &  2,600 & \\
-\quad Journal articles: JFE             &  3,072 & \\
-\quad \textbf{Total corpus}             & \textbf{39,443} & \\
+\quad Journal articles: JF              &  3,383 & \\
+\quad Journal articles: RFS             &  2,598 & \\
+\quad Journal articles: JFE             &  3,066 & \\
+\quad \textbf{Total corpus}             & \textbf{39,259} & \\
 \addlinespace
 \textit{Pass 1: Keyword filter} & & \\
-\quad Retain keyword-hit papers         &  1,045 & 38,398 \\
+\quad Retain keyword-hit papers         &  1,045 & 38,214 \\
 \quad \quad of which: NBER              &    510 & \\
 \quad \quad of which: JF                &    184 & \\
 \quad \quad of which: RFS               &    151 & \\
