@@ -433,7 +433,7 @@ Journal & Abbrev. & ISSN & Publisher & Abstract source \\
 \begin{minipage}{\textwidth}
 \small
 Coverage: 2000--2024.  Abstract text is available for 99.8\% of \JF{}
-research articles, 99.8\% of \RFS{} articles, and 98.1\% of \JFE{} articles
+research articles, 99.8\% of \RFS{} articles, and 98.3\% of \JFE{} articles
 after Elsevier API enrichment.  The \JF{} denominator is restricted to
 research articles only; the raw Web of Science record for the \JF{} includes
 a large number of editorial matter, meeting announcements, and AFA
@@ -543,8 +543,8 @@ criterion (main topic is private behaviour with policy as incidental context)
 but were not consistently flagged by the automated classifier.  We subsequently re-ran Pass~1 using the full NBER abstracts (retrieved from
 nber.org rather than the truncated API text of \textasciitilde45 words), which
 yielded 803 additional NBER candidates.  The automated pipeline and manual
-validation together retain \textbf{339 in-scope papers} from the combined
-1,848 candidates (1,045 initial plus 803 from the full-abstract re-run).
+validation together retain \textbf{343 in-scope papers} from the combined
+1,852 candidates (1,049 initial plus 803 from the full-abstract re-run).
 Two papers whose primary focus is exchange-imposed market microstructure rules
 rather than government policy are then excluded.  The final analysis
 sample consists of \textbf{291 papers}: 157 NBER working papers and 134
@@ -569,15 +569,15 @@ Selection step & Papers remaining & Papers dropped \\
 \quad \textbf{Total corpus}             & \textbf{39,152} & \\
 \addlinespace
 \textit{Pass 1: Keyword filter} & & \\
-\quad Retain keyword-hit papers         &  1,045 & 38,107 \\
+\quad Retain keyword-hit papers         &  1,049 & 38,103 \\
 \quad \quad of which: NBER              &    510 & \\
 \quad \quad of which: JF                &    184 & \\
 \quad \quad of which: RFS               &    151 & \\
-\quad \quad of which: JFE               &    200 & \\
+\quad \quad of which: JFE               &    204 & \\
 \quad Re-run Pass~1 with full NBER abstracts & +803 new candidates & \\
 \addlinespace
 \textit{Pass 2: LLM scope classification} & & \\
-\quad Retain in-scope papers (LLM, combined) &    339 &  1,509 \\
+\quad Retain in-scope papers (LLM, combined) &    343 &  1,509 \\
 \quad Exclude exchange-imposed market structure rules & 188 & 2 \\
 \addlinespace
 \textit{Final analysis sample}          & & \\
