@@ -496,7 +496,21 @@ easing,'' ``fiscal stimulus''), market microstructure rules (e.g., ``uptick rule
 ``tick size pilot''), and corporate governance law (e.g., ``say-on-pay,''
 ``proxy access,'' ``mandatory disclosure'').  Ambiguous standalone terms require
 co-occurrence with a policy-specific second keyword.  The full taxonomy is
-reported in Appendix~\ref{app:keywords}.  The keyword filter reduces the corpus
+reported in Appendix~\ref{app:keywords}.
+
+Searching the combined title-and-abstract text rather than the abstract alone
+improves recall for three reasons.  First, authors frequently name the specific
+law or regulation in the title but refer to it only as ``the reform'' or ``the
+rule'' throughout the abstract, so the keyword would appear only in the title.
+Second, common abbreviations (e.g., ``Dodd-Frank'' in the title) and full
+statutory names (e.g., ``Wall Street Reform and Consumer Protection Act'' in the
+abstract) are not always used interchangeably; searching both fields catches
+either form.  Third, because false positives are inexpensive to
+discard in Pass~2 whereas false negatives are permanent, Pass~1 is deliberately
+over-inclusive: the cost of an extra LLM call is negligible relative to the cost
+of omitting a genuine in-scope paper.
+
+The keyword filter reduces the corpus
 from 40,324 documents to \textbf{1,045 candidates} (510 NBER, 184 \JF{}, 151
 \RFS{}, and 200 \JFE{}).
 
