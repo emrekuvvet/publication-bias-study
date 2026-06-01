@@ -31,10 +31,13 @@ Usage:
 import json
 import os
 import pathlib
+import threading
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import dotenv
 
 import anthropic
+import httpx
 import pandas as pd
 
 dotenv.load_dotenv(pathlib.Path(__file__).parent.parent / ".env")
@@ -101,35 +104,45 @@ def classify_paper(client: anthropic.Anthropic, title: str, abstract: str) -> di
 
 def main():
     df = pd.read_parquet(IN_PATH)
-    print(f"Loaded {len(df)} papers. Classifying identification strategies...")
+    print(f"Loaded {len(df)} papers. Classifying identification strategies...", flush=True)
 
-    client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+    _tls = threading.local()
 
-    strategies = []
-    rationales = []
+    def _get_client() -> anthropic.Anthropic:
+        if not hasattr(_tls, "client"):
+            _tls.client = anthropic.Anthropic(
+                api_key=os.environ["ANTHROPIC_API_KEY"],
+                timeout=httpx.Timeout(30.0, connect=5.0),
+            )
+        return _tls.client
 
-    for i, row in df.iterrows():
+    def _classify_row(row) -> tuple:
         title    = str(row.get("title", ""))
         abstract = str(row.get("abstract", ""))
         if not abstract or abstract == "nan":
-            strategies.append("unclear")
-            rationales.append("no abstract available")
-            continue
+            return row.name, "unclear", "no abstract available"
+        result = classify_paper(_get_client(), title, abstract)
+        return row.name, result["id_strategy"], result.get("rationale", "")
 
-        result = classify_paper(client, title, abstract)
-        strategies.append(result["id_strategy"])
-        rationales.append(result.get("rationale", ""))
+    results: dict[int, tuple] = {}
+    rows = [row for _, row in df.iterrows()]
 
-        if (len(strategies)) % 50 == 0:
-            print(f"  Classified {len(strategies)}/{len(df)} papers...")
-        time.sleep(0.05)  # gentle rate limiting
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        futures = {pool.submit(_classify_row, row): row.name for row in rows}
+        done_count = 0
+        for future in as_completed(futures):
+            idx, strat, rat = future.result()
+            results[idx] = (strat, rat)
+            done_count += 1
+            if done_count % 50 == 0:
+                print(f"  Classified {done_count}/{len(df)} papers...", flush=True)
 
-    df["id_strategy"]    = strategies
-    df["id_rationale"]   = rationales
-    df["quasi_exp"]      = (df["id_strategy"] == "quasi_exp").astype(int)
+    df["id_strategy"] = [results[i][0] for i in df.index]
+    df["id_rationale"] = [results[i][1] for i in df.index]
+    df["quasi_exp"]   = (df["id_strategy"] == "quasi_exp").astype(int)
 
     df.to_parquet(IN_PATH, index=False)
-    print(f"\nDone. Results saved to {IN_PATH}")
+    print(f"\nDone. Results saved to {IN_PATH}", flush=True)
     print("\nIdentification strategy distribution:")
     print(df["id_strategy"].value_counts())
     print(f"\nQuasi-experimental by published status:")

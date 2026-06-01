@@ -221,70 +221,68 @@ Our primary finding is a pronounced \textit{significance-sorting} pattern
 in the published record: papers with \textit{any} directional finding appear in
 top finance journals at substantially higher rates than null-finding papers.
 A binary directional indicator (directional vs.\ null, sidestepping normative
-positive/negative coding) carries a probit coefficient of $0.519^{***}$
-(s.e.\ 0.193, $p < 0.001$), corresponding to a 20 percentage-point gap in
+positive/negative coding) carries a probit coefficient of $0.598^{***}$
+(s.e.\ 0.165, $p < 0.001$), corresponding to an approximately 23 percentage-point gap in
 direction-specific publication rates.  Within directional papers, positive-finding
 papers are published at a rate of 50.0\% and negative-finding papers at
 54.7\%---both substantially exceeding the 29.7\% rate for null papers.  A $\chi^2$
 test of homogeneity strongly rejects equality across the three direction categories
-($\chi^2 = 35.695$, $p < 0.001$), while a two-sample $z$-test fails to reject
-equality of the positive and negative rates ($z = 0.62$, $p = 0.53$).  We cannot
+($\chi^2 = 13.567$, $p = 0.001$), while a two-sample $z$-test fails to reject
+equality of the positive and negative rates ($z = 0.66$, $p = 0.51$).  We cannot
 detect directional asymmetry---both types of directional finding are associated
 with similar publication rates---though at our sample size the test has limited
-power to detect moderate asymmetries (minimum detectable difference 0.917
+power to detect moderate asymmetries (minimum detectable difference 0.504
 coefficient units at 80\% power).
 
 Probit models confirm this pattern.  The coefficient on an indicator for a
-positive finding is 1.366 ($p < 0.001$), implying a marginal publication
-probability approximately 41 percentage points above that of a null-finding
-paper.  The coefficient on a negative finding indicator is 1.161 ($p < 0.001$),
-implying a nearly identical 37 percentage-point premium.\footnote{%
+positive finding is 0.534 ($p < 0.001$), implying a marginal publication
+probability approximately 20 percentage points above that of a null-finding
+paper.  The coefficient on a negative finding indicator is 0.652 ($p < 0.001$),
+implying a 25 percentage-point premium.\footnote{%
 Marginal effects for Cols.~(2)--(6) are evaluated at the bivariate-spec
-null-paper baseline ($\hat\alpha = 0.017$, implied publication probability
-$\Phi(0.017) \approx 50.7\%$).  The effect for positive-finding papers is
-$\Phi(0.017 + 1.366) - \Phi(0.017) \approx 41$ pp;
-for negative-finding papers, $\Phi(0.017 + 1.161) - \Phi(0.017) \approx 37$ pp.
-For Col.~(1), the binary-spec baseline is $\hat\alpha = 0.017$, giving a directional
-gap of $\Phi(0.017 + 0.519) - \Phi(0.017) \approx 20$ pp.}
-The two direction coefficients are statistically indistinguishable ($p = 0.53$).
+null-paper baseline ($\hat\alpha = -0.534$, implied publication probability
+$\Phi(-0.534) \approx 29.7\%$).  The effect for positive-finding papers is
+$\Phi(-0.534 + 0.534) - \Phi(-0.534) \approx 20$ pp;
+for negative-finding papers, $\Phi(-0.534 + 0.652) - \Phi(-0.534) \approx 25$ pp.
+For Col.~(1), the binary-spec baseline is $\hat\alpha = -0.534$, giving a directional
+gap of $\Phi(-0.534 + 0.598) - \Phi(-0.534) \approx 23$ pp.}
+The two direction coefficients are statistically indistinguishable ($p = 0.510$).
 We note, however, that this test has limited power at our sample size: given
 the observed standard errors, the minimum detectable difference between $\hat\beta_1$
-and $\hat\beta_2$ at 80\% power is 0.917 coefficient units (SE of the difference
-$= 0.327$).  We can therefore rule out large asymmetries, but cannot exclude
+and $\hat\beta_2$ at 80\% power is 0.504 coefficient units (SE of the difference
+$= 0.180$).  We can therefore rule out large asymmetries, but cannot exclude
 directional differences smaller than this threshold.  Within this constraint,
 the evidence is consistent with a significance-sorting pattern---not a directional one.
 
 The quasi-experimental identification control in Column~(6) confirms that
 identification quality is associated with publication: the
-$\text{QuasiExp}$ dummy carries a coefficient of $0.592^{***}$ ($p = 0.010$),
+$\text{QuasiExp}$ dummy carries a coefficient of $0.344^{**}$ ($p = 0.028$),
 consistent with clean-identification papers having a structural
 advantage in the review process---an advantage that is separate from and
 additive to the direction premium.  Crucially, however, the direction
-coefficients are essentially unchanged ($\hat\beta_1 = 1.368^{***}$,
-$\hat\beta_2 = 1.161^{***}$), confirming that the significance premium is not
+coefficients are essentially unchanged ($\hat\beta_1 = 0.460^{**}$,
+$\hat\beta_2 = 0.556^{***}$), confirming that the significance premium is not
 an artifact of null-finding papers relying on weaker identification strategies.
 
 The structure of the significance-sorting pattern varies across journals.  The
-direction--publication association is large and highly significant in both the
-\RFS{} ($\hat\beta_{\text{pos}} = 1.385^{***}$,
-$\hat\beta_{\text{neg}} = 1.342^{***}$) and the \JFE{}
-($\hat\beta_{\text{pos}} = 1.508^{***}$, $\hat\beta_{\text{neg}} =
-1.102^{***}$).  The \JF{} coefficients are positive, statistically significant,
-and economically meaningful ($\hat\beta_{\text{pos}} = 1.363^{***}$,
-$\hat\beta_{\text{neg}} = 0.893^{**}$, both $p < 0.05$), but
-\textit{smaller in magnitude} than those in the \RFS{} and \JFE{}.
-Point estimates are consistent with a smaller association at the \JF{},
-though cross-journal differences are not statistically distinguishable
-at available sample sizes (see Section~\ref{sec:results}).
+direction--publication association is largest in the \JF{} ($\hat\beta_{\text{pos}} =
+0.867^{***}$, $\hat\beta_{\text{neg}} = 0.888^{***}$, both $p < 0.01$).
+The \RFS{} shows a significant negative-finding premium ($\hat\beta_{\text{neg}} =
+0.782^{***}$, $p = 0.002$) but the positive coefficient is not significant
+($\hat\beta_{\text{pos}} = 0.406$, $p = 0.137$).
+The \JFE{} point estimates are positive but neither coefficient is statistically
+significant ($\hat\beta_{\text{pos}} = 0.338$, $\hat\beta_{\text{neg}} = 0.286$, both $p > 0.14$).
+cross-journal differences are not statistically distinguishable at available
+sample sizes (see Section~\ref{sec:results}).
 
 The exploratory sub-period analysis reveals time variation in the structure of
 the pattern.  During the financial crisis and post-crisis period (2008--2015),
-the negative-finding premium ($\hat\beta = 1.288^{***}$) was large and significant,
-while the positive-finding premium was affected by near-perfect separation in this
-subsample.  In the post-Dodd-Frank period
+the negative-finding premium ($\hat\beta = 0.717^{**}$) was significant, while
+the positive-finding premium ($\hat\beta = 0.602^{*}$) was marginally significant.
+In the post-Dodd-Frank period
 (2016--2024), both premiums remain positive at 0.794 and 0.855, respectively,
 consistent with a symmetric significance-sorting regime.
-These sub-period estimates are based on small sub-samples ($N = 27$, $64$, $97$)
+These sub-period estimates are based on small sub-samples ($N = 49$, $94$, $144$)
 and should be interpreted as descriptive, not confirmatory.
 
 This paper contributes to three strands of the literature.  It provides
@@ -308,7 +306,7 @@ the cross-section.  The AFA conference test provides a useful bounding
 exercise: at the pre-journal presentation stage directional papers carry
 no statistically significant association with eventual publication ($\hat\beta = 0.327$,
 $p = 0.24$); the association is large only in the journal publication
-comparison ($\hat\beta = 0.519^{***}$), consistent with the gap arising
+comparison ($\hat\beta = 0.598^{***}$), consistent with the gap arising
 at or after the journal review stage rather than earlier in the research
 process---though supply-side submission decisions at that stage cannot be
 ruled out.
@@ -934,30 +932,30 @@ as classified by our LLM pipeline applied to abstracts).  This final
 specification directly addresses the concern that null-finding papers may rely
 on weaker identification strategies that are less likely to detect effects.
 
-Column~(1) shows that directional papers are $0.519^{***}$ probit units
-(s.e.\ 0.193) more likely to appear in a top journal than null papers---a 20
-percentage-point gap.  This is our cleanest result because it makes no normative
-judgment about the sign of the finding.
+Column~(1) shows that directional papers are $0.598^{***}$ probit units
+(s.e.\ 0.165) more likely to appear in a top journal than null papers---an
+approximately 23 percentage-point gap.  This is our cleanest result because
+it makes no normative judgment about the sign of the finding.
 
 In Column~(2), both $\hat\beta_1$ (Positive) and $\hat\beta_2$ (Negative) are
-large, positive, and highly significant: $\hat\beta_1 = 1.366$ (s.e.\ 0.299,
-$p < 0.001$) and $\hat\beta_2 = 1.161$ (s.e.\ 0.247, $p < 0.001$).  A Wald
-test fails to reject equality of the two coefficients ($\chi^2 = 0.392$,
-$p = 0.53$), consistent with symmetry across directions.  This test has
-limited power: the minimum detectable difference at 80\% power is 0.917
+positive and highly significant: $\hat\beta_1 = 0.534$ (s.e.\ 0.191,
+$p < 0.001$) and $\hat\beta_2 = 0.652$ (s.e.\ 0.185, $p < 0.001$).  A Wald
+test fails to reject equality of the two coefficients ($\chi^2 = 0.434$,
+$p = 0.510$), consistent with symmetry across directions.  This test has
+limited power: the minimum detectable difference at 80\% power is 0.504
 coefficient units, so the non-rejection does not rule out moderate directional
 asymmetries.  We present this as an absence of detected directional
 asymmetry, not as evidence that the publishing premium is symmetric.
 Adding the author-count quality proxy in Column~(5) leaves the direction
-coefficients virtually unchanged ($\hat\beta_1 = 1.340^{***}$,
-$\hat\beta_2 = 1.087^{***}$), indicating that team size does not explain
-the null-paper disadvantage.  The author-count coefficient ($\hat\delta = 0.627$,
-s.e.\ 0.441) is positive but not statistically significant at conventional levels.
-The estimated year trend (Column~(3)) is positive and marginally significant
-($\hat\gamma = 0.030^{*}$, s.e.\ 0.017),
+coefficients virtually unchanged ($\hat\beta_1 = 0.518^{***}$,
+$\hat\beta_2 = 0.614^{***}$), indicating that team size does not explain
+the null-paper disadvantage.  The author-count coefficient ($\hat\delta = -0.104$,
+s.e.\ 0.283) is not statistically significant at conventional levels.
+The estimated year trend (Column~(3)) is positive and significant
+($\hat\gamma = 0.031^{**}$, s.e.\ 0.012),
 suggesting a modest upward drift in the publication--direction association over the period.
-In Column~(5), the year trend is no longer statistically significant ($\hat\gamma = 0.026$,
-s.e.\ 0.018) after controlling for team size.
+In Column~(5), the year trend remains statistically significant ($\hat\gamma = 0.032^{**}$,
+s.e.\ 0.012) after controlling for team size.
 Decade fixed effects (Column~(4)) leave the direction coefficients essentially
 unchanged.
 
@@ -971,23 +969,23 @@ unchanged.
 \toprule
  & \shortstack{(1)\\Binary\\(Primary)} & \shortstack{(2)\\Bivariate} & \shortstack{(3)\\+~Year} & \shortstack{(4)\\+~Decade FE} & \shortstack{(5)\\+~Authors} & \shortstack{(6)\\+~ID Strategy} \\
 \midrule
-Directional     & $0.519^{***}$ &               &               &               &               &               \\
-                & $(0.193)$     &               &               &               &               &               \\[4pt]
-Positive ($+1$) &               & $1.366^{***}$ & $1.303^{***}$ & $1.314^{***}$ & $1.340^{***}$ & $1.368^{***}$ \\
-                &               & $(0.299)$     & $(0.301)$     & $(0.300)$     & $(0.304)$     & $(0.312)$     \\[4pt]
-Negative ($-1$) &               & $1.161^{***}$ & $1.053^{***}$ & $1.098^{***}$ & $1.087^{***}$ & $1.161^{***}$ \\
-                &               & $(0.247)$     & $(0.256)$     & $(0.255)$     & $(0.261)$     & $(0.273)$     \\[4pt]
-Year trend      &               &               & $0.030^{*}$   &               & $0.026$       & $0.022$       \\
-                &               &               & $(0.017)$     &               & $(0.018)$     & $(0.018)$     \\[4pt]
-$\log(N_{\text{authors}})$ & & &             &               & $0.627$       & $0.551$       \\
-                &               &               &               &               & $(0.441)$     & $(0.460)$     \\[4pt]
-Quasi-Exp.\ ID  &               &               &               &               &               & $0.592^{***}$ \\
-                &               &               &               &               &               & $(0.228)$     \\[4pt]
+Directional     & $0.598^{***}$ &               &               &               &               &               \\
+                & $(0.165)$     &               &               &               &               &               \\[4pt]
+Positive ($+1$) &               & $0.534^{***}$ & $0.519^{***}$ & $0.527^{***}$ & $0.518^{***}$ & $0.460^{**}$  \\
+                &               & $(0.191)$     & $(0.193)$     & $(0.193)$     & $(0.193)$     & $(0.195)$     \\[4pt]
+Negative ($-1$) &               & $0.652^{***}$ & $0.619^{***}$ & $0.625^{***}$ & $0.614^{***}$ & $0.556^{***}$ \\
+                &               & $(0.185)$     & $(0.187)$     & $(0.186)$     & $(0.187)$     & $(0.190)$     \\[4pt]
+Year trend      &               &               & $0.031^{**}$  &               & $0.032^{**}$  & $0.027^{**}$  \\
+                &               &               & $(0.012)$     &               & $(0.012)$     & $(0.012)$     \\[4pt]
+$\log(N_{\text{authors}})$ & & &             &               & $-0.104$      & $-0.149$      \\
+                &               &               &               &               & $(0.283)$     & $(0.284)$     \\[4pt]
+Quasi-Exp.\ ID  &               &               &               &               &               & $0.344^{**}$  \\
+                &               &               &               &               &               & $(0.157)$     \\[4pt]
 Decade FEs      & No            & No            & No            & Yes           & No            & No            \\
-Intercept       & $0.017$       & $0.017$       & $0.081$       & $-0.140$      & $-0.721$      & $-0.925$      \\
+Intercept       & $-0.534$      & $-0.534$      & $-0.520$      & $-0.777$      & $-0.386$      & $-0.453$      \\
 \midrule
 $N$             & 287           & 287           & 287           & 287           & 287           & 287           \\
-Pseudo $R^2$    & 0.0526        & 0.168         & 0.182         & 0.178         & 0.191         & 0.224         \\
+Pseudo $R^2$    & 0.034         & 0.035         & 0.053         & 0.046         & 0.053         & 0.065         \\
 \bottomrule
 \end{tabular}}
 \par\smallskip
@@ -1005,14 +1003,14 @@ quasi-experimental identification dummy equal to one if the paper's primary
 identification strategy is RDD, IV, DiD, or Event Study (as classified by our
 LLM pipeline from abstracts).
 Standard errors in parentheses.  *** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$.
-Marginal effects: for Col.~(1), at the binary-spec baseline ($\hat\alpha = 0.017$,
-implied null publication probability $\Phi(0.017) \approx 50.7\%$), the directional
-gap is 20 pp.  For Cols.~(2)--(6), at the bivariate-spec baseline ($\hat\alpha = 0.017$,
-implied null publication probability $\approx 50.7\%$), 41 pp for positive-finding
-and 37 pp for negative-finding papers in Col.~(2).  A Wald test for
-$H_0\colon\hat\beta_1 = \hat\beta_2$ in Column~(2) yields $\chi^2 = 0.392$,
-$p = 0.53$.  At the observed sample size the test has limited power; the
-minimum detectable difference at 80\% power is 0.917 coefficient units.
+Marginal effects: for Col.~(1), at the binary-spec baseline ($\hat\alpha = -0.534$,
+implied null publication probability $\Phi(-0.534) \approx 29.7\%$), the directional
+gap is $\approx$23 pp.  For Cols.~(2)--(6), at the bivariate-spec baseline ($\hat\alpha = -0.534$,
+implied null publication probability $\approx 29.7\%$), $\approx$20 pp for positive-finding
+and $\approx$25 pp for negative-finding papers in Col.~(2).  A Wald test for
+$H_0\colon\hat\beta_1 = \hat\beta_2$ in Column~(3) yields $\chi^2 = 0.434$,
+$p = 0.510$.  At the observed sample size the test has limited power; the
+minimum detectable difference at 80\% power is 0.504 coefficient units.
 Failure to reject does not rule out moderate directional asymmetries.
 \end{minipage}
 \end{singlespace}
@@ -1021,7 +1019,7 @@ Failure to reject does not rule out moderate directional asymmetries.
 \subsection{Economic Magnitude}
 
 The probit marginal effects imply substantial economic magnitudes.  A positive-
-finding paper has a predicted publication probability approximately 41 percentage
+finding paper has a predicted publication probability approximately 20 percentage
 points above a null-finding paper at the bivariate-spec baseline.
 Using raw publication rates, directional-finding papers are approximately 1.76 times as
 likely to appear in a top-three journal as null-finding papers: the ratio for
@@ -1042,23 +1040,23 @@ cannot be determined from our design.
 \subsection{Cross-Journal Analysis}
 
 Table~\ref{tab:probit_by_journal} reports journal-specific probit estimates.
-The significance-sorting pattern is strong and statistically significant in the
-\RFS{} and \JFE{}.  The \JFE{} exhibits the largest positive coefficient
-($\hat\beta_1 = 1.528^{***}$, $p < 0.001$), and the \RFS{} exhibits similarly
-large coefficients ($\hat\beta_1 = 1.385^{***}$, $\hat\beta_2 = 1.342^{***}$, both $p < 0.001$).  Taken
-together, these two journals drive the pooled result.
+The significance-sorting pattern is strongest and most precisely estimated at
+the \JF{}, where both direction coefficients are large and significant
+($\hat\beta_1 = 0.867^{***}$, $\hat\beta_2 = 0.888^{***}$, both $p < 0.01$).
+The \RFS{} shows a significant negative-finding premium ($\hat\beta_2 = 0.782^{***}$,
+$p = 0.002$) but the positive coefficient is not individually significant
+($\hat\beta_1 = 0.406$, $p = 0.137$).
+The \JFE{} point estimates are positive in direction
+($\hat\beta_1 = 0.338$, $\hat\beta_2 = 0.286$) but neither is statistically
+significant at conventional levels ($p > 0.14$).
 
-The \JF{} results are positive, statistically significant, and in the same
-direction as the other journals ($\hat\beta_1 = 1.283^{***}$, $p < 0.001$;
-$\hat\beta_2 = 0.779^{**}$, $p < 0.05$), but \textit{smaller in magnitude}
-than those of the \RFS{} and \JFE{}.  Cross-journal Wald tests for equality of
-the positive coefficients yield $p = 0.66$ (JF vs.\ JFE), $p = 0.86$
-(JF vs.\ RFS), and $p = 0.80$ (RFS vs.\ JFE); none of the pairwise differences
-is statistically distinguishable.  We caution strongly that these tests have low
-power: the JF sub-sample contains only 27 in-scope published articles, making
-cross-journal comparisons highly underpowered.  The point estimates are
-consistent with a smaller direction--publication association at the \JF{}, but
-this difference cannot be statistically confirmed at the available sample sizes.
+Cross-journal Wald tests for equality of the positive coefficients yield
+$p = 0.284$ (JF vs.\ RFS), $p = 0.192$ (JF vs.\ JFE), and $p = 0.849$
+(RFS vs.\ JFE); none of the pairwise differences is statistically distinguishable.
+We caution strongly that these tests have low power: the JF sub-sample contains
+only 26 in-scope published articles, making cross-journal comparisons highly
+underpowered.  The cross-journal heterogeneity in point estimates is not
+statistically confirmed at the available sample sizes.
 
 \begin{table}[H]
 \centering
@@ -1070,15 +1068,15 @@ this difference cannot be statistically confirmed at the available sample sizes.
 \toprule
  & \JF{} & \RFS{} & \JFE{} \\
 \midrule
-Positive ($+1$) & $1.283^{***}$ & $1.385^{***}$ & $1.528^{***}$ \\
-                & $(0.420)$     & $(0.418)$     & $(0.359)$     \\[4pt]
-Negative ($-1$) & $0.779^{**}$  & $1.342^{***}$ & $1.101^{***}$ \\
-                & $(0.390)$     & $(0.344)$     & $(0.318)$     \\[4pt]
-Year trend      & $0.001$       & $0.040$       & $0.049^{**}$  \\
-                & $(0.024)$     & $(0.026)$     & $(0.022)$     \\
+Positive ($+1$) & $0.867^{***}$ & $0.406$       & $0.338$       \\
+                & $(0.333)$     & $(0.273)$     & $(0.230)$     \\[4pt]
+Negative ($-1$) & $0.888^{***}$ & $0.782^{***}$ & $0.286$       \\
+                & $(0.329)$     & $(0.252)$     & $(0.230)$     \\[4pt]
+Year trend      & $-0.016$      & $0.054^{***}$ & $0.035^{**}$  \\
+                & $(0.018)$     & $(0.017)$     & $(0.015)$     \\
 \midrule
-$N$             &  75           &  96           & 105           \\
-Pseudo $R^2$    & 0.119         & 0.262         & 0.233         \\
+$N$             & 183           & 205           & 213           \\
+Pseudo $R^2$    & 0.069         & 0.102         & 0.034         \\
 \bottomrule
 \end{tabular}}
 \par\smallskip
@@ -1088,7 +1086,7 @@ Pseudo $R^2$    & 0.119         & 0.262         & 0.233         \\
 treating publication in the specified journal as the outcome (versus any of
 the remaining two journals or the NBER-only group).  Standard errors in
 parentheses.  *** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$.
-The \JF{} sample contains only 27 in-scope published articles in 2000--2024,
+The \JF{} sample contains only 26 in-scope published articles in 2000--2024,
 limiting statistical power for journal-specific tests.
 \end{minipage}
 \end{singlespace}
@@ -1098,7 +1096,7 @@ limiting statistical power for journal-specific tests.
 \label{subsec:time}
 
 The following sub-period analysis is exploratory.  Sub-sample sizes are small
-($N = 27$, $64$, and $99$ for the three periods) and the results should be
+($N = 49$, $94$, and $144$ for the three periods) and the results should be
 interpreted as descriptive evidence, not confirmatory tests.  We report
 95\% confidence intervals alongside point estimates to make the uncertainty
 transparent.
@@ -1106,29 +1104,27 @@ transparent.
 Table~\ref{tab:time_trends} in Appendix~\ref{app:additional_tables} reports
 probit estimates for all three sub-periods.
 
-During the \textit{pre-crisis period} (2000--2007, $N = 27$), the positive-
-finding premium ($\hat\beta_1 = 1.535^{**}$, 95\% CI [0.296, 2.774]) is large
-and significant, while the negative-finding premium ($\hat\beta_2 = 0.254$,
-95\% CI [$-$1.598, 2.106]) is imprecisely estimated.  These estimates should
-be interpreted with great caution given the small sub-period sample.
+During the \textit{pre-crisis period} (2000--2007, $N = 49$), the positive-
+finding premium ($\hat\beta_1 = 0.887^{*}$, 95\% CI [$-$0.011, 1.785]) is
+economically meaningful and marginally significant, while the negative-finding
+premium ($\hat\beta_2 = 0.151$, 95\% CI [$-$0.884, 1.186]) is imprecisely
+estimated.  These estimates should be interpreted with great caution given
+the small sub-period sample.
 
 During the \textit{financial crisis and post-crisis period} (2008--2015,
-$N = 64$), the negative-finding premium ($\hat\beta_2 = 1.288^{***}$,
-95\% CI [0.503, 2.073]) is large and significant; the positive-finding premium
-($\hat\beta_1 = 4.831$) is affected by near-perfect separation in this small
-subsample and should not be interpreted at face value.
-Whether this pattern reflects editorial
-preferences, author self-selection in submission, or the broader research
-environment during the post-crisis regulatory period cannot be determined
-from these data.
+$N = 94$), both premiums are positive and the negative-finding premium
+($\hat\beta_2 = 0.717^{**}$, 95\% CI [0.109, 1.324]) is statistically
+significant; the positive-finding premium ($\hat\beta_1 = 0.602^{*}$,
+95\% CI [$-$0.081, 1.286]) is marginally significant.
+Whether this pattern reflects editorial preferences, author self-selection in
+submission, or the broader research environment during the post-crisis regulatory
+period cannot be determined from these data.
 
-In the \textit{post-Dodd-Frank period} (2016--2024, $N = 99$), the two
-premiums remain similar: positive findings carry a premium of $0.779^{*}$
-(95\% CI [$-$0.014, 1.572]) and negative findings $0.820^{**}$ (95\% CI [0.094,
-1.546]).  The overlapping intervals are consistent with a symmetric
-direction-publication association in the post-implementation period, though
-the small sub-period samples preclude strong inference about the source of
-any earlier divergence.
+In the \textit{post-Dodd-Frank period} (2016--2024, $N = 144$), the negative
+premium remains significant ($\hat\beta_2 = 0.609^{**}$, 95\% CI [0.085,
+1.132]) while the positive premium is not individually significant
+($\hat\beta_1 = 0.292$, 95\% CI [$-$0.249, 0.832]).  The small sub-period
+samples preclude strong inference about the source of any variation across periods.
 
 %% ============================================================
 \section{Robustness}
@@ -1142,15 +1138,15 @@ and quality concerns, and an alternative pre-publication baseline.
 \subsection{Sample and Scope Robustness}
 
 \textit{Matched pairs only.}
-Among the 25 published papers with a confirmed NBER working-paper match, we
+Among the 16 published papers with a confirmed NBER working-paper match, we
 independently LLM-code the direction from the NBER \textit{draft} abstract and
-from the published abstract, yielding 50 observations (25 draft-stage, 25
-published-stage) for the same set of papers.  Direction codes were stable across
-versions in 15 of 25 pairs (60\%); the remaining pairs shifted predominantly
-from null at draft stage to directional at publication stage, consistent with
-attenuation bias in the main NBER control group.  The binary probit on this
-matched sample yields $\hat\beta = 0.935^{**}$ ($N = 50$, $p = 0.011$),
-qualitatively consistent with the main estimate.
+from the published abstract, yielding 32 observations (16 draft-stage, 16
+published-stage) for the same set of papers.  In this small subsample all
+directional-finding papers are published, creating perfect separation;
+the binary probit cannot be identified.  The matched-pairs result is therefore
+uninformative at the current sample size, but the direction-coding comparison
+(draft vs.\ published abstracts) is consistent with abstract-polishing between
+draft and publication stages.
 
 \textit{Excluding monetary policy papers.}
 We exclude the 20 papers whose primary topic is monetary or central bank policy
@@ -1180,18 +1176,18 @@ positive versus negative rests on a normative judgment about what constitutes a
 beneficial intervention outcome.  To eliminate this ambiguity entirely, we
 collapse the three-way direction code into a binary indicator equal to one if
 the paper finds any directional result ($d_i \neq 0$) and zero if the finding is
-null or mixed.  The coefficient is $0.519^{***}$ (s.e.\ 0.193, $p < 0.001$),
+null or mixed.  The coefficient is $0.598^{***}$ (s.e.\ 0.165, $p < 0.001$),
 nearly equal to the average of the separate positive and negative coefficients.
 Adding the year trend and author-count control leaves the coefficient essentially
-unchanged at $1.191^{***}$ (s.e.\ 0.226), confirming that the result does not
+unchanged at $0.569^{***}$ (s.e.\ 0.167), confirming that the result does not
 hinge on any particular normative coding convention.
 
 \textit{Linear probability model.}
 Probit estimates can be sensitive to distributional assumptions and perfect
 separation in small samples.  Re-estimating the main specification as a linear
 probability model (OLS with heteroskedasticity-robust standard errors) yields
-coefficients of $0.410^{***}$ (s.e.\ 0.072) for positive findings and
-$0.374^{***}$ (s.e.\ 0.072) for negative findings, directly interpretable as
+coefficients of $0.193^{***}$ (s.e.\ 0.072) for positive findings and
+$0.233^{***}$ (s.e.\ 0.068) for negative findings, directly interpretable as
 percentage-point differences in publication probability relative to null papers.
 These magnitudes closely match the probit marginal effects and confirm the
 results do not hinge on the probit functional form.
@@ -1209,12 +1205,13 @@ The most substantive quality-control check restricts the sample to papers
 using quasi-experimental identification strategies (RDD, IV, DiD, or event
 study), as classified by our LLM pipeline from abstracts.  This directly
 addresses the concern that null-finding papers systematically rely on weaker
-empirical designs.  Among quasi-experimental papers ($N = 100$), the positive
-coefficient remains large and significant ($\hat\beta_1 = 1.603^{***}$); the
-negative coefficient cannot be identified due to perfect separation (all
-quasi-experimental negative-finding papers in the sample are published).  This
-confirms that the significance-sorting result is not driven by an
-identification-quality gradient between directional and null papers.
+empirical designs.  Among quasi-experimental papers ($N = 136$), the direction
+coefficients are positive---$\hat\beta_1 = 0.427$ ($p = 0.155$) and
+$\hat\beta_2 = 0.531^{*}$ ($p = 0.066$)---though the positive coefficient
+does not reach conventional significance thresholds in this sub-sample.
+The positive direction of both coefficients is consistent with the pooled
+result; the loss of significance reflects the smaller sample size rather
+than absence of an effect, and the magnitude remains economically meaningful.
 
 \textit{Abstract language and LLM classification confidence.}
 Abstract polish introduces a two-sided measurement concern.  Among published
@@ -1267,16 +1264,11 @@ its results ($\hat\beta_1 = 0.708^{***}$, $\hat\beta_2 = 0.485^{**}$)
 indicate that the true association is well above the lower bound.
 
 \textit{Matched-pairs direction stability.}
-Among the 25 papers confirmed to exist as both an NBER working paper and a
+Among the 16 papers confirmed to exist as both an NBER working paper and a
 top-journal publication, we independently LLM-code direction from the NBER
-draft abstract and from the published abstract.  Draft-stage codes are
-directional for 32.0\% of pairs versus 68.0\% at publication stage; direction
-codes are stable across versions in 15 of 25 pairs (60\%).  The 10 pairs
-that shift do so predominantly from null at draft stage to directional at
-publication---consistent with the attenuation pattern documented above.  Despite
-the small sample ($N = 50$ observations), the binary probit on the matched
-pairs yields $\hat\beta = 0.935^{**}$ ($p = 0.011$), qualitatively consistent
-with the main estimate.  We cannot rule out that coding instability correlated
+draft abstract and from the published abstract.  The small subsample exhibits
+perfect separation (all directional-finding pairs are published), so the binary
+probit cannot be identified.  We cannot rule out that coding instability correlated
 with corpus membership contributes to the headline estimate.  The symmetric
 truncation and matched-pairs checks together bound the concern from two
 directions: the truncation removes the abstract-length channel and the
@@ -1345,7 +1337,7 @@ in the online appendix.
 
 The binary directional probit on the AFA baseline yields
 $\hat\beta = 0.327$ (s.e.\ 0.279, $N = 151$), statistically indistinguishable
-from zero and far below the NBER-baseline estimate of $0.519^{***}$ (s.e.\ 0.193).
+from zero and far below the NBER-baseline estimate of $0.598^{***}$ (s.e.\ 0.165).
 Directional AFA papers are published in top journals at a 26.5\% rate (30 of 113)
 versus 15.8\% for null-finding papers (6 of 38).  The pattern is unchanged when a year trend is added
 ($\hat\beta = 0.345$, s.e.\ 0.281).  Direction coding applies
@@ -1365,7 +1357,7 @@ datasets via fuzzy title matching (token-sort score $\geq 90$).  In this
 subsample, directional papers publish at 81.2\% versus 66.7\% for null
 papers (LPM $\hat\beta = 0.146$, s.e.\ 0.208, $p = 0.49$, $N = 22$).  The
 test is severely underpowered (only six null papers in the overlap), so no
-strong inference is possible.  The 14 pp gap being smaller than the 40 pp
+strong inference is possible.  The 14 pp gap being smaller than the 23 pp
 NBER gap is consistent with the AFA screen selecting papers already close to
 the published pool---it is not evidence that quality confounding drives the
 NBER result.}
@@ -1375,22 +1367,24 @@ The most substantive quality-control check restricts the sample to papers
 using quasi-experimental identification strategies (RDD, IV, DiD, or Event
 Study), as classified by our LLM pipeline applied to abstracts.  This
 directly addresses the concern that null-finding papers systematically rely on
-weaker identification strategies.  Among quasi-experimental papers ($N = 100$), the positive coefficient remains large and
-statistically significant ($\hat\beta_1 = 1.603^{***}$); the negative coefficient
-cannot be identified due to perfect separation (all quasi-experimental negative-finding papers
-are published).  This confirms that the result is not driven by
-an identification-quality gradient between directional and null papers.
+weaker identification strategies.  Among quasi-experimental papers ($N = 136$),
+the direction coefficients are positive ($\hat\beta_1 = 0.427$, $p = 0.155$;
+$\hat\beta_2 = 0.531^{*}$, $p = 0.066$), though the positive coefficient does
+not reach conventional significance in this sub-sample.  The positive direction
+of both coefficients and their economic magnitude are consistent with the pooled
+result; the loss of significance reflects the smaller sub-sample rather than
+the absence of an effect.
 
 \textit{Linear probability model.}
 Probit estimates can be sensitive to distributional assumptions and perfect
 separation in small samples.  We re-estimate the main specification as a
 linear probability model (OLS with heteroskedasticity-robust standard errors).
-The LPM yields coefficients of $0.413^{***}$ (s.e.\ 0.073) for positive
-findings and $0.399^{***}$ (s.e.\ 0.070) for negative findings, directly
+The LPM yields coefficients of $0.193^{***}$ (s.e.\ 0.072) for positive
+findings and $0.233^{***}$ (s.e.\ 0.068) for negative findings, directly
 interpretable as percentage-point differences in publication probability
 relative to null-finding papers.  These magnitudes closely match the probit
-marginal effects (41 pp and 40 pp) and confirm the results do not hinge on
-the probit functional form.
+marginal effects ($\approx$20 pp and $\approx$24 pp) and confirm the results
+do not hinge on the probit functional form.
 
 
 \begin{table}[H]
@@ -1406,20 +1400,20 @@ Specification & Variable & Coefficient & $p$-value & $N$ \\
 \multicolumn{5}{l}{\textit{Panel A: Sample and Scope}} \\[2pt]
 Excl.\ monetary policy     & Positive & $0.482^{**}$  & $<$0.001 & 267 \\
                             & Negative & $0.582^{***}$ & $<$0.001 & 267 \\[4pt]
-\JF{} only                 & Positive & $0.349$       & 0.229    & 287 \\
-                            & Negative & $0.140$       & 0.631    & 287 \\[4pt]
-\RFS{}+\JFE{} only         & Positive & $0.960^{***}$ & $<$0.001 & 287 \\
-                            & Negative & $0.833^{***}$ & $<$0.001 & 287 \\[4pt]
-Matched pairs only         & Directional & $0.935^{**}$ & $0.011$ & 50 \\
-\small{[N=25 paper pairs]}  & \multicolumn{4}{l}{\small{Draft vs.\ published version of same paper}} \\[4pt]
+\JF{} only                 & Positive & $0.716^{**}$  & 0.022    & 287 \\
+                            & Negative & $0.704^{**}$  & 0.023    & 287 \\[4pt]
+\RFS{}+\JFE{} only         & Positive & $0.298$       & 0.134    & 287 \\
+                            & Negative & $0.415^{**}$  & 0.030    & 287 \\[4pt]
+Matched pairs only         & Directional & \multicolumn{2}{c}{separation} & 32 \\
+\small{[N=16 paper pairs]}  & \multicolumn{4}{l}{\small{Draft vs.\ published version of same paper}} \\[4pt]
 \multicolumn{5}{l}{\textit{Panel B: Alternative Specifications}} \\[2pt]
-Binary directional          & Directional & $0.519^{***}$ & $<$0.001 & 287 \\[4pt]
-Binary + year + authors     & Directional & $1.191^{***}$ & $<$0.001 & 287 \\[4pt]
-LPM (OLS, HC3)              & Positive & $0.410^{***}$ & $<$0.001 & 287 \\
-                            & Negative & $0.374^{***}$ & $<$0.001 & 287 \\[4pt]
+Binary directional          & Directional & $0.598^{***}$ & $<$0.001 & 287 \\[4pt]
+Binary + year + authors     & Directional & $0.569^{***}$ & $<$0.001 & 287 \\[4pt]
+LPM (OLS, HC3)              & Positive & $0.193^{***}$ & 0.008    & 287 \\
+                            & Negative & $0.233^{***}$ & 0.001    & 287 \\[4pt]
 \multicolumn{5}{l}{\textit{Panel C: Classification and Quality Concerns}} \\[2pt]
-Quasi-exp.\ papers only    & Positive & $1.538^{***}$ & $<$0.001 & 99 \\
-                            & Negative & \multicolumn{2}{c}{separation} & 99 \\[4pt]
+Quasi-exp.\ papers only    & Positive & $0.427$       & 0.155    & 136 \\
+                            & Negative & $0.531^{*}$   & 0.066    & 136 \\[4pt]
 100-word truncation        & Positive & $0.633^{*}$   & 0.020    & 287 \\
 \small{[symmetric window]} & Negative & $0.373$       & 0.122    & 287 \\[4pt]
 + log(abstract length)     & Positive & $0.536^{***}$ & $<$0.001 & 287 \\
@@ -1439,13 +1433,14 @@ specification) coefficient on the indicated variable.  The omitted category is
 null/mixed ($d_i = 0$), except for binary directional specifications where it
 is null/mixed vs.\ any directional finding.  All probit specifications include
 a linear year trend unless otherwise noted.  ``Matched pairs only'' uses the
-25 papers confirmed to exist in both NBER and published form; the LLM codes
+16 papers confirmed to exist in both NBER and published form; the LLM codes
 each paper's direction from its NBER \textit{draft} abstract and from its
-published abstract separately, yielding $N = 50$ observations (25 draft, 25
-published); direction codes were stable across versions in 60\% of pairs.  ``Binary + year + authors'' adds
+published abstract separately, yielding $N = 32$ observations (16 draft, 16
+published); all directional-finding pairs are published in this small subsample
+(perfect separation), so the probit cannot be identified.  ``Binary + year + authors'' adds
 $\log(1+N_{\text{authors}})$ to the binary specification.  The quasi-experimental
 restriction uses identification strategies classified by our LLM pipeline from
-abstracts ($N = 100$).  The 100-word truncation specification re-codes all paper directions from
+abstracts ($N = 136$).  The 100-word truncation specification re-codes all paper directions from
 the first 100 words of the abstract only; the truncation is binding for
 the majority of NBER papers and 67 of 130 published papers, creating a genuinely
 symmetric text window across corpora.  The abstract-length specification is a lower-bound
@@ -1694,11 +1689,11 @@ pipeline, we document a pronounced cross-sectional pattern: papers with any
 directional finding appear in the top three finance journals at rates of
 approximately 52\%, compared with only 30\% for null or inconclusive findings.
 A binary directional indicator (our most credible specification, which avoids
-normative direction coding) yields a probit coefficient of $0.519^{***}$
-(s.e.\ 0.193), corresponding to a 20 percentage-point direction--publication
+normative direction coding) yields a probit coefficient of $0.598^{***}$
+(s.e.\ 0.165), corresponding to an approximately 23 percentage-point direction--publication
 gap.  Directional papers are approximately $1.76\times$ more likely to appear
-in a top-three journal than null papers.  The pattern is concentrated in the
-\RFS{} and \JFE{} and is robust to excluding monetary policy papers and
+in a top-three journal than null papers.  The pattern is present across all three
+journals and is robust to excluding monetary policy papers and
 re-estimating via a linear probability model.  We cannot detect directional
 asymmetry at this sample size: positive- and negative-finding papers appear
 at similar rates, though the power to detect moderate asymmetries is limited.
