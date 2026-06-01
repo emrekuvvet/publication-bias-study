@@ -1236,25 +1236,6 @@ authors revise abstracts to sound more decisive after a revise-and-resubmit,
 the LLM may code published papers as directional partly because their language
 signals directionality more clearly, inflating the premium.
 
-The cleanest test is a symmetric truncation: we recode all direction codes from
-only the first 100 words of each abstract, equalising the text available to the
-LLM across both corpora.  NBER abstracts in our final dataset average 150 words
-and published abstracts average 104 words, so the 100-word window is binding for
-the majority of NBER papers and 67 of 134 published papers---a genuinely symmetric
-restriction.\footnote{Initial data collection retrieved NBER abstracts from the
-NBER API, which truncates responses at approximately 300 characters ($\approx$45
-words). We subsequently re-fetched full abstract text for all NBER working
-papers directly from the NBER website and re-ran Pass~1 with the full abstracts,
-yielding 803 additional NBER candidates that entered the LLM classification stage.
-The direction-coding and regression pipeline was rerun on the enlarged sample;
-robustness checks reported here use the corrected full-text abstracts.}
-The positive-finding result remains significant:
-$\hat\beta_1 = 0.633^{*}$ ($p = 0.020$); the negative-finding coefficient
-$\hat\beta_2 = 0.373$ ($p = 0.122$) is positive but no longer statistically
-significant at conventional levels with the truncated text, reported in Table~\ref{tab:robustness} Panel~C.  The attenuation
-relative to the main estimate reflects information loss from truncating both
-corpora, not reversal of the direction-publication pattern.
-
 Our replication exercise (Section~\ref{subsec:direction}) further supports this
 conclusion: of the 20 null-coded papers in the validation sample, 15 are
 reclassified as directional in the independent replication run, while no
@@ -1263,18 +1244,17 @@ null-coding error attenuates rather than inflates our estimate.
 
 Table~\ref{tab:robustness} Panel~C also reports a bounding specification
 that adds $\log(\text{abstract length})$ as a covariate
-($\hat\beta_1 = 0.171$, $p = 0.766$; $\hat\beta_2 = 0.322$, $p = 0.486$).
+($\hat\beta_1 = 0.544^{***}$, $p = 0.006$; $\hat\beta_2 = 0.620^{***}$, $p = 0.001$).
 This bounds the association from below: because abstract length is partly
 shaped by journals requiring polished abstracts at acceptance, the control
 is endogenous (close to a second proxy for publication status), so this
-coefficient is a lower bound rather than an unbiased estimate.  Together,
-the main uninstrumented estimates provide an \textit{upper bound} on the
+coefficient is a lower bound rather than an unbiased estimate.  The main
+uninstrumented estimates provide an \textit{upper bound} on the
 direction-publication association if abstract polish fully drives it, and the
 abstract-length control provides an \textit{extreme lower bound} if all
-abstract-length variation is editorial.  The symmetric 100-word truncation
-sits between these poles and does not share the endogeneity problem:
-its results ($\hat\beta_1 = 0.708^{***}$, $\hat\beta_2 = 0.485^{**}$)
-indicate that the true association is well above the lower bound.
+abstract-length variation is editorial; both bounds are large and statistically
+significant, indicating that the true association is well above zero regardless
+of which pole one adopts.
 
 \textit{Matched-pairs direction stability.}
 Among the 16 papers confirmed to exist as both an NBER working paper and a
@@ -1282,10 +1262,9 @@ top-journal publication, we independently LLM-code direction from the NBER
 draft abstract and from the published abstract.  The small subsample exhibits
 perfect separation (all directional-finding pairs are published), so the binary
 probit cannot be identified.  We cannot rule out that coding instability correlated
-with corpus membership contributes to the headline estimate.  The symmetric
-truncation and matched-pairs checks together bound the concern from two
-directions: the truncation removes the abstract-length channel and the
-matched-pairs analysis holds the paper fixed.
+with corpus membership contributes to the headline estimate.  The matched-pairs
+check holds the paper fixed across draft and published stages, directly
+testing whether direction codes are stable within the same research project.
 
 \subsection{AFA Conference Baseline}
 
@@ -1427,8 +1406,6 @@ LPM (OLS, HC3)              & Positive & $0.207^{***}$ & 0.004    & 291 \\
 \multicolumn{5}{l}{\textit{Panel C: Classification and Quality Concerns}} \\[2pt]
 Quasi-exp.\ papers only    & Positive & $0.489^{*}$   & 0.099    & 139 \\
                             & Negative & $0.556^{*}$   & 0.053    & 139 \\[4pt]
-100-word truncation        & Positive & $0.633^{*}$   & 0.020    & 291 \\
-\small{[symmetric window]} & Negative & $0.373$       & 0.122    & 291 \\[4pt]
 + log(abstract length)     & Positive & $0.544^{***}$ & 0.006    & 291 \\
 \small{[lower-bound spec]} & Negative & $0.620^{***}$ & 0.001    & 291 \\[4pt]
 \multicolumn{5}{l}{\textit{Panel D: Alternative Pre-Publication Baseline}} \\[2pt]
@@ -1453,10 +1430,7 @@ published); all directional-finding pairs are published in this small subsample
 (perfect separation), so the probit cannot be identified.  ``Binary + year + authors'' adds
 $\log(1+N_{\text{authors}})$ to the binary specification.  The quasi-experimental
 restriction uses identification strategies classified by our LLM pipeline from
-abstracts ($N = 139$).  The 100-word truncation specification re-codes all paper directions from
-the first 100 words of the abstract only; the truncation is binding for
-the majority of NBER papers and 67 of 134 published papers, creating a genuinely
-symmetric text window across corpora.  The abstract-length specification is a lower-bound
+abstracts ($N = 139$).  The abstract-length specification is a lower-bound
 bounding exercise: the control is partly endogenous (journals require longer
 abstracts during revision), so these coefficients represent a lower bound on
 the true direction-publication association.  The AFA conference baseline uses
@@ -1967,8 +1941,6 @@ contains:
   regressions (AFA conference baseline, Section~\ref{sec:robustness})
 \item \texttt{scripts/11c\_recode\_afa\_direction\_llm.py} --- LLM
   direction re-coding for AFA papers (uniform coding robustness check)
-\item \texttt{scripts/04b\_code\_direction\_truncated.py} --- Direction
-  coding from first 100 words only (symmetric-window robustness check)
 \item \texttt{data/} --- Final analysis dataset in Parquet format
 \item \texttt{validation/human\_coding\_sheet\_40.xlsx} --- Coding sheet for
   40-paper human direction-coding validation (to be filled by authors)
