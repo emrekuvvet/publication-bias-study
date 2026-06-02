@@ -258,6 +258,18 @@ $\hat\beta_{\text{neg}} = -0.305$ ($p = 0.20$), both insignificant.
 Cross-journal differences are not statistically distinguishable at available
 sample sizes (see Section~\ref{sec:results}).
 
+A complementary analysis of the \textit{within-paper} distribution of test
+statistics reveals a distinct pattern.  Applying the \citet{Brodeur2016} caliper
+test to 7,610 $|z|$-statistics extracted from 112 published papers, we find
+significant threshold bunching in \JFE{} papers (caliper ratio $= 1.27$,
+$p = 0.006$) but not in \JF{} or \RFS{} papers.  Strikingly, the bunching is
+concentrated in \textit{negative-finding papers}---papers concluding that
+interventions are harmful or ineffective---which show a caliper ratio of 1.26
+($p = 0.011$), while positive-finding papers show no bunching.  This suggests
+that while editorial selection does not differentially favor directional papers,
+researchers studying anti-intervention findings may engage in more aggressive
+within-paper specification search to achieve publishable significance levels.
+
 Sub-period estimates across three regulatory regimes (2000--2007, 2008--2015,
 2016--2024) are uniformly insignificant, with all direction coefficients
 well below conventional significance thresholds.
@@ -1107,6 +1119,159 @@ $\hat\beta_2 = 0.190$ ($p = 0.489$), both statistically indistinguishable from
 zero.  The consistent absence of significant direction coefficients across all
 three sub-periods is concordant with the pooled null result.
 
+\subsection{Within-Paper Test Statistic Distributions}
+\label{subsec:pvalue_dist}
+
+A limitation of the cross-sectional design is that it cannot detect
+\textit{within-paper} manipulation of reported statistics---p-hacking or
+selective reporting of specifications that push results across the significance
+threshold.  To complement the directional analysis, we apply the
+\citet{Brodeur2016} caliper and density-discontinuity tests to the
+distribution of test statistics extracted from the published papers themselves.
+
+\medskip
+\noindent\textbf{Data.}
+We extract all regression-table test statistics from the PDFs of the 134
+published papers using \texttt{pdfplumber} for text extraction and a
+large language model to parse coefficient--standard-error pairs into
+absolute $z$-values.  After removing summary-statistics tables,
+intercepts, and fixed-effect indicators, the sample contains
+\textbf{7,610 test statistics} from \textbf{112 papers}
+(JF: 1,304; RFS: 2,594; JFE: 3,712).
+The remaining 22 papers are either pure theory models with no regression
+tables or have PDFs that could not be fully parsed.
+
+\medskip
+\noindent\textbf{Tests.}
+The \textit{caliper test} \citep{Brodeur2016} compares the mass of
+$|z|$-statistics in the interval $(1.645, 1.96)$---just below the
+conventional 5\% threshold---to the mass in $(1.96, 2.275)$---just
+above it.  Under a smooth null distribution the ratio should equal one;
+values above one indicate excess bunching below the threshold, consistent
+with p-hacking.  The \textit{density discontinuity test} estimates
+whether there is a discrete jump in the density of $|z|$ at the $z=1.96$
+threshold using a local-polynomial estimator; a negative discontinuity
+indicates that the density drops at the boundary, also consistent with
+threshold manipulation.
+
+\medskip
+\noindent\textbf{Results.}
+Table~\ref{tab:pvalue_dist} reports caliper ratios and discontinuity
+estimates for the full sample, by journal, and by finding direction.
+Figure~\ref{fig:zdist_full} displays the $|z|$-distribution for the
+full sample; Figures~\ref{fig:zdist_journals} and \ref{fig:zdist_direction}
+show journal- and direction-level panels.
+
+\begin{table}[ht]
+\centering
+\caption{Within-Paper Test Statistic Distribution Tests}
+\label{tab:pvalue_dist}
+\begin{singlespace}
+\small
+\begin{tabular}{lrrrrrr}
+\hline\hline
+Subset & $N$ & \% Sig & Caliper ratio & Caliper $\chi^2$ & Caliper $p$ & Disc.\ $p$ \\
+\hline
+Full sample        & 7,610 & 57.3\% & 1.10 & 2.30 & 0.129 & \textbf{0.002} \\[2pt]
+\textit{By journal:} \\
+\quad JF           & 1,304 & 65.0\% & 0.93 & 0.21 & 0.645 & \textbf{$<$0.001} \\
+\quad RFS          & 2,594 & 59.2\% & 0.95 & 0.22 & 0.638 & 0.153 \\
+\quad JFE          & 3,712 & 53.3\% & \textbf{1.27} & 7.67 & \textbf{0.006} & 0.690 \\[2pt]
+\textit{By finding direction:} \\
+\quad Positive      & 2,624 & 61.5\% & 0.94 & 0.33 & 0.568 & 0.516 \\
+\quad Negative      & 3,346 & 54.6\% & \textbf{1.26} & 6.43 & \textbf{0.011} & 0.879 \\
+\quad Null/mixed    & 1,640 & 56.2\% & 1.05 & 0.11 & 0.740 & \textbf{$<$0.001} \\
+\hline\hline
+\end{tabular}
+\begin{minipage}{\textwidth}
+\smallskip
+\footnotesize
+\textit{Notes:}
+$N$ is the number of $|z|$-statistics after cleaning (removing values $<0.1$ and
+$>50$, and non-numeric entries).
+\textit{Caliper ratio} is the ratio of mass in $(1.645, 1.96)$ to mass in
+$(1.96, 2.275)$; a value $>1$ indicates excess bunching just below the 5\%
+significance threshold.
+\textit{Caliper $\chi^2$} is the chi-squared statistic for the equality of the
+two mass counts; \textit{Caliper $p$} is the associated $p$-value.
+\textit{Disc.\ $p$} is the $p$-value from the \citet{Brodeur2016}
+density-discontinuity test at $|z|=1.96$, estimated by local polynomial.
+Bold entries are significant at the 5\% level.
+\end{minipage}
+\end{singlespace}
+\end{table}
+
+Three patterns stand out.  First, the \JFE{} exhibits statistically
+significant caliper bunching: the ratio of mass just below to just above
+the 5\% threshold is 1.27 ($\chi^2 = 7.67$, $p = 0.006$), indicating
+that reported test statistics in \JFE{} papers are about 27\% more
+likely to fall marginally below the significance cutoff than marginally
+above it.  The \JF{} and \RFS{} show no evidence of caliper bunching
+(ratios 0.93 and 0.95, both $p > 0.60$).  Second, the full-sample
+density-discontinuity test detects a sharp drop in density at $|z|=1.96$
+(Disc.\ $p = 0.002$), consistent with the distribution being shaped in
+part by threshold-seeking behavior.  Third, breaking by finding direction
+reveals that the caliper bunching is concentrated in
+\textit{negative-finding papers}---papers concluding that an intervention
+is harmful or ineffective---where the ratio reaches 1.26 ($p = 0.011$).
+Positive-finding and null-finding papers show no significant bunching.
+
+This last result is novel.  The cross-sectional analysis (Sections~\ref{sec:results}--\ref{sec:robustness}) finds no evidence that
+journals differentially select positive versus negative papers.  Yet
+within published papers, the test statistics of negative-conclusion
+research show detectable threshold manipulation, while those of
+positive-conclusion research do not.  A plausible interpretation is that
+papers arguing that an intervention is harmful face higher evidentiary
+hurdles---either self-imposed by authors who anticipate greater scrutiny
+or enforced by reviewers---leading authors to search more aggressively
+for specifications that clear the significance bar.  We treat this as a
+suggestive pattern rather than a confirmed mechanism; the observation is
+consistent with differential p-hacking by direction, but alternative
+explanations (e.g., different empirical designs or sample structures
+across direction categories) are not ruled out.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{figures/fig1_zdist_full.pdf}
+\caption{Distribution of absolute $z$-statistics, full sample.
+Dashed vertical lines mark $|z|=1.645$ (10\% threshold) and $|z|=1.96$
+(5\% threshold).  The smooth curve is the theoretical half-normal
+density.  The caliper ratio (mass in $[1.645, 1.96]$ relative to
+$[1.96, 2.275]$) is 1.10 ($\chi^2 = 2.30$, $p = 0.129$).  Sample:
+7,610 test statistics from 112 published papers.}
+\label{fig:zdist_full}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{ccc}
+\includegraphics[width=0.32\textwidth]{figures/fig3_JF_zdist.pdf} &
+\includegraphics[width=0.32\textwidth]{figures/fig3_RFS_zdist.pdf} &
+\includegraphics[width=0.32\textwidth]{figures/fig3_JFE_zdist.pdf}
+\end{tabular}
+\caption{$|z|$-distributions by journal.
+\textit{Left}: JF (1,304 statistics, caliper ratio 0.93, $p=0.645$).
+\textit{Center}: RFS (2,594 statistics, caliper ratio 0.95, $p=0.638$).
+\textit{Right}: JFE (3,712 statistics, caliper ratio \textbf{1.27}, $p=\mathbf{0.006}$).
+Only JFE shows statistically significant caliper bunching.}
+\label{fig:zdist_journals}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{ccc}
+\includegraphics[width=0.32\textwidth]{figures/fig2a_zdist_positive.pdf} &
+\includegraphics[width=0.32\textwidth]{figures/fig2b_zdist_negative.pdf} &
+\includegraphics[width=0.32\textwidth]{figures/fig2c_zdist_null.pdf}
+\end{tabular}
+\caption{$|z|$-distributions by finding direction.
+\textit{Left}: Positive-finding papers (2,624 statistics, caliper ratio 0.94, $p=0.568$).
+\textit{Center}: Negative-finding papers (3,346 statistics, caliper ratio \textbf{1.26}, $p=\mathbf{0.011}$).
+\textit{Right}: Null/mixed-finding papers (1,640 statistics, caliper ratio 1.05, $p=0.740$).
+Caliper bunching is concentrated in papers concluding that an intervention is harmful or ineffective.}
+\label{fig:zdist_direction}
+\end{figure}
+
 %% ============================================================
 \section{Robustness}
 \label{sec:robustness}
@@ -1603,17 +1768,29 @@ This identification-quality premium is the dominant driver of publication in
 our sample and is consistent with editorial reward for methodological rigor
 rather than for finding direction.
 
+A complementary analysis of within-paper test statistic distributions
+(\citealt{Brodeur2016} caliper test; 7,610 $|z|$-statistics from 112 papers)
+reveals that \JFE{} papers exhibit significant threshold bunching (caliper
+ratio $= 1.27$, $p = 0.006$), while \JF{} and \RFS{} papers do not.  The
+bunching is concentrated in negative-finding papers (caliper ratio $= 1.26$,
+$p = 0.011$)---papers that conclude interventions are harmful or
+ineffective---while positive-finding papers show no significant bunching.
+The joint pattern suggests that the \textit{absence} of direction-based
+editorial selection coexists with \textit{within-paper} threshold
+manipulation, particularly among anti-intervention findings in the \JFE{}.
+
 We interpret these results throughout as cross-sectional associations.  Our
 design identifies a null association between finding direction and publication
 status, but cannot rule out that this reflects an upstream equilibrium in
 submission behavior rather than editorial neutrality.  Two practical
 implications follow.  For researchers and meta-analysts, the published
 distribution in this domain does not appear systematically biased toward
-directional findings; concerns about significance-sorting in this specific
-corpus do not find empirical support.  For journal editors, the results are
-consistent with a selection process that rewards identification quality over
-finding direction, which may constitute a desirable editorial norm for
-policy-relevant research.
+directional findings at the editorial-selection level; concerns about
+cross-sectional significance-sorting in this specific corpus do not find
+empirical support.  For journal editors, the results are consistent with a
+selection process that rewards identification quality over finding direction,
+though the within-paper test statistic patterns suggest that specification
+searching remains a concern at the research-design stage.
 
 %% ============================================================
 \newpage
