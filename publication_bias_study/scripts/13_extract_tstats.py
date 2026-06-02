@@ -11,6 +11,8 @@ import json
 import time
 import re
 from pathlib import Path
+from dotenv import load_dotenv
+load_dotenv()
 
 EXTRACTION_PROMPT = """You are extracting ALL test statistics from a finance research paper.
 
