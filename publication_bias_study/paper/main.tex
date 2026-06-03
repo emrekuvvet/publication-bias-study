@@ -660,7 +660,7 @@ For each in-scope paper, we assign a direction code to the paper's primary
 empirical finding: $+1$ (the government intervention produced a positive or
 beneficial outcome), $-1$ (negative or harmful), or $0$ (null, mixed, or
 inconclusive).  Papers with multiple interventions are coded on the primary
-intervention identified in the title or opening sentence of the abstract.
+intervention identified from the abstract.
 
 The coding prompt instructs the model to code +1 if the intervention produced
 a \textit{positive or beneficial outcome relative to its stated regulatory
@@ -1238,8 +1238,8 @@ above it.  Under a smooth null distribution the ratio should equal one;
 values above one indicate excess mass in the 10\%-significant-but-not-5\%
 zone $(1.645, 1.96)$ relative to the just-5\%-significant zone $(1.96,
 2.275)$, consistent with selective reporting of marginally significant
-specifications or specification search aimed at clearing the 10\%
-threshold.  The \textit{density discontinuity test} estimates
+specifications or specification search aimed at clearing the 5\%
+significance threshold.  The \textit{density discontinuity test} estimates
 whether there is a discrete jump in the density of $|z|$ at the $z=1.96$
 threshold using a local-polynomial estimator; a negative discontinuity
 indicates that the density drops at the boundary, also consistent with
@@ -1836,7 +1836,7 @@ of marginally significant specifications, not fabrication of large effects.
 
 \subsection{What the Data Can and Cannot Tell Us}
 
-Our empirical design documents a cross-sectional association between finding
+Our empirical design estimates the cross-sectional association between finding
 direction and publication status.  This association is consistent with two
 broad classes of mechanism, and distinguishing them is important because they
 have different policy implications.  Our data cannot distinguish between them,
@@ -2288,7 +2288,7 @@ contains:
 \end{itemize}
 
 %% ============================================================
-\section{In-Scope Classifier Validation}
+\section{LLM Pipeline Validation}
 \label{app:inscope_validation}
 
 \paragraph{Direction-coding reliability.}
