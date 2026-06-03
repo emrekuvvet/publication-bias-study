@@ -902,7 +902,7 @@ sample into three sub-periods corresponding to distinct regulatory regimes:
 2000--2007 (pre-crisis baseline), 2008--2015 (financial crisis and post-crisis
 regulatory response), and 2016--2024 (post-Dodd-Frank implementation).  We
 report results for all three sub-periods with appropriate caveats about sample
-size for the earliest period ($N = 28$).
+size for the earliest period ($N = 50$).
 
 %% ============================================================
 \section{Results}
@@ -996,7 +996,12 @@ significant at conventional levels.
 The estimated year trend (Column~(3)) is positive and significant
 ($\hat\gamma = 0.033^{***}$, s.e.\ 0.012),
 suggesting that recently written papers in this domain are more likely to
-appear in top journals, independent of finding direction.
+appear in top journals, independent of finding direction.  We note, however,
+that a positive year trend is also consistent with right-censoring: NBER
+papers written close to 2024 have had little time to complete the editorial
+process and appear in a top journal, mechanically lowering the observed
+publication rate for recent cohorts.  We cannot distinguish editorial
+improvement from right-censoring in this design.
 In Column~(5), the year trend remains statistically significant ($\hat\gamma = 0.034^{***}$,
 s.e.\ 0.012) after controlling for team size.
 Decade fixed effects (Column~(4)) leave the direction coefficients essentially
@@ -1145,7 +1150,7 @@ limiting statistical power for journal-specific tests.
 \label{subsec:time}
 
 The following sub-period analysis is exploratory.  Sub-sample sizes are small
-($N = 49$, $94$, and $144$ for the three periods) and the results should be
+($N = 50$, $95$, and $146$ for the three periods) and the results should be
 interpreted as descriptive evidence, not confirmatory tests.  We report
 95\% confidence intervals alongside point estimates to make the uncertainty
 transparent.
@@ -1207,8 +1212,11 @@ The \textit{caliper test} \citep{Brodeur2016} compares the mass of
 $|z|$-statistics in the interval $(1.645, 1.96)$---just below the
 conventional 5\% threshold---to the mass in $(1.96, 2.275)$---just
 above it.  Under a smooth null distribution the ratio should equal one;
-values above one indicate excess bunching below the threshold, consistent
-with p-hacking.  The \textit{density discontinuity test} estimates
+values above one indicate excess mass in the 10\%-significant-but-not-5\%
+zone $(1.645, 1.96)$ relative to the just-5\%-significant zone $(1.96,
+2.275)$, consistent with selective reporting of marginally significant
+specifications or specification search aimed at clearing the 10\%
+threshold.  The \textit{density discontinuity test} estimates
 whether there is a discrete jump in the density of $|z|$ at the $z=1.96$
 threshold using a local-polynomial estimator; a negative discontinuity
 indicates that the density drops at the boundary, also consistent with
@@ -1820,7 +1828,6 @@ non-causal studies in this specific domain, the identification filter would
 generate no direction sorting in the aggregate.  Our data are consistent with
 this interpretation, though our design cannot confirm it.
 
-\paragraph{What the data can and cannot tell us.}
 Our design cannot distinguish between these mechanisms, and both are consistent
 with our null result.  Without submission-level data (desk-rejection rates by
 direction, time-to-first-decision, share of null-result papers sent out for
@@ -1901,13 +1908,6 @@ quality assessment across all 291 papers---using full paper text to classify
 identification strategy, sample size, and data quality---would provide a more
 definitive quality control and is a natural extension of this work.
 
-We acknowledge that the LLM-based identification-strategy coding from abstracts
-is itself imperfect: fewer than half of abstracts explicitly name their
-identification strategy, so the LLM infers it from other signals.  A hand-coded
-quality assessment across all 291 papers---using full paper text to classify
-identification strategy, sample size, and data quality---would provide a more
-definitive quality control and is a natural extension of this work.
-
 
 \medskip
 \noindent\textbf{NBER selection and the direction of potential bias.}
@@ -1922,6 +1922,17 @@ Absent such data, the most reassuring feature of our design is the close
 alignment of direction rates between NBER ($79.6\%$ directional) and published
 ($79.1\%$ directional), which suggests little residual direction-based sorting
 at least within this elite sample.
+
+\medskip
+\noindent\textbf{Right-censoring in the year trend.}
+The positive and significant year trend ($\hat\gamma \approx 0.033^{***}$) is
+consistent with genuine improvement in publication prospects for recent papers,
+but an equally plausible mechanical explanation is right-censoring: NBER
+working papers from 2020--2024 have had fewer years to complete the editorial
+pipeline and appear in a top journal.  Our cross-section design cannot
+distinguish these alternatives.  The year trend should therefore be interpreted
+as descriptive rather than as evidence that finance journals have become more
+open to government-intervention research over time.
 
 \medskip
 \noindent\textbf{Multiple comparisons.}
