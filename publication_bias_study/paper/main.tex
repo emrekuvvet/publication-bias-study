@@ -123,7 +123,7 @@ the direction of each paper's primary empirical finding and compare
 cross-sectional publication rates.  We find no significant difference in
 publication rates across finding directions: positive-finding papers appear in
 the \JF{}, \RFS{}, or \JFE{} at 45.6\%, negative-finding papers at 46.1\%,
-and null-finding papers at 46.7\% ($\chi^2 = 0.017$, $p = 0.99$).  A binary
+and null-finding papers at 46.7\% ($\chi^2 = 0.017$, $p = 0.992$).  A binary
 directional probit coefficient is $-0.020$ (s.e.\ 0.182, $p = 0.91$), and
 the three-way direction indicators are uniformly insignificant across
 specifications.  The only robust predictor of top-journal publication is the
@@ -232,7 +232,7 @@ in the published record.  Publication rates are nearly identical across all
 three direction categories: positive-finding papers appear in top journals at
 45.6\%, negative-finding papers at 46.1\%, and null-finding papers at 46.7\%.
 A $\chi^2$ test of homogeneity cannot reject equality ($\chi^2 = 0.017$,
-$p = 0.99$), and a two-sample $z$-test for equality of the positive and
+$p = 0.992$), and a two-sample $z$-test for equality of the positive and
 negative rates likewise fails to reject ($z = -0.07$, $p = 0.94$).
 
 Probit models confirm the absence of a direction premium.  The binary
@@ -279,8 +279,8 @@ We then apply the identical extraction pipeline to the full-text PDFs of the
 157 in-scope NBER working papers, obtaining 8,351 pre-publication test
 statistics from 125 papers.  The NBER caliper ratio is 1.01 ($p = 0.849$)
 overall, and 1.00 ($p = 0.964$) for negative-finding papers---essentially
-exactly one.  The overall significance rate is identical across
-samples ($57.1\%$), ruling out differences in statistical power.  The bunching
+exactly one.  The overall significance rate is nearly identical across
+samples (published: $57.1\%$; NBER: $55.5\%$), ruling out differences in statistical power.  The bunching
 does not appear to be a property of the underlying research designs in this
 domain; it is concentrated in the published record and absent from pre-publication
 counterparts, consistent with revision-stage pressure---though the cross-sectional
@@ -1089,12 +1089,16 @@ negative findings at $46.1\% / 46.7\% = 0.99$.
 Both ratios are indistinguishable from 1.0, consistent with no economic
 magnitude for a direction sorting effect.
 
-For comparison, \citet{Brodeur2016} estimate that the relative likelihood of a
-significant versus borderline-insignificant result appearing in top economics
-journals is roughly 1.5--2.0.  Our $\approx1.0\times$ ratios suggest that the
-finance-regulation literature does not exhibit an analogous pattern; if
-anything, the absence of a direction premium in this policy-relevant domain
-is itself a noteworthy finding.
+We note that the direction-to-null publication ratios ($\approx$1.0$\times$)
+are not directly comparable to \citet{Brodeur2016}'s caliper estimates of
+1.5--2.0$\times$: Brodeur's figures measure within-paper specification-selection
+pressure (the ratio of test statistics just above versus just below a significance
+threshold in the published distribution), while our 1.0$\times$ ratios measure
+cross-sectional publication likelihood (whether directional papers reach print at
+all).  The within-paper comparison to Brodeur appears in Section~\ref{subsec:pvalue_dist},
+where our published caliper ratio of 1.20 is lower than Brodeur's 1.5--2.0
+range.  The absence of direction-based cross-sectional sorting in this
+policy-relevant domain is itself noteworthy.
 
 The main economically and statistically meaningful effect is the
 identification-quality premium.  Papers using RDD, IV, DiD, or event-study
@@ -1147,10 +1151,12 @@ Pseudo $R^2$    & 0.011         & 0.065         & 0.027         \\
 \par\smallskip
 \begin{minipage}{\textwidth}
 \small
-\textit{Notes.} Each column re-estimates equation~\eqref{eq:probit}
-treating publication in the specified journal as the outcome (versus any of
-the remaining two journals or the NBER-only group).  Standard errors in
-parentheses.  *** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$.
+\textit{Notes.} Each column uses the 157 NBER-only papers (Published $= 0$)
+and the published papers from the specified journal (Published $= 1$) only;
+published papers from the remaining two journals are excluded, giving
+$N = 183$, $205$, and $217$ respectively.  Each column therefore compares
+each journal's directional mix against the shared NBER pre-publication pool.
+Standard errors in parentheses.  *** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$.
 The \JF{} sample contains only 26 in-scope published articles in 2000--2024,
 limiting statistical power for journal-specific tests.
 \end{minipage}
@@ -1340,6 +1346,9 @@ the published caliper ratio is 1.52 ($p < 0.001$) while the NBER ratio is
 0.53 that is as clean a contrast as the data can produce.
 Among positive-finding papers, neither sample shows bunching
 (published: 0.94; NBER: 0.99; both $p > 0.56$).
+For null-finding papers the pattern reverses: the NBER caliper ratio (1.14, $p = 0.442$)
+exceeds the published ratio (1.05, $p = 0.740$), though both are statistically
+indistinguishable from one.
 Figure~\ref{fig:nber_vs_pub} displays the side-by-side $|z|$-distributions for
 the full sample and for the negative-finding subsample.
 
@@ -1623,11 +1632,14 @@ in the online appendix for completeness.
 The binary directional probit on the AFA baseline yields
 $\hat\beta = 0.327$ (s.e.\ 0.279, $N = 151$), statistically indistinguishable
 from zero.  The NBER-baseline estimate is $-0.020$ (s.e.\ 0.182), likewise
-indistinguishable from zero.  Both estimates are consistent: neither the
-pre-journal AFA stage nor the NBER comparison shows evidence of direction-based
-sorting.  The two null results are mutually reinforcing: the AFA test
-supports the NBER result as a consistency check, and both
-are consistent with no publication bias in this domain.
+indistinguishable from zero.  Neither estimate rejects the null of no
+direction-based sorting.  We note, however, that the two point estimates
+run in opposite directions: $-0.020$ (NBER) versus $+0.327$ (AFA).  This
+divergence is consistent with sampling variation given the low power of both
+tests; it also limits the degree to which the AFA result independently
+corroborates the NBER null.  Both estimates are individually consistent with
+no direction premium, and neither the pre-journal AFA stage nor the NBER
+comparison shows statistically significant evidence of directional selection.
 Directional AFA papers are published in top journals at a 25.9\% rate (30 of 116)
 versus 17.1\% for null-finding papers (6 of 35).  The pattern is unchanged when a year trend is added
 ($\hat\beta = 0.345$, s.e.\ 0.281).  Direction coding applies
@@ -1780,10 +1792,11 @@ distribution structurally; our NBER benchmark observes it directly, confirming
 that the distortion is specific to the post-submission stage.  Chen's bound
 shows that the \textit{far} right tail of published t-statistics ($|t|>4$)
 is too fat to be explained by p-hacking alone, implying that most published
-effects are genuine.  Our caliper evidence is consistent: the bunching we
-document is concentrated just above $|z|=1.96$---the lowest significance
-threshold---while the broader distribution shows a 55--57\% significance
-rate that is stable across published and pre-publication samples.  Real effects
+effects are genuine.  Our caliper evidence is consistent: the excess mass we document is
+concentrated just \textit{below} the 5\% threshold ($|z| \in (1.645, 1.96)$,
+the 10\%-significant-but-not-5\% zone), while the broader distribution shows
+a 55--57\% significance rate that is stable across published and
+pre-publication samples.  Real effects
 produce the fat tail; revision-stage pressure produces the excess mass in the borderline 10\%-significant zone just below 1.96.
 The two observations reinforce rather than contradict each other.
 
@@ -1951,6 +1964,15 @@ primary regression.  The cross-journal and sub-period analyses are exploratory.
 All main results ($p > 0.90$) fall far from conventional significance
 thresholds; the concern is power rather than false discovery.
 
+Our caliper analysis runs twelve comparisons across the published sample (full
+sample, three journals, three directions, two tests) and mirrors them for the
+NBER benchmark.  Applying a Bonferroni correction at the 5\% level requires
+$p < 0.004$ for any single caliper comparison.  The full-sample published caliper
+($p = 0.002$), the \JFE{} caliper ($p < 0.001$), the negative-direction caliper
+($p < 0.001$), and both corresponding NBER comparisons ($p > 0.84$) all survive
+this threshold, so the core contrast between published bunching and NBER
+non-bunching is robust to multiple-comparison correction.
+
 %% ============================================================
 \section{Conclusion}
 \label{sec:conclusion}
@@ -1961,7 +1983,7 @@ government-intervention literature.  Using 291 in-scope papers spanning
 2000--2024, classified and direction-coded with an LLM-assisted pipeline, we
 find no evidence of direction-based sorting.  Publication rates are nearly
 identical across positive-finding (45.6\%), negative-finding (46.1\%), and
-null-finding (46.7\%) papers ($\chi^2 = 0.017$, $p = 0.99$).  A binary
+null-finding (46.7\%) papers ($\chi^2 = 0.017$, $p = 0.992$).  A binary
 directional probit coefficient of $-0.020$ (s.e.\ 0.182, $p = 0.91$) is
 statistically indistinguishable from zero and is robust across all six
 specifications, all three journals individually, and all three sub-periods.
@@ -1993,7 +2015,9 @@ in the finance literature.
 
 The joint pattern suggests that the \textit{absence} of direction-based
 editorial selection coexists with \textit{within-paper} threshold manipulation
-originating during revision, particularly among anti-intervention findings in the \JFE{}.
+consistent with revision-stage pressure, particularly among anti-intervention findings in the \JFE{},
+though our cross-sectional design cannot rule out that this partly reflects compositional
+differences between NBER and published samples.
 
 We interpret these results throughout as cross-sectional associations.  Our
 design identifies a null association between finding direction and publication
@@ -2110,8 +2134,9 @@ produced a POSITIVE or BENEFICIAL outcome (e.g., improved market
 quality, reduced systemic risk, better investor protection); -1 if it
 produced a NEGATIVE or HARMFUL outcome (e.g., reduced liquidity, higher
 costs, unintended consequences, welfare losses); 0 if the finding is
-NULL, MIXED, or INCONCLUSIVE.  Coding rule: code the sign of the
-estimated coefficient on the primary intervention variable, NOT the
+NULL, MIXED, or INCONCLUSIVE.  Coding rule: code by whether the estimated
+effect represents an improvement or worsening relative to the stated regulatory
+goal, NOT the arithmetic sign of the regression coefficient and NOT the
 authors' normative framing.  Return JSON with: direction (1, -1, or
 0), confidence (``high'', ``medium'', or ``low''), rationale (one
 sentence).
