@@ -692,8 +692,7 @@ Appendix Table~\ref{tab:confusion_matrix} reports the full confusion matrix.
 
 \textit{Human validation.}
 To assess agreement between LLM codes and a human standard, we drew a stratified
-random sample of 40 papers (20 published, 20 NBER) and asked the authors to
-independently code the direction of each paper's primary finding using only the
+random sample of 40 papers (20 published, 20 NBER) and independently coded the direction of each paper's primary finding using only the
 abstract, without reference to the LLM output.  The human coding sheet and
 comparison script (\texttt{scripts/13\_human\_validation\_kappa.py}) are
 included in the replication package.  Human-coded results and the corresponding
@@ -851,7 +850,7 @@ points in the pipeline.}  Because only 11.9\% of published papers are matched
 to an NBER counterpart, the NBER and journal samples are largely non-overlapping
 cross-sections selected by different institutional processes.  The constructed
 ``publication rate'' of 46\% is a function of the relative sizes of the two
-corpora the authors chose to assemble; it depends on NBER program coverage,
+corpora we assembled; it depends on NBER program coverage,
 abstract availability, and the decision to count unmatched NBER papers as
 published $= 0$.  We do not claim to observe papers transitioning through the
 editorial filter; rather, we compare the direction distribution of
