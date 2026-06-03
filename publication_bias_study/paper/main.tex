@@ -1553,7 +1553,7 @@ of what significance-sorting would predict.  Neither estimate supports a positiv
 direction premium within the most methodologically credible sub-sample.
 
 \textit{Abstract language and LLM classification confidence.}
-Abstract writing style introduces a two-sided measurement concern.  Among published
+Abstract writing style introduces two related measurement concerns.  Among published
 papers, 81.3\% receive a high-confidence direction code; among NBER-only
 papers, 62.4\% do, with 26.8\% receiving low-confidence ratings.  The
 18.9-percentage-point gap in high-confidence rates persists despite NBER
@@ -1562,9 +1562,10 @@ words), suggesting the difference reflects writing style rather than abstract
 length: working paper abstracts present findings more tentatively---with
 qualifications, sensitivity discussions, and multiple results---while
 published abstracts typically lead with a clear declarative finding.
-Both concerns pull in the same direction: either mechanism would push genuinely
-directional NBER papers into the null category, inflating the measured directional
-premium.  Our replication exercise (Section~\ref{subsec:direction}) supports
+First, hedged NBER abstract language may push genuinely directional NBER papers
+into the null category.  Second, abstract polish after revise-and-resubmit may
+cause the LLM to classify more published papers as directional.  Both
+concerns inflate the measured directional premium.  Our replication exercise (Section~\ref{subsec:direction}) supports
 the inflation interpretation: of the 20 null-coded papers in the validation
 sample, 15 are reclassified as directional in the independent replication run,
 while no directional-coded papers are reclassified as null.  This asymmetry
@@ -1686,7 +1687,7 @@ LPM (OLS, HC3)              & Positive & $-0.010$      & 0.900    & 291 \\
 Quasi-exp.\ papers only    & Positive & $-0.598$      & 0.121    & 139 \\
                             & Negative & $-0.657^{*}$  & 0.081    & 139 \\[4pt]
 + log(abstract length)     & Positive & $0.008$       & 0.968    & 291 \\
-\small{[lower-bound spec]} & Negative & $0.011$       & 0.958    & 291 \\[4pt]
+\small{[abstract length control]} & Negative & $0.011$       & 0.958    & 291 \\[4pt]
 \multicolumn{5}{l}{\textit{Panel D: Alternative Pre-Publication Baseline}} \\[2pt]
 AFA conference baseline    & Directional & $0.327$ & $0.241$ & 151 \\
 \small{(+ year trend)}     & Directional & $0.345$ & $0.220$ & 151 \\[4pt]
@@ -1907,9 +1908,9 @@ measured null-paper publication rate would be biased downward---which would
 Our replication exercise (Section~\ref{subsec:direction}) provides direct
 evidence on this null-coding instability: of the 20 null-coded papers in the validation
 sample, 15 are re-classified as directional in the independent replication run,
-confirming that the null category is the least stable.  This instability
-\textit{reduces} the significance premium we estimate, because some papers we
-code as null would be coded as directional by an alternative rater---which
+confirming that the null category is the least stable.  Using the alternative rater's codes would yield a lower estimated directional
+premium than ours, because some papers we code as null would be coded as
+directional by an alternative rater---which
 would increase the denominator of the directional publication rate (since the
 reclassified papers are unpublished NBER working papers, so the numerator is
 unchanged) while reducing the denominator of the null rate, inflating the
