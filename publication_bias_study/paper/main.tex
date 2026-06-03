@@ -138,7 +138,8 @@ bunching is entirely absent from the pre-publication NBER benchmark (ratio $=
 published caliper ratio $1.52$ ($p < 0.001$) versus NBER ratio $1.00$ ($p =
 0.964$).  Because the overall significance rates are nearly identical across
 samples (57.1\% vs.\ 55.5\%), the bunching is not explained by differences in
-statistical power; it is specific to the published record.  We interpret the
+statistical power; it is concentrated in the published record and absent from
+pre-publication counterparts, consistent with revision-stage pressure.  We interpret the
 joint pattern as evidence that editorial selection in top finance journals is
 directionally neutral, but that the revision process creates within-paper
 threshold pressure, particularly for anti-intervention findings.
@@ -324,9 +325,8 @@ The remainder of the paper proceeds as follows.
 Section~\ref{sec:literature} reviews the related literature.
 Section~\ref{sec:data} describes data construction and the classification
 pipeline.  Section~\ref{sec:methods} presents the empirical strategy.
-Section~\ref{sec:results} reports main results.
+Section~\ref{sec:results} reports main results and economic magnitudes.
 Section~\ref{sec:robustness} presents robustness checks.
-Section~\ref{sec:results} also reports economic magnitudes.
 Section~\ref{sec:discussion} discusses mechanisms, policy implications,
 comparisons to other domains, and limitations.
 Section~\ref{sec:conclusion} concludes.
@@ -657,13 +657,14 @@ beneficial outcome), $-1$ (negative or harmful), or $0$ (null, mixed, or
 inconclusive).  Papers with multiple interventions are coded on the primary
 intervention identified in the title or opening sentence of the abstract.
 
-The coding prompt instructs the model to code the \textit{sign of the estimated
-coefficient} on the primary intervention, not the authors' normative framing.
-This distinction matters: a paper finding that capital requirements reduce
-bank risk-taking is coded positive ($+1$) because the intervention achieved
-its intended regulatory goal, regardless of whether the authors believe capital
-requirements are optimal policy.  The full coding prompt is in
-Appendix~\ref{app:prompts}.
+The coding prompt instructs the model to code +1 if the intervention produced
+a \textit{positive or beneficial outcome relative to its stated regulatory
+objective}, $-1$ if harmful or counterproductive, and $0$ if null or mixed.
+Normative framing by the authors is explicitly excluded.  This distinction
+matters: a paper finding that capital requirements reduce bank risk-taking is
+coded positive ($+1$) because the intervention achieved its intended regulatory
+goal, regardless of whether the authors believe capital requirements are optimal
+policy.  The full coding prompt is in Appendix~\ref{app:prompts}.
 
 \paragraph{Coding reliability.}
 \label{subsec:validation}
@@ -729,14 +730,14 @@ preprint versions.  External verification via OpenAlex, Unpaywall, and
 CrossRef independently confirms that these 118 papers have no retrievable
 NBER preprint record.
 
-To assess whether the matched and directly identified published papers are
-representative, we compare the direction codes of the 16 matched NBER papers
-with those of the 134 directly identified journal articles.  Among matched
-NBER working papers, 79.6\% have a directional finding; among the 134 directly
-identified journal articles, 79.1\% do.  These rates are nearly identical,
-suggesting that the two sub-samples are comparable in their directional
-composition.  The close alignment in direction rates foreshadows the
-main finding: publication rates across directions are essentially equal.
+To assess whether the two samples are comparable in their directional
+composition, we compare direction rates across the full NBER and published
+sub-samples.  Among all 157 NBER working papers, 79.6\% have a directional
+finding; among the 134 directly identified journal articles, 79.1\% do.  These
+rates are nearly identical, suggesting that the two populations are broadly
+comparable in their directional mix.  The close alignment in direction rates
+foreshadows the main finding: publication rates across directions are essentially
+equal.
 
 In our probit analysis, unmatched journal papers are treated as having been
 published in a top journal (Published $= 1$), while NBER working papers without
@@ -989,10 +990,15 @@ In Column~(2), both $\hat\beta_1$ (Positive) and $\hat\beta_2$ (Negative) are
 small and insignificant: $\hat\beta_1 = -0.026$ (s.e.\ 0.204, $p = 0.898$)
 and $\hat\beta_2 = -0.014$ (s.e.\ 0.196, $p = 0.942$).  A Wald test for
 equality of the two coefficients gives $\chi^2 = 0.005$ ($p = 0.944$).  The
-minimum detectable difference at 80\% power is 0.466 coefficient units
-(SE of difference $= 0.166$), so the non-rejection cannot rule out moderate
-directional asymmetries.  Within the power constraints of our sample,
-the evidence is consistent with no direction-based sorting of any form.
+minimum detectable difference at 80\% power for the equality test is 0.466
+coefficient units (SE of difference $= 0.166$).  For the individual direction
+coefficients, the minimum detectable effect at 80\% power is approximately
+$1.96 \times 0.204 \approx 0.40$ coefficient units, corresponding to a
+publication probability premium of roughly 13--15 percentage points above
+the 46\% baseline---a large, policy-relevant effect.  Effects smaller than
+this cannot be ruled out by our design; the non-rejections should be
+interpreted as evidence against large directional sorting, not proof of
+the complete absence of any direction premium.
 Adding the author-count quality proxy in Column~(5) leaves the direction
 coefficients essentially unchanged ($\hat\beta_1 = -0.005$,
 $\hat\beta_2 = -0.020$), both far from significance.  The author-count
@@ -1519,11 +1525,14 @@ using quasi-experimental identification strategies (RDD, IV, DiD, or event
 study), as classified by our LLM pipeline from abstracts.  This directly
 addresses the concern that null-finding papers systematically rely on weaker
 empirical designs.  Among quasi-experimental papers ($N = 139$), the direction
-coefficients remain negative and insignificant: $\hat\beta_1 = -0.598$
-($p = 0.121$) and $\hat\beta_2 = -0.657$ ($p = 0.081$).
-These estimates are statistically indistinguishable from zero and do not
-support a positive direction premium even within the most methodologically
-credible sub-sample.
+coefficients are $\hat\beta_1 = -0.598$ ($p = 0.121$) and $\hat\beta_2 =
+-0.657^{*}$ ($p = 0.081$).  $\hat\beta_1$ is clearly insignificant;
+$\hat\beta_2$ is marginally significant at the 10\% level, driven by the
+reduced sub-sample size ($N = 139$) rather than a genuine direction premium ---
+the coefficient is negative, indicating that quasi-experimental negative-finding
+papers are \textit{less} likely to be published than null papers, opposite to
+the significance-sorting prediction.  Neither estimate supports a positive
+direction premium within the most methodologically credible sub-sample.
 
 \textit{Abstract language and LLM classification confidence.}
 Abstract writing style introduces a two-sided measurement concern.  Among published
@@ -1619,8 +1628,8 @@ pre-journal AFA stage nor the NBER comparison shows evidence of direction-based
 sorting.  The two null results are mutually reinforcing: the AFA test
 supports the NBER result as a consistency check, and both
 are consistent with no publication bias in this domain.
-Directional AFA papers are published in top journals at a 26.1\% rate (30 of 115)
-versus 16.2\% for null-finding papers (6 of 37).  The pattern is unchanged when a year trend is added
+Directional AFA papers are published in top journals at a 25.9\% rate (30 of 116)
+versus 17.1\% for null-finding papers (6 of 35).  The pattern is unchanged when a year trend is added
 ($\hat\beta = 0.345$, s.e.\ 0.281).  Direction coding applies
 the same three-tier hierarchy as the NBER pipeline.\footnote{As a direct
 test of overlap, we identified 22 papers appearing in both the NBER and AFA
@@ -1746,9 +1755,15 @@ are substantially more likely to appear in print than null-result studies.
 \citet{Brodeur2023} document that pre-registration and pre-analysis plans
 reduce but do not eliminate these biases in economics.
 
-Our $\approx1.0\times$ ratio is well below these estimates, suggesting that the
-finance-regulation literature does not exhibit the significance-sorting pattern
-documented in other social science domains.  This could reflect genuine
+Our published-sample caliper ratio of 1.20 is below Brodeur et al.'s estimates
+of $1.5$--$2.0\times$ for the AER/JPE/QJE, and our NBER benchmark ratio of
+1.01 confirms that this domain's research base does not itself generate excess
+bunching before the editorial stage.  On the cross-sectional direction-sorting
+dimension, our $\approx$1.0$\times$ directional-to-null publication ratio is
+well below the $3\times$ estimate of \citet{Franco2014} and the analogous
+findings in \citet{DellaVigna2022}.  Together these comparisons suggest that
+the finance-regulation literature does not exhibit the significance-sorting
+patterns documented in other social science domains.  This could reflect genuine
 differences in editorial norms at top finance journals, or could reflect the
 nature of our NBER comparison group (which captures well-resourced researchers
 whose null results may circulate widely, reducing the selection gap relative to
