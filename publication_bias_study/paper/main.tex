@@ -218,8 +218,8 @@ states---not merely the subset that appears in top journals.
 
 We define a paper as in-scope if its primary research question is the causal
 effect of a specific government law, regulation, or public policy on financial
-markets, firms, or investors.  Identifying in-scope papers in a corpus of more
-than 40,000 documents would be infeasible by hand.  We therefore develop a
+markets, firms, or investors.  Identifying in-scope papers in a corpus of nearly
+40,000 documents (39,136) would be infeasible by hand.  We therefore develop a
 two-pass automated pipeline: a keyword filter that screens for government
 intervention terminology, followed by a large language model (LLM) classifier
 that reads each flagged abstract and returns a binary in-scope decision with a
@@ -1651,8 +1651,7 @@ no direction premium, and neither the pre-journal AFA stage nor the NBER
 comparison shows statistically significant evidence of directional selection.
 Directional AFA papers are published in top journals at a 25.9\% rate (30 of 116)
 versus 17.1\% for null-finding papers (6 of 35).  The pattern is unchanged when a year trend is added
-($\hat\beta = 0.345$, s.e.\ 0.281).  Direction coding applies
-the same three-tier hierarchy as the NBER pipeline.\footnote{As a direct
+($\hat\beta = 0.345$, s.e.\ 0.281).\footnote{As a direct
 test of overlap, we identified 22 papers appearing in both the NBER and AFA
 datasets via fuzzy title matching (token-sort score $\geq 90$).  In this
 subsample, directional papers publish at 81.2\% versus 66.7\% for null
@@ -1906,10 +1905,10 @@ abstracts).  Accordingly, 81.3\% of published papers receive a
 ``high-confidence'' LLM direction code, versus 62.4\% of NBER-only papers.
 If the LLM more often assigns a null code to hedged NBER abstracts, the
 measured null-paper publication rate would be biased downward---which would
-\textit{attenuate} our estimated significance premium rather than inflate it.
+\textit{inflate} our estimated directional premium relative to the truth.
 
 Our replication exercise (Section~\ref{subsec:direction}) provides direct
-evidence on this attenuation: of the 20 null-coded papers in the validation
+evidence on this null-coding instability: of the 20 null-coded papers in the validation
 sample, 15 are re-classified as directional in the independent replication run,
 confirming that the null category is the least stable.  This instability
 \textit{reduces} the significance premium we estimate, because some papers we
@@ -1919,7 +1918,9 @@ reclassified papers are unpublished NBER working papers, so the numerator is
 unchanged) while reducing the denominator of the null rate, inflating the
 measured null publication rate and compressing the estimated gap between
 directional and null rates.  Our reported estimates should
-thus be interpreted as a conservative lower bound on the true bias.  Future work
+thus be interpreted as a conservative upper bound on any true directional
+premium---the actual premium is no larger than what we measure, and may be
+smaller.  Future work
 with standardized abstract templates, full-paper coding (rather than abstract
 coding), or pre-registered abstract language could address this concern
 directly.
