@@ -711,8 +711,7 @@ In the \textit{first round} we apply token-sort Levenshtein similarity
 (RapidFuzz) to normalized titles, comparing each of the 134 journal papers
 against the full NBER archive of 30,212 working papers.  A shared author
 surname is required as a second gate.  Scores of 90 or above are
-automatically linked; scores in $[75, 90)$ are flagged for manual inspection
-by the authors.  In the \textit{second round} we query six external
+automatically linked; scores in $[75, 90)$ are flagged for our manual inspection.  In the \textit{second round} we query six external
 sources---OpenAlex, Semantic Scholar, the NBER search endpoint, CrossRef
 (queried in both the preprint-to-journal and journal-to-preprint directions),
 and Unpaywall---and complement these with TF-IDF cosine similarity over paper
@@ -2278,7 +2277,7 @@ contains:
   direction re-coding for AFA papers (uniform coding robustness check)
 \item \texttt{data/} --- Final analysis dataset in Parquet format
 \item \texttt{validation/human\_coding\_sheet\_40.xlsx} --- Coding sheet for
-  40-paper human direction-coding validation (to be filled by authors)
+  40-paper human direction-coding validation (to be completed before submission)
 \item \texttt{scripts/13\_human\_validation\_kappa.py} --- Computes Cohen's
   $\kappa$ between human and LLM codes once coding sheet is complete
 \item \texttt{paper/} --- \LaTeX{} source for this paper
@@ -2351,7 +2350,7 @@ Total & \textit{[--]} & \textit{[--]} & \textit{[--]} & 40 \\
 \begin{minipage}{0.75\textwidth}
 \small
 \textit{Notes.} Stratified random sample of 40 papers (20 published, 20
-NBER).  Each paper was coded by the authors using only the abstract, without
+NBER).  Each paper was coded by us using only the abstract, without
 reference to the LLM output.  Linear-weighted Cohen's $\kappa$ (direction,
 3-category): \textit{[--]}.  Cohen's $\kappa$ (binary directional):
 \textit{[--]}.  Results to be completed before final submission.
