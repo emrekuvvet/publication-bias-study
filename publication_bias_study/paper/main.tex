@@ -692,7 +692,8 @@ the negative ($-1$) category achieves 100\% agreement (20/20) and the positive
 ($+1$) category 90\% (18/20).  Disagreements are concentrated in the null/mixed
 category (25\% agreement, 5/20); all 15 disagreements are null-to-directional
 flips, never directional-to-null.  This asymmetry implies that any coding error
-attenuates our estimated premium, making coefficients a conservative lower bound.
+inflates our estimated directional premium, making our reported estimates a conservative
+upper bound on the true premium.
 Appendix Table~\ref{tab:confusion_matrix} reports the full confusion matrix.
 
 \textit{Human validation.}
@@ -1561,17 +1562,13 @@ words), suggesting the difference reflects writing style rather than abstract
 length: working paper abstracts present findings more tentatively---with
 qualifications, sensitivity discussions, and multiple results---while
 published abstracts typically lead with a clear declarative finding.
-On one hand, hedged NBER abstract language may push genuinely directional papers into
-the null category, attenuating the estimated premium.  On the other hand, if
-authors revise abstracts to sound more decisive after a revise-and-resubmit,
-the LLM may code published papers as directional partly because their language
-signals directionality more clearly, inflating the premium.
-
-Our replication exercise (Section~\ref{subsec:direction}) supports the
-attenuation interpretation: of the 20 null-coded papers in the validation
+Both concerns pull in the same direction: either mechanism would push genuinely
+directional NBER papers into the null category, inflating the measured directional
+premium.  Our replication exercise (Section~\ref{subsec:direction}) supports
+the inflation interpretation: of the 20 null-coded papers in the validation
 sample, 15 are reclassified as directional in the independent replication run,
 while no directional-coded papers are reclassified as null.  This asymmetry
-implies that null-coding error attenuates rather than inflates our estimate.
+implies that null-coding error inflates rather than attenuates our estimate.
 
 Table~\ref{tab:robustness} Panel~C also reports a bounding specification
 that adds $\log(\text{abstract length})$ as a covariate
@@ -2241,7 +2238,7 @@ category (25\% agreement), with 15 of 20 null-coded papers re-classified as
 directional in replication---consistent with null abstracts being less decisive
 and more sensitive to prompt context.  Because coding instability pushes
 ambiguous papers \textit{toward} directional codes rather than toward null,
-any resulting measurement error attenuates our estimated significance premium.
+any resulting measurement error inflates our estimated directional premium.
 \end{minipage}
 \end{singlespace}
 \end{table}
