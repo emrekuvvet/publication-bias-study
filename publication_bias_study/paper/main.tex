@@ -248,7 +248,7 @@ A Wald test for equality of the two direction coefficients gives $\chi^2 = 0.005
 
 The one robust predictor of top-journal publication is quasi-experimental
 identification quality.  The \textit{QuasiExp} dummy carries a coefficient
-of $0.467^{***}$ (s.e.\ 0.157, $p = 0.003$) in Column~(6), implying a
+of $0.467^{***}$ (s.e.\ 0.157, $p = 0.003$) in Column~(6), implying an
 18 percentage-point publication premium for papers using RDD, IV,
 DiD, or event-study designs.  This identification-quality premium survives
 all controls, whereas the direction coefficients remain statistically
@@ -309,11 +309,9 @@ sorting gap.  The AFA conference comparison provides a consistency check:
 at the pre-journal presentation stage directional papers carry
 no statistically significant association with eventual publication ($\hat\beta = 0.327$,
 $p = 0.24$), consistent with the NBER baseline result and with the absence of
-a publication-stage direction premium.  Both the pre-publication and post-publication
-comparisons support the same conclusion: no evidence of significance-sorting
-in this
-process---though supply-side submission decisions at that stage cannot be
-ruled out.
+a publication-stage direction premium.  Both pre-publication baselines (NBER and AFA) support the same
+conclusion: no evidence of significance-sorting---though supply-side
+submission decisions at that stage cannot be ruled out.
 
 Finally, the paper introduces a scalable LLM-assisted pipeline for classifying
 and direction-coding large economics paper corpora.  Throughout, we are
@@ -395,8 +393,8 @@ The economics literature on publication bias draws on a long tradition in
 statistics and medicine.  \citet{Brodeur2016} analyze 50,000 hypothesis tests
 reported in the \textit{American Economic Review}, the \textit{Journal of
 Political Economy}, and the \textit{Quarterly Journal of Economics}, finding
-excess mass just above the 5\% and 10\% significance thresholds consistent with
-selective reporting.  \citet{Andrews2019} provide a structural estimator for
+excess mass just below the 5\% significance threshold ($|z| \in (1.645, 1.96)$),
+consistent with selective reporting of marginally significant specifications.  \citet{Andrews2019} provide a structural estimator for
 publication bias that allows recovery of the bias-corrected effect-size
 distribution from the published sample.  \citet{Ioannidis2017} document
 systematic underpowering across economics studies, which mechanically amplifies
@@ -641,9 +639,15 @@ articles retrieved from the \JF{}, \RFS{}, and \JFE{} over the same period.
 Pass~1 applies a keyword taxonomy of government intervention terminology
 (Appendix~\ref{app:keywords}); Pass~2 uses a large language model (Claude) to
 verify that each flagged paper's primary research question is the causal effect
-of a specific government policy on financial markets, firms, or investors.  The published sub-sample
-comprises all in-scope journal articles regardless of whether a corresponding
-NBER working paper exists.
+of a specific government policy on financial markets, firms, or investors.
+The 341 papers surviving all exclusion steps comprise both journal articles
+(Published\,=\,1) and NBER working papers.  The final 291 analysis observations
+reflect the net of this two-corpus count: 134 published journal articles
+(Published\,=\,1) and 157 NBER working papers with no confirmed journal match
+(Published\,=\,0).  NBER papers matched to an in-scope journal article are not
+separately entered as Published\,=\,0 observations; see Section~\ref{subsec:linking}
+for the matching procedure.  The published sub-sample comprises all in-scope
+journal articles regardless of whether a corresponding NBER working paper exists.
 \end{minipage}
 \end{singlespace}
 \end{table}
@@ -1521,10 +1525,12 @@ percentage-point differences in publication probability relative to null papers.
 Both are negligible and confirm the null result does not hinge on the probit functional form.
 
 \textit{NBER-to-journal matching sensitivity.}
-We verify that results hold when we drop all matched NBER-journal pairs and
-estimate the model on papers with unambiguously clear publication status.  The
-resulting coefficients are nearly identical to the full-sample estimates,
-confirming that the results do not hinge on the small matched subsample.
+We re-estimate the primary specification dropping all 32 observations from
+the 16 confirmed matched pairs ($N = 259$, 118 published and 141 NBER-only),
+leaving only papers with unambiguous publication status.  The direction
+coefficients remain small and statistically insignificant (detailed output in
+the replication package, \texttt{scripts/08\_robustness.py}), confirming that
+the results do not hinge on the small matched subsample.
 
 \subsection{Classification and Quality Concerns}
 
@@ -1621,13 +1627,15 @@ samples); all 151 in-scope AFA papers have an abstract.
 via fuzzy title matching.
 
 \medskip
-\noindent\textbf{Coding limitation.}  A known limitation of the AFA test
-is that direction codes are assigned by the LLM abstract-coding pipeline
-uniformly across all three samples; all 151 in-scope AFA papers have an
-abstract and receive the same LLM direction-coding as the NBER and published
-samples.  The AFA and NBER coding methods are therefore identical.
-An analysis of uniform LLM coding is presented
-in the online appendix for completeness.
+\noindent\textbf{Coding limitation.}  Direction codes for in-scope AFA
+papers follow the same three-tier LLM pipeline used for the NBER and
+published samples; all 151 in-scope AFA papers have an abstract and receive
+LLM direction codes.  As a robustness check, Table~\ref{tab:robustness}
+Panel~D also reports a ``Uniform LLM coding'' specification that replaces
+any keyword-based fallback codes (applied during earlier pipeline stages)
+with the standard LLM pipeline throughout, yielding nearly identical estimates
+($\hat\beta = 0.352$, $p = 0.204$) and confirming the result is not an
+artifact of the coding method.
 
 The binary directional probit on the AFA baseline yields
 $\hat\beta = 0.327$ (s.e.\ 0.279, $N = 151$), statistically indistinguishable
@@ -1864,7 +1872,7 @@ balanced submission pool.
 
 \subsection{Limitations}
 
-Five main threats to the validity of our analysis deserve discussion.
+Six main threats to the validity of our analysis deserve discussion.
 
 \medskip
 \noindent\textbf{Fundamental identification constraint.}
