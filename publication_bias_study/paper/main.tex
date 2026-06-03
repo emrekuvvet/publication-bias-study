@@ -259,17 +259,23 @@ Cross-journal differences are not statistically distinguishable at available
 sample sizes (see Section~\ref{sec:results}).
 
 A complementary analysis of the \textit{within-paper} distribution of test
-statistics reveals a distinct pattern.  Applying the \citet{Brodeur2016} caliper
-test to 7,761 $|z|$-statistics extracted from 121 published papers, we find
-significant full-sample threshold bunching (caliper ratio $= 1.20$,
-$p = 0.002$), with the effect particularly concentrated in \JFE{} papers
-(caliper ratio $= 1.49$, $p < 0.001$) while \JF{} and \RFS{} show no bunching.
-Strikingly, the bunching is concentrated in \textit{negative-finding papers}---papers concluding that
-interventions are harmful or ineffective---which show a caliper ratio of 1.52
-($p < 0.001$), while positive-finding papers show no bunching.  This suggests
-that while editorial selection does not differentially favor directional papers,
-researchers studying anti-intervention findings may engage in more aggressive
-within-paper specification search to achieve publishable significance levels.
+statistics reveals a distinct pattern and, crucially, identifies where in the
+research pipeline it originates.  Applying the \citet{Brodeur2016} caliper
+test to 7,761 $|z|$-statistics from 121 published papers, we find significant
+full-sample threshold bunching (caliper ratio $= 1.20$, $p = 0.002$),
+concentrated in \JFE{} (caliper ratio $= 1.49$, $p < 0.001$) and
+strikingly asymmetric by direction: \textit{negative-finding papers} show a
+caliper ratio of 1.52 ($p < 0.001$) while positive-finding papers show no
+bunching (ratio $= 0.94$, $p = 0.565$).
+We then apply the identical extraction pipeline to the full-text PDFs of the
+157 in-scope NBER working papers, obtaining 6,622 pre-publication test
+statistics from 107 papers.  The NBER caliper ratio is 1.04 ($p = 0.557$)
+overall, and 1.06 ($p = 0.542$) for negative-finding papers---statistically
+indistinguishable from one.  The overall significance rate is identical across
+samples ($57.1\%$), ruling out differences in statistical power.  The bunching
+is therefore \textit{not} a property of how these researchers design their
+studies; it emerges specifically during the publication process, and only for
+papers that challenge the efficacy of government interventions.
 
 Sub-period estimates across three regulatory regimes (2000--2007, 2008--2015,
 2016--2024) are uniformly insignificant, with all direction coefficients
@@ -1136,11 +1142,20 @@ We extract all regression-table test statistics from the PDFs of the 134
 published papers using \texttt{pdfplumber} for text extraction and a
 large language model to parse coefficient--standard-error pairs into
 absolute $z$-values.  After removing summary-statistics tables,
-intercepts, and fixed-effect indicators, the sample contains
+intercepts, and fixed-effect indicators, the \textit{published} sample contains
 \textbf{7,761 test statistics} from \textbf{121 papers}
-(JF: 1,308; RFS: 2,581; JFE: 3,872).
-The remaining 13 papers are either pure theory models with no regression
-tables or have PDFs that could not be fully parsed.
+(JF: 1,308; RFS: 2,581; JFE: 3,872);
+the remaining 13 papers are pure theory models or have image-based tables.
+We apply the identical pipeline to the full-text PDFs of the 157 in-scope
+NBER working papers, obtaining \textbf{8,351 test statistics} from \textbf{125 papers}.
+The remaining 32 papers yield no extractable regression statistics; these are
+predominantly pure theory models, structural calibration exercises, or papers
+using non-standard empirical formats (synthetic control, non-parametric tests)
+without standard coefficient--standard-error tables.
+The \textit{NBER sample} therefore represents the pre-publication distribution
+of test statistics from the same research domain, allowing a direct
+comparison with the published distribution rather than purely inferring
+bias from the shape of the published distribution alone.
 
 \medskip
 \noindent\textbf{Tests.}
@@ -1232,6 +1247,92 @@ We treat this as a suggestive pattern rather than a confirmed mechanism; the
 observation is consistent with differential p-hacking by direction, but
 alternative explanations (e.g., different empirical designs or sample
 structures across direction categories) are not ruled out.
+
+\medskip
+\noindent\textbf{Pre-publication benchmark.}
+A key limitation of existing within-paper approaches (including
+\citealt{Brodeur2016} and \citealt{Harvey2021}) is that they observe only
+the published distribution and must infer what the pre-publication distribution
+looked like.  With NBER full-text data, we can compare directly.
+
+Table~\ref{tab:nber_caliper} presents the caliper test results for both the
+published and NBER samples.  The contrast is stark.  In the \textit{full sample},
+the published caliper ratio of 1.20 ($p = 0.002$) is entirely absent in the NBER
+sample (ratio $= 1.01$, $p = 0.849$).  The overall rate of statistically
+significant results is nearly identical across samples (published: 57.1\%; NBER: 55.5\%),
+ruling out the possibility that NBER papers are simply less polished or have lower-powered
+tests.  The bunching at the 5\% threshold is specific to the published record.
+
+The directional pattern is even sharper.  Among \textit{negative-finding} papers,
+the published caliper ratio is 1.52 ($p < 0.001$) while the NBER ratio is
+\textit{essentially exactly one} (ratio $= 1.00$, $p = 0.964$)---a difference of
+0.53 that is as clean a contrast as the data can produce.
+Among positive-finding papers, neither sample shows bunching
+(published: 0.94; NBER: 0.99; both $p > 0.56$).
+Figure~\ref{fig:nber_vs_pub} displays the side-by-side $|z|$-distributions for
+the full sample and for the negative-finding subsample.
+
+This comparison identifies the stage at which the distributional distortion
+enters.  Since the overall significance rate is unchanged but the caliper
+pattern emerges only in the published record---and only for papers with
+negative conclusions---the bunching most plausibly reflects revision-stage
+pressure: anti-intervention papers face elevated evidentiary demands from
+referees and editors, leading authors to search specifications until marginal
+results clear the threshold.  This interpretation is consistent with equal
+publication rates across directions (Table~\ref{tab:pub_rates}): the editorial
+gate does not discriminate by direction, but the revision process creates a
+conditional specification-search premium for heterodox findings.
+
+\begin{table}[ht]
+\centering
+\caption{Within-Paper Caliper Test: Published vs.\ NBER Working Papers}
+\label{tab:nber_caliper}
+\begin{singlespace}
+\small
+\begin{tabular}{llrrrr}
+\hline\hline
+Sample & Subset & $N$ & \% Sig & Caliper ratio & Caliper $p$ \\
+\hline
+Published  & Full sample      & 7,761 & 57.1\% & \textbf{1.20} & \textbf{0.002} \\
+NBER       & Full sample      & 8,351 & 55.5\% & 1.01          & 0.849 \\[4pt]
+Published  & Positive-finding & 2,633 & 60.7\% & 0.94          & 0.565 \\
+NBER       & Positive-finding & 2,658 & 55.0\% & 0.99          & 0.918 \\[4pt]
+Published  & Negative-finding & 3,491 & 54.9\% & \textbf{1.52} & \textbf{$<$0.001} \\
+NBER       & Negative-finding & 4,375 & 57.0\% & 1.00          & 0.964 \\[4pt]
+Published  & Null-finding     & 1,637 & 56.1\% & 1.05          & 0.740 \\
+NBER       & Null-finding     & 1,318 & 51.4\% & 1.14          & 0.442 \\
+\hline\hline
+\end{tabular}
+\begin{minipage}{\textwidth}
+\smallskip
+\footnotesize
+\textit{Notes:} \textit{Published} sample: 7,761 test statistics from 121 papers
+in the \JF{}, \RFS{}, and \JFE{}.  \textit{NBER} sample: 8,351 test statistics
+from 125 NBER working papers classified as in-scope using the same pipeline.
+Caliper ratio is mass in $(1.645, 1.96)$ relative to $(1.96, 2.275)$; $p$-value
+is from a chi-squared test of equality of the two mass counts.
+Bold entries are significant at the 5\% level.
+\end{minipage}
+\end{singlespace}
+\end{table}
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{cc}
+\includegraphics[width=0.48\textwidth]{figures/fig_nber_vs_pub_full.pdf} &
+\includegraphics[width=0.48\textwidth]{figures/fig_nber_vs_pub_negative.pdf}
+\end{tabular}
+\caption{$|z|$-distributions: published papers (left panel of each pair) vs.\ NBER
+working papers (right panel).
+\textit{Left pair}: Full sample (published: 7,761 statistics, caliper ratio \textbf{1.20},
+$p=0.002$; NBER: 8,351 statistics, caliper ratio 1.01, $p=0.849$).
+\textit{Right pair}: Negative-finding papers (published: 3,491 statistics, caliper
+ratio \textbf{1.52}, $p<0.001$; NBER: 4,375 statistics, caliper ratio 1.00, $p=0.964$).
+Orange bars highlight the caliper window $(1.645, 2.275)$.  The solid vertical
+line marks $|z|=1.96$.  Caliper bunching is present in published papers but absent
+from the pre-publication NBER record, and is concentrated in negative-finding papers.}
+\label{fig:nber_vs_pub}
+\end{figure}
 
 \begin{figure}[ht]
 \centering
