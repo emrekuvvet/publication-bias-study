@@ -143,7 +143,9 @@ statistical power; it is concentrated in the published record and absent from
 pre-publication counterparts, consistent with revision-stage pressure.  We interpret the
 joint pattern as evidence that editorial selection in top finance journals is
 directionally neutral, but that the revision process creates within-paper
-threshold pressure, particularly for anti-intervention findings.
+threshold pressure concentrated in anti-intervention findings (negative-finding
+caliper ratio 1.52; permutation $p<0.001$; cluster-bootstrap 95\% CI
+$[0.81,\,2.67]$---wide, reflecting paper-level heterogeneity).
 \end{singlespace}
 \vspace{4pt}
 \noindent\small\textit{JEL classification:} G18, G28, C80, B40.
@@ -685,7 +687,10 @@ We re-ran the direction coding protocol on a stratified random sample of 60
 papers (5 papers per source $\times$ direction cell, balanced across the three
 journals and NBER), treating the independent replication run as a second rater.
 The replication run used a smaller model (claude-haiku-4-5-20251001, temperature $= 0$)
-to test robustness to model choice.
+to test robustness to model choice; the same prompt was used in both runs so
+that disagreements isolate model-choice sensitivity rather than prompt-choice sensitivity.
+LLM coding in general is sensitive to exact prompt phrasing; we report the
+per-category disagreement pattern below so readers can assess directional risk.
 The two runs agree on 43 of 60 papers (71.7\%).  The linear-weighted Cohen's
 $\kappa$ across all three direction categories is $\kappa = 0.674$, consistent
 with ``substantial agreement'' by the \citet{LandisKoch1977} scale
@@ -1137,6 +1142,9 @@ Standard errors in parentheses.  *** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$.
 The baseline implied publication probability is $\Phi(-0.084) \approx 46.7\%$,
 nearly identical to all three direction-specific publication rates.
 Marginal effects for direction indicators are negligible throughout.
+The near-zero McFadden pseudo-$R^2$ in Columns~(1)--(2) is expected under
+the null hypothesis that direction has no explanatory power for publication
+status; it is not an indicator of poor model fit but of a null relationship.
 A Wald test for $H_0\colon\hat\beta_1 = \hat\beta_2$ in Column~(2) yields
 $\chi^2 = 0.005$, $p = 0.944$.  The minimum detectable difference at 80\% power
 is 0.466 coefficient units (SE of difference $= 0.166$).  The non-rejection
@@ -1438,13 +1446,17 @@ the full sample and for the negative-finding subsample.
 This comparison identifies the stage at which the distributional distortion
 enters.  Since the overall significance rate is unchanged but the caliper
 pattern emerges only in the published record---and only for papers with
-negative conclusions---the bunching most plausibly reflects revision-stage
-pressure: anti-intervention papers face elevated evidentiary demands from
-referees and editors, leading authors to search specifications until marginal
-results clear the threshold.  This interpretation is consistent with equal
-publication rates across directions (Table~\ref{tab:pub_rates}): the editorial
-gate does not discriminate by direction, but the revision process creates a
-conditional specification-search premium for anti-intervention findings.
+negative conclusions---the bunching is \textit{consistent with} revision-stage
+pressure: one interpretation is that anti-intervention papers face elevated
+evidentiary demands---either self-imposed by authors anticipating scrutiny or
+enforced by reviewers---leading to specification search until marginal results
+clear the 5\% threshold.  A compositional alternative is also possible:
+negative-finding published papers may differ from their NBER counterparts in
+unobserved dimensions (empirical detail, research design complexity, vintage)
+correlated with within-paper specification counts, and our cross-sectional
+design cannot rule this out.  The editorial gate does not discriminate by
+direction, but the revision process appears to create a conditional threshold
+premium for anti-intervention findings.
 
 \medskip
 \noindent\textbf{Inference under paper-level clustering.}
@@ -1876,6 +1888,15 @@ direction of a paper's finding has no statistically detectable association with
 its likelihood of appearing in a top-three finance journal.  The published
 distribution closely mirrors the pre-publication distribution on this dimension.
 
+Two power caveats qualify this conclusion.  First, the minimum detectable
+difference in publication rates at 80\% power is approximately 18 percentage
+points (probit coefficient $\approx0.466$), so moderate directional asymmetries
+below that threshold are consistent with the data.  Second, the cluster-bootstrap
+95\% confidence interval for the negative-finding caliper ratio is $[0.81,\,2.67]$,
+wide enough to encompass both negligible and substantial threshold pressure; the
+wide interval reflects genuine paper-level heterogeneity rather than a sampling
+artifact.
+
 To the extent that structural bias-correction methods \citep{Andrews2019}
 applied to specific intervention literatures (capital requirements, short-sale
 bans, mandatory disclosure) would detect bias, that bias does not appear to
@@ -1956,12 +1977,17 @@ in the following subsection.  For the caliper finding, the NBER benchmark provid
 answer: because the bunching is present in published papers but absent from
 their pre-publication counterparts, and because the overall significance rate
 is unchanged, the distortion is specific to the revision stage.
-Anti-intervention papers face elevated evidentiary demands from referees and
-editors---perhaps because anti-intervention findings invite more scrutiny---leading
+One interpretation is that anti-intervention papers face elevated evidentiary
+demands---perhaps because anti-intervention findings invite more scrutiny---leading
 authors to search specifications until marginal results clear the 5\%
-threshold.  This interpretation is consistent with equal publication rates
+threshold.  This interpretation is \textit{consistent with} equal publication rates
 (the gate does not discriminate by direction) while generating a
-within-paper conditional specification-search premium for negative findings.
+within-paper conditional threshold premium for negative findings.
+A compositional alternative deserves acknowledgment: negative-finding published
+papers may systematically differ from their NBER counterparts in unobserved
+dimensions (research design complexity, empirical detail, vintage) that
+correlate with within-paper specification counts; our cross-sectional design
+cannot distinguish between these mechanisms.
 It is also consistent with \citet{Chen2020}'s finding that the far right
 tail of published t-statistics cannot be explained by p-hacking alone:
 the excess mass we document just below $|z|=1.96$ reflects selective reporting
