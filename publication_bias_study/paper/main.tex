@@ -1072,7 +1072,7 @@ Positive ($+1$) and Negative ($-1$) are indicators for the LLM-assigned
 direction code; the omitted category is Null/Mixed ($0$).  Column~(5) adds
 $\log(1 + N_{\text{authors}})$ as a proxy for team size.  Column~(6) adds a
 quasi-experimental identification dummy equal to one if the paper's primary
-identification strategy is RDD, IV, DiD, or Event Study (as classified by our
+identification strategy is RDD, IV, DiD, or event study (as classified by our
 LLM pipeline from abstracts).
 Standard errors in parentheses.  *** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$.
 The baseline implied publication probability is $\Phi(-0.084) \approx 46.7\%$,
@@ -1202,9 +1202,8 @@ three sub-periods is consistent with the pooled null result.
 \label{subsec:pvalue_dist}
 
 A limitation of the cross-sectional design is that it cannot detect
-\textit{within-paper} manipulation of reported statistics---p-hacking or
-selective reporting of specifications that push results across the significance
-threshold.  To complement the directional analysis, we apply the
+\textit{within-paper} selective reporting of test statistics---p-hacking or
+specification search that pushes results across the significance threshold.  To complement the directional analysis, we apply the
 \citet{Brodeur2016} caliper and density-discontinuity tests to the
 distribution of test statistics extracted from the published papers themselves.
 
@@ -2267,7 +2266,7 @@ contains:
   and summary statistics
 \item \texttt{scripts/08\_robustness.py} --- Robustness checks
 \item \texttt{scripts/09\_code\_id\_strategy.py} --- LLM identification-strategy
-  classification (RDD, IV, DiD, Event Study)
+  classification (RDD, IV, DiD, event study)
 \item \texttt{scripts/10\_collect\_afa.py} --- AFA annual meeting program
   collection (2006--2024)
 \item \texttt{scripts/10b\_enrich\_afa\_abstracts.py} --- Abstract enrichment
