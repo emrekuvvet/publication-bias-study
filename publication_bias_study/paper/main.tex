@@ -346,28 +346,44 @@ published claims.  \citet{Harvey2021} develop a structural model that tries to i
 pre-publication distribution of test statistics---the full iceberg---from the
 published distribution alone, which is only the tip.  They estimate the
 share of true factors and the intensity of specification search as latent
-parameters, but \citet{Chen2020} shows the approach is weakly identified:
-bootstrapped confidence intervals on the false-discovery rate are so wide
-that the data cannot determine whether significance thresholds should be
-raised or even lowered.  \citet{Chen2020} also bounds how much
-within-study p-hacking alone can inflate published significance rates,
-finding that the observed excess mass likely requires selective reporting
-in addition to specification search.
+parameters; identification is challenging because the pre-publication
+distribution is unobserved.  \citet{Chen2020} takes a complementary approach,
+running thought experiments to bound how much p-hacking would be needed to
+generate the observed right tail of published t-statistics if all 300+
+asset-pricing factors were spurious.  He finds the implied search effort is
+implausibly large---if 10,000 researchers generated one factor per minute it
+would take millions of years---concluding that most published factors reflect
+genuine economic content rather than data-mining.  Both papers study the
+\textit{level} of published test statistics in asset pricing.
 
 This strand focuses entirely on \textit{significance-level} sorting in the
-asset-pricing factor zoo.  All papers in it face a common limitation: the
-pre-publication distribution is unobserved and must be inferred from a
-structural model or theoretical bound.  Our paper sidesteps this
-identification problem entirely by directly observing the pre-publication
-distribution through NBER working paper full texts, converting an
-inferential exercise into a direct comparison.
+asset-pricing factor zoo.  All papers in it face the identification problem
+that the pre-publication distribution is unobserved and must be inferred
+from a structural model (Harvey \& Liu) or bounded by thought experiment
+(Chen).  Our paper sidesteps this problem by directly observing the
+pre-publication distribution through NBER working paper full texts,
+converting an inferential exercise into a direct empirical comparison.
+
+The two papers are also studying a different part of the t-statistic
+distribution.  Chen's bound concerns the \textit{far} right tail ($|t| > 4$,
+$|t| > 6$), which is too heavy to be explained by p-hacking alone.  Our
+caliper test focuses on the narrow window \textit{just above} the 5\%
+threshold ($|z| \in (1.645, 2.275)$), where revision-stage pressure to cross
+the significance line leaves a characteristic local spike.  Both phenomena
+can coexist: genuine economic effects produce the fat tail; deadline and
+referee pressure produce the local bunching at 1.96.  Indeed, our findings
+are entirely consistent with Chen's conclusion that most published effects
+are real---we find no evidence that publication \textit{directionally} sorts
+pro- versus anti-intervention findings, and our caliper evidence points to
+within-paper revision pressure rather than outright fabrication.
 
 Our paper also differs on the question asked.  Factor-return sign is not
 normatively coded, so these papers cannot test for \textit{directional}
-bias---whether interventions that harm or help are differentially likely to
-reach print.  That question is economically meaningful only in a domain
-where sign has a clear policy interpretation, which is precisely the
-government-intervention literature we study.
+bias---whether papers concluding an intervention is harmful are less likely
+to reach print than papers concluding it is beneficial.  That question is
+economically meaningful only in a domain where finding direction has a
+clear policy interpretation, which is precisely the government-intervention
+literature we study.
 
 \subsection{Publication Bias in Economics}
 The economics literature on publication bias draws on a long tradition in
