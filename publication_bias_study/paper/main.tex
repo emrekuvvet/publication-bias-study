@@ -280,9 +280,11 @@ statistics from 125 papers.  The NBER caliper ratio is 1.01 ($p = 0.849$)
 overall, and 1.00 ($p = 0.964$) for negative-finding papers---essentially
 exactly one.  The overall significance rate is identical across
 samples ($57.1\%$), ruling out differences in statistical power.  The bunching
-is therefore \textit{not} a property of how these researchers design their
-studies; it emerges specifically during the publication process, and only for
-papers that challenge the efficacy of government interventions.
+does not appear to be a property of the underlying research designs in this
+domain; it is concentrated in the published record and absent from pre-publication
+counterparts, consistent with revision-stage pressure---though the cross-sectional
+design cannot rule out that it partly reflects compositional differences between
+papers that circulate through NBER versus those that reach top journals.
 
 Sub-period estimates across three regulatory regimes (2000--2007, 2008--2015,
 2016--2024) are uniformly insignificant, with all direction coefficients
@@ -324,8 +326,10 @@ Section~\ref{sec:data} describes data construction and the classification
 pipeline.  Section~\ref{sec:methods} presents the empirical strategy.
 Section~\ref{sec:results} reports main results.
 Section~\ref{sec:robustness} presents robustness checks.
-Section~\ref{sec:discussion} discusses economic magnitudes, mechanisms, and
-limitations.  Section~\ref{sec:conclusion} concludes.
+Section~\ref{sec:results} also reports economic magnitudes.
+Section~\ref{sec:discussion} discusses mechanisms, policy implications,
+comparisons to other domains, and limitations.
+Section~\ref{sec:conclusion} concludes.
 
 %% ============================================================
 \section{Related Literature}
@@ -367,11 +371,12 @@ converting an inferential exercise into a direct empirical comparison.
 The two papers are also studying a different part of the t-statistic
 distribution.  Chen's bound concerns the \textit{far} right tail ($|t| > 4$,
 $|t| > 6$), which is too heavy to be explained by p-hacking alone.  Our
-caliper test focuses on the narrow window \textit{just above} the 5\%
-threshold ($|z| \in (1.645, 2.275)$), where revision-stage pressure to cross
-the significance line leaves a characteristic local spike.  Both phenomena
-can coexist: genuine economic effects produce the fat tail; deadline and
-referee pressure produce the local bunching at 1.96.  Indeed, our findings
+caliper test focuses on the narrow window \textit{around} the 5\%
+threshold ($|z| \in (1.645, 2.275)$), where selective reporting of marginally
+significant specifications creates excess mass just \textit{below} the
+1.96 boundary.  Both phenomena can coexist: genuine economic effects produce
+the fat tail; revision-stage pressure produces excess mass in the borderline
+10\%-significant zone.  Indeed, our findings
 are entirely consistent with Chen's conclusion that most published effects
 are real---we find no evidence that publication \textit{directionally} sorts
 pro- versus anti-intervention findings, and our caliper evidence points to
@@ -1284,7 +1289,15 @@ concluding that an intervention is harmful or ineffective---where the ratio
 reaches 1.52 ($\chi^2 = 22.54$, $p < 0.001$), compared to 0.94 in
 positive-finding papers and 1.05 in null-finding papers.  Fourth, the
 density-discontinuity test is significant for the \JF{} and null-finding
-subsamples, consistent with a sharp drop in density exactly at the threshold.
+subsamples, consistent with a sharp drop in density exactly at $|z|=1.96$.
+We note a tension in the \JF{} sub-sample: the caliper ratio of 0.88 ($p =
+0.423$) indicates no excess mass just below 1.96, yet the discontinuity test
+yields $p < 0.001$.  These two statistics can coexist if density is relatively
+\textit{smooth} in both the $(1.645, 1.96)$ and $(1.96, 2.275)$ windows but
+drops sharply \textit{at} the 1.96 boundary itself---consistent with authors
+in \JF{} selectively omitting borderline-significant results rather than
+accumulating them.  This pattern should be interpreted with caution given the
+\JF{} sub-sample's small size (1,308 statistics from 26 papers).
 
 The direction-level result is particularly novel.  The cross-sectional
 analysis (Sections~\ref{sec:results}--\ref{sec:robustness}) finds no evidence
@@ -1513,10 +1526,16 @@ support a positive direction premium even within the most methodologically
 credible sub-sample.
 
 \textit{Abstract language and LLM classification confidence.}
-Abstract polish introduces a two-sided measurement concern.  Among published
-papers, 78.9\% receive a high-confidence direction code; among NBER-only
-papers, only 17.2\% do, with 70.7\% receiving low-confidence ratings.  On one
-hand, hedged NBER abstract language may push genuinely directional papers into
+Abstract writing style introduces a two-sided measurement concern.  Among published
+papers, 81.3\% receive a high-confidence direction code; among NBER-only
+papers, 62.4\% do, with 26.8\% receiving low-confidence ratings.  The
+18.9-percentage-point gap in high-confidence rates persists despite NBER
+abstracts being longer on average (158 words) than published abstracts (109
+words), suggesting the difference reflects writing style rather than abstract
+length: working paper abstracts present findings more tentatively---with
+qualifications, sensitivity discussions, and multiple results---while
+published abstracts typically lead with a clear declarative finding.
+On one hand, hedged NBER abstract language may push genuinely directional papers into
 the null category, attenuating the estimated premium.  On the other hand, if
 authors revise abstracts to sound more decisive after a revise-and-resubmit,
 the LLM may code published papers as directional partly because their language
@@ -1548,7 +1567,7 @@ testing whether direction codes are stable within the same research project.
 
 The central identification concern is that NBER working papers and
 top-journal articles are drawn from fundamentally different populations:
-only 7.4\% of published papers are matched to an NBER counterpart, so the
+only 11.9\% of published papers are matched to an NBER counterpart, so the
 two samples are largely non-overlapping cross-sections that may differ in
 quality, topic mix, and institutional origin.  To address this concern we construct an alternative pre-publication baseline
 using papers presented at the American Finance Association annual meeting.
@@ -1575,31 +1594,22 @@ OpenAlex, CrossRef, and the NBER working paper dataset (local fuzzy-title matchi
 obtaining abstracts for 3,975 of the 4,080 AFA papers (97.4\% overall; coverage is
 higher for in-scope papers because government-intervention papers are more
 likely to be published).  We apply our standard title-plus-abstract keyword
-filter (identical to the NBER pipeline) to papers with abstracts, and the
-broader title-only filter to the remaining papers, yielding 108
-in-scope papers.  Direction codes are assigned as follows: papers matched to our published
-dataset receive the direction code from the LLM-based abstract coding in
-our main pipeline; papers with available abstracts but no published match
-receive abstract-based keyword-rule codes; and the remaining papers (those
-without abstracts and unmatched) receive conservative title-keyword rules,
-which predominantly yield null codes because finance titles are typically
-neutral.  36 AFA papers (23.8\%) are matched to a JF/RFS/JFE publication
+filter (identical to the NBER pipeline) to the 3,975 AFA papers with abstracts,
+then run the LLM scope classifier, yielding \textbf{151 in-scope papers}.
+Direction codes are assigned uniformly using the LLM abstract-coding pipeline
+applied to all in-scope papers (the same method used for the NBER and published
+samples); all 151 in-scope AFA papers have an abstract.
+36 AFA papers (23.8\%) are matched to a JF/RFS/JFE publication
 via fuzzy title matching.
 
 \medskip
 \noindent\textbf{Coding limitation.}  A known limitation of the AFA test
-is that direction codes are \textit{not} assigned by identical methods
-across samples: the NBER and published samples use LLM abstract-coding
-throughout, while unmatched AFA papers with abstracts use keyword rules
-and papers without abstracts use title rules.  Because keyword and title
-rules default more often to null when abstracts are ambiguous or absent,
-this asymmetry likely \textit{overstates} the null share of the AFA sample
-and therefore \textit{understates} the AFA directional premium relative to
-a uniform-LLM-coded baseline.  The absence of a significant premium at the AFA stage
-($\hat\beta = 0.327$, $p = 0.24$) can therefore be interpreted as an upper bound on the
-true AFA premium: if anything, uniform LLM coding would raise this estimate.
-An analysis using LLM coding uniformly across all three samples is presented
-in the online appendix.
+is that direction codes are assigned by the LLM abstract-coding pipeline
+uniformly across all three samples; all 151 in-scope AFA papers have an
+abstract and receive the same LLM direction-coding as the NBER and published
+samples.  The AFA and NBER coding methods are therefore identical.
+An analysis of uniform LLM coding is presented
+in the online appendix for completeness.
 
 The binary directional probit on the AFA baseline yields
 $\hat\beta = 0.327$ (s.e.\ 0.279, $N = 151$), statistically indistinguishable
@@ -1620,21 +1630,6 @@ papers (LPM $\hat\beta = 0.146$, s.e.\ 0.208, $p = 0.49$, $N = 22$).  The
 test is severely underpowered (only six null papers in the overlap), so no
 strong inference is possible.}
 
-\textit{Quasi-experimental papers only (robustness, Panel D).}
-The most substantive quality-control check restricts the sample to papers
-using quasi-experimental identification strategies (RDD, IV, DiD, or Event
-Study), as classified by our LLM pipeline applied to abstracts.
-Among quasi-experimental papers ($N = 139$), the direction
-coefficients remain negative and insignificant ($\hat\beta_1 = -0.598$, $p = 0.121$;
-$\hat\beta_2 = -0.657$, $p = 0.081$), consistent with the pooled null result.
-
-\textit{Linear probability model.}
-Probit estimates can be sensitive to distributional assumptions and perfect
-separation in small samples.  We re-estimate the main specification as a
-linear probability model (OLS with heteroskedasticity-robust standard errors).
-The LPM yields coefficients of $-0.010$ (s.e.\ 0.082, $p = 0.900$) for positive
-findings and $-0.006$ (s.e.\ 0.079, $p = 0.942$) for negative findings,
-confirming the null result is not an artifact of the probit functional form.
 
 
 \begin{table}[H]
@@ -1774,7 +1769,7 @@ effects are genuine.  Our caliper evidence is consistent: the bunching we
 document is concentrated just above $|z|=1.96$---the lowest significance
 threshold---while the broader distribution shows a 55--57\% significance
 rate that is stable across published and pre-publication samples.  Real effects
-produce the fat tail; revision-stage pressure produces the local spike at 1.96.
+produce the fat tail; revision-stage pressure produces the excess mass in the borderline 10\%-significant zone just below 1.96.
 The two observations reinforce rather than contradict each other.
 
 \subsection{Mechanisms}
@@ -1798,8 +1793,8 @@ threshold.  This interpretation is consistent with equal publication rates
 within-paper conditional specification-search premium for negative findings.
 It is also consistent with \citet{Chen2020}'s finding that the far right
 tail of published t-statistics cannot be explained by p-hacking alone:
-the local bunching we document at $|z|=1.96$ is threshold-crossing pressure,
-not fabrication of large effects.
+the excess mass we document just below $|z|=1.96$ reflects selective reporting
+of marginally significant specifications, not fabrication of large effects.
 
 \subsection{What the Data Can and Cannot Tell Us}
 
@@ -1867,15 +1862,14 @@ not causal editorial-filter effects.
 \medskip
 \noindent\textbf{LLM classification errors and abstract polish.}
 Our pipeline assigns direction codes by reading paper abstracts.  A key
-concern---confirmed by our data---is that published paper abstracts are
-substantially more detailed and decisive in their language than NBER working
-paper abstracts: the mean published abstract contains 104 words, compared
-with 45 words for NBER abstracts.  Accordingly, 75.4\% of published papers
-receive a ``high-confidence'' LLM direction code, versus only 15.5\% of
-NBER-only papers.  If the LLM more often assigns a null code to ambiguously
-phrased NBER abstracts, the measured null-paper publication rate would be
-biased downward---which would \textit{attenuate} our estimated significance
-premium rather than inflate it.
+concern---confirmed by our data---is that NBER working paper abstracts are
+written in a more tentative, multi-result style than published abstracts,
+even though they are longer on average (158 words vs.\ 109 words for published
+abstracts).  Accordingly, 81.3\% of published papers receive a
+``high-confidence'' LLM direction code, versus 62.4\% of NBER-only papers.
+If the LLM more often assigns a null code to hedged NBER abstracts, the
+measured null-paper publication rate would be biased downward---which would
+\textit{attenuate} our estimated significance premium rather than inflate it.
 
 Our replication exercise (Section~\ref{subsec:direction}) provides direct
 evidence on this attenuation: of the 20 null-coded papers in the validation
