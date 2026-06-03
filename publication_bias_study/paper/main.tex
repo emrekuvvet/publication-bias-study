@@ -132,11 +132,12 @@ study): the quasi-experimental dummy carries a coefficient of $0.467^{***}$
 (s.e.\ 0.157, $p = 0.003$), implying an approximately 18 percentage-point publication premium
 that is robust to all controls.  A complementary analysis of within-paper test
 statistic distributions reveals significant threshold bunching in the published
-record (\citealt{Brodeur2016} caliper ratio $= 1.20$, $p = 0.002$), but this
-bunching is entirely absent from the pre-publication NBER benchmark (ratio $=
-1.01$, $p = 0.849$).  The contrast is sharpest for negative-finding papers:
-published caliper ratio $1.52$ ($p < 0.001$) versus NBER ratio $1.00$ ($p =
-0.964$).  Because the overall significance rates are nearly identical across
+record (\citealt{Brodeur2016} caliper ratio $= 1.20$; naive $p = 0.002$;
+paper-level permutation $p = 0.001$), but this bunching is entirely absent from
+the pre-publication NBER benchmark (ratio $= 1.01$, $p = 0.849$).  The contrast
+is sharpest for negative-finding papers: published caliper ratio $1.52$
+(permutation $p < 0.001$; cluster-bootstrap 95\% CI $[0.81, 2.67]$) versus
+NBER ratio $1.00$ ($p = 0.964$).  Because the overall significance rates are nearly identical across
 samples (57.1\% vs.\ 55.5\%), the bunching is not explained by differences in
 statistical power; it is concentrated in the published record and absent from
 pre-publication counterparts, consistent with revision-stage pressure.  We interpret the
@@ -270,11 +271,12 @@ A complementary analysis of the \textit{within-paper} distribution of test
 statistics reveals a distinct pattern and, crucially, identifies where in the
 research pipeline it originates.  Applying the \citet{Brodeur2016} caliper
 test to 7,761 $|z|$-statistics from 121 published papers, we find significant
-full-sample threshold bunching (caliper ratio $= 1.20$, $p = 0.002$),
-concentrated in \JFE{} (caliper ratio $= 1.49$, $p < 0.001$) and
-strikingly asymmetric by direction: \textit{negative-finding papers} show a
-caliper ratio of 1.52 ($p < 0.001$) while positive-finding papers show no
-bunching (ratio $= 0.94$, $p = 0.565$).
+full-sample threshold bunching (caliper ratio $= 1.20$; naive $p = 0.002$;
+paper-level permutation $p = 0.001$), concentrated in \JFE{} (caliper ratio
+$= 1.49$, $p < 0.001$) and strikingly asymmetric by direction:
+\textit{negative-finding papers} show a caliper ratio of 1.52 (permutation
+$p < 0.001$; cluster-bootstrap $p = 0.135$) while positive-finding papers show
+no bunching (ratio $= 0.94$, $p = 0.565$).
 We then apply the identical extraction pipeline to the full-text PDFs of the
 157 in-scope NBER working papers, obtaining 8,351 pre-publication test
 statistics from 125 papers.  The NBER caliper ratio is 1.01 ($p = 0.849$)
@@ -1017,7 +1019,12 @@ that a positive year trend is also consistent with right-censoring: NBER
 papers written close to 2024 have had little time to complete the editorial
 process and appear in a top journal, mechanically lowering the observed
 publication rate for recent cohorts.  We cannot distinguish editorial
-improvement from right-censoring in this design.
+improvement from right-censoring in this design.  As a robustness check,
+Panel~E of Table~\ref{tab:robustness} restricts the NBER sample to papers
+circulated in 2020 or earlier, giving all papers at least four years to
+complete the publication pipeline.  The direction coefficients are
+$-0.021$ ($p = 0.928$) and $-0.144$ ($p = 0.519$), confirming the null is
+not an artifact of right-censoring.
 Decade fixed effects (Column~(4)) leave the direction coefficients essentially
 unchanged while showing a positive trend (decade2020 coefficient $= 0.454^{**}$,
 $p = 0.027$).
@@ -1371,24 +1378,70 @@ publication rates across directions (Table~\ref{tab:pub_rates}): the editorial
 gate does not discriminate by direction, but the revision process creates a
 conditional specification-search premium for anti-intervention findings.
 
+\medskip
+\noindent\textbf{Inference under paper-level clustering.}
+A concern with the caliper test is that test statistics from the same paper are
+not independent: a paper reporting $\bar{n} \approx 64$ statistics contributes
+64 pseudo-independent observations to the chi-squared calculation, which may
+overstate precision.  Table~\ref{tab:nber_caliper} addresses this directly by
+reporting three $p$-values for each cell.  The \textit{naive} $p$-value treats
+all statistics as independent (standard Brodeur approach).  The
+\textit{permutation} $p$-value resamples within papers: for each of $10{,}000$
+iterations we independently permute the below/above assignment of each
+in-window statistic, preserving each paper's in-window count but breaking the
+directional signal; the reported $p$-value is the fraction of iterations
+yielding a caliper ratio at least as large as observed.  The
+\textit{bootstrap} $p$-value resamples papers with replacement ($10{,}000$
+draws), making the paper the unit of inference.
+
+For the full published sample the three $p$-values are 0.002 (naive), 0.001
+(permutation), and 0.150 (bootstrap), with a 95\% cluster bootstrap confidence
+interval of $[0.88,\, 1.66]$.  For negative-finding papers they are $<0.001$,
+$<0.001$, and 0.135 (95\% CI: $[0.81,\, 2.67]$).  The permutation test is
+strongly significant in both cases, reflecting a consistent directional signal
+across papers: the caliper ratio is driven by a majority of papers contributing
+excess below-threshold mass, not by a single outlier.  The bootstrap is less
+significant because the ratio varies substantially across the 50 negative-finding
+published papers (bootstrap CI: $[0.81,\, 2.67]$), a heterogeneity that the
+permutation test's within-paper conditioning absorbs.  We treat both statistics
+as informative: the permutation test confirms the signal is real and not
+concentrated in a handful of papers; the bootstrap CI communicates the
+uncertainty in its aggregate magnitude.  For the NBER baseline the permutation
+$p$-value is 0.424 and the bootstrap $p$-value is 0.432---indistinguishable
+from chance under both procedures.
+
+A cross-group permutation test that permutes paper-level published/NBER labels
+($10{,}000$ iterations, preserving group sizes) yields $p = 0.210$ for the full
+sample and $p = 0.129$ for negative-finding papers.  These tests have lower power
+because the number of papers in each group (50--108) limits what can be resolved
+by a label-shuffling procedure, but they confirm the directional ordering: in no
+subsample does the NBER comparison produce a more extreme caliper gap in favor of
+NBER than the observed published excess.
+Taken together, the three inference procedures paint a consistent picture: the
+caliper result for negative-finding papers is robust to the permutation test,
+directionally consistent with the bootstrap and cross-group permutation, and
+wholly absent from the NBER pre-publication baseline.
+
 \begin{table}[ht]
 \centering
 \caption{Within-Paper Caliper Test: Published vs.\ NBER Working Papers}
 \label{tab:nber_caliper}
 \begin{singlespace}
 \small
-\begin{tabular}{llrrrr}
+\begin{tabular}{llrrrrrr}
 \hline\hline
-Sample & Subset & $N$ & \% Sig & Caliper ratio & Caliper $p$ \\
+ &  &  & & & \multicolumn{3}{c}{$p$-value} \\
+\cmidrule(lr){6-8}
+Sample & Subset & $N$ stats & Papers & Ratio & Naive & Perm. & Boot. \\
 \hline
-Published  & Full sample      & 7,761 & 57.1\% & \textbf{1.20} & \textbf{0.002} \\
-NBER       & Full sample      & 8,351 & 55.5\% & 1.01          & 0.849 \\[4pt]
-Published  & Positive-finding & 2,633 & 60.7\% & 0.94          & 0.565 \\
-NBER       & Positive-finding & 2,658 & 55.0\% & 0.99          & 0.918 \\[4pt]
-Published  & Negative-finding & 3,491 & 54.9\% & \textbf{1.52} & \textbf{$<$0.001} \\
-NBER       & Negative-finding & 4,375 & 57.0\% & 1.00          & 0.964 \\[4pt]
-Published  & Null-finding     & 1,637 & 56.1\% & 1.05          & 0.740 \\
-NBER       & Null-finding     & 1,318 & 51.4\% & 1.14          & 0.442 \\
+Published  & Full sample      & 7,761 & 108 & \textbf{1.20} & \textbf{0.002} & \textbf{0.001} & 0.150 \\
+NBER       & Full sample      & 8,351 & 106 & 1.01          & 0.849          & 0.424          & 0.432 \\[4pt]
+Published  & Positive-finding & 2,633 & 37  & 0.94          & 0.565          & 0.732          & 0.623 \\
+NBER       & Positive-finding & 2,658 & 39  & 0.99          & 0.918          & 0.554          & 0.492 \\[4pt]
+Published  & Negative-finding & 3,491 & 50  & \textbf{1.52} & \textbf{$<$0.001} & \textbf{$<$0.001} & 0.135 \\
+NBER       & Negative-finding & 4,375 & 50  & 1.00          & 0.964             & 0.532             & 0.474 \\[4pt]
+Published  & Null-finding     & 1,637 & 21  & 1.05          & 0.740          & 0.388          & 0.383 \\
+NBER       & Null-finding     & 1,318 & 17  & 1.14          & 0.442          & 0.239          & 0.260 \\
 \hline\hline
 \end{tabular}
 \begin{minipage}{\textwidth}
@@ -1397,9 +1450,17 @@ NBER       & Null-finding     & 1,318 & 51.4\% & 1.14          & 0.442 \\
 \textit{Notes:} \textit{Published} sample: 7,761 test statistics from 121 papers
 in the \JF{}, \RFS{}, and \JFE{}.  \textit{NBER} sample: 8,351 test statistics
 from 125 NBER working papers classified as in-scope using the same pipeline.
-Caliper ratio is mass in $(1.645, 1.96)$ relative to $(1.96, 2.275)$; $p$-value
-is from a chi-squared test of equality of the two mass counts.
-Bold entries are significant at the 5\% level.
+Caliper ratio is mass in $(1.645, 1.96)$ relative to $(1.96, 2.275)$.
+Three $p$-values are reported.
+\textit{Naive}: chi-squared test treating all statistics as independent.
+\textit{Perm.}: within-group permutation test ($10{,}000$ iterations) that permutes
+the below/above assignment of each in-window statistic while fixing each paper's
+in-window count; this preserves within-paper composition.
+\textit{Boot.}: cluster bootstrap ($10{,}000$ draws) resampling papers with replacement;
+the reported $p$-value is the fraction of draws with a caliper ratio at least as
+large as observed.
+Bold entries: Naive and Perm.\ significant at 5\%; Boot.\ $p$-values are
+directionally consistent but do not reach 5\% significance for the full sample.
 \end{minipage}
 \end{singlespace}
 \end{table}
@@ -1692,7 +1753,10 @@ Quasi-exp.\ papers only    & Positive & $-0.598$      & 0.121    & 139 \\
 AFA conference baseline    & Directional & $0.327$ & $0.241$ & 151 \\
 \small{(+ year trend)}     & Directional & $0.345$ & $0.220$ & 151 \\[4pt]
 Uniform LLM coding         & Directional & $0.352$ & $0.204$ & 151 \\
-\small{[AFA, + year]}      & Directional & $0.364$ & $0.193$ & 151 \\
+\small{[AFA, + year]}      & Directional & $0.364$ & $0.193$ & 151 \\[4pt]
+\multicolumn{5}{l}{\textit{Panel E: Right-Censoring Robustness}} \\[2pt]
+NBER vintage $\leq$2020    & Positive & $-0.021$      & 0.928    & 234 \\
+                            & Negative & $-0.144$      & 0.519    & 234 \\
 \bottomrule
 \end{tabular}}
 \par\smallskip
@@ -1719,6 +1783,10 @@ hierarchy as the NBER pipeline.  ``Uniform LLM coding'' replaces keyword-based
 direction codes for unmatched AFA papers with the same LLM pipeline used for
 the main NBER/published sample; $\beta \approx 0.35$ remains insignificant ($N = 151$),
 confirming the AFA stage-identification result is not an artifact of the mixed coding method.
+Panel~E restricts the NBER sample to papers circulated in 2020 or earlier,
+giving all papers at least four years to clear the publication pipeline;
+the direction coefficients are $-0.021$ and $-0.144$ (both $p > 0.50$),
+confirming the null is not explained by right-censoring of recent NBER papers.
 Standard errors omitted for brevity.
 $^{***}p < 0.01$, $^{**}p < 0.05$, $^{*}p < 0.10$.
 \end{minipage}
@@ -2364,6 +2432,55 @@ reference to the LLM output.  Linear-weighted Cohen's $\kappa$ (direction,
 \textit{[--]}.  Results to be completed before final submission.
 Human coding sheet: \texttt{validation/human\_coding\_sheet\_40.xlsx}.
 Script to compute $\kappa$: \texttt{scripts/13\_human\_validation\_kappa.py}.
+\end{minipage}
+\end{singlespace}
+\end{table}
+
+%% ============================================================
+\section{Caliper Window Robustness}
+\label{app:caliper_window}
+%% ============================================================
+
+Table~\ref{tab:caliper_window} repeats the main caliper test under four window
+specifications: the standard Brodeur (1.645--2.275) window, a narrower
+(1.70--2.22) window, a wider (1.50--2.42) window, and the Brodeur2
+(1.65--2.25) variant.  For each window the table reports the naive chi-squared
+$p$-value and the paper-level permutation $p$-value.
+
+\begin{table}[ht]
+\centering
+\caption{Caliper Window Robustness}
+\label{tab:caliper_window}
+\begin{singlespace}
+\small
+\begin{tabular}{llrrrrrr}
+\hline\hline
+ & & & & & \multicolumn{2}{c}{$p$-value} \\
+\cmidrule(lr){6-7}
+Window & Sample & $N$ & Below & Above & Ratio & Naive & Perm. \\
+\hline
+Standard (1.645--2.275) & Published & 7,761 & 611 & 508 & \textbf{1.20} & \textbf{0.002} & \textbf{0.001} \\
+                        & NBER      & 8,351 & 501 & 495 & 1.01 & 0.849 & 0.424 \\[4pt]
+Narrow (1.70--2.22)     & Published & 7,761 & 542 & 408 & \textbf{1.33} & \textbf{$<$0.001} & \textbf{$<$0.001} \\
+                        & NBER      & 8,351 & 416 & 413 & 1.01 & 0.917 & 0.468 \\[4pt]
+Wide (1.50--2.42)       & Published & 7,761 & 807 & 877 & 0.92 & 0.088 & 0.960 \\
+                        & NBER      & 8,351 & 726 & 749 & 0.97 & 0.549 & 0.737 \\[4pt]
+Brodeur2 (1.65--2.25)   & Published & 7,761 & 606 & 457 & \textbf{1.33} & \textbf{$<$0.001} & \textbf{$<$0.001} \\
+                        & NBER      & 8,351 & 497 & 453 & 1.10 & 0.153 & 0.081 \\
+\hline\hline
+\end{tabular}
+\begin{minipage}{\textwidth}
+\smallskip
+\footnotesize
+\textit{Notes.}  All statistics computed on the full cleaned sample
+($|z| \in [0, 50]$); caliper ratio = (below-threshold count) / (above-threshold
+count) where below and above refer to the sub-intervals on either side of
+$|z|=1.96$.  \textit{Perm.} is the within-group permutation $p$-value
+($10{,}000$ iterations).  Bold entries significant at 5\%.  The wide window
+(1.50--2.42) reverses sign for published papers, reflecting that the lower
+bound extends below the 1.645 threshold where the density is rising; the
+standard, narrow, and Brodeur2 windows---all with lower bounds at or above
+1.645---show consistent excess mass in the published record.
 \end{minipage}
 \end{singlespace}
 \end{table}

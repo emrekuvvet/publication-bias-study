@@ -59,12 +59,16 @@ def density_discontinuity_test(z_abs, threshold=1.96, bandwidth=0.5):
 def plot_zdist(z_abs, title, filename, threshold=1.96):
     fig, ax = plt.subplots(figsize=(8, 5))
 
-    # Filter to plausible z range
-    z = z_abs[(z_abs >= 0) & (z_abs <= 6)]
+    # Caliper and discontinuity computed on the full cleaned sample [0, 50]
+    z_full = z_abs[(z_abs >= 0) & (z_abs <= 50)]
+    ratio, chi2, p = caliper_test(z_full)
+    z_disc, p_disc = density_discontinuity_test(z_full)
 
-    ax.hist(z, bins=np.arange(0, 6.1, 0.2), density=True,
+    # Histogram trimmed to [0, 6] for display only
+    z_hist = z_full[z_full <= 6]
+    ax.hist(z_hist, bins=np.arange(0, 6.1, 0.2), density=True,
             color='steelblue', edgecolor='white', linewidth=0.5, alpha=0.8,
-            label=f'Observed (N={len(z):,})')
+            label=f'Observed (N={len(z_full):,}; histogram trimmed to |z|≤6)')
 
     # Expected chi2(1) density as reference
     x = np.linspace(0, 6, 300)
@@ -79,9 +83,6 @@ def plot_zdist(z_abs, title, filename, threshold=1.96):
     # Shade the caliper window
     ax.axvspan(1.645, 1.96, alpha=0.1, color='orange', label='Caliper window (below)')
     ax.axvspan(1.96,  2.275, alpha=0.1, color='red',   label='Caliper window (above)')
-
-    ratio, chi2, p = caliper_test(z)
-    z_disc, p_disc = density_discontinuity_test(z)
 
     textstr = (f'Caliper ratio (below/above 1.96): {ratio:.2f}\n'
                f'Caliper χ²={chi2:.2f}, p={p:.3f}\n'

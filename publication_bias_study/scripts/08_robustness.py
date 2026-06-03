@@ -341,6 +341,31 @@ def r9_matched_pairs_direction(df: pd.DataFrame) -> pd.DataFrame:
 
 
 # ------------------------------------------------------------------ #
+# R10 — Right-censoring robustness (Referee Point 3)                   #
+# ------------------------------------------------------------------ #
+
+def r10_right_censoring(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Restrict to papers with NBER vintage ≤ 2020.
+
+    Papers circulated after 2020 have had less time to be accepted for
+    publication, so they may appear as unpublished not because of their
+    direction but simply because of elapsed time. Restricting to ≤2020
+    gives all papers at least 4+ years to clear the publication pipeline.
+    """
+    df = df.copy()
+    df["year_num"] = pd.to_numeric(df["year"], errors="coerce")
+    sub = df[df["year_num"] <= 2020]
+    print(f"  R10: restricted to vintage ≤2020, N={len(sub):,} "
+          f"({sub['published_top3'].mean()*100:.0f}% published)")
+    if len(sub) < 20:
+        print("  R10: too few obs — skipping")
+        return pd.DataFrame()
+    return run_probit("pub ~ pos + neg + year_c", sub,
+                      "R10: Right-censoring (vintage ≤2020)")
+
+
+# ------------------------------------------------------------------ #
 # Main                                                                 #
 # ------------------------------------------------------------------ #
 
@@ -370,6 +395,9 @@ def main() -> None:
 
     print("\n[R9] Matched-pairs direction stability (Referee Point 1)")
     results.append(r9_matched_pairs_direction(df))
+
+    print("\n[R10] Right-censoring robustness (vintage ≤2020)")
+    results.append(r10_right_censoring(df))
 
     valid = [r for r in results if r is not None and not r.empty]
     if not valid:
