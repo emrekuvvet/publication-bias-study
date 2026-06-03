@@ -129,8 +129,8 @@ the three-way direction indicators are uniformly insignificant across
 specifications.  The only robust predictor of top-journal publication is the
 use of a quasi-experimental identification strategy (RDD, IV, DiD, or event
 study): the quasi-experimental dummy carries a coefficient of $0.467^{***}$
-(s.e.\ 0.157, $p = 0.003$), an approximately 18 percentage-point publication premium that is
-robust to all controls.  A complementary analysis of within-paper test
+(s.e.\ 0.157, $p = 0.003$), implying an approximately 18 percentage-point publication premium
+that is robust to all controls.  A complementary analysis of within-paper test
 statistic distributions reveals significant threshold bunching in the published
 record (\citealt{Brodeur2016} caliper ratio $= 1.20$, $p = 0.002$), but this
 bunching is entirely absent from the pre-publication NBER benchmark (ratio $=
@@ -621,6 +621,7 @@ Selection step & Papers remaining & Papers dropped \\
 \textit{Pass 2: LLM scope classification} & & \\
 \quad Retain in-scope papers (LLM, combined) &    343 &  1,509 \\
 \quad Exclude exchange-imposed market structure rules & 341 & 2 \\
+\quad Manual validation and scope review & 291 & 50 \\
 \addlinespace
 \textit{Final analysis sample}          & & \\
 \quad Published in JF / RFS / JFE       &    134 & \\
@@ -641,13 +642,14 @@ Pass~1 applies a keyword taxonomy of government intervention terminology
 (Appendix~\ref{app:keywords}); Pass~2 uses a large language model (Claude) to
 verify that each flagged paper's primary research question is the causal effect
 of a specific government policy on financial markets, firms, or investors.
-The 341 papers surviving all exclusion steps comprise both journal articles
-(Published\,=\,1) and NBER working papers.  The final 291 analysis observations
-reflect the net of this two-corpus count: 134 published journal articles
+The 341 papers surviving the automated exclusion steps comprise both journal articles
+(Published\,=\,1) and NBER working papers.  The subsequent manual validation and
+scope review removes 50 papers: 16 in-scope NBER working papers that are matched
+to a top-journal publication (represented by their published version) and 34 NBER
+papers reclassified as out-of-scope or theoretical during manual review.  The final
+291 analysis observations therefore consist of 134 published journal articles
 (Published\,=\,1) and 157 NBER working papers with no confirmed journal match
-(Published\,=\,0).  NBER papers matched to an in-scope journal article are not
-separately entered as Published\,=\,0 observations; see Section~\ref{subsec:linking}
-for the matching procedure.  The published sub-sample comprises all in-scope
+(Published\,=\,0).  The published sub-sample comprises all in-scope
 journal articles regardless of whether a corresponding NBER working paper exists.
 \end{minipage}
 \end{singlespace}
@@ -1003,11 +1005,6 @@ the 46\% baseline ($\Phi(-0.084 + 0.57) - \Phi(-0.084) \approx 0.22$)---a large,
 this cannot be ruled out by our design; the non-rejections should be
 interpreted as evidence against large directional sorting, not proof of
 the complete absence of any direction premium.
-Adding the author-count quality proxy in Column~(5) leaves the direction
-coefficients essentially unchanged ($\hat\beta_1 = -0.005$,
-$\hat\beta_2 = -0.020$), both far from significance.  The author-count
-coefficient ($\hat\delta = -0.186$, s.e.\ 0.279) is not statistically
-significant at conventional levels.
 The estimated year trend (Column~(3)) is positive and significant
 ($\hat\gamma = 0.033^{***}$, s.e.\ 0.012),
 suggesting that recently written papers in this domain are more likely to
@@ -1017,11 +1014,15 @@ papers written close to 2024 have had little time to complete the editorial
 process and appear in a top journal, mechanically lowering the observed
 publication rate for recent cohorts.  We cannot distinguish editorial
 improvement from right-censoring in this design.
-In Column~(5), the year trend remains statistically significant ($\hat\gamma = 0.034^{***}$,
-s.e.\ 0.012) after controlling for team size.
 Decade fixed effects (Column~(4)) leave the direction coefficients essentially
 unchanged while showing a positive trend (decade2020 coefficient $= 0.454^{**}$,
 $p = 0.027$).
+Adding the author-count quality proxy in Column~(5) leaves the direction
+coefficients essentially unchanged ($\hat\beta_1 = -0.005$,
+$\hat\beta_2 = -0.020$), both far from significance.  The author-count
+coefficient ($\hat\delta = -0.186$, s.e.\ 0.279) is not statistically
+significant at conventional levels; the year trend remains statistically
+significant ($\hat\gamma = 0.034^{***}$, s.e.\ 0.012) after this control.
 
 Column~(6) adds the quasi-experimental identification dummy.  The \textit{QuasiExp}
 coefficient is $0.467^{***}$ (s.e.\ 0.157, $p = 0.003$), confirming that
