@@ -580,7 +580,7 @@ as an exogenous instrument to identify a non-regulatory relationship---for
 example, using SOX passage to instrument for disclosure quality in order to
 study its effect on firm investment.  Such papers' primary research question
 is not the policy effect itself; they fall under the third LLM exclusion
-criterion (main topic is private behaviour with policy as incidental context)
+criterion (main topic is private behavior with policy as incidental context)
 but were not consistently flagged by the automated classifier.  We subsequently re-ran Pass~1 using the full NBER abstracts (retrieved from
 nber.org rather than the truncated API text of \textasciitilde45 words), which
 yielded 803 additional NBER candidates.  The automated pipeline and manual
@@ -997,9 +997,10 @@ equality of the two coefficients gives $\chi^2 = 0.005$ ($p = 0.944$).  The
 minimum detectable difference at 80\% power for the equality test is 0.466
 coefficient units (SE of difference $= 0.166$).  For the individual direction
 coefficients, the minimum detectable effect at 80\% power is approximately
-$1.96 \times 0.204 \approx 0.40$ coefficient units, corresponding to a
-publication probability premium of roughly 13--15 percentage points above
-the 46\% baseline---a large, policy-relevant effect.  Effects smaller than
+$(1.96 + 0.842) \times 0.204 \approx 0.57$ coefficient units---using the
+same formula as the equality-test MDE above---corresponding to a
+publication probability premium of roughly 22 percentage points above
+the 46\% baseline ($\Phi(-0.084 + 0.57) - \Phi(-0.084) \approx 0.22$)---a large, policy-relevant effect.  Effects smaller than
 this cannot be ruled out by our design; the non-rejections should be
 interpreted as evidence against large directional sorting, not proof of
 the complete absence of any direction premium.
@@ -1096,8 +1097,8 @@ magnitude for a direction sorting effect.
 We note that the direction-to-null publication ratios ($\approx$1.0$\times$)
 are not directly comparable to \citet{Brodeur2016}'s caliper estimates of
 1.5--2.0$\times$: Brodeur's figures measure within-paper specification-selection
-pressure (the ratio of test statistics just above versus just below a significance
-threshold in the published distribution), while our 1.0$\times$ ratios measure
+pressure (the ratio of test statistics just below versus just above the 5\%
+significance threshold in the published distribution), while our 1.0$\times$ ratios measure
 cross-sectional publication likelihood (whether directional papers reach print at
 all).  The within-paper comparison to Brodeur appears in Section~\ref{subsec:pvalue_dist},
 where our published caliper ratio of 1.20 is lower than Brodeur's 1.5--2.0
@@ -1762,10 +1763,11 @@ selection rather than a distortion.
 
 Our $\approx1.0\times$ directional-to-null publication ratio stands in contrast
 to analogous estimates from adjacent literatures.  \citet{Brodeur2016} document
-excess mass just above conventional significance thresholds in the
-\textit{American Economic Review}, the \textit{Journal of Political Economy},
-and the \textit{Quarterly Journal of Economics}, with implied ratios of roughly
-$1.5$--$2.0\times$ for significant versus borderline-insignificant findings.
+excess mass just below the conventional 5\% significance threshold
+($|z| \in (1.645, 1.96)$) in the \textit{American Economic Review},
+the \textit{Journal of Political Economy}, and the \textit{Quarterly Journal
+of Economics}, with implied ratios of roughly $1.5$--$2.0\times$ for
+borderline-significant versus just-significant findings.
 \citet{Franco2014}, studying NSF-funded social science experiments with
 pre-registered designs, find that 65\% of null results were never published
 versus 21\% of significant results---also implying a roughly $3\times$
