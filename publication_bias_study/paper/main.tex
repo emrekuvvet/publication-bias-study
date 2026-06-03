@@ -126,15 +126,22 @@ the \JF{}, \RFS{}, or \JFE{} at 45.6\%, negative-finding papers at 46.1\%,
 and null-finding papers at 46.7\% ($\chi^2 = 0.017$, $p = 0.99$).  A binary
 directional probit coefficient is $-0.020$ (s.e.\ 0.182, $p = 0.91$), and
 the three-way direction indicators are uniformly insignificant across
-specifications.  The only robust predictor of top-journal publication in our
-sample is the use of a quasi-experimental identification strategy (RDD, IV,
-DiD, or event study): the quasi-experimental dummy carries a coefficient of
-$0.467^{***}$ (s.e.\ 0.157, $p = 0.003$), a 14 percentage-point publication
-premium that is robust to all controls.  We interpret our results as evidence
-that editorial selection in top finance journals rewards methodological rigor
-rather than finding direction in the government-intervention literature.  We
-discuss the limitations of our two-sample design and the conditions under which
-the null finding could mask underlying publication bias.
+specifications.  The only robust predictor of top-journal publication is the
+use of a quasi-experimental identification strategy (RDD, IV, DiD, or event
+study): the quasi-experimental dummy carries a coefficient of $0.467^{***}$
+(s.e.\ 0.157, $p = 0.003$), a 14 percentage-point publication premium that is
+robust to all controls.  A complementary analysis of within-paper test
+statistic distributions reveals significant threshold bunching in the published
+record (\citealt{Brodeur2016} caliper ratio $= 1.20$, $p = 0.002$), but this
+bunching is entirely absent from the pre-publication NBER benchmark (ratio $=
+1.01$, $p = 0.849$).  The contrast is sharpest for negative-finding papers:
+published caliper ratio $1.52$ ($p < 0.001$) versus NBER ratio $1.00$ ($p =
+0.964$).  Because the overall significance rates are nearly identical across
+samples (57.1\% vs.\ 55.5\%), the bunching is not explained by differences in
+statistical power; it is specific to the published record.  We interpret the
+joint pattern as evidence that editorial selection in top finance journals is
+directionally neutral, but that the revision process creates within-paper
+threshold pressure, particularly for anti-intervention findings.
 \end{singlespace}
 \vspace{4pt}
 \noindent\small\textit{JEL classification:} G18, G28, C80, B40.
@@ -268,10 +275,10 @@ strikingly asymmetric by direction: \textit{negative-finding papers} show a
 caliper ratio of 1.52 ($p < 0.001$) while positive-finding papers show no
 bunching (ratio $= 0.94$, $p = 0.565$).
 We then apply the identical extraction pipeline to the full-text PDFs of the
-157 in-scope NBER working papers, obtaining 6,622 pre-publication test
-statistics from 107 papers.  The NBER caliper ratio is 1.04 ($p = 0.557$)
-overall, and 1.06 ($p = 0.542$) for negative-finding papers---statistically
-indistinguishable from one.  The overall significance rate is identical across
+157 in-scope NBER working papers, obtaining 8,351 pre-publication test
+statistics from 125 papers.  The NBER caliper ratio is 1.01 ($p = 0.849$)
+overall, and 1.00 ($p = 0.964$) for negative-finding papers---essentially
+exactly one.  The overall significance rate is identical across
 samples ($57.1\%$), ruling out differences in statistical power.  The bunching
 is therefore \textit{not} a property of how these researchers design their
 studies; it emerges specifically during the publication process, and only for
@@ -1712,6 +1719,24 @@ important question for future research.
 
 \subsection{Mechanisms}
 
+Two analytically distinct patterns require separate mechanistic accounts.
+The \textit{absence} of direction-based editorial selection---roughly equal
+publication rates across finding directions---and the \textit{presence} of
+within-paper threshold bunching concentrated in the published record point to
+different stages of the research pipeline.
+
+For the direction-sorting null result, we consider two compatible explanations
+below.  For the caliper finding, the NBER benchmark provides a more direct
+answer: because the bunching is present in published papers but absent from
+their pre-publication counterparts, and because the overall significance rate
+is unchanged, the distortion is specific to the revision stage.
+Anti-intervention papers face elevated evidentiary demands from referees and
+editors---perhaps because heterodox findings invite more scrutiny---leading
+authors to search specifications until marginal results clear the 5\%
+threshold.  This interpretation is consistent with equal publication rates
+(the gate does not discriminate by direction) while generating a
+within-paper conditional specification-search premium for negative findings.
+
 \subsection{What the Data Can and Cannot Tell Us}
 
 Our empirical design documents a cross-sectional association between finding
@@ -1880,9 +1905,19 @@ $p < 0.001$), while \JF{} and \RFS{} papers do not exhibit bunching.  The
 bunching is even more severe in negative-finding papers (caliper ratio $= 1.52$,
 $p < 0.001$)---papers that conclude interventions are harmful or
 ineffective---while positive-finding papers show no significant bunching.
+
+Crucially, applying the identical pipeline to 8,351 test statistics from 125
+NBER working-paper counterparts shows no bunching (full-sample ratio $= 1.01$,
+$p = 0.849$; negative-finding ratio $= 1.00$, $p = 0.964$), while the overall
+significance rate is nearly identical across the two samples (57.1\% vs.\
+55.5\%).  This pre-publication benchmark localizes the distributional distortion
+to the revision stage rather than to the upstream research design, and is---to
+our knowledge---the first direct published-vs.-working-paper caliper comparison
+in the finance literature.
+
 The joint pattern suggests that the \textit{absence} of direction-based
-editorial selection coexists with \textit{within-paper} threshold
-manipulation, particularly among anti-intervention findings in the \JFE{}.
+editorial selection coexists with \textit{within-paper} threshold manipulation
+originating during revision, particularly among anti-intervention findings in the \JFE{}.
 
 We interpret these results throughout as cross-sectional associations.  Our
 design identifies a null association between finding direction and publication
