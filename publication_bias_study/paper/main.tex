@@ -1565,11 +1565,11 @@ authors revise abstracts to sound more decisive after a revise-and-resubmit,
 the LLM may code published papers as directional partly because their language
 signals directionality more clearly, inflating the premium.
 
-Our replication exercise (Section~\ref{subsec:direction}) further supports this
-conclusion: of the 20 null-coded papers in the validation sample, 15 are
-reclassified as directional in the independent replication run, while no
-directional-coded papers are reclassified as null.  This asymmetry implies that
-null-coding error attenuates rather than inflates our estimate.
+Our replication exercise (Section~\ref{subsec:direction}) supports the
+attenuation interpretation: of the 20 null-coded papers in the validation
+sample, 15 are reclassified as directional in the independent replication run,
+while no directional-coded papers are reclassified as null.  This asymmetry
+implies that null-coding error attenuates rather than inflates our estimate.
 
 Table~\ref{tab:robustness} Panel~C also reports a bounding specification
 that adds $\log(\text{abstract length})$ as a covariate
@@ -1620,9 +1620,8 @@ higher for in-scope papers because government-intervention papers are more
 likely to be published).  We apply our standard title-plus-abstract keyword
 filter (identical to the NBER pipeline) to the 3,975 AFA papers with abstracts,
 then run the LLM scope classifier, yielding \textbf{151 in-scope papers}.
-Direction codes are assigned uniformly using the LLM abstract-coding pipeline
-applied to all in-scope papers (the same method used for the NBER and published
-samples); all 151 in-scope AFA papers have an abstract.
+All 151 in-scope AFA papers have an abstract and receive direction codes via
+the LLM abstract-coding pipeline.
 36 AFA papers (23.8\%) are matched to a JF/RFS/JFE publication
 via fuzzy title matching.
 
@@ -2016,7 +2015,7 @@ $p < 0.001$)---papers that conclude interventions are harmful or
 ineffective---while positive-finding papers show no significant bunching.
 
 Crucially, applying the identical pipeline to 8,351 test statistics from 125
-NBER working-paper counterparts shows no bunching (full-sample ratio $= 1.01$,
+NBER pre-publication benchmark papers shows no bunching (full-sample ratio $= 1.01$,
 $p = 0.849$; negative-finding ratio $= 1.00$, $p = 0.964$), while the overall
 significance rate is nearly identical across the two samples (57.1\% vs.\
 55.5\%).  This pre-publication benchmark localizes the distributional distortion
