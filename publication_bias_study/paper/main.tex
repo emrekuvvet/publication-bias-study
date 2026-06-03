@@ -1348,7 +1348,7 @@ tests.  The bunching at the 5\% threshold is specific to the published record.
 The directional pattern is even sharper.  Among \textit{negative-finding} papers,
 the published caliper ratio is 1.52 ($p < 0.001$) while the NBER ratio is
 \textit{essentially exactly one} (ratio $= 1.00$, $p = 0.964$)---a difference of
-0.53 that is as clean a contrast as the data can produce.
+0.52 that is as clean a contrast as the data can produce.
 Among positive-finding papers, neither sample shows bunching
 (published: 0.94; NBER: 0.99; both $p > 0.56$).
 For null-finding papers the pattern reverses: the NBER caliper ratio (1.14, $p = 0.442$)
@@ -1543,11 +1543,10 @@ addresses the concern that null-finding papers systematically rely on weaker
 empirical designs.  Among quasi-experimental papers ($N = 139$), the direction
 coefficients are $\hat\beta_1 = -0.598$ ($p = 0.121$) and $\hat\beta_2 =
 -0.657^{*}$ ($p = 0.081$).  $\hat\beta_1$ is clearly insignificant;
-$\hat\beta_2$ is marginally significant at the 10\% level, driven by the
-reduced sub-sample size ($N = 139$) rather than a genuine direction premium ---
-the coefficient is negative, indicating that quasi-experimental negative-finding
-papers are \textit{less} likely to be published than null papers, opposite to
-the significance-sorting prediction.  Neither estimate supports a positive
+$\hat\beta_2$ is marginally significant at the 10\% level, but its negative sign
+rules out a positive direction premium: quasi-experimental negative-finding
+papers are \textit{less} likely to be published than null papers, the opposite
+of what significance-sorting would predict.  Neither estimate supports a positive
 direction premium within the most methodologically credible sub-sample.
 
 \textit{Abstract language and LLM classification confidence.}
@@ -1629,12 +1628,13 @@ via fuzzy title matching.
 
 \medskip
 \noindent\textbf{Coding limitation.}  Direction codes for in-scope AFA
-papers follow the same three-tier LLM pipeline used for the NBER and
-published samples; all 151 in-scope AFA papers have an abstract and receive
-LLM direction codes.  As a robustness check, Table~\ref{tab:robustness}
-Panel~D also reports a ``Uniform LLM coding'' specification that replaces
-any keyword-based fallback codes (applied during earlier pipeline stages)
-with the standard LLM pipeline throughout, yielding nearly identical estimates
+papers are assigned via the LLM abstract-coding pipeline; the baseline
+specification applies keyword-based fallback codes for cases where earlier
+pipeline stages produced low-confidence LLM results.  All 151 in-scope AFA
+papers have an abstract and receive direction codes.  As a robustness check,
+Table~\ref{tab:robustness} Panel~D also reports a ``Uniform LLM coding''
+specification that replaces these keyword-based fallback codes with the
+standard LLM pipeline throughout, yielding nearly identical estimates
 ($\hat\beta = 0.352$, $p = 0.204$) and confirming the result is not an
 artifact of the coding method.
 
@@ -1979,9 +1979,10 @@ sample, three journals, three directions, two tests) and mirrors them for the
 NBER benchmark.  Applying a Bonferroni correction at the 5\% level requires
 $p < 0.004$ for any single caliper comparison.  The full-sample published caliper
 ($p = 0.002$), the \JFE{} caliper ($p < 0.001$), the negative-direction caliper
-($p < 0.001$), and both corresponding NBER comparisons ($p > 0.84$) all survive
-this threshold, so the core contrast between published bunching and NBER
-non-bunching is robust to multiple-comparison correction.
+($p < 0.001$) all survive this threshold.  The corresponding NBER caliper tests
+($p > 0.84$) do not approach significance, confirming the absence of
+pre-publication bunching.  The core contrast between published bunching and NBER
+non-bunching is therefore robust to multiple-comparison correction.
 
 %% ============================================================
 \section{Conclusion}
@@ -2127,7 +2128,7 @@ regulation, or public policy on financial markets, firms, or investors.
 Exclusion criteria: (1) purely theoretical papers with no empirical test
 of a policy; (2) papers that only DESCRIBE a regulation without estimating
 its effect; (3) papers whose main topic is private firm or market
-behaviour, with policy as incidental context; (4) papers studying
+behavior, with policy as incidental context; (4) papers studying
 central bank communication WITHOUT a specific policy instrument.
 Return JSON with exactly three keys: in\_scope (boolean), confidence
 (``high'', ``medium'', or ``low''), reason (one sentence).
