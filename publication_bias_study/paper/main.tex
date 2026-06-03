@@ -129,7 +129,7 @@ the three-way direction indicators are uniformly insignificant across
 specifications.  The only robust predictor of top-journal publication is the
 use of a quasi-experimental identification strategy (RDD, IV, DiD, or event
 study): the quasi-experimental dummy carries a coefficient of $0.467^{***}$
-(s.e.\ 0.157, $p = 0.003$), a 14 percentage-point publication premium that is
+(s.e.\ 0.157, $p = 0.003$), an approximately 18 percentage-point publication premium that is
 robust to all controls.  A complementary analysis of within-paper test
 statistic distributions reveals significant threshold bunching in the published
 record (\citealt{Brodeur2016} caliper ratio $= 1.20$, $p = 0.002$), but this
@@ -248,7 +248,7 @@ A Wald test for equality of the two direction coefficients gives $\chi^2 = 0.005
 The one robust predictor of top-journal publication is quasi-experimental
 identification quality.  The \textit{QuasiExp} dummy carries a coefficient
 of $0.467^{***}$ (s.e.\ 0.157, $p = 0.003$) in Column~(6), implying a
-14 percentage-point publication premium for papers using RDD, IV,
+18 percentage-point publication premium for papers using RDD, IV,
 DiD, or event-study designs.  This identification-quality premium survives
 all controls, whereas the direction coefficients remain statistically
 indistinguishable from zero.  The evidence suggests that editorial selection
@@ -342,11 +342,25 @@ anomalies and find that 65\% fail under standard portfolio construction
 choices, consistent with upward-biased published effect sizes.
 \citet{Jensen2023} document that most factors replicate out-of-sample but that
 the factor space is highly redundant, implying substantial duplication in
-published claims.  This strand focuses entirely on the asset pricing domain
-and diagnoses bias through t-statistic distributions or replication rates.  It
-does not study policy-intervention research, and it cannot distinguish
-significance bias from directional bias because factor-return sign is not
-normatively coded.
+published claims.  \citet{Harvey2021} extend this line to quantify the share
+of published factors attributable to data-mining and luck rather than genuine
+risk premia.  \citet{Chen2020} provides a theoretical bound on how much
+p-hacking alone can inflate the published significance rate, arguing that the
+excess mass observed in empirical economics likely requires selective reporting
+in addition to within-study specification search.  This strand focuses
+entirely on the asset pricing domain and diagnoses bias through t-statistic
+distributions or replication rates.  It does not study policy-intervention
+research, and it cannot distinguish significance bias from directional bias
+because factor-return sign is not normatively coded.
+
+Our paper differs in three ways.  First, we study a policy-relevant domain
+(government-intervention research) where finding direction has a clear
+normative interpretation---pro- versus anti-intervention.  Second, we test
+for \textit{directional} sorting rather than significance-level sorting, which
+is the economically meaningful question for regulators.  Third, we use an
+explicit pre-publication benchmark (NBER working papers) that allows us to
+attribute any distributional distortion to a specific pipeline stage, rather
+than inferring it from the shape of the published distribution alone.
 
 \subsection{Publication Bias in Economics}
 The economics literature on publication bias draws on a long tradition in
@@ -1045,7 +1059,7 @@ is itself a noteworthy finding.
 
 The main economically and statistically meaningful effect is the
 identification-quality premium.  Papers using RDD, IV, DiD, or event-study
-designs are approximately 14 percentage points more likely to appear in a
+designs are approximately 18 percentage points more likely to appear in a
 top-three journal, consistent with editorial reward for clean causal
 identification.
 
@@ -1831,7 +1845,7 @@ directly.
 \noindent\textbf{Quality controls and the identification-strategy alternative.}
 The positive quasi-experimental premium ($0.467^{***}$) confirms that
 identification quality is a genuine predictor of publication.  Papers using
-RDD, IV, DiD, or event-study methods are approximately 14 percentage points
+RDD, IV, DiD, or event-study methods are approximately 18 percentage points
 more likely to appear in a top journal, even controlling for direction.
 Importantly, including this control does not alter the direction coefficients
 ($\hat\beta_1 = -0.135$, $\hat\beta_2 = -0.156$, both insignificant),
