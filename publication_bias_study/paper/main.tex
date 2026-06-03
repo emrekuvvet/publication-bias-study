@@ -558,7 +558,7 @@ from 39,136 documents to \textbf{1,049 candidates} (510 NBER, 184 \JF{}, 151
 
 \medskip
 \noindent\textbf{Pass 2 --- LLM classifier.}
-Each keyword-flagged candidate is passed to Claude \citep{Anthropic2024} with
+Each keyword-flagged candidate is passed to Claude (claude-opus-4-7; \citealt{Anthropic2024}) with
 the following instruction (full prompt in Appendix~\ref{app:prompts}):
 \begin{quote}
 \textit{``A finance research paper is `in scope' if and only if its
@@ -662,7 +662,8 @@ For each in-scope paper, we assign a direction code to the paper's primary
 empirical finding: $+1$ (the government intervention produced a positive or
 beneficial outcome), $-1$ (negative or harmful), or $0$ (null, mixed, or
 inconclusive).  Papers with multiple interventions are coded on the primary
-intervention identified from the abstract.
+intervention identified from the abstract.  Direction coding uses the same
+model as the in-scope classifier (claude-opus-4-7; \citealt{Anthropic2024}).
 
 The coding prompt instructs the model to code +1 if the intervention produced
 a \textit{positive or beneficial outcome relative to its stated regulatory
@@ -681,6 +682,8 @@ We validate the direction codes through two exercises.
 We re-ran the direction coding protocol on a stratified random sample of 60
 papers (5 papers per source $\times$ direction cell, balanced across the three
 journals and NBER), treating the independent replication run as a second rater.
+The replication run used a smaller model (claude-haiku-4-5-20251001, temperature $= 0$)
+to test robustness to model choice.
 The two runs agree on 43 of 60 papers (71.7\%).  The linear-weighted Cohen's
 $\kappa$ across all three direction categories is $\kappa = 0.674$, consistent
 with ``substantial agreement'' by the \citet{LandisKoch1977} scale
@@ -1912,8 +1915,11 @@ sample, 15 are re-classified as directional in the independent replication run,
 confirming that the null category is the least stable.  This instability
 \textit{reduces} the significance premium we estimate, because some papers we
 code as null would be coded as directional by an alternative rater---which
-would increase both the numerator and denominator of the directional publication
-rate but reduce the denominator of the null rate.  Our reported estimates should
+would increase the denominator of the directional publication rate (since the
+reclassified papers are unpublished NBER working papers, so the numerator is
+unchanged) while reducing the denominator of the null rate, shrinking the
+measured null publication rate and compressing the estimated gap between
+directional and null rates.  Our reported estimates should
 thus be interpreted as a conservative lower bound on the true bias.  Future work
 with standardized abstract templates, full-paper coding (rather than abstract
 coding), or pre-registered abstract language could address this concern
@@ -2023,7 +2029,8 @@ in the finance literature.
 
 The joint pattern suggests that the \textit{absence} of direction-based
 editorial selection coexists with \textit{within-paper} threshold bunching
-consistent with revision-stage pressure, particularly among anti-intervention findings in the \JFE{},
+consistent with revision-stage pressure, particularly among anti-intervention findings
+across journals --- and concentrated in the \JFE{} at the journal level ---
 though our cross-sectional design cannot rule out that this partly reflects compositional
 differences between NBER and published samples.
 
@@ -2222,7 +2229,7 @@ Column total & 31 & 5 & 24 & 60 \\
 random subsample (5 papers per source $\times$ direction cell, balanced across
 the three journals and NBER).  Rows show the original direction code used in
 the main analysis; columns show the code from an independent second LLM run
-(claude-haiku-4-5-20251001, temperature $= 0$).  Bold entries on the main
+(claude-haiku-4-5-20251001, temperature\,$= 0$; see Section~\ref{subsec:direction}).  Bold entries on the main
 diagonal indicate agreement.  Overall agreement: 43/60 $= 71.7\%$.
 Linear-weighted Cohen's $\kappa = 0.674$ (``substantial agreement'' by the
 \citet{LandisKoch1977} scale).  The negative category achieves 100\% agreement;
