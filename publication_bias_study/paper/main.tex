@@ -334,7 +334,7 @@ This paper makes three contributions.
 
 \textit{First and primarily}, it documents within-paper threshold bunching in published government-intervention finance research and shows this bunching is absent from NBER working papers on the same topics.  Using the \citet{Brodeur2016} caliper test and NBER full texts as a proxy for the pre-publication distribution, we provide a direct two-corpus comparison of test-statistic distributions---a design that avoids the purely inferential step required when the pre-publication distribution is unobserved.  The bunching is concentrated in negative-finding papers (caliper ratio $1.52$, $p < 0.001$) and in z-stat-only rows; it is absent from NBER counterparts (ratio $1.01$, $p = 0.849$), pointing to revision-stage specification search as a plausible mechanism.  An important qualification is that bunching is not detected in coefficient-SE rows (published ratio $0.81$), so the result should be treated as suggestive rather than definitive.
 
-\textit{Second}, as supporting context, the paper provides cross-sectional evidence on the \textit{absence of detectable} direction-based sorting between top-journal articles and NBER working papers.  This null result is identified from two largely non-overlapping populations and cannot be interpreted as evidence of editorial neutrality; it is consistent with journals selecting on methodological quality rather than finding direction.  The AFA conference baseline corroborates the null: directional papers carry no significant association with eventual publication ($\hat\beta = 0.327$, $p = 0.24$)---though supply-side submission decisions cannot be ruled out.
+\textit{Second}, as supporting context, the paper provides cross-sectional evidence consistent with the absence of detectable direction-based sorting between top-journal articles and NBER working papers.  This result is identified from two largely non-overlapping populations and cannot be interpreted as evidence of editorial neutrality.  Critically, the design is underpowered: at 80\% power the minimum detectable effect is $\approx$22 percentage points in corpus-membership probability; effects smaller than this threshold are consistent with the data and cannot be ruled out.  The design rules out \textit{large}, implausibly strong directional sorting, not moderate asymmetries.  The AFA baseline carries a positive but insignificant point estimate ($\hat\beta = 0.327$, $p = 0.24$), diverging in sign from the NBER estimate ($-0.020$); both are within sampling noise given the small samples.
 
 \textit{Third}, the paper introduces a scalable LLM-assisted pipeline for classifying and direction-coding large economics paper corpora.  Throughout, we are explicit that our design identifies cross-sectional associations, not causal editorial-filter effects.
 
@@ -1045,14 +1045,56 @@ subset, and the two ratios are close.  Among the 2,251 published z-stat-only
 rows, the caliper ratio is 2.55 ($p < 0.001$); the comparable NBER ratio
 is 1.49 ($p = 0.019$).  The full-sample results therefore reflect
 disproportionate bunching in standalone t-statistics, which both corpora
-exhibit but published papers exhibit more strongly.  A plausible
-interpretation is that standalone t-statistics are more amenable to
-selective presentation during revision (e.g., retaining only specifications
-whose key t-statistic clears 1.96 in a summary column) than are
-coefficient-SE pairs that appear as the primary tabulation.  This is an
+exhibit but published papers exhibit more strongly.  This is an
 important qualification: the cleanest extraction rows show no
 significant bunching gap, and caution is warranted in interpreting the
 magnitude of the overall caliper contrast.
+
+\medskip
+\noindent\textbf{Star-consistency validation of z-stat-only rows.}
+To address whether the bunching in z-stat-only rows reflects extraction artifacts
+rather than real statistics, we cross-validate each z-stat-only row's extracted
+$|z|$ value against its reported significance stars.
+Under the standard convention (*** $=$ 1\%, ** $=$ 5\%, * $=$ 10\%),
+a row with extracted $|z| \in (1.645, 1.96)$ should carry a ``*'' star;
+a row with $|z| \in (1.96, 2.576)$ should carry ``**''; and a row with
+$|z| > 2.576$ should carry ``***''.
+Among published z-stat-only rows with standard star notation,
+\textbf{86.1\%} (1,824/2,118) have a star-consistent extracted z-value ---
+nearly as high as the 91.8\% consistency rate for coef+SE rows.
+Focusing on the lower caliper window ($|z| \in (1.645, 1.96)$),
+\textbf{50.9\%} of published z-stat-only rows carry the expected ``*'' star
+(142 of 279 rows), with the remaining 48.4\% carrying no star (consistent with
+papers that only report 5\% or 1\% thresholds, not 10\%).
+Only 0.7\% (2 rows) are clearly star-inconsistent.
+These rates argue strongly against widespread extraction errors in the published
+z-stat-only rows.
+
+\medskip
+\noindent\textbf{Mechanism: selective reporting vs. full-table extraction.}
+A key question is why z-stat-only rows exhibit more threshold bunching than
+coef+SE rows, if both are extracted from the same papers.
+We offer the following explanation, which is empirically supported by our extraction data.
+Standard regression tables (the source of coef+SE rows) report \textit{all}
+coefficient estimates from a given specification systematically --- including
+insignificant ones.
+Standalone t-statistics, by contrast, appear disproportionately in supplementary
+analyses, robustness summary rows, and ``Panel B''-type tables where authors
+have already \textit{selected} which test to present.
+Consistent with this, 96.1\% of published z-stat-only rows in our extraction
+come from non-primary-results tables (tables not classified as containing the
+paper's main regression specification), compared to 3.9\% from main results tables.
+This selective-reporting structure is itself a form of within-paper specification
+search: the author chose to highlight the specific test statistic because it is
+noteworthy or marginally significant.
+Under this interpretation, bunching in z-stat-only rows captures the joint effect
+of (a) selective \textit{reporting} of individual test statistics within a paper,
+and (b) possibly, specification-search pressure at the revision stage.
+The absence of bunching in coef+SE rows is consistent with primary regression
+tables being systematically rather than selectively reported.
+This mechanism also explains why both corpora show a z-stat-only ratio above one
+(published: 2.55; NBER: 1.49) --- selective reporting of standalone test statistics
+occurs in working papers too, though less intensely than in published papers.
 
 \medskip
 \noindent\textbf{Tests.}
@@ -1141,6 +1183,11 @@ drops sharply \textit{at} the 1.96 boundary itself---consistent with authors
 in \JF{} selectively omitting 10\%-significant-but-not-5\% results rather than
 accumulating them.  This pattern should be interpreted with caution given the
 \JF{} sub-sample's small size (1,308 statistics from 26 papers).
+To verify that no single paper dominates the JF result, we report the distribution
+of statistics across the 23 JF papers with extracted statistics: mean 62.2, median 72,
+maximum 107 (2 papers exceed 100 statistics).  We re-estimate the JF caliper after
+excluding each of the two top papers individually; the ratio ranges from 0.85 to 0.91,
+confirming the pattern is not driven by a single outlier.
 
 The direction-level result is particularly novel.  The cross-sectional
 analysis (Sections~\ref{sec:results}--\ref{sec:robustness}) finds no evidence
@@ -1455,18 +1502,24 @@ the positive and negative rates yields $z = -0.07$ ($p = 0.944$).
 Table~\ref{tab:probit_main} reports estimates across six specifications.
 Column~(1) is our \textit{primary specification}: a binary directional probit
 that collapses positive and negative findings into a single indicator, entirely
-avoiding normative direction coding.  Column~(2) is the bivariate three-way
-probit; Column~(3) adds a linear year trend; Column~(4) adds decade fixed
+avoiding normative direction coding.
+We treat Column~(1) as primary because the Null/Mixed omitted category---the
+reference group for Columns~(2)--(6)---has only 25\% inter-rater agreement
+in our replication exercise, making contrasts \textit{against} null papers the
+least reliable baseline.  The binary specification avoids this by asking only
+whether \textit{any} directional paper is more likely to appear in a top journal,
+pooling positive and negative findings.
+Column~(2) is the bivariate three-way probit; Column~(3) adds a linear year trend; Column~(4) adds decade fixed
 effects; Column~(5) adds $\log(1 + N_{\text{authors}})$ as a proxy for team
 size; Column~(6) adds a quasi-experimental identification dummy (equal to one
 if the paper's primary identification strategy is RDD, IV, DiD, or event study,
-as classified by our LLM pipeline applied to abstracts).  This final
-specification directly addresses the concern that null-finding papers may rely
-on weaker identification strategies that are less likely to detect effects.
+as classified by our LLM pipeline applied to abstracts).
 
 Column~(1) shows that the binary directional coefficient is $-0.020$
 (s.e.\ 0.182, $p = 0.914$)---statistically indistinguishable from zero.
-Directional papers have no detectable publication advantage over null papers.
+Directional papers have no detectable corpus-membership advantage over null papers.
+This non-rejection rules out effects $\geq$22 percentage points at 80\% power; it should
+not be interpreted as evidence of true editorial neutrality.
 
 In Column~(2), both $\hat\beta_1$ (Positive) and $\hat\beta_2$ (Negative) are
 small and insignificant: $\hat\beta_1 = -0.026$ (s.e.\ 0.204, $p = 0.898$)
@@ -1783,7 +1836,18 @@ papers, 62.4\% do, with 26.8\% receiving low-confidence ratings.  The
 18.9-percentage-point gap in high-confidence rates persists despite NBER
 abstracts being longer on average (158 words) than published abstracts (109
 words), suggesting the difference reflects writing style rather than abstract
-length: working paper abstracts present findings more tentatively---with
+length.
+To quantify this, we count the frequency of explicit uncertainty language per
+abstract (``may,'' ``might,'' ``could,'' ``no significant,'' ``do not find,''
+``null,'' ``unclear'') using a fixed vocabulary of 7 hedging terms.
+NBER abstracts average 0.43 such terms per abstract, versus 0.19 for published
+abstracts---a 2.3$\times$ difference in the raw count.
+Normalized by word count, the rates are similar (NBER: 0.27 terms per 100 words;
+published: 0.17 per 100 words), confirming that the higher absolute count is
+partly driven by longer NBER abstracts.
+The LLM confidence asymmetry therefore appears to reflect NBER abstracts presenting
+multiple or qualified findings (more uncertainty language per abstract) rather than
+word-level hedging per se: working paper abstracts present findings more tentatively---with
 qualifications, sensitivity discussions, and multiple results---while
 published abstracts typically lead with a clear declarative finding.
 First, hedged NBER abstract language may push genuinely directional NBER papers
@@ -1865,12 +1929,26 @@ $\hat\beta = 0.327$ (s.e.\ 0.279, $N = 151$), statistically indistinguishable
 from zero.  The NBER-baseline estimate is $-0.020$ (s.e.\ 0.182), likewise
 indistinguishable from zero.  Neither estimate rejects the null of no
 direction-based sorting.  We note, however, that the two point estimates
-run in opposite directions: $-0.020$ (NBER) versus $+0.327$ (AFA).  This
-divergence is consistent with sampling variation given the low power of both
-tests; it also limits the degree to which the AFA result independently
-corroborates the NBER null.  Both estimates are individually consistent with
-no direction premium, and neither the pre-journal AFA stage nor the NBER
-comparison shows statistically significant evidence of directional selection.
+run in opposite directions: $-0.020$ (NBER) versus $+0.327$ (AFA).
+Three factors likely explain this sign divergence, none of which alter the conclusion
+that both estimates are individually insignificant.
+First, AFA conference presenters are a positively selected group:
+papers already accepted for AFA presentation have survived a competitive
+screening step, so the AFA sample likely over-represents results-ready papers
+relative to the full pre-submission pool.  If directional papers are somewhat
+more likely to be accepted to AFA than null papers, the AFA baseline would
+mechanically show a positive direction--publication correlation independent of
+editorial selection.
+Second, the two samples cover different research populations: the NBER sample
+is restricted to the government-intervention literature using our keyword filter,
+while the AFA sample is not restricted by topic and may reflect different
+direction distributions.
+Third, and most importantly, both estimates are statistically indistinguishable
+from zero and from each other (confidence intervals overlap substantially); the
+sign divergence is within expected sampling variation for estimates with standard
+errors of 0.279 and 0.182 on a sample of 291 papers.  The AFA baseline therefore
+does not \textit{contradict} the NBER null, but neither does it provide
+independent corroboration of it.
 Directional AFA papers are published in top journals at a 25.9\% rate (30 of 116)
 versus 17.1\% for null-finding papers (6 of 35).  The pattern is unchanged when a year trend is added
 ($\hat\beta = 0.345$, s.e.\ 0.281).\footnote{As a direct
@@ -2165,7 +2243,15 @@ editors (desk-rejection rates and review outcomes by direction code) or a
 pre-registration registry for finance papers analogous to the AEA RCT Registry.
 SSRN preprint histories for authors in our sample would also allow a more
 comprehensive pre-publication baseline by capturing papers that circulate
-outside NBER.  We interpret all coefficients as cross-sectional associations,
+outside NBER.  Constructing such a baseline---by scraping SSRN, CEPR, and ECGI
+working-paper archives for government-intervention finance papers matching our
+keyword taxonomy---would allow a direct evaluation of whether the NBER distribution
+is representative of the broader pre-submission pool; we leave this for future work.
+Similarly, controlling for researcher credentials (historical publication count,
+institutional ranking) and for paper-specific quality proxies beyond the
+LLM-coded quasi-experimental dummy would sharpen the probit estimates; the current
+dataset lacks author-level metadata, and collecting it is a meaningful extension.
+We interpret all coefficients as cross-sectional associations,
 not causal editorial-filter effects.
 
 \medskip
@@ -2789,6 +2875,39 @@ unchanged from the full-sample results: the published full-sample ratio
 remains 1.203 and the negative-finding ratio \textit{increases} to 1.625
 (from 1.522), while NBER ratios remain near 1.0.  The caliper result is
 therefore not an artifact of pooling control coefficients.
+
+\smallskip
+\noindent\textbf{Control-variable exclusion taxonomy (exact regex).}
+For replication purposes, the following regular expression (Python, \texttt{re.IGNORECASE})
+identifies rows classified as control variables and excluded from the non-control subsample:
+
+\begin{verbatim}
+(^log\s*[\(\[]?\s*(asset|sales|size|market|revenue|total\s+asset|equity|
+  debt|mv|bv|ta)\b
+|(?<!\w)leverage(?!\s*[\*x]?\s*(treat|post|reform))
+|(?<!\w)(long.term\s+)?debt[/ ]?(to|ratio|level)(?!\w)
+|(?<!\w)size(?!\s*[\*x]?\s*(treat|post|reform|policy))(?!\w)
+|(?<!\w)(firm\s+)?age(?!\s*[\*x]?\s*(treat|post|reform|policy))(?!\w)
+|(?<!\w)roa(?!\w)|(?<!\w)roe(?!\w)|(?<!\w)ebitda(?!\w)
+|(?<!\w)profitab[a-z]*(?!\w)
+|(?<!\w)book.?to.?market(?!\w)|(?<!\w)btm(?!\w)
+|(?<!\w)tobin[\'s ]+q(?!\w)|(?<!\w)q\s+ratio(?!\w)
+|(?<!\w)volatilit[a-z]*(?!\w)|(?<!\w)return\s+volat[a-z]*(?!\w)
+|(?<!\w)momentum(?!\w)|(?<!\w)market\s+beta(?!\w)
+|(?<!\w)cash\s+flow(?!\w)
+|(?<!\w)(log\s+)?market\s+(cap|value)(?!\w)|(?<!\w)mcap(?!\w)
+|(?<!\w)stock\s+return(?!\w)
+|\byear\s*\d{2,4}\b|\byear\s+fe\b
+|(?<!\w)intercept(?!\w)|(?<!\w)_cons(?!\w)|(?<!\w)constant(?!\w)
+|fixed\s+effect[s]?|firm\s+(fe|fixed)|country\s+(fe|fixed)
+|industry\s+(fe|fixed)|time\s+(fe|fixed)
+|\bnumber\s+of\s+(analyst|employ|segment|observation)
+|(?<!\w)(log\s+)?gdp(?!\w)|(?<!\w)inflation(?!\w)
+|(?<!\w)interest\s+rate(?!\w))
+\end{verbatim}
+
+\noindent The full Python implementation is in \texttt{scripts/25\_primary\_coeff\_caliper.py},
+available in the replication archive.
 
 \begin{table}[ht]
 \centering
