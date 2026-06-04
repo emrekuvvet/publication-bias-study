@@ -116,36 +116,33 @@
 \begin{center}{\normalsize\bf ABSTRACT}\end{center}
 \begin{singlespace}
 \noindent\small
-We examine whether top finance journals exhibit publication bias in the
-government-intervention literature.  Using a two-sample design---157 NBER
-working papers and 134 top-journal articles spanning 2000--2024---we classify
-the direction of each paper's primary empirical finding and compare
-cross-sectional publication rates.  We find no significant difference in
-publication rates across finding directions: positive-finding papers appear in
-the \JF{}, \RFS{}, or \JFE{} at 45.6\%, negative-finding papers at 46.1\%,
-and null-finding papers at 46.7\% ($\chi^2 = 0.017$, $p = 0.992$).  A binary
-directional probit coefficient is $-0.020$ (s.e.\ 0.182, $p = 0.91$), and
-the three-way direction indicators are uniformly insignificant across
-specifications.  The only robust predictor of top-journal publication is the
-use of a quasi-experimental identification strategy (RDD, IV, DiD, or event
-study): the quasi-experimental dummy carries a coefficient of $0.467^{***}$
-(s.e.\ 0.157, $p = 0.003$), implying an approximately 18 percentage-point publication premium
-that is robust to all controls.  A complementary analysis of within-paper test
-statistic distributions reveals significant threshold bunching in the published
-record (\citealt{Brodeur2016} caliper ratio $= 1.20$; naive $p = 0.002$;
-paper-level permutation $p = 0.001$), but this bunching is entirely absent from
-the pre-publication NBER benchmark (ratio $= 1.01$, $p = 0.849$).  The contrast
-is sharpest for negative-finding papers: published caliper ratio $1.52$
-(permutation $p < 0.001$; cluster-bootstrap 95\% CI $[0.81, 2.67]$) versus
-NBER ratio $1.00$ ($p = 0.964$).  Because the overall significance rates are nearly identical across
-samples (57.1\% vs.\ 55.5\%), the bunching is not explained by differences in
-statistical power; it is concentrated in the published record and absent from
-pre-publication counterparts, consistent with revision-stage pressure.  We interpret the
-joint pattern as evidence that editorial selection in top finance journals is
-directionally neutral, but that the revision process creates within-paper
-threshold pressure concentrated in anti-intervention findings (negative-finding
-caliper ratio 1.52; permutation $p<0.001$; cluster-bootstrap 95\% CI
-$[0.81,\,2.67]$---wide, reflecting paper-level heterogeneity).
+We document a sharp contrast between published and pre-publication test-statistic
+distributions in the government-intervention literature.  Applying the
+\citet{Brodeur2016} caliper test to 7,761 test statistics from 121 articles in
+the \JF{}, \RFS{}, and \JFE{} reveals significant threshold bunching just below
+$|z|=1.96$ (caliper ratio $1.20$; naive $p = 0.002$; paper-level permutation
+$p = 0.001$), whereas the identical pipeline applied to 8,351 test statistics
+from 157 NBER working papers on the same topic finds no bunching at all (ratio
+$1.01$, $p = 0.849$).  The contrast is sharpest for negative-finding papers
+(published ratio $1.52$, permutation $p < 0.001$; cluster-bootstrap 95\% CI
+$[0.81,\,2.67]$; NBER ratio $1.00$, $p = 0.964$) and survives restriction to
+non-control variable coefficients (non-control ratio $1.625$).  Because
+overall significance rates are nearly identical across samples (57.1\%
+vs.\ 55.5\%), the bunching is not explained by differences in statistical power;
+it is concentrated in the published record and absent from pre-publication
+counterparts, consistent with revision-stage pressure.
+
+As supporting context, a cross-sectional comparison of publication rates across
+134 top-journal articles and 157 NBER working papers (2000--2024) finds no
+significant difference by finding direction: positive-finding papers appear in
+the \JF{}, \RFS{}, or \JFE{} at 45.6\%, negative-finding at 46.1\%, and
+null-finding at 46.7\% ($p = 0.992$); a binary directional probit coefficient
+is $-0.020$ (s.e.\ 0.182, $p = 0.91$), robust across six specifications.  The
+only robust predictor of top-journal publication is a quasi-experimental
+identification strategy (coefficient $0.467^{***}$, s.e.\ 0.157, $\approx$18 pp
+premium).  The joint pattern indicates that editorial selection is directionally
+neutral while the revision process creates within-paper threshold pressure
+concentrated in anti-intervention findings.
 \end{singlespace}
 \vspace{4pt}
 \noindent\small\textit{JEL classification:} G18, G28, C80, B40.
@@ -1958,6 +1955,30 @@ or event-study designs are substantially more likely to appear in print,
 suggesting that the published evidence base is biased toward cleaner causal
 identification.  For regulators, this is plausibly a desirable form of
 selection rather than a distortion.
+
+\medskip
+\noindent\textbf{Implications for the corporate-finance regulation literature.}
+Although this paper's corpus spans the full government-intervention literature
+in finance, a significant share of the in-scope papers studies interventions of
+direct relevance to corporate finance: mandatory disclosure requirements
+(Sarbanes-Oxley, Reg FD), corporate governance regulation (say-on-pay, proxy
+access, board independence mandates), short-selling restrictions, and
+Dodd-Frank provisions governing capital requirements and resolution authority.
+Our findings carry a specific message for practitioners and regulators who rely
+on this sub-literature.  First, the directional-neutrality result means that the
+published record of corporate-governance and disclosure research is unlikely to
+be systematically skewed toward pro-intervention or anti-intervention conclusions
+by editorial selection; both positive- and negative-finding studies on, say, the
+effect of say-on-pay or mandatory auditor rotation face similar publication
+probabilities.  Second, the revision-stage bunching---concentrated in
+negative-finding papers and absent from the pre-publication baseline---suggests
+that anti-intervention evidence in the corporate-finance regulation literature
+may be subject to within-paper specification pressure before it reaches print,
+even though the decision to publish is not direction-contingent.  Readers of
+the corporate-governance and disclosure evidence base should therefore treat
+marginal significance ($p$ just below 0.05) in anti-intervention findings with
+additional scrutiny, while treating publication status as a reasonable signal
+of methodological quality.
 
 \subsection{Comparison to Other Domains}
 
