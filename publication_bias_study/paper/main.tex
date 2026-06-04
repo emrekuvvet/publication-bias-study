@@ -226,15 +226,11 @@ inferring the pre-publication shape from published p-value bunching alone.
 The NBER corpus serves as a proxy for the pre-publication distribution;
 it is selected on NBER affiliation and should not be equated with the full
 population of submitted or in-progress papers.
-We emphasize that the two samples are largely non-overlapping cross-sections
-(only $\approx$12\% of published papers are matched to NBER counterparts),
-so the comparison reflects differences between two distinct corpora---not the
-same papers tracked through the editorial filter.  The identifying assumption
-is that the NBER working-paper distribution is reasonably representative of
-research circulating before top-journal submission in this domain, conditional
-on NBER affiliation, which is itself selective.  Together, these samples
-allow us to compare the full distribution of findings across publication
-states---not merely the subset that appears in top journals.
+The two samples are largely non-overlapping cross-sections (only
+$\approx$12\% overlap), so comparisons reflect differences between distinct
+populations, not papers tracked through the editorial filter; for the full
+discussion of identification limitations and their implications, see
+Section~\ref{subsec:limitations}.
 
 \medskip
 \noindent\textbf{A note on what this design can and cannot identify.}
@@ -335,7 +331,7 @@ results should be interpreted as descriptive, not confirmatory.
 
 This paper makes three contributions.
 
-\textit{First and primarily}, it documents a \textit{pattern of selective reporting} in the within-paper distribution of test statistics in published government-intervention finance research.  Specifically: systematically reported primary regression rows (with verifiable coefficient-SE pairs) show no caliper bunching and no gap relative to NBER working papers.  Standalone z-statistics---predominantly from supplementary and robustness tables---show elevated bunching in published papers (ratio 2.55) relative to NBER (ratio 1.49), a difference that is suggestive but imprecisely estimated (cluster-bootstrap $p = 0.150$).  This pattern is consistent with authors selectively reporting which supplementary test statistics to highlight, rather than with manipulation of primary regression estimates.  Using NBER full texts as a proxy for the pre-publication distribution, we provide a two-corpus comparison that avoids the purely inferential step required when the pre-publication distribution is unobserved; the two corpora are largely non-overlapping, so compositional confounds cannot be ruled out.
+\textit{First and primarily}, it documents a \textit{pattern of selective reporting} in the within-paper distribution of test statistics in published government-intervention finance research.  Specifically: systematically reported primary regression rows (with verifiable coefficient-SE pairs) show no caliper bunching and no gap relative to NBER working papers.  Standalone z-statistics---predominantly from supplementary and robustness tables---show elevated bunching in published papers (ratio 2.55) relative to NBER (ratio 1.49), a difference that is suggestive but imprecisely estimated (cluster-bootstrap $p = 0.150$).  This pattern is consistent with authors selectively reporting which supplementary test statistics to highlight, rather than with manipulation of primary regression estimates.
 
 \textit{Second}, as supporting context, the paper provides cross-sectional evidence consistent with the absence of \textit{large} directional sorting between top-journal articles and NBER working papers.  This null result rules out effects $\geq$22 percentage points at 80\% power; moderate asymmetries remain consistent with the data and cannot be distinguished from zero at the current sample size of 291 papers.  Whether moderate, policy-relevant levels of directional bias exist cannot be determined from this design.
 
@@ -933,36 +929,7 @@ measured gap).  We cannot resolve this ambiguity without submission-level data.
 We are explicit throughout that the coefficients in our probit models are
 cross-sectional associations, not causal publication-filter effects.
 
-\medskip
-\noindent\textbf{Critical design limitation: the two samples are largely
-non-overlapping populations, not the same papers at two pipeline stages.}
-Because only 11.9\% of published papers are matched to an NBER counterpart,
-the NBER and journal samples are overwhelmingly different papers selected by
-different institutional processes.  This is the most fundamental constraint on
-the cross-sectional analysis.  The constructed corpus-membership rate of 46\%
-is a mechanical ratio determined by our sample construction---not an estimate of
-true journal acceptance probabilities.  It depends on NBER program coverage,
-abstract availability, and the decision to count unmatched NBER papers as
-unpublished.  We do not observe papers transitioning through the editorial
-filter; we compare the \textit{direction distribution} of one corpus (NBER
-working papers) to that of another (published articles), and ask whether the
-two distributions are consistent with a significance-sorting mechanism.
-
-The NBER benchmark is also imperfect in multiple ways beyond the matching
-rate.  NBER affiliates are not representative finance researchers: they differ
-systematically in institutional quality, co-author networks, and publication
-success.  Topic selection within NBER programs emphasizes certain areas,
-excluding papers that circulate through SSRN, CEPR, ECGI, or other channels.
-Timing selection is also a concern: researchers may circulate NBER working
-papers only after obtaining strong results, which would mean the NBER corpus is
-already partially selected toward directional findings relative to all ongoing
-research.  These concerns cannot be fully resolved without submission-level
-data.  We are explicit throughout that the probit coefficients are
-cross-sectional associations in this sample, not causal estimates of editorial
-selection effects.  The key identifying assumption---that the NBER distribution
-is representative of pre-publication research in this domain conditional on
-NBER affiliation---is maintained for tractability, and we acknowledge it may
-not hold.
+The full treatment of these identification constraints---including the direction of likely bias and what the design can and cannot establish---is consolidated in Section~\ref{subsec:limitations}.
 
 \subsection{Primary Specification}
 
