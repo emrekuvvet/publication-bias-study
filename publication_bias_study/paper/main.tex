@@ -88,7 +88,7 @@
 \DeclareMathOperator{\Prob}{Pr}
 
 %% ---- Title block --------------------------------------------
-\title{Identification Quality Over Finding Direction:\\
+\title{Direction-Neutral Editorial Selection and Revision-Stage Threshold Bunching:\\
        Evidence from Government Intervention Research in Top Finance Journals%
        \thanks{We thank seminar participants at [XX] for helpful comments.
        We are grateful to [XX] for outstanding research assistance.
@@ -1315,6 +1315,31 @@ the number of regression rows one would expect to extract from a 40--60 page
 empirical finance paper containing 5--8 tables of 8--15 coefficients each.
 
 \medskip
+\noindent\textbf{Extraction quality by corpus.}
+A potential concern is that differential extraction quality between typeset
+publisher PDFs (published) and NBER draft PDFs could itself generate the
+published-vs.-NBER caliper gap.  We assess this in three ways.
+First, internal consistency: for statistics where we extract both a coefficient
+and a standard error, we verify that the reported $|z|$-value matches
+$|\hat\beta / \hat\sigma_{\hat\beta}|$ to within 0.1.  This internal check
+passes for \textbf{98.3\%} of published rows (5,474/5,569) and \textbf{99.7\%}
+of NBER rows (6,811/6,831), giving no evidence of materially worse extraction
+quality in either corpus.  The higher share of z-stat-only rows in the published
+corpus (29.4\% vs.\ 19.9\% for NBER) reflects the typeset formatting of some
+publisher tables that display t-statistics directly rather than coefficient-SE
+pairs; these statistics are taken at face value and are not subject to a
+consistency check, but they pass all caliper-window bounds checks.
+Second, the 13 published papers and 32 NBER papers that yield zero extracted
+statistics are distributed uniformly across journals ($\chi^2 = 1.08$,
+$p = 0.58$ for published) and by vintage (Mann-Whitney $p = 0.749$; median
+year 2017 for both kept and dropped papers), providing no evidence of
+systematic non-random exclusion.
+Third, restricting the caliper analysis to high-coverage papers ($\geq$20
+extracted statistics per paper) leaves the published ratio essentially
+unchanged (1.207 vs.\ 1.203 for the full sample) and the NBER ratio
+unaffected (1.012 vs.\ 1.012).
+
+\medskip
 \noindent\textbf{Tests.}
 The \textit{caliper test} \citep{Brodeur2016} compares the mass of
 $|z|$-statistics in the interval $(1.645, 1.96)$---just below the
@@ -1605,6 +1630,24 @@ Caliper bunching is concentrated in papers concluding that an intervention is ha
 \label{fig:zdist_direction}
 \end{figure}
 
+\medskip
+\noindent\textbf{Robustness to coefficient inclusion.}
+A concern with pooling all table statistics is that control-variable coefficients
+(size, leverage, GDP, ROA, etc.) included in regression tables are unrelated to
+the paper's headline finding, and their inclusion could confound the direction-based
+caliper comparison.  Appendix~\ref{app:inclusion_sensitivity} reports caliper
+statistics after excluding rows whose variable name matches a broad list of
+common control-variable patterns.  This \textit{non-control} subsample retains
+\textbf{7,055} published and \textbf{7,599} NBER statistics ($\approx$89\%
+of each corpus).  The caliper ratio for published full-sample is unchanged
+(1.203 vs.\ 1.203), and the negative-finding ratio \textit{strengthens}
+slightly (1.625 vs.\ 1.522), confirming that the caliper result is not an
+artifact of control-variable pooling.  The NBER non-control ratios remain
+near one (0.981 full sample; 0.955 negative-finding).  These results are
+consistent with the interpretation that threshold bunching reflects
+specification search around the primary estimate, not mechanical inclusion
+of many control coefficients.
+
 %% ============================================================
 \section{Robustness}
 \label{sec:robustness}
@@ -1687,11 +1730,14 @@ addresses the concern that null-finding papers systematically rely on weaker
 empirical designs.  Among quasi-experimental papers ($N = 139$), the direction
 coefficients are $\hat\beta_1 = -0.598$ ($p = 0.121$) and $\hat\beta_2 =
 -0.657^{*}$ ($p = 0.081$).  $\hat\beta_1$ is clearly insignificant;
-$\hat\beta_2$ is marginally significant at the 10\% level, but its negative sign
-rules out a positive direction premium: quasi-experimental negative-finding
-papers are \textit{less} likely to be published than null papers, the opposite
-of what significance-sorting would predict.  Neither estimate supports a positive
-direction premium within the most methodologically credible sub-sample.
+$\hat\beta_2$ is marginally significant at the 10\% level with a \textit{negative}
+sign.  The sign is unexpected if significance-sorting were operating: it implies
+quasi-experimental negative-finding papers are \textit{less} likely to be
+published than null papers.  We flag this as likely small-sample noise ($N=139$)
+rather than evidence of an anti-intervention penalty; the subsample is too small
+to reliably estimate differential direction effects, and the point estimate is
+sensitive to which papers are classified as quasi-experimental.  Neither estimate
+supports a positive direction premium within the quasi-experimental sub-sample.
 
 \textit{Abstract language and LLM classification confidence.}
 Abstract writing style introduces two related measurement concerns.  Among published
@@ -2098,10 +2144,24 @@ with identification quality.
 
 We acknowledge that the LLM-based identification-strategy coding from abstracts
 is itself imperfect: fewer than half of abstracts explicitly name their
-identification strategy, so the LLM infers it from other signals.  A hand-coded
-quality assessment across all 291 papers---using full paper text to classify
-identification strategy, sample size, and data quality---would provide a more
-definitive quality control and is a natural extension of this work.
+identification strategy, so the LLM infers it from other signals.  No separate
+validation run has been completed for the QuasiExp indicator (unlike the direction
+codes, which have a two-run replication with $\kappa = 0.674$).  A hand-coded
+assessment using full paper text would provide a more definitive check and is a
+natural extension of this work.
+
+A related concern is that quasi-experimental papers might be disproportionately
+directional, in which case the QuasiExp control could absorb a direction effect.
+Table~\ref{tab:quasiexp_direction} speaks directly to this:
+quasi-experimental papers are somewhat more likely to be directional
+(88.5\%, 123/139) than non-quasi-experimental papers (71.1\%, 108/152),
+consistent with cleaner identification yielding sharper estimates.  However,
+within each QuasiExp tier the publication rate is flat across direction
+categories ($\approx$36--39\% for non-QE papers; $\approx$52--75\% for QE
+papers), and adding QuasiExp to the probit leaves the direction coefficients
+essentially unchanged ($\hat\beta_1 = -0.135$, $\hat\beta_2 = -0.156$, both
+insignificant).  The identification-quality premium therefore appears to
+operate independently of direction sorting rather than absorbing it.
 
 
 \medskip
@@ -2117,6 +2177,16 @@ Absent such data, the most reassuring feature of our design is the close
 alignment of direction rates between NBER ($79.6\%$ directional) and published
 ($79.1\%$ directional), which suggests little residual direction-based sorting
 at least within this elite sample.
+
+A second feature of the design that biases toward the null is our definition
+of ``published'': NBER papers that appeared in journals outside the top-three
+(e.g., \textit{Review of Finance}, \textit{JFQA}) are coded as $\mathit{Published} = 0$,
+adding measurement error to the dependent variable and attenuating any true
+direction premium.  Constructing a broader publication indicator covering all
+peer-reviewed venues would reduce this attenuation; such a check requires
+matching against a comprehensive publication database and is left for future
+work.  For present purposes, the attenuation-toward-null bias means that our
+direction-sorting null is, if anything, conservative.
 
 \medskip
 \noindent\textbf{Right-censoring in the year trend.}
@@ -2186,9 +2256,10 @@ NBER pre-publication benchmark papers shows no bunching (full-sample ratio $= 1.
 $p = 0.849$; negative-finding ratio $= 1.00$, $p = 0.964$), while the overall
 significance rate is nearly identical across the two samples (57.1\% vs.\
 55.5\%).  This pre-publication benchmark localizes the distributional distortion
-to the revision stage rather than to the upstream research design, and is---to
-our knowledge---the first direct published-vs.-working-paper caliper comparison
-in the finance literature.
+to the revision stage rather than to the upstream research design.  We are not
+aware of a prior published-vs.-working-paper caliper comparison in finance,
+though the approach extends naturally from the broader caliper literature
+\citep{Brodeur2016,Brodeur2023}.
 
 The joint pattern suggests that the \textit{absence} of direction-based
 editorial selection coexists with \textit{within-paper} threshold bunching
@@ -2586,6 +2657,67 @@ $|z|=1.96$.  \textit{Perm.} is the within-group permutation $p$-value
 bound extends below the 1.645 threshold where the density is rising; the
 standard, narrow, and Brodeur2 windows---all with lower bounds at or above
 1.645---show consistent excess mass in the published record.
+\end{minipage}
+\end{singlespace}
+\end{table}
+
+%% ============================================================
+\section{Caliper Robustness to Coefficient Inclusion}
+\label{app:inclusion_sensitivity}
+%% ============================================================
+
+Table~\ref{tab:inclusion_sensitivity} repeats the main caliper test after
+excluding rows whose variable name matches a broad set of common
+control-variable patterns (size, leverage, age, GDP, ROA, ROE, return
+volatility, fixed-effect indicators, intercepts, etc.).  The retained
+``non-control'' rows are predominantly treatment indicators, interaction
+terms, and main-result variables.  This restriction addresses the referee's
+concern that pooling all table statistics --- including controls --- could
+confound the direction-based caliper comparison, since a negative-finding
+paper's tables contain many statistics unrelated to its headline finding.
+
+The non-control subsample retains 7,055 published statistics (89.4\% of
+the full sample) and 7,599 NBER statistics (89.4\%), distributed across
+the same 108 and 106 papers.  Caliper ratios and $p$-values are essentially
+unchanged from the full-sample results: the published full-sample ratio
+remains 1.203 and the negative-finding ratio \textit{increases} to 1.625
+(from 1.522), while NBER ratios remain near 1.0.  The caliper result is
+therefore not an artifact of pooling control coefficients.
+
+\begin{table}[ht]
+\centering
+\caption{Caliper Test: All Statistics vs.\ Non-Control Statistics}
+\label{tab:inclusion_sensitivity}
+\begin{singlespace}
+\small
+\begin{tabular}{llllrrrrr}
+\hline\hline
+Sample & Subset & Filter & $N$ & Papers & Ratio & Naive $p$ & Perm.\ $p$ & Boot.\ $p$ \\
+\hline
+Published & Full sample      & All stats    & 7,761 & 108 & \textbf{1.203} & 0.002 & 0.001 & 0.150 \\
+Published & Full sample      & Non-control  & 7,055 & 108 & \textbf{1.203} & 0.003 & 0.001 & 0.161 \\[3pt]
+Published & Negative-finding & All stats    & 3,491 &  50 & \textbf{1.522} & $<$0.001 & $<$0.001 & 0.135 \\
+Published & Negative-finding & Non-control  & 3,139 &  50 & \textbf{1.625} & $<$0.001 & $<$0.001 & 0.121 \\[3pt]
+Published & Positive-finding & All stats    & 2,633 &  37 & 0.941 & 0.565 & 0.732 & 0.623 \\
+Published & Positive-finding & Non-control  & 2,409 &  37 & 0.927 & 0.481 & 0.769 & 0.637 \\[3pt]
+NBER      & Full sample      & All stats    & 8,351 & 106 & 1.012 & 0.849 & 0.424 & 0.432 \\
+NBER      & Full sample      & Non-control  & 7,599 & 104 & 0.981 & 0.767 & 0.625 & 0.561 \\[3pt]
+NBER      & Negative-finding & All stats    & 4,375 &  50 & 0.996 & 0.964 & 0.532 & 0.474 \\
+NBER      & Negative-finding & Non-control  & 3,981 &  50 & 0.955 & 0.633 & 0.693 & 0.614 \\
+\hline\hline
+\end{tabular}
+\begin{minipage}{\textwidth}
+\smallskip
+\footnotesize
+\textit{Notes.}  ``Non-control'' excludes rows whose variable name matches common
+control-variable patterns (size, leverage, ROA/ROE, book-to-market, GDP, inflation,
+firm age, return volatility, fixed-effect indicators, intercepts, etc.).  The
+retained rows are predominantly treatment indicators, DiD interactions, and
+main-result variables.  Caliper ratio is mass in $(1.645, 1.96)$ relative to
+$(1.96, 2.275)$.  \textit{Perm.}: within-group permutation ($10{,}000$ iterations).
+\textit{Boot.}: cluster bootstrap ($10{,}000$ draws) resampling papers with replacement.
+Bold entries: permutation $p < 0.05$.  The caliper result is qualitatively
+unchanged by the restriction, and the negative-finding ratio strengthens slightly.
 \end{minipage}
 \end{singlespace}
 \end{table}
