@@ -706,8 +706,8 @@ random sample of 40 papers (20 published, 20 NBER) and independently coded the d
 abstract, without reference to the LLM output.  The human coding sheet and
 comparison script (\texttt{scripts/13\_human\_validation\_kappa.py}) are
 included in the replication package.  Human-coded results and the corresponding
-$\kappa$ statistics are reported in Table~\ref{tab:human_validation} in the
-online appendix.
+$\kappa$ statistics are reported in Table~\ref{tab:human_validation} in
+Appendix~\ref{app:human_validation}.
 
 \subsection{Linking NBER Papers to Published Papers}
 \label{subsec:linking}
@@ -1508,7 +1508,11 @@ published papers (bootstrap CI: $[0.81,\, 2.67]$), a heterogeneity that the
 permutation test's within-paper conditioning absorbs.  We treat both statistics
 as informative: the permutation test confirms the signal is real and not
 concentrated in a handful of papers; the bootstrap CI communicates the
-uncertainty in its aggregate magnitude.  For the NBER baseline the permutation
+uncertainty in its aggregate magnitude.  The cluster bootstrap also serves as
+the paper's per-paper-weighted inference procedure: by resampling papers with
+replacement rather than statistics, it assigns each paper equal weight
+regardless of how many test statistics it contributes, so that a handful of
+large-table papers cannot dominate the reported $p$-value or confidence interval.  For the NBER baseline the permutation
 $p$-value is 0.424 and the bootstrap $p$-value is 0.432---indistinguishable
 from chance under both procedures.
 
