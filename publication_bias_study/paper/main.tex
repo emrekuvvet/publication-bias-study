@@ -1,6 +1,6 @@
 %% ============================================================
-%%  Editorial Neutrality and Revision-Stage Pressure in Top Finance Journals:
-%%  Evidence from Government Intervention Research
+%%  Threshold Bunching in Published Finance Research:
+%%  Pre-Publication Evidence from Government-Intervention Studies
 %%
 %%  Target: Journal of Corporate Finance
 %%
@@ -88,8 +88,8 @@
 \DeclareMathOperator{\Prob}{Pr}
 
 %% ---- Title block --------------------------------------------
-\title{Editorial Neutrality and Revision-Stage Pressure in Top Finance Journals:\\
-       Evidence from Government Intervention Research%
+\title{Threshold Bunching in Published Finance Research:\\
+       Pre-Publication Evidence from Government-Intervention Studies%
        \thanks{We thank seminar participants at [XX] for helpful comments.
        We are grateful to [XX] for outstanding research assistance.
        All data and code are available at
@@ -130,20 +130,29 @@ $[0.81,\,2.67]$; NBER ratio $1.00$, $p = 0.964$) and survives restriction to
 non-control variable coefficients (non-control ratio $1.625$).  Because
 overall significance rates are nearly identical across samples (57.1\%
 vs.\ 55.5\%), the bunching is not explained by differences in statistical power;
-it is concentrated in the published record and absent from pre-publication
-counterparts, consistent with revision-stage pressure.
+it is concentrated in the published record and absent from the NBER working
+papers, consistent with within-paper specification pressure concentrated at the
+revision stage---though compositional differences between the two corpora
+cannot be ruled out.  Note that the NBER and journal samples are largely
+non-overlapping cross-sections (only $\approx$12\% of published papers are
+matched to NBER counterparts), so this comparison reflects differences between
+two distinct corpora rather than the same papers tracked pre- and
+post-publication.
 
-As supporting context, a cross-sectional comparison of publication rates across
-134 top-journal articles and 157 NBER working papers (2000--2024) finds no
-significant difference by finding direction: positive-finding papers appear in
-the \JF{}, \RFS{}, or \JFE{} at 45.6\%, negative-finding at 46.1\%, and
-null-finding at 46.7\% ($p = 0.992$); a binary directional probit coefficient
-is $-0.020$ (s.e.\ 0.182, $p = 0.91$), robust across six specifications.  The
-strongest predictor of top-journal publication is a quasi-experimental
-identification strategy (coefficient $0.467^{***}$, s.e.\ 0.157, $\approx$18 pp
-premium; this coding has not been independently validated at the granular level).  The joint pattern indicates that editorial selection is directionally
-neutral while the revision process creates within-paper threshold pressure
-concentrated in anti-intervention findings.
+As supporting context, a cross-sectional comparison of corpus-membership
+probabilities across 134 top-journal articles and 157 NBER working papers
+(2000--2024) finds no detectable directional sorting between corpora:
+positive-finding papers appear in top journals at 45.6\%, negative-finding at
+46.1\%, and null-finding at 46.7\% ($p = 0.992$); a binary directional probit
+coefficient is $-0.020$ (s.e.\ 0.182, $p = 0.91$), robust across six
+specifications.  These rates are corpus-membership ratios determined by our
+sample construction, not estimates of true journal acceptance
+probabilities.  The strongest predictor of corpus membership is a
+quasi-experimental identification strategy (coefficient $0.467^{***}$,
+s.e.\ 0.157, $\approx$18 pp; this coding has not been independently validated
+at the granular level).  The joint pattern shows no detectable directional
+sorting between the two corpora, while the caliper comparison reveals
+within-paper threshold bunching concentrated in the published record.
 \end{singlespace}
 \vspace{4pt}
 \noindent\small\textit{JEL classification:} G18, G28, C80, B40.
@@ -207,13 +216,17 @@ the \JF{}, the \RFS{}, and the \JFE{} from 2000 to 2024.  The
 \textit{working paper} sample is drawn from NBER working papers in five
 programs: Corporate Finance (CF), Asset Pricing (AP), Monetary Economics (ME),
 Economic Fluctuations and Growth (EFG), and Public Economics (PE), covering
-papers from 2000 to 2024.  A key methodological advantage of this two-sample
-design is that we observe actual pre-publication findings rather than merely
-the shape of the published distribution: the gap between pre- and
-post-publication finding rates is directly observable rather than inferred
-from p-value bunching, though the cross-sectional design cannot rule out
-that it reflects differences between the two populations rather than the
-editorial filter alone.  Together, these samples
+papers from 2000 to 2024.  A key feature of this two-sample design is that we observe findings from
+working papers that circulated \textit{before} potential journal publication,
+allowing a direct comparison of test-statistic distributions rather than merely
+inferring the pre-publication shape from published p-value bunching alone.
+We emphasize that the two samples are largely non-overlapping cross-sections
+(only $\approx$12\% of published papers are matched to NBER counterparts),
+so the comparison reflects differences between two distinct corpora --- not the
+same papers tracked through the editorial filter.  The identifying assumption
+is that the NBER working-paper distribution is reasonably representative of
+research circulating before top-journal submission in this domain, conditional
+on NBER affiliation, which is itself selective.  Together, these samples
 allow us to compare the full distribution of findings across publication
 states---not merely the subset that appears in top journals.
 
@@ -256,16 +269,10 @@ all controls, whereas the direction coefficients remain statistically
 indistinguishable from zero.  The evidence suggests that editorial selection
 in this literature rewards methodological rigor, not finding direction.
 
-The absence of a direction--publication association is uniform across journals.
-No journal shows a statistically significant direction coefficient: the \JF{}
-yields $\hat\beta_{\text{pos}} = 0.393$ ($p = 0.27$) and
-$\hat\beta_{\text{neg}} = 0.329$ ($p = 0.35$).
-The \RFS{} yields $\hat\beta_{\text{pos}} = -0.036$ ($p = 0.90$) and
-$\hat\beta_{\text{neg}} = 0.252$ ($p = 0.35$).
-The \JFE{} yields $\hat\beta_{\text{pos}} = -0.136$ ($p = 0.57$) and
-$\hat\beta_{\text{neg}} = -0.305$ ($p = 0.20$), both insignificant.
-Cross-journal differences are not statistically distinguishable at available
-sample sizes (see Section~\ref{sec:results}).
+The absence of a direction--corpus-membership association is uniform across
+journals; no individual journal shows a statistically significant direction
+coefficient (Appendix~\ref{app:by_journal}), though sub-samples are small
+and cross-journal comparisons are severely underpowered.
 
 A complementary analysis of the \textit{within-paper} distribution of test
 statistics reveals a distinct pattern and, crucially, identifies where in the
@@ -283,12 +290,14 @@ We then apply the identical extraction pipeline to the full-text PDFs of the
 statistics from 125 papers (106 as clusters).  The NBER caliper ratio is 1.01 ($p = 0.849$)
 overall, and 1.00 ($p = 0.964$) for negative-finding papers---essentially
 exactly one.  The overall significance rate is nearly identical across
-samples (published: $57.1\%$; NBER: $55.5\%$), ruling out the possibility that NBER papers are simply lower-powered.  The bunching
-does not appear to be a property of the underlying research designs in this
-domain; it is concentrated in the published record and absent from pre-publication
-counterparts, consistent with revision-stage pressure---though the cross-sectional
-design cannot rule out that it partly reflects compositional differences between
-papers that circulate through NBER versus those that reach top journals.
+samples (published: $57.1\%$; NBER: $55.5\%$), a fact that is \textit{consistent
+with} similar statistical power but does not fully establish it (equal significance
+rates can coexist with different effect sizes, sample sizes, or model specifications).
+The bunching does not appear to be a property of the underlying research designs
+in this domain; it is concentrated in the published record and largely absent
+from the NBER working papers, consistent with specification-search pressure
+concentrated at the revision stage---though compositional differences between
+the two corpora cannot be ruled out.
 
 Sub-period estimates across three regulatory regimes (2000--2007, 2008--2015,
 2016--2024) are uniformly insignificant, with all direction coefficients
@@ -856,22 +865,35 @@ We are explicit throughout that the coefficients in our probit models are
 cross-sectional associations, not causal publication-filter effects.
 
 \medskip
-\noindent\textbf{Limitation: the two samples are not the same papers at two
-points in the pipeline.}  Because only 11.9\% of published papers are matched
-to an NBER counterpart, the NBER and journal samples are largely non-overlapping
-cross-sections selected by different institutional processes.  The constructed
-``publication rate'' of 46\% is a function of the relative sizes of the two
-corpora we assembled; it depends on NBER program coverage,
+\noindent\textbf{Critical design limitation: the two samples are largely
+non-overlapping populations, not the same papers at two pipeline stages.}
+Because only 11.9\% of published papers are matched to an NBER counterpart,
+the NBER and journal samples are overwhelmingly different papers selected by
+different institutional processes.  This is the most fundamental constraint on
+the cross-sectional analysis.  The constructed corpus-membership rate of 46\%
+is a mechanical ratio determined by our sample construction---not an estimate of
+true journal acceptance probabilities.  It depends on NBER program coverage,
 abstract availability, and the decision to count unmatched NBER papers as
-published $= 0$.  We do not claim to observe papers transitioning through the
-editorial filter; rather, we compare the direction distribution of
-pre-publication research (NBER working papers) to that of published articles,
-and ask whether the two distributions are consistent with a significance-sorting
-mechanism.  This framing is analogous to \citet{Franco2014} and
-\citet{DellaVigna2022}, who likewise rely on cross-sectional comparisons
-between pre-registered and published samples.  The key identifying assumption
-is that the NBER distribution is representative of the pre-publication
-distribution conditional on NBER affiliation, which we acknowledge is selective.
+unpublished.  We do not observe papers transitioning through the editorial
+filter; we compare the \textit{direction distribution} of one corpus (NBER
+working papers) to that of another (published articles), and ask whether the
+two distributions are consistent with a significance-sorting mechanism.
+
+The NBER benchmark is also imperfect in multiple ways beyond the matching
+rate.  NBER affiliates are not representative finance researchers: they differ
+systematically in institutional quality, co-author networks, and publication
+success.  Topic selection within NBER programs emphasizes certain areas,
+excluding papers that circulate through SSRN, CEPR, ECGI, or other channels.
+Timing selection is also a concern: researchers may circulate NBER working
+papers only after obtaining strong results, which would mean the NBER corpus is
+already partially selected toward directional findings relative to all ongoing
+research.  These concerns cannot be fully resolved without submission-level
+data.  We are explicit throughout that the probit coefficients are
+cross-sectional associations in this sample, not causal estimates of editorial
+selection effects.  The key identifying assumption---that the NBER distribution
+is representative of pre-publication research in this domain conditional on
+NBER affiliation---is maintained for tractability, and we acknowledge it may
+not hold.
 
 \subsection{Primary Specification}
 
@@ -932,15 +954,19 @@ size for the earliest period ($N = 50$).
 
 \subsection{Directional vs.\ Null Findings}
 
-Table~\ref{tab:pub_rates} reports the unconditional publication rates by
-direction code.  Positive-finding papers are published at a rate of 45.6\%
-(47 of 103 papers), negative-finding papers at 46.1\% (59 of 128), and
-null-finding papers at 46.7\% (28 of 60).  All three rates are statistically
-indistinguishable from each other: a $\chi^2$ test of homogeneity cannot reject
-equality ($\chi^2 = 0.017$, $p = 0.992$), and a two-sample $z$-test for the
-positive versus negative rates gives $z = -0.07$ ($p = 0.944$).  The
-approximately 46\% publication rate is remarkably uniform across all three
-direction categories, providing no raw evidence of direction-based sorting.
+Table~\ref{tab:pub_rates} reports the unconditional corpus-membership rates by
+direction code.  (We use the term ``corpus-membership rate'' to emphasize that
+these are ratios determined by our sample construction---specifically the
+relative sizes of the published and NBER corpora---not estimates of actual
+journal acceptance probabilities.)  Positive-finding papers appear in the
+published corpus at 45.6\% (47 of 103 papers), negative-finding papers at
+46.1\% (59 of 128), and null-finding papers at 46.7\% (28 of 60).  All three
+rates are statistically indistinguishable: a $\chi^2$ test of homogeneity
+cannot reject equality ($\chi^2 = 0.017$, $p = 0.992$), and a two-sample
+$z$-test for positive versus negative rates gives $z = -0.07$ ($p = 0.944$).
+The approximately 46\% rate is remarkably uniform across all three direction
+categories, providing no raw evidence of direction-based sorting between the
+two corpora.
 
 \begin{table}[H]
 \centering
@@ -1180,60 +1206,12 @@ identification.
 
 \subsection{Cross-Journal Analysis}
 
-Table~\ref{tab:probit_by_journal} reports journal-specific probit estimates.
-No journal shows a statistically significant direction coefficient.
-At the \JF{}, point estimates are $\hat\beta_1 = 0.393$ ($p = 0.269$) and
-$\hat\beta_2 = 0.329$ ($p = 0.345$).
-The \RFS{} yields $\hat\beta_1 = -0.036$ ($p = 0.900$) and
-$\hat\beta_2 = 0.252$ ($p = 0.350$).
-The \JFE{} yields $\hat\beta_1 = -0.136$ ($p = 0.572$) and
-$\hat\beta_2 = -0.305$ ($p = 0.200$).
-A positive year trend is significant at the \RFS{} ($\hat\gamma = 0.058^{***}$,
-$p < 0.001$) and \JFE{} ($\hat\gamma = 0.032^{**}$, $p = 0.029$).
-
-Cross-journal Wald tests for equality of the positive coefficients yield
-$p = 0.349$ (JF vs.\ RFS), $p = 0.218$ (JF vs.\ JFE), and $p = 0.791$
-(RFS vs.\ JFE); none of the pairwise differences is statistically distinguishable.
-We caution strongly that these tests have low power: the JF sub-sample contains
-only 26 in-scope published articles, making cross-journal comparisons highly
-underpowered.  The uniform absence of significant direction coefficients across
-journals is consistent with the pooled null result.
-
-\begin{table}[H]
-\centering
-\caption{Probit Models by Journal}
-\label{tab:probit_by_journal}
-\begin{singlespace}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{lccc}
-\toprule
- & \JF{} & \RFS{} & \JFE{} \\
-\midrule
-Positive ($+1$) & $0.393$       & $-0.036$      & $-0.136$      \\
-                & $(0.355)$     & $(0.290)$     & $(0.241)$     \\[4pt]
-Negative ($-1$) & $0.329$       & $0.252$       & $-0.305$      \\
-                & $(0.349)$     & $(0.270)$     & $(0.238)$     \\[4pt]
-Year trend      & $-0.010$      & $0.058^{***}$ & $0.032^{**}$  \\
-                & $(0.017)$     & $(0.017)$     & $(0.015)$     \\
-\midrule
-$N$             & 183           & 205           & 217           \\
-Pseudo $R^2$    & 0.011         & 0.065         & 0.027         \\
-\bottomrule
-\end{tabular}}
-\par\smallskip
-\begin{minipage}{\textwidth}
-\small
-\textit{Notes.} Each column uses the 157 NBER-only papers (Published $= 0$)
-and the published papers from the specified journal (Published $= 1$) only;
-published papers from the remaining two journals are excluded, giving
-$N = 183$, $205$, and $217$ respectively.  Each column therefore compares
-each journal's directional mix against the shared NBER pre-publication pool.
-Standard errors in parentheses.  *** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$.
-The \JF{} sample contains only 26 in-scope published articles in 2000--2024,
-limiting statistical power for journal-specific tests.
-\end{minipage}
-\end{singlespace}
-\end{table}
+Journal-level estimates are reported in Appendix~\ref{app:by_journal}.
+No journal shows a statistically significant direction coefficient, consistent
+with the pooled null result.  We caution that sub-samples are severely
+underpowered: the \JF{} contributes only 26 in-scope published articles,
+so cross-journal comparisons carry limited inferential weight and should be
+treated as descriptive.
 
 \subsection{Time-Period Heterogeneity (Exploratory)}
 \label{subsec:time}
@@ -1471,8 +1449,16 @@ published and NBER samples.  The contrast is stark.  In the \textit{full sample}
 the published caliper ratio of 1.20 ($p = 0.002$) is entirely absent in the NBER
 sample (ratio $= 1.01$, $p = 0.849$).  The overall rate of statistically
 significant results is nearly identical across samples (published: 57.1\%; NBER: 55.5\%),
-ruling out the possibility that NBER papers are simply less polished or have lower-powered
-tests.  The bunching at the 5\% threshold is specific to the published record.
+a fact \textit{consistent with} similar statistical power across corpora.  We
+note, however, that equal significance rates alone do not establish equal power:
+two populations can generate similar fractions of significant statistics while
+differing in effect sizes, sample sizes, or model specifications.  What the
+equal-rates result does establish, in conjunction with the caliper gap, is that
+the bunching pattern cannot be explained purely by NBER papers being uniformly
+under-powered: under-powered tests would produce fewer significant results
+\textit{and} no bunching at the threshold, rather than the similar significance
+rate with absent bunching that we observe.  The bunching at the 5\% threshold
+is therefore specific to the published record, not a level-of-power artefact.
 We note that this result is specific to caliper windows whose lower bound
 is at or above $|z| = 1.645$ (the Brodeur convention); as shown in
 Appendix~\ref{app:caliper_window}, a wider window extending down to $|z| = 1.50$
@@ -1505,9 +1491,10 @@ clear the 5\% threshold.  A compositional alternative is also possible:
 negative-finding published papers may differ from their NBER counterparts in
 unobserved dimensions (empirical detail, research design complexity, vintage)
 correlated with within-paper specification counts, and our cross-sectional
-design cannot rule this out.  The editorial gate does not discriminate by
-direction, but the revision process appears to create a conditional threshold
-premium for anti-intervention findings.
+design cannot rule this out.  We do not claim to have established a causal mechanism; the data are consistent
+with revision-stage specification pressure but alternative compositional
+explanations remain open.  The cross-sectional comparison shows that the
+directional pattern in caliper ratios is specific to the published corpus.
 
 \medskip
 \noindent\textbf{Inference under paper-level clustering.}
@@ -2318,16 +2305,19 @@ aware of a prior published-vs.-working-paper caliper comparison in finance,
 though the approach extends naturally from the broader caliper literature
 \citep{Brodeur2016,Brodeur2023}.
 
-The joint pattern suggests that the \textit{absence} of direction-based
-editorial selection coexists with \textit{within-paper} threshold bunching
-consistent with revision-stage pressure---concentrated in negative-finding papers
-and in \JFE{}---though our cross-sectional design cannot rule out that this partly reflects compositional
-differences between NBER and published samples.
+The joint pattern shows the \textit{absence} of detectable directional sorting
+between the two corpora, alongside \textit{within-paper} threshold bunching
+concentrated in the published record---a pattern consistent with
+specification-search pressure during revision.  We stress that compositional
+differences between NBER affiliates and the broader population of published
+authors could partly explain both results, and that neither claim about
+mechanism is directly identified.
 
 We interpret these results throughout as cross-sectional associations.  Our
-design identifies a null association between finding direction and publication
-status, but cannot rule out that this reflects an upstream equilibrium in
-submission behavior rather than editorial neutrality.  Two practical
+design identifies a null association between finding direction and
+corpus membership (published vs.\ NBER), but cannot rule out that this
+reflects an upstream equilibrium in submission behavior rather than
+directional indifference on the part of editors.  Two practical
 implications follow.  For researchers and meta-analysts, the published
 distribution in this domain does not appear systematically biased toward
 directional findings at the editorial-selection level; concerns about
@@ -2448,8 +2438,65 @@ sentence).
 \end{quote}
 
 %% ============================================================
+%% ============================================================
+\section{Cross-Journal Probit Estimates}
+\label{app:by_journal}
+%% ============================================================
+
+Table~\ref{tab:probit_by_journal} reports journal-specific probit estimates.
+No journal shows a statistically significant direction coefficient.
+At the \JF{}, point estimates are $\hat\beta_1 = 0.393$ ($p = 0.269$) and
+$\hat\beta_2 = 0.329$ ($p = 0.345$).
+The \RFS{} yields $\hat\beta_1 = -0.036$ ($p = 0.900$) and
+$\hat\beta_2 = 0.252$ ($p = 0.350$).
+The \JFE{} yields $\hat\beta_1 = -0.136$ ($p = 0.572$) and
+$\hat\beta_2 = -0.305$ ($p = 0.200$).
+Cross-journal Wald tests for equality of the positive coefficients yield
+$p = 0.349$ (JF vs.\ RFS), $p = 0.218$ (JF vs.\ JFE), and $p = 0.791$
+(RFS vs.\ JFE); none is statistically distinguishable.  These results are
+consistent with the pooled null but carry limited inferential weight given
+the small sub-samples (especially JF: 26 papers).
+
+\begin{table}[H]
+\centering
+\caption{Probit Models by Journal}
+\label{tab:probit_by_journal}
+\begin{singlespace}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccc}
+\toprule
+ & \JF{} & \RFS{} & \JFE{} \\
+\midrule
+Positive ($+1$) & $0.393$       & $-0.036$      & $-0.136$      \\
+                & $(0.355)$     & $(0.290)$     & $(0.241)$     \\[4pt]
+Negative ($-1$) & $0.329$       & $0.252$       & $-0.305$      \\
+                & $(0.349)$     & $(0.270)$     & $(0.238)$     \\[4pt]
+Year trend      & $-0.010$      & $0.058^{***}$ & $0.032^{**}$  \\
+                & $(0.017)$     & $(0.017)$     & $(0.015)$     \\
+\midrule
+$N$             & 183           & 205           & 217           \\
+Pseudo $R^2$    & 0.011         & 0.065         & 0.027         \\
+\bottomrule
+\end{tabular}}
+\par\smallskip
+\begin{minipage}{\textwidth}
+\small
+\textit{Notes.} Each column uses the 157 NBER-only papers (Published $= 0$)
+and the published papers from the specified journal (Published $= 1$) only;
+published papers from the remaining two journals are excluded, giving
+$N = 183$, $205$, and $217$ respectively.  Each column therefore compares
+each journal's directional mix against the shared NBER working-paper pool.
+Standard errors in parentheses.  *** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$.
+The \JF{} sample contains only 26 in-scope published articles in 2000--2024,
+limiting statistical power for journal-specific tests.
+\end{minipage}
+\end{singlespace}
+\end{table}
+
+%% ============================================================
 \section{Additional Tables}
 \label{app:additional_tables}
+%% ============================================================
 
 \begin{table}[H]
 \centering
