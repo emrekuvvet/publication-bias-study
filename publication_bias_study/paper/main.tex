@@ -1,6 +1,6 @@
 %% ============================================================
 %%  Editorial Neutrality and Revision-Stage Pressure in Top Finance Journals:
-%%  Evidence from Government Intervention Research in Top Finance Journals
+%%  Evidence from Government Intervention Research
 %%
 %%  Target: Journal of Corporate Finance
 %%
@@ -89,7 +89,7 @@
 
 %% ---- Title block --------------------------------------------
 \title{Editorial Neutrality and Revision-Stage Pressure in Top Finance Journals:\\
-       Evidence from Government Intervention Research in Top Finance Journals%
+       Evidence from Government Intervention Research%
        \thanks{We thank seminar participants at [XX] for helpful comments.
        We are grateful to [XX] for outstanding research assistance.
        All data and code are available at
@@ -138,9 +138,9 @@ significant difference by finding direction: positive-finding papers appear in
 the \JF{}, \RFS{}, or \JFE{} at 45.6\%, negative-finding at 46.1\%, and
 null-finding at 46.7\% ($p = 0.992$); a binary directional probit coefficient
 is $-0.020$ (s.e.\ 0.182, $p = 0.91$), robust across six specifications.  The
-only robust predictor of top-journal publication is a quasi-experimental
+strongest predictor of top-journal publication is a quasi-experimental
 identification strategy (coefficient $0.467^{***}$, s.e.\ 0.157, $\approx$18 pp
-premium).  The joint pattern indicates that editorial selection is directionally
+premium; this coding has not been independently validated at the granular level).  The joint pattern indicates that editorial selection is directionally
 neutral while the revision process creates within-paper threshold pressure
 concentrated in anti-intervention findings.
 \end{singlespace}
@@ -246,7 +246,7 @@ throughout.}
 A Wald test for equality of the two direction coefficients gives $\chi^2 = 0.005$
 ($p = 0.944$).  These null results are robust across all six specifications.
 
-The one robust predictor of top-journal publication is quasi-experimental
+The strongest predictor of top-journal publication is quasi-experimental
 identification quality.  The \textit{QuasiExp} dummy carries a coefficient
 of $0.467^{***}$ (s.e.\ 0.157, $p = 0.003$) in Column~(6), implying an
 18 percentage-point publication premium for papers using RDD, IV,
@@ -1322,7 +1322,7 @@ $|\hat\beta / \hat\sigma_{\hat\beta}|$ to within 0.1.  This internal check
 passes for \textbf{98.3\%} of published rows (5,474/5,569) and \textbf{99.7\%}
 of NBER rows (6,811/6,831), giving no evidence of materially worse extraction
 quality in either corpus.  The higher share of z-stat-only rows in the published
-corpus (29.4\% vs.\ 19.9\% for NBER) reflects the typeset formatting of some
+corpus (29.0\% vs.\ 18.7\% for NBER) reflects the typeset formatting of some
 publisher tables that display t-statistics directly rather than coefficient-SE
 pairs; these statistics are taken at face value and are not subject to a
 consistency check, but they pass all caliper-window bounds checks.
@@ -1335,6 +1335,25 @@ Third, restricting the caliper analysis to high-coverage papers ($\geq$20
 extracted statistics per paper) leaves the published ratio essentially
 unchanged (1.207 vs.\ 1.203 for the full sample) and the NBER ratio
 unaffected (1.012 vs.\ 1.012).
+Fourth, we stratify the caliper by row type to assess whether the
+overall result is driven by the unverifiable z-stat-only rows
+(Appendix~\ref{app:coefse_caliper}).  Among the 5,510 published rows
+with both a coefficient and a standard error, the caliper ratio is 0.81
+(below $=$ 320, above $=$ 394; naive $p = 0.006$ against 1.0 from
+below); the corresponding NBER ratio is 0.95 (below $=$ 416, above $=$
+438; $p = 0.45$).  Neither corpus shows excess bunching in this clean
+subset, and the two ratios are close.  Among the 2,251 published z-stat-only
+rows, the caliper ratio is 2.55 ($p < 0.001$); the comparable NBER ratio
+is 1.49 ($p = 0.019$).  The full-sample results therefore reflect
+disproportionate bunching in standalone t-statistics, which both corpora
+exhibit but published papers exhibit more strongly.  A plausible
+interpretation is that standalone t-statistics are more amenable to
+selective presentation during revision (e.g., retaining only specifications
+whose key t-statistic clears 1.96 in a summary column) than are
+coefficient-SE pairs that appear as the primary tabulation.  This is an
+important qualification: the cleanest extraction rows show no
+significant bunching gap, and caution is warranted in interpreting the
+magnitude of the overall caliper contrast.
 
 \medskip
 \noindent\textbf{Tests.}
@@ -1452,11 +1471,19 @@ sample (ratio $= 1.01$, $p = 0.849$).  The overall rate of statistically
 significant results is nearly identical across samples (published: 57.1\%; NBER: 55.5\%),
 ruling out the possibility that NBER papers are simply less polished or have lower-powered
 tests.  The bunching at the 5\% threshold is specific to the published record.
+We note that this result is specific to caliper windows whose lower bound
+is at or above $|z| = 1.645$ (the Brodeur convention); as shown in
+Appendix~\ref{app:caliper_window}, a wider window extending down to $|z| = 1.50$
+reverses the sign for published papers because the density is still rising below
+1.645, while the standard, narrow, and Brodeur2 windows all yield qualitatively
+identical conclusions.
 
 The directional pattern is even sharper.  Among \textit{negative-finding} papers,
 the published caliper ratio is 1.52 ($p < 0.001$) while the NBER ratio is
 \textit{essentially exactly one} (ratio $= 1.00$, $p = 0.964$)---a difference of
-0.52 that is as clean a contrast as the data can produce.
+0.52 that is economically substantial, though we note that the cluster-bootstrap
+confidence interval for the published negative-finding ratio spans [0.81, 2.67],
+indicating imprecision in the magnitude estimate.
 Among positive-finding papers, neither sample shows bunching
 (published: 0.94; NBER: 0.99; both $p > 0.56$).
 For null-finding papers the pattern reverses: the NBER caliper ratio (1.14, $p = 0.442$)
@@ -2260,7 +2287,7 @@ directional probit coefficient of $-0.020$ (s.e.\ 0.182, $p = 0.91$) is
 statistically indistinguishable from zero and is robust across all six
 specifications, all three journals individually, and all three sub-periods.
 
-The one robust predictor of top-journal publication in our sample is the use
+The strongest predictor of top-journal publication in our sample is the use
 of a quasi-experimental identification strategy (RDD, IV, DiD, or event study),
 which carries a probit coefficient of $0.467^{***}$ (s.e.\ 0.157, $p = 0.003$).
 This identification-quality premium is the dominant driver of publication in
@@ -2743,6 +2770,54 @@ $(1.96, 2.275)$.  \textit{Perm.}: within-group permutation ($10{,}000$ iteration
 \textit{Boot.}: cluster bootstrap ($10{,}000$ draws) resampling papers with replacement.
 Bold entries: permutation $p < 0.05$.  The caliper result is qualitatively
 unchanged by the restriction, and the negative-finding ratio strengthens slightly.
+\end{minipage}
+\end{singlespace}
+\end{table}
+
+%% ============================================================
+\section{Caliper by Row Type: Coef+SE vs.\ Standalone \textit{z}-Statistics}
+\label{app:coefse_caliper}
+%% ============================================================
+
+Table~\ref{tab:coefse_caliper} decomposes the caliper test by whether each
+row has a verifiable coefficient-SE pair (so that $|z| = |\hat\beta / \hat\sigma|$
+can be confirmed) versus a standalone $z$-statistic extracted directly from a
+t-statistic column.  As discussed in Section~\ref{subsec:pvalue_dist}, the two types
+differ in verifiability, not in the source paper: both appear in published
+regression tables.
+
+\begin{table}[ht]
+\centering
+\caption{Caliper Test Stratified by Row Type}
+\label{tab:coefse_caliper}
+\begin{singlespace}
+\small
+\begin{tabular}{llrrrrr}
+\hline\hline
+Corpus & Row type & $N$ & Below & Above & Ratio & Naive $p$ \\
+\hline
+Published & All rows         & 7,761 & 611 & 508 & \textbf{1.203} & \textbf{0.002} \\
+Published & Coef+SE only     & 5,510 & 320 & 394 & 0.812 & 0.006 \\
+Published & $z$-stat only    & 2,251 & 291 & 114 & \textbf{2.553} & \textbf{$<$0.001} \\[4pt]
+NBER      & All rows         & 8,351 & 501 & 495 & 1.012 & 0.849 \\
+NBER      & Coef+SE only     & 6,788 & 416 & 438 & 0.950 & 0.452 \\
+NBER      & $z$-stat only    & 1,563 &  85 &  57 & \textbf{1.491} & \textbf{0.019} \\
+\hline\hline
+\end{tabular}
+\begin{minipage}{\textwidth}
+\smallskip
+\footnotesize
+\textit{Notes.}  \textit{Coef+SE only}: rows where a coefficient and a
+positive standard error are both extracted; $z_{\text{abs}}$ is computed
+as $|\hat\beta / \hat\sigma|$.  \textit{$z$-stat only}: rows where a
+$|z|$-value appears in the table but no coefficient-SE pair is present,
+so the value cannot be independently verified.  Caliper ratio $=$ mass in
+$(1.645, 1.96)$ / mass in $(1.96, 2.275)$; a value $>1$ indicates excess
+bunching below 1.96.  Bold entries are significant at 5\%.
+\textit{Naive $p$} tests equality of the below- and above-counts via
+$\chi^2(1)$.  Neither corpus shows excess bunching in coef+SE rows; both
+corpora show elevated bunching in standalone $z$-statistics, with
+published papers showing a substantially higher ratio (2.55 vs.\ 1.49).
 \end{minipage}
 \end{singlespace}
 \end{table}
