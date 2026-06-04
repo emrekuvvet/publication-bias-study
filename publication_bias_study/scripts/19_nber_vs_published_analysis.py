@@ -302,7 +302,7 @@ def plot_zdist(z_pub_full, z_nber_full, title, fname, bins=None,
     if bins is None:
         bins = np.arange(0, 6.05, 0.1)
 
-    fig, axes = plt.subplots(1, 2, figsize=(12, 4.5), sharey=False)
+    fig, axes = plt.subplots(1, 2, figsize=(13, 5.5), sharey=False)
 
     for ax, z_full, pid, label, color in zip(
         axes,
@@ -349,16 +349,17 @@ def plot_zdist(z_pub_full, z_nber_full, title, fname, bins=None,
             f'N={r["N"]:,} stats, {r.get("N_papers","?")} papers\n'
             f'Caliper ratio = {r["caliper_ratio"]:.2f}  '
             f'({p_label} = {p_show:.3f}, clustered)',
-            fontsize=10
+            fontsize=12
         )
-        ax.set_xlabel('|z|-statistic', fontsize=11)
-        ax.set_ylabel('Count', fontsize=11)
+        ax.set_xlabel('|z|-statistic', fontsize=13)
+        ax.set_ylabel('Count', fontsize=13)
+        ax.tick_params(axis='both', labelsize=12)
         ax.set_xlim(0, 6)
 
     fig.suptitle(title + '\n(histogram trimmed to |z| ≤ 6; caliper uses full sample)',
-                 fontsize=12, fontweight='bold', y=1.02)
+                 fontsize=13, fontweight='bold', y=1.02)
     plt.tight_layout()
-    plt.savefig(out_dir / fname, dpi=150, bbox_inches='tight')
+    plt.savefig(out_dir / fname, dpi=250, bbox_inches='tight')
     plt.close()
     print(f'  Saved {fname}')
 

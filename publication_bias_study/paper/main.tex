@@ -1084,30 +1084,41 @@ These rates argue strongly against widespread extraction errors in the published
 z-stat-only rows.
 
 \medskip
-\noindent\textbf{Mechanism: selective reporting vs. full-table extraction.}
+\noindent\textbf{Mechanism: selective inclusion of supplementary statistics.}
 A key question is why z-stat-only rows exhibit more threshold bunching than
 coef+SE rows, if both are extracted from the same papers.
-We offer the following explanation, which is empirically supported by our extraction data.
-Standard regression tables (the source of coef+SE rows) report \textit{all}
-coefficient estimates from a given specification systematically --- including
-insignificant ones.
-Standalone t-statistics, by contrast, appear disproportionately in supplementary
-analyses, robustness summary rows, and ``Panel B''-type tables where authors
-have already \textit{selected} which test to present.
-Consistent with this, 96.1\% of published z-stat-only rows in our extraction
-come from non-primary-results tables (tables not classified as containing the
-paper's main regression specification), compared to 3.9\% from main results tables.
-This selective-reporting structure is itself a form of within-paper specification
-search: the author chose to highlight the specific test statistic because it is
-noteworthy or marginally significant.
-Under this interpretation, bunching in z-stat-only rows captures the joint effect
-of (a) selective \textit{reporting} of individual test statistics within a paper,
-and (b) possibly, specification-search pressure at the revision stage.
-The absence of bunching in coef+SE rows is consistent with primary regression
-tables being systematically rather than selectively reported.
-This mechanism also explains why both corpora show a z-stat-only ratio above one
-(published: 2.55; NBER: 1.49) --- selective reporting of standalone test statistics
-occurs in working papers too, though less intensely than in published papers.
+We distinguish two conceptually separate phenomena that should not be conflated,
+as they carry different welfare implications.
+
+\textit{Selective reporting} refers to authors choosing which test statistics to
+present in the first place.  Standard regression tables (the source of coef+SE rows)
+report \textit{all} coefficient estimates for a given specification systematically,
+including insignificant ones.  Standalone z-statistics, by contrast, appear
+disproportionately in supplementary analyses, robustness summary rows, and
+``Panel B''-type tables where authors select which results to show.
+Consistent with this, 96.1\% of published z-stat-only rows come from non-primary
+tables.  If authors prefer to highlight marginally significant test statistics
+in these supplementary slots, the caliper pattern in z-stat-only rows would
+emerge purely from a \textit{reporting decision}---not from any manipulation of
+the underlying estimates.
+
+\textit{Specification search} is a distinct phenomenon: running multiple
+specifications and selecting those whose primary estimates cross a significance
+threshold.  Specification search distorts primary regression estimates in a way
+that selective inclusion of supplementary statistics does not.  The absence of
+bunching in coef+SE rows---the systematically reported primary regressions---is
+evidence \textit{against} specification search in the primary estimates.
+
+We therefore interpret the z-stat-only bunching as evidence of \textit{selective
+reporting of supplementary statistics}, not as evidence of specification search in
+primary results.  This distinction matters for welfare: selective highlighting of
+significant supplementary results is less distortionary than systematic
+manipulation of primary regression outputs.  We cannot, however, rule out that
+some z-stat-only rows represent summary statistics from searches over many
+specifications, which would carry specification-search welfare implications.
+Both corpora show a z-stat-only ratio above one (published: 2.55; NBER: 1.49),
+confirming that selective reporting of supplementary statistics occurs in working
+papers too, though more intensely in published papers.
 
 \medskip
 \noindent\textbf{Tests.}
@@ -1194,8 +1205,13 @@ yields $p < 0.001$.  These two statistics can coexist if density is relatively
 \textit{smooth} in both the $(1.645, 1.96)$ and $(1.96, 2.275)$ windows but
 drops sharply \textit{at} the 1.96 boundary itself---consistent with authors
 in \JF{} selectively omitting 10\%-significant-but-not-5\% results rather than
-accumulating them.  This pattern should be interpreted with caution given the
-\JF{} sub-sample's small size (1,308 statistics from 26 papers).
+accumulating them.  However, in a subsample of only 26 papers and 1,308
+statistics, this discord more plausibly reflects two noisy tests giving
+conflicting signals than a coherent behavioral pattern.  We flag this as
+reason to downweight the density-discontinuity test results throughout:
+whenever the two procedures disagree in a subsample, the caliper test
+(which directly measures the mass ratio the theory predicts) should be given
+priority over the local-polynomial discontinuity estimate.
 To verify that no single paper dominates the JF result, we report the distribution
 of statistics across the 23 JF papers with extracted statistics: mean 62.2, median 72,
 maximum 107 (2 papers exceed 100 statistics).  We re-estimate the JF caliper after
@@ -1555,8 +1571,14 @@ not be interpreted as evidence of true editorial neutrality.
 
 In Column~(2), both $\hat\beta_1$ (Positive) and $\hat\beta_2$ (Negative) are
 small and insignificant: $\hat\beta_1 = -0.026$ (s.e.\ 0.204, $p = 0.898$)
-and $\hat\beta_2 = -0.014$ (s.e.\ 0.196, $p = 0.942$).  A Wald test for
-equality of the two coefficients gives $\chi^2 = 0.005$ ($p = 0.944$).  The
+and $\hat\beta_2 = -0.014$ (s.e.\ 0.196, $p = 0.942$).
+The most robust inference from this specification is the \textit{joint} $\chi^2$
+test for whether both direction coefficients are simultaneously zero
+($\chi^2(2) = 0.017$, $p = 0.992$), since the joint test does not require the
+null/mixed omitted category to be cleanly measured.  Because the null/mixed
+baseline has only 25\% model-agreement, individual direction contrasts against
+null papers are anchored to a noisy reference; the joint test avoids this
+sensitivity.  A Wald test for equality of the two coefficients gives $\chi^2 = 0.005$ ($p = 0.944$).  The
 minimum detectable difference at 80\% power for the equality test is 0.466
 coefficient units (SE of difference $= 0.166$).  For the individual direction
 coefficients, the minimum detectable effect at 80\% power is approximately
@@ -1906,15 +1928,19 @@ study), as classified by our LLM pipeline from abstracts.  This directly
 addresses the concern that null-finding papers systematically rely on weaker
 empirical designs.  Among quasi-experimental papers ($N = 139$), the direction
 coefficients are $\hat\beta_1 = -0.598$ ($p = 0.121$) and $\hat\beta_2 =
--0.657^{*}$ ($p = 0.081$).  $\hat\beta_1$ is clearly insignificant;
+-0.657^{*}$ ($p = 0.081$).  $\hat\beta_1$ is clearly insignificant.
 $\hat\beta_2$ is marginally significant at the 10\% level with a \textit{negative}
-sign.  The sign is unexpected if significance-sorting were operating: it implies
-quasi-experimental negative-finding papers are \textit{less} likely to be
-published than null papers.  We flag this as likely small-sample noise ($N=139$)
-rather than evidence of an anti-intervention penalty; the subsample is too small
-to reliably estimate differential direction effects, and the point estimate is
-sensitive to which papers are classified as quasi-experimental.  Neither estimate
-supports a positive direction premium within the quasi-experimental sub-sample.
+sign, implying quasi-experimental negative-finding papers are \textit{less} likely
+to appear in top journals than null papers.  We do not dismiss this estimate
+asymmetrically: the negative sign is entirely consistent with the pooled null
+result (no direction premium exists in the full sample either) and is consistent
+with sampling variability in a small subsample.  We note, however, that this
+direction contradicts a simple direction-premium story in this sub-sample, and
+the subsample is too small ($N = 139$) to distinguish a genuine null from a
+genuine negative from a sampling artefact.  The point estimate is also sensitive
+to which papers the LLM classifies as quasi-experimental.  Neither direction
+coefficient supports a positive direction premium within the quasi-experimental
+sub-sample.
 
 \textit{Abstract language and LLM classification confidence.}
 Abstract writing style introduces two related measurement concerns.  Among published

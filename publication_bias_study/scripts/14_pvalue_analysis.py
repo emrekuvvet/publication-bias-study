@@ -57,7 +57,7 @@ def density_discontinuity_test(z_abs, threshold=1.96, bandwidth=0.5):
     return z_stat, p_val
 
 def plot_zdist(z_abs, title, filename, threshold=1.96):
-    fig, ax = plt.subplots(figsize=(8, 5))
+    fig, ax = plt.subplots(figsize=(9, 5.5))
 
     # Caliper and discontinuity computed on the full cleaned sample [0, 50]
     z_full = z_abs[(z_abs >= 0) & (z_abs <= 50)]
@@ -84,20 +84,21 @@ def plot_zdist(z_abs, title, filename, threshold=1.96):
     ax.axvspan(1.645, 1.96, alpha=0.1, color='orange', label='Caliper window (below)')
     ax.axvspan(1.96,  2.275, alpha=0.1, color='red',   label='Caliper window (above)')
 
-    textstr = (f'Caliper ratio (below/above 1.96): {ratio:.2f}\n'
-               f'Caliper χ²={chi2:.2f}, p={p:.3f}\n'
-               f'Discontinuity z={z_disc:.2f}, p={p_disc:.3f}' if ratio else '')
+    textstr = (f'Caliper ratio: {ratio:.2f}\n'
+               f'χ²={chi2:.2f}, p={p:.3f}\n'
+               f'Disc. p={p_disc:.3f}' if ratio else '')
     ax.text(0.98, 0.97, textstr, transform=ax.transAxes,
-            fontsize=9, verticalalignment='top', horizontalalignment='right',
+            fontsize=11, verticalalignment='top', horizontalalignment='right',
             bbox=dict(boxstyle='round', facecolor='white', alpha=0.8))
 
-    ax.set_xlabel('|z| statistic', fontsize=12)
-    ax.set_ylabel('Density', fontsize=12)
-    ax.set_title(title, fontsize=13)
-    ax.legend(fontsize=8, loc='upper right')
+    ax.set_xlabel('|z| statistic', fontsize=14)
+    ax.set_ylabel('Density', fontsize=14)
+    ax.set_title(title, fontsize=14, fontweight='bold')
+    ax.tick_params(axis='both', labelsize=12)
+    ax.legend(fontsize=10, loc='upper right')
     ax.set_xlim(0, 6)
     plt.tight_layout()
-    plt.savefig(OUT_DIR / filename, dpi=150, bbox_inches='tight')
+    plt.savefig(OUT_DIR / filename, dpi=250, bbox_inches='tight')
     plt.close()
     print(f"  Saved → output/figures/{filename}")
     return ratio, chi2, p, z_disc, p_disc
