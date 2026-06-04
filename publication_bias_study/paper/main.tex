@@ -116,36 +116,31 @@
 \begin{center}{\normalsize\bf ABSTRACT}\end{center}
 \begin{singlespace}
 \noindent\small
-We apply the \citet{Brodeur2016} caliper test to 7,761 test statistics from
-121 corporate-finance regulation articles in the \JF{}, \RFS{}, and \JFE{}
-and compare them against 8,351 test statistics from 125 NBER working papers
-on the same topic.  \textbf{Primary specification (verifiable rows):} among
-the 5,510 published rows with extractable coefficient-SE pairs, the caliper
-ratio is 0.81 --- below one and statistically indistinguishable from the NBER
-ratio of 0.95.  No systematic threshold bunching exists in primary regression
-rows of either corpus.  \textbf{Secondary finding (standalone statistics):}
-published papers show elevated bunching in standalone z-statistics (ratio 2.55
-vs.\ 1.49 for NBER), concentrated in supplementary and robustness tables (96.1\%
-of published standalone rows come from non-primary tables).  This pattern is
-consistent with selective reporting of which individual test results to highlight,
-rather than manipulation of primary regression estimates.  The full-sample
-published ratio of 1.20 (cluster-bootstrap 95\% CI $[0.88,\,1.66]$;
-bootstrap $p = 0.150$; permutation $p = 0.001$) is approximately equally
-attributable to a within-type effect (standalone statistics bunching more in
-the published corpus, contributing $+0.097$ to the gap) and a composition
-effect (published papers contain more standalone-statistic rows: 31.6\%
-vs.\ 21.0\%, contributing $+0.094$).  The NBER and journal samples are
-largely non-overlapping cross-sections (only $\approx$12\% of published papers
-are matched to NBER counterparts), so this comparison reflects differences
-between two distinct corpora and cannot rule out compositional confounds.
+We compare the within-paper distribution of test statistics in 121 published
+government-intervention finance articles (\JF{}, \RFS{}, \JFE{}, 2000--2024)
+against 125 NBER working papers on the same topic, using NBER full texts as an
+observable proxy for the pre-publication distribution.  The two corpora are
+largely non-overlapping cross-sections ($\approx$12\% overlap), so comparisons
+reflect differences between distinct populations and cannot rule out
+compositional confounds.
 
-A cross-sectional probit finds no detectable directional sorting: the binary
-directional coefficient is $-0.020$ (s.e.\ 0.182, $p = 0.91$, $N = 291$).
-This design rules out directional sorting $\geq$22 percentage points at 80\%
-power; moderate asymmetries are consistent with the data.  The strongest
-predictor of corpus membership is a quasi-experimental identification strategy
-($0.467^{***}$, s.e.\ 0.157), though this variable lacks a human-coded
-validation and likely captures a bundle of correlated quality attributes.
+Two findings emerge.  \textbf{First} (caliper analysis): among verifiable
+coefficient-SE rows, published and NBER caliper ratios are statistically
+indistinguishable (0.81 vs.\ 0.95)---no bunching gap in primary regressions.
+Standalone $z$-statistics show elevated bunching in published papers (2.55 vs.\
+1.49 for NBER), but this full-sample gap ($p = 0.150$ cluster-bootstrap) is
+imprecisely estimated and should be treated as suggestive.  Roughly half the
+gap is mechanical (published papers contain more standalone-statistic rows:
+31.6\% vs.\ 21.0\%), and the negative-finding concentration (cluster-bootstrap
+$p = 0.135$) does not survive our primary inference procedure.
+\textbf{Second} (cross-sectional probit): corpus-membership rates are
+near-identical across positive, negative, and null findings ($\approx$46\%),
+and the directional probit coefficient is small and insignificant
+($-0.020$, s.e.\ 0.182).  This design rules out only large directional sorting
+($\geq$22 percentage points); moderate asymmetries are entirely consistent with
+the data.  The one clearly significant predictor is a quasi-experimental
+identification dummy ($0.467^{***}$), which lacks human-coded validation and
+likely captures correlated quality attributes.
 \end{singlespace}
 \vspace{4pt}
 \noindent\small\textit{JEL classification:} G18, G28, C80, B40.
@@ -233,13 +228,29 @@ it is selected on NBER affiliation and should not be equated with the full
 population of submitted or in-progress papers.
 We emphasize that the two samples are largely non-overlapping cross-sections
 (only $\approx$12\% of published papers are matched to NBER counterparts),
-so the comparison reflects differences between two distinct corpora --- not the
+so the comparison reflects differences between two distinct corpora---not the
 same papers tracked through the editorial filter.  The identifying assumption
 is that the NBER working-paper distribution is reasonably representative of
 research circulating before top-journal submission in this domain, conditional
 on NBER affiliation, which is itself selective.  Together, these samples
 allow us to compare the full distribution of findings across publication
 states---not merely the subset that appears in top journals.
+
+\medskip
+\noindent\textbf{A note on what this design can and cannot identify.}
+Before summarizing results, we flag the key limitation directly.  Because the
+NBER and published corpora are largely non-overlapping populations selected by
+different institutional processes, \textit{neither} the caliper comparison nor
+the directional probit identifies an editorial-filter effect in the usual
+quasi-experimental sense.  The probit rules out direction-based sorting of
+$\geq$22 percentage points at 80\% power, but cannot speak to moderate or
+small directional asymmetries.  The caliper comparison assumes NBER is a
+reasonable proxy for the pre-publication distribution; if NBER and the
+submitted-to-journals population differ in composition, the comparison reflects
+that compositional difference as well as any editorial-stage distortion.
+We interpret all results as \textit{descriptive associations} between corpus
+membership and paper characteristics, and we ask readers to carry this caveat
+throughout the paper rather than encounter it piecemeal in later sections.
 
 We define a paper as in-scope if its primary research question is the causal
 effect of a specific government law, regulation, or public policy on financial
@@ -310,6 +321,11 @@ The directional pattern for standalone statistics is imprecisely estimated
 (negative-finding published: ratio 1.52, cluster-bootstrap $p = 0.135$,
 CI $[0.81, 2.67]$); two of three paper-level inference procedures are
 insignificant, and the finding should be treated as suggestive.
+An additional caveat applies to the within-type effect ($+0.097$): published
+articles are professionally typeset while NBER drafts are author-typeset, and
+whether standalone $z$-statistics are extracted with equal reliability across
+the two formats cannot be verified directly; differential extraction fidelity
+could contribute to the within-type gap without any behavioral cause.
 
 Sub-period estimates across three regulatory regimes (2000--2007, 2008--2015,
 2016--2024) are uniformly insignificant, with all direction coefficients
@@ -321,7 +337,7 @@ This paper makes three contributions.
 
 \textit{First and primarily}, it documents a \textit{pattern of selective reporting} in the within-paper distribution of test statistics in published government-intervention finance research.  Specifically: systematically reported primary regression rows (with verifiable coefficient-SE pairs) show no caliper bunching and no gap relative to NBER working papers.  Standalone z-statistics---predominantly from supplementary and robustness tables---show elevated bunching in published papers (ratio 2.55) relative to NBER (ratio 1.49), a difference that is suggestive but imprecisely estimated (cluster-bootstrap $p = 0.150$).  This pattern is consistent with authors selectively reporting which supplementary test statistics to highlight, rather than with manipulation of primary regression estimates.  Using NBER full texts as a proxy for the pre-publication distribution, we provide a two-corpus comparison that avoids the purely inferential step required when the pre-publication distribution is unobserved; the two corpora are largely non-overlapping, so compositional confounds cannot be ruled out.
 
-\textit{Second}, as supporting context, the paper provides cross-sectional evidence consistent with the absence of detectable \textit{directional} sorting between top-journal articles and NBER working papers.  This null result rules out effects $\geq$22 percentage points at 80\% power; moderate asymmetries remain consistent with the data and cannot be distinguished from zero at the current sample size.
+\textit{Second}, as supporting context, the paper provides cross-sectional evidence consistent with the absence of \textit{large} directional sorting between top-journal articles and NBER working papers.  This null result rules out effects $\geq$22 percentage points at 80\% power; moderate asymmetries remain consistent with the data and cannot be distinguished from zero at the current sample size of 291 papers.  Whether moderate, policy-relevant levels of directional bias exist cannot be determined from this design.
 
 \textit{Third}, the paper introduces a scalable LLM-assisted pipeline for classifying and direction-coding large economics paper corpora.  Throughout, we are explicit that our design identifies cross-sectional associations, not causal editorial-filter effects.
 
@@ -1249,13 +1265,16 @@ yields $p < 0.001$.  These two statistics can coexist if density is relatively
 \textit{smooth} in both the $(1.645, 1.96)$ and $(1.96, 2.275)$ windows but
 drops sharply \textit{at} the 1.96 boundary itself---consistent with authors
 in \JF{} selectively omitting 10\%-significant-but-not-5\% results rather than
-accumulating them.  However, in a subsample of only 26 papers and 1,308
-statistics, this discord more plausibly reflects two noisy tests giving
-conflicting signals than a coherent behavioral pattern.  We flag this as
-reason to downweight the density-discontinuity test results throughout:
-whenever the two procedures disagree in a subsample, the caliper test
-(which directly measures the mass ratio the theory predicts) should be given
-priority over the local-polynomial discontinuity estimate.
+accumulating them.  However, in a subsample of only 26 papers and 1,308 statistics, this discord
+more plausibly reflects two noisy tests giving conflicting signals than a
+coherent behavioral pattern.  Local-polynomial density estimators are known to
+have poor finite-sample properties when the number of observations is small
+(here $n = 1{,}308$ test statistics, with bandwidth chosen by cross-validation
+on a thin distribution), which makes the discontinuity $p$-value unreliable in
+this subsample.  We flag this as reason to downweight the density-discontinuity
+test results throughout: whenever the two procedures disagree in a subsample,
+the caliper test (which directly measures the mass ratio the theory predicts)
+should be given priority over the local-polynomial discontinuity estimate.
 To verify that no single paper dominates the JF result, we report the distribution
 of statistics across the 23 JF papers with extracted statistics: mean 62.2, median 72,
 maximum 107 (2 papers exceed 100 statistics).  We re-estimate the JF caliper after
@@ -1319,21 +1338,28 @@ indistinguishable from one.
 Figure~\ref{fig:nber_vs_pub} displays the side-by-side $|z|$-distributions for
 the full sample and for the negative-finding subsample.
 
-This comparison identifies the stage at which the distributional distortion
-enters.  Since the overall significance rate is unchanged but the caliper
-pattern emerges only in the published record---and only for papers with
-negative conclusions---the bunching is \textit{consistent with} revision-stage
-pressure: one interpretation is that anti-intervention papers face elevated
-evidentiary demands---either self-imposed by authors anticipating scrutiny or
-enforced by reviewers---leading to specification search until marginal results
-clear the 5\% threshold.  A compositional alternative is also possible:
-negative-finding published papers may differ from their NBER counterparts in
-unobserved dimensions (empirical detail, research design complexity, vintage)
-correlated with within-paper specification counts, and our cross-sectional
-design cannot rule this out.  We do not claim to have established a causal mechanism; the data are consistent
-with revision-stage specification pressure but alternative compositional
-explanations remain open.  The cross-sectional comparison shows that the
-directional pattern in caliper ratios is specific to the published corpus.
+The directional pattern in caliper ratios is specific to the published corpus.
+Two interpretations are consistent with the data, and we regard them as equally
+plausible.
+
+\textit{Compositional interpretation (preferred given evidence):}
+Published negative-finding papers may differ from their NBER counterparts in
+unobserved dimensions---research design complexity, table structure, vintage,
+or the number of supplementary robustness checks---that independently predict
+within-paper specification counts and standalone-statistic density.  Our
+cross-sectional design cannot rule this out, and given that half the full-sample
+gap is already explained by a composition effect (different standalone-statistic
+shares across corpora), a compositional explanation for the within-type effect
+remains the most conservative reading of the evidence.
+
+\textit{Behavioral interpretation (consistent with but not established by the data):}
+Anti-intervention papers may face elevated evidentiary demands---either
+self-imposed by authors anticipating scrutiny or enforced by reviewers---leading
+to specification search until marginal results clear the 5\% threshold.  This
+would predict bunching concentrated in the published negative-finding corpus,
+which is what we observe.  We present this as a hypothesis the data are
+consistent with, not as a finding the data establish; we do not claim to have
+identified a causal mechanism.
 
 \medskip
 \noindent\textbf{Inference under paper-level clustering.}
@@ -1378,15 +1404,18 @@ because the number of papers in each group (50--108) limits what can be resolved
 by a label-shuffling procedure, but they confirm the directional ordering: in no
 subsample does the NBER comparison produce a more extreme caliper gap in favor of
 NBER than the observed published excess.
-The three inference procedures should be read with equal weight.  The paper-level
-cluster bootstrap is the most conservative and assigns each paper equal weight
-regardless of table length; it gives $p = 0.135$ (full: $p = 0.150$) and CIs
-that span from just below 1.0 to 2.67.  The permutation test, which conditions
-on within-paper composition, gives $p < 0.001$.  The cross-group test gives
-$p = 0.129$.  Under two of the three procedures the directional result does not
-reach conventional significance; the magnitude is imprecisely estimated and the
-finding should be treated as \textit{suggestive} rather than definitive.  The
-NBER baseline shows no bunching under any procedure.
+We designate the paper-level cluster bootstrap as our \textit{primary} inference
+procedure, because it treats each paper as the unit of analysis regardless of
+how many test statistics it contributes, and therefore avoids inflating precision
+from high-table-count papers.  Under this primary procedure the full-sample
+published result is $p = 0.150$ (CI $[0.88, 1.66]$) and the negative-finding
+result is $p = 0.135$ (CI $[0.81, 2.67]$)---neither reaches conventional
+significance.  The permutation test, which is more powerful because it
+conditions on within-paper composition, gives $p < 0.001$ for both; the
+cross-group test gives $p = 0.129$.  Under the primary (bootstrap) procedure
+the directional result is not statistically significant; the magnitude is
+imprecisely estimated and should be treated as \textit{suggestive} rather than
+definitive.  The NBER baseline shows no bunching under any procedure.
 
 \begin{table}[ht]
 \centering
@@ -1509,6 +1538,21 @@ the full-sample result ($p = 0.002$) and the JFE and negative-finding subsets
 ($p < 0.001$) survive, while some secondary comparisons do not.
 
 \medskip
+\noindent\textbf{Why we pool all in-table test statistics.}
+The caliper test is applied to all extracted regression-table statistics,
+averaging $\approx$64 per paper across published papers.  We follow this
+approach---rather than restricting to primary-outcome coefficients only---for
+a conceptual reason: specification-search incentives operate on \textit{any}
+result that a researcher might choose to report or suppress, not only on the
+headline coefficient.  A researcher revising toward the threshold can adjust
+control-variable interactions, alternative-specification rows, and robustness
+checks; restricting to primary coefficients alone would miss this
+dimension of the distribution.  We treat the paper as the unit of analysis
+(via the cluster bootstrap) to guard against a handful of large-table papers
+dominating the test.  The robustness check below confirms that excluding
+probable control-variable rows leaves the caliper ratios essentially unchanged.
+
+\medskip
 \noindent\textbf{Robustness to coefficient inclusion.}
 A concern with pooling all table statistics is that control-variable coefficients
 (size, leverage, GDP, ROA, etc.) included in regression tables are unrelated to
@@ -1538,7 +1582,12 @@ Table~\ref{tab:pub_rates} reports the unconditional corpus-membership rates by
 direction code.  (We use the term ``corpus-membership rate'' to emphasize that
 these are ratios determined by our sample construction---specifically the
 relative sizes of the published and NBER corpora---not estimates of actual
-journal acceptance probabilities.)  Positive-finding papers appear in the
+journal acceptance probabilities.  We also note a terminological ambiguity in
+the paper: ``primary specification'' is used in two senses.  In the caliper
+analysis it refers to the coefficient-SE restricted subsample (verifiable rows).
+In the probit analysis, Column~(1) is the ``primary specification'' in the
+sense of the preferred regression model.  These are distinct uses and should
+not be confused.)  Positive-finding papers appear in the
 published corpus at 45.6\% (47 of 103 papers), negative-finding papers at
 46.1\% (59 of 128), and null-finding papers at 46.7\% (28 of 60).  All three
 rates are statistically indistinguishable: a $\chi^2$ test of homogeneity
@@ -1996,10 +2045,13 @@ result (no direction premium exists in the full sample either) and is consistent
 with sampling variability in a small subsample.  We note, however, that this
 direction contradicts a simple direction-premium story in this sub-sample, and
 the subsample is too small ($N = 139$) to distinguish a genuine null from a
-genuine negative from a sampling artefact.  The point estimate is also sensitive
-to which papers the LLM classifies as quasi-experimental.  Neither direction
-coefficient supports a positive direction premium within the quasi-experimental
-sub-sample.
+genuine negative from a sampling artefact.  Specifically, the QE subsample
+splits into roughly 40 published and 99 NBER papers, further divided by three
+direction categories, yielding approximately 10--15 observations per cell;
+a spurious significant coefficient is entirely expected at this cell size
+under the global null.  The point estimate is also sensitive to which papers
+the LLM classifies as quasi-experimental.  Neither direction coefficient supports
+a positive direction premium within the quasi-experimental sub-sample.
 
 \textit{Abstract language and LLM classification confidence.}
 Abstract writing style introduces two related measurement concerns.  Among published
@@ -2118,9 +2170,17 @@ direction distributions.
 Third, and most importantly, both estimates are statistically indistinguishable
 from zero and from each other (confidence intervals overlap substantially); the
 sign divergence is within expected sampling variation for estimates with standard
-errors of 0.279 and 0.182 on a sample of 291 papers.  The AFA baseline therefore
-does not \textit{contradict} the NBER null, but neither does it provide
-independent corroboration of it.
+errors of 0.279 and 0.182 on a sample of 291 papers.  The AFA baseline therefore does not \textit{contradict} the NBER null, but
+neither does it corroborate it.  More importantly, the sign flip from $-0.020$
+(NBER) to $+0.327$ (AFA) illustrates a genuine fragility: the \textit{sign}
+of the estimated direction premium is sensitive to the choice of pre-publication
+benchmark, even though neither estimate is individually significant.  A reader
+could reasonably conclude that the available baselines are too few and too
+different from each other to establish even the sign of any editorial direction premium.
+The ideal benchmark---a large-scale SSRN corpus matched to our keyword
+taxonomy, capturing papers that circulate outside NBER---would provide a far
+more representative pre-submission distribution; we leave its construction for
+future work but flag the fragility here as a genuine limitation.
 Directional AFA papers are published in top journals at a 25.9\% rate (30 of 116)
 versus 17.1\% for null-finding papers (6 of 35).  The pattern is unchanged when a year trend is added
 ($\hat\beta = 0.345$, s.e.\ 0.281).\footnote{As a direct
@@ -2250,28 +2310,35 @@ identification.  For regulators, this is plausibly a desirable form of
 selection rather than a distortion.
 
 \medskip
-\noindent\textbf{Implications for the corporate-finance regulation literature.}
-Although this paper's corpus spans the full government-intervention literature
-in finance, a significant share of the in-scope papers studies interventions of
-direct relevance to corporate finance: mandatory disclosure requirements
-(Sarbanes-Oxley, Reg FD), corporate governance regulation (say-on-pay, proxy
-access, board independence mandates), short-selling restrictions, and
-Dodd-Frank provisions governing capital requirements and resolution authority.
-Our findings carry a specific message for practitioners and regulators who rely
-on this sub-literature.  First, the directional-neutrality result means that the
-published record of corporate-governance and disclosure research is unlikely to
-be systematically skewed toward pro-intervention or anti-intervention conclusions
-by editorial selection; both positive- and negative-finding studies on, say, the
-effect of say-on-pay or mandatory auditor rotation face similar publication
-probabilities.  Second, the revision-stage bunching---concentrated in
-negative-finding papers and absent from the pre-publication baseline---suggests
-that anti-intervention evidence in the corporate-finance regulation literature
-may be subject to within-paper specification pressure before it reaches print,
-even though the decision to publish is not direction-contingent.  Readers of
-the corporate-governance and disclosure evidence base should therefore treat
-marginal significance ($p$ just below 0.05) in anti-intervention findings with
-additional scrutiny, while treating publication status as a reasonable signal
-of methodological quality.
+\noindent\textbf{Relevance to the corporate-finance regulation literature.}
+The published sample in this paper is drawn exclusively from the \JF{},
+\RFS{}, and \JFE{}---the three premier corporate-finance journals---and includes
+every in-scope article on government intervention in financial markets that
+these journals published over 2000--2024.  A large share of this literature
+directly concerns the core topics of corporate-finance scholarship: mandatory
+disclosure requirements (Sarbanes-Oxley, Reg FD), corporate governance regulation
+(say-on-pay, proxy access, board independence mandates), short-selling
+restrictions and market integrity, and Dodd-Frank provisions governing capital
+requirements and resolution authority.  The NBER programs contributing the
+working-paper baseline similarly encompass the Corporate Finance, Asset Pricing,
+and Monetary Economics programs, all of which regularly study these regulatory
+interventions.
+
+For readers interested specifically in the corporate-finance regulation
+literature, our findings carry two messages.  First, the directional-neutrality
+result---robust to our power constraints---suggests that the published
+corporate-governance and disclosure record is unlikely to be \textit{large-scale}
+skewed toward pro- or anti-intervention conclusions by editorial selection;
+both positive- and negative-finding studies on, say, the effect of say-on-pay
+or mandatory auditor rotation face similar corpus-membership rates.  Second,
+the revision-stage bunching concentrated in negative-finding papers (though
+imprecisely estimated) is consistent with the hypothesis that anti-intervention
+evidence in the corporate-finance regulation literature faces within-paper
+specification pressure before reaching print, even when the publication decision
+itself is direction-neutral.  Readers of the corporate-governance and
+disclosure evidence base should treat marginal significance ($p$ just below 0.05)
+in anti-intervention findings with additional scrutiny, while treating
+publication status as a reasonable signal of methodological quality.
 
 \subsection{Comparison to Other Domains}
 
@@ -2428,6 +2495,19 @@ LLM-coded quasi-experimental dummy would sharpen the probit estimates; the curre
 dataset lacks author-level metadata, and collecting it is a meaningful extension.
 We interpret all coefficients as cross-sectional associations,
 not causal editorial-filter effects.
+
+\medskip
+\noindent\textbf{Narrow publication indicator and attenuation bias.}
+The probit dependent variable codes a paper as Published~$= 1$ only if it
+appeared in the \JF{}, \RFS{}, or \JFE{}.  NBER papers that eventually appeared
+in the \textit{Review of Finance}, the \textit{Journal of Financial and
+Quantitative Analysis}, or other peer-reviewed venues are coded Published~$= 0$,
+introducing measurement error in the dependent variable.  This mis-coding
+attenuates the direction coefficient toward zero, biasing our probit estimates
+in the direction of the null we report.  A broader publication indicator covering
+any peer-reviewed finance journal would reduce this attenuation; we leave its
+construction to future work, but note that the bias makes our reported
+null results a conservative lower bound on any true direction premium.
 
 \medskip
 \noindent\textbf{LLM classification errors and abstract polish.}
