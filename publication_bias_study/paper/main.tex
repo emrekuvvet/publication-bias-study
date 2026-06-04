@@ -131,9 +131,13 @@ non-control variable coefficients (non-control ratio $1.625$).  Because
 overall significance rates are nearly identical across samples (57.1\%
 vs.\ 55.5\%), the bunching is not explained by differences in statistical power;
 it is concentrated in the published record and absent from the NBER working
-papers, consistent with within-paper specification pressure concentrated at the
-revision stage---though compositional differences between the two corpora
-cannot be ruled out.  Note that the NBER and journal samples are largely
+papers, consistent with within-paper specification pressure at the revision
+stage---though compositional differences between the two corpora cannot be
+ruled out.  An important qualification: when restricted to rows with
+verifiable coefficient-SE pairs (5,510 published rows), the caliper ratio
+reverses to 0.81 and shows no significant gap versus NBER (0.95); the
+overall bunching is concentrated in z-stat-only rows.
+Note that the NBER and journal samples are largely
 non-overlapping cross-sections (only $\approx$12\% of published papers are
 matched to NBER counterparts), so this comparison reflects differences between
 two distinct corpora rather than the same papers tracked pre- and
@@ -193,7 +197,22 @@ effect, suppression of null results generates the false impression that most
 interventions work---or, more precisely, that most interventions have discernible
 effects in one direction or the other.
 
-This paper studies publication bias in a domain the existing literature has
+Why might directional publication bias arise in the government-intervention
+literature specifically?  Two theoretical channels operate in opposite
+directions, making the sign of any bias an open empirical question.  A
+\textit{pro-intervention channel} could arise if journals and readers favor
+results that confirm a policy's stated objective (e.g., that capital
+requirements reduce bank risk), both because positive results are more
+actionable for regulators and because they more naturally confirm the prior
+that motivated the policy.  An \textit{anti-intervention channel} could arise
+if research that documents unintended costs or failures of regulation is more
+surprising---and thus more publishable---than research confirming that a
+policy works as intended.  Under either channel, the direction of sorting
+would differ from significance bias (null vs.\ directional), which reflects a
+simpler threshold between finding-something and finding-nothing.  This paper
+is designed to detect both types.
+
+This paper studies sorting patterns in a domain the existing literature has
 not examined: the finance literature's treatment of government intervention.
 Prior work on publication bias in finance has focused on the cross-section of
 asset pricing anomalies, documenting that factor-zoo proliferation reflects
@@ -306,18 +325,21 @@ Sub-period sample sizes ($N = 50$, $95$, $146$) are small and these
 results should be interpreted as descriptive, not confirmatory.
 
 This paper contributes to three strands of the literature.  It provides
-direct evidence on the \textit{absence} of direction-based publication bias
-in the government-intervention finance literature, a finding that stands in
-contrast to the widespread significance-sorting documented in the broader
-economics literature.  The result suggests that finance journals in this
-domain select primarily on methodological rigor (quasi-experimental identification)
-rather than on whether papers find that a policy has a measurable effect.
+cross-sectional evidence on the \textit{absence of detectable} direction-based
+sorting between top-journal articles and NBER working papers in the
+government-intervention finance literature---though we stress that this
+null result is identified from two non-overlapping populations and cannot
+be interpreted as evidence of editorial neutrality per se.  The result is
+consistent with finance journals selecting primarily on methodological rigor
+rather than on finding direction, conditional on the NBER being a reasonable
+comparison corpus.
 
 The paper also contributes methodologically to the literature on identifying
-publication bias.  Unlike approaches that infer bias from the internal shape
-of published p-value distributions, our NBER working paper baseline allows us
-to observe actual pre-publication findings and measure the cross-sectional
-sorting gap.  The AFA conference comparison provides a consistency check:
+publication bias.  Unlike approaches that infer bias solely from the internal shape
+of published p-value distributions, our NBER working paper baseline allows
+a direct comparison of test-statistic distributions across two corpora at
+different stages of the publication pipeline, rather than merely inferring the
+pre-publication shape from published p-values.  The AFA conference comparison provides a consistency check:
 at the pre-journal presentation stage, directional papers carry
 no statistically significant association with eventual publication ($\hat\beta = 0.327$,
 $p = 0.24$), consistent with the absence of
@@ -2269,22 +2291,26 @@ non-bunching is therefore robust to multiple-comparison correction.
 \label{sec:conclusion}
 %% ============================================================
 
-We examine whether top finance journals exhibit publication bias in the
-government-intervention literature.  Using 291 in-scope papers spanning
-2000--2024, classified and direction-coded with an LLM-assisted pipeline, we
-find no evidence of direction-based sorting.  Publication rates are nearly
-identical across positive-finding (45.6\%), negative-finding (46.1\%), and
-null-finding (46.7\%) papers ($\chi^2 = 0.017$, $p = 0.992$).  A binary
+We examine whether top finance journals exhibit direction-based sorting in the
+government-intervention literature, using a cross-sectional comparison of two
+largely non-overlapping corpora: 291 in-scope papers spanning 2000--2024
+(134 published, 157 NBER working papers).  We find no \textit{detectable}
+direction-based sorting between the two corpora.  Corpus-membership rates are
+nearly identical across positive-finding (45.6\%), negative-finding (46.1\%),
+and null-finding (46.7\%) papers ($\chi^2 = 0.017$, $p = 0.992$).  A binary
 directional probit coefficient of $-0.020$ (s.e.\ 0.182, $p = 0.91$) is
 statistically indistinguishable from zero and is robust across all six
-specifications, all three journals individually, and all three sub-periods.
+specifications.  We emphasize that these corpus-membership rates depend on
+sample construction and are not estimates of actual acceptance probabilities;
+the comparison reflects differences between two distinct populations rather
+than the same papers tracked through the editorial filter.
 
-The strongest predictor of top-journal publication in our sample is the use
+The strongest predictor of corpus membership in our sample is the use
 of a quasi-experimental identification strategy (RDD, IV, DiD, or event study),
-which carries a probit coefficient of $0.467^{***}$ (s.e.\ 0.157, $p = 0.003$).
-This identification-quality premium is the dominant driver of publication in
-our sample and is consistent with editorial reward for methodological rigor
-rather than for finding direction.
+which carries a probit coefficient of $0.467^{***}$ (s.e.\ 0.157, $p = 0.003$;
+this coding has not been independently validated at the granular level).
+This identification-quality association is consistent with editorial reward for
+methodological rigor rather than for finding direction.
 
 A complementary analysis of within-paper test statistic distributions
 (\citealt{Brodeur2016} caliper test; 7,761 $|z|$-statistics from 121 papers, 108 as permutation clusters)
@@ -2296,11 +2322,18 @@ $p < 0.001$)---papers that conclude interventions are harmful or
 ineffective---while positive-finding papers show no significant bunching.
 
 Crucially, applying the identical pipeline to 8,351 test statistics from 125
-NBER pre-publication benchmark papers shows no bunching (full-sample ratio $= 1.01$,
+NBER working papers shows no bunching (full-sample ratio $= 1.01$,
 $p = 0.849$; negative-finding ratio $= 1.00$, $p = 0.964$), while the overall
-significance rate is nearly identical across the two samples (57.1\% vs.\
-55.5\%).  This pre-publication benchmark localizes the distributional distortion
-to the revision stage rather than to the upstream research design.  We are not
+significance rate is nearly identical across the two corpora (57.1\% vs.\
+55.5\%).  This comparison localizes the distributional difference to the
+published corpus, though compositional differences between the two corpora
+cannot be ruled out as an alternative explanation.  An important qualification
+is that when the caliper analysis is restricted to rows with verifiable
+coefficient-SE pairs (5,510 published; 6,788 NBER), neither corpus shows
+significant bunching (published ratio $= 0.81$, NBER $= 0.95$); the overall
+bunching is concentrated in z-stat-only rows that cannot be independently
+verified (Appendix~\ref{app:coefse_caliper}).  This limits the strength of
+the caliper interpretation.  We are not
 aware of a prior published-vs.-working-paper caliper comparison in finance,
 though the approach extends naturally from the broader caliper literature
 \citep{Brodeur2016,Brodeur2023}.
