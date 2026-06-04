@@ -261,7 +261,7 @@ structured justification.  For each in-scope paper we then code the
 was beneficial), negative ($-1$, harmful), or null/mixed ($0$).
 
 Our primary finding is the \textit{absence} of a cross-sectional significance-sorting pattern
-in the published record.  Publication rates are nearly identical across all
+in the published record.  Corpus-membership rates are nearly identical across all
 three direction categories: positive-finding papers appear in top journals at
 45.6\%, negative-finding papers at 46.1\%, and null-finding papers at 46.7\%.
 A $\chi^2$ test of homogeneity cannot reject equality ($\chi^2 = 0.017$,
@@ -274,7 +274,7 @@ three-way direction indicators are $-0.026$ (positive, $p = 0.90$) and
 $-0.014$ (negative, $p = 0.94$).\footnote{%
 The baseline implied publication probability at the bivariate intercept is
 $\Phi(-0.084) \approx 46.7\%$, nearly identical to all three direction-specific
-publication rates.  Marginal effects for direction indicators are negligible
+corpus-membership rates.  Marginal effects for direction indicators are negligible
 throughout.}
 A Wald test for equality of the two direction coefficients gives $\chi^2 = 0.005$
 ($p = 0.944$).  These null results are robust across all six specifications.
@@ -407,11 +407,12 @@ caliper test focuses on the narrow window \textit{around} the 5\%
 threshold ($|z| \in (1.645, 2.275)$), where selective reporting of marginally
 significant specifications creates excess mass just \textit{below} the
 1.96 boundary.  Both phenomena can coexist: genuine economic effects produce
-the fat tail; revision-stage pressure produces excess mass in the
+the fat tail; the caliper bunching concentrated in the published record is
+consistent with revision-stage specification pressure producing excess mass in the
 10\%-significant-but-not-5\% zone.  Indeed, our findings
 are entirely consistent with Chen's conclusion that most published effects
 are real---we find no evidence that publication \textit{directionally} sorts
-pro- versus anti-intervention findings, and our caliper evidence points to
+pro- versus anti-intervention findings, and our caliper evidence is consistent with
 within-paper revision pressure rather than outright fabrication.
 
 Our paper also differs on the question asked.  Factor-return sign is not
@@ -782,7 +783,7 @@ sub-samples.  Among all 157 NBER working papers, 79.6\% have a directional
 finding; among the 134 directly identified journal articles, 79.1\% do.  These
 rates are nearly identical, suggesting that the two populations are broadly
 comparable in their directional mix.  The close alignment in direction rates
-foreshadows the main finding: publication rates across directions are essentially
+foreshadows the main finding: corpus-membership rates across directions are essentially
 equal.
 
 In our probit analysis, unmatched journal papers are treated as having been
@@ -955,7 +956,7 @@ the null-paper baseline:
 \]
 This equals the difference in fitted publication probabilities between a
 directional-finding paper and a null-finding paper.  We also report raw
-publication rates directly from the data as a transparent, model-free summary
+corpus-membership rates directly from the data as a transparent, model-free summary
 of the unconditional patterns.
 
 \subsection{Cross-Journal and Time-Trend Analysis}
@@ -992,7 +993,7 @@ two corpora.
 
 \begin{table}[H]
 \centering
-\caption{Publication Rates by Finding Direction}
+\caption{Corpus-Membership Rates by Finding Direction}
 \label{tab:pub_rates}
 \begin{singlespace}
 \resizebox{\textwidth}{!}{%
@@ -1000,7 +1001,7 @@ two corpora.
 \toprule
  & \multicolumn{2}{c}{Sample composition} & & & \\
 \cmidrule(lr){2-3}
-Finding Direction & NBER-only & Published & Total & Publication Rate & 95\% CI \\
+Finding Direction & NBER-only & Published & Total & Corpus-Membership Rate & 95\% CI \\
 \midrule
 Positive ($+1$) &  56 &  47 & 103 & 45.6\% & [36.3, 55.2] \\
 Negative ($-1$) &  69 &  59 & 128 & 46.1\% & [37.7, 54.7] \\
@@ -1020,8 +1021,8 @@ paper's primary empirical result: $+1$ (positive/beneficial), $-1$
 match to a JF/RFS/JFE article (Published $= 0$);
 \textit{Published} counts in-scope journal articles (Published $= 1$);
 \textit{Total} is the sum across both sub-samples.
-\textit{Publication Rate} is $N_{\text{Published}} / N_{\text{Total}}$
-within each direction category; it is a cross-sectional ratio, not an
+\textit{Corpus-Membership Rate} is $N_{\text{Published}} / N_{\text{Total}}$
+within each direction category; it is a cross-sectional corpus-construction ratio, not an
 estimated acceptance probability.
 \textit{95\% CI} is the Wilson score confidence interval.
 A $\chi^2$ test of homogeneity across the three rates gives
@@ -1093,11 +1094,11 @@ identification quality is the dominant predictor of publication.  The direction
 coefficients remain insignificant ($\hat\beta_1 = -0.135$, $\hat\beta_2 = -0.156$),
 ruling out the concern that direction effects are masked by identification confounds.
 
-Table~\ref{tab:quasiexp_direction} disaggregates publication rates by the joint
+Table~\ref{tab:quasiexp_direction} disaggregates corpus-membership rates by the joint
 distribution of direction and identification strategy.  Within every direction
-category, QE papers publish at materially higher rates than non-QE papers
+category, QE papers appear in top journals at materially higher rates than non-QE papers
 (positive: 55.6\% vs.\ 34.7\%; negative: 52.2\% vs.\ 39.0\%; null: 75.0\%
-vs.\ 36.4\%).  The direction-specific publication rates are nearly identical
+vs.\ 36.4\%).  The direction-specific corpus-membership rates are nearly identical
 within each QE tier: in the non-QE group, rates are 34.7\%, 39.0\%, and 36.4\%
 for positive, negative, and null papers, a spread of only 4.3 percentage points;
 in the QE group, 55.6\%, 52.2\%, and 75.0\%, though the null $\times$ QE cell
@@ -1112,7 +1113,7 @@ QuasiExp premium does not depend on finding direction.
 
 \begin{table}[ht]
 \centering
-\caption{Publication Rates by Finding Direction and Identification Strategy}
+\caption{Corpus-Membership Rates by Finding Direction and Identification Strategy}
 \label{tab:quasiexp_direction}
 \begin{singlespace}
 \small
@@ -1130,7 +1131,7 @@ Total & 36.8\% (56/152) & 56.1\% (78/139) & 46.0\% (134/291) \\
 \begin{minipage}{\textwidth}
 \smallskip
 \footnotesize
-\textit{Notes.} Each cell shows the publication rate (top-3 finance journal) with
+\textit{Notes.} Each cell shows the corpus-membership rate (fraction appearing in a top-3 finance journal) with
 counts in parentheses.  Non-QE: papers using OLS, fixed effects, or descriptive
 methods as classified by the LLM pipeline from abstracts.  QE: papers using RDD,
 IV, DiD, or event study.  $\dagger$: Null $\times$ QE cell has only $N = 16$
@@ -1187,7 +1188,7 @@ identification strategy is RDD, IV, DiD, or event study (as classified by our
 LLM pipeline from abstracts).
 Standard errors in parentheses.  *** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$.
 The baseline implied publication probability is $\Phi(-0.084) \approx 46.7\%$,
-nearly identical to all three direction-specific publication rates.
+nearly identical to all three direction-specific corpus-membership rates.
 Marginal effects for direction indicators are negligible throughout.
 The near-zero McFadden pseudo-$R^2$ in Columns~(1)--(2) is expected under
 the null hypothesis that direction has no explanatory power for publication
@@ -1970,14 +1971,14 @@ $^{***}p < 0.01$, $^{**}p < 0.05$, $^{*}p < 0.10$.
 
 Our results are \textit{inconsistent with} the hypothesis that the published
 record of government-intervention research overstates the proportion of
-interventions with detectable effects due to significance-sorting.  Publication
+interventions with detectable effects due to significance-sorting.  Corpus-membership
 rates across finding directions are nearly identical ($\approx$46\%), and the
 direction of a paper's finding has no statistically detectable association with
 its likelihood of appearing in a top-three finance journal.  The published
 distribution closely mirrors the pre-publication distribution on this dimension.
 
 Two power caveats qualify this conclusion.  First, the minimum detectable
-difference in publication rates at 80\% power is approximately 18 percentage
+difference in corpus-membership rates at 80\% power is approximately 18 percentage
 points (probit coefficient $\approx0.466$), so moderate directional asymmetries
 below that threshold are consistent with the data.  Second, the cluster-bootstrap
 95\% confidence interval for the negative-finding caliper ratio is $[0.81,\,2.67]$,
@@ -2073,14 +2074,16 @@ concentrated just \textit{below} the 5\% threshold ($|z| \in (1.645, 1.96)$,
 the 10\%-significant-but-not-5\% zone), while the broader distribution shows
 a 55--57\% significance rate that is stable across published and
 pre-publication samples.  Real effects
-produce the fat tail; revision-stage pressure produces the excess mass in the 10\%-significant-but-not-5\% zone just below 1.96.
+produce the fat tail; the caliper bunching is consistent with revision-stage
+specification pressure producing the excess mass in the
+10\%-significant-but-not-5\% zone just below 1.96.
 The two observations reinforce rather than contradict each other.
 
 \subsection{Mechanisms}
 
 Two analytically distinct patterns require separate mechanistic accounts.
 The \textit{absence} of direction-based editorial selection---roughly equal
-publication rates across finding directions---and the \textit{presence} of
+corpus-membership rates across finding directions---and the \textit{presence} of
 within-paper threshold bunching concentrated in the published record point to
 different stages of the research pipeline.
 
@@ -2092,8 +2095,8 @@ is unchanged, the distortion is specific to the revision stage.
 One interpretation is that anti-intervention papers face elevated evidentiary
 demands---perhaps because anti-intervention findings invite more scrutiny---leading
 authors to search specifications until marginal results clear the 5\%
-threshold.  This interpretation is \textit{consistent with} equal publication rates
-(the gate does not discriminate by direction) while generating a
+threshold.  This interpretation is \textit{consistent with} equal corpus-membership rates
+(no detectable direction-based sorting between corpora) while generating a
 within-paper conditional threshold premium for negative findings.
 A compositional alternative deserves acknowledgment: negative-finding published
 papers may systematically differ from their NBER counterparts in unobserved
@@ -2176,7 +2179,7 @@ even though they are longer on average (158 words vs.\ 109 words for published
 abstracts).  Accordingly, 81.3\% of published papers receive a
 ``high-confidence'' LLM direction code, versus 62.4\% of NBER-only papers.
 If the LLM more often assigns a null code to hedged NBER abstracts, the
-measured null-paper publication rate would be biased downward---which would
+measured null-paper corpus-membership rate would be biased downward---which would
 \textit{inflate} our estimated directional premium relative to the truth.
 
 Our replication exercise (Section~\ref{subsec:direction}) provides direct
@@ -2185,10 +2188,10 @@ sample, 15 are re-classified as directional in the independent replication run,
 confirming that the null category is the least stable.  This instability implies that using the alternative rater's codes would yield a lower estimated directional
 premium than ours, because some papers we code as null would be coded as
 directional by an alternative rater---which
-would increase the denominator of the directional publication rate (since the
+would increase the denominator of the directional corpus-membership rate (since the
 reclassified papers are unpublished NBER working papers, so the numerator is
 unchanged) while reducing the denominator of the null rate, inflating the
-measured null publication rate and compressing the estimated gap between
+measured null corpus-membership rate and compressing the estimated gap between
 directional and null rates.  Our reported estimates should
 thus be interpreted as a conservative upper bound on any true directional
 premium---the actual premium is no larger than what we measure, and may be
@@ -2222,7 +2225,7 @@ Table~\ref{tab:quasiexp_direction} speaks directly to this:
 quasi-experimental papers are somewhat more likely to be directional
 (88.5\%, 123/139) than non-quasi-experimental papers (71.1\%, 108/152),
 consistent with cleaner identification yielding sharper estimates.  However,
-within each QuasiExp tier the publication rate is flat across direction
+within each QuasiExp tier the corpus-membership rate is flat across direction
 categories ($\approx$36--39\% for non-QE papers; $\approx$52--75\% for QE
 papers), and adding QuasiExp to the probit leaves the direction coefficients
 essentially unchanged ($\hat\beta_1 = -0.135$, $\hat\beta_2 = -0.156$, both
