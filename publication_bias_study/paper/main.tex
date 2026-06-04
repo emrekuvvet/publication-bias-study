@@ -119,11 +119,12 @@
 We document a sharp contrast between published and pre-publication test-statistic
 distributions in the government-intervention literature.  Applying the
 \citet{Brodeur2016} caliper test to 7,761 test statistics from 121 articles in
-the \JF{}, \RFS{}, and \JFE{} reveals significant threshold bunching just below
-$|z|=1.96$ (caliper ratio $1.20$; naive $p = 0.002$; paper-level permutation
-$p = 0.001$), whereas the identical pipeline applied to 8,351 test statistics
-from 157 NBER working papers on the same topic finds no bunching at all (ratio
-$1.01$, $p = 0.849$).  The contrast is sharpest for negative-finding papers
+the \JF{}, \RFS{}, and \JFE{} (108 papers with in-caliper-window statistics, which
+serve as the permutation and bootstrap clusters) reveals significant threshold bunching
+just below $|z|=1.96$ (caliper ratio $1.20$; naive $p = 0.002$; paper-level
+permutation $p = 0.001$), whereas the identical pipeline applied to 8,351 test
+statistics from 125 NBER working papers (106 as clusters) on the same topic
+finds no bunching at all (ratio $1.01$, $p = 0.849$).  The contrast is sharpest for negative-finding papers
 (published ratio $1.52$, permutation $p < 0.001$; cluster-bootstrap 95\% CI
 $[0.81,\,2.67]$; NBER ratio $1.00$, $p = 0.964$) and survives restriction to
 non-control variable coefficients (non-control ratio $1.625$).  Because
@@ -269,16 +270,17 @@ sample sizes (see Section~\ref{sec:results}).
 A complementary analysis of the \textit{within-paper} distribution of test
 statistics reveals a distinct pattern and, crucially, identifies where in the
 research pipeline it originates.  Applying the \citet{Brodeur2016} caliper
-test to 7,761 $|z|$-statistics from 121 published papers, we find significant
-full-sample threshold bunching (caliper ratio $= 1.20$; naive $p = 0.002$;
-paper-level permutation $p = 0.001$), concentrated in \JFE{} (caliper ratio
-$= 1.49$, $p < 0.001$) and strikingly asymmetric by direction:
+test to 7,761 $|z|$-statistics from 121 published papers (of which 108 contribute
+at least one in-caliper-window statistic and serve as permutation/bootstrap clusters),
+we find significant full-sample threshold bunching (caliper ratio $= 1.20$; naive
+$p = 0.002$; paper-level permutation $p = 0.001$), concentrated in \JFE{} (caliper
+ratio $= 1.49$, $p < 0.001$) and strikingly asymmetric by direction:
 \textit{negative-finding papers} show a caliper ratio of 1.52 (permutation
 $p < 0.001$; cluster-bootstrap $p = 0.135$) while positive-finding papers show
 no bunching (ratio $= 0.94$, $p = 0.565$).
 We then apply the identical extraction pipeline to the full-text PDFs of the
 157 in-scope NBER working papers, obtaining 8,351 pre-publication test
-statistics from 125 papers.  The NBER caliper ratio is 1.01 ($p = 0.849$)
+statistics from 125 papers (106 as clusters).  The NBER caliper ratio is 1.01 ($p = 0.849$)
 overall, and 1.00 ($p = 0.964$) for negative-finding papers---essentially
 exactly one.  The overall significance rate is nearly identical across
 samples (published: $57.1\%$; NBER: $55.5\%$), ruling out the possibility that NBER papers are simply lower-powered.  The bunching
@@ -1581,8 +1583,11 @@ NBER       & Null-finding     & 1,318 & 17  & 1.14          & 0.442          & 0
 \smallskip
 \footnotesize
 \textit{Notes:} \textit{Published} sample: 7,761 test statistics from 121 papers
-in the \JF{}, \RFS{}, and \JFE{}.  \textit{NBER} sample: 8,351 test statistics
-from 125 NBER working papers classified as in-scope using the same pipeline.
+in the \JF{}, \RFS{}, and \JFE{}; of these, \textbf{108} papers contribute at
+least one statistic to the $(1.645, 2.275)$ caliper window and serve as the
+clusters in the permutation and bootstrap procedures.  \textit{NBER} sample:
+8,351 test statistics from 125 NBER working papers (out of 157 in-scope);
+\textbf{106} contribute in-window statistics and serve as clusters.
 Caliper ratio is mass in $(1.645, 1.96)$ relative to $(1.96, 2.275)$.
 Three $p$-values are reported.
 \textit{Naive}: chi-squared test treating all statistics as independent.
@@ -1624,7 +1629,7 @@ Dashed vertical lines mark $|z|=1.645$ (10\% threshold) and $|z|=1.96$
 (5\% threshold).  The smooth curve is the theoretical half-normal
 density.  The caliper ratio (mass in $[1.645, 1.96]$ relative to
 $[1.96, 2.275]$) is \textbf{1.20} ($\chi^2 = 9.48$, $p = 0.002$).  Sample:
-7,761 test statistics from 121 published papers.}
+7,761 test statistics from 121 published papers (108 with in-caliper-window statistics).}
 \label{fig:zdist_full}
 \end{figure}
 
@@ -2295,7 +2300,7 @@ our sample and is consistent with editorial reward for methodological rigor
 rather than for finding direction.
 
 A complementary analysis of within-paper test statistic distributions
-(\citealt{Brodeur2016} caliper test; 7,761 $|z|$-statistics from 121 papers)
+(\citealt{Brodeur2016} caliper test; 7,761 $|z|$-statistics from 121 papers, 108 as permutation clusters)
 reveals significant full-sample threshold bunching (caliper ratio $= 1.20$,
 $p = 0.002$), concentrated in \JFE{} papers (caliper ratio $= 1.49$,
 $p < 0.001$), while \JF{} and \RFS{} papers do not exhibit bunching.  The
