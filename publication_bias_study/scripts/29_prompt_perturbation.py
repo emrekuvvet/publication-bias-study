@@ -10,7 +10,7 @@ Outputs:
     output/tables/prompt_perturbation_kappa.csv
 """
 
-import json, os, time
+import json, os, re, time
 import numpy as np
 import pandas as pd
 from pathlib import Path
@@ -107,6 +107,10 @@ def code_one(abstract, prompt_template, retries=3):
                 messages=[{"role": "user", "content": prompt}],
             )
             raw = msg.content[0].text.strip()
+            # strip markdown code fences if present
+            if raw.startswith("```"):
+                raw = re.sub(r"^```[a-z]*\n?", "", raw)
+                raw = re.sub(r"\n?```$", "", raw).strip()
             result = json.loads(raw)
             return int(result.get("direction", 0))
         except Exception as e:

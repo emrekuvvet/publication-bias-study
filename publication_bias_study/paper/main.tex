@@ -700,9 +700,7 @@ with the same prompt; disagreements therefore isolate model-choice sensitivity
 rather than prompt-choice sensitivity.  We emphasize that two LLM runs sharing
 a prompt are \textit{not} independent raters in the same sense as two trained
 human coders, and the reported $\kappa$ should be interpreted as a model-stability
-check, not as true inter-rater agreement.  Prompt-perturbation robustness
-(systematically varying instruction wording) is a natural extension we leave
-for future work.
+check, not as true inter-rater agreement.
 The two runs agree on 43 of 60 papers (71.7\%).  The linear-weighted Cohen's
 $\kappa$ across all three direction categories is $\boldsymbol{\kappa = 0.674}$,
 consistent with ``substantial agreement'' by the \citet{LandisKoch1977} scale
@@ -718,6 +716,52 @@ robust probit result, as it does not depend on the direction of the contrast
 against the null baseline.
 Appendix Table~\ref{tab:confusion_matrix} reports the full confusion matrix;
 Appendix~\ref{app:human_validation} disaggregates agreement by source corpus.
+
+\textit{Prompt-perturbation robustness check.}
+To assess sensitivity to instruction wording, we re-ran direction coding on the
+same 58-paper stratified sample under three prompt variants: our baseline prompt
+(``Classify the MAIN empirical finding''), Variant~A (``What is the paper's
+primary empirical conclusion about the policy's effect?''), and Variant~B
+(``You will classify the direction of the main finding'').  All three variants
+use identical classification rules and return the same JSON schema.
+Table~\ref{tab:prompt_perturbation} reports agreement and weighted $\kappa$
+for each variant relative to the original direction codes.
+
+\begin{table}[H]
+\centering
+\caption{Prompt-Perturbation Robustness: Agreement with Original Direction Codes}
+\label{tab:prompt_perturbation}
+\begin{singlespace}
+\small
+\begin{tabular}{lcccc}
+\toprule
+Prompt variant & $N$ & Agreed & Agreement \% & $\kappa_w$ \\
+\midrule
+Baseline (original wording)     & 58 & 53 & 91.4 & 0.904 \\
+Variant A (``primary conclusion'')  & 58 & 48 & 82.8 & 0.742 \\
+Variant B (``classify direction'')  & 58 & 49 & 84.5 & 0.814 \\
+\bottomrule
+\end{tabular}
+\par\smallskip
+\begin{minipage}{0.85\textwidth}
+\small
+\textit{Notes.} Each variant re-codes the same 58-paper stratified sample
+(seed $= 42$) using claude-haiku-4-5-20251001 at temperature $= 0$.  Agreement
+and $\kappa_w$ are computed against the original direction codes used throughout
+the paper.  All three variants achieve $\kappa_w \geq 0.74$, placing them in
+the ``substantial'' to ``almost perfect'' range on the \citet{LandisKoch1977} scale.
+\end{minipage}
+\end{singlespace}
+\end{table}
+
+All three prompt variants achieve $\kappa_w \geq 0.742$, meeting the
+``substantial agreement'' threshold on the \citet{LandisKoch1977} scale.
+The baseline prompt achieves the highest agreement (91.4\%, $\kappa_w = 0.904$),
+consistent with the original codes having been generated under this exact wording.
+Variants A and B, which differ substantially in framing and instruction style,
+still achieve $\kappa_w \in [0.742, 0.814]$---higher than the model-choice
+$\kappa = 0.674$ reported above.  The direction-coding results are therefore
+robust to prompt wording across the range of natural variation tested here.
 
 \textit{Human validation (pending).}
 To assess agreement between LLM codes and a human gold standard, we drew a
