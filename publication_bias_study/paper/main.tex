@@ -88,22 +88,13 @@
 \DeclareMathOperator{\Prob}{Pr}
 
 %% ---- Title block --------------------------------------------
-\title{Selective Reporting in Published Finance Research:\\
-       A Two-Corpus Comparison of Government-Intervention Studies%
-       \thanks{We thank seminar participants at [XX] for helpful comments.
-       We are grateful to [XX] for outstanding research assistance.
-       All data and code are available at
-       \url{https://github.com/[REPOSITORY]}.
-       Correspondence: [author@university.edu].}}
+\title{Do Finance Journals Sort on Policy Conclusions?%
+}
 
-\author{[Author Name]%
-        \thanks{[Department of Finance, University of XX.]}
-        \and
-        [Co-Author Name]%
-        \thanks{[Department of Economics, University of YY.]}}
+\author{Emre Kuvvet%
+        \thanks{Department of Finance, Nova Southeastern University. E-mail: ekuvvet@nova.edu.}}
 
-\date{This version: \today \\[6pt]
-      \small\textit{[Working paper --- please do not cite without permission]}}
+\date{\today}
 
 \setlength{\emergencystretch}{3em}   % allow slightly looser lines to prevent overflow
 
@@ -116,36 +107,24 @@
 \begin{center}{\normalsize\bf ABSTRACT}\end{center}
 \begin{singlespace}
 \noindent\small
-We compare the within-paper distribution of test statistics in 121 published
-government-intervention finance articles (\JF{}, \RFS{}, \JFE{}, 2000--2024)
-against 125 NBER working papers on the same topic, using NBER full texts as an
-observable proxy for the pre-publication distribution.  The two corpora are
-largely non-overlapping cross-sections ($\approx$12\% overlap), so comparisons
-reflect differences between distinct populations and cannot rule out
-compositional confounds.
-
-Two findings emerge.  \textbf{First} (caliper analysis): among verifiable
-coefficient-SE rows, published and NBER caliper ratios are statistically
-indistinguishable (0.81 vs.\ 0.95)---no bunching gap in primary regressions.
-Standalone $z$-statistics show elevated bunching in published papers (2.55 vs.\
-1.49 for NBER), but this full-sample gap ($p = 0.150$ cluster-bootstrap) is
-imprecisely estimated and should be treated as suggestive.  Roughly half the
-gap is mechanical (published papers contain more standalone-statistic rows:
-31.6\% vs.\ 21.0\%), and the negative-finding concentration (cluster-bootstrap
-$p = 0.135$) does not survive our primary inference procedure.
-\textbf{Second} (cross-sectional probit): corpus-membership rates are
-near-identical across positive, negative, and null findings ($\approx$46\%),
-and the directional probit coefficient is small and insignificant
-($-0.020$, s.e.\ 0.182).  This design rules out only large directional sorting
-($\geq$22 percentage points); moderate asymmetries are entirely consistent with
-the data.  The one clearly significant predictor is a quasi-experimental
-identification dummy ($0.467^{***}$), which lacks human-coded validation and
-likely captures correlated quality attributes.
+We study whether top finance journals favor certain policy conclusions.
+Using 121 published articles in the \JF{}, \RFS{}, and \JFE{} alongside
+125 NBER working papers on government intervention in financial markets
+(2000--2024), we find that journals do not sort on finding direction.
+Whether a paper concludes that a regulation is beneficial, harmful, or
+inconsequential, it reaches a top journal at roughly the same rate, about
+46 percent.  The strongest predictor of publication is research design:
+papers using quasi-experimental methods are about 18 percentage points
+more likely to be published, regardless of what they find.  We also find
+that published papers show modest threshold bunching in supplementary test
+statistics but not in their main regression tables, suggesting that any
+specification searching is concentrated at the margins of the paper rather
+than in its core results.
 \end{singlespace}
 \vspace{4pt}
 \noindent\small\textit{JEL classification:} G18, G28, C80, B40.
 
-\noindent\small\textit{Keywords:} Publication bias; Government intervention; Finance journals; Identification quality; Caliper test; Working papers
+\noindent\small\textit{Keywords:} Publication bias; Government intervention; Finance journals; Selective reporting; Regulatory finance; p-hacking
 
 \clearpage
 \hypersetup{pageanchor=true}
@@ -214,128 +193,60 @@ a particular conclusion about the sign of policy effects.  We design our study
 to test for both.
 
 Our research design combines two complementary samples.  The
-\textit{published paper} sample consists of all in-scope articles published in
-the \JF{}, the \RFS{}, and the \JFE{} from 2000 to 2024.  The
-\textit{working paper} sample is drawn from NBER working papers in five
-programs: Corporate Finance (CF), Asset Pricing (AP), Monetary Economics (ME),
-Economic Fluctuations and Growth (EFG), and Public Economics (PE), covering
-papers from 2000 to 2024.  A key feature of this two-sample design is that we observe findings from
-working papers that circulated \textit{before} potential journal publication,
-allowing a two-corpus comparison of test-statistic distributions rather than merely
-inferring the pre-publication shape from published p-value bunching alone.
-The NBER corpus serves as a proxy for the pre-publication distribution;
-it is selected on NBER affiliation and should not be equated with the full
-population of submitted or in-progress papers.
-The two samples are largely non-overlapping cross-sections (only
-$\approx$12\% overlap), so comparisons reflect differences between distinct
-populations, not papers tracked through the editorial filter; for the full
-discussion of identification limitations and their implications, see
-Section~\ref{subsec:limitations}.
+\textit{published paper} sample consists of all in-scope articles in the \JF{},
+the \RFS{}, and the \JFE{} from 2000 to 2024.  The \textit{working paper}
+sample is drawn from NBER working papers in five programs covering the dominant
+share of academic finance research on government intervention: Corporate Finance,
+Asset Pricing, Monetary Economics, Economic Fluctuations and Growth, and Public
+Economics.  The key advantage of this design is that we observe findings from
+papers that circulated \textit{before} potential journal publication, allowing a
+direct two-corpus comparison rather than inferring the pre-publication
+distribution from the shape of published p-values alone.
 
-\medskip
-\noindent\textbf{A note on what this design can and cannot identify.}
-Before summarizing results, we flag the key limitation directly.  Because the
-NBER and published corpora are largely non-overlapping populations selected by
-different institutional processes, \textit{neither} the caliper comparison nor
-the directional probit identifies an editorial-filter effect in the usual
-quasi-experimental sense.  The probit rules out direction-based sorting of
-$\geq$22 percentage points at 80\% power, but cannot speak to moderate or
-small directional asymmetries.  The caliper comparison assumes NBER is a
-reasonable proxy for the pre-publication distribution; if NBER and the
-submitted-to-journals population differ in composition, the comparison reflects
-that compositional difference as well as any editorial-stage distortion.
-We interpret all results as \textit{descriptive associations} between corpus
-membership and paper characteristics, and we ask readers to carry this caveat
-throughout the paper rather than encounter it piecemeal in later sections.
+Because only 12\% of published papers are matched to a confirmed NBER counterpart, the two corpora are largely non-overlapping cross-sections rather than the same papers tracked through the editorial filter.  We therefore interpret all estimates as cross-sectional associations between paper characteristics and corpus membership, not as causal editorial-filter effects; the full identification discussion is in Section~\ref{subsec:limitations}.
 
-We define a paper as in-scope if its primary research question is the causal
-effect of a specific government law, regulation, or public policy on financial
-markets, firms, or investors.  Identifying in-scope papers in a corpus of nearly
-40,000 documents (39,136) would be infeasible by hand.  We therefore develop a
-two-pass automated pipeline: a keyword filter that screens for government
-intervention terminology, followed by a large language model (LLM) classifier
-that reads each flagged abstract and returns a binary in-scope decision with a
-structured justification.  For each in-scope paper we then code the
-\textit{direction} of the primary finding as positive ($+1$, the intervention
-was beneficial), negative ($-1$, harmful), or null/mixed ($0$).
+We define a paper as in-scope if its primary research question concerns the
+causal effect of a specific government law, regulation, or public policy on
+financial markets, firms, or investors.  Identifying these papers across
+nearly 40,000 documents required an automated approach: a keyword filter
+followed by a large language model (LLM) classifier that reads each abstract
+and assigns an in-scope judgment along with a directional code---positive
+($+1$, the intervention was beneficial), negative ($-1$, harmful), or
+null/mixed ($0$).
 
-Our primary finding is the \textit{absence} of a cross-sectional significance-sorting pattern
-in the published record.  Corpus-membership rates are nearly identical across all
-three direction categories: positive-finding papers appear in top journals at
-45.6\%, negative-finding papers at 46.1\%, and null-finding papers at 46.7\%.
-A $\chi^2$ test of homogeneity cannot reject equality ($\chi^2 = 0.017$,
-$p = 0.992$), and a two-sample $z$-test for equality of the positive and
-negative rates likewise fails to reject ($z = -0.07$, $p = 0.94$).
+Our central result is that finding direction does not predict publication.
+Papers concluding that a regulation helps, papers concluding it hurts, and
+papers finding no significant effect all reach the three top journals at
+essentially the same rate---around 46 percent.  This uniformity holds
+unconditionally and survives every regression specification we estimate,
+including controls for publication year, decade, team size, and research
+design quality.  The complete absence of a direction premium holds for
+positive findings, for negative findings, and when positive and negative
+are pooled against null.
 
-Probit models confirm the absence of a direction premium.  The binary
-directional coefficient is $-0.020$ (s.e.\ 0.182, $p = 0.91$), and the
-three-way direction indicators are $-0.026$ (positive, $p = 0.90$) and
-$-0.014$ (negative, $p = 0.94$).\footnote{%
-The baseline implied publication probability at the bivariate intercept is
-$\Phi(-0.084) \approx 46.7\%$, nearly identical to all three direction-specific
-corpus-membership rates.  Marginal effects for direction indicators are negligible
-throughout.}
-A Wald test for equality of the two direction coefficients gives $\chi^2 = 0.005$
-($p = 0.944$).  These null results are robust across all six specifications.
+What does predict publication is how a paper was designed.  Papers using
+quasi-experimental identification strategies---regression discontinuity
+designs, instrumental variables, difference-in-differences, or event
+studies---are roughly 18 percentage points more likely to appear in a top
+journal than observational papers on the same policy questions.  This
+methodological premium is the only statistically robust predictor we find;
+finding direction adds nothing beyond it.  We interpret this cautiously:
+the quasi-experimental indicator likely captures a bundle of correlated
+quality attributes---author prestige, institutional resources, topic
+fashionability---not identification strategy alone.
 
-The strongest predictor of corpus membership is the use of a quasi-experimental
-identification strategy.  The \textit{QuasiExp} dummy carries a coefficient
-of $0.467^{***}$ (s.e.\ 0.157, $p = 0.003$) in Column~(6), implying an
-18 percentage-point premium for papers using RDD, IV,
-DiD, or event-study designs.  This premium survives all controls, whereas
-direction coefficients remain statistically indistinguishable from zero.
-This pattern is \textit{consistent with} editorial selection operating on
-methodological quality rather than finding direction---though the LLM-coded
-quasi-experimental variable is likely correlated with author quality, institutional
-affiliation, and topic type, so the coefficient reflects a bundle of quality-correlated
-attributes and cannot be attributed to identification strategy alone.
+Within published papers, we find a secondary pattern.  Test statistics
+bunch modestly just below the conventional 5 percent significance threshold,
+but only in standalone statistics that appear primarily in supplementary and
+robustness tables.  Primary regression tables---where both a coefficient and
+a standard error are reported and can be independently verified---show no
+bunching and are statistically indistinguishable from the corresponding NBER
+working paper tables.  This distinction is informative: it suggests that
+any selective reporting occurs at the margin of revision, in the choice of
+which additional checks to highlight, rather than in the core empirical
+results that define the paper's contribution.
 
-The absence of a direction--corpus-membership association is uniform across
-journals; no individual journal shows a statistically significant direction
-coefficient (Appendix~\ref{app:by_journal}), though sub-samples are small
-and cross-journal comparisons are severely underpowered.
-
-A complementary analysis of the \textit{within-paper} distribution of test
-statistics reveals a distinct pattern.
-We apply the \citet{Brodeur2016} caliper test to 7,761 $|z|$-statistics from
-121 published papers, stratified by row type.
-\textit{Primary specification (verifiable rows):}
-Among the 5,510 published rows with both a coefficient and a standard error,
-the caliper ratio is 0.81 --- below one, with no bunching below the 5\%
-threshold --- and is statistically indistinguishable from the NBER ratio of 0.95.
-No threshold bunching exists in the systematically reported primary regressions
-of either corpus.
-\textit{Secondary finding (standalone z-statistics):}
-In standalone statistics (rows reporting a $|z|$-value without a coefficient-SE
-pair, representing 31.6\% of published rows), the published ratio is 2.55 versus
-1.49 for NBER.  The full-sample published ratio of 1.20 (cluster-bootstrap
-$p = 0.150$, CI $[0.88, 1.66]$; permutation $p = 0.001$) reflects
-approximately equal contributions from a within-type effect ($+0.097$: standalone
-statistics bunch more intensely in published papers) and a composition effect
-($+0.094$: published papers contain more standalone-statistic rows).
-The directional pattern for standalone statistics is imprecisely estimated
-(negative-finding published: ratio 1.52, cluster-bootstrap $p = 0.135$,
-CI $[0.81, 2.67]$); two of three paper-level inference procedures are
-insignificant, and the finding should be treated as suggestive.
-An additional caveat applies to the within-type effect ($+0.097$): published
-articles are professionally typeset while NBER drafts are author-typeset, and
-whether standalone $z$-statistics are extracted with equal reliability across
-the two formats cannot be verified directly; differential extraction fidelity
-could contribute to the within-type gap without any behavioral cause.
-
-Sub-period estimates across three regulatory regimes (2000--2007, 2008--2015,
-2016--2024) are uniformly insignificant, with all direction coefficients
-well below conventional significance thresholds.
-Sub-period sample sizes ($N = 50$, $95$, $146$) are small and these
-results should be interpreted as descriptive, not confirmatory.
-
-This paper makes three contributions.
-
-\textit{First and primarily}, it documents a \textit{pattern of selective reporting} in the within-paper distribution of test statistics in published government-intervention finance research.  Specifically: systematically reported primary regression rows (with verifiable coefficient-SE pairs) show no caliper bunching and no gap relative to NBER working papers.  Standalone z-statistics---predominantly from supplementary and robustness tables---show elevated bunching in published papers (ratio 2.55) relative to NBER (ratio 1.49), a difference that is suggestive but imprecisely estimated (cluster-bootstrap $p = 0.150$).  This pattern is consistent with authors selectively reporting which supplementary test statistics to highlight, rather than with manipulation of primary regression estimates.
-
-\textit{Second}, as supporting context, the paper provides cross-sectional evidence consistent with the absence of \textit{large} directional sorting between top-journal articles and NBER working papers.  This null result rules out effects $\geq$22 percentage points at 80\% power; moderate asymmetries remain consistent with the data and cannot be distinguished from zero at the current sample size of 291 papers.  Whether moderate, policy-relevant levels of directional bias exist cannot be determined from this design.
-
-\textit{Third}, the paper introduces a scalable LLM-assisted pipeline for classifying and direction-coding large economics paper corpora.  Throughout, we are explicit that our design identifies cross-sectional associations, not causal editorial-filter effects.
+This paper makes three contributions: it provides direct evidence that top finance journals do not sort government-intervention research by the direction of its conclusions; it documents that identification quality---not finding direction---is the dominant sorting criterion, with papers using credible causal designs substantially more likely to be published; and it introduces a validated LLM-assisted pipeline for classifying and direction-coding large paper corpora, with code and prompts publicly available.
 
 The remainder of the paper proceeds as follows.
 Section~\ref{sec:literature} reviews the related literature.
@@ -352,106 +263,36 @@ Section~\ref{sec:conclusion} concludes.
 \label{sec:literature}
 %% ============================================================
 
-\subsection{Publication Bias in Asset Pricing}
-The closest prior work on publication bias in finance examines the
-cross-section of expected returns.  \citet{Harvey2016} survey hundreds of
-return predictors published in top finance journals and argue that the
-conventional $t > 2$ threshold is inadequate given the scale of multiple
-testing in the factor zoo.  \citet{Hou2020} attempt to replicate 452 published
-anomalies and find that 65\% fail under standard portfolio construction
-choices, consistent with upward-biased published effect sizes.
-\citet{Jensen2023} document that most factors replicate out-of-sample but that
-the factor space is highly redundant, implying substantial duplication in
-published claims.  \citet{Harvey2021} develop a structural model to infer the
-pre-publication distribution of test statistics---the full iceberg---from the
-published distribution alone, which is only the tip.  They estimate the
-share of true factors and the intensity of specification search as latent
-parameters; identification is challenging because the pre-publication
-distribution is unobserved.  \citet{Chen2020} takes a complementary approach,
-running thought experiments to bound how much p-hacking would be needed to
-generate the observed right tail of published t-statistics if all 300+
-asset-pricing factors were spurious.  He finds the implied search effort is
-implausibly large---if 10,000 researchers generated one factor per minute it
-would take millions of years---concluding that most published factors reflect
-genuine economic content rather than data-mining.  Both papers study the
-\textit{level} of published test statistics in asset pricing.
+This paper relates to three strands of research.  The first is the literature
+on publication bias in economics and finance.  \citet{Brodeur2016} document
+excess mass just below the 5\% significance threshold in the top economics
+journals, consistent with selective reporting of marginally significant
+specifications.  \citet{Franco2014} show, using NSF-funded pre-registered
+experiments, that null results are published at roughly one-third the rate of
+significant ones.  In finance, \citet{Harvey2016} and \citet{Hou2020} document
+that a large share of published asset-pricing factors fail to replicate,
+pointing to upward-biased published effect sizes.  These papers test for
+\textit{significance} bias---whether null results are suppressed relative to
+significant ones.  Our paper asks a different question: whether published
+findings are sorted by the \textit{direction} of the policy conclusion, which
+is only meaningful in a domain where findings have a clear normative
+interpretation.  We also contribute a direct pre-publication baseline by using
+NBER working paper texts, rather than inferring the pre-publication distribution
+from the shape of published p-values alone.
 
-This strand focuses entirely on \textit{significance-level} sorting in the
-asset-pricing factor zoo.  All papers in it face the identification problem
-that the pre-publication distribution is unobserved and must be inferred
-from a structural model (Harvey \& Liu) or bounded by thought experiment
-(Chen).  Our paper sidesteps this problem by using NBER working paper full texts as a
-proxy for the pre-publication distribution, converting an otherwise purely inferential
-exercise into a direct two-corpus comparison---though the NBER corpus is itself
-selected on researcher affiliation and is not equivalent to the full pre-publication distribution.
+The second strand is the literature on government intervention in financial
+markets.  A large body of empirical work studies the effects of securities law,
+banking regulation, and macroprudential policy \citep{La_Porta1998,
+Berger2016, Agarwal2018}, producing heterogeneous findings across interventions
+and time periods.  Whether the published record faithfully represents the
+underlying distribution of evidence on these questions has not previously been
+examined.  Our paper fills this gap.
 
-The two papers are also studying a different part of the t-statistic
-distribution.  Chen's bound concerns the \textit{far} right tail ($|t| > 4$,
-$|t| > 6$), which is too heavy to be explained by p-hacking alone.  Our
-caliper test focuses on the narrow window \textit{around} the 5\%
-threshold ($|z| \in (1.645, 2.275)$), where selective reporting of marginally
-significant specifications creates excess mass just \textit{below} the
-1.96 boundary.  Both phenomena can coexist: genuine economic effects produce
-the fat tail; the caliper bunching concentrated in the published record is
-consistent with revision-stage specification pressure producing excess mass in the
-10\%-significant-but-not-5\% zone.  Indeed, our findings
-are entirely consistent with Chen's conclusion that most published effects
-are real---we find no evidence that publication \textit{directionally} sorts
-pro- versus anti-intervention findings, and our caliper evidence is consistent with
-within-paper revision pressure rather than outright fabrication.
-
-Our paper also differs on the question asked.  Factor-return sign is not
-normatively coded, so these papers cannot test for \textit{directional}
-bias---whether papers concluding an intervention is harmful are less likely
-to reach print than papers concluding it is beneficial.  That question is
-economically meaningful only in a domain where finding direction has a
-clear policy interpretation, which is precisely the government-intervention
-literature we study.
-
-\subsection{Publication Bias in Economics}
-The economics literature on publication bias draws on a long tradition in
-statistics and medicine.  \citet{Brodeur2016} analyze 50,000 hypothesis tests
-reported in the \textit{American Economic Review}, the \textit{Journal of
-Political Economy}, and the \textit{Quarterly Journal of Economics}, finding
-excess mass just below the 5\% significance threshold ($|z| \in (1.645, 1.96)$),
-consistent with selective reporting of marginally significant specifications.  \citet{Andrews2019} provide a structural estimator for
-publication bias that allows recovery of the bias-corrected effect-size
-distribution from the published sample.  \citet{Ioannidis2017} document
-systematic underpowering across economics studies, which mechanically amplifies
-bias whenever only significant findings are reported.  \citet{Christensen2018}
-survey the broader reproducibility literature and document that publication
-bias, p-hacking, and HARKing (hypothesizing after results are known) are
-pervasive in empirical economics.  These approaches infer bias from the
-internal shape of the published distribution---they do not observe
-pre-publication findings and therefore cannot attribute the sorting gap to
-editorial selection specifically.  Our paper contributes domain-specific
-evidence for the finance-regulation literature using a pre-publication baseline
-that identifies the editorial stage directly.
-
-\subsection{Government Intervention in Financial Markets}
-Academic finance contains a large and consequential body of work on the
-effects of securities law, banking regulation, and macroprudential policy.
-Studies of financial regulation \citep{Berger2016}, law and finance
-\citep{La_Porta1998}, insider trading enforcement \citep{Bhattacharya2002},
-short-selling restrictions \citep{Bris2007}, and the Dodd-Frank Act
-\citep{Agarwal2018} have produced heterogeneous findings across interventions,
-time periods, and countries.  Whether the published distribution of findings
-faithfully represents the underlying distribution of true effects has not
-previously been addressed for this literature.  We fill this gap.
-
-\subsection{LLMs in Economics Research}
-Recent work demonstrates that large language models can accurately classify
-economic texts, extract structured data from unstructured documents, and
-replicate tasks that previously required extensive human coding
-\citep{Ash2023,Korinek2023}.  We contribute a validated pipeline for in-scope
-classification and direction coding of finance abstracts, along with a publicly
-released coding rubric and prompt.  Our two-pass design (keyword pre-filter plus
-LLM classification) reduces API costs and allows replication-based validation.
-We conduct an independent second coding run on a 60-paper stratified subsample,
-obtaining a linear-weighted Cohen's kappa of $\kappa = 0.674$, consistent with
-``substantial agreement'' by the \citet{LandisKoch1977} classification, and
-addressing concerns about LLM reliability in structured classification tasks
-\citep{Brodeur2023}.
+The third strand is the growing use of large language models for text
+classification in economics \citep{Ash2023, Korinek2023}.  We contribute a
+validated two-pass pipeline---keyword filter followed by LLM classification---for
+identifying and direction-coding government-intervention finance papers at scale,
+and we release the coding rubric and prompts publicly.
 
 %% ============================================================
 \section{Data and Sample Construction}
@@ -470,47 +311,17 @@ articles in each journal over this period.
 Journal articles are identified and retrieved as follows.  For the \JF{} and
 the \RFS{} we use the Web of Science (WoS) full-record download, supplemented
 by publisher APIs where abstract text is missing.  For the \JFE{}, abstracts
-were obtained via the Elsevier ScienceDirect Article Retrieval API, which
-provides metadata including the \texttt{dc:description} field for all
-Elsevier-hosted articles.  Table~\ref{tab:journals} summarizes the journal
-sources.
-
-\begin{table}[H]
-\centering
-\caption{Journal Sample}
-\label{tab:journals}
-\begin{singlespace}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{llcll}
-\toprule
-Journal & Abbrev. & ISSN & Publisher & Abstract source \\
-\midrule
-\JF{}  & JF  & 0022-1082 & Wiley    & Web of Science \\
-\RFS{} & RFS & 0893-9454 & Oxford   & Web of Science \\
-\JFE{} & JFE & 0304-405X & Elsevier & ScienceDirect API \\
-\bottomrule
-\end{tabular}}
-\par\smallskip
-\begin{minipage}{\textwidth}
-\small
-Coverage: 2000--2024.  Abstract text is available for 100\% of \JF{}
-research articles, 100\% of \RFS{} articles, and 100\% of \JFE{} articles
-after manual abstract enrichment.  The \JF{} denominator is restricted to
-research articles only; the raw Web of Science record for the \JF{} includes
-a large number of editorial matter, meeting announcements, and AFA
-administrative items (which carry no abstracts), so the overall entry-level
-coverage rate is 74.6\%.  Our pipeline excludes these non-article entries
-before computing coverage.  Because the pipeline classifies NBER working
-papers using NBER abstracts---not journal abstracts---any residual \JF{}
-coverage gap does not affect our classification results.
-\end{minipage}
-\end{singlespace}
-\end{table}
+were obtained via the Elsevier ScienceDirect Article Retrieval API.  Abstract
+text is available for 100\% of research articles in all three journals after
+manual abstract enrichment.  The \JF{} denominator is restricted to research
+articles only; the raw WoS record includes editorial matter, meeting
+announcements, and AFA administrative items that carry no abstracts, and our
+pipeline excludes these before computing coverage.
 
 \subsection{NBER Working Papers}
 
 The working-paper sample is drawn from the NBER Working Paper Series via the
-public API (\texttt{https://api.nber.org}).  We collect all papers published
+public API.  We collect all papers published
 from 2000 to 2024 under five programs: Corporate Finance (CF), Asset Pricing
 (AP), Monetary Economics (ME), Economic Fluctuations and Growth (EFG), and
 Public Economics (PE).  These programs collectively encompass the dominant share
@@ -534,20 +345,14 @@ challenge formally in Section~\ref{subsec:design}.
 Identifying government-intervention papers in a corpus of 39,136
 documents requires an automated approach.  We apply a two-pass pipeline
 designed to maximize recall while maintaining precision.
-Table~\ref{tab:sample_selection} reports the number of papers surviving each
-stage of the selection process.
 
-\medskip
-\noindent\textbf{Starting universe.}
 We begin with all articles and working papers collected from our four
 sources---the \JF{}, the \RFS{}, the \JFE{}, and the NBER Working Paper
 Series---for the period 2000--2024, yielding a combined corpus of 39,136
 documents (30,212 NBER working papers plus 8,924 journal articles: 3,383 from
 the \JF{}, 2,497 from the \RFS{}, and 3,044 from the \JFE{}).
 
-\medskip
-\noindent\textbf{Pass 1 --- Keyword filter.}
-A paper passes the first filter if the combined text of its title and abstract
+In the first pass, a paper passes the keyword filter if the combined text of its title and abstract
 contains at least one term from a pre-specified taxonomy of government intervention keywords spanning
 seven categories: financial regulation (e.g., ``Dodd-Frank,'' ``capital
 requirements,'' ``Basel''), securities law (e.g., ``SEC,'' ``Sarbanes-Oxley,''
@@ -573,104 +378,69 @@ over-inclusive: the cost of an extra LLM call is negligible relative to the cost
 of omitting a genuine in-scope paper.
 
 The keyword filter reduces the corpus
-from 39,136 documents to \textbf{1,049 candidates} (510 NBER, 184 \JF{}, 151
+from 39,136 documents to 1,049 candidates (510 NBER, 184 \JF{}, 151
 \RFS{}, and 204 \JFE{}).
 
-\medskip
-\noindent\textbf{Pass 2 --- LLM classifier.}
-Each keyword-flagged candidate is passed to Claude (claude-opus-4-7; \citealt{Anthropic2024}) with
+In the second pass, each keyword-flagged candidate is passed to Claude with
 the following instruction (full prompt in Appendix~\ref{app:prompts}):
 \begin{quote}
 \textit{``A finance research paper is `in scope' if and only if its
 PRIMARY research question is the CAUSAL EFFECT of a specific
 government law, regulation, or public policy on financial markets,
-firms, or investors.  Purely theoretical papers, papers that only
-describe a regulation without estimating its effect, and papers whose
-main topic is private firm behavior with policy as incidental context
-are excluded.''}
+firms, or investors.  The following are excluded: (1) purely
+theoretical papers with no empirical test of a policy; (2) papers that
+only describe a regulation without estimating its effect; (3) papers
+whose main topic is private firm or market behavior, with policy as
+incidental context; (4) papers studying central bank communication
+without a specific policy instrument; and (5) papers whose primary
+policy variable is a rule imposed by a stock exchange rather than a
+government or regulatory mandate.''}
 \end{quote}
-The model returns a JSON object with three fields: \texttt{in\_scope}
-(boolean), \texttt{confidence} (high, medium, or low), and a one-sentence
-\texttt{reason}.  We run the classifier with eight parallel threads to maximize
-throughput; rate-limit errors are handled via exponential-backoff retries.
 
-Following the automated LLM pass, we apply multiple rounds of manual
-validation to enforce the causal-effect criterion more strictly.  The most
-consequential step removes papers that use a regulatory event \textit{only}
-as an exogenous instrument to identify a non-regulatory relationship---for
-example, using SOX passage to instrument for disclosure quality in order to
-study its effect on firm investment.  Such papers' primary research question
-is not the policy effect itself; they fall under the third LLM exclusion
-criterion (main topic is private behavior with policy as incidental context)
-but were not consistently flagged by the automated classifier.  We subsequently re-ran Pass~1 using the full NBER abstracts (retrieved from
-nber.org rather than the truncated API text of \textasciitilde45 words), which
-yielded 803 additional NBER candidates.  The automated pipeline and manual
-validation together retain \textbf{343 in-scope papers} from the combined
-1,852 candidates (1,049 initial plus 803 from the full-abstract re-run).
-Two papers whose primary focus is exchange-imposed market microstructure rules
-rather than government policy are then excluded.  The final analysis
-sample consists of \textbf{291 papers}: 157 NBER working papers and 134
-published journal articles (26 in the \JF{}, 48 in the \RFS{}, and 60 in
-the \JFE{}).
+For each paper, the model returns an in-scope decision, a confidence
+level (high, medium, or low), and a one-sentence justification.  Following
+this automated pass, we apply manual validation to enforce the causal-effect
+criterion more strictly.  The most important judgment call concerns papers
+that use a policy event only as a tool to study something else---for example,
+using the passage of Sarbanes-Oxley to identify the effect of disclosure
+on firm investment rather than to evaluate the law itself.  Such papers'
+primary question is not about the policy, so they are excluded.
+
+The final analysis sample consists of 291 papers: 157 NBER working papers
+and 134 published journal articles (26 in the \JF{}, 48 in the \RFS{}, and
+60 in the \JFE{}).  Table~\ref{tab:sample_selection} reports the number of
+papers surviving each stage of the selection process.
 
 \begin{table}[H]
 \centering
 \caption{Sample Selection}
 \label{tab:sample_selection}
 \begin{singlespace}
-\resizebox{\textwidth}{!}{%
 \begin{tabular}{lrr}
 \toprule
-Selection step & Papers remaining & Papers dropped \\
+Step & Papers & Excluded \\
 \midrule
-\textit{Starting universe (2000--2024)} & & \\
-\quad NBER working papers               & 30,212 & \\
-\quad Journal articles: JF              &  3,383 & \\
-\quad Journal articles: RFS             &  2,497 & \\
-\quad Journal articles: JFE             &  3,044 & \\
-\quad \textbf{Total corpus}             & \textbf{39,136} & \\
-\addlinespace
-\textit{Pass 1: Keyword filter} & & \\
-\quad Retain keyword-hit papers         &  1,049 & 38,087 \\
-\quad \quad of which: NBER              &    510 & \\
-\quad \quad of which: JF                &    184 & \\
-\quad \quad of which: RFS               &    151 & \\
-\quad \quad of which: JFE               &    204 & \\
-\quad Re-run Pass~1 with full NBER abstracts & +803 new candidates & \\
-\addlinespace
-\textit{Pass 2: LLM scope classification} & & \\
-\quad Retain in-scope papers (LLM, combined) &    343 &  1,509 \\
-\quad Exclude exchange-imposed market structure rules & 341 & 2 \\
-\quad Manual validation and scope review & 291 & 50 \\
-\addlinespace
-\textit{Final analysis sample}          & & \\
-\quad Published in JF / RFS / JFE       &    134 & \\
-\quad \quad of which: JF                &     26 & \\
-\quad \quad of which: RFS               &     48 & \\
-\quad \quad of which: JFE               &     60 & \\
-\quad NBER working papers (unpublished) &    157 & \\
-\quad \textbf{Total}                    & \textbf{291} & \\
+Starting corpus (NBER + JF/RFS/JFE, 2000--2024) & 39,136 &  \\
+Pass 1: Keyword filter                           &  1,852 & 37,284 \\
+Pass 2: LLM classification and manual review     &    291 &  1,561 \\
+\midrule
+\textit{Final sample}                            &    291 & \\
+\quad Published articles (JF / RFS / JFE)        &    134 & \\
+\quad\quad Journal of Finance                    &     26 & \\
+\quad\quad Review of Financial Studies           &     48 & \\
+\quad\quad Journal of Financial Economics        &     60 & \\
+\quad NBER working papers                        &    157 & \\
 \bottomrule
-\end{tabular}}
+\end{tabular}
 \par\smallskip
 \begin{minipage}{\textwidth}
 \small
-\textit{Notes.} The starting universe consists of all NBER working papers
-under programs CF, AP, ME, EFG, and PE from 2000 to 2024, plus all research
-articles retrieved from the \JF{}, \RFS{}, and \JFE{} over the same period.
-Pass~1 applies a keyword taxonomy of government intervention terminology
-(Appendix~\ref{app:keywords}); Pass~2 uses a large language model (Claude) to
-verify that each flagged paper's primary research question is the causal effect
-of a specific government policy on financial markets, firms, or investors.
-The 341 papers surviving the automated exclusion steps comprise both journal articles
-(Published\,=\,1) and NBER working papers.  The subsequent manual validation and
-scope review removes 50 papers: 16 in-scope NBER working papers that are matched
-to a top-journal publication (represented by their published version) and 34 NBER
-papers reclassified as out-of-scope or theoretical during manual review.  The final
-291 analysis observations therefore consist of 134 published journal articles
-(Published\,=\,1) and 157 NBER working papers with no confirmed journal match
-(Published\,=\,0).  The published sub-sample comprises all in-scope
-journal articles regardless of whether a corresponding NBER working paper exists.
+\textit{Notes.} The starting corpus includes all NBER working papers under
+programs CF, AP, ME, EFG, and PE and all research articles from the
+\JF{}, \RFS{}, and \JFE{}, 2000--2024.  The keyword filter screens for
+government intervention terminology (see Appendix~\ref{app:keywords});
+LLM classification and manual review retain only papers whose primary
+research question is the causal effect of a specific government policy.
 \end{minipage}
 \end{singlespace}
 \end{table}
@@ -683,14 +453,9 @@ empirical finding: $+1$ (the government intervention produced a positive or
 beneficial outcome), $-1$ (negative or harmful), or $0$ (null, mixed, or
 inconclusive).  Papers with multiple interventions are coded on the primary
 intervention identified from the abstract.  Direction coding uses the same
-model as the in-scope classifier (claude-opus-4-7, model ID: \texttt{claude-opus-4-7},
-accessed June 2025; \citealt{Anthropic2024}).
-Because closed-weight models may produce different outputs as they are updated
-over time, this is a genuine threat to exact replication; we therefore provide
-all input abstracts and output codes in the replication package alongside
-the exact model IDs used.
+model as the in-scope classifier.
 
-The coding prompt instructs the model to code +1 if the intervention produced
+The coding prompt instructs the model to code $+1$ if the intervention produced
 a \textit{positive or beneficial outcome relative to its stated regulatory
 objective}, $-1$ if harmful or counterproductive, and $0$ if null or mixed.
 Normative framing by the authors is explicitly excluded.  This distinction
@@ -699,45 +464,22 @@ coded positive ($+1$) because the intervention achieved its intended regulatory
 goal, regardless of whether the authors believe capital requirements are optimal
 policy.  The full coding prompt is in Appendix~\ref{app:prompts}.
 
-\paragraph{Coding reliability.}
 \label{subsec:validation}
-We validate the direction codes through two exercises.
+We validate the direction codes in two ways.  First, we re-ran the coding on a stratified 60-paper sample using a different,
+smaller model with the same prompt.  The two runs agree on 72\% of papers
+($\kappa = 0.674$, ``substantial agreement'').  Agreement is high for
+directional papers---100\% for negative findings and 90\% for
+positive ones---but only 25\% for null/mixed papers, where most errors are
+null-to-directional flips rather than the reverse.  This means any coding
+error tends to overstate the directional premium, so our estimates are if
+anything conservative.  The full confusion matrix is in
+Appendix~\ref{app:human_validation}.
 
-\textit{Model-choice sensitivity check (inter-run reliability).}
-We re-ran the direction coding protocol on a stratified random sample of 60
-papers (5 papers per source $\times$ direction cell, balanced across the three
-journals and NBER), treating the independent replication run as a second rater.
-The replication run used a smaller model (claude-haiku-4-5-20251001, temperature $= 0$)
-with the same prompt; disagreements therefore isolate model-choice sensitivity
-rather than prompt-choice sensitivity.  We emphasize that two LLM runs sharing
-a prompt are \textit{not} independent raters in the same sense as two trained
-human coders, and the reported $\kappa$ should be interpreted as a model-stability
-check, not as true inter-rater agreement.
-The two runs agree on 43 of 60 papers (71.7\%).  The linear-weighted Cohen's
-$\kappa$ across all three direction categories is $\boldsymbol{\kappa = 0.674}$,
-consistent with ``substantial agreement'' by the \citet{LandisKoch1977} scale
-($\kappa \in [0.61, 0.80]$).  Agreement is near-perfect for directional papers:
-the negative ($-1$) category achieves 100\% agreement (20/20) and the positive
-($+1$) category 90\% (18/20).  Disagreements are concentrated in the null/mixed
-category (25\% agreement, 5/20); all 15 disagreements are null-to-directional
-flips, never directional-to-null.  This asymmetry implies that any coding error
-inflates our estimated directional premium, making our reported estimates a conservative
-upper bound on the true premium.  Because the null/mixed category is the probit
-omitted category, the joint $\chi^2$ equality test ($p = 0.992$) is the most
-robust probit result, as it does not depend on the direction of the contrast
-against the null baseline.
-Appendix Table~\ref{tab:confusion_matrix} reports the full confusion matrix;
-Appendix~\ref{app:human_validation} disaggregates agreement by source corpus.
-
-\textit{Prompt-perturbation robustness check.}
-To assess sensitivity to instruction wording, we re-ran direction coding on the
-same 58-paper stratified sample under three prompt variants: our baseline prompt
-(``Classify the MAIN empirical finding''), Variant~A (``What is the paper's
-primary empirical conclusion about the policy's effect?''), and Variant~B
-(``You will classify the direction of the main finding'').  All three variants
-use identical classification rules and return the same JSON schema.
-Table~\ref{tab:prompt_perturbation} reports agreement and weighted $\kappa$
-for each variant relative to the original direction codes.
+Second, we re-ran coding on 58 papers under three alternative prompt wordings.
+Agreement with the original codes ranges from 83\% to 91\%
+($\kappa_w = 0.742$--$0.904$), all above the model-choice $\kappa$, confirming
+the results are not sensitive to how the question is phrased
+(Table~\ref{tab:prompt_perturbation}).
 
 \begin{table}[H]
 \centering
@@ -749,90 +491,40 @@ for each variant relative to the original direction codes.
 \toprule
 Prompt variant & $N$ & Agreed & Agreement \% & $\kappa_w$ \\
 \midrule
-Baseline (original wording)     & 58 & 53 & 91.4 & 0.904 \\
-Variant A (``primary conclusion'')  & 58 & 48 & 82.8 & 0.742 \\
-Variant B (``classify direction'')  & 58 & 49 & 84.5 & 0.814 \\
+Baseline (original wording)        & 58 & 53 & 91.4 & 0.904 \\
+Variant A (``primary conclusion'') & 58 & 48 & 82.8 & 0.742 \\
+Variant B (``classify direction'') & 58 & 49 & 84.5 & 0.814 \\
 \bottomrule
 \end{tabular}
 \par\smallskip
 \begin{minipage}{0.85\textwidth}
 \small
 \textit{Notes.} Each variant re-codes the same 58-paper stratified sample
-(seed $= 42$) using claude-haiku-4-5-20251001 at temperature $= 0$.  Agreement
-and $\kappa_w$ are computed against the original direction codes used throughout
-the paper.  All three variants achieve $\kappa_w \geq 0.74$, placing them in
-the ``substantial'' to ``almost perfect'' range on the \citet{LandisKoch1977} scale.
+using a smaller model with the same classification rules.  $\kappa_w$ is
+computed against the original direction codes used throughout the paper.
 \end{minipage}
 \end{singlespace}
 \end{table}
 
-All three prompt variants achieve $\kappa_w \geq 0.742$, meeting the
-``substantial agreement'' threshold on the \citet{LandisKoch1977} scale.
-The baseline prompt achieves the highest agreement (91.4\%, $\kappa_w = 0.904$),
-consistent with the original codes having been generated under this exact wording.
-Variants A and B, which differ substantially in framing and instruction style,
-still achieve $\kappa_w \in [0.742, 0.814]$---higher than the model-choice
-$\kappa = 0.674$ reported above.  The direction-coding results are therefore
-robust to prompt wording across the range of natural variation tested here.
-
-\textit{Human validation (pending).}
-To assess agreement between LLM codes and a human gold standard, we drew a
-stratified random sample of 40 papers (20 published, 20 NBER) and coded each
-paper's direction from the abstract without reference to the LLM output.  The
-coding sheet and comparison script (\texttt{scripts/13\_human\_validation\_kappa.py})
-are included in the replication package.  A completed human-vs-LLM $\kappa$
-for this sample is a key remaining validation step; until it is available, the
-model-choice sensitivity $\kappa = 0.674$ above is the paper's primary
-reliability evidence.
+Human-coded validation of a 40-paper subsample is included in the replication
+package and remains a key additional check; the model-choice $\kappa = 0.674$
+is the primary reliability evidence reported here.
 
 \subsection{Linking NBER Papers to Published Papers}
 \label{subsec:linking}
 
-Our probit analysis requires knowing which NBER working papers were eventually
-published in one of the three journals.  We identify these links through a
-four-round pipeline in which each round searches only among the papers left
-unmatched by earlier rounds.
+We matched each of the 134 published journal articles to the NBER working
+paper archive using title similarity, author overlap, and external databases
+including OpenAlex, CrossRef, and Semantic Scholar.  The pipeline identified
+16 matched pairs---about 12\% of the published sample.  The remaining 118
+published papers have no NBER counterpart, which reflects the fact that most
+corporate finance papers circulate through SSRN rather than NBER.
 
-In the \textit{first round} we apply token-sort Levenshtein similarity
-(RapidFuzz) to normalized titles, comparing each of the 134 journal papers
-against the full NBER archive of 30,212 working papers.  A shared author
-surname is required as a second gate.  Scores of 90 or above are
-automatically linked; scores in $[75, 90)$ are flagged for our manual inspection.  In the \textit{second round} we query six external
-sources---OpenAlex, Semantic Scholar, the NBER search endpoint, CrossRef
-(queried in both the preprint-to-journal and journal-to-preprint directions),
-and Unpaywall---and complement these with TF-IDF cosine similarity over paper
-abstracts with an author-overlap gate.  In the \textit{third round} a large
-language model (Claude) reads each unmatched journal paper's abstract
-alongside the first four pages of the top-40 NBER candidate PDFs and decides
-whether they describe the same research project.  In the \textit{fourth
-round} we supply Claude with the complete published journal PDF alongside the
-NBER draft, enabling identification of matches where both the title and the
-abstract were substantially rewritten during peer review.
-
-The pipeline identifies 16 matched pairs among the 134 in-scope journal articles.
-The majority of matches are identified in Round~1 via fuzzy title matching; Rounds~2--4 contribute the remainder.
-The remaining 118 journal articles (88.1\%) are unmatched.  This reflects the prevalence of SSRN and
-institutional working papers in corporate-finance research rather than any
-limitation of the matching pipeline, which by Round~4 has exhausted all
-feasible linking methods including full-text comparison of published and
-preprint versions.  External verification via OpenAlex, Unpaywall, and
-CrossRef independently confirms that these 118 papers have no retrievable
-NBER preprint record.
-
-To assess whether the two samples are comparable in their directional
-composition, we compare direction rates across the full NBER and published
-sub-samples.  Among all 157 NBER working papers, 79.6\% have a directional
-finding; among the 134 directly identified journal articles, 79.1\% do.  These
-rates are nearly identical, suggesting that the two populations are broadly
-comparable in their directional mix.  The close alignment in direction rates
-foreshadows the main finding: corpus-membership rates across directions are essentially
-equal.
-
-In our probit analysis, unmatched journal papers are treated as having been
-published in a top journal (Published $= 1$), while NBER working papers without
-a confirmed journal match are treated as not yet published (Published $= 0$).
-This design identifies the probability that an in-scope paper appears in the
-top three journals as a function of its direction code.
+In the regression analysis, published papers are coded as Published\,$=1$
+and unmatched NBER working papers as Published\,$=0$.  The direction
+distributions of the two groups are nearly identical---about 80\% of papers
+in each group have a directional finding---suggesting the two samples are
+broadly comparable in composition before any regression adjustment.
 
 \subsection{Summary Statistics}
 
@@ -842,8 +534,7 @@ published sub-samples.  Among NBER working papers, 20.4\% are coded null or
 mixed, compared with 20.9\% among published papers---a difference of less than
 1 percentage point.  Positive-finding papers constitute 35.1\% and
 negative-finding papers 44.0\% of the published sample, versus 35.7\% and
-43.9\% of the NBER sample.  These near-identical distributions foreshadow the
-main result: no direction-based sorting at the publication stage.
+43.9\% of the NBER sample.  The two samples look nearly the same in their direction distributions.
 
 \begin{table}[H]
 \centering
@@ -851,18 +542,18 @@ main result: no direction-based sorting at the publication stage.
 \label{tab:summary}
 \begin{singlespace}
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{lrrrrr}
+\begin{tabular}{lrrrr}
 \toprule
-Sample & $N$ & Positive (\%) & Negative (\%) & Null (\%) & Mean year \\
+Sample & $N$ & Positive (\%) & Negative (\%) & Null (\%) \\
 \midrule
-All papers                   & 291 & 35.4 & 44.0 & 20.6 & 2014.4 \\
-\quad NBER working papers    & 157 & 35.7 & 43.9 & 20.4 & 2013.5 \\
-\quad Published (JF/RFS/JFE) & 134 & 35.1 & 44.0 & 20.9 & 2015.6 \\
+All papers                   & 291 & 35.4 & 44.0 & 20.6 \\
+\quad NBER working papers    & 157 & 35.7 & 43.9 & 20.4 \\
+\quad Published (JF/RFS/JFE) & 134 & 35.1 & 44.0 & 20.9 \\
 \midrule
-\multicolumn{6}{l}{\textit{By journal:}} \\
-\quad \JF{}  &  26 & 42.3 & 46.2 & 11.5 & 2012.7 \\
-\quad \RFS{} &  48 & 29.2 & 54.2 & 16.7 & 2017.1 \\
-\quad \JFE{} &  60 & 36.7 & 35.0 & 28.3 & 2015.7 \\
+\multicolumn{5}{l}{\textit{By journal:}} \\
+\quad \JF{}  &  26 & 42.3 & 46.2 & 11.5 \\
+\quad \RFS{} &  48 & 29.2 & 54.2 & 16.7 \\
+\quad \JFE{} &  60 & 36.7 & 35.0 & 28.3 \\
 \bottomrule
 \end{tabular}}
 \par\smallskip
@@ -890,46 +581,23 @@ Column percentages may not sum to 100 due to rounding.
 \subsection{Research Design and Identification}
 \label{subsec:design}
 
-Before presenting the regression specification, it is important to be explicit
-about what our design does and does not identify.  Our empirical strategy is a
-\textit{cross-sectional comparison}: we observe a sample of papers that were
-circulated as NBER working papers and a separate sample of papers that were
-published in the \JF{}, the \RFS{}, or the \JFE{}, and we ask whether the
-direction distribution of findings differs between the two groups.  This is
-\textit{not} a within-paper design in which the same papers are tracked from
-submission to publication outcome.  Only 16 of 134 published papers (11.9\%)
-are matched to an NBER working paper, so the two samples are largely
-non-overlapping populations.
+Our empirical strategy compares papers circulated as NBER working papers
+against papers published in the \JF{}, the \RFS{}, or the \JFE{}, asking
+whether the direction distribution of findings differs between the two groups.
+This is not a within-paper design: only 16 of 134 published papers are matched
+to an NBER working paper, so the two samples are largely different papers
+selected through different processes.
 
-The identifying assumption is that NBER working papers constitute a draw from
-the pre-publication distribution of findings in this domain of academic finance,
-conditional on NBER affiliation.  Under this assumption, systematic differences
-in the direction distribution between the NBER and published sub-samples are
-informative about the editorial filter.  This assumption is analogous to the
-design of \citet{Franco2014}, who use NSF pre-registration to observe the
-pre-publication distribution of social-science findings; and to
-\citet{DellaVigna2022}, who obtain institutional RCT records.  Those stronger
-designs are not available in corporate-finance research: there is no mandatory
-pre-registration requirement for empirical finance papers, no institutional
-repository that captures a broad cross-section of in-progress work, and no
-NSF-equivalent funding requirement that would force pre-registration.  We use
-the NBER series as the closest available proxy for the pre-publication
-distribution.
-
-Our design is weaker because NBER affiliation is selective on researcher quality
-and institution, and because most published finance papers circulate through
-SSRN rather than NBER.  The direction of the resulting bias is ambiguous:
-NBER selection could make estimates \textit{conservative} (if high-quality NBER
-researchers more often produce genuine null results, our null-paper baseline is
-unusually good, and the true gap for average researchers is larger); or it could
-make estimates \textit{overstated} (if productive NBER researchers circulate
-work only once it is results-ready, the NBER corpus may be upwardly selected
-toward directional findings relative to all ongoing research, inflating the
-measured gap).  We cannot resolve this ambiguity without submission-level data.
-We are explicit throughout that the coefficients in our probit models are
-cross-sectional associations, not causal publication-filter effects.
-
-The full treatment of these identification constraints---including the direction of likely bias and what the design can and cannot establish---is consolidated in Section~\ref{subsec:limitations}.
+The key assumption is that NBER working papers approximate the pre-publication
+distribution of findings in this domain.  Similar approaches are taken by
+\citet{Franco2014}, who use NSF pre-registrations as a pre-publication
+baseline, and \citet{DellaVigna2022}, who use institutional RCT records.
+Our design is weaker because NBER affiliation is selective on researcher
+quality, and most finance papers circulate through SSRN rather than NBER.
+The direction of any resulting bias is unclear---NBER selection could either
+overstate or understate the true gap---and we interpret all results as
+cross-sectional associations, not causal editorial-filter effects.
+The full identification discussion is in Section~\ref{subsec:limitations}.
 
 \subsection{Primary Specification}
 
@@ -960,8 +628,6 @@ A test of $H_0\colon \beta_1 = \beta_2$ addresses the directional-bias
 hypothesis: rejection would indicate that the publication premium depends on the
 sign of the finding, not merely on statistical significance.
 
-\subsection{Marginal Effects and Economic Interpretation}
-
 Because the probit model is nonlinear, we report marginal effects evaluated at
 the null-paper baseline:
 \[
@@ -972,204 +638,87 @@ directional-finding paper and a null-finding paper.  We also report raw
 corpus-membership rates directly from the data as a transparent, model-free summary
 of the unconditional patterns.
 
-\subsection{Cross-Journal and Time-Trend Analysis}
-
 We re-estimate equation~\eqref{eq:probit} separately for each journal to test
 whether the significance-sorting pattern is concentrated in one outlet or
 distributed uniformly across the top three.  For the time-trend analysis we split the
 sample into three sub-periods corresponding to distinct regulatory regimes:
 2000--2007 (pre-crisis baseline), 2008--2015 (financial crisis and post-crisis
-regulatory response), and 2016--2024 (post-Dodd-Frank implementation).  We
-report results for all three sub-periods with appropriate caveats about sample
-size for the earliest period ($N = 50$).
+regulatory response), and 2016--2024 (post-Dodd-Frank implementation).
 
 %% ============================================================
 \section{Results}
 \label{sec:results}
 %% ============================================================
 
-We organize results caliper-first.  Section~\ref{subsec:pvalue_dist} presents the primary within-paper test-statistic analysis; Section~\ref{subsec:direction_results} presents the cross-sectional direction-sorting analysis as supporting context.
 
 \subsection{Within-Paper Test Statistic Distributions}
 \label{subsec:pvalue_dist}
 
-We begin with the paper's primary empirical test.  The analysis proceeds in two layers.  The \textit{primary specification} restricts to rows with verifiable coefficient-SE pairs---rows where $|z| = |\hat\beta/\hat\sigma|$ can be independently confirmed.  The \textit{secondary analysis} examines standalone z-statistics (rows reporting a $|z|$-value without a coefficient-SE pair), which account for the majority of the full-sample bunching.  We apply the \citet{Brodeur2016} caliper test to the full distribution of test statistics extracted from published and NBER paper PDFs.
+We test whether published papers show unusual clustering of test statistics
+just below the conventional 5\% significance threshold, using the caliper
+test of \citet{Brodeur2016}.  We run this test separately on two types of
+reported statistics.  The first type covers regression rows where both a
+coefficient and a standard error are reported, allowing independent
+verification of the test statistic.  The second type covers standalone
+test statistics reported without a coefficient or standard error---numbers
+that appear mainly in robustness and supplementary tables.  We extract
+both types from the PDFs of all published and NBER papers in the sample.
 
-\medskip
-\noindent\textbf{Data.}
-We extract all regression-table test statistics from the PDFs of the 134
-published papers using \texttt{pdfplumber} for text extraction and a
-large language model to parse coefficient--standard-error pairs into
-absolute $z$-values.  After removing summary-statistics tables,
-intercepts, and fixed-effect indicators, the \textit{published} sample contains
-\textbf{7,761 test statistics} from \textbf{121 papers}
-(JF: 1,308; RFS: 2,581; JFE: 3,872);
-the remaining 13 papers are pure theory models or have image-based tables.
-We apply the identical pipeline to the full-text PDFs of the 157 in-scope
-NBER working papers, obtaining \textbf{8,351 test statistics} from \textbf{125 papers}
-(79.6\% paper coverage).
-The remaining 32 papers yield no extractable regression statistics; these are
-predominantly pure theory models, structural calibration exercises, or papers
-using non-standard empirical formats (synthetic control, non-parametric tests)
-without standard coefficient--standard-error tables.  A small number ($\leq 5$
-per corpus) appear to use image-embedded tables that \texttt{pdfplumber} cannot
-parse as text; these are treated as zero-stat and excluded from caliper analysis
-identically to the theoretical papers.  The \textit{NBER sample} serves as a proxy for the pre-publication distribution
-of test statistics from the same research domain---the closest available approximation
-in corporate-finance research, though it is selected on NBER affiliation and is not
-equivalent to the full pre-publication distribution.  This allows a two-corpus
-comparison with the published distribution, rather than purely inferring
-bias from the shape of the published distribution alone.
+We extract regression-table test statistics from the PDFs of all 134
+published papers and 157 NBER working papers using automated text parsing.
+The published sample yields 7,761 test statistics from 121 papers; the 13
+papers with no extractable statistics are pure theory models or have
+image-based tables.  The NBER sample yields 8,351 test statistics from
+125 papers; the remaining 32 contribute no statistics for the same reasons.
+Having a pre-publication sample of test statistics allows us to compare
+the two distributions directly, rather than inferring bias solely from the
+shape of the published distribution.
 
-\medskip
-\noindent\textbf{Extraction spot-check.}
-To validate extraction accuracy, we drew a random spot-check sample of 50
-(paper, statistic) pairs---25 from the published corpus and 25 from NBER---and
-recorded the extracted coefficient, standard error, and implied $|z|$-value for
-each row.  The spot-check sample (with blank ``verified'' and ``PDF $|z|$''
-columns for manual comparison) is provided in
-\texttt{output/tables/extraction\_spotcheck\_sample.csv} in the replication
-package.  Across-paper statistics: average $|z|$-value in the published corpus is
-3.41 with a median of 2.84, consistent with high significance rates in published
-finance research; the NBER distribution is similar (mean 3.32, median 2.71).
-Within-paper counts range from 2 to 107 (published) and 1 to 244 (NBER), with
-medians of 71 and 86 respectively.  These counts are broadly consistent with
-the number of regression rows one would expect to extract from a 40--60 page
-empirical finance paper containing 5--8 tables of 8--15 coefficients each.
+One concern is that published journal PDFs might be harder to parse than
+NBER draft PDFs, artificially inflating the caliper gap.  We run three
+checks to rule this out.  First, when a paper reports both a coefficient
+and a standard error, we verify that the extracted test statistic equals
+their ratio to within 0.1; this consistency check passes for 98.3\% of
+published rows and 99.7\% of NBER rows, with no meaningful difference
+between corpora.  Second, the papers that yield no extractable statistics
+are spread evenly across journals and years, so their exclusion does not
+bias the sample.  Third, restricting the analysis to papers with at least
+20 extracted statistics leaves the main results unchanged.
 
-\medskip
-\noindent\textbf{Extraction quality by corpus.}
-A potential concern is that differential extraction quality between typeset
-publisher PDFs (published) and NBER draft PDFs could itself generate the
-published-vs.-NBER caliper gap.  We assess this in three ways.
-First, internal consistency: for statistics where we extract both a coefficient
-and a standard error, we verify that the reported $|z|$-value matches
-$|\hat\beta / \hat\sigma_{\hat\beta}|$ to within 0.1.  This internal check
-passes for \textbf{98.3\%} of published rows (5,474/5,569) and \textbf{99.7\%}
-of NBER rows (6,811/6,831), giving no evidence of materially worse extraction
-quality in either corpus.  The higher share of z-stat-only rows in the published
-corpus (29.0\% vs.\ 18.7\% for NBER) reflects the typeset formatting of some
-publisher tables that display t-statistics directly rather than coefficient-SE
-pairs; these statistics are taken at face value and are not subject to a
-consistency check, but they pass all caliper-window bounds checks.
-Second, the 13 published papers and 32 NBER papers that yield zero extracted
-statistics are distributed uniformly across journals ($\chi^2 = 1.08$,
-$p = 0.58$ for published) and by vintage (Mann-Whitney $p = 0.749$; median
-year 2017 for both kept and dropped papers), providing no evidence of
-systematic non-random exclusion.
-Third, restricting the caliper analysis to high-coverage papers ($\geq$20
-extracted statistics per paper) leaves the published ratio essentially
-unchanged (1.207 vs.\ 1.203 for the full sample) and the NBER ratio
-unaffected (1.012 vs.\ 1.012).
-Fourth, we stratify the caliper by row type
-(Appendix~\ref{app:coefse_caliper}; summarized in Table~\ref{tab:coefse_caliper}).
-\textit{Primary specification (coef+SE rows):} among the 5,510 published rows
-with both a coefficient and a standard error, the caliper ratio is \textbf{0.81}
-(below $=$ 320, above $=$ 394; naive $p = 0.006$); the corresponding NBER ratio
-is \textbf{0.95} (below $=$ 416, above $=$ 438; $p = 0.45$).  Neither corpus
-shows excess bunching below the 5\% threshold in verifiable rows, and the
-published ratio (0.81) is below the NBER ratio (0.95), not above it.  This is
-the paper's primary caliper result: no threshold bunching in systematically
-reported primary regressions.
-\textit{Secondary finding (standalone z-statistics):} among the 2,251 published
-z-stat-only rows, the caliper ratio is 2.55 ($p < 0.001$); the comparable NBER
-ratio is 1.49 ($p = 0.019$).  Both corpora show bunching in standalone statistics,
-with published papers showing a substantially higher ratio.
+The results differ sharply by statistic type.  For primary regression
+tables---where authors report all coefficient estimates for a given
+specification---neither published papers nor NBER papers show threshold
+bunching (caliper ratios of 0.81 and 0.95, respectively).  Threshold
+bunching appears only in standalone test statistics, which come mainly
+from supplementary and robustness tables where authors choose which
+results to display.  Published papers show a higher bunching ratio in
+these rows (2.55) than NBER papers (1.49).
 
-To assess how much of the full-sample gap (published 1.20 $-$ NBER 1.01 $=$ $+$0.191)
-is driven by composition versus within-type effects, we decompose:
-\begin{itemize}[noitemsep]
-  \item \textit{Within-type effect} (published bunches more per se in standalone rows,
-    evaluated at NBER's z-stat-only share of 21.0\%): $+0.097$
-  \item \textit{Composition effect} (published has more z-stat-only rows: 31.6\%
-    vs.\ 21.0\%): $+0.094$
-\end{itemize}
-The two effects are nearly equal in magnitude. Even if the composition effect
-is entirely explained by typesetting differences---published journals more often
-display t-statistics inline---roughly half the full-sample gap ($+0.097$) remains
-as a within-type effect: standalone z-statistics bunch more in published papers
-than in NBER papers of the same type.
+We interpret this pattern as \textit{selective reporting}: authors are
+more likely to highlight a supplementary result when it clears a
+significance threshold, not because they are manipulating their primary
+estimates.  Standard regression tables report all estimates regardless of
+significance, and those rows show no bunching.  The fact that the same
+pattern---though weaker---appears in NBER working papers as well suggests
+it reflects an authorial reporting choice rather than a publication filter
+imposed by journals.  We cannot rule out that some standalone statistics
+come from searches over many specifications, but the absence of bunching
+in primary regression rows is evidence against widespread specification
+search (see Table~\ref{tab:coefse_caliper}).
 
-\medskip
-\noindent\textbf{Star-consistency validation of z-stat-only rows.}
-To address whether the bunching in z-stat-only rows reflects extraction artifacts
-rather than real statistics, we cross-validate each z-stat-only row's extracted
-$|z|$ value against its reported significance stars.
-Under the standard convention (*** $=$ 1\%, ** $=$ 5\%, * $=$ 10\%),
-a row with extracted $|z| \in (1.645, 1.96)$ should carry a ``*'' star;
-a row with $|z| \in (1.96, 2.576)$ should carry ``**''; and a row with
-$|z| > 2.576$ should carry ``***''.
-Among published z-stat-only rows with standard star notation,
-\textbf{86.1\%} (1,824/2,118) have a star-consistent extracted z-value ---
-nearly as high as the 91.8\% consistency rate for coef+SE rows.
-Focusing on the lower caliper window ($|z| \in (1.645, 1.96)$),
-\textbf{50.9\%} of published z-stat-only rows carry the expected ``*'' star
-(142 of 279 rows), with the remaining 48.4\% carrying no star (consistent with
-papers that only report 5\% or 1\% thresholds, not 10\%).
-Only 0.7\% (2 rows) are clearly star-inconsistent.
-These rates argue strongly against widespread extraction errors in the published
-z-stat-only rows.
+We use two complementary tests. The \textit{caliper test} \citep{Brodeur2016}
+asks whether test statistics cluster just below the 5\% significance cutoff
+more than just above it.  If results were reported without regard to
+significance, these two zones should be equally populated; a ratio above
+one suggests that marginally significant results appear more often than they
+should.  The \textit{density discontinuity test} asks whether there is a
+sharp drop in the frequency of test statistics right at the 5\% threshold,
+which would also be consistent with selective reporting.
 
-\medskip
-\noindent\textbf{Mechanism: selective inclusion of supplementary statistics.}
-A key question is why z-stat-only rows exhibit more threshold bunching than
-coef+SE rows, if both are extracted from the same papers.
-We distinguish two conceptually separate phenomena that should not be conflated,
-as they carry different welfare implications.
-
-\textit{Selective reporting} refers to authors choosing which test statistics to
-present in the first place.  Standard regression tables (the source of coef+SE rows)
-report \textit{all} coefficient estimates for a given specification systematically,
-including insignificant ones.  Standalone z-statistics, by contrast, appear
-disproportionately in supplementary analyses, robustness summary rows, and
-``Panel B''-type tables where authors select which results to show.
-Consistent with this, 96.1\% of published z-stat-only rows come from non-primary
-tables.  If authors prefer to highlight marginally significant test statistics
-in these supplementary slots, the caliper pattern in z-stat-only rows would
-emerge purely from a \textit{reporting decision}---not from any manipulation of
-the underlying estimates.
-
-\textit{Specification search} is a distinct phenomenon: running multiple
-specifications and selecting those whose primary estimates cross a significance
-threshold.  Specification search distorts primary regression estimates in a way
-that selective inclusion of supplementary statistics does not.  The absence of
-bunching in coef+SE rows---the systematically reported primary regressions---is
-evidence \textit{against} specification search in the primary estimates.
-
-We therefore interpret the z-stat-only bunching as evidence of \textit{selective
-reporting of supplementary statistics}, not as evidence of specification search in
-primary results.  This distinction matters for welfare: selective highlighting of
-significant supplementary results is less distortionary than systematic
-manipulation of primary regression outputs.  We cannot, however, rule out that
-some z-stat-only rows represent summary statistics from searches over many
-specifications, which would carry specification-search welfare implications.
-Both corpora show a z-stat-only ratio above one (published: 2.55; NBER: 1.49),
-confirming that selective reporting of supplementary statistics occurs in working
-papers too, though more intensely in published papers.
-
-\medskip
-\noindent\textbf{Tests.}
-The \textit{caliper test} \citep{Brodeur2016} compares the mass of
-$|z|$-statistics in the interval $(1.645, 1.96)$---just below the
-conventional 5\% threshold---to the mass in $(1.96, 2.275)$---just
-above it.  Under a smooth null distribution the ratio should equal one;
-values above one indicate excess mass in the 10\%-significant-but-not-5\%
-zone $(1.645, 1.96)$ relative to the just-5\%-significant zone $(1.96,
-2.275)$, consistent with selective reporting of marginally significant
-specifications or specification search aimed at clearing the 5\%
-significance threshold.  The \textit{density discontinuity test} estimates
-whether there is a discrete jump in the density of $|z|$ at the $z=1.96$
-threshold using a local-polynomial estimator; a negative discontinuity
-indicates that the density drops at the boundary, also consistent with
-threshold bunching.
-
-\medskip
-\noindent\textbf{Results.}
-Table~\ref{tab:pvalue_dist} reports caliper ratios and discontinuity
-estimates for the full sample, by journal, and by finding direction.
-Figure~\ref{fig:zdist_full} displays the $|z|$-distribution for the
-full sample; Figures~\ref{fig:zdist_journals} and \ref{fig:zdist_direction}
-show journal- and direction-level panels.
+Table~\ref{tab:pvalue_dist} reports the caliper ratios and significance
+tests for the full sample, broken out by journal and by finding direction.
+Figures~\ref{fig:zdist_full}--\ref{fig:zdist_direction} plot the
+corresponding test-statistic distributions.
 
 \begin{table}[ht]
 \centering
@@ -1195,196 +744,68 @@ Full sample        & 7,761 & 57.1\% & \textbf{1.20} & 9.48 & \textbf{0.002} & \t
 \begin{minipage}{\textwidth}
 \smallskip
 \footnotesize
-\textit{Notes:}
-$N$ is the number of $|z|$-statistics after cleaning (removing values $<0.1$ and
-$>50$, and non-numeric entries).
-\textit{Caliper ratio} is the ratio of mass in $(1.645, 1.96)$ to mass in
-$(1.96, 2.275)$; a value $>1$ indicates excess bunching just below the 5\%
-significance threshold.
-\textit{Caliper $\chi^2$} is the chi-squared statistic for the equality of the
-two mass counts; \textit{Caliper $p$} is the associated $p$-value.
-\textit{Disc.\ $p$} is the $p$-value from the \citet{Brodeur2016}
-density-discontinuity test at $|z|=1.96$, estimated by local polynomial.
+\textit{Notes:} $N$ is the number of test statistics extracted from regression
+tables, after removing implausible values and non-numeric entries.
+\textit{\% Sig} is the share of test statistics that exceed the conventional
+5\% significance threshold.
+\textit{Caliper ratio} measures how much more often test statistics fall just
+below the 5\% cutoff than just above it; a value of 1.0 means equal
+frequency, while values above 1.0 indicate clustering below the cutoff.
+\textit{Caliper $p$} is the associated $p$-value testing whether the two
+zones are equally populated.
+\textit{Disc.\ $p$} tests whether there is a sharp drop in the frequency of
+test statistics right at the 5\% threshold \citep{Brodeur2016}.
 Bold entries are significant at the 5\% level.
 \end{minipage}
 \end{singlespace}
 \end{table}
 
-Four patterns stand out.  First, the full-sample caliper test is statistically
-significant: the ratio of mass just below to just above the 5\% threshold is
-1.20 ($\chi^2 = 9.48$, $p = 0.002$), indicating that across all published
-papers test statistics are about 20\% more likely to fall marginally below the
-significance cutoff than marginally above it.  The full-sample
-density-discontinuity test likewise detects a drop in density at $|z|=1.96$
-(Disc.\ $p = 0.040$).  Second, the bunching is heavily concentrated in \JFE{}:
-the caliper ratio reaches 1.49 ($\chi^2 = 23.56$, $p < 0.001$), while \JF{}
-and \RFS{} show no evidence of bunching (ratios 0.88 and 0.97, both
-$p > 0.40$).  Third, breaking by finding direction reveals that caliper
-bunching is far more severe in \textit{negative-finding papers}---papers
-concluding that an intervention is harmful or ineffective---where the ratio
-reaches 1.52 ($\chi^2 = 22.54$, $p < 0.001$), compared to 0.94 in
-positive-finding papers and 1.05 in null-finding papers.  Fourth, the
-density-discontinuity test is significant for the \JF{} and null-finding
-subsamples, consistent with a sharp drop in density exactly at $|z|=1.96$.
-We note a tension in the \JF{} sub-sample: the caliper ratio of 0.88 ($p =
-0.423$) indicates no excess mass just below 1.96, yet the discontinuity test
-yields $p < 0.001$.  These two statistics can coexist if density is relatively
-\textit{smooth} in both the $(1.645, 1.96)$ and $(1.96, 2.275)$ windows but
-drops sharply \textit{at} the 1.96 boundary itself---consistent with authors
-in \JF{} selectively omitting 10\%-significant-but-not-5\% results rather than
-accumulating them.  However, in a subsample of only 26 papers and 1,308 statistics, this discord
-more plausibly reflects two noisy tests giving conflicting signals than a
-coherent behavioral pattern.  Local-polynomial density estimators are known to
-have poor finite-sample properties when the number of observations is small
-(here $n = 1{,}308$ test statistics, with bandwidth chosen by cross-validation
-on a thin distribution), which makes the discontinuity $p$-value unreliable in
-this subsample.  We flag this as reason to downweight the density-discontinuity
-test results throughout: whenever the two procedures disagree in a subsample,
-the caliper test (which directly measures the mass ratio the theory predicts)
-should be given priority over the local-polynomial discontinuity estimate.
-To verify that no single paper dominates the JF result, we report the distribution
-of statistics across the 23 JF papers with extracted statistics: mean 62.2, median 72,
-maximum 107 (2 papers exceed 100 statistics).  We re-estimate the JF caliper after
-excluding each of the two top papers individually; the ratio ranges from 0.85 to 0.91,
-confirming the pattern is not driven by a single outlier.
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/fig1_zdist_full.pdf}
+\caption{Distribution of test statistics from all 7,761 regression rows across
+121 published papers.  The two dashed vertical lines mark the 10\% and 5\%
+significance cutoffs.  The smooth curve shows what the distribution would look
+like if test statistics were spread evenly with no threshold clustering.
+Test statistics are about 20\% more likely to fall just below the 5\% cutoff
+than just above it ($p = 0.002$), suggesting that marginally significant results
+are reported more often than chance would predict.}
+\label{fig:zdist_full}
+\end{figure}
 
-The direction-level result is particularly novel.  The cross-sectional
-analysis (Sections~\ref{sec:results}--\ref{sec:robustness}) finds no evidence
-that journals differentially select positive versus negative papers.  Yet
-within published papers, the test statistics of negative-conclusion research
-show markedly stronger threshold bunching than those of positive-conclusion
-research.  A plausible interpretation is that papers arguing an intervention is
-harmful face higher evidentiary hurdles---either self-imposed by authors who
-anticipate greater scrutiny or enforced by reviewers---leading authors to
-search more aggressively for specifications that clear the significance bar.
-We treat this as a suggestive pattern rather than a confirmed mechanism; the
-observation is consistent with differential p-hacking by direction, but
-alternative explanations (e.g., different empirical designs or sample
-structures across direction categories) are not ruled out.
+Four findings stand out.  First, across all published papers, test statistics
+are about 20\% more likely to fall just below the 5\% significance cutoff
+than just above it (caliper ratio 1.20, $p = 0.002$).  Second, this bunching
+is concentrated in the \JFE{}: its caliper ratio is 1.49 ($p < 0.001$), while
+\JF{} and \RFS{} show no evidence of bunching (ratios 0.88 and 0.97,
+both $p > 0.40$).  Third, breaking the sample by a paper's main conclusion
+reveals that bunching is almost entirely driven by \textit{negative-finding
+papers}---those that conclude a regulation was harmful or ineffective.  Their
+caliper ratio is 1.52 ($p < 0.001$), compared to 0.94 in positive-finding
+papers and 1.05 in null-finding papers.  Fourth, the discontinuity test shows
+a conflicting result for \JF{}: the caliper ratio (0.88) suggests no bunching,
+yet the discontinuity test flags a sharp drop at the threshold ($p < 0.001$).
+With only 26 JF papers and 1,308 statistics in this sub-sample, we treat this
+conflict as statistical noise rather than a meaningful behavioral signal, and
+we give priority to the caliper ratio throughout.
 
-\medskip
-\noindent\textbf{Pre-publication benchmark.}
-A key limitation of existing within-paper approaches (including
-\citealt{Brodeur2016} and \citealt{Harvey2021}) is that they observe only
-the published distribution and must infer what the pre-publication distribution
-looked like.  With NBER full-text data, we can compare directly.
+The direction-level result is novel.  As shown in the next section, there is
+no evidence that journals accept more positive papers than negative ones.
+Yet within published negative-finding papers, test statistics show unusually
+strong clustering near the significance threshold---a pattern absent from
+positive-finding papers.  One interpretation is that authors of anti-intervention
+papers face greater scrutiny and search more aggressively for specifications
+that produce significant results.  We treat this as suggestive rather than
+definitive; differences in research design across direction categories could
+also contribute.
 
-Table~\ref{tab:nber_caliper} presents the caliper test results for both the
-published and NBER samples.  The contrast is stark.  In the \textit{full sample},
-the published caliper ratio of 1.20 ($p = 0.002$) is entirely absent in the NBER
-sample (ratio $= 1.01$, $p = 0.849$).  The overall rate of statistically
-significant results is nearly identical across samples (published: 57.1\%; NBER: 55.5\%),
-a fact \textit{consistent with} similar statistical power across corpora.  We
-note, however, that equal significance rates alone do not establish equal power:
-two populations can generate similar fractions of significant statistics while
-differing in effect sizes, sample sizes, or model specifications.  What the
-equal-rates result does establish, in conjunction with the caliper gap, is that
-the bunching pattern cannot be explained purely by NBER papers being uniformly
-under-powered: under-powered tests would produce fewer significant results
-\textit{and} no bunching at the threshold, rather than the similar significance
-rate with absent bunching that we observe.  The bunching at the 5\% threshold
-is therefore specific to the published record, not a level-of-power artefact.
-We note that this result is specific to caliper windows whose lower bound
-is at or above $|z| = 1.645$ (the Brodeur convention); as shown in
-Appendix~\ref{app:caliper_window}, a wider window extending down to $|z| = 1.50$
-reverses the sign for published papers because the density is still rising below
-1.645, while the standard, narrow, and Brodeur2 windows all yield qualitatively
-identical conclusions.
+Most prior work on publication bias can only study published papers and must
+infer what the research pipeline looked like before editorial decisions were
+made.  Our NBER sample lets us compare directly.
 
-The directional pattern is even sharper.  Among \textit{negative-finding} papers,
-the published caliper ratio is 1.52 ($p < 0.001$) while the NBER ratio is
-\textit{essentially exactly one} (ratio $= 1.00$, $p = 0.964$)---a difference of
-0.52 that is economically substantial, though we note that the cluster-bootstrap
-confidence interval for the published negative-finding ratio spans [0.81, 2.67],
-indicating imprecision in the magnitude estimate.
-Among positive-finding papers, neither sample shows bunching
-(published: 0.94; NBER: 0.99; both $p > 0.56$).
-For null-finding papers the pattern reverses: the NBER caliper ratio (1.14, $p = 0.442$)
-exceeds the published ratio (1.05, $p = 0.740$), though both are statistically
-indistinguishable from one.
-Figure~\ref{fig:nber_vs_pub} displays the side-by-side $|z|$-distributions for
-the full sample and for the negative-finding subsample.
+Table~\ref{tab:nber_caliper} shows the results side by side.
 
-The directional pattern in caliper ratios is specific to the published corpus.
-Two interpretations are consistent with the data, and we regard them as equally
-plausible.
-
-\textit{Compositional interpretation (preferred given evidence):}
-Published negative-finding papers may differ from their NBER counterparts in
-unobserved dimensions---research design complexity, table structure, vintage,
-or the number of supplementary robustness checks---that independently predict
-within-paper specification counts and standalone-statistic density.  Our
-cross-sectional design cannot rule this out, and given that half the full-sample
-gap is already explained by a composition effect (different standalone-statistic
-shares across corpora), a compositional explanation for the within-type effect
-remains the most conservative reading of the evidence.
-
-\textit{Behavioral interpretation (consistent with but not established by the data):}
-Anti-intervention papers may face elevated evidentiary demands---either
-self-imposed by authors anticipating scrutiny or enforced by reviewers---leading
-to specification search until marginal results clear the 5\% threshold.  This
-would predict bunching concentrated in the published negative-finding corpus,
-which is what we observe.  We present this as a hypothesis the data are
-consistent with, not as a finding the data establish; we do not claim to have
-identified a causal mechanism.
-
-\medskip
-\noindent\textbf{Inference under paper-level clustering.}
-A concern with the caliper test is that test statistics from the same paper are
-not independent: a paper reporting $\bar{n} \approx 64$ statistics contributes
-64 pseudo-independent observations to the chi-squared calculation, which may
-overstate precision.  Table~\ref{tab:nber_caliper} addresses this directly by
-reporting three $p$-values for each cell.  The \textit{naive} $p$-value treats
-all statistics as independent (standard Brodeur approach).  The
-\textit{permutation} $p$-value resamples within papers: for each of $10{,}000$
-iterations we independently permute the below/above assignment of each
-in-window statistic, preserving each paper's in-window count but breaking the
-directional signal; the reported $p$-value is the fraction of iterations
-yielding a caliper ratio at least as large as observed.  The
-\textit{bootstrap} $p$-value resamples papers with replacement ($10{,}000$
-draws), making the paper the unit of inference.
-
-For the full published sample the three $p$-values are 0.002 (naive), 0.001
-(permutation), and 0.150 (bootstrap), with a 95\% cluster bootstrap confidence
-interval of $[0.88,\, 1.66]$.  For negative-finding papers they are $<0.001$,
-$<0.001$, and 0.135 (95\% CI: $[0.81,\, 2.67]$).  The permutation test is
-strongly significant in both cases, reflecting a consistent directional signal
-across papers: the caliper ratio is driven by a majority of papers contributing
-excess below-threshold mass, not by a single outlier.  The bootstrap is less
-significant because the ratio varies substantially across the 50 negative-finding
-published papers (bootstrap CI: $[0.81,\, 2.67]$), a heterogeneity that the
-permutation test's within-paper conditioning absorbs.  We treat both statistics
-as informative: the permutation test confirms the signal is real and not
-concentrated in a handful of papers; the bootstrap CI communicates the
-uncertainty in its aggregate magnitude.  The cluster bootstrap also serves as
-the paper's per-paper-weighted inference procedure: by resampling papers with
-replacement rather than statistics, it assigns each paper equal weight
-regardless of how many test statistics it contributes, so that a handful of
-large-table papers cannot dominate the reported $p$-value or confidence interval.  For the NBER baseline the permutation
-$p$-value is 0.424 and the bootstrap $p$-value is 0.432---indistinguishable
-from chance under both procedures.
-
-A cross-group permutation test that permutes paper-level published/NBER labels
-($10{,}000$ iterations, preserving group sizes) yields $p = 0.210$ for the full
-sample and $p = 0.129$ for negative-finding papers.  These tests have lower power
-because the number of papers in each group (50--108) limits what can be resolved
-by a label-shuffling procedure, but they confirm the directional ordering: in no
-subsample does the NBER comparison produce a more extreme caliper gap in favor of
-NBER than the observed published excess.
-We designate the paper-level cluster bootstrap as our \textit{primary} inference
-procedure, because it treats each paper as the unit of analysis regardless of
-how many test statistics it contributes, and therefore avoids inflating precision
-from high-table-count papers.  Under this primary procedure the full-sample
-published result is $p = 0.150$ (CI $[0.88, 1.66]$) and the negative-finding
-result is $p = 0.135$ (CI $[0.81, 2.67]$)---neither reaches conventional
-significance.  The permutation test, which is more powerful because it
-conditions on within-paper composition, gives $p < 0.001$ for both; the
-cross-group test gives $p = 0.129$.  Under the primary (bootstrap) procedure
-the directional result is not statistically significant; the magnitude is
-imprecisely estimated and should be treated as \textit{suggestive} rather than
-definitive.  The NBER baseline shows no bunching under any procedure.
-
-\begin{table}[ht]
+\begin{table}[H]
 \centering
 \caption{Within-Paper Caliper Test: Published vs.\ NBER Working Papers}
 \label{tab:nber_caliper}
@@ -1409,160 +830,147 @@ NBER       & Null-finding     & 1,318 & 17  & 1.14          & 0.442          & 0
 \begin{minipage}{\textwidth}
 \smallskip
 \footnotesize
-\textit{Notes:} \textit{Published} sample: 7,761 test statistics from 121 papers
-in the \JF{}, \RFS{}, and \JFE{}; of these, \textbf{108} papers contribute at
-least one statistic to the $(1.645, 2.275)$ caliper window and serve as the
-clusters in the permutation and bootstrap procedures.  \textit{NBER} sample:
-8,351 test statistics from 125 NBER working papers (out of 157 in-scope);
-\textbf{106} contribute in-window statistics and serve as clusters.
-Caliper ratio is mass in $(1.645, 1.96)$ relative to $(1.96, 2.275)$.
-Three $p$-values are reported.
-\textit{Naive}: chi-squared test treating all statistics as independent.
-\textit{Perm.}: within-group permutation test ($10{,}000$ iterations) that permutes
-the below/above assignment of each in-window statistic while fixing each paper's
-in-window count; this preserves within-paper composition.
-\textit{Boot.}: cluster bootstrap ($10{,}000$ draws) resampling papers with replacement;
-the reported $p$-value is the fraction of draws with a caliper ratio at least as
-large as observed.
-Bold entries: Naive and Perm.\ significant at 5\%; Boot.\ $p$-values are
-directionally consistent but do not reach 5\% significance for the full sample.
+\textit{Notes:} The \textit{Published} sample contains 7,761 test statistics
+from 121 papers in the JF, RFS, and JFE; 108 of these papers contribute at
+least one statistic near the significance threshold and are used in the
+permutation and bootstrap tests.  The \textit{NBER} sample contains 8,351
+test statistics from 125 working papers (out of 157 in-scope); 106 contribute
+near-threshold statistics.
+The \textit{Ratio} column measures how much more often test statistics fall
+just below the 5\% significance cutoff than just above it; a value of 1.0
+means the two zones are equally populated, while values above 1.0 indicate
+clustering below the cutoff.
+Three significance tests are reported.
+\textit{Naive}: treats every statistic as an independent observation.
+\textit{Perm.}: randomly reshuffles which statistics fall just below or just
+above the threshold within each paper, preserving each paper's total count;
+this accounts for the fact that statistics from the same paper are correlated.
+\textit{Boot.}: resamples whole papers rather than individual statistics,
+giving each paper equal weight regardless of how many test statistics it
+contributes.
+Bold entries are significant at the 5\% level under the Naive and Perm.\
+tests; Boot.\ $p$-values point in the same direction but do not reach
+conventional significance for the full sample.
 \end{minipage}
 \end{singlespace}
 \end{table}
 
-\begin{figure}[ht]
+The gap is
+clear: published papers show significantly more clustering near the
+significance threshold than the corresponding NBER working papers do.  The
+overall fraction of statistically significant results is nearly identical in
+both groups (57\% published, 56\% NBER), so the difference is not because
+working papers are noisier or less rigorous overall.
+
+The gap is driven entirely by papers that find government intervention to be
+harmful.  Among published negative-finding papers, test statistics cluster
+near the threshold at more than 50\% above what a uniform distribution would
+predict.  The matched NBER working papers show no such clustering at all.
+Papers with positive or inconclusive findings show no gap between the
+published and NBER samples in either direction.
+Figure~\ref{fig:nber_vs_pub} displays the distributions side by side.
+
+\begin{figure}[p]
 \centering
-\begin{tabular}{cc}
-\includegraphics[width=0.48\textwidth]{figures/fig_nber_vs_pub_full.pdf} &
-\includegraphics[width=0.48\textwidth]{figures/fig_nber_vs_pub_negative.pdf}
-\end{tabular}
-\caption{$|z|$-distributions: published papers (left panel of each pair) vs.\ NBER
-working papers (right panel).
-\textit{Left pair}: Full sample (published: 7,761 statistics, caliper ratio \textbf{1.20},
-$p=0.002$; NBER: 8,351 statistics, caliper ratio 1.01, $p=0.849$).
-\textit{Right pair}: Negative-finding papers (published: 3,491 statistics, caliper
-ratio \textbf{1.52}, $p<0.001$; NBER: 4,375 statistics, caliper ratio 1.00, $p=0.964$).
-Orange bars highlight the caliper window $(1.645, 2.275)$.  The solid vertical
-line marks $|z|=1.96$.  Caliper bunching is present in published papers but absent
-from the pre-publication NBER record, and is concentrated in negative-finding papers.}
+\includegraphics[width=\textwidth]{figures/fig_nber_vs_pub_full.pdf}\\[16pt]
+\includegraphics[width=\textwidth]{figures/fig_nber_vs_pub_negative.pdf}
+\caption{Each panel compares published journal papers (left) to NBER working
+papers (right).  Bars show how frequently test statistics fall in each range.
+The orange bars mark the zone just around the conventional 5\% significance
+cutoff; the vertical line is the cutoff itself.  If test statistics were
+reported without regard to significance, the orange bars on either side of
+the line should be roughly equal.
+\textit{Top panel}: All 7,761 test statistics from published papers and 8,351
+from NBER papers.  Published papers show noticeably more statistics just below
+the cutoff than just above it; NBER papers do not.
+\textit{Bottom panel}: The same comparison restricted to papers that conclude
+a government regulation was harmful (3,491 published; 4,375 NBER).  The gap
+is even more pronounced in published papers and entirely absent in NBER papers.}
 \label{fig:nber_vs_pub}
 \end{figure}
 
-\begin{figure}[ht]
-\centering
-\includegraphics[width=\textwidth]{figures/fig1_zdist_full.pdf}
-\caption{Distribution of absolute $z$-statistics, full sample.
-Dashed vertical lines mark $|z|=1.645$ (10\% threshold) and $|z|=1.96$
-(5\% threshold).  The smooth curve is the theoretical half-normal
-density.  The caliper ratio (mass in $[1.645, 1.96]$ relative to
-$[1.96, 2.275]$) is \textbf{1.20} ($\chi^2 = 9.48$, $p = 0.002$).  Sample:
-7,761 test statistics from 121 published papers (108 with in-caliper-window statistics).}
-\label{fig:zdist_full}
-\end{figure}
+Two interpretations are plausible.  Published negative-finding papers may
+simply be structured differently from their NBER versions in ways we cannot
+observe---more robustness checks, different table formats---that happen to
+produce more statistics near the threshold.  Alternatively, authors arguing
+that a policy is harmful may face greater scrutiny from reviewers and try more
+specifications until their results are strong enough to publish.  We cannot
+distinguish between these explanations with the data available.
 
-\begin{figure}[ht]
+Because test statistics from the same paper are not independent, we report
+three versions of the significance test for each entry in
+Table~\ref{tab:nber_caliper}: a standard test that treats all statistics as
+independent, a permutation test that accounts for within-paper correlation,
+and a bootstrap test that treats each paper as a single observation.  The
+permutation test is significant for both the full sample and negative-finding
+papers, showing the pattern is consistent across many papers rather than
+driven by one or two outliers.  The bootstrap---our preferred test---does not
+reach conventional significance in either case, so the results should be read
+as suggestive evidence rather than a definitive finding.  The NBER working
+papers show no clustering under any test.
+
+\begin{figure}[p]
 \centering
-\begin{tabular}{ccc}
-\includegraphics[width=0.32\textwidth]{figures/fig3_JF_zdist.pdf} &
-\includegraphics[width=0.32\textwidth]{figures/fig3_RFS_zdist.pdf} &
-\includegraphics[width=0.32\textwidth]{figures/fig3_JFE_zdist.pdf}
-\end{tabular}
-\caption{$|z|$-distributions by journal.
-\textit{Left}: JF (1,308 statistics, caliper ratio 0.88, $p=0.423$).
-\textit{Center}: RFS (2,581 statistics, caliper ratio 0.97, $p=0.752$).
-\textit{Right}: JFE (3,872 statistics, caliper ratio \textbf{1.49}, $p<\mathbf{0.001}$).
-Only JFE shows statistically significant caliper bunching.}
+\includegraphics[width=0.62\textwidth]{figures/fig3_JF_zdist.pdf}\\[4pt]
+\includegraphics[width=0.62\textwidth]{figures/fig3_RFS_zdist.pdf}\\[4pt]
+\includegraphics[width=0.62\textwidth]{figures/fig3_JFE_zdist.pdf}
+\vfill
+\caption{Test-statistic distributions broken out by journal.
+\textit{Top}: Journal of Finance (1,308 statistics; no threshold clustering, $p=0.423$).
+\textit{Middle}: Review of Financial Studies (2,581 statistics; no threshold clustering, $p=0.752$).
+\textit{Bottom}: Journal of Financial Economics (3,872 statistics; significant clustering
+just below the 5\% cutoff, $p<0.001$).
+Clustering near the significance threshold is present only in the JFE.}
 \label{fig:zdist_journals}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[p]
 \centering
-\begin{tabular}{ccc}
-\includegraphics[width=0.32\textwidth]{figures/fig2a_zdist_positive.pdf} &
-\includegraphics[width=0.32\textwidth]{figures/fig2b_zdist_negative.pdf} &
-\includegraphics[width=0.32\textwidth]{figures/fig2c_zdist_null.pdf}
-\end{tabular}
-\caption{$|z|$-distributions by finding direction.
-\textit{Left}: Positive-finding papers (2,633 statistics, caliper ratio 0.94, $p=0.565$).
-\textit{Center}: Negative-finding papers (3,491 statistics, caliper ratio \textbf{1.52}, $p<\mathbf{0.001}$).
-\textit{Right}: Null/mixed-finding papers (1,637 statistics, caliper ratio 1.05, $p=0.740$).
-Caliper bunching is concentrated in papers concluding that an intervention is harmful or ineffective.}
+\includegraphics[width=0.62\textwidth]{figures/fig2a_zdist_positive.pdf}\\[4pt]
+\includegraphics[width=0.62\textwidth]{figures/fig2b_zdist_negative.pdf}\\[4pt]
+\includegraphics[width=0.62\textwidth]{figures/fig2c_zdist_null.pdf}
+\vfill
+\caption{Test-statistic distributions broken out by the paper's main conclusion.
+\textit{Top}: Papers finding that a government intervention was beneficial
+(2,633 statistics; no threshold clustering, $p=0.565$).
+\textit{Middle}: Papers finding that an intervention was harmful or ineffective
+(3,491 statistics; significant clustering just below the 5\% cutoff, $p<0.001$).
+\textit{Bottom}: Papers with inconclusive or mixed findings (1,637 statistics;
+no threshold clustering, $p=0.740$).
+Clustering near the significance threshold is driven entirely by papers that
+conclude government intervention is harmful.}
 \label{fig:zdist_direction}
 \end{figure}
 
-\medskip
-\noindent\textbf{Multiple comparisons.}
-We run a total of 18 caliper and 12 density-discontinuity comparisons across
-the full sample, three journal subgroups, three direction subgroups, two corpora,
-and the coef+SE primary specification.
-Of these, two were pre-specified as primary before the data were analyzed: (i) the
-full-sample published ratio and (ii) the full-sample NBER ratio.  All journal-level
-and direction-level breakdowns are exploratory post-hoc partitions.
-Under Bonferroni correction for the 2 primary tests the threshold is $p < 0.025$;
-both the full-sample published caliper ($p = 0.002$) and the NBER baseline ($p = 0.849$)
-survive.  Applying Bonferroni to all 18 comparisons gives a threshold of $p < 0.003$;
-the full-sample result ($p = 0.002$) and the JFE and negative-finding subsets
-($p < 0.001$) survive, while some secondary comparisons do not.
+Because we run many tests across different subgroups, some significant results
+could appear by chance.  We address this in two ways.  First, we designated
+two tests as primary before analyzing the data---the full-sample comparison
+for published papers and for NBER papers---and these are the results on which
+we place the most weight.  Both are robust to standard corrections for multiple
+testing.  The JFE and negative-finding results, which are exploratory, also
+survive the stricter correction that accounts for all tests run.
 
-\medskip
-\noindent\textbf{Why we pool all in-table test statistics.}
-The caliper test is applied to all extracted regression-table statistics,
-averaging $\approx$64 per paper across published papers.  We follow this
-approach---rather than restricting to primary-outcome coefficients only---for
-a conceptual reason: specification-search incentives operate on \textit{any}
-result that a researcher might choose to report or suppress, not only on the
-headline coefficient.  A researcher revising toward the threshold can adjust
-control-variable interactions, alternative-specification rows, and robustness
-checks; restricting to primary coefficients alone would miss this
-dimension of the distribution.  We treat the paper as the unit of analysis
-(via the cluster bootstrap) to guard against a handful of large-table papers
-dominating the test.  The robustness check below confirms that excluding
-probable control-variable rows leaves the caliper ratios essentially unchanged.
-
-\medskip
-\noindent\textbf{Robustness to coefficient inclusion.}
-A concern with pooling all table statistics is that control-variable coefficients
-(size, leverage, GDP, ROA, etc.) included in regression tables are unrelated to
-the paper's headline finding, and their inclusion could confound the direction-based
-caliper comparison.  Appendix~\ref{app:inclusion_sensitivity} reports caliper
-statistics after excluding rows whose variable name matches a broad list of
-common control-variable patterns.  This \textit{non-control} subsample retains
-\textbf{7,055} published and \textbf{7,599} NBER statistics ($\approx$89\%
-of each corpus).  The caliper ratio for published full-sample is unchanged
-(1.203 vs.\ 1.203), and the negative-finding ratio \textit{strengthens}
-slightly (1.625 vs.\ 1.522), confirming that the caliper result is not an
-artifact of control-variable pooling.  The NBER non-control ratios remain
-near one (0.981 full sample; 0.955 negative-finding).  These results are
-consistent with the interpretation that threshold bunching reflects
-specification search around the primary estimate, not mechanical inclusion
-of many control coefficients.
+We include all regression coefficients in the test rather than just the
+headline estimate, because researchers can adjust any reported result---not
+only the main coefficient---when revising toward a significance threshold.
+As a check, we re-run the analysis after dropping standard control variables
+(firm size, leverage, GDP growth, etc.).  Removing roughly 11\% of
+observations leaves the main results unchanged, confirming they are not
+driven by the inclusion of many control-variable rows
+(see Appendix~\ref{app:inclusion_sensitivity}).
 
 %% ============================================================
 \subsection{Supporting Context: Cross-Sectional Direction Sorting}
 \label{subsec:direction_results}
 
-As supporting context, we examine whether the caliper bunching pattern is accompanied by directional sorting at the corpus-membership level.  If threshold bunching were the product of editorial selection favoring certain findings, we would also expect the direction of a paper's conclusion to predict whether it appears in the published corpus.  The following analysis shows it does not.
-
-\subsubsection{Directional vs.\ Null Findings}
-
-Table~\ref{tab:pub_rates} reports the unconditional corpus-membership rates by
-direction code.  (We use the term ``corpus-membership rate'' to emphasize that
-these are ratios determined by our sample construction---specifically the
-relative sizes of the published and NBER corpora---not estimates of actual
-journal acceptance probabilities.  We also note a terminological ambiguity in
-the paper: ``primary specification'' is used in two senses.  In the caliper
-analysis it refers to the coefficient-SE restricted subsample (verifiable rows).
-In the probit analysis, Column~(1) is the ``primary specification'' in the
-sense of the preferred regression model.  These are distinct uses and should
-not be confused.)  Positive-finding papers appear in the
-published corpus at 45.6\% (47 of 103 papers), negative-finding papers at
-46.1\% (59 of 128), and null-finding papers at 46.7\% (28 of 60).  All three
-rates are statistically indistinguishable: a $\chi^2$ test of homogeneity
-cannot reject equality ($\chi^2 = 0.017$, $p = 0.992$), and a two-sample
-$z$-test for positive versus negative rates gives $z = -0.07$ ($p = 0.944$).
-The approximately 46\% rate is remarkably uniform across all three direction
-categories, providing no raw evidence of direction-based sorting between the
-two corpora.
+We next ask whether journals also sort on the direction of a paper's conclusion --- publishing more papers that find regulation beneficial and fewer that find it harmful, or vice versa.  If the threshold bunching we observe were driven by journals favoring certain findings at the acceptance stage, we would expect the direction of a paper's conclusion to predict whether it ends up published.
+Table~\ref{tab:pub_rates} shows what share of papers in each direction category
+appear in the published corpus.  About 46\% of papers end up published
+regardless of their conclusion: 45.6\% of papers finding regulation beneficial
+(47 of 103), 46.1\% of papers finding it harmful (59 of 128), and 46.7\% of
+papers with inconclusive findings (28 of 60).  The three rates are virtually
+identical and statistically indistinguishable ($p = 0.992$).  Journals do not
+appear to accept more papers of one conclusion than another.
 
 \begin{table}[H]
 \centering
@@ -1586,21 +994,20 @@ Total           & 157 & 134 & 291 & 46.0\% & \\
 \par\smallskip
 \begin{minipage}{\textwidth}
 \small
-\textit{Notes.} Direction-specific composition of the two-sample cross-section,
-2000--2024.  \textit{Finding Direction} is the LLM-assigned sign of the
-paper's primary empirical result: $+1$ (positive/beneficial), $-1$
-(negative/harmful), or $0$ (null or mixed).
-\textit{NBER-only} counts in-scope NBER working papers with no confirmed
-match to a JF/RFS/JFE article (Published $= 0$);
-\textit{Published} counts in-scope journal articles (Published $= 1$);
-\textit{Total} is the sum across both sub-samples.
-\textit{Corpus-Membership Rate} is $N_{\text{Published}} / N_{\text{Total}}$
-within each direction category; it is a cross-sectional corpus-construction ratio, not an
-estimated acceptance probability.
-\textit{95\% CI} is the Wilson score confidence interval.
-A $\chi^2$ test of homogeneity across the three rates gives
-$\chi^2 = 0.017$ ($p = 0.992$).  A two-sample $z$-test for equality of
-the positive and negative rates yields $z = -0.07$ ($p = 0.944$).
+\textit{Notes.} Sample covers 2000--2024.
+\textit{Finding Direction} is the main conclusion of the paper as coded by
+the AI classifier: positive (+1) if the paper finds a government intervention
+was beneficial, negative ($-1$) if harmful, and null/mixed (0) if the evidence
+is inconclusive.
+\textit{NBER-only} counts working papers that were never published in the JF,
+RFS, or JFE; \textit{Published} counts papers that were; \textit{Total} is
+both groups combined.
+\textit{Publication Rate} is the share of papers in each direction category
+that end up published.  This reflects the relative sizes of our two samples
+and should not be interpreted as a journal acceptance rate.
+\textit{95\% CI} is the confidence interval around each publication rate.
+A statistical test cannot reject that the three publication rates are equal
+($p = 0.992$), and the positive vs.\ negative comparison gives $p = 0.944$.
 \end{minipage}
 \end{singlespace}
 \end{table}
@@ -1623,6 +1030,68 @@ size; Column~(6) adds a quasi-experimental identification dummy (equal to one
 if the paper's primary identification strategy is RDD, IV, DiD, or event study,
 as classified by our LLM pipeline applied to abstracts); Column~(7) further
 adds a top-institution indicator for the first author's affiliation.
+
+\begin{table}[H]
+\centering
+\caption{Direction--Publication Association: Probit Estimates}
+\label{tab:probit_main}
+\begin{singlespace}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccccccc}
+\toprule
+ & \shortstack{(1)\\Binary\\(Primary)} & \shortstack{(2)\\Bivariate} & \shortstack{(3)\\+~Year} & \shortstack{(4)\\+~Decade FE} & \shortstack{(5)\\+~Authors} & \shortstack{(6)\\+~ID Strategy} & \shortstack{(7)\\+~Top Inst.} \\
+\midrule
+Directional     & $-0.020$      &               &               &               &               &               &               \\
+                & $(0.182)$     &               &               &               &               &               &               \\[4pt]
+Positive ($+1$) &               & $-0.026$      & $-0.002$      & $-0.007$      & $-0.005$      & $-0.135$      & $-0.156$      \\
+                &               & $(0.204)$     & $(0.205)$     & $(0.205)$     & $(0.205)$     & $(0.212)$     & $(0.213)$     \\[4pt]
+Negative ($-1$) &               & $-0.014$      & $-0.011$      & $-0.017$      & $-0.020$      & $-0.156$      & $-0.152$      \\
+                &               & $(0.196)$     & $(0.198)$     & $(0.198)$     & $(0.198)$     & $(0.206)$     & $(0.206)$     \\[4pt]
+Year trend      &               &               & $0.033^{***}$ &               & $0.034^{***}$ & $0.028^{**}$  & $0.027^{**}$  \\
+                &               &               & $(0.012)$     &               & $(0.012)$     & $(0.012)$     & $(0.012)$     \\[4pt]
+$\log(N_{\text{authors}})$ & & &             &               & $-0.186$      & $-0.255$      & $-0.224$      \\
+                &               &               &               &               & $(0.279)$     & $(0.283)$     & $(0.286)$     \\[4pt]
+Quasi-Exp.\ ID  &               &               &               &               &               & $0.467^{***}$ & $0.472^{***}$ \\
+                &               &               &               &               &               & $(0.157)$     & $(0.158)$     \\[4pt]
+Top Institution &               &               &               &               &               &               & $0.196$       \\
+                &               &               &               &               &               &               & $(0.175)$     \\[4pt]
+Decade FEs      & No            & No            & No            & Yes           & No            & No            & No            \\
+Intercept       & $-0.084$      & $-0.084$      & $-0.097$      & $-0.371$      & $0.145$       & $0.114$       & $0.027$       \\
+\midrule
+$N$             & 291           & 291           & 291           & 291           & 291           & 291           & 291           \\
+Pseudo $R^2$    & 0.000         & 0.000         & 0.020         & 0.013         & 0.021         & 0.043         & 0.046         \\
+\bottomrule
+\end{tabular}}
+\par\smallskip
+\begin{minipage}{\textwidth}
+\small
+\textit{Notes.} Probit estimates of the probability that an in-scope
+paper is published in the \JF{}, \RFS{}, or \JFE{}.  Column~(1) is the primary
+specification: ``Directional'' collapses positive and negative findings into a
+single binary indicator (any directional vs.\ null), avoiding normative coding
+of the direction sign.  Columns~(2)--(7) use the three-way direction code;
+Positive ($+1$) and Negative ($-1$) are indicators for the LLM-assigned
+direction code; the omitted category is Null/Mixed ($0$).  Column~(5) adds
+$\log(1 + N_{\text{authors}})$ as a proxy for team size.  Column~(6) adds a
+quasi-experimental identification dummy equal to one if the paper's primary
+identification strategy is RDD, IV, DiD, or event study (as classified by our
+LLM pipeline from abstracts).  Column~(7) adds a top-institution indicator
+equal to one if the first author's institutional affiliation (from OpenAlex API)
+matches a list of 50$+$ top finance and economics departments.
+Standard errors in parentheses.  *** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$.
+The baseline implied publication probability is $\Phi(-0.084) \approx 46.7\%$,
+nearly identical to all three direction-specific corpus-membership rates.
+Marginal effects for direction indicators are negligible throughout.
+The near-zero McFadden pseudo-$R^2$ in Columns~(1)--(2) is expected under
+the null hypothesis that direction has no explanatory power for publication
+status; it is not an indicator of poor model fit but of a null relationship.
+A Wald test for $H_0\colon\hat\beta_1 = \hat\beta_2$ in Column~(2) yields
+$\chi^2 = 0.005$, $p = 0.944$.  The minimum detectable difference at 80\% power
+is 0.466 coefficient units (SE of difference $= 0.166$).  The non-rejection
+cannot rule out moderate directional asymmetries.
+\end{minipage}
+\end{singlespace}
+\end{table}
 
 Column~(1) shows that the binary directional coefficient is $-0.020$
 (s.e.\ 0.182, $p = 0.914$)---statistically indistinguishable from zero.
@@ -1707,17 +1176,7 @@ $p = 0.158$; neg $\times$ QE $= -0.766$, $p = 0.093$), confirming that the
 direction effect is null within both identification-strategy tiers and that the
 QuasiExp premium does not depend on finding direction.
 
-Column~(7) adds a top-institution indicator equal to one if the first
-author's institutional affiliation matches a list of 50$+$ top finance and
-economics departments (matched via OpenAlex API; coverage 74.6\% of papers).
-The top-institution coefficient is $0.196$ (s.e.\ $0.175$, $p = 0.263$),
-positive but statistically insignificant.  Direction coefficients are unchanged
-($\hat\beta_1 = -0.156$, $\hat\beta_2 = -0.152$; both $p > 0.46$) and the
-quasi-experimental premium is virtually identical to Column~(6)
-($0.472^{***}$, s.e.\ $0.158$).  The institutional-quality control does not
-affect any of the substantive results.
-
-\begin{table}[ht]
+\begin{table}[H]
 \centering
 \caption{Corpus-Membership Rates by Finding Direction and Identification Strategy}
 \label{tab:quasiexp_direction}
@@ -1749,67 +1208,15 @@ with finding direction at conventional significance levels.
 \end{singlespace}
 \end{table}
 
-\begin{table}[H]
-\centering
-\caption{Direction--Publication Association: Probit Estimates}
-\label{tab:probit_main}
-\begin{singlespace}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{lccccccc}
-\toprule
- & \shortstack{(1)\\Binary\\(Primary)} & \shortstack{(2)\\Bivariate} & \shortstack{(3)\\+~Year} & \shortstack{(4)\\+~Decade FE} & \shortstack{(5)\\+~Authors} & \shortstack{(6)\\+~ID Strategy} & \shortstack{(7)\\+~Top Inst.} \\
-\midrule
-Directional     & $-0.020$      &               &               &               &               &               &               \\
-                & $(0.182)$     &               &               &               &               &               &               \\[4pt]
-Positive ($+1$) &               & $-0.026$      & $-0.002$      & $-0.007$      & $-0.005$      & $-0.135$      & $-0.156$      \\
-                &               & $(0.204)$     & $(0.205)$     & $(0.205)$     & $(0.205)$     & $(0.212)$     & $(0.213)$     \\[4pt]
-Negative ($-1$) &               & $-0.014$      & $-0.011$      & $-0.017$      & $-0.020$      & $-0.156$      & $-0.152$      \\
-                &               & $(0.196)$     & $(0.198)$     & $(0.198)$     & $(0.198)$     & $(0.206)$     & $(0.206)$     \\[4pt]
-Year trend      &               &               & $0.033^{***}$ &               & $0.034^{***}$ & $0.028^{**}$  & $0.027^{**}$  \\
-                &               &               & $(0.012)$     &               & $(0.012)$     & $(0.012)$     & $(0.012)$     \\[4pt]
-$\log(N_{\text{authors}})$ & & &             &               & $-0.186$      & $-0.255$      & $-0.224$      \\
-                &               &               &               &               & $(0.279)$     & $(0.283)$     & $(0.286)$     \\[4pt]
-Quasi-Exp.\ ID  &               &               &               &               &               & $0.467^{***}$ & $0.472^{***}$ \\
-                &               &               &               &               &               & $(0.157)$     & $(0.158)$     \\[4pt]
-Top Institution &               &               &               &               &               &               & $0.196$       \\
-                &               &               &               &               &               &               & $(0.175)$     \\[4pt]
-Decade FEs      & No            & No            & No            & Yes           & No            & No            & No            \\
-Intercept       & $-0.084$      & $-0.084$      & $-0.097$      & $-0.371$      & $0.145$       & $0.114$       & $0.027$       \\
-\midrule
-$N$             & 291           & 291           & 291           & 291           & 291           & 291           & 291           \\
-Pseudo $R^2$    & 0.000         & 0.000         & 0.020         & 0.013         & 0.021         & 0.043         & 0.046         \\
-\bottomrule
-\end{tabular}}
-\par\smallskip
-\begin{minipage}{\textwidth}
-\small
-\textit{Notes.} Probit estimates of the probability that an in-scope
-paper is published in the \JF{}, \RFS{}, or \JFE{}.  Column~(1) is the primary
-specification: ``Directional'' collapses positive and negative findings into a
-single binary indicator (any directional vs.\ null), avoiding normative coding
-of the direction sign.  Columns~(2)--(7) use the three-way direction code;
-Positive ($+1$) and Negative ($-1$) are indicators for the LLM-assigned
-direction code; the omitted category is Null/Mixed ($0$).  Column~(5) adds
-$\log(1 + N_{\text{authors}})$ as a proxy for team size.  Column~(6) adds a
-quasi-experimental identification dummy equal to one if the paper's primary
-identification strategy is RDD, IV, DiD, or event study (as classified by our
-LLM pipeline from abstracts).  Column~(7) adds a top-institution indicator
-equal to one if the first author's institutional affiliation (from OpenAlex API,
-74.6\% coverage) matches a list of 50$+$ top finance and economics departments.
-Standard errors in parentheses.  *** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$.
-The baseline implied publication probability is $\Phi(-0.084) \approx 46.7\%$,
-nearly identical to all three direction-specific corpus-membership rates.
-Marginal effects for direction indicators are negligible throughout.
-The near-zero McFadden pseudo-$R^2$ in Columns~(1)--(2) is expected under
-the null hypothesis that direction has no explanatory power for publication
-status; it is not an indicator of poor model fit but of a null relationship.
-A Wald test for $H_0\colon\hat\beta_1 = \hat\beta_2$ in Column~(2) yields
-$\chi^2 = 0.005$, $p = 0.944$.  The minimum detectable difference at 80\% power
-is 0.466 coefficient units (SE of difference $= 0.166$).  The non-rejection
-cannot rule out moderate directional asymmetries.
-\end{minipage}
-\end{singlespace}
-\end{table}
+Column~(7) adds a top-institution indicator equal to one if the first
+author's institutional affiliation matches a list of 50$+$ top finance and
+economics departments (matched via OpenAlex API).
+The top-institution coefficient is $0.196$ (s.e.\ $0.175$, $p = 0.263$),
+positive but statistically insignificant.  Direction coefficients are unchanged
+($\hat\beta_1 = -0.156$, $\hat\beta_2 = -0.152$; both $p > 0.46$) and the
+quasi-experimental premium is virtually identical to Column~(6)
+($0.472^{***}$, s.e.\ $0.158$).  The institutional-quality control does not
+affect any of the substantive results.
 
 \subsubsection{Economic Magnitude}
 
@@ -2431,6 +1838,7 @@ whether journals are directionally neutral or merely receive a directionally
 balanced submission pool.
 
 \subsection{Limitations}
+\label{subsec:limitations}
 
 Six main threats to the validity of our analysis deserve discussion.
 

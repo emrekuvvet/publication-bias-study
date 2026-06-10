@@ -85,11 +85,12 @@ def plot_zdist(z_abs, title, filename, threshold=1.96):
     ax.axvspan(1.96,  2.275, alpha=0.1, color='red',   label='Caliper window (above)')
 
     textstr = (f'Caliper ratio: {ratio:.2f}\n'
-               f'χ²={chi2:.2f}, p={p:.3f}\n'
-               f'Disc. p={p_disc:.3f}' if ratio else '')
-    ax.text(0.98, 0.97, textstr, transform=ax.transAxes,
-            fontsize=11, verticalalignment='top', horizontalalignment='right',
-            bbox=dict(boxstyle='round', facecolor='white', alpha=0.8))
+               f'Caliper p={p:.3f}\n'
+               f'Discontinuity p={p_disc:.3f}' if ratio else '')
+    ax.text(0.02, 0.97, textstr, transform=ax.transAxes,
+            fontsize=13, verticalalignment='top', horizontalalignment='left',
+            bbox=dict(boxstyle='round', facecolor='white', alpha=0.9,
+                      edgecolor='gray', linewidth=1))
 
     ax.set_xlabel('|z| statistic', fontsize=14)
     ax.set_ylabel('Density', fontsize=14)
