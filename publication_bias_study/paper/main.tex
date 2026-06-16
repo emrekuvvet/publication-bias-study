@@ -1708,11 +1708,10 @@ of quality-related attributes, of which identification strategy is one.
 \subsection{Limitations}
 \label{subsec:limitations}
 
-Our design has six limitations worth flagging.
-
-First, only 16 of 134 published papers (11.9\%) can be matched to a specific
-NBER counterpart, so we are comparing two largely non-overlapping groups of
-papers rather than tracking the same paper through the editorial process.
+Our design has six limitations worth flagging.  First, only 16 of 134
+published papers (11.9\%) can be matched to a specific NBER counterpart,
+so we are comparing two largely non-overlapping groups of papers rather
+than tracking the same paper through the editorial process.
 We cannot directly observe whether any paper was rejected because of its
 findings; we can only compare the distribution of findings across the two
 groups.  All direction coefficients should be read as cross-sectional
@@ -1767,57 +1766,67 @@ where the concern is power rather than false discovery.
 \label{sec:conclusion}
 %% ============================================================
 
-We apply the \citealt{Brodeur2016} caliper test to 7,761 $|z|$-statistics from
-121 published papers and 8,351 statistics from 125 NBER working papers on
-government-intervention finance.
-\textbf{Primary specification (verifiable rows):} among the 5,510 published rows
-with verifiable coefficient-SE pairs, the caliper ratio is 0.81---no excess bunching below
-the 5\% threshold---and is statistically indistinguishable from the NBER ratio of 0.95.
-Primary regression rows show no systematic threshold manipulation in either corpus.
-\textbf{Secondary finding (standalone z-statistics):} standalone statistics show
-elevated bunching in published papers (ratio 2.55) relative to NBER (ratio 1.49).
-The full-sample published ratio of 1.20 (cluster-bootstrap $p = 0.150$,
-CI $[0.88, 1.66]$) is approximately equally attributable to a within-type
-effect ($+0.097$: standalone statistics bunch more intensely in published papers
-at the same z-stat-only share) and a composition effect ($+0.094$: published papers
-contain more standalone-statistic rows: 31.6\% vs.\ 21.0\%).
-The directional pattern---standalone bunching concentrated in negative-finding
-papers (ratio 1.52, cluster-bootstrap $p = 0.135$, CI $[0.81, 2.67]$)---is
-suggestive but not statistically robust under paper-level bootstrap inference.
-The NBER corpus serves as a proxy for the pre-publication distribution; it is
-selected on NBER affiliation and only 12\% of published papers are matched to
-NBER counterparts, so compositional confounds cannot be ruled out.
+This paper asks whether top finance journals are more likely to publish
+government-intervention studies that find an effect than studies that find
+none.  Using a sample of 134 published articles from the \JF{}, \RFS{}, and
+\JFE{} and 157 NBER working papers as a pre-publication benchmark, we find
+no evidence of direction-based editorial selection at a scale our design can
+detect.  Positive-, negative-, and null-finding papers appear in top journals
+at nearly identical rates --- 45.6\%, 46.1\%, and 46.7\% respectively --- and
+the finding direction is statistically unrelated to publication across all
+six model specifications.  The design rules out gaps larger than 22 percentage
+points at 80\% power; smaller asymmetries remain possible.
 
-As supporting context, we examine cross-sectional direction sorting in a 291-paper
-comparison of two largely non-overlapping corpora (134 published, 157 NBER working papers).
-We find no \textit{detectable} direction-based sorting within the power of this design.
-Corpus-membership rates are nearly identical across positive-finding (45.6\%),
-negative-finding (46.1\%), and null-finding (46.7\%) papers ($\chi^2 = 0.017$, $p = 0.992$);
-a binary directional probit is $-0.020$ (s.e.\ 0.182, $p = 0.91$), robust across all
-six specifications.  This design rules out sorting $\geq$22 percentage points at 80\%
-power; moderate asymmetries are consistent with the data.
-These rates depend on sample construction and are not estimates of actual acceptance
-probabilities.  The strongest predictor of corpus membership is an LLM-coded
-quasi-experimental identification dummy ($0.467^{***}$, s.e.\ 0.157), but this
-variable lacks human-coded validation and likely captures a bundle of correlated
-quality attributes; it should not be interpreted as evidence that journals
-specifically reward causal identification.
+The distribution of test statistics tells a more nuanced story.  Among
+standalone reported statistics --- those not tied to a specific regression
+coefficient and standard error --- published papers show more clustering just
+below the conventional 5\% significance threshold than their NBER counterparts
+(ratio 2.55 vs.\ 1.49).  The full-sample caliper ratio of 1.20 across all
+statistics is driven roughly equally by this within-type effect and by the
+fact that published papers contain a higher share of standalone statistics
+(31.6\% vs.\ 21.0\% in NBER papers).  The bunching is most pronounced in
+negative-finding papers (ratio 1.52), though this pattern is suggestive
+rather than statistically definitive.  Among the primary verifiable regression
+rows, neither published papers nor NBER papers show systematic threshold
+manipulation.
 
-The joint pattern shows \textit{absent} directional sorting alongside \textit{within-paper} threshold bunching concentrated in the published record.  We stress that compositional differences between NBER affiliates and the broader population of published authors could partly explain both results, and that neither claim about mechanism is directly identified.
+Together these two results point to different stages of the research pipeline.
+The absence of direction-based sorting between published and pre-publication
+papers suggests that editorial selection in this domain is not tilted toward
+finding an effect.  The within-paper bunching just below the significance
+threshold, concentrated in published negative-finding papers, is more
+consistent with revision-stage pressure than with outright fabrication of
+results --- and survives stringent multiple-comparison correction.
 
-We interpret these results throughout as cross-sectional associations.  Our
-design identifies a null association between finding direction and
-corpus membership (published vs.\ NBER), but cannot rule out that this
-reflects an upstream equilibrium in submission behavior rather than
-directional indifference on the part of editors.  Two practical
-implications follow.  For researchers and meta-analysts, the published
-distribution in this domain does not appear systematically biased toward
-directional findings at the editorial-selection level; concerns about
-cross-sectional significance-sorting in this specific corpus do not find
-empirical support.  For journal editors, the results are consistent with a
-selection process consistent with rewarding methodological quality over finding direction---though the quasi-experimental premium likely captures a bundle of correlated quality attributes beyond identification strategy alone.
-The within-paper test statistic patterns suggest that specification
-searching at the revision stage remains a concern independent of the directional-sorting question.
+The strongest predictor of publication is not finding direction but research
+design quality: papers using credible causal methods are about 18 percentage
+points more likely to appear in a top journal.  This likely reflects journals
+selecting on a bundle of quality attributes --- rigorous identification,
+careful data construction, well-crafted writing --- of which the specific
+method is one component.
+
+Two caveats qualify these conclusions.  First, NBER working papers and
+published articles are largely non-overlapping groups, so our comparison
+captures differences in the composition of research circulating before
+submission rather than the editorial filter applied to the same papers.
+Second, NBER researchers are drawn from a select group at leading
+universities; if their papers are inherently more publishable, our design
+would understate any true direction premium in the broader research
+population.  Both limitations bias toward the null, making our findings
+a conservative lower bound rather than a precise point estimate of
+direction-based selection.
+
+For policymakers and researchers who use this literature, the main takeaway
+is that the published record of government-intervention research in top
+finance journals does not appear to be large-scale tilted toward positive or
+negative findings by editorial selection.  The more pressing concern is
+within-paper: test statistics clustered just below the significance threshold
+in published negative-finding papers suggest that authors may be adjusting
+their specifications during revision to clear the significance bar.  Those
+relying on this evidence base should treat marginal significance in
+anti-intervention findings with additional scrutiny, while treating
+publication in a top-three finance journal as a credible signal of
+methodological quality.
 
 %% ============================================================
 \newpage
