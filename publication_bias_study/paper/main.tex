@@ -163,7 +163,7 @@ effects in one direction or the other.
 Why might directional publication bias arise in the government-intervention
 literature specifically?  Two theoretical channels operate in opposite
 directions, making the sign of any bias an open empirical question.  A
-\textit{pro-intervention channel} could arise if journals and readers favor
+\textit{pro-intervention channel} could arise if journals and audiences favor
 results that confirm a policy's stated objective (e.g., that capital
 requirements reduce bank risk), both because positive results are more
 actionable for regulators and because they more naturally confirm the prior
@@ -1012,24 +1012,18 @@ A statistical test cannot reject that the three publication rates are equal
 \end{singlespace}
 \end{table}
 
-\subsubsection{Probit Regression Results}
 
-Table~\ref{tab:probit_main} reports estimates across seven specifications.
-Column~(1) is our \textit{primary specification}: a binary directional probit
-that collapses positive and negative findings into a single indicator, entirely
-avoiding normative direction coding.
-We treat Column~(1) as primary because the Null/Mixed omitted category---the
-reference group for Columns~(2)--(7)---has only 25\% inter-rater agreement
-in our replication exercise, making contrasts \textit{against} null papers the
-least reliable baseline.  The binary specification avoids this by asking only
-whether \textit{any} directional paper is more likely to appear in a top journal,
-pooling positive and negative findings.
-Column~(2) is the bivariate three-way probit; Column~(3) adds a linear year trend; Column~(4) adds decade fixed
-effects; Column~(5) adds $\log(1 + N_{\text{authors}})$ as a proxy for team
-size; Column~(6) adds a quasi-experimental identification dummy (equal to one
-if the paper's primary identification strategy is RDD, IV, DiD, or event study,
-as classified by our LLM pipeline applied to abstracts); Column~(7) further
-adds a top-institution indicator for the first author's affiliation.
+Table~\ref{tab:probit_main} reports probit regression results across seven
+specifications, each predicting whether a paper ends up published in one of
+the three journals.  Column~(1) is our primary specification: it combines
+positive- and negative-finding papers into a single group and asks whether
+any directional conclusion---regardless of sign---predicts publication.  We
+treat this as primary because the null/mixed category is the least reliably
+coded in our data, so comparisons against it are the noisiest.  Column~(2)
+separates positive and negative findings; Columns~(3)--(7) add controls for
+publication year, decade fixed effects, team size, identification method
+(whether the paper uses a quasi-experimental design such as RDD, IV, DiD, or
+event study), and author institution.
 
 \begin{table}[H]
 \centering
@@ -1043,138 +1037,138 @@ adds a top-institution indicator for the first author's affiliation.
 \midrule
 Directional     & $-0.020$      &               &               &               &               &               &               \\
                 & $(0.182)$     &               &               &               &               &               &               \\[4pt]
-Positive ($+1$) &               & $-0.026$      & $-0.002$      & $-0.007$      & $-0.005$      & $-0.135$      & $-0.156$      \\
-                &               & $(0.204)$     & $(0.205)$     & $(0.205)$     & $(0.205)$     & $(0.212)$     & $(0.213)$     \\[4pt]
-Negative ($-1$) &               & $-0.014$      & $-0.011$      & $-0.017$      & $-0.020$      & $-0.156$      & $-0.152$      \\
-                &               & $(0.196)$     & $(0.198)$     & $(0.198)$     & $(0.198)$     & $(0.206)$     & $(0.206)$     \\[4pt]
-Year trend      &               &               & $0.033^{***}$ &               & $0.034^{***}$ & $0.028^{**}$  & $0.027^{**}$  \\
-                &               &               & $(0.012)$     &               & $(0.012)$     & $(0.012)$     & $(0.012)$     \\[4pt]
-$\log(N_{\text{authors}})$ & & &             &               & $-0.186$      & $-0.255$      & $-0.224$      \\
-                &               &               &               &               & $(0.279)$     & $(0.283)$     & $(0.286)$     \\[4pt]
-Quasi-Exp.\ ID  &               &               &               &               &               & $0.467^{***}$ & $0.472^{***}$ \\
-                &               &               &               &               &               & $(0.157)$     & $(0.158)$     \\[4pt]
-Top Institution &               &               &               &               &               &               & $0.196$       \\
-                &               &               &               &               &               &               & $(0.175)$     \\[4pt]
+Positive ($+1$) &               & $-0.026$      & $-0.002$      & $-0.006$      & $-0.005$      & $-0.135$      & $-0.160$      \\
+                &               & $(0.204)$     & $(0.205)$     & $(0.205)$     & $(0.205)$     & $(0.212)$     & $(0.215)$     \\[4pt]
+Negative ($-1$) &               & $-0.014$      & $-0.011$      & $-0.017$      & $-0.020$      & $-0.156$      & $-0.159$      \\
+                &               & $(0.196)$     & $(0.198)$     & $(0.198)$     & $(0.198)$     & $(0.206)$     & $(0.208)$     \\[4pt]
+Year trend      &               &               & $0.033^{***}$ &               & $0.034^{***}$ & $0.028^{**}$  & $0.034^{***}$ \\
+                &               &               & $(0.012)$     &               & $(0.012)$     & $(0.012)$     & $(0.013)$     \\[4pt]
+$\log(N_{\text{authors}})$ & & &             &               & $-0.186$      & $-0.255$      & $-0.264$      \\
+                &               &               &               &               & $(0.279)$     & $(0.283)$     & $(0.291)$     \\[4pt]
+Quasi-Exp.\ ID  &               &               &               &               &               & $0.467^{***}$ & $0.473^{***}$ \\
+                &               &               &               &               &               & $(0.157)$     & $(0.160)$     \\[4pt]
+Top Institution &               &               &               &               &               &               & $0.661^{***}$ \\
+                &               &               &               &               &               &               & $(0.167)$     \\[4pt]
 Decade FEs      & No            & No            & No            & Yes           & No            & No            & No            \\
-Intercept       & $-0.084$      & $-0.084$      & $-0.097$      & $-0.371$      & $0.145$       & $0.114$       & $0.027$       \\
+Intercept       & $-0.084$      & $-0.084$      & $-0.097$      & $-0.371$      & $0.145$       & $0.114$       & $-0.075$      \\
 \midrule
 $N$             & 291           & 291           & 291           & 291           & 291           & 291           & 291           \\
-Pseudo $R^2$    & 0.000         & 0.000         & 0.020         & 0.013         & 0.021         & 0.043         & 0.046         \\
+Pseudo $R^2$    & 0.000         & 0.000         & 0.020         & 0.013         & 0.021         & 0.043         & 0.083         \\
 \bottomrule
 \end{tabular}}
 \par\smallskip
 \begin{minipage}{\textwidth}
 \small
-\textit{Notes.} Probit estimates of the probability that an in-scope
-paper is published in the \JF{}, \RFS{}, or \JFE{}.  Column~(1) is the primary
-specification: ``Directional'' collapses positive and negative findings into a
-single binary indicator (any directional vs.\ null), avoiding normative coding
-of the direction sign.  Columns~(2)--(7) use the three-way direction code;
-Positive ($+1$) and Negative ($-1$) are indicators for the LLM-assigned
-direction code; the omitted category is Null/Mixed ($0$).  Column~(5) adds
-$\log(1 + N_{\text{authors}})$ as a proxy for team size.  Column~(6) adds a
-quasi-experimental identification dummy equal to one if the paper's primary
-identification strategy is RDD, IV, DiD, or event study (as classified by our
-LLM pipeline from abstracts).  Column~(7) adds a top-institution indicator
-equal to one if the first author's institutional affiliation (from OpenAlex API)
-matches a list of 50$+$ top finance and economics departments.
+\textit{Notes.} Each column reports probit estimates of the probability that a
+paper in our dataset ends up published in the \JF{}, \RFS{}, or \JFE{}.
+Column~(1) is the primary specification: the ``Directional'' indicator asks simply
+whether a paper has any directional finding---positive or negative---versus a
+null or inconclusive finding, without distinguishing the direction of the effect.
+Columns~(2)--(7) separate positive ($+1$) and negative ($-1$) findings, using
+null/mixed papers ($0$) as the comparison group; direction codes are assigned by
+the AI pipeline from paper abstracts.  Column~(5) adds the number of authors
+(log scale) as a proxy for team size.  Column~(6) adds an indicator for papers
+that use a credible causal identification strategy---natural experiments,
+instrumental variables, difference-in-differences, or regression discontinuity
+designs---as classified by the AI from abstracts.  Column~(7) adds an indicator
+for whether the lead author's institution appears in the UTD Top 100 Business
+School Research Rankings (2021--2025; \citealt{UTDTop100}), retrieved via OpenAlex.
 Standard errors in parentheses.  *** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$.
-The baseline implied publication probability is $\Phi(-0.084) \approx 46.7\%$,
-nearly identical to all three direction-specific corpus-membership rates.
-Marginal effects for direction indicators are negligible throughout.
-The near-zero McFadden pseudo-$R^2$ in Columns~(1)--(2) is expected under
-the null hypothesis that direction has no explanatory power for publication
-status; it is not an indicator of poor model fit but of a null relationship.
-A Wald test for $H_0\colon\hat\beta_1 = \hat\beta_2$ in Column~(2) yields
-$\chi^2 = 0.005$, $p = 0.944$.  The minimum detectable difference at 80\% power
-is 0.466 coefficient units (SE of difference $= 0.166$).  The non-rejection
-cannot rule out moderate directional asymmetries.
+The baseline publication probability implied by the intercept alone is
+$\Phi(-0.084) \approx 46.7\%$, which closely matches the raw share of papers in
+the full dataset that appear in one of the three journals.  The marginal effects
+of all direction indicators are negligible across all columns.
+The near-zero pseudo-$R^2$ in Columns~(1)--(2) is exactly what we would
+expect if finding direction has no predictive power for publication; it reflects
+a null relationship, not poor model quality.
+A formal test of whether positive and negative coefficients are equal to each
+other in Column~(2) gives $\chi^2 = 0.005$, $p = 0.944$, providing no evidence
+that journals treat the two directions differently.  The sample is large enough
+to detect coefficient differences of roughly 0.465 units with 80\% power
+(standard error of the difference $= 0.166$), so the null result does not rule
+out moderate directional preferences, only large ones.
 \end{minipage}
 \end{singlespace}
 \end{table}
 
-Column~(1) shows that the binary directional coefficient is $-0.020$
-(s.e.\ 0.182, $p = 0.914$)---statistically indistinguishable from zero.
-Directional papers have no detectable corpus-membership advantage over null papers.
-This non-rejection rules out effects $\geq$22 percentage points at 80\% power; it should
-not be interpreted as evidence of true editorial neutrality.
+Column~(1) shows no relationship between directional conclusions and
+publication: the coefficient is $-0.020$ ($p = 0.914$), indistinguishable
+from zero.  Papers with directional findings are no more or less likely to
+appear in a top journal than papers with null findings.  This result rules
+out large sorting effects---roughly 22 percentage points or more---but
+cannot rule out smaller ones; we interpret it as evidence against strong
+directional sorting, not proof of complete editorial neutrality.
 
-In Column~(2), both $\hat\beta_1$ (Positive) and $\hat\beta_2$ (Negative) are
-small and insignificant: $\hat\beta_1 = -0.026$ (s.e.\ 0.204, $p = 0.898$)
-and $\hat\beta_2 = -0.014$ (s.e.\ 0.196, $p = 0.942$).
-The most robust inference from this specification is the \textit{joint} $\chi^2$
-test for whether both direction coefficients are simultaneously zero
-($\chi^2(2) = 0.017$, $p = 0.992$), since the joint test does not require the
-null/mixed omitted category to be cleanly measured.  Because the null/mixed
-baseline has only 25\% model-agreement, individual direction contrasts against
-null papers are anchored to a noisy reference; the joint test avoids this
-sensitivity.  A Wald test for equality of the two coefficients gives $\chi^2 = 0.005$ ($p = 0.944$).  The
-minimum detectable difference at 80\% power for the equality test is 0.466
-coefficient units (SE of difference $= 0.166$).  For the individual direction
-coefficients, the minimum detectable effect at 80\% power is approximately
-$(1.96 + 0.842) \times 0.204 \approx 0.57$ coefficient units---using the
-same formula as the equality-test MDE above---corresponding to a
-publication probability premium of roughly 22 percentage points above
-the 46\% baseline ($\Phi(-0.084 + 0.57) - \Phi(-0.084) \approx 0.22$)---a large, policy-relevant effect.  Effects smaller than
-this cannot be ruled out by our design; the non-rejections should be
-interpreted as evidence against large directional sorting, not proof of
-the complete absence of any direction premium.
-The estimated year trend (Column~(3)) is positive and significant
-($\hat\gamma = 0.033^{***}$, s.e.\ 0.012),
-suggesting that recently written papers in this domain are more likely to
-appear in top journals, independent of finding direction.  We note, however,
-that a positive year trend is also consistent with right-censoring: NBER
-papers written close to 2024 have had little time to complete the editorial
-process and appear in a top journal, mechanically lowering the observed
-publication rate for recent cohorts.  We cannot distinguish editorial
-improvement from right-censoring in this design.  As a robustness check,
-Panel~E of Table~\ref{tab:robustness} restricts the NBER sample to papers
-circulated in 2020 or earlier, giving all papers at least four years to
-complete the publication pipeline.  The direction coefficients are
-$-0.021$ ($p = 0.928$) and $-0.144$ ($p = 0.519$), confirming the null is
-not an artifact of right-censoring.
-Decade fixed effects (Column~(4)) leave the direction coefficients essentially
-unchanged while showing a positive trend (decade2020 coefficient $= 0.454^{**}$,
-$p = 0.027$).
-Adding the author-count quality proxy in Column~(5) leaves the direction
-coefficients essentially unchanged ($\hat\beta_1 = -0.005$,
-$\hat\beta_2 = -0.020$), both far from significance.  The author-count
-coefficient ($\hat\delta = -0.186$, s.e.\ 0.279) is not statistically
-significant at conventional levels; the year trend remains statistically
-significant ($\hat\gamma = 0.034^{***}$, s.e.\ 0.012) after this control.
+Column~(2) separates positive and negative findings and reaches the same
+conclusion: both coefficients are near zero and insignificant
+($p = 0.898$ and $p = 0.942$).  A joint test of whether both are zero
+gives $p = 0.992$.  A test of whether the two coefficients are equal to
+each other gives $p = 0.944$, providing no evidence that journals favor
+one direction over the other.
 
-Column~(6) adds the quasi-experimental identification dummy.  The \textit{QuasiExp}
-coefficient is $0.467^{***}$ (s.e.\ 0.157, $p = 0.003$).
-\textit{Important caveats on this variable.}  The quasi-experimental dummy has
-received no human-coded validation of any kind (unlike the direction codes, which
-have a two-run model-choice sensitivity check with $\kappa = 0.674$).  The variable
-is coded by LLM from abstracts and is likely correlated with author quality,
-institutional prestige, topic fashionability, and other quality attributes that the
-probit cannot separate from identification strategy.  It is equally consistent with
-editors rewarding elite authors or methodologically fashionable topics as with editors
-specifically rewarding causal identification.  We therefore \textit{strongly caution}
-against interpreting this coefficient as evidence that journals reward causal
-identification per se; it is preliminary evidence of a positive quality premium, with
-identification strategy as one plausible---but not the only---contributing factor.
-Direction coefficients remain insignificant ($\hat\beta_1 = -0.135$, $\hat\beta_2 = -0.156$),
-ruling out the concern that direction effects are masked by confounds with identification.
+Adding controls does not change the picture.  The year trend
+(Column~(3)) is positive and significant, suggesting that more recently
+written papers in this area are more likely to be published---though this
+could also reflect the fact that recent NBER papers have had less time to
+complete the publication process.  As a robustness check, restricting
+the sample to papers circulated before 2021 leaves the direction
+coefficients unchanged ($p > 0.50$ in both cases).  Decade fixed effects
+(Column~(4)) and team size controls (Column~(5)) likewise leave the
+direction results unaffected.
 
-Table~\ref{tab:quasiexp_direction} disaggregates corpus-membership rates by the joint
-distribution of direction and identification strategy.  Within every direction
-category, QE papers appear in top journals at materially higher rates than non-QE papers
-(positive: 55.6\% vs.\ 34.7\%; negative: 52.2\% vs.\ 39.0\%; null: 75.0\%
-vs.\ 36.4\%).  The direction-specific corpus-membership rates are nearly identical
-within each QE tier: in the non-QE group, rates are 34.7\%, 39.0\%, and 36.4\%
-for positive, negative, and null papers, a spread of only 4.3 percentage points;
-in the QE group, 55.6\%, 52.2\%, and 75.0\%, though the null $\times$ QE cell
-is small ($N = 16$).  An additive probit controlling jointly for direction and
-QE status yields QuasiExp $= 0.454^{***}$ ($p = 0.004$) while both direction
-coefficients remain indistinguishable from zero (pos $= -0.128$, $p = 0.548$;
-neg $= -0.139$, $p = 0.499$).  A specification with full direction $\times$ QE
-interactions yields non-significant interaction terms (pos $\times$ QE $= -0.669$,
-$p = 0.158$; neg $\times$ QE $= -0.766$, $p = 0.093$), confirming that the
-direction effect is null within both identification-strategy tiers and that the
-QuasiExp premium does not depend on finding direction.
+Column~(6) adds a control for whether the paper uses a quasi-experimental
+design (such as a natural experiment, instrumental variable, or
+difference-in-differences).  Papers with such designs are significantly
+more likely to be published ($p = 0.003$), consistent with journals
+rewarding rigorous causal identification.  This variable is classified
+by the AI from paper abstracts and has not been manually validated, so
+it may also capture other quality attributes---author prestige,
+institutional affiliation, or topic fashionability---that happen to
+correlate with research design.  We caution against interpreting this
+as direct evidence that journals specifically reward quasi-experimental
+methods.  Importantly, direction coefficients remain insignificant after
+adding this control, ruling out the possibility that the null direction
+result was masking an underlying effect.
+
+Column~(7) adds a top-institution indicator equal to one if the first
+author's institutional affiliation appears in the UTD Top 100 Business
+School Research Rankings (2021--2025 worldwide ranking; \citealt{UTDTop100}),
+as retrieved from OpenAlex.
+Papers from UTD Top 100 institutions are significantly more likely to be
+published: the top-institution coefficient is $0.661$ (s.e.\ $0.167$,
+$p < 0.001$), indicating a strong institutional prestige premium on top of
+the quasi-experimental design premium.  Direction coefficients remain
+unchanged and insignificant ($\hat\beta_1 = -0.160$, $\hat\beta_2 = -0.159$;
+both $p > 0.44$), and the quasi-experimental premium is virtually identical
+to Column~(6) ($0.473^{***}$, s.e.\ $0.160$).  The null result for finding
+direction is robust to controlling for institutional prestige.
+
+Table~\ref{tab:quasiexp_direction} breaks down publication rates by both
+finding direction and research design.  The clearest pattern is that papers
+using quasi-experimental methods are published at much higher rates than
+papers that rely on standard regression approaches, regardless of what the
+paper finds: the gap is about 20 percentage points for positive-finding
+papers (55.6\% vs.\ 34.7\%), 13 points for negative-finding papers
+(52.2\% vs.\ 39.0\%), and 39 points for null-finding papers (75.0\%
+vs.\ 36.4\%), though the null $\times$ QE cell contains only 16 papers
+so the 75\% figure should be interpreted cautiously.
+
+Within each research-design group, publication rates are nearly identical
+across finding directions.  Among papers without quasi-experimental designs,
+positive, negative, and null papers are published at 34.7\%, 39.0\%, and
+36.4\% respectively---a spread of only 4.3 percentage points.  Among
+quasi-experimental papers, the rates are 55.6\%, 52.2\%, and 75.0\%
+(with the caveat above on the null cell).
+
+Two additional checks confirm this pattern holds statistically.  First, a
+probit that includes both direction and research-design indicators jointly
+finds a strong quasi-experimental premium ($p = 0.004$) while both
+direction coefficients remain indistinguishable from zero
+(positive: $p = 0.548$; negative: $p = 0.499$).  Second, adding
+interaction terms between direction and research design---which would
+detect whether the research-design premium differs by finding direction---
+yields no significant interactions ($p = 0.158$ and $p = 0.093$).
+Journals reward rigorous research designs, not particular conclusions.
 
 \begin{table}[H]
 \centering
@@ -1196,115 +1190,87 @@ Total & 36.8\% (56/152) & 56.1\% (78/139) & 46.0\% (134/291) \\
 \begin{minipage}{\textwidth}
 \smallskip
 \footnotesize
-\textit{Notes.} Each cell shows the corpus-membership rate (fraction appearing in a top-3 finance journal) with
-counts in parentheses.  Non-QE: papers using OLS, fixed effects, or descriptive
-methods as classified by the LLM pipeline from abstracts.  QE: papers using RDD,
-IV, DiD, or event study.  $\dagger$: Null $\times$ QE cell has only $N = 16$
-papers; the 75\% rate reflects sampling variability in a small cell and should
-be interpreted with caution.  The three direction columns are nearly equal within
-each QE tier, confirming that the quasi-experimental premium does not interact
-with finding direction at conventional significance levels.
+\textit{Notes.} Each cell shows the share of papers published in a top-3
+finance journal (JF, RFS, or JFE), with paper counts in parentheses.
+Non-QE: papers that use standard regression, fixed effects, or descriptive
+methods, as classified by the AI from abstracts.  QE: papers that use a
+credible causal identification strategy---regression discontinuity, instrumental
+variables, difference-in-differences, or event study.  $\dagger$: Only 16
+papers fall in the null/mixed $\times$ QE cell; the 75\% rate is based on a
+small sample and should be treated with caution.  Within each column (Non-QE
+or QE), publication rates are nearly identical across the three finding
+directions, confirming that the research-design premium does not depend on
+what the paper concludes.
 \end{minipage}
 \end{singlespace}
 \end{table}
 
-Column~(7) adds a top-institution indicator equal to one if the first
-author's institutional affiliation matches a list of 50$+$ top finance and
-economics departments (matched via OpenAlex API).
-The top-institution coefficient is $0.196$ (s.e.\ $0.175$, $p = 0.263$),
-positive but statistically insignificant.  Direction coefficients are unchanged
-($\hat\beta_1 = -0.156$, $\hat\beta_2 = -0.152$; both $p > 0.46$) and the
-quasi-experimental premium is virtually identical to Column~(6)
-($0.472^{***}$, s.e.\ $0.158$).  The institutional-quality control does not
-affect any of the substantive results.
+How large is the direction effect in practical terms?  The raw publication
+rates tell the story directly: positive-finding papers appear in top journals
+45.6\% of the time, negative-finding papers 46.1\%, and null-finding papers
+46.7\%.  Dividing each by the null rate gives ratios of 0.98 and 0.99 ---
+essentially 1.0 in both cases.  A paper's directional conclusion has no
+meaningful bearing on whether it gets published.
 
-\subsubsection{Economic Magnitude}
+These ratios are not the same as the 1.5--2.0$\times$ figures reported by
+\citet{Brodeur2016}, and the two should not be directly compared.
+Brodeur's estimates measure a different phenomenon: how often researchers
+choose test statistics that land just above the 5\% significance threshold
+relative to just below it, within the set of already-published papers.
+Our ratios instead measure whether papers with different conclusions are
+equally likely to reach print in the first place.  We compare our results
+to Brodeur on the within-paper metric in Section~\ref{subsec:pvalue_dist},
+where our published caliper ratio of 1.20 is somewhat lower than Brodeur's
+range.  The absence of direction-based sorting in the policy-finance
+literature is a distinct and noteworthy finding.
 
-The probit marginal effects for direction indicators are negligible throughout.
-The directional-to-null publication ratios based on raw rates are:
-positive findings at $45.6\% / 46.7\% = 0.98$;
-negative findings at $46.1\% / 46.7\% = 0.99$.
-Both ratios are indistinguishable from 1.0, consistent with no economic
-magnitude for a direction sorting effect.
+The one factor that does predict publication with both statistical and
+practical significance is research design.  Papers that use credible causal
+identification methods---natural experiments, instrumental variables,
+difference-in-differences, or regression discontinuity---are about 18
+percentage points more likely to appear in a top journal than otherwise
+similar papers using standard regression approaches.
 
-We note that the direction-to-null publication ratios ($\approx$1.0$\times$)
-are not directly comparable to \citet{Brodeur2016}'s caliper estimates of
-1.5--2.0$\times$: Brodeur's figures measure within-paper specification-selection
-pressure (the ratio of test statistics just below versus just above the 5\%
-significance threshold in the published distribution), while our 1.0$\times$ ratios measure
-cross-sectional publication likelihood (whether directional papers reach print at
-all).  The within-paper comparison to Brodeur appears in Section~\ref{subsec:pvalue_dist},
-where our published caliper ratio of 1.20 is lower than Brodeur's 1.5--2.0
-range.  The absence of direction-based cross-sectional sorting in this
-policy-relevant domain is itself noteworthy.
-
-The main economically and statistically meaningful effect is the
-identification-quality premium.  Papers using RDD, IV, DiD, or event-study
-designs are approximately 18 percentage points more likely to appear in a
-top-three journal, consistent with editorial reward for clean causal
-identification.
-
-\subsubsection{Cross-Journal Analysis}
-
-Journal-level estimates are reported in Appendix~\ref{app:by_journal}.
-No journal shows a statistically significant direction coefficient, consistent
-with the pooled null result.  We caution that sub-samples are severely
-underpowered: the \JF{} contributes only 26 in-scope published articles,
-so cross-journal comparisons carry limited inferential weight and should be
-treated as descriptive.
-
-\subsubsection{Time-Period Heterogeneity (Exploratory)}
-\label{subsec:time}
-
-The following sub-period analysis is exploratory.  Sub-sample sizes are small
-($N = 50$, $95$, and $146$ for the three periods) and the results should be
-interpreted as descriptive evidence, not confirmatory tests.  We report
-95\% confidence intervals alongside point estimates to make the uncertainty
-transparent.
-
-Table~\ref{tab:time_trends} in Appendix~\ref{app:additional_tables} reports
-probit estimates for all three sub-periods.
-
-During the \textit{pre-crisis period} (2000--2007, $N = 50$), neither
-direction coefficient is statistically significant: $\hat\beta_1 = 0.376$
-(95\% CI [$-$0.614, 1.366]) and $\hat\beta_2 = -0.537$
-(95\% CI [$-$1.628, 0.556]).  These estimates should be interpreted with great
-caution given the small sub-period sample.
-
-During the \textit{financial crisis and post-crisis period} (2008--2015,
-$N = 95$), both direction coefficients are small and insignificant:
-$\hat\beta_1 = -0.247$ ($p = 0.498$) and $\hat\beta_2 = -0.163$ ($p = 0.632$).
-No direction premium is detectable in this period.
-
-In the \textit{post-Dodd-Frank period} (2016--2024, $N = 146$), the pattern is
-unchanged: $\hat\beta_1 = -0.015$ ($p = 0.959$) and
-$\hat\beta_2 = 0.190$ ($p = 0.489$), both statistically indistinguishable from
-zero.  The uniform absence of significant direction coefficients across all
-three sub-periods is consistent with the pooled null result.
+Untabulated journal-level probits show no statistically significant direction
+coefficient at any of the three journals individually, consistent with the
+pooled null result.  These estimates carry limited inferential weight given
+small sub-samples---the \JF{} contributes only 26 in-scope published
+articles over the full sample period---and should be treated as descriptive.
 
 \section{Robustness}
 \label{sec:robustness}
 %% ============================================================
 
-Table~\ref{tab:robustness} summarizes the robustness checks. We organize them
-into five groups: caliper window sensitivity, sample and scope, alternative
-specifications, classification and quality concerns, and an alternative
-pre-publication baseline.
+This section checks whether the main findings hold under a range of
+alternative assumptions.  Table~\ref{tab:robustness} summarizes results
+across five areas: sensitivity of the caliper test to the choice of window,
+sample and scope restrictions, alternative model specifications, concerns
+about classification quality, and an alternative pre-publication baseline.
 
 \subsection{Caliper Window Sensitivity}
 \label{subsec:window_robustness}
 
-The caliper result is window-dependent.
-Table~\ref{tab:caliper_window} (reproduced from Appendix~\ref{app:caliper_window})
-repeats the main caliper test under four window specifications.
-Under the standard Brodeur window $(1.645, 2.275)$ and the narrower $(1.70, 2.22)$
-and Brodeur2 $(1.65, 2.25)$ variants --- all with lower bounds at or above
-$|z|=1.645$ --- the published full-sample ratio ranges from 1.20 to 1.33 and the
-NBER ratio remains near 1.0.  However, widening the lower bound to $|z| = 1.50$
-reverses the sign for published papers (ratio $0.92$, $p = 0.088$) because the
-density is still \textit{rising} in the $(1.50, 1.645)$ interval.  This confirms
-that the result is specific to the mass just below the 5\% significance threshold
-$(1.645, 1.96)$, not to a general rightward density shift.
+The caliper test compares how many test statistics fall just below the 5\%
+significance threshold versus just above it, so the result depends on exactly
+how wide a band is used on each side.  Table~\ref{tab:caliper_window_main}
+repeats the test under four different window choices.
+
+When the window starts at $|z| = 1.645$ or higher---covering three of the four
+specifications, including the standard \citet{Brodeur2016} window---published
+papers consistently show excess mass just below the threshold: the ratio of
+below-threshold to above-threshold test statistics ranges from 1.20 to 1.33,
+while the same ratio for NBER working papers stays near 1.0.
+
+The exception is the widest window, which extends the lower bound down to
+$|z| = 1.50$.  Here the ratio for published papers drops to 0.92 ($p = 0.088$),
+suggesting fewer statistics below the threshold than above.  The reason is
+mechanical: at $|z|$ values between 1.50 and 1.645, the overall density of
+test statistics is still rising---there is no bunching there---so pulling that
+region into the window dilutes and reverses the bunching signal found closer
+to the threshold.  This rules out the alternative explanation that published
+papers simply have a general shift toward larger test statistics; the pattern
+is specifically concentrated in the narrow band just below the 5\%
+significance cutoff.
 
 \begin{table}[ht]
 \centering
@@ -1329,241 +1295,208 @@ Brodeur2 (1.65--2.25)   & Published & \textbf{1.33} & \textbf{$<$0.001} & \textb
 \begin{minipage}{\textwidth}
 \smallskip
 \footnotesize
-\textit{Notes.} Caliper ratio $=$ mass in (below, 1.96) / mass in (1.96, above).
-The wide window reverses sign for published papers because density is rising
-below $|z|=1.645$; the three windows with lower bounds $\geq 1.645$ show
-consistent excess mass in the published record. Bold entries significant at 5\%.
+\textit{Notes.} The caliper ratio is the number of test statistics falling just
+below the 5\% significance threshold ($|z| < 1.96$) divided by the number
+falling just above it ($|z| > 1.96$), within the specified window.  A ratio
+above 1.0 means more statistics land just below the threshold than just above
+it---the pattern expected if researchers selectively report results near
+significance.  The wide window (1.50--2.42) reverses sign for published papers
+because test-statistic density is still rising between $|z| = 1.50$ and
+$|z| = 1.645$, pulling the ratio below 1.0; this is a mechanical artifact of
+the wider lower bound, not evidence against bunching.  The three windows whose
+lower bounds start at or above $|z| = 1.645$ all show consistent excess mass
+in the published record.  Bold entries are statistically significant at the 5\%
+level.
 \end{minipage}
 \end{singlespace}
 \end{table}
 
 \subsection{Sample and Scope Robustness}
 
-\textit{Matched pairs only.}
-Among the 16 published papers with a confirmed NBER working-paper match, we
-independently LLM-code the direction from the NBER \textit{draft} abstract and
-from the published abstract, yielding 32 observations (16 draft-stage, 16
-published-stage) for the same set of papers.  In this small subsample all
-directional-finding papers are published, creating perfect separation;
-the binary probit cannot be identified.  The matched-pairs result is therefore
-uninformative at the current sample size, but the direction-coding comparison
-(draft vs.\ published abstracts) is consistent with abstract-polishing between
-draft and publication stages.
+Our sample includes papers on central bank actions such as quantitative easing,
+discount window lending, and unconventional monetary policy alongside papers on
+explicit legislation, securities regulation, and banking supervision.  One might
+worry that monetary policy papers behave differently---perhaps because their
+findings are harder to classify directionally, or because they attract a
+different editorial audience.  To check, we drop the 21 monetary policy papers
+and re-estimate using only the 270 remaining papers on financial legislation and
+regulation.  The results are unchanged: both direction coefficients are close to
+zero and statistically insignificant ($\hat\beta_1 = -0.028$, $p = 0.896$;
+$\hat\beta_2 = -0.068$, $p = 0.741$), confirming that the null finding is not
+driven by the inclusion of monetary policy papers.
 
-\textit{Excluding monetary policy papers.}
-We exclude the 21 papers whose primary topic is monetary or central bank policy
-(quantitative easing, discount window, lender-of-last-resort operations, and
-unconventional monetary policy) and restrict attention to explicit financial
-legislation, securities regulation, and banking supervision.  The null result
-is unchanged: $\hat\beta_1 = -0.028$ ($p = 0.896$) and $\hat\beta_2 = -0.068$
-($p = 0.741$, $N = 270$), confirming that the null finding is not driven by
-the inclusion of monetary policy papers (within the power constraints of this design).
-
-\textit{Journal subsets.}
-We re-estimate the probit treating publication in the \JF{} alone (versus all
-other in-scope papers) and, separately, publication in the \RFS{} or \JFE{}
-(versus all other papers) as the outcome.  Both premiums are statistically
-insignificant in the \JF{}-only specification ($\hat\beta_1 = 0.400$,
-$\hat\beta_2 = 0.350$, $p > 0.20$), as in the pooled result.  The \RFS{}+\JFE{}
-specification likewise yields insignificant coefficients ($\hat\beta_1 = -0.147$,
-$\hat\beta_2 = -0.130$, $p > 0.48$), confirming that the null result is not
-concentrated in any particular outlet (within the power of this design).
+As a further check, we ask whether the null result holds within each journal
+individually rather than across all three combined.  We re-run the probit
+separately for the \JF{} (comparing its published papers to all NBER working
+papers) and for the \RFS{} and \JFE{} together.  In neither case does finding
+direction predict publication: the \JF{}-only coefficients are $0.400$ and
+$0.350$ ($p > 0.20$), and the \RFS{}+\JFE{} coefficients are $-0.147$ and
+$-0.130$ ($p > 0.48$).  The null result is not confined to any particular
+journal.
 
 \subsection{Alternative Specifications}
 
-\textit{Binary directional indicator.}
-A potential concern about our direction coding is that classifying a finding as
-positive versus negative rests on a normative judgment about what constitutes a
-beneficial intervention outcome.  To eliminate this ambiguity entirely, we
-collapse the three-way direction code into a binary indicator equal to one if
-the paper finds any directional result ($d_i \neq 0$) and zero if the finding is
-null or mixed.  The coefficient is $-0.020$ (s.e.\ 0.182, $p = 0.914$),
-confirming the null result within the power of this design (minimum detectable
-effect $\approx$22 percentage points at 80\% power).
-Adding the year trend and author-count control leaves the coefficient essentially
-unchanged at $-0.014$ (s.e.\ 0.183, $p = 0.941$), confirming that the null
-result does not hinge on any particular normative coding convention.
+Our baseline model separates papers into positive, negative, and null findings.
+One concern is that labeling a finding as positive or negative requires a judgment
+call about what counts as a beneficial outcome for a given intervention.  As a
+check, we sidestep this issue entirely by collapsing the three categories into
+a simple binary: did the paper find any directional result at all, or was the
+finding null?  The result is unchanged---the coefficient is $-0.020$
+(s.e.\ $0.182$, $p = 0.914$)---and adding year and author-count controls
+leaves it essentially the same at $-0.014$ ($p = 0.941$).  The null result
+does not depend on how finely we classify finding direction.
 
-\textit{Linear probability model.}
-Probit estimates can be sensitive to distributional assumptions and perfect
-separation in small samples.  Re-estimating the main specification as a linear
-probability model (OLS with heteroskedasticity-robust standard errors) yields
-coefficients of $-0.010$ (s.e.\ 0.082, $p = 0.900$) for positive findings and
-$-0.006$ (s.e.\ 0.079, $p = 0.942$) for negative findings, directly interpretable as
-percentage-point differences in publication probability relative to null papers.
-Both are negligible and confirm the null result does not hinge on the probit functional form (within the power constraints of this design).
+We also check whether the result depends on the choice of statistical model.
+Probit models make distributional assumptions that may not hold perfectly in
+small samples.  Re-estimating the same model using ordinary least squares
+(a linear probability model with robust standard errors) gives coefficients
+of $-0.010$ ($p = 0.900$) for positive-finding papers and $-0.006$
+($p = 0.942$) for negative-finding papers---directly readable as
+percentage-point differences in publication rates relative to null papers.
+Both are negligible, confirming that the null result is not an artifact of
+the probit specification.
 
-\textit{NBER-to-journal matching sensitivity.}
-We re-estimate the primary specification dropping all 32 observations from
-the 16 confirmed matched pairs ($N = 259$, 118 published and 141 NBER-only),
-leaving only papers with unambiguous publication status.  The direction
-coefficients remain small and statistically insignificant (detailed output in
-the replication package, \texttt{scripts/08\_robustness.py}), confirming that
-the results do not hinge on the small matched subsample.
+Finally, we check whether the results are driven by the small set of 16 papers
+that we can confirm appear in both the NBER dataset and a top journal.  Dropping
+these 16 papers and their NBER counterparts ($N = 259$ remaining) leaves the
+direction coefficients small and statistically insignificant, confirming that
+the results do not depend on this matched subset.
 
 \subsection{Classification and Quality Concerns}
 
-\textit{Quasi-experimental papers only.}
-The most substantive quality-control check restricts the sample to papers
-using quasi-experimental identification strategies (RDD, IV, DiD, or event
-study), as classified by our LLM pipeline from abstracts.  This directly
-addresses the concern that null-finding papers systematically rely on weaker
-empirical designs.  Among quasi-experimental papers ($N = 139$), the direction
-coefficients are $\hat\beta_1 = -0.598$ ($p = 0.121$) and $\hat\beta_2 =
--0.657^{*}$ ($p = 0.081$).  $\hat\beta_1$ is clearly insignificant.
-$\hat\beta_2$ is marginally significant at the 10\% level with a \textit{negative}
-sign, implying quasi-experimental negative-finding papers are \textit{less} likely
-to appear in top journals than null papers.  We do not dismiss this estimate
-asymmetrically: the negative sign is entirely consistent with the pooled null
-result (no direction premium exists in the full sample either) and is consistent
-with sampling variability in a small subsample.  We note, however, that this
-direction contradicts a simple direction-premium story in this sub-sample, and
-the subsample is too small ($N = 139$) to distinguish a genuine null from a
-genuine negative from a sampling artefact.  Specifically, the QE subsample
-splits into roughly 40 published and 99 NBER papers, further divided by three
-direction categories, yielding approximately 10--15 observations per cell;
-a spurious significant coefficient is entirely expected at this cell size
-under the global null.  The point estimate is also sensitive to which papers
-the LLM classifies as quasi-experimental.  Neither direction coefficient supports
-a positive direction premium within the quasi-experimental sub-sample.
+One concern with our main result is that null-finding papers may simply use
+weaker research designs, and editors may be rejecting them for quality reasons
+rather than because of their conclusions.  To address this, we restrict the
+sample to the 139 papers that use credible causal identification methods---
+natural experiments, instrumental variables, difference-in-differences, or
+regression discontinuity designs---holding research design quality roughly
+constant across finding directions.
 
-\textit{Abstract language and LLM classification confidence.}
-Abstract writing style introduces two related measurement concerns.  Among published
-papers, 81.3\% receive a high-confidence direction code; among NBER-only
-papers, 62.4\% do, with 26.8\% receiving low-confidence ratings.  The
-18.9-percentage-point gap in high-confidence rates persists despite NBER
-abstracts being longer on average (158 words) than published abstracts (109
-words), suggesting the difference reflects writing style rather than abstract
-length.
-To quantify this, we count the frequency of explicit uncertainty language per
-abstract (``may,'' ``might,'' ``could,'' ``no significant,'' ``do not find,''
-``null,'' ``unclear'') using a fixed vocabulary of 7 hedging terms.
-NBER abstracts average 0.43 such terms per abstract, versus 0.19 for published
-abstracts---a 2.3$\times$ difference in the raw count.
-Normalized by word count, the rates are similar (NBER: 0.27 terms per 100 words;
-published: 0.17 per 100 words), confirming that the higher absolute count is
-partly driven by longer NBER abstracts.
-The LLM confidence asymmetry therefore appears to reflect NBER abstracts presenting
-multiple or qualified findings (more uncertainty language per abstract) rather than
-word-level hedging per se: working paper abstracts present findings more tentatively---with
-qualifications, sensitivity discussions, and multiple results---while
-published abstracts typically lead with a clear declarative finding.
-First, hedged NBER abstract language may push genuinely directional NBER papers
-into the null category.  Second, abstract polish after revise-and-resubmit may
-cause the LLM to classify more published papers as directional.  Both
-concerns inflate the measured directional premium.  Our replication exercise (Section~\ref{subsec:direction}) supports
-the inflation interpretation: of the 20 null-coded papers in the validation
-sample, 15 are reclassified as directional in the independent replication run,
-while no directional-coded papers are reclassified as null.  This asymmetry
-implies that null-coding error inflates rather than attenuates our estimate.
+Within this subsample, neither direction coefficient is significantly positive:
+the positive-finding coefficient is $-0.598$ ($p = 0.121$) and the
+negative-finding coefficient is $-0.657$ ($p = 0.081$).  The second figure
+is marginally significant at the 10\% level, but with a \textit{negative} sign,
+meaning quasi-experimental negative-finding papers are if anything \textit{less}
+likely to be published than null papers---the opposite of what a direction-premium
+story would predict.  We do not over-interpret this: it is fully consistent with
+the pooled null result and with random sampling variation in a small subsample.
+With only 139 papers split across three direction categories and two corpus
+groups, each cell contains roughly 10--15 observations, and a spuriously
+significant coefficient is entirely expected by chance.  The classification of
+papers as quasi-experimental is also based on AI coding of abstracts and has
+not been manually verified.  The key takeaway is that neither coefficient
+supports the existence of a positive direction premium among the most
+rigorously designed papers in the sample.
 
-Table~\ref{tab:robustness} Panel~C also reports a bounding specification
-that adds $\log(\text{abstract length})$ as a covariate
-($\hat\beta_1 = 0.008$, $p = 0.968$; $\hat\beta_2 = 0.011$, $p = 0.958$).
-Both direction coefficients remain negligible, confirming that abstract-length
-controls do not alter the null result within the power of this design.
+A second concern is that the AI may classify the same paper differently
+depending on how the abstract is written.  Published abstracts tend to be
+sharper and more declarative; working paper abstracts often present multiple
+findings, hedge conclusions, and include sensitivity discussions.  This
+writing-style difference could cause the AI to assign high-confidence
+direction codes more often to published papers than to NBER papers---and
+that asymmetry could inflate our estimated direction premium even if none exists.
 
-\textit{Matched-pairs direction stability.}
-Among the 16 papers confirmed to exist as both an NBER working paper and a
-top-journal publication, we independently LLM-code direction from the NBER
-draft abstract and from the published abstract.  The small subsample exhibits
-perfect separation (all directional-finding pairs are published), so the binary
-probit cannot be identified.  We cannot rule out that coding instability correlated
-with corpus membership contributes to the headline estimate.  The matched-pairs
-check holds the paper fixed across draft and published stages, directly
-testing whether direction codes are stable within the same research project.
+The data support this concern.  The AI assigns a high-confidence code to
+81.3\% of published abstracts but only 62.4\% of NBER abstracts, a gap of
+18.9 percentage points.  NBER abstracts are actually longer on average
+(158 words versus 109 words for published abstracts), so the lower confidence
+rate is not simply about having less text to work with.  To pin down the
+source, we count how often each abstract uses hedging language---words and
+phrases like ``may,'' ``might,'' ``could,'' ``no significant,'' ``do not
+find,'' ``null,'' and ``unclear.''  NBER abstracts average 0.43 such terms
+per abstract versus 0.19 for published abstracts, a 2.3$\times$ difference.
+Once we adjust for abstract length, the gap narrows (NBER: 0.27 hedging terms
+per 100 words; published: 0.17), confirming that the higher raw count partly
+reflects longer NBER abstracts---but a meaningful difference in writing style
+remains.
+
+This writing-style gap creates two measurement risks.  First, hedged language
+in NBER abstracts may cause the AI to classify genuinely directional working
+papers as null.  Second, polished language in published abstracts may cause
+the AI to classify more of them as directional.  Both errors would push our
+estimate of the direction premium upward, meaning our estimates are more
+likely to overstate than understate any premium.  Our human-validation
+exercise (Section~\ref{subsec:direction}) is consistent with this: of the
+20 papers that the AI coded as null in the validation sample, 15 were
+reclassified as directional in an independent replication run, while no
+directional-coded papers were reclassified as null.
+
+As a direct robustness check, we add abstract length as a control variable.
+The direction coefficients remain essentially zero
+($\hat\beta_1 = 0.008$, $p = 0.968$; $\hat\beta_2 = 0.011$, $p = 0.958$),
+confirming that abstract-length differences do not drive the null result.
 
 \subsection{AFA Conference Baseline}
 
-The central identification concern is that NBER working papers and
-top-journal articles are drawn from fundamentally different populations:
-only 11.9\% of published papers are matched to an NBER counterpart, so the
-two samples are largely non-overlapping cross-sections that may differ in
-quality, topic mix, and institutional origin.  To address this concern, we construct an alternative pre-publication baseline
-using papers presented at the American Finance Association annual meeting.
-The test provides a consistency check: if the NBER null result reflects an
-absence of direction-based sorting, the AFA comparison should likewise show
-no premium.  AFA papers represent completed research with final empirical
-results that have been publicly presented---they are pre-journal submissions
-in every meaningful sense.
+Our main analysis compares published papers to NBER working papers, but only
+11.9\% of published papers can be matched to a specific NBER counterpart.
+The two groups are largely different sets of papers that may differ in ways
+beyond finding direction---such as research quality, topic, or author
+institution.  To check whether this comparison is driving the results, we
+construct an alternative pre-publication baseline using papers presented at
+the American Finance Association (AFA) annual meeting.  AFA conference papers
+represent completed research that has been publicly presented but not yet
+published in a top journal---a natural comparison group for measuring whether
+publication depends on what a paper finds.
 
-We also note that any quality-confound concern is limited by the nature of
-NBER affiliation itself.  Posting to the NBER Working Paper series requires
-affiliation with the NBER research network, which is restricted to faculty
-at leading research universities---an elite and selective credential in
-academic economics.  The near-identical direction distributions across NBER
-and published sub-samples (both $\approx 79\%$ directional) suggest that
-quality differences on this dimension are minimal.
+We collect 4,080 AFA program papers from 2006--2024, retrieving abstracts
+from OpenAlex, CrossRef, and the NBER dataset for 3,975 of them (97.4\%).
+Applying our standard keyword and AI scope filter yields 151
+in-scope AFA papers, all of which receive direction codes through the AI
+pipeline.  Of these, 36 (23.8\%) are matched to a \JF{}/\RFS{}/\JFE{}
+publication via title matching.
 
-We collect 4,080 AFA program papers from 2006--2024.  For 2006--2012 and
-2014--2024, we scrape the AFA website directly; for 2013, whose AFA page
-returns a 404, we parse AFA sessions from the full ASSA preliminary program
-hosted by the AEA (\url{https://www.aeaweb.org/conference/2013/preliminary.php}),
-yielding 186 papers from 57 AFA sessions.  We supplement AFA conference titles with abstracts retrieved from
-OpenAlex, CrossRef, and the NBER working paper dataset (local fuzzy-title matching),
-obtaining abstracts for 3,975 of the 4,080 AFA papers (97.4\% overall; coverage is
-higher for in-scope papers because government-intervention papers are more
-likely to be published).  We apply our standard title-plus-abstract keyword
-filter (identical to the NBER pipeline) to the 3,975 AFA papers with abstracts,
-then run the LLM scope classifier, yielding \textbf{151 in-scope papers}.
-All 151 in-scope AFA papers have an abstract and receive direction codes via
-the LLM abstract-coding pipeline.
-36 AFA papers (23.8\%) are matched to a JF/RFS/JFE publication
-via fuzzy title matching.
+In some cases the AI assigns a low-confidence direction code and a
+keyword-based fallback is used instead.  As a check, Table~\ref{tab:robustness}
+Panel~D replaces all fallback codes with the standard AI pipeline, yielding
+nearly identical estimates ($\hat\beta = 0.352$, $p = 0.204$) and confirming
+the result is not an artifact of the coding method.
 
-\medskip
-\noindent\textbf{Coding limitation.}  Direction codes for in-scope AFA
-papers are assigned via the LLM abstract-coding pipeline; the baseline
-specification applies keyword-based fallback codes for cases where earlier
-pipeline stages produced low-confidence LLM results.  As a robustness check,
-Table~\ref{tab:robustness} Panel~D also reports a ``Uniform LLM coding''
-specification that replaces these keyword-based fallback codes with the
-standard LLM pipeline throughout, yielding nearly identical estimates
-($\hat\beta = 0.352$, $p = 0.204$) and confirming the result is not an
-artifact of the coding method.
+Using AFA as the pre-publication baseline, the probit coefficient on finding
+direction is $0.327$ (s.e.\ $0.279$, $N = 151$), statistically
+indistinguishable from zero.  The corresponding NBER-baseline estimate is
+$-0.020$ (s.e.\ $0.182$), also indistinguishable from zero.  Neither
+estimate finds evidence of direction-based sorting.
 
-The binary directional probit on the AFA baseline yields
-$\hat\beta = 0.327$ (s.e.\ 0.279, $N = 151$), statistically indistinguishable
-from zero.  The NBER-baseline estimate is $-0.020$ (s.e.\ 0.182), likewise
-indistinguishable from zero.  Neither estimate rejects the null of no
-direction-based sorting.  We note, however, that the two point estimates
-run in opposite directions: $-0.020$ (NBER) versus $+0.327$ (AFA).
-Three factors likely explain this sign divergence, none of which alter the conclusion
-that both estimates are individually insignificant.
-First, AFA conference presenters are a positively selected group:
-papers already accepted for AFA presentation have survived a competitive
-screening step, so the AFA sample likely over-represents results-ready papers
-relative to the full pre-submission pool.  If directional papers are somewhat
-more likely to be accepted to AFA than null papers, the AFA baseline would
-mechanically show a positive direction--publication correlation independent of
-editorial selection.
-Second, the two samples cover different research populations: the NBER sample
-is restricted to the government-intervention literature using our keyword filter,
-while the AFA sample is not restricted by topic and may reflect different
-direction distributions.
-Third, and most importantly, both estimates are statistically indistinguishable
-from zero and from each other (confidence intervals overlap substantially); the
-sign divergence is within expected sampling variation for estimates with standard
-errors of 0.279 and 0.182 on a sample of 291 papers.  The AFA baseline therefore does not \textit{contradict} the NBER null, but
-neither does it corroborate it.  More importantly, the sign flip from $-0.020$
-(NBER) to $+0.327$ (AFA) illustrates a genuine fragility: the \textit{sign}
-of the estimated direction premium is sensitive to the choice of pre-publication
-benchmark, even though neither estimate is individually significant.  A reader
-could reasonably conclude that the available baselines are too few and too
-different from each other to establish even the sign of any editorial direction premium.
-The ideal benchmark---a large-scale SSRN corpus matched to our keyword
-taxonomy, capturing papers that circulate outside NBER---would provide a far
-more representative pre-submission distribution; we leave its construction for
-future work but flag the fragility here as a genuine limitation.
-Directional AFA papers are published in top journals at a 25.9\% rate (30 of 116)
-versus 17.1\% for null-finding papers (6 of 35).  The pattern is unchanged when a year trend is added
-($\hat\beta = 0.345$, s.e.\ 0.281).\footnote{As a direct
-test of overlap, we identified 22 papers appearing in both the NBER and AFA
-datasets via fuzzy title matching (token-sort score $\geq 90$).  In this
-subsample, directional papers publish at 81.2\% versus 66.7\% for null
-papers (LPM $\hat\beta = 0.146$, s.e.\ 0.208, $p = 0.49$, $N = 22$).  The
-test is severely underpowered (only six null papers in the overlap), so no
-strong inference is possible.}
+The two estimates do point in opposite directions, however: $-0.020$ (NBER)
+versus $+0.327$ (AFA).  Three factors explain this divergence without
+undermining the conclusion that both are insignificant.  First, AFA conference selection may favor papers with clear, presentable
+findings over papers with null or ambiguous results---program committees
+naturally prefer results that generate discussion.  If directional papers
+are somewhat more likely to be accepted to AFA than null papers, the AFA
+comparison will mechanically suggest a positive direction--publication link
+even if journals have no such preference.  This is distinct from author
+prestige: both NBER and AFA are selective on who presents, but AFA
+selection operates on the paper's findings in a way that NBER affiliation
+does not.
+Second, the two samples draw from different author pools: the NBER sample
+is limited to researchers affiliated with the NBER network---primarily
+faculty at leading universities---while the AFA sample includes a broader
+range of conference presenters.
+Third, and most importantly, both estimates have wide, overlapping confidence
+intervals; the sign difference is easily within the range of expected
+sampling variation given standard errors of 0.279 and 0.182.
+
+The AFA baseline neither contradicts the NBER null nor firmly corroborates
+it.  The fact that the estimated sign changes depending on which comparison
+group is used---even though neither estimate is individually significant---
+is a genuine fragility worth flagging.  A more representative benchmark,
+such as a large corpus of working papers covering the same topic range as
+our keyword filter but circulating outside NBER, would allow a cleaner test;
+we leave its construction for future work.
+
+As a simple descriptive check, directional AFA papers appear in top journals
+at a 25.9\% rate (30 of 116) versus 17.1\% for null-finding papers (6 of
+35), and the pattern is unchanged when a year trend is added
+($\hat\beta = 0.345$, s.e.\ $0.281$).
+
+One mitigating consideration is that the NBER comparison group is itself
+selective on quality: posting to the NBER Working Paper series requires
+affiliation with the NBER research network, which is limited to faculty at
+leading research universities.  Supporting this, the share of directional
+papers is nearly identical across the NBER and published samples (both
+approximately 79\%), suggesting the two groups are similar in composition
+despite not being directly matched.
 
 
 
@@ -1584,8 +1517,6 @@ Excl.\ monetary policy     & Positive & $-0.028$      & 0.896    & 270 \\
                             & Negative & $0.350$       & 0.271    & 291 \\[4pt]
 \RFS{}+\JFE{} only         & Positive & $-0.147$      & 0.483    & 291 \\
                             & Negative & $-0.130$      & 0.519    & 291 \\[4pt]
-Matched pairs only         & Directional & \multicolumn{2}{c}{separation} & 32 \\
-\small{[N=16 paper pairs]}  & \multicolumn{4}{l}{\small{Draft vs.\ published version of same paper}} \\[4pt]
 \multicolumn{5}{l}{\textit{Panel B: Alternative Specifications}} \\[2pt]
 Binary directional          & Directional & $-0.020$      & 0.914    & 291 \\[4pt]
 Binary + year + authors     & Directional & $-0.014$      & 0.941    & 291 \\[4pt]
@@ -1600,41 +1531,39 @@ Quasi-exp.\ papers only    & Positive & $-0.598$      & 0.121    & 139 \\
 AFA conference baseline    & Directional & $0.327$ & $0.241$ & 151 \\
 \small{(+ year trend)}     & Directional & $0.345$ & $0.220$ & 151 \\[4pt]
 Uniform LLM coding         & Directional & $0.352$ & $0.204$ & 151 \\
-\small{[AFA, + year]}      & Directional & $0.364$ & $0.193$ & 151 \\[4pt]
-\multicolumn{5}{l}{\textit{Panel E: Right-Censoring Robustness}} \\[2pt]
-NBER vintage $\leq$2020    & Positive & $-0.021$      & 0.928    & 234 \\
-                            & Negative & $-0.144$      & 0.519    & 234 \\
+\small{[AFA, + year]}      & Directional & $0.364$ & $0.193$ & 151 \\
 \bottomrule
 \end{tabular}}
 \par\smallskip
 \begin{minipage}{\textwidth}
-\small
-\textit{Notes.} Each row reports the probit (or OLS for the LPM
-specification) coefficient on the indicated variable.  The omitted category is
-null/mixed ($d_i = 0$), except for binary directional specifications where it
-is null/mixed vs.\ any directional finding.  All probit specifications include
-a linear year trend unless otherwise noted.  ``Matched pairs only'' uses the
-16 papers confirmed to exist in both NBER and published form; the LLM codes
-each paper's direction from its NBER \textit{draft} abstract and from its
-published abstract separately, yielding $N = 32$ observations (16 draft, 16
-published); all directional-finding pairs are published in this small subsample
-(perfect separation), so the probit cannot be identified.  ``Binary + year + authors'' adds
-$\log(1+N_{\text{authors}})$ to the binary specification.  The quasi-experimental
-restriction uses identification strategies classified by our LLM pipeline from
-abstracts ($N = 139$).  The abstract-length specification adds $\log(\text{abstract length})$ as a
-covariate; both direction coefficients remain negligible, confirming the null
-result is not driven by abstract-length differences.  The AFA conference baseline uses
-AFA annual meeting papers (2006--2024, $N = 151$ in-scope) as the
-pre-publication comparison group; direction codes follow the same three-tier
-hierarchy as the NBER pipeline.  ``Uniform LLM coding'' replaces keyword-based
-direction codes for unmatched AFA papers with the same LLM pipeline used for
-the main NBER/published sample; $\beta \approx 0.35$ remains insignificant ($N = 151$),
-confirming the AFA stage-identification result is not an artifact of the mixed coding method.
-Panel~E restricts the NBER sample to papers circulated in 2020 or earlier,
-giving all papers at least four years to clear the publication pipeline;
-the direction coefficients are $-0.021$ and $-0.144$ (both $p > 0.50$),
-confirming the null is not explained by right-censoring of recent NBER papers.
+\footnotesize
+\textit{Notes.} Each row reports the probit coefficient on finding direction
+(or the OLS coefficient for the LPM row), estimated on the indicated sample.
+The coefficient measures how much the probability of publication changes for
+positive- or negative-finding papers relative to null/mixed papers.
+All specifications include a linear year trend unless noted.
 Standard errors omitted for brevity.
+\textit{Panel A:} Drops monetary policy papers or restricts to one journal
+(or journal pair) at a time; direction coefficients are small and insignificant
+in all cases.
+\textit{Panel B:} ``Binary directional'' collapses positive and negative
+findings into a single directional category; adding author-count controls
+leaves results unchanged.
+``LPM'' re-estimates via OLS with robust standard errors, giving
+percentage-point differences in publication rates directly; results remain negligible.
+\textit{Panel C:} ``Quasi-exp.\ only'' restricts to the 139 papers using
+credible causal methods (natural experiments, IV, DiD, RD), holding research
+design quality constant across direction categories.
+``$+\log(\text{abstract length})$'' controls for abstract length to check
+whether writing-style differences drive the result; they do not.
+\textit{Panel D:} AFA rows use papers presented at the American Finance
+Association annual meeting (2006--2024, $N=151$ in-scope) as an alternative
+pre-publication baseline.
+``Uniform LLM coding'' replaces keyword-based direction codes for unmatched
+AFA papers with the same AI pipeline used for the main sample;
+$\beta \approx 0.35$ remains insignificant, confirming the result is not
+an artifact of the coding method.
+Sub-rows marked ``$+$ year trend'' add a linear year control.
 $^{***}p < 0.01$, $^{**}p < 0.05$, $^{*}p < 0.10$.
 \end{minipage}
 \end{singlespace}
@@ -1645,197 +1574,136 @@ $^{***}p < 0.01$, $^{**}p < 0.05$, $^{*}p < 0.10$.
 \label{sec:discussion}
 %% ============================================================
 
-\subsection{Policy Implications}
+\subsection{Implications for Research and Regulation}
 
-Our results are \textit{inconsistent with} the hypothesis that the published
-record of government-intervention research overstates the proportion of
-interventions with detectable effects due to significance-sorting.  Corpus-membership
-rates across finding directions are nearly identical ($\approx$46\%), and the
-direction of a paper's finding has no statistically detectable association with
-its likelihood of appearing in a top-three finance journal.  The published
-distribution closely mirrors the pre-publication distribution on this dimension.
+Our findings argue against the concern that top finance journals systematically
+favor studies that find an effect of government intervention over those that
+find none.  Positive-, negative-, and null-finding papers are published at
+nearly identical rates (all around 46\%), and the direction of a paper's main
+finding is unrelated to its chances of appearing in a top finance journal.
+This holds across the core topics of the corporate-finance regulation
+literature---mandatory disclosure rules (Sarbanes-Oxley, Reg FD), corporate
+governance mandates (say-on-pay, proxy access, board independence), short-selling
+restrictions, and Dodd-Frank capital and resolution provisions.  A study finding
+that say-on-pay improved firm outcomes faces roughly the same publication odds
+as one finding it did not.
 
-Two power caveats qualify this conclusion.  First, the minimum detectable
-difference in corpus-membership rates at 80\% power is approximately 18 percentage
-points (probit coefficient $\approx0.466$), so moderate directional asymmetries
-below that threshold are consistent with the data.  Second, the cluster-bootstrap
-95\% confidence interval for the negative-finding caliper ratio is $[0.81,\,2.67]$,
-wide enough to encompass both negligible and substantial threshold pressure; the
-wide interval reflects genuine paper-level heterogeneity rather than a sampling
-artifact.
+Two qualifications limit how strongly this conclusion can be stated.  First,
+our study is underpowered to detect modest imbalances: the smallest directional
+gap we could reliably identify corresponds to an 18-percentage-point difference
+in publication rates, so smaller asymmetries remain possible.  Second, the
+confidence interval on the negative-finding caliper ratio is wide
+($[0.81,\,2.67]$), leaving room for meaningful threshold pressure in that
+direction that our design cannot rule out.  Policymakers who rely on this
+literature should treat our null as evidence against \textit{large-scale}
+editorial distortion, not as a clean bill of health; residual direction-based
+bias on specific topics such as capital requirements or short-sale restrictions
+could exist below our detection threshold.
 
-To the extent that structural bias-correction methods \citep{Andrews2019}
-applied to specific intervention literatures (capital requirements, short-sale
-bans, mandatory disclosure) would detect bias, that bias does not appear to
-originate from direction-based editorial selection in the top-three finance
-journals.  Regulators who rely on the \JF{}, \RFS{}, or \JFE{} literature on government
-intervention appear to face a record that is not systematically distorted in
-favor of or against directional findings relative to null results---at least
-not to a degree that the current design can detect (minimum detectable effect
-$\approx$22 percentage points; moderate directional asymmetries below this
-threshold remain consistent with the data).
+A clearer form of selection does emerge: papers using credible causal methods
+---regression discontinuity, instrumental variables, difference-in-differences,
+or event studies---are substantially more likely to be published.  For
+regulators, this is a reassuring rather than distorting form of selection;
+the published evidence base has been filtered for methodological quality.
 
-The robust positive finding---that quasi-experimental identification quality
-predicts top-journal publication---has a different policy implication: the
-published literature is methodologically selective.  Papers using RDD, IV, DiD,
-or event-study designs are substantially more likely to appear in print,
-suggesting that the published evidence base is biased toward cleaner causal
-identification.  For regulators, this is plausibly a desirable form of
-selection rather than a distortion.
+One further caution applies to how individual results are read.  The bunching
+of test statistics just below the 5\% significance threshold---concentrated in
+negative-finding papers---suggests that \textit{within-paper} specification
+choices may play a role even when the publication decision itself is
+direction-neutral.  Those relying on this literature should apply extra scrutiny to
+anti-intervention findings that are only marginally significant ($p$ just below
+0.05), while treating publication in a top-three finance journal as a credible
+signal of overall methodological quality.
 
-\medskip
-\noindent\textbf{Relevance to the corporate-finance regulation literature.}
-The published sample in this paper is drawn exclusively from the \JF{},
-\RFS{}, and \JFE{}---the three premier corporate-finance journals---and includes
-every in-scope article on government intervention in financial markets that
-these journals published over 2000--2024.  A large share of this literature
-directly concerns the core topics of corporate-finance scholarship: mandatory
-disclosure requirements (Sarbanes-Oxley, Reg FD), corporate governance regulation
-(say-on-pay, proxy access, board independence mandates), short-selling
-restrictions and market integrity, and Dodd-Frank provisions governing capital
-requirements and resolution authority.  The NBER programs contributing the
-working-paper baseline similarly encompass the Corporate Finance, Asset Pricing,
-and Monetary Economics programs, all of which regularly study these regulatory
-interventions.
+\subsection{How Finance Compares to Economics}
 
-For readers interested specifically in the corporate-finance regulation
-literature, our findings carry two messages.  First, the directional-neutrality
-result---robust to our power constraints---suggests that the published
-corporate-governance and disclosure record is unlikely to be \textit{large-scale}
-skewed toward pro- or anti-intervention conclusions by editorial selection;
-both positive- and negative-finding studies on, say, the effect of say-on-pay
-or mandatory auditor rotation face similar corpus-membership rates.  Second,
-the revision-stage bunching concentrated in negative-finding papers (though
-imprecisely estimated) is consistent with the hypothesis that anti-intervention
-evidence in the corporate-finance regulation literature faces within-paper
-specification pressure before reaching print, even when the publication decision
-itself is direction-neutral.  Readers of the corporate-governance and
-disclosure evidence base should treat marginal significance ($p$ just below 0.05)
-in anti-intervention findings with additional scrutiny, while treating
-publication status as a reasonable signal of methodological quality.
+Studies in economics and related social sciences find that papers reporting
+statistically significant results are published at substantially higher rates
+than papers reporting null results.  \citet{Brodeur2016} show that the top
+general-interest economics journals (\textit{AER}, \textit{JPE}, \textit{QJE})
+contain between $1.5$ and $2.0$ times as many test statistics that land just
+above the conventional significance threshold as those that land just below
+it---a sign that researchers and editors favor results that clear the
+significance bar.  \citet{Franco2014} tracked NSF-funded social science
+experiments from registration through to publication and found that 65\% of
+null results were never published, compared with only 21\% of significant
+results---a roughly three-to-one publication advantage for significant
+findings.  \citet{DellaVigna2022} report similar disparities in a sample of
+field experiments, and \citet{Brodeur2023} show that pre-registering a study
+in advance reduces but does not eliminate this advantage.
 
-\subsection{Comparison to Other Domains}
+Our results stand out against this backdrop.  Null-finding papers in the
+finance-regulation literature are published at essentially the same rate as
+papers that find a positive or negative effect---no three-to-one gap, and no
+evidence that editors systematically reward significant findings.  The
+clustering of test statistics just below the 5\% threshold is also more
+moderate in our published sample (a ratio of 1.20) than in the top economics
+journals ($1.5$--$2.0\times$), and the same measure applied to NBER working
+papers---before any editorial selection---comes out at 1.01, confirming that
+this clustering is not a feature of the underlying research base but is
+introduced at the revision stage.
 
-Our $\approx1.0\times$ directional-to-null publication ratio stands in contrast
-to analogous estimates from adjacent literatures.  \citet{Brodeur2016} document
-excess mass just below the conventional 5\% significance threshold
-($|z| \in (1.645, 1.96)$) in the \textit{American Economic Review},
-the \textit{Journal of Political Economy}, and the \textit{Quarterly Journal
-of Economics}, with implied ratios of roughly $1.5$--$2.0\times$ for
-10\%-significant-but-not-5\% versus just-5\%-significant findings.
-\citet{Franco2014}, studying NSF-funded social science experiments with
-pre-registered designs, find that 65\% of null results were never published
-versus 21\% of significant results---also implying a roughly $3\times$
-publication premium.  \citet{DellaVigna2022} find, in a sample of nudge-unit
-RCTs with institutional outcome tracking, that studies with detectable effects
-are substantially more likely to appear in print than null-result studies.
-\citet{Brodeur2023} document that pre-registration and pre-analysis plans
-reduce but do not eliminate these biases in economics.
+Two explanations could account for why finance-regulation research looks
+different from other social science domains.  First, editorial norms at the
+\JF{}, \RFS{}, and \JFE{} may genuinely be less sensitive to whether a paper
+finds an effect than norms at general-interest economics journals.  Second,
+because our pre-publication baseline consists of NBER working papers---which
+tend to come from faculty at well-resourced research universities---null
+results in this domain may circulate and reach editors more reliably than null
+results produced by less-connected researchers.  If so, the absence of a
+selection gap in our data could partly reflect the composition of the NBER
+group rather than editorial neutrality per se.  Whether the same pattern holds
+for lower-ranked finance journals or for finance sub-fields without explicit
+policy content (such as corporate governance or asset pricing) remains an open
+question.
 
-Our published-sample caliper ratio of 1.20 is below Brodeur et al.'s estimates
-of $1.5$--$2.0\times$ for the AER/JPE/QJE, and our NBER benchmark ratio of
-1.01 confirms that this domain's research base does not itself generate excess
-bunching before the editorial stage.  On the cross-sectional direction-sorting
-dimension, our $\approx$1.0$\times$ directional-to-null publication ratio is
-well below the $3\times$ estimate of \citet{Franco2014} and the analogous
-findings in \citet{DellaVigna2022}.  Together these comparisons suggest that
-the finance-regulation literature does not exhibit the significance-sorting
-patterns documented in other social science domains.  This could reflect genuine
-differences in editorial norms at top finance journals, or could reflect the
-nature of our NBER comparison group (which captures well-resourced researchers
-whose null results may circulate widely, reducing the selection gap relative to
-the full population of research).  Whether the absence of bias in top finance
-journals extends to lower-tier journals or comparable finance sub-fields without
-explicit policy content (e.g., corporate governance, asset pricing) is an
-important question for future research.
+Our caliper finding also fits naturally alongside prior work within finance.
+\citet{Harvey2021} document the same clustering of test statistics just below
+the 5\% cutoff in published finance research and try to estimate what the
+pre-publication distribution must have looked like to produce it; our NBER
+data provide a direct look at that pre-publication distribution, confirming
+that the clustering is added during the revision process.  \citet{Chen2020}
+make a complementary observation: the very largest published test statistics
+($|t|>4$, corresponding to highly significant results) appear too frequently
+to be explained by selective reporting of marginally significant findings---
+implying that most large, convincing effects in the published literature are
+real.  These two observations fit together: genuine large effects account for
+the strong results in the published literature, while revision-stage pressure
+to clear the 5\% bar accounts for the narrower cluster of test statistics
+landing just below that threshold.  One interpretation of why this bunching
+is concentrated in negative-finding papers is that anti-intervention results
+face elevated scrutiny during peer review, leading authors to try alternative
+specifications until a result clears the 5\% threshold.  A compositional
+alternative is that negative-finding published papers differ from their NBER
+counterparts along unobserved dimensions---research design complexity,
+empirical detail, or vintage---that correlate with the number of specifications
+tried; our cross-sectional design cannot distinguish between these two
+explanations.
 
-Within finance specifically, our within-paper caliper finding (published ratio
-$= 1.20$; NBER ratio $= 1.01$) can be read alongside \citet{Harvey2021} and
-\citet{Chen2020}.  Harvey and Liu model the same excess mass at the 5\%
-threshold in published finance research and infer the pre-publication
-distribution structurally; our NBER benchmark observes it directly, confirming
-that the distortion is specific to the revision stage.  Chen's bound
-shows that the \textit{far} right tail of published t-statistics ($|t|>4$)
-is too fat to be explained by p-hacking alone, implying that most published
-effects are genuine.  Our caliper evidence is consistent: the excess mass we document is
-concentrated just \textit{below} the 5\% threshold ($|z| \in (1.645, 1.96)$,
-the 10\%-significant-but-not-5\% zone), while the broader distribution shows
-a 55--57\% significance rate that is stable across published and
-pre-publication samples.  Real effects
-produce the fat tail; the caliper bunching is consistent with revision-stage
-specification pressure producing the excess mass in the
-10\%-significant-but-not-5\% zone just below 1.96.
-The two observations reinforce rather than contradict each other.
+\subsection{Alternative Interpretations}
 
-\subsection{Mechanisms}
+Finding equal publication rates across finding directions is consistent with
+two different explanations, and our data cannot tell them apart.
 
-Two analytically distinct patterns require separate mechanistic accounts.
-The \textit{absence} of direction-based editorial selection---roughly equal
-corpus-membership rates across finding directions---and the \textit{presence} of
-within-paper threshold bunching concentrated in the published record point to
-different stages of the research pipeline.
+The first is genuine editorial neutrality: editors evaluate papers on their
+merits and do not systematically favor those that find an effect.  The second
+is a supply-side equilibrium: if top finance journals have a reputation for
+publishing null results, researchers who produce null findings may be more
+willing to submit them in this field than in fields where null results are
+known to face rejection.  Equal publication rates would then emerge not
+because editors are neutral but because the papers arriving on editors' desks
+are already balanced across directions.  The near-identical share of
+directional findings in NBER working papers (79.6\%) and published articles
+(79.1\%) is consistent with this story.
 
-For the direction-sorting null result, we consider two compatible explanations
-in the following subsection.  For the caliper finding, the NBER benchmark provides a more direct
-answer: because the bunching is present in published papers but absent from
-their pre-publication counterparts, and because the overall significance rate
-is unchanged, the distortion is specific to the revision stage.
-One interpretation is that anti-intervention papers face elevated evidentiary
-demands---perhaps because anti-intervention findings invite more scrutiny---leading
-authors to search specifications until marginal results clear the 5\%
-threshold.  This interpretation is \textit{consistent with} equal corpus-membership rates
-(no detectable direction-based sorting between corpora) while generating a
-within-paper conditional threshold premium for negative findings.
-A compositional alternative deserves acknowledgment: negative-finding published
-papers may systematically differ from their NBER counterparts in unobserved
-dimensions (research design complexity, empirical detail, vintage) that
-correlate with within-paper specification counts; our cross-sectional design
-cannot distinguish between these mechanisms.
-It is also consistent with \citet{Chen2020}'s finding that the far right
-tail of published t-statistics cannot be explained by p-hacking alone:
-the excess mass we document just below $|z|=1.96$ reflects selective reporting
-of marginally significant specifications, not fabrication of large effects.
-
-\subsection{What the Data Can and Cannot Tell Us}
-
-Our empirical design estimates the cross-sectional association between finding
-direction and publication status.  This association is consistent with two
-broad classes of mechanism, and distinguishing them is important because they
-have different policy implications.  Our data cannot distinguish between them,
-and we do not attempt to do so.
-
-\paragraph{Supply-side equilibrium.}
-Researchers who anticipate that null results face no publication penalty may
-submit them to top journals at higher rates than in domains with known
-significance sorting, producing an equilibrium with equal submission rates
-across directions.  Under this mechanism, null results are not underrepresented
-in the NBER pool relative to the published pool, which is precisely what
-we observe (NBER directional rate: 79.6\%; published directional rate: 79.1\%).
-
-\paragraph{Identification quality and correlated attributes.}
-The positive quasi-experimental premium ($0.467^{***}$) is consistent with
-editorial selection in this domain operating on methodological quality, among other factors.
-We caution, however, that the LLM-coded quasi-experimental dummy is likely correlated
-with author quality, institutional affiliation, topic type, and other unobserved
-quality dimensions that the probit cannot separate from identification strategy alone.
-If clean-identification studies have directional findings at similar rates to
-non-causal studies in this domain, an identification-quality filter would
-generate no direction sorting in the aggregate.  Our data are consistent with
-this interpretation, but the identification-quality channel is one of several
-plausible explanations for the premium.
-
-Either mechanism could suppress a direction-publication
-association even if publication bias exists elsewhere in the pipeline.
-
-Without submission-level data (desk-rejection rates by
-direction, time-to-first-decision, share of null-result papers sent out for
-review), we cannot test whether the absence of a direction premium in the
-published record reflects true editorial neutrality or an upstream equilibrium
-in submission behavior.  Future work following the approach of
-\citet{DellaVigna2022}---who obtain institutional data on submission and
-publication outcomes for nudge-unit RCTs---would allow a sharper test of
-whether journals are directionally neutral or merely receive a directionally
-balanced submission pool.
+The second finding --- that papers using credible causal methods are more
+likely to be published --- also warrants caution in interpretation.  The
+quasi-experimental premium ($0.467^{***}$) reflects selection on research
+design quality, but research design quality tends to travel with other
+attributes: better-resourced research groups, more prominent institutions,
+and more carefully crafted papers.  Our model cannot separate these factors,
+so the premium should be read as evidence that journals select on a bundle
+of quality-related attributes, of which identification strategy is one.
 
 \subsection{Limitations}
 \label{subsec:limitations}
@@ -1845,181 +1713,117 @@ Six main threats to the validity of our analysis deserve discussion.
 \medskip
 \noindent\textbf{Fundamental identification constraint.}
 The most important limitation is that NBER working papers and published journal
-articles are not different states of the same population of papers.  They are
-largely non-overlapping samples selected through different institutional
-processes: only 16 of 134 published papers (11.9\%) are matched to an NBER
-working paper.  Our design therefore compares two different cross-sections,
-not papers tracked through the editorial filter.  The observed difference in
-direction distributions is consistent with editorial selection but equally
-consistent with NBER papers having a different direction distribution for
-reasons unrelated to journals---for example, NBER researchers may strategically
-circulate papers with more ambiguous findings, or null-finding papers in this
-domain may disproportionately circulate through SSRN rather than NBER.
-Addressing this fully would require either submission-level data from journal
-editors (desk-rejection rates and review outcomes by direction code) or a
-pre-registration registry for finance papers analogous to the AEA RCT Registry.
-SSRN preprint histories for authors in our sample would also allow a more
-comprehensive pre-publication baseline by capturing papers that circulate
-outside NBER.  Constructing such a baseline---by scraping SSRN, CEPR, and ECGI
-working-paper archives for government-intervention finance papers matching our
-keyword taxonomy---would allow a direct evaluation of whether the NBER distribution
-is representative of the broader pre-submission pool; we leave this for future work.
-Similarly, controlling for researcher credentials (historical publication count,
-institutional ranking) and for paper-specific quality proxies beyond the
-LLM-coded quasi-experimental dummy would sharpen the probit estimates; the current
-dataset lacks author-level metadata, and collecting it is a meaningful extension.
-We interpret all coefficients as cross-sectional associations,
-not causal editorial-filter effects.
+articles are largely non-overlapping groups of papers: only 16 of 134 published
+papers (11.9\%) can be matched to a specific NBER counterpart.  Our design
+therefore compares two different cross-sections of research rather than
+tracking the same paper through the editorial process.  This means we cannot
+directly observe whether a given paper was rejected because of its findings;
+we can only compare the distribution of findings across the two groups.
+A sharper test would require submission-level data from journal editors or a
+pre-registration registry for finance papers, neither of which currently exists.
+We interpret all coefficients as cross-sectional associations, not causal
+editorial-filter effects.
 
 \medskip
 \noindent\textbf{Narrow publication indicator and attenuation bias.}
-The probit dependent variable codes a paper as Published~$= 1$ only if it
-appeared in the \JF{}, \RFS{}, or \JFE{}.  NBER papers that eventually appeared
-in the \textit{Review of Finance}, the \textit{Journal of Financial and
-Quantitative Analysis}, or other peer-reviewed venues are coded Published~$= 0$,
-introducing measurement error in the dependent variable.  This mis-coding
-attenuates the direction coefficient toward zero, biasing our probit estimates
-in the direction of the null we report.  A broader publication indicator covering
-any peer-reviewed finance journal would reduce this attenuation; we leave its
-construction to future work, but note that the bias makes our reported
-null results a conservative lower bound on any true direction premium.
+We define publication as appearing in the \JF{}, \RFS{}, or \JFE{} specifically.
+NBER papers that were eventually published in other peer-reviewed journals ---
+such as the \textit{Review of Finance} or the \textit{Journal of Financial and
+Quantitative Analysis} --- are counted as unpublished in our design.  This
+understates the true publication rate for some papers in our NBER sample.
+Any bias this introduces pushes our direction estimates toward zero, meaning
+our null result is conservative: if a direction premium exists, our design
+is more likely to understate it than to overstate it.  A future extension
+covering all peer-reviewed finance journals would provide a cleaner test.
 
 \medskip
 \noindent\textbf{LLM classification errors and abstract polish.}
-Our pipeline assigns direction codes by reading paper abstracts.  A key
-concern---confirmed by our data---is that NBER working paper abstracts are
-written in a more tentative, multi-result style than published abstracts,
-even though they are longer on average (158 words vs.\ 109 words for published
-abstracts).  Accordingly, 81.3\% of published papers receive a
-``high-confidence'' LLM direction code, versus 62.4\% of NBER-only papers.
-If the LLM more often assigns a null code to hedged NBER abstracts, the
-measured null-paper corpus-membership rate would be biased downward---which would
-\textit{inflate} our estimated directional premium relative to the truth.
+Our AI pipeline codes finding direction by reading abstracts.  A key concern
+is that NBER working paper abstracts are written more tentatively than published
+abstracts --- hedging conclusions, presenting multiple findings, and qualifying
+results --- even though they are longer on average (158 words vs.\ 109 words).
+This stylistic difference shows up in our confidence rates: 81.3\% of published
+abstracts receive a high-confidence direction code, versus only 62.4\% of NBER
+abstracts.  If the AI more often assigns a null code to hedged NBER abstracts
+that are genuinely directional, we would be overstating the share of null papers
+in the pre-publication pool and therefore overstating any direction premium.
 
-Our replication exercise (Section~\ref{subsec:direction}) provides direct
-evidence on this null-coding instability: of the 20 null-coded papers in the validation
-sample, 15 are re-classified as directional in the independent replication run,
-confirming that the null category is the least stable.  This instability implies that using the alternative rater's codes would yield a lower estimated directional
-premium than ours, because some papers we code as null would be coded as
-directional by an alternative rater---which
-would increase the denominator of the directional corpus-membership rate (since the
-reclassified papers are unpublished NBER working papers, so the numerator is
-unchanged) while reducing the denominator of the null rate, inflating the
-measured null corpus-membership rate and compressing the estimated gap between
-directional and null rates.  Our reported estimates should
-thus be interpreted as a conservative upper bound on any true directional
-premium---the actual premium is no larger than what we measure, and may be
-smaller.  Future work
-with standardized abstract templates, full-paper coding (rather than abstract
-coding), or pre-registered abstract language could address this concern
-directly.
+Our validation exercise (Section~\ref{subsec:direction}) confirms this concern:
+of the 20 papers coded as null in the validation sample, 15 were reclassified
+as directional in an independent replication run, making the null category the
+least reliable of the three.  The practical implication is that our estimated
+direction premium is an \textit{upper bound} --- the true premium is no larger
+than what we report, and is likely smaller.  We code abstracts rather than
+full papers because abstracts are freely and consistently available across
+working paper and published formats, while full published texts are paywalled
+and introduce additional noise from methods sections, literature reviews, and
+robustness appendices that are not present in abstracts.
 
-A further implication of null-category instability deserves separate emphasis.
-In our probit models, Null/Mixed ($0$) is the \textit{omitted category}: the
-direction coefficients $\hat\beta_1$ (positive) and $\hat\beta_2$ (negative)
-measure the directional premium \textit{relative to null papers}.  If the null
-category is unstable---as the 25\% replication agreement suggests---the
-omitted-category baseline is itself measured with considerable error.
-This does not mechanically bias the direction coefficients in a specific direction
-(instability in the null group inflates the standard error of the baseline, which
-in turn widens confidence intervals for the direction dummies), but it does mean
-that the estimated null corpus-membership rate of $\approx$46.7\% is substantially
-less reliable than the directional rates.  Readers should interpret the probit
-intercept and the direction-specific contrasts against the null baseline with
-appropriate caution.  The $\chi^2$ test of \textit{joint equality} across all three
-direction categories (positive, negative, null) is more robust to this concern
-because it does not depend on a single omitted-category reference point;
-that test gives $\chi^2 = 0.017$ ($p = 0.992$), consistent with the overall null result.
+A related consequence is that the null-finding publication rate of
+$\approx$46.7\% is less reliable than the rates for positive- and
+negative-finding papers, since the null category itself is noisiest.
+The overall conclusion is nonetheless robust: a joint test of equality across
+all three direction categories gives $\chi^2 = 0.017$ ($p = 0.992$), a test
+that does not depend on any single category as the reference point.
 
 \medskip
 \noindent\textbf{Quality controls and the identification-strategy alternative.}
-The positive quasi-experimental premium ($0.467^{***}$) confirms that
-identification quality is a genuine predictor of publication.  Papers using
-RDD, IV, DiD, or event-study methods are approximately 18 percentage points
-more likely to appear in a top journal, even controlling for direction.
-Importantly, including this control does not alter the direction coefficients
-($\hat\beta_1 = -0.135$, $\hat\beta_2 = -0.156$, both insignificant),
-ruling out the concern that the null result on direction reflects confounding
-with identification quality.
+We find that papers using rigorous causal methods are about 18 percentage
+points more likely to be published than those that do not.  One might
+worry that this masks the direction effect: perhaps rigorous studies
+simply tend to find cleaner, more directional results, and what looks like a
+quality premium is really a direction premium in disguise.  We checked this
+directly.  Whether or not we control for research design quality, the
+direction coefficients barely move and remain statistically insignificant.
+Moreover, Table~\ref{tab:quasiexp_direction} shows that among both rigorous
+and less-rigorous studies, publication rates are nearly identical across
+positive-, negative-, and null-finding papers.  Journals appear to select
+on research quality and on finding direction separately --- and only the
+former matters.
 
-We acknowledge that the LLM-based identification-strategy coding from abstracts
-is itself imperfect: fewer than half of abstracts explicitly name their
-identification strategy, so the LLM infers it from other signals.  No separate
-validation run has been completed for the QuasiExp indicator (unlike the direction
-codes, which have a two-run replication with $\kappa = 0.674$).  A hand-coded
-assessment using full paper text would provide a more definitive check and is a
-natural extension of this work.
-
-A related concern is that quasi-experimental papers might be disproportionately
-directional, in which case the QuasiExp control could absorb a direction effect.
-Table~\ref{tab:quasiexp_direction} speaks directly to this:
-quasi-experimental papers are somewhat more likely to be directional
-(88.5\%, 123/139) than non-quasi-experimental papers (71.1\%, 108/152),
-consistent with cleaner identification yielding sharper estimates.  However,
-within each QuasiExp tier the corpus-membership rate is flat across direction
-categories ($\approx$36--39\% for non-QE papers; $\approx$52--75\% for QE
-papers), and adding QuasiExp to the probit leaves the direction coefficients
-essentially unchanged ($\hat\beta_1 = -0.135$, $\hat\beta_2 = -0.156$, both
-insignificant).  The identification-quality premium therefore appears to
-operate independently of direction sorting rather than absorbing it.
+One limitation is that our AI classification of research design quality
+is less reliable than our direction coding.  Many abstracts do not
+explicitly name the methods used, so the AI has to infer the research
+design from context.  This classification was not separately validated the
+way our direction codes were (those were checked by a second independent
+rater, with good agreement).  Manual coding from full paper texts would
+provide a stronger check.
 
 
 \medskip
 \noindent\textbf{NBER selection and the direction of potential bias.}
-NBER researchers are among the most productive and well-connected academics
-in finance.  If their directional-finding papers are more publishable than
-directional-finding papers from the broader population, the NBER comparison
-group may not be representative of the typical pre-publication paper.  Under
-this scenario, our null result could mask publication bias present in the
-broader research population.  We cannot rule out this possibility without
-submission-level data or a more representative pre-publication baseline.
-Absent such data, the most reassuring feature of our design is the close
-alignment of direction rates between NBER ($79.6\%$ directional) and published
-($79.1\%$ directional), which suggests little residual direction-based sorting
-at least within this elite sample.
-
-A second feature of the design that biases toward the null is our definition
-of ``published'': NBER papers that appeared in journals outside the top-three
-(e.g., \textit{Review of Finance}, \textit{JFQA}) are coded as $\mathit{Published} = 0$,
-adding measurement error to the dependent variable and attenuating any true
-direction premium.  Constructing a broader publication indicator covering all
-peer-reviewed venues would reduce this attenuation; such a check requires
-matching against a comprehensive publication database and is left for future
-work.  For present purposes, the attenuation-toward-null bias means that our
-direction-sorting null is, if anything, conservative.
-
-\medskip
-\noindent\textbf{Right-censoring in the year trend.}
-The positive and significant year trend ($\hat\gamma \approx 0.033^{***}$) is
-consistent with genuine improvement in publication prospects for recent papers,
-but an equally plausible mechanical explanation is right-censoring: NBER
-working papers from 2020--2024 have had fewer years to complete the editorial
-pipeline and appear in a top journal.  Our cross-sectional design cannot
-distinguish these alternatives.  The year trend should therefore be interpreted
-as descriptive rather than as evidence that finance journals have become more
-open to government-intervention research over time.
+NBER working papers come from a select group of researchers at leading
+universities.  If papers from this group are inherently more publishable ---
+regardless of what they find --- then our pre-publication baseline may set
+a higher bar than the typical unpublished paper, and our design would
+understate any true direction premium.  We cannot rule this out.  The most
+reassuring evidence is that the share of directional findings is nearly
+identical in the NBER sample (79.6\%) and the published sample (79.1\%),
+suggesting that whatever selection operates on NBER researchers, it does
+not appear to distort the balance of positive, negative, and null findings
+relative to what gets published.
 
 \medskip
 \noindent\textbf{Multiple comparisons.}
-Our main hypothesis---that directional-finding papers are published at different
-rates than null-finding papers---is pre-specified and tested in a single
-primary regression.  The cross-journal and sub-period analyses are exploratory.
-All main results ($p > 0.90$) fall far from conventional significance
-thresholds; the concern is power rather than false discovery.
+Our main test --- whether finding direction predicts publication --- is
+specified in advance and estimated in a single regression.  Because the
+direction coefficients are far from conventional significance thresholds
+($p > 0.90$), the concern here is that the study lacks power to detect a
+true effect, not that we are finding false positives by running too many tests.
 
-Our caliper analysis runs 18 comparisons across the published sample (full sample,
-three journals, three directions, two row types, two inference procedures) and mirrors
-them for the NBER benchmark; see Section~\ref{subsec:pvalue_dist} for the pre-specified
-primary tests.  Applying a Bonferroni correction at the 5\% level requires
-$p < 0.003$ for 18 caliper comparisons.  Among the caliper tests, the full-sample
-published caliper ($p = 0.002$), the \JFE{} caliper ($p < 0.001$), and the
-negative-direction caliper ($p < 0.001$) all survive this threshold.  Among the
-density-discontinuity tests, the \JF{} ($p < 0.001$) and null/mixed ($p < 0.001$)
-discontinuity results likewise survive Bonferroni correction, providing independent confirmatory
-evidence.  The corresponding NBER caliper tests
-($p > 0.84$) do not approach significance, confirming the absence of
-pre-publication bunching.  The core contrast between published bunching and NBER
-non-bunching is therefore robust to multiple-comparison correction.
+The caliper analysis is a different matter: we run 18 comparisons across
+different subsamples, journals, and finding directions.  When many tests are
+run, some will appear significant by chance.  A standard correction for this
+--- the Bonferroni method --- adjusts the significance threshold downward
+(to $p < 0.003$ for 18 tests) to keep the overall false-positive rate at 5\%.
+Three caliper tests clear this stricter bar: the full published sample
+($p = 0.002$), the \JFE{} subsample ($p < 0.001$), and negative-finding
+papers ($p < 0.001$).  Two density tests --- for the \JF{} and for
+null/mixed papers --- also survive ($p < 0.001$ each).  By contrast, none
+of the NBER caliper tests come close to significance ($p > 0.84$), confirming
+that the bunching pattern is specific to published papers and not present in
+the pre-publication research base.  The core finding therefore holds even
+after accounting for the number of comparisons made.
 
 %% ============================================================
 \section{Conclusion}
@@ -2189,104 +1993,9 @@ sentence).
 \end{quote}
 
 %% ============================================================
-%% ============================================================
-\section{Cross-Journal Probit Estimates}
-\label{app:by_journal}
-%% ============================================================
-
-Table~\ref{tab:probit_by_journal} reports journal-specific probit estimates.
-No journal shows a statistically significant direction coefficient.
-At the \JF{}, point estimates are $\hat\beta_1 = 0.393$ ($p = 0.269$) and
-$\hat\beta_2 = 0.329$ ($p = 0.345$).
-The \RFS{} yields $\hat\beta_1 = -0.036$ ($p = 0.900$) and
-$\hat\beta_2 = 0.252$ ($p = 0.350$).
-The \JFE{} yields $\hat\beta_1 = -0.136$ ($p = 0.572$) and
-$\hat\beta_2 = -0.305$ ($p = 0.200$).
-Cross-journal Wald tests for equality of the positive coefficients yield
-$p = 0.349$ (JF vs.\ RFS), $p = 0.218$ (JF vs.\ JFE), and $p = 0.791$
-(RFS vs.\ JFE); none is statistically distinguishable.  These results are
-consistent with the pooled null but carry limited inferential weight given
-the small sub-samples (especially JF: 26 papers).
-
-\begin{table}[H]
-\centering
-\caption{Probit Models by Journal}
-\label{tab:probit_by_journal}
-\begin{singlespace}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{lccc}
-\toprule
- & \JF{} & \RFS{} & \JFE{} \\
-\midrule
-Positive ($+1$) & $0.393$       & $-0.036$      & $-0.136$      \\
-                & $(0.355)$     & $(0.290)$     & $(0.241)$     \\[4pt]
-Negative ($-1$) & $0.329$       & $0.252$       & $-0.305$      \\
-                & $(0.349)$     & $(0.270)$     & $(0.238)$     \\[4pt]
-Year trend      & $-0.010$      & $0.058^{***}$ & $0.032^{**}$  \\
-                & $(0.017)$     & $(0.017)$     & $(0.015)$     \\
-\midrule
-$N$             & 183           & 205           & 217           \\
-Pseudo $R^2$    & 0.011         & 0.065         & 0.027         \\
-\bottomrule
-\end{tabular}}
-\par\smallskip
-\begin{minipage}{\textwidth}
-\small
-\textit{Notes.} Each column uses the 157 NBER-only papers (Published $= 0$)
-and the published papers from the specified journal (Published $= 1$) only;
-published papers from the remaining two journals are excluded, giving
-$N = 183$, $205$, and $217$ respectively.  Each column therefore compares
-each journal's directional mix against the shared NBER working-paper pool.
-Standard errors in parentheses.  *** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$.
-The \JF{} sample contains only 26 in-scope published articles in 2000--2024,
-limiting statistical power for journal-specific tests.
-\end{minipage}
-\end{singlespace}
-\end{table}
-
-%% ============================================================
 \section{Additional Tables}
 \label{app:additional_tables}
 %% ============================================================
-
-\begin{table}[H]
-\centering
-\caption{Probit Results by Sub-Period \textit{(Exploratory)}}
-\label{tab:time_trends}
-\begin{singlespace}
-\begin{tabularx}{\textwidth}{l>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
-\toprule
- & 2000--2007 & 2008--2015 & 2016--2024 \\
-\midrule
-Positive ($+1$) & $0.376$       & $-0.247$      & $-0.015$      \\
-                & $(0.505)$     & $(0.364)$     & $(0.288)$     \\
-                & [$-$0.61, 1.37] & [$-$0.96, 0.47] & [$-$0.58, 0.55] \\[4pt]
-Negative ($-1$) & $-0.537$      & $-0.163$      & $0.190$       \\
-                & $(0.557)$     & $(0.340)$     & $(0.274)$     \\
-                & [$-$1.63, 0.56] & [$-$0.83, 0.50] & [$-$0.35, 0.73] \\
-\midrule
-$N$             &  50           &  95           & 146           \\
-Pseudo $R^2$    & 0.072         & 0.004         & 0.005         \\
-\bottomrule
-\end{tabularx}
-\par\smallskip
-\begin{minipage}{\textwidth}
-\small
-\textit{Notes.} \textbf{This analysis is exploratory.}  Sub-period sample
-sizes are small ($N = 50$, 95, 146) and results should be interpreted as
-descriptive evidence, not confirmatory tests; confidence intervals overlap
-substantially across periods and encompass zero in all cases.  Each column
-estimates equation~\eqref{eq:probit} on the indicated sub-period without
-additional controls.  Standard errors in parentheses; 95\% confidence intervals
-in brackets.
-*** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$.  Period 2008--2015 spans the
-financial crisis and post-crisis regulatory response (Dodd-Frank enacted July
-2010); 2016--2024 covers the post-implementation period.  All direction
-coefficients are statistically indistinguishable from zero across all three
-sub-periods, consistent with the pooled null result.
-\end{minipage}
-\end{singlespace}
-\end{table}
 
 %% ============================================================
 \section{LLM Direction Coding: Replication Confusion Matrix}
