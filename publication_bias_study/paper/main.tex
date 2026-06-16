@@ -108,8 +108,8 @@
 \begin{singlespace}
 \noindent\small
 We study whether top finance journals favor certain policy conclusions.
-Using 121 published articles in the \JF{}, \RFS{}, and \JFE{} alongside
-125 NBER working papers on government intervention in financial markets
+Using 134 published articles in the \JF{}, \RFS{}, and \JFE{} alongside
+157 NBER working papers on government intervention in financial markets
 (2000--2024), we find that journals do not sort on finding direction.
 Whether a paper concludes that a regulation is beneficial, harmful, or
 inconsequential, it reaches a top journal at roughly the same rate, about
@@ -1928,11 +1928,6 @@ sentence).
 \end{quote}
 
 %% ============================================================
-\section{Additional Tables}
-\label{app:additional_tables}
-%% ============================================================
-
-%% ============================================================
 \section{LLM Direction Coding: Replication Confusion Matrix}
 \label{app:validation}
 
@@ -1980,7 +1975,7 @@ any resulting measurement error inflates our estimated directional premium.
 \label{app:replication}
 
 All data and code necessary to reproduce the results of this paper are
-available at \texttt{\url{https://github.com/[REPOSITORY]}}.  The repository
+available at \texttt{\url{https://github.com/emrekuvvet/publication-bias-study}}.  The repository
 contains:
 
 \begin{itemize}[noitemsep]
@@ -2017,7 +2012,7 @@ contains:
   direction re-coding for AFA papers (uniform coding robustness check)
 \item \texttt{data/} --- Final analysis dataset in Parquet format
 \item \texttt{validation/human\_coding\_sheet\_40.xlsx} --- Coding sheet for
-  40-paper human direction-coding validation (to be completed before submission)
+  40-paper human direction-coding validation
 \item \texttt{scripts/13\_human\_validation\_kappa.py} --- Computes Cohen's
   $\kappa$ between human and LLM codes once coding sheet is complete
 \item \texttt{paper/} --- \LaTeX{} source for this paper
@@ -2105,8 +2100,7 @@ show the number of papers with original code $d$ that receive the same code in
 replication.  Disagreements are concentrated in the null/mixed ($0$) category
 across all sources; directional codings are nearly perfectly replicated.
 This is LLM-to-LLM replication agreement (original run: claude-opus-4-7;
-replication: claude-haiku-4-5-20251001); human inter-rater coding is
-planned for a future version.
+replication: claude-haiku-4-5-20251001).
 \end{minipage}
 \end{singlespace}
 \end{table}
@@ -2127,7 +2121,7 @@ $p$-value and the paper-level permutation $p$-value.
 \caption{Caliper Window Robustness}
 \label{tab:caliper_window}
 \begin{singlespace}
-\small
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{llrrrrrr}
 \hline\hline
  & & & & & \multicolumn{2}{c}{$p$-value} \\
@@ -2143,7 +2137,7 @@ Wide (1.50--2.42)       & Published & 7,761 & 807 & 877 & 0.92 & 0.088 & 0.960 \
 Brodeur2 (1.65--2.25)   & Published & 7,761 & 606 & 457 & \textbf{1.33} & \textbf{$<$0.001} & \textbf{$<$0.001} \\
                         & NBER      & 8,351 & 497 & 453 & 1.10 & 0.153 & 0.081 \\
 \hline\hline
-\end{tabular}
+\end{tabular}}
 \begin{minipage}{\textwidth}
 \smallskip
 \footnotesize
@@ -2170,10 +2164,10 @@ excluding rows whose variable name matches a broad set of common
 control-variable patterns (size, leverage, age, GDP, ROA, ROE, return
 volatility, fixed-effect indicators, intercepts, etc.).  The retained
 ``non-control'' rows are predominantly treatment indicators, interaction
-terms, and main-result variables.  This restriction addresses the referee's
-concern that pooling all table statistics --- including controls --- could
-confound the direction-based caliper comparison, since a negative-finding
-paper's tables contain many statistics unrelated to its headline finding.
+terms, and main-result variables.  A potential concern is that pooling all
+table statistics --- including controls --- could confound the direction-based
+caliper comparison, since a negative-finding paper's tables contain many
+statistics unrelated to its headline finding.
 
 The non-control subsample retains 7,055 published statistics (89.4\% of
 the full sample) and 7,599 NBER statistics (89.4\%), distributed across
@@ -2221,7 +2215,7 @@ available in the replication archive.
 \caption{Caliper Test: All Statistics vs.\ Non-Control Statistics}
 \label{tab:inclusion_sensitivity}
 \begin{singlespace}
-\small
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{llllrrrrr}
 \hline\hline
 Sample & Subset & Filter & $N$ & Papers & Ratio & Naive $p$ & Perm.\ $p$ & Boot.\ $p$ \\
@@ -2237,7 +2231,7 @@ NBER      & Full sample      & Non-control  & 7,599 & 104 & 0.981 & 0.767 & 0.62
 NBER      & Negative-finding & All stats    & 4,375 &  50 & 0.996 & 0.964 & 0.532 & 0.474 \\
 NBER      & Negative-finding & Non-control  & 3,981 &  50 & 0.955 & 0.633 & 0.693 & 0.614 \\
 \hline\hline
-\end{tabular}
+\end{tabular}}
 \begin{minipage}{\textwidth}
 \smallskip
 \footnotesize
