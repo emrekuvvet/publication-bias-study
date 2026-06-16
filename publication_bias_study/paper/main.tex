@@ -382,8 +382,8 @@ over-inclusive: the cost of an extra LLM call is negligible relative to the cost
 of omitting a genuine in-scope paper.
 
 The keyword filter reduces the corpus
-from 39,136 documents to 1,049 candidates (510 NBER, 184 \JF{}, 151
-\RFS{}, and 204 \JFE{}).
+from 39,136 documents to 1,852 candidates (1,313 NBER, 182 \JF{}, 153
+\RFS{}, and 201 \JFE{}).
 
 In the second pass, each keyword-flagged candidate is passed to Claude with
 the following instruction (full prompt in Appendix~\ref{app:prompts}):
@@ -468,7 +468,6 @@ coded positive ($+1$) because the intervention achieved its intended regulatory
 goal, regardless of whether the authors believe capital requirements are optimal
 policy.  The full coding prompt is in Appendix~\ref{app:prompts}.
 
-\label{subsec:validation}
 We validate the direction codes in two ways.  First, we re-ran the coding on a stratified 60-paper sample using a different,
 smaller model with the same prompt.  The two runs agree on 72\% of papers
 ($\kappa = 0.674$, ``substantial agreement'').  Agreement is high for
@@ -1099,7 +1098,7 @@ Column~(1) shows no relationship between directional conclusions and
 publication: the coefficient is $-0.020$ ($p = 0.914$), indistinguishable
 from zero.  Papers with directional findings are no more or less likely to
 appear in a top journal than papers with null findings.  This result rules
-out large sorting effects---roughly 22 percentage points or more---but
+out large sorting effects---roughly 18 percentage points or more---but
 cannot rule out smaller ones; we interpret it as evidence against strong
 directional sorting, not proof of complete editorial neutrality.
 
