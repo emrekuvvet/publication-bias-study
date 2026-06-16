@@ -1708,122 +1708,59 @@ of quality-related attributes, of which identification strategy is one.
 \subsection{Limitations}
 \label{subsec:limitations}
 
-Six main threats to the validity of our analysis deserve discussion.
+Our design has six limitations worth flagging.
 
-\medskip
-\noindent\textbf{Fundamental identification constraint.}
-The most important limitation is that NBER working papers and published journal
-articles are largely non-overlapping groups of papers: only 16 of 134 published
-papers (11.9\%) can be matched to a specific NBER counterpart.  Our design
-therefore compares two different cross-sections of research rather than
-tracking the same paper through the editorial process.  This means we cannot
-directly observe whether a given paper was rejected because of its findings;
-we can only compare the distribution of findings across the two groups.
-A sharper test would require submission-level data from journal editors or a
-pre-registration registry for finance papers, neither of which currently exists.
-We interpret all coefficients as cross-sectional associations, not causal
-editorial-filter effects.
+First, only 16 of 134 published papers (11.9\%) can be matched to a specific
+NBER counterpart, so we are comparing two largely non-overlapping groups of
+papers rather than tracking the same paper through the editorial process.
+We cannot directly observe whether any paper was rejected because of its
+findings; we can only compare the distribution of findings across the two
+groups.  All direction coefficients should be read as cross-sectional
+associations, not causal effects of editorial filtering.
 
-\medskip
-\noindent\textbf{Narrow publication indicator and attenuation bias.}
-We define publication as appearing in the \JF{}, \RFS{}, or \JFE{} specifically.
-NBER papers that were eventually published in other peer-reviewed journals ---
-such as the \textit{Review of Finance} or the \textit{Journal of Financial and
-Quantitative Analysis} --- are counted as unpublished in our design.  This
-understates the true publication rate for some papers in our NBER sample.
-Any bias this introduces pushes our direction estimates toward zero, meaning
-our null result is conservative: if a direction premium exists, our design
-is more likely to understate it than to overstate it.  A future extension
-covering all peer-reviewed finance journals would provide a cleaner test.
+Second, we define publication as appearing in the \JF{}, \RFS{}, or \JFE{}
+only.  NBER papers that ended up in other peer-reviewed journals are counted
+as unpublished, understating the true publication rate for some papers.  Any
+resulting bias pushes our direction estimates toward zero, making our null
+result conservative.
 
-\medskip
-\noindent\textbf{LLM classification errors and abstract polish.}
-Our AI pipeline codes finding direction by reading abstracts.  A key concern
-is that NBER working paper abstracts are written more tentatively than published
-abstracts --- hedging conclusions, presenting multiple findings, and qualifying
-results --- even though they are longer on average (158 words vs.\ 109 words).
-This stylistic difference shows up in our confidence rates: 81.3\% of published
-abstracts receive a high-confidence direction code, versus only 62.4\% of NBER
-abstracts.  If the AI more often assigns a null code to hedged NBER abstracts
-that are genuinely directional, we would be overstating the share of null papers
-in the pre-publication pool and therefore overstating any direction premium.
+Third, our AI pipeline codes direction from abstracts, and NBER abstracts are
+written more tentatively than published ones (high-confidence rate: 62.4\%
+vs.\ 81.3\%).  If the AI over-assigns null codes to hedged NBER abstracts,
+the estimated direction premium is overstated.  Our validation exercise
+confirms this risk: 15 of 20 null-coded papers were reclassified as
+directional in an independent replication, making null the least stable
+category.  Our estimates are therefore best read as an upper bound on any
+true direction premium.  The null-finding publication rate ($\approx$46.7\%)
+is the least reliable of the three rates, but a joint equality test across
+all three categories ($\chi^2 = 0.017$, $p = 0.992$) confirms the overall
+null without relying on any single category as reference.
 
-Our validation exercise (Section~\ref{subsec:direction}) confirms this concern:
-of the 20 papers coded as null in the validation sample, 15 were reclassified
-as directional in an independent replication run, making the null category the
-least reliable of the three.  The practical implication is that our estimated
-direction premium is an \textit{upper bound} --- the true premium is no larger
-than what we report, and is likely smaller.  We code abstracts rather than
-full papers because abstracts are freely and consistently available across
-working paper and published formats, while full published texts are paywalled
-and introduce additional noise from methods sections, literature reviews, and
-robustness appendices that are not present in abstracts.
+Fourth, the 18-percentage-point quasi-experimental premium could mask a
+direction effect if rigorous studies also tend to find directional results.
+This does not appear to be the case: direction coefficients are unchanged
+whether or not research design quality is controlled, and
+Table~\ref{tab:quasiexp_direction} shows flat publication rates across
+directions within both rigorous and non-rigorous studies.  The AI
+classification of research design is less reliable than the direction
+coding --- many abstracts do not name their methods explicitly --- and has
+not been separately validated.
 
-A related consequence is that the null-finding publication rate of
-$\approx$46.7\% is less reliable than the rates for positive- and
-negative-finding papers, since the null category itself is noisiest.
-The overall conclusion is nonetheless robust: a joint test of equality across
-all three direction categories gives $\chi^2 = 0.017$ ($p = 0.992$), a test
-that does not depend on any single category as the reference point.
+Fifth, NBER researchers come from a select group at leading universities.
+If their papers are inherently more publishable, our pre-publication baseline
+sets a higher bar than the average unpublished paper, and we would understate
+any true direction premium.  The near-identical share of directional findings
+in the NBER (79.6\%) and published (79.1\%) samples is the most reassuring
+evidence against this concern.
 
-\medskip
-\noindent\textbf{Quality controls and the identification-strategy alternative.}
-We find that papers using rigorous causal methods are about 18 percentage
-points more likely to be published than those that do not.  One might
-worry that this masks the direction effect: perhaps rigorous studies
-simply tend to find cleaner, more directional results, and what looks like a
-quality premium is really a direction premium in disguise.  We checked this
-directly.  Whether or not we control for research design quality, the
-direction coefficients barely move and remain statistically insignificant.
-Moreover, Table~\ref{tab:quasiexp_direction} shows that among both rigorous
-and less-rigorous studies, publication rates are nearly identical across
-positive-, negative-, and null-finding papers.  Journals appear to select
-on research quality and on finding direction separately --- and only the
-former matters.
-
-One limitation is that our AI classification of research design quality
-is less reliable than our direction coding.  Many abstracts do not
-explicitly name the methods used, so the AI has to infer the research
-design from context.  This classification was not separately validated the
-way our direction codes were (those were checked by a second independent
-rater, with good agreement).  Manual coding from full paper texts would
-provide a stronger check.
-
-
-\medskip
-\noindent\textbf{NBER selection and the direction of potential bias.}
-NBER working papers come from a select group of researchers at leading
-universities.  If papers from this group are inherently more publishable ---
-regardless of what they find --- then our pre-publication baseline may set
-a higher bar than the typical unpublished paper, and our design would
-understate any true direction premium.  We cannot rule this out.  The most
-reassuring evidence is that the share of directional findings is nearly
-identical in the NBER sample (79.6\%) and the published sample (79.1\%),
-suggesting that whatever selection operates on NBER researchers, it does
-not appear to distort the balance of positive, negative, and null findings
-relative to what gets published.
-
-\medskip
-\noindent\textbf{Multiple comparisons.}
-Our main test --- whether finding direction predicts publication --- is
-specified in advance and estimated in a single regression.  Because the
-direction coefficients are far from conventional significance thresholds
-($p > 0.90$), the concern here is that the study lacks power to detect a
-true effect, not that we are finding false positives by running too many tests.
-
-The caliper analysis is a different matter: we run 18 comparisons across
-different subsamples, journals, and finding directions.  When many tests are
-run, some will appear significant by chance.  A standard correction for this
---- the Bonferroni method --- adjusts the significance threshold downward
-(to $p < 0.003$ for 18 tests) to keep the overall false-positive rate at 5\%.
-Three caliper tests clear this stricter bar: the full published sample
-($p = 0.002$), the \JFE{} subsample ($p < 0.001$), and negative-finding
-papers ($p < 0.001$).  Two density tests --- for the \JF{} and for
-null/mixed papers --- also survive ($p < 0.001$ each).  By contrast, none
-of the NBER caliper tests come close to significance ($p > 0.84$), confirming
-that the bunching pattern is specific to published papers and not present in
-the pre-publication research base.  The core finding therefore holds even
-after accounting for the number of comparisons made.
+Sixth, the caliper analysis runs 18 comparisons across subsamples, journals,
+and directions.  Applying the Bonferroni correction ($p < 0.003$ for 18
+tests), three caliper tests survive: the full published sample ($p = 0.002$),
+the \JFE{} ($p < 0.001$), and negative-finding papers ($p < 0.001$).  Two
+density tests --- \JF{} and null/mixed ($p < 0.001$ each) --- also survive.
+The NBER caliper tests do not approach significance ($p > 0.84$), and the
+main direction regression is pre-specified in a single test ($p > 0.90$),
+where the concern is power rather than false discovery.
 
 %% ============================================================
 \section{Conclusion}
