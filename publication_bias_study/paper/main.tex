@@ -477,7 +477,7 @@ positive ones---but only 25\% for null/mixed papers, where most errors are
 null-to-directional flips rather than the reverse.  This means any coding
 error tends to overstate the directional premium, so our estimates are if
 anything conservative.  The full confusion matrix is in
-Appendix~\ref{app:human_validation}.
+Appendix~\ref{app:validation}.
 
 Second, we re-ran coding on 58 papers under three alternative prompt wordings.
 Agreement with the original codes ranges from 83\% to 91\%
@@ -1419,7 +1419,7 @@ in NBER abstracts may cause the AI to classify genuinely directional working
 papers as null.  Second, polished language in published abstracts may cause
 the AI to classify more of them as directional.  Both errors would push our
 estimate of the direction premium upward, meaning our estimates are more
-likely to overstate than understate any premium.  Our human-validation
+likely to overstate than understate any premium.  Our LLM replication
 exercise (Section~\ref{subsec:direction}) is consistent with this: of the
 20 papers that the AI coded as null in the validation sample, 15 were
 reclassified as directional in an independent replication run, while no
@@ -1834,8 +1834,6 @@ methodological quality.
   {Appendix \Alph{section}.}{0.5em}{}
 \setcounter{table}{0}
 \renewcommand{\thetable}{A\arabic{table}}
-\setcounter{figure}{0}
-\renewcommand{\thefigure}{A\arabic{figure}}
 
 %% ============================================================
 \section{Keyword Taxonomy}
@@ -1931,7 +1929,7 @@ sentence).
 \end{quote}
 
 %% ============================================================
-\section{LLM Direction Coding: Replication Confusion Matrix}
+\section{Replication Confusion Matrix}
 \label{app:validation}
 
 \begin{table}[H]
@@ -1954,7 +1952,7 @@ Column total & 31 & 5 & 24 & 60 \\
 \end{tabularx}
 \par\smallskip
 \begin{minipage}{\textwidth}
-\small
+\footnotesize
 \textit{Notes.} Entries are paper counts from a 60-paper stratified
 random subsample (5 papers per source $\times$ direction cell, balanced across
 the three journals and NBER).  Rows show the original direction code used in
@@ -2014,10 +2012,6 @@ contains:
 \item \texttt{scripts/11c\_recode\_afa\_direction\_llm.py} --- LLM
   direction re-coding for AFA papers (uniform coding robustness check)
 \item \texttt{data/} --- Final analysis dataset in Parquet format
-\item \texttt{validation/human\_coding\_sheet\_40.xlsx} --- Coding sheet for
-  40-paper human direction-coding validation
-\item \texttt{scripts/13\_human\_validation\_kappa.py} --- Computes Cohen's
-  $\kappa$ between human and LLM codes once coding sheet is complete
 \item \texttt{paper/} --- \LaTeX{} source for this paper
 \end{itemize}
 
@@ -2063,10 +2057,10 @@ directionally selected.
 
 %% ============================================================
 \section{Direction-Coding Reliability by Source}
-\label{app:human_validation}
+\label{app:replication_by_source}
 %% ============================================================
 
-Table~\ref{tab:human_validation} disaggregates the LLM replication agreement
+Table~\ref{tab:replication_by_source} disaggregates the LLM replication agreement
 (from Appendix~\ref{app:validation}) by source corpus.  The replication used an
 independent second LLM run (claude-haiku-4-5-20251001, temperature $= 0$) on the
 same stratified sample of 60 papers.  Agreement is highest for NBER papers
@@ -2077,7 +2071,7 @@ directional codings ($\pm 1$) are nearly perfectly replicated across all sources
 \begin{table}[H]
 \centering
 \caption{LLM Replication Agreement by Source (N\,=\,60)}
-\label{tab:human_validation}
+\label{tab:replication_by_source}
 \begin{singlespace}
 \resizebox{0.85\textwidth}{!}{%
 \begin{tabular}{lrrrrrr}
@@ -2094,7 +2088,7 @@ Total & 60 & 71.7\% & 0.674 & 20/20 & 5/20 & 18/20 \\
 \end{tabular}}
 \par\smallskip
 \begin{minipage}{0.85\textwidth}
-\small
+\footnotesize
 \textit{Notes.} Each source contributes 15 papers (5 per direction cell)
 from a stratified random sample.  \textit{Agreement} is the fraction of papers
 where the original and replication LLM codes match.  $\kappa_w$ is the
@@ -2252,7 +2246,7 @@ unchanged by the restriction, and the negative-finding ratio strengthens slightl
 \end{table}
 
 %% ============================================================
-\section{Caliper by Row Type: Coef+SE vs.\ Standalone \textit{z}-Statistics}
+\section{Caliper Test Stratified by Row Type: Coef+SE vs.\ Standalone \textit{z}-Statistics}
 \label{app:coefse_caliper}
 %% ============================================================
 
