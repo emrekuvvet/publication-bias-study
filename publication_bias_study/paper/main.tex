@@ -178,7 +178,7 @@ is designed to detect both types.
 
 This paper studies sorting patterns in a domain the existing literature has
 not examined: the finance literature's treatment of government intervention.
-Prior work on publication bias in finance has focused on the cross-section of
+Prior work on significance bias in finance has focused on the cross-section of
 asset pricing anomalies, documenting that factor-zoo proliferation reflects
 selection for high t-statistics \citep*{Harvey2016,Hou2020,Jensen2023}.  A
 parallel economics literature \citep*{Brodeur2016,Andrews2019} infers bias from
@@ -264,8 +264,27 @@ Section~\ref{sec:conclusion} concludes.
 \label{sec:literature}
 %% ============================================================
 
+We use four terms with distinct meanings throughout.
+\textit{Significance bias} refers to the selective suppression of statistically
+null results, giving the published record an inflated share of significant
+findings regardless of their direction.
+\textit{Directional bias} refers to editorial selection based on the
+substantive direction of a paper's conclusion---whether a policy is found
+beneficial, harmful, or inconsequential---independent of its statistical
+significance.
+\textit{Selective reporting} refers to within-paper researcher behavior: the
+choice of which specifications, robustness checks, or standalone test statistics
+to highlight in the final manuscript based on whether they clear a significance
+threshold.
+\textit{Editorial selection} is our umbrella term for any mechanism by which
+the submission-to-publication pipeline shapes the composition of the published
+literature.
+Our main finding concerns directional bias; our caliper analysis speaks to
+selective reporting; the significance-bias literature provides the
+methodological benchmark for both.
+
 This paper relates to three strands of research.  The first is the literature
-on publication bias in economics and finance.  \citet*{Brodeur2016} document
+on significance bias in economics and finance.  \citet*{Brodeur2016} document
 excess mass just below the 5\% significance threshold in the top economics
 journals, consistent with selective reporting of marginally significant
 specifications.  \citet*{Franco2014} show, using NSF-funded pre-registered
@@ -879,7 +898,7 @@ $^{***}p<0.01$, $^{**}p<0.05$, $^{*}p<0.10$.
 \end{singlespace}
 \end{table}
 
-Most prior work on publication bias can only study published papers and must
+Most prior work on significance bias can only study published papers and must
 infer what the research pipeline looked like before editorial decisions were
 made.  Our NBER sample lets us compare directly.
 
@@ -1992,7 +2011,7 @@ User message:
 
 \begin{quote}
 \small
-A finance research paper is `in scope' for a study of publication bias
+A finance research paper is `in scope' for a study of directional bias
 in government intervention research if and only if its PRIMARY research
 question is the CAUSAL EFFECT of a specific government law, regulation,
 or public policy on financial markets, firms, or investors.
