@@ -493,8 +493,8 @@ Pass 2: LLM classification and manual review     &    291 &  1,558 \\
 \par\smallskip
 \begin{minipage}{\textwidth}
 \small
-\textit{Notes.} The starting corpus includes all NBER working papers under
-programs CF, AP, ME, EFG, and PE and all research articles from the
+\textit{Notes.} The starting corpus includes all 30,212 NBER working papers
+(every program, 2000--2024) and all research articles from the
 \JF{}, \RFS{}, and \JFE{}, 2000--2024.  The keyword filter screens for
 government intervention terminology (see Appendix~\ref{app:keywords});
 LLM classification and manual review retain only papers whose primary
@@ -524,7 +524,7 @@ policy.  The full coding prompt is in Appendix~\ref{app:prompts}.
 
 We validate the direction codes in two ways.  First, we re-ran the coding on a stratified 60-paper sample using the same model
 (claude-haiku-4-5-20251001) in an independent second call.  The two runs agree on 71.7\% of papers
-($\kappa = 0.674$, ``substantial agreement'').  Agreement is high for
+($\kappa_w = 0.674$, ``substantial agreement'').  Agreement is high for
 directional papers---100\% for negative findings and 90\% for
 positive ones---but only 25\% for null/mixed papers, where most errors are
 null-to-directional flips rather than the reverse.  This means any coding
@@ -564,7 +564,7 @@ computed against the original direction codes used throughout the paper.
 \end{table}
 
 Human-coded validation of a 40-paper subsample is included in the replication
-package and remains a key additional check; the model-choice $\kappa = 0.674$
+package and remains a key additional check; the model-choice $\kappa_w = 0.674$
 is the primary reliability evidence reported here.
 
 \subsection{Linking NBER Papers to Published Papers}
@@ -616,8 +616,8 @@ All papers                   & 291 & 35.4 & 44.0 & 20.6 \\
 \par\smallskip
 \begin{minipage}{\textwidth}
 \small
-\textit{Notes.} The sample consists of 157 NBER working papers (programs
-CF, AP, ME, EFG, and PE, 2000--2024) and 134 published journal articles
+\textit{Notes.} The sample consists of 157 NBER working papers identified
+from the full NBER corpus (all programs, 2000--2024) via topic filter, and 134 published journal articles
 (\JF{}, \RFS{}, \JFE{}) classified as in-scope government-intervention papers
 by our LLM pipeline and manual validation.  Direction codes: $+1 =$
 positive/beneficial finding, $-1 =$ negative/harmful finding, $0 =$ null or
@@ -2050,7 +2050,7 @@ consistent with revision-stage pressure than with outright fabrication of
 results --- and survives stringent multiple-comparison correction.
 
 The strongest predictor of publication is not finding direction but research
-design quality: papers using credible causal methods are about 18 percentage
+design quality: papers using credible causal methods are 18--20 percentage
 points more likely to appear in a top journal.  This likely reflects journals
 selecting on a bundle of quality attributes --- rigorous identification,
 careful data construction, well-crafted writing --- of which the specific
@@ -2239,7 +2239,7 @@ Bold entries on the main diagonal are papers where both runs assigned
 the same code---these are the agreements.
 Off-diagonal entries are disagreements.
 Overall, the two runs agree on 43 of 60 papers (71.7\%).
-Cohen's $\kappa = 0.674$, which the \citet*{LandisKoch1977} scale
+Cohen's weighted $\kappa_w = 0.674$ (linear weights), which the \citet*{LandisKoch1977} scale
 classifies as ``substantial agreement.''
 Agreement is perfect for negative-finding papers (20/20 = 100\%) and
 high for positive-finding papers (18/20 = 90\%), but much lower for
