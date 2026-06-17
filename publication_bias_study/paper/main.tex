@@ -468,8 +468,8 @@ coded positive ($+1$) because the intervention achieved its intended regulatory
 goal, regardless of whether the authors believe capital requirements are optimal
 policy.  The full coding prompt is in Appendix~\ref{app:prompts}.
 
-We validate the direction codes in two ways.  First, we re-ran the coding on a stratified 60-paper sample using a different,
-smaller model with the same prompt.  The two runs agree on 72\% of papers
+We validate the direction codes in two ways.  First, we re-ran the coding on a stratified 60-paper sample using the same model
+(claude-haiku-4-5-20251001) in an independent second call.  The two runs agree on 71.7\% of papers
 ($\kappa = 0.674$, ``substantial agreement'').  Agreement is high for
 directional papers---100\% for negative findings and 90\% for
 positive ones---but only 25\% for null/mixed papers, where most errors are
@@ -1005,7 +1005,7 @@ is inconclusive.
 \textit{NBER-only} counts working papers that were never published in the JF,
 RFS, or JFE; \textit{Published} counts papers that were; \textit{Total} is
 both groups combined.
-\textit{Publication Rate} is the share of papers in each direction category
+\textit{Corpus-Membership Rate} is the share of papers in each direction category
 that end up published.  This reflects the relative sizes of our two samples
 and should not be interpreted as a journal acceptance rate.
 \textit{95\% CI} is the confidence interval around each publication rate.
@@ -1246,9 +1246,10 @@ articles over the full sample period---and should be treated as descriptive.
 
 This section checks whether the main findings hold under a range of
 alternative assumptions.  Table~\ref{tab:robustness} summarizes results
-across five areas: sensitivity of the caliper test to the choice of window,
-sample and scope restrictions, alternative model specifications, concerns
-about classification quality, and an alternative pre-publication baseline.
+across four areas: sample and scope restrictions, alternative model
+specifications, concerns about classification quality, and an alternative
+pre-publication baseline. Caliper window sensitivity is addressed separately
+in Table~\ref{tab:caliper_window_main}.
 
 \subsection{Caliper Window Sensitivity}
 \label{subsec:window_robustness}
@@ -1775,7 +1776,7 @@ no evidence of direction-based editorial selection at a scale our design can
 detect.  Positive-, negative-, and null-finding papers appear in top journals
 at nearly identical rates --- 45.6\%, 46.1\%, and 46.7\% respectively --- and
 the finding direction is statistically unrelated to publication across all
-six model specifications.  The design rules out gaps larger than 18 percentage
+seven model specifications.  The design rules out gaps larger than 18 percentage
 points at 80\% power; smaller asymmetries remain possible.
 
 The distribution of test statistics tells a more nuanced story.  Among
@@ -1785,7 +1786,7 @@ below the conventional 5\% significance threshold than their NBER counterparts
 (ratio 2.55 vs.\ 1.49).  The full-sample caliper ratio of 1.20 across all
 statistics is driven roughly equally by this within-type effect and by the
 fact that published papers contain a higher share of standalone statistics
-(31.6\% vs.\ 21.0\% in NBER papers).  The bunching is most pronounced in
+(29.0\% vs.\ 18.7\% in NBER papers).  The bunching is most pronounced in
 negative-finding papers (ratio 1.52), though this pattern is suggestive
 rather than statistically definitive.  Among the primary verifiable regression
 rows, neither published papers nor NBER papers show systematic threshold
