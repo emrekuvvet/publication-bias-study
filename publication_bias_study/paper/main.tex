@@ -2011,56 +2011,25 @@ our estimates conservative.
 \label{app:inclusion_sensitivity}
 %% ============================================================
 
-Table~\ref{tab:inclusion_sensitivity} repeats the main caliper test after
-excluding rows whose variable name matches a broad set of common
-control-variable patterns (size, leverage, age, GDP, ROA, ROE, return
-volatility, fixed-effect indicators, intercepts, etc.).  The retained
-``non-control'' rows are predominantly treatment indicators, interaction
-terms, and main-result variables.  A potential concern is that pooling all
-table statistics --- including controls --- could confound the direction-based
-caliper comparison, since a negative-finding paper's tables contain many
-statistics unrelated to its headline finding.
-
-The non-control subsample retains 7,055 published statistics (90.9\% of
-the full sample) and 7,599 NBER statistics (91.0\%), distributed across
-108 published and 104 NBER papers.  Caliper ratios and $p$-values are essentially
-unchanged from the full-sample results: the published full-sample ratio
+A potential concern is that pooling all regression-table rows---including
+standard controls---could inflate the caliper count without reflecting
+publication pressure on headline results.
+Table~\ref{tab:inclusion_sensitivity} addresses this by re-running the caliper
+test after dropping rows whose variable name matches common control patterns:
+firm size, leverage, profitability (ROA/ROE/EBITDA), book-to-market, Tobin's $q$,
+return volatility, momentum, cash flow, market capitalization, intercepts,
+year dummies, and fixed-effect indicators, as well as macro controls (GDP,
+inflation, interest rates).
+The retained ``non-control'' rows are predominantly treatment indicators,
+DiD interactions, and main-result variables.
+The restriction drops fewer than 10\% of rows (7,055 of 7,761 published
+and 7,599 of 8,351 NBER statistics are retained).
+Caliper ratios are essentially unchanged: the published full-sample ratio
 remains 1.203 and the negative-finding ratio \textit{increases} to 1.625
-(from 1.522), while NBER ratios remain near 1.0.  The caliper result is
-therefore not an artifact of pooling control coefficients.
-
-\smallskip
-\noindent\textbf{Control-variable exclusion taxonomy (exact regex).}
-For replication purposes, the following regular expression (Python, \texttt{re.IGNORECASE})
-identifies rows classified as control variables and excluded from the non-control subsample:
-
-\begin{verbatim}
-(^log\s*[\(\[]?\s*(asset|sales|size|market|revenue|total\s+asset|equity|
-  debt|mv|bv|ta)\b
-|(?<!\w)leverage(?!\s*[\*x]?\s*(treat|post|reform))
-|(?<!\w)(long.term\s+)?debt[/ ]?(to|ratio|level)(?!\w)
-|(?<!\w)size(?!\s*[\*x]?\s*(treat|post|reform|policy))(?!\w)
-|(?<!\w)(firm\s+)?age(?!\s*[\*x]?\s*(treat|post|reform|policy))(?!\w)
-|(?<!\w)roa(?!\w)|(?<!\w)roe(?!\w)|(?<!\w)ebitda(?!\w)
-|(?<!\w)profitab[a-z]*(?!\w)
-|(?<!\w)book.?to.?market(?!\w)|(?<!\w)btm(?!\w)
-|(?<!\w)tobin[\'s ]+q(?!\w)|(?<!\w)q\s+ratio(?!\w)
-|(?<!\w)volatilit[a-z]*(?!\w)|(?<!\w)return\s+volat[a-z]*(?!\w)
-|(?<!\w)momentum(?!\w)|(?<!\w)market\s+beta(?!\w)
-|(?<!\w)cash\s+flow(?!\w)
-|(?<!\w)(log\s+)?market\s+(cap|value)(?!\w)|(?<!\w)mcap(?!\w)
-|(?<!\w)stock\s+return(?!\w)
-|\byear\s*\d{2,4}\b|\byear\s+fe\b
-|(?<!\w)intercept(?!\w)|(?<!\w)_cons(?!\w)|(?<!\w)constant(?!\w)
-|fixed\s+effect[s]?|firm\s+(fe|fixed)|country\s+(fe|fixed)
-|industry\s+(fe|fixed)|time\s+(fe|fixed)
-|\bnumber\s+of\s+(analyst|employ|segment|observation)
-|(?<!\w)(log\s+)?gdp(?!\w)|(?<!\w)inflation(?!\w)
-|(?<!\w)interest\s+rate(?!\w))
-\end{verbatim}
-
-\noindent The full Python implementation is in \texttt{scripts/25\_primary\_coeff\_caliper.py},
-available in the replication archive.
+(from 1.522), while NBER ratios stay near 1.0.
+The caliper result is not an artifact of pooling control coefficients.
+The full exclusion regex is in \texttt{scripts/25\_primary\_coeff\_caliper.py}
+in the replication archive.
 
 \begin{table}[ht]
 \centering
