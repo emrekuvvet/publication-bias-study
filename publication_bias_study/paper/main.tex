@@ -2083,12 +2083,16 @@ when controls are dropped.
 \label{app:coefse_caliper}
 %% ============================================================
 
-Table~\ref{tab:coefse_caliper} decomposes the caliper test by whether each
-row has a verifiable coefficient-SE pair (so that $|z| = |\hat\beta / \hat\sigma|$
-can be confirmed) versus a standalone $z$-statistic extracted directly from a
-t-statistic column.  As discussed in Section~\ref{subsec:pvalue_dist}, the two types
-differ in verifiability, not in the source paper: both appear in published
-regression tables.
+Regression tables present statistical results in two ways.
+Some rows show a coefficient alongside its standard error, which allows
+a reader to independently verify the test statistic by dividing one by the other.
+Other rows report only a $t$- or $z$-statistic directly, with no coefficient
+or standard error shown, making it impossible to cross-check the number.
+Both types appear routinely in published finance papers.
+Table~\ref{tab:coefse_caliper} asks whether the threshold-clustering pattern
+differs between these two types of rows---that is, whether the excess mass
+just below the 5\% significance cutoff is concentrated in the rows readers
+can verify or in the rows they cannot.
 
 \begin{table}[ht]
 \centering
