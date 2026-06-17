@@ -1893,38 +1893,64 @@ keyword before the paper is flagged as a candidate.
 
 \subsection{In-Scope Classification Prompt}
 
+The prompt receives the paper's title and abstract.
+System instruction: \textit{``You are a research assistant helping to classify
+finance research papers. You must return valid JSON only --- no other text.''}
+User message:
+
 \begin{quote}
 \small\sloppy\ttfamily
-A finance research paper is `in scope' for a study of publication
-bias in government intervention research if and only if its PRIMARY
-research question is the CAUSAL EFFECT of a specific government law,
-regulation, or public policy on financial markets, firms, or investors.
-Exclusion criteria: (1) purely theoretical papers with no empirical test
-of a policy; (2) papers that only DESCRIBE a regulation without estimating
-its effect; (3) papers whose main topic is private firm or market
-behavior, with policy as incidental context; (4) papers studying
-central bank communication WITHOUT a specific policy instrument.
-Return JSON with exactly three keys: in\_scope (boolean), confidence
-(``high'', ``medium'', or ``low''), reason (one sentence).
+A finance research paper is `in scope' for a study of publication bias
+in government intervention research if and only if its PRIMARY research
+question is the CAUSAL EFFECT of a specific government law, regulation,
+or public policy on financial markets, firms, or investors.
+
+Exclusion criteria (mark in\_scope=false):
+\newline--- Purely theoretical papers (no empirical test of a policy)
+\newline--- Papers that only DESCRIBE a regulation without estimating its effect
+\newline--- Papers whose main topic is private firm/market behaviour, with policy as incidental context
+\newline--- Papers studying central bank communication WITHOUT a specific policy instrument
+\newline--- Papers whose primary policy variable is a rule imposed by a stock exchange
+(NYSE, NASDAQ, etc.) without a specific government or regulatory mandate
+(e.g., exchange-designed trading halts, voluntary tick size conventions,
+exchange fee structures)
+
+Return JSON with exactly these keys: in\_scope (true or false),
+confidence (``high'' $|$ ``medium'' $|$ ``low''), reason (one sentence).
 \end{quote}
 
 \subsection{Direction Coding Prompt}
 
+The prompt receives the paper's abstract.  When no abstract is available,
+a title-only fallback prompt is used, which defaults to direction $= 0$ unless
+the title provides an unambiguous directional signal.
+System instruction: \textit{``You are a research assistant classifying finance
+paper findings. Return valid JSON only --- no other text.''}
+User message:
+
 \begin{quote}
 \small\sloppy\ttfamily
-The following is the abstract of a finance paper that studies
-the effect of a government law, regulation, or public policy.  Classify
-the MAIN empirical finding as: +1 if the government intervention
-produced a POSITIVE or BENEFICIAL outcome (e.g., improved market
-quality, reduced systemic risk, better investor protection); -1 if it
-produced a NEGATIVE or HARMFUL outcome (e.g., reduced liquidity, higher
-costs, unintended consequences, welfare losses); 0 if the finding is
-NULL, MIXED, or INCONCLUSIVE.  Coding rule: code by whether the estimated
-effect represents an improvement or worsening relative to the stated regulatory
-goal, NOT the arithmetic sign of the regression coefficient and NOT the
-authors' normative framing.  Return JSON with: direction (1, -1, or
-0), confidence (``high'', ``medium'', or ``low''), rationale (one
-sentence).
+The following is the abstract of a finance paper that studies the effect
+of a government law, regulation, or public policy.
+
+Classify the MAIN empirical finding:
+\newline\quad +1 \enspace The government intervention produced a POSITIVE / BENEFICIAL
+outcome (e.g.\ improved market quality, reduced systemic risk, better investor
+protection, increased firm value, lower cost of capital)
+\newline\quad -1 \enspace The government intervention produced a NEGATIVE / HARMFUL
+outcome (e.g.\ reduced liquidity, higher costs, unintended consequences, welfare losses)
+\newline\quad\phantom{+}0 \enspace NULL, MIXED, or INCONCLUSIVE finding (no statistically
+significant effect, evidence on both sides, or the paper explicitly refuses to
+take a directional stance)
+
+Coding rules:
+\newline--- Code the PRIMARY intervention and PRIMARY outcome (named in title or first sentence)
+\newline--- If paper is purely theoretical with no empirical test, set direction=0, confidence=low
+\newline--- Do NOT infer direction from normative framing; code the sign of the estimated effect
+relative to the stated regulatory goal
+
+Return JSON with exactly: direction (1 $|$ -1 $|$ 0),
+confidence (``high'' $|$ ``medium'' $|$ ``low''), rationale (one sentence).
 \end{quote}
 
 %% ============================================================
