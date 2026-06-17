@@ -382,7 +382,7 @@ over-inclusive: the cost of an extra LLM call is negligible relative to the cost
 of omitting a genuine in-scope paper.
 
 The keyword filter reduces the corpus
-from 39,136 documents to 1,852 candidates (1,313 NBER, 182 \JF{}, 153
+from 39,136 documents to 1,849 candidates (1,313 NBER, 182 \JF{}, 153
 \RFS{}, and 201 \JFE{}).
 
 In the second pass, each keyword-flagged candidate is passed to Claude with
@@ -425,7 +425,7 @@ papers surviving each stage of the selection process.
 Step & Papers & Excluded \\
 \midrule
 Starting corpus (NBER + JF/RFS/JFE, 2000--2024) & 39,136 &  \\
-Pass 1: Keyword filter                           &  1,852 & 37,284 \\
+Pass 1: Keyword filter                           &  1,849 & 37,287 \\
 Pass 2: LLM classification and manual review     &    291 &  1,561 \\
 \midrule
 \textit{Final sample}                            &    291 & \\
@@ -1046,7 +1046,7 @@ Negative ($-1$) &               & $-0.014$      & $-0.011$      & $-0.017$      
                 &               & $(0.196)$     & $(0.198)$     & $(0.198)$     & $(0.198)$     & $(0.206)$     & $(0.208)$     \\[4pt]
 Year trend      &               &               & $0.033^{***}$ &               & $0.034^{***}$ & $0.028^{**}$  & $0.034^{***}$ \\
                 &               &               & $(0.012)$     &               & $(0.012)$     & $(0.012)$     & $(0.013)$     \\[4pt]
-$\log(N_{\text{authors}})$ & & &             &               & $-0.186$      & $-0.255$      & $-0.264$      \\
+$\log(1+N_{\text{authors}})$ & & &             &               & $-0.186$      & $-0.255$      & $-0.264$      \\
                 &               &               &               &               & $(0.279)$     & $(0.283)$     & $(0.291)$     \\[4pt]
 Quasi-Exp.\ ID  &               &               &               &               &               & $0.467^{***}$ & $0.473^{***}$ \\
                 &               &               &               &               &               & $(0.157)$     & $(0.160)$     \\[4pt]
@@ -1489,8 +1489,8 @@ our keyword filter but circulating outside NBER, would allow a cleaner test;
 we leave its construction for future work.
 
 As a simple descriptive check, directional AFA papers appear in top journals
-at a 25.9\% rate (30 of 116) versus 17.1\% for null-finding papers (6 of
-35), and the pattern is unchanged when a year trend is added
+at a 26.1\% rate (30 of 115) versus 16.7\% for null-finding papers (6 of
+36), and the pattern is unchanged when a year trend is added
 ($\hat\beta = 0.345$, s.e.\ $0.281$).
 
 One mitigating consideration is that the NBER comparison group is itself
