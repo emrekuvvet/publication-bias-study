@@ -1978,20 +1978,30 @@ Column total & 31 & 5 & 24 & 60 \\
 \par\smallskip
 \begin{minipage}{\textwidth}
 \footnotesize
-\textit{Notes.} Entries are paper counts from a 60-paper stratified
-random subsample (5 papers per source $\times$ direction cell, balanced across
-the three journals and NBER).  Rows show the original direction code used in
-the main analysis; columns show the code from an independent second LLM run
-(claude-haiku-4-5-20251001, temperature\,$= 0$; see Section~\ref{subsec:direction}).  Bold entries on the main
-diagonal indicate agreement.  Overall agreement: 43/60 $= 71.7\%$.
-Linear-weighted Cohen's $\kappa = 0.674$ (``substantial agreement'' by the
-\citet*{LandisKoch1977} scale).  The negative category achieves 100\% agreement;
-the positive category 90\%.  Disagreements are concentrated in the null/mixed
-category (25\% agreement), with 15 of 20 null-coded papers re-classified as
-directional in replication---consistent with null abstracts being less decisive
-and more sensitive to prompt context.  Because coding instability pushes
-ambiguous papers \textit{toward} directional codes rather than toward null,
-any resulting measurement error inflates our estimated directional premium.
+\textit{Notes.} To assess how consistently the AI classifies paper findings,
+we drew a random sample of 60 papers (20 from each direction category) and
+ran the direction-coding prompt a second time using a different AI model
+(claude-haiku-4-5-20251001) at the same settings.
+Each cell shows how many papers the two runs agreed or disagreed on.
+Rows are the original codes used in the main analysis;
+columns are the codes from the second independent run.
+Bold entries on the main diagonal are papers where both runs assigned
+the same code---these are the agreements.
+Off-diagonal entries are disagreements.
+Overall, the two runs agree on 43 of 60 papers (71.7\%).
+Cohen's $\kappa = 0.674$, which the \citet*{LandisKoch1977} scale
+classifies as ``substantial agreement.''
+Agreement is perfect for negative-finding papers (20/20 = 100\%) and
+high for positive-finding papers (18/20 = 90\%), but much lower for
+null/mixed papers (5/20 = 25\%).
+When the two runs disagree on a null-coded paper, the replication
+almost always re-classifies it as directional (positive or negative)
+rather than keeping it null---suggesting that abstracts with inconclusive
+findings are harder for the AI to classify consistently.
+Importantly, this type of error works against our main finding:
+if null papers are sometimes mis-coded as directional, the estimated
+gap between directional and null papers is biased toward zero, making
+our estimates conservative.
 \end{minipage}
 \end{singlespace}
 \end{table}
