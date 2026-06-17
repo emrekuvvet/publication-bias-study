@@ -200,10 +200,11 @@ to test for both.
 Our research design combines two complementary samples.  The
 \textit{published paper} sample consists of all in-scope articles in the \JF{},
 the \RFS{}, and the \JFE{} from 2000 to 2024.  The \textit{working paper}
-sample is drawn from NBER working papers in five programs covering the dominant
-share of academic finance research on government intervention: Corporate Finance,
-Asset Pricing, Monetary Economics, Economic Fluctuations and Growth, and Public
-Economics.  The key advantage of this design is that we observe findings from
+sample is drawn from all NBER working papers published from 2000 to 2024
+(30,212 papers across every program), with in-scope papers identified through
+the same keyword filter and LLM classification applied to the journal sample.
+No program restriction is imposed; topic relevance alone determines inclusion.
+The key advantage of this design is that we observe findings from
 papers that circulated \textit{before} potential journal publication, allowing a
 direct two-corpus comparison rather than inferring the pre-publication
 distribution from the shape of published p-values alone.
@@ -232,7 +233,7 @@ are pooled against null.
 What does predict publication is how a paper was designed.  Papers using
 quasi-experimental identification strategies---regression discontinuity
 designs, instrumental variables, difference-in-differences, or event
-studies---are roughly 18 percentage points more likely to appear in a top
+studies---are 18--20 percentage points more likely to appear in a top
 journal than observational papers on the same policy questions.  This
 methodological premium is the only statistically robust predictor we find;
 finding direction adds nothing beyond it.  We interpret this cautiously:
@@ -1229,11 +1230,13 @@ difference-in-differences).  Papers with such designs are significantly
 more likely to be published ($p = 0.003$), consistent with journals
 rewarding rigorous causal identification.  This variable is classified
 by the AI from paper abstracts and has not been manually validated, so
-it may also capture other quality attributes---author prestige,
-institutional affiliation, or topic fashionability---that happen to
-correlate with research design.  We caution against interpreting this
-as direct evidence that journals specifically reward quasi-experimental
-methods.  Importantly, direction coefficients remain insignificant after
+it may also capture other quality attributes---such as institutional
+affiliation or topic fashionability---that happen to correlate with
+research design.  Section~\ref{subsec:id_premium} examines this
+concern directly, showing that the premium survives sequential controls
+for institutional prestige and team size, and that quasi-exp status
+and institutional rank are nearly orthogonal ($r = 0.015$).
+Importantly, direction coefficients remain insignificant after
 adding this control, ruling out the possibility that the null direction
 result was masking an underlying effect.
 
@@ -1247,7 +1250,7 @@ $p < 0.001$), indicating a strong institutional prestige premium on top of
 the quasi-experimental design premium.  Direction coefficients remain
 unchanged and insignificant ($\hat\beta_1 = -0.160$, $\hat\beta_2 = -0.159$;
 both $p > 0.44$), and the quasi-experimental premium is virtually identical
-to Column~(6) ($0.473^{***}$, s.e.\ $0.160$).  The null result for finding
+to Column~(6) of Table~\ref{tab:probit_main} ($0.473^{***}$, s.e.\ $0.160$).  The null result for finding
 direction is robust to controlling for institutional prestige.
 
 Table~\ref{tab:quasiexp_direction} breaks down publication rates by both
@@ -1334,7 +1337,7 @@ literature is a distinct and noteworthy finding.
 The one factor that does predict publication with both statistical and
 practical significance is research design.  Papers that use credible causal
 identification methods---natural experiments, instrumental variables,
-difference-in-differences, or regression discontinuity---are about 18
+difference-in-differences, or regression discontinuity---are 18--20
 percentage points more likely to appear in a top journal than otherwise
 similar papers using standard regression approaches.
 
@@ -1394,7 +1397,10 @@ variables listed, estimated on the full sample of 291 papers.
 identification strategy (natural experiment, IV, DiD, or RDD), as coded by
 the AI from abstracts.  \textit{Top Institution} equals one if the first
 author's institution appears in the UTD Top 100 Business School Research
-Rankings.  Marginal effects (in percentage points) are evaluated at the
+Rankings.  Column~(6) includes positive and negative finding-direction dummies
+(omitted from the table for brevity; both are individually and jointly
+insignificant, $p > 0.45$).
+Marginal effects (in percentage points) are evaluated at the
 sample mean of the linear index.
 Standard errors in parentheses.
 $^{***}p<0.01$, $^{**}p<0.05$, $^{*}p<0.10$.
