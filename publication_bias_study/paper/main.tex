@@ -115,8 +115,12 @@ Using 134 published articles in the \JF{}, \RFS{}, and \JFE{} alongside
 Whether a paper concludes that a regulation is beneficial, harmful, or
 inconsequential, it reaches a top journal at roughly the same rate, about
 46 percent.  The strongest predictor of publication is research design:
-papers using quasi-experimental methods are about 18 percentage points
-more likely to be published, regardless of what they find.  We also find
+papers using quasi-experimental methods are about 18--20 percentage points
+more likely to be published, regardless of what they find.  This premium
+is independent of institutional prestige (the two are nearly uncorrelated,
+$r = 0.015$) and survives sequential controls, suggesting journals in this
+domain reward credible causal identification as a quality criterion in its
+own right.  We also find
 that published papers show modest threshold bunching in supplementary test
 statistics but not in their main regression tables, suggesting that any
 specification searching is concentrated at the margins of the paper rather
@@ -247,7 +251,7 @@ any selective reporting occurs at the margin of revision, in the choice of
 which additional checks to highlight, rather than in the core empirical
 results that define the paper's contribution.
 
-This paper makes three contributions: it provides direct evidence that top finance journals do not sort government-intervention research by the direction of its conclusions at the scale detectable by our design; it documents that identification quality---not finding direction---is the dominant sorting criterion, with papers using credible causal designs substantially more likely to be published; and it introduces a validated LLM-assisted pipeline for classifying and direction-coding large paper corpora, with code and prompts publicly available.
+This paper makes three contributions.  First, it provides direct evidence that top finance journals do not sort government-intervention research by the direction of its conclusions at the scale detectable by our design.  Second, it documents that identification quality --- not finding direction --- is the dominant sorting criterion: papers using credible causal designs are about 18--20 percentage points more likely to be published, a premium that is independent of institutional prestige ($r = 0.015$ between the two) and survives sequential controls for team size and year; this result speaks directly to ongoing debates about editorial standards and the replication crisis in finance.  Third, it introduces a validated LLM-assisted pipeline for classifying and direction-coding large paper corpora, with code and prompts publicly available.
 
 The remainder of the paper proceeds as follows.
 Section~\ref{sec:literature} reviews the related literature.
@@ -1340,6 +1344,135 @@ pooled null result.  These estimates carry limited inferential weight given
 small sub-samples---the \JF{} contributes only 26 in-scope published
 articles over the full sample period---and should be treated as descriptive.
 
+\subsection{The Identification Quality Premium}
+\label{subsec:id_premium}
+
+The quasi-experimental premium---papers using IV, DiD, RDD, or natural
+experiments are roughly 18--20 percentage points more likely to be
+published---is a substantive finding in its own right, not merely a
+control variable.  We develop it here.
+
+A natural concern is that the premium proxies for confounds: top
+institutions may produce more quasi-experimental work, or larger teams may
+have better access to data and computing resources that enable credible
+identification.  To assess this, Table~\ref{tab:id_premium_seq} adds
+controls sequentially.
+
+\begin{table}[ht]
+\centering
+\caption{Identification Quality Premium: Sequential Controls}
+\label{tab:id_premium_seq}
+\begin{singlespace}
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccc}
+\toprule
+ & (1) & (2) & (3) & (4) & (5) & (6) \\
+\midrule
+Quasi-Exp.\ ID & $0.490^{***}$ & $0.501^{***}$ & $0.497^{***}$ & $0.508^{***}$ & $0.441^{***}$ & $0.473^{***}$ \\
+               & $(0.149)$     & $(0.151)$     & $(0.150)$     & $(0.152)$     & $(0.155)$     & $(0.160)$ \\[4pt]
+Top Institution &              & $0.607^{***}$ &               & $0.606^{***}$ & $0.659^{***}$ & $0.661^{***}$ \\
+                &              & $(0.164)$     &               & $(0.164)$     & $(0.167)$     & $(0.167)$ \\[4pt]
+$\log(1+N_{\text{authors}})$ & & & $-0.176$ & $-0.160$ & $-0.265$ & $-0.264$ \\
+               &               &               & $(0.280)$     & $(0.281)$     & $(0.286)$     & $(0.291)$ \\[4pt]
+Year trend     &               &               &               &               & $0.036^{***}$ & $0.034^{***}$ \\
+               &               &               &               &               & $(0.013)$     & $(0.013)$ \\[4pt]
+Direction dummies & No         & No            & No            & No            & No            & Yes \\
+\midrule
+Marg.\ effect, Quasi-Exp.\ (pp) & 19.4 & 19.9 & 19.7 & 20.1 & 17.5 & 18.8 \\
+Marg.\ effect, Top Inst.\ (pp) & --- & 24.1 & --- & 24.1 & 26.1 & 26.2 \\
+Pseudo $R^2$   & 0.027         & 0.062         & 0.028         & 0.062         & 0.081         & 0.083 \\
+$N$            & 291           & 291           & 291           & 291           & 291           & 291 \\
+\bottomrule
+\end{tabular}}
+\par\smallskip
+\begin{minipage}{\textwidth}
+\small
+\textit{Notes.} Each column reports a probit of publication on the indicator
+variables listed, estimated on the full sample of 291 papers.
+\textit{Quasi-Exp.\ ID} equals one if the paper uses a credible causal
+identification strategy (natural experiment, IV, DiD, or RDD), as coded by
+the AI from abstracts.  \textit{Top Institution} equals one if the first
+author's institution appears in the UTD Top 100 Business School Research
+Rankings.  Marginal effects (in percentage points) are evaluated at the
+sample mean of the linear index.
+Standard errors in parentheses.
+$^{***}p<0.01$, $^{**}p<0.05$, $^{*}p<0.10$.
+\end{minipage}
+\end{singlespace}
+\end{table}
+
+The quasi-experimental premium is essentially unchanged across all six
+specifications.  Adding top-institution status (Column~2) does not shrink
+the quasi-exp coefficient---it rises marginally from 0.490 to 0.501.
+Adding team size (Column~3) leaves it equally stable.  Adding both
+prestige proxies together (Column~4), then a year trend (Column~5), then
+direction dummies (Column~6) produces a range of 0.441--0.508, all
+significant at $p < 0.01$.
+
+The stability is explained by a striking feature of the data: quasi-exp
+and institutional prestige are nearly orthogonal.  The correlation between
+the two indicators is $r = 0.015$.  Researchers at top institutions use
+quasi-experimental methods at virtually the same rate as those at other
+institutions (48.9\% vs.\ 47.3\%).  This means controlling for prestige
+provides almost no new information about method choice, and vice versa.
+
+Table~\ref{tab:id_prestige_crosstab} presents raw publication rates by
+the four combinations of method and institution.  The quasi-exp premium
+operates within both institution tiers: among top-institution authors,
+quasi-exp papers publish at 72.7\% vs.\ 52.2\% for non-QE papers (a gap
+of 20.5 pp); among other institutions, the gap is 48.4\% vs.\ 30.2\%
+(18.2 pp).  The institutional prestige premium likewise holds within both
+method groups.  The two effects are additive: a top-institution quasi-exp
+paper reaches a top journal at 72.7\%, a non-top non-QE paper at 30.2\%
+--- a 42-percentage-point spread reflecting roughly equal contributions
+from method and pedigree.
+
+\begin{table}[ht]
+\centering
+\caption{Publication Rates by Identification Strategy and Institutional Tier}
+\label{tab:id_prestige_crosstab}
+\begin{singlespace}
+\small
+\begin{tabular}{lcc}
+\toprule
+ & Non-QE & Quasi-Experimental \\
+\midrule
+Top Institution   & 52.2\%\ (24/46) & 72.7\%\ (32/44) \\
+Other Institution & 30.2\%\ (32/106) & 48.4\%\ (46/95) \\
+\midrule
+QE premium (pp) & \multicolumn{1}{r}{---} & +20.5 (top) / +18.2 (other) \\
+\bottomrule
+\end{tabular}
+\par\smallskip
+\begin{minipage}{\textwidth}
+\small
+\textit{Notes.} Each cell shows the share of papers published in a top-3
+finance journal, with counts in parentheses.
+\textit{Quasi-Experimental} denotes papers using natural experiments, IV,
+DiD, or RDD.  \textit{Top Institution} is the UTD Top 100 indicator.
+The correlation between the two indicators is $r = 0.015$.
+\end{minipage}
+\end{singlespace}
+\end{table}
+
+What can we conclude?  Institutional prestige and team size --- the most
+natural observable confounds --- do not explain the quasi-experimental
+premium.  The premium is not a prestige premium in disguise.  What
+remains is consistent with journals in this domain having internalized
+credible causal identification as a quality criterion, independently of
+where the paper comes from.
+
+We cannot fully rule out residual confounding: quasi-experimental papers
+may be higher quality on unobservable dimensions --- better natural
+experiments, richer data, more careful robustness checking --- that
+correlate with method choice but not with institutional affiliation.  But
+the separability from observable prestige proxies is itself informative.
+If the premium were purely about researcher quality, it would be expected
+to correlate at least moderately with institutional rank; the near-zero
+correlation argues against a pure researcher-quality story.
+
+%% ============================================================
 \section{Robustness}
 \label{sec:robustness}
 %% ============================================================
