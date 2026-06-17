@@ -325,12 +325,16 @@ pipeline excludes these before computing coverage.
 \subsection{NBER Working Papers}
 
 The working-paper sample is drawn from the NBER Working Paper Series via the
-public API.  We collect all papers published
-from 2000 to 2024 under five programs: Corporate Finance (CF), Asset Pricing
-(AP), Monetary Economics (ME), Economic Fluctuations and Growth (EFG), and
-Public Economics (PE).  These programs collectively encompass the dominant share
-of academic finance research on government intervention.  Papers appearing in
-multiple programs are counted once.
+public API.  We collect \textit{all} working papers published from 2000 to 2024
+across every NBER program (30,212 papers in total) and identify in-scope
+government-intervention papers through the keyword filter and LLM classification
+described in Section~\ref{sec:data_classification}.  No program restriction is
+applied at the collection stage; the topic filter alone determines inclusion.
+Government intervention finance research is concentrated in five programs---
+Corporate Finance (CF), Asset Pricing (AP), Monetary Economics (ME), Economic
+Fluctuations and Growth (EFG), and Public Economics (PE)---but papers assigned
+to neighboring programs (e.g., Economic History or International Finance and
+Macroeconomics) are automatically captured if they pass the scope filter.
 
 We use the NBER working paper sample as a reference distribution for comparison
 with the published sample.  The identifying assumption required for a causal
