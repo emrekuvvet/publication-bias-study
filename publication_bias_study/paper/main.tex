@@ -111,7 +111,7 @@
 We study whether top finance journals favor certain policy conclusions.
 Using 134 published articles in the \JF{}, \RFS{}, and \JFE{} alongside
 157 NBER working papers on government intervention in financial markets
-(2000--2024), we find that journals do not sort on finding direction.
+(2000--2024), we find no evidence that journals sort on finding direction at scales our design can detect.
 Whether a paper concludes that a regulation is beneficial, harmful, or
 inconsequential, it reaches a top journal at roughly the same rate, about
 46 percent.  The strongest predictor of publication is research design:
@@ -215,14 +215,14 @@ and assigns an in-scope judgment along with a directional code---positive
 ($+1$, the intervention was beneficial), negative ($-1$, harmful), or
 null/mixed ($0$).
 
-Our central result is that finding direction does not predict publication.
+Our central result is that finding direction does not predict publication at the scale our design can detect.
 Papers concluding that a regulation helps, papers concluding it hurts, and
 papers finding no significant effect all reach the three top journals at
 essentially the same rate---around 46 percent.  This uniformity holds
 unconditionally and survives every regression specification we estimate,
 including controls for publication year, decade, team size, and research
-design quality.  The complete absence of a direction premium holds for
-positive findings, for negative findings, and when positive and negative
+design quality.  No detectable direction premium is found for
+positive findings, for negative findings, or when positive and negative
 are pooled against null.
 
 What does predict publication is how a paper was designed.  Papers using
@@ -247,7 +247,7 @@ any selective reporting occurs at the margin of revision, in the choice of
 which additional checks to highlight, rather than in the core empirical
 results that define the paper's contribution.
 
-This paper makes three contributions: it provides direct evidence that top finance journals do not sort government-intervention research by the direction of its conclusions; it documents that identification quality---not finding direction---is the dominant sorting criterion, with papers using credible causal designs substantially more likely to be published; and it introduces a validated LLM-assisted pipeline for classifying and direction-coding large paper corpora, with code and prompts publicly available.
+This paper makes three contributions: it provides direct evidence that top finance journals do not sort government-intervention research by the direction of its conclusions at the scale detectable by our design; it documents that identification quality---not finding direction---is the dominant sorting criterion, with papers using credible causal designs substantially more likely to be published; and it introduces a validated LLM-assisted pipeline for classifying and direction-coding large paper corpora, with code and prompts publicly available.
 
 The remainder of the paper proceeds as follows.
 Section~\ref{sec:literature} reviews the related literature.
@@ -1095,8 +1095,10 @@ A formal test of whether positive and negative coefficients are equal to each
 other in Column~(2) gives $\chi^2 = 0.005$, $p = 0.944$, providing no evidence
 that journals treat the two directions differently.  The sample is large enough
 to detect coefficient differences of roughly 0.465 units with 80\% power
-(standard error of the difference $= 0.166$), so the null result does not rule
-out moderate directional preferences, only large ones.
+(standard error of the difference $= 0.166$), corresponding to a
+publication-rate advantage of approximately $1.4\times$ the null-paper rate
+(roughly 18 percentage points on the probability scale).  The null result
+therefore does not rule out moderate directional preferences, only large ones.
 \end{minipage}
 \end{singlespace}
 \end{table}
@@ -1231,7 +1233,7 @@ Our ratios instead measure whether papers with different conclusions are
 equally likely to reach print in the first place.  We compare our results
 to Brodeur on the within-paper metric in Section~\ref{subsec:pvalue_dist},
 where our published caliper ratio of 1.20 is somewhat lower than Brodeur's
-range.  The absence of direction-based sorting in the policy-finance
+range.  The absence of detectable large-scale direction-based sorting in the policy-finance
 literature is a distinct and noteworthy finding.
 
 The one factor that does predict publication with both statistical and
@@ -1813,8 +1815,8 @@ rows, neither published papers nor NBER papers show systematic threshold
 manipulation.
 
 Together these two results point to different stages of the research pipeline.
-The absence of direction-based sorting between published and pre-publication
-papers suggests that editorial selection in this domain is not tilted toward
+The absence of detectable large-scale direction-based sorting between published and pre-publication
+papers suggests that editorial selection in this domain is not strongly tilted toward
 finding an effect.  The within-paper bunching just below the significance
 threshold, concentrated in published negative-finding papers, is more
 consistent with revision-stage pressure than with outright fabrication of
