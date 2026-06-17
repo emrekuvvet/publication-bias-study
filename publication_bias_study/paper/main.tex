@@ -155,7 +155,7 @@ deliberate misconduct.  When researchers are reluctant to write up null results,
 when journals are more likely to accept papers with statistically significant
 findings, or when both effects operate simultaneously, the published literature
 understates the true prevalence of null or inconclusive evidence
-\citep{Franco2014}.  In a domain such as government intervention research,
+\citep*{Franco2014}.  In a domain such as government intervention research,
 where policy decisions depend on whether a regulation has a measurable causal
 effect, suppression of null results generates the false impression that most
 interventions work---or, more precisely, that most interventions have discernible
@@ -180,8 +180,8 @@ This paper studies sorting patterns in a domain the existing literature has
 not examined: the finance literature's treatment of government intervention.
 Prior work on publication bias in finance has focused on the cross-section of
 asset pricing anomalies, documenting that factor-zoo proliferation reflects
-selection for high t-statistics \citep{Harvey2016,Hou2020,Jensen2023}.  A
-parallel economics literature \citep{Brodeur2016,Andrews2019} infers bias from
+selection for high t-statistics \citep*{Harvey2016,Hou2020,Jensen2023}.  A
+parallel economics literature \citep*{Brodeur2016,Andrews2019} infers bias from
 the shape of published p-value distributions, finding excess mass just below
 conventional significance thresholds.  Neither strand addresses the
 policy-intervention literature, nor do they distinguish two conceptually
@@ -265,15 +265,15 @@ Section~\ref{sec:conclusion} concludes.
 %% ============================================================
 
 This paper relates to three strands of research.  The first is the literature
-on publication bias in economics and finance.  \citet{Brodeur2016} document
+on publication bias in economics and finance.  \citet*{Brodeur2016} document
 excess mass just below the 5\% significance threshold in the top economics
 journals, consistent with selective reporting of marginally significant
-specifications.  \citet{Franco2014} show, using NSF-funded pre-registered
+specifications.  \citet*{Franco2014} show, using NSF-funded pre-registered
 experiments, that null results are published at roughly one-third the rate of
-significant ones.  In finance, \citet{Harvey2016} show that given the scale of data mining
+significant ones.  In finance, \citet*{Harvey2016} show that given the scale of data mining
 in the factor literature, conventional significance thresholds are far too
 low and most claimed factors are likely false discoveries under multiple
-testing; \citet{Hou2020} confirm this empirically, finding that 65--82\%
+testing; \citet*{Hou2020} confirm this empirically, finding that 65--82\%
 of published anomalies fail to replicate out of sample, pointing to
 upward-biased published effect sizes.  These papers test for
 \textit{significance} bias---whether null results are suppressed relative to
@@ -286,14 +286,14 @@ from the shape of published p-values alone.
 
 The second strand is the literature on government intervention in financial
 markets.  A large body of empirical work studies the effects of securities law,
-banking regulation, and macroprudential policy \citep{La_Porta1998,
+banking regulation, and macroprudential policy \citep*{La_Porta1998,
 Berger2017, Agarwal2014}, producing heterogeneous findings across interventions
 and time periods.  Whether the published record faithfully represents the
 underlying distribution of evidence on these questions has not previously been
 examined.  Our paper fills this gap.
 
 The third strand is the growing use of large language models for text
-classification in economics \citep{Ash2023, Korinek2023}.  We contribute a
+classification in economics \citep*{Ash2023, Korinek2023}.  We contribute a
 validated two-pass pipeline---keyword filter followed by LLM classification---for
 identifying and direction-coding government-intervention finance papers at scale,
 and we release the coding rubric and prompts publicly.
@@ -593,8 +593,8 @@ selected through different processes.
 
 The key assumption is that NBER working papers approximate the pre-publication
 distribution of findings in this domain.  Similar approaches are taken by
-\citet{Franco2014}, who use NSF pre-registrations as a pre-publication
-baseline, and \citet{DellaVigna2022}, who use institutional RCT records.
+\citet*{Franco2014}, who use NSF pre-registrations as a pre-publication
+baseline, and \citet*{DellaVigna2022}, who use institutional RCT records.
 Our design is weaker because NBER affiliation is selective on researcher
 quality, and most finance papers circulate through SSRN rather than NBER.
 The direction of any resulting bias is unclear---NBER selection could either
@@ -659,7 +659,7 @@ regulatory response), and 2016--2024 (post-Dodd-Frank implementation).
 
 We test whether published papers show unusual clustering of test statistics
 just below the conventional 5\% significance threshold, using the caliper
-test of \citet{Brodeur2016}.  We run this test separately on two types of
+test of \citet*{Brodeur2016}.  We run this test separately on two types of
 reported statistics.  The first type covers regression rows where both a
 coefficient and a standard error are reported, allowing independent
 verification of the test statistic.  The second type covers standalone
@@ -709,7 +709,7 @@ come from searches over many specifications, but the absence of bunching
 in primary regression rows is evidence against widespread specification
 search (see Table~\ref{tab:coefse_caliper}).
 
-We use two complementary tests. The \textit{caliper test} \citep{Brodeur2016}
+We use two complementary tests. The \textit{caliper test} \citep*{Brodeur2016}
 asks whether test statistics cluster just below the 5\% significance cutoff
 more than just above it.  If results were reported without regard to
 significance, these two zones should be equally populated; a ratio above
@@ -757,7 +757,7 @@ frequency, while values above 1.0 indicate clustering below the cutoff.
 \textit{Caliper $p$} is the associated $p$-value testing whether the two
 zones are equally populated.
 \textit{Disc.\ $p$} tests whether there is a sharp drop in the frequency of
-test statistics right at the 5\% threshold \citep{Brodeur2016}.
+test statistics right at the 5\% threshold \citep*{Brodeur2016}.
 *** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$ (caliper ratio).
 \end{minipage}
 \end{singlespace}
@@ -1075,7 +1075,7 @@ that use a credible causal identification strategy---natural experiments,
 instrumental variables, difference-in-differences, or regression discontinuity
 designs---as classified by the AI from abstracts.  Column~(7) adds an indicator
 for whether the lead author's institution appears in the UTD Top 100 Business
-School Research Rankings (2021--2025; \citealt{UTDTop100}), retrieved via OpenAlex.
+School Research Rankings (2021--2025; \citealt*{UTDTop100}), retrieved via OpenAlex.
 Standard errors in parentheses.  *** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$.
 The baseline publication probability implied by the intercept alone is
 $\Phi(-0.084) \approx 46.7\%$, which closely matches the raw share of papers in
@@ -1135,7 +1135,7 @@ result was masking an underlying effect.
 
 Column~(7) adds a top-institution indicator equal to one if the first
 author's institutional affiliation appears in the UTD Top 100 Business
-School Research Rankings (2021--2025 worldwide ranking; \citealt{UTDTop100}),
+School Research Rankings (2021--2025 worldwide ranking; \citealt*{UTDTop100}),
 as retrieved from OpenAlex.
 Papers from UTD Top 100 institutions are significantly more likely to be
 published: the top-institution coefficient is $0.661$ (s.e.\ $0.167$,
@@ -1216,7 +1216,7 @@ essentially 1.0 in both cases.  A paper's directional conclusion has no
 meaningful bearing on whether it gets published.
 
 These ratios are not the same as the 1.5--2.0$\times$ figures reported by
-\citet{Brodeur2016}, and the two should not be directly compared.
+\citet*{Brodeur2016}, and the two should not be directly compared.
 Brodeur's estimates measure a different phenomenon: how often researchers
 choose test statistics that land just above the 5\% significance threshold
 relative to just below it, within the set of already-published papers.
@@ -1259,7 +1259,7 @@ how wide a band is used on each side.  Table~\ref{tab:caliper_window_main}
 repeats the test under four different window choices.
 
 When the window starts at $|z| = 1.645$ or higher---covering three of the four
-specifications, including the standard \citet{Brodeur2016} window---published
+specifications, including the standard \citet*{Brodeur2016} window---published
 papers consistently show excess mass just below the threshold: the ratio of
 below-threshold to above-threshold test statistics ranges from 1.20 to 1.33,
 while the same ratio for NBER working papers stays near 1.0.
@@ -1621,16 +1621,16 @@ signal of overall methodological quality.
 
 Studies in economics and related social sciences find that papers reporting
 statistically significant results are published at substantially higher rates
-than papers reporting null results.  \citet{Brodeur2016} show that the top
+than papers reporting null results.  \citet*{Brodeur2016} show that the top
 general-interest economics journals (\textit{AER}, \textit{JPE}, \textit{QJE})
 contain substantially more test statistics that land just above the conventional
 significance threshold than just below it---a sign that researchers and editors
-favor results that clear the significance bar.  \citet{Franco2014} tracked NSF-funded social science
+favor results that clear the significance bar.  \citet*{Franco2014} tracked NSF-funded social science
 experiments from registration through to publication and found that only
 about 21\% of null results were eventually published, compared with roughly
 62\% of significant results---a roughly three-to-one publication advantage
-for significant findings.  \citet{DellaVigna2022} report similar disparities in a sample of
-field experiments, and \citet{Brodeur2023} show that pre-registering a study
+for significant findings.  \citet*{DellaVigna2022} report similar disparities in a sample of
+field experiments, and \citet*{Brodeur2023} show that pre-registering a study
 in advance reduces but does not eliminate this advantage.
 
 Our results stand out against this backdrop.  Null-finding papers in the
@@ -1659,11 +1659,11 @@ policy content (such as corporate governance or asset pricing) remains an open
 question.
 
 Our caliper finding also fits naturally alongside prior work within finance.
-\citet{Harvey2021} document the same clustering of test statistics just below
+\citet*{Harvey2021} document the same clustering of test statistics just below
 the 5\% cutoff in published finance research and try to estimate what the
 pre-publication distribution must have looked like to produce it; our NBER
 data provide a direct look at that pre-publication distribution, confirming
-that the clustering is added during the revision process.  \citet{Chen2021}
+that the clustering is added during the revision process.  \citet*{Chen2021}
 make a complementary observation: the very largest published test statistics
 ($|t|>4$, corresponding to highly significant results) appear too frequently
 to be explained by selective reporting of marginally significant findings---
@@ -1958,7 +1958,7 @@ the main analysis; columns show the code from an independent second LLM run
 (claude-haiku-4-5-20251001, temperature\,$= 0$; see Section~\ref{subsec:direction}).  Bold entries on the main
 diagonal indicate agreement.  Overall agreement: 43/60 $= 71.7\%$.
 Linear-weighted Cohen's $\kappa = 0.674$ (``substantial agreement'' by the
-\citet{LandisKoch1977} scale).  The negative category achieves 100\% agreement;
+\citet*{LandisKoch1977} scale).  The negative category achieves 100\% agreement;
 the positive category 90\%.  Disagreements are concentrated in the null/mixed
 category (25\% agreement), with 15 of 20 null-coded papers re-classified as
 directional in replication---consistent with null abstracts being less decisive
