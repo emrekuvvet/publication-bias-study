@@ -329,7 +329,7 @@ The working-paper sample is drawn from the NBER Working Paper Series via the
 public API.  We collect \textit{all} working papers published from 2000 to 2024
 across every NBER program (30,212 papers in total) and identify in-scope
 government-intervention papers through the keyword filter and LLM classification
-described in Section~\ref{sec:data_classification}.  No program restriction is
+described in Section~\ref{subsec:inscope}.  No program restriction is
 applied at the collection stage; the topic filter alone determines inclusion.
 Government intervention finance research is concentrated in five programs---
 Corporate Finance (CF), Asset Pricing (AP), Monetary Economics (ME), Economic
@@ -712,7 +712,8 @@ it reflects an authorial reporting choice rather than a publication filter
 imposed by journals.  We cannot rule out that some standalone statistics
 come from searches over many specifications, but the absence of bunching
 in primary regression rows is evidence against widespread specification
-search (see Table~\ref{tab:coefse_caliper}).
+search (see Table~\ref{tab:stat_type_decomp} below and
+Appendix~\ref{app:coefse_caliper} for full counts).
 
 We use two complementary tests. The \textit{caliper test} \citep*{Brodeur2016}
 asks whether test statistics cluster just below the 5\% significance cutoff
@@ -806,6 +807,52 @@ papers face greater scrutiny and search more aggressively for specifications
 that produce significant results.  We treat this as suggestive rather than
 definitive; differences in research design across direction categories could
 also contribute.
+
+A simple decomposition explains how the full-sample ratio of 1.20 arises.
+Published papers devote 29.0\% of their table rows to standalone
+$z$-statistics (those reported without a paired coefficient and standard
+error), compared with 18.7\% in NBER working papers; and standalone
+statistics cluster far more sharply in published papers (ratio 2.55) than in
+NBER papers (1.49).  The full-sample difference therefore reflects both a
+within-type effect---more bunching per standalone statistic in published
+papers---and a composition effect---a higher standalone share.  In the
+verifiable coefficient rows, neither corpus shows excess clustering (ratios
+of 0.81 and 0.95, respectively).  Table~\ref{tab:stat_type_decomp} presents
+these numbers together; Appendix~\ref{app:coefse_detail} provides the full
+counts.
+
+\begin{table}[ht]
+\centering
+\caption{Caliper Ratio Decomposition by Statistic Type and Corpus}
+\label{tab:stat_type_decomp}
+\begin{singlespace}
+\small
+\begin{tabular}{llrrc}
+\hline\hline
+Corpus & Row type & $N$ stats & Ratio & Share \\
+\hline
+Published & All rows            & 7,761 & $1.20$\rlap{$^{***}$} & 100\% \\
+          & \ Coef.+SE rows     & 5,510 & 0.81                  & 71.0\% \\
+          & \ Standalone $z$    & 2,251 & $2.55$\rlap{$^{***}$} & 29.0\% \\[4pt]
+NBER      & All rows            & 8,351 & 1.01                  & 100\% \\
+          & \ Coef.+SE rows     & 6,788 & 0.95                  & 81.3\% \\
+          & \ Standalone $z$    & 1,563 & $1.49$\rlap{$^{**}$}  & 18.7\% \\
+\hline\hline
+\end{tabular}
+\begin{minipage}{\textwidth}
+\smallskip
+\footnotesize
+\textit{Notes.} \textit{Coef.+SE rows} are regression rows where both a
+coefficient and a standard error are reported, so the test statistic can be
+independently verified.  \textit{Standalone $z$} rows report only a $t$- or
+$z$-statistic with no coefficient or standard error.  \textit{Share} is the
+fraction of each corpus's statistics that fall into that row type.  The
+full-sample ratio of 1.20 reflects both the higher standalone bunching in
+published papers and their larger standalone share relative to the NBER corpus.
+$^{***}p<0.01$, $^{**}p<0.05$, $^{*}p<0.10$.
+\end{minipage}
+\end{singlespace}
+\end{table}
 
 Most prior work on publication bias can only study published papers and must
 infer what the research pipeline looked like before editorial decisions were
@@ -1777,7 +1824,7 @@ tests), three caliper tests survive: the full published sample ($p = 0.002$),
 the \JFE{} ($p < 0.001$), and negative-finding papers ($p < 0.001$).  Two
 density tests --- \JF{} and null/mixed ($p < 0.001$ each) --- also survive.
 The \JF{} density result is included for completeness, but as noted in
-Section~\ref{sec:pvalue}, it conflicts with the \JF{} caliper ratio
+Section~\ref{subsec:pvalue_dist}, it conflicts with the \JF{} caliper ratio
 (0.88, $p = 0.423$); given the small \JF{} sample (26 papers, 1,308 statistics),
 we give priority to the caliper and do not interpret the density finding as
 evidence of bunching.
@@ -1801,18 +1848,15 @@ the finding direction is statistically unrelated to publication across all
 seven model specifications.  The design rules out gaps larger than 18 percentage
 points at 80\% power; smaller asymmetries remain possible.
 
-The distribution of test statistics tells a more nuanced story.  Among
-standalone reported statistics --- those not tied to a specific regression
-coefficient and standard error --- published papers show more clustering just
-below the conventional 5\% significance threshold than their NBER counterparts
-(ratio 2.55 vs.\ 1.49).  The full-sample caliper ratio of 1.20 across all
-statistics is driven roughly equally by this within-type effect and by the
-fact that published papers contain a higher share of standalone statistics
-(29.0\% vs.\ 18.7\% in NBER papers).  The bunching is most pronounced in
-negative-finding papers (ratio 1.52), though this pattern is suggestive
-rather than statistically definitive.  Among the primary verifiable regression
-rows, neither published papers nor NBER papers show systematic threshold
-manipulation.
+The distribution of test statistics tells a more nuanced story.
+As shown in Table~\ref{tab:stat_type_decomp}, the full-sample caliper ratio
+of 1.20 reflects two reinforcing effects: published papers cluster standalone
+$z$-statistics more sharply near the significance threshold than NBER papers
+do (ratio 2.55 vs.\ 1.49), and they devote a larger share of table rows to
+such statistics (29.0\% vs.\ 18.7\%).  Verifiable coefficient rows show no
+systematic threshold manipulation in either corpus.  The bunching is most
+pronounced in negative-finding papers (ratio 1.52), though this pattern is
+suggestive rather than statistically definitive.
 
 Together these two results point to different stages of the research pipeline.
 The absence of detectable large-scale direction-based sorting between published and pre-publication
@@ -2104,6 +2148,7 @@ when controls are dropped.
 %% ============================================================
 \section{Caliper Test Stratified by Row Type: Coef+SE vs.\ Standalone \textit{z}-Statistics}
 \label{app:coefse_caliper}
+\label{app:coefse_detail}
 %% ============================================================
 
 Regression tables present statistical results in two ways.
