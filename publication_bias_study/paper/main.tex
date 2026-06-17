@@ -2111,17 +2111,27 @@ NBER      & $z$-stat only    & 1,563 &  85 &  57 & $1.491$\rlap{$^{**}$}  & 0.01
 \begin{minipage}{\textwidth}
 \smallskip
 \footnotesize
-\textit{Notes.}  \textit{Coef+SE only}: rows where a coefficient and a
-positive standard error are both extracted; $z_{\text{abs}}$ is computed
-as $|\hat\beta / \hat\sigma|$.  \textit{$z$-stat only}: rows where a
-$|z|$-value appears in the table but no coefficient-SE pair is present,
-so the value cannot be independently verified.  Caliper ratio $=$ mass in
-$(1.645, 1.96)$ / mass in $(1.96, 2.275)$; a value $>1$ indicates excess
-bunching below 1.96.  *** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$ (caliper ratio).
-\textit{Naive $p$} tests equality of the below- and above-counts via
-$\chi^2(1)$.  Neither corpus shows excess bunching in coef+SE rows; both
-corpora show elevated bunching in standalone $z$-statistics, with
-published papers showing a substantially higher ratio (2.55 vs.\ 1.49).
+\textit{Notes.}  Regression tables report statistical results in two ways.
+Some rows report a coefficient and its standard error side by side, which
+allows the test statistic to be independently verified by dividing one by
+the other (\textit{Coef+SE only} rows).
+Other rows report only a $t$- or $z$-statistic directly, with no
+coefficient or standard error shown, so there is no way to cross-check
+the number (\textit{$z$-stat only} rows).
+The \textit{Ratio} column measures how much more often test statistics
+land just below the 5\% significance threshold than just above it;
+a value of 1.0 means equal frequency and values above 1.0 indicate
+excess clustering below the threshold.
+\textit{Below} and \textit{Above} are the raw counts of test statistics
+falling in the windows just below and just above the 5\% cutoff.
+\textit{Naive $p$} tests whether those two counts are equal.
+*** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$ (caliper ratio).
+The key finding is that threshold clustering is entirely concentrated
+in the directly reported $z$-statistics, not in the rows where the
+test statistic can be independently verified from the coefficient and
+standard error. Published papers show a much stronger clustering
+in standalone $z$-statistics (ratio 2.55) than NBER working papers do (1.49),
+while neither corpus shows excess clustering in the verifiable rows.
 \end{minipage}
 \end{singlespace}
 \end{table}
