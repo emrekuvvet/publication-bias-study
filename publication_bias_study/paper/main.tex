@@ -456,8 +456,8 @@ For each in-scope paper, we assign a direction code to the paper's primary
 empirical finding: $+1$ (the government intervention produced a positive or
 beneficial outcome), $-1$ (negative or harmful), or $0$ (null, mixed, or
 inconclusive).  Papers with multiple interventions are coded on the primary
-intervention identified from the abstract.  Direction coding uses the same
-model as the in-scope classifier.
+intervention identified from the abstract.  Both the in-scope classifier and the direction coder use
+Claude Haiku (claude-haiku-4-5-20251001; Anthropic).
 
 The coding prompt instructs the model to code $+1$ if the intervention produced
 a \textit{positive or beneficial outcome relative to its stated regulatory
@@ -1980,8 +1980,8 @@ Column total & 31 & 5 & 24 & 60 \\
 \footnotesize
 \textit{Notes.} To assess how consistently the AI classifies paper findings,
 we drew a random sample of 60 papers (20 from each direction category) and
-ran the direction-coding prompt a second time using a different AI model
-(claude-haiku-4-5-20251001) at the same settings.
+ran the direction-coding prompt a second time using the same model
+(claude-haiku-4-5-20251001) in an independent second call.
 Each cell shows how many papers the two runs agreed or disagreed on.
 Rows are the original codes used in the main analysis;
 columns are the codes from the second independent run.
