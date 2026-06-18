@@ -449,7 +449,7 @@ from 39,136 documents to 1,849 candidates (1,313 NBER, 182 \JF{}, 153
 In the second pass, each keyword-flagged candidate is passed to Claude with
 the following instruction (full prompt in Appendix~\ref{app:prompts}):
 \begin{quote}
-\textit{``A finance research paper is `in scope' if and only if its
+``A finance research paper is `in scope' if and only if its
 PRIMARY research question is the CAUSAL EFFECT of a specific
 government law, regulation, or public policy on financial markets,
 firms, or investors.  The following are excluded: (1) purely
@@ -459,7 +459,7 @@ whose main topic is private firm or market behavior, with policy as
 incidental context; (4) papers studying central bank communication
 without a specific policy instrument; and (5) papers whose primary
 policy variable is a rule imposed by a stock exchange rather than a
-government or regulatory mandate.''}
+government or regulatory mandate.''
 \end{quote}
 
 For each paper, the model returns an in-scope decision, a confidence

@@ -100,8 +100,8 @@ keyword before the paper is flagged as a candidate.
 \subsection{In-Scope Classification Prompt}
 
 The prompt receives the paper's title and abstract.
-System instruction: \textit{``You are a research assistant helping to classify
-finance research papers. You must return valid JSON only, no other text.''}
+System instruction: ``You are a research assistant helping to classify
+finance research papers. You must return valid JSON only, no other text.''
 User message:
 
 \begin{quote}
@@ -138,9 +138,9 @@ sample have abstracts of at least 20 words, so the title-only fallback
 was not invoked for any analysis-sample paper; the validation samples
 and AFA pipeline use the same two-path logic.
 
-System instruction (both prompts): \textit{``You are a research assistant
+System instruction (both prompts): ``You are a research assistant
 classifying finance paper findings. Return valid JSON only, no other
-text.''}
+text.''
 
 \paragraph{Abstract-only prompt (used for all 291 analysis-sample papers).}
 \begin{quote}
