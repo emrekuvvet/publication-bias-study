@@ -114,16 +114,17 @@ Using 134 published articles in the \JF{}, \RFS{}, and \JFE{} alongside
 (2000--2024), we find no evidence that journals sort on finding direction at scales our design can detect.
 Whether a paper concludes that a regulation is beneficial, harmful, or
 inconsequential, it reaches a top journal at roughly the same rate, about
-46 percent.  The strongest cross-sectional predictor of corpus membership is research
-design: papers using quasi-experimental methods are about 18--20
-percentage points more likely to appear in the published corpus
-than papers with otherwise similar observed characteristics (year, team
-size, top-institution status, and finding direction), regardless of what
-they find.  This premium is independent of institutional prestige (the
-two are nearly uncorrelated, $r = 0.015$) and survives sequential
-controls; it is consistent with---but does not prove---an editorial
-preference for credible causal identification, since our cross-sectional
-design cannot rule out that quasi-experimental papers differ on
+46 percent.  The two largest cross-sectional predictors of corpus membership are
+research-design quality and institutional prestige, not finding
+direction: papers using quasi-experimental methods are about 18--20
+percentage points more likely to appear in the published corpus, and
+papers from UTD Top 100 institutions are about 24--26 percentage points
+more likely, conditional on the same observed controls (year, team size,
+finding direction).  The two premia are essentially orthogonal
+($r = 0.015$) and both survive sequential controls; they are consistent
+with---but do not prove---an editorial preference for credible causal
+identification and institutional pedigree, since our cross-sectional
+design cannot rule out that QE and top-institution papers differ on
 unobserved quality dimensions.  We also find
 that published papers show modest threshold bunching in supplementary test
 statistics but not in their main regression tables, suggesting that any
@@ -267,7 +268,7 @@ any selective reporting occurs at the margin of revision, in the choice of
 which additional checks to highlight, rather than in the core empirical
 results that define the paper's contribution.
 
-This paper makes three contributions.  First, it provides direct evidence that top finance journals do not sort government-intervention research by the direction of its conclusions at the scale detectable by our design.  Second, it documents that identification quality---not finding direction---is the dominant cross-sectional predictor of corpus membership: conditional on observed controls (year, team size, top-institution status, direction), papers using credible causal designs are about 18--20 percentage points more likely to appear in the published corpus, a premium that is independent of institutional prestige ($r = 0.015$ between the two) and survives sequential controls.  We do not interpret this as a causal estimate of editorial weighting, but the pattern speaks to ongoing debates about editorial standards and the replication crisis in finance.  Third, it introduces a validated LLM-assisted pipeline for classifying and direction-coding large paper corpora, with code and prompts publicly available.
+This paper makes three contributions.  First, it provides direct evidence that top finance journals do not sort government-intervention research by the direction of its conclusions at the scale detectable by our design.  Second, it documents that identification quality and institutional prestige---not finding direction---are the two largest cross-sectional predictors of corpus membership in our sample: conditional on observed controls (year, team size, direction), papers using credible causal designs are about 18--20 percentage points more likely to appear in the published corpus, and papers from UTD Top 100 institutions are about 24--26 points more likely; the two premia are essentially orthogonal to each other ($r = 0.015$) and both survive sequential controls.  We do not interpret this as a causal estimate of editorial weighting, but the pattern speaks to ongoing debates about editorial standards and the replication crisis in finance.  Third, it introduces a validated LLM-assisted pipeline for classifying and direction-coding large paper corpora, with code and prompts publicly available.
 
 The remainder of the paper proceeds as follows.
 Section~\ref{sec:literature} reviews the related literature.
@@ -2373,14 +2374,24 @@ test statistic as independent, but does not clear conventional
 significance under our preferred paper-clustered bootstrap
 ($p = 0.135$--$0.150$, see Section~\ref{subsec:pvalue_dist}).
 
-The strongest cross-sectional predictor of corpus membership is not
-finding direction but research design quality: conditional on year, team
-size, top-institution status, and direction, papers using credible causal
-methods are 18--20 percentage points more likely to appear in the
-published corpus.  This association is consistent with journals selecting
-on a bundle of quality attributes---rigorous identification, careful data
-construction, well-crafted writing---of which the specific
-method is one component.
+Among observed paper characteristics, the two largest cross-sectional
+predictors of corpus membership are research-design quality and
+institutional prestige, not finding direction.  Conditional on year,
+team size, and direction, QE papers (RDD, IV, DiD, natural experiment,
+or event study with causal interpretation) are 18--20 percentage points
+more likely to appear in the published corpus, and papers from UTD Top
+100 institutions are 24--26 percentage points more likely (Table~\ref{tab:id_premium_seq});
+in the fully specified Column~(6) the institutional-prestige marginal
+effect (26.2 pp) actually exceeds the QE marginal effect (18.8 pp), so
+we do not claim research design is uniformly the single strongest
+predictor.  What we can say is that both QE and top-institution status
+are substantively large cross-sectional predictors that exceed any
+direction-based predictor in our sample, and the two are essentially
+orthogonal to each other ($r = 0.015$).  These associations are
+consistent with journals selecting on a bundle of quality attributes---
+rigorous identification, careful data construction, well-crafted
+writing---of which identification strategy and pedigree are two
+components.
 
 For policymakers and researchers who use this literature, the main takeaway
 is that the published record of government-intervention research in top
