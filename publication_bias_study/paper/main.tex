@@ -1071,20 +1071,34 @@ conventional significance for the full sample.
 \end{singlespace}
 \end{table}
 
-The gap is
-clear: published papers show significantly more clustering near the
-significance threshold than the corresponding NBER working papers do.  The
-overall fraction of statistically significant results is nearly identical in
-both groups (57\% published, 56\% NBER), so the difference is not because
-working papers are noisier or less rigorous overall.
+The point estimates suggest a gap: the published caliper ratio (1.20) is
+larger than the NBER ratio (1.01), and the overall fraction of statistically
+significant results is nearly identical in both groups (57\% published,
+56\% NBER), so the difference in ratios is not driven by working papers
+being noisier or less rigorous overall.  How confident we can be in the gap
+depends on which test we use.  A naive $2 \times 2$ chi-square comparing
+the cross-corpus difference in just-below/just-above counts---treating each
+statistic as independent---gives $\chi^2 = 3.74$, $p = 0.053$ for the full
+sample; the same test on negative-finding papers gives $\chi^2 = 10.66$,
+$p = 0.001$ (published: 318 below / 209 above; NBER: 239/240).  Both
+figures, however, treat within-paper statistics as independent and so
+overstate precision.  The within-sample paper-clustered bootstrap reported
+in Table~\ref{tab:nber_caliper} does not reach conventional significance
+for either the published full sample ($p = 0.150$) or the published
+negative-finding subsample ($p = 0.135$).  We therefore read the
+published--NBER gap as suggestive rather than definitively significant: the
+point estimates are larger for published papers, and especially so for
+negative-finding papers, but the cross-corpus difference is not robust to
+paper-level clustering on our preferred test.
 
-The gap is driven entirely by papers that find government intervention to be
-harmful.  Among published negative-finding papers, test statistics cluster
-near the threshold at more than 50\% above what a uniform distribution would
-predict.  The corresponding NBER negative-finding papers show no such clustering at all.
-Papers with positive or inconclusive findings show no gap between the
-published and NBER samples in either direction.
-Figure~\ref{fig:nber_vs_pub} displays the distributions side by side.
+Within these caveats, the size and direction of the gap are concentrated
+in negative-finding papers.  Among published negative-finding papers, test
+statistics in the caliper window cluster on the just-below-1.96 side at
+more than 50\% above the just-above-1.96 count; the corresponding NBER
+negative-finding papers show essentially no such asymmetry ($R = 1.00$).
+Papers with positive or inconclusive findings show no gap in either
+direction.  Figure~\ref{fig:nber_vs_pub} displays the distributions side
+by side.
 
 \begin{figure}[p]
 \centering
@@ -1097,11 +1111,13 @@ cutoff; the vertical line is the cutoff itself.  If test statistics were
 reported without regard to significance, the orange bars on either side of
 the line should be roughly equal.
 \textit{Top panel}: All 7,761 test statistics from published papers and 8,351
-from NBER papers.  Published papers show noticeably more statistics just below
+from NBER papers.  Published papers show visibly more statistics just below
 the cutoff than just above it; NBER papers do not.
 \textit{Bottom panel}: The same comparison restricted to papers that conclude
-a government regulation was harmful (3,491 published; 4,375 NBER).  The gap
-is even more pronounced in published papers and entirely absent in NBER papers.}
+a government regulation was harmful (3,491 published; 4,375 NBER).  The
+asymmetry is more pronounced in published papers and essentially absent in
+NBER papers; see Section~\ref{subsec:pvalue_dist} for the cross-corpus
+significance discussion.}
 \label{fig:nber_vs_pub}
 \end{figure}
 
