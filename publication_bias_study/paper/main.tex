@@ -1422,22 +1422,32 @@ papers (55.6\% vs.\ 34.7\%), 13 points for negative-finding papers
 vs.\ 36.4\%), though the null $\times$ QE cell contains only 16 papers
 so the 75\% figure should be interpreted cautiously.
 
-Within each research-design group, publication rates are nearly identical
-across finding directions.  Among papers without quasi-experimental designs,
-positive, negative, and null papers are published at 34.7\%, 39.0\%, and
-36.4\% respectively---a spread of only 4.3 percentage points.  Among
-quasi-experimental papers, the rates are 55.6\%, 52.2\%, and 75.0\%
-(with the caveat above on the null cell).
+Within each research-design group, publication rates are similar across
+finding directions for non-QE papers but more dispersed for QE papers.
+Among papers without quasi-experimental designs, positive, negative, and
+null papers are published at 34.7\%, 39.0\%, and 36.4\% respectively---a
+spread of only 4.3 percentage points.  Among quasi-experimental papers
+the rates are 55.6\%, 52.2\%, and 75.0\%---a spread of 22.8 percentage
+points, driven mainly by the high publication rate in the null cell,
+which contains only 16 papers and should be interpreted cautiously.  We
+therefore do not describe the QE rates as ``nearly identical'' across
+direction categories.
 
-Two additional checks confirm this pattern holds statistically.  First, a
-probit that includes both direction and research-design indicators jointly
-finds a strong quasi-experimental premium ($p = 0.004$) while both
-direction coefficients remain indistinguishable from zero
-(positive: $p = 0.548$; negative: $p = 0.499$).  Second, adding
-interaction terms between direction and research design---which would
-detect whether the research-design premium differs by finding direction---
-yields no significant interactions ($p = 0.158$ and $p = 0.093$).
-Journals reward rigorous research designs, not particular conclusions.
+Two additional checks bear on whether the research-design premium itself
+varies with finding direction.  First, a probit that includes both
+direction and research-design indicators jointly finds a strong
+quasi-experimental coefficient ($p = 0.004$) while both direction
+coefficients remain indistinguishable from zero (positive: $p = 0.548$;
+negative: $p = 0.499$); this leaves the research-design premium intact
+after conditioning on direction.  Second, adding interaction terms
+between direction and research design---which would detect whether the
+research-design premium differs by finding direction---yields one
+interaction at $p = 0.158$ and one at $p = 0.093$ (marginally significant
+at the 10\% level the paper uses elsewhere).  We read these checks as
+ruling out strong heterogeneity in the QE premium across direction
+categories, but not as conclusive evidence of pure uniformity; the
+$p = 0.093$ interaction leaves room for a modest direction-specific
+component that our sample size cannot reliably distinguish from noise.
 
 \begin{table}[H]
 \centering
@@ -1465,11 +1475,17 @@ Non-QE: papers that use standard regression, fixed effects, or descriptive
 methods, as classified by the AI from abstracts.  QE: papers that use a
 credible causal identification strategy---regression discontinuity, instrumental
 variables, difference-in-differences, or event study.  $\dagger$: Only 16
-papers fall in the null/mixed $\times$ QE cell; the 75\% rate is based on a
-small sample and should be treated with caution.  Within each column (Non-QE
-or QE), publication rates are nearly identical across the three finding
-directions, confirming that the research-design premium does not depend on
-what the paper concludes.
+papers fall in the null/mixed $\times$ QE cell; the 75\% rate is based on
+a small sample and should be treated with caution.  Within the Non-QE
+column, publication rates are similar across the three finding
+directions (34.7\%, 39.0\%, 36.4\%); within the QE column, the rates are
+more dispersed (55.6\%, 52.2\%, 75.0\%), driven mainly by the small
+null/mixed cell.  A formal interaction test of whether the
+research-design premium varies by finding direction does not reject pure
+uniformity at conventional levels, but one interaction is marginal
+($p = 0.093$); we therefore characterize the evidence as ruling out
+strong heterogeneity rather than confirming complete uniformity (see
+text).
 \end{minipage}
 \end{singlespace}
 \end{table}
