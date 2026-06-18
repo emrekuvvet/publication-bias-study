@@ -458,13 +458,44 @@ government or regulatory mandate.''}
 \end{quote}
 
 For each paper, the model returns an in-scope decision, a confidence
-level (high, medium, or low), and a one-sentence justification.  Following
-this automated pass, we apply manual validation to enforce the causal-effect
-criterion more strictly.  The most important judgment call concerns papers
-that use a policy event only as a tool to study something else---for example,
-using the passage of Sarbanes-Oxley to identify the effect of disclosure
-on firm investment rather than to evaluate the law itself.  Such papers'
-primary question is not about the policy, so they are excluded.
+level (high, medium, or low), and a one-sentence justification.  At this stage
+the model classifies 343 of the 1,849 keyword-flagged candidates as in scope
+(NBER: 187, \JF{}: 44, \RFS{}: 50, \JFE{}: 62) and the remaining 1,506 as out
+of scope.
+
+Following the automated pass, all 343 LLM in-scope classifications are
+reviewed manually by the author against the paper's abstract, with the PDF
+introduction consulted whenever the abstract is ambiguous about whether the
+policy is the primary research question.  The review proceeds in two
+directions.
+
+\textit{(i)~Re-examining LLM in-scope decisions.}  The most important
+judgment call concerns papers that use a policy event only as a tool to
+study something else---for example, using the passage of Sarbanes-Oxley to
+identify the effect of disclosure on firm investment rather than to
+evaluate the law itself.  Such papers' primary question is not about the
+policy, so they are excluded.  A second class of overrides drops papers
+that test a policy whose empirical content turns out to be a private
+market response (e.g., voluntary cross-listing decisions after a directive).
+This re-examination produces 52 net exclusions relative to the LLM
+(NBER: 30, \JF{}: 18, \RFS{}: 2, \JFE{}: 2).
+
+\textit{(ii)~Reconsidering LLM out-of-scope decisions in the NBER corpus.}
+Because false-negative LLM exclusions are difficult to detect without a
+second pass, the author re-codes 803 NBER papers that the LLM flagged as
+low-confidence out-of-scope.  Of these, 126 are returned to the in-scope
+pool; 106 survive the same Pass~(i) criteria and enter the analysis
+sample.  The published-side LLM decisions are not subjected to a symmetric
+refilter because the journal denominators (8,924 articles) are small
+enough that the keyword filter retains all plausible candidates at the
+first stage.
+
+Borderline cases are resolved by the following rule: if the policy
+variable is the right-hand-side treatment in the paper's headline
+regression, the paper is in scope; if the policy is used as an instrument
+or a covariate to study a non-policy outcome, it is out of scope.  The
+full per-paper override log---LLM decision, manual decision, and reason
+when they differ---is available in the replication package.
 
 The final analysis sample consists of 291 papers: 157 NBER working papers
 and 134 published journal articles (26 in the \JF{}, 48 in the \RFS{}, and
@@ -482,7 +513,7 @@ Step & Papers & Excluded \\
 \midrule
 Starting corpus (NBER + JF/RFS/JFE, 2000--2024) & 39,136 &  \\
 Pass 1: Keyword filter                           &  1,849 & 37,287 \\
-Pass 2: LLM classification and manual review     &    291 &  1,558 \\
+Pass 2: LLM classification \& manual review      &    291 &  1,558 \\
 \midrule
 \textit{Final sample}                            &    291 & \\
 \quad Published articles (JF / RFS / JFE)        &    134 & \\
@@ -498,9 +529,18 @@ Pass 2: LLM classification and manual review     &    291 &  1,558 \\
 \textit{Notes.} The starting corpus includes all 30,212 NBER working papers
 (every program, 2000--2024) and all research articles from the
 \JF{}, \RFS{}, and \JFE{}, 2000--2024.  The keyword filter screens for
-government intervention terminology (see Appendix~\ref{app:keywords});
-LLM classification and manual review retain only papers whose primary
-research question is the causal effect of a specific government policy.
+government intervention terminology (see Appendix~\ref{app:keywords}).  Pass~2
+combines three sub-steps.  (a)~The LLM in-scope prompt is run on all 1,849
+keyword candidates, flagging 217 as in-scope.  (b)~The author manually reviews
+each LLM in-scope decision and overrides 22 published articles
+(\JF{}: 18, \RFS{}: 2, \JFE{}: 2) plus 10 NBER papers as out of scope,
+retaining 51 of the 61 LLM in-scope NBER papers and 134 of the 156 LLM
+in-scope published articles.  (c)~An NBER-side refilter re-codes 803 NBER
+papers that the LLM had flagged as low-confidence out-of-scope; 126 are
+returned to the in-scope pool and 106 survive the same manual review
+criteria.  Net of all three sub-steps the working-paper sample is
+$51 + 106 = 157$ NBER and the published sample is $134$ articles, summing to
+the 291-paper analysis sample.
 \end{minipage}
 \end{singlespace}
 \end{table}
