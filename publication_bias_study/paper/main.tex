@@ -1927,10 +1927,15 @@ evidence that editors systematically reward significant findings.  Our
 published sample also shows clustering near the $|z|=1.96$ threshold (caliper
 ratio $R = 1.20$ in our just-below/just-above convention; equivalently,
 $\approx 0.83$ in the just-above/just-below convention more familiar from
-\citealt*{Brodeur2016}), and the same measure applied to NBER working papers
----before any editorial selection---is $R = 1.01$ (essentially symmetric),
-indicating that the asymmetry in published papers is introduced at the
-revision stage rather than reflecting the underlying research base.  Notably,
+\citealt*{Brodeur2016}), while the same measure applied to NBER working
+papers is $R = 1.01$ (essentially symmetric).  The published--NBER gap is
+consistent with editorial or revision-stage selection introducing the
+asymmetry, but because the two corpora are largely non-overlapping
+cross-sections, we cannot rule out a compositional explanation---published
+and unmatched NBER papers may differ on unobserved dimensions (research
+design, table format, vintage) that themselves correlate with near-threshold
+density.  We discuss this identification limit in
+Section~\ref{subsec:limitations}.  Notably,
 the published-sample asymmetry is in the opposite direction from the
 classical Brodeur pattern: excess mass falls on the just-insignificant side
 rather than just clearing the threshold (see Section~\ref{subsec:pvalue_dist}
@@ -1955,17 +1960,21 @@ Our caliper finding also fits alongside prior work within finance.
 \citet*{Harvey2021} document near-threshold clustering of test statistics in
 published finance research and estimate what the pre-publication distribution
 must have looked like to produce it; our NBER data provide a direct look at
-that pre-publication distribution, confirming that the asymmetry is introduced
-at the revision stage.  \citet*{Chen2021} make a complementary observation:
+that pre-publication distribution and are consistent with their inferred
+shape, but---given the largely non-overlapping cross-section design---do
+not by themselves pin the asymmetry on the revision stage.  \citet*{Chen2021} make a complementary observation:
 the very largest published test statistics ($|t|>4$, corresponding to highly
 significant results) appear too frequently to be explained by selective
 reporting of marginal findings---implying that most large, convincing effects
-in the published literature are real.  These observations fit together:
+in the published literature are real.  These observations fit together if
 genuine large effects account for the strong results in the published
-literature, while revision-stage selection accounts for the asymmetry near
-$|z|=1.96$---in our data, an excess of statistics in $[1.645,\,1.96)$ (just
-short of conventional significance) relative to $[1.96,\,2.275]$ (just
-clearing it).  One interpretation of why this asymmetry is concentrated in
+literature, while revision-stage selection is one candidate channel for
+the near-$|z|=1.96$ asymmetry we document---in our data, an excess of
+statistics in $[1.645,\,1.96)$ (just short of conventional significance)
+relative to $[1.96,\,2.275]$ (just clearing it).  We note again that the
+cross-sectional design does not let us distinguish revision-stage
+selection from compositional differences between the published and NBER
+samples.  One interpretation of why this asymmetry is concentrated in
 negative-finding papers is that anti-intervention results face elevated
 scrutiny during peer review, leading authors to report many borderline
 specifications---some that clear the threshold and many that come close but
