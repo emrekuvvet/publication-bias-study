@@ -2453,13 +2453,22 @@ confidence (``high'' $|$ ``medium'' $|$ ``low''), reason (one sentence).
 
 \subsection{Direction Coding Prompt}
 
-The prompt receives the paper's abstract.  When no abstract is available,
-a title-only fallback prompt is used, which defaults to direction $= 0$ unless
-the title provides an unambiguous directional signal.
-System instruction: \textit{``You are a research assistant classifying finance
-paper findings. Return valid JSON only --- no other text.''}
-User message:
+The deployed pipeline has two paths, selected per paper by the
+classifier in \texttt{scripts/04\_code\_direction.py}.  When the abstract
+is present and contains at least 20 words, the model receives the
+\textit{abstract-only} prompt below; the title is \textit{not} concatenated
+with the abstract or otherwise passed.  When the abstract is missing or
+shorter than 20 words, the model instead receives the \textit{title-only}
+fallback prompt also shown below.  All 291 papers in the final analysis
+sample have abstracts of at least 20 words, so the title-only fallback
+was not invoked for any analysis-sample paper; the validation samples
+and AFA pipeline use the same two-path logic.
 
+System instruction (both prompts): \textit{``You are a research assistant
+classifying finance paper findings. Return valid JSON only --- no other
+text.''}
+
+\paragraph{Abstract-only prompt (used for all 291 analysis-sample papers).}
 \begin{quote}
 \small
 The following is the abstract of a finance paper that studies the effect
@@ -2478,8 +2487,44 @@ take a directional stance)
 Coding rules:
 \newline--- Code the PRIMARY intervention and PRIMARY outcome (named in title or first sentence)
 \newline--- If paper is purely theoretical with no empirical test, set direction=0, confidence=low
-\newline--- Do NOT infer direction from normative framing; code the sign of the estimated effect
-relative to the stated regulatory goal
+\newline--- Do NOT infer direction from normative framing; code the sign of the estimated coefficient
+
+Abstract:\\
+\texttt{"""\{abstract\}"""}
+
+Return JSON with exactly: direction (1 $|$ -1 $|$ 0),
+confidence (``high'' $|$ ``medium'' $|$ ``low''), rationale (one sentence).
+\end{quote}
+
+The instruction ``named in title or first sentence'' is preserved from
+the deployed prompt verbatim; because only the abstract is passed in
+this path, the model interprets ``title'' as title-like leading material
+that some abstracts include in their first sentence (e.g., naming the
+specific statute being studied).  Body Section~\ref{subsec:direction}
+paraphrases the spirit of the rule---coding the sign of the estimated
+effect relative to the stated regulatory goal---which the prompt conveys
+through the example outcomes for $+1$ (regulatory objectives achieved:
+improved market quality, reduced systemic risk, etc.) and $-1$
+(regulatory side-effects: reduced liquidity, higher costs, etc.).
+
+\paragraph{Title-only fallback (not used for any analysis-sample paper).}
+\begin{quote}
+\small
+The following is the title of a finance paper that studies the effect of
+a government law, regulation, or public policy. No abstract is available.
+
+Based on the title alone, infer the likely direction of the main empirical finding:
+\newline\quad +1 \enspace The intervention likely produced a POSITIVE / BENEFICIAL outcome
+\newline\quad -1 \enspace The intervention likely produced a NEGATIVE / HARMFUL outcome
+\newline\quad\phantom{+}0 \enspace NULL, MIXED, or cannot be determined from the title alone
+
+Coding rules:
+\newline--- Default to 0 (null) if the title is neutral or provides no directional signal
+\newline--- Only assign $+1$ or $-1$ if the title clearly implies a directional finding
+\newline--- Set confidence to ``low'' unless the directional signal is unambiguous
+
+Title:\\
+\texttt{"""\{title\}"""}
 
 Return JSON with exactly: direction (1 $|$ -1 $|$ 0),
 confidence (``high'' $|$ ``medium'' $|$ ``low''), rationale (one sentence).
