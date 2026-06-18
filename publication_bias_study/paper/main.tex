@@ -1893,16 +1893,29 @@ that asymmetry could inflate our estimated direction premium even if none exists
 The data support this concern.  The AI assigns a high-confidence code to
 81.3\% of published abstracts but only 62.4\% of NBER abstracts, a gap of
 18.9 percentage points.  NBER abstracts are actually longer on average
-(158 words versus 109 words for published abstracts), so the lower confidence
-rate is not simply about having less text to work with.  To pin down the
-source, we count how often each abstract uses hedging language---words and
-phrases like ``may,'' ``might,'' ``could,'' ``no significant,'' ``do not
-find,'' ``null,'' and ``unclear.''  NBER abstracts average 0.43 such terms
-per abstract versus 0.19 for published abstracts, a 2.3$\times$ difference.
-Once we adjust for abstract length, the gap narrows (NBER: 0.27 hedging terms
-per 100 words; published: 0.17), confirming that the higher raw count partly
-reflects longer NBER abstracts---but a meaningful difference in writing style
-remains.
+(158 words versus 109 words for published abstracts), so the lower
+confidence rate is not simply about having less text to work with.
+
+To pin down whether the confidence gap reflects writing style or
+substantive differences in reported findings, we count occurrences of
+two distinct families of terms separately, since a single mixed
+dictionary would conflate the two.  \textit{Style-only hedges} are
+phrases that signal author tentativeness without naming a finding---``may,''
+``might,'' ``could,'' ``possibly,'' ``perhaps,'' ``suggests,''
+``appears,'' ``tends to,'' ``seems,'' ``unclear.''  \textit{Null-result
+phrases} explicitly describe the substantive finding---``no significant,''
+``do not find,'' ``no evidence,'' ``insignificant,''
+``statistically insignificant,'' ``null,'' ``null result.''  Per 100
+words of abstract text, NBER abstracts contain 0.36 style-only hedges
+versus 0.22 in published abstracts (1.67$\times$), and 0.05 null-result
+phrases versus 0.04 in published abstracts (1.15$\times$).  The
+style-only gap is the larger of the two and persists after length
+adjustment; the null-result gap is small and consistent with the
+already-known direction-distribution difference between the two corpora.
+We therefore read the confidence gap as primarily reflecting writing
+style rather than substantive finding differences, while acknowledging
+that a residual finding-driven component cannot be ruled out from these
+counts alone.
 
 This writing-style gap creates a measurement risk in two directions, and
 the sign of the resulting bias in our direction premium depends on which
