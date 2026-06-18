@@ -114,13 +114,17 @@ Using 134 published articles in the \JF{}, \RFS{}, and \JFE{} alongside
 (2000--2024), we find no evidence that journals sort on finding direction at scales our design can detect.
 Whether a paper concludes that a regulation is beneficial, harmful, or
 inconsequential, it reaches a top journal at roughly the same rate, about
-46 percent.  The strongest predictor of publication is research design:
-papers using quasi-experimental methods are about 18--20 percentage points
-more likely to be published, regardless of what they find.  This premium
-is independent of institutional prestige (the two are nearly uncorrelated,
-$r = 0.015$) and survives sequential controls, suggesting journals in this
-domain reward credible causal identification as a quality criterion in its
-own right.  We also find
+46 percent.  The strongest cross-sectional predictor of corpus membership is research
+design: papers using quasi-experimental methods are about 18--20
+percentage points more likely to appear in the published corpus
+than papers with otherwise similar observed characteristics (year, team
+size, top-institution status, and finding direction), regardless of what
+they find.  This premium is independent of institutional prestige (the
+two are nearly uncorrelated, $r = 0.015$) and survives sequential
+controls; it is consistent with---but does not prove---an editorial
+preference for credible causal identification, since our cross-sectional
+design cannot rule out that quasi-experimental papers differ on
+unobserved quality dimensions.  We also find
 that published papers show modest threshold bunching in supplementary test
 statistics but not in their main regression tables, suggesting that any
 specification searching is concentrated at the margins of the paper rather
@@ -252,7 +256,7 @@ any selective reporting occurs at the margin of revision, in the choice of
 which additional checks to highlight, rather than in the core empirical
 results that define the paper's contribution.
 
-This paper makes three contributions.  First, it provides direct evidence that top finance journals do not sort government-intervention research by the direction of its conclusions at the scale detectable by our design.  Second, it documents that identification quality --- not finding direction --- is the dominant sorting criterion: papers using credible causal designs are about 18--20 percentage points more likely to be published, a premium that is independent of institutional prestige ($r = 0.015$ between the two) and survives sequential controls for team size and year; this result speaks directly to ongoing debates about editorial standards and the replication crisis in finance.  Third, it introduces a validated LLM-assisted pipeline for classifying and direction-coding large paper corpora, with code and prompts publicly available.
+This paper makes three contributions.  First, it provides direct evidence that top finance journals do not sort government-intervention research by the direction of its conclusions at the scale detectable by our design.  Second, it documents that identification quality---not finding direction---is the dominant cross-sectional predictor of corpus membership: conditional on observed controls (year, team size, top-institution status, direction), papers using credible causal designs are about 18--20 percentage points more likely to appear in the published corpus, a premium that is independent of institutional prestige ($r = 0.015$ between the two) and survives sequential controls.  We do not interpret this as a causal estimate of editorial weighting, but the pattern speaks to ongoing debates about editorial standards and the replication crisis in finance.  Third, it introduces a validated LLM-assisted pipeline for classifying and direction-coding large paper corpora, with code and prompts publicly available.
 
 The remainder of the paper proceeds as follows.
 Section~\ref{sec:literature} reviews the related literature.
@@ -1489,12 +1493,20 @@ where our published caliper ratio of 1.20 is somewhat lower than Brodeur's
 range.  The absence of detectable large-scale direction-based sorting in the policy-finance
 literature is a distinct and noteworthy finding.
 
-The one factor that does predict publication with both statistical and
-practical significance is research design.  Papers that use credible causal
+The one factor that does predict corpus membership with both statistical
+and practical significance is research design.  Conditional on the
+controls included in our model (publication year, team size, top-institution
+status, and finding direction), papers that use credible causal
 identification methods---natural experiments, instrumental variables,
 difference-in-differences, or regression discontinuity---are 18--20
-percentage points more likely to appear in a top journal than otherwise
-similar papers using standard regression approaches.
+percentage points more likely to appear in the published corpus than
+papers with the same observed characteristics that use standard regression
+approaches.  We use the phrase ``otherwise similar'' to refer specifically
+to these observed dimensions; unobserved differences in quality, data
+access, or narrative framing between quasi-experimental and other papers
+cannot be ruled out, and we read this association as cross-sectional
+rather than as a causal estimate of how editors weight identification
+strategy.
 
 Untabulated journal-level probits show no statistically significant direction
 coefficient at any of the three journals individually, consistent with the
@@ -1617,12 +1629,16 @@ The correlation between the two indicators is $r = 0.015$.
 \end{singlespace}
 \end{table}
 
-What can we conclude?  Institutional prestige and team size --- the most
-natural observable confounds --- do not explain the quasi-experimental
-premium.  The premium is not a prestige premium in disguise.  What
-remains is consistent with journals in this domain having internalized
-credible causal identification as a quality criterion, independently of
-where the paper comes from.
+What can we conclude?  Institutional prestige and team size---the most
+natural observable confounds---do not explain the quasi-experimental
+premium; the premium is not a prestige premium in disguise on the
+observed dimensions.  What remains is consistent with journals in this
+domain having internalized credible causal identification as a quality
+criterion, but our cross-sectional design does not let us identify that
+channel directly.  Unobserved quality dimensions that travel with
+quasi-experimental method choice---data access, framing, robustness
+practices---could equally well explain the cross-sectional association
+that we measure.
 
 We cannot fully rule out residual confounding: quasi-experimental papers
 may be higher quality on unobservable dimensions --- better natural
@@ -1941,11 +1957,19 @@ editorial distortion, not as a clean bill of health; residual direction-based
 bias on specific topics such as capital requirements or short-sale restrictions
 could exist below our detection threshold.
 
-A clearer form of selection does emerge: papers using credible causal methods
----regression discontinuity, instrumental variables, difference-in-differences,
-or event studies---are substantially more likely to be published.  For
-regulators, this is a reassuring rather than distorting form of selection;
-the published evidence base has been filtered for methodological quality.
+A clearer cross-sectional association does emerge: papers using credible
+causal methods---regression discontinuity, instrumental variables,
+difference-in-differences, or event studies---are substantially more
+likely to appear in the published corpus, conditional on year, team size,
+top-institution status, and finding direction.  For regulators, this
+association is reassuring rather than distorting if it reflects editorial
+or pipeline selection on methodological quality, but our cross-sectional
+design cannot exclude that quasi-experimental papers also differ on
+unobserved dimensions (data, framing, robustness practices) that travel
+with method choice.  The descriptive statement we can defend is that the
+published evidence base is disproportionately drawn from quasi-experimental
+work; whether that pattern reflects an editorial quality filter or
+unobserved correlated quality is a question our design leaves open.
 
 One further caution applies to how individual results are read.  The excess
 mass we observe on the just-below-1.96 side of the threshold ($|z|\in[1.645,\,1.96)$,
@@ -2055,14 +2079,17 @@ are already balanced across directions.  The near-identical share of
 directional findings in NBER working papers (79.6\%) and published articles
 (79.1\%) is consistent with this story.
 
-The second finding --- that papers using credible causal methods are more
-likely to be published --- also warrants caution in interpretation.  The
-quasi-experimental premium ($0.467^{***}$) reflects selection on research
-design quality, but research design quality tends to travel with other
-attributes: better-resourced research groups, more prominent institutions,
-and more carefully crafted papers.  Our model cannot separate these factors,
-so the premium should be read as evidence that journals select on a bundle
-of quality-related attributes, of which identification strategy is one.
+The second finding---that papers using credible causal methods are more
+likely to appear in the published corpus---also warrants caution in
+interpretation.  The quasi-experimental coefficient ($0.467^{***}$) is a
+cross-sectional association conditional on year, team size, top-institution
+status, and finding direction.  Research design quality also tends to
+travel with other attributes (better-resourced research groups, more
+carefully crafted papers, richer data) that our model does not observe,
+so the coefficient should be read as evidence that the published corpus
+disproportionately contains a bundle of quality-related attributes
+correlated with identification strategy, not as a causal estimate of how
+editors weight identification strategy in the acceptance decision.
 
 \subsection{Limitations}
 \label{subsec:limitations}
@@ -2178,11 +2205,13 @@ test statistic as independent, but does not clear conventional
 significance under our preferred paper-clustered bootstrap
 ($p = 0.135$--$0.150$, see Section~\ref{subsec:pvalue_dist}).
 
-The strongest predictor of publication is not finding direction but research
-design quality: papers using credible causal methods are 18--20 percentage
-points more likely to appear in a top journal.  This likely reflects journals
-selecting on a bundle of quality attributes --- rigorous identification,
-careful data construction, well-crafted writing --- of which the specific
+The strongest cross-sectional predictor of corpus membership is not
+finding direction but research design quality: conditional on year, team
+size, top-institution status, and direction, papers using credible causal
+methods are 18--20 percentage points more likely to appear in the
+published corpus.  This association is consistent with journals selecting
+on a bundle of quality attributes---rigorous identification, careful data
+construction, well-crafted writing---of which the specific
 method is one component.
 
 For policymakers and researchers who use this literature, the main takeaway
