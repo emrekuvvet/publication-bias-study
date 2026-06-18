@@ -1258,12 +1258,25 @@ papers show no clustering under any test.
 \includegraphics[width=0.62\textwidth]{figures/fig3_RFS_zdist.pdf}\\[4pt]
 \includegraphics[width=0.62\textwidth]{figures/fig3_JFE_zdist.pdf}
 \vfill
-\caption{Test-statistic distributions broken out by journal.
-\textit{Top}: Journal of Finance (1,308 statistics; no threshold clustering, $p=0.423$).
-\textit{Middle}: Review of Financial Studies (2,581 statistics; no threshold clustering, $p=0.752$).
-\textit{Bottom}: Journal of Financial Economics (3,872 statistics; significant clustering
-just below the 5\% cutoff, $p<0.001$).
-Clustering near the significance threshold is present only in the JFE.}
+\caption{Test-statistic distributions broken out by journal.  All
+$p$-values reported in this caption are caliper-test $p$-values
+($R = \#\{|z|\in[1.645,\,1.96)\}/\#\{|z|\in[1.96,\,2.275]\}$); the
+density discontinuity test (Disc.\ $p$ in
+Table~\ref{tab:pvalue_dist}) gives a different reading for some panels
+and we note conflicts explicitly below.
+\textit{Top}: Journal of Finance (1,308 statistics; no caliper-test
+clustering, caliper $p=0.423$).  Note that the discontinuity test for
+JF gives $p<0.001$; the body text explains why we give priority to the
+caliper here (Section~\ref{subsec:pvalue_dist}).
+\textit{Middle}: Review of Financial Studies (2,581 statistics; no
+caliper-test clustering, caliper $p=0.752$; discontinuity $p=0.180$, no
+conflict).
+\textit{Bottom}: Journal of Financial Economics (3,872 statistics;
+significant caliper-test clustering on the just-below-1.96 side,
+caliper $p<0.001$; discontinuity $p=0.038$, same direction).
+Under the caliper test, near-threshold clustering is present only in
+the JFE; the discontinuity test flags the JF as well, and we read that
+JF flag as noise (see Section~\ref{subsec:pvalue_dist}).}
 \label{fig:zdist_journals}
 \end{figure}
 
@@ -1273,15 +1286,25 @@ Clustering near the significance threshold is present only in the JFE.}
 \includegraphics[width=0.62\textwidth]{figures/fig2b_zdist_negative.pdf}\\[4pt]
 \includegraphics[width=0.62\textwidth]{figures/fig2c_zdist_null.pdf}
 \vfill
-\caption{Test-statistic distributions broken out by the paper's main conclusion.
-\textit{Top}: Papers finding that a government intervention was beneficial
-(2,633 statistics; no threshold clustering, $p=0.565$).
-\textit{Middle}: Papers finding that an intervention was harmful or ineffective
-(3,491 statistics; significant clustering just below the 5\% cutoff, $p<0.001$).
-\textit{Bottom}: Papers with inconclusive or mixed findings (1,637 statistics;
-no threshold clustering, $p=0.740$).
-Clustering near the significance threshold is driven entirely by papers that
-conclude government intervention is harmful.}
+\caption{Test-statistic distributions broken out by the paper's main
+conclusion.  All $p$-values in this caption are caliper-test
+$p$-values; the density discontinuity test gives a different reading
+for the null/mixed panel and we note it explicitly.
+\textit{Top}: Papers finding that a government intervention was
+beneficial (2,633 statistics; no caliper-test clustering, caliper
+$p=0.565$; discontinuity $p=0.456$, no conflict).
+\textit{Middle}: Papers finding that an intervention was harmful or
+ineffective (3,491 statistics; significant caliper-test clustering on
+the just-below-1.96 side, caliper $p<0.001$; discontinuity $p=0.183$).
+\textit{Bottom}: Papers with inconclusive or mixed findings (1,637
+statistics; no caliper-test clustering, caliper $p=0.740$).  Note that
+the discontinuity test for null/mixed papers gives $p<0.001$; as with
+the JF density anomaly, we prioritize the caliper ratio for the
+substantive interpretation
+(Section~\ref{subsec:pvalue_dist}).
+Under the caliper test, near-threshold clustering is concentrated in
+negative-finding papers; the discontinuity test also flags the
+null/mixed panel.}
 \label{fig:zdist_direction}
 \end{figure}
 
