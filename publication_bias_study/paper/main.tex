@@ -254,13 +254,14 @@ and research design quality.  No detectable direction premium is found
 for positive findings, for negative findings, or when positive and
 negative are pooled against null.
 
-What does predict publication is how a paper was designed.  Papers using
-quasi-experimental identification strategies---regression discontinuity,
-instrumental variables, difference-in-differences, natural experiments,
-or event studies with a causal interpretation (full definition in
+What does predict published-side corpus membership is how a paper was
+designed.  Papers using quasi-experimental identification
+strategies---regression discontinuity, instrumental variables,
+difference-in-differences, natural experiments, or event studies with a
+causal interpretation (full definition in
 Section~\ref{subsec:direction_results})---are 18--20 percentage points
-more likely to appear in a top journal than observational papers on the
-same policy questions.  This
+more likely to sit on the published side of our corpus than observational
+papers on the same policy questions.  This
 methodological premium is the only statistically robust predictor we find;
 finding direction adds nothing beyond it.  We interpret this cautiously:
 the quasi-experimental indicator likely captures a bundle of correlated
@@ -1366,6 +1367,21 @@ driven by the inclusion of many control-variable rows
 \subsection{Supporting Context: Cross-Sectional Direction Sorting}
 \label{subsec:direction_results}
 
+\textit{Terminology convention.}  Throughout the rest of this section
+and in Sections~\ref{sec:robustness} and~\ref{sec:discussion}, we use
+``publication rate'' and related phrases (e.g., ``a paper reaches a top
+journal at $X\%$'') as compact labels for the within-cell
+\textit{corpus-membership share}---published $/$ (published $+$
+NBER-only) within the indicated cell of our 291-paper sample.  These
+shares are mechanically determined by the chosen sample composition
+(134 published vs.\ 157 NBER-only) and do not estimate journal
+acceptance, transition, or editorial-filter probabilities, which would
+require observing the submission pool and editorial decisions, neither
+of which is in our data.  We retain the shorter ``publication rate''
+phrasing in tables and prose for readability; readers should interpret
+every occurrence as a corpus-membership share rather than as a
+transition probability.
+
 We next ask whether finding direction predicts membership in the published
 corpus relative to the NBER-only comparison group, which provides a
 cross-sectional test of whether the published-versus-pre-publication mix
@@ -1531,8 +1547,8 @@ one direction over the other.
 The supporting binary specification in Column~(1) reaches the same
 conclusion in a more parsimonious form: the pooled directional coefficient
 is $-0.020$ ($p = 0.914$), indistinguishable from zero, so papers with any
-directional finding are no more or less likely to appear in a top journal
-than papers with null findings.  The design rules out large sorting
+directional finding are no more or less likely than null-finding papers to
+sit on the published side of our corpus.  The design rules out large sorting
 effects---roughly 18 percentage points or more---but cannot rule out
 smaller ones; we read both columns as evidence against strong directional
 sorting, not as proof of complete editorial neutrality.
@@ -1804,10 +1820,10 @@ operates within both institution tiers: among top-institution authors,
 quasi-exp papers publish at 72.7\% vs.\ 52.2\% for non-QE papers (a gap
 of 20.5 pp); among other institutions, the gap is 48.4\% vs.\ 30.2\%
 (18.2 pp).  The institutional prestige premium likewise holds within both
-method groups.  The two effects are additive: a top-institution quasi-exp
-paper reaches a top journal at 72.7\%, a non-top non-QE paper at 30.2\%
---- a 42-percentage-point spread reflecting roughly equal contributions
-from method and pedigree.
+method groups.  The two effects are additive: top-institution quasi-exp papers sit on
+the published side of the corpus 72.7\% of the time, non-top non-QE
+papers 30.2\% of the time---a 42-percentage-point corpus-membership
+spread reflecting roughly equal contributions from method and pedigree.
 
 \begin{table}[ht]
 \centering
@@ -2453,9 +2469,12 @@ government-intervention studies that find an effect than studies that find
 none.  Using a sample of 134 published articles from the \JF{}, \RFS{}, and
 \JFE{} and 157 NBER working papers as a pre-publication benchmark, we find
 no evidence of direction-based editorial selection at a scale our design can
-detect.  Positive-, negative-, and null-finding papers appear in top journals
-at nearly identical rates --- 45.6\%, 46.1\%, and 46.7\% respectively --- and
-the finding direction is statistically unrelated to publication across all
+detect.  Positive-, negative-, and null-finding papers occupy the published side
+of our combined 291-paper corpus at nearly identical
+corpus-membership shares --- 45.6\%, 46.1\%, and 46.7\% respectively
+(within-direction shares, see the terminology convention at the start of
+Section~\ref{subsec:direction_results}) --- and finding direction is
+statistically unrelated to published-side corpus membership across all
 seven model specifications.  The design rules out gaps larger than 18 percentage
 points at 80\% power; smaller asymmetries remain possible.
 
