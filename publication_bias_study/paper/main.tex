@@ -2012,10 +2012,20 @@ claim the estimates are conservative; the replication exercise establishes
 instability of the null category but not a clean sign for the residual
 measurement bias.
 
-As a direct robustness check, we add abstract length as a control variable.
-The direction coefficients remain essentially zero
+As a partial robustness check, we add $\log(1+\text{abstract length})$ as
+a control variable.  The direction coefficients remain essentially zero
 ($\hat\beta_1 = 0.008$, $p = 0.968$; $\hat\beta_2 = 0.011$, $p = 0.958$),
-confirming that abstract-length differences do not drive the null result.
+indicating that the length component of the writing-style gap is not what
+is driving the null direction result.  This check addresses only the
+length channel; it does not control for the residual per-100-word
+hedging-style gap documented above (NBER 0.36 style hedges per 100 words
+vs.\ 0.22 in published abstracts), which could affect LLM direction
+coding even conditional on length.  A proper test of the style channel
+would require either re-coding direction from length-and-style-normalized
+abstracts or controlling for per-word style intensity, neither of which
+we attempt here; we therefore read this row as evidence against a
+length-driven story specifically, not as a closure of the broader
+writing-style concern.
 
 \begin{table}[H]
 \centering
@@ -2070,8 +2080,11 @@ percentage-point differences in publication rates directly; results remain negli
 \textit{Panel C:} ``Quasi-exp.\ only'' restricts to the 139 papers using
 credible causal methods (natural experiments, IV, DiD, RD), holding research
 design quality constant across direction categories.
-``$+\log(\text{abstract length})$'' controls for abstract length to check
-whether writing-style differences drive the result; they do not.
+``$+\log(\text{abstract length})$'' controls for abstract length only;
+the row tests the length channel of the writing-style concern and does
+not control for per-word hedging style.  See
+Section~\ref{subsec:limitations} and the body discussion above for the
+broader scope.
 $^{***}p < 0.01$, $^{**}p < 0.05$, $^{*}p < 0.10$.
 \end{minipage}
 \end{singlespace}
