@@ -693,17 +693,51 @@ is the primary reliability evidence reported here.
 \label{subsec:linking}
 
 We matched each of the 134 published journal articles to the NBER working
-paper archive using title similarity, author overlap, and external databases
-including OpenAlex, CrossRef, and Semantic Scholar.  The pipeline identified
-16 matched pairs---about 12\% of the published sample.  The remaining 118
-published papers have no NBER counterpart, which reflects the fact that most
-corporate finance papers circulate through SSRN rather than NBER.
+paper archive using title similarity, author overlap, and external
+databases including OpenAlex, CrossRef, and Semantic Scholar.  The
+pipeline identified 16 matched pairs---about 12\% of the published
+sample.  The remaining 118 published papers have no NBER counterpart,
+reflecting that most corporate finance papers circulate through SSRN
+rather than NBER.
 
-In the regression analysis, published papers are coded as Published\,$=1$
-and unmatched NBER working papers as Published\,$=0$.  The direction
-distributions of the two groups are nearly identical---about 80\% of papers
-in each group have a directional finding---suggesting the two samples are
-broadly comparable in composition before any regression adjustment.
+\paragraph{Accounting rule for the 16 matched pairs.}  We adopt a single
+auditable rule for the 16 matched-pair NBER drafts and apply it
+consistently across every table and regression in the paper:
+\begin{enumerate}[label=(\roman*),leftmargin=2em,itemsep=2pt,topsep=2pt]
+\item The 134 \JF{}/\RFS{}/\JFE{} articles enter the analysis sample
+with $\text{Published}=1$ (the journal-published version is the one
+counted).
+\item The NBER comparison group of 157 papers contains \textit{only}
+NBER working papers whose published version did not subsequently appear
+in the \JF{}, \RFS{}, or \JFE{} during 2000--2024.  The 16 NBER drafts
+of papers that did reach a top-three journal are excluded from the 157
+by construction.
+\item No paper-author-content unit is therefore double-counted.  The
+291-paper sample partitions cleanly into $134 + 157$ disjoint units,
+with the 16 matched-pair NBER drafts appearing in neither cell---they
+are represented only by their journal-published incarnation in the
+$134$-paper Published group.
+\end{enumerate}
+This rule has three immediate implications.  First, the dependent
+variable in the probit (Published $\in \{0,1\}$) is well-defined and
+mutually exclusive across the 291 observations (matching the
+Table~\ref{tab:summary} note).  Second, dropping the 16 matched-pair
+published papers as a robustness check (Section~\ref{subsec:alt_spec})
+removes only those 16 observations and leaves $N = 275$, because their
+NBER drafts are already excluded; the corresponding NBER counterparts
+are not separately deletable.  Third, the
+caliper test (Section~\ref{subsec:pvalue_dist}) operates on the
+$|z|$-statistics extracted from the journal-published version of each
+matched pair when computing the Published-row caliper, and on the NBER
+draft for the unmatched NBER-only papers; no test statistic is counted
+twice.  The same rule governs every subsequent table in the paper.
+
+In the regression analysis, the 134 published papers are coded
+$\text{Published}=1$ and the 157 NBER-only working papers are coded
+$\text{Published}=0$.  The direction distributions of the two groups
+are nearly identical---about 80\% of papers in each group have a
+directional finding---suggesting the two samples are broadly comparable
+in composition before any regression adjustment.
 
 \subsection{Summary Statistics}
 
@@ -743,10 +777,14 @@ from the full NBER corpus (all programs, 2000--2024) via topic filter, and 134 p
 (\JF{}, \RFS{}, \JFE{}) classified as in-scope government-intervention papers
 by our LLM pipeline and manual validation.  Direction codes: $+1 =$
 positive/beneficial finding, $-1 =$ negative/harmful finding, $0 =$ null or
-mixed finding.  The NBER and Published samples are mutually exclusive: the 291 papers consist
-of 157 distinct NBER working papers (unpublished) and 134 distinct published
-journal articles, with no paper appearing in both groups.  The Published count
-of 134 is what enters the probit regressions as $\text{Published}=1$.
+mixed finding.  The NBER and Published samples are mutually exclusive under the
+accounting rule stated in Section~\ref{subsec:linking}: the 291 papers
+consist of 157 NBER working papers whose published version did not
+subsequently appear in the \JF{}, \RFS{}, or \JFE{} during 2000--2024,
+and 134 distinct published journal articles, with the 16 matched-pair
+NBER drafts represented only by their journal-published incarnation.
+The Published count of 134 is what enters the probit regressions as
+$\text{Published}=1$.
 Column percentages may not sum to 100 due to rounding.
 \end{minipage}
 \end{singlespace}
@@ -1981,6 +2019,7 @@ observations); it asks whether any single outlet sorts on direction more
 sharply than the corpus as a whole, and the answer is no.
 
 \subsection{Alternative Specifications}
+\label{subsec:alt_spec}
 
 Our baseline model separates papers into positive, negative, and null findings.
 One concern is that labeling a finding as positive or negative requires a judgment
