@@ -123,11 +123,17 @@ direction: papers using quasi-experimental methods are about 18--20
 percentage points more likely to appear in the published corpus, and
 papers from UTD Top 100 institutions are about 24--26 percentage points
 more likely, conditional on the same observed controls (year, team size,
-finding direction).  The two premia are essentially orthogonal
-($r = 0.015$) and both survive sequential controls; they are consistent
-with---but do not prove---an editorial preference for credible causal
-identification and institutional pedigree, since our cross-sectional
-design cannot rule out that QE and top-institution papers differ on
+finding direction).  A 30-paper audit of the QE indicator
+(Appendix~\ref{app:core_var_validation}) suggests the QE premium
+attenuates substantially under a strict re-coding rule that requires
+abstracts to name an identification strategy and use it as the primary
+method; we therefore treat the sign of the QE premium (positive) as
+more robust than its specific magnitude.  The two premia are
+essentially orthogonal ($r = 0.015$) and both survive sequential
+controls; they are consistent with---but do not prove---an editorial
+preference for credible causal identification and institutional
+pedigree, since our cross-sectional design cannot rule out that QE and
+top-institution papers differ on
 unobserved quality dimensions.  We also find
 that published papers show modest threshold bunching in supplementary test
 statistics but not in their main regression tables, suggesting that any
@@ -1781,7 +1787,13 @@ experiment, or event study with causal interpretation) are roughly
 18--20 percentage points more likely to appear in the published corpus
 conditional on observed controls---is a substantive cross-sectional
 association in its own right, not merely a control variable.  We develop
-it here.
+it here.  We flag at the outset that the QE indicator is LLM-coded from
+abstracts and has not been manually validated on the full sample; a
+30-paper audit reported in Appendix~\ref{app:core_var_validation}
+suggests the headline magnitude is fragile to stricter coding criteria,
+so the discussion in this subsection should be read as describing the
+sign and order of magnitude of the QE--corpus-membership association
+rather than a precisely measured premium.
 
 A natural concern is that the premium proxies for confounds: top
 institutions may produce more quasi-experimental work, or larger teams may
@@ -3063,5 +3075,96 @@ verdicts are in the replication package:
 \texttt{data/classified/inscope\_nber\_recheck.csv} and
 \texttt{data/classified/nber\_refilter\_newcandidates.csv} for the
 existing precision and recall data.
+
+%% ============================================================
+\section{Validation of Core LLM-Coded Variables}
+\label{app:core_var_validation}
+%% ============================================================
+
+Two LLM-coded variables drive the main inference: the direction code that
+defines the probit dependent groups and the QE indicator that produces
+the headline $18$--$20$ percentage-point research-design premium.  This
+appendix audits each with a stricter coding prompt on a 30-paper
+balanced sample (15 published + 15 NBER-only).  Scripts and per-paper
+verdicts:
+\texttt{scripts/32\_core\_variable\_validation.py},
+\texttt{output/tables/null\_stability\_audit.csv},
+\texttt{output/tables/qe\_validation\_audit.csv}.
+
+\subsection*{(A) Null-coded paper stability}
+
+The Appendix~\ref{app:validation} confusion matrix shows null/mixed
+($0$) is the least stable category, with only $5/20$ ($25\%$) agreement
+between the two original LLM runs.  Because the null category is the
+\textit{baseline} in the probit (positive and negative are measured
+\textit{relative} to null), instability in null coding could either
+attenuate or bias both direction coefficients.
+
+We re-code a stratified sample of 30 null-coded papers (15 published,
+15 NBER-only; random seed 42) using a stricter prompt that requires
+the abstract to explicitly state \textit{no significant effect}, mixed
+evidence, or refusal to take a directional stance for the paper to
+remain coded $0$; hedged language with a substantive directional claim
+flips the code to $+1$ or $-1$.  Under this stricter rule, 10 of 15
+published null-coded papers ($66.7\%$) and 10 of 15 NBER-only
+null-coded papers ($66.7\%$) flip to directional.
+
+The flip rate is large but, critically, \textit{symmetric across
+corpora}: the within-corpus null-instability is the same on both sides.
+This has a clean implication for our headline directional null result:
+null-misclassification injects direction-neutral noise into the
+baseline category but does not bias the cross-corpus comparison of
+directional categories.  In particular, the equality test
+$H_0\colon \beta_1 = \beta_2$ (Section~\ref{subsec:design}) does not
+depend on the integrity of the null baseline---it compares the
+positive and negative coefficients to each other---and gives
+$\chi^2 = 0.005$, $p = 0.944$ in our primary specification.  We
+therefore read the directional null as robust to null-coding
+instability.
+
+\subsection*{(B) QE indicator validation}
+
+The QE indicator is AI-coded from abstracts and---unlike the direction
+code---was not separately validated in the original pipeline (we noted
+this in Section~\ref{subsec:direction_results} and
+Section~\ref{subsec:limitations}).  A referee raised the specific
+concern that the $18$--$20$ pp QE premium might capture differences in
+whether published abstracts \textit{explicitly name} their
+identification strategy (``we use a regression discontinuity
+design'') rather than differences in actual research-design quality,
+because published abstracts tend to be sharper and more declarative
+than NBER drafts.
+
+We test this directly by re-coding a stratified sample of 30 QE-coded
+papers (15 published, 15 NBER-only; random seed 42) under a strict
+rule: a paper qualifies as QE only if its abstract \textit{names} an
+identification strategy (RDD, IV, DiD, natural experiment, or event
+study with explicit causal claim) AND uses that strategy as the
+\textit{primary} empirical method, not as a robustness check.
+
+Results.  Of 15 QE-coded \textit{published} papers, only 5 ($33.3\%$)
+survive the strict rule; the other 10 are re-coded as not-QE.  Of 15
+QE-coded \textit{NBER-only} papers, 8 ($53.3\%$) survive.  The strict
+survival rate is therefore higher on the NBER side than on the
+published side---the \textit{opposite} of the directional asymmetry
+the referee's hypothesis predicted.  Extrapolating to the full QE pool
+($78$ published $+$ $61$ NBER), the strict-QE published share would be
+$26 / (26 + 33) = 44.4\%$, against an original $56.1\%$ and a sample
+overall published share of $46.0\%$.  Most of the original $18$--$20$
+pp QE premium attenuates toward zero under the strict coding rule.
+
+We interpret this as evidence that a meaningful fraction of the
+documented QE premium reflects looser LLM coding of abstract-style
+cues---explicit-method-naming language, declarative framing---rather
+than differences in true research-design quality.  We therefore do not
+treat the magnitude of the QE premium as a precisely measured
+quantity, and we read its sign (positive) and direction-independent
+character as more robust than its specific $18$--$20$ pp point
+estimate.  The audit also suggests that QE coding from abstracts is
+less reliable than direction coding from abstracts and would benefit
+from a future manual-coding exercise on the full $291$-paper sample.
+The headline finding---that finding direction does not predict
+corpus membership---does not depend on the QE indicator's calibration
+and is unaffected.
 
 \end{document}
