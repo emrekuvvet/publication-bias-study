@@ -194,12 +194,21 @@ the shape of published p-value distributions, finding excess mass just below
 conventional significance thresholds.  Neither strand addresses the
 policy-intervention literature, nor do they distinguish two conceptually
 distinct forms of bias with different welfare implications.
-\textit{Significance bias}---directional findings over-published relative to
-null findings---makes every intervention appear detectable.
-\textit{Directional bias}---pro-intervention findings over-published relative
-to anti-intervention findings---additionally skews the regulatory record toward
-a particular conclusion about the sign of policy effects.  We design our study
-to test for both.
+\textit{Significance bias}---non-null findings over-published relative to
+null/inconclusive ones---makes every intervention appear detectable.
+\textit{Directional bias}---pro-intervention findings over-published
+relative to anti-intervention findings, conditional on being non-null---
+additionally skews the regulatory record toward a particular conclusion
+about the sign of policy effects.  These two biases map onto distinct
+empirical tests in our analysis: the across-corpus probit with separate
+$\text{Positive}$ and $\text{Negative}$ indicators against the null
+baseline (equation~\eqref{eq:probit}) speaks to both at once---the
+$\beta_1 = \beta_2$ test asks about directional bias, while the joint
+test $\beta_1 = \beta_2 = 0$ asks about significance bias---and the
+within-paper caliper test (Section~\ref{subsec:pvalue_dist}) speaks to
+within-paper selective reporting near the significance threshold, a
+related but distinct phenomenon from across-paper editorial selection.
+We design our study to address all three.
 
 Our research design combines two complementary samples.  The
 \textit{published paper} sample consists of all in-scope articles in the \JF{},
@@ -275,24 +284,31 @@ Section~\ref{sec:conclusion} concludes.
 \label{sec:literature}
 %% ============================================================
 
-We use four terms with distinct meanings throughout.
-\textit{Significance bias} refers to the selective suppression of statistically
-null results, giving the published record an inflated share of significant
-findings regardless of their direction.
+We use four terms with distinct meanings throughout, and each maps to a
+specific empirical test.
+\textit{Significance bias} refers to the selective suppression of
+statistically null results, giving the published record an inflated
+share of non-null findings regardless of their substantive direction; in
+our analysis it corresponds to a joint test that the $\text{Positive}$
+and $\text{Negative}$ coefficients in equation~\eqref{eq:probit} are
+both zero (equivalently, the binary ``Directional vs.\ null'' coefficient
+in Column~(1) of Table~\ref{tab:probit_main}).
 \textit{Directional bias} refers to editorial selection based on the
-substantive direction of a paper's conclusion---whether a policy is found
-beneficial, harmful, or inconsequential---independent of its statistical
-significance.
-\textit{Selective reporting} refers to within-paper researcher behavior: the
-choice of which specifications, robustness checks, or standalone test statistics
-to highlight in the final manuscript based on whether they clear a significance
-threshold.
-\textit{Editorial selection} is our umbrella term for any mechanism by which
-the submission-to-publication pipeline shapes the composition of the published
-literature.
-Our main finding concerns directional bias; our caliper analysis speaks to
-selective reporting; the significance-bias literature provides the
-methodological benchmark for both.
+substantive sign of a paper's conclusion---whether a policy is found
+beneficial or harmful---conditional on the finding being non-null; it
+corresponds to the equality test $\beta_1 = \beta_2$ in our primary
+Column~(2) specification.
+\textit{Selective reporting} refers to within-paper researcher behavior:
+the choice of which specifications, robustness checks, or standalone
+test statistics to highlight in the final manuscript based on proximity
+to a significance threshold; in our analysis it corresponds to the
+caliper test in Section~\ref{subsec:pvalue_dist}.
+\textit{Editorial selection} is our umbrella term for any mechanism by
+which the submission-to-publication pipeline shapes the composition of
+the published literature.
+The probit tests speak to significance and directional bias; the caliper
+test speaks to within-paper selective reporting; the significance-bias
+literature provides the methodological benchmark for both.
 
 This paper relates to three strands of research.  The first is the literature
 on significance bias in economics and finance.  \citet*{Brodeur2016} document
