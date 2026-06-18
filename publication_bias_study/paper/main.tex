@@ -1266,15 +1266,20 @@ A statistical test cannot reject that the three publication rates are equal
 
 Table~\ref{tab:probit_main} reports probit regression results across seven
 specifications, each predicting whether a paper ends up published in one of
-the three journals.  Column~(1) is our primary specification: it combines
-positive- and negative-finding papers into a single group and asks whether
-any directional conclusion---regardless of sign---predicts publication.  We
-treat this as primary because the null/mixed category is the least reliably
-coded in our data, so comparisons against it are the noisiest.  Column~(2)
-separates positive and negative findings; Columns~(3)--(7) add controls for
-publication year, decade fixed effects, team size, identification method
-(whether the paper uses a quasi-experimental design such as RDD, IV, DiD, or
-event study), and author institution.
+the three journals.  Column~(2) is our primary specification, matching
+equation~\eqref{eq:probit} in Section~\ref{subsec:design}: it separates
+positive ($+1$) and negative ($-1$) findings against null/mixed papers
+($0$), and the directional-bias hypothesis is the test of
+$H_0\colon \beta_1 = \beta_2$.  Column~(1) reports a more parsimonious
+binary specification---directional vs.\ null/mixed---as a complementary
+check on whether \textit{any} directional sign carries a publication
+premium; we report it alongside Column~(2) but treat it as supporting
+rather than primary, because the binary version answers a different
+question (significance bias) than the directional-bias test that motivates
+the paper.  Columns~(3)--(7) extend the primary Column~(2) specification by
+adding controls for publication year, decade fixed effects, team size,
+identification method (whether the paper uses a quasi-experimental design
+such as RDD, IV, DiD, or event study), and author institution.
 
 \begin{table}[H]
 \centering
@@ -1284,7 +1289,7 @@ event study), and author institution.
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{lccccccc}
 \toprule
- & \shortstack{(1)\\Binary\\(Primary)} & \shortstack{(2)\\Bivariate} & \shortstack{(3)\\+~Year} & \shortstack{(4)\\+~Decade FE} & \shortstack{(5)\\+~Authors} & \shortstack{(6)\\+~ID Strategy} & \shortstack{(7)\\+~Top Inst.} \\
+ & \shortstack{(1)\\Binary} & \shortstack{(2)\\Bivariate\\(Primary)} & \shortstack{(3)\\+~Year} & \shortstack{(4)\\+~Decade FE} & \shortstack{(5)\\+~Authors} & \shortstack{(6)\\+~ID Strategy} & \shortstack{(7)\\+~Top Inst.} \\
 \midrule
 Directional     & $-0.020$      &               &               &               &               &               &               \\
                 & $(0.182)$     &               &               &               &               &               &               \\[4pt]
@@ -1312,12 +1317,12 @@ Pseudo $R^2$    & 0.000         & 0.000         & 0.020         & 0.013         
 \small
 \textit{Notes.} Each column reports probit estimates of the probability that a
 paper in our dataset ends up published in the \JF{}, \RFS{}, or \JFE{}.
-Column~(1) is the primary specification: the ``Directional'' indicator asks simply
-whether a paper has any directional finding---positive or negative---versus a
-null or inconclusive finding, without distinguishing the direction of the effect.
-Columns~(2)--(7) separate positive ($+1$) and negative ($-1$) findings, using
-null/mixed papers ($0$) as the comparison group; direction codes are assigned by
-the AI pipeline from paper abstracts.  Column~(5) adds the number of authors
+Column~(2) is the primary specification: it separates positive ($+1$) and
+negative ($-1$) findings against null/mixed papers ($0$), matching
+equation~\eqref{eq:probit} in Section~\ref{subsec:design}; direction codes
+are assigned by the AI pipeline from paper abstracts.  Column~(1) reports a
+parsimonious binary alternative---``Directional'' versus null/mixed---as a
+supporting check; Columns~(3)--(7) extend Column~(2) by adding controls.  Column~(5) adds the number of authors
 (log scale) as a proxy for team size.  Column~(6) adds an indicator for papers
 that use a credible causal identification strategy---natural experiments,
 instrumental variables, difference-in-differences, or regression discontinuity
@@ -1346,20 +1351,22 @@ therefore does not rule out moderate directional preferences, only large ones.
 \end{singlespace}
 \end{table}
 
-Column~(1) shows no relationship between directional conclusions and
-publication: the coefficient is $-0.020$ ($p = 0.914$), indistinguishable
-from zero.  Papers with directional findings are no more or less likely to
-appear in a top journal than papers with null findings.  This result rules
-out large sorting effects---roughly 18 percentage points or more---but
-cannot rule out smaller ones; we interpret it as evidence against strong
-directional sorting, not proof of complete editorial neutrality.
-
-Column~(2) separates positive and negative findings and reaches the same
-conclusion: both coefficients are near zero and insignificant
-($p = 0.898$ and $p = 0.942$).  A joint test of whether both are zero
-gives $p = 0.992$.  A test of whether the two coefficients are equal to
-each other gives $p = 0.944$, providing no evidence that journals favor
+Our primary Column~(2) shows no relationship between either signed
+direction indicator and publication: both coefficients are near zero and
+insignificant (positive: $p = 0.898$; negative: $p = 0.942$).  A joint
+test of whether both are zero gives $p = 0.992$.  The directional-bias
+test of whether the two coefficients are equal to each other gives
+$\chi^2 = 0.005$, $p = 0.944$, providing no evidence that journals favor
 one direction over the other.
+
+The supporting binary specification in Column~(1) reaches the same
+conclusion in a more parsimonious form: the pooled directional coefficient
+is $-0.020$ ($p = 0.914$), indistinguishable from zero, so papers with any
+directional finding are no more or less likely to appear in a top journal
+than papers with null findings.  The design rules out large sorting
+effects---roughly 18 percentage points or more---but cannot rule out
+smaller ones; we read both columns as evidence against strong directional
+sorting, not as proof of complete editorial neutrality.
 
 Adding controls does not change the picture.  The year trend
 (Column~(3)) is positive and significant, suggesting that more recently
