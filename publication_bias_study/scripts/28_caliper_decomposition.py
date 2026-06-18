@@ -34,22 +34,28 @@ rows = []
 
 # ── Observed ratios ────────────────────────────────────────────────────────────
 for corpus_name, df in [('Published', pub_raw), ('NBER', nber_raw)]:
+    z_valid = df['z'].notna()
+    n_valid = z_valid.sum()
     for label, mask in [('Overall', pd.Series(True, index=df.index)),
                         ('Coef+SE', ~df['zonly']),
                         ('Z-stat-only', df['zonly'])]:
         r = caliper_ratio(df[mask]['z'])
-        share = mask.mean() if label != 'Overall' else 1.0
+        # Share relative to z-valid rows (the denominator that matches the caliper N)
+        share = (mask & z_valid).sum() / n_valid if label != 'Overall' else 1.0
         rows.append({'Corpus': corpus_name, 'Row type': label,
                      'Caliper ratio': round(r, 3),
-                     'Share of rows': round(mask.mean(), 3)})
+                     'Share of rows': round(share, 3)})
 
 obs_df = pd.DataFrame(rows)
 print('=== Observed caliper ratios ===')
 print(obs_df.to_string(index=False))
 
 # ── Decomposition ──────────────────────────────────────────────────────────────
-pub_zonly_share = pub_raw['zonly'].mean()
-nber_zonly_share = nber_raw['zonly'].mean()
+# Shares computed over z-valid rows to match the caliper analysis denominator
+pub_z_valid  = pub_raw['z'].notna()
+nber_z_valid = nber_raw['z'].notna()
+pub_zonly_share  = (pub_raw['zonly'] & pub_z_valid).sum()  / pub_z_valid.sum()
+nber_zonly_share = (nber_raw['zonly'] & nber_z_valid).sum() / nber_z_valid.sum()
 
 pub_zonly_ratio   = caliper_ratio(pub_raw[pub_raw['zonly']]['z'])
 pub_coefse_ratio  = caliper_ratio(pub_raw[~pub_raw['zonly']]['z'])

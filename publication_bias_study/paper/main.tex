@@ -723,10 +723,11 @@ both types from the PDFs of all published and NBER papers in the sample.
 
 We extract regression-table test statistics from the PDFs of all 134
 published papers and 157 NBER working papers using automated text parsing.
-The published sample yields 7,761 test statistics from 121 papers; the 13
-papers with no extractable statistics are pure theory models or have
-image-based tables.  The NBER sample yields 8,351 test statistics from
-125 papers; the remaining 32 contribute no statistics for the same reasons.
+The published sample yields 7,761 test statistics from 114 papers; the
+remaining 20 published papers contribute no usable statistics (13 have no
+extractable rows; 7 have rows whose values fail numeric validation).
+The NBER sample yields 8,351 test statistics from 117 papers; the remaining
+40 contribute no usable statistics for similar reasons.
 Having a pre-publication sample of test statistics allows us to compare
 the two distributions directly, rather than inferring bias solely from the
 shape of the published distribution.
@@ -822,7 +823,7 @@ test statistics right at the 5\% threshold \citep*{Brodeur2016}.
 \centering
 \includegraphics[width=\textwidth]{figures/fig1_zdist_full.pdf}
 \caption{Distribution of test statistics from all 7,761 regression rows across
-121 published papers.  The two dashed vertical lines mark the 10\% and 5\%
+114 published papers.  The two dashed vertical lines mark the 10\% and 5\%
 significance cutoffs.  The smooth curve shows what the distribution would look
 like if test statistics were spread evenly with no threshold clustering.
 Test statistics are about 20\% more likely to fall just below the 5\% cutoff
@@ -935,10 +936,10 @@ NBER       & Null-finding     & 1,318 & 17  & 1.14          & 0.442          & 0
 \smallskip
 \footnotesize
 \textit{Notes:} The \textit{Published} sample contains 7,761 test statistics
-from 121 papers in the JF, RFS, and JFE; 108 of these papers contribute at
+from 114 papers in the JF, RFS, and JFE; 108 of these papers contribute at
 least one statistic near the significance threshold and are used in the
 permutation and bootstrap tests.  The \textit{NBER} sample contains 8,351
-test statistics from 125 working papers (out of 157 in-scope); 106 contribute
+test statistics from 117 working papers (out of 157 in-scope); 106 contribute
 near-threshold statistics.
 The \textit{Ratio} column measures how much more often test statistics fall
 just below the 5\% significance cutoff than just above it; a value of 1.0
