@@ -802,15 +802,42 @@ A test of $H_0\colon \beta_1 = \beta_2$ addresses the directional-bias
 hypothesis: rejection would indicate that the publication premium depends on the
 sign of the finding, not merely on statistical significance.
 
-Because the probit model is nonlinear, we report marginal effects evaluated at
-the null-paper baseline:
+Because the probit model is nonlinear, we report marginal effects.  For
+the bivariate (Column~2) specification, which has no covariates beyond
+the direction indicators, we report the null-paper baseline difference
 \[
-  \Delta_d = \Phi(\hat\alpha + \hat\beta_d) - \Phi(\hat\alpha), \quad d \in \{+, -\}.
+  \Delta_d = \Phi(\hat\alpha + \hat\beta_d) - \Phi(\hat\alpha),
+  \quad d \in \{+, -\}.
 \]
-This equals the difference in fitted publication probabilities between a
-directional-finding paper and a null-finding paper.  We also report raw
-corpus-membership rates directly from the data as a transparent, model-free summary
-of the unconditional patterns.
+For controlled specifications (Columns~3--7), the probit index also
+includes $\hat{\boldsymbol{\gamma}}'\mathbf{X}_i$, so the corresponding
+expression at a covariate baseline $\mathbf{X}^{\mathrm{base}}$ is
+\[
+  \Delta_d(\mathbf{X}^{\mathrm{base}}) =
+  \Phi\!\bigl(\hat\alpha + \hat\beta_d
+              + \hat{\boldsymbol{\gamma}}'\mathbf{X}^{\mathrm{base}}\bigr)
+  - \Phi\!\bigl(\hat\alpha
+              + \hat{\boldsymbol{\gamma}}'\mathbf{X}^{\mathrm{base}}\bigr).
+\]
+In the controlled specifications we report two summaries.  (a)~Marginal
+effects at the centered baseline, defined by $\text{year}_c = 0$ (the
+sample median year), $\log(1+N_{\text{authors}}) = 0$ (single-author
+papers), $\text{Quasi-Exp.\ ID} = 0$, and $\text{Top Institution} = 0$;
+this is the baseline reported in the bivariate Column~(2) expression
+above, where the centered controls all enter at zero.  (b)~Average
+partial effects (APE), computed by averaging over the in-sample empirical
+distribution of $\mathbf{X}_i$:
+\[
+  \text{APE}_d = \frac{1}{N}\sum_{i=1}^{N}
+  \Bigl[
+    \Phi\!\bigl(\hat\alpha + \hat\beta_d + \hat{\boldsymbol{\gamma}}'\mathbf{X}_i\bigr)
+    - \Phi\!\bigl(\hat\alpha + \hat{\boldsymbol{\gamma}}'\mathbf{X}_i\bigr)
+  \Bigr].
+\]
+The two summaries are close in our sample because the centered controls
+mostly take values near zero.  We also report raw corpus-membership rates
+directly from the data as a transparent, model-free summary of the
+unconditional patterns.
 
 We re-estimate equation~\eqref{eq:probit} separately for each journal to test
 whether the significance-sorting pattern is concentrated in one outlet or
