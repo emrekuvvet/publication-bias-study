@@ -392,16 +392,28 @@ Fluctuations and Growth (EFG), and Public Economics (PE)---but papers assigned
 to neighboring programs (e.g., Economic History or International Finance and
 Macroeconomics) are automatically captured if they pass the scope filter.
 
-We use the NBER working paper sample as a reference distribution for comparison
-with the published sample.  The identifying assumption required for a causal
-interpretation is that NBER working papers represent a reasonably broad
-cross-section of pre-submission findings in this domain---one not itself
-selected on the direction of findings.  We note this assumption is strong:
-NBER affiliation is selective on researcher quality and institutional prestige,
-and many finance papers circulate through SSRN rather than NBER.  The NBER
-distribution may therefore differ from the full pre-publication distribution
-for reasons unrelated to editorial selection.  We return to this identification
-challenge formally in Section~\ref{subsec:design}.
+We use the NBER working paper sample as a reference distribution for
+comparison with the published sample.  A causal editorial-selection
+interpretation would require two distinct conditions: (i) NBER selection
+into working-paper circulation is itself direction-neutral, so that the
+NBER distribution is not pre-filtered on finding direction; and
+(ii)~conditional on direction, the NBER sample approximates the relevant
+top-journal submission pool on other factors jointly related to direction
+and publication (e.g., research-design quality, topic, author network,
+data access, vintage).  Both conditions are strong.  NBER affiliation is
+selective on researcher quality and institutional prestige, and many
+finance papers circulate through SSRN rather than NBER; the NBER
+distribution may therefore differ from the full pre-publication
+distribution for reasons unrelated to editorial selection.  We also note
+that ``pre-publication'' here means circulated as an NBER working paper
+at some point---NBER posting dates establish working-paper circulation
+but do not establish that this circulation preceded journal submission,
+since papers may be posted to NBER before, alongside, or after a
+submission decision.  We therefore read all results in this paper as
+cross-sectional associations between corpus membership and paper
+characteristics, not as causal estimates of editorial filtering; we
+return to this identification challenge formally in
+Section~\ref{subsec:design}.
 
 \subsection{In-Scope Classification Pipeline}
 \label{subsec:inscope}
@@ -698,16 +710,23 @@ This is not a within-paper design: only 16 of 134 published papers are matched
 to an NBER working paper, so the two samples are largely different papers
 selected through different processes.
 
-The key assumption is that NBER working papers approximate the pre-publication
-distribution of findings in this domain.  Similar approaches are taken by
-\citet*{Franco2014}, who use NSF pre-registrations as a pre-publication
-baseline, and \citet*{DellaVigna2022}, who use institutional RCT records.
-Our design is weaker because NBER affiliation is selective on researcher
-quality, and most finance papers circulate through SSRN rather than NBER.
-The direction of any resulting bias is unclear---NBER selection could either
-overstate or understate the true gap---and we interpret all results as
-cross-sectional associations, not causal editorial-filter effects.
-The full identification discussion is in Section~\ref{subsec:limitations}.
+A causal editorial-selection interpretation would require both that NBER
+working papers approximate the direction distribution of papers actually
+submitted to top finance journals, and that the NBER and published
+samples be comparable on other factors related jointly to finding
+direction and publication.  Similar working-paper-based approaches are
+taken by \citet*{Franco2014}, who use NSF pre-registrations as a
+pre-publication baseline, and \citet*{DellaVigna2022}, who use
+institutional RCT records.  Our design is weaker than either: NBER
+affiliation is selective on researcher quality and institutional
+prestige; most finance papers circulate through SSRN rather than NBER;
+and NBER posting dates do not pin down whether a paper circulated before
+or after journal submission.  The direction of any resulting bias is
+unclear---NBER selection could either overstate or understate the true
+editorial gap---so we interpret all results in this paper as
+cross-sectional associations between corpus membership and paper
+characteristics, not causal editorial-filter effects.  The full
+identification discussion is in Section~\ref{subsec:limitations}.
 
 \subsection{Primary Specification}
 
