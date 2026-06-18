@@ -2137,12 +2137,22 @@ Quasi-exp.\ papers only    & Positive & $-0.598$      & 0.121    & 139 \\
 \par\smallskip
 \begin{minipage}{\textwidth}
 \footnotesize
-\textit{Notes.} Each row reports the probit coefficient on finding direction
-(or the OLS coefficient for the LPM row), estimated on the indicated sample.
-The coefficient measures how much the probability of publication changes for
-positive- or negative-finding papers relative to null/mixed papers.
-All specifications include a linear year trend unless noted.
-Standard errors omitted for brevity.
+\textit{Notes.} Each row reports the probit latent-index coefficient on
+finding direction, except the LPM row, which reports an OLS coefficient
+estimated on the same sample.  Probit coefficients are on the
+latent-index ($\Phi^{-1}$) scale and do not by themselves give a
+percentage-point change in publication probability; the implied
+publication-probability change is
+$\Phi(\hat\alpha + \hat\beta_d + \hat{\boldsymbol{\gamma}}'\mathbf{X}^{\mathrm{base}})
+- \Phi(\hat\alpha + \hat{\boldsymbol{\gamma}}'\mathbf{X}^{\mathrm{base}})$
+at a covariate baseline $\mathbf{X}^{\mathrm{base}}$ (the centered
+baseline defined in Section~\ref{subsec:design} is used elsewhere in the
+paper).  The LPM (OLS) row, by contrast, has a direct
+percentage-point interpretation: an LPM coefficient of $-0.010$ means a
+1.0 percentage-point decrease in publication probability for the
+indicated direction category relative to null/mixed papers.  All
+specifications include a linear year trend unless noted.  Standard errors
+omitted for brevity.
 \textit{Panel A:} The first row drops monetary policy papers.  The
 ``\JF{} membership'' and ``\RFS{}+\JFE{} membership'' rows hold the full
 291-paper sample fixed and redefine the dependent variable as an indicator
