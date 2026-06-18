@@ -1538,12 +1538,24 @@ smaller ones; we read both columns as evidence against strong directional
 sorting, not as proof of complete editorial neutrality.
 
 Adding controls does not change the picture.  The year trend
-(Column~(3)) is positive and significant, suggesting that more recently
-written papers in this area are more likely to be published---though this
-could also reflect the fact that recent NBER papers have had less time to
-complete the publication process.  As a robustness check, restricting
-the sample to papers circulated before 2021 leaves the direction
-coefficients unchanged ($p > 0.50$ in both cases).  Decade fixed effects
+(Column~(3)) is positive and significant, indicating that, conditional on
+direction, more recently dated papers in the in-scope government-intervention
+literature are disproportionately on the published side of the
+sample.  We note that any right-censoring of recent NBER papers
+(working papers that have not yet had time to be published) would push in
+the \textit{opposite} direction---attenuating or reversing a positive
+year trend, since recent NBER papers stuck in review would inflate the
+NBER share at higher years---so censoring is not the explanation for the
+positive coefficient.  More plausible explanations are compositional:
+the in-scope set may shift over the 2000--2024 window toward topics
+(e.g., post-2008 capital and resolution regulation) where journal
+publication outpaces NBER circulation in our sample, or the published-side
+data may simply be more completely indexed for recent years than the NBER
+side.  Our two-corpus design does not let us separate these
+compositional channels.  As a robustness check, restricting the sample
+to papers circulated before 2021 leaves the direction coefficients
+unchanged ($p > 0.50$ in both cases), so the positive year trend does
+not interact with the direction null.  Decade fixed effects
 (Column~(4)) and team size controls (Column~(5)) likewise leave the
 direction results unaffected.
 
