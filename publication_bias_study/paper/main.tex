@@ -775,15 +775,56 @@ the two distributions directly, rather than inferring bias solely from the
 shape of the published distribution.
 
 One concern is that published journal PDFs might be harder to parse than
-NBER draft PDFs, artificially inflating the caliper gap.  We run three
-checks to rule this out.  First, when a paper reports both a coefficient
-and a standard error, we verify that the extracted test statistic equals
-their ratio to within 0.1; this consistency check passes for 98.3\% of
-published rows and 99.7\% of NBER rows, with no meaningful difference
-between corpora.  Second, the papers that yield no extractable statistics
-are spread evenly across journals and years, so their exclusion does not
-bias the sample.  Third, restricting the analysis to papers with at least
-20 extracted statistics leaves the main results unchanged.
+NBER draft PDFs, artificially inflating the caliper gap.  We address this
+concern with several checks but acknowledge that none of them rules it
+out completely; each speaks to a different aspect of differential
+missingness.
+
+First, for rows where both a coefficient and a standard error are
+extracted, we verify that the reported test statistic equals their ratio
+to within 0.1.  This consistency check passes for 98.3\% of published
+rows and 99.7\% of NBER rows, with no meaningful difference between
+corpora.  By construction this check applies only to Coef+SE rows; the
+standalone $z$-statistics that drive the headline caliper finding (ratio
+2.54 published vs.\ 1.58 NBER) report no coefficient or standard error
+and therefore cannot be cross-validated against another extracted field.
+What we can say is that within the Coef+SE rows, where extraction is
+verifiable, neither corpus shows excess bunching ($R = 0.82$ published,
+$0.95$ NBER); the gap between corpora is concentrated in the
+unverifiable row type, which is precisely where parsing concerns are
+hardest to rule out.
+
+Second, the per-paper extraction rate---the fraction of in-scope papers
+that yield at least one usable $|z|$-statistic---differs by both corpus
+and direction.  Among published papers, 91.5\% of negative-finding,
+83.0\% of positive-finding, and 75.0\% of null-finding papers contribute
+at least one extracted statistic; the corresponding NBER rates are
+82.6\%, 75.0\%, and 56.2\%.  Null-finding papers are over-represented in
+the missing-extraction group in both corpora, which is consistent with
+the fact that null-finding papers report fewer significance-laden
+regression tables to begin with.  The headline caliper result is
+concentrated in negative-finding papers, where extraction rates are
+highest (above 80\% in both corpora) and most similar across corpora;
+the negative-finding result is therefore the least likely of the three
+direction-specific results to be driven by selective extraction.
+
+Third, papers yielding no usable statistics are spread roughly evenly
+across journals and across years within journal (within-cell counts are
+small, so we report this descriptively rather than as a formal test).
+
+Fourth, restricting the analysis to papers with at least 20 extracted
+statistics leaves the main caliper ratios within $\pm 0.05$ of their
+full-sample values, indicating that the result is not driven by a small
+set of high-volume papers.
+
+Two parsing-bias channels remain genuinely outside our checks:
+differential missingness within a paper's tables (a paper might
+contribute its Coef+SE rows but not its standalone $z$-stats, or vice
+versa), and table-format heterogeneity that systematically suppresses
+just-above-1.96 statistics relative to just-below-1.96 ones in published
+papers.  We are not able to rule these out with the data we have; we
+flag them as residual concerns rather than claim the parsing channel is
+fully closed.
 
 The results differ sharply by statistic type.  For primary regression
 tables---where authors report all coefficient estimates for a given
