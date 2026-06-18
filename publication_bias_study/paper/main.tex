@@ -564,15 +564,22 @@ coded positive ($+1$) because the intervention achieved its intended regulatory
 goal, regardless of whether the authors believe capital requirements are optimal
 policy.  The full coding prompt is in Appendix~\ref{app:prompts}.
 
-We validate the direction codes in two ways.  First, we re-ran the coding on a stratified 60-paper sample using the same model
-(claude-haiku-4-5-20251001) in an independent second call.  The two runs agree on 71.7\% of papers
-($\kappa_w = 0.674$, ``substantial agreement'').  Agreement is high for
-directional papers---100\% for negative findings and 90\% for
-positive ones---but only 25\% for null/mixed papers, where most errors are
-null-to-directional flips rather than the reverse.  This means any coding
-error tends to overstate the directional premium, so our estimates are if
-anything conservative.  The full confusion matrix is in
-Appendix~\ref{app:validation}.
+We validate the direction codes in two ways.  First, we re-ran the coding on
+a stratified 60-paper sample (5 papers per source $\times$ direction cell)
+using the same model (claude-haiku-4-5-20251001) in an independent second
+call.  The two runs agree on 71.7\% of papers ($\kappa_w = 0.674$,
+``substantial agreement'').  Agreement is high for directional papers---100\%
+for negative findings and 90\% for positive ones---but only 25\% for
+null/mixed papers; among the 20 originally null-coded papers, 15 were
+re-coded as directional and only 5 stayed null.  These flips are not evenly
+distributed across corpora: 13 of the 15 originally null-coded \textit{published}
+articles flipped to directional, against 2 of 5 NBER papers.  Because the
+sign of the resulting bias in our direction premium depends on which corpus
+the miscoded papers come from---NBER directional-as-null inflates the
+premium, while published directional-as-null deflates it---the replication
+exercise establishes that null is the least stable category but does
+\textit{not} establish a clean sign for the residual measurement error.  The
+full confusion matrix is in Appendix~\ref{app:validation}.
 
 Second, we re-ran coding on 58 papers under three alternative prompt wordings.
 Agreement with the original codes ranges from 83\% to 91\%
@@ -1763,16 +1770,30 @@ per 100 words; published: 0.17), confirming that the higher raw count partly
 reflects longer NBER abstracts---but a meaningful difference in writing style
 remains.
 
-This writing-style gap creates two measurement risks.  First, hedged language
-in NBER abstracts may cause the AI to classify genuinely directional working
-papers as null.  Second, polished language in published abstracts may cause
-the AI to classify more of them as directional.  Both errors would push our
-estimate of the direction premium upward, meaning our estimates are more
-likely to overstate than understate any premium.  Our LLM replication
-exercise (Section~\ref{subsec:direction}) is consistent with this: of the
-20 papers that the AI coded as null in the validation sample, 15 were
-reclassified as directional in an independent replication run, while no
-directional-coded papers were reclassified as null.
+This writing-style gap creates a measurement risk in two directions, and
+the sign of the resulting bias in our direction premium depends on which
+direction dominates.  \textit{(a)}~Hedged NBER abstracts may cause the AI to
+classify genuinely directional working papers as null, which would inflate
+the NBER null share, deflate the NBER directional share, and push the
+estimated direction premium \textit{upward}.  \textit{(b)}~Polished
+published abstracts may cause the AI to classify some genuinely null
+published articles as directional, which would inflate the published
+directional share and also push the premium \textit{upward}; conversely,
+miscoding genuinely directional published articles as null (a third
+channel) would push the premium \textit{downward}.
+
+The LLM replication exercise (Section~\ref{subsec:direction}) shows the
+null category to be the least stable: of the 20 papers the AI coded as null
+in the validation sample, 15 were re-coded as directional in an independent
+replication.  Crucially, these 15 flips are not symmetric across corpora:
+13 occurred among the 15 originally null-coded published articles
+(87\% flip rate), against 2 of 5 NBER papers (40\%).  Channel~(a), which
+would make our null result conservative, is therefore not the dominant
+empirical pattern in the replication: the corpus where null coding swings
+most is the \textit{published} side, not NBER.  We accordingly do not
+claim the estimates are conservative; the replication exercise establishes
+instability of the null category but not a clean sign for the residual
+measurement bias.
 
 As a direct robustness check, we add abstract length as a control variable.
 The direction coefficients remain essentially zero
@@ -1998,17 +2019,20 @@ as unpublished, understating the true publication rate for some papers.  Any
 resulting bias pushes our direction estimates toward zero, making our null
 result conservative.
 
-Third, our AI pipeline codes direction from abstracts, and NBER abstracts are
-written more tentatively than published ones (high-confidence rate: 62.4\%
-vs.\ 81.3\%).  If the AI over-assigns null codes to hedged NBER abstracts,
-the estimated direction premium is overstated.  Our validation exercise
-confirms this risk: 15 of 20 null-coded papers were reclassified as
-directional in an independent replication, making null the least stable
-category.  Our estimates are therefore best read as an upper bound on any
-true direction premium.  The null-finding publication rate ($\approx$46.7\%)
-is the least reliable of the three rates, but a joint equality test across
-all three categories ($\chi^2 = 0.017$, $p = 0.992$) confirms the overall
-null without relying on any single category as reference.
+Third, our AI pipeline codes direction from abstracts, and NBER abstracts
+are written more tentatively than published ones (high-confidence rate:
+62.4\% vs.\ 81.3\%).  Our validation exercise shows that null is the least
+stable category: 15 of 20 null-coded validation papers were re-coded as
+directional in an independent replication, with the flips concentrated on
+the published side (13 of 15 published nulls flipped vs.\ 2 of 5 NBER
+nulls).  Because the sign of the resulting bias on the direction premium
+depends on whether the miscoding is concentrated in NBER (which would
+inflate the premium) or in published (which would deflate it), the
+validation evidence does not let us sign the residual measurement error.
+The null-finding publication rate ($\approx$46.7\%) is the least reliable
+of the three rates, but a joint equality test across all three categories
+($\chi^2 = 0.017$, $p = 0.992$) confirms the overall null without relying
+on any single category as the reference.
 
 Fourth, the 18-percentage-point quasi-experimental premium could mask a
 direction effect if rigorous studies also tend to find directional results.
@@ -2269,15 +2293,25 @@ Cohen's weighted $\kappa_w = 0.674$ (linear weights), which the \citet*{LandisKo
 classifies as ``substantial agreement.''
 Agreement is perfect for negative-finding papers (20/20 = 100\%) and
 high for positive-finding papers (18/20 = 90\%), but much lower for
-null/mixed papers (5/20 = 25\%).
-When the two runs disagree on a null-coded paper, the replication
-almost always re-classifies it as directional (positive or negative)
-rather than keeping it null---suggesting that abstracts with inconclusive
-findings are harder for the AI to classify consistently.
-Importantly, this type of error works against our main finding:
-if null papers are sometimes mis-coded as directional, the estimated
-gap between directional and null papers is biased toward zero, making
-our estimates conservative.
+null/mixed papers (5/20 = 25\%).  When the two runs disagree on a
+null-coded paper, the replication almost always re-classifies it as
+directional, suggesting that abstracts with inconclusive findings are
+harder for the AI to classify consistently.
+
+The corpus breakdown of these null-category flips matters for signing the
+measurement-error bias.  The 20 originally null-coded validation papers
+comprise 5 NBER working papers and 15 published articles
+(\JF{}: 5, \RFS{}: 5, \JFE{}: 5).  Of the 15 papers re-coded as directional
+in replication, 2 are NBER and 13 are published.  The direction of bias
+in our estimated direction premium depends on which side dominates:
+NBER directional papers miscoded as null would inflate the premium (and
+make our null finding conservative), while published directional papers
+miscoded as null would deflate the premium (and make the null finding
+easier to obtain).  The replication evidence shows null-coding
+instability is concentrated on the \textit{published} side, so we do not
+claim our estimates are conservative; the validation establishes
+instability of the null category but does not establish a clean sign for
+the residual measurement error.
 \end{minipage}
 \end{singlespace}
 \end{table}
