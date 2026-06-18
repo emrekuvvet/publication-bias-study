@@ -1670,85 +1670,6 @@ The direction coefficients remain essentially zero
 ($\hat\beta_1 = 0.008$, $p = 0.968$; $\hat\beta_2 = 0.011$, $p = 0.958$),
 confirming that abstract-length differences do not drive the null result.
 
-\subsection{AFA Conference Baseline}
-
-Our main analysis compares published papers to NBER working papers, but only
-11.9\% of published papers can be matched to a specific NBER counterpart.
-The two groups are largely different sets of papers that may differ in ways
-beyond finding direction---such as research quality, topic, or author
-institution.  To check whether this comparison is driving the results, we
-construct an alternative pre-publication baseline using papers presented at
-the American Finance Association (AFA) annual meeting.  AFA conference papers
-represent completed research that has been publicly presented but not yet
-published in a top journal---a natural comparison group for measuring whether
-publication depends on what a paper finds.
-
-We collect 4,080 AFA program papers from 2006--2024, retrieving abstracts
-from OpenAlex, CrossRef, and the NBER dataset for 3,975 of them (97.4\%).
-Applying our standard keyword and AI scope filter yields 151
-in-scope AFA papers, all of which receive direction codes through the AI
-pipeline.  Of these, 36 (23.8\%) are matched to a \JF{}/\RFS{}/\JFE{}
-publication via title matching.
-
-In some cases the AI assigns a low-confidence direction code and a
-keyword-based fallback is used instead.  As a check, Table~\ref{tab:robustness}
-Panel~D replaces all fallback codes with the standard AI pipeline, yielding
-nearly identical estimates ($\hat\beta = 0.352$, $p = 0.204$) and confirming
-the result is not an artifact of the coding method.
-
-Using AFA as the pre-publication baseline, the probit coefficient on finding
-direction is $0.327$ (s.e.\ $0.279$, $N = 151$), statistically
-indistinguishable from zero.  The corresponding NBER-baseline estimate is
-$-0.020$ (s.e.\ $0.182$), also indistinguishable from zero.  Neither
-estimate finds evidence of direction-based sorting.
-
-The two estimates do point in opposite directions, however: $-0.020$ (NBER)
-versus $+0.327$ (AFA).  Three factors explain this divergence without
-undermining the conclusion that both are insignificant.  First, AFA conference selection may favor papers with clear, presentable
-findings over papers with null or ambiguous results---program committees
-naturally prefer results that generate discussion.  If directional papers
-are somewhat more likely to be accepted to AFA than null papers, the AFA
-comparison will mechanically suggest a positive direction--publication link
-even if journals have no such preference.  This is distinct from author
-prestige: both NBER and AFA are selective on who presents, but AFA
-selection operates on the paper's findings in a way that NBER affiliation
-does not.
-Second, the two samples draw from different author pools: the NBER sample
-is limited to researchers affiliated with the NBER network---primarily
-faculty at leading universities---while the AFA sample includes a broader
-range of conference presenters.
-Third, and most importantly, both estimates have wide, overlapping confidence
-intervals; the sign difference is easily within the range of expected
-sampling variation given standard errors of 0.279 and 0.182.
-
-The AFA baseline neither contradicts the NBER null nor firmly corroborates
-it.  The fact that the estimated sign changes depending on which comparison
-group is used---even though neither estimate is individually significant---
-is a genuine fragility worth flagging.  A more representative benchmark,
-such as a large corpus of working papers covering the same topic range as
-our keyword filter but circulating outside NBER, would allow a cleaner test;
-we leave its construction for future work.
-
-As a simple descriptive check, directional AFA papers appear in top journals
-at a 26.1\% rate (30 of 115) versus 16.7\% for null-finding papers (6 of
-36), and the pattern is unchanged when a year trend is added
-($\hat\beta = 0.345$, s.e.\ $0.281$).
-
-Because the AFA baseline covers 2006--2024 while the main sample covers
-2000--2024, it is worth checking whether the window mismatch affects the
-comparison.  Restricting the main NBER sample to 2006--2024 ($N = 258$,
-dropping 33 pre-2006 papers) leaves the direction coefficients
-near zero and statistically insignificant (positive: $0.003$, $p = 0.988$;
-negative: $0.031$, $p = 0.882$), confirming that the null result is not an
-artifact of the additional six years in the main sample.
-
-One mitigating consideration is that the NBER comparison group is itself
-selective on quality: posting to the NBER Working Paper series requires
-affiliation with the NBER research network, which is limited to faculty at
-leading research universities.  Supporting this, the share of directional
-papers is nearly identical across the NBER and published samples (both
-approximately 79\%), suggesting the two groups are similar in composition
-despite not being directly matched.
 
 
 
@@ -1779,11 +1700,6 @@ Quasi-exp.\ papers only    & Positive & $-0.598$      & 0.121    & 139 \\
                             & Negative & $-0.656^{*}$  & 0.081    & 139 \\[4pt]
 + log(abstract length)     & Positive & $0.008$       & 0.968    & 291 \\
 \small{[abstract length control]} & Negative & $0.011$       & 0.958    & 291 \\[4pt]
-\multicolumn{5}{l}{\textit{Panel D: Alternative Pre-Publication Baseline}} \\[2pt]
-AFA conference baseline    & Directional & $0.327$ & $0.241$ & 151 \\
-\small{(+ year trend)}     & Directional & $0.345$ & $0.220$ & 151 \\[4pt]
-Uniform LLM coding         & Directional & $0.352$ & $0.204$ & 151 \\
-\small{[AFA, + year]}      & Directional & $0.364$ & $0.193$ & 151 \\
 \bottomrule
 \end{tabular}}
 \par\smallskip
@@ -1808,13 +1724,6 @@ credible causal methods (natural experiments, IV, DiD, RD), holding research
 design quality constant across direction categories.
 ``$+\log(\text{abstract length})$'' controls for abstract length to check
 whether writing-style differences drive the result; they do not.
-\textit{Panel D:} AFA rows use papers presented at the American Finance
-Association annual meeting (2006--2024, $N=151$ in-scope) as an alternative
-pre-publication baseline.
-``Uniform LLM coding'' replaces keyword-based direction codes for unmatched
-AFA papers with the same AI pipeline used for the main sample;
-$\beta \approx 0.35$ remains insignificant, confirming the result is not
-an artifact of the coding method.
 Sub-rows marked ``$+$ year trend'' add a linear year control.
 $^{***}p < 0.01$, $^{**}p < 0.05$, $^{*}p < 0.10$.
 \end{minipage}
