@@ -504,15 +504,38 @@ policy is the primary research question.  The review proceeds in two
 directions.
 
 \textit{(i)~Re-examining LLM in-scope decisions.}  The most important
-judgment call concerns papers that use a policy event only as a tool to
-study something else---for example, using the passage of Sarbanes-Oxley to
-identify the effect of disclosure on firm investment rather than to
-evaluate the law itself.  Such papers' primary question is not about the
-policy, so they are excluded.  A second class of overrides drops papers
-that test a policy whose empirical content turns out to be a private
-market response (e.g., voluntary cross-listing decisions after a directive).
-This re-examination produces 52 net exclusions relative to the LLM
-(NBER: 30, \JF{}: 18, \RFS{}: 2, \JFE{}: 2).
+judgment call concerns papers that use a policy event only as an
+identification device to study a downstream outcome that the regulation
+did not target.  We operationalize the boundary at the level of the
+\textit{outcome variable}:
+\begin{itemize}
+\item A paper is \textit{in scope} if its primary outcome is something
+the regulation explicitly aimed to affect (its stated regulatory
+objective)---e.g., for Sarbanes-Oxley, audit quality, internal-control
+disclosure, financial-reporting accuracy, restatement frequency, or
+fraud detection.  The paper's contribution is then a direct test of
+``did SOX achieve its disclosure objective?''
+\item A paper is \textit{out of scope} if its primary outcome is
+downstream of the regulated mechanism but is \textit{not} a stated
+regulatory objective---e.g., for Sarbanes-Oxley, firm investment,
+M\&A activity, cost of capital, or innovation.  The paper's contribution
+is then ``what is the effect of disclosure (or governance, or
+liability) on outcome $Y$, using SOX as an instrument?''  These are
+mechanism papers whose policy variable is incidental.
+\end{itemize}
+The criterion turns on whether the regulator stated the outcome as a
+target, not on whether the outcome plausibly responds to the
+regulation.  Borderline cases---where authors describe both a
+policy-effect and a mechanism interpretation---are resolved by the
+position of the outcome in the abstract: if the abstract's headline
+result names a stated regulatory objective, the paper is in scope; if
+the abstract frames the regulation as the source of variation for a
+non-objective outcome, the paper is out of scope.  A second class of
+overrides drops papers that test a policy whose empirical content turns
+out to be a private market response (e.g., voluntary cross-listing
+decisions after a directive).  This re-examination produces 52 net
+exclusions relative to the LLM (NBER: 30, \JF{}: 18, \RFS{}: 2,
+\JFE{}: 2).
 
 \textit{(ii)~Reconsidering LLM out-of-scope decisions in the NBER corpus.}
 Because false-negative LLM exclusions are difficult to detect without a
