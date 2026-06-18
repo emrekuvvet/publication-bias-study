@@ -1679,14 +1679,22 @@ zero and statistically insignificant ($\hat\beta_1 = -0.028$, $p = 0.896$;
 $\hat\beta_2 = -0.068$, $p = 0.741$), confirming that the null finding is not
 driven by the inclusion of monetary policy papers.
 
-As a further check, we ask whether the null result holds within each journal
-individually rather than across all three combined.  We re-run the probit
-separately for the \JF{} (comparing its published papers to all NBER working
-papers) and for the \RFS{} and \JFE{} together.  In neither case does finding
-direction predict publication: the \JF{}-only coefficients are $0.400$ and
-$0.350$ ($p > 0.20$), and the \RFS{}+\JFE{} coefficients are $-0.147$ and
-$-0.130$ ($p > 0.48$).  The null result is not confined to any particular
-journal.
+As a further check, we ask whether finding direction predicts placement in
+one journal rather than another.  Holding the full 291-paper sample fixed,
+we redefine the dependent variable in two ways and re-run the probit:
+$\text{Pub}_{\JF{}} = 1$ if a paper appears in the \JF{} (0 otherwise,
+including \RFS{}, \JFE{}, and NBER), and $\text{Pub}_{\RFS+\JFE} = 1$ if a
+paper appears in the \RFS{} or the \JFE{} (0 otherwise, including \JF{} and
+NBER).  Each specification asks whether directional papers are
+disproportionately likely to land in the indicated outlet relative to
+everything else in the corpus.  In neither case does finding direction
+predict outlet placement: the $\text{Pub}_{\JF{}}$ coefficients are $0.400$
+and $0.350$ ($p > 0.20$, $N = 291$), and the $\text{Pub}_{\RFS+\JFE}$
+coefficients are $-0.147$ and $-0.130$ ($p > 0.48$, $N = 291$).  This is a
+target-journal-membership test on the full sample, not a journal-vs-NBER
+subsample comparison (a JF-vs-NBER subsample would be $26 + 157 = 183$
+observations); it asks whether any single outlet sorts on direction more
+sharply than the corpus as a whole, and the answer is no.
 
 \subsection{Alternative Specifications}
 
@@ -1813,9 +1821,9 @@ Specification & Variable & Coefficient & $p$-value & $N$ \\
 \multicolumn{5}{l}{\textit{Panel A: Sample and Scope}} \\[2pt]
 Excl.\ monetary policy     & Positive & $-0.028$      & 0.896    & 270 \\
                             & Negative & $-0.068$      & 0.741    & 270 \\[4pt]
-\JF{} only                 & Positive & $0.400$       & 0.217    & 291 \\
+\JF{} membership            & Positive & $0.400$       & 0.217    & 291 \\
                             & Negative & $0.350$       & 0.271    & 291 \\[4pt]
-\RFS{}+\JFE{} only         & Positive & $-0.147$      & 0.483    & 291 \\
+\RFS{}+\JFE{} membership    & Positive & $-0.147$      & 0.483    & 291 \\
                             & Negative & $-0.130$      & 0.519    & 291 \\[4pt]
 \multicolumn{5}{l}{\textit{Panel B: Alternative Specifications}} \\[2pt]
 Binary directional          & Directional & $-0.020$      & 0.914    & 291 \\[4pt]
@@ -1838,9 +1846,13 @@ The coefficient measures how much the probability of publication changes for
 positive- or negative-finding papers relative to null/mixed papers.
 All specifications include a linear year trend unless noted.
 Standard errors omitted for brevity.
-\textit{Panel A:} Drops monetary policy papers or restricts to one journal
-(or journal pair) at a time; direction coefficients are small and insignificant
-in all cases.
+\textit{Panel A:} The first row drops monetary policy papers.  The
+``\JF{} membership'' and ``\RFS{}+\JFE{} membership'' rows hold the full
+291-paper sample fixed and redefine the dependent variable as an indicator
+for placement in the indicated outlet (so the reference group includes the
+other journals and NBER); these are target-journal-membership tests, not
+journal-vs-NBER subsample regressions.  Direction coefficients are small
+and insignificant in all cases.
 \textit{Panel B:} ``Binary directional'' collapses positive and negative
 findings into a single directional category; adding author-count controls
 leaves results unchanged.
