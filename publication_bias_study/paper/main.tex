@@ -2114,17 +2114,27 @@ reliable within-topic publication-rate comparisons.  Whether the
 aggregate null also holds at the level of any specific regulation
 remains an open question that our design cannot resolve.
 
-Two qualifications limit how strongly this conclusion can be stated.  First,
-our study is underpowered to detect modest imbalances: the smallest directional
-gap we could reliably identify corresponds to an 18-percentage-point difference
-in publication rates, so smaller asymmetries remain possible.  Second, the
-confidence interval on the negative-finding caliper ratio is wide
-($[0.81,\,2.67]$), leaving room for meaningful threshold pressure in that
-direction that our design cannot rule out.  Policymakers who rely on this
-literature should treat our null as evidence against \textit{large-scale}
-editorial distortion, not as a clean bill of health; residual direction-based
-bias on specific topics such as capital requirements or short-sale restrictions
-could exist below our detection threshold.
+One qualification limits how strongly this direction-publication
+conclusion can be stated: our study is underpowered to detect modest
+imbalances.  The smallest directional gap we could reliably identify
+corresponds to an 18-percentage-point difference in publication rates,
+so smaller direction-based asymmetries in corpus membership remain
+possible.  Policymakers who rely on this literature should treat our null
+as evidence against \textit{large-scale} direction-based editorial
+distortion at the aggregate level, not as a clean bill of health;
+residual direction-based bias on specific regulations could exist below
+our detection threshold.
+
+A separate and distinct caveat applies to the within-paper caliper
+analysis: the bootstrap confidence interval on the negative-finding
+caliper ratio is wide ($[0.81,\,2.67]$), which limits how confidently we
+can pin down the magnitude of within-paper threshold pressure in
+negative-finding published papers.  We flag this here because the two
+caveats are about different estimands---the first concerns
+\textit{direction-based corpus membership} measured by the probit; the
+second concerns \textit{within-paper selective reporting near $|z|=1.96$}
+measured by the caliper test---and the wide caliper interval does not by
+itself qualify the no-direction-sorting result.
 
 A clearer cross-sectional association does emerge: QE papers (RDD, IV,
 DiD, natural experiment, or event study with causal interpretation; see
