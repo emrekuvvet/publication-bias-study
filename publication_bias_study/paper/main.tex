@@ -1407,21 +1407,18 @@ quasi-experimental methods at virtually the same rate as those at other
 institutions (48.9\% vs.\ 47.3\%).  This means controlling for prestige
 provides almost no new information about method choice, and vice versa.
 
-Table~\ref{tab:id_prestige_crosstab} presents raw publication rates by
-the four combinations of method and institution.  The quasi-exp premium
-operates within both institution tiers: among top-institution authors,
-quasi-exp papers publish at 72.7\% vs.\ 52.2\% for non-QE papers (a gap
-of 20.5 pp); among other institutions, the gap is 48.4\% vs.\ 30.2\%
-(18.2 pp).  The institutional prestige premium likewise holds within both
-method groups.  The two effects are additive: top-institution quasi-exp papers sit on
-the published side of the corpus 72.7\% of the time, non-top non-QE
-papers 30.2\% of the time---a 42-percentage-point corpus-membership
-spread reflecting roughly equal contributions from method and pedigree.
-
-
-\begin{center}
-\textbf{[INSERT TABLE 11 HERE]}
-\end{center}
+An untabulated 2$\times$2 cross-tabulation of corpus-membership shares
+by method and institutional tier shows the QE premium operates within
+both tiers: top-institution QE papers vs.\ non-QE papers sit on the
+published side at 72.7\% vs.\ 52.2\% (gap 20.5 pp); other-institution
+QE vs.\ non-QE at 48.4\% vs.\ 30.2\% (gap 18.2 pp).  The institutional
+prestige premium likewise holds within both method groups.  The two
+effects are additive: top-institution QE papers sit on the published
+side 72.7\% of the time, non-top non-QE papers 30.2\% of the
+time---a 42-percentage-point corpus-membership spread reflecting roughly
+equal contributions from method and pedigree.  Cell counts:
+top-institution QE 32/44, top-institution non-QE 24/46,
+other-institution QE 46/95, other-institution non-QE 32/106.
 
 What can we conclude?  Institutional prestige and team size---the most
 natural observable confounds---do not explain the quasi-experimental
@@ -1451,38 +1448,26 @@ correlation argues against a pure researcher-quality story.
 This section checks whether the main findings hold under a range of
 alternative assumptions.  Table~\ref{tab:robustness} summarizes results
 across three areas: sample and scope restrictions, alternative model
-specifications, and concerns about classification quality.  Caliper window
-sensitivity is addressed separately in Table~\ref{tab:caliper_window_main}.
+specifications, and concerns about classification quality.
 
 \subsection{Caliper Window Sensitivity}
 \label{subsec:window_robustness}
 
 The caliper test compares how many test statistics fall just below the 5\%
 significance threshold versus just above it, so the result depends on exactly
-how wide a band is used on each side.  Table~\ref{tab:caliper_window_main}
-repeats the test under four different window choices.
-
-When the window starts at $|z| = 1.645$ or higher---covering three of the four
-specifications, including the standard \citet*{Brodeur2016} window---published
-papers consistently show excess mass just below the threshold: the ratio of
-below-threshold to above-threshold test statistics ranges from 1.20 to 1.33,
-while the same ratio for NBER working papers stays near 1.0.
-
-The exception is the widest window, which extends the lower bound down to
-$|z| = 1.50$.  Here the ratio for published papers drops to 0.92 ($p = 0.088$),
-suggesting fewer statistics below the threshold than above.  The reason is
-mechanical: at $|z|$ values between 1.50 and 1.645, the overall density of
-test statistics is still rising---there is no bunching there---so pulling that
-region into the window dilutes and reverses the bunching signal found closer
-to the threshold.  This rules out the alternative explanation that published
-papers simply have a general shift toward larger test statistics; the pattern
-is specifically concentrated in the narrow band just below the 5\%
-significance cutoff.
-
-
-\begin{center}
-\textbf{[INSERT TABLE 12 HERE]}
-\end{center}
+how wide a band is used on each side.  Untabulated, when the window starts
+at $|z| = 1.645$ or higher---covering three of the four specifications
+we examine, including the standard \citet*{Brodeur2016} window---published
+papers consistently show excess mass just below the threshold (ratios
+$1.20$ at the standard window, $1.33$ at the narrow $[1.70,2.22]$ window,
+and $1.33$ at Brodeur's $[1.65,2.25]$ window), while NBER ratios stay
+between $0.97$ and $1.10$.  The exception is the widest window
+($[1.50,2.42]$): the published ratio drops to $0.92$ ($p = 0.088$),
+mechanically driven by rising test-statistic density between $|z| = 1.50$
+and $|z| = 1.645$.  This rules out the alternative explanation that
+published papers simply have a general shift toward larger test
+statistics; the pattern is specifically concentrated in the narrow band
+just below the 5\% significance cutoff.
 
 \subsection{Sample and Scope Robustness}
 
@@ -1659,7 +1644,7 @@ writing-style concern.
 
 
 \begin{center}
-\textbf{[INSERT TABLE 13 HERE]}
+\textbf{[INSERT TABLE 11 HERE]}
 \end{center}
 
 %% ============================================================
@@ -2576,74 +2561,8 @@ $^{***}p<0.01$, $^{**}p<0.05$, $^{*}p<0.10$.
 \end{table}
 
 
-\begin{table}[H]
-\centering
-\caption{Publication Rates by Identification Strategy and Institutional Tier}
-\label{tab:id_prestige_crosstab}
-\begin{singlespace}
-\small
-\begin{tabular}{lcc}
-\toprule
- & Non-QE & Quasi-Experimental \\
-\midrule
-Top Institution   & 52.2\%\ (24/46) & 72.7\%\ (32/44) \\
-Other Institution & 30.2\%\ (32/106) & 48.4\%\ (46/95) \\
-\midrule
-QE premium (pp) & \multicolumn{1}{r}{---} & +20.5 (top) / +18.2 (other) \\
-\bottomrule
-\end{tabular}
-\par\smallskip
-\begin{minipage}{\textwidth}
-\small
-\textit{Notes.} Each cell shows the share of papers published in a top-3
-finance journal, with counts in parentheses.
-\textit{Quasi-Experimental} (QE) denotes papers using the five-method
-definition in Section~\ref{subsec:direction_results}: RDD, IV, DiD,
-natural experiment, or event study with causal interpretation.
-\textit{Top Institution} is the UTD Top 100 indicator.
-The correlation between the two indicators is $r = 0.015$.
-\end{minipage}
-\end{singlespace}
-\end{table}
 
 
-\begin{table}[H]
-\centering
-\caption{Caliper Window Robustness (Summary)}
-\label{tab:caliper_window_main}
-\begin{singlespace}
-\small
-\begin{tabular}{llrrr}
-\hline\hline
-Window & Sample & Ratio & Naive $p$ & Perm.\ $p$ \\
-\hline
-Standard (1.645--2.275) & Published & $1.20^{***}$ & 0.002    & 0.001    \\
-                        & NBER      & $1.01$       & 0.849    & 0.424    \\[3pt]
-Narrow (1.70--2.22)     & Published & $1.33^{***}$ & $<$0.001 & $<$0.001 \\
-                        & NBER      & $1.01$       & 0.917    & 0.468    \\[3pt]
-Wide (1.50--2.42)       & Published & $0.92$       & 0.088    & 0.960    \\
-                        & NBER      & $0.97$       & 0.549    & 0.737    \\[3pt]
-Brodeur2 (1.65--2.25)   & Published & $1.33^{***}$ & $<$0.001 & $<$0.001 \\
-                        & NBER      & $1.10$       & 0.153    & 0.081    \\
-\hline\hline
-\end{tabular}
-\begin{minipage}{\textwidth}
-\smallskip
-\footnotesize
-\textit{Notes.} The caliper ratio is the count of $|z|$-statistics with $|z|$
-strictly below 1.96 (the just-insignificant side) divided by the count with
-$|z|$ at or above 1.96 (the just-significant side), within the specified
-window.  $R > 1.0$ means more statistics fall on the just-below-1.96 side than
-the just-above-1.96 side---an excess of borderline-but-not-quite-significant
-results.  The wide window (1.50--2.42) reverses sign for published papers
-because test-statistic density is still rising between $|z| = 1.50$ and
-$|z| = 1.645$, pulling the ratio below 1.0; this is a mechanical artifact of
-the wider lower bound, not evidence against bunching.  The three windows whose
-lower bounds start at or above $|z| = 1.645$ all show consistent excess mass
-on the just-below-1.96 side of the published distribution.  *** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$ (caliper ratio).
-\end{minipage}
-\end{singlespace}
-\end{table}
 
 
 \begin{table}[H]
@@ -2729,171 +2648,30 @@ $^{***}p < 0.01$, $^{**}p < 0.05$, $^{*}p < 0.10$.
 \renewcommand{\thetable}{A\arabic{table}}
 
 %% ============================================================
-\section{Keyword Taxonomy}
+%% ============================================================
+\section{Keyword Taxonomy (Online Appendix~OA.1)}
 \label{app:keywords}
 
-Table~\ref{tab:keywords} lists all terms used in Pass~1 of the classification
-pipeline.
-
-\begin{longtable}{p{4cm}p{10cm}}
-\caption{In-Scope Classification: Keyword Taxonomy}
-\label{tab:keywords} \\
-\toprule
-Category & Keywords \\
-\midrule
-\endfirsthead
-\multicolumn{2}{c}{\tablename\ \thetable{} (continued)} \\
-\toprule
-Category & Keywords \\
-\midrule
-\endhead
-\midrule
-\multicolumn{2}{r}{\textit{Continued on next page}} \\
-\endfoot
-\bottomrule
-\endlastfoot
-Financial regulation &
-  regulation, regulatory, Dodd-Frank, Basel, Glass-Steagall,
-  capital requirements, leverage ratio, bank capital \\[4pt]
-Securities law &
-  SEC, securities and exchange, disclosure requirement, Reg FD,
-  Sarbanes-Oxley, SOX, insider trading law, short-selling ban,
-  short sale ban, short-sale restriction \\[4pt]
-Banking policy &
-  FDIC, deposit insurance, lender of last resort, bailout, TARP,
-  stress test, bank resolution, government guarantee \\[4pt]
-Monetary/fiscal policy &
-  quantitative easing, QE, Fed intervention, government subsidy,
-  public guarantee, state guarantee, fiscal stimulus \\[4pt]
-Market microstructure rules &
-  circuit breaker, tick size, trading halt, uptick rule,
-  limit-down, limit-up, trading curb \\[4pt]
-Corporate governance law &
-  board independence requirement, say-on-pay, proxy access,
-  mandatory audit, governance mandate, clawback provision,
-  mandatory disclosure \\[4pt]
-General intervention signals &
-  government intervention, government policy, public policy,
-  law and finance, legal protection, shareholder rights,
-  creditor rights, investor protection, financial regulation reform \\
-\end{longtable}
-
-\noindent Ambiguous standalone terms (\textit{regulation}, \textit{regulatory},
-\textit{SEC}) require co-occurrence with at least one additional in-scope
-keyword before the paper is flagged as a candidate.
+The complete seven-category keyword taxonomy used at the first-pass
+classification stage (financial regulation, securities law, banking
+policy, monetary/fiscal policy, market microstructure rules, corporate
+governance law, and general intervention signals) and the
+co-occurrence rules for ambiguous standalone terms are provided in
+Online Appendix~OA.1 to conserve space.
 
 %% ============================================================
-\section{LLM Prompts}
+\section{LLM Prompts (Online Appendix~OA.2)}
 \label{app:prompts}
 
-\subsection{In-Scope Classification Prompt}
+The verbatim in-scope classification prompt and the two
+direction-coding prompts (abstract-only and title-only fallback),
+including system instructions and JSON return-schema specifications,
+are reproduced in Online Appendix~OA.2.  The deployed pipeline is
+implemented in
+\texttt{scripts/03\_classify\_inscope.py} (in-scope) and
+\texttt{scripts/04\_code\_direction.py} (direction); these scripts and
+the prompts they invoke are available in the replication package.
 
-The prompt receives the paper's title and abstract.
-System instruction: \textit{``You are a research assistant helping to classify
-finance research papers. You must return valid JSON only --- no other text.''}
-User message:
-
-\begin{quote}
-\small
-A finance research paper is `in scope' for a study of directional bias
-in government intervention research if and only if its PRIMARY research
-question is the CAUSAL EFFECT of a specific government law, regulation,
-or public policy on financial markets, firms, or investors.
-
-Exclusion criteria (mark in\_scope=false):
-\newline--- Purely theoretical papers (no empirical test of a policy)
-\newline--- Papers that only DESCRIBE a regulation without estimating its effect
-\newline--- Papers whose main topic is private firm/market behaviour, with policy as incidental context
-\newline--- Papers studying central bank communication WITHOUT a specific policy instrument
-\newline--- Papers whose primary policy variable is a rule imposed by a stock exchange
-(NYSE, NASDAQ, etc.) without a specific government or regulatory mandate
-(e.g., exchange-designed trading halts, voluntary tick size conventions,
-exchange fee structures)
-
-Return JSON with exactly these keys: in\_scope (true or false),
-confidence (``high'' $|$ ``medium'' $|$ ``low''), reason (one sentence).
-\end{quote}
-
-\subsection{Direction Coding Prompt}
-
-The deployed pipeline has two paths, selected per paper by the
-classifier in \texttt{scripts/04\_code\_direction.py}.  When the abstract
-is present and contains at least 20 words, the model receives the
-\textit{abstract-only} prompt below; the title is \textit{not} concatenated
-with the abstract or otherwise passed.  When the abstract is missing or
-shorter than 20 words, the model instead receives the \textit{title-only}
-fallback prompt also shown below.  All 291 papers in the final analysis
-sample have abstracts of at least 20 words, so the title-only fallback
-was not invoked for any analysis-sample paper; the validation samples
-and AFA pipeline use the same two-path logic.
-
-System instruction (both prompts): \textit{``You are a research assistant
-classifying finance paper findings. Return valid JSON only --- no other
-text.''}
-
-\paragraph{Abstract-only prompt (used for all 291 analysis-sample papers).}
-\begin{quote}
-\small
-The following is the abstract of a finance paper that studies the effect
-of a government law, regulation, or public policy.
-
-Classify the MAIN empirical finding:
-\newline\quad +1 \enspace The government intervention produced a POSITIVE / BENEFICIAL
-outcome (e.g.\ improved market quality, reduced systemic risk, better investor
-protection, increased firm value, lower cost of capital)
-\newline\quad -1 \enspace The government intervention produced a NEGATIVE / HARMFUL
-outcome (e.g.\ reduced liquidity, higher costs, unintended consequences, welfare losses)
-\newline\quad\phantom{+}0 \enspace NULL, MIXED, or INCONCLUSIVE finding (no statistically
-significant effect, evidence on both sides, or the paper explicitly refuses to
-take a directional stance)
-
-Coding rules:
-\newline--- Code the PRIMARY intervention and PRIMARY outcome (named in title or first sentence)
-\newline--- If paper is purely theoretical with no empirical test, set direction=0, confidence=low
-\newline--- Do NOT infer direction from normative framing; code the sign of the estimated coefficient
-
-Abstract:\\
-\texttt{"""\{abstract\}"""}
-
-Return JSON with exactly: direction (1 $|$ -1 $|$ 0),
-confidence (``high'' $|$ ``medium'' $|$ ``low''), rationale (one sentence).
-\end{quote}
-
-The instruction ``named in title or first sentence'' is preserved from
-the deployed prompt verbatim; because only the abstract is passed in
-this path, the model interprets ``title'' as title-like leading material
-that some abstracts include in their first sentence (e.g., naming the
-specific statute being studied).  Body Section~\ref{subsec:direction}
-paraphrases the spirit of the rule---coding the sign of the estimated
-effect relative to the stated regulatory goal---which the prompt conveys
-through the example outcomes for $+1$ (regulatory objectives achieved:
-improved market quality, reduced systemic risk, etc.) and $-1$
-(regulatory side-effects: reduced liquidity, higher costs, etc.).
-
-\paragraph{Title-only fallback (not used for any analysis-sample paper).}
-\begin{quote}
-\small
-The following is the title of a finance paper that studies the effect of
-a government law, regulation, or public policy. No abstract is available.
-
-Based on the title alone, infer the likely direction of the main empirical finding:
-\newline\quad +1 \enspace The intervention likely produced a POSITIVE / BENEFICIAL outcome
-\newline\quad -1 \enspace The intervention likely produced a NEGATIVE / HARMFUL outcome
-\newline\quad\phantom{+}0 \enspace NULL, MIXED, or cannot be determined from the title alone
-
-Coding rules:
-\newline--- Default to 0 (null) if the title is neutral or provides no directional signal
-\newline--- Only assign $+1$ or $-1$ if the title clearly implies a directional finding
-\newline--- Set confidence to ``low'' unless the directional signal is unambiguous
-
-Title:\\
-\texttt{"""\{title\}"""}
-
-Return JSON with exactly: direction (1 $|$ -1 $|$ 0),
-confidence (``high'' $|$ ``medium'' $|$ ``low''), rationale (one sentence).
-\end{quote}
-
-%% ============================================================
 \section{Replication Confusion Matrix}
 \label{app:validation}
 
@@ -3117,102 +2895,25 @@ verifiable rows show a smaller asymmetry in the opposite direction.
 \end{table}
 
 %% ============================================================
-\section{Sample Frame Validation: Precision and Recall}
+%% ============================================================
+\section{Sample Frame Validation (Online Appendix~OA.3)}
 \label{app:frame_validation}
-%% ============================================================
 
-The selection pipeline narrows 39,136 documents to 1,849 keyword
-candidates and then to 291 final papers (Table~\ref{tab:sample_selection}).
-Differential exclusion at any stage---between NBER and journal papers, or
-between null and directional papers---could bias the within-direction
-corpus-membership shares that our main inference relies on.  This appendix
-reports three precision/recall estimates that bound this concern.
+Three precision/recall estimates bound the sample-frame quality.
+\textit{(i)~LLM precision on its in-scope decisions} is $58/68 = 85.3\%$
+(manual recheck file).  \textit{(ii)~LLM recall on the low-confidence
+out-of-scope NBER pool} is $1 - 126/803 = 84.3\%$ (NBER-side refilter).
+\textit{(iii)~Keyword-filter false-negative rate}: a 200-paper audit of
+the 37,656-paper keyword-negative pool (with $\geq 20$-word abstracts;
+random seed 42) flags $4$ as in-scope under the same LLM prompt
+($2.0\%$, 95\% binomial CI $0.5\%$ to $4.0\%$), implying roughly $753$
+in-scope misses ($95\%$ CI $188$--$1{,}506$) before adjusting for the
+LLM's $\approx 85\%$ precision and roughly $640$ ($95\%$ CI
+$160$--$1{,}280$) after.  Full audit details, per-paper verdicts, and
+scripts are in Online Appendix~OA.3 and the replication package
+(\texttt{scripts/31\_keyword\_recall\_audit.py},
+\texttt{output/tables/keyword\_recall\_audit.csv}).
 
-\subsection*{LLM precision on its in-scope decisions}
-
-We re-evaluated 68 papers that the LLM flagged as in-scope to test whether
-the in-scope label was correct under the boundary rule of
-Section~\ref{subsec:inscope}.  The author overrode 10 of the 68, giving an
-implied LLM precision (against the manual gold standard) of
-$58/68 = 85.3\%$.  Across the full keyword-positive pool, the LLM flagged
-217 papers as in-scope at the first pass; manual review trimmed this to
-189 ($28$ of the initial $217$ were overridden, plus $24$ additional
-overrides on papers brought in by the NBER refilter) and the NBER-side
-refilter added 106 surviving papers, yielding the final 291-paper sample
-($217 - 52 + 126 = 291$, with the published-side counts above).  The
-file \texttt{data/classified/inscope\_nber\_recheck.csv} in the replication
-package records every per-paper override; the boundary criterion (policy
-as primary research question vs.\ as identification device for a
-non-policy outcome) is operationalized in Section~\ref{subsec:inscope}.
-
-\subsection*{LLM recall on the keyword-positive pool}
-
-The NBER refilter re-coded 803 NBER papers that the LLM had flagged as
-low-confidence out-of-scope; 126 were promoted to in-scope and 106
-survived the same manual review used elsewhere.  Treating
-\textit{manual\,+\,refilter} as the gold standard restricted to the
-NBER subset, the LLM's first-pass recall on this low-confidence pool is
-$1 - 126/803 = 84.3\%$, comparable to its precision.  The published-side
-LLM decisions were not subjected to a symmetric refilter because the
-journal denominators (8,924 articles) are small enough that the keyword
-filter retains all plausible candidates at the first stage, but the
-symmetry between the precision and recall point estimates suggests no
-strong directional asymmetry in LLM errors within the keyword-positive
-pool.
-
-\subsection*{Keyword-filter recall: audit of keyword-negative papers}
-
-Stage~1 (the keyword filter) is by design over-inclusive, but its recall
-on truly in-scope papers cannot be inferred from
-Table~\ref{tab:sample_selection} alone.  We audit the keyword-negative
-pool by sampling 200 papers (random seed 42) from the 37,656 documents
-that fail the keyword filter and have abstracts of at least 20 words, and
-re-running the in-scope LLM prompt on each.  Of the 200 sampled papers,
-the LLM flagged $4$ as in-scope: false-negative rate
-$2.0\%$ (95\% binomial CI: $0.5\%$ to $4.0\%$).  Extrapolated to the full
-37,656-paper keyword-negative pool with usable abstracts, this implies
-roughly $753$ in-scope papers (95\% CI: $188$ to $1{,}506$) that the
-keyword filter misses; adjusting for the $\approx 85\%$ LLM precision
-documented above brings the implied count of \textit{manually-validated}
-in-scope misses to roughly $640$ (95\% CI: $160$ to $1{,}280$).
-
-The 4 audited keyword-misses concern papers studying specific government
-policies (a tax rule change in commercial mortgage markets, voluntary
-restraint arrangements with Japan, bank nationalization, foreign royalty
-tax rates on R\&D) whose abstracts happen not to contain any term in our
-seven-category taxonomy.  Per-source false-negative rates in the small
-audit sample are not significantly differentiated
-(JF: $1/14$, RFS: $1/7$, JFE: $0/15$, NBER: $2/164$), but the journal
-side carries a slightly higher point estimate.  If a true differential
-exists, the published-side denominator is modestly understated relative
-to the NBER denominator; the implied bias on the within-direction
-corpus-membership shares depends additionally on how the missed papers
-distribute across direction categories, which we cannot estimate from
-this small sample.
-
-\subsection*{Interpretation and replication}
-
-Two takeaways follow.  First, the manual-review step exerts meaningful
-quality control on the LLM output, with both precision ($\approx 85\%$)
-and recall ($\approx 84\%$) on the keyword-positive pool exceeding the
-LLM-only baseline.  Second, the keyword filter is not perfectly recalling
-the in-scope literature: a substantively large pool of in-scope papers
-sits in the keyword-negative set and is unaudited at the document level.
-Our main inference rests on the equality of direction shares across the
-NBER and published \textit{within} the selected sample; any
-direction-neutral keyword miss leaves these shares unchanged, while a
-direction-correlated keyword miss would bias them.  The 200-paper audit
-sample is too small to detect such direction-correlated differential
-exclusion if it exists; the analysis would benefit from a larger
-keyword-negative audit in future work.  All audit code and per-paper
-verdicts are in the replication package:
-\texttt{scripts/31\_keyword\_recall\_audit.py} and
-\texttt{output/tables/keyword\_recall\_audit.csv} for the new audit;
-\texttt{data/classified/inscope\_nber\_recheck.csv} and
-\texttt{data/classified/nber\_refilter\_newcandidates.csv} for the
-existing precision and recall data.
-
-%% ============================================================
 \section{Validation of Core LLM-Coded Variables}
 \label{app:core_var_validation}
 %% ============================================================
