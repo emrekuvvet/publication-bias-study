@@ -70,10 +70,12 @@ def plot_zdist(z_abs, title, filename, threshold=1.96):
             color='steelblue', edgecolor='white', linewidth=0.5, alpha=0.8,
             label=f'Observed (N={len(z_full):,}; histogram trimmed to |z|≤6)')
 
-    # Expected chi2(1) density as reference
+    # Half-normal density of |Z| under H_0: Z ~ N(0,1).
+    # Equivalently the change-of-variables image of chi^2(1) (on z^2) onto the |z| scale.
     x = np.linspace(0, 6, 300)
-    chi2_density = stats.chi2.pdf(x**2, df=1) * 2 * x
-    ax.plot(x, chi2_density, 'r--', linewidth=1.5, alpha=0.7, label='χ²(1) reference')
+    half_normal_density = stats.chi2.pdf(x**2, df=1) * 2 * x
+    ax.plot(x, half_normal_density, 'r--', linewidth=1.5, alpha=0.7,
+            label='Half-normal (|Z| under H₀: Z∼N(0,1))')
 
     # Threshold lines
     ax.axvline(1.645, color='orange', linestyle=':', linewidth=1.5, label='p=0.10 (z=1.645)')
