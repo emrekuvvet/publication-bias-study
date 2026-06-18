@@ -235,10 +235,12 @@ positive findings, for negative findings, or when positive and negative
 are pooled against null.
 
 What does predict publication is how a paper was designed.  Papers using
-quasi-experimental identification strategies---regression discontinuity
-designs, instrumental variables, difference-in-differences, or event
-studies---are 18--20 percentage points more likely to appear in a top
-journal than observational papers on the same policy questions.  This
+quasi-experimental identification strategies---regression discontinuity,
+instrumental variables, difference-in-differences, natural experiments,
+or event studies with a causal interpretation (full definition in
+Section~\ref{subsec:direction_results})---are 18--20 percentage points
+more likely to appear in a top journal than observational papers on the
+same policy questions.  This
 methodological premium is the only statistically robust predictor we find;
 finding direction adds nothing beyond it.  We interpret this cautiously:
 the quasi-experimental indicator likely captures a bundle of correlated
@@ -1315,8 +1317,17 @@ rather than primary, because the binary version answers a different
 question (significance bias) than the directional-bias test that motivates
 the paper.  Columns~(3)--(7) extend the primary Column~(2) specification by
 adding controls for publication year, decade fixed effects, team size,
-identification method (whether the paper uses a quasi-experimental design
-such as RDD, IV, DiD, or event study), and author institution.
+identification method, and author institution.  We classify a paper as
+\textit{quasi-experimental} (``QE'') if its primary identification
+strategy is regression discontinuity (RDD), instrumental variables (IV),
+difference-in-differences (DiD), a natural experiment with an exogenous
+shock, or an event study that the AI judges to carry a causal
+interpretation (i.e., the event is used to identify a causal effect, not
+merely to characterize an event-window return pattern).  Descriptive
+event-window analyses without a causal claim are coded as non-QE
+(\texttt{ols\_reduced}), matching the rubric used by the classifier
+(scripts/09\_code\_id\_strategy.py).  We use this five-method definition
+consistently throughout the paper.
 
 \begin{table}[H]
 \centering
@@ -1360,10 +1371,9 @@ equation~\eqref{eq:probit} in Section~\ref{subsec:design}; direction codes
 are assigned by the AI pipeline from paper abstracts.  Column~(1) reports a
 parsimonious binary alternative---``Directional'' versus null/mixed---as a
 supporting check; Columns~(3)--(7) extend Column~(2) by adding controls.  Column~(5) adds the number of authors
-(log scale) as a proxy for team size.  Column~(6) adds an indicator for papers
-that use a credible causal identification strategy---natural experiments,
-instrumental variables, difference-in-differences, or regression discontinuity
-designs---as classified by the AI from abstracts.  Column~(7) adds an indicator
+(log scale) as a proxy for team size.  Column~(6) adds the quasi-experimental (QE) indicator defined in the
+preceding text (RDD, IV, DiD, natural experiment, or event study with
+causal interpretation), as classified by the AI from abstracts.  Column~(7) adds an indicator
 for whether the lead author's institution appears in the UTD Top 100 Business
 School Research Rankings (2021--2025; \citealt*{UTDTop100}), retrieved via OpenAlex.
 Standard errors in parentheses.  *** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$.
@@ -1415,9 +1425,9 @@ coefficients unchanged ($p > 0.50$ in both cases).  Decade fixed effects
 (Column~(4)) and team size controls (Column~(5)) likewise leave the
 direction results unaffected.
 
-Column~(6) adds a control for whether the paper uses a quasi-experimental
-design (such as a natural experiment, instrumental variable, or
-difference-in-differences).  Papers with such designs are significantly
+Column~(6) adds the QE indicator defined above (RDD, IV, DiD, natural
+experiment, or event study with causal interpretation).  Papers with
+such designs are significantly
 more likely to be published ($p = 0.003$), consistent with journals
 rewarding rigorous causal identification.  This variable is classified
 by the AI from paper abstracts and has not been manually validated, so
@@ -1504,10 +1514,14 @@ Total & 36.8\% (56/152) & 56.1\% (78/139) & 46.0\% (134/291) \\
 \footnotesize
 \textit{Notes.} Each cell shows the share of papers published in a top-3
 finance journal (JF, RFS, or JFE), with paper counts in parentheses.
-Non-QE: papers that use standard regression, fixed effects, or descriptive
-methods, as classified by the AI from abstracts.  QE: papers that use a
-credible causal identification strategy---regression discontinuity, instrumental
-variables, difference-in-differences, or event study.  $\dagger$: Only 16
+QE: papers whose primary identification strategy is regression
+discontinuity (RDD), instrumental variables (IV),
+difference-in-differences (DiD), a natural experiment with an exogenous
+shock, or an event study with causal interpretation (see definition
+following Table~\ref{tab:probit_main}).  Non-QE: papers that use
+standard regression, panel fixed effects without an instrument,
+descriptive methods, or event-window analyses without a causal claim,
+as classified by the AI from abstracts.  $\dagger$: Only 16
 papers fall in the null/mixed $\times$ QE cell; the 75\% rate is based on
 a small sample and should be treated with caution.  Within the Non-QE
 column, publication rates are similar across the three finding
@@ -1545,11 +1559,11 @@ literature is a distinct and noteworthy finding.
 The one factor that does predict corpus membership with both statistical
 and practical significance is research design.  Conditional on the
 controls included in our model (publication year, team size, top-institution
-status, and finding direction), papers that use credible causal
-identification methods---natural experiments, instrumental variables,
-difference-in-differences, or regression discontinuity---are 18--20
-percentage points more likely to appear in the published corpus than
-papers with the same observed characteristics that use standard regression
+status, and finding direction), QE papers (the five-method definition
+given above: RDD, IV, DiD, natural experiment, or event study with
+causal interpretation) are 18--20 percentage points more likely to
+appear in the published corpus than papers with the same observed
+characteristics that use standard regression or descriptive
 approaches.  We use the phrase ``otherwise similar'' to refer specifically
 to these observed dimensions; unobserved differences in quality, data
 access, or narrative framing between quasi-experimental and other papers
@@ -1566,10 +1580,12 @@ articles over the full sample period---and should be treated as descriptive.
 \subsection{The Identification Quality Premium}
 \label{subsec:id_premium}
 
-The quasi-experimental premium---papers using IV, DiD, RDD, or natural
-experiments are roughly 18--20 percentage points more likely to be
-published---is a substantive finding in its own right, not merely a
-control variable.  We develop it here.
+The quasi-experimental coefficient---QE papers (RDD, IV, DiD, natural
+experiment, or event study with causal interpretation) are roughly
+18--20 percentage points more likely to appear in the published corpus
+conditional on observed controls---is a substantive cross-sectional
+association in its own right, not merely a control variable.  We develop
+it here.
 
 A natural concern is that the premium proxies for confounds: top
 institutions may produce more quasi-experimental work, or larger teams may
@@ -1609,9 +1625,10 @@ $N$            & 291           & 291           & 291           & 291           &
 \small
 \textit{Notes.} Each column reports a probit of publication on the indicator
 variables listed, estimated on the full sample of 291 papers.
-\textit{Quasi-Exp.\ ID} equals one if the paper uses a credible causal
-identification strategy (natural experiment, IV, DiD, or RDD), as coded by
-the AI from abstracts.  \textit{Top Institution} equals one if the first
+\textit{Quasi-Exp.\ ID} equals one if the paper's primary identification
+strategy is RDD, IV, DiD, a natural experiment, or an event study with
+causal interpretation (full definition following
+Table~\ref{tab:probit_main}), as coded by the AI from abstracts.  \textit{Top Institution} equals one if the first
 author's institution appears in the UTD Top 100 Business School Research
 Rankings.  Column~(6) includes positive and negative finding-direction dummies
 (omitted from the table for brevity; both are individually and jointly
@@ -1671,8 +1688,10 @@ QE premium (pp) & \multicolumn{1}{r}{---} & +20.5 (top) / +18.2 (other) \\
 \small
 \textit{Notes.} Each cell shows the share of papers published in a top-3
 finance journal, with counts in parentheses.
-\textit{Quasi-Experimental} denotes papers using natural experiments, IV,
-DiD, or RDD.  \textit{Top Institution} is the UTD Top 100 indicator.
+\textit{Quasi-Experimental} (QE) denotes papers using the five-method
+definition in Section~\ref{subsec:direction_results}: RDD, IV, DiD,
+natural experiment, or event study with causal interpretation.
+\textit{Top Institution} is the UTD Top 100 indicator.
 The correlation between the two indicators is $r = 0.015$.
 \end{minipage}
 \end{singlespace}
@@ -2006,10 +2025,10 @@ editorial distortion, not as a clean bill of health; residual direction-based
 bias on specific topics such as capital requirements or short-sale restrictions
 could exist below our detection threshold.
 
-A clearer cross-sectional association does emerge: papers using credible
-causal methods---regression discontinuity, instrumental variables,
-difference-in-differences, or event studies---are substantially more
-likely to appear in the published corpus, conditional on year, team size,
+A clearer cross-sectional association does emerge: QE papers (RDD, IV,
+DiD, natural experiment, or event study with causal interpretation; see
+Section~\ref{subsec:direction_results}) are substantially more likely to
+appear in the published corpus, conditional on year, team size,
 top-institution status, and finding direction.  For regulators, this
 association is reassuring rather than distorting if it reflects editorial
 or pipeline selection on methodological quality, but our cross-sectional
