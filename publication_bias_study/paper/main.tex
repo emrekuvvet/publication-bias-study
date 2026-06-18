@@ -290,9 +290,11 @@ methodological benchmark for both.
 
 This paper relates to three strands of research.  The first is the literature
 on significance bias in economics and finance.  \citet*{Brodeur2016} document
-excess mass just below the 5\% significance threshold in the top economics
-journals, consistent with selective reporting of marginally significant
-specifications.  \citet*{Franco2014} show, using NSF-funded pre-registered
+excess mass just above the $|z|=1.96$ significance cutoff (equivalently, on
+the $p<0.05$ side of the threshold) in the top economics journals---the
+classical p-hacking pattern.  Our caliper analysis uses the same windows
+but the inverse ratio convention; we describe both directions explicitly in
+Section~\ref{subsec:pvalue_dist}.  \citet*{Franco2014} show, using NSF-funded pre-registered
 experiments, that null results are published at roughly one-third the rate of
 significant ones.  In finance, \citet*{Harvey2016} show that given the scale of data mining
 in the factor literature, conventional significance thresholds are far too
@@ -766,13 +768,24 @@ search (see Table~\ref{tab:stat_type_decomp} below and
 Appendix~\ref{app:coefse_caliper} for full counts).
 
 We use two complementary tests. The \textit{caliper test} \citep*{Brodeur2016}
-asks whether test statistics cluster just below the 5\% significance cutoff
-more than just above it.  If results were reported without regard to
-significance, these two zones should be equally populated; a ratio above
-one suggests that marginally significant results appear more often than they
-should.  The \textit{density discontinuity test} asks whether there is a
-sharp drop in the frequency of test statistics right at the 5\% threshold,
-which would also be consistent with selective reporting.
+compares the number of $|z|$-statistics on either side of the conventional
+significance cutoff $|z| = 1.96$ (equivalently, the two-sided $p = 0.05$
+threshold).  Throughout the paper we report the ratio
+\[
+  R \;=\; \frac{\#\{|z|\in[1.645,\,1.96)\}}{\#\{|z|\in[1.96,\,2.275]\}},
+\]
+the count of statistics in the narrow window \textit{just below} the
+$|z|=1.96$ cutoff (where $0.05 < p \le 0.10$) divided by the count
+\textit{just above} it (where $0.023 \le p \le 0.05$).  Under the null of
+no threshold sorting, the two zones should be equally populated and
+$R = 1$.  A value $R > 1$ indicates excess mass on the just-below-1.96 side
+(i.e., test statistics that fall just short of conventional significance);
+a value $R < 1$ indicates excess mass on the just-above-1.96 side (i.e.,
+results that just clear the bar).  We adopt this $|z|$-space convention---
+the inverse of the $p$-space convention used by some authors---throughout
+the paper.  The \textit{density discontinuity test} asks whether there is
+a sharp jump in the frequency of test statistics right at the $|z|=1.96$
+threshold, which is also consistent with selective reporting.
 
 Table~\ref{tab:pvalue_dist} reports the caliper ratios and significance
 tests for the full sample, broken out by journal and by finding direction.
@@ -807,9 +820,13 @@ Full sample        & 7,761 & 57.1\% & $1.20$\rlap{$^{***}$} & 9.48 & 0.002 & 0.0
 tables, after removing implausible values and non-numeric entries.
 \textit{\% Sig} is the share of test statistics that exceed the conventional
 5\% significance threshold.
-\textit{Caliper ratio} measures how much more often test statistics fall just
-below the 5\% cutoff than just above it; a value of 1.0 means equal
-frequency, while values above 1.0 indicate clustering below the cutoff.
+\textit{Caliper ratio} is
+$R = \#\{|z|\in[1.645,\,1.96)\}/\#\{|z|\in[1.96,\,2.275]\}$, the count of
+$|z|$-statistics in the just-insignificant window divided by the count in the
+just-significant window.  $R = 1.0$ means equal frequency; $R > 1.0$ indicates
+clustering on the just-below-1.96 side (results that fall just short of the
+conventional significance bar), and $R < 1.0$ indicates clustering on the
+just-above-1.96 side.
 \textit{Caliper $p$} is the associated $p$-value testing whether the two
 zones are equally populated.
 \textit{Disc.\ $p$} tests whether there is a sharp drop in the frequency of
@@ -822,19 +839,23 @@ test statistics right at the 5\% threshold \citep*{Brodeur2016}.
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{figures/fig1_zdist_full.pdf}
-\caption{Distribution of test statistics from all 7,761 regression rows across
-114 published papers.  The two dashed vertical lines mark the 10\% and 5\%
-significance cutoffs.  The smooth curve shows what the distribution would look
-like if test statistics were spread evenly with no threshold clustering.
-Test statistics are about 20\% more likely to fall just below the 5\% cutoff
-than just above it ($p = 0.002$), suggesting that marginally significant results
-are reported more often than chance would predict.}
+\caption{Distribution of $|z|$-statistics from all 7,761 regression rows
+across 114 published papers.  The dashed vertical lines mark $|z|=1.645$
+(10\% two-sided), $|z|=1.96$ (5\%), and $|z|=2.576$ (1\%); the red reference
+curve is the $\chi^2(1)$ density expected under random sampling.  Within
+the caliper window, statistics in $[1.645,\,1.96)$---the just-insignificant
+zone, where $0.05 < p \le 0.10$---outnumber those in $[1.96,\,2.275]$---the
+just-significant zone, where $p \le 0.05$---by about 20\% ($R = 1.20$,
+$p = 0.002$).  The excess on the just-below-1.96 side is consistent with
+selective reporting of borderline results that fall just short of
+conventional significance.}
 \label{fig:zdist_full}
 \end{figure}
 
 Four findings stand out.  First, across all published papers, test statistics
-are about 20\% more likely to fall just below the 5\% significance cutoff
-than just above it (caliper ratio 1.20, $p = 0.002$).  Second, this bunching
+in the just-insignificant window $|z|\in[1.645,\,1.96)$ outnumber those in the
+just-significant window $|z|\in[1.96,\,2.275]$ by about 20\% ($R = 1.20$,
+$p = 0.002$).  Second, this bunching
 is concentrated in the \JFE{}: its caliper ratio is 1.49 ($p < 0.001$), while
 \JF{} and \RFS{} show no evidence of bunching (ratios 0.88 and 0.97,
 both $p > 0.40$).  Third, breaking the sample by a paper's main conclusion
@@ -941,10 +962,12 @@ least one statistic near the significance threshold and are used in the
 permutation and bootstrap tests.  The \textit{NBER} sample contains 8,351
 test statistics from 117 working papers (out of 157 in-scope); 106 contribute
 near-threshold statistics.
-The \textit{Ratio} column measures how much more often test statistics fall
-just below the 5\% significance cutoff than just above it; a value of 1.0
-means the two zones are equally populated, while values above 1.0 indicate
-clustering below the cutoff.
+The \textit{Ratio} column is
+$R = \#\{|z|\in[1.645,\,1.96)\}/\#\{|z|\in[1.96,\,2.275]\}$.
+$R = 1.0$ means the two zones are equally populated;
+$R > 1.0$ indicates clustering on the just-below-1.96 side (just-insignificant
+results), and $R < 1.0$ indicates clustering on the just-above-1.96 side
+(just-significant results).
 Three significance tests are reported.
 \textit{Naive}: treats every statistic as an independent observation.
 \textit{Perm.}: randomly reshuffles which statistics fall just below or just
@@ -1539,17 +1562,17 @@ Brodeur2 (1.65--2.25)   & Published & $1.33$\rlap{$^{***}$} & $<$0.001 & $<$0.00
 \begin{minipage}{\textwidth}
 \smallskip
 \footnotesize
-\textit{Notes.} The caliper ratio is the number of test statistics falling just
-below the 5\% significance threshold ($|z| < 1.96$) divided by the number
-falling just above it ($|z| > 1.96$), within the specified window.  A ratio
-above 1.0 means more statistics land just below the threshold than just above
-it---the pattern expected if researchers selectively report results near
-significance.  The wide window (1.50--2.42) reverses sign for published papers
+\textit{Notes.} The caliper ratio is the count of $|z|$-statistics with $|z|$
+strictly below 1.96 (the just-insignificant side) divided by the count with
+$|z|$ at or above 1.96 (the just-significant side), within the specified
+window.  $R > 1.0$ means more statistics fall on the just-below-1.96 side than
+the just-above-1.96 side---an excess of borderline-but-not-quite-significant
+results.  The wide window (1.50--2.42) reverses sign for published papers
 because test-statistic density is still rising between $|z| = 1.50$ and
 $|z| = 1.645$, pulling the ratio below 1.0; this is a mechanical artifact of
 the wider lower bound, not evidence against bunching.  The three windows whose
 lower bounds start at or above $|z| = 1.645$ all show consistent excess mass
-in the published record.  *** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$ (caliper ratio).
+on the just-below-1.96 side of the published distribution.  *** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$ (caliper ratio).
 \end{minipage}
 \end{singlespace}
 \end{table}
@@ -1762,14 +1785,16 @@ or event studies---are substantially more likely to be published.  For
 regulators, this is a reassuring rather than distorting form of selection;
 the published evidence base has been filtered for methodological quality.
 
-One further caution applies to how individual results are read.  The bunching
-of test statistics just below the 5\% significance threshold---concentrated in
-negative-finding papers---suggests that \textit{within-paper} specification
-choices may play a role even when the publication decision itself is
-direction-neutral.  Those relying on this literature should apply extra scrutiny to
-anti-intervention findings that are only marginally significant ($p$ just below
-0.05), while treating publication in a top-three finance journal as a credible
-signal of overall methodological quality.
+One further caution applies to how individual results are read.  The excess
+mass we observe on the just-below-1.96 side of the threshold ($|z|\in[1.645,\,1.96)$,
+$p \in (0.05,\,0.10]$)---concentrated in negative-finding papers---suggests
+that \textit{within-paper} specification choices may play a role even when the
+publication decision itself is direction-neutral.  Those relying on this
+literature should apply extra scrutiny to anti-intervention findings whose
+test statistics sit close to the conventional significance boundary on either
+side (roughly $|z|\in[1.645,\,2.275]$), while treating publication in a
+top-three finance journal as a credible signal of overall methodological
+quality.
 
 \subsection{How Finance Compares to Economics}
 
@@ -1790,13 +1815,19 @@ in advance reduces but does not eliminate this advantage.
 Our results stand out against this backdrop.  Null-finding papers in the
 finance-regulation literature are published at essentially the same rate as
 papers that find a positive or negative effect---no three-to-one gap, and no
-evidence that editors systematically reward significant findings.  The
-clustering of test statistics near the 5\% threshold is also more moderate
-in our published sample (a caliper ratio of 1.20) than in Brodeur's top
-economics journals, and the same measure applied to NBER working
-papers---before any editorial selection---comes out at 1.01, confirming that
-this clustering is not a feature of the underlying research base but is
-introduced at the revision stage.
+evidence that editors systematically reward significant findings.  Our
+published sample also shows clustering near the $|z|=1.96$ threshold (caliper
+ratio $R = 1.20$ in our just-below/just-above convention; equivalently,
+$\approx 0.83$ in the just-above/just-below convention more familiar from
+\citealt*{Brodeur2016}), and the same measure applied to NBER working papers
+---before any editorial selection---is $R = 1.01$ (essentially symmetric),
+indicating that the asymmetry in published papers is introduced at the
+revision stage rather than reflecting the underlying research base.  Notably,
+the published-sample asymmetry is in the opposite direction from the
+classical Brodeur pattern: excess mass falls on the just-insignificant side
+rather than just clearing the threshold (see Section~\ref{subsec:pvalue_dist}
+for our convention and Appendix~\ref{app:coefse_caliper} for the row-type
+decomposition).
 
 Two explanations could account for why finance-regulation research looks
 different from other social science domains.  First, editorial norms at the
@@ -1812,28 +1843,30 @@ for lower-ranked finance journals or for finance sub-fields without explicit
 policy content (such as corporate governance or asset pricing) remains an open
 question.
 
-Our caliper finding also fits naturally alongside prior work within finance.
-\citet*{Harvey2021} document the same clustering of test statistics just below
-the 5\% cutoff in published finance research and try to estimate what the
-pre-publication distribution must have looked like to produce it; our NBER
-data provide a direct look at that pre-publication distribution, confirming
-that the clustering is added during the revision process.  \citet*{Chen2021}
-make a complementary observation: the very largest published test statistics
-($|t|>4$, corresponding to highly significant results) appear too frequently
-to be explained by selective reporting of marginally significant findings---
-implying that most large, convincing effects in the published literature are
-real.  These two observations fit together: genuine large effects account for
-the strong results in the published literature, while revision-stage pressure
-to clear the 5\% bar accounts for the narrower cluster of test statistics
-landing just below that threshold.  One interpretation of why this bunching
-is concentrated in negative-finding papers is that anti-intervention results
-face elevated scrutiny during peer review, leading authors to try alternative
-specifications until a result clears the 5\% threshold.  A compositional
-alternative is that negative-finding published papers differ from their NBER
-counterparts along unobserved dimensions---research design complexity,
-empirical detail, or vintage---that correlate with the number of specifications
-tried; our cross-sectional design cannot distinguish between these two
-explanations.
+Our caliper finding also fits alongside prior work within finance.
+\citet*{Harvey2021} document near-threshold clustering of test statistics in
+published finance research and estimate what the pre-publication distribution
+must have looked like to produce it; our NBER data provide a direct look at
+that pre-publication distribution, confirming that the asymmetry is introduced
+at the revision stage.  \citet*{Chen2021} make a complementary observation:
+the very largest published test statistics ($|t|>4$, corresponding to highly
+significant results) appear too frequently to be explained by selective
+reporting of marginal findings---implying that most large, convincing effects
+in the published literature are real.  These observations fit together:
+genuine large effects account for the strong results in the published
+literature, while revision-stage selection accounts for the asymmetry near
+$|z|=1.96$---in our data, an excess of statistics in $[1.645,\,1.96)$ (just
+short of conventional significance) relative to $[1.96,\,2.275]$ (just
+clearing it).  One interpretation of why this asymmetry is concentrated in
+negative-finding papers is that anti-intervention results face elevated
+scrutiny during peer review, leading authors to report many borderline
+specifications---some that clear the threshold and many that come close but
+do not---rather than reducing the reported set to only the just-significant
+ones.  A compositional alternative is that negative-finding published papers
+differ from their NBER counterparts along unobserved dimensions---research
+design complexity, empirical detail, or vintage---that correlate with the
+number of specifications reported; our cross-sectional design cannot
+distinguish between these two explanations.
 
 \subsection{Alternative Interpretations}
 
@@ -2218,9 +2251,11 @@ The ``All stats'' rows use every regression coefficient; the ``Non-control''
 rows keep only the main-variable rows, dropping controls such as size, leverage,
 ROA/ROE, book-to-market, GDP, inflation, firm age, return volatility,
 fixed-effect indicators, and intercepts.
-The \textit{Ratio} column measures how much more often test statistics land just
-below the 5\% significance threshold than just above it (a value of 1.0 means
-equal frequency; values above 1.0 indicate excess clustering below the threshold).
+The \textit{Ratio} column is
+$R = \#\{|z|\in[1.645,\,1.96)\}/\#\{|z|\in[1.96,\,2.275]\}$.
+$R = 1.0$ means equal frequency; $R > 1.0$ indicates excess clustering on the
+just-below-1.96 side (just-insignificant results), and $R < 1.0$ indicates
+excess clustering on the just-above-1.96 side (just-significant results).
 \textit{Naive $p$}: standard chi-squared test.
 \textit{Perm.}: permutation test that accounts for the fact that statistics
 from the same paper are correlated ($10{,}000$ iterations).
@@ -2279,10 +2314,11 @@ the other (\textit{Coef+SE only} rows).
 Other rows report only a $t$- or $z$-statistic directly, with no
 coefficient or standard error shown, so there is no way to cross-check
 the number (\textit{$z$-stat only} rows).
-The \textit{Ratio} column measures how much more often test statistics
-land just below the 5\% significance threshold than just above it;
-a value of 1.0 means equal frequency and values above 1.0 indicate
-excess clustering below the threshold.
+The \textit{Ratio} column is
+$R = \#\{|z|\in[1.645,\,1.96)\}/\#\{|z|\in[1.96,\,2.275]\}$.
+$R = 1.0$ means equal frequency; $R > 1.0$ indicates excess clustering on
+the just-below-1.96 side, and $R < 1.0$ indicates excess clustering on the
+just-above-1.96 side.
 \textit{Below} and \textit{Above} are the raw counts of test statistics
 falling in the windows just below and just above the 5\% cutoff.
 \textit{Naive $p$} tests whether those two counts are equal.
