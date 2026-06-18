@@ -1174,13 +1174,32 @@ conclude government intervention is harmful.}
 \label{fig:zdist_direction}
 \end{figure}
 
-Because we run many tests across different subgroups, some significant results
-could appear by chance.  We address this in two ways.  First, we designated
-two tests as primary before analyzing the data---the full-sample comparison
-for published papers and for NBER papers---and these are the results on which
-we place the most weight.  Both are robust to standard corrections for multiple
-testing.  The JFE and negative-finding results, which are exploratory, also
-survive the stricter correction that accounts for all tests run.
+Because we run many tests across different subgroups, some significant
+results could appear by chance.  We address this in two ways, but the
+conclusion depends on which test one prioritizes.  First, we designated
+two tests as primary before analyzing the data: the full-sample caliper
+test for published papers and for NBER papers.  Under the naive
+chi-square---which treats every statistic as independent---the published
+full-sample $p = 0.002$ clears a Bonferroni threshold of $0.05/18 \approx
+0.003$, and the NBER full-sample $p = 0.849$ is (trivially) consistent
+with no clustering.  Under the paper-clustered bootstrap, however, which
+we prefer because it does not assume within-paper independence, the
+published full-sample $p$ is $0.150$ and does not reach conventional
+significance even before correction; the NBER full-sample $p = 0.432$ is
+again null.  We therefore do not claim the primary published-side result
+``survives'' multiple-testing correction under our preferred test; what
+we can say is that it survives correction under the naive test that
+ignores within-paper clustering, and that the corpus where clustering is
+absent (NBER) remains absent under every test.
+
+Among the exploratory subgroups, the negative-finding and \JFE{} results
+likewise reach the Bonferroni cutoff under the naive test ($p < 0.001$
+each) but do not under the bootstrap ($p = 0.135$ for negative-finding;
+the \JFE{} bootstrap is not reported separately).  We read these as
+suggestive evidence whose significance depends materially on whether
+within-paper correlation is accounted for, not as results that have been
+shown to be robust to multiple-testing correction on the preferred
+inferential standard.
 
 We include all regression coefficients in the test rather than just the
 headline estimate, because researchers can adjust any reported result---not
@@ -2090,17 +2109,28 @@ evidence against this concern.
 
 Sixth, the caliper analysis runs 18 comparisons across subsamples, journals,
 and directions.  Applying the Bonferroni correction ($p < 0.003$ for 18
-tests), three caliper tests survive: the full published sample ($p = 0.002$),
-the \JFE{} ($p < 0.001$), and negative-finding papers ($p < 0.001$).  Two
-density tests --- \JF{} and null/mixed ($p < 0.001$ each) --- also survive.
-The \JF{} density result is included for completeness, but as noted in
-Section~\ref{subsec:pvalue_dist}, it conflicts with the \JF{} caliper ratio
-(0.88, $p = 0.423$); given the small \JF{} sample (26 papers, 1,308 statistics),
-we give priority to the caliper and do not interpret the density finding as
-evidence of bunching.
-The NBER caliper tests do not approach significance ($p > 0.84$), and the
-main direction regression is pre-specified in a single test ($p > 0.90$),
-where the concern is power rather than false discovery.
+tests) to the \textit{naive} chi-square $p$-values, three caliper tests
+survive: the full published sample ($p = 0.002$), the \JFE{}
+($p < 0.001$), and negative-finding papers ($p < 0.001$); two density
+tests---\JF{} and null/mixed ($p < 0.001$ each)---also survive.  However,
+the naive chi-square treats every test statistic as independent and we
+have flagged it as overstating precision relative to our preferred
+paper-clustered bootstrap.  Under the bootstrap, the published full sample
+($p = 0.150$) and negative-finding sample ($p = 0.135$) do not clear
+$0.05$ even before correction, so we cannot claim these results
+``survive'' multiple-testing correction on our preferred test.  The
+Bonferroni-surviving set above should therefore be read as the set that
+survives under the less conservative inferential standard, not as a
+definitive multiple-testing-robust finding.  The \JF{} density result is
+included for completeness, but as noted in
+Section~\ref{subsec:pvalue_dist}, it conflicts with the \JF{} caliper
+ratio (0.88, $p = 0.423$); given the small \JF{} sample (26 papers, 1,308
+statistics), we give priority to the caliper and do not interpret the
+density finding as evidence of bunching.  The NBER caliper tests do not
+approach significance under any of the three test versions ($p > 0.42$
+under both naive chi-square and bootstrap), and the main direction
+regression is pre-specified in a single test ($p > 0.90$), where the
+concern is power rather than false discovery.
 
 %% ============================================================
 \section{Conclusion}
@@ -2129,12 +2159,17 @@ pronounced in negative-finding papers (ratio 1.52), though this pattern is
 suggestive rather than statistically definitive.
 
 Together these two results point to different stages of the research pipeline.
-The absence of detectable large-scale direction-based sorting between published and pre-publication
-papers suggests that editorial selection in this domain is not strongly tilted toward
-finding an effect.  The within-paper bunching just below the significance
-threshold, concentrated in published negative-finding papers, is more
-consistent with revision-stage pressure than with outright fabrication of
-results --- and survives stringent multiple-comparison correction.
+The absence of detectable large-scale direction-based sorting between
+published and pre-publication papers suggests that editorial selection in
+this domain is not strongly tilted toward finding an effect.  The
+within-paper bunching just below the $|z|=1.96$ threshold, concentrated
+in published negative-finding papers, is more consistent with
+revision-stage pressure than with outright fabrication of results.  We
+flag this as suggestive rather than definitive: the bunching pattern
+clears a Bonferroni cutoff under a naive chi-square that treats every
+test statistic as independent, but does not clear conventional
+significance under our preferred paper-clustered bootstrap
+($p = 0.135$--$0.150$, see Section~\ref{subsec:pvalue_dist}).
 
 The strongest predictor of publication is not finding direction but research
 design quality: papers using credible causal methods are 18--20 percentage
@@ -2373,8 +2408,15 @@ The restriction drops fewer than 10\% of rows (7,055 of 7,761 published
 and 7,599 of 8,351 NBER statistics are retained).
 Caliper ratios are essentially unchanged: the published full-sample ratio
 remains 1.203 and the negative-finding ratio \textit{increases} to 1.625
-(from 1.522), while NBER ratios stay near 1.0.
-The caliper result is not an artifact of pooling control coefficients.
+(from 1.522), while NBER ratios stay near 1.0.  As in the main analysis,
+the published-side results clear the naive chi-square at very small
+$p$-values but do not reach $0.05$ on the paper-clustered bootstrap
+($p = 0.161$ for the non-control full sample, $p = 0.121$ for the
+non-control negative-finding subsample); the *** stars in the table reflect
+the naive chi-square only.  The pattern that the caliper result is not an
+artifact of pooling control coefficients therefore holds at the level of
+the point estimates and the naive test, but does not strengthen the result
+on the preferred test.
 
 \begin{table}[ht]
 \centering
@@ -2419,10 +2461,12 @@ excess clustering on the just-above-1.96 side (just-significant results).
 from the same paper are correlated ($10{,}000$ iterations).
 \textit{Boot.}: bootstrap that gives each paper equal weight regardless of how
 many statistics it contributes ($10{,}000$ draws).
-*** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$ (caliper ratio).
-Results are virtually identical whether or not control rows are included,
-and the clustering among negative-finding papers actually strengthens
-when controls are dropped.
+*** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$ refer to the \textit{naive}
+chi-square only; under the paper-clustered bootstrap the published-side
+$p$-values are $0.121$--$0.161$ and do not reach conventional significance.
+Point estimates of the ratio are virtually identical whether or not control
+rows are included, and the clustering among negative-finding papers
+strengthens (in point estimate) when controls are dropped.
 \end{minipage}
 \end{singlespace}
 \end{table}
