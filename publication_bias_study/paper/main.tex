@@ -113,8 +113,11 @@ Using 134 published articles in the \JF{}, \RFS{}, and \JFE{} alongside
 157 NBER working papers on government intervention in financial markets
 (2000--2024), we find no evidence that journals sort on finding direction at scales our design can detect.
 Whether a paper concludes that a regulation is beneficial, harmful, or
-inconsequential, it reaches a top journal at roughly the same rate, about
-46 percent.  The two largest cross-sectional predictors of corpus membership are
+inconsequential, its share of the combined 291-paper corpus that sits on
+the published side is roughly the same, about 46 percent.  This is a
+within-direction corpus-membership share, not a journal acceptance rate
+(which would require observing submissions and editorial decisions
+neither of which is in our data).  The two largest cross-sectional predictors of corpus membership are
 research-design quality and institutional prestige, not finding
 direction: papers using quasi-experimental methods are about 18--20
 percentage points more likely to appear in the published corpus, and
@@ -234,15 +237,22 @@ and assigns an in-scope judgment along with a directional code---positive
 ($+1$, the intervention was beneficial), negative ($-1$, harmful), or
 null/mixed ($0$).
 
-Our central result is that finding direction does not predict publication at the scale our design can detect.
-Papers concluding that a regulation helps, papers concluding it hurts, and
-papers finding no significant effect all reach the three top journals at
-essentially the same rate---around 46 percent.  This uniformity holds
-unconditionally and survives every regression specification we estimate,
-including controls for publication year, decade, team size, and research
-design quality.  No detectable direction premium is found for
-positive findings, for negative findings, or when positive and negative
-are pooled against null.
+Our central result is that finding direction does not predict
+published-versus-NBER-only corpus membership at the scale our design can
+detect.  Within each direction category---papers concluding that a
+regulation helps, papers concluding it hurts, and papers finding no
+significant effect---the share that sits on the published side of our
+combined 291-paper sample is essentially the same, around 46 percent.
+We emphasize that this 46 percent is a within-direction corpus-membership
+share, computed as published/(published $+$ NBER-only) within each
+direction category, not a journal acceptance rate; the latter would
+require observing the submission pool and editorial decisions, neither
+of which is in our data.  This uniformity in corpus-membership shares
+holds unconditionally and survives every regression specification we
+estimate, including controls for publication year, decade, team size,
+and research design quality.  No detectable direction premium is found
+for positive findings, for negative findings, or when positive and
+negative are pooled against null.
 
 What does predict publication is how a paper was designed.  Papers using
 quasi-experimental identification strategies---regression discontinuity,
