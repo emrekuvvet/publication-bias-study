@@ -932,6 +932,24 @@ Having a pre-publication sample of test statistics allows us to compare
 the two distributions directly, rather than inferring bias solely from the
 shape of the published distribution.
 
+\textit{Standalone-statistic comparability.}  Our extraction pulls any
+number in a regression table that can be interpreted as a $|t|$- or
+$|z|$-statistic.  For rows where both a coefficient and a standard error
+are reported, the extracted statistic is verifiable as their ratio.  For
+standalone rows we accept the reported number on its own.  The caliper
+analysis then treats every extracted number as if it were a two-sided
+$|z|$-test against $H_0=0$ evaluated against the 1.96 cutoff, which is
+the dominant convention in the published-finance regression tables we
+read but is not certified row-by-row by the extraction.  In particular,
+a small share of standalone rows are flagged in the underlying data as
+$F$-statistics, $\chi^2$-statistics, one-sided tests, or tests against
+non-zero nulls (e.g., joint hypothesis tests); these have different
+distributions and would not be comparable to the 1.96 cutoff used in the
+caliper window.  We do not separately filter these out, and a future
+revision would benefit from a row-level provenance audit on the
+standalone $z$-statistic subset.  The caliper conclusions in this
+section should be read with this comparability caveat in mind.
+
 One concern is that published journal PDFs might be harder to parse than
 NBER draft PDFs, artificially inflating the caliper gap.  We address this
 concern with several checks but acknowledge that none of them rules it
@@ -1098,19 +1116,30 @@ conventional significance.}
 Four findings stand out.  First, across all published papers, test statistics
 in the just-insignificant window $|z|\in[1.645,\,1.96)$ outnumber those in the
 just-significant window $|z|\in[1.96,\,2.275]$ by about 20\% ($R = 1.20$,
-$p = 0.002$).  Second, this bunching
-is concentrated in the \JFE{}: its caliper ratio is 1.49 ($p < 0.001$), while
-\JF{} and \RFS{} show no evidence of bunching (ratios 0.88 and 0.97,
-both $p > 0.40$).  Third, breaking the sample by a paper's main conclusion
-reveals that bunching is almost entirely driven by \textit{negative-finding
-papers}---those that conclude a regulation was harmful or ineffective.  Their
-caliper ratio is 1.52 ($p < 0.001$), compared to 0.94 in positive-finding
-papers and 1.05 in null-finding papers.  Fourth, the discontinuity test shows
-a conflicting result for \JF{}: the caliper ratio (0.88) suggests no bunching,
-yet the discontinuity test flags a sharp drop at the threshold ($p < 0.001$).
-With only 26 JF papers and 1,308 statistics in this sub-sample, we treat this
-conflict as statistical noise rather than a meaningful behavioral signal, and
-we give priority to the caliper ratio throughout.
+$p = 0.002$).  Second, on the same naive test, the asymmetry in the published sample
+is more visible in the \JFE{} (caliper ratio 1.49, $p < 0.001$ under
+the naive chi-square) than in the \JF{} or \RFS{} (ratios 0.88 and
+0.97, both $p > 0.40$).  Third, breaking the sample by a paper's main
+conclusion, the asymmetry on the same naive test is largest in
+\textit{negative-finding papers}---those that conclude a regulation was
+harmful or ineffective.  Their caliper ratio is 1.52 ($p < 0.001$
+naive), compared to 0.94 in positive-finding papers and 1.05 in
+null-finding papers.  Fourth, the discontinuity test shows a conflicting
+result for \JF{}: the caliper ratio (0.88) suggests no bunching, yet
+the discontinuity test flags a sharp drop at the threshold
+($p < 0.001$).  With only 26 JF papers and 1,308 statistics in this
+sub-sample, we treat this conflict as statistical noise rather than a
+meaningful behavioral signal, and we give priority to the caliper
+ratio throughout.  All four sub-sample $p$-values quoted in this
+paragraph are naive chi-squares; the corresponding paper-clustered
+bootstrap $p$-values are $0.135$ for negative-finding papers and not
+significant for the \JFE{} either (see
+Table~\ref{tab:nber_caliper}).  Accordingly, the per-subgroup framing
+in this paragraph---``concentrated in the \JFE{}'', ``largest in
+negative-finding papers''---describes where the naive-test point
+estimates are largest, not where statistical significance is robustly
+established.  We read the per-subgroup pattern as suggestive rather
+than as a decomposition that survives our preferred inference.
 
 The direction-level result is novel.  As shown in the next section,
 positive-finding papers are not over-represented in the published corpus
@@ -2953,7 +2982,13 @@ allows the test statistic to be independently verified by dividing one by
 the other (\textit{Coef+SE only} rows).
 Other rows report only a $t$- or $z$-statistic directly, with no
 coefficient or standard error shown, so there is no way to cross-check
-the number (\textit{$z$-stat only} rows).
+the number (\textit{$z$-stat only} rows).  The extraction treats every
+such number as a two-sided $|z|$-test against $H_0 = 0$; a small share
+of standalone rows are flagged in the underlying data as $F$- or
+$\chi^2$-statistics, one-sided tests, or tests against non-zero nulls
+and would not be comparable to the 1.96 cutoff used in the caliper
+window, but we do not separately filter these out
+(Section~\ref{subsec:pvalue_dist}).
 The \textit{Ratio} column is
 $R = \#\{|z|\in[1.645,\,1.96)\}/\#\{|z|\in[1.96,\,2.275]\}$.
 $R = 1.0$ means equal frequency; $R > 1.0$ indicates excess clustering on
