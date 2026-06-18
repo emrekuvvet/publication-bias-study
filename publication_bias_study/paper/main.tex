@@ -1101,12 +1101,12 @@ counts.
 \hline\hline
 Corpus & Row type & $N$ stats & Ratio & Share \\
 \hline
-Published & All rows            & 7,761 & $1.20$\rlap{$^{***}$} & 100\% \\
-          & \ Coef.+SE rows     & 5,563 & 0.82                  & 71.7\% \\
-          & \ Standalone $z$    & 2,198 & $2.54$\rlap{$^{***}$} & 28.3\% \\[4pt]
+Published & All rows            & 7,761 & $1.20$\rlap{$^{***\uparrow}$} & 100\% \\
+          & \ Coef.+SE rows     & 5,563 & $0.82$\rlap{$^{***\downarrow}$} & 71.7\% \\
+          & \ Standalone $z$    & 2,198 & $2.54$\rlap{$^{***\uparrow}$} & 28.3\% \\[4pt]
 NBER      & All rows            & 8,351 & 1.01                  & 100\% \\
           & \ Coef.+SE rows     & 6,840 & 0.95                  & 81.9\% \\
-          & \ Standalone $z$    & 1,511 & $1.58$\rlap{$^{**}$}  & 18.1\% \\
+          & \ Standalone $z$    & 1,511 & $1.58$\rlap{$^{**\uparrow}$}  & 18.1\% \\
 \hline\hline
 \end{tabular}
 \begin{minipage}{\textwidth}
@@ -1116,10 +1116,19 @@ NBER      & All rows            & 8,351 & 1.01                  & 100\% \\
 coefficient and a standard error are reported, so the test statistic can be
 independently verified.  \textit{Standalone $z$} rows report only a $t$- or
 $z$-statistic with no coefficient or standard error.  \textit{Share} is the
-fraction of each corpus's statistics that fall into that row type.  The
-full-sample ratio of 1.20 reflects both the higher standalone bunching in
-published papers and their larger standalone share relative to the NBER corpus.
-$^{***}p<0.01$, $^{**}p<0.05$, $^{*}p<0.10$.
+fraction of each corpus's statistics that fall into that row type.  The full-sample ratio of 1.20 reflects both the higher standalone
+bunching in published papers and their larger standalone share relative
+to the NBER corpus.  Significance markers are two-sided
+($^{***}p<0.01$, $^{**}p<0.05$, $^{*}p<0.10$ for the equality test).
+Direction arrows: $\uparrow$ flags $R>1$ (excess on the just-below-1.96
+side, the focal pattern); $\downarrow$ flags $R<1$ (excess on the
+just-above-1.96 side, the classical Brodeur ``just-cleared-the-bar''
+direction).  The published Coef$+$SE row is significant in the
+$\downarrow$ direction ($p = 0.007$): in verifiable rows, published
+papers show slightly more statistics just above 1.96 than just below.
+See Section~\ref{subsec:pvalue_dist} for the two-direction
+interpretation and Appendix~\ref{app:coefse_caliper} for the underlying
+counts.
 \end{minipage}
 \end{singlespace}
 \end{table}
@@ -2810,12 +2819,12 @@ can verify or in the rows they cannot.
 \hline\hline
 Corpus & Row type & $N$ & Below & Above & Ratio & Naive $p$ \\
 \hline
-Published & All rows         & 7,761 & 611 & 508 & $1.203$\rlap{$^{***}$} & 0.002 \\
-Published & Coef+SE only     & 5,563 & 322 & 394 & 0.817                  & 0.007 \\
-Published & $z$-stat only    & 2,198 & 289 & 114 & $2.535$\rlap{$^{***}$} & $<$0.001 \\[4pt]
+Published & All rows         & 7,761 & 611 & 508 & $1.203$\rlap{$^{***\uparrow}$} & 0.002 \\
+Published & Coef+SE only     & 5,563 & 322 & 394 & $0.817$\rlap{$^{***\downarrow}$} & 0.007 \\
+Published & $z$-stat only    & 2,198 & 289 & 114 & $2.535$\rlap{$^{***\uparrow}$} & $<$0.001 \\[4pt]
 NBER      & All rows         & 8,351 & 501 & 495 & 1.012                  & 0.849 \\
 NBER      & Coef+SE only     & 6,840 & 422 & 445 & 0.948                  & 0.435 \\
-NBER      & $z$-stat only    & 1,511 &  79 &  50 & $1.580$\rlap{$^{**}$}  & 0.011 \\
+NBER      & $z$-stat only    & 1,511 &  79 &  50 & $1.580$\rlap{$^{**\uparrow}$}  & 0.011 \\
 \hline\hline
 \end{tabular}
 \begin{minipage}{\textwidth}
@@ -2836,13 +2845,20 @@ just-above-1.96 side.
 \textit{Below} and \textit{Above} are the raw counts of test statistics
 falling in the windows just below and just above the 5\% cutoff.
 \textit{Naive $p$} tests whether those two counts are equal.
-*** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$ (caliper ratio).
-The key finding is that threshold clustering is entirely concentrated
-in the directly reported $z$-statistics, not in the rows where the
-test statistic can be independently verified from the coefficient and
-standard error. Published papers show a much stronger clustering
-in standalone $z$-statistics (ratio 2.54) than NBER working papers do (1.58),
-while neither corpus shows excess clustering in the verifiable rows.
+Significance markers are two-sided: $^{***} p < 0.01$, $^{**} p < 0.05$,
+$^{*} p < 0.10$ for the test that the below and above counts are equal.
+Direction arrows indicate which side has the excess: $\uparrow$ flags
+$R > 1$ (excess on the just-below-1.96 side, the focal pattern), and
+$\downarrow$ flags $R < 1$ (excess on the just-above-1.96 side).  The
+published Coef+SE-only row is significant at $p = 0.007$ in the
+$\downarrow$ direction: among verifiable rows in published papers, the
+sample shows more statistics in $[1.96,\,2.275]$ than in $[1.645,\,1.96)$.
+This is the classical Brodeur-style ``just-cleared-the-bar'' pattern, in
+the opposite direction from the headline excess driven by standalone
+$z$-statistics; we describe both directions in
+Section~\ref{subsec:pvalue_dist}.  Across the table, threshold-side
+asymmetry is concentrated in the standalone $z$-statistics, while the
+verifiable rows show a smaller asymmetry in the opposite direction.
 \end{minipage}
 \end{singlespace}
 \end{table}
