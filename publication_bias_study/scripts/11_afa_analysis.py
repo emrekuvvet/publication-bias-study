@@ -532,8 +532,15 @@ def code_direction_afa(client: Anthropic, title: str, abstract: str = "") -> dic
         }
 
 
-def step_direction(no_api: bool = False) -> None:
+def step_direction(no_api: bool = False, force: bool = False) -> None:
     print("=== Step B: Direction coding ===")
+    if AFA_DIRECTION.exists() and not force:
+        existing = pd.read_parquet(AFA_DIRECTION)
+        counts = existing["direction"].value_counts()
+        print(f"  Frozen parquet found ({len(existing):,} papers) — skipping re-coding.")
+        print(f"  Direction distribution: {counts.to_dict()}")
+        print(f"  (Use --force to overwrite.)")
+        return
     if not AFA_SCOPE.exists():
         raise FileNotFoundError(f"{AFA_SCOPE} not found — run --step classify first")
 
@@ -928,7 +935,7 @@ def step_analyze() -> None:
 # Main                                                                 #
 # ------------------------------------------------------------------ #
 
-def main(step: str, no_api: bool) -> None:
+def main(step: str, no_api: bool, force: bool = False) -> None:
     VALID_STEPS = {"classify", "direction", "match", "analyze", "all"}
     if step not in VALID_STEPS:
         raise ValueError(f"Unknown step '{step}'. Choose from: {VALID_STEPS}")
@@ -942,7 +949,7 @@ def main(step: str, no_api: bool) -> None:
         step_classify(no_api=no_api)
 
     if run_all or step == "direction":
-        step_direction(no_api=no_api)
+        step_direction(no_api=no_api, force=force)
 
     if run_all or step == "match":
         step_match()
@@ -968,5 +975,10 @@ if __name__ == "__main__":
         help="Free mode: keyword filter for scope + rule-based direction coding. "
              "No Anthropic API calls. Direction coding is noisier but costs nothing."
     )
+    parser.add_argument(
+        "--force", action="store_true",
+        help="Force re-run of direction coding even if frozen parquet already exists. "
+             "WARNING: LLM outputs are stochastic; this will change the AFA results."
+    )
     args = parser.parse_args()
-    main(args.step, args.no_api)
+    main(args.step, args.no_api, args.force)
