@@ -550,8 +550,10 @@ policy.  The full coding prompt is in Appendix~\ref{app:prompts}.
 We validate the direction codes in two ways.  First, we re-ran the coding on
 a stratified 60-paper sample (5 papers per source $\times$ direction cell)
 using the same model (claude-haiku-4-5-20251001) in an independent second
-call.  The two runs agree on 71.7\% of papers ($\kappa_w = 0.674$,
-``substantial agreement'').  Agreement is high for directional papers, 100\%
+call.  The two runs agree on 71.7\% of papers.  Adjusting for the agreement
+two random coders would produce by chance, this corresponds to
+``substantial agreement'' on the standard Landis-Koch reliability
+scale (Cohen's weighted $\kappa_w = 0.674$).  Agreement is high for directional papers, 100\%
 for negative findings and 90\% for positive ones, but only 25\% for
 null/mixed papers; among the 20 originally null-coded papers, 15 were
 re-coded as directional and only 5 stayed null.  These flips are not evenly
