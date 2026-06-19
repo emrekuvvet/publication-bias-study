@@ -789,10 +789,10 @@ extracted, the reported test statistic matches their ratio to within
 0.1 in 98.3\% of published rows and 99.7\% of NBER rows, no meaningful
 gap between corpora.  By construction this check applies only to
 Coef+SE rows; the standalone $z$-statistics that drive the headline
-caliper finding (ratio 2.54 published vs.\ 1.58 NBER) cannot be
-cross-validated.  Within the verifiable Coef+SE rows, neither corpus
-shows excess bunching ($R = 0.82$ published, $0.95$ NBER); the gap is
-concentrated precisely in the unverifiable row type.  Second, per-paper
+caliper finding cannot be cross-validated.  Within the verifiable
+Coef+SE rows, neither corpus shows excess bunching just below the
+significance threshold, and the gap is concentrated precisely in the
+unverifiable row type.  Second, per-paper
 extraction rates (the fraction of in-scope papers yielding at least one
 usable $|z|$-statistic) differ by both corpus and direction:
 91.5\%/83.0\%/75.0\% of published negative-/positive-/null-finding
@@ -813,8 +813,7 @@ the threshold in published papers.  We flag these as residual concerns
 rather than claim the parsing channel is fully closed.
 
 The results differ sharply by statistic type.  Primary Coef+SE rows
-show no threshold bunching in either corpus ($R = 0.82$ published,
-$0.95$ NBER).  Bunching appears only in standalone test statistics,
+show no threshold bunching in either corpus.  Bunching appears only in standalone test statistics,
 which come mainly from supplementary tables, and published papers
 show a higher bunching ratio ($R = 2.54$) than NBER papers ($R = 1.58$).
 We read this as selective reporting.  Authors are more likely
