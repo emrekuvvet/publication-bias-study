@@ -184,13 +184,16 @@ reflects selection for high $t$-statistics
 literature \citep*{Brodeur2016,Andrews2019} infers bias from published
 $p$-value distributions.  Neither strand addresses the
 policy-intervention literature or separates significance bias from
-directional bias.  In our setup, these two biases map onto distinct
-tests: the across-corpus probit with separate $\text{Positive}$ and
-$\text{Negative}$ indicators (equation~\eqref{eq:probit}) speaks to
-both, the $\beta_1 = \beta_2$ test for directional bias, the joint
-$\beta_1 = \beta_2 = 0$ test for significance bias, and the
-within-paper caliper test (Section~\ref{subsec:pvalue_dist}) speaks to
-selective reporting near the significance threshold.
+directional bias.  We translate these two biases into separate
+tests.  Comparing how often positive-finding and negative-finding
+papers appear in top journals (equation~\eqref{eq:probit}) speaks to
+both: whether positive findings are favored over negative ones
+(directional bias), and whether either type is favored over null
+findings (significance bias).  A second test
+(Section~\ref{subsec:pvalue_dist}) looks inside individual papers for
+an unusual bunching of $t$-statistics just above the standard
+significance cutoff, the telltale sign of selective reporting near
+the threshold.
 
 Our research design combines two complementary samples.  The
 published paper sample consists of all in-scope articles in the \JF{},
