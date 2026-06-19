@@ -1222,19 +1222,21 @@ specifications, and concerns about classification quality.
 \subsection{Caliper Window Sensitivity}
 \label{subsec:window_robustness}
 
-The caliper test compares how many test statistics fall just below the 5\%
-significance threshold versus just above it, so the result depends on exactly
-how wide a band is used on each side.  Untabulated, when the window starts
-at $|z| = 1.645$ or higher, covering three of the four specifications
-we examine, including one of the windows used by
-\citet*{Brodeur2016}, published papers consistently show excess mass
-just below the threshold (ratios $1.20$ at the standard window,
-$1.33$ at the narrow $[1.70,2.22]$ window, and $1.33$ at the
-$[1.65,2.25]$ window used by \citealt*{Brodeur2016}), while NBER ratios stay
-between $0.97$ and $1.10$.  The exception is the widest window
-($[1.50,2.42]$): the published ratio drops to $0.92$ ($p = 0.088$),
-mechanically driven by rising test-statistic density between $|z| = 1.50$
-and $|z| = 1.645$.  This rules out the alternative explanation that
+The caliper test compares how many test statistics fall just below
+the 5\% significance threshold versus just above it, so the result
+depends on exactly how wide a band is used on each side.  The four
+window specifications below are reported in prose only and are not
+tabulated in the paper.  When the window starts at $|z| = 1.645$
+or higher, covering three of the four specifications we examine,
+including one of the windows used by \citet*{Brodeur2016}, published
+papers consistently show excess mass just below the threshold
+(ratios $1.20$ at the standard window, $1.33$ at the narrow
+$[1.70,2.22]$ window, and $1.33$ at the $[1.65,2.25]$ window used by
+\citealt*{Brodeur2016}), while NBER ratios stay between $0.97$ and
+$1.10$.  The exception is the widest window ($[1.50,2.42]$): the
+published ratio drops to $0.92$ ($p = 0.088$), mechanically driven
+by rising test-statistic density between $|z| = 1.50$ and
+$|z| = 1.645$.  This rules out the alternative explanation that
 published papers simply have a general shift toward larger test
 statistics; the pattern is specifically concentrated in the narrow band
 just below the 5\% significance cutoff.
