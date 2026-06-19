@@ -608,11 +608,11 @@ $134$-paper Published group.
 This rule has three immediate implications.  First, the dependent
 variable in the probit (Published $\in \{0,1\}$) is well-defined and
 mutually exclusive across the 291 observations.  Second, dropping the 16 matched-pair
-published papers as a robustness check (Section~\ref{subsec:alt_spec})
-removes only those 16 observations and leaves $N = 275$, because their
+published papers as a robustness check removes only those 16
+observations and leaves $N = 275$, because their
 NBER drafts are already excluded; the corresponding NBER counterparts
 are not separately deletable.  Third, the
-caliper test (Section~\ref{subsec:pvalue_dist}) operates on the
+caliper test operates on the
 $|z|$-statistics extracted from the journal-published version of each
 matched pair when computing the Published-row caliper, and on the NBER
 draft for the unmatched NBER-only papers; no test statistic is counted
@@ -990,7 +990,7 @@ We include all regression coefficients in the test rather than just
 the headline estimate, since researchers can adjust any reported
 result toward a significance threshold.  As a check, dropping standard
 control-variable rows ($\approx 9\%$ of observations) leaves the main
-results unchanged (Appendix~\ref{app:inclusion_sensitivity}).
+results unchanged.
 
 %% ============================================================
 \subsection{Supporting Context: Cross-Sectional Direction Sorting}
@@ -1285,7 +1285,7 @@ published papers that we can confirm previously circulated as NBER working
 papers.  Because our NBER comparison group is defined as the 157 in-scope
 working papers that did not reach the \JF{}, \RFS{}, or \JFE{}, the
 matched-pair NBER drafts are by construction already excluded from the
-estimation sample (see Section~\ref{subsec:linking}); dropping the 16
+estimation sample; dropping the 16
 matched published papers therefore leaves $N = 275$ (118 published + 157 NBER).
 The direction coefficients remain small and statistically insignificant on
 this subsample ($\hat\beta_1 = -0.122$, $p = 0.561$;
@@ -1342,8 +1342,7 @@ as primarily reflecting writing style.
 The bias direction on our direction premium depends on which miscoding
 channel dominates.  NBER directional-as-null inflates the premium;
 published directional-as-null deflates it; published null-as-directional
-also inflates it.  The LLM replication exercise
-(Section~\ref{subsec:direction}) shows null is the least stable
+also inflates it.  The LLM replication exercise shows null is the least stable
 category: 15 of 20 null-coded validation papers re-code as directional
 in replication, with the flips concentrated on the published side (13
 of 15 published nulls vs.\ 2 of 5 NBER nulls).  We therefore do not
@@ -2542,8 +2541,8 @@ This has a clean implication for our headline directional null result:
 null-misclassification injects direction-neutral noise into the
 baseline category but does not bias the cross-corpus comparison of
 directional categories.  In particular, the equality test
-$H_0\colon \beta_1 = \beta_2$ (Section~\ref{subsec:design}) does not
-depend on the integrity of the null baseline, it compares the
+$H_0\colon \beta_1 = \beta_2$ does not depend on the integrity of the
+null baseline, it compares the
 positive and negative coefficients to each other, and gives
 $\chi^2 = 0.005$, $p = 0.944$ in our primary specification.  We
 therefore read the directional null as robust to null-coding
