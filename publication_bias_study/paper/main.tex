@@ -901,24 +901,27 @@ Most prior work on significance bias can only study published papers
 and must infer what the research pipeline looked like before editorial
 decisions were made; our NBER sample lets us compare directly.
 
-Table~\ref{tab:nber_caliper} shows a gap in point estimates between
-the two corpora.  Published $R = 1.20$ vs.\ NBER $R = 1.01$.  The two groups have nearly identical overall significance
-shares (57\% published, 56\% NBER), so the ratio difference is not driven
-by noise levels.  A naive $2 \times 2$ chi-square treating each statistic
-as independent gives $\chi^2 = 3.74$ ($p = 0.053$) for the full sample
-and $\chi^2 = 10.66$ ($p = 0.001$) for negative-finding papers; the
-paper-clustered bootstrap in Table~\ref{tab:nber_caliper} does not
-clear $0.05$ for either ($p = 0.150$ full, $p = 0.135$ negative).  We
-read the published--NBER gap as suggestive rather than definitively
-significant; the point estimates are larger for published papers and
-especially so for negative-finding papers, but the cross-corpus
-difference is not robust to paper-level clustering on our preferred
-test.  Within these caveats, the size and direction of the gap are
-concentrated in negative-finding papers.  Published negative-finding
-papers cluster on the just-below-1.96 side at more than 50\% above the
-just-above-1.96 count; NBER negative-finding papers show no such
-asymmetry ($R = 1.00$).  Positive- and null-finding papers show no
-gap in either direction.
+Table~\ref{tab:nber_caliper} shows that published papers cluster
+test statistics just below the significance threshold more strongly
+than NBER papers do.  The ratio of just-below to just-above counts
+is 1.20 in the published corpus, compared with 1.01 in NBER.  Both
+groups have similar overall significance rates (57\% published,
+56\% NBER), so this gap is not driven by differences in noise
+levels.  A simple test treating each statistic as independent gives
+a borderline-significant result for the full sample and a strongly
+significant result for negative-finding papers.  Our preferred test,
+which accounts for the fact that statistics within the same paper
+are correlated, does not reach the conventional 5\% threshold in
+either case ($p = 0.150$ for the full sample, $p = 0.135$ for
+negative-finding papers).  We read the cross-corpus gap as
+suggestive rather than definitive; the point estimates are larger
+for published papers and especially so for negative-finding papers,
+but the difference is not robust to paper-level clustering.  The
+gap is concentrated in negative-finding papers.  Published
+negative-finding papers cluster just-below-significant statistics
+at more than 50\% above the just-above rate, while their NBER
+counterparts show no such asymmetry.  Positive- and null-finding
+papers show no cross-corpus gap.
 
 
 \begin{center}
