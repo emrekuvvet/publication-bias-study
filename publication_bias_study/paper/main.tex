@@ -1087,20 +1087,25 @@ not interact with the direction null.  Decade fixed effects
 (Column~(4)) and team size controls (Column~(5)) likewise leave the
 direction results unaffected.
 
-Column~(6) adds the QE indicator (RDD, IV, DiD, natural experiment, or
-event study with causal interpretation).  QE papers are significantly
-more likely to be published ($p = 0.003$), suggesting that journals
-reward rigorous identification, though the indicator is AI-coded
-and may capture correlated quality attributes; Section~\ref{subsec:id_premium}
-shows the premium survives sequential controls for prestige and team
-size ($r = 0.015$ between QE and institutional rank).  Direction
-coefficients remain near zero after adding QE ($p > 0.44$).
-Column~(7) adds a top-institution indicator (UTD Top 100 Business
-School Research Rankings 2021--2025, \citealt*{UTDTop100}, via
-OpenAlex).  Top Institution is strongly positive ($0.661$, $p<0.001$),
-the QE coefficient barely shifts ($0.473^{***}$), and
-direction coefficients remain insignificant
-($\hat\beta_1 = -0.160$, $\hat\beta_2 = -0.159$).
+Column~(6) adds an indicator for quasi-experimental research designs
+(RDD, IV, DiD, natural experiments, or event studies with a causal
+interpretation).  Papers using these designs are significantly more
+likely to be published ($p = 0.003$), suggesting that journals reward
+rigorous identification, though the indicator is AI-coded and may
+capture correlated quality attributes; Section~\ref{subsec:id_premium}
+shows the premium survives controls for institutional prestige and
+team size, and the QE indicator is essentially uncorrelated with
+institutional rank.  Positive- and negative-finding papers continue
+to show no publication advantage after adding QE ($p > 0.44$ for
+both).
+Column~(7) adds an indicator for top-institution authorship (the UTD
+Top 100 Business School Research Rankings 2021--2025,
+\citealt*{UTDTop100}, via OpenAlex).  Top-institution papers show a
+strong publication advantage (coefficient $0.661$, $p < 0.001$), the
+QE premium barely changes (still $0.473$ and highly significant), and
+positive- and negative-finding papers continue to show no advantage
+relative to null-finding papers (point estimates $-0.160$ and
+$-0.159$, both not significant).
 
 Table~\ref{tab:quasiexp_direction} breaks down publication rates by
 direction and research design.  QE papers publish at much higher rates
