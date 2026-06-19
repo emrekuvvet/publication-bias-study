@@ -770,15 +770,14 @@ reasons).  The pre-publication sample lets us compare the two
 distributions directly rather than inferring bias from the published
 distribution alone.
 
-\textit{Standalone-statistic comparability.}  The extraction treats
-every standalone number as a two-sided $|z|$-test against $H_0=0$
-evaluated against the 1.96 cutoff (the dominant convention in
-published-finance tables), but is not certified row-by-row.  A small
-share of standalone rows are flagged as $F$-stats, $\chi^2$-stats,
-one-sided tests, or tests against non-zero nulls, these would not be
-comparable to the 1.96 cutoff but we do not separately filter them
-out.  A row-level provenance audit would benefit a future revision;
-the caliper conclusions should be read with this caveat.
+We treat every standalone test statistic in a published table as a
+standard significance test against the 1.96 cutoff, the usual
+convention in finance, but do not verify the test type row by row.
+A small share of rows may report other test types such as $F$-tests,
+$\chi^2$-tests, one-sided tests, or tests against a non-zero
+baseline, which would not line up with the 1.96 cutoff.  A more
+detailed row-level check is left for future work, and the caliper
+results should be read with this caveat in mind.
 
 One concern is that published journal PDFs might be harder to parse than
 NBER draft PDFs, artificially inflating the caliper gap.  We address this
