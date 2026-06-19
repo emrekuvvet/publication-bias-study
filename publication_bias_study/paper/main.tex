@@ -961,24 +961,29 @@ case.  NBER papers show no clustering under any test.
 
 
 
-Because we run 18 tests across subsamples, journals, and directions,
-some significant results could appear by chance.  We designated the
-two full-sample caliper tests (published and NBER) as primary ex ante.
-Under naive chi-square, the published full-sample $p = 0.002$ clears
-the Bonferroni threshold $0.05/18 \approx 0.003$; under the
-more conservative paper-clustered bootstrap, $p = 0.150$ does not
-clear $0.05$ even before correction.  NBER is null under both ($p = 0.849$
-naive, $p = 0.432$ bootstrap).  Among exploratory subgroups, the
-\JFE{} and negative-finding results clear the naive Bonferroni cutoff
-($p < 0.001$ each) but the negative-finding bootstrap $p = 0.135$
-does not.  We treat the naive-test results as the less-conservative
-reading and the bootstrap as the headline reading.
+We run 18 caliper tests across sub-samples, journals, and direction
+categories.  With so many tests, some significant results could
+appear by chance, so we designated the two full-sample caliper tests
+(published and NBER) as primary before looking at the data.  For the
+remaining 16 tests, we apply the Bonferroni correction, which
+divides the 5\% threshold by the number of tests and gives a
+corrected cutoff of $0.003$.  Under the simple test, the published
+full-sample result clears the corrected cutoff easily
+($p = 0.002$); under the more conservative test, it does not even
+clear an uncorrected 5\% threshold ($p = 0.150$).  NBER is not
+significant under either ($p = 0.849$ simple, $p = 0.432$
+conservative).  Among the exploratory subgroups, the \JFE{} and the
+negative-finding result clear the corrected cutoff under the simple
+test ($p < 0.001$ each), but the negative-finding result does not
+under the conservative test ($p = 0.135$).  We treat the simple-test
+results as the less-conservative reading and the conservative-test
+results as the headline.
 
-We include all regression coefficients in the test rather than just
-the headline estimate, since researchers can adjust any reported
-result toward a significance threshold.  As a check, dropping standard
-control-variable rows ($\approx 9\%$ of observations) leaves the main
-results unchanged.
+We include every regression coefficient in the test, not just the
+headline result from each paper, because researchers can adjust any
+reported coefficient toward the significance threshold.  As a check,
+dropping standard control-variable rows (about $9\%$ of observations)
+leaves the main results unchanged.
 
 %% ============================================================
 \subsection{Supporting Context: Cross-Sectional Direction Sorting}
