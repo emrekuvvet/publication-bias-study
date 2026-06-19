@@ -1222,24 +1222,29 @@ specifications, and concerns about classification quality.
 \subsection{Caliper Window Sensitivity}
 \label{subsec:window_robustness}
 
-The caliper test compares how many test statistics fall just below
-the 5\% significance threshold versus just above it, so the result
-depends on exactly how wide a band is used on each side.  The four
-window specifications below are reported in prose only and are not
-tabulated in the paper.  When the window starts at $|z| = 1.645$
-or higher, covering three of the four specifications we examine,
-including one of the windows used by \citet*{Brodeur2016}, published
-papers consistently show excess mass just below the threshold
-(ratios $1.20$ at the standard window, $1.33$ at the narrow
-$[1.70,2.22]$ window, and $1.24$ at the $[1.66,2.26]$ window used by
-\citealt*{Brodeur2016}), while NBER ratios stay between $0.97$ and
-$1.02$.  The exception is the widest window ($[1.50,2.42]$): the
-published ratio drops to $0.92$ ($p = 0.088$), mechanically driven
-by rising test-statistic density between $|z| = 1.50$ and
-$|z| = 1.645$.  This rules out the alternative explanation that
-published papers simply have a general shift toward larger test
-statistics; the pattern is specifically concentrated in the narrow band
-just below the 5\% significance cutoff.
+Our headline result, that published papers have about 20\% more test
+statistics just below the 5\% significance threshold than just above,
+depends on exactly where we draw the boundaries of the two zones.
+We check by repeating the test with four different band widths around
+the threshold.  The four window specifications below are reported in
+prose only and are not tabulated in the paper.
+
+In three of the four bands, published papers show clear excess on
+the just-below side.  Just-below counts exceed just-above counts by
+$20\%$ in the standard band, by $33\%$ in a narrower band
+($[1.70,2.22]$), and by $24\%$ in the band used by
+\citet*{Brodeur2016} ($[1.66,2.26]$).  NBER working papers show no
+such excess in any of these bands.
+
+The exception is the widest band tested ($[1.50,2.42]$), where
+published papers have $8\%$ fewer just-below than just-above
+($p = 0.088$).  This drop has a mechanical explanation: test-statistic
+density rises sharply between $|z| = 1.50$ and $|z| = 1.645$, so
+widening the lower edge of the band sweeps in many statistics that
+are not actually near the significance threshold.  This rules out the
+alternative reading that published papers simply have systematically
+larger test statistics overall; the asymmetry is concentrated in the
+narrow band immediately below the 5\% cutoff.
 
 \subsection{Sample and Scope Robustness}
 
