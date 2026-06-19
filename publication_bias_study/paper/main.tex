@@ -850,20 +850,13 @@ a sharp jump in the frequency of test statistics right at the $|z|=1.96$
 threshold, which also fits the selective-reporting pattern.
 
 Table~\ref{tab:pvalue_dist} reports the caliper ratios and significance
-tests for the full sample, broken out by journal and by finding direction.
-Figures~\ref{fig:zdist_full} and~\ref{fig:zdist_journals} plot the
-full-sample and by-journal test-statistic distributions; the
-direction-specific distributions are summarized in
+tests for the full sample, broken out by journal and by finding
+direction; the direction-specific distributions are summarized in
 Table~\ref{tab:nber_caliper}.
 
 
 \begin{center}
 \textbf{[INSERT TABLE 4 HERE]}
-\end{center}
-
-
-\begin{center}
-\textbf{[INSERT FIGURE 1 HERE]}
 \end{center}
 
 Under the standard chi-square test, four sub-sample patterns stand
@@ -945,7 +938,7 @@ show no gap in either direction (Figure~\ref{fig:nber_vs_pub}).
 
 
 \begin{center}
-\textbf{[INSERT FIGURE 2 HERE]}
+\textbf{[INSERT FIGURE 1 HERE]}
 \end{center}
 
 Two interpretations are plausible.  Published negative-finding papers
@@ -968,9 +961,6 @@ bootstrap does not reach conventional significance in either case.
 NBER papers show no clustering under any test.
 
 
-\begin{center}
-\textbf{[INSERT FIGURE 3 HERE]}
-\end{center}
 
 Because we run 18 tests across subsamples, journals, and directions,
 some significant results could appear by chance.  We designated the
@@ -1613,27 +1603,6 @@ methodological quality.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{figures/fig1_zdist_full.pdf}
-\caption{Distribution of $|z|$-statistics from all 7,761 regression rows
-across 114 published papers.  The dashed vertical lines mark $|z|=1.645$
-(10\% two-sided), $|z|=1.96$ (5\%), and $|z|=2.576$ (1\%).  The red
-reference curve is the half-normal density, the implied distribution of
-$|Z|$ when $Z \sim N(0,1)$, equivalently the change-of-variables image of
-the $\chi^2(1)$ distribution of $Z^2$ onto the $|z|$ scale, so it is
-commensurate with the histogram and represents the null benchmark of no
-true effects and no selective reporting.  Within the caliper window,
-statistics in $[1.645,\,1.96)$, the just-insignificant zone, where
-$0.05 < p \le 0.10$, outnumber those in $[1.96,\,2.275]$, the
-just-significant zone, where $p \le 0.05$, by about 20\% ($R = 1.20$,
-$p = 0.002$).  The excess on the just-below-1.96 side fits
-selective reporting of borderline results that fall just short of
-conventional significance.}
-\label{fig:zdist_full}
-\end{figure}
-
-
-\begin{figure}[H]
-\centering
 \includegraphics[width=\textwidth]{figures/fig_nber_vs_pub_full.pdf}\\[16pt]
 \includegraphics[width=\textwidth]{figures/fig_nber_vs_pub_negative.pdf}
 \caption{Each panel compares published journal papers (left) to NBER working
@@ -1651,35 +1620,6 @@ asymmetry is more pronounced in published papers and all but absent in
 NBER papers; see Section~\ref{subsec:pvalue_dist} for the cross-corpus
 significance discussion.}
 \label{fig:nber_vs_pub}
-\end{figure}
-
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.62\textwidth]{figures/fig3_JF_zdist.pdf}\\[4pt]
-\includegraphics[width=0.62\textwidth]{figures/fig3_RFS_zdist.pdf}\\[4pt]
-\includegraphics[width=0.62\textwidth]{figures/fig3_JFE_zdist.pdf}
-\vfill
-\caption{Test-statistic distributions broken out by journal.  All
-$p$-values reported in this caption are caliper-test $p$-values
-($R = \#\{|z|\in[1.645,\,1.96)\}/\#\{|z|\in[1.96,\,2.275]\}$); the
-density discontinuity test (Disc.\ $p$ in
-Table~\ref{tab:pvalue_dist}) gives a different reading for some panels
-and we note conflicts explicitly below.
-\textit{Top}: Journal of Finance (1,308 statistics; no caliper-test
-clustering, caliper $p=0.423$).  Note that the discontinuity test for
-JF gives $p<0.001$; the body text explains why we give priority to the
-caliper here (Section~\ref{subsec:pvalue_dist}).
-\textit{Middle}: Review of Financial Studies (2,581 statistics; no
-caliper-test clustering, caliper $p=0.752$; discontinuity $p=0.180$, no
-conflict).
-\textit{Bottom}: Journal of Financial Economics (3,872 statistics;
-significant caliper-test clustering on the just-below-1.96 side,
-caliper $p<0.001$; discontinuity $p=0.038$, same direction).
-Under the caliper test, near-threshold clustering is present only in
-the JFE; the discontinuity test flags the JF as well, and we read that
-JF flag as noise (see Section~\ref{subsec:pvalue_dist}).}
-\label{fig:zdist_journals}
 \end{figure}
 
 
