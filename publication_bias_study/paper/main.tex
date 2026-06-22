@@ -246,7 +246,7 @@ any selective reporting occurs at the margin of revision, in the choice of
 which additional checks to highlight, rather than in the core empirical
 results that define the paper's contribution.
 
-The paper makes three contributions.  First, it provides direct evidence that top finance journals do not sort government-intervention research by the direction of its conclusions at scales our design can detect.  Second, it documents that identification quality and institutional prestige, not finding direction, are the two largest cross-sectional predictors of corpus membership: conditional on observed controls, quasi-experimental papers are about 18--20 pp more likely to appear in the published corpus and top-institution papers about 24--26 pp more likely, with the correlation between the two indicators near zero and each estimate remaining stable across alternative specifications.  Third, it introduces a validated LLM-assisted pipeline for classifying and direction-coding large paper corpora, with code and prompts publicly available.
+The paper makes three contributions.  First, it provides direct evidence that top finance journals do not sort government-intervention research by the direction of its conclusions at scales our design can detect.  Second, it documents that identification quality and institutional prestige, not finding direction, are the two largest cross-sectional predictors of corpus membership. Conditional on observed controls, quasi-experimental papers are about 18--20 pp more likely to appear in the published corpus and top-institution papers about 24--26 pp more likely, with the correlation between the two indicators near zero and each estimate remaining stable across alternative specifications.  Third, it introduces a validated LLM-assisted pipeline for classifying and direction-coding large paper corpora, with code and prompts publicly available.
 
 Section~\ref{sec:literature} reviews the literature; Section~\ref{sec:data}
 describes the data and classification pipeline;
@@ -1255,7 +1255,7 @@ of these bands.
 
 The exception is the widest band tested ($[1.50,2.42]$), where
 published papers have $8\%$ fewer just-below than just-above
-($p = 0.088$).  This drop has a mechanical explanation: test-statistic
+($p = 0.088$).  This drop has a mechanical explanation.  Test-statistic
 density rises sharply between $|z| = 1.50$ and $|z| = 1.645$, so
 widening the lower edge of the band sweeps in many statistics that
 are not actually near the significance threshold.  This rules out the
@@ -1269,8 +1269,8 @@ Our sample mixes two different kinds of policy papers.  Some study
 central bank actions such as quantitative easing, discount window
 lending, and other unconventional monetary policy tools.  Others study
 laws and rules, including securities regulation, banking supervision,
-and explicit legislation.  The two groups might behave differently:
-monetary policy findings can be harder to label as favorable or
+and explicit legislation.  The two groups might behave differently.
+Monetary policy findings can be harder to label as favorable or
 unfavorable to intervention, and journals may treat the two
 literatures differently as well.
 
@@ -1281,8 +1281,8 @@ direction effects land essentially at zero, and neither comes close
 to statistical significance.  The null finding is not driven by the
 inclusion of monetary policy papers.
 
-We then ask a different question: does finding direction predict
-which journal a paper lands in, rather than just whether it
+We then ask whether finding direction predicts which journal a paper
+lands in, rather than just whether it
 gets published at all?  Holding the full 291-paper sample fixed, we
 re-run the regression twice with new outcomes.  In the first run,
 the outcome equals one if the paper appears in the \JF{} and zero
@@ -1560,8 +1560,8 @@ therefore compare two largely non-overlapping cross-sections rather
 than tracking individual papers through the editorial process, and
 all direction coefficients should be read as cross-sectional
 associations rather than causal estimates of an editorial filter.
-Second, our outcome is narrow: placement in the top three
-finance journals (\JF{}, \RFS{}, \JFE{}).  NBER papers that appear
+Second, our outcome is narrow.  We measure only placement in the top
+three finance journals (\JF{}, \RFS{}, \JFE{}).  NBER papers that appear
 in other peer-reviewed journals are correctly classified as
 not-in-top-three under this outcome, so there is no
 misclassification.  Generalizing to broader peer-reviewed
@@ -1571,7 +1571,7 @@ not have, and we cannot sign the bias on that broader outcome.
 Third, AI direction coding is noisier on the NBER side.
 The high-confidence rate is $62.4\%$ for NBER abstracts versus
 $81.3\%$ for published abstracts.  The null category is also the
-least stable: 15 of 20 null-coded validation papers re-code as
+least stable, with 15 of 20 null-coded validation papers re-coding as
 directional in replication, with the flips concentrated on the
 published side (13 of 15) rather than the NBER side (2 of 5).  The
 direction of the resulting bias depends on which side is more
@@ -2507,10 +2507,10 @@ replication package.
 \subsection*{(A) Null-coded paper stability}
 
 The confusion matrix in Appendix~\ref{app:validation} shows that
-``null'' is the least stable category: when the AI runs the same
+``null'' is the least stable category.  When the AI runs the same
 abstract twice, it agrees with itself only $5$ out of $20$ times
 ($25\%$).  This matters because null is the comparison group in our
-main regression: positive and negative findings are measured
+main regression, with positive and negative findings measured
 relative to null.  Instability in the null group could in
 principle distort our main estimates.
 
@@ -2525,7 +2525,7 @@ null-coded papers ($66.7\%$) and $10$ of $15$ NBER null-coded papers
 
 The flip rate is large but, critically, identical on both sides.
 Within-corpus null instability is the same in the published and NBER
-samples.  This has a clean implication: null miscoding injects
+samples.  This has a clean implication.  Null miscoding injects
 direction-neutral noise into the comparison group but does not bias
 the cross-corpus comparison between positive and negative categories.
 The equality test of whether the positive and negative publication
@@ -2541,8 +2541,8 @@ The QE indicator is also AI-coded from abstracts, but, unlike the
 finding-direction code, it was not separately validated in the
 original pipeline (we noted this in
 Section~\ref{subsec:direction_results} and
-Section~\ref{subsec:limitations}).  A referee raised a specific
-concern: the $18$--$20$ pp QE premium might reflect differences in
+Section~\ref{subsec:limitations}).  A referee raised the concern
+that the $18$--$20$ pp QE premium might reflect differences in
 whether published abstracts explicitly name their
 identification strategy (``we use a regression discontinuity
 design''), rather than differences in actual research-design quality.
