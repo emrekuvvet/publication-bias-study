@@ -173,7 +173,7 @@ confidence (``high'' $|$ ``medium'' $|$ ``low''), reason (one sentence).
 The deployed pipeline has two paths, selected per paper by the
 direction-coding classifier.  When the abstract is present and
 contains at least 20 words, the model receives the
-\textit{abstract-only} prompt below; the title is \textit{not}
+\textit{abstract-only} prompt below; the title is not
 concatenated with the abstract or otherwise passed.  When the abstract is missing or
 shorter than 20 words, the model instead receives the \textit{title-only}
 fallback prompt also shown below.  All 291 papers in the final analysis
@@ -284,7 +284,7 @@ operationalized in Section~\ref{subsec:inscope} of the main paper.
 The NBER refilter re-coded 803 NBER papers that the LLM had flagged as
 low-confidence out-of-scope; 126 were promoted to in-scope and 106
 survived the same manual review used elsewhere.  Treating
-\textit{manual\,+\,refilter} as the gold standard restricted to the
+manual + refilter as the gold standard restricted to the
 NBER subset, the LLM's first-pass recall on this low-confidence pool is
 $1 - 126/803 = 84.3\%$, comparable to its precision.  The published-side
 LLM decisions were not subjected to a symmetric refilter because the
@@ -307,7 +307,7 @@ $2.0\%$ (95\% binomial CI: $0.5\%$ to $4.0\%$).  Extrapolated to the full
 37,287-paper keyword-negative pool with usable abstracts, this implies
 roughly $746$ in-scope papers (95\% CI: $186$ to $1{,}491$) that the
 keyword filter misses; adjusting for the $\approx 85\%$ LLM precision
-documented above brings the implied count of \textit{manually-validated}
+documented above brings the implied count of manually-validated
 in-scope misses to roughly $634$ (95\% CI: $158$ to $1{,}267$).
 
 The 4 audited keyword-misses concern papers studying specific government
@@ -327,7 +327,7 @@ this small sample.
 \subsection*{Interpretation}
 
 Our main inference rests on the equality of direction shares across the
-NBER and published samples \textit{within} the selected corpus.  A
+NBER and published samples within the selected corpus.  A
 direction-neutral keyword miss leaves these shares unchanged; a
 direction-correlated keyword miss would bias them.  The 200-paper
 audit is too small to detect such differential exclusion if it exists.
