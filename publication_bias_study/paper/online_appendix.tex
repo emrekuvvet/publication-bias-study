@@ -298,16 +298,16 @@ pool.
 Stage~1 (the keyword filter) is by design over-inclusive, but its recall
 on truly in-scope papers cannot be inferred from
 Table~\ref{tab:sample_selection} of the main paper alone.  We audit the keyword-negative
-pool by sampling 200 papers (random seed 42) from the 37,656 documents
+pool by sampling 200 papers (random seed 42) from the 37,287 documents
 that fail the keyword filter and have abstracts of at least 20 words, and
 re-running the in-scope LLM prompt on each.  Of the 200 sampled papers,
 the LLM flagged $4$ as in-scope: false-negative rate
 $2.0\%$ (95\% binomial CI: $0.5\%$ to $4.0\%$).  Extrapolated to the full
-37,656-paper keyword-negative pool with usable abstracts, this implies
-roughly $753$ in-scope papers (95\% CI: $188$ to $1{,}506$) that the
+37,287-paper keyword-negative pool with usable abstracts, this implies
+roughly $746$ in-scope papers (95\% CI: $186$ to $1{,}491$) that the
 keyword filter misses; adjusting for the $\approx 85\%$ LLM precision
 documented above brings the implied count of \textit{manually-validated}
-in-scope misses to roughly $640$ (95\% CI: $160$ to $1{,}280$).
+in-scope misses to roughly $634$ (95\% CI: $158$ to $1{,}267$).
 
 The 4 audited keyword-misses concern papers studying specific government
 policies (a tax rule change in commercial mortgage markets, voluntary
