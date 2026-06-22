@@ -179,7 +179,7 @@ shorter than 20 words, the model instead receives the \textit{title-only}
 fallback prompt also shown below.  All 291 papers in the final analysis
 sample have abstracts of at least 20 words, so the title-only fallback
 was not invoked for any analysis-sample paper; the validation samples
-and AFA pipeline use the same two-path logic.
+also use the same two-path logic.
 
 System instruction (both prompts): ``You are a research assistant
 classifying finance paper findings. Return valid JSON only, no other
@@ -203,7 +203,8 @@ take a directional stance)
 
 Coding rules:
 \newline, Code the PRIMARY intervention and PRIMARY outcome (named in title or first sentence)
-\newline, If paper is purely theoretical with no empirical test, set direction=0, confidence=low
+\newline, If paper is purely theoretical with no empirical test,
+\newline\phantom{,}\quad set direction=0, confidence=low
 \newline, Do NOT infer direction from normative framing; code the sign of the estimated coefficient
 
 Abstract:\\

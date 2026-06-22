@@ -292,8 +292,9 @@ This paper relates to three strands of research.  The first is the literature
 on significance bias in economics and finance.  \citet*{Brodeur2016} document
 excess mass just above the $|z|=1.96$ significance cutoff (equivalently, on
 the $p<0.05$ side of the threshold) in the top economics journals, the
-classical p-hacking pattern.  Our caliper analysis uses the same windows
-but the inverse ratio convention; we describe both directions explicitly in
+classical p-hacking pattern.  Our caliper analysis uses comparable
+threshold windows but the inverse ratio convention; we describe both
+directions explicitly in
 Section~\ref{subsec:pvalue_dist}.  \citet*{Franco2014} show, using TESS-funded
 studies with a known population of conducted experiments, that null results are
 published at roughly one-third the rate of significant ones.  In finance, \citet*{Harvey2016} show that given the scale of data mining
@@ -472,6 +473,10 @@ NBER-side refilter described in step~(ii) below promotes an additional 126
 NBER papers (NBER total: 187), giving a combined LLM in-scope pool of 343
 (NBER: 187, \JF{}: 44, \RFS{}: 50, \JFE{}: 62) before manual review.
 Figure~\ref{fig:flow} traces the full flow visually.
+
+\begin{center}
+\textbf{[INSERT FIGURE 1 HERE]}
+\end{center}
 
 Following the automated pass, all 343 LLM in-scope classifications are
 reviewed manually by the author against the paper's abstract, with the PDF
@@ -948,7 +953,7 @@ more pronounced in published papers and all but absent in NBER.
 
 
 \begin{center}
-\textbf{[INSERT FIGURE 1 HERE]}
+\textbf{[INSERT FIGURE 2 HERE]}
 \end{center}
 
 Two interpretations are plausible.  Published negative-finding papers
@@ -1682,28 +1687,6 @@ a credible signal of methodological quality.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{figures/fig_nber_vs_pub_full.pdf}\\[16pt]
-\includegraphics[width=\textwidth]{figures/fig_nber_vs_pub_negative.pdf}
-\caption{Each panel compares published journal papers (left) to NBER working
-papers (right).  Bars show how frequently test statistics fall in each range.
-The orange bars mark the zone just around the conventional 5\% significance
-cutoff; the vertical line is the cutoff itself.  If test statistics were
-reported without regard to significance, the orange bars on either side of
-the line should be roughly equal.
-\textit{Top panel}: All 7,761 test statistics from published papers and 8,351
-from NBER papers.  Published papers show visibly more statistics just below
-the cutoff than just above it; NBER papers do not.
-\textit{Bottom panel}: The same comparison restricted to papers that conclude
-a government regulation was harmful (3,491 published; 4,375 NBER).  The
-asymmetry is more pronounced in published papers and all but absent in
-NBER papers; see Section~\ref{subsec:pvalue_dist} for the cross-corpus
-significance discussion.}
-\label{fig:nber_vs_pub}
-\end{figure}
-
-
-\begin{figure}[H]
-\centering
 \caption{Sample Selection Flow}
 \label{fig:flow}
 \small
@@ -1737,6 +1720,26 @@ NBER: 157 (51 first-pass $+$ 106 refilter)}} \\
 \end{figure}
 
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/fig_nber_vs_pub_full.pdf}\\[16pt]
+\includegraphics[width=\textwidth]{figures/fig_nber_vs_pub_negative.pdf}
+\caption{Each panel compares published journal papers (left) to NBER working
+papers (right).  Bars show how frequently test statistics fall in each range.
+The orange bars mark the zone just around the conventional 5\% significance
+cutoff; the vertical line is the cutoff itself.  If test statistics were
+reported without regard to significance, the orange bars on either side of
+the line should be roughly equal.
+\textit{Top panel}: All 7,761 test statistics from published papers and 8,351
+from NBER papers.  Published papers show visibly more statistics just below
+the cutoff than just above it; NBER papers do not.
+\textit{Bottom panel}: The same comparison restricted to papers that conclude
+a government regulation was harmful (3,491 published; 4,375 NBER).  The
+asymmetry is more pronounced in published papers and all but absent in
+NBER papers; see Section~\ref{subsec:pvalue_dist} for the cross-corpus
+significance discussion.}
+\label{fig:nber_vs_pub}
+\end{figure}
 
 
 %% ============================================================
