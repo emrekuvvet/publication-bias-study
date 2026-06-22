@@ -1343,8 +1343,9 @@ rejecting them for quality reasons rather than because of their
 conclusions.  To address this, we narrow the sample to the 139
 papers that use credible causal identification methods, that is,
 natural experiments, instrumental variables, difference-in-differences,
-or regression discontinuity designs.  Within this subset, research
-design quality is held roughly constant across finding directions.
+regression discontinuity designs, or event studies with causal
+interpretation.  Within this subset, research design quality is held
+roughly constant across finding directions.
 
 Within this subsample, neither direction coefficient is significantly
 positive.  The positive-finding coefficient is $-0.598$ and the
@@ -2226,8 +2227,9 @@ findings into a single directional category.
 ``LPM'' re-estimates via OLS with robust standard errors, giving
 percentage-point differences in publication rates directly.
 \textit{Panel C:} ``Quasi-exp.\ only'' restricts to the 139 papers using
-credible causal methods (natural experiments, IV, DiD, RD), holding research
-design quality constant across direction categories.
+credible causal methods (natural experiments, IV, DiD, RD, or event
+studies with causal interpretation), holding research design quality
+constant across direction categories.
 ``$+\log(\text{abstract length})$'' controls for abstract length only;
 the row tests the length channel of the writing-style concern and does
 not control for per-word hedging style.  See
@@ -2254,7 +2256,6 @@ $^{***}p < 0.01$, $^{**}p < 0.05$, $^{*}p < 0.10$.
 \begin{table}[H]
 \centering
 \caption{LLM Direction Coding: Replication Confusion Matrix}
-\label{tab:confusion_matrix}
 \begin{singlespace}
 \begin{tabularx}{\textwidth}{l>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
 \toprule
@@ -2311,7 +2312,6 @@ the residual measurement error.
 
 %% ============================================================
 \section{Caliper Robustness to Coefficient Inclusion}
-\label{app:inclusion_sensitivity}
 %% ============================================================
 
 A potential concern is that pooling all regression-table rows, including
@@ -2472,7 +2472,6 @@ verifiable rows show a smaller asymmetry in the opposite direction.
 %% ============================================================
 %% ============================================================
 \section{Sample Frame Validation}
-\label{app:frame_validation}
 
 Three precision/recall estimates bound the sample-frame quality.
 \textit{(i)~LLM precision on its in-scope decisions} is $58/68 = 85.3\%$
@@ -2562,7 +2561,7 @@ rate is therefore \textit{higher} on the NBER side than on the
 published side, the opposite of what the referee's hypothesis would
 predict.  Extrapolating the strict rule to the full QE pool (78
 published, 61 NBER), the strict-QE published share would be
-$26 / (26 + 33) = 44.4\%$, compared to the original $56.1\%$ and a
+$26 / (26 + 33) = 44.1\%$, compared to the original $56.1\%$ and a
 sample-wide published share of $46.0\%$.  Most of the original
 $18$--$20$ pp QE premium shrinks toward zero under the strict coding
 rule.
