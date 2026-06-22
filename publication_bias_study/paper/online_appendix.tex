@@ -10,6 +10,8 @@
 \usepackage{enumitem}
 \usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
 \usepackage{natbib}
+\usepackage{xr}
+\externaldocument{main}
 \renewcommand{\refname}{References}
 
 \newcommand{\JF}{\textit{Journal of Finance}}
@@ -39,7 +41,6 @@ sections of the main paper retain their main-paper numbering.
 \setcounter{table}{0}
 
 \section{Keyword Taxonomy}
-\label{app:keywords}
 
 Table~\ref{tab:keywords} lists all terms used in Pass~1 of the classification
 pipeline.
@@ -95,7 +96,6 @@ keyword before the paper is flagged as a candidate.
 
 
 \section{LLM Prompts}
-\label{app:prompts}
 
 \subsection{In-Scope Classification Prompt}
 
