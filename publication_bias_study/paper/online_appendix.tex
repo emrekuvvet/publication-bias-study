@@ -8,19 +8,61 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{enumitem}
-\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+  colorlinks=false,
+  pdfborder={0 0 0},
+  allbordercolors={1 1 1}
+}
 \usepackage{natbib}
+\bibpunct{(}{)}{;}{a}{,}{ }
+\usepackage{microtype}
+\usepackage{caption}
+\captionsetup[table]{
+  labelfont={bf},
+  textfont={normalsize},
+  labelsep=period,
+  justification=raggedright,
+  singlelinecheck=false,
+  skip=6pt
+}
+\captionsetup[figure]{font=small,labelfont=bf,labelsep=period}
+\renewcommand{\tablename}{Table}
+\renewcommand{\figurename}{Figure}
+\usepackage{titlesec}
+
+%% ---- Section/subsection formatting matching the main paper -----------
+\titleformat{\section}
+  {\normalfont\large\bfseries\color{black}}
+  {\thesection.}{0.5em}{}
+\titlespacing*{\section}{0pt}{18pt}{8pt}
+
+\titleformat{\subsection}
+  {\normalfont\normalsize\bfseries\color{black}}
+  {\thesubsection}{0.5em}{}
+\titlespacing*{\subsection}{0pt}{12pt}{4pt}
+
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\itshape\color{black}}
+  {}{0em}{}
+\titlespacing*{\subsubsection}{0pt}{8pt}{3pt}
+
 \usepackage{xr}
 \externaldocument{main}
 \renewcommand{\refname}{References}
+
+\hyphenation{confidence taxonomy}
+
+\color{black}
 
 \newcommand{\JF}{\textit{Journal of Finance}}
 \newcommand{\RFS}{\textit{Review of Financial Studies}}
 \newcommand{\JFE}{\textit{Journal of Financial Economics}}
 
 \title{Online Appendix to ``Do Finance Journals Pick Sides? Evidence from Government Intervention Research''}
-\author{Emre Kuvvet\\Department of Finance, Nova Southeastern University\\ekuvvet@nova.edu}
-\date{\today}
+\author{}
+\date{}
 
 \begin{document}
 \maketitle
@@ -45,48 +87,49 @@ sections of the main paper retain their main-paper numbering.
 Table~\ref{tab:keywords} lists all terms used in Pass~1 of the classification
 pipeline.
 
-\begin{longtable}{p{4cm}p{10cm}}
-\caption{In-Scope Classification: Keyword Taxonomy}
-\label{tab:keywords} \\
+\begin{table}[H]
+\centering
+\caption{In-Scope Classification: Keyword \mbox{Taxonomy}}
+\label{tab:keywords}
+\small
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}p{3.8cm}p{10cm}@{}}
 \toprule
-Category & Keywords \\
+\textbf{Category} & \textbf{Keywords} \\
 \midrule
-\endfirsthead
-\multicolumn{2}{c}{\tablename\ \thetable{} (continued)} \\
-\toprule
-Category & Keywords \\
-\midrule
-\endhead
-\midrule
-\multicolumn{2}{r}{\textit{Continued on next page}} \\
-\endfoot
-\bottomrule
-\endlastfoot
 Financial regulation &
   regulation, regulatory, Dodd-Frank, Basel, Glass-Steagall,
-  capital requirements, leverage ratio, bank capital \\[4pt]
+  capital requirements, leverage ratio, bank capital \\
+\addlinespace[3pt]
 Securities law &
   SEC, securities and exchange, disclosure requirement, Reg FD,
   Sarbanes-Oxley, SOX, insider trading law, short-selling ban,
-  short sale ban, short-sale restriction \\[4pt]
+  short sale ban, short-sale restriction \\
+\addlinespace[3pt]
 Banking policy &
   FDIC, deposit insurance, lender of last resort, bailout, TARP,
-  stress test, bank resolution, government guarantee \\[4pt]
+  stress test, bank resolution, government guarantee \\
+\addlinespace[3pt]
 Monetary/fiscal policy &
   quantitative easing, QE, Fed intervention, government subsidy,
-  public guarantee, state guarantee, fiscal stimulus \\[4pt]
+  public guarantee, state guarantee, fiscal stimulus \\
+\addlinespace[3pt]
 Market microstructure rules &
   circuit breaker, tick size, trading halt, uptick rule,
-  limit-down, limit-up, trading curb \\[4pt]
+  limit-down, limit-up, trading curb \\
+\addlinespace[3pt]
 Corporate governance law &
   board independence requirement, say-on-pay, proxy access,
   mandatory audit, governance mandate, clawback provision,
-  mandatory disclosure \\[4pt]
+  mandatory disclosure \\
+\addlinespace[3pt]
 General intervention signals &
   government intervention, government policy, public policy,
   law and finance, legal protection, shareholder rights,
   creditor rights, investor protection, financial regulation reform \\
-\end{longtable}
+\bottomrule
+\end{tabular}
+\end{table}
 
 \noindent Ambiguous standalone terms (\textit{regulation}, \textit{regulatory},
 \textit{SEC}) require co-occurrence with at least one additional in-scope
@@ -128,10 +171,10 @@ confidence (``high'' $|$ ``medium'' $|$ ``low''), reason (one sentence).
 \subsection{Direction Coding Prompt}
 
 The deployed pipeline has two paths, selected per paper by the
-classifier in \texttt{scripts/04\_code\_direction.py}.  When the abstract
-is present and contains at least 20 words, the model receives the
-\textit{abstract-only} prompt below; the title is \textit{not} concatenated
-with the abstract or otherwise passed.  When the abstract is missing or
+direction-coding classifier.  When the abstract is present and
+contains at least 20 words, the model receives the
+\textit{abstract-only} prompt below; the title is \textit{not}
+concatenated with the abstract or otherwise passed.  When the abstract is missing or
 shorter than 20 words, the model instead receives the \textit{title-only}
 fallback prompt also shown below.  All 291 papers in the final analysis
 sample have abstracts of at least 20 words, so the title-only fallback
@@ -164,7 +207,7 @@ Coding rules:
 \newline, Do NOT infer direction from normative framing; code the sign of the estimated coefficient
 
 Abstract:\\
-\texttt{"""\{abstract\}"""}
+\texttt{[ABSTRACT TEXT HERE]}
 
 Return JSON with exactly: direction (1 $|$ -1 $|$ 0),
 confidence (``high'' $|$ ``medium'' $|$ ``low''), rationale (one sentence).
@@ -174,14 +217,14 @@ The instruction ``named in title or first sentence'' is preserved from
 the deployed prompt verbatim; because only the abstract is passed in
 this path, the model interprets ``title'' as title-like leading material
 that some abstracts include in their first sentence (e.g., naming the
-specific statute being studied).  Body Section~\ref{subsec:direction}
-paraphrases the spirit of the rule, coding the sign of the estimated
+specific statute being studied).  Section~\ref{subsec:direction} of the
+main paper paraphrases the spirit of the rule, coding the sign of the estimated
 effect relative to the stated regulatory goal, which the prompt conveys
 through the example outcomes for $+1$ (regulatory objectives achieved:
 improved market quality, reduced systemic risk, etc.) and $-1$
 (regulatory side-effects: reduced liquidity, higher costs, etc.).
 
-\paragraph{Title-only fallback (not used for any analysis-sample paper).}
+\paragraph{Title-only fallback prompt (documented for pipeline completeness; not invoked for any paper in the 291-paper analysis sample).}
 \begin{quote}
 \small
 The following is the title of a finance paper that studies the effect of
@@ -198,7 +241,7 @@ Coding rules:
 \newline, Set confidence to ``low'' unless the directional signal is unambiguous
 
 Title:\\
-\texttt{"""\{title\}"""}
+\texttt{[TITLE TEXT HERE]}
 
 Return JSON with exactly: direction (1 $|$ -1 $|$ 0),
 confidence (``high'' $|$ ``medium'' $|$ ``low''), rationale (one sentence).
@@ -208,11 +251,10 @@ confidence (``high'' $|$ ``medium'' $|$ ``low''), rationale (one sentence).
 
 
 \section{Sample Frame Validation: Precision and Recall}
-\label{app:frame_validation}
 %% ============================================================
 
 The selection pipeline narrows 39,136 documents to 1,849 keyword
-candidates and then to 291 final papers (Table~\ref{tab:sample_selection}).
+candidates and then to 291 final papers (Table~\ref{tab:sample_selection} of the main paper).
 Differential exclusion at any stage, between NBER and journal papers, or
 between null and directional papers, could bias the within-direction
 corpus-membership shares that our main inference relies on.  This appendix
@@ -222,18 +264,19 @@ reports three precision/recall estimates that bound this concern.
 
 We re-evaluated 68 papers that the LLM flagged as in-scope to test whether
 the in-scope label was correct under the boundary rule of
-Section~\ref{subsec:inscope}.  The author overrode 10 of the 68, giving an
+Section~\ref{subsec:inscope} of the main paper.  The author overrode 10 of the 68, giving an
 implied LLM precision (against the manual gold standard) of
 $58/68 = 85.3\%$.  Across the full keyword-positive pool, the LLM flagged
 217 papers as in-scope at the first pass; manual review trimmed this to
-189 ($28$ of the initial $217$ were overridden, plus $24$ additional
-overrides on papers brought in by the NBER refilter) and the NBER-side
-refilter added 106 surviving papers, yielding the final 291-paper sample
-($217 - 52 + 126 = 291$, with the published-side counts above).  The
-file \texttt{data/classified/inscope\_nber\_recheck.csv} in the replication
-package records every per-paper override; the boundary criterion (policy
-as primary research question vs.\ as identification device for a
-non-policy outcome) is operationalized in Section~\ref{subsec:inscope}.
+185 ($32$ of the initial $217$ were overridden: 10 NBER and 22 published,
+with the published-side split JF: 18, RFS: 2, JFE: 2).  The NBER refilter
+then promoted 126 additional papers to in-scope, of which 20 were overridden
+on second-pass review and 106 survived, yielding the final 291-paper sample
+($217 - 32 + 106 = 291$, equivalently $217 + 126 - 52 = 291$ with the
+combined override count).  Every per-paper override is recorded in the
+replication package; the boundary criterion (policy as primary research
+question vs.\ as identification device for a non-policy outcome) is
+operationalized in Section~\ref{subsec:inscope} of the main paper.
 
 \subsection*{LLM recall on the keyword-positive pool}
 
@@ -254,7 +297,7 @@ pool.
 
 Stage~1 (the keyword filter) is by design over-inclusive, but its recall
 on truly in-scope papers cannot be inferred from
-Table~\ref{tab:sample_selection} alone.  We audit the keyword-negative
+Table~\ref{tab:sample_selection} of the main paper alone.  We audit the keyword-negative
 pool by sampling 200 papers (random seed 42) from the 37,656 documents
 that fail the keyword filter and have abstracts of at least 20 words, and
 re-running the in-scope LLM prompt on each.  Of the 200 sampled papers,
@@ -280,27 +323,13 @@ corpus-membership shares depends additionally on how the missed papers
 distribute across direction categories, which we cannot estimate from
 this small sample.
 
-\subsection*{Interpretation and replication}
+\subsection*{Interpretation}
 
-Two takeaways follow.  First, the manual-review step exerts meaningful
-quality control on the LLM output, with both precision ($\approx 85\%$)
-and recall ($\approx 84\%$) on the keyword-positive pool exceeding the
-LLM-only baseline.  Second, the keyword filter is not perfectly recalling
-the in-scope literature: a substantively large pool of in-scope papers
-sits in the keyword-negative set and is unaudited at the document level.
 Our main inference rests on the equality of direction shares across the
-NBER and published \textit{within} the selected sample; any
-direction-neutral keyword miss leaves these shares unchanged, while a
-direction-correlated keyword miss would bias them.  The 200-paper audit
-sample is too small to detect such direction-correlated differential
-exclusion if it exists; the analysis would benefit from a larger
-keyword-negative audit in future work.  All audit code and per-paper
-verdicts are in the replication package:
-\texttt{scripts/31\_keyword\_recall\_audit.py} and
-\texttt{output/tables/keyword\_recall\_audit.csv} for the new audit;
-\texttt{data/classified/inscope\_nber\_recheck.csv} and
-\texttt{data/classified/nber\_refilter\_newcandidates.csv} for the
-existing precision and recall data.
+NBER and published samples \textit{within} the selected corpus.  A
+direction-neutral keyword miss leaves these shares unchanged; a
+direction-correlated keyword miss would bias them.  The 200-paper
+audit is too small to detect such differential exclusion if it exists.
 
 %% ============================================================
 

@@ -465,9 +465,13 @@ government or regulatory mandate.''
 
 For each paper, the model returns an in-scope decision, a confidence
 level (high, medium, or low), and a one-sentence justification.  At this stage
-the model classifies 343 of the 1,849 keyword-flagged candidates as in scope
-(NBER: 187, \JF{}: 44, \RFS{}: 50, \JFE{}: 62) and the remaining 1,506 as out
-of scope.
+the model classifies 217 of the 1,849 keyword-flagged candidates as in scope
+on the first pass (NBER: 61, \JF{}: 44, \RFS{}: 50, \JFE{}: 62) and the
+remaining 1,632 as out of scope.  The first-pass count grows to 343 once the
+NBER-side refilter described in step~(ii) below promotes an additional 126
+NBER papers (NBER total: 187), giving a combined LLM in-scope pool of 343
+(NBER: 187, \JF{}: 44, \RFS{}: 50, \JFE{}: 62) before manual review.
+Figure~\ref{fig:flow} traces the full flow visually.
 
 Following the automated pass, all 343 LLM in-scope classifications are
 reviewed manually by the author against the paper's abstract, with the PDF
@@ -505,16 +509,19 @@ the abstract frames the regulation as the source of variation for a
 non-objective outcome, the paper is out of scope.  A second class of
 overrides drops papers that test a policy whose empirical content turns
 out to be a private market response (e.g., voluntary cross-listing
-decisions after a directive).  This re-examination produces 52 net
-exclusions relative to the LLM (NBER: 30, \JF{}: 18, \RFS{}: 2,
-\JFE{}: 2).
+decisions after a directive).  This re-examination produces 32 first-pass
+exclusions (NBER: 10, \JF{}: 18, \RFS{}: 2, \JFE{}: 2), retaining 185
+first-pass papers (NBER: 51, published: 134).  An additional 20 NBER
+exclusions arise during the second-pass review of refilter promotions
+(step~(ii) below), yielding 52 total overrides (NBER: 30 combined,
+\JF{}: 18, \RFS{}: 2, \JFE{}: 2).
 
 \textit{(ii)~Reconsidering LLM out-of-scope decisions in the NBER corpus.}
 Because false-negative LLM exclusions are difficult to detect without a
 second pass, the author re-codes 803 NBER papers that the LLM flagged as
 low-confidence out-of-scope.  Of these, 126 are returned to the in-scope
-pool; 106 survive the same Pass~(i) criteria and enter the analysis
-sample.  The published-side LLM decisions are not subjected to a symmetric
+pool; applying the same Pass~(i) criteria yields 20 second-pass overrides
+and 106 surviving NBER papers, which enter the analysis sample.  The published-side LLM decisions are not subjected to a symmetric
 refilter because the journal denominators (8,924 articles) are small
 enough that the keyword filter retains all plausible candidates at the
 first stage.
@@ -1691,6 +1698,41 @@ asymmetry is more pronounced in published papers and all but absent in
 NBER papers; see Section~\ref{subsec:pvalue_dist} for the cross-corpus
 significance discussion.}
 \label{fig:nber_vs_pub}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\caption{Sample Selection Flow}
+\label{fig:flow}
+\small
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{c}
+\fbox{\parbox{12cm}{\centering \textbf{Starting corpus: 39,136 documents}\\
+30,212 NBER working papers $+$ 8,924 \JF{}/\RFS{}/\JFE{} articles (2000--2024)}} \\
+$\downarrow$ \\[2pt]
+\fbox{\parbox{12cm}{\centering \textbf{Pass 1: Keyword filter} \\
+Retained: 1,849 \quad Excluded: 37,287}} \\
+$\downarrow$ \\[2pt]
+\fbox{\parbox{12cm}{\centering \textbf{Pass 2(a): LLM first-pass classification} \\
+In-scope: 217 (NBER 61, \JF{} 44, \RFS{} 50, \JFE{} 62) \\
+Out-of-scope: 1,632}} \\
+$\downarrow$ \\[2pt]
+\fbox{\parbox{12cm}{\centering \textbf{Manual review of first-pass in-scope} \\
+Overrides: 32 (NBER 10, \JF{} 18, \RFS{} 2, \JFE{} 2) \\
+Retained: 185 (NBER 51, published 134)}} \\
+$\downarrow$ \\[2pt]
+\fbox{\parbox{12cm}{\centering \textbf{Pass 2(b): NBER refilter} \\
+803 low-confidence out-of-scope NBER papers re-coded \\
+Promoted to in-scope: 126}} \\
+$\downarrow$ \\[2pt]
+\fbox{\parbox{12cm}{\centering \textbf{Manual review of refilter promotions} \\
+Overrides: 20 \quad Retained: 106 NBER}} \\
+$\downarrow$ \\[2pt]
+\fbox{\parbox{12cm}{\centering \textbf{Final analysis sample: 291 papers} \\
+Published: 134 (\JF{} 26, \RFS{} 48, \JFE{} 60) \\
+NBER: 157 (51 first-pass $+$ 106 refilter)}} \\
+\end{tabular}
 \end{figure}
 
 
