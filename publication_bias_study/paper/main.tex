@@ -127,7 +127,7 @@ institutions are about 24 to 26 points more likely.  We also find subtle statist
 the conventional significance threshold in published papers, but only
 in supplementary tables, not in their main regression results, which
 matches a pattern of selective reporting concentrated in robustness
-checks rather than headline findings.
+checks rather than the main findings.
 \end{singlespace}
 \vspace{4pt}
 \noindent\small\textit{JEL classification:} G18, G28, C80, B40.
@@ -513,7 +513,7 @@ The criterion turns on whether the regulator stated the outcome as a
 target, not on whether the outcome plausibly responds to the
 regulation.  Borderline cases, where authors describe both a
 policy-effect and a mechanism interpretation, are resolved by the
-position of the outcome in the abstract.  If the abstract's headline
+position of the outcome in the abstract.  If the abstract's primary
 result names a stated regulatory objective, the paper is in scope; if
 the abstract frames the regulation as the source of variation for a
 non-objective outcome, the paper is out of scope.  A second class of
@@ -537,7 +537,7 @@ enough that the keyword filter retains all plausible candidates at the
 first stage.
 
 Borderline cases are resolved by the following rule.  If the policy
-variable is the right-hand-side treatment in the paper's headline
+variable is the right-hand-side treatment in the paper's main
 regression, the paper is in scope; if the policy is used as an instrument
 or a covariate to study a non-policy outcome, it is out of scope.
 
@@ -806,7 +806,7 @@ First, for rows where both a coefficient and a standard error are
 extracted, the reported test statistic matches their ratio to within
 0.1 in 98.3\% of published rows and 99.7\% of NBER rows, no meaningful
 gap between corpora.  By construction this check applies only to
-Coef+SE rows; the standalone $z$-statistics that drive the headline
+Coef+SE rows; the standalone $z$-statistics that drive the main
 caliper finding cannot be cross-validated.  Within the verifiable
 Coef+SE rows, neither corpus shows excess bunching just below the
 significance threshold, and the gap is concentrated precisely in the
@@ -818,7 +818,7 @@ papers contribute statistics, vs.\ 82.6\%/75.0\%/56.2\% for NBER.
 Null-finding papers are over-represented in the missing-extraction
 group in both corpora, in keeping with their reporting fewer
 significance-laden tables.  The negative-finding result, the one
-driving the headline, has the highest extraction rates and the most
+driving the main caliper effect, has the highest extraction rates and the most
 balanced corpus comparison, and is therefore the least likely of the
 three to reflect selective extraction.  Third, papers with no usable
 statistics are spread roughly evenly across journals and years within
@@ -998,10 +998,10 @@ negative-finding result clear the corrected cutoff under the simple
 test ($p < 0.001$ each), but the negative-finding result does not
 under the conservative test ($p = 0.135$).  We treat the simple-test
 results as the less-conservative reading and the conservative-test
-results as the headline.
+results as the primary reading.
 
 We include every regression coefficient in the test, not just the
-headline result from each paper, because researchers can adjust any
+main estimate from each paper, because researchers can adjust any
 reported coefficient toward the significance threshold.  As a check,
 dropping standard control-variable rows (about $9\%$ of observations)
 leaves the main results unchanged.
@@ -1186,7 +1186,7 @@ cross-sectional association in its own right rather than merely a
 control variable.  We flag at the outset that the QE indicator is
 LLM-coded from abstracts and has not been manually validated on the
 full sample; a 30-paper audit reported in
-Appendix~\ref{app:core_var_validation} suggests the headline
+Appendix~\ref{app:core_var_validation} suggests the central
 magnitude is fragile to stricter coding criteria, so the discussion
 in this subsection should be read as describing the sign and order
 of magnitude of the QE--corpus-membership association rather than a
@@ -1243,7 +1243,7 @@ specifications, and concerns about classification quality.
 \subsection{Caliper Window Sensitivity}
 \label{subsec:window_robustness}
 
-Our headline result, that published papers have about 20\% more test
+Our main result, that published papers have about 20\% more test
 statistics just below the 5\% significance threshold than just above,
 depends on exactly where we draw the boundaries of the two zones.
 We check by repeating the test with four different band widths around
@@ -1613,7 +1613,7 @@ null/mixed).  Under the more conservative paper-clustered bootstrap,
 however, the full published sample and the negative-finding
 subgroup do not clear the $0.05$ threshold even before any
 multiple-testing correction.  We treat the Bonferroni results as
-the less-conservative reading and the bootstrap as the headline
+the less-conservative reading and the bootstrap as the primary
 reading.  The \JF{} density anomaly is reported for completeness
 but conflicts with the \JF{} caliper ratio of $0.88$, and we side
 with the caliper.  NBER caliper tests do not approach significance
@@ -2325,7 +2325,7 @@ the residual measurement error.
 
 A potential concern is that pooling all regression-table rows, including
 standard controls, could inflate the caliper count without reflecting
-publication pressure on headline results.
+publication pressure on lead results.
 Table~\ref{tab:inclusion_sensitivity} addresses this by re-running the caliper
 test after dropping rows whose variable name matches common control patterns:
 firm size, leverage, profitability (ROA/ROE/EBITDA), book-to-market, Tobin's $q$,
@@ -2469,7 +2469,7 @@ published Coef+SE-only row is significant at $p = 0.007$ in the
 $\downarrow$ direction: among verifiable rows in published papers, the
 sample shows more statistics in $[1.96,\,2.275]$ than in $[1.645,\,1.96)$.
 This is the classical Brodeur-style ``just-cleared-the-bar'' pattern, in
-the opposite direction from the headline excess driven by standalone
+the opposite direction from the main excess driven by standalone
 $z$-statistics; we describe both directions in
 Section~\ref{subsec:pvalue_dist}.  Across the table, threshold-side
 asymmetry is concentrated in the standalone $z$-statistics, while the
@@ -2503,7 +2503,7 @@ are in Online Appendix~OA.3 and the replication package.
 
 Two AI-coded variables do most of the work in our main analysis: the
 finding-direction code (positive, negative, or null) and the
-quasi-experimental (QE) indicator that produces the headline
+quasi-experimental (QE) indicator that produces the central
 $18$--$20$ percentage-point research-design premium.  This appendix
 re-audits each on a 30-paper sample (15 published, 15 NBER) using a
 much stricter coding rule.  Per-paper verdicts are available in the
@@ -2584,7 +2584,7 @@ finding-direction groups as more robust than its specific
 $18$--$20$ pp point estimate.  The audit also suggests that QE coding
 from abstracts is less reliable than direction coding from abstracts
 and would benefit from a manual coding exercise on the full
-291-paper sample in future work.  The headline finding, that finding
+291-paper sample in future work.  The main finding, that finding
 direction does not predict publication, does not depend on the QE
 indicator's calibration and is unaffected.
 
